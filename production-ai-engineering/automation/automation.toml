@@ -1,0 +1,14 @@
+version = 1
+id = "weekly-production-ai-handbook-review"
+kind = "cron"
+name = "Weekly Production AI Handbook Review"
+prompt = "Run `/bin/zsh automation/run-weekly-handbook-review.sh` exactly once. The worker owns the isolated snapshot, live primary-source research, authorized handling of gated sources, candidate build, exact source and PDF-text diffs, source ledger, PDF validation, and final audit. Never edit or publish `output/pdf/production-ai-engineering.pdf` or the canonical handbook source. When the worker finishes, use the exact `weekly_handbook_run_dir` printed by the worker and read its `run-summary.md`, `change-report.md`, `changes.json`, `sources.md`, `sources.json`, `blocked-sources.md`, `exact-changes.patch`, `review-status.json`, and `status.txt`. Present the review outcome in the inbox with direct links to the candidate PDF and every report. Show the exact additions, deprecations or removals, and corrections or clarifications, and explain why each is warranted with direct source links. State the recommended release-version bump, all gated-source limitations, validation results, and whether production remained unchanged. If the worker or any phase fails, report the exact failed phase and log path; do not rerun automatically or claim that a candidate is ready."
+status = "ACTIVE"
+rrule = "FREQ=WEEKLY;BYDAY=MO;BYHOUR=9;BYMINUTE=0"
+model = "gpt-5.6-sol"
+reasoning_effort = "high"
+execution_environment = "local"
+target = { type = "project", project_id = "local-7d5d631f754b157e90d21c80e72a9892" }
+cwds = ["/Users/mike/production-ai-engineering-book"]
+created_at = 1784492430000
+updated_at = 1784492430000

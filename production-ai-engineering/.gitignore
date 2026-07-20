@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local browser and build scratch data
+.playwright-cli/
+tmp/
+
+# Keep only the canonical published PDF from generated output
+output/*
+!output/pdf/
+output/pdf/*
+!output/pdf/production-ai-engineering.pdf
