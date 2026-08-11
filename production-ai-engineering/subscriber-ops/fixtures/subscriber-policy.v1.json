@@ -1,0 +1,40 @@
+{
+  "schema_version": "1",
+  "policy_id": "subscriber-access-v1",
+  "effective_at": "2026-08-04T00:00:00.000Z",
+  "refund": {
+    "first_charge_window_days": 7,
+    "window_anchor": "first_charge_paid_at",
+    "boundary": "inclusive",
+    "suspend_on": "refund_completed"
+  },
+  "cancellation": {
+    "access_until": "current_paid_period_end",
+    "renewal_after_cancel": false
+  },
+  "past_due": {
+    "grace_days": 7,
+    "grace_anchor": "first_past_due_event",
+    "repeat_event_resets_grace": false,
+    "after_grace": "suspend"
+  },
+  "chargeback": {
+    "suspend_on": "chargeback_created"
+  },
+  "initial_asset": {
+    "source_path": "output/pdf/production-ai-engineering.pdf",
+    "sha256": "6de23ed2cc62babf1c0f5692f395c38d6398c9cc230f937b151a762167473456",
+    "byte_count": 15598098,
+    "page_count": 74,
+    "content_type": "application/pdf",
+    "selection_status": "APPROVED_INITIAL_ASSET",
+    "staging_status": "PRIVATE_STAGING_UPLOADED",
+    "staging_receipt_path": "subscriber-ops/fixtures/initial-staging-upload-receipt.json",
+    "production_status": "UNAPPROVED",
+    "required_approval": {
+      "scope": "PROMOTION",
+      "environment": "production",
+      "action": "promote_initial_canonical_pdf_to_production"
+    }
+  }
+}

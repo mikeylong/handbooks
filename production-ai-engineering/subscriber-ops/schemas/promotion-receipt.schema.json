@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/promotion-receipt.schema.json",
+  "title": "Private release promotion receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "release_id",
+    "manifest_sha256",
+    "approval_id",
+    "object_key",
+    "expected",
+    "observed",
+    "verified_at",
+    "previous_release_id",
+    "database_receipt_ref"
+  ],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "release_id": { "type": "string", "minLength": 1 },
+    "manifest_sha256": { "$ref": "#/$defs/sha256" },
+    "approval_id": { "type": "string", "minLength": 1 },
+    "object_key": { "type": "string", "pattern": "^private/handbook/[^/]+/[a-f0-9]{64}\\.pdf$" },
+    "expected": { "$ref": "#/$defs/objectEvidence" },
+    "observed": { "$ref": "#/$defs/objectEvidence" },
+    "verified_at": { "type": "string", "format": "date-time" },
+    "previous_release_id": { "type": ["string", "null"] },
+    "database_receipt_ref": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "objectEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256", "byte_count", "content_type", "filename"],
+      "properties": {
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "byte_count": { "type": "integer", "minimum": 1 },
+        "content_type": { "const": "application/pdf" },
+        "filename": { "type": "string", "pattern": "^[^/\\\\]+\\.pdf$" }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Production AI Engineering acquisition event",
+  "$comment": "Acquisition raw events use the subscriber-ops envelope and enum. Do not add a local event name here.",
+  "$ref": "../../subscriber-ops/schemas/analytics-event.schema.json"
+}

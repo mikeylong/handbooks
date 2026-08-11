@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/audience-snapshot.schema.json",
+  "title": "Subscriber audience snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "release_id",
+    "created_at",
+    "eligibility_as_of",
+    "rule_version",
+    "communication_basis",
+    "recipient_count",
+    "recipient_set_sha256",
+    "recipient_refs",
+    "exclusions"
+  ],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "snapshot_id": { "type": "string", "pattern": "^aud_[a-z0-9][a-z0-9_-]{7,95}$" },
+    "release_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "eligibility_as_of": { "type": "string", "format": "date-time" },
+    "rule_version": { "type": "string", "minLength": 1 },
+    "communication_basis": { "const": "contractual_subscriber_delivery" },
+    "recipient_count": { "type": "integer", "minimum": 0 },
+    "recipient_set_sha256": { "$ref": "#/$defs/sha256" },
+    "recipient_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^usr_[A-Za-z0-9_-]+$" }
+    },
+    "exclusions": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 },
+      "required": ["expired", "past_due_policy", "refunded_or_revoked", "unverified_email", "suppressed", "already_delivered"]
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

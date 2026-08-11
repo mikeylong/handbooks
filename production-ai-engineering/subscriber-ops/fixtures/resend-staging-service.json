@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "provider": "resend",
+  "plan": "Free",
+  "resource_status": "onboarding",
+  "domain": "surfaces.systems",
+  "domain_status": "not_started",
+  "dns_provider": "GoDaddy",
+  "dns_nameservers": ["ns07.domaincontrol.com", "ns08.domaincontrol.com"],
+  "environments": ["preview", "development"],
+  "environment_variables": ["RESEND_API_KEY", "RESEND_EMAIL_DOMAIN"],
+  "sender": {
+    "from_name": "Production AI Engineering",
+    "local_part": "hello",
+    "reply_to_local_part": "hello"
+  },
+  "production_enabled": false
+}

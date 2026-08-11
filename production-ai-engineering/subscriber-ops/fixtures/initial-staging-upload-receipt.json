@@ -1,0 +1,36 @@
+{
+  "schema_version": "1",
+  "receipt_id": "stgr_initial_canonical_2026_08_04",
+  "status": "PRIVATE_STAGING_UPLOADED",
+  "store": {
+    "name": "production-ai-handbook-staging-pdf",
+    "id": "store_Y79UDmNrtHqx852p",
+    "access": "private",
+    "region": "iad1",
+    "environments": ["preview", "development"]
+  },
+  "object": {
+    "url": "https://y79udmnrthqx852p.private.blob.vercel-storage.com/handbooks/production-ai-engineering/2026-07-19/production-ai-engineering-6de23ed2-mAJ1Udx53hgqMBfVjDsWVeeb98BD8w.pdf",
+    "sha256": "6de23ed2cc62babf1c0f5692f395c38d6398c9cc230f937b151a762167473456",
+    "byte_count": 15598098,
+    "page_count": 74,
+    "content_type": "application/pdf"
+  },
+  "source": {
+    "path": "output/pdf/production-ai-engineering.pdf",
+    "sha256": "6de23ed2cc62babf1c0f5692f395c38d6398c9cc230f937b151a762167473456"
+  },
+  "protected_state": {
+    "canonical_source_path": "AI_ENGINEERING_FIELD_GUIDE.md",
+    "canonical_source_sha256": "70b962eaef46c361232399ca117c5051e15ba0747ea6fbc9f0932f18f34c3b63",
+    "canonical_source_unchanged": true,
+    "production_pdf_path": "output/pdf/production-ai-engineering.pdf",
+    "production_pdf_sha256": "6de23ed2cc62babf1c0f5692f395c38d6398c9cc230f937b151a762167473456",
+    "production_pdf_unchanged": true
+  },
+  "production": {
+    "status": "UNAPPROVED",
+    "promotion_performed": false,
+    "subscriber_delivery_authorized": false
+  }
+}

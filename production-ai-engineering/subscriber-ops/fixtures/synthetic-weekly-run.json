@@ -1,0 +1,45 @@
+{
+  "schema_version": "1",
+  "release_id": "rel_2026_08_04_synthetic",
+  "release_kind": "EDITION_AND_NOTE",
+  "created_at": "2026-08-04T18:00:00.000Z",
+  "edition_version": "0.2.0-test",
+  "previous_release_id": "rel_2026_07_28_synthetic",
+  "candidate_run_id": "2026-08-04T09-00-00.synthetic",
+  "candidate_run_dir": "/private/tmp/weekly-handbook-synthetic",
+  "candidate_pdf": {
+    "path": "/private/tmp/weekly-handbook-synthetic/production-ai-engineering-synthetic.pdf",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "byte_count": 1024,
+    "page_count": 75,
+    "content_type": "application/pdf",
+    "filename": "production-ai-engineering-0.2.0-test.pdf"
+  },
+  "field_note": {
+    "path": "/private/tmp/weekly-handbook-synthetic/field-note.md",
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "subject": "Production AI Engineering: synthetic weekly update",
+    "edition_changed": true,
+    "body": "Synthetic fixture only. No subscriber will receive this content."
+  },
+  "reports": {
+    "run_summary": { "path": "/private/tmp/weekly-handbook-synthetic/run-summary.md", "sha256": "1111111111111111111111111111111111111111111111111111111111111111" },
+    "change_report": { "path": "/private/tmp/weekly-handbook-synthetic/change-report.md", "sha256": "2222222222222222222222222222222222222222222222222222222222222222" },
+    "changes": { "path": "/private/tmp/weekly-handbook-synthetic/changes.json", "sha256": "3333333333333333333333333333333333333333333333333333333333333333" },
+    "sources": { "path": "/private/tmp/weekly-handbook-synthetic/sources.json", "sha256": "4444444444444444444444444444444444444444444444444444444444444444" },
+    "blocked_sources": { "path": "/private/tmp/weekly-handbook-synthetic/blocked-sources.md", "sha256": "5555555555555555555555555555555555555555555555555555555555555555" },
+    "exact_patch": { "path": "/private/tmp/weekly-handbook-synthetic/exact-changes.patch", "sha256": "6666666666666666666666666666666666666666666666666666666666666666" },
+    "review_status": { "path": "/private/tmp/weekly-handbook-synthetic/review-status.json", "sha256": "7777777777777777777777777777777777777777777777777777777777777777" },
+    "source_ledger": { "path": "/private/tmp/weekly-handbook-synthetic/sources.md", "sha256": "8888888888888888888888888888888888888888888888888888888888888888" }
+  },
+  "delivery_date": "2026-08-04",
+  "audience_rule_version": "subscriber-weekly-v1-test",
+  "recipient_refs": ["usr_alpha", "usr_bravo", "usr_charlie"],
+  "email": {
+    "subject": "Production AI Engineering: synthetic weekly update",
+    "body": "Synthetic fixture only. No subscriber will receive this content.",
+    "from_name": "Production AI Engineering",
+    "reply_to": "hello@surfaces.systems",
+    "access_url_origin": "https://example.invalid"
+  }
+}

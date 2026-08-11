@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/staging-upload-receipt.schema.json",
+  "title": "Private staging PDF upload receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "receipt_id", "status", "store", "object", "source", "protected_state", "production"],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "receipt_id": { "type": "string", "pattern": "^stgr_[a-z0-9][a-z0-9_-]{7,95}$" },
+    "status": { "const": "PRIVATE_STAGING_UPLOADED" },
+    "store": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "id", "access", "region", "environments"],
+      "properties": {
+        "name": { "const": "production-ai-handbook-staging-pdf" },
+        "id": { "const": "store_Y79UDmNrtHqx852p" },
+        "access": { "const": "private" },
+        "region": { "const": "iad1" },
+        "environments": {
+          "type": "array",
+          "const": ["preview", "development"]
+        }
+      }
+    },
+    "object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "sha256", "byte_count", "page_count", "content_type"],
+      "properties": {
+        "url": { "const": "https://y79udmnrthqx852p.private.blob.vercel-storage.com/handbooks/production-ai-engineering/2026-07-19/production-ai-engineering-6de23ed2-mAJ1Udx53hgqMBfVjDsWVeeb98BD8w.pdf" },
+        "sha256": { "const": "6de23ed2cc62babf1c0f5692f395c38d6398c9cc230f937b151a762167473456" },
+        "byte_count": { "const": 15598098 },
+        "page_count": { "const": 74 },
+        "content_type": { "const": "application/pdf" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "const": "output/pdf/production-ai-engineering.pdf" },
+        "sha256": { "const": "6de23ed2cc62babf1c0f5692f395c38d6398c9cc230f937b151a762167473456" }
+      }
+    },
+    "protected_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical_source_path", "canonical_source_sha256", "canonical_source_unchanged", "production_pdf_path", "production_pdf_sha256", "production_pdf_unchanged"],
+      "properties": {
+        "canonical_source_path": { "const": "AI_ENGINEERING_FIELD_GUIDE.md" },
+        "canonical_source_sha256": { "const": "70b962eaef46c361232399ca117c5051e15ba0747ea6fbc9f0932f18f34c3b63" },
+        "canonical_source_unchanged": { "const": true },
+        "production_pdf_path": { "const": "output/pdf/production-ai-engineering.pdf" },
+        "production_pdf_sha256": { "const": "6de23ed2cc62babf1c0f5692f395c38d6398c9cc230f937b151a762167473456" },
+        "production_pdf_unchanged": { "const": true }
+      }
+    },
+    "production": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "promotion_performed", "subscriber_delivery_authorized"],
+      "properties": {
+        "status": { "const": "UNAPPROVED" },
+        "promotion_performed": { "const": false },
+        "subscriber_delivery_authorized": { "const": false }
+      }
+    }
+  }
+}

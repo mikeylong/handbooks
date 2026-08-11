@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/delivery-plan.schema.json",
+  "title": "Approved Tuesday delivery plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "delivery_plan_id",
+    "release_id",
+    "manifest_sha256",
+    "audience_snapshot_id",
+    "audience_sha256",
+    "recipient_count",
+    "content",
+    "window",
+    "weekly_send_key"
+  ],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "delivery_plan_id": { "type": "string", "pattern": "^dlp_[a-z0-9][a-z0-9_-]{7,95}$" },
+    "release_id": { "type": "string", "minLength": 1 },
+    "manifest_sha256": { "$ref": "#/$defs/sha256" },
+    "audience_snapshot_id": { "type": "string", "minLength": 1 },
+    "audience_sha256": { "$ref": "#/$defs/sha256" },
+    "recipient_count": { "type": "integer", "minimum": 0 },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "body_sha256", "from_name", "reply_to", "access_url_origin"],
+      "properties": {
+        "subject": { "type": "string", "minLength": 1, "maxLength": 140 },
+        "body_sha256": { "$ref": "#/$defs/sha256" },
+        "from_name": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "reply_to": { "type": "string", "format": "email" },
+        "access_url_origin": { "type": "string", "format": "uri" }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["not_before", "not_after", "timezone"],
+      "properties": {
+        "not_before": { "type": "string", "format": "date-time" },
+        "not_after": { "type": "string", "format": "date-time" },
+        "timezone": { "const": "America/Los_Angeles" }
+      }
+    },
+    "weekly_send_key": { "type": "string", "pattern": "^weekly:[^:]+:[^:]+:[a-f0-9]{64}$" }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

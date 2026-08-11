@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/resend-staging-service.schema.json",
+  "title": "Resend staging service-email resource",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "provider", "plan", "resource_status", "domain", "domain_status", "dns_provider", "dns_nameservers", "environments", "environment_variables", "sender", "production_enabled"],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "provider": { "const": "resend" },
+    "plan": { "const": "Free" },
+    "resource_status": { "const": "onboarding" },
+    "domain": { "const": "surfaces.systems" },
+    "domain_status": { "const": "not_started" },
+    "dns_provider": { "const": "GoDaddy" },
+    "dns_nameservers": { "const": ["ns07.domaincontrol.com", "ns08.domaincontrol.com"] },
+    "environments": { "const": ["preview", "development"] },
+    "environment_variables": { "const": ["RESEND_API_KEY", "RESEND_EMAIL_DOMAIN"] },
+    "sender": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from_name", "local_part", "reply_to_local_part"],
+      "properties": {
+        "from_name": { "const": "Production AI Engineering" },
+        "local_part": { "const": "hello" },
+        "reply_to_local_part": { "const": "hello" }
+      }
+    },
+    "production_enabled": { "const": false }
+  }
+}

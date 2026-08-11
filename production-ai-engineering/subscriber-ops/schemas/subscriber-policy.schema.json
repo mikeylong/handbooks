@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/subscriber-policy.schema.json",
+  "title": "Subscriber entitlement, refund, and initial-asset policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "policy_id", "effective_at", "refund", "cancellation", "past_due", "chargeback", "initial_asset"],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "policy_id": { "const": "subscriber-access-v1" },
+    "effective_at": { "type": "string", "format": "date-time" },
+    "refund": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["first_charge_window_days", "window_anchor", "boundary", "suspend_on"],
+      "properties": {
+        "first_charge_window_days": { "const": 7 },
+        "window_anchor": { "const": "first_charge_paid_at" },
+        "boundary": { "const": "inclusive" },
+        "suspend_on": { "const": "refund_completed" }
+      }
+    },
+    "cancellation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["access_until", "renewal_after_cancel"],
+      "properties": {
+        "access_until": { "const": "current_paid_period_end" },
+        "renewal_after_cancel": { "const": false }
+      }
+    },
+    "past_due": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["grace_days", "grace_anchor", "repeat_event_resets_grace", "after_grace"],
+      "properties": {
+        "grace_days": { "const": 7 },
+        "grace_anchor": { "const": "first_past_due_event" },
+        "repeat_event_resets_grace": { "const": false },
+        "after_grace": { "const": "suspend" }
+      }
+    },
+    "chargeback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["suspend_on"],
+      "properties": {
+        "suspend_on": { "const": "chargeback_created" }
+      }
+    },
+    "initial_asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "sha256", "byte_count", "page_count", "content_type", "selection_status", "staging_status", "staging_receipt_path", "production_status", "required_approval"],
+      "properties": {
+        "source_path": { "const": "output/pdf/production-ai-engineering.pdf" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "byte_count": { "type": "integer", "minimum": 1 },
+        "page_count": { "type": "integer", "minimum": 1 },
+        "content_type": { "const": "application/pdf" },
+        "selection_status": { "const": "APPROVED_INITIAL_ASSET" },
+        "staging_status": { "const": "PRIVATE_STAGING_UPLOADED" },
+        "staging_receipt_path": { "const": "subscriber-ops/fixtures/initial-staging-upload-receipt.json" },
+        "production_status": { "const": "UNAPPROVED" },
+        "required_approval": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["scope", "environment", "action"],
+          "properties": {
+            "scope": { "const": "PROMOTION" },
+            "environment": { "const": "production" },
+            "action": { "const": "promote_initial_canonical_pdf_to_production" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/staging-email-approval.schema.json",
+  "title": "One-recipient Resend staging verification approval",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "approval_id", "scope", "environment", "decision", "provider", "release_id", "audience_snapshot_id", "recipient_user_id", "recipient_email_sha256", "weekly_send_key", "delivery_id", "content_sha256", "subject_sha256", "sender_domain", "send_count_limit", "decided_at", "expires_at", "authorizer", "production_authorized", "live_promotion_authorized", "reason"],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "approval_id": { "type": "string", "pattern": "^apr_[a-z0-9][a-z0-9_-]{7,95}$" },
+    "scope": { "const": "STAGING_EMAIL_VERIFICATION" },
+    "environment": { "const": "staging" },
+    "decision": { "const": "APPROVED" },
+    "provider": { "const": "resend" },
+    "release_id": { "type": "string", "minLength": 1 },
+    "audience_snapshot_id": { "type": "string", "minLength": 1 },
+    "recipient_user_id": { "type": "string", "minLength": 1 },
+    "recipient_email_sha256": { "$ref": "#/$defs/sha256" },
+    "weekly_send_key": { "type": "string", "pattern": "^weekly:[^:]+:[^:]+:[a-f0-9]{64}$" },
+    "delivery_id": { "type": "string", "pattern": "^del_[a-f0-9]{64}$" },
+    "content_sha256": { "$ref": "#/$defs/sha256" },
+    "subject_sha256": { "$ref": "#/$defs/sha256" },
+    "sender_domain": { "const": "surfaces.systems" },
+    "send_count_limit": { "const": 1 },
+    "decided_at": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "authorizer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor_id", "role", "method"],
+      "properties": {
+        "actor_id": { "type": "string", "minLength": 1 },
+        "role": { "const": "release_owner" },
+        "method": { "enum": ["signed_ui", "cli_attestation", "recorded_manual"] }
+      }
+    },
+    "production_authorized": { "const": false },
+    "live_promotion_authorized": { "const": false },
+    "reason": { "type": "string", "minLength": 1, "maxLength": 1000 }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

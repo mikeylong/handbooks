@@ -1,0 +1,20 @@
+{
+  "schema_version": "1",
+  "plan_id": "staging-rehearsal-v1",
+  "mode": "local_simulation_only",
+  "external_mutations_allowed": false,
+  "policy_id": "subscriber-access-v1",
+  "scenarios": [
+    "initial_asset_integrity",
+    "purchase_and_access",
+    "cancellation_paid_period",
+    "renewal_paid",
+    "payment_failure_grace_and_suspension",
+    "first_charge_refund",
+    "chargeback_suspension",
+    "pdf_replacement",
+    "tuesday_delivery",
+    "release_rollback",
+    "provider_mutations_blocked"
+  ]
+}

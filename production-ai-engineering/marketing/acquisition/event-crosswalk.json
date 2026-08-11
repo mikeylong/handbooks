@@ -1,0 +1,62 @@
+{
+  "contract_version": "1",
+  "canonical_schema": "../../subscriber-ops/schemas/analytics-event.schema.json",
+  "derived_funnel_stages": [
+    {
+      "stage": "discovery",
+      "raw_events": ["acquisition.teaser_viewed"]
+    },
+    {
+      "stage": "sample",
+      "raw_events": [
+        "acquisition.sample_opened",
+        "acquisition.sample_downloaded",
+        "acquisition.sample_engaged"
+      ]
+    },
+    {
+      "stage": "offer",
+      "raw_events": [
+        "acquisition.offer_viewed",
+        "billing.checkout_started"
+      ]
+    },
+    {
+      "stage": "paid_activation",
+      "raw_events": [
+        "billing.subscription_activated",
+        "subscriber.pdf_access_granted",
+        "subscriber.field_note_opened"
+      ]
+    },
+    {
+      "stage": "retention",
+      "raw_events": ["billing.renewal_paid"]
+    },
+    {
+      "stage": "churn",
+      "raw_events": ["billing.subscription_ended"]
+    },
+    {
+      "stage": "refund",
+      "raw_events": ["billing.refund_completed"]
+    },
+    {
+      "stage": "email_consent",
+      "raw_events": ["acquisition.email_opted_in"]
+    },
+    {
+      "stage": "referral",
+      "raw_events": ["acquisition.referral_shared"]
+    }
+  ],
+  "diagnostic_raw_events": [
+    "billing.payment_failed",
+    "billing.cancellation_requested",
+    "billing.refund_requested",
+    "subscriber.pdf_access_requested",
+    "subscriber.pdf_access_denied",
+    "subscriber.weekly_delivery_accepted",
+    "subscriber.weekly_delivery_bounced"
+  ]
+}

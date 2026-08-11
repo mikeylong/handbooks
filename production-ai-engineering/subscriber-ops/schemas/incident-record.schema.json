@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/incident-record.schema.json",
+  "title": "Subscriber operations incident",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "incident_id", "severity", "category", "status", "detected_at", "release_id", "summary", "containment", "approval_ids", "customer_impact", "retention_review_at"],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "incident_id": { "type": "string", "pattern": "^inc_[a-z0-9][a-z0-9_-]{7,95}$" },
+    "severity": { "enum": ["High", "Medium", "Low"] },
+    "category": { "enum": ["privacy", "authorization", "asset_integrity", "payment", "entitlement", "delivery", "provider", "audit"] },
+    "status": { "enum": ["OPEN", "CONTAINED", "RECOVERING", "CLOSED"] },
+    "detected_at": { "type": "string", "format": "date-time" },
+    "release_id": { "type": ["string", "null"] },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "containment": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "approval_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "customer_impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["known_affected_count", "scope_known", "irreversible_boundaries"],
+      "properties": {
+        "known_affected_count": { "type": "integer", "minimum": 0 },
+        "scope_known": { "type": "boolean" },
+        "irreversible_boundaries": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "retention_review_at": { "type": "string", "format": "date-time" }
+  }
+}

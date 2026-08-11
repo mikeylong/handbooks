@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://surfaces.systems/schemas/subscriber-ops/release-manifest.schema.json",
+  "title": "Subscriber release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "release_id",
+    "release_kind",
+    "created_at",
+    "edition_version",
+    "previous_release_id",
+    "candidate",
+    "field_note",
+    "distribution",
+    "protected_state"
+  ],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "release_id": { "type": "string", "pattern": "^rel_[a-z0-9][a-z0-9_-]{7,95}$" },
+    "release_kind": { "enum": ["EDITION_AND_NOTE", "NOTE_ONLY"] },
+    "created_at": { "type": "string", "format": "date-time" },
+    "edition_version": { "type": ["string", "null"], "minLength": 1, "maxLength": 64 },
+    "previous_release_id": { "type": ["string", "null"] },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "run_dir", "status", "pdf", "reports"],
+      "properties": {
+        "run_id": { "type": "string", "minLength": 1 },
+        "run_dir": { "type": "string", "minLength": 1 },
+        "status": { "const": "ready" },
+        "pdf": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["path", "sha256", "byte_count", "page_count", "content_type", "filename"],
+              "properties": {
+                "path": { "type": "string", "minLength": 1 },
+                "sha256": { "$ref": "#/$defs/sha256" },
+                "byte_count": { "type": "integer", "minimum": 1 },
+                "page_count": { "type": "integer", "minimum": 1 },
+                "content_type": { "const": "application/pdf" },
+                "filename": { "type": "string", "pattern": "^[^/\\\\]+\\.pdf$" }
+              }
+            }
+          ]
+        },
+        "reports": {
+          "type": "object",
+          "minProperties": 5,
+          "additionalProperties": { "$ref": "#/$defs/artifact" }
+        }
+      }
+    },
+    "field_note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "subject", "edition_changed"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "subject": { "type": "string", "minLength": 1, "maxLength": 140 },
+        "edition_changed": { "type": "boolean" }
+      }
+    },
+    "distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["delivery_date", "timezone", "audience_rule_version"],
+      "properties": {
+        "delivery_date": { "type": "string", "format": "date" },
+        "timezone": { "const": "America/Los_Angeles" },
+        "audience_rule_version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "protected_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical_source_unchanged", "production_pdf_unchanged"],
+      "properties": {
+        "canonical_source_unchanged": { "const": true },
+        "production_pdf_unchanged": { "const": true }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "release_kind": { "const": "EDITION_AND_NOTE" } } },
+      "then": {
+        "properties": {
+          "edition_version": { "type": "string" },
+          "candidate": { "properties": { "pdf": { "type": "object" } } },
+          "field_note": { "properties": { "edition_changed": { "const": true } } }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "release_kind": { "const": "NOTE_ONLY" } } },
+      "then": {
+        "properties": {
+          "edition_version": { "type": "null" },
+          "candidate": { "properties": { "pdf": { "type": "null" } } },
+          "field_note": { "properties": { "edition_changed": { "const": false } } }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    }
+  }
+}
