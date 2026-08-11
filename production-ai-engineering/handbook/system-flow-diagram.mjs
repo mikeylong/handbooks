@@ -40,7 +40,7 @@ export function renderSystemFlowDiagram(source) {
   }
 
   return `
-<figure class="system-flow-diagram">
+<figure class="system-flow-diagram" role="region" aria-label="Production AI system flow diagram" tabindex="0">
   <svg viewBox="0 0 760 590" role="img" aria-labelledby="system-flow-title system-flow-description">
     <title id="system-flow-title">Production AI system flow</title>
     <desc id="system-flow-description">A request passes through identity and policy, routing, context construction, model inference, and validation. Validation returns a response or sends a tool proposal to authorization and execution. Tool results return to context. Authorized data, caches, and tool contracts feed context. Observability watches the operating path, while evaluations improve it.</desc>

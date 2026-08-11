@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import re
 import shutil
@@ -20,6 +21,7 @@ AUTHOR = "Michael Long"
 AUTHOR_CREDIT = "Michael Long, surfaces.systems"
 AUTHOR_URL = "https://surfaces.systems"
 SUBTITLE = "A Handbook for Building Reliable LLM Systems"
+UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged."
 CHAPTERS = [
     "Build the System Around the Model",
     "Treat Context as a Budget",
@@ -80,6 +82,15 @@ def flatten_outline(items):
             yield item
 
 
+def load_changelog() -> tuple[dict, bool]:
+    ledger_path = Path(__file__).with_name("changelog.json")
+    ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+    summary = ledger.get("summary")
+    if not isinstance(summary, str):
+        raise AssertionError("Changelog summary is missing")
+    return ledger, summary.strip() != UNCHANGED_CHANGELOG_SUMMARY
+
+
 def validate_fonts(path: Path) -> int:
     executable = shutil.which("pdffonts")
     if not executable:
@@ -99,8 +110,12 @@ def validate_fonts(path: Path) -> int:
 
 def validate(path: Path) -> None:
     assert path.is_file(), f"Missing PDF: {path}"
+    changelog, require_changelog = load_changelog()
     reader = PdfReader(path, strict=True)
-    assert 74 <= len(reader.pages) <= 90, f"Unexpected page count: {len(reader.pages)}"
+    minimum_pages = 75 if require_changelog else 74
+    assert minimum_pages <= len(reader.pages) <= 90, (
+        f"Unexpected page count: {len(reader.pages)}"
+    )
 
     metadata = reader.metadata
     assert metadata.title == BOOK_TITLE
@@ -159,7 +174,17 @@ def validate(path: Path) -> None:
         "SLO is not defined on first use in the foreword"
     )
     assert "\ufffd" not in text, "Replacement glyph found in extracted text"
-    for expected in [BOOK_TITLE, SUBTITLE, "Notes and Sources", "Index of Terms", *CHAPTERS, *SECTIONS]:
+    expected_text = [
+        BOOK_TITLE,
+        SUBTITLE,
+        "Notes and Sources",
+        "Index of Terms",
+        *CHAPTERS,
+        *SECTIONS,
+    ]
+    if require_changelog:
+        expected_text.append("Changelog")
+    for expected in expected_text:
         assert canonical(expected) in canonical_text, f"Missing text: {expected}"
     assert len(SECTION_DISPLAY_NUMBERS) == len(SECTIONS)
     for old_number, (display_number, title) in enumerate(
@@ -276,8 +301,18 @@ def validate(path: Path) -> None:
     assert len(outline) >= 70, f"Expected a rich outline, found {len(outline)} entries"
     for chapter in CHAPTERS:
         assert canonical(chapter) in outline_titles, f"Missing chapter bookmark: {chapter}"
-    for back_matter in ["Notes and Sources", "Index of Terms"]:
+    expected_back_matter = ["Notes and Sources", "Index of Terms"]
+    if require_changelog:
+        expected_back_matter.append("Changelog")
+    for back_matter in expected_back_matter:
         assert canonical(back_matter) in outline_titles, f"Missing bookmark: {back_matter}"
+    changelog_outline_count = sum(
+        canonical(title) == canonical("Changelog")
+        for title in outline_title_list
+    )
+    assert changelog_outline_count == (1 if require_changelog else 0), (
+        f"Unexpected changelog bookmark count: {changelog_outline_count}"
+    )
     for display_number, title in zip(SECTION_DISPLAY_NUMBERS, SECTIONS):
         section_outline_title = next(
             (
@@ -309,6 +344,64 @@ def validate(path: Path) -> None:
         for index, page_text in enumerate(page_texts)
         if index > appendix_start and "INDEX OF TERMS" in page_text.upper()
     )
+    destination_names = {
+        str(name).lstrip("/") for name in reader.named_destinations
+    }
+    if require_changelog:
+        assert "changelog" in destination_names, (
+            "Required changelog destination is missing"
+        )
+        assert canonical("Changelog") in canonical(page_texts[2]), (
+            "Required changelog contents entry is missing"
+        )
+        changelog_start = next(
+            index
+            for index, page_text in enumerate(page_texts)
+            if index > index_start
+            and "VERSION HISTORY" in page_text.upper()
+            and "CHANGELOG" in page_text.upper()
+        )
+        assert changelog_start == len(page_texts) - 1, (
+            "Changelog is not the final PDF page"
+        )
+        changelog_text = page_texts[changelog_start]
+        expected_changelog_texts = [
+            (
+                f"Compared with {changelog['previousVersion']}, "
+                f"published {changelog['previousPublicationDate']}."
+            ),
+            changelog["summary"],
+            changelog["previousPdfSha256"],
+            *(
+                value
+                for item in changelog["items"]
+                for value in (item["category"], item["text"])
+            ),
+        ]
+        for expected_changelog_text in expected_changelog_texts:
+            assert canonical(expected_changelog_text) in canonical(changelog_text), (
+                f"Missing changelog text: {expected_changelog_text}"
+            )
+    else:
+        assert changelog.get("items") == [], (
+            "Unchanged content must not carry changelog items"
+        )
+        assert all(
+            not (
+                "VERSION HISTORY" in page_text.upper()
+                and "CHANGELOG" in page_text.upper()
+            )
+            for page_text in page_texts
+        ), "Unexpected changelog page for unchanged content"
+        assert canonical("Changelog") not in canonical(page_texts[2]), (
+            "Unexpected changelog contents entry for unchanged content"
+        )
+        assert "changelog" not in destination_names, (
+            "Unexpected changelog destination for unchanged content"
+        )
+        assert canonical(changelog["previousPdfSha256"]) not in canonical_text, (
+            "Previous-PDF hash was printed despite the omitted changelog"
+        )
     assert "NOTES AND SOURCES" in page_texts[appendix_start + 1].upper(), (
         "Appendix running head is missing from the page after the opener"
     )

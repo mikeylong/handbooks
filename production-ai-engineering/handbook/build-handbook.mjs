@@ -21,6 +21,11 @@ import {
 import { INDEX_ENTRIES } from "./index-data.mjs";
 import { renderFallbackFlowDiagram } from "./fallback-flow-diagram.mjs";
 import { renderRagFlowDiagram } from "./rag-flow-diagram.mjs";
+import {
+  buildReleaseSchedule,
+  releaseReviewLabel,
+  releaseTimeZoneLabel,
+} from "./release-schedule.mjs";
 import { renderSystemFlowDiagram } from "./system-flow-diagram.mjs";
 import { renderValidationFlowDiagram } from "./validation-flow-diagram.mjs";
 
@@ -28,6 +33,16 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const SOURCE_PATH = resolve(HERE, "../AI_ENGINEERING_FIELD_GUIDE.md");
 const OUTPUT_PATH = resolve(HERE, "index.html");
 const PAGE_MAP_PATH = resolve(HERE, "page-map.json");
+const STYLE_PATH = resolve(HERE, "styles.css");
+const APP_PATH = resolve(HERE, "app.js");
+const CHANGELOG_PATH = resolve(HERE, "changelog.json");
+const AUTOMATION_PATH = process.env.HANDBOOK_AUTOMATION_PATH
+  ? resolve(process.env.HANDBOOK_AUTOMATION_PATH)
+  : resolve(HERE, "../automation/automation.toml");
+const RELEASE_POLICY_PATH = process.env.HANDBOOK_RELEASE_POLICY_PATH
+  ? resolve(process.env.HANDBOOK_RELEASE_POLICY_PATH)
+  : resolve(HERE, "../automation/release-policy.json");
+const RELEASE_SCHEDULE_PATH = resolve(HERE, "release-schedule.json");
 
 const BOOK_TITLE = "Production AI Engineering";
 const BOOK_SUBTITLE = "A Handbook for Building Reliable LLM Systems";
@@ -35,8 +50,11 @@ const AUTHOR = "Michael Long";
 const AUTHOR_SITE = "https://surfaces.systems";
 const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems</a>`;
 const PUBLICATION_DATE = "July 19, 2026";
+const PDF_HREF = "../output/pdf/production-ai-engineering.pdf";
+const PDF_PAGE_COUNT = 74;
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
   ?? `Version 1.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 
 const HANDBOOK_CHAPTERS = [
   {
@@ -372,7 +390,9 @@ function isBlockStart(lines, index) {
     || (/^\|.*\|$/.test(line.trim()) && isTableDivider(next));
 }
 
-function renderBlocks(lines, chapterSlug = "front-matter", headingOffset = 0) {
+let tableSequence = 0;
+
+function renderBlocks(lines, chapterSlug = "front-matter", headingOffset = 0, sectionTitle = "Handbook") {
   const output = [];
   let index = 0;
 
@@ -461,7 +481,11 @@ function renderBlocks(lines, chapterSlug = "front-matter", headingOffset = 0) {
       }
       const headerHtml = headers.map((cell) => `<th scope="col">${inlineMarkdown(cell)}</th>`).join("");
       const bodyHtml = rows.map((row) => `<tr>${row.map((cell, cellIndex) => `<td data-label="${escapeHtml(headers[cellIndex] ?? "")}">${inlineMarkdown(cell)}</td>`).join("")}</tr>`).join("");
-      output.push(`<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`);
+      const tableNumber = ++tableSequence;
+      const scrollHintId = `table-scroll-hint-${tableNumber}`;
+      const tableLabelId = `table-label-${tableNumber}`;
+      const tableLabel = `${sectionTitle}: ${headers[0] ?? "comparison"} table`;
+      output.push(`<div class="table-scroll" role="region" aria-label="${escapeHtml(tableLabel)}" aria-describedby="${scrollHintId}" tabindex="0"><p class="table-scroll-hint" id="${scrollHintId}">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="${tableLabelId}">${escapeHtml(tableLabel)}</caption><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`);
       continue;
     }
 
@@ -504,7 +528,7 @@ function renderBlocks(lines, chapterSlug = "front-matter", headingOffset = 0) {
         const check = item.match(/^\[([ xX])\]\s+(.+)$/);
         if (check) {
           checklist = true;
-          item = `<input type="checkbox" disabled${check[1].toLowerCase() === "x" ? " checked" : ""}> <span>${inlineMarkdown(check[2])}</span>`;
+          item = `<span class="checklist-box" aria-hidden="true"${check[1].toLowerCase() === "x" ? ' data-checked="true"' : ""}></span><span>${inlineMarkdown(check[2])}</span>`;
         } else {
           item = inlineMarkdown(item);
         }
@@ -528,7 +552,44 @@ function renderBlocks(lines, chapterSlug = "front-matter", headingOffset = 0) {
   return output.join("\n");
 }
 
-const source = await readFile(SOURCE_PATH, "utf8");
+const [
+  source,
+  styleSource,
+  appSource,
+  automationSource,
+  releasePolicySource,
+  changelogSource,
+] = await Promise.all([
+  readFile(SOURCE_PATH, "utf8"),
+  readFile(STYLE_PATH, "utf8"),
+  readFile(APP_PATH, "utf8"),
+  readFile(AUTOMATION_PATH, "utf8"),
+  readFile(RELEASE_POLICY_PATH, "utf8"),
+  readFile(CHANGELOG_PATH, "utf8"),
+]);
+const changelog = JSON.parse(changelogSource);
+const changelogRequired = changelog.summary?.trim() !== UNCHANGED_CHANGELOG_SUMMARY;
+if (
+  changelog.schemaVersion !== 1
+  || typeof changelog.entryDate !== "string"
+  || typeof changelog.previousVersion !== "string"
+  || typeof changelog.previousPublicationDate !== "string"
+  || !/^[a-f0-9]{64}$/.test(changelog.previousPdfSha256 ?? "")
+  || !/^[a-f0-9]{64}$/.test(changelog.currentSourceSha256 ?? "")
+  || typeof changelog.summary !== "string"
+  || !Array.isArray(changelog.items)
+  || changelog.items.length > 8
+  || (changelogRequired && changelog.items.length < 1)
+  || (!changelogRequired && changelog.items.length !== 0)
+  || changelog.items.some(({ category, text }) => (
+    typeof category !== "string"
+    || !category.trim()
+    || typeof text !== "string"
+    || !text.trim()
+  ))
+) {
+  throw new Error("handbook/changelog.json does not match the required schema");
+}
 let pageMap = {};
 try {
   pageMap = JSON.parse(await readFile(PAGE_MAP_PATH, "utf8"));
@@ -536,6 +597,17 @@ try {
   if (error.code !== "ENOENT") throw error;
 }
 const sourceHash = createHash("sha256").update(source).digest("hex");
+if (changelog.currentSourceSha256 !== sourceHash) {
+  throw new Error("handbook/changelog.json does not match the current handbook source");
+}
+const assetVersion = createHash("sha256").update(styleSource).update(appSource).digest("hex").slice(0, 12);
+const buildNow = process.env.HANDBOOK_BUILD_NOW
+  ? new Date(process.env.HANDBOOK_BUILD_NOW)
+  : new Date();
+const releaseSchedule = buildReleaseSchedule(automationSource, releasePolicySource, buildNow);
+const nextReviewAt = new Date(releaseSchedule.nextReviewAt);
+const nextReviewLabel = releaseReviewLabel(nextReviewAt, releaseSchedule.timeZone);
+const releaseZoneLabel = releaseTimeZoneLabel(releaseSchedule.timeZone);
 const lines = source.replaceAll("\r\n", "\n").split("\n");
 const sourceTitle = lines.find((line) => /^#\s+/.test(line))?.replace(/^#\s+/, "") ?? "Production AI Engineering Field Guide";
 const evidenceDate = source.match(/Last evidence review:\s*\*\*([^*]+)\*\*/)?.[1] ?? "Unspecified";
@@ -592,6 +664,17 @@ const tocLinks = chapters.map((chapter) => `
     </a>
   </li>`).join("");
 
+const changelogTocLink = changelogRequired
+  ? `
+  <li class="pdf-only">
+    <a href="#changelog">
+      <span class="toc-number">C</span>
+      <span class="toc-title">Changelog</span>
+      <span class="toc-page" aria-label="Page ${escapeHtml(pageMap.changelog ?? "000")}">${escapeHtml(pageMap.changelog ?? "000")}</span>
+    </a>
+  </li>`
+  : "";
+
 const backMatterTocLinks = `
   <li>
     <a href="#appendix-citations">
@@ -606,7 +689,7 @@ const backMatterTocLinks = `
       <span class="toc-title">Index of Terms</span>
       <span class="toc-page" aria-label="Page ${escapeHtml(pageMap["term-index"] ?? "000")}">${escapeHtml(pageMap["term-index"] ?? "000")}</span>
     </a>
-  </li>`;
+  </li>${changelogTocLink}`;
 
 function sectionSourcesHtml(sectionNumber) {
   const source = SECTION_SOURCES[Number(sectionNumber)];
@@ -626,7 +709,7 @@ const chapterHtml = chapters.map((chapter, chapterIndex) => {
   const body = chapter.sections.map((section) => `
       <section class="source-section" id="${section.slug}">
         <h3><span class="section-number">${escapeHtml(section.displayNumber)}&nbsp;</span><span class="section-title">${escapeHtml(section.title)}</span></h3>
-        ${renderBlocks(section.lines, section.slug, 1)}
+        ${renderBlocks(section.lines, section.slug, 1, section.title)}
         ${sectionSourcesHtml(section.number)}
       </section>`).join("\n");
   const navigation = `
@@ -642,15 +725,22 @@ const chapterHtml = chapters.map((chapter, chapterIndex) => {
       <h2>${escapeHtml(chapter.title)}</h2>
       <p class="chapter-deck">${escapeHtml(chapter.deck)}</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-${String(chapter.number).padStart(2, "0")}.webp"
-          alt=""
-          width="${CHAPTER_IMAGE_WIDTH}"
-          height="${CHAPTER_IMAGE_HEIGHTS[chapterIndex]}"
-          loading="${chapterIndex === 0 ? "eager" : "lazy"}"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-${String(chapter.number).padStart(2, "0")}-768.webp 768w, assets/chapters/chapter-${String(chapter.number).padStart(2, "0")}.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-${String(chapter.number).padStart(2, "0")}.webp"
+            alt=""
+            width="${CHAPTER_IMAGE_WIDTH}"
+            height="${CHAPTER_IMAGE_HEIGHTS[chapterIndex]}"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -792,18 +882,38 @@ const indexHtml = `
     </div>
   </section>`;
 
+const changelogHtml = changelogRequired ? `
+  <section class="back-matter changelog pdf-only" id="changelog" aria-labelledby="changelog-title">
+    <header class="back-matter-header changelog-header">
+      <p class="section-label">Version history</p>
+      <h2 id="changelog-title">Changelog</h2>
+      <p class="changelog-version">${escapeHtml(BOOK_VERSION)} - ${escapeHtml(changelog.entryDate)}</p>
+      <p>Compared with ${escapeHtml(changelog.previousVersion)}, published ${escapeHtml(changelog.previousPublicationDate)}.</p>
+      <p>${escapeHtml(changelog.summary)}</p>
+    </header>
+    <dl class="changelog-list">
+      ${changelog.items.map(({ category, text }) => `
+        <div>
+          <dt>${escapeHtml(category)}</dt>
+          <dd>${escapeHtml(text)}</dd>
+        </div>`).join("")}
+    </dl>
+    <p class="changelog-baseline">Previous PDF SHA-256: <code>${escapeHtml(changelog.previousPdfSha256)}</code></p>
+  </section>` : "";
+
 const html = `<!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A practical handbook for building reliable production AI systems.">
   <meta name="author" content="${AUTHOR}">
-  <meta name="theme-color" content="#f4f1e9">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
   <title>${BOOK_TITLE} · ${AUTHOR}</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=${assetVersion}">
+  <script src="app.js?v=${assetVersion}" defer></script>
 </head>
 <body id="book-top" data-source-sha256="${sourceHash}">
   <a class="skip-link" href="#main-content">Skip to handbook</a>
@@ -812,11 +922,15 @@ const html = `<!doctype html>
   <header class="mobile-bar">
     <a class="mobile-title" href="#book-top">${BOOK_TITLE}</a>
     <div class="mobile-actions">
-      <button class="text-button" type="button" data-print aria-label="Print handbook">Print</button>
-      <button class="menu-button" type="button" data-open-toc aria-haspopup="dialog" aria-controls="toc-dialog">
+      <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
+      <button class="menu-button js-only" type="button" data-open-toc aria-haspopup="dialog" aria-controls="toc-dialog">
         <span aria-hidden="true"></span>
         Contents
       </button>
+      <a class="menu-button no-js-only" href="#contents">
+        <span aria-hidden="true"></span>
+        Contents
+      </a>
     </div>
   </header>
 
@@ -831,18 +945,42 @@ const html = `<!doctype html>
         <ol>${tocLinks}${backMatterTocLinks}</ol>
       </nav>
       <div class="sidebar-meta">
-        <p>${AUTHOR}</p>
-        <button class="text-button" type="button" data-print>Print edition</button>
+        <div class="sidebar-publication">
+          <p class="sidebar-author">${AUTHOR_CREDIT_HTML}</p>
+          <p class="sidebar-edition">${PUBLICATION_DATE} · ${BOOK_VERSION}</p>
+        </div>
+        <div class="sidebar-actions">
+          <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
+          <a class="text-link" href="${PDF_HREF}" download aria-label="Download ${BOOK_TITLE} as a PDF, ${PDF_PAGE_COUNT} pages">PDF</a>
+        </div>
       </div>
     </aside>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <section class="cover" aria-labelledby="cover-title">
         <div class="cover-rule" aria-hidden="true"></div>
         <h1 id="cover-title">${BOOK_TITLE}</h1>
         <p class="cover-subtitle">${BOOK_SUBTITLE}</p>
         <p class="cover-credit">${AUTHOR_CREDIT_HTML}</p>
         <p class="cover-date">${PUBLICATION_DATE} · ${BOOK_VERSION}</p>
+        <section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-schedule release-window-policy" data-release-window data-release-at="${releaseSchedule.nextReviewAt}" data-release-time-zone="${releaseSchedule.timeZone}" data-release-rrule="${releaseSchedule.rrule}">
+          <div class="release-window-heading">
+            <p class="release-window-label" id="release-window-title" data-release-status>Next version review</p>
+            <p class="release-window-products">Site + PDF</p>
+          </div>
+          <div class="release-countdown js-only" data-release-countdown aria-hidden="true">
+            <span><strong data-countdown-days>00</strong><small>Days</small></span>
+            <span><strong data-countdown-hours>00</strong><small>Hours</small></span>
+            <span><strong data-countdown-minutes>00</strong><small>Minutes</small></span>
+            <span><strong data-countdown-seconds>00</strong><small>Seconds</small></span>
+          </div>
+          <p class="release-window-schedule" id="release-window-schedule">Scheduled for <time datetime="${releaseSchedule.nextReviewAt}" data-release-time>${nextReviewLabel} ${releaseZoneLabel}</time>.</p>
+          <p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p>
+        </section>
+        <nav class="cover-actions site-only" aria-label="Handbook actions">
+          <a class="action-link action-link-primary" href="#contents">Explore the handbook</a>
+          <a class="action-link" href="${PDF_HREF}" download aria-label="Download ${BOOK_TITLE} as a PDF, ${PDF_PAGE_COUNT} pages">Download PDF <span>${PDF_PAGE_COUNT} pages</span></a>
+        </nav>
       </section>
 
       <section class="foreword" aria-labelledby="foreword-title">
@@ -862,6 +1000,8 @@ const html = `<!doctype html>
 
       ${indexHtml}
 
+      ${changelogHtml}
+
       <footer class="book-footer">
         <p>${BOOK_TITLE}</p>
         <p>${AUTHOR_CREDIT_HTML}</p>
@@ -877,9 +1017,30 @@ const html = `<!doctype html>
     <nav aria-label="Mobile table of contents">
       <ol>${tocLinks}${backMatterTocLinks}</ol>
     </nav>
+    <div class="dialog-footer">
+      <a class="action-link" href="${PDF_HREF}" download aria-label="Download ${BOOK_TITLE} as a PDF, ${PDF_PAGE_COUNT} pages">Download PDF <span>${PDF_PAGE_COUNT} pages</span></a>
+    </div>
   </dialog>
 
-  <output class="sr-only" id="progress-status">Reading progress: 0%</output>
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-dialog-title">
+    <div class="dialog-header">
+      <div>
+        <p class="section-label">Companion search</p>
+        <h2 id="search-dialog-title">Find a section</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-search aria-label="Close search">Close</button>
+    </div>
+    <div class="search-panel">
+      <label class="sr-only" for="handbook-search">Search the handbook</label>
+      <div class="search-field">
+        <input id="handbook-search" type="search" inputmode="search" autocomplete="off" spellcheck="false" placeholder="Try “latency”, “retrieval”, or “agents”" aria-describedby="search-guidance search-status">
+        <kbd aria-hidden="true">/</kbd>
+      </div>
+      <p class="search-guidance" id="search-guidance">Searches all ${mappedSectionNumbers.length} handbook sections. Choose a result to jump directly to it.</p>
+      <p class="search-status" id="search-status" aria-live="polite">Search all ${mappedSectionNumbers.length} sections.</p>
+      <ol class="search-results" data-search-results></ol>
+    </div>
+  </dialog>
 </body>
 </html>
 `;
@@ -889,10 +1050,16 @@ const requiredAssets = [
   resolve(HERE, "assets/fonts/source-serif-4-latin-variable.woff2"),
   resolve(HERE, "assets/fonts/source-serif-4-latin-variable-italic.woff2"),
   ...chapters.map((chapter) => resolve(HERE, `assets/chapters/chapter-${String(chapter.number).padStart(2, "0")}.webp`)),
+  ...chapters.map((chapter) => resolve(HERE, `assets/chapters/chapter-${String(chapter.number).padStart(2, "0")}-768.webp`)),
 ];
 await Promise.all(requiredAssets.map((asset) => access(asset)));
-await writeFile(OUTPUT_PATH, html, "utf8");
+await Promise.all([
+  writeFile(OUTPUT_PATH, html, "utf8"),
+  writeFile(RELEASE_SCHEDULE_PATH, `${JSON.stringify(releaseSchedule, null, 2)}\n`, "utf8"),
+]);
 console.log(`Built ${OUTPUT_PATH}`);
 console.log(`Source SHA-256: ${sourceHash}`);
 console.log(`Chapters: ${chapters.length}`);
 console.log(`Verified chapter images: ${chapters.length}`);
+console.log(`Changelog: ${changelogRequired ? "included" : "omitted; reader-facing content unchanged"}`);
+console.log(`Next version review: ${nextReviewAt.toISOString()}`);

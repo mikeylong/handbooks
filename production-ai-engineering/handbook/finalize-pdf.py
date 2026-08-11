@@ -80,6 +80,8 @@ def build_overlay(reader: PdfReader) -> PdfReader:
             opening_back_matter = "Notes and Sources"
         elif "INDEX OF TERMS" in upper_text:
             opening_back_matter = "Index of Terms"
+        elif "VERSION HISTORY" in upper_text and "CHANGELOG" in upper_text:
+            opening_back_matter = "Changelog"
         opening_section = opening_chapter or opening_back_matter
         if opening_section:
             current_chapter = opening_section

@@ -19,7 +19,7 @@ export function renderRagFlowDiagram(lines) {
   }
 
   return `
-<figure class="rag-flow-diagram">
+<figure class="rag-flow-diagram" role="region" aria-label="Retrieval-augmented generation dataflow diagram" tabindex="0">
   <svg viewBox="0 0 760 400" role="img" aria-labelledby="rag-flow-title rag-flow-description">
     <title id="rag-flow-title">Retrieval-augmented generation dataflow</title>
     <desc id="rag-flow-description">The ingestion lane preserves source structure, authorizes and versions chunks, and writes lexical and vector indexes to a shared datastore. In the query lane, identity-based tenant and document filters converge with that shared index before candidate retrieval. Candidates are fused, reranked, deduplicated, and packed into context before the system either answers with claim-level citations or abstains.</desc>

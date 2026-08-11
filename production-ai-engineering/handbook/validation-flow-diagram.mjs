@@ -119,7 +119,7 @@ export function renderValidationFlowDiagram(source) {
   }
 
   return `
-<figure class="validation-flow-diagram">
+<figure class="validation-flow-diagram" role="region" aria-label="Structured output validation flow diagram" tabindex="0">
   <svg viewBox="0 0 760 478" role="img" aria-labelledby="validation-flow-title validation-flow-description">
     <title id="validation-flow-title">From model response to verified outcome</title>
     <desc id="validation-flow-description">The mainline path inspects the response state and continues only when the response is usable. It parses the payload, validates its raw structure, applies only allowed normalization, revalidates the schema and domain invariants, authorizes the exact action, executes or publishes, and verifies the postcondition. Refused or incomplete responses do not proceed to parsing.</desc>

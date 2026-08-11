@@ -1,0 +1,8 @@
+{
+  "name": "production-ai-engineering-book",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "validate:handbook": "node handbook/validate-handbook.mjs"
+  }
+}

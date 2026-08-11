@@ -1,17 +1,37 @@
 #!/usr/bin/env node
 
+import { createHash } from "node:crypto";
 import { access, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { citationByUrl, citationEntries } from "./book-data.mjs";
 import { INDEX_ENTRIES } from "./index-data.mjs";
+import { buildReleaseSchedule, releaseTimeZoneLabel } from "./release-schedule.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
+const automationPath = process.env.HANDBOOK_AUTOMATION_PATH
+  ? resolve(process.env.HANDBOOK_AUTOMATION_PATH)
+  : resolve(here, "../automation/automation.toml");
+const releasePolicyPath = process.env.HANDBOOK_RELEASE_POLICY_PATH
+  ? resolve(process.env.HANDBOOK_RELEASE_POLICY_PATH)
+  : resolve(here, "../automation/release-policy.json");
 const source = await readFile(resolve(here, "../AI_ENGINEERING_FIELD_GUIDE.md"), "utf8");
 const html = await readFile(resolve(here, "index.html"), "utf8");
 const css = await readFile(resolve(here, "styles.css"), "utf8");
+const app = await readFile(resolve(here, "app.js"), "utf8");
+const changelog = JSON.parse(await readFile(resolve(here, "changelog.json"), "utf8"));
+const releaseSchedule = JSON.parse(await readFile(resolve(here, "release-schedule.json"), "utf8"));
+const automationSource = await readFile(automationPath, "utf8");
+const releasePolicySource = await readFile(releasePolicyPath, "utf8");
+const expectedReleaseSchedule = buildReleaseSchedule(
+  automationSource,
+  releasePolicySource,
+  new Date(releaseSchedule.generatedAt),
+);
 const expectedBookVersion = process.env.HANDBOOK_VERSION
   ?? `Version 1.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
+const changelogRequired = changelog.summary?.trim() !== UNCHANGED_CHANGELOG_SUMMARY;
 
 const count = (pattern, value) => value.match(pattern)?.length ?? 0;
 const decodeHtml = (value) => value
@@ -21,6 +41,7 @@ const decodeHtml = (value) => value
   .replaceAll("&gt;", ">")
   .replaceAll("&amp;", "&");
 const sourceUrls = new Set([...source.matchAll(/https?:\/\/[^)\s]+/g)].map((match) => match[0]));
+const sourceHash = createHash("sha256").update(source).digest("hex");
 const htmlUrls = new Set([...html.matchAll(/href="(https?:\/\/[^"]+)"/g)].map((match) => match[1]));
 const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
 const internalTargets = [...html.matchAll(/href="#([^"]+)"/g)].map((match) => match[1]);
@@ -40,8 +61,12 @@ const jsonRenderedText = decodeHtml(jsonHtml.replace(/<\/?span(?:\s+class="[^"]+
 const syntaxTokens = (className) => [...jsonHtml.matchAll(new RegExp(`<span class="${className}">([^<]+)<\\/span>`, "g"))]
   .map((match) => decodeHtml(match[1]));
 const coverHtml = html.match(/<section class="cover"[\s\S]*?<\/section>/)?.[0] ?? "";
+const sidebarHtml = html.match(/<aside class="sidebar"[\s\S]*?<\/aside>/)?.[0] ?? "";
+const releaseWindowHtml = html.match(/<section class="release-window site-only"[\s\S]*?<\/section>/)?.[0] ?? "";
 const forewordHtml = html.match(/<section class="foreword"[\s\S]*?<\/section>/)?.[0] ?? "";
-const figureHtml = (className) => html.match(new RegExp(`<figure class="${className}">[\\s\\S]*?<\\/figure>`))?.[0] ?? "";
+const changelogHtml = html.match(/<section class="back-matter changelog pdf-only"[\s\S]*?<\/section>/)?.[0] ?? "";
+const decodedChangelogHtml = decodeHtml(changelogHtml);
+const figureHtml = (className) => html.match(new RegExp(`<figure class="${className}"[^>]*>[\\s\\S]*?<\\/figure>`))?.[0] ?? "";
 const dataLabels = (value) => [...value.matchAll(/\sdata-label="([^"]+)"/g)].map((match) => decodeHtml(match[1]));
 const dataTopology = (value) => [...value.matchAll(/<path\b[^>]*\sdata-from="([^"]+)"[^>]*\sdata-to="([^"]+)"/g)]
   .map((match) => `${match[1]}->${match[2]}`);
@@ -68,6 +93,10 @@ const ragNodeLabels = dataLabels(ragHtml);
 const ragTopology = dataTopology(ragHtml);
 const ownershipOutlineHtml = html.match(/<p>A production harness needs to own:<\/p>([\s\S]*?)<p>Enforce any rule about safety/)?.[1] ?? "";
 const toolContractListHtml = html.match(/<p>A strong tool contract includes:<\/p>([\s\S]*?)<p>The harness then enforces the contract:<\/p>/)?.[1] ?? "";
+const tableLabelIds = [...html.matchAll(/<caption class="sr-only" id="(table-label-\d+)"/g)]
+  .map((match) => match[1]);
+const tableRegionLabels = [...html.matchAll(/class="table-scroll" role="region" aria-label="([^"]+)"/g)]
+  .map((match) => decodeHtml(match[1]));
 const expectedSectionDisplayNumbers = [
   "1.1", "1.2", "2.1", "2.2", "3.1", "3.2", "3.3", "4.1", "4.2", "5.1",
   "5.2", "6.1", "6.2", "7.1", "7.2", "8.1", "9.1", "9.2", "10.1", "10.2",
@@ -80,11 +109,15 @@ const renderedSectionDisplayNumbers = [
 const chapterImages = Array.from({ length: 12 }, (_, index) =>
   resolve(here, `assets/chapters/chapter-${String(index + 1).padStart(2, "0")}.webp`),
 );
+const responsiveChapterImages = Array.from({ length: 12 }, (_, index) =>
+  resolve(here, `assets/chapters/chapter-${String(index + 1).padStart(2, "0")}-768.webp`),
+);
 await Promise.all([
   resolve(here, "assets/favicon.png"),
   resolve(here, "assets/fonts/source-serif-4-latin-variable.woff2"),
   resolve(here, "assets/fonts/source-serif-4-latin-variable-italic.woff2"),
   ...chapterImages,
+  ...responsiveChapterImages,
 ].map((path) => access(path)));
 
 const checks = {
@@ -115,6 +148,7 @@ const checks = {
     count(/width="1536"/g, html) === 12
     && count(/height="1364"/g, html) === 8
     && count(/height="1368"/g, html) === 4,
+  responsiveChapterImages: count(/<source\s+media="\(max-width: 42rem\)"[\s\S]*?-768\.webp 768w,[\s\S]*?1536w"[\s\S]*?>/g, html),
   chapterArtPrintScaleValid:
     /width:\s*104mm/.test(chapterArtPrintRule)
     && /max-width:\s*100%/.test(chapterArtPrintRule)
@@ -305,6 +339,125 @@ const checks = {
   textSchematics: count(/class="editorial-example text-schematic"/g, html),
   lazyImages: count(/loading="lazy"/g, html),
   eagerImages: count(/loading="eager"/g, html),
+  pdfDownloadLinks: count(/href="\.\.\/output\/pdf\/production-ai-engineering\.pdf" download/g, html),
+  releaseScheduleValid:
+    JSON.stringify(releaseSchedule) === JSON.stringify(expectedReleaseSchedule)
+    && Number.isFinite(Date.parse(releaseSchedule.generatedAt))
+    && Number.isFinite(Date.parse(releaseSchedule.nextReviewAt))
+    && Date.parse(releaseSchedule.nextReviewAt) > Date.parse(releaseSchedule.generatedAt),
+  releaseCountdownValid:
+    count(/class="release-window site-only"/g, html) === 1
+    && releaseWindowHtml.includes(`data-release-at="${releaseSchedule.nextReviewAt}"`)
+    && releaseWindowHtml.includes(`datetime="${releaseSchedule.nextReviewAt}"`)
+    && releaseWindowHtml.includes("Next version review")
+    && releaseWindowHtml.includes("Site + PDF")
+    && releaseWindowHtml.includes(releaseTimeZoneLabel(releaseSchedule.timeZone))
+    && releaseWindowHtml.includes("Site and PDF updates publish together after manual review.")
+    && count(/data-countdown-(?:days|hours|minutes|seconds)/g, releaseWindowHtml) === 4
+    && app.includes('document.querySelector("[data-release-window]")')
+    && app.includes('releaseStatus.textContent = "Review window open"')
+    && app.includes("window.setInterval(updateReleaseCountdown, 1000)")
+    && app.includes('window.addEventListener("pageshow", startReleaseCountdown)')
+    && app.includes('window.addEventListener("pagehide"'),
+  releaseCountdownAccessible:
+    releaseWindowHtml.includes('aria-describedby="release-window-schedule release-window-policy"')
+    && releaseWindowHtml.includes('data-release-countdown aria-hidden="true"')
+    && !releaseWindowHtml.includes("aria-live")
+    && css.includes(".js .release-countdown")
+    && /@media \(max-width: 22rem\)[\s\S]*?\.release-countdown\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/.test(css),
+  searchCompanionValid:
+    html.includes('id="search-dialog"')
+    && html.includes('id="handbook-search"')
+    && html.includes('data-search-results')
+    && count(/data-open-search/g, html) === 2
+    && app.includes('document.querySelectorAll(".source-section")')
+    && app.includes('aria-current'),
+  noJavaScriptNavigationFallback:
+    html.includes('class="menu-button no-js-only" href="#contents"')
+    && html.includes('class="menu-button js-only" type="button" data-open-toc')
+    && css.includes('.no-js .js-only')
+    && css.includes('.no-js .no-js-only'),
+  activeNavigationValid:
+    app.includes('section.querySelector(".chapter-header[id]")?.id')
+    && app.includes('.sidebar-nav a, .toc-dialog nav a')
+    && app.includes('.cover, .foreword, #contents, .chapter')
+    && app.includes('targetId && link.getAttribute("href")'),
+  scrollProgressAnnouncementsRemoved:
+    !html.includes('id="progress-status"')
+    && !app.includes("lastReportedProgress"),
+  keyboardScrollableDiagrams:
+    [systemHtml, validationHtml, fallbackHtml, ragHtml].every((figure) => (
+      /^<figure[^>]+role="region"[^>]+aria-label="[^"]+"[^>]+tabindex="0">/.test(figure)
+    )),
+  tableScrollHintsMatch:
+    count(/class="table-scroll-hint"/g, html) === count(/class="table-scroll"/g, html),
+  tableRegionsUniquelyNamed:
+    tableLabelIds.length === count(/class="table-scroll"/g, html)
+    && new Set(tableLabelIds).size === tableLabelIds.length
+    && tableRegionLabels.length === tableLabelIds.length
+    && new Set(tableRegionLabels).size === tableRegionLabels.length,
+  checklistsAreStatic:
+    !/<input[^>]+type="checkbox"/.test(html)
+    && count(/class="checklist-box"/g, html) === 31,
+  accessibleColorTokens:
+    css.includes("--faint: #6e6b63;")
+    && css.includes("--line-strong: #77746b;"),
+  siteCanvasWhite:
+    css.includes("--paper: #ffffff;")
+    && css.includes("--paper-raised: #ffffff;")
+    && html.includes('<meta name="theme-color" content="#ffffff">')
+    && /html\s*\{[^}]*background:\s*var\(--paper\);/.test(css)
+    && /body\s*\{[^}]*background:\s*var\(--paper\);/.test(css)
+    && /main\s*\{[^}]*background:\s*var\(--paper\);/.test(css),
+  sidebarPublicationMetadataExact:
+    sidebarHtml.includes('<p class="sidebar-author">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>')
+    && sidebarHtml.includes(`<p class="sidebar-edition">July 19, 2026 · ${expectedBookVersion}</p>`)
+    && /\.sidebar-meta\s*\{[^}]*display:\s*grid;/.test(css)
+    && /\.sidebar-publication\s*\{[^}]*display:\s*grid;/.test(css),
+  touchTargetsDefined:
+    /\.text-button,\s*\.text-link,\s*\.menu-button,\s*\.dialog-close\s*\{[\s\S]*?min-height:\s*2\.75rem;/.test(css),
+  tocDialogFooterLayoutScoped:
+    css.includes(".toc-dialog nav a {")
+    && !css.includes(".toc-dialog a {")
+    && /\.dialog-footer \.action-link\s*\{[\s\S]*?width:\s*100%;/.test(css),
+  companionChromeHiddenInPrint:
+    /@media print[\s\S]*?\.search-dialog,[\s\S]*?\.site-only,[\s\S]*?\.table-scroll-hint\s*\{[\s\S]*?display:\s*none !important;/.test(css),
+  changelogPage: count(/class="back-matter changelog pdf-only"/g, html),
+  changelogContentValid:
+    changelog.schemaVersion === 1
+    && /^[a-f0-9]{64}$/.test(changelog.previousPdfSha256)
+    && changelog.currentSourceSha256 === sourceHash
+    && Array.isArray(changelog.items)
+    && (
+      changelogRequired
+        ? (
+          changelog.items.length >= 1
+          && changelog.items.length <= 8
+          && decodedChangelogHtml.includes(`<p class="changelog-version">${expectedBookVersion} - ${changelog.entryDate}</p>`)
+          && decodedChangelogHtml.includes(`Compared with ${changelog.previousVersion}, published ${changelog.previousPublicationDate}.`)
+          && decodedChangelogHtml.includes(changelog.summary)
+          && changelog.items.every(({ category, text }) => (
+            decodedChangelogHtml.includes(`<dt>${category}</dt>`)
+            && decodedChangelogHtml.includes(`<dd>${text}</dd>`)
+          ))
+          && decodedChangelogHtml.includes(changelog.previousPdfSha256)
+        )
+        : changelog.items.length === 0 && changelogHtml === ""
+    ),
+  changelogIsFinalSection:
+    changelogRequired
+      ? (
+        html.indexOf('id="changelog"') > html.indexOf('id="term-index"')
+        && html.indexOf('id="changelog"') < html.indexOf('<footer class="book-footer">')
+      )
+      : !html.includes('id="changelog"'),
+  changelogTocLink:
+    count(/<li class="pdf-only">\s*<a href="#changelog">/g, html)
+      === (changelogRequired ? 3 : 0),
+  changelogPdfOnly:
+    /\.pdf-only\s*\{\s*display:\s*none;\s*\}/s.test(css)
+    && /@media print[\s\S]*?\.pdf-only\s*\{\s*display:\s*block;\s*\}/s.test(css)
+    && /@media print[\s\S]*?\.changelog\s*\{[\s\S]*?break-before:\s*(?:auto|page);[\s\S]*?break-inside:\s*avoid-page;/s.test(css),
   sourceUrls: sourceUrls.size,
   htmlUrls: htmlUrls.size,
   allSourceUrlsPreserved: [...sourceUrls].every((url) => htmlUrls.has(url)),
@@ -317,7 +470,7 @@ const checks = {
     html.includes('<p class="cover-credit">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>')
     && !html.includes("Bainbridge Island"),
   authorSiteLinked:
-    count(/href="https:\/\/surfaces\.systems"/g, html) === 2,
+    count(/href="https:\/\/surfaces\.systems"/g, html) === 3,
   coverLabelsRemoved:
     !html.includes("Written by")
     && !html.includes("Evidence reviewed"),
@@ -378,6 +531,7 @@ const expected = {
   indexEntries: INDEX_ENTRIES.length,
   chapterImages: 12,
   chapterImageIntrinsicResolutionValid: true,
+  responsiveChapterImages: 12,
   chapterArtPrintScaleValid: true,
   pairedRowVerticalAlignmentValid: true,
   systemFlowDiagrams: 1,
@@ -451,8 +605,31 @@ const expected = {
   toolContractListOrdered: true,
   textSchematics: 0,
   codeFrameDecorationRemoved: true,
-  lazyImages: 11,
-  eagerImages: 1,
+  lazyImages: 12,
+  eagerImages: 0,
+  pdfDownloadLinks: 3,
+  releaseScheduleValid: true,
+  releaseCountdownValid: true,
+  releaseCountdownAccessible: true,
+  searchCompanionValid: true,
+  noJavaScriptNavigationFallback: true,
+  activeNavigationValid: true,
+  scrollProgressAnnouncementsRemoved: true,
+  keyboardScrollableDiagrams: true,
+  tableScrollHintsMatch: true,
+  tableRegionsUniquelyNamed: true,
+  checklistsAreStatic: true,
+  accessibleColorTokens: true,
+  siteCanvasWhite: true,
+  sidebarPublicationMetadataExact: true,
+  touchTargetsDefined: true,
+  tocDialogFooterLayoutScoped: true,
+  companionChromeHiddenInPrint: true,
+  changelogPage: changelogRequired ? 1 : 0,
+  changelogContentValid: true,
+  changelogIsFinalSection: true,
+  changelogTocLink: true,
+  changelogPdfOnly: true,
 };
 
 const failures = Object.entries(expected)
@@ -467,7 +644,7 @@ if (!checks.cssBracesBalanced) failures.push("CSS braces are unbalanced");
 if (checks.citationMarkers < 25) failures.push("Too few inline citation markers");
 if (!checks.fullAuthorName) failures.push("Full author name is missing");
 if (!checks.coverCreditExact) failures.push("Cover credit is not the approved linked author line");
-if (!checks.authorSiteLinked) failures.push("Author site is not linked consistently on the cover and footer");
+if (!checks.authorSiteLinked) failures.push("Author site is not linked consistently on the cover, sidebar, and footer");
 if (!checks.coverLabelsRemoved) failures.push("Removed cover-credit labels remain");
 if (!checks.coverLegacyEditionLineRemoved) failures.push("Legacy edition line remains on the cover");
 if (!checks.coverPublicationMetadataExact) failures.push("Cover publication date or version is missing or incorrect");

@@ -20,7 +20,7 @@ export function renderFallbackFlowDiagram(lines) {
   }
 
   return `
-<figure class="fallback-flow-diagram">
+<figure class="fallback-flow-diagram" role="region" aria-label="Agent fallback state flow diagram" tabindex="0">
   <svg viewBox="0 0 760 300" role="img" aria-labelledby="fallback-flow-title fallback-flow-description">
     <title id="fallback-flow-title">Graceful fallback path for eligible failures</title>
     <desc id="fallback-flow-description">An eligible failure moves from the primary qualified model to a contract-compatible secondary provider or model. A further eligible failure may move to a disclosed read-only or lower-capability mode. From there the system returns a deterministic result, queues the work, or hands it to a human. Safety refusals, authorization or policy denials, and semantic validation failures do not enter this chain.</desc>

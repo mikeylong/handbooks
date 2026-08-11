@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A practical handbook for building reliable production AI systems.">
   <meta name="author" content="Michael Long">
-  <meta name="theme-color" content="#f4f1e9">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
   <title>Production AI Engineering · Michael Long</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=4659c5e722b6">
+  <script src="app.js?v=4659c5e722b6" defer></script>
 </head>
 <body id="book-top" data-source-sha256="70b962eaef46c361232399ca117c5051e15ba0747ea6fbc9f0932f18f34c3b63">
   <a class="skip-link" href="#main-content">Skip to handbook</a>
@@ -18,11 +19,15 @@
   <header class="mobile-bar">
     <a class="mobile-title" href="#book-top">Production AI Engineering</a>
     <div class="mobile-actions">
-      <button class="text-button" type="button" data-print aria-label="Print handbook">Print</button>
-      <button class="menu-button" type="button" data-open-toc aria-haspopup="dialog" aria-controls="toc-dialog">
+      <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
+      <button class="menu-button js-only" type="button" data-open-toc aria-haspopup="dialog" aria-controls="toc-dialog">
         <span aria-hidden="true"></span>
         Contents
       </button>
+      <a class="menu-button no-js-only" href="#contents">
+        <span aria-hidden="true"></span>
+        Contents
+      </a>
     </div>
   </header>
 
@@ -135,18 +140,42 @@
   </li></ol>
       </nav>
       <div class="sidebar-meta">
-        <p>Michael Long</p>
-        <button class="text-button" type="button" data-print>Print edition</button>
+        <div class="sidebar-publication">
+          <p class="sidebar-author">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>
+          <p class="sidebar-edition">July 19, 2026 · Version 1.0</p>
+        </div>
+        <div class="sidebar-actions">
+          <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
+          <a class="text-link" href="../output/pdf/production-ai-engineering.pdf" download aria-label="Download Production AI Engineering as a PDF, 74 pages">PDF</a>
+        </div>
       </div>
     </aside>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <section class="cover" aria-labelledby="cover-title">
         <div class="cover-rule" aria-hidden="true"></div>
         <h1 id="cover-title">Production AI Engineering</h1>
         <p class="cover-subtitle">A Handbook for Building Reliable LLM Systems</p>
         <p class="cover-credit">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>
         <p class="cover-date">July 19, 2026 · Version 1.0</p>
+        <section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-schedule release-window-policy" data-release-window data-release-at="2026-07-27T16:00:00.000Z" data-release-time-zone="America/Los_Angeles" data-release-rrule="FREQ=WEEKLY;BYDAY=MO;BYHOUR=9;BYMINUTE=0">
+          <div class="release-window-heading">
+            <p class="release-window-label" id="release-window-title" data-release-status>Next version review</p>
+            <p class="release-window-products">Site + PDF</p>
+          </div>
+          <div class="release-countdown js-only" data-release-countdown aria-hidden="true">
+            <span><strong data-countdown-days>00</strong><small>Days</small></span>
+            <span><strong data-countdown-hours>00</strong><small>Hours</small></span>
+            <span><strong data-countdown-minutes>00</strong><small>Minutes</small></span>
+            <span><strong data-countdown-seconds>00</strong><small>Seconds</small></span>
+          </div>
+          <p class="release-window-schedule" id="release-window-schedule">Scheduled for <time datetime="2026-07-27T16:00:00.000Z" data-release-time>Monday, July 27, 2026 at 9:00 AM Pacific time</time>.</p>
+          <p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p>
+        </section>
+        <nav class="cover-actions site-only" aria-label="Handbook actions">
+          <a class="action-link action-link-primary" href="#contents">Explore the handbook</a>
+          <a class="action-link" href="../output/pdf/production-ai-engineering.pdf" download aria-label="Download Production AI Engineering as a PDF, 74 pages">Download PDF <span>74 pages</span></a>
+        </nav>
       </section>
 
       <section class="foreword" aria-labelledby="foreword-title">
@@ -267,15 +296,22 @@
       <h2>Build the System Around the Model</h2>
       <p class="chapter-deck">A production AI system succeeds when the full workflow delivers the right outcome, follows policy, and stays inside its latency and cost targets.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-01.webp"
-          alt=""
-          width="1536"
-          height="1364"
-          loading="eager"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-01-768.webp 768w, assets/chapters/chapter-01.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-01.webp"
+            alt=""
+            width="1536"
+            height="1364"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -283,7 +319,7 @@
       <section class="source-section" id="section-01-the-full-system">
         <h3><span class="section-number">1.1&nbsp;</span><span class="section-title">The full system</span></h3>
         
-<figure class="system-flow-diagram">
+<figure class="system-flow-diagram" role="region" aria-label="Production AI system flow diagram" tabindex="0">
   <svg viewBox="0 0 760 590" role="img" aria-labelledby="system-flow-title system-flow-description">
     <title id="system-flow-title">Production AI system flow</title>
     <desc id="system-flow-description">A request passes through identity and policy, routing, context construction, model inference, and validation. Validation returns a response or sends a tool proposal to authorization and execution. Tool results return to context. Authorized data, caches, and tool contracts feed context. Observability watches the operating path, while evaluations improve it.</desc>
@@ -397,14 +433,14 @@
   </svg>
 </figure>
 <p>Each layer has a specific job:</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Layer</th><th scope="col">Primary responsibility</th><th scope="col">Typical failure</th></tr></thead><tbody><tr><td data-label="Layer">Product contract</td><td data-label="Primary responsibility">Define success, SLOs, risk, and degraded behavior</td><td data-label="Typical failure">Optimizing a proxy that users do not value</td></tr><tr><td data-label="Layer">Harness</td><td data-label="Primary responsibility">Orchestrate state, tools, retries, budgets, and termination</td><td data-label="Typical failure">Runaway loops or duplicate side effects</td></tr><tr><td data-label="Layer">Context</td><td data-label="Primary responsibility">Select the smallest high-signal authorized state for this step</td><td data-label="Typical failure">Context rot, stale facts, or contamination</td></tr><tr><td data-label="Layer">Retrieval and memory</td><td data-label="Primary responsibility">Supply current, attributable external knowledge</td><td data-label="Typical failure">Irrelevant, stale, or unauthorized evidence</td></tr><tr><td data-label="Layer">Model and serving</td><td data-label="Primary responsibility">Produce useful tokens efficiently</td><td data-label="Typical failure">Queueing, KV pressure, or quality loss</td></tr><tr><td data-label="Layer">Validation and policy</td><td data-label="Primary responsibility">Turn probabilistic proposals into safe actions</td><td data-label="Typical failure">Valid JSON with invalid business meaning</td></tr><tr><td data-label="Layer">Evals and observability</td><td data-label="Primary responsibility">Detect regressions and explain production behavior</td><td data-label="Typical failure">Silent quality, cost, or safety drift</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="The full system: Layer table" aria-describedby="table-scroll-hint-1" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-1">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-1">The full system: Layer table</caption><thead><tr><th scope="col">Layer</th><th scope="col">Primary responsibility</th><th scope="col">Typical failure</th></tr></thead><tbody><tr><td data-label="Layer">Product contract</td><td data-label="Primary responsibility">Define success, SLOs, risk, and degraded behavior</td><td data-label="Typical failure">Optimizing a proxy that users do not value</td></tr><tr><td data-label="Layer">Harness</td><td data-label="Primary responsibility">Orchestrate state, tools, retries, budgets, and termination</td><td data-label="Typical failure">Runaway loops or duplicate side effects</td></tr><tr><td data-label="Layer">Context</td><td data-label="Primary responsibility">Select the smallest high-signal authorized state for this step</td><td data-label="Typical failure">Context rot, stale facts, or contamination</td></tr><tr><td data-label="Layer">Retrieval and memory</td><td data-label="Primary responsibility">Supply current, attributable external knowledge</td><td data-label="Typical failure">Irrelevant, stale, or unauthorized evidence</td></tr><tr><td data-label="Layer">Model and serving</td><td data-label="Primary responsibility">Produce useful tokens efficiently</td><td data-label="Typical failure">Queueing, KV pressure, or quality loss</td></tr><tr><td data-label="Layer">Validation and policy</td><td data-label="Primary responsibility">Turn probabilistic proposals into safe actions</td><td data-label="Typical failure">Valid JSON with invalid business meaning</td></tr><tr><td data-label="Layer">Evals and observability</td><td data-label="Primary responsibility">Detect regressions and explain production behavior</td><td data-label="Typical failure">Silent quality, cost, or safety drift</td></tr></tbody></table></div>
         <p class="section-sources"><strong>Sources</strong> <a href="#ref-agt-01">[AGT-01]</a> <a href="#ref-ctx-01">[CTX-01]</a> <a href="#ref-obs-01">[OBS-01]</a><span>Author synthesis: the cited sources inform this layered operating model.</span></p>
       </section>
 
       <section class="source-section" id="section-02-harness-engineering-not-just-prompt-engineering">
         <h3><span class="section-number">1.2&nbsp;</span><span class="section-title">Harness engineering, not just prompt engineering</span></h3>
         <p>Prompt engineering handles the wording and structure of instructions. Context engineering selects and maintains every token supplied for each model step. Harness engineering runs the software system around the model.</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Discipline</th><th scope="col">Controls</th><th scope="col">It does not control by itself</th></tr></thead><tbody><tr><td data-label="Discipline">Prompt engineering</td><td data-label="Controls">Instruction clarity, examples, response guidance</td><td data-label="It does not control by itself">State, permissions, retries, side effects</td></tr><tr><td data-label="Discipline">Context engineering</td><td data-label="Controls">Instructions, history, retrieved evidence, tool definitions, summaries, token allocation</td><td data-label="It does not control by itself">Execution safety or end-to-end termination</td></tr><tr><td data-label="Discipline">Harness engineering</td><td data-label="Controls">State machine, routing, tools, validators, budgets, caches, telemetry, recovery</td><td data-label="It does not control by itself">The model&#039;s intrinsic capability ceiling</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="Harness engineering, not just prompt engineering: Discipline table" aria-describedby="table-scroll-hint-2" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-2">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-2">Harness engineering, not just prompt engineering: Discipline table</caption><thead><tr><th scope="col">Discipline</th><th scope="col">Controls</th><th scope="col">It does not control by itself</th></tr></thead><tbody><tr><td data-label="Discipline">Prompt engineering</td><td data-label="Controls">Instruction clarity, examples, response guidance</td><td data-label="It does not control by itself">State, permissions, retries, side effects</td></tr><tr><td data-label="Discipline">Context engineering</td><td data-label="Controls">Instructions, history, retrieved evidence, tool definitions, summaries, token allocation</td><td data-label="It does not control by itself">Execution safety or end-to-end termination</td></tr><tr><td data-label="Discipline">Harness engineering</td><td data-label="Controls">State machine, routing, tools, validators, budgets, caches, telemetry, recovery</td><td data-label="It does not control by itself">The model&#039;s intrinsic capability ceiling</td></tr></tbody></table></div>
 <p>A production harness needs to own:</p>
 <ol class="outline-list"><li><span class="outline-entry"><strong>Bind every run.</strong></span><ol><li><span class="outline-entry">Request identity, tenant, authorization, and policy version.</span></li><li><span class="outline-entry">Prompt, tool, schema, model, and retrieval-index versions.</span></li></ol></li><li><span class="outline-entry"><strong>Control execution.</strong></span><ol><li><span class="outline-entry">Deterministic context assembly and compaction.</span></li><li><span class="outline-entry">Model routing and fallback compatibility.</span></li><li><span class="outline-entry">Parse, schema, semantic, and policy validation.</span></li><li><span class="outline-entry">Retry classification and idempotency.</span></li></ol></li><li><span class="outline-entry"><strong>Bound and account for outcomes.</strong></span><ol><li><span class="outline-entry">Time, token, tool, turn, cost, and risk budgets.</span></li><li><span class="outline-entry">Success, refusal, blocked, degraded, and failed terminal states.</span></li><li><span class="outline-entry">Traces, outcome metrics, and cost attribution.</span></li></ol></li></ol>
 <p>Enforce any rule about safety, money, permissions, or termination in code. A sentence in a system prompt can steer the model, but it cannot serve as a security boundary.</p>
@@ -424,15 +460,22 @@
       <h2>Treat Context as a Budget</h2>
       <p class="chapter-deck">Context is finite. Choose the smallest set of instructions, state, evidence, and tools the model needs for the current step.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-02.webp"
-          alt=""
-          width="1536"
-          height="1364"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-02-768.webp 768w, assets/chapters/chapter-02.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-02.webp"
+            alt=""
+            width="1536"
+            height="1364"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -452,7 +495,7 @@
 
       <section class="source-section" id="section-04-four-caches-that-must-not-be-confused">
         <h3><span class="section-number">2.2&nbsp;</span><span class="section-title">Four caches that must not be confused</span></h3>
-        <div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Cache</th><th scope="col">Key and value</th><th scope="col">Main benefit</th><th scope="col">Main risk</th><th scope="col">Invalidation/isolation</th></tr></thead><tbody><tr><td data-label="Cache">Exact response cache</td><td data-label="Key and value">Exact normalized request to completed response</td><td data-label="Main benefit">Avoids the entire workflow</td><td data-label="Main risk">Stale response if hidden state changed</td><td data-label="Invalidation/isolation">Include every response-affecting version and authorization dimension</td></tr><tr><td data-label="Cache">Prompt/prefix cache</td><td data-label="Key and value">Exact rendered-token prefix to reusable prefill work</td><td data-label="Main benefit">Can lower TTFT and billed input cost when read/write pricing and reuse frequency are favorable</td><td data-label="Main risk">Small serialization changes destroy hits; provider write pricing and retention implications</td><td data-label="Invalidation/isolation">Stable prefix first; model/prompt scoped; follow provider data controls</td></tr><tr><td data-label="Cache">Semantic response cache</td><td data-label="Key and value">Embedding-near request to prior response</td><td data-label="Main benefit">Captures paraphrases and reduces full calls</td><td data-label="Main risk">False positive can return a plausible but wrong, stale, or unauthorized answer</td><td data-label="Invalidation/isolation">Tenant/principal, state, model, prompt, corpus, policy, locale, and freshness scoped</td></tr><tr><td data-label="Cache">Runtime KV cache</td><td data-label="Key and value">Per-layer attention keys and values for an active sequence</td><td data-label="Main benefit">Avoids recomputing tokens already processed within that sequence</td><td data-label="Main risk">GPU memory exhaustion and cross-request leakage if ownership is mishandled</td><td data-label="Invalidation/isolation">Request ownership, active block pinning, preemption, reclamation, and quotas</td></tr></tbody></table></div>
+        <div class="table-scroll" role="region" aria-label="Four caches that must not be confused: Cache table" aria-describedby="table-scroll-hint-3" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-3">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-3">Four caches that must not be confused: Cache table</caption><thead><tr><th scope="col">Cache</th><th scope="col">Key and value</th><th scope="col">Main benefit</th><th scope="col">Main risk</th><th scope="col">Invalidation/isolation</th></tr></thead><tbody><tr><td data-label="Cache">Exact response cache</td><td data-label="Key and value">Exact normalized request to completed response</td><td data-label="Main benefit">Avoids the entire workflow</td><td data-label="Main risk">Stale response if hidden state changed</td><td data-label="Invalidation/isolation">Include every response-affecting version and authorization dimension</td></tr><tr><td data-label="Cache">Prompt/prefix cache</td><td data-label="Key and value">Exact rendered-token prefix to reusable prefill work</td><td data-label="Main benefit">Can lower TTFT and billed input cost when read/write pricing and reuse frequency are favorable</td><td data-label="Main risk">Small serialization changes destroy hits; provider write pricing and retention implications</td><td data-label="Invalidation/isolation">Stable prefix first; model/prompt scoped; follow provider data controls</td></tr><tr><td data-label="Cache">Semantic response cache</td><td data-label="Key and value">Embedding-near request to prior response</td><td data-label="Main benefit">Captures paraphrases and reduces full calls</td><td data-label="Main risk">False positive can return a plausible but wrong, stale, or unauthorized answer</td><td data-label="Invalidation/isolation">Tenant/principal, state, model, prompt, corpus, policy, locale, and freshness scoped</td></tr><tr><td data-label="Cache">Runtime KV cache</td><td data-label="Key and value">Per-layer attention keys and values for an active sequence</td><td data-label="Main benefit">Avoids recomputing tokens already processed within that sequence</td><td data-label="Main risk">GPU memory exhaustion and cross-request leakage if ownership is mishandled</td><td data-label="Invalidation/isolation">Request ownership, active block pinning, preemption, reclamation, and quotas</td></tr></tbody></table></div>
 <p>Prompt caching and semantic caching do different work:</p>
 <ul><li><strong>Prompt/prefix caching is exact and reuses prefill work.</strong> It skips recomputation for an identical rendered prefix, while still running prefill for the uncached suffix and a full decode. Put stable system instructions, examples, and tool definitions first. Put user-specific material later. Small differences in tokenization, message order, tool serialization, or timestamps can destroy a hit. The cache can reduce TTFT and billed input cost only when provider-specific read/write pricing and reuse frequency make the tradeoff worthwhile.</li><li><strong>Semantic caching is approximate and reuses an answer.</strong> It decides whether a new request is close enough to an old one to return the old answer. The reuse decision acts as both a quality classifier and a security classifier. The critical metric is <strong>false-hit rate by risk slice</strong>, not hit rate alone.</li></ul>
 <p>Use semantic caching only when two paraphrased requests should receive the same answer. Avoid it, or require verification, for personalized, permission-sensitive, rapidly changing, transactional, high-stakes, and multi-turn-dependent answers. Azure&#039;s own semantic-cache policy warns that similarity hits can be incorrect, outdated, or unsafe; see the <a href="https://learn.microsoft.com/en-us/azure/api-management/llm-semantic-cache-lookup-policy">official policy reference</a><sup class="citation-marker"><a href="#ref-cache-02" aria-label="Citation CACHE-02">[CACHE-02]</a></sup>.</p>
@@ -475,15 +518,22 @@
       <h2>Prefill and Decode Are Different Jobs</h2>
       <p class="chapter-deck">Prefill and decode use the hardware differently. The serving plan has to account for both.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-03.webp"
-          alt=""
-          width="1536"
-          height="1364"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-03-768.webp 768w, assets/chapters/chapter-03.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-03.webp"
+            alt=""
+            width="1536"
+            height="1364"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -491,7 +541,7 @@
       <section class="source-section" id="section-05-prefill-and-decode-optimize-differently">
         <h3><span class="section-number">3.1&nbsp;</span><span class="section-title">Prefill and decode optimize differently</span></h3>
         <p>Autoregressive inference has two phases that place different demands on the system.</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Property</th><th scope="col">Prefill</th><th scope="col">Decode</th></tr></thead><tbody><tr><td data-label="Property">Work</td><td data-label="Prefill">Process all input tokens and populate KV state</td><td data-label="Decode">Generate one next token per active sequence per step</td></tr><tr><td data-label="Property">Parallelism</td><td data-label="Prefill">High within the prompt; large matrix operations</td><td data-label="Decode">Sequential across output positions; smaller per-step operations</td></tr><tr><td data-label="Property">Common bottleneck</td><td data-label="Prefill">Usually compute-bound once prompt length or batch reaches accelerator saturation</td><td data-label="Decode">Usually weight/KV-bandwidth-bound at low-to-moderate batch; can become compute-bound at high batch</td></tr><tr><td data-label="Property">User metric</td><td data-label="Prefill">Prefill contributes to TTFT, which also includes queueing, retrieval, cache, and network time</td><td data-label="Decode">Decode cadence contributes to mean TPOT and the distribution of inter-token latencies and stalls</td></tr><tr><td data-label="Property">Helpful techniques</td><td data-label="Prefill">Safe context reduction, prefix cache, efficient kernels, prefill batching, chunking, or disaggregation</td><td data-label="Decode">Continuous batching, efficient kernels, quantization, speculative decoding</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="Prefill and decode optimize differently: Property table" aria-describedby="table-scroll-hint-4" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-4">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-4">Prefill and decode optimize differently: Property table</caption><thead><tr><th scope="col">Property</th><th scope="col">Prefill</th><th scope="col">Decode</th></tr></thead><tbody><tr><td data-label="Property">Work</td><td data-label="Prefill">Process all input tokens and populate KV state</td><td data-label="Decode">Generate one next token per active sequence per step</td></tr><tr><td data-label="Property">Parallelism</td><td data-label="Prefill">High within the prompt; large matrix operations</td><td data-label="Decode">Sequential across output positions; smaller per-step operations</td></tr><tr><td data-label="Property">Common bottleneck</td><td data-label="Prefill">Usually compute-bound once prompt length or batch reaches accelerator saturation</td><td data-label="Decode">Usually weight/KV-bandwidth-bound at low-to-moderate batch; can become compute-bound at high batch</td></tr><tr><td data-label="Property">User metric</td><td data-label="Prefill">Prefill contributes to TTFT, which also includes queueing, retrieval, cache, and network time</td><td data-label="Decode">Decode cadence contributes to mean TPOT and the distribution of inter-token latencies and stalls</td></tr><tr><td data-label="Property">Helpful techniques</td><td data-label="Prefill">Safe context reduction, prefix cache, efficient kernels, prefill batching, chunking, or disaggregation</td><td data-label="Decode">Continuous batching, efficient kernels, quantization, speculative decoding</td></tr></tbody></table></div>
 <p>Break the latency budget into its actual components:</p>
 <figure class="editorial-example latency-budget" aria-label="End-to-end latency composition"><div class="latency-total"><strong>End-to-end latency</strong><span>= sum of</span></div><div class="latency-band"><p>Before generation</p><div><span class="latency-stage">queue</span><span class="latency-stage">cache lookup</span><span class="latency-stage">retrieval</span><span class="latency-stage">rerank</span></div></div><div class="latency-band"><p>Generation and execution</p><div><span class="latency-stage">prefill</span><span class="latency-stage">decode</span><span class="latency-stage">tools</span><span class="latency-stage">validation and retries</span></div></div></figure>
 <p>Track p50, p95, and p99 for end-to-end latency, queue time, TTFT, TPOT/ITL, and tool latency. A low average can still hide an unusable tail.</p>
@@ -536,15 +586,22 @@
       <h2>Choose the Optimization That Fits</h2>
       <p class="chapter-deck">Speculative decoding, quantization, and distillation solve different problems. Pick the one that matches the bottleneck and verify the quality tradeoff.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-04.webp"
-          alt=""
-          width="1536"
-          height="1364"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-04-768.webp 768w, assets/chapters/chapter-04.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-04.webp"
+            alt=""
+            width="1536"
+            height="1364"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -552,7 +609,7 @@
       <section class="source-section" id="section-08-speculative-decoding-quantization-and-distillation">
         <h3><span class="section-number">4.1&nbsp;</span><span class="section-title">Speculative decoding, quantization, and distillation</span></h3>
         <p>Speculative decoding, quantization, and distillation change different parts of the inference stack and solve different bottlenecks.</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Technique</th><th scope="col">Changes</th><th scope="col">Best fit</th><th scope="col">Main tradeoff</th></tr></thead><tbody><tr><td data-label="Technique">Speculative decoding</td><td data-label="Changes">A draft process proposes tokens; the target verifies several in parallel</td><td data-label="Best fit">Decode-bound, low-to-moderate batch workloads with high draft acceptance</td><td data-label="Main tradeoff">Extra draft compute and memory can erase gains when acceptance is low</td></tr><tr><td data-label="Technique">Quantization</td><td data-label="Changes">Represents weights and sometimes activations/KV with fewer bits</td><td data-label="Best fit">Memory/bandwidth-constrained inference with supported kernels</td><td data-label="Main tradeoff">Calibration and numerical error can cause task-specific tail regressions</td></tr><tr><td data-label="Technique">Distillation</td><td data-label="Changes">Trains a smaller student to imitate a larger teacher</td><td data-label="Best fit">Stable, narrow, high-volume tasks with governed training data and clear evals</td><td data-label="Main tradeoff">Up-front teacher-data/training cost; broad and long-tail capabilities or teacher biases can transfer or regress</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="Speculative decoding, quantization, and distillation: Technique table" aria-describedby="table-scroll-hint-5" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-5">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-5">Speculative decoding, quantization, and distillation: Technique table</caption><thead><tr><th scope="col">Technique</th><th scope="col">Changes</th><th scope="col">Best fit</th><th scope="col">Main tradeoff</th></tr></thead><tbody><tr><td data-label="Technique">Speculative decoding</td><td data-label="Changes">A draft process proposes tokens; the target verifies several in parallel</td><td data-label="Best fit">Decode-bound, low-to-moderate batch workloads with high draft acceptance</td><td data-label="Main tradeoff">Extra draft compute and memory can erase gains when acceptance is low</td></tr><tr><td data-label="Technique">Quantization</td><td data-label="Changes">Represents weights and sometimes activations/KV with fewer bits</td><td data-label="Best fit">Memory/bandwidth-constrained inference with supported kernels</td><td data-label="Main tradeoff">Calibration and numerical error can cause task-specific tail regressions</td></tr><tr><td data-label="Technique">Distillation</td><td data-label="Changes">Trains a smaller student to imitate a larger teacher</td><td data-label="Best fit">Stable, narrow, high-volume tasks with governed training data and clear evals</td><td data-label="Main tradeoff">Up-front teacher-data/training cost; broad and long-tail capabilities or teacher biases can transfer or regress</td></tr></tbody></table></div>
 <p>When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use it to reduce latency, not to approximate an answer. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. See <a href="https://proceedings.mlr.press/v202/leviathan23a.html">Leviathan et al.</a><sup class="citation-marker"><a href="#ref-spec-01" aria-label="Citation SPEC-01">[SPEC-01]</a></sup>.</p>
 <p>Distillation changes the deployed model and usually changes its behavior. Distillation can greatly lower steady-state cost, but the target workflow first needs to be stable enough for teacher data and evals to represent production. <a href="https://arxiv.org/abs/1503.02531">Hinton, Vinyals, and Dean</a><sup class="citation-marker"><a href="#ref-dist-01" aria-label="Citation DIST-01">[DIST-01]</a></sup> describe the foundational method.</p>
         <p class="section-sources"><strong>Sources</strong> <a href="#ref-spec-01">[SPEC-01]</a> <a href="#ref-quant-02">[QUANT-02]</a> <a href="#ref-dist-01">[DIST-01]</a><span>Author synthesis: the comparison maps each technique to the bottleneck it changes.</span></p>
@@ -562,7 +619,7 @@
         <h3><span class="section-number">4.2&nbsp;</span><span class="section-title">Quantization: formats, methods, and quality risk</span></h3>
         <p>AWQ and GPTQ describe quantization methods. Numeric formats are a separate choice. Always spell out the precision tuple: <code>W8A8</code>, <code>W8A16</code>, <code>W4A16</code>, or <code>KV8</code>, for example. <code>INT8</code> and <code>INT4</code> leave too much unspecified on their own.</p>
 <p>Weight storage is approximately <code>parameters × bits / 8 + scales + zero-points + unquantized modules</code>. W4A16 reduces weight storage, but it does not shrink activations or KV. Calling a model “4-bit” therefore does not imply 4× lower total VRAM. Whether smaller storage lowers latency depends on the actual kernel and hardware.</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Choice</th><th scope="col">What it usually means</th><th scope="col">When it is attractive</th><th scope="col">Watch for</th></tr></thead><tbody><tr><td data-label="Choice">INT8</td><td data-label="What it usually means">Integer 8-bit weights and possibly activations</td><td data-label="When it is attractive">Broad hardware support; safer first step from FP16/BF16</td><td data-label="Watch for">Activation outliers, calibration mismatch, unsupported fast paths</td></tr><tr><td data-label="Choice">FP8</td><td data-label="What it usually means">8-bit floating point, commonly E4M3/E5M2 with scaling</td><td data-label="When it is attractive">Newer accelerators; training or W8A8-style inference where dynamic range matters</td><td data-label="Watch for">Hardware dependence, scale management, accumulation precision</td></tr><tr><td data-label="Choice">INT4</td><td data-label="What it usually means">Often W4A16 weight-only, though W4A8/W4A4 also exist</td><td data-label="When it is attractive">Model fit and bandwidth-bound decode; native low-activation kernels may also help prefill or high batch</td><td data-label="Watch for">Greater quality risk, scale/dequantization overhead, and runtime- and hardware-dependent speedups</td></tr><tr><td data-label="Choice">AWQ</td><td data-label="What it usually means">Activation-aware weight-only post-training quantization</td><td data-label="When it is attractive">Protecting salient weight channels without retraining</td><td data-label="Watch for">Representative activation calibration and kernel compatibility</td></tr><tr><td data-label="Choice">GPTQ</td><td data-label="What it usually means">One-shot weight quantization using approximate second-order information</td><td data-label="When it is attractive">Accurate 3/4-bit compression of supported decoder models</td><td data-label="Watch for">Calibration set, group size, layer sensitivity, conversion/runtime support</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="Quantization: formats, methods, and quality risk: Choice table" aria-describedby="table-scroll-hint-6" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-6">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-6">Quantization: formats, methods, and quality risk: Choice table</caption><thead><tr><th scope="col">Choice</th><th scope="col">What it usually means</th><th scope="col">When it is attractive</th><th scope="col">Watch for</th></tr></thead><tbody><tr><td data-label="Choice">INT8</td><td data-label="What it usually means">Integer 8-bit weights and possibly activations</td><td data-label="When it is attractive">Broad hardware support; safer first step from FP16/BF16</td><td data-label="Watch for">Activation outliers, calibration mismatch, unsupported fast paths</td></tr><tr><td data-label="Choice">FP8</td><td data-label="What it usually means">8-bit floating point, commonly E4M3/E5M2 with scaling</td><td data-label="When it is attractive">Newer accelerators; training or W8A8-style inference where dynamic range matters</td><td data-label="Watch for">Hardware dependence, scale management, accumulation precision</td></tr><tr><td data-label="Choice">INT4</td><td data-label="What it usually means">Often W4A16 weight-only, though W4A8/W4A4 also exist</td><td data-label="When it is attractive">Model fit and bandwidth-bound decode; native low-activation kernels may also help prefill or high batch</td><td data-label="Watch for">Greater quality risk, scale/dequantization overhead, and runtime- and hardware-dependent speedups</td></tr><tr><td data-label="Choice">AWQ</td><td data-label="What it usually means">Activation-aware weight-only post-training quantization</td><td data-label="When it is attractive">Protecting salient weight channels without retraining</td><td data-label="Watch for">Representative activation calibration and kernel compatibility</td></tr><tr><td data-label="Choice">GPTQ</td><td data-label="What it usually means">One-shot weight quantization using approximate second-order information</td><td data-label="When it is attractive">Accurate 3/4-bit compression of supported decoder models</td><td data-label="Watch for">Calibration set, group size, layer sensitivity, conversion/runtime support</td></tr></tbody></table></div>
 <p>Primary references: <a href="https://arxiv.org/abs/2209.05433">FP8 formats</a><sup class="citation-marker"><a href="#ref-quant-01" aria-label="Citation QUANT-01">[QUANT-01]</a></sup>, <a href="https://proceedings.mlr.press/v202/xiao23c.html">SmoothQuant for W8A8</a><sup class="citation-marker"><a href="#ref-quant-02" aria-label="Citation QUANT-02">[QUANT-02]</a></sup>, <a href="https://proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9ba4aa95cc1ef21-Abstract-Conference.html">AWQ</a><sup class="citation-marker"><a href="#ref-quant-03" aria-label="Citation QUANT-03">[QUANT-03]</a></sup>, and <a href="https://arxiv.org/abs/2210.17323">GPTQ</a><sup class="citation-marker"><a href="#ref-quant-04" aria-label="Citation QUANT-04">[QUANT-04]</a></sup>.</p>
 <p>Quality risk generally rises below 4-bit, in smaller models, on harder reasoning slices, with unrepresentative calibration, and when activation or KV outliers are aggressively quantized. The risk pattern is empirical, not guaranteed. Specific risks include:</p>
 <ul><li>calibration data does not match production languages, domains, lengths, or modalities;</li><li>the task depends on small logit margins, exact numbers, code, rare tokens, or precise tool arguments;</li><li>activation or KV outliers are aggressively quantized;</li><li>long-context, multilingual, rare-token, safety, or tool-use behavior is more sensitive than the aggregate benchmark suggests.</li></ul>
@@ -584,15 +641,22 @@
       <h2>Turn Model Output into a Contract</h2>
       <p class="chapter-deck">Schemas make output parseable. Authorization, validation, idempotency, and effect checks make it safe to use.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-05.webp"
-          alt=""
-          width="1536"
-          height="1368"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-05-768.webp 768w, assets/chapters/chapter-05.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-05.webp"
+            alt=""
+            width="1536"
+            height="1368"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -602,7 +666,7 @@
         <p>Constrained decoding and provider structured-output features can greatly improve syntactic conformance. Syntactic conformance does not establish whether the values are true, authorized, internally consistent, current, or safe to execute.</p>
 <p>Use this pipeline:</p>
 
-<figure class="validation-flow-diagram">
+<figure class="validation-flow-diagram" role="region" aria-label="Structured output validation flow diagram" tabindex="0">
   <svg viewBox="0 0 760 478" role="img" aria-labelledby="validation-flow-title validation-flow-description">
     <title id="validation-flow-title">From model response to verified outcome</title>
     <desc id="validation-flow-description">The mainline path inspects the response state and continues only when the response is usable. It parses the payload, validates its raw structure, applies only allowed normalization, revalidates the schema and domain invariants, authorizes the exact action, executes or publishes, and verifies the postcondition. Refused or incomplete responses do not proceed to parsing.</desc>
@@ -731,15 +795,22 @@
       <h2>Put Clear Limits on Agents</h2>
       <p class="chapter-deck">Agents need limits you can enforce: budgets, stop conditions, compatible fallbacks, and explicit terminal states.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-06.webp"
-          alt=""
-          width="1536"
-          height="1368"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-06-768.webp 768w, assets/chapters/chapter-06.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-06.webp"
+            alt=""
+            width="1536"
+            height="1368"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -748,7 +819,7 @@
         <h3><span class="section-number">6.1&nbsp;</span><span class="section-title">Agent guardrails, budgets, and termination</span></h3>
         <p>An agent is a state machine whose next transition is proposed by a model. Apply guardrails at every transition. Final-text checks alone are not enough.</p>
 <p>Enforce these budgets outside the model:</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Budget</th><th scope="col">Example control</th></tr></thead><tbody><tr><td data-label="Budget">Turns</td><td data-label="Example control">Maximum model decisions per run</td></tr><tr><td data-label="Budget">Tools</td><td data-label="Example control">Total calls plus lower limits for writes or expensive tools</td></tr><tr><td data-label="Budget">Tokens</td><td data-label="Example control">Input, output, reasoning, and cumulative context ceilings</td></tr><tr><td data-label="Budget">Time</td><td data-label="Example control">Wall-clock deadline and per-step timeout</td></tr><tr><td data-label="Budget">Cost</td><td data-label="Example control">Hard run limit and softer escalation threshold</td></tr><tr><td data-label="Budget">Retries</td><td data-label="Example control">Per operation, per failure class, and total</td></tr><tr><td data-label="Budget">Risk</td><td data-label="Example control">Maximum unapproved action class or data scope</td></tr><tr><td data-label="Budget">Concurrency/fan-out</td><td data-label="Example control">Maximum in-flight model, tool, and subagent work; reserve budget before dispatch</td></tr><tr><td data-label="Budget">Mutations</td><td data-label="Example control">Separate count, value, and data-scope caps for writes and destructive actions</td></tr><tr><td data-label="Budget">No progress</td><td data-label="Example control">Stop after repeated equivalent state/action cycles</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="Agent guardrails, budgets, and termination: Budget table" aria-describedby="table-scroll-hint-7" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-7">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-7">Agent guardrails, budgets, and termination: Budget table</caption><thead><tr><th scope="col">Budget</th><th scope="col">Example control</th></tr></thead><tbody><tr><td data-label="Budget">Turns</td><td data-label="Example control">Maximum model decisions per run</td></tr><tr><td data-label="Budget">Tools</td><td data-label="Example control">Total calls plus lower limits for writes or expensive tools</td></tr><tr><td data-label="Budget">Tokens</td><td data-label="Example control">Input, output, reasoning, and cumulative context ceilings</td></tr><tr><td data-label="Budget">Time</td><td data-label="Example control">Wall-clock deadline and per-step timeout</td></tr><tr><td data-label="Budget">Cost</td><td data-label="Example control">Hard run limit and softer escalation threshold</td></tr><tr><td data-label="Budget">Retries</td><td data-label="Example control">Per operation, per failure class, and total</td></tr><tr><td data-label="Budget">Risk</td><td data-label="Example control">Maximum unapproved action class or data scope</td></tr><tr><td data-label="Budget">Concurrency/fan-out</td><td data-label="Example control">Maximum in-flight model, tool, and subagent work; reserve budget before dispatch</td></tr><tr><td data-label="Budget">Mutations</td><td data-label="Example control">Separate count, value, and data-scope caps for writes and destructive actions</td></tr><tr><td data-label="Budget">No progress</td><td data-label="Example control">Stop after repeated equivalent state/action cycles</td></tr></tbody></table></div>
 <p>Budget counters need to be hierarchical, atomic, and persistent across retries, resumes, handoffs, fallbacks, and subagents. A retry or alternate route must not reset the run&#039;s deadline, cost, risk, or mutation budget.</p>
 <p>Give every run explicit terminal conditions:</p>
 <ul><li>success predicate verified against external state;</li><li>user cancellation, after stopping new work and reconciling any already-dispatched mutation whose commit status is unknown;</li><li>policy or authorization denial;</li><li>dependency unavailable or irrecoverably blocked;</li><li>budget exhausted;</li><li>repeated state, repeated action, or no measurable progress;</li><li>insufficient evidence under an externally measured sufficiency check, or a calibrated product score that requires abstention; never use the model&#039;s self-reported confidence alone.</li></ul>
@@ -766,7 +837,7 @@
 <p>Choose the fallback based on the failure class. Never route around a safety refusal, an authorization or policy denial, or a semantic validation failure. After a timeout that may have committed a mutation, reconcile through the idempotency receipt before retrying or changing routes. Every attempt shares one deadline and retry budget. Use circuit breakers to prevent retry and fallback storms.</p>
 <p>A safe chain might be:</p>
 
-<figure class="fallback-flow-diagram">
+<figure class="fallback-flow-diagram" role="region" aria-label="Agent fallback state flow diagram" tabindex="0">
   <svg viewBox="0 0 760 300" role="img" aria-labelledby="fallback-flow-title fallback-flow-description">
     <title id="fallback-flow-title">Graceful fallback path for eligible failures</title>
     <desc id="fallback-flow-description">An eligible failure moves from the primary qualified model to a contract-compatible secondary provider or model. A further eligible failure may move to a disclosed read-only or lower-capability mode. From there the system returns a deterministic result, queues the work, or hands it to a human. Safety refusals, authorization or policy denials, and semantic validation failures do not enter this chain.</desc>
@@ -844,15 +915,22 @@
       <h2>Keep Retrieval Grounded</h2>
       <p class="chapter-deck">Retrieval is useful only when the evidence is authorized, current, attributable, and relevant to the claim.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-07.webp"
-          alt=""
-          width="1536"
-          height="1368"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-07-768.webp 768w, assets/chapters/chapter-07.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-07.webp"
+            alt=""
+            width="1536"
+            height="1368"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -861,7 +939,7 @@
         <h3><span class="section-number">7.1&nbsp;</span><span class="section-title">RAG architecture</span></h3>
         <p>RAG gives a generator access to an external retrieval system. If ingestion loses evidence or retrieval misses it, the generator cannot recover it.</p>
 
-<figure class="rag-flow-diagram">
+<figure class="rag-flow-diagram" role="region" aria-label="Retrieval-augmented generation dataflow diagram" tabindex="0">
   <svg viewBox="0 0 760 400" role="img" aria-labelledby="rag-flow-title rag-flow-description">
     <title id="rag-flow-title">Retrieval-augmented generation dataflow</title>
     <desc id="rag-flow-description">The ingestion lane preserves source structure, authorizes and versions chunks, and writes lexical and vector indexes to a shared datastore. In the query lane, identity-based tenant and document filters converge with that shared index before candidate retrieval. Candidates are fused, reranked, deduplicated, and packed into context before the system either answers with claim-level citations or abstains.</desc>
@@ -976,7 +1054,7 @@
       <section class="source-section" id="section-15-retrieval-and-answer-evals">
         <h3><span class="section-number">7.2&nbsp;</span><span class="section-title">Retrieval and answer evals</span></h3>
         <p>Evaluate retrieval separately from generation. A correct answer can hide a retrieval miss when the model already knew the fact. Perfect evidence can still produce a bad answer.</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Metric</th><th scope="col">Definition or question</th><th scope="col">Diagnoses</th></tr></thead><tbody><tr><td data-label="Metric">Recall@k</td><td data-label="Definition or question">Relevant items retrieved in top k / all known relevant items</td><td data-label="Diagnoses">Whether evidence is being missed</td></tr><tr><td data-label="Metric">Precision@k</td><td data-label="Definition or question">Relevant items in top k / k</td><td data-label="Diagnoses">Noise and context waste</td></tr><tr><td data-label="Metric">MRR</td><td data-label="Definition or question">Mean over queries of 1 / rank of the first relevant result, using 0 when none is retrieved</td><td data-label="Diagnoses">How early one decisive item appears</td></tr><tr><td data-label="Metric">nDCG@k</td><td data-label="Definition or question">Rank-discounted graded relevance, normalized to the ideal ranking</td><td data-label="Diagnoses">Ordering when relevance is graded</td></tr><tr><td data-label="Metric">Context relevance</td><td data-label="Definition or question">Does each supplied passage help answer this query?</td><td data-label="Diagnoses">Bad fusion, excessive k, duplicate chunks</td></tr><tr><td data-label="Metric">Answer correctness</td><td data-label="Definition or question">Is the final answer correct against the task reference/outcome?</td><td data-label="Diagnoses">End-to-end quality</td></tr><tr><td data-label="Metric">Claim support rate</td><td data-label="Definition or question">Supported atomic answer claims / all answer claims</td><td data-label="Diagnoses">Hallucination beyond supplied context; does not establish evidence truth, freshness, authority, or answer correctness</td></tr><tr><td data-label="Metric">Citation-pair precision</td><td data-label="Definition or question">Citation-claim pairs entailed by the cited span / all citation-claim pairs</td><td data-label="Diagnoses">Decorative, misplaced, or non-supporting citations</td></tr><tr><td data-label="Metric">Citation completeness</td><td data-label="Definition or question">Citation-required claims with complete supporting evidence / all claims requiring citation under product policy</td><td data-label="Diagnoses">Unsupported answer coverage</td></tr><tr><td data-label="Metric">Attribution accuracy</td><td data-label="Definition or question">Does the source identity and anchor match the actual evidence?</td><td data-label="Diagnoses">Wrong-source or wrong-span citations</td></tr><tr><td data-label="Metric">Selective risk and coverage</td><td data-label="Definition or question">Error rate among answered cases, reported with the fraction of cases answered</td><td data-label="Diagnoses">Quality/abstention tradeoff</td></tr><tr><td data-label="Metric">Abstention precision and recall</td><td data-label="Definition or question">Whether abstentions correctly identify unanswerable, conflicting, stale, or unauthorized cases</td><td data-label="Diagnoses">Over- and under-abstention</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="Retrieval and answer evals: Metric table" aria-describedby="table-scroll-hint-8" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-8">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-8">Retrieval and answer evals: Metric table</caption><thead><tr><th scope="col">Metric</th><th scope="col">Definition or question</th><th scope="col">Diagnoses</th></tr></thead><tbody><tr><td data-label="Metric">Recall@k</td><td data-label="Definition or question">Relevant items retrieved in top k / all known relevant items</td><td data-label="Diagnoses">Whether evidence is being missed</td></tr><tr><td data-label="Metric">Precision@k</td><td data-label="Definition or question">Relevant items in top k / k</td><td data-label="Diagnoses">Noise and context waste</td></tr><tr><td data-label="Metric">MRR</td><td data-label="Definition or question">Mean over queries of 1 / rank of the first relevant result, using 0 when none is retrieved</td><td data-label="Diagnoses">How early one decisive item appears</td></tr><tr><td data-label="Metric">nDCG@k</td><td data-label="Definition or question">Rank-discounted graded relevance, normalized to the ideal ranking</td><td data-label="Diagnoses">Ordering when relevance is graded</td></tr><tr><td data-label="Metric">Context relevance</td><td data-label="Definition or question">Does each supplied passage help answer this query?</td><td data-label="Diagnoses">Bad fusion, excessive k, duplicate chunks</td></tr><tr><td data-label="Metric">Answer correctness</td><td data-label="Definition or question">Is the final answer correct against the task reference/outcome?</td><td data-label="Diagnoses">End-to-end quality</td></tr><tr><td data-label="Metric">Claim support rate</td><td data-label="Definition or question">Supported atomic answer claims / all answer claims</td><td data-label="Diagnoses">Hallucination beyond supplied context; does not establish evidence truth, freshness, authority, or answer correctness</td></tr><tr><td data-label="Metric">Citation-pair precision</td><td data-label="Definition or question">Citation-claim pairs entailed by the cited span / all citation-claim pairs</td><td data-label="Diagnoses">Decorative, misplaced, or non-supporting citations</td></tr><tr><td data-label="Metric">Citation completeness</td><td data-label="Definition or question">Citation-required claims with complete supporting evidence / all claims requiring citation under product policy</td><td data-label="Diagnoses">Unsupported answer coverage</td></tr><tr><td data-label="Metric">Attribution accuracy</td><td data-label="Definition or question">Does the source identity and anchor match the actual evidence?</td><td data-label="Diagnoses">Wrong-source or wrong-span citations</td></tr><tr><td data-label="Metric">Selective risk and coverage</td><td data-label="Definition or question">Error rate among answered cases, reported with the fraction of cases answered</td><td data-label="Diagnoses">Quality/abstention tradeoff</td></tr><tr><td data-label="Metric">Abstention precision and recall</td><td data-label="Definition or question">Whether abstentions correctly identify unanswerable, conflicting, stale, or unauthorized cases</td><td data-label="Diagnoses">Over- and under-abstention</td></tr></tbody></table></div>
 <p>Define the relevance unit for every metric: document, deduplicated source, chunk, claim, or exact evidence span. Overlapping chunks can inflate item precision and recall, so report deduplicated source recall and claim coverage as well. When relevance judgments are incomplete, Recall@k and Precision@k are estimates against the judged pool. They do not represent corpus-wide truth.</p>
 <p>A useful golden record contains:</p>
 <dl class="editorial-example golden-record" aria-label="Golden evaluation record fields"><div><dt>Request context</dt><dd><span>query</span><span>user/tenant/ACL identity</span><span>time snapshot</span></dd></div><div><dt>Expected outcome</dt><dd><span>expected answer or outcome</span><span>answerable/unanswerable label</span></dd></div><div><dt>Evidence and attribution</dt><dd><span>relevant source IDs</span><span>exact evidence spans</span><span>allowed and forbidden sources</span><span>expected citation mapping</span></dd></div><div><dt>Coverage and risk</dt><dd><span>important slice labels</span><span>risk class</span></dd></div></dl>
@@ -998,15 +1076,22 @@
       <h2>Make Evals the Release Gate</h2>
       <p class="chapter-deck">Golden sets, adversarial tests, calibrated judges, and human review determine whether a release can ship.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-08.webp"
-          alt=""
-          width="1536"
-          height="1368"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-08-768.webp 768w, assets/chapters/chapter-08.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-08.webp"
+            alt=""
+            width="1536"
+            height="1368"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -1042,15 +1127,22 @@
       <h2>Trace the Whole User Journey</h2>
       <p class="chapter-deck">A complete trace should explain what happened, what it cost, where it slowed down, and whether the user got the intended result.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-09.webp"
-          alt=""
-          width="1536"
-          height="1364"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-09-768.webp 768w, assets/chapters/chapter-09.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-09.webp"
+            alt=""
+            width="1536"
+            height="1364"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -1093,15 +1185,22 @@
       <h2>Build Safety into the Architecture</h2>
       <p class="chapter-deck">Prompt injection and tenant isolation are system problems. Permissions and data boundaries must hold even when the model is wrong.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-10.webp"
-          alt=""
-          width="1536"
-          height="1364"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-10-768.webp 768w, assets/chapters/chapter-10.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-10.webp"
+            alt=""
+            width="1536"
+            height="1364"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -1138,15 +1237,22 @@
       <h2>Choose What to Change</h2>
       <p class="chapter-deck">Measure the constraint first. Change the part of the system that causes it, then verify what happened to quality, latency, cost, and reliability.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-11.webp"
-          alt=""
-          width="1536"
-          height="1364"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-11-768.webp 768w, assets/chapters/chapter-11.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-11.webp"
+            alt=""
+            width="1536"
+            height="1364"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -1154,7 +1260,7 @@
       <section class="source-section" id="section-21-in-context-learning-rag-fine-tuning-and-distillation">
         <h3><span class="section-number">11.1&nbsp;</span><span class="section-title">In-context learning, RAG, fine-tuning, and distillation</span></h3>
         <p>Choose the method based on what has to change.</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Method</th><th scope="col">Best when</th><th scope="col">Wrong tool when</th><th scope="col">Hidden cost</th></tr></thead><tbody><tr><td data-label="Method">In-context learning</td><td data-label="Best when">Instructions or examples change often; the task fits in context; fast iteration matters</td><td data-label="Wrong tool when">The example set is huge or sensitive, or the examples must be applied consistently at very high volume</td><td data-label="Hidden cost">Repeated tokens, context interference, prompt and version complexity</td></tr><tr><td data-label="Method">RAG</td><td data-label="Best when">Knowledge is external, mutable, permission-scoped, or needs attribution, and an authoritative retrievable corpus exists</td><td data-label="Wrong tool when">You are using it as the sole fix for behavior or style, corpus quality is poor, or retrieval cannot locate evidence reliably</td><td data-label="Hidden cost">Ingestion, freshness, retrieval and rerank latency, ACL operations</td></tr><tr><td data-label="Method">Fine-tuning</td><td data-label="Best when">Stable behavior, format, style, tool use, or domain transformation repeats, and clean representative examples exist</td><td data-label="Wrong tool when">You are using it as the sole knowledge store when facts change or current provenance and citations are required; policy needs deterministic enforcement</td><td data-label="Hidden cost">Data curation, training, model lifecycle, regression, and rollback</td></tr><tr><td data-label="Method">Distillation</td><td data-label="Best when">A narrow, stable, high-volume workflow has a validated teacher, governed teacher outputs, and a strong eval set</td><td data-label="Wrong tool when">The task changes quickly, requires broad frontier reasoning, depends on rare cases for most of its value, or includes teacher failures that cannot be filtered</td><td data-label="Hidden cost">Teacher bias and error inheritance, output rights and governance, training, refresh, tail-capability loss</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="In-context learning, RAG, fine-tuning, and distillation: Method table" aria-describedby="table-scroll-hint-9" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-9">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-9">In-context learning, RAG, fine-tuning, and distillation: Method table</caption><thead><tr><th scope="col">Method</th><th scope="col">Best when</th><th scope="col">Wrong tool when</th><th scope="col">Hidden cost</th></tr></thead><tbody><tr><td data-label="Method">In-context learning</td><td data-label="Best when">Instructions or examples change often; the task fits in context; fast iteration matters</td><td data-label="Wrong tool when">The example set is huge or sensitive, or the examples must be applied consistently at very high volume</td><td data-label="Hidden cost">Repeated tokens, context interference, prompt and version complexity</td></tr><tr><td data-label="Method">RAG</td><td data-label="Best when">Knowledge is external, mutable, permission-scoped, or needs attribution, and an authoritative retrievable corpus exists</td><td data-label="Wrong tool when">You are using it as the sole fix for behavior or style, corpus quality is poor, or retrieval cannot locate evidence reliably</td><td data-label="Hidden cost">Ingestion, freshness, retrieval and rerank latency, ACL operations</td></tr><tr><td data-label="Method">Fine-tuning</td><td data-label="Best when">Stable behavior, format, style, tool use, or domain transformation repeats, and clean representative examples exist</td><td data-label="Wrong tool when">You are using it as the sole knowledge store when facts change or current provenance and citations are required; policy needs deterministic enforcement</td><td data-label="Hidden cost">Data curation, training, model lifecycle, regression, and rollback</td></tr><tr><td data-label="Method">Distillation</td><td data-label="Best when">A narrow, stable, high-volume workflow has a validated teacher, governed teacher outputs, and a strong eval set</td><td data-label="Wrong tool when">The task changes quickly, requires broad frontier reasoning, depends on rare cases for most of its value, or includes teacher failures that cannot be filtered</td><td data-label="Hidden cost">Teacher bias and error inheritance, output rights and governance, training, refresh, tail-capability loss</td></tr></tbody></table></div>
 <p>These methods can work together. A practical sequence is:</p>
 <ol><li>Define the evals and establish a strong-model baseline.</li><li>Improve the harness, context, tools, and deterministic validation.</li><li>Add RAG for changing or attributable knowledge.</li><li>Route simpler cases to smaller models only when evals show that it is safe.</li><li>Fine-tune persistent behavior gaps with clean representative data.</li><li>Distill only when the volume and task stability justify a student model.</li></ol>
 <p>Use each method for the job it can actually do: fine-tuning changes stable behavior rather than current facts, RAG supplies knowledge without enforcing behavior, in-context examples do not create durable state, and distillation is not lossless. OpenAI&#039;s <a href="https://developers.openai.com/api/docs/guides/model-optimization">model optimization guide</a><sup class="citation-marker"><a href="#ref-opt-01" aria-label="Citation OPT-01">[OPT-01]</a></sup> starts with evals because model behavior varies across families and snapshots.</p>
@@ -1164,7 +1270,7 @@
       <section class="source-section" id="section-22-diagnosing-the-four-way-tradeoff">
         <h3><span class="section-number">11.2&nbsp;</span><span class="section-title">Diagnosing the four-way tradeoff</span></h3>
         <p>Diagnose the symptom, measure the relevant stack signals, and track where the fix moves risk.</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Symptom</th><th scope="col">First measurements</th><th scope="col">Likely actions</th><th scope="col">Risk moved elsewhere</th></tr></thead><tbody><tr><td data-label="Symptom">Slow first token</td><td data-label="First measurements">Queue, retrieval, prompt length, prefix hit, prefill time</td><td data-label="Likely actions">Reduce queue/retrieval, maximize safe prefix reuse, prune context only after recall checks; when self-hosted, tune prefill chunks and admission</td><td data-label="Risk moved elsewhere">Lower retrieval recall, lower throughput, or more rejected/queued work</td></tr><tr><td data-label="Symptom">Slow token stream</td><td data-label="First measurements">Mean TPOT, p95/p99 ITL, stall rate, active batch, KV pressure, memory bandwidth, speculative acceptance</td><td data-label="Likely actions">Reduce active batch/KV pressure, tune scheduler and kernels, then test quantization or speculative decoding</td><td data-label="Risk moved elsewhere">Lower throughput, extra memory, quality loss, or worse tails; shorter output improves completion time but not TPOT</td></tr><tr><td data-label="Symptom">Low throughput</td><td data-label="First measurements">Goodput, scheduler occupancy, KV utilization, length distribution</td><td data-label="Likely actions">Paged allocation, continuous batching, length-aware admission, quotas</td><td data-label="Risk moved elsewhere">Interactive latency or tenant fairness</td></tr><tr><td data-label="Symptom">High model cost</td><td data-label="First measurements">Cost per success, cached tokens, retries, route mix</td><td data-label="Likely actions">Prefix cache, smaller qualified route, shorter output, distillation</td><td data-label="Risk moved elsewhere">Router errors or capability loss</td></tr><tr><td data-label="Symptom">Poor answer quality</td><td data-label="First measurements">Retrieval recall, claim coverage, grounding, slice scores, plus gold-context and no-context ablations</td><td data-label="Likely actions">Fix the component that fails: ingestion/retrieval when gold evidence is missing; context packing or the generator when sufficient gold evidence is present</td><td data-label="Risk moved elsewhere">Added latency/cost, model dependence, or index complexity</td></tr><tr><td data-label="Symptom">Tool failures</td><td data-label="First measurements">Selection, argument validity, auth denial, duplicate effects</td><td data-label="Likely actions">Redesign contracts, validate, idempotency, narrower tools</td><td data-label="Risk moved elsewhere">More orchestration code</td></tr><tr><td data-label="Symptom">Unreliable agents</td><td data-label="First measurements">Trace loops, no-progress count, tool/time/cost budgets</td><td data-label="Likely actions">Stronger state machine, success predicates, stop conditions</td><td data-label="Risk moved elsewhere">Less autonomy on edge cases</td></tr><tr><td data-label="Symptom">Safety concerns</td><td data-label="First measurements">Injection tests, permissions, egress, cross-tenant canaries</td><td data-label="Likely actions">Least privilege, isolation, approvals, policy outside model</td><td data-label="Risk moved elsewhere">UX friction and operational cost</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="Diagnosing the four-way tradeoff: Symptom table" aria-describedby="table-scroll-hint-10" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-10">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-10">Diagnosing the four-way tradeoff: Symptom table</caption><thead><tr><th scope="col">Symptom</th><th scope="col">First measurements</th><th scope="col">Likely actions</th><th scope="col">Risk moved elsewhere</th></tr></thead><tbody><tr><td data-label="Symptom">Slow first token</td><td data-label="First measurements">Queue, retrieval, prompt length, prefix hit, prefill time</td><td data-label="Likely actions">Reduce queue/retrieval, maximize safe prefix reuse, prune context only after recall checks; when self-hosted, tune prefill chunks and admission</td><td data-label="Risk moved elsewhere">Lower retrieval recall, lower throughput, or more rejected/queued work</td></tr><tr><td data-label="Symptom">Slow token stream</td><td data-label="First measurements">Mean TPOT, p95/p99 ITL, stall rate, active batch, KV pressure, memory bandwidth, speculative acceptance</td><td data-label="Likely actions">Reduce active batch/KV pressure, tune scheduler and kernels, then test quantization or speculative decoding</td><td data-label="Risk moved elsewhere">Lower throughput, extra memory, quality loss, or worse tails; shorter output improves completion time but not TPOT</td></tr><tr><td data-label="Symptom">Low throughput</td><td data-label="First measurements">Goodput, scheduler occupancy, KV utilization, length distribution</td><td data-label="Likely actions">Paged allocation, continuous batching, length-aware admission, quotas</td><td data-label="Risk moved elsewhere">Interactive latency or tenant fairness</td></tr><tr><td data-label="Symptom">High model cost</td><td data-label="First measurements">Cost per success, cached tokens, retries, route mix</td><td data-label="Likely actions">Prefix cache, smaller qualified route, shorter output, distillation</td><td data-label="Risk moved elsewhere">Router errors or capability loss</td></tr><tr><td data-label="Symptom">Poor answer quality</td><td data-label="First measurements">Retrieval recall, claim coverage, grounding, slice scores, plus gold-context and no-context ablations</td><td data-label="Likely actions">Fix the component that fails: ingestion/retrieval when gold evidence is missing; context packing or the generator when sufficient gold evidence is present</td><td data-label="Risk moved elsewhere">Added latency/cost, model dependence, or index complexity</td></tr><tr><td data-label="Symptom">Tool failures</td><td data-label="First measurements">Selection, argument validity, auth denial, duplicate effects</td><td data-label="Likely actions">Redesign contracts, validate, idempotency, narrower tools</td><td data-label="Risk moved elsewhere">More orchestration code</td></tr><tr><td data-label="Symptom">Unreliable agents</td><td data-label="First measurements">Trace loops, no-progress count, tool/time/cost budgets</td><td data-label="Likely actions">Stronger state machine, success predicates, stop conditions</td><td data-label="Risk moved elsewhere">Less autonomy on edge cases</td></tr><tr><td data-label="Symptom">Safety concerns</td><td data-label="First measurements">Injection tests, permissions, egress, cross-tenant canaries</td><td data-label="Likely actions">Least privilege, isolation, approvals, policy outside model</td><td data-label="Risk moved elsewhere">UX friction and operational cost</td></tr></tbody></table></div>
 <p>Change one major variable at a time when you can. If you combine a model swap with a prompt rewrite, a new retriever, quantization, and a router change, you will have almost no way to attribute a regression.</p>
         <p class="section-sources"><strong>Sources</strong> <a href="#ref-serv-05">[SERV-05]</a> <a href="#ref-serv-04">[SERV-04]</a> <a href="#ref-opt-01">[OPT-01]</a> <a href="#ref-obs-01">[OBS-01]</a><span>Author synthesis: the diagnostic matrix keeps quality, latency, cost, and reliability in one decision.</span></p>
       </section>
@@ -1182,15 +1288,22 @@
       <h2>Design for Production Failure</h2>
       <p class="chapter-deck">Production systems fail in predictable ways. The final chapter turns those patterns into checks, operating decisions, and a practical learning order.</p>
       <figure class="chapter-figure">
-        <img
-          class="chapter-art"
-          src="assets/chapters/chapter-12.webp"
-          alt=""
-          width="1536"
-          height="1364"
-          loading="lazy"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 42rem)"
+            srcset="assets/chapters/chapter-12-768.webp 768w, assets/chapters/chapter-12.webp 1536w"
+            sizes="calc(100vw - 2.25rem)"
+          >
+          <img
+            class="chapter-art"
+            src="assets/chapters/chapter-12.webp"
+            alt=""
+            width="1536"
+            height="1364"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </figure>
     </header>
     <div class="chapter-body">
@@ -1198,7 +1311,7 @@
       <section class="source-section" id="section-23-production-failure-matrix">
         <h3><span class="section-number">12.1&nbsp;</span><span class="section-title">Production failure matrix</span></h3>
         <p>Before launch, define a detection signal, containment path, and regression test for every known failure.</p>
-<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table><thead><tr><th scope="col">Failure</th><th scope="col">Detect</th><th scope="col">Contain</th><th scope="col">Prevent/regress</th></tr></thead><tbody><tr><td data-label="Failure">Hallucinated tool name</td><td data-label="Detect">Registry lookup rejection</td><td data-label="Contain">Do not execute; bounded replan</td><td data-label="Prevent/regress">Tool-selection positive and negative evals</td></tr><tr><td data-label="Failure">Malformed JSON</td><td data-label="Detect">Parse and finish-reason telemetry</td><td data-label="Contain">One bounded repair or typed fallback</td><td data-label="Prevent/regress">Constrained output plus exact-schema regressions</td></tr><tr><td data-label="Failure">Schema-valid but wrong arguments</td><td data-label="Detect">Domain invariants and state checks</td><td data-label="Contain">Reject before authorization/execution</td><td data-label="Prevent/regress">Argument and cross-field golden cases</td></tr><tr><td data-label="Failure">Model claims tool success without executor receipt</td><td data-label="Detect">Missing correlated receipt or failed postcondition</td><td data-label="Contain">Do not present success; reconcile external state</td><td data-label="Prevent/regress">Require execution receipt and postcondition tests</td></tr><tr><td data-label="Failure">Duplicate side effect</td><td data-label="Detect">Idempotency store and uniqueness constraint</td><td data-label="Contain">Return prior result or reconcile unknown state</td><td data-label="Prevent/regress">Timeout-after-commit and redelivery tests</td></tr><tr><td data-label="Failure">Stale retrieval</td><td data-label="Detect">Source/index version and freshness SLO</td><td data-label="Contain">Warn, abstain, or use authoritative live source</td><td data-label="Prevent/regress">Update/delete/revocation evals</td></tr><tr><td data-label="Failure">Wrong citation</td><td data-label="Detect">Claim-to-evidence entailment and anchor check</td><td data-label="Contain">Remove unsupported claim or abstain</td><td data-label="Prevent/regress">Citation precision/completeness suite</td></tr><tr><td data-label="Failure">Semantic-cache false hit</td><td data-label="Detect">Per-hit tenant/ACL, policy, corpus, state, and freshness validation; semantic verification for every consequential hit</td><td data-label="Contain">Bypass and invalidate; investigate cross-scope hits</td><td data-label="Prevent/regress">Disable semantic caching for personalized, transactional, permission-sensitive, or high-stakes flows; hard-negative evals by risk slice</td></tr><tr><td data-label="Failure">Cross-user contamination</td><td data-label="Detect">Tenant canaries, ACL audit, namespace mismatch</td><td data-label="Contain">Disable cache/route, revoke, incident response</td><td data-label="Prevent/regress">Concurrent isolation and ACL-change tests</td></tr><tr><td data-label="Failure">Runaway agent</td><td data-label="Detect">Budget and repeated-state detection</td><td data-label="Contain">Stop with typed partial/blocked result</td><td data-label="Prevent/regress">Loop traps and no-progress evals</td></tr><tr><td data-label="Failure">Prompt injection via retrieved/tool data</td><td data-label="Detect">Policy/flow alerts and risky tool sequence</td><td data-label="Contain">Isolate content, deny action, require approval</td><td data-label="Prevent/regress">Direct/indirect/multimodal adversarial suite</td></tr><tr><td data-label="Failure">KV exhaustion</td><td data-label="Detect">KV usage, eviction/preemption, OOM forecast</td><td data-label="Contain">Admission control, shed/degrade load</td><td data-label="Prevent/regress">Long-context and concurrency load tests</td></tr><tr><td data-label="Failure">Prefill starves decode</td><td data-label="Detect">TTFT/TPOT by prompt length and scheduler class</td><td data-label="Contain">Chunk/limit prefill, reserve decode budget</td><td data-label="Prevent/regress">Mixed-length SLO load tests</td></tr><tr><td data-label="Failure">Quantized tail regression</td><td data-label="Detect">Slice deltas against baseline</td><td data-label="Contain">Roll back format/model route</td><td data-label="Prevent/regress">Exact, long-context, safety, multilingual gates</td></tr><tr><td data-label="Failure">Router regression</td><td data-label="Detect">Quality/cost/latency by route and confidence</td><td data-label="Contain">Pin high-risk traffic to qualified route</td><td data-label="Prevent/regress">Shadow traffic and route confusion matrix</td></tr><tr><td data-label="Failure">Fallback bypasses refusal or policy</td><td data-label="Detect">Fallback-reason audit and policy-state mismatch</td><td data-label="Contain">Stop with typed refusal or denial</td><td data-label="Prevent/regress">Failure-class routing tests and identical policy gates on every route</td></tr><tr><td data-label="Failure">Silent eval regression</td><td data-label="Detect">Versioned CI and production drift alert</td><td data-label="Contain">Halt rollout or roll back</td><td data-label="Prevent/regress">Required slice-aware release gates</td></tr></tbody></table></div>
+<div class="table-scroll" role="region" aria-label="Production failure matrix: Failure table" aria-describedby="table-scroll-hint-11" tabindex="0"><p class="table-scroll-hint" id="table-scroll-hint-11">Scroll table horizontally <span aria-hidden="true">→</span></p><table><caption class="sr-only" id="table-label-11">Production failure matrix: Failure table</caption><thead><tr><th scope="col">Failure</th><th scope="col">Detect</th><th scope="col">Contain</th><th scope="col">Prevent/regress</th></tr></thead><tbody><tr><td data-label="Failure">Hallucinated tool name</td><td data-label="Detect">Registry lookup rejection</td><td data-label="Contain">Do not execute; bounded replan</td><td data-label="Prevent/regress">Tool-selection positive and negative evals</td></tr><tr><td data-label="Failure">Malformed JSON</td><td data-label="Detect">Parse and finish-reason telemetry</td><td data-label="Contain">One bounded repair or typed fallback</td><td data-label="Prevent/regress">Constrained output plus exact-schema regressions</td></tr><tr><td data-label="Failure">Schema-valid but wrong arguments</td><td data-label="Detect">Domain invariants and state checks</td><td data-label="Contain">Reject before authorization/execution</td><td data-label="Prevent/regress">Argument and cross-field golden cases</td></tr><tr><td data-label="Failure">Model claims tool success without executor receipt</td><td data-label="Detect">Missing correlated receipt or failed postcondition</td><td data-label="Contain">Do not present success; reconcile external state</td><td data-label="Prevent/regress">Require execution receipt and postcondition tests</td></tr><tr><td data-label="Failure">Duplicate side effect</td><td data-label="Detect">Idempotency store and uniqueness constraint</td><td data-label="Contain">Return prior result or reconcile unknown state</td><td data-label="Prevent/regress">Timeout-after-commit and redelivery tests</td></tr><tr><td data-label="Failure">Stale retrieval</td><td data-label="Detect">Source/index version and freshness SLO</td><td data-label="Contain">Warn, abstain, or use authoritative live source</td><td data-label="Prevent/regress">Update/delete/revocation evals</td></tr><tr><td data-label="Failure">Wrong citation</td><td data-label="Detect">Claim-to-evidence entailment and anchor check</td><td data-label="Contain">Remove unsupported claim or abstain</td><td data-label="Prevent/regress">Citation precision/completeness suite</td></tr><tr><td data-label="Failure">Semantic-cache false hit</td><td data-label="Detect">Per-hit tenant/ACL, policy, corpus, state, and freshness validation; semantic verification for every consequential hit</td><td data-label="Contain">Bypass and invalidate; investigate cross-scope hits</td><td data-label="Prevent/regress">Disable semantic caching for personalized, transactional, permission-sensitive, or high-stakes flows; hard-negative evals by risk slice</td></tr><tr><td data-label="Failure">Cross-user contamination</td><td data-label="Detect">Tenant canaries, ACL audit, namespace mismatch</td><td data-label="Contain">Disable cache/route, revoke, incident response</td><td data-label="Prevent/regress">Concurrent isolation and ACL-change tests</td></tr><tr><td data-label="Failure">Runaway agent</td><td data-label="Detect">Budget and repeated-state detection</td><td data-label="Contain">Stop with typed partial/blocked result</td><td data-label="Prevent/regress">Loop traps and no-progress evals</td></tr><tr><td data-label="Failure">Prompt injection via retrieved/tool data</td><td data-label="Detect">Policy/flow alerts and risky tool sequence</td><td data-label="Contain">Isolate content, deny action, require approval</td><td data-label="Prevent/regress">Direct/indirect/multimodal adversarial suite</td></tr><tr><td data-label="Failure">KV exhaustion</td><td data-label="Detect">KV usage, eviction/preemption, OOM forecast</td><td data-label="Contain">Admission control, shed/degrade load</td><td data-label="Prevent/regress">Long-context and concurrency load tests</td></tr><tr><td data-label="Failure">Prefill starves decode</td><td data-label="Detect">TTFT/TPOT by prompt length and scheduler class</td><td data-label="Contain">Chunk/limit prefill, reserve decode budget</td><td data-label="Prevent/regress">Mixed-length SLO load tests</td></tr><tr><td data-label="Failure">Quantized tail regression</td><td data-label="Detect">Slice deltas against baseline</td><td data-label="Contain">Roll back format/model route</td><td data-label="Prevent/regress">Exact, long-context, safety, multilingual gates</td></tr><tr><td data-label="Failure">Router regression</td><td data-label="Detect">Quality/cost/latency by route and confidence</td><td data-label="Contain">Pin high-risk traffic to qualified route</td><td data-label="Prevent/regress">Shadow traffic and route confusion matrix</td></tr><tr><td data-label="Failure">Fallback bypasses refusal or policy</td><td data-label="Detect">Fallback-reason audit and policy-state mismatch</td><td data-label="Contain">Stop with typed refusal or denial</td><td data-label="Prevent/regress">Failure-class routing tests and identical policy gates on every route</td></tr><tr><td data-label="Failure">Silent eval regression</td><td data-label="Detect">Versioned CI and production drift alert</td><td data-label="Contain">Halt rollout or roll back</td><td data-label="Prevent/regress">Required slice-aware release gates</td></tr></tbody></table></div>
         <p class="section-sources"><strong>Sources</strong> <a href="#ref-out-01">[OUT-01]</a> <a href="#ref-tool-01">[TOOL-01]</a> <a href="#ref-serv-01">[SERV-01]</a> <a href="#ref-eval-02">[EVAL-02]</a> <a href="#ref-safe-01">[SAFE-01]</a> <a href="#ref-ten-01">[TEN-01]</a><span>Author synthesis: the failure matrix combines the controls in sections 4–20.</span></p>
       </section>
 
@@ -1206,17 +1319,17 @@
         <h3><span class="section-number">12.2&nbsp;</span><span class="section-title">Production readiness checklist</span></h3>
         <p>Use this checklist before launch and again after any material change.</p>
 <h4 id="section-24-production-readiness-checklist-contract-and-harness">Contract and harness</h4>
-<ul class="checklist"><li><input type="checkbox" disabled> <span>Success, partial, refused, blocked, degraded, and failed states are defined.</span></li><li><input type="checkbox" disabled> <span>End-to-end quality, latency, cost, reliability, freshness, and safety SLOs exist.</span></li><li><input type="checkbox" disabled> <span>State, versions, retries, idempotency, budgets, and termination are harness-owned.</span></li><li><input type="checkbox" disabled> <span>Consequential actions have deterministic authorization and approval boundaries.</span></li></ul>
+<ul class="checklist"><li><span class="checklist-box" aria-hidden="true"></span><span>Success, partial, refused, blocked, degraded, and failed states are defined.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>End-to-end quality, latency, cost, reliability, freshness, and safety SLOs exist.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>State, versions, retries, idempotency, budgets, and termination are harness-owned.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Consequential actions have deterministic authorization and approval boundaries.</span></li></ul>
 <h4 id="section-24-production-readiness-checklist-context-and-retrieval">Context and retrieval</h4>
-<ul class="checklist"><li><input type="checkbox" disabled> <span>Context is minimal, authorized, source-attributed, versioned, and reproducible.</span></li><li><input type="checkbox" disabled> <span>Retrieval recall and generation grounding are measured separately.</span></li><li><input type="checkbox" disabled> <span>The retrieval strategy—lexical, dense, or hybrid—plus chunking, k, fusion, and reranking when used is selected and tuned through evals.</span></li><li><input type="checkbox" disabled> <span>Updates, deletions, ACL changes, and cache invalidation meet a freshness SLO.</span></li></ul>
+<ul class="checklist"><li><span class="checklist-box" aria-hidden="true"></span><span>Context is minimal, authorized, source-attributed, versioned, and reproducible.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Retrieval recall and generation grounding are measured separately.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>The retrieval strategy—lexical, dense, or hybrid—plus chunking, k, fusion, and reranking when used is selected and tuned through evals.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Updates, deletions, ACL changes, and cache invalidation meet a freshness SLO.</span></li></ul>
 <h4 id="section-24-production-readiness-checklist-inference-and-caching">Inference and caching</h4>
-<ul class="checklist"><li><input type="checkbox" disabled> <span>Queue, TTFT, mean TPOT, p95/p99 ITL, stall rate, goodput, and p95/p99 end-to-end latency are load-tested on real length distributions.</span></li><li><input type="checkbox" disabled> <span>KV capacity, fragmentation, eviction, preemption, quotas, and OOM behavior are known.</span></li><li><input type="checkbox" disabled> <span>Prefix and semantic caches have distinct policies and metrics.</span></li><li><input type="checkbox" disabled> <span>Any speculative, quantized, or distilled route passes the full regression suite.</span></li></ul>
+<ul class="checklist"><li><span class="checklist-box" aria-hidden="true"></span><span>Queue, TTFT, mean TPOT, p95/p99 ITL, stall rate, goodput, and p95/p99 end-to-end latency are load-tested on real length distributions.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>KV capacity, fragmentation, eviction, preemption, quotas, and OOM behavior are known.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Prefix and semantic caches have distinct policies and metrics.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Any speculative, quantized, or distilled route passes the full regression suite.</span></li></ul>
 <h4 id="section-24-production-readiness-checklist-outputs-tools-and-agents">Outputs, tools, and agents</h4>
-<ul class="checklist"><li><input type="checkbox" disabled> <span>Structured outputs pass syntax, schema, semantic, authorization, and result checks.</span></li><li><input type="checkbox" disabled> <span>Tool names, arguments, results, errors, and risk annotations are strict and versioned.</span></li><li><input type="checkbox" disabled> <span>Retryable side effects are idempotent and tested under unknown commit status.</span></li><li><input type="checkbox" disabled> <span>Idempotency keys survive retries, resumes, handoffs, and fallbacks and are recorded atomically with mutations.</span></li><li><input type="checkbox" disabled> <span>Concurrency, fan-out, mutation, and shared fallback budgets are enforced atomically with turn, tool, token, time, cost, risk, retry, and no-progress budgets.</span></li><li><input type="checkbox" disabled> <span>Refusal, incomplete/truncated, repair, and fallback paths are tested; repair cannot authorize mutations.</span></li></ul>
+<ul class="checklist"><li><span class="checklist-box" aria-hidden="true"></span><span>Structured outputs pass syntax, schema, semantic, authorization, and result checks.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Tool names, arguments, results, errors, and risk annotations are strict and versioned.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Retryable side effects are idempotent and tested under unknown commit status.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Idempotency keys survive retries, resumes, handoffs, and fallbacks and are recorded atomically with mutations.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Concurrency, fan-out, mutation, and shared fallback budgets are enforced atomically with turn, tool, token, time, cost, risk, retry, and no-progress budgets.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Refusal, incomplete/truncated, repair, and fallback paths are tested; repair cannot authorize mutations.</span></li></ul>
 <h4 id="section-24-production-readiness-checklist-evals-operations-and-economics">Evals, operations, and economics</h4>
-<ul class="checklist"><li><input type="checkbox" disabled> <span>Golden, regression, adversarial, stochastic, and human eval layers exist.</span></li><li><input type="checkbox" disabled> <span>Release gates are slice-aware and evaluator versions are pinned.</span></li><li><input type="checkbox" disabled> <span>Bounded traces cover routing, context, retrieval, model, validation, tools, and outcome, and linked journey IDs connect asynchronous or multi-session work.</span></li><li><input type="checkbox" disabled> <span>Cost is attributed per feature, workflow, tenant, journey, route, and successful outcome.</span></li><li><input type="checkbox" disabled> <span>Drift dashboards and rollback procedures are exercised.</span></li></ul>
+<ul class="checklist"><li><span class="checklist-box" aria-hidden="true"></span><span>Golden, regression, adversarial, stochastic, and human eval layers exist.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Release gates are slice-aware and evaluator versions are pinned.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Bounded traces cover routing, context, retrieval, model, validation, tools, and outcome, and linked journey IDs connect asynchronous or multi-session work.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Cost is attributed per feature, workflow, tenant, journey, route, and successful outcome.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Drift dashboards and rollback procedures are exercised.</span></li></ul>
 <h4 id="section-24-production-readiness-checklist-security-and-tenancy">Security and tenancy</h4>
-<ul class="checklist"><li><input type="checkbox" disabled> <span>Untrusted content is never treated as authority merely because it is in context.</span></li><li><input type="checkbox" disabled> <span>Least privilege, sandboxing, egress controls, DLP, and approvals limit blast radius.</span></li><li><input type="checkbox" disabled> <span>Tenant identity scopes retrieval, caches, tools, logs, traces, queues, and quotas.</span></li><li><input type="checkbox" disabled> <span>Cross-tenant canaries, revoked-access tests, and incident procedures exist.</span></li><li><input type="checkbox" disabled> <span>Fallback cannot bypass refusal, authorization, residency, retention, or unknown-commit reconciliation.</span></li><li><input type="checkbox" disabled> <span>Credentials and bearer tokens never enter model context; OAuth audiences are validated and token passthrough is prohibited.</span></li><li><input type="checkbox" disabled> <span>Approvals are bound to the exact action and state version.</span></li><li><input type="checkbox" disabled> <span>Cache hits fail closed on missing tenant scope, are reauthorized, and are invalidated after access changes.</span></li></ul>
+<ul class="checklist"><li><span class="checklist-box" aria-hidden="true"></span><span>Untrusted content is never treated as authority merely because it is in context.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Least privilege, sandboxing, egress controls, DLP, and approvals limit blast radius.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Tenant identity scopes retrieval, caches, tools, logs, traces, queues, and quotas.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Cross-tenant canaries, revoked-access tests, and incident procedures exist.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Fallback cannot bypass refusal, authorization, residency, retention, or unknown-commit reconciliation.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Credentials and bearer tokens never enter model context; OAuth audiences are validated and token passthrough is prohibited.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Approvals are bound to the exact action and state version.</span></li><li><span class="checklist-box" aria-hidden="true"></span><span>Cache hits fail closed on missing tenant scope, are reauthorized, and are invalidated after access changes.</span></li></ul>
         <p class="section-sources"><strong>Sources</strong> <a href="#ref-safe-03">[SAFE-03]</a> <a href="#ref-obs-02">[OBS-02]</a> <a href="#ref-eval-02">[EVAL-02]</a> <a href="#ref-ten-01">[TEN-01]</a><span>Author synthesis: the operating guidance is recast as a production-readiness checklist.</span></p>
       </section>
 
@@ -1916,8 +2029,29 @@
     </a>
   </li></ol>
     </nav>
+    <div class="dialog-footer">
+      <a class="action-link" href="../output/pdf/production-ai-engineering.pdf" download aria-label="Download Production AI Engineering as a PDF, 74 pages">Download PDF <span>74 pages</span></a>
+    </div>
   </dialog>
 
-  <output class="sr-only" id="progress-status">Reading progress: 0%</output>
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-dialog-title">
+    <div class="dialog-header">
+      <div>
+        <p class="section-label">Companion search</p>
+        <h2 id="search-dialog-title">Find a section</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-search aria-label="Close search">Close</button>
+    </div>
+    <div class="search-panel">
+      <label class="sr-only" for="handbook-search">Search the handbook</label>
+      <div class="search-field">
+        <input id="handbook-search" type="search" inputmode="search" autocomplete="off" spellcheck="false" placeholder="Try “latency”, “retrieval”, or “agents”" aria-describedby="search-guidance search-status">
+        <kbd aria-hidden="true">/</kbd>
+      </div>
+      <p class="search-guidance" id="search-guidance">Searches all 25 handbook sections. Choose a result to jump directly to it.</p>
+      <p class="search-status" id="search-status" aria-live="polite">Search all 25 sections.</p>
+      <ol class="search-results" data-search-results></ol>
+    </div>
+  </dialog>
 </body>
 </html>
