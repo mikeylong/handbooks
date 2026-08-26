@@ -4,12 +4,31 @@ set -u
 set -o pipefail
 umask 077
 
-export PATH="/Users/mike/.nvm/versions/node/v22.16.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-WORKSPACE="/Users/mike/production-ai-engineering-book"
+AUTOMATION_DIR="${0:A:h}"
+WORKSPACE="${HANDBOOK_WORKSPACE:-${AUTOMATION_DIR:h}}"
+WORKSPACE="$(cd -- "$WORKSPACE" && pwd -P)" || {
+  /usr/bin/printf 'Could not resolve the handbook workspace: %s\n' "$WORKSPACE" >&2
+  exit 64
+}
 PREPARER_SCRIPT="$WORKSPACE/automation/prepare-weekly-handbook-review.sh"
 FINALIZER_SCRIPT="$WORKSPACE/automation/run-weekly-handbook-review.sh"
-NODE_BIN="/Users/mike/.nvm/versions/node/v22.16.0/bin/node"
+REQUIRED_NODE_VERSION="22.16.0"
+NODE_BIN="${HANDBOOK_NODE_BIN:-}"
+if [[ -z "$NODE_BIN" ]]; then
+  path_node="${commands[node]:-}"
+  path_node_version=""
+  if [[ -n "$path_node" && -x "$path_node" ]]; then
+    path_node_version=$("$path_node" -p 'process.versions.node' 2>/dev/null)
+  fi
+  if [[ "$path_node_version" == "$REQUIRED_NODE_VERSION" ]]; then
+    NODE_BIN="$path_node"
+  elif [[ -n "${HOME:-}" \
+    && -x "$HOME/.nvm/versions/node/v$REQUIRED_NODE_VERSION/bin/node" ]]; then
+    NODE_BIN="$HOME/.nvm/versions/node/v$REQUIRED_NODE_VERSION/bin/node"
+  else
+    NODE_BIN="$path_node"
+  fi
+fi
 RESEARCH_PROMPT="$WORKSPACE/automation/weekly-handbook-review.md"
 FINAL_PROMPT="$WORKSPACE/automation/weekly-handbook-review-final.md"
 EXPORT_DATA="$WORKSPACE/automation/export-handbook-data.mjs"
@@ -22,12 +41,18 @@ RELEASE_POLICY="$WORKSPACE/automation/release-policy.json"
 RENDER_PDF="$WORKSPACE/automation/render-handbook-pdf.mjs"
 CANONICAL_SOURCE="$WORKSPACE/AI_ENGINEERING_FIELD_GUIDE.md"
 PRODUCTION_PDF="$WORKSPACE/output/pdf/production-ai-engineering.pdf"
+WRITE_LIKE_MIKE_SKILL="${HANDBOOK_WRITE_LIKE_MIKE_SKILL:-${CODEX_HOME:-${HOME:-}/.codex}/skills/write-like-mike/SKILL.md}"
 DEFAULT_CANDIDATE_ROOT="$WORKSPACE/output/candidates"
 CANDIDATE_ROOT="${HANDBOOK_CANDIDATE_ROOT:-$DEFAULT_CANDIDATE_ROOT}"
-if [[ "$CANDIDATE_ROOT" != "$DEFAULT_CANDIDATE_ROOT" \
-  && "$CANDIDATE_ROOT" != /private/tmp/weekly-handbook-test.*/* ]]; then
-  /usr/bin/printf 'HANDBOOK_CANDIDATE_ROOT is restricted to a weekly-handbook test directory.\n' >&2
-  exit 64
+CANDIDATE_ROOT="${CANDIDATE_ROOT:A}"
+if [[ "$CANDIDATE_ROOT" != "$DEFAULT_CANDIDATE_ROOT" ]]; then
+  TEST_TMP_ROOT="${HANDBOOK_TEST_TMP_ROOT:-${TMPDIR:-/tmp}}"
+  TEST_TMP_ROOT="${TEST_TMP_ROOT:A}"
+  if [[ "${HANDBOOK_TEST_MODE:-0}" != 1 \
+    || "$CANDIDATE_ROOT" != "$TEST_TMP_ROOT"/weekly-handbook-test.*/* ]]; then
+    /usr/bin/printf 'HANDBOOK_CANDIDATE_ROOT is restricted to a weekly-handbook test directory.\n' >&2
+    exit 64
+  fi
 fi
 
 RUN_DIR=""
@@ -156,11 +181,34 @@ run_phase() {
 
 preflight() {
   local check_status=0
-  local required_path
-  for required_path in \
+  local required_executable
+  for required_executable in \
     "$NODE_BIN" \
     "$PREPARER_SCRIPT" \
     "$FINALIZER_SCRIPT" \
+    "/usr/bin/awk" \
+    "/usr/bin/cmp" \
+    "/usr/bin/cut" \
+    "/usr/bin/diff" \
+    "/usr/bin/find" \
+    "/usr/bin/grep" \
+    "/usr/bin/head" \
+    "/usr/bin/mktemp" \
+    "/usr/bin/printf" \
+    "/usr/bin/rsync" \
+    "/usr/bin/shasum"; do
+    if [[ -z "$required_executable" \
+      || ! -f "$required_executable" \
+      || ! -x "$required_executable" ]]; then
+      /usr/bin/printf 'Missing required executable: %s\n' \
+        "${required_executable:-<unresolved>}"
+      check_status=1
+    fi
+  done
+
+  local required_file
+  for required_file in \
+    "$WRITE_LIKE_MIKE_SKILL" \
     "$RESEARCH_PROMPT" \
     "$FINAL_PROMPT" \
     "$EXPORT_DATA" \
@@ -178,24 +226,24 @@ preflight() {
     "$WORKSPACE/handbook/validate-handbook.mjs" \
     "$WORKSPACE/handbook/finalize-pdf.py" \
     "$WORKSPACE/handbook/validate-pdf.py" \
-    "$WORKSPACE/handbook/extract-page-map.py" \
-    "/usr/bin/awk" \
-    "/usr/bin/cmp" \
-    "/usr/bin/cut" \
-    "/usr/bin/diff" \
-    "/usr/bin/find" \
-    "/usr/bin/grep" \
-    "/usr/bin/head" \
-    "/usr/bin/mktemp" \
-    "/usr/bin/printf" \
-    "/usr/bin/rsync" \
-    "/usr/bin/shasum"; do
-    if [[ ! -e "$required_path" ]]; then
-      /usr/bin/printf 'Missing required path: %s\n' "$required_path"
+    "$WORKSPACE/handbook/extract-page-map.py"; do
+    if [[ -z "$required_file" \
+      || ! -f "$required_file" \
+      || ! -r "$required_file" ]]; then
+      /usr/bin/printf 'Missing required readable file: %s\n' \
+        "${required_file:-<unresolved>}"
       check_status=1
     fi
   done
-  "$NODE_BIN" --version || check_status=1
+  if [[ -n "$NODE_BIN" && -f "$NODE_BIN" && -x "$NODE_BIN" ]]; then
+    local node_version
+    node_version=$("$NODE_BIN" -p 'process.versions.node') || check_status=1
+    if [[ "$node_version" != "$REQUIRED_NODE_VERSION" ]]; then
+      /usr/bin/printf 'Node version mismatch. Required: %s; found: %s\n' \
+        "$REQUIRED_NODE_VERSION" "${node_version:-unresolved}"
+      check_status=1
+    fi
+  fi
   return "$check_status"
 }
 
@@ -346,6 +394,7 @@ write_context() {
     /usr/bin/printf -- '- Checkpoint date: `%s`\n' "$RESEARCH_CHECKPOINT_DATE"
     /usr/bin/printf -- '- Required overlap start: `%s`\n' "$RESEARCH_OVERLAP_START"
     /usr/bin/printf -- '- Candidate version suffix: `-candidate.%s`\n' "$RUN_VERSION"
+    /usr/bin/printf -- '- Required writing skill: `%s`\n' "$WRITE_LIKE_MIKE_SKILL"
     /usr/bin/printf '\nRead `%s` and perform its live research job in this runtime.\n' \
       "$TOOLCHAIN_DIR/weekly-handbook-review.md"
   } > "$RUN_DIR/run-context.md" || return 1
@@ -354,6 +403,18 @@ write_context() {
     "$RUN_DATE" "$RUN_STARTED_AT" "$RESEARCH_CHECKPOINT_PATH" \
     "$RESEARCH_CHECKPOINT_DATE" "$RESEARCH_OVERLAP_START" > "$RUN_DIR/status.txt"
 }
+
+if [[ "${1:-}" == "--preflight" ]]; then
+  PREFLIGHT_STATUS=0
+  preflight || PREFLIGHT_STATUS=$?
+  /usr/bin/printf 'Weekly handbook preparation preflight: %s\n' "$PREFLIGHT_STATUS"
+  exit "$PREFLIGHT_STATUS"
+fi
+
+if [[ "$#" -ne 0 ]]; then
+  /usr/bin/printf 'Usage: %s [--preflight]\n' "$0" >&2
+  exit 64
+fi
 
 if ! /bin/mkdir -p "$CANDIDATE_ROOT" "$WORKSPACE/tmp"; then
   /usr/bin/printf 'Could not create the weekly candidate root.\n' >&2

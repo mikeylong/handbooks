@@ -499,8 +499,8 @@ const checks = {
   cssBracesBalanced: count(/{/g, css) === count(/}/g, css),
   fullAuthorName: html.includes("Michael Long"),
   coverCreditExact:
-    html.includes('<p class="cover-credit">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>')
-    && !html.includes("Bainbridge Island"),
+    coverHtml.match(/<p class="cover-credit">.*?<\/p>/s)?.[0]
+      === '<p class="cover-credit">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>',
   authorSiteLinked:
     count(/href="https:\/\/surfaces\.systems"/g, html) === 3,
   coverLabelsRemoved:
@@ -513,7 +513,6 @@ const checks = {
     coverHtml.includes(`<p class="cover-date">${expectedCoverDate} · ${expectedBookVersion}</p>`),
   coverDedicationRemoved:
     !coverHtml.includes("Dedication")
-    && !coverHtml.includes("For Corban, Luca, and Lela")
     && !html.includes('class="cover-dedication"'),
   forewordPremiseLabelRemoved: !forewordHtml.includes(">Premise<"),
   forewordSloDefined:

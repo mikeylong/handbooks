@@ -135,20 +135,19 @@ def validate(path: Path) -> None:
     page_texts = [page.extract_text() or "" for page in reader.pages]
     text = "\n".join(page_texts)
     canonical_text = canonical(text)
-    assert canonical(AUTHOR_CREDIT) in canonical(page_texts[0]), (
-        "Approved linked author line is missing from the cover"
+    cover_text = " ".join(page_texts[0].split())
+    cover_title_pattern = r"\s*".join(
+        re.escape(token) for token in BOOK_TITLE.split()
     )
-    assert canonical("Bainbridge Island") not in canonical(text), (
-        "Removed author location remains"
+    cover_pattern = re.compile(
+        rf"{cover_title_pattern} {re.escape(SUBTITLE)} {re.escape(AUTHOR_CREDIT)} "
+        r"[A-Z][a-z]+ \d{1,2}, \d{4} · Version \d+\.\d+"
+        r"(?:-candidate\.\d{8}\.\d{6})?"
     )
-    assert "WRITTEN BY" not in page_texts[0].upper(), "Removed cover label remains"
+    assert cover_pattern.fullmatch(cover_text), (
+        "The cover contains missing, unexpected, or malformed reader-facing text"
+    )
     assert "EVIDENCE REVIEWED" not in text.upper(), "Removed review label remains"
-    assert "FIRST EDITION" not in page_texts[0].upper(), "Edition label remains on the cover"
-    assert "JULY 2026" not in page_texts[0].upper(), "Edition date remains on the cover"
-    assert canonical("Dedication") not in canonical(page_texts[0]), "Removed dedication label remains"
-    assert canonical("For Corban, Luca, and Lela") not in canonical(page_texts[0]), (
-        "Removed cover dedication remains"
-    )
     assert "PREMISE" not in page_texts[1].upper(), "Premise label remains on the foreword"
     assert canonical("This handbook lays out an operating model") in canonical(page_texts[1]), (
         "Foreword does not use the approved handbook self-reference"

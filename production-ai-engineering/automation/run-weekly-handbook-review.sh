@@ -4,13 +4,116 @@ set -u
 set -o pipefail
 umask 077
 
-export PATH="/Users/mike/.nvm/versions/node/v22.16.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+AUTOMATION_DIR="${0:A:h}"
+WORKSPACE="${HANDBOOK_WORKSPACE:-${AUTOMATION_DIR:h}}"
+WORKSPACE="$(cd -- "$WORKSPACE" && pwd -P)" || {
+  /usr/bin/printf 'Could not resolve the handbook workspace: %s\n' "$WORKSPACE" >&2
+  exit 64
+}
 
-WORKSPACE="/Users/mike/production-ai-engineering-book"
-NODE_BIN="/Users/mike/.nvm/versions/node/v22.16.0/bin/node"
-PYTHON_BIN="/opt/homebrew/bin/python3.12"
-PYTHON_PACKAGES="/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages"
-PLAYWRIGHT_CORE="/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core"
+REQUIRED_NODE_VERSION="22.16.0"
+NODE_BIN="${HANDBOOK_NODE_BIN:-}"
+if [[ -z "$NODE_BIN" ]]; then
+  path_node="${commands[node]:-}"
+  path_node_version=""
+  if [[ -n "$path_node" && -x "$path_node" ]]; then
+    path_node_version=$("$path_node" -p 'process.versions.node' 2>/dev/null)
+  fi
+  if [[ "$path_node_version" == "$REQUIRED_NODE_VERSION" ]]; then
+    NODE_BIN="$path_node"
+  elif [[ -n "${HOME:-}" \
+    && -x "$HOME/.nvm/versions/node/v$REQUIRED_NODE_VERSION/bin/node" ]]; then
+    NODE_BIN="$HOME/.nvm/versions/node/v$REQUIRED_NODE_VERSION/bin/node"
+  else
+    NODE_BIN="$path_node"
+  fi
+fi
+
+CODEX_DEPS_ROOT="${HANDBOOK_CODEX_DEPS_ROOT:-${XDG_CACHE_HOME:-${HOME:-}/.cache}/codex-runtimes/codex-primary-runtime/dependencies}"
+PYTHON_PACKAGES="${HANDBOOK_PYTHON_PACKAGES:-}"
+PYTHON_PACKAGES_AMBIGUOUS=false
+if [[ -z "$PYTHON_PACKAGES" && -d "$CODEX_DEPS_ROOT/python/lib" ]]; then
+  typeset -a python_package_candidates
+  python_package_candidates=("$CODEX_DEPS_ROOT"/python/lib/python*/site-packages(N/))
+  if (( ${#python_package_candidates[@]} == 1 )); then
+    PYTHON_PACKAGES="${python_package_candidates[1]}"
+  elif (( ${#python_package_candidates[@]} > 1 )); then
+    PYTHON_PACKAGES_AMBIGUOUS=true
+  fi
+fi
+
+PYTHON_PACKAGE_VERSION=""
+PYTHON_BIN="${HANDBOOK_PYTHON_BIN:-}"
+if [[ -n "$PYTHON_PACKAGES" ]]; then
+  python_package_parent="${PYTHON_PACKAGES:h}"
+  python_command_name="${python_package_parent:t}"
+  if [[ "$python_command_name" =~ '^python([0-9]+\.[0-9]+)$' ]]; then
+    PYTHON_PACKAGE_VERSION="${match[1]}"
+    if [[ -z "$PYTHON_BIN" ]]; then
+      PYTHON_BIN="${commands[$python_command_name]:-}"
+    fi
+  fi
+elif [[ "$PYTHON_PACKAGES_AMBIGUOUS" != true && -z "$PYTHON_BIN" ]]; then
+  PYTHON_BIN="${commands[python3]:-}"
+fi
+
+PLAYWRIGHT_CORE="${HANDBOOK_PLAYWRIGHT_CORE:-}"
+if [[ -z "$PLAYWRIGHT_CORE" ]]; then
+  for playwright_candidate in \
+    "$WORKSPACE/node_modules/playwright-core" \
+    "$CODEX_DEPS_ROOT/node/node_modules/playwright-core"; do
+    if [[ -f "$playwright_candidate/index.mjs" ]]; then
+      PLAYWRIGHT_CORE="$playwright_candidate"
+      break
+    fi
+  done
+fi
+
+BROWSER_BIN="${HANDBOOK_BROWSER_BIN:-}"
+HEADLESS_SHELL_REVISION=""
+if [[ -z "$BROWSER_BIN" \
+  && -n "$NODE_BIN" \
+  && -x "$NODE_BIN" \
+  && -f "$PLAYWRIGHT_CORE/browsers.json" ]]; then
+  HEADLESS_SHELL_REVISION=$(
+    "$NODE_BIN" -e \
+      'const fs = require("node:fs"); const manifest = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); const browser = manifest.browsers.find(({ name }) => name === "chromium-headless-shell"); process.stdout.write(browser?.revision ?? "");' \
+      "$PLAYWRIGHT_CORE/browsers.json" 2>/dev/null
+  )
+fi
+if [[ -z "$BROWSER_BIN" && -n "$HEADLESS_SHELL_REVISION" ]]; then
+  typeset -a browser_roots
+  browser_roots=()
+  if [[ "${PLAYWRIGHT_BROWSERS_PATH:-}" == 0 ]]; then
+    browser_roots+=("$PLAYWRIGHT_CORE/.local-browsers")
+  elif [[ -n "${PLAYWRIGHT_BROWSERS_PATH:-}" ]]; then
+    browser_roots+=("$PLAYWRIGHT_BROWSERS_PATH")
+  elif [[ -n "${HOME:-}" ]]; then
+    browser_roots+=(
+      "$HOME/Library/Caches/ms-playwright"
+      "${XDG_CACHE_HOME:-$HOME/.cache}/ms-playwright"
+    )
+  fi
+  for browser_root in "${browser_roots[@]}"; do
+    [[ -d "$browser_root/chromium_headless_shell-$HEADLESS_SHELL_REVISION" ]] || continue
+    BROWSER_BIN=$(
+      /usr/bin/find "$browser_root/chromium_headless_shell-$HEADLESS_SHELL_REVISION" \
+        -type f \
+        \( -name chrome-headless-shell -o -name chrome-headless-shell.exe \) \
+        -perm -111 \
+        -print 2>/dev/null \
+        | LC_ALL=C /usr/bin/sort \
+        | /usr/bin/tail -n 1
+    )
+    [[ -n "$BROWSER_BIN" ]] && break
+  done
+fi
+
+PDFIMAGES_BIN="${HANDBOOK_PDFIMAGES_BIN:-${commands[pdfimages]:-}}"
+PDFFONTS_BIN="${HANDBOOK_PDFFONTS_BIN:-${commands[pdffonts]:-}}"
+PDFINFO_BIN="${HANDBOOK_PDFINFO_BIN:-${commands[pdfinfo]:-}}"
+PDFTOPPM_BIN="${HANDBOOK_PDFTOPPM_BIN:-${commands[pdftoppm]:-}}"
+PDFTOTEXT_BIN="${HANDBOOK_PDFTOTEXT_BIN:-${commands[pdftotext]:-}}"
 PREPARER_SCRIPT="$WORKSPACE/automation/prepare-weekly-handbook-review.sh"
 FINALIZER_SCRIPT="$WORKSPACE/automation/run-weekly-handbook-review.sh"
 RESEARCH_PROMPT="$WORKSPACE/automation/weekly-handbook-review.md"
@@ -27,22 +130,17 @@ CANONICAL_SOURCE="$WORKSPACE/AI_ENGINEERING_FIELD_GUIDE.md"
 PRODUCTION_PDF="$WORKSPACE/output/pdf/production-ai-engineering.pdf"
 DEFAULT_CANDIDATE_ROOT="$WORKSPACE/output/candidates"
 CANDIDATE_ROOT="${HANDBOOK_CANDIDATE_ROOT:-$DEFAULT_CANDIDATE_ROOT}"
-if [[ "$CANDIDATE_ROOT" != "$DEFAULT_CANDIDATE_ROOT" \
-  && "$CANDIDATE_ROOT" != /private/tmp/weekly-handbook-test.*/* ]]; then
-  /usr/bin/printf 'HANDBOOK_CANDIDATE_ROOT is restricted to a weekly-handbook test directory.\n' >&2
-  exit 64
+CANDIDATE_ROOT="${CANDIDATE_ROOT:A}"
+if [[ "$CANDIDATE_ROOT" != "$DEFAULT_CANDIDATE_ROOT" ]]; then
+  TEST_TMP_ROOT="${HANDBOOK_TEST_TMP_ROOT:-${TMPDIR:-/tmp}}"
+  TEST_TMP_ROOT="${TEST_TMP_ROOT:A}"
+  if [[ "${HANDBOOK_TEST_MODE:-0}" != 1 \
+    || "$CANDIDATE_ROOT" != "$TEST_TMP_ROOT"/weekly-handbook-test.*/* ]]; then
+    /usr/bin/printf 'HANDBOOK_CANDIDATE_ROOT is restricted to a weekly-handbook test directory.\n' >&2
+    exit 64
+  fi
 fi
 PDF_TIMEOUT_SECONDS=300
-
-BROWSER_BIN=$(
-  /usr/bin/find /Users/mike/Library/Caches/ms-playwright \
-    -type f \
-    -path '*/chromium_headless_shell-*/chrome-headless-shell-mac-arm64/chrome-headless-shell' \
-    -perm -111 \
-    -print 2>/dev/null \
-    | LC_ALL=C /usr/bin/sort \
-    | /usr/bin/tail -n 1
-)
 
 RUN_DIR=""
 RUN_ID=""
@@ -97,6 +195,16 @@ run_with_timeout() {
     exit 128 + ($? & 127) if $? & 127;
     exit $? >> 8;
   ' "$timeout_seconds" "$@"
+}
+
+run_python() {
+  if [[ -n "$PYTHON_PACKAGES" ]]; then
+    /usr/bin/env PYTHONDONTWRITEBYTECODE=1 \
+      "PYTHONPATH=$PYTHON_PACKAGES${PYTHONPATH:+:$PYTHONPATH}" \
+      "$PYTHON_BIN" "$@"
+  else
+    /usr/bin/env PYTHONDONTWRITEBYTECODE=1 "$PYTHON_BIN" "$@"
+  fi
 }
 
 write_file_hash() {
@@ -242,14 +350,32 @@ run_phase() {
 
 runtime_check() {
   local check_status=0
-  local required_path
-  for required_path in \
+  local required_executable
+  for required_executable in \
     "$NODE_BIN" \
     "$PYTHON_BIN" \
-    "$PYTHON_PACKAGES" \
-    "$PLAYWRIGHT_CORE/index.mjs" \
     "$PREPARER_SCRIPT" \
     "$FINALIZER_SCRIPT" \
+    "$PDFIMAGES_BIN" \
+    "$PDFFONTS_BIN" \
+    "$PDFINFO_BIN" \
+    "$PDFTOPPM_BIN" \
+    "$PDFTOTEXT_BIN" \
+    "/usr/bin/perl" \
+    "/usr/bin/shasum"; do
+    if [[ -z "$required_executable" \
+      || ! -f "$required_executable" \
+      || ! -x "$required_executable" ]]; then
+      /usr/bin/printf 'Missing required executable: %s\n' \
+        "${required_executable:-<unresolved>}"
+      check_status=1
+    fi
+  done
+
+  local required_file
+  for required_file in \
+    "$PLAYWRIGHT_CORE/index.mjs" \
+    "$PLAYWRIGHT_CORE/browsers.json" \
     "$RESEARCH_PROMPT" \
     "$FINAL_PROMPT" \
     "$EXPORT_DATA" \
@@ -261,29 +387,54 @@ runtime_check() {
     "$RELEASE_POLICY" \
     "$RENDER_PDF" \
     "$CANONICAL_SOURCE" \
-    "$PRODUCTION_PDF" \
-    "/opt/homebrew/bin/pdfimages" \
-    "/opt/homebrew/bin/pdffonts" \
-    "/opt/homebrew/bin/pdfinfo" \
-    "/opt/homebrew/bin/pdftoppm" \
-    "/opt/homebrew/bin/pdftotext" \
-    "/usr/bin/perl" \
-    "/usr/bin/shasum"; do
-    if [[ ! -e "$required_path" ]]; then
-      /usr/bin/printf 'Missing required path: %s\n' "$required_path"
+    "$PRODUCTION_PDF"; do
+    if [[ -z "$required_file" \
+      || ! -f "$required_file" \
+      || ! -r "$required_file" ]]; then
+      /usr/bin/printf 'Missing required readable file: %s\n' \
+        "${required_file:-<unresolved>}"
       check_status=1
     fi
   done
-  if [[ -z "$BROWSER_BIN" || ! -x "$BROWSER_BIN" ]]; then
-    /usr/bin/printf 'Missing executable Playwright Chromium headless shell.\n'
+  if [[ "$PYTHON_PACKAGES_AMBIGUOUS" == true ]]; then
+    /usr/bin/printf 'Multiple bundled Python package directories found; set HANDBOOK_PYTHON_PACKAGES.\n'
+    check_status=1
+  elif [[ -n "$PYTHON_PACKAGES" \
+    && ( ! -d "$PYTHON_PACKAGES" || ! -r "$PYTHON_PACKAGES" ) ]]; then
+    /usr/bin/printf 'Missing Python package directory: %s\n' "$PYTHON_PACKAGES"
+    check_status=1
+  fi
+  if [[ -z "$BROWSER_BIN" || ! -f "$BROWSER_BIN" || ! -x "$BROWSER_BIN" ]]; then
+    /usr/bin/printf 'Missing executable Playwright browser.\n'
     check_status=1
   else
     "$BROWSER_BIN" --version || check_status=1
   fi
-  "$NODE_BIN" --version || check_status=1
-  PYTHONPATH="$PYTHON_PACKAGES" "$PYTHON_BIN" -c \
-    'import pdfplumber, pypdf, reportlab; print("Python PDF dependencies: ok")' \
-    || check_status=1
+  if [[ -n "$NODE_BIN" && -f "$NODE_BIN" && -x "$NODE_BIN" ]]; then
+    local node_version
+    node_version=$("$NODE_BIN" -p 'process.versions.node') || check_status=1
+    if [[ "$node_version" != "$REQUIRED_NODE_VERSION" ]]; then
+      /usr/bin/printf 'Node version mismatch. Required: %s; found: %s\n' \
+        "$REQUIRED_NODE_VERSION" "${node_version:-unresolved}"
+      check_status=1
+    fi
+  fi
+  if [[ -n "$PYTHON_BIN" && -f "$PYTHON_BIN" && -x "$PYTHON_BIN" ]]; then
+    if [[ -n "$PYTHON_PACKAGE_VERSION" ]]; then
+      local python_version
+      python_version=$("$PYTHON_BIN" -c \
+        'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")') \
+        || check_status=1
+      if [[ "$python_version" != "$PYTHON_PACKAGE_VERSION" ]]; then
+        /usr/bin/printf 'Python package/interpreter mismatch. Packages: %s; interpreter: %s\n' \
+          "$PYTHON_PACKAGE_VERSION" "${python_version:-unresolved}"
+        check_status=1
+      fi
+    fi
+    run_python -c \
+      'import pdfplumber, pypdf, reportlab; print("Python PDF dependencies: ok")' \
+      || check_status=1
+  fi
   run_with_timeout 5 /usr/bin/true || check_status=1
   return "$check_status"
 }
@@ -579,7 +730,7 @@ render_proof_page() {
   local physical_page="$1"
   local output_path="$2"
   local output_prefix="${output_path%.png}"
-  /opt/homebrew/bin/pdftoppm \
+  "$PDFTOPPM_BIN" \
     -f "$physical_page" \
     -l "$physical_page" \
     -singlefile \
@@ -591,12 +742,12 @@ render_proof_page() {
 }
 
 collect_pdf_evidence() {
-  /opt/homebrew/bin/pdfinfo "$CANDIDATE_PDF" > "$RUN_DIR/pdfinfo.txt" || return 1
-  /opt/homebrew/bin/pdffonts "$CANDIDATE_PDF" > "$RUN_DIR/pdffonts.txt" || return 1
-  /opt/homebrew/bin/pdfimages -list "$CANDIDATE_PDF" > "$RUN_DIR/pdfimages.txt" || return 1
-  /opt/homebrew/bin/pdftotext -layout "$PRODUCTION_PDF" "$RUN_DIR/previous-version.txt" \
+  "$PDFINFO_BIN" "$CANDIDATE_PDF" > "$RUN_DIR/pdfinfo.txt" || return 1
+  "$PDFFONTS_BIN" "$CANDIDATE_PDF" > "$RUN_DIR/pdffonts.txt" || return 1
+  "$PDFIMAGES_BIN" -list "$CANDIDATE_PDF" > "$RUN_DIR/pdfimages.txt" || return 1
+  "$PDFTOTEXT_BIN" -layout "$PRODUCTION_PDF" "$RUN_DIR/previous-version.txt" \
     || return 1
-  /opt/homebrew/bin/pdftotext -layout "$CANDIDATE_PDF" "$RUN_DIR/current-version.txt" \
+  "$PDFTOTEXT_BIN" -layout "$CANDIDATE_PDF" "$RUN_DIR/current-version.txt" \
     || return 1
   /usr/bin/diff -u \
     "$RUN_DIR/previous-version.txt" \
@@ -726,6 +877,13 @@ write_success_status() {
     "$candidate_sha" > "$RUN_DIR/status.txt"
 }
 
+if [[ "${1:-}" == "--preflight" ]]; then
+  PREFLIGHT_STATUS=0
+  runtime_check || PREFLIGHT_STATUS=$?
+  /usr/bin/printf 'Weekly handbook runtime preflight: %s\n' "$PREFLIGHT_STATUS"
+  exit "$PREFLIGHT_STATUS"
+fi
+
 if [[ "${1:-}" == "--check" ]]; then
   /bin/mkdir -p "$WORKSPACE/tmp" || exit 70
   CHECK_STATUS=0
@@ -753,15 +911,22 @@ if [[ "${1:-}" == "--check" ]]; then
 fi
 
 if [[ "$#" -ne 1 ]]; then
-  /usr/bin/printf 'Usage: %s /absolute/path/to/prepared-run\n' "$0" >&2
+  /usr/bin/printf 'Usage: %s --preflight | --check | /absolute/path/to/prepared-run\n' "$0" >&2
   exit 64
 fi
-RUN_DIR="$1"
-if [[ "$RUN_DIR" != /* \
-  || "$RUN_DIR" != "$CANDIDATE_ROOT/"* \
-  || ! -d "$RUN_DIR" \
-  || -L "$RUN_DIR" ]]; then
-  /usr/bin/printf 'Unsafe or missing prepared run directory: %s\n' "$RUN_DIR" >&2
+RUN_DIR_INPUT="$1"
+if [[ "$RUN_DIR_INPUT" != /* \
+  || ! -d "$RUN_DIR_INPUT" \
+  || -L "$RUN_DIR_INPUT" ]]; then
+  /usr/bin/printf 'Unsafe or missing prepared run directory: %s\n' "$RUN_DIR_INPUT" >&2
+  exit 64
+fi
+RUN_DIR="$(cd -- "$RUN_DIR_INPUT" && pwd -P)" || {
+  /usr/bin/printf 'Could not resolve prepared run directory: %s\n' "$RUN_DIR_INPUT" >&2
+  exit 64
+}
+if [[ "$RUN_DIR" != "$CANDIDATE_ROOT/"* ]]; then
+  /usr/bin/printf 'Prepared run directory is outside the candidate root: %s\n' "$RUN_DIR" >&2
   exit 64
 fi
 
@@ -835,8 +1000,7 @@ run_phase "pdf_render_pass_1" "$RUN_DIR/pdf-render-pass-1.log" \
     --output "$RUN_DIR/raw-pass-1.pdf" \
     --playwright-module "$PLAYWRIGHT_CORE"
 run_phase "page_map_pass_1" "$RUN_DIR/page-map-pass-1.log" \
-  /usr/bin/env "PYTHONPATH=$PYTHON_PACKAGES" \
-    "$PYTHON_BIN" "$BUILD_DIR/handbook/extract-page-map.py" \
+  run_python "$BUILD_DIR/handbook/extract-page-map.py" \
     --pdf "$RUN_DIR/raw-pass-1.pdf" \
     --output "$RUN_DIR/page-map-pass-1.json"
 run_phase "page_map_apply" "$RUN_DIR/page-map-apply.log" \
@@ -863,16 +1027,13 @@ run_phase "pdf_render" "$RUN_DIR/pdf-render.log" \
     --output "$RUN_DIR/raw.pdf" \
     --playwright-module "$PLAYWRIGHT_CORE"
 run_phase "pdf_finalize" "$RUN_DIR/pdf-finalize.log" \
-  /usr/bin/env "PYTHONPATH=$PYTHON_PACKAGES" \
-    "$PYTHON_BIN" "$BUILD_DIR/handbook/finalize-pdf.py" \
+  run_python "$BUILD_DIR/handbook/finalize-pdf.py" \
     --input "$RUN_DIR/raw.pdf" \
     --output "$CANDIDATE_PDF"
 run_phase "pdf_validation" "$RUN_DIR/pdf-validation.log" \
-  /usr/bin/env "PYTHONPATH=$PYTHON_PACKAGES" \
-    "$PYTHON_BIN" "$BUILD_DIR/handbook/validate-pdf.py" "$CANDIDATE_PDF"
+  run_python "$BUILD_DIR/handbook/validate-pdf.py" "$CANDIDATE_PDF"
 run_phase "page_map" "$RUN_DIR/page-map.log" \
-  /usr/bin/env "PYTHONPATH=$PYTHON_PACKAGES" \
-    "$PYTHON_BIN" "$BUILD_DIR/handbook/extract-page-map.py" \
+  run_python "$BUILD_DIR/handbook/extract-page-map.py" \
     --pdf "$CANDIDATE_PDF" \
     --output "$RUN_DIR/page-map.json"
 run_phase "page_map_stability" "$RUN_DIR/page-map-stability.log" \
