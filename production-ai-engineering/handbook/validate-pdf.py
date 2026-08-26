@@ -347,6 +347,7 @@ def validate(path: Path) -> None:
     destination_names = {
         str(name).lstrip("/") for name in reader.named_destinations
     }
+    changelog_start: int | None = None
     if require_changelog:
         assert "changelog" in destination_names, (
             "Required changelog destination is missing"
@@ -447,11 +448,35 @@ def validate(path: Path) -> None:
     image_pages: list[int] = []
     with pdfplumber.open(path) as pdf:
         for page_number, page in enumerate(pdf.pages, start=1):
+            body_words = [
+                word
+                for word in page.extract_words(use_text_flow=True)
+                if float(word["top"]) > 30
+                and float(word["bottom"]) < page.height - 35
+            ]
             body_chars = [
                 char
                 for char in page.chars
                 if float(char["top"]) > 30 and float(char["bottom"]) < page.height - 35
             ]
+            if require_changelog and page_number - 1 == changelog_start:
+                assert body_words, "Changelog page has no body text"
+                first_body_top = min(float(word["top"]) for word in body_words)
+                first_body_line = " ".join(
+                    str(word["text"])
+                    for word in sorted(
+                        (
+                            word
+                            for word in body_words
+                            if abs(float(word["top"]) - first_body_top) < 2
+                        ),
+                        key=lambda word: float(word["x0"]),
+                    )
+                )
+                assert canonical(first_body_line) == canonical("Version History"), (
+                    "Changelog does not begin on a dedicated page; "
+                    f"found body content first: {first_body_line}"
+                )
             if not body_chars:
                 blank_pages.append(page_number)
             if len(body_chars) < 80:

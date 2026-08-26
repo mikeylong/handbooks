@@ -476,7 +476,9 @@ const checks = {
   changelogPdfOnly:
     /\.pdf-only\s*\{\s*display:\s*none;\s*\}/s.test(css)
     && /@media print[\s\S]*?\.pdf-only\s*\{\s*display:\s*block;\s*\}/s.test(css)
-    && /@media print[\s\S]*?\.changelog\s*\{[\s\S]*?break-before:\s*(?:auto|page);[\s\S]*?break-inside:\s*avoid-page;/s.test(css),
+    && /@media print[\s\S]*?\.changelog\s*\{[\s\S]*?break-inside:\s*avoid-page;/s.test(css),
+  changelogStartsOnNewPrintPage:
+    /@media print[\s\S]*?\.changelog\s*\{[\s\S]*?break-before:\s*page;/s.test(css),
   sourceUrls: sourceUrls.size,
   htmlUrls: htmlUrls.size,
   allSourceUrlsPreserved: [...sourceUrls].every((url) => htmlUrls.has(url)),
