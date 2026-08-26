@@ -30,6 +30,25 @@ const expectedReleaseSchedule = buildReleaseSchedule(
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
   ?? `Version 1.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const PUBLICATION_DATE = "July 19, 2026";
+const formatCandidateDate = (isoDate) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
+    throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
+  }
+  const date = new Date(`${isoDate}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== isoDate) {
+    throw new Error("HANDBOOK_CANDIDATE_DATE must be a valid calendar date");
+  }
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+};
+const expectedCoverDate = process.env.HANDBOOK_CANDIDATE_DATE
+  ? formatCandidateDate(process.env.HANDBOOK_CANDIDATE_DATE)
+  : PUBLICATION_DATE;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 const changelogRequired = changelog.summary?.trim() !== UNCHANGED_CHANGELOG_SUMMARY;
 
@@ -411,7 +430,7 @@ const checks = {
     && /main\s*\{[^}]*background:\s*var\(--paper\);/.test(css),
   sidebarPublicationMetadataExact:
     sidebarHtml.includes('<p class="sidebar-author">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>')
-    && sidebarHtml.includes(`<p class="sidebar-edition">July 19, 2026 · ${expectedBookVersion}</p>`)
+    && sidebarHtml.includes(`<p class="sidebar-edition">${expectedCoverDate} · ${expectedBookVersion}</p>`)
     && /\.sidebar-meta\s*\{[^}]*display:\s*grid;/.test(css)
     && /\.sidebar-publication\s*\{[^}]*display:\s*grid;/.test(css),
   touchTargetsDefined:
@@ -478,7 +497,7 @@ const checks = {
     !coverHtml.includes("First edition")
     && !html.includes('class="cover-edition"'),
   coverPublicationMetadataExact:
-    coverHtml.includes(`<p class="cover-date">July 19, 2026 · ${expectedBookVersion}</p>`),
+    coverHtml.includes(`<p class="cover-date">${expectedCoverDate} · ${expectedBookVersion}</p>`),
   coverDedicationRemoved:
     !coverHtml.includes("Dedication")
     && !coverHtml.includes("For Corban, Luca, and Lela")

@@ -17,7 +17,7 @@ Neither helper launches a nested Codex process or needs an unsandboxed execution
 
 When live research finds no warranted reader-facing change, the candidate summary is exactly `The handbook's reader-facing content is unchanged.` and the PDF omits the changelog. Any validated change generates a populated changelog on the physical final PDF page. The canonical `handbook/changelog.json` remains untouched; each candidate receives its own ledger tied to the candidate source hash and current production-PDF hash.
 
-The exact PDF-text diff can still show generated-only differences for an unchanged candidate—its candidate-version suffix, line or page flow, and regenerated index page numbers. The final audit reports those separately and treats the source/data patch as the reader-facing change authority; any unexplained PDF-text difference fails review.
+The exact PDF-text diff can still show generated-only differences for an unchanged candidate—its candidate run date and version suffix, line or page flow, and regenerated index page numbers. The final audit reports those separately and treats the source/data patch as the reader-facing change authority; any unexplained PDF-text difference fails review. The published edition keeps its publication date; a weekly candidate displays its own run date on the cover and in the sidebar.
 
 Blocked or gated sources are reported with the access barrier, authorized methods attempted, legitimate public alternatives, and any resulting evidence limitation. The worker never bypasses a paywall, login, CAPTCHA, robots control, or permission boundary.
 

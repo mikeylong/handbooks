@@ -50,6 +50,24 @@ const AUTHOR = "Michael Long";
 const AUTHOR_SITE = "https://surfaces.systems";
 const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems</a>`;
 const PUBLICATION_DATE = "July 19, 2026";
+const formatCandidateDate = (isoDate) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
+    throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
+  }
+  const date = new Date(`${isoDate}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== isoDate) {
+    throw new Error("HANDBOOK_CANDIDATE_DATE must be a valid calendar date");
+  }
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+};
+const COVER_DATE = process.env.HANDBOOK_CANDIDATE_DATE
+  ? formatCandidateDate(process.env.HANDBOOK_CANDIDATE_DATE)
+  : PUBLICATION_DATE;
 const PDF_HREF = "../output/pdf/production-ai-engineering.pdf";
 const PDF_PAGE_COUNT = 74;
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
@@ -947,7 +965,7 @@ const html = `<!doctype html>
       <div class="sidebar-meta">
         <div class="sidebar-publication">
           <p class="sidebar-author">${AUTHOR_CREDIT_HTML}</p>
-          <p class="sidebar-edition">${PUBLICATION_DATE} · ${BOOK_VERSION}</p>
+          <p class="sidebar-edition">${COVER_DATE} · ${BOOK_VERSION}</p>
         </div>
         <div class="sidebar-actions">
           <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
@@ -962,7 +980,7 @@ const html = `<!doctype html>
         <h1 id="cover-title">${BOOK_TITLE}</h1>
         <p class="cover-subtitle">${BOOK_SUBTITLE}</p>
         <p class="cover-credit">${AUTHOR_CREDIT_HTML}</p>
-        <p class="cover-date">${PUBLICATION_DATE} · ${BOOK_VERSION}</p>
+        <p class="cover-date">${COVER_DATE} · ${BOOK_VERSION}</p>
         <section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-schedule release-window-policy" data-release-window data-release-at="${releaseSchedule.nextReviewAt}" data-release-time-zone="${releaseSchedule.timeZone}" data-release-rrule="${releaseSchedule.rrule}">
           <div class="release-window-heading">
             <p class="release-window-label" id="release-window-title" data-release-status>Next version review</p>

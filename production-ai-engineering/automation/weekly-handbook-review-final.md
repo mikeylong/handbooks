@@ -14,7 +14,7 @@ Perform a read-only audit of the weekly candidate run identified by the schedule
 9. Confirm that the production PDF and canonical source were not modified by the run.
 10. If the build failed or evidence is incomplete, label the candidate `FAILED REVIEW` and state exactly what must be fixed. Do not present it as releasable.
 11. Confirm that an unchanged candidate uses the exact sentence `The handbook's reader-facing content is unchanged.` and omits the changelog. Any changed candidate must contain a populated changelog on the physical final PDF page.
-12. Do not mistake generated-only PDF-text differences for handbook content changes. An unchanged candidate may differ from production in its candidate-version suffix, line/page flow, and regenerated index page numbers; identify those separately from the empty source/data patch and report any PDF-text difference outside those expected build effects as a failed review.
+12. Do not mistake generated-only PDF-text differences for handbook content changes. An unchanged candidate may differ from production in its candidate run date and version suffix, line/page flow, and regenerated index page numbers; identify those separately from the empty source/data patch and report any PDF-text difference outside those expected build effects as a failed review.
 
 Your final response must lead with the outcome and include:
 

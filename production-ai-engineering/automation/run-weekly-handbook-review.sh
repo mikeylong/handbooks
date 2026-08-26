@@ -817,12 +817,14 @@ run_phase "html_build_pass_1" "$RUN_DIR/html-build-pass-1.log" \
   /usr/bin/env \
     "HANDBOOK_AUTOMATION_PATH=$AUTOMATION_CONFIG" \
     "HANDBOOK_RELEASE_POLICY_PATH=$RELEASE_POLICY" \
+    "HANDBOOK_CANDIDATE_DATE=$RUN_DATE" \
     "HANDBOOK_VERSION_SUFFIX=-candidate.$RUN_VERSION" \
     "$NODE_BIN" "$BUILD_DIR/handbook/build-handbook.mjs"
 run_phase "html_validation_pass_1" "$RUN_DIR/html-validation-pass-1.log" \
   /usr/bin/env \
     "HANDBOOK_AUTOMATION_PATH=$AUTOMATION_CONFIG" \
     "HANDBOOK_RELEASE_POLICY_PATH=$RELEASE_POLICY" \
+    "HANDBOOK_CANDIDATE_DATE=$RUN_DATE" \
     "HANDBOOK_VERSION_SUFFIX=-candidate.$RUN_VERSION" \
     "$NODE_BIN" "$BUILD_DIR/handbook/validate-handbook.mjs"
 run_phase "pdf_render_pass_1" "$RUN_DIR/pdf-render-pass-1.log" \
@@ -843,12 +845,14 @@ run_phase "html_build" "$RUN_DIR/html-build.log" \
   /usr/bin/env \
     "HANDBOOK_AUTOMATION_PATH=$AUTOMATION_CONFIG" \
     "HANDBOOK_RELEASE_POLICY_PATH=$RELEASE_POLICY" \
+    "HANDBOOK_CANDIDATE_DATE=$RUN_DATE" \
     "HANDBOOK_VERSION_SUFFIX=-candidate.$RUN_VERSION" \
     "$NODE_BIN" "$BUILD_DIR/handbook/build-handbook.mjs"
 run_phase "html_validation" "$RUN_DIR/html-validation.log" \
   /usr/bin/env \
     "HANDBOOK_AUTOMATION_PATH=$AUTOMATION_CONFIG" \
     "HANDBOOK_RELEASE_POLICY_PATH=$RELEASE_POLICY" \
+    "HANDBOOK_CANDIDATE_DATE=$RUN_DATE" \
     "HANDBOOK_VERSION_SUFFIX=-candidate.$RUN_VERSION" \
     "$NODE_BIN" "$BUILD_DIR/handbook/validate-handbook.mjs"
 run_phase "pdf_render" "$RUN_DIR/pdf-render.log" \
