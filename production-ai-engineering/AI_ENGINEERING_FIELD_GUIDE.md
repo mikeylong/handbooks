@@ -1,6 +1,6 @@
 # Production AI Engineering Field Guide
 
-Last evidence review: **2026-07-18**
+Last evidence review: **2026-08-24**
 
 Production AI engineering works as a system. This handbook lays out an operating model that connects the techniques instead of treating them as isolated fixes. The central idea is simple:
 
@@ -202,6 +202,8 @@ Apply the controls in this order:
 
 The [PagedAttention paper](https://arxiv.org/abs/2309.06180) applies virtual-memory-like block management to KV state, reducing allocation waste and enabling sharing. Paging manages memory more efficiently, but the underlying KV capacity limit remains.
 
+For bursty multi-tenant traffic, evaluate a reservation policy against real prompt-length, output-length, and arrival traces instead of reserving each request's maximum possible KV footprint. A robust policy can admit more useful work by protecting against plausible distribution shifts while keeping an explicit overload path. Cheng et al.'s [robust KV-cache reservation study](https://arxiv.org/abs/2607.16892) provides one trace-driven formulation; it is a planning method, not a substitute for per-tenant quotas, active-decode reserves, or load shedding.
+
 ## 7. Continuous batching, paged attention, and goodput
 
 Static batching waits for a fixed group of requests. Continuous, or iteration-level, batching releases completed sequences at each engine iteration and may admit queued work into the capacity they free, subject to token, KV, deadline, and fairness limits. The approach removes static-batch head-of-line blocking, although requests can still queue. The [Orca paper](https://www.usenix.org/conference/osdi22/presentation/yu) established iteration-level scheduling as a core serving technique.
@@ -340,9 +342,13 @@ A useful response envelope is:
 
 Design for at-least-once delivery. Control it with idempotent effects, uniqueness constraints, or compare-and-swap state. Atomically record the idempotency key, normalized request fingerprint, side effect, and resulting receipt/state.
 
+When a stable, repeated procedure is narrow enough to specify and test, compile it into a versioned deterministic tool instead of making the model re-reason through every mechanical step. Keep judgment, exception handling, and stop decisions explicit. In a production alarm-triage study, Kujanpaa et al. [compiled repeated SOP steps into tools](https://arxiv.org/abs/2607.08010) and reported lower median latency and fewer errors in that workflow; treat the result as domain evidence, not a universal performance guarantee.
+
 A network timeout can leave the execution status unknown. Reconcile through the idempotency receipt or authoritative external state before retrying or changing routes. The HTTP specification explains why automatic retry is safe only when the semantics are idempotent or the client knows the original action was not applied; see [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods).
 
-Evaluate tool behavior directly. Test correct selection, correct non-selection, argument validity, authorization denial, duplicate delivery, timeout-after-commit, partial failure, and hostile tool output. Anthropic's [tool design guidance](https://www.anthropic.com/engineering/writing-tools-for-agents) is a useful primary reference.
+Evaluate tool and protocol behavior directly. Test correct selection, correct non-selection, argument validity, authorization denial, duplicate delivery, timeout-after-commit, partial failure, hostile tool output, protocol-version negotiation, and session-state assumptions. Anthropic's [tool design guidance](https://www.anthropic.com/engineering/writing-tools-for-agents) is a useful primary reference.
+
+Protocol migrations are production migrations. The [MCP 2026-07-28 specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/) added stateless operation, explicit version negotiation, and versioned extensions. Pin the negotiated version and SDK, test mixed-version clients and servers, and roll forward through a compatibility window rather than changing defaults everywhere at once.
 
 ## 12. Agent guardrails, budgets, and termination
 
@@ -393,7 +399,7 @@ Route against measured task requirements. Provider reputation or prompt length a
 - current provider health and rate limits;
 - router confidence and out-of-distribution detection.
 
-Maintain a compatibility matrix for every route: tool protocol, JSON Schema support, context limit, refusal semantics, modality, data policy, and tested quality slices. A fallback that cannot honor the same contract puts the product in a different mode.
+Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. A fallback that cannot honor the same contract puts the product in a different mode.
 
 Choose the fallback based on the failure class. Never route around a safety refusal, an authorization or policy denial, or a semantic validation failure. After a timeout that may have committed a mutation, reconcile through the idempotency receipt before retrying or changing routes. Every attempt shares one deadline and retry budget. Use circuit breakers to prevent retry and fallback storms.
 
@@ -617,7 +623,7 @@ Build the defense in layers:
 11. Red-team direct, indirect, multimodal, encoded, and retrieved injections.
 12. Have containment, revocation, incident response, and replay procedures.
 
-For OAuth or MCP tools, validate the issuer, audience, scopes, actor, and expiry. Prohibit token passthrough. Use separately issued downstream tokens and per-client consent.
+For OAuth or MCP tools, validate the issuer, audience, scopes, actor, and expiry. Prohibit token passthrough. Use separately issued downstream tokens and per-client consent. Treat OAuth metadata, discovery documents, and registration endpoints as untrusted network input: allowlist schemes and destinations, block private and link-local ranges after DNS resolution, disable unsafe redirect following, and revalidate every redirect hop. The MCP [authorization specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) and [security best practices](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices) make these boundaries explicit.
 
 The [OWASP LLM prompt-injection guidance](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) notes that RAG and fine-tuning do not fully mitigate injection. Microsoft's [defense-in-depth pattern](https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection) recommends content isolation, least privilege, monitoring, and human approval. For the broader governance and risk context, use the [NIST Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
 
@@ -632,6 +638,8 @@ Use this checklist:
 - use tenant-scoped credentials, storage namespaces, vector indexes or filters, and encryption boundaries appropriate to risk;
 - namespace exact, semantic, and retrieval response caches by a nonempty authenticated tenant/principal or ACL scope plus every response-affecting policy, corpus, prompt, model, schema, and freshness version; reauthorize provenance on every hit and purge entries after ACL, role, user, or document changes;
 - require exact-token matching plus runtime ownership and refcount isolation for prefix/KV reuse; a provider organization or project is not an application tenant boundary;
+- treat the serving engine, custom kernels, and batching scheduler as tenant-isolation code; pin and inventory the runtime, monitor its security advisories, patch within the risk window, and test response ownership under concurrent tenants; a model-server flaw can cross-contaminate responses even when cache namespaces are correct;
+- record the requested processing geography and the provider-resolved organization, project, workspace, and region when the API exposes them; reject unexpected resolution before sensitive data crosses the boundary;
 - exclude sensitive content and identifiers from shared scheduler metadata, and address timing or resource side channels with quotas, traffic shaping, or physical silos where the threat model requires;
 - bind every request, tool call, callback, queue item, and result to immutable tenant, principal, conversation, run, and call IDs; reject mismatched or late results and clear or zero pooled worker, sandbox, and request-local state before reuse;
 - isolate background jobs, queues, temporary files, sandboxes, logs, traces, and eval environments;
@@ -780,7 +788,12 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 - OpenAI: [Structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs)
 - OpenAI: [Function calling](https://developers.openai.com/api/docs/guides/function-calling)
 - OpenAI: [Latency optimization](https://developers.openai.com/api/docs/guides/latency-optimization)
-- Model Context Protocol: [Authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) and [security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices)
+- Google: [Gemini API release notes](https://ai.google.dev/gemini-api/docs/changelog)
+- Anthropic: [Developer platform release notes](https://platform.claude.com/docs/en/release-notes/overview)
+- OpenAI: [API changelog](https://developers.openai.com/api/docs/changelog)
+- AWS: [Amazon Bedrock model lifecycle](https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html)
+- Model Context Protocol: [2026-07-28 key changes](https://blog.modelcontextprotocol.io/posts/2026-07-28/), [authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization), and [security best practices](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices)
+- Kujanpaa et al.: [Compiling repeated agent procedures into deterministic tools](https://arxiv.org/abs/2607.08010)
 
 ### Serving and compression
 
@@ -793,6 +806,8 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 - Lin et al.: [AWQ](https://proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9ba4aa95cc1ef21-Abstract-Conference.html)
 - Frantar et al.: [GPTQ](https://arxiv.org/abs/2210.17323)
 - Hinton et al.: [Knowledge distillation](https://arxiv.org/abs/1503.02531)
+- Cheng et al.: [Robust KV-cache reservation under workload shifts](https://arxiv.org/abs/2607.16892)
+- vLLM Project: [Cross-user response leakage advisory GHSA-7m6h-x95x-82q5](https://github.com/vllm-project/vllm/security/advisories/GHSA-7m6h-x95x-82q5)
 
 ### Retrieval and evaluation
 

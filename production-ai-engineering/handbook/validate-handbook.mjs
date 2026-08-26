@@ -29,8 +29,8 @@ const expectedReleaseSchedule = buildReleaseSchedule(
   new Date(releaseSchedule.generatedAt),
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
-  ?? `Version 1.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
-const PUBLICATION_DATE = "July 19, 2026";
+  ?? `Version 1.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const PUBLICATION_DATE = "August 24, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -49,6 +49,12 @@ const formatCandidateDate = (isoDate) => {
 const expectedCoverDate = process.env.HANDBOOK_CANDIDATE_DATE
   ? formatCandidateDate(process.env.HANDBOOK_CANDIDATE_DATE)
   : PUBLICATION_DATE;
+const formatBibliographyDate = (displayDate) => {
+  const match = /^([A-Z][a-z]+) (\d{1,2}), (\d{4})$/.exec(displayDate);
+  if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
+  return `${match[2]} ${match[1]} ${match[3]}`;
+};
+const expectedBibliographyAccessDate = formatBibliographyDate(expectedCoverDate);
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 const changelogRequired = changelog.summary?.trim() !== UNCHANGED_CHANGELOG_SUMMARY;
 
@@ -158,6 +164,11 @@ const checks = {
     && !/<strong>§\d+<\/strong>/.test(html),
   bibliographySectionHierarchyValid:
     !/<a href="#section-[^"]+">§\d+<\/a>/.test(html),
+  bibliographyAccessDateExact:
+    count(new RegExp(`Accessed ${expectedBibliographyAccessDate}\\.`, "g"), html)
+      === citationEntries.filter((entry) => entry.accessed).length
+    && count(/Accessed \d{1,2} [A-Z][a-z]+ \d{4}\./g, html)
+      === citationEntries.filter((entry) => entry.accessed).length,
   sectionSourceLines: count(/class="section-sources"/g, html),
   citationMarkers: count(/class="citation-marker"/g, html),
   bibliographyEntries: count(/class="reference-label"/g, html),
@@ -547,6 +558,7 @@ const expected = {
   legacyGlobalSectionHeadingsRemoved: true,
   sourceMapHierarchyValid: true,
   bibliographySectionHierarchyValid: true,
+  bibliographyAccessDateExact: true,
   sectionSourceLines: 25,
   bibliographyEntries: citationEntries.length,
   indexEntries: INDEX_ENTRIES.length,

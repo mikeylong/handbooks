@@ -49,7 +49,7 @@ const BOOK_SUBTITLE = "A Handbook for Building Reliable LLM Systems";
 const AUTHOR = "Michael Long";
 const AUTHOR_SITE = "https://surfaces.systems";
 const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems</a>`;
-const PUBLICATION_DATE = "July 19, 2026";
+const PUBLICATION_DATE = "August 24, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -68,10 +68,16 @@ const formatCandidateDate = (isoDate) => {
 const COVER_DATE = process.env.HANDBOOK_CANDIDATE_DATE
   ? formatCandidateDate(process.env.HANDBOOK_CANDIDATE_DATE)
   : PUBLICATION_DATE;
+const formatBibliographyDate = (displayDate) => {
+  const match = /^([A-Z][a-z]+) (\d{1,2}), (\d{4})$/.exec(displayDate);
+  if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
+  return `${match[2]} ${match[1]} ${match[3]}`;
+};
+const BIBLIOGRAPHY_ACCESS_DATE = formatBibliographyDate(COVER_DATE);
 const PDF_HREF = "../output/pdf/production-ai-engineering.pdf";
-const PDF_PAGE_COUNT = 74;
+const PDF_PAGE_COUNT = 79;
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
-  ?? `Version 1.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+  ?? `Version 1.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 
 const HANDBOOK_CHAPTERS = [
@@ -812,7 +818,7 @@ const bibliographyHtml = CITATION_GROUPS.map((group) => `
             return `<a href="#${section.slug}">§${escapeHtml(section.displayNumber)}</a>`;
           })
           .join(", ");
-        const accessed = entry.accessed ? " Accessed 18 July 2026." : "";
+        const accessed = entry.accessed ? ` Accessed ${BIBLIOGRAPHY_ACCESS_DATE}.` : "";
         return `
         <li id="${referenceId(entry.label)}">
           <span class="reference-label">[${escapeHtml(entry.label)}]</span>
@@ -1018,7 +1024,7 @@ const html = `<!doctype html>
 
       ${indexHtml}
 
-      ${changelogHtml}
+${changelogHtml}
 
       <footer class="book-footer">
         <p>${BOOK_TITLE}</p>
