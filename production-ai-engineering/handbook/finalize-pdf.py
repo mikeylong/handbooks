@@ -114,6 +114,9 @@ def finalize(input_path: Path, output_path: Path) -> None:
     reader = PdfReader(input_path)
     overlay = build_overlay(reader)
     writer = PdfWriter(clone_from=reader)
+    # Preserve Chromium's declared PDF version. pypdf otherwise defaults the
+    # cloned document to PDF 1.3 even when the input uses PDF 1.4 features.
+    writer.pdf_header = reader.pdf_header
 
     for index, overlay_page in enumerate(overlay.pages):
         writer.pages[index].merge_page(overlay_page, over=True)

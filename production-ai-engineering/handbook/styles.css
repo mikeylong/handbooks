@@ -2602,7 +2602,16 @@ tbody tr:last-child td {
     max-width: 100%;
     height: auto;
     max-height: none;
-    filter: grayscale(1) contrast(1.1) brightness(1.02);
+    /*
+     * Keep PDF image XObjects opaque. Chromium/Skia represents CSS filters,
+     * clip paths, and masks with soft-mask transparency groups; Preview/PDFKit
+     * can tile or displace those groups at some zoom levels. The source art is
+     * already grayscale on white, so the print edition needs no live effects.
+     */
+    clip-path: none;
+    filter: none;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
     print-color-adjust: exact;
   }
 

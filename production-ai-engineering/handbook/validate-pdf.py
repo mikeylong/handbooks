@@ -108,10 +108,55 @@ def validate_fonts(path: Path) -> int:
     return len(rows)
 
 
+def validate_chapter_art_compatibility(
+    path: Path,
+    chapter_opener_pages: list[int],
+) -> None:
+    """Reject PDF image structures that Apple PDFKit renders unreliably."""
+    executable = shutil.which("pdfimages")
+    if not executable:
+        raise AssertionError("pdfimages is required for the chapter-art compatibility check")
+    result = subprocess.run(
+        [executable, "-list", str(path)],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    rows: list[tuple[int, str]] = []
+    for line in result.stdout.splitlines():
+        match = re.match(r"^\s*(\d+)\s+\d+\s+(image|smask|mask)\s+", line)
+        if match:
+            rows.append((int(match.group(1)), match.group(2)))
+
+    expected_pages = set(chapter_opener_pages)
+    image_rows = [page for page, kind in rows if kind == "image"]
+    mask_rows = [(page, kind) for page, kind in rows if kind in {"smask", "mask"}]
+    assert not mask_rows, (
+        "Chapter art must be opaque; found PDF soft-mask or mask rows: "
+        f"{mask_rows}"
+    )
+    assert len(image_rows) == len(CHAPTERS), (
+        f"Expected {len(CHAPTERS)} image paints, found {image_rows}"
+    )
+    assert set(image_rows) == expected_pages, (
+        "Illustrations are not confined to the chapter opener pages: "
+        f"expected {sorted(expected_pages)}, found {image_rows}"
+    )
+    assert len(set(image_rows)) == len(image_rows), (
+        f"A chapter illustration is painted more than once: {image_rows}"
+    )
+
+
 def validate(path: Path) -> None:
     assert path.is_file(), f"Missing PDF: {path}"
     changelog, require_changelog = load_changelog()
     reader = PdfReader(path, strict=True)
+    version_match = re.fullmatch(r"%PDF-(\d+)\.(\d+)", reader.pdf_header)
+    assert version_match, f"Malformed PDF header: {reader.pdf_header}"
+    pdf_version = tuple(int(part) for part in version_match.groups())
+    assert pdf_version >= (1, 4), (
+        f"PDF 1.4 or newer is required; found {reader.pdf_header}"
+    )
     minimum_pages = 75 if require_changelog else 74
     assert minimum_pages <= len(reader.pages) <= 90, (
         f"Unexpected page count: {len(reader.pages)}"
@@ -133,6 +178,17 @@ def validate(path: Path) -> None:
         )
 
     page_texts = [page.extract_text() or "" for page in reader.pages]
+    chapter_opener_pages: list[int] = []
+    for number in range(1, len(CHAPTERS) + 1):
+        matching_pages = [
+            index
+            for index, page_text in enumerate(page_texts, start=1)
+            if f"CHAPTER {number:02d}" in page_text.upper()
+        ]
+        assert len(matching_pages) == 1, (
+            f"Expected one opener for chapter {number:02d}, found {matching_pages}"
+        )
+        chapter_opener_pages.append(matching_pages[0])
     text = "\n".join(page_texts)
     canonical_text = canonical(text)
     cover_text = " ".join(page_texts[0].split())
@@ -141,7 +197,7 @@ def validate(path: Path) -> None:
     )
     cover_pattern = re.compile(
         rf"{cover_title_pattern} {re.escape(SUBTITLE)} {re.escape(AUTHOR_CREDIT)} "
-        r"[A-Z][a-z]+ \d{1,2}, \d{4} · Version \d+\.\d+"
+        r"[A-Z][a-z]+ \d{1,2}, \d{4} · Version \d+\.\d+(?:\.\d+)?"
         r"(?:-candidate\.\d{8}\.\d{6})?"
     )
     assert cover_pattern.fullmatch(cover_text), (
@@ -445,6 +501,7 @@ def validate(path: Path) -> None:
     sparse_pages: list[tuple[int, int]] = []
     overflow_pages: list[int] = []
     image_pages: list[int] = []
+    image_paints_by_page: dict[int, int] = {}
     with pdfplumber.open(path) as pdf:
         for page_number, page in enumerate(pdf.pages, start=1):
             body_words = [
@@ -482,6 +539,7 @@ def validate(path: Path) -> None:
                 sparse_pages.append((page_number, len(body_chars)))
             if page.images:
                 image_pages.append(page_number)
+                image_paints_by_page[page_number] = len(page.images)
             for char in page.chars:
                 if (
                     float(char["x0"]) < -0.1
@@ -494,14 +552,25 @@ def validate(path: Path) -> None:
 
     assert not blank_pages, f"Blank pages: {blank_pages}"
     assert not overflow_pages, f"Text outside page bounds: {overflow_pages}"
-    assert len(image_pages) == 12, f"Expected 12 illustrated pages, found {image_pages}"
+    assert image_pages == chapter_opener_pages, (
+        "Illustrated pages do not match the chapter openers: "
+        f"expected {chapter_opener_pages}, found {image_pages}"
+    )
+    duplicate_image_paints = {
+        page: count for page, count in image_paints_by_page.items() if count != 1
+    }
+    assert not duplicate_image_paints, (
+        "Each chapter opener must paint exactly one illustration; found "
+        f"{duplicate_image_paints}"
+    )
+    validate_chapter_art_compatibility(path, chapter_opener_pages)
 
     font_count = validate_fonts(path)
     print(
         "PASS — "
         f"{len(reader.pages)} A5 pages, {len(outline)} outline entries, "
         f"{internal_links} internal links, {len(external_urls)} external links, "
-        f"12 illustrations, {font_count} embedded font subsets, "
+        f"12 opaque single-paint illustrations, {font_count} embedded font subsets, "
         f"and no blank body pages. Sparse body pages: {sparse_pages}."
     )
 

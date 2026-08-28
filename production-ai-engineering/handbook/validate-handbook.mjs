@@ -29,8 +29,8 @@ const expectedReleaseSchedule = buildReleaseSchedule(
   new Date(releaseSchedule.generatedAt),
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
-  ?? `Version 1.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
-const PUBLICATION_DATE = "August 24, 2026";
+  ?? `Version 1.1.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const PUBLICATION_DATE = "August 27, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -54,7 +54,12 @@ const formatBibliographyDate = (displayDate) => {
   if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
   return `${match[2]} ${match[1]} ${match[3]}`;
 };
-const expectedBibliographyAccessDate = formatBibliographyDate(expectedCoverDate);
+const evidenceReviewDate = source.match(
+  /Last evidence review:\s*\*\*([^*]+)\*\*/,
+)?.[1] ?? "Unspecified";
+const expectedBibliographyAccessDate = formatBibliographyDate(
+  formatCandidateDate(evidenceReviewDate),
+);
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 const changelogRequired = changelog.summary?.trim() !== UNCHANGED_CHANGELOG_SUMMARY;
 
@@ -185,6 +190,11 @@ const checks = {
     && /height:\s*auto/.test(chapterArtPrintRule)
     && /#chapter-03-prefill-and-decode-are-different-jobs \.chapter-art\s*\{\s*width:\s*110mm;\s*\}/s.test(printCss)
     && /#chapter-09-trace-the-whole-user-journey \.chapter-art\s*\{\s*width:\s*116mm;\s*\}/s.test(printCss),
+  chapterArtPrintPdfKitCompatibilityValid:
+    /clip-path:\s*none/.test(chapterArtPrintRule)
+    && /filter:\s*none/.test(chapterArtPrintRule)
+    && /-webkit-mask-image:\s*none\s*!important/.test(chapterArtPrintRule)
+    && /(?<!-webkit-)mask-image:\s*none\s*!important/.test(chapterArtPrintRule),
   pairedRowVerticalAlignmentValid:
     /\.key-value-example > div,\s*\.cache-key-composition > div,\s*\.latency-band,\s*\.golden-record > div,\s*\.cost-model dl > div\s*\{\s*align-items:\s*center;\s*\}/s.test(css),
   systemFlowDiagrams: count(/class="system-flow-diagram"/g, html),
