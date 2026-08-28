@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "designSystemVersion": "1.0.0",
+  "artifactProfile": "design-specimen",
+  "changelogMode": "include",
+  "pageNumbering": "pdfPage is one-based; folio is the printed label",
+  "pages": [
+    {
+      "pdfPage": 1,
+      "folio": "Cover",
+      "role": "cover",
+      "inspect": ["title hierarchy", "negative space", "subtitle", "version line"]
+    },
+    {
+      "pdfPage": 2,
+      "folio": "ii",
+      "role": "editorial-premise",
+      "inspect": ["display heading", "italic lede", "blockquote", "three-column principles"]
+    },
+    {
+      "pdfPage": 3,
+      "folio": "iii",
+      "role": "contents",
+      "inspect": ["two-column navigation", "rules", "utility typography", "page labels"]
+    },
+    {
+      "pdfPage": 4,
+      "folio": "1",
+      "role": "chapter-opener",
+      "inspect": ["kicker", "balanced title", "italic deck", "opaque monochrome illustration"]
+    },
+    {
+      "pdfPage": 5,
+      "folio": "2",
+      "role": "narrative-and-sources",
+      "inspect": ["numbered heading", "body rhythm", "callout", "citation marker", "source strip", "running furniture"]
+    },
+    {
+      "pdfPage": 6,
+      "folio": "3",
+      "role": "diagram-and-table",
+      "inspect": ["vector flow", "diagram labels", "horizontal-rule table", "sans data typography"]
+    },
+    {
+      "pdfPage": 7,
+      "folio": "4",
+      "role": "editorial-examples",
+      "inspect": ["structured key-value rows", "outer and inner rules", "label hierarchy"]
+    },
+    {
+      "pdfPage": 8,
+      "folio": "5",
+      "role": "code-and-checklist",
+      "inspect": ["frameless code", "monospace legibility", "checklist boxes", "page density"]
+    },
+    {
+      "pdfPage": 9,
+      "folio": "6",
+      "role": "dense-table-stress",
+      "inspect": ["minimum table size", "four-column wrapping", "section transition", "no clipping"]
+    },
+    {
+      "pdfPage": 10,
+      "folio": "7",
+      "role": "notes-and-sources",
+      "inspect": ["back-matter opener", "source map", "grouped references", "readable direct links"]
+    },
+    {
+      "pdfPage": 11,
+      "folio": "8",
+      "role": "index",
+      "inspect": ["two-column density", "letter headings", "cross-references", "running furniture"]
+    },
+    {
+      "pdfPage": 12,
+      "folio": "9",
+      "role": "conditional-final-changelog",
+      "conditional": true,
+      "inspect": ["final-page placement", "three change categories", "baseline statement", "omission rule"]
+    }
+  ]
+}

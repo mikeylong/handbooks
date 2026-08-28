@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifact": "canonical-handbook-specimen.pdf",
+  "artifactSha256": "f2b35119784796cbc6a1da72b11842bb02f90667d90a3dffc1b68622bd1bca85",
+  "status": "passed",
+  "checks": {
+    "strictPdfOpen": true,
+    "pdfVersion": "1.4",
+    "a5PageGeometry": true,
+    "tagged": true,
+    "encrypted": false,
+    "javascript": false,
+    "blankPages": [],
+    "outlineEntries": 12,
+    "pageMapEntries": 12,
+    "embeddedFontSubsets": 17,
+    "internalLinks": 9,
+    "externalLinks": 6,
+    "rasterImages": 1,
+    "imageMasks": 0,
+    "illustrationPaints": 1,
+    "illustrationEffectivePpi": {
+      "x": 361,
+      "y": 362
+    },
+    "bitwiseReproducibleRebuild": true,
+    "rebuildStructuralValidation": true,
+    "rebuildReaderFacingComparison": "unchanged",
+    "rebuildVisualEquivalence": true,
+    "conditionalChangelogRegression": "passed"
+  },
+  "limitations": [
+    "Tagged output records generated structure; it is not a substitute for assistive-technology testing.",
+    "Tagged structure node identifiers may vary between browser builds, so reproducibility is defined by inputs, structure, extracted reader-facing content, and visual proof rather than binary identity.",
+    "Visual compatibility evidence is recorded separately in compatibility-matrix.json.",
+    "The conditional changelog workflow regression is recorded separately in workflow-regression.json."
+  ]
+}

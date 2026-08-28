@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifact": "canonical-handbook-specimen.pdf",
+  "artifactSha256": "f2b35119784796cbc6a1da72b11842bb02f90667d90a3dffc1b68622bd1bca85",
+  "status": "passed",
+  "renderers": [
+    {
+      "name": "Poppler pdftoppm",
+      "version": "26.02.0",
+      "pagesRendered": 12,
+      "allPagesInspected": true,
+      "result": "passed"
+    },
+    {
+      "name": "Apple PDFKit",
+      "host": "macOS 26.6.2 (25G83)",
+      "renderHarness": "scripts/render-pdfkit.swift",
+      "runtime": "Apple Swift 6.3.3",
+      "pagesRendered": 12,
+      "allPagesInspected": true,
+      "result": "passed"
+    }
+  ],
+  "observations": {
+    "missingOrBlankPages": false,
+    "clippingOrOverflow": false,
+    "fontSubstitution": false,
+    "illustrationTilingOrDisplacement": false,
+    "materialCrossRendererDifference": false
+  }
+}

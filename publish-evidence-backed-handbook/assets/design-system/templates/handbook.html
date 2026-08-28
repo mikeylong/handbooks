@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <link rel="stylesheet" href="../print.css">
+</head>
+<body>
+  <main class="handbook">
+    <section class="cover">
+      <div class="cover-rule"></div>
+      <p class="cover-label">{{COVER_LABEL}}</p>
+      <h1>{{TITLE}}</h1>
+      <p class="cover-subtitle">{{SUBTITLE}}</p>
+      <p class="cover-byline">{{AUTHOR}}</p>
+      <p class="cover-meta">{{PUBLICATION_DATE}} · {{VERSION}}</p>
+    </section>
+
+    <section class="foreword">
+      <p class="section-label">Premise</p>
+      <h2 class="display-title">{{FOREWORD_TITLE}}</h2>
+      <p class="lede">{{FOREWORD_LEDE}}</p>
+      {{FOREWORD_BODY}}
+    </section>
+
+    <section class="contents">
+      <p class="section-label">Navigation</p>
+      <h2 class="display-title">Contents</h2>
+      <ol class="contents-list">{{CONTENTS_ITEMS}}</ol>
+    </section>
+
+    {{CHAPTERS}}
+    {{NOTES_AND_SOURCES}}
+    {{INDEX}}
+    {{CONDITIONAL_CHANGELOG}}
+  </main>
+</body>
+</html>

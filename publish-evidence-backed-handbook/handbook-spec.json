@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "profile": "editorial-technical-monochrome",
+  "designSystemVersion": "1.0.0",
+  "canonicalSpecimen": "references/specimen/canonical-handbook-specimen.pdf",
+  "canonicalPageMap": "references/specimen/canonical-page-map.json",
+  "designTokens": "assets/design-system/tokens.json",
+  "candidatePageMap": {
+    "required": true,
+    "artifactProfile": "candidate",
+    "stabilizeAfterPagination": true
+  },
+  "page": {
+    "standard": "A5",
+    "widthPoints": 420.0,
+    "heightPoints": 594.96,
+    "tolerancePoints": 0.15,
+    "marginsMillimetres": {
+      "top": 15,
+      "outside": 13,
+      "bottom": 18,
+      "inside": 13
+    }
+  },
+  "pdf": {
+    "minimumVersion": "1.4",
+    "forbidEncryption": true,
+    "forbidJavaScript": true,
+    "requireEmbeddedFonts": true,
+    "requireOutline": true,
+    "forbidImageMasks": true,
+    "requireOpaquePrintIllustrations": true,
+    "requireNonblankPages": true
+  },
+  "typography": {
+    "narrativeFamily": "Source Serif 4",
+    "labelFamily": "Noto Sans",
+    "codeFamily": "Source Code Pro",
+    "bodySizePoints": 10,
+    "bodyLineHeight": 1.5,
+    "minimumTableSizePoints": 6.6,
+    "minimumCodeSizePoints": 7.8,
+    "widows": 3,
+    "orphans": 3
+  },
+  "illustration": {
+    "palette": "opaque monochrome on white",
+    "defaultPrintWidthMillimetres": 104,
+    "maximumPrintWidthMillimetres": 116,
+    "minimumEffectivePpi": 240,
+    "preferredEffectivePpi": 300,
+    "forbiddenLiveEffects": [
+      "clip-path",
+      "filter",
+      "mask-image",
+      "-webkit-mask-image"
+    ]
+  },
+  "changelog": {
+    "unchangedSummary": "The handbook's reader-facing content is unchanged.",
+    "includeWhenUnchanged": false,
+    "positionWhenIncluded": "final-page",
+    "categories": [
+      "Addition",
+      "Deprecation or removal",
+      "Correction or clarification"
+    ]
+  }
+}

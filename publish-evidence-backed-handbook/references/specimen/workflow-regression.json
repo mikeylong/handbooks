@@ -1,0 +1,21 @@
+{
+  "command": "python3 scripts/test-edition-workflow.py --output <report.json>",
+  "limitations": [
+    "The regression suite verifies workflow logic and structural gates; visual and renderer evidence is recorded separately.",
+    "Raw PDF-text diff byte counts can vary when renderer text extraction changes; the required invariant is nonzero raw diff and zero substantive diff."
+  ],
+  "schemaVersion": 1,
+  "status": "passed",
+  "tests": {
+    "changedCandidateValidation": "passed",
+    "derivativeRemovalDecision": "The handbook's reader-facing content is unchanged.",
+    "derivativeRemovalRawDiffBytes": 1847,
+    "derivativeRemovalSubstantiveDiffBytes": 0,
+    "mismatchedCandidateRejected": true,
+    "staleChangelogArtifactRejected": true,
+    "unchangedBuildOmitsChangelog": true,
+    "unchangedCandidateValidation": "passed",
+    "unchangedDecisionSummary": "The handbook's reader-facing content is unchanged.",
+    "unchangedFixturePages": 11
+  }
+}
