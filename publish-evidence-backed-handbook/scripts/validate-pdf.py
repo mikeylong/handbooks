@@ -5,13 +5,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import subprocess
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlparse
 
-from pypdf import PdfReader
+from pypdf import PdfReader, Transformation
+from pypdf.generic import ContentStream
 
 from runtime_support import (
     atomic_write_text,
@@ -27,6 +29,7 @@ DEFAULT_SPEC = PACKAGE_ROOT / "handbook-spec.json"
 SPECIMEN_PAGE_MAP = PACKAGE_ROOT / "references/specimen/canonical-page-map.json"
 CHANGELOG_WORDS = ("changelog", "version history")
 NAVIGATION_ROLE_WORDS = ("contents", "index", "navigation")
+REQUIRED_RASTER_ILLUSTRATION_FIELD = "requiredRasterIllustration"
 
 
 def flatten_outline(items: Iterable[Any]) -> Iterable[Any]:
@@ -92,6 +95,243 @@ def image_objects(reader: PdfReader) -> list[dict[str, Any]]:
         for value in dereference(xobjects).values():
             walk(value, page_number)
     return found
+
+
+def _object_key(value: Any) -> tuple[int, int] | int:
+    if hasattr(value, "idnum"):
+        return (int(value.idnum), int(value.generation))
+    return id(value)
+
+
+def _object_label(value: Any, fallback: str) -> str:
+    if hasattr(value, "idnum"):
+        return f"{int(value.idnum)} {int(value.generation)}"
+    return fallback
+
+
+def _concatenate_matrix(
+    current: tuple[float, float, float, float, float, float],
+    operands: Iterable[Any],
+) -> tuple[float, float, float, float, float, float]:
+    values = tuple(float(value) for value in operands)
+    if len(values) != 6:
+        return current
+    return tuple(
+        float(value)
+        for value in Transformation(current).transform(Transformation(values)).ctm
+    )  # type: ignore[return-value]
+
+
+def _effective_ppi(
+    width: int,
+    height: int,
+    ctm: tuple[float, float, float, float, float, float],
+    user_unit: float,
+) -> tuple[float, float]:
+    width_points = math.hypot(ctm[0], ctm[1]) * user_unit
+    height_points = math.hypot(ctm[2], ctm[3]) * user_unit
+    x_ppi = width * 72.0 / width_points if width_points > 0 else 0.0
+    y_ppi = height * 72.0 / height_points if height_points > 0 else 0.0
+    return x_ppi, y_ppi
+
+
+def raster_image_paints(reader: PdfReader) -> list[dict[str, Any]]:
+    """Return every raster image paint, including repeated paints of one XObject."""
+
+    paints: list[dict[str, Any]] = []
+
+    def record_image(
+        image: Any,
+        *,
+        page_number: int,
+        name: str,
+        object_label: str,
+        ctm: tuple[float, float, float, float, float, float],
+        user_unit: float,
+    ) -> None:
+        width = int(image.get("/Width", image.get("/W", 0)))
+        height = int(image.get("/Height", image.get("/H", 0)))
+        x_ppi, y_ppi = _effective_ppi(width, height, ctm, user_unit)
+        has_smask = image.get("/SMask") is not None
+        has_mask = image.get("/Mask") is not None
+        is_image_mask = bool(image.get("/ImageMask", image.get("/IM", False)))
+        paints.append(
+            {
+                "page": page_number,
+                "name": name,
+                "object": object_label,
+                "width": width,
+                "height": height,
+                "xPpi": round(x_ppi, 2),
+                "yPpi": round(y_ppi, 2),
+                "hasSMask": has_smask,
+                "hasMask": has_mask,
+                "isImageMask": is_image_mask,
+                "opaque": not (has_smask or has_mask or is_image_mask),
+            }
+        )
+
+    def walk_stream(
+        stream: Any,
+        resources: Any,
+        *,
+        page_number: int,
+        initial_ctm: tuple[float, float, float, float, float, float],
+        user_unit: float,
+        active_forms: frozenset[tuple[int, int] | int],
+    ) -> None:
+        content = ContentStream(stream, reader)
+        resources = dereference(resources) if resources else {}
+        ctm = initial_ctm
+        stack: list[tuple[float, float, float, float, float, float]] = []
+        for operands, operator in content.operations:
+            if operator == b"q":
+                stack.append(ctm)
+            elif operator == b"Q":
+                if stack:
+                    ctm = stack.pop()
+            elif operator == b"cm":
+                ctm = _concatenate_matrix(ctm, operands)
+            elif operator == b"INLINE IMAGE":
+                settings = operands.get("settings", operands)
+                record_image(
+                    settings,
+                    page_number=page_number,
+                    name="inline",
+                    object_label="inline",
+                    ctm=ctm,
+                    user_unit=user_unit,
+                )
+            elif operator == b"Do" and operands:
+                xobjects = resources.get("/XObject") if hasattr(resources, "get") else None
+                xobjects = dereference(xobjects) if xobjects else None
+                if not xobjects:
+                    continue
+                reference = xobjects.get(operands[0])
+                if reference is None:
+                    continue
+                obj = dereference(reference)
+                subtype = str(obj.get("/Subtype", ""))
+                if subtype == "/Image":
+                    record_image(
+                        obj,
+                        page_number=page_number,
+                        name=str(operands[0]),
+                        object_label=_object_label(reference, str(operands[0])),
+                        ctm=ctm,
+                        user_unit=user_unit,
+                    )
+                elif subtype == "/Form":
+                    key = _object_key(reference)
+                    if key in active_forms:
+                        continue
+                    matrix = obj.get("/Matrix", (1, 0, 0, 1, 0, 0))
+                    form_ctm = _concatenate_matrix(ctm, matrix)
+                    walk_stream(
+                        obj,
+                        obj.get("/Resources") or resources,
+                        page_number=page_number,
+                        initial_ctm=form_ctm,
+                        user_unit=user_unit,
+                        active_forms=active_forms | {key},
+                    )
+
+    for page_number, page in enumerate(reader.pages, start=1):
+        contents = page.get_contents()
+        if contents is None:
+            continue
+        user_unit = float(page.get("/UserUnit", 1) or 1)
+        walk_stream(
+            contents,
+            page.get("/Resources") or {},
+            page_number=page_number,
+            initial_ctm=(1, 0, 0, 1, 0, 0),
+            user_unit=user_unit,
+            active_forms=frozenset(),
+        )
+    return paints
+
+
+def required_raster_illustration_report(
+    pages: list[Any] | None,
+    paints: list[dict[str, Any]],
+    default_minimum_ppi: int,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """Validate opt-in per-page raster illustration requirements."""
+
+    results: list[dict[str, Any]] = []
+    failures: list[str] = []
+    if not isinstance(pages, list):
+        return results, failures
+
+    for page_number, page in enumerate(pages, start=1):
+        if not isinstance(page, dict) or REQUIRED_RASTER_ILLUSTRATION_FIELD not in page:
+            continue
+        requirement = page.get(REQUIRED_RASTER_ILLUSTRATION_FIELD)
+        if not isinstance(requirement, dict):
+            failures.append(
+                f"Page {page_number} {REQUIRED_RASTER_ILLUSTRATION_FIELD} must be an object"
+            )
+            continue
+
+        paint_count = requirement.get("paintCount")
+        minimum_ppi = requirement.get("minimumEffectivePpi", default_minimum_ppi)
+        require_opaque = requirement.get("requireOpaque", True)
+        configuration_failures: list[str] = []
+        if (
+            not isinstance(paint_count, int)
+            or isinstance(paint_count, bool)
+            or paint_count != 1
+        ):
+            configuration_failures.append("paintCount must be exactly 1")
+        if (
+            not isinstance(minimum_ppi, int)
+            or isinstance(minimum_ppi, bool)
+            or minimum_ppi < default_minimum_ppi
+        ):
+            configuration_failures.append(
+                f"minimumEffectivePpi must be an integer at least {default_minimum_ppi}"
+            )
+        if require_opaque is not True:
+            configuration_failures.append("requireOpaque must be true")
+        if configuration_failures:
+            failures.extend(
+                f"Page {page_number} {REQUIRED_RASTER_ILLUSTRATION_FIELD} {message}"
+                for message in configuration_failures
+            )
+            continue
+
+        page_paints = [paint for paint in paints if paint["page"] == page_number]
+        gate_failures: list[str] = []
+        if len(page_paints) != paint_count:
+            gate_failures.append(
+                f"requires exactly {paint_count} raster image paint; found {len(page_paints)}"
+            )
+        non_opaque = [paint for paint in page_paints if not paint["opaque"]]
+        if non_opaque:
+            gate_failures.append(f"contains masked or non-opaque raster paints: {non_opaque}")
+        low_resolution = [
+            paint
+            for paint in page_paints
+            if min(float(paint["xPpi"]), float(paint["yPpi"])) < minimum_ppi
+        ]
+        if low_resolution:
+            gate_failures.append(
+                f"contains raster paints below {minimum_ppi} effective PPI: {low_resolution}"
+            )
+        failures.extend(f"Page {page_number} {message}" for message in gate_failures)
+        results.append(
+            {
+                "page": page_number,
+                "requiredPaintCount": paint_count,
+                "actualPaintCount": len(page_paints),
+                "minimumEffectivePpi": minimum_ppi,
+                "requireOpaque": True,
+                "status": "passed" if not gate_failures else "failed",
+                "paints": page_paints,
+            }
+        )
+    return results, failures
 
 
 def font_report(path: Path) -> dict[str, Any]:
@@ -355,6 +595,7 @@ def main() -> None:
     failures: list[str] = []
     reader = PdfReader(pdf, strict=True)
     page_map_count = None
+    page_map_pages: list[Any] | None = None
     roles: dict[int, str] = {}
     if args.page_map:
         page_map_path = args.page_map.expanduser()
@@ -364,6 +605,7 @@ def main() -> None:
             page_map_path = page_map_path.resolve()
             page_map = json.loads(page_map_path.read_text(encoding="utf-8"))
             pages = page_map.get("pages")
+            page_map_pages = pages if isinstance(pages, list) else None
             artifact_profile = page_map.get("artifactProfile")
             page_map_count = len(pages) if isinstance(pages, list) else None
             if page_map_count != len(reader.pages):
@@ -451,6 +693,15 @@ def main() -> None:
 
     rasters = raster_report(pdf)
     minimum_ppi = int(illustration_spec["minimumEffectivePpi"])
+    image_paints = raster_image_paints(reader)
+    illustration_gates, illustration_gate_failures = (
+        required_raster_illustration_report(
+            page_map_pages,
+            image_paints,
+            minimum_ppi,
+        )
+    )
+    failures.extend(illustration_gate_failures)
     low_resolution = [
         image
         for image in rasters["images"]
@@ -499,17 +750,20 @@ def main() -> None:
         "status": "passed" if not failures else "failed",
         "failures": failures,
         "changelogDecision": changelog_validation,
+        "requiredRasterIllustrations": illustration_gates,
         "stats": {
             "pages": len(reader.pages),
             "pdfVersion": f"{actual_version[0]}.{actual_version[1]}",
             "outlineEntries": outline_count,
             "fonts": fonts["count"],
             "rasterImages": len(rasters["images"]),
+            "rasterImagePaints": len(image_paints),
             "imageMasks": len(rasters["masks"]),
             "internalLinks": links["internalCount"],
             "externalLinks": links["externalCount"],
             "blankPages": blank_pages,
             "pageMapEntries": page_map_count,
+            "requiredRasterIllustrationPages": len(illustration_gates),
         },
         "limitations": [
             "This structural validator does not establish visual quality.",

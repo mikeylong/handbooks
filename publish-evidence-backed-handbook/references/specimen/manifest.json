@@ -36,7 +36,7 @@
   "inputs": {
     ".gitattributes": "c946264169ba03cb2e392755cfe903acbcf25dcbe7d73a915381db6eb8dcfb2c",
     ".gitignore": "dd7eed9c481a9f900b9175c5f4bccdd5dc6ad144606d89cd36869d3c2ce24208",
-    "SKILL.md": "47e8fb9e865c8af3aaead0a849923f7f438a7b7f95638cd993b8de86960dc3e5",
+    "SKILL.md": "696072fc8efde0b1a623f2d060c4e6b98989f9655ffd75b2f5c36196110890a5",
     "assets/design-system/fonts/NOTO-SANS-LICENSE.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb",
     "assets/design-system/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
     "assets/design-system/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
@@ -52,10 +52,11 @@
     "assets/design-system/templates/handbook.html": "b801044c7a349f1039039f4305990d2a596bac7379139abd8d525bfeb80287cc",
     "assets/design-system/tokens.json": "191a9d3ebeb37edda97817bda64bce3150795d7ace07dc0590b004c32b96d9b0",
     "handbook-spec.json": "87f4a9491eca40d340e1c4387f75189bad6db129a429a273957975f06be980f8",
-    "references/design-system.md": "c1da55e5f2748c28877c14ed9604dc3d76eca9f58631422a10d4144a9be0ec3b",
+    "references/design-system.md": "91cab181e4dd2eca39d2abf980906e0a90ddc2b2fc3a2b20499ea3185601c0e9",
     "references/edition-and-release.md": "4df676a61ce31fa72c2372d1dd553b7d6603882258b1a3d713e6991ab4cd5abd",
     "references/editorial-quality.md": "370bf467b94eb1c1109c141275871c4e45b4c0db05b014837722f2dd21bbea0e",
-    "references/quality-gates.md": "cc03ecaa8241c03509c988e72bef0abfaaeffa0ea13a0afa2d5d2a7749430f83",
+    "references/illustration-workflow.md": "57cebbb4f17cecc07bd91ae8c945ca95fe620f654dd42d6a3c5103502c266359",
+    "references/quality-gates.md": "00766b4fd03cf406e4d0c8c2053f708da7ca4a1fafa38a7de6a2561850ab0607",
     "references/research-and-evidence.md": "9efa14246e49e70ef49d99b49e2872e28ec94dec4befc8cc9c14bebaee9e6454",
     "references/specimen/canonical-page-map.json": "96e76966601f638438dbcd29e8544d452096ce39233666bea0a6455c82410832",
     "references/specimen/compatibility-matrix.json": "c53cee9c0ccc6ea887b97fc8c69a283b04da2a10f868b75b4d47d21c7f73f9f6",
@@ -73,8 +74,9 @@
     "scripts/render-proof.py": "c46436972f9b25793b35754659c93fc3c133d6e75c964d8dfbb42b2bf287dee8",
     "scripts/runtime_support.py": "8c38cf7b432696455f4b51e95fb0bef78a50fb1984cd889e5ea160fb6652b0f6",
     "scripts/test-edition-workflow.py": "3c8aff6a6a6c64140b59eaf28cc8bab18886979188a9b1429a8df670c7091394",
+    "scripts/test-illustration-gate.py": "a7d52d6e335e6813f300771415781168f3e93483cf069854765137798e6dc552",
     "scripts/validate-package.py": "dde6fa2856a3e8f6086f8b6d0d305cedb85e0d6cccb45fc9eaaef427051d795a",
-    "scripts/validate-pdf.py": "02baf3f81bf02b84c2d7753811ffab19659624da25e1f47eff3070d2c8cae554"
+    "scripts/validate-pdf.py": "7eba861193fa52d07377c53ff7907239b97b8c5caf63a295ff0c90c4a566174b"
   },
   "schemaVersion": 1,
   "toolchain": {

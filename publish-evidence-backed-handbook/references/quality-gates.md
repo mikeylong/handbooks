@@ -31,6 +31,7 @@ A candidate is ready only when every required hard gate passes and the perceptua
 - Print-critical images meet effective-resolution requirements.
 - Image objects have no `/SMask`, `/Mask`, or live transparency structure that the target renderer handles unreliably.
 - An illustration is painted once at its intended placement, not fragmented or duplicated.
+- Every page-map entry that requires an illustration resolves to exactly one raster image paint on that PDF page. Zero-image opener pages fail even when every other structural check passes.
 
 ## Visual and print gates
 
@@ -40,6 +41,7 @@ A candidate is ready only when every required hard gate passes and the perceptua
 - Confirm typography, margins, hierarchy, rules, running furniture, page numbers, whitespace, table wrapping, and diagram labels.
 - Confirm widows, orphans, heading separation, and accidental blank areas are acceptable.
 - Confirm illustrations remain coherent at normal viewing scale and print resolution.
+- Confirm generated chapter art matches the governing illustration treatment rather than reading as a flowchart, labeled diagram, icon, or generic stock image.
 
 ## Cross-renderer gates
 
