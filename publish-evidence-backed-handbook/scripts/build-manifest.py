@@ -62,6 +62,7 @@ def main() -> None:
     tracked = [
         PACKAGE_ROOT / ".gitattributes",
         PACKAGE_ROOT / ".gitignore",
+        PACKAGE_ROOT / "README.md",
         PACKAGE_ROOT / "SKILL.md",
         PACKAGE_ROOT / "handbook-spec.json",
         PACKAGE_ROOT / "requirements.txt",

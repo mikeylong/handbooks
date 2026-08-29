@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-08-28",
+  "purpose": "Item-level provenance and rights evidence for every open-web image used in Generation B",
+  "workIdentity": {
+    "title": "Atlas des champignons comestibles et vénéneux",
+    "creator": "Léon Dufour",
+    "publication": "Paris, P. Klincksieck, 1891",
+    "holdingInstitution": "New York Botanical Garden, LuEsther T. Mertz Library",
+    "bhlTitleId": 4063,
+    "bhlCanonicalUrl": "https://www.biodiversitylibrary.org/bibliography/4063",
+    "bhlDoi": "10.5962/bhl.title.4063",
+    "catalogEvidenceUrl": "https://www.biodiversitylibrary.org/browse/titles/a/year?bpg=14&ppg=77&psize=250",
+    "catalogEvidenceObserved": "The BHL title listing identifies Atlas des champignons comestibles et vénéneux, author Dufour, Léon, Paris publication by P. Klincksieck in 1891, and the New York Botanical Garden, LuEsther T. Mertz Library as holding institution."
+  },
+  "rightsPolicy": {
+    "appliedTerms": "Creative Commons Attribution 2.0 Generic",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "obligationsObserved": [
+      "Give appropriate credit.",
+      "Provide a link to the license.",
+      "Indicate whether changes were made."
+    ],
+    "publicDomainStatus": "Each item page also identifies the underlying 1891 work and mechanical scan as public domain.",
+    "candidateDecision": "Generation B conservatively complies with CC BY 2.0 even though the Commons API's primary extmetadata field reports public domain."
+  },
+  "rawImageInfoEvidence": {
+    "path": "candidates/poisonous-mushroom-identification-generation-b/evidence/wikimedia-commons-imageinfo.json",
+    "sha256": "ba3d794250fca0cfb08ef59636726d952ec4e059a04306e94f9147a47f602df5",
+    "scope": "Wikimedia Commons API image identity, dimensions, byte size, SHA-1, description URL, creator string, public-domain metadata, and source-credit URL"
+  },
+  "usedItems": [
+    {
+      "plate": 2,
+      "commonsItemUrl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_2)_(6358013309).jpg",
+      "bhlPageUrl": "https://www.biodiversitylibrary.org/page/3270717",
+      "flickrSourceId": "6358013309",
+      "commonsFileSha1": "764c0c375ac3657fd3ae1a820874e74324240a8e",
+      "commonsFileBytes": 503962,
+      "pixels": [2288, 3254],
+      "licenseEvidenceObserved": "The item page explicitly states Creative Commons Attribution 2.0 Generic, links the CC BY 2.0 license, records FlickreviewR confirmation, and also records public-domain scan and underlying-work status."
+    },
+    {
+      "plate": 3,
+      "commonsItemUrl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_3)_(6358013625).jpg",
+      "bhlPageUrl": "https://www.biodiversitylibrary.org/page/3270680",
+      "flickrSourceId": "6358013625",
+      "commonsFileSha1": "3769ea910de8607ab6978d39309e09d4ec65fbf0",
+      "commonsFileBytes": 511482,
+      "pixels": [2288, 3254],
+      "licenseEvidenceObserved": "The item page explicitly states Creative Commons Attribution 2.0 Generic, links the CC BY 2.0 license, records FlickreviewR confirmation, and also records public-domain scan and underlying-work status."
+    },
+    {
+      "plate": 4,
+      "commonsItemUrl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_4)_(6358013781).jpg",
+      "bhlPageUrl": "https://www.biodiversitylibrary.org/page/3270805",
+      "flickrSourceId": "6358013781",
+      "commonsFileSha1": "65663c3fb7ebe7baedb853832776402f1d72a31e",
+      "commonsFileBytes": 512674,
+      "pixels": [2288, 3254],
+      "licenseEvidenceObserved": "The item page explicitly states Creative Commons Attribution 2.0 Generic, links the CC BY 2.0 license, records FlickreviewR confirmation, and also records public-domain scan and underlying-work status."
+    },
+    {
+      "plate": 54,
+      "commonsItemUrl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_54)_(6358026021).jpg",
+      "bhlPageUrl": "https://www.biodiversitylibrary.org/page/3270758",
+      "flickrSourceId": "6358026021",
+      "commonsFileSha1": "4674b2f2f88b8b1627ea89bffdd2df7e1f254c40",
+      "commonsFileBytes": 530428,
+      "pixels": [2288, 3254],
+      "licenseEvidenceObserved": "The item page explicitly states Creative Commons Attribution 2.0 Generic, links the CC BY 2.0 license, and also records public-domain scan and underlying-work status."
+    },
+    {
+      "plate": 78,
+      "commonsItemUrl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_78)_(6358032311).jpg",
+      "bhlPageUrl": "https://www.biodiversitylibrary.org/page/3270667",
+      "flickrSourceId": "6358032311",
+      "commonsFileSha1": "eece51b4ecf92594d74d77425c3f837c4f8a66cd",
+      "commonsFileBytes": 681216,
+      "pixels": [2288, 3254],
+      "licenseEvidenceObserved": "The item page explicitly states Creative Commons Attribution 2.0 Generic, links the CC BY 2.0 license, records FlickreviewR confirmation, and also records public-domain scan and underlying-work status."
+    }
+  ],
+  "unusedRawSnapshotEntries": [
+    {
+      "plate": 5,
+      "status": "search candidate only; rejected and not used in the manuscript, manifests, or PDF",
+      "reasonRetained": "The immutable API response was preserved as retrieved; this explicit disposition prevents the unused search candidate from being mistaken for a selected source."
+    }
+  ]
+}

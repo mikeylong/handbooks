@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-08-28",
+  "acquisitionMode": "open-licensed-web",
+  "imageGenerationState": "blocked by user for Generation B; no image-generation call was made",
+  "repository": "Wikimedia Commons",
+  "work": "Atlas des champignons comestibles et vénéneux",
+  "creator": "Léon Dufour",
+  "date": "1891",
+  "sourceInstitution": "Biodiversity Heritage Library; LuEsther T. Mertz Library, New York Botanical Garden",
+  "bhlTitleUrl": "https://www.biodiversitylibrary.org/bibliography/4063",
+  "bhlDoi": "10.5962/bhl.title.4063",
+  "accessDate": "2026-08-28",
+  "provenanceEvidence": {
+    "path": "candidates/poisonous-mushroom-identification-generation-b/evidence/open-image-provenance.json",
+    "sha256": "c6eed8a1c2904655035ede6c65f4a10bd3013948c3cd98d209bfd678005e3357"
+  },
+  "rights": {
+    "commonsStatus": "Public domain",
+    "publicDomainBasis": "1891 work plus mechanical scan; Commons records PD-old-70-expired, PD-scan, and Public Domain Mark metadata",
+    "publicDomainMarkUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "conservativeSourceTermsApplied": "Creative Commons Attribution 2.0 Generic (BHL/Flickr scan terms)",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "attributionRequiredByCandidate": true,
+    "modificationsAllowed": true
+  },
+  "attribution": "Léon Dufour, Atlas des champignons comestibles et vénéneux (1891), Biodiversity Heritage Library / Wikimedia Commons, CC BY 2.0; cropped, recomposed, converted to monochrome, historical labels removed, and placed on opaque white.",
+  "normalization": {
+    "tool": "ImageMagick",
+    "background": "opaque white",
+    "format": "lossless WebP",
+    "intendedPrintWidthMillimetres": 116,
+    "minimumEffectivePpi": 240
+  },
+  "assets": [
+    {
+      "assetId": "amanita-warning-constellation",
+      "chapter": 3,
+      "placement": "section 3.1 warning illustration",
+      "acquisitionMode": "open-licensed-web",
+      "source": {
+        "plate": 3,
+        "title": "Atlas des champignons comestibles et vénéneux (Planche 3)",
+        "itemPage": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_3)_(6358013625).jpg",
+        "originalFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_3%29_%286358013625%29.jpg",
+        "itemIdentity": "Amanita muscaria"
+      },
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/section-illustrations/originals/atlas-planche-03-original.jpg",
+      "selectedSourceSha256": "2760369fe605d4f2e5d7aaee791e4b4eb522f7b64fc4c08e0ff2a91aec697838",
+      "selectedSourcePixels": [2288, 3254],
+      "frozenCropIntermediates": [
+        {
+          "path": "candidates/poisonous-mushroom-identification-generation-b/source/assets/section-illustrations/intermediates/amanita-vertical-crop.png",
+          "sha256": "98f246c08be1f8d45fb5add53d42620f868870b106c2213b2a7bc8f6a5976c57"
+        },
+        {
+          "path": "candidates/poisonous-mushroom-identification-generation-b/source/assets/section-illustrations/intermediates/amanita-angled-crop.png",
+          "sha256": "579d57a5c8240227c085e35e6d75044e3a88c244a4a08f764eb883e6bede9e17"
+        }
+      ],
+      "finalPath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/section-illustrations/amanita-warning-constellation.webp",
+      "finalSha256": "b3cf1aa165f2736bea14247f2fc543fa1cd58324df239029a9b3c6916caa6abb",
+      "pixelWidth": 1300,
+      "pixelHeight": 846,
+      "intendedPrintWidthMillimetres": 82,
+      "effectivePpiAt82mm": 402.44,
+      "sourceEvidence": [{"claimId": "C07", "sourceIds": ["S05", "S07", "S08"], "role": "warning-pattern limits; the plate is not sole evidence"}],
+      "modifications": ["Cropped one upright study from source region 1000x2300+150+300 and one angled study from source region 950x1700+1100+1300.", "Excluded the plate title, species name, toxicity label, and unrelated specimens by cropping and painting only background regions white.", "Converted to monochrome, resized both studies, recomposed them on a 1300x846 opaque-white canvas, normalized the paper white point, stripped metadata, and encoded as lossless WebP."],
+      "normalizationCommands": [
+        "magick atlas-planche-03-original.jpg -crop 1000x2300+150+300 +repage -colorspace Gray -contrast-stretch 0.5%x0.5% -level 10%,90% -background white -alpha remove -alpha off amanita-vertical-crop.png",
+        "magick atlas-planche-03-original.jpg -crop 950x1700+1100+1300 +repage -fill white -draw 'rectangle 820,0 950,120' -colorspace Gray -contrast-stretch 0.5%x0.5% -level 10%,90% -background white -alpha remove -alpha off amanita-angled-crop.png",
+        "magick -size 1300x846 canvas:white ( amanita-vertical-crop.png -resize x760 ) -gravity west -geometry +150+0 -composite ( amanita-angled-crop.png -resize x750 ) -gravity east -geometry +120+0 -composite -fill white -draw 'rectangle 140,0 500,80' -draw 'rectangle 940,0 1190,110' -draw 'rectangle 455,390 700,760' -draw 'rectangle 440,760 700,846' -draw 'rectangle 755,75 790,120' -colorspace sRGB -strip -define webp:lossless=true amanita-warning-constellation.webp"
+      ],
+      "selectionRationale": "Two views make the cap, gills, veil ring, and bulbous base legible at normal A5 scale in a historically compatible botanical style. Alt text and adjacent prose explicitly prevent the plate from being read as a death-cap portrait or identification key."
+    },
+    {
+      "assetId": "morel-warning-comparison",
+      "chapter": 3,
+      "placement": "section 3.3 comparison illustration",
+      "acquisitionMode": "open-licensed-web",
+      "source": {
+        "plate": 78,
+        "title": "Atlas des champignons comestibles et vénéneux (Planche 78)",
+        "itemPage": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_78)_(6358032311).jpg",
+        "originalFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_78%29_%286358032311%29.jpg",
+        "itemIdentity": "Morchella conica and Gyromitra esculenta external forms"
+      },
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/section-illustrations/originals/atlas-planche-78-original.jpg",
+      "selectedSourceSha256": "3a26f58c020418a978d3c60e8ffeac20e0c738927c202aa139b5b2bbd9c7ba5a",
+      "selectedSourcePixels": [2288, 3254],
+      "finalPath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/section-illustrations/morel-warning-comparison.webp",
+      "finalSha256": "a9b8168397c17acab786ee42282f05f6e00f03bc578d1f6b87e061f97ee2ef2d",
+      "pixelWidth": 1869,
+      "pixelHeight": 842,
+      "effectivePpiAt116mm": 409.28,
+      "sourceEvidence": [{"claimId": "C10", "sourceIds": ["S09"], "role": "external morphology and safety constraints; internal anatomy remains source-backed text"}],
+      "modifications": ["Selected the pitted Morchella conica and brainlike Gyromitra esculenta external studies.", "Excluded every historical name and edibility label; painted only unrelated background fragments and a scan speck white.", "Converted to monochrome, recomposed with equal visual weight on an opaque-white 1869x842 canvas, stripped metadata, and encoded as lossless WebP."],
+      "normalizationCommands": [
+        "magick atlas-planche-78-original.jpg -crop 650x1100+1550+200 +repage -colorspace Gray -level 10%,90% -background white -alpha remove -alpha off morel-true.png",
+        "magick atlas-planche-78-original.jpg -crop 1050x950+250+1850 +repage -fill white -draw 'rectangle 0,0 1050,130' -draw 'rectangle 180,820 410,950' -colorspace Gray -level 10%,90% -background white -alpha remove -alpha off morel-false.png",
+        "magick -size 1869x842 canvas:white ( morel-true.png -resize x720 ) -gravity west -geometry +160+0 -composite ( morel-false.png -resize x700 ) -gravity east -geometry +90+0 -composite -colorspace sRGB -strip -define webp:lossless=true morel-warning-comparison.webp"
+      ],
+      "selectionRationale": "One coherent historical plate supplies visibly pitted and brainlike external forms. The image deliberately does not claim hollow-versus-chambered anatomy; those current safety claims remain in editable text backed by S09."
+    }
+  ]
+}

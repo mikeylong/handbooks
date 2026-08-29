@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "runOn": "2026-08-28",
+  "command": "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/preflight.py",
+  "runtime": {
+    "python": "3.12.13",
+    "pypdf": "6.10.0",
+    "browser": "Google Chrome 152.0.7977.65",
+    "imagemagick": "7.1.2-27 Q16-HDRI aarch64",
+    "poppler": "26.02.0",
+    "swift": "6.3.3"
+  },
+  "failures": [],
+  "environmentNote": "The host system python3 does not include pypdf and was not used. All Python build and validation commands used the bundled workspace runtime recorded above."
+}

@@ -11,6 +11,15 @@ A candidate is ready only when every required hard gate passes and the perceptua
 - Gated, partial, conflicting, and stale sources are disclosed.
 - Exact source diff matches the accepted change ledger.
 
+## Illustration acquisition and provenance gates
+
+- Every required illustration declares its acquisition mode and preserves an original file plus a separately normalized build asset.
+- Generated art records its prompt, negative constraints, references, transforms, and hashes.
+- Open-web art records a stable item/file-description page, direct original-file URL, creator, source institution when supplied, access date, exact license or public-domain basis, license URL, required credit, modifications, and original/normalized hashes.
+- Open-web assets use a verified public-domain or reusable open license. Fair-use, editorial-only, noncommercial, no-derivatives, permission-by-request, missing-license, or unresolved-license assets fail.
+- Reader-visible credits and change notices satisfy the recorded terms and agree with the illustration manifest.
+- Every selected asset is accurate for the supported subject, fits the governing visual system, and meets the final placement's resolution gate. A technically reusable but inaccurate, generic, or style-mismatched image fails.
+
 ## Editorial gates
 
 - The intended audience and reader job remain clear.
@@ -31,6 +40,7 @@ A candidate is ready only when every required hard gate passes and the perceptua
 - Print-critical images meet effective-resolution requirements.
 - Image objects have no `/SMask`, `/Mask`, or live transparency structure that the target renderer handles unreliably.
 - An illustration is painted once at its intended placement, not fragmented or duplicated.
+- Every page-map entry that requires an illustration resolves to exactly one raster image paint on that PDF page. Zero-image opener pages fail even when every other structural check passes.
 
 ## Visual and print gates
 
@@ -40,6 +50,7 @@ A candidate is ready only when every required hard gate passes and the perceptua
 - Confirm typography, margins, hierarchy, rules, running furniture, page numbers, whitespace, table wrapping, and diagram labels.
 - Confirm widows, orphans, heading separation, and accidental blank areas are acceptable.
 - Confirm illustrations remain coherent at normal viewing scale and print resolution.
+- Confirm required chapter art, whether generated or acquired through the open-image fallback, matches the governing illustration treatment rather than reading as a flowchart, labeled diagram, icon, or generic stock image.
 
 ## Cross-renderer gates
 

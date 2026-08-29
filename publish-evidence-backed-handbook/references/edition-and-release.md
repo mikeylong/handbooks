@@ -38,6 +38,8 @@ Rendering, metadata, compatibility, generator, and validation changes belong in 
 
 ## Changelog rule
 
+If no approved previous edition exists, record the edition decision as `not-applicable` and omit every changelog surface. A peer candidate may still support an A/B review, but its differences belong in a separate comparison and semantic ledger rather than an edition changelog or an “unchanged” decision.
+
 If the exact result is `The handbook's reader-facing content is unchanged.`, do not add a changelog page, contents entry, bookmark, or empty placeholder.
 
 When reader-facing content changed, the changelog must:
