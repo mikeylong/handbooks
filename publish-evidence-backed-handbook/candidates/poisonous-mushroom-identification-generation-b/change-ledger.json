@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "comparisonType": "peer-variant comparison; not an edition comparison",
+  "previousApprovedEdition": null,
+  "readerFacingContentChanged": true,
+  "summary": "Generation B contains accepted reader-facing visual and wording changes from the unapproved Generation A peer baseline.",
+  "recommendedInitialVersion": "1.0.0",
+  "peerVariantVersionImpact": "Patch",
+  "changes": [
+    {
+      "category": "Correction or clarification",
+      "section": "Required raster illustration placements on PDF pages 4, 7, 10, 11, 13, and 14",
+      "text": "Six generated raster illustrations were replaced with adapted open-license plates from Léon Dufour's 1891 Atlas des champignons comestibles et vénéneux.",
+      "readerImpact": "The visual treatment changes while the handbook's safety boundary and reader job remain the same.",
+      "rationale": "This variant deliberately exercises the skill's open-image fallback because image generation was blocked for the run.",
+      "sources": [
+        "https://www.biodiversitylibrary.org/bibliography/4063",
+        "https://commons.wikimedia.org/wiki/Category:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux"
+      ],
+      "sourceLimitations": "Historical plates are visual references rather than modern identification keys; all labels were removed and current safety claims remain in evidence-backed text.",
+      "recommendedVersionImpact": "Patch",
+      "exactEvidence": [
+        "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/manifest.json",
+        "candidates/poisonous-mushroom-identification-generation-b/source/assets/section-illustrations/manifest.json",
+        "candidates/poisonous-mushroom-identification-generation-b/qa/validation.json"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "3.1 Treat the Amanita constellation as a hard stop",
+      "text": "Illustrated: toxic Amanita muscaria—a different Amanita, not a death cap—shown only as a stop-pattern example.",
+      "readerImpact": "Sighted readers receive the same species-fit limitation carried by the image alt text and cannot reasonably read the plate as a death-cap portrait.",
+      "rationale": "The selected plate depicts Amanita muscaria while the adjacent text discusses a broader Amanita stop pattern, including death caps and destroying angels.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_3)_(6358013625).jpg",
+        "https://www.cdph.ca.gov/Programs/CCDPHP/DEODC/EHIB/Pages/EIS/Poisonous-Mushrooms.aspx",
+        "https://mdc.mo.gov/sites/default/files/2021-03/MushroomGuide.pdf",
+        "https://www.fs.usda.gov/media/225912"
+      ],
+      "sourceLimitations": "The historical image supports only the identity and visible form of the illustrated A. muscaria studies. The broader warning constellation and its limits come from S05, S07, and S08.",
+      "recommendedVersionImpact": "Patch",
+      "exactEvidence": [
+        "candidates/poisonous-mushroom-identification-generation-b/qa/edition-comparison/reader-facing-content.patch"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "3.3 Compare structure, then keep the safety limit",
+      "text": "Image captions changed from 'pits and ridges; hollow inside' and 'wrinkled or brainlike; chambered' to 'pits and ridges' and 'wrinkled or brainlike'.",
+      "readerImpact": "The image captions now claim only exterior features actually visible in the plate; the adjacent sourced prose still explains hollow-versus-chambered internal anatomy.",
+      "rationale": "The open-image plate depicts external morphology and cannot visually establish internal structure.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_78)_(6358032311).jpg",
+        "https://www.michigan.gov/dnr/things-to-do/morels/morel-identification"
+      ],
+      "sourceLimitations": "The 1891 plate contains historical species and edibility wording that was excluded. It supports external form only, while S09 supports the internal-anatomy warning text.",
+      "recommendedVersionImpact": "Patch",
+      "exactEvidence": [
+        "candidates/poisonous-mushroom-identification-generation-b/qa/edition-comparison/reader-facing-content.patch"
+      ]
+    },
+    {
+      "category": "Addition",
+      "section": "Notes and Sources, illustration credits",
+      "text": "Added a Generation B credit naming the source work, repository, CC BY 2.0 terms, public-domain status, modifications, and the limitation that images are visual references rather than identification keys.",
+      "readerImpact": "Readers can see where the images came from, how they changed, the reuse terms, and why they must not be treated as standalone safety evidence.",
+      "rationale": "Visible attribution, license linkage, change disclosure, and a safety limitation satisfy the conservative reuse policy applied to the selected Commons scans.",
+      "sources": [
+        "https://creativecommons.org/licenses/by/2.0/",
+        "https://www.biodiversitylibrary.org/bibliography/4063",
+        "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_2)_(6358013309).jpg",
+        "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_3)_(6358013625).jpg",
+        "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_4)_(6358013781).jpg",
+        "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_54)_(6358026021).jpg",
+        "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_78)_(6358032311).jpg"
+      ],
+      "sourceLimitations": "Wikimedia's primary API extmetadata reports public domain; the individual description pages additionally display the source scan's CC BY 2.0 block. Generation B follows the more conservative terms.",
+      "recommendedVersionImpact": "Patch",
+      "exactEvidence": [
+        "candidates/poisonous-mushroom-identification-generation-b/qa/edition-comparison/reader-facing-content.patch",
+        "candidates/poisonous-mushroom-identification-generation-b/evidence/open-image-provenance.json"
+      ]
+    }
+  ]
+}

@@ -449,9 +449,19 @@ def changelog_contract(
     decision: dict[str, Any],
 ) -> tuple[dict[str, Any], list[str]]:
     failures: list[str] = []
-    if decision.get("status") != "passed":
+    decision_status = decision.get("status")
+    first_edition = decision_status == "not-applicable"
+    if decision_status not in {"passed", "not-applicable"}:
         failures.append("Changelog decision status is not passed")
     include = bool(decision.get("includeChangelog"))
+    if first_edition:
+        basis = decision.get("comparisonBasis")
+        if not isinstance(basis, dict) or basis.get("previousApprovedEdition") is not None:
+            failures.append(
+                "First-edition changelog decision must explicitly record no previous approved edition"
+            )
+        if include:
+            failures.append("First-edition changelog decision cannot require a changelog")
     required = decision.get("requiredPdfState")
     if not isinstance(required, dict):
         failures.append("Changelog decision is missing requiredPdfState")
@@ -532,9 +542,14 @@ def changelog_contract(
             )
     else:
         summary = decision.get("summary")
-        expected_summary = "The handbook's reader-facing content is unchanged."
+        expected_summary = (
+            "No previous approved edition exists; an edition changelog is not applicable."
+            if first_edition
+            else "The handbook's reader-facing content is unchanged."
+        )
         if summary != expected_summary:
-            failures.append(f"Unchanged decision summary must be exactly: {expected_summary}")
+            label = "First-edition" if first_edition else "Unchanged"
+            failures.append(f"{label} decision summary must be exactly: {expected_summary}")
         if changelog_pages:
             failures.append(f"Decision forbids changelog pages; found {changelog_pages}")
         if outline_hits:
@@ -548,6 +563,8 @@ def changelog_contract(
 
     return (
         {
+            "decisionStatus": decision_status,
+            "firstEdition": first_edition,
             "includeChangelog": include,
             "changelogPages": changelog_pages,
             "outlineEntries": outline_hits,

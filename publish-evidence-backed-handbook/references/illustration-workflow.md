@@ -2,16 +2,16 @@
 
 Read this file when a handbook create, redesign, or authorized art repair requires new illustration. The governing project visual system takes precedence; otherwise use the bundled specimen and design system.
 
-## Decide whether generation is required
+## Decide whether new art is required
 
-- **Create or redesign:** generate original raster art for every chapter-opener placement required by the governing system.
+- **Create or redesign:** acquire raster art for every chapter-opener placement required by the governing system; original image generation is the preferred path.
 - **Text-only research or editorial update:** preserve approved illustration unless the user also authorized art changes.
 - **Build or PDF repair:** preserve frozen art unless the defect is an illustration defect.
 - **Project-supplied illustration system:** follow it instead of the bundled subject or style, while preserving the same provenance and PDF gates.
 
 An opener illustration and an explanatory diagram are different assets. Use image generation for original raster illustration. Use deterministic SVG, HTML, CSS, or canvas for diagrams, tables, flows, labels, and repo-native vector systems. Do not use a diagram as an unannounced fallback for missing illustration.
 
-## Generate with the specialist capability
+## Prefer generation with the specialist capability
 
 1. Read the host's image-generation skill completely and use its built-in generation path by default.
 2. Inspect every local style reference before generation and label its role as a style reference, not an edit target.
@@ -20,7 +20,7 @@ An opener illustration and an explanatory diagram are different assets. Use imag
 5. Keep headings, captions, numbers, and safety instructions in the editable document source. Unless the governing art explicitly requires lettering, prohibit text, labels, logos, and watermarks inside generated art.
 6. Inspect each result at full size and in its proposed crop. Iterate with one targeted correction at a time. Reject generic clip art, vector-like schematics, accidental species-identification claims, inconsistent style, clipped subjects, gray paper, illegible detail, or visual artifacts.
 
-If the built-in generator is unavailable and new art is required, stop at a failed illustration gate. Do not silently use a CLI model, a deterministic drawing, stock imagery, or a lower-quality asset. Reuse is acceptable only when an already approved illustration remains in scope and unchanged.
+If the built-in generator is missing or unavailable and new art is required, do not silently use a CLI model or a deterministic drawing. Read `open-image-fallback.md` and follow its public-domain/open-license acquisition path unless the user explicitly requires original generated art or forbids web acquisition. Use that path while generation is available only when the user explicitly requests sourced open art. If no candidate passes its license, accuracy, style, and resolution gates, stop at a failed illustration gate.
 
 ## Normalize and freeze selected assets
 
@@ -32,7 +32,10 @@ Copy each selected project-bound result into the candidate workspace. Preserve t
 - Give every asset a stable, descriptive filename and explicit source dimensions.
 - Record the exact final placement size so effective PPI can be recomputed.
 
-Create an illustration manifest beside the assets with, for each image: asset ID, chapter/placement, final path, original selected path, generation date, built-in or approved fallback mode, prompt, negative constraints, reference paths and hashes, selected-output hash, normalized-output hash, pixel dimensions, intended print dimensions, effective PPI, normalization command or transform, and selection rationale. Record the generator/model identifier only when the tool exposes it; never invent it.
+Create an illustration manifest beside the assets. Every image records: asset ID, chapter/placement, acquisition mode, final path, preserved original path, acquisition date, selected-original hash, normalized-output hash, pixel dimensions, intended print dimensions, effective PPI, normalization command or transform, and selection rationale.
+
+- For generated art, also record the prompt, negative constraints, reference paths and hashes, and generator/model identifier when exposed; never invent it.
+- For open-web art, record the repository, item/file-description page, direct original-file URL, title, creator rather than merely the uploader, source institution when supplied, exact license or public-domain basis, license URL, access date, required credit line, and every crop or modification. Follow `open-image-fallback.md`.
 
 The normalized files and manifest become deterministic inputs to the PDF build. Rebuilding from those frozen inputs must not call image generation again.
 

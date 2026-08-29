@@ -83,14 +83,14 @@ Notes and sources use grouped references with stable labels and direct URLs. The
 
 ## Illustration direction
 
-- Create original chapter-opener raster art with the host's image-generation capability and follow `illustration-workflow.md`. Deterministic geometry is appropriate for diagrams, not as a substitute for this illustration treatment.
+- Prefer original chapter-opener raster art made with the host's image-generation capability and follow `illustration-workflow.md`. When that capability is missing or unavailable, or when the user explicitly requests sourced open art, `open-image-fallback.md` permits a verified public-domain or openly licensed image only if it matches this treatment. Deterministic geometry is appropriate for diagrams, not as a substitute for illustration.
 - Use coherent black-and-white technical, engraved, or stippled line art on an opaque white background.
 - The illustration should embody the chapter's mental model, not merely decorate its topic.
 - Maintain consistent camera angle, line density, scale, contrast, and white-space behavior across a set.
 - Final print images must be precomposed and opaque. Remove live filters, clip paths, masks, blend modes, and soft-mask transparency before PDF generation.
 - Prefer 300 effective PPI at final size; 240 PPI is the minimum acceptance threshold for print-critical raster art.
 - Require one intended image paint per illustration placement. Duplicate paints or fragmented image masks are blockers.
-- Freeze selected and normalized art into the candidate with prompt, reference, transform, and hash provenance. Reproducible layout starts from those frozen assets; it does not require image generation during every build.
+- Freeze selected and normalized art into the candidate with mode-specific provenance: prompt and references for generated work, or item-page, creator, source, license, credit, and modification evidence for open-web work. Always record transforms and hashes. Reproducible layout starts from those frozen assets; it does not require image generation during every build.
 
 ## Reference protocol
 

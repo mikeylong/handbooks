@@ -157,6 +157,43 @@ def main() -> None:
             ]
         )
 
+        first_edition_decision_path = temp / "first-edition-decision.json"
+        write(
+            first_edition_decision_path,
+            {
+                "schemaVersion": 2,
+                "status": "not-applicable",
+                "includeChangelog": False,
+                "summary": "No previous approved edition exists; an edition changelog is not applicable.",
+                "entryCount": 0,
+                "expectedEntries": [],
+                "requiredPdfState": {
+                    "changelogPages": 0,
+                    "finalPage": False,
+                    "navigationEntry": False,
+                    "outlineEntry": False,
+                },
+                "comparisonBasis": {"previousApprovedEdition": None},
+            },
+        )
+        first_edition_validation_path = temp / "first-edition-validation.json"
+        run(
+            [
+                sys.executable,
+                str(SCRIPTS / "validate-pdf.py"),
+                "--profile",
+                "candidate",
+                "--pdf",
+                str(candidate_pdf),
+                "--page-map",
+                str(candidate_map),
+                "--changelog-decision",
+                str(first_edition_decision_path),
+                "--output",
+                str(first_edition_validation_path),
+            ]
+        )
+
         copied_specimen_map = temp / "specimen-page-map.json"
         copied_specimen_payload = load(SPECIMEN_MAP)
         copied_specimen_payload["artifactProfile"] = "candidate-fixture"
@@ -290,6 +327,7 @@ def main() -> None:
                 "unchangedFixturePages": len(load(candidate_map)["pages"]),
                 "unchangedDecisionSummary": identical_diff["summary"],
                 "unchangedCandidateValidation": load(unchanged_validation_path)["status"],
+                "firstEditionDecisionValidation": load(first_edition_validation_path)["status"],
                 "staleChangelogArtifactRejected": stale_decision["status"] == "failed",
                 "mismatchedCandidateRejected": negative_validation["status"] == "failed",
                 "derivativeRemovalRawDiffBytes": (circular_comparison / "exact-pdf-text.patch").stat().st_size,

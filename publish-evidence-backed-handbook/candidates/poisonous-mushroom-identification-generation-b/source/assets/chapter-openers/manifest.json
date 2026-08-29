@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-08-28",
+  "acquisitionMode": "open-licensed-web",
+  "imageGenerationState": "blocked by user for Generation B; no image-generation call was made",
+  "governingStyleReference": {
+    "path": "assets/design-system/illustration-reference.webp",
+    "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+    "role": "perceptual style reference only"
+  },
+  "sharedSource": {
+    "work": "Atlas des champignons comestibles et vénéneux",
+    "creator": "Léon Dufour",
+    "date": "1891",
+    "repository": "Wikimedia Commons",
+    "sourceInstitution": "Biodiversity Heritage Library; LuEsther T. Mertz Library, New York Botanical Garden",
+    "bhlTitleUrl": "https://www.biodiversitylibrary.org/bibliography/4063",
+    "bhlDoi": "10.5962/bhl.title.4063",
+    "accessDate": "2026-08-28",
+    "provenanceEvidence": {
+      "path": "candidates/poisonous-mushroom-identification-generation-b/evidence/open-image-provenance.json",
+      "sha256": "c6eed8a1c2904655035ede6c65f4a10bd3013948c3cd98d209bfd678005e3357"
+    },
+    "rights": {
+      "commonsStatus": "Public domain",
+      "publicDomainBasis": "1891 work plus mechanical scan; Commons records PD-old-70-expired, PD-scan, and Public Domain Mark metadata",
+      "publicDomainMarkUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "conservativeSourceTermsApplied": "Creative Commons Attribution 2.0 Generic (BHL/Flickr scan terms)",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "attributionRequiredByCandidate": true,
+      "modificationsAllowed": true
+    },
+    "attribution": "Léon Dufour, Atlas des champignons comestibles et vénéneux (1891), Biodiversity Heritage Library / Wikimedia Commons, CC BY 2.0; cropped, recomposed, converted to monochrome, historical labels removed, and placed on opaque white."
+  },
+  "normalization": {
+    "tool": "ImageMagick",
+    "background": "opaque white",
+    "format": "lossless WebP",
+    "intendedPrintWidthMillimetres": 108,
+    "minimumEffectivePpi": 240
+  },
+  "assets": [
+    {
+      "assetId": "chapter-01-safety-boundary",
+      "chapter": 1,
+      "placement": "chapter opener",
+      "acquisitionMode": "open-licensed-web",
+      "source": {
+        "plate": 54,
+        "title": "Atlas des champignons comestibles et vénéneux (Planche 54)",
+        "itemPage": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_54)_(6358026021).jpg",
+        "originalFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_54%29_%286358026021%29.jpg"
+      },
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/originals/atlas-planche-54-original.jpg",
+      "selectedSourceSha256": "ee97e72c9fc42df3f979d0fb70f4577441cac271ce839b75f207ccbfc0390867",
+      "selectedSourcePixels": [2288, 3254],
+      "finalPath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/chapter-01-safety-boundary.webp",
+      "finalSha256": "5f9c3dd39c2ae9c751bc6c66b1aa72b14f04699b1e2ed2c7ca5c7ab263b7430e",
+      "pixelWidth": 1331,
+      "pixelHeight": 1182,
+      "effectivePpiAt108mm": 313.04,
+      "modifications": [
+        "Selected two separate specimen studies from Plate 54.",
+        "Removed the historical species, edibility, and toxicity labels by excluding them or painting only background regions white.",
+        "Converted to monochrome, set black and white points, recomposed with a visible white gutter, stripped metadata, and encoded as opaque lossless WebP."
+      ],
+      "normalizationCommands": [
+        "magick atlas-planche-54-original.jpg -crop 1050x1400+250+250 +repage -fill white -draw 'rectangle 760,680 1050,1180' -draw 'rectangle 650,1180 1050,1400' -colorspace Gray -level 10%,90% -background white -alpha remove -alpha off ch1-top.png",
+        "magick atlas-planche-54-original.jpg -crop 1250x1500+950+1400 +repage -fill white -draw 'rectangle 0,700 230,930' -draw 'rectangle 0,930 160,1500' -colorspace Gray -level 10%,90% -background white -alpha remove -alpha off ch1-bottom.png",
+        "magick -size 1331x1182 canvas:white ( ch1-top.png -resize x760 ) -gravity west -geometry +45+0 -composite ( ch1-bottom.png -resize x780 ) -gravity east -geometry +35+0 -composite -colorspace sRGB -strip -define webp:lossless=true chapter-01-safety-boundary.webp"
+      ],
+      "selectionRationale": "Two label-free botanical studies create a visual comparison and uncertainty boundary without functioning as a species key; the fine monochrome plate work fits the handbook's engraving-led system."
+    },
+    {
+      "assetId": "chapter-02-evidence-packet",
+      "chapter": 2,
+      "placement": "chapter opener",
+      "acquisitionMode": "open-licensed-web",
+      "source": {
+        "plate": 2,
+        "title": "Atlas des champignons comestibles et vénéneux (Planche 2)",
+        "itemPage": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_2)_(6358013309).jpg",
+        "originalFileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_2%29_%286358013309%29.jpg"
+      },
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/originals/atlas-planche-02-original.jpg",
+      "selectedSourceSha256": "dbabc2ccab337a76bc0a6c323e8614ccd78907792c95526c3d94122eb3e6627a",
+      "selectedSourcePixels": [2288, 3254],
+      "frozenCropIntermediate": {
+        "path": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/intermediates/chapter-02-evidence-packet-crop.webp",
+        "sha256": "85dd0d7d0d0610ade0f0ad2129e8c9cafd46c86bbf84608b6f12223b2cf7b0c6",
+        "note": "Frozen full-resolution crop excluding the plate title and historical edibility label; retained because the exploratory crop command was not captured."
+      },
+      "finalPath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/chapter-02-evidence-packet.webp",
+      "finalSha256": "c7ce5795e473ddb1fda4f625e7b75596eb45b63be07657689e4f7f01708cb7f6",
+      "pixelWidth": 1331,
+      "pixelHeight": 1182,
+      "effectivePpiAt108mm": 313.04,
+      "sourceEvidence": [{"claimId": "C05", "sourceIds": ["S07", "S12"], "role": "multi-view documentation practice; the plate illustrates views while the cited sources establish the protocol"}],
+      "modifications": ["Cropped to whole, underside, base, button, and section-view studies; excluded historical labels.", "Converted to monochrome, normalized paper to opaque white, stripped metadata, and encoded as lossless WebP."],
+      "normalizationCommand": "magick intermediates/chapter-02-evidence-packet-crop.webp -colorspace Gray -level 10%,90% -colorspace sRGB -strip -define webp:lossless=true chapter-02-evidence-packet.webp",
+      "selectionRationale": "The multiple views communicate why a useful evidence packet records cap, underside, base, and developmental form rather than relying on one attractive cap photograph."
+    },
+    {
+      "assetId": "chapter-03-high-risk-patterns",
+      "chapter": 3,
+      "placement": "chapter opener",
+      "acquisitionMode": "open-licensed-web",
+      "source": {
+        "plate": 4,
+        "title": "Atlas des champignons comestibles et vénéneux (Planche 4)",
+        "itemPage": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_4)_(6358013781).jpg",
+        "originalFileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_4%29_%286358013781%29.jpg"
+      },
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/originals/atlas-planche-04-original.jpg",
+      "selectedSourceSha256": "967d181fe4a6668347a8e5c6c8bb6e1c8dc5064401e4437822dc7939f7908706",
+      "selectedSourcePixels": [2288, 3254],
+      "frozenCropIntermediate": {
+        "path": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/intermediates/chapter-03-high-risk-patterns-crop.webp",
+        "sha256": "acc278ac99c049144d7a2d11df3b050ce549ce985f2a72fe05b116f873b1359e",
+        "note": "Frozen upper-plate crop excluding the title and historical species/toxicity labels; retained because the exploratory crop command was not captured."
+      },
+      "finalPath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/chapter-03-high-risk-patterns.webp",
+      "finalSha256": "ed58419f37ff967b7a7ccb2779b840225ad5b84bcd778a07bfa51ca6a7ad2d54",
+      "pixelWidth": 1332,
+      "pixelHeight": 1181,
+      "effectivePpiAt108mm": 313.27,
+      "sourceEvidence": [{"claimId": "C07", "sourceIds": ["S05", "S07", "S08"], "role": "Amanita warning morphology and safety constraints"}],
+      "modifications": ["Cropped to several Amanita developmental forms and excluded all historical labels.", "Converted to monochrome, normalized paper to opaque white, stripped metadata, and encoded as lossless WebP."],
+      "normalizationCommand": "magick intermediates/chapter-03-high-risk-patterns-crop.webp -colorspace Gray -level 10%,90% -colorspace sRGB -strip -define webp:lossless=true chapter-03-high-risk-patterns.webp",
+      "selectionRationale": "Multiple Amanita forms reinforce that warning features vary with view and maturity; adjacent handbook prose supplies the safety limits and never treats the plate as a standalone key."
+    },
+    {
+      "assetId": "chapter-04-triage-signal",
+      "chapter": 4,
+      "placement": "chapter opener",
+      "acquisitionMode": "open-licensed-web",
+      "source": {
+        "plate": 3,
+        "title": "Atlas des champignons comestibles et vénéneux (Planche 3)",
+        "itemPage": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_3)_(6358013625).jpg",
+        "originalFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_3%29_%286358013625%29.jpg"
+      },
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/originals/atlas-planche-03-original.jpg",
+      "selectedSourceSha256": "2760369fe605d4f2e5d7aaee791e4b4eb522f7b64fc4c08e0ff2a91aec697838",
+      "selectedSourcePixels": [2288, 3254],
+      "frozenCropIntermediate": {
+        "path": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/intermediates/chapter-04-triage-signal-crop.webp",
+        "sha256": "c59cdfbe742a2f0d331a3d9bc4fa113fb60949db15a6e81a1f9ab7c7a59aa797",
+        "note": "Frozen developmental-stage crop excluding the plate title and historical toxicity label; retained because the exploratory crop command was not captured."
+      },
+      "finalPath": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/chapter-04-triage-signal.webp",
+      "finalSha256": "c2b817f804c4b3786c95a62d1ef519dbdb64c2e4a9d2279858d4faacd2a4ee58",
+      "pixelWidth": 1331,
+      "pixelHeight": 1182,
+      "effectivePpiAt108mm": 313.04,
+      "modifications": ["Cropped to several developmental views and excluded all historical labels.", "Converted to monochrome, normalized paper to opaque white, stripped metadata, and encoded as lossless WebP."],
+      "normalizationCommand": "magick intermediates/chapter-04-triage-signal-crop.webp -colorspace Gray -level 10%,90% -colorspace sRGB -strip -define webp:lossless=true chapter-04-triage-signal.webp",
+      "selectionRationale": "A sequence of developmental forms creates a restrained visual cue for change over time while the chapter text, not the image, carries the medical timing guidance."
+    }
+  ]
+}
