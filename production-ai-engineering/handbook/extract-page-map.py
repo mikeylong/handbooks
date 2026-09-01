@@ -52,9 +52,14 @@ def extract(pdf_path: Path, require_changelog: bool) -> dict[str, int]:
     if "appendix-citations" not in page_map or "term-index" not in page_map:
         raise AssertionError("Missing appendix or index destination")
     has_changelog = "changelog" in page_map
+    has_changelog_end = "changelog-end" in page_map
     if require_changelog and not has_changelog:
         raise AssertionError("Missing required changelog destination")
-    if not require_changelog and has_changelog:
+    if require_changelog:
+        page_map["changelog-end"] = printed_page(len(reader.pages) - 1)
+        if page_map["changelog-end"] < page_map["changelog"]:
+            raise AssertionError("Changelog end precedes its start")
+    if not require_changelog and (has_changelog or has_changelog_end):
         raise AssertionError("Unexpected changelog destination for unchanged content")
     return dict(sorted(page_map.items()))
 
@@ -74,7 +79,7 @@ def main() -> None:
         f"appendix page {page_map['appendix-citations']}, "
         f"index page {page_map['term-index']}, "
         + (
-            f"changelog page {page_map['changelog']}."
+            f"changelog pages {page_map['changelog']}-{page_map['changelog-end']}."
             if require_changelog
             else "changelog omitted; reader-facing content unchanged."
         )

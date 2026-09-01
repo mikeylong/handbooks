@@ -399,11 +399,17 @@ def validate(path: Path) -> None:
         for index, page_text in enumerate(page_texts)
         if index > appendix_start and "INDEX OF TERMS" in page_text.upper()
     )
-    destination_names = {
-        str(name).lstrip("/") for name in reader.named_destinations
+    destination_pages = {
+        str(name).lstrip("/"): reader.get_destination_page_number(destination)
+        for name, destination in reader.named_destinations.items()
     }
+    destination_names = set(destination_pages)
     changelog_start: int | None = None
+    changelog_end: int | None = None
     if require_changelog:
+        assert changelog.get("schemaVersion") == 2, (
+            "A changed edition requires the detailed changelog schema"
+        )
         assert "changelog" in destination_names, (
             "Required changelog destination is missing"
         )
@@ -417,26 +423,59 @@ def validate(path: Path) -> None:
             and "VERSION HISTORY" in page_text.upper()
             and "CHANGELOG" in page_text.upper()
         )
-        assert changelog_start == len(page_texts) - 1, (
-            "Changelog is not the final PDF page"
+        changelog_end = len(page_texts) - 1
+        assert destination_pages["changelog"] == changelog_start, (
+            "Changelog destination does not match the visible opening page"
         )
-        changelog_text = page_texts[changelog_start]
+        assert changelog_start <= changelog_end == len(page_texts) - 1, (
+            "Changelog is not a contiguous terminal PDF range"
+        )
+        changelog_text = "\n".join(page_texts[changelog_start : changelog_end + 1])
         expected_changelog_texts = [
             (
                 f"Compared with {changelog['previousVersion']}, "
                 f"published {changelog['previousPublicationDate']}."
             ),
             changelog["summary"],
-            changelog["previousPdfSha256"],
             *(
                 value
                 for item in changelog["items"]
-                for value in (item["category"], item["text"])
+                for value in (
+                    item["changeId"],
+                    item["classificationLabel"],
+                    item["section"],
+                    item["title"],
+                    item["whatChanged"],
+                    item["why"],
+                    *(
+                        source_value
+                        for source in item["sources"]
+                        for source_value in (
+                            source["sourceId"],
+                            source["authority"],
+                            source["title"],
+                            source["publicationDate"],
+                        )
+                    ),
+                )
             ),
         ]
         for expected_changelog_text in expected_changelog_texts:
             assert canonical(expected_changelog_text) in canonical(changelog_text), (
                 f"Missing changelog text: {expected_changelog_text}"
+            )
+        assert canonical(changelog["previousPdfSha256"]) not in canonical(changelog_text), (
+            "The audit-only previous-PDF hash was printed in the reader changelog"
+        )
+        assert "INDEX OF TERMS" not in page_texts[changelog_start].upper(), (
+            "Index content appears on the changelog opening page"
+        )
+        for page_text in page_texts[changelog_start + 1 : changelog_end + 1]:
+            assert "CHANGELOG" in page_text.upper(), (
+                "A changelog continuation page is missing its running head"
+            )
+            assert "INDEX OF TERMS" not in page_text.upper(), (
+                "Index content appears inside the changelog range"
             )
     else:
         assert changelog.get("items") == [], (
@@ -466,15 +505,32 @@ def validate(path: Path) -> None:
     )
 
     external_urls: list[str] = []
+    changelog_external_urls: list[str] = []
     internal_links = 0
     broken_links = 0
-    for page in reader.pages:
+    for page_index, page in enumerate(reader.pages):
         for annotation_ref in page.get("/Annots", []) or []:
             annotation = annotation_ref.get_object()
             action = annotation.get("/A")
             destination = annotation.get("/Dest")
             if action and str(action.get("/S")) == "/URI":
-                external_urls.append(str(action.get("/URI")))
+                external_url = str(action.get("/URI"))
+                external_urls.append(external_url)
+                if (
+                    require_changelog
+                    and changelog_start is not None
+                    and changelog_end is not None
+                    and changelog_start <= page_index <= changelog_end
+                ):
+                    rectangle = [float(value) for value in annotation.get("/Rect", [])]
+                    assert len(rectangle) == 4, "Changelog source link has no rectangle"
+                    x0, y0, x1, y1 = rectangle
+                    assert x1 > x0 and y1 > y0, "Changelog source link has an empty rectangle"
+                    assert (
+                        0 <= x0 < x1 <= float(page.mediabox.width)
+                        and 0 <= y0 < y1 <= float(page.mediabox.height)
+                    ), "Changelog source link extends outside its page"
+                    changelog_external_urls.append(external_url)
             elif destination is not None or (
                 action and str(action.get("/S")) == "/GoTo"
             ):
@@ -495,6 +551,16 @@ def validate(path: Path) -> None:
         if urlparse(url).scheme not in {"http", "https"}
     ]
     assert not invalid_urls, f"Invalid external URLs: {invalid_urls}"
+    if require_changelog:
+        expected_changelog_urls = {
+            source["url"]
+            for item in changelog["items"]
+            for source in item["sources"]
+        }
+        assert set(changelog_external_urls) == expected_changelog_urls, (
+            "Changelog source-link annotations do not match the structured primary evidence: "
+            f"expected {sorted(expected_changelog_urls)}, found {sorted(set(changelog_external_urls))}"
+        )
 
     logging.disable(logging.WARNING)
     blank_pages: list[int] = []

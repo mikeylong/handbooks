@@ -13,6 +13,8 @@ const { values } = parseArgs({
     "wrapper-proof-dir": { type: "string" },
     "page-count": { type: "string" },
     "changelog-required": { type: "string" },
+    "changelog-start-page": { type: "string" },
+    "changelog-end-page": { type: "string" },
   },
   strict: true,
 });
@@ -23,6 +25,8 @@ for (const key of [
   "wrapper-proof-dir",
   "page-count",
   "changelog-required",
+  "changelog-start-page",
+  "changelog-end-page",
 ]) {
   if (!values[key]) throw new Error(`Missing --${key}`);
 }
@@ -34,6 +38,30 @@ if (!new Set(["true", "false"]).has(values["changelog-required"])) {
   throw new Error("--changelog-required must be true or false");
 }
 const changelogRequired = values["changelog-required"] === "true";
+const changelogStartPage = changelogRequired
+  ? Number.parseInt(values["changelog-start-page"], 10)
+  : null;
+const changelogEndPage = changelogRequired
+  ? Number.parseInt(values["changelog-end-page"], 10)
+  : null;
+if (changelogRequired && (
+  !Number.isSafeInteger(changelogStartPage)
+  || !Number.isSafeInteger(changelogEndPage)
+  || changelogStartPage < 1
+  || changelogStartPage > changelogEndPage
+  || changelogEndPage !== pageCount
+)) {
+  throw new Error("Invalid changelog physical page range");
+}
+if (!changelogRequired && (
+  values["changelog-start-page"] !== "none"
+  || values["changelog-end-page"] !== "none"
+)) {
+  throw new Error("An unchanged candidate must not report changelog pages");
+}
+const changelogPageCount = changelogRequired
+  ? changelogEndPage - changelogStartPage + 1
+  : 0;
 
 const path = resolve(values.file);
 const metadata = await lstat(path);
@@ -87,7 +115,14 @@ const validatePng = async (proofPath, proofName) => {
 const finalProofNames = [
   "cover.png",
   ...Array.from({ length: 12 }, (_, index) => `chapter-${String(index + 1).padStart(2, "0")}.png`),
-  ...(changelogRequired ? ["changelog.png"] : []),
+  ...(changelogRequired ? [
+    "changelog.png",
+    "changelog-final.png",
+    ...Array.from(
+      { length: changelogPageCount },
+      (_, index) => `changelog-page-${String(index + 1).padStart(3, "0")}.png`,
+    ),
+  ] : []),
 ];
 for (const proofName of finalProofNames) {
   await validatePng(resolve(values["proof-dir"], proofName), `final-review/${proofName}`);
@@ -98,9 +133,46 @@ const wrapperProofNames = [
   "cover.png",
   "final-page.png",
   ...Array.from({ length: 12 }, (_, index) => `chapter-${String(index + 1).padStart(2, "0")}.png`),
-  ...(changelogRequired ? ["changelog.png"] : []),
+  ...(changelogRequired ? [
+    "changelog.png",
+    "changelog-final.png",
+    ...Array.from(
+      { length: changelogPageCount },
+      (_, index) => `changelog-page-${String(index + 1).padStart(3, "0")}.png`,
+    ),
+  ] : []),
 ];
 for (const proofName of wrapperProofNames) {
   await validatePng(resolve(values["wrapper-proof-dir"], proofName), `wrapper/${proofName}`);
+}
+if (changelogRequired) {
+  const wrapperProofDir = resolve(values["wrapper-proof-dir"]);
+  const finalProofDir = resolve(values["proof-dir"]);
+  for (let index = 0; index < changelogPageCount; index += 1) {
+    const physicalPage = changelogStartPage + index;
+    const pageName = `page-${String(physicalPage).padStart(3, "0")}.png`;
+    const changelogName = `changelog-page-${String(index + 1).padStart(3, "0")}.png`;
+    const [pageBytes, wrapperChangelogBytes, finalChangelogBytes] = await Promise.all([
+      readFile(resolve(wrapperProofDir, pageName)),
+      readFile(resolve(wrapperProofDir, changelogName)),
+      readFile(resolve(finalProofDir, changelogName)),
+    ]);
+    if (!pageBytes.equals(wrapperChangelogBytes) || !pageBytes.equals(finalChangelogBytes)) {
+      throw new Error(`${changelogName} does not match ${pageName}`);
+    }
+  }
+  const [firstPage, changelogAlias, lastPage, finalAlias, finalReviewAlias] = await Promise.all([
+    readFile(resolve(wrapperProofDir, `page-${String(changelogStartPage).padStart(3, "0")}.png`)),
+    readFile(resolve(wrapperProofDir, "changelog.png")),
+    readFile(resolve(wrapperProofDir, `page-${String(changelogEndPage).padStart(3, "0")}.png`)),
+    readFile(resolve(wrapperProofDir, "final-page.png")),
+    readFile(resolve(finalProofDir, "changelog-final.png")),
+  ]);
+  if (!firstPage.equals(changelogAlias)) {
+    throw new Error("changelog.png does not match the first changelog page");
+  }
+  if (!lastPage.equals(finalAlias) || !lastPage.equals(finalReviewAlias)) {
+    throw new Error("The final-page aliases do not match the last changelog page");
+  }
 }
 console.log(JSON.stringify(status));

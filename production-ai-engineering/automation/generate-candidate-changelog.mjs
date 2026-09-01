@@ -12,6 +12,7 @@ const { values } = parseArgs({
     baseline: { type: "string" },
     "baseline-source": { type: "string" },
     changes: { type: "string" },
+    sources: { type: "string" },
     patch: { type: "string" },
     source: { type: "string" },
     "production-hash": { type: "string" },
@@ -21,7 +22,7 @@ const { values } = parseArgs({
   strict: true,
 });
 
-for (const key of ["baseline", "baseline-source", "changes", "patch", "source", "production-hash", "entry-date", "output"]) {
+for (const key of ["baseline", "baseline-source", "changes", "sources", "patch", "source", "production-hash", "entry-date", "output"]) {
   if (!values[key]) throw new Error(`Missing --${key}`);
 }
 
@@ -37,11 +38,14 @@ async function readRegular(pathValue, name, maxBytes = 20_000_000) {
 const baseline = JSON.parse(await readRegular(values.baseline, "baseline changelog"));
 const baselineSourceText = await readRegular(values["baseline-source"], "baseline source");
 const changes = JSON.parse(await readRegular(values.changes, "changes.json"));
+const sources = JSON.parse(await readRegular(values.sources, "sources.json"));
 const patchText = await readRegular(values.patch, "exact-changes.patch");
 const sourceText = await readRegular(values.source, "candidate source");
 const productionHashText = await readRegular(values["production-hash"], "production PDF hash");
 
 if (!Array.isArray(changes)) throw new Error("changes.json must be an array");
+if (!Array.isArray(sources)) throw new Error("sources.json must be an array");
+if (changes.length > 32) throw new Error("changes.json cannot contain more than 32 reader-facing changes");
 const patchHasChanges = patchText.trim().length > 0;
 if ((changes.length > 0) !== patchHasChanges) {
   throw new Error("changes.json and exact-changes.patch disagree about whether reader-facing content changed");
@@ -66,12 +70,36 @@ const entryDateLabel = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 }).format(entryDate);
 
-const classificationGroups = [
-  { category: "Additions", values: new Set(["addition"]) },
-  { category: "Deprecations and removals", values: new Set(["deprecation", "removal"]) },
-  { category: "Corrections and clarifications", values: new Set(["correction", "clarification"]) },
-];
-const allowedClassifications = new Set(classificationGroups.flatMap(({ values: groupValues }) => [...groupValues]));
+const classificationLabels = new Map([
+  ["addition", "Addition"],
+  ["deprecation", "Deprecation"],
+  ["removal", "Removal"],
+  ["correction", "Correction"],
+  ["clarification", "Clarification"],
+]);
+const sourcesById = new Map();
+for (const [index, source] of sources.entries()) {
+  if (!source || typeof source !== "object" || Array.isArray(source)) {
+    throw new Error(`sources[${index}] must be an object`);
+  }
+  if (!/^[A-Z][A-Z0-9]*-[0-9]{2,3}$/.test(source.source_id ?? "")) {
+    throw new Error(`sources[${index}].source_id is invalid`);
+  }
+  if (sourcesById.has(source.source_id)) {
+    throw new Error(`sources.json contains duplicate source_id ${source.source_id}`);
+  }
+  for (const key of ["title", "authority", "url", "publication_date"]) {
+    if (typeof source[key] !== "string" || !source[key].trim()) {
+      throw new Error(`sources[${index}].${key} is required`);
+    }
+  }
+  const sourceUrl = new URL(source.url);
+  if (sourceUrl.protocol !== "https:") {
+    throw new Error(`sources[${index}].url must use HTTPS`);
+  }
+  sourcesById.set(source.source_id, source);
+}
+
 for (const [index, change] of changes.entries()) {
   if (!change || typeof change !== "object" || Array.isArray(change)) {
     throw new Error(`changes[${index}] must be an object`);
@@ -79,42 +107,56 @@ for (const [index, change] of changes.entries()) {
   if (!/^CHG-[0-9]{3}$/.test(change.change_id ?? "")) {
     throw new Error(`changes[${index}].change_id is invalid`);
   }
-  if (!allowedClassifications.has(change.classification)) {
+  if (!classificationLabels.has(change.classification)) {
     throw new Error(`changes[${index}].classification is invalid`);
   }
   if (typeof change.section !== "string" || !change.section.trim()) {
     throw new Error(`changes[${index}].section is required`);
   }
+  for (const key of ["reader_title", "reader_what_changed", "reader_why"]) {
+    if (typeof change[key] !== "string" || !change[key].trim()) {
+      throw new Error(`changes[${index}].${key} is required`);
+    }
+    if (/https?:\/\//i.test(change[key])) {
+      throw new Error(`changes[${index}].${key} must not contain URLs; use source_ids`);
+    }
+  }
+  if (!Array.isArray(change.source_ids) || !change.source_ids.length) {
+    throw new Error(`changes[${index}].source_ids must be a non-empty array`);
+  }
+  for (const sourceId of change.source_ids) {
+    const source = sourcesById.get(sourceId);
+    if (!source) throw new Error(`changes[${index}] references unknown source ${sourceId}`);
+    if (source.access_status !== "accessible" || source.conclusion !== "supports_change") {
+      throw new Error(`changes[${index}] source ${sourceId} cannot support a reader-facing change`);
+    }
+  }
 }
-
-const concise = (value, max = 40) => {
-  const normalized = value.replace(/\s+/g, " ").trim();
-  return normalized.length <= max ? normalized : `${normalized.slice(0, max - 1).trimEnd()}…`;
-};
-const sectionReference = (section) => {
-  const normalized = section.replace(/\s+/g, " ").trim();
-  const withoutNumber = normalized.replace(/^\d+(?:\.\d+)?\.?\s*/, "");
-  if (/metadata/i.test(normalized)) return "handbook metadata";
-  if (/index/i.test(normalized)) return "the index";
-  if (/appendix|citation|source trail/i.test(normalized)) return "appendix and source trails";
-  return concise(withoutNumber || normalized);
-};
-const items = classificationGroups.flatMap(({ category, values: groupValues }) => {
-  const matching = changes.filter(({ classification }) => groupValues.has(classification));
-  if (!matching.length) return [];
-  const sections = [...new Set(matching.map(({ section }) => sectionReference(section)))];
-  const shownSections = sections.slice(0, 6).join(", ");
-  const remaining = sections.length > 6 ? `, and ${sections.length - 6} more area${sections.length - 6 === 1 ? "" : "s"}` : "";
-  const prefix = category === "Additions"
-    ? "Added or expanded guidance in"
-    : category === "Deprecations and removals"
-      ? "Deprecated or removed guidance in"
-      : "Corrected or clarified guidance in";
-  return [{
-    category,
-    text: `${prefix} ${shownSections}${remaining}. Exact wording and primary-source evidence are in the candidate change report.`,
-  }];
+const orderedChanges = [...changes].sort((left, right) => {
+  const leftIsMetadata = /(^|\b)metadata(\b|$)/i.test(left.section) ? 1 : 0;
+  const rightIsMetadata = /(^|\b)metadata(\b|$)/i.test(right.section) ? 1 : 0;
+  return leftIsMetadata - rightIsMetadata;
 });
+
+const items = orderedChanges.map((change) => ({
+  changeId: change.change_id,
+  classification: change.classification,
+  classificationLabel: classificationLabels.get(change.classification),
+  section: change.section,
+  title: change.reader_title,
+  whatChanged: change.reader_what_changed,
+  why: change.reader_why,
+  sources: change.source_ids.map((sourceId) => {
+    const source = sourcesById.get(sourceId);
+    return {
+      sourceId,
+      title: source.title,
+      authority: source.authority,
+      publicationDate: source.publication_date,
+      url: source.url,
+    };
+  }),
+}));
 
 const countLabel = (count, singular) => `${count} ${singular}${count === 1 ? "" : "s"}`;
 const counts = {
@@ -133,14 +175,14 @@ const summaryParts = [
 ].filter(Boolean);
 
 const output = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   entryDate: entryDateLabel,
   previousVersion: baseline.previousVersion,
   previousPublicationDate: baseline.previousPublicationDate,
   previousPdfSha256: productionPdfSha256,
   currentSourceSha256: createHash("sha256").update(sourceText).digest("hex"),
   summary: changes.length
-    ? `This candidate proposes ${changes.length} reader-facing update${changes.length === 1 ? "" : "s"}: ${summaryParts.join(", ")}.`
+    ? `This edition makes ${changes.length} reader-facing change${changes.length === 1 ? "" : "s"}: ${summaryParts.join(", ")}.${counts.removals ? "" : " No guidance was removed."}`
     : UNCHANGED_SUMMARY,
   items,
 };

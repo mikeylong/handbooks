@@ -230,6 +230,37 @@ function inlineMarkdown(value, { citations = true } = {}) {
   return html;
 }
 
+function renderChangelogBlocks(value) {
+  if (/https?:\/\//i.test(value)) {
+    throw new Error("Reader-facing changelog copy must use the structured primary-evidence links");
+  }
+  const lines = value.replaceAll("\r\n", "\n").split("\n");
+  const output = [];
+  let index = 0;
+  while (index < lines.length) {
+    if (!lines[index].trim()) {
+      index += 1;
+      continue;
+    }
+    if (/^-\s+/.test(lines[index])) {
+      const items = [];
+      while (index < lines.length && /^-\s+/.test(lines[index])) {
+        items.push(`<li>${inlineMarkdown(lines[index].replace(/^-\s+/, ""), { citations: false })}</li>`);
+        index += 1;
+      }
+      output.push(`<ul>${items.join("")}</ul>`);
+      continue;
+    }
+    const paragraph = [];
+    while (index < lines.length && lines[index].trim() && !/^-\s+/.test(lines[index])) {
+      paragraph.push(lines[index].trim());
+      index += 1;
+    }
+    output.push(`<p>${inlineMarkdown(paragraph.join(" "), { citations: false })}</p>`);
+  }
+  return output.join("\n");
+}
+
 function isTableDivider(line) {
   return /^\|(?:\s*:?-{3,}:?\s*\|)+$/.test(line.trim());
 }
@@ -591,8 +622,41 @@ const [
 ]);
 const changelog = JSON.parse(changelogSource);
 const changelogRequired = changelog.summary?.trim() !== UNCHANGED_CHANGELOG_SUMMARY;
+const classificationLabels = new Map([
+  ["addition", "Addition"],
+  ["deprecation", "Deprecation"],
+  ["removal", "Removal"],
+  ["correction", "Correction"],
+  ["clarification", "Clarification"],
+]);
+const validDetailedChangelogItem = (item) => {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return false;
+  const requiredStrings = [
+    "changeId",
+    "classification",
+    "classificationLabel",
+    "section",
+    "title",
+    "whatChanged",
+    "why",
+  ];
+  if (requiredStrings.some((key) => typeof item[key] !== "string" || !item[key].trim())) return false;
+  if (!/^CHG-[0-9]{3}$/.test(item.changeId)) return false;
+  if (classificationLabels.get(item.classification) !== item.classificationLabel) return false;
+  if (!Array.isArray(item.sources) || !item.sources.length || item.sources.length > 16) return false;
+  const sourceIds = new Set();
+  for (const source of item.sources) {
+    if (!source || typeof source !== "object" || Array.isArray(source)) return false;
+    if (["sourceId", "title", "authority", "publicationDate", "url"].some((key) => (
+      typeof source[key] !== "string" || !source[key].trim()
+    ))) return false;
+    if (!/^https:\/\//.test(source.url) || sourceIds.has(source.sourceId)) return false;
+    sourceIds.add(source.sourceId);
+  }
+  return true;
+};
 if (
-  changelog.schemaVersion !== 1
+  !new Set([1, 2]).has(changelog.schemaVersion)
   || typeof changelog.entryDate !== "string"
   || typeof changelog.previousVersion !== "string"
   || typeof changelog.previousPublicationDate !== "string"
@@ -600,15 +664,11 @@ if (
   || !/^[a-f0-9]{64}$/.test(changelog.currentSourceSha256 ?? "")
   || typeof changelog.summary !== "string"
   || !Array.isArray(changelog.items)
-  || changelog.items.length > 8
+  || changelog.items.length > 32
   || (changelogRequired && changelog.items.length < 1)
   || (!changelogRequired && changelog.items.length !== 0)
-  || changelog.items.some(({ category, text }) => (
-    typeof category !== "string"
-    || !category.trim()
-    || typeof text !== "string"
-    || !text.trim()
-  ))
+  || (changelogRequired && changelog.schemaVersion !== 2)
+  || (changelogRequired && changelog.items.some((item) => !validDetailedChangelogItem(item)))
 ) {
   throw new Error("handbook/changelog.json does not match the required schema");
 }
@@ -619,9 +679,19 @@ try {
   if (error.code !== "ENOENT") throw error;
 }
 const mappedPages = Object.values(pageMap).filter(Number.isInteger);
-const PDF_PAGE_COUNT = mappedPages.length
-  ? Math.max(...mappedPages) + 3
-  : (changelogRequired ? 79 : 78);
+const minimumMappedPageCount = mappedPages.length ? Math.max(...mappedPages) + 3 : 0;
+const configuredPdfPageCount = process.env.HANDBOOK_PDF_PAGE_COUNT
+  ? Number.parseInt(process.env.HANDBOOK_PDF_PAGE_COUNT, 10)
+  : null;
+if (configuredPdfPageCount !== null && (
+  !Number.isSafeInteger(configuredPdfPageCount)
+  || configuredPdfPageCount < Math.max(1, minimumMappedPageCount)
+  || configuredPdfPageCount > 1000
+)) {
+  throw new Error("HANDBOOK_PDF_PAGE_COUNT must be an integer that covers every mapped page");
+}
+const PDF_PAGE_COUNT = configuredPdfPageCount
+  ?? (minimumMappedPageCount || (changelogRequired ? 79 : 78));
 const sourceHash = createHash("sha256").update(source).digest("hex");
 if (changelog.currentSourceSha256 !== sourceHash) {
   throw new Error("handbook/changelog.json does not match the current handbook source");
@@ -637,7 +707,8 @@ const releaseZoneLabel = releaseTimeZoneLabel(releaseSchedule.timeZone);
 const lines = source.replaceAll("\r\n", "\n").split("\n");
 const sourceTitle = lines.find((line) => /^#\s+/.test(line))?.replace(/^#\s+/, "") ?? "Production AI Engineering Field Guide";
 const evidenceDate = source.match(/Last evidence review:\s*\*\*([^*]+)\*\*/)?.[1] ?? "Unspecified";
-const BIBLIOGRAPHY_ACCESS_DATE = formatBibliographyDate(formatCandidateDate(evidenceDate));
+const bibliographyDate = process.env.HANDBOOK_CANDIDATE_DATE ?? evidenceDate;
+const BIBLIOGRAPHY_ACCESS_DATE = formatBibliographyDate(formatCandidateDate(bibliographyDate));
 
 const chapterStarts = lines
   .map((line, index) => ({ line, index }))
@@ -909,6 +980,24 @@ const indexHtml = `
     </div>
   </section>`;
 
+const changelogSectionHtml = (section) => {
+  const displaySection = section.replace(/[–—]/g, "-");
+  const sectionMatch = /^(\d+)\.\s+/.exec(section);
+  if (!sectionMatch) return escapeHtml(displaySection);
+  const sourceNumber = Number.parseInt(sectionMatch[1], 10);
+  const target = sourceNumber === 26
+    ? { slug: "appendix-citations" }
+    : sourceSections.find(({ number }) => Number(number) === sourceNumber);
+  if (!target) return escapeHtml(displaySection);
+  const printedPage = pageMap[target.slug];
+  const pageLabel = Number.isInteger(printedPage) ? ` <span>· p. ${printedPage}</span>` : "";
+  return `<a href="#${target.slug}">${escapeHtml(displaySection)}</a>${pageLabel}`;
+};
+
+const changelogSourcesHtml = (sources) => sources.map((source) => (
+  `<a href="${escapeHtml(source.url)}">[${escapeHtml(source.sourceId)}] ${escapeHtml(source.authority)} - ${escapeHtml(source.title)} (${escapeHtml(source.publicationDate)})</a>`
+)).join("<span aria-hidden=\"true\"> · </span>");
+
 const changelogHtml = changelogRequired ? `
   <section class="back-matter changelog pdf-only" id="changelog" aria-labelledby="changelog-title">
     <header class="back-matter-header changelog-header">
@@ -918,14 +1007,26 @@ const changelogHtml = changelogRequired ? `
       <p>Compared with ${escapeHtml(changelog.previousVersion)}, published ${escapeHtml(changelog.previousPublicationDate)}.</p>
       <p>${escapeHtml(changelog.summary)}</p>
     </header>
-    <dl class="changelog-list">
-      ${changelog.items.map(({ category, text }) => `
-        <div>
-          <dt>${escapeHtml(category)}</dt>
-          <dd>${escapeHtml(text)}</dd>
-        </div>`).join("")}
-    </dl>
-    <p class="changelog-baseline">Previous PDF SHA-256: <code>${escapeHtml(changelog.previousPdfSha256)}</code></p>
+    <div class="changelog-entries">
+      ${changelog.items.map((item) => `
+        <article class="changelog-entry" data-change-id="${escapeHtml(item.changeId)}">
+          <header>
+            <p class="changelog-entry-meta"><span>${escapeHtml(item.changeId)}</span><span>${escapeHtml(item.classificationLabel)}</span><span>${changelogSectionHtml(item.section)}</span></p>
+            <h3>${escapeHtml(item.title)}</h3>
+          </header>
+          <div class="changelog-entry-copy">
+            <div class="changelog-entry-part" role="group" aria-label="What changed">
+              <h4>What changed</h4>
+              ${renderChangelogBlocks(item.whatChanged)}
+            </div>
+            <div class="changelog-entry-part" role="group" aria-label="Why this changed">
+              <h4>Why</h4>
+              ${renderChangelogBlocks(item.why)}
+            </div>
+          </div>
+          <p class="changelog-sources"><strong>Primary evidence</strong> ${changelogSourcesHtml(item.sources)}</p>
+        </article>`).join("")}
+    </div>
   </section>` : "";
 
 const html = `<!doctype html>

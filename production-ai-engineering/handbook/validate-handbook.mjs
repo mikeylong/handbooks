@@ -57,8 +57,9 @@ const formatBibliographyDate = (displayDate) => {
 const evidenceReviewDate = source.match(
   /Last evidence review:\s*\*\*([^*]+)\*\*/,
 )?.[1] ?? "Unspecified";
+const bibliographyDate = process.env.HANDBOOK_CANDIDATE_DATE ?? evidenceReviewDate;
 const expectedBibliographyAccessDate = formatBibliographyDate(
-  formatCandidateDate(evidenceReviewDate),
+  formatCandidateDate(bibliographyDate),
 );
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 const changelogRequired = changelog.summary?.trim() !== UNCHANGED_CHANGELOG_SUMMARY;
@@ -96,6 +97,44 @@ const releaseWindowHtml = html.match(/<section class="release-window site-only"[
 const forewordHtml = html.match(/<section class="foreword"[\s\S]*?<\/section>/)?.[0] ?? "";
 const changelogHtml = html.match(/<section class="back-matter changelog pdf-only"[\s\S]*?<\/section>/)?.[0] ?? "";
 const decodedChangelogHtml = decodeHtml(changelogHtml);
+const changelogVisibleText = decodeHtml(
+  changelogHtml.replace(/<[^>]+>/g, " "),
+).replace(/\s+/g, " ").trim();
+const canonicalText = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "");
+const canonicalChangelogVisibleText = canonicalText(changelogVisibleText);
+const classificationLabels = new Map([
+  ["addition", "Addition"],
+  ["deprecation", "Deprecation"],
+  ["removal", "Removal"],
+  ["correction", "Correction"],
+  ["clarification", "Clarification"],
+]);
+const detailedChangelogItemValid = (item) => {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return false;
+  if ([
+    "changeId",
+    "classification",
+    "classificationLabel",
+    "section",
+    "title",
+    "whatChanged",
+    "why",
+  ].some((key) => typeof item[key] !== "string" || !item[key].trim())) return false;
+  if (!/^CHG-[0-9]{3}$/.test(item.changeId)) return false;
+  if (classificationLabels.get(item.classification) !== item.classificationLabel) return false;
+  if (/https?:\/\//i.test(`${item.title}\n${item.whatChanged}\n${item.why}`)) return false;
+  if (!Array.isArray(item.sources) || !item.sources.length || item.sources.length > 16) return false;
+  const sourceIds = new Set();
+  return item.sources.every((source) => {
+    if (!source || typeof source !== "object" || Array.isArray(source)) return false;
+    if (["sourceId", "title", "authority", "publicationDate", "url"].some((key) => (
+      typeof source[key] !== "string" || !source[key].trim()
+    ))) return false;
+    if (!/^https:\/\//.test(source.url) || sourceIds.has(source.sourceId)) return false;
+    sourceIds.add(source.sourceId);
+    return true;
+  });
+};
 const figureHtml = (className) => html.match(new RegExp(`<figure class="${className}"[^>]*>[\\s\\S]*?<\\/figure>`))?.[0] ?? "";
 const dataLabels = (value) => [...value.matchAll(/\sdata-label="([^"]+)"/g)].map((match) => decodeHtml(match[1]));
 const dataTopology = (value) => [...value.matchAll(/<path\b[^>]*\sdata-from="([^"]+)"[^>]*\sdata-to="([^"]+)"/g)]
@@ -464,23 +503,37 @@ const checks = {
     /@media print[\s\S]*?\.search-dialog,[\s\S]*?\.site-only,[\s\S]*?\.table-scroll-hint\s*\{[\s\S]*?display:\s*none !important;/.test(css),
   changelogPage: count(/class="back-matter changelog pdf-only"/g, html),
   changelogContentValid:
-    changelog.schemaVersion === 1
+    new Set([1, 2]).has(changelog.schemaVersion)
     && /^[a-f0-9]{64}$/.test(changelog.previousPdfSha256)
     && changelog.currentSourceSha256 === sourceHash
     && Array.isArray(changelog.items)
     && (
       changelogRequired
         ? (
-          changelog.items.length >= 1
-          && changelog.items.length <= 8
+          changelog.schemaVersion === 2
+          && changelog.items.length >= 1
+          && changelog.items.length <= 32
           && decodedChangelogHtml.includes(`<p class="changelog-version">${expectedBookVersion} - ${changelog.entryDate}</p>`)
           && decodedChangelogHtml.includes(`Compared with ${changelog.previousVersion}, published ${changelog.previousPublicationDate}.`)
           && decodedChangelogHtml.includes(changelog.summary)
-          && changelog.items.every(({ category, text }) => (
-            decodedChangelogHtml.includes(`<dt>${category}</dt>`)
-            && decodedChangelogHtml.includes(`<dd>${text}</dd>`)
+          && count(/class="changelog-entry"/g, changelogHtml) === changelog.items.length
+          && changelog.items.every((item) => (
+            detailedChangelogItemValid(item)
+            && decodedChangelogHtml.includes(`data-change-id="${item.changeId}"`)
+            && canonicalChangelogVisibleText.includes(canonicalText(item.changeId))
+            && canonicalChangelogVisibleText.includes(canonicalText(item.classificationLabel))
+            && canonicalChangelogVisibleText.includes(canonicalText(item.section))
+            && canonicalChangelogVisibleText.includes(canonicalText(item.title))
+            && canonicalChangelogVisibleText.includes(canonicalText(item.whatChanged))
+            && canonicalChangelogVisibleText.includes(canonicalText(item.why))
+            && item.sources.every((source) => (
+              decodedChangelogHtml.includes(`href="${source.url}"`)
+              && canonicalChangelogVisibleText.includes(canonicalText(
+                `[${source.sourceId}] ${source.authority} - ${source.title} (${source.publicationDate})`,
+              ))
+            ))
           ))
-          && decodedChangelogHtml.includes(changelog.previousPdfSha256)
+          && !decodedChangelogHtml.includes(changelog.previousPdfSha256)
         )
         : changelog.items.length === 0 && changelogHtml === ""
     ),
@@ -497,7 +550,10 @@ const checks = {
   changelogPdfOnly:
     /\.pdf-only\s*\{\s*display:\s*none;\s*\}/s.test(css)
     && /@media print[\s\S]*?\.pdf-only\s*\{\s*display:\s*block;\s*\}/s.test(css)
-    && /@media print[\s\S]*?\.changelog\s*\{[\s\S]*?break-inside:\s*avoid-page;/s.test(css),
+    && !/@media print[\s\S]*?\.changelog\s*\{[^}]*break-inside:/s.test(css)
+    && /@media print[\s\S]*?\.changelog-entry\s*\{[^}]*break-inside:\s*auto;/s.test(css)
+    && /@media print[\s\S]*?\.changelog-entry-part,[\s\S]*?\.changelog-sources\s*\{[^}]*break-inside:\s*avoid;/s.test(css)
+    && /@media print[\s\S]*?\.changelog-entry\s*>\s*header\s*\{[^}]*break-after:\s*avoid;/s.test(css),
   changelogStartsOnNewPrintPage:
     /@media print[\s\S]*?\.changelog\s*\{[\s\S]*?break-before:\s*page;/s.test(css),
   sourceUrls: sourceUrls.size,
