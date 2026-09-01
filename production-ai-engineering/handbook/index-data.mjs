@@ -1216,5 +1216,265 @@ export const INDEX_ENTRIES = [
       "continuous-batching",
       "multi-tenant-isolation"
     ]
+  },
+  {
+    "id": "workflow-aware-scheduling",
+    "label": "Workflow-aware scheduling",
+    "sections": [
+      7
+    ],
+    "seeAlso": [
+      "continuous-batching",
+      "goodput",
+      "caching-prefix"
+    ]
+  },
+  {
+    "id": "schema-validation-budgets",
+    "label": "Schema validation budgets",
+    "sections": [
+      10
+    ],
+    "seeAlso": [
+      "schema-validation",
+      "server-side-request-forgery",
+      "structured-outputs"
+    ]
+  },
+  {
+    "id": "mcp-statelessness",
+    "label": "MCP statelessness",
+    "sections": [
+      11
+    ],
+    "seeAlso": [
+      "idempotency",
+      "mcp-version-negotiation",
+      "tool-contracts"
+    ]
+  },
+  {
+    "id": "mcp-deprecations",
+    "label": "MCP deprecations",
+    "sections": [
+      11
+    ],
+    "seeAlso": [
+      "mcp-version-negotiation",
+      "versioning"
+    ]
+  },
+  {
+    "id": "agent-identity",
+    "label": "Agent identity",
+    "sections": [
+      11,
+      19
+    ],
+    "seeAlso": [
+      "authorization",
+      "least-privilege",
+      "permission-boundaries"
+    ]
+  },
+  {
+    "id": "delegated-authority",
+    "label": "Delegated authority",
+    "sections": [
+      11,
+      19
+    ],
+    "seeAlso": [
+      "agent-identity",
+      "authorization",
+      "tool-contracts"
+    ]
+  },
+  {
+    "id": "safe-stop",
+    "label": "Safe stop",
+    "sections": [
+      12,
+      16
+    ],
+    "seeAlso": [
+      "agents-budgets",
+      "agents-termination",
+      "evals-adversarial"
+    ]
+  },
+  {
+    "id": "incident-kill-path",
+    "label": "Incident kill path",
+    "sections": [
+      12,
+      19
+    ],
+    "seeAlso": [
+      "agents-guardrails",
+      "permission-boundaries"
+    ]
+  },
+  {
+    "id": "sdk-migrations",
+    "label": "SDK migrations",
+    "sections": [
+      13
+    ],
+    "seeAlso": [
+      "model-lifecycle",
+      "versioning"
+    ]
+  },
+  {
+    "id": "retrieval-confidentiality",
+    "label": "Retrieval confidentiality",
+    "sections": [
+      14,
+      20
+    ],
+    "seeAlso": [
+      "access-control-lists",
+      "dense-retrieval",
+      "multi-tenant-isolation"
+    ]
+  },
+  {
+    "id": "evaluation-sandboxing",
+    "label": "Evaluation sandboxing",
+    "sections": [
+      16
+    ],
+    "seeAlso": [
+      "evals-adversarial",
+      "permission-boundaries"
+    ]
+  },
+  {
+    "id": "trajectory-evaluation",
+    "label": "Trajectory evaluation",
+    "sections": [
+      16
+    ],
+    "seeAlso": [
+      "evals",
+      "evals-adversarial",
+      "traces-spans"
+    ]
+  },
+  {
+    "id": "tamper-evident-telemetry",
+    "label": "Tamper-evident telemetry",
+    "sections": [
+      17
+    ],
+    "seeAlso": [
+      "observability",
+      "tool-receipts",
+      "traces-spans"
+    ]
+  },
+  {
+    "id": "consent-fatigue",
+    "label": "Consent fatigue",
+    "sections": [
+      19
+    ],
+    "seeAlso": [
+      "authorization",
+      "permission-boundaries"
+    ]
+  },
+  {
+    "id": "transitive-egress",
+    "label": "Transitive egress",
+    "sections": [
+      16,
+      19
+    ],
+    "seeAlso": [
+      "evaluation-sandboxing",
+      "permission-boundaries"
+    ]
+  },
+  {
+    "id": "model-server-ingress",
+    "label": "Model-server ingress",
+    "sections": [
+      20
+    ],
+    "seeAlso": [
+      "authorization",
+      "serving-engine-security"
+    ]
+  },
+  {
+    "id": "model-artifact-security",
+    "label": "Model artifact security",
+    "sections": [
+      20
+    ],
+    "seeAlso": [
+      "multi-tenant-isolation",
+      "serving-engine-security"
+    ]
+  },
+  {
+    "id": "multimodal-input-budgets",
+    "label": "Multimodal input budgets",
+    "sections": [
+      20
+    ],
+    "seeAlso": [
+      "quotas",
+      "serving-engine-security"
+    ]
+  },
+  {
+    "id": "privileged-backend-admission",
+    "label": "Privileged backend admission",
+    "sections": [
+      20
+    ],
+    "seeAlso": [
+      "admission-control",
+      "serving-engine-security"
+    ]
+  },
+  {
+    "id": "agent-runtime-security",
+    "label": "Agent runtime security",
+    "sections": [
+      19,
+      20
+    ],
+    "seeAlso": [
+      "permission-boundaries",
+      "serving-engine-security"
+    ]
+  },
+  {
+    "id": "interaction-aware-retrieval",
+    "label": "Interaction-aware retrieval",
+    "sections": [
+      15
+    ],
+    "seeAlso": [
+      "dense-retrieval",
+      "evals-retrieval",
+      "trajectory-evaluation"
+    ]
+  },
+  {
+    "id": "code-approval-binding",
+    "label": "Code approval binding",
+    "sections": [
+      16
+    ],
+    "seeAlso": [
+      "evaluation-sandboxing",
+      "evals-adversarial",
+      "versioning"
+    ]
   }
 ];
