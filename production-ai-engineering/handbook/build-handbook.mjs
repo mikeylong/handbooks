@@ -73,7 +73,7 @@ const formatBibliographyDate = (displayDate) => {
   if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
   return `${match[2]} ${match[1]} ${match[3]}`;
 };
-const PDF_HREF = "../output/pdf/production-ai-engineering.pdf";
+const PDF_HREF = "../output/pdf/production-ai-engineering-v1.2.0-2026-08-31.pdf";
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
   ?? `Version 1.2${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
@@ -691,7 +691,11 @@ if (configuredPdfPageCount !== null && (
   throw new Error("HANDBOOK_PDF_PAGE_COUNT must be an integer that covers every mapped page");
 }
 const PDF_PAGE_COUNT = configuredPdfPageCount
-  ?? (minimumMappedPageCount || (changelogRequired ? 79 : 78));
+  ?? (
+    process.env.HANDBOOK_CANDIDATE_DATE
+      ? (minimumMappedPageCount || (changelogRequired ? 79 : 78))
+      : Math.max(76, minimumMappedPageCount)
+  );
 const sourceHash = createHash("sha256").update(source).digest("hex");
 if (changelog.currentSourceSha256 !== sourceHash) {
   throw new Error("handbook/changelog.json does not match the current handbook source");

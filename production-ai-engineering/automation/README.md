@@ -42,6 +42,6 @@ The automation ID remains `weekly-production-ai-handbook-review` for continuity.
 
 ## Production release contract
 
-A candidate is not a release and does not change the root README. Every commit that updates `output/pdf/production-ai-engineering.pdf` also updates the README's visible version and publication date, the README's hidden PDF checksum, and `handbook/changelog.json`. The README keeps one stable link to the canonical PDF.
+A candidate is not a release and does not change the root README. Every commit that updates the current `output/pdf/production-ai-engineering-v<semantic-version>-<yyyy-mm-dd>.pdf` also updates the README's visible version and publication date, the README's hidden PDF checksum, and `handbook/changelog.json`. The release contract requires the PDF filename and README link to match that version and date exactly.
 
 Run `npm run validate:release` before committing a release. The release-contract workflow repeats the check for pull requests, merge queues, and pushes to `main`. It verifies that the README identity matches the PDF cover, the hidden checksum matches the exact PDF, and the canonical changelog is aligned to the published PDF and manuscript. The GitHub rules for `main` should require this check and code-owner review so invalid releases cannot merge and the gate cannot be weakened without review.

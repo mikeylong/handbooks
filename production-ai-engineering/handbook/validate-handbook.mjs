@@ -31,6 +31,7 @@ const expectedReleaseSchedule = buildReleaseSchedule(
 const expectedBookVersion = process.env.HANDBOOK_VERSION
   ?? `Version 1.2${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const PUBLICATION_DATE = "August 31, 2026";
+const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.2.0-2026-08-31.pdf";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -418,7 +419,10 @@ const checks = {
   textSchematics: count(/class="editorial-example text-schematic"/g, html),
   lazyImages: count(/loading="lazy"/g, html),
   eagerImages: count(/loading="eager"/g, html),
-  pdfDownloadLinks: count(/href="\.\.\/output\/pdf\/production-ai-engineering\.pdf" download/g, html),
+  pdfDownloadLinks: html.split(`href="${CURRENT_PDF_HREF}" download`).length - 1,
+  pdfDownloadPageCountExact:
+    count(/aria-label="Download Production AI Engineering as a PDF, 76 pages"/g, html) === 3
+    && count(/<span>76 pages<\/span>/g, html) === 2,
   releaseScheduleValid:
     JSON.stringify(releaseSchedule) === JSON.stringify(expectedReleaseSchedule)
     && Number.isFinite(Date.parse(releaseSchedule.generatedAt))
@@ -706,6 +710,7 @@ const expected = {
   lazyImages: 12,
   eagerImages: 0,
   pdfDownloadLinks: 3,
+  pdfDownloadPageCountExact: true,
   releaseScheduleValid: true,
   releaseCountdownValid: true,
   releaseCountdownAccessible: true,

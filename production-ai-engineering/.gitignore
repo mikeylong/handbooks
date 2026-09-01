@@ -6,8 +6,8 @@ __pycache__/
 .playwright-cli/
 tmp/
 
-# Keep only the canonical published PDF from generated output
+# Keep only the current, versioned published PDF from generated output
 output/*
 !output/pdf/
 output/pdf/*
-!output/pdf/production-ai-engineering.pdf
+!output/pdf/production-ai-engineering-v1.2.0-2026-08-31.pdf
