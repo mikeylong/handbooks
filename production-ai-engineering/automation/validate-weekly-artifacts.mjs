@@ -15,6 +15,7 @@ const { values } = parseArgs({
     "candidate-index-json": { type: "string" },
     patch: { type: "string" },
     "run-start": { type: "string" },
+    "run-date": { type: "string" },
   },
   strict: true,
 });
@@ -29,6 +30,7 @@ const requiredOptions = [
   "candidate-index-json",
   "patch",
   "run-start",
+  "run-date",
 ];
 for (const key of requiredOptions) {
   if (!values[key]) throw new Error(`Missing --${key}`);
@@ -108,6 +110,13 @@ if (!Array.isArray(coverage)) fail("coverage.json must be an array");
 
 const runStart = Date.parse(values["run-start"]);
 if (Number.isNaN(runStart)) fail("--run-start must be an ISO-8601 timestamp");
+const runDate = values["run-date"];
+const parsedRunDate = new Date(`${runDate}T00:00:00Z`);
+if (!/^\d{4}-\d{2}-\d{2}$/.test(runDate)
+  || Number.isNaN(parsedRunDate.getTime())
+  || parsedRunDate.toISOString().slice(0, 10) !== runDate) {
+  fail("--run-date must be a valid YYYY-MM-DD calendar date");
+}
 const earliestAccess = runStart - 10 * 60 * 1000;
 const latestAccess = Date.now() + 10 * 60 * 1000;
 
@@ -246,13 +255,15 @@ const baselineBook = JSON.parse(baselineBookJsonText);
 const baselineIndex = JSON.parse(baselineIndexJsonText);
 const candidateBook = JSON.parse(candidateBookJsonText);
 const candidateIndex = JSON.parse(candidateIndexJsonText);
+const baselineGuideText = await readRegular(values["baseline-guide"], "baseline guide");
+const candidateGuideText = await readRegular(values["candidate-guide"], "candidate guide");
 const baselineCorpus = [
-  await readRegular(values["baseline-guide"], "baseline guide"),
+  baselineGuideText,
   ...collectStrings(baselineBook),
   ...collectStrings(baselineIndex),
 ].join("\n");
 const candidateCorpus = [
-  await readRegular(values["candidate-guide"], "candidate guide"),
+  candidateGuideText,
   ...collectStrings(candidateBook),
   ...collectStrings(candidateIndex),
 ].join("\n");
@@ -270,6 +281,12 @@ if (changes.length === 0 && releaseRecommendation.recommended_bump !== "none") {
 }
 if (changes.length > 0 && releaseRecommendation.recommended_bump === "none") {
   fail("A changed candidate must recommend patch, minor, or major");
+}
+const candidateEvidenceReviewDate = candidateGuideText.match(
+  /Last evidence review:\s*\*\*([^*]+)\*\*/,
+)?.[1];
+if (changes.length > 0 && candidateEvidenceReviewDate !== runDate) {
+  fail(`A changed candidate must set Last evidence review to the run date ${runDate}`);
 }
 if (!changesText.toLowerCase().includes(releaseRecommendation.recommended_bump)) {
   fail("change-report.md does not include the structured release recommendation");
@@ -292,9 +309,27 @@ for (const [changeIndex, change] of changes.entries()) {
     "confidence",
     "consequence_accept",
     "consequence_reject",
+    "reader_title",
+    "reader_what_changed",
+    "reader_why",
   ], changeName);
-  for (const key of ["change_id", "section", "before_text", "reason", "consequence_accept", "consequence_reject"]) {
+  for (const key of [
+    "change_id",
+    "section",
+    "before_text",
+    "reason",
+    "consequence_accept",
+    "consequence_reject",
+    "reader_title",
+    "reader_what_changed",
+    "reader_why",
+  ]) {
     assertString(change[key], `${changeName}.${key}`);
+  }
+  for (const key of ["reader_title", "reader_what_changed", "reader_why"]) {
+    if (/https?:\/\//i.test(change[key])) {
+      fail(`${changeName}.${key} must not contain URLs; use source_ids`);
+    }
   }
   assertString(change.after_text, `${changeName}.after_text`, {
     allowEmpty: change.classification === "removal",
@@ -327,6 +362,9 @@ for (const [changeIndex, change] of changes.entries()) {
     fail(`${changeName}.before_text is still present in the candidate corpus`);
   }
   if (!changesText.includes(change.change_id)) fail(`change-report.md does not include ${change.change_id}`);
+  if (!changesText.includes(change.reader_title)) {
+    fail(`change-report.md does not include the reader-facing title for ${change.change_id}`);
+  }
 }
 
 const patchHasChanges = patchText.trim().length > 0;

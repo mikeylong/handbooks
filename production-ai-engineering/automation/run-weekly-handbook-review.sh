@@ -127,7 +127,7 @@ AUTOMATION_CONFIG="$WORKSPACE/automation/automation.toml"
 RELEASE_POLICY="$WORKSPACE/automation/release-policy.json"
 RENDER_PDF="$WORKSPACE/automation/render-handbook-pdf.mjs"
 CANONICAL_SOURCE="$WORKSPACE/AI_ENGINEERING_FIELD_GUIDE.md"
-PRODUCTION_PDF="$WORKSPACE/output/pdf/production-ai-engineering.pdf"
+PRODUCTION_PDF="$WORKSPACE/output/pdf/production-ai-engineering-v1.2.0-2026-08-31.pdf"
 DEFAULT_CANDIDATE_ROOT="$WORKSPACE/output/candidates"
 CANDIDATE_ROOT="${HANDBOOK_CANDIDATE_ROOT:-$DEFAULT_CANDIDATE_ROOT}"
 CANDIDATE_ROOT="${CANDIDATE_ROOT:A}"
@@ -158,6 +158,11 @@ PAGE_COUNT=""
 CHANGE_COUNT=0
 CHANGELOG_REQUIRED="unknown"
 CHANGELOG_SUMMARY=""
+CHANGELOG_START_PHYSICAL_PAGE="none"
+CHANGELOG_START_PRINTED_PAGE="none"
+CHANGELOG_END_PHYSICAL_PAGE="none"
+CHANGELOG_END_PRINTED_PAGE="none"
+CHANGELOG_PAGE_COUNT=0
 EXPECTED_REVIEW_STATUS="unknown"
 RECOMMENDED_VERSION_BUMP="unknown"
 RESEARCH_COMPLETED=false
@@ -642,7 +647,8 @@ validate_research_artifacts() {
     --baseline-index-json "$PRISTINE_DIR/handbook-data/index-data.json" \
     --candidate-index-json "$STAGE_DIR/handbook-data/index-data.json" \
     --patch "$RUN_DIR/exact-changes.patch" \
-    --run-start "$RUN_STARTED_AT"
+    --run-start "$RUN_STARTED_AT" \
+    --run-date "$RUN_DATE"
 }
 
 generate_candidate_changelog() {
@@ -650,6 +656,7 @@ generate_candidate_changelog() {
     --baseline "$PRISTINE_DIR/handbook/changelog.json" \
     --baseline-source "$PRISTINE_DIR/AI_ENGINEERING_FIELD_GUIDE.md" \
     --changes "$RUN_DIR/changes.json" \
+    --sources "$RUN_DIR/sources.json" \
     --patch "$RUN_DIR/exact-changes.patch" \
     --source "$BUILD_DIR/AI_ENGINEERING_FIELD_GUIDE.md" \
     --production-hash "$RUN_DIR/production-pdf-before-sha256.txt" \
@@ -766,6 +773,37 @@ collect_pdf_evidence() {
     return 1
   fi
 
+  if [[ "$CHANGELOG_REQUIRED" == true ]]; then
+    CHANGELOG_START_PRINTED_PAGE=$(
+      "$NODE_BIN" -e \
+        'const fs = require("node:fs"); const data = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); const value = data[process.argv[2]]; if (!Number.isInteger(value)) process.exit(1); process.stdout.write(String(value));' \
+        "$RUN_DIR/page-map.json" "changelog"
+    ) || return 1
+    local changelog_end_printed_page
+    changelog_end_printed_page=$(
+      "$NODE_BIN" -e \
+        'const fs = require("node:fs"); const data = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); const value = data[process.argv[2]]; if (!Number.isInteger(value)) process.exit(1); process.stdout.write(String(value));' \
+        "$RUN_DIR/page-map.json" "changelog-end"
+    ) || return 1
+    CHANGELOG_START_PHYSICAL_PAGE=$((CHANGELOG_START_PRINTED_PAGE + 3))
+    CHANGELOG_END_PRINTED_PAGE="$changelog_end_printed_page"
+    CHANGELOG_END_PHYSICAL_PAGE=$((CHANGELOG_END_PRINTED_PAGE + 3))
+    CHANGELOG_PAGE_COUNT=$((CHANGELOG_END_PHYSICAL_PAGE - CHANGELOG_START_PHYSICAL_PAGE + 1))
+    if [[ "$CHANGELOG_START_PHYSICAL_PAGE" -lt 1 \
+      || "$CHANGELOG_END_PHYSICAL_PAGE" -ne "$PAGE_COUNT" \
+      || "$CHANGELOG_PAGE_COUNT" -lt 1 ]]; then
+      /usr/bin/printf 'Invalid changelog page range: physical %s-%s of %s pages.\n' \
+        "$CHANGELOG_START_PHYSICAL_PAGE" "$CHANGELOG_END_PHYSICAL_PAGE" "$PAGE_COUNT"
+      return 1
+    fi
+  else
+    CHANGELOG_START_PHYSICAL_PAGE="none"
+    CHANGELOG_END_PHYSICAL_PAGE="none"
+    CHANGELOG_START_PRINTED_PAGE="none"
+    CHANGELOG_END_PRINTED_PAGE="none"
+    CHANGELOG_PAGE_COUNT=0
+  fi
+
   /bin/mkdir -p "$RUN_DIR/proof" "$FINAL_REVIEW_DIR/proof" || return 1
   local physical_page
   local page_name
@@ -800,9 +838,29 @@ collect_pdf_evidence() {
   page_name=$(/usr/bin/printf 'page-%03d.png' "$PAGE_COUNT") || return 1
   /bin/cp "$RUN_DIR/proof/$page_name" "$RUN_DIR/proof/final-page.png" || return 1
   if [[ "$CHANGELOG_REQUIRED" == true ]]; then
-    /bin/cp "$RUN_DIR/proof/final-page.png" "$RUN_DIR/proof/changelog.png" || return 1
-    /bin/cp "$RUN_DIR/proof/final-page.png" "$FINAL_REVIEW_DIR/proof/changelog.png" \
+    local changelog_physical_page
+    local changelog_page_ordinal
+    local changelog_proof_name
+    for ((
+      changelog_physical_page = CHANGELOG_START_PHYSICAL_PAGE, changelog_page_ordinal = 1;
+      changelog_physical_page <= CHANGELOG_END_PHYSICAL_PAGE;
+      changelog_physical_page++, changelog_page_ordinal++
+    )); do
+      page_name=$(/usr/bin/printf 'page-%03d.png' "$changelog_physical_page") || return 1
+      changelog_proof_name=$(/usr/bin/printf 'changelog-page-%03d.png' "$changelog_page_ordinal") \
+        || return 1
+      /bin/cp "$RUN_DIR/proof/$page_name" "$RUN_DIR/proof/$changelog_proof_name" || return 1
+      /bin/cp "$RUN_DIR/proof/$changelog_proof_name" \
+        "$FINAL_REVIEW_DIR/proof/$changelog_proof_name" || return 1
+    done
+    /bin/cp "$RUN_DIR/proof/changelog-page-001.png" "$RUN_DIR/proof/changelog.png" \
       || return 1
+    /bin/cp "$RUN_DIR/proof/changelog.png" "$FINAL_REVIEW_DIR/proof/changelog.png" \
+      || return 1
+    /bin/cp "$RUN_DIR/proof/final-page.png" "$RUN_DIR/proof/changelog-final.png" \
+      || return 1
+    /bin/cp "$RUN_DIR/proof/changelog-final.png" \
+      "$FINAL_REVIEW_DIR/proof/changelog-final.png" || return 1
   fi
   /usr/bin/find "$RUN_DIR/proof" -type f -print | LC_ALL=C /usr/bin/sort \
     > "$RUN_DIR/proof/manifest.txt"
@@ -834,6 +892,14 @@ write_review_outputs() {
     /usr/bin/printf -- '- Research checkpoint: `%s` (`%s`; overlap from `%s`)\n' \
       "$RESEARCH_CHECKPOINT_PATH" "$RESEARCH_CHECKPOINT_DATE" "$RESEARCH_OVERLAP_START"
     /usr/bin/printf -- '- PDF pages: `%s`\n' "$PAGE_COUNT"
+    if [[ "$CHANGELOG_REQUIRED" == true ]]; then
+      /usr/bin/printf -- '- Changelog pages: physical `%s-%s` / printed `%s-%s` (`%s` pages)\n' \
+        "$CHANGELOG_START_PHYSICAL_PAGE" "$CHANGELOG_END_PHYSICAL_PAGE" \
+        "$CHANGELOG_START_PRINTED_PAGE" "$CHANGELOG_END_PRINTED_PAGE" \
+        "$CHANGELOG_PAGE_COUNT"
+    else
+      /usr/bin/printf -- '- Changelog pages: omitted\n'
+    fi
     /usr/bin/printf -- '- HTML validation: passed\n'
     /usr/bin/printf -- '- PDF validation: passed\n'
     /usr/bin/printf -- '- Two-pass page-map stability: passed\n'
@@ -856,23 +922,21 @@ validate_review_outputs() {
     --proof-dir "$FINAL_REVIEW_DIR/proof" \
     --wrapper-proof-dir "$RUN_DIR/proof" \
     --page-count "$PAGE_COUNT" \
-    --changelog-required "$CHANGELOG_REQUIRED"
+    --changelog-required "$CHANGELOG_REQUIRED" \
+    --changelog-start-page "$CHANGELOG_START_PHYSICAL_PAGE" \
+    --changelog-end-page "$CHANGELOG_END_PHYSICAL_PAGE"
 }
 
 write_success_status() {
   local candidate_sha
-  local changelog_pdf_page="none"
-  local changelog_printed_page="none"
   candidate_sha=$(/usr/bin/awk '{ print $1; exit }' "$RUN_DIR/candidate-sha256.txt") \
     || return 1
-  if [[ "$CHANGELOG_REQUIRED" == true ]]; then
-    changelog_pdf_page="$PAGE_COUNT"
-    changelog_printed_page=$((PAGE_COUNT - 3))
-  fi
-  /usr/bin/printf 'status=%s\nexit_code=0\nrun_date=%s\nrun_started_at=%s\ncandidate_ready=true\nchanges=%s\npages=%s\nreader_facing_content_changed=%s\nchangelog_included=%s\nchangelog_pdf_page=%s\nchangelog_printed_page=%s\nrecommended_version_bump=%s\nresearch_checkpoint_path=%s\nresearch_checkpoint_date=%s\nresearch_overlap_start=%s\npage_map_stable=true\nresearch_completed=true\nresearch_artifacts_valid=true\ndeterministic_review_passed=true\nscheduled_task_audit_pending=true\ncanonical_source_unchanged=true\ncanonical_workspace_unchanged=true\nproduction_pdf_unchanged=true\ncandidate_pdf=%s\ncandidate_sha256=%s\n' \
+  /usr/bin/printf 'status=%s\nexit_code=0\nrun_date=%s\nrun_started_at=%s\ncandidate_ready=true\nchanges=%s\npages=%s\nreader_facing_content_changed=%s\nchangelog_included=%s\nchangelog_pdf_page_start=%s\nchangelog_pdf_page_end=%s\nchangelog_pdf_page_count=%s\nchangelog_printed_page_start=%s\nchangelog_printed_page_end=%s\nrecommended_version_bump=%s\nresearch_checkpoint_path=%s\nresearch_checkpoint_date=%s\nresearch_overlap_start=%s\npage_map_stable=true\nresearch_completed=true\nresearch_artifacts_valid=true\ndeterministic_review_passed=true\nscheduled_task_audit_pending=true\ncanonical_source_unchanged=true\ncanonical_workspace_unchanged=true\nproduction_pdf_unchanged=true\ncandidate_pdf=%s\ncandidate_sha256=%s\n' \
     "$EXPECTED_REVIEW_STATUS" "$RUN_DATE" "$RUN_STARTED_AT" "$CHANGE_COUNT" \
-    "$PAGE_COUNT" "$CHANGELOG_REQUIRED" "$CHANGELOG_REQUIRED" "$changelog_pdf_page" \
-    "$changelog_printed_page" "$RECOMMENDED_VERSION_BUMP" "$RESEARCH_CHECKPOINT_PATH" \
+    "$PAGE_COUNT" "$CHANGELOG_REQUIRED" "$CHANGELOG_REQUIRED" \
+    "$CHANGELOG_START_PHYSICAL_PAGE" "$CHANGELOG_END_PHYSICAL_PAGE" \
+    "$CHANGELOG_PAGE_COUNT" "$CHANGELOG_START_PRINTED_PAGE" \
+    "$CHANGELOG_END_PRINTED_PAGE" "$RECOMMENDED_VERSION_BUMP" "$RESEARCH_CHECKPOINT_PATH" \
     "$RESEARCH_CHECKPOINT_DATE" "$RESEARCH_OVERLAP_START" "$CANDIDATE_PDF" \
     "$candidate_sha" > "$RUN_DIR/status.txt"
 }

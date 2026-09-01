@@ -1,6 +1,6 @@
 # Production AI Engineering Field Guide
 
-Last evidence review: **2026-08-24**
+Last evidence review: **2026-08-31**
 
 Production AI engineering works as a system. This handbook lays out an operating model that connects the techniques instead of treating them as isolated fixes. The central idea is simple:
 
@@ -221,6 +221,8 @@ The scheduler needs controls for:
 
 Raw tokens per second do not tell you whether the service works for users. Optimize **goodput**: the maximum arrival rate per provisioned GPU or resource at which the required fraction of requests satisfies both TTFT and TPOT/ITL SLOs plus the application-quality gate. A larger batch can increase throughput while pushing interactive latency past an acceptable limit.
 
+For multi-stage agent workflows, measure task-level completion time alongside request goodput and prefix-hit rate. Evaluate dependency and critical-path progress, prefix residency, transition and preemption cost, and starvation on real traces. Optimizing prefix locality or the progress of one stage in isolation can make the complete workflow slower.
+
 The current [vLLM documentation](https://docs.vllm.ai/en/latest/) is a useful implementation reference for PagedAttention, continuous batching, prefix caching, chunked prefill, quantization, and speculative decoding. Engine defaults are starting points. Tune them against production prompt-length and output-length distributions.
 
 ## 8. Speculative decoding, quantization, and distillation
@@ -290,6 +292,7 @@ Build the schema so failures are explicit:
 - Distinguish `null`, omitted, unknown, and refused.
 - Validate dates, identifiers, money, units, and cross-field relationships in deterministic code.
 - Store hashes, versioned references, validation errors, and repair lineage by default. Retain raw candidates only under an explicit privacy policy with minimization or redaction, encryption, restricted access, and short retention.
+- Treat schemas from providers, tool servers, or user-controlled sources as untrusted input. Do not automatically resolve network `$ref` targets. If remote resolution is explicitly enabled, allowlist hosts; block loopback, link-local, and private ranges; cap bytes and time; log every fetch; and reject unresolved references. Bound schema depth, subschema count, and validation time so composition keywords cannot turn validation into an SSRF or denial-of-service path.
 
 Keep repair bounded:
 
@@ -348,7 +351,13 @@ A network timeout can leave the execution status unknown. Reconcile through the 
 
 Evaluate tool and protocol behavior directly. Test correct selection, correct non-selection, argument validity, authorization denial, duplicate delivery, timeout-after-commit, partial failure, hostile tool output, protocol-version negotiation, and session-state assumptions. Anthropic's [tool design guidance](https://www.anthropic.com/engineering/writing-tools-for-agents) is a useful primary reference.
 
-Protocol migrations are production migrations. The [MCP 2026-07-28 specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/) added stateless operation, explicit version negotiation, and versioned extensions. Pin the negotiated version and SDK, test mixed-version clients and servers, and roll forward through a compatibility window rather than changing defaults everywhere at once.
+Give every agent and workload a distinct identity; never lend it a human credential or allow it to impersonate the delegating user. Bind short-lived, audience-restricted authority to the operating principal, attenuate it at every delegation, and let the least-authorized hop bound the chain.
+
+Protocol migrations are architecture migrations. MCP 2026-07-28 removed protocol sessions, `Mcp-Session-Id`, and the initialization handshake. A connection or stdio process is not a conversation: carry protocol version and capabilities on every request, discover server support before selection, and pass cross-call state through explicit handles. Treat `clientInfo` and `serverInfo` as self-reported diagnostics, never authenticated identity or policy input.
+
+Model protocol results as a state machine. `resultType: "input_required"` is nonterminal; preserve the logical operation, policy decision, approval scope, and budget across the next round. If a response stream breaks, issue a new protocol request ID, but preserve the application idempotency key and reconcile external state before repeating a mutation. Pin the protocol and SDK, test mixed-version clients and servers, and roll through a compatibility window.
+
+Treat protocol deprecations as owned migration work, not optional cleanup. The MCP [2026-07-28 changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog) marks Roots, Sampling, Logging, HTTP+SSE, the `"thisServer"` and `"allServers"` `includeContext` values, and OAuth Dynamic Client Registration as Deprecated. Do not add new dependencies on them. Inventory current use, assign an owner and removal date, and test the named replacement before the compatibility window closes.
 
 ## 12. Agent guardrails, budgets, and termination
 
@@ -381,6 +390,8 @@ Give every run explicit terminal conditions:
 - repeated state, repeated action, or no measurable progress;
 - insufficient evidence under an externally measured sufficiency check, or a calibrated product score that requires abstention; never use the model's self-reported confidence alone.
 
+Broken or impossible tasks must terminate safely; persistence or additional reasoning may not unlock wider tools, egress, or credentials. Define severity triggers for boundary circumvention and unauthorized cross-agent coordination, provide a reliable fleet or workload kill path, name the authority to pause, contain, restart, and restore, and fail closed when a severe alert cannot be cleared.
+
 Treat `awaiting_input` and `awaiting_approval` as persisted, resumable interrupts rather than success or failure terminals. Keep their deadlines and reserved budgets explicit.
 
 The model's claim that it finished does not count as the success predicate. Verify the outcome: the record exists, tests pass, the message was sent once, or the cited evidence supports the answer.
@@ -400,6 +411,8 @@ Route against measured task requirements. Provider reputation or prompt length a
 - router confidence and out-of-distribution detection.
 
 Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. A fallback that cannot honor the same contract puts the product in a different mode.
+
+Treat provider SDK upgrades as production migrations. Diff request headers and response types, exercise every mutating method against disposable state, and canary the pinned upgrade before rollout.
 
 Choose the fallback based on the failure class. Never route around a safety refusal, an authorization or policy denial, or a semantic validation failure. After a timeout that may have committed a mutation, reconcile through the idempotency receipt before retrying or changing routes. Every attempt shares one deadline and retry budget. Use circuit breakers to prevent retry and fallback storms.
 
@@ -448,6 +461,7 @@ Query and answer | Query + identity | filters + lexical/dense candidates | fusio
 - Dense embeddings are strong for paraphrase and conceptual similarity.
 - Hybrid retrieval combines complementary candidate sets. Reciprocal rank fusion is a practical starting point when raw scores are not directly comparable; see the [Elastic hybrid-search guide](https://www.elastic.co/docs/solutions/search/hybrid-search).
 - Enforce tenant and document ACL constraints inside the source query and before or during vector candidate generation and reranking. Post-filtering a global top-k result is not an isolation boundary and risks leakage through scores, logs, caches, or context.
+- Treat retrieval queries, embeddings, candidate identities, scores, access patterns, and selected results as sensitive data. ACLs control what may be returned; they do not hide these artifacts from the retrieval operator. When that operator is outside the trust boundary, define the adversary and validate the security, latency, and bandwidth tradeoffs of the private-retrieval design.
 - Rerank a wider candidate set with a more precise model, then pack a smaller nonredundant evidence set.
 - Tune `k`, fusion, reranking, and context packing against end-to-end evals instead of intuition.
 
@@ -489,7 +503,9 @@ Coverage and risk | important slice labels + risk class
 
 Test typo, acronym, exact-identifier, paraphrase, multi-hop, conflicting-source, stale-source, newly updated, deleted, unauthorized, poisoned-document, no-answer, and long-tail queries.
 
-Use [BEIR](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html) for heterogeneous retrieval evaluation, [RAGAS](https://aclanthology.org/2024.eacl-demo.16/) for component-level RAG evaluation, and [ALCE](https://aclanthology.org/2023.emnlp-main.398/) for citation quality. Automated metrics surface problems; calibrated human review remains part of the evaluation.
+Use [BEIR](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html) for heterogeneous retrieval evaluation, [RAGAS](https://aclanthology.org/2024.eacl-demo.16/) for component-level RAG evaluation, and [ALCE](https://aclanthology.org/2023.emnlp-main.398/) for citation quality. Treat every retrieval or evaluator score as decision-specific evidence: validate it against the comparison, training choice, system selection, downstream prediction, or filtering decision it will drive, and test whether evaluator conclusions remain stable across the relevant slices. A metric that ranks retrievers well may still fail to predict answer quality or justify a different generator. Automated metrics surface problems; calibrated human review remains part of the evaluation.
+
+For iterative search agents, evaluate retrieval in trajectory context. Condition the retriever and its evaluation on the original task and prior search interactions, not only the latest sub-query. Measure marginal evidence gain, duplicate resurfacing, and task-level outcome; a locally relevant result can still waste a step or steer the investigation away from the remaining evidence gap.
 
 ## 16. Evals as the release contract
 
@@ -527,6 +543,12 @@ Make release gates slice-aware. A one-point global gain cannot offset a large re
 
 Version the test data, graders, judge prompts/models, harness code, and environment. Report task count, trial count, confidence intervals, and per-slice support. Define non-inferiority margins before the run. Then read the failed traces; the score cannot tell you whether the model or the evaluation infrastructure failed.
 
+Treat agents and model-generated code in training and evaluation as hostile workloads. Isolate every run and its writable supporting services; apply independent egress controls to the sandbox and every package mirror, cache, metadata service, relay, and shared store; and make direct escape, transitive escape, and cross-run communication tested failure modes.
+
+Grade the trajectory and external effect, not only the reward or final answer. Include broken or impossible tasks, grader and tool tampering, unauthorized peer instructions, side channels, boundary probing, safe clarification or stop behavior, and cross-run coordination. Keep grader secrets outside agent-visible surfaces.
+
+When model-generated code changes the system under evaluation, bind approval to an immutable artifact digest; any edit invalidates approval. Keep held-out data inaccessible to the agent through operating-system isolation, have a separate evaluator refuse unapproved artifacts, use capability regressions as hard gates, and review sampled trajectories for gaming. Monitoring is detection, not a substitute for isolation or deterministic enforcement.
+
 Anthropic's [agent-eval guidance](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) and OpenAI's [eval guide](https://developers.openai.com/api/docs/guides/evals) both emphasize evaluating the full system or harness instead of stopping at isolated model text.
 
 ## 17. LLM observability as a first-class discipline
@@ -560,7 +582,7 @@ Capture the following data, with the right privacy controls in place:
 - feature, workflow, route reason, and pseudonymous tenant/user dimensions;
 - model provider, requested model, actual model snapshot, and decoding settings;
 - prompt/context manifest, tool contract, schema, policy, and index versions;
-- input, cached input, output, and reasoning-token counts when available;
+- per-model-call input, cached input, cache-write, output, and reasoning-token counts when available; derive agent and workflow totals from those child spans rather than attaching rolled-up cache subtypes to an agent span;
 - cache decision, similarity score, age, namespace, and invalidation reason;
 - retrieval query, filters, source IDs/versions, ranks, and reranker scores;
 - TTFT, mean TPOT, p95/p99 inter-token latency and stall rate, plus queue, retrieval, rerank, tool, repair, and end-to-end latency;
@@ -574,6 +596,8 @@ By default, do not record raw prompts, retrieved private documents, tool argumen
 Build drift dashboards from directly observed distributions and sampled, versioned evaluator estimates for retrieval relevance, citation support, grounding, and outcome quality. Show evaluation coverage, grader version, calibration status, and confidence intervals alongside input length, route mix, cache behavior, tool errors, validation and repair rate, tokens, latency, and cost. Alert on user-impacting SLOs and regression slices instead of every noisy model event.
 
 [OpenTelemetry's GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai) provide a vendor-neutral starting vocabulary for inference, agents, tools, tokens, and timing. The conventions are evolving, so pin the version your telemetry contract uses.
+
+Agent-, runtime-, and tool-authored transcripts are evidence, not the source of truth. Capture policy decisions, tool invocations, network events, receipts, and terminal state outside the agent-controlled environment in append-only or tamper-evident storage, then reconcile traces against authoritative external state. Reasoning traces, when available, may supplement detection, but neither hidden reasoning nor any single transcript can be a required enforcement dependency.
 
 ## 18. Attribute cost to the whole workflow
 
@@ -598,6 +622,7 @@ Track:
 - semantic and prefix-cache savings net of lookup/storage cost;
 - cost of fallback and escalation paths;
 - idle and reserved accelerator cost for self-hosting;
+- for self-hosted serving, total inference energy per request and per successful outcome alongside energy per output token, sliced by model, phase, batch, context length, and output length; a falling per-token figure can hide rising request energy;
 - marginal cost and fully loaded cost separately.
 
 Reconcile the trace-derived estimates with provider invoices or Costs APIs. Allocate reserved capacity, idle accelerators, storage, observability, and shared platform cost through documented drivers. Keep an explicit unallocated or residual bucket instead of inventing false precision. Preserve the price-table version and effective timestamp behind every calculation.
@@ -623,6 +648,8 @@ Build the defense in layers:
 11. Red-team direct, indirect, multimodal, encoded, and retrieved injections.
 12. Have containment, revocation, incident response, and replay procedures.
 
+Human approval is scarce attention and approval frequency is a security property. Use bounded action plans and risk-triggered reapproval so consent fatigue does not turn review into a rubber stamp. Never use elicitation to collect passwords, bearer tokens, or other secrets.
+
 For OAuth or MCP tools, validate the issuer, audience, scopes, actor, and expiry. Prohibit token passthrough. Use separately issued downstream tokens and per-client consent. Treat OAuth metadata, discovery documents, and registration endpoints as untrusted network input: allowlist schemes and destinations, block private and link-local ranges after DNS resolution, disable unsafe redirect following, and revalidate every redirect hop. The MCP [authorization specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) and [security best practices](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices) make these boundaries explicit.
 
 The [OWASP LLM prompt-injection guidance](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) notes that RAG and fine-tuning do not fully mitigate injection. Microsoft's [defense-in-depth pattern](https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection) recommends content isolation, least privilege, monitoring, and human approval. For the broader governance and risk context, use the [NIST Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
@@ -638,6 +665,11 @@ Use this checklist:
 - use tenant-scoped credentials, storage namespaces, vector indexes or filters, and encryption boundaries appropriate to risk;
 - namespace exact, semantic, and retrieval response caches by a nonempty authenticated tenant/principal or ACL scope plus every response-affecting policy, corpus, prompt, model, schema, and freshness version; reauthorize provenance on every hit and purge entries after ACL, role, user, or document changes;
 - require exact-token matching plus runtime ownership and refcount isolation for prefix/KV reuse; a provider organization or project is not an application tenant boundary;
+- put an authenticated and authorized ingress boundary in front of every model-server route; treat built-in API-key flags as endpoint-scoped until verified, inventory every reachable route, disable unused compatibility, administration, metrics, and profiling APIs, and negative-test access;
+- treat model repositories, processor and tokenizer code, custom operators, and conversion steps as executable supply-chain inputs; allow only reviewed, digest-pinned artifacts, and load or convert them in an isolated environment without production credentials or broad egress; a runtime flag such as `trust_remote_code=false` is not a security boundary for an unreviewed loader;
+- enforce decoded-byte, duration, frame, pixel, and accelerator-memory limits across every audio, image, and video path; derive limits from bounded decode output rather than trusting caller-controlled container metadata, and reject the request before it can exhaust shared worker or GPU capacity;
+- do not let request fields select a decoder, kernel, plugin, adapter, or other privileged backend unless an operator allowlisted it and included it in startup resource reservation and isolation policy;
+- treat agent runtimes, sandbox provisioners, gateways and proxies, bridges, installers, updaters, and inference services as privileged policy-enforcement code; pin and patch them, verify certificates and artifact integrity, normalize paths before layer-7 policy, avoid building shell commands from untrusted data, and test escape, injection, traversal, and authorization-bypass paths;
 - treat the serving engine, custom kernels, and batching scheduler as tenant-isolation code; pin and inventory the runtime, monitor its security advisories, patch within the risk window, and test response ownership under concurrent tenants; a model-server flaw can cross-contaminate responses even when cache namespaces are correct;
 - record the requested processing geography and the provider-resolved organization, project, workspace, and region when the API exposes them; reject unexpected resolution before sensitive data crosses the boundary;
 - exclude sensitive content and identifiers from shared scheduler metadata, and address timing or resource side channels with quotas, traffic shaping, or physical silos where the threat model requires;
@@ -792,7 +824,11 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 - Anthropic: [Developer platform release notes](https://platform.claude.com/docs/en/release-notes/overview)
 - OpenAI: [API changelog](https://developers.openai.com/api/docs/changelog)
 - AWS: [Amazon Bedrock model lifecycle](https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html)
-- Model Context Protocol: [2026-07-28 key changes](https://blog.modelcontextprotocol.io/posts/2026-07-28/), [authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization), and [security best practices](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices)
+- Model Context Protocol: [2026-07-28 key changes](https://blog.modelcontextprotocol.io/posts/2026-07-28/), [full changelog and deprecations](https://modelcontextprotocol.io/specification/2026-07-28/changelog), [base protocol](https://modelcontextprotocol.io/specification/2026-07-28/basic/index), [authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization), and [security best practices](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices)
+- NIST NCCoE: [Agent identity and authorization guidance](https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation)
+- OpenAI: [Hugging Face incident overview](https://openai.com/index/hugging-face-incident-and-the-road-ahead/) and [technical report](https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf)
+- METR and Redwood Research: [Independent investigation of agent behavior and collaboration](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/)
+- Chen, Wen, and Kirchner: [Automated researchers can reliably mitigate alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures)
 - Kujanpaa et al.: [Compiling repeated agent procedures into deterministic tools](https://arxiv.org/abs/2607.08010)
 
 ### Serving and compression
@@ -807,11 +843,21 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 - Frantar et al.: [GPTQ](https://arxiv.org/abs/2210.17323)
 - Hinton et al.: [Knowledge distillation](https://arxiv.org/abs/1503.02531)
 - Cheng et al.: [Robust KV-cache reservation under workload shifts](https://arxiv.org/abs/2607.16892)
+- Ni et al.: [TOPAS workflow-aware prefix-state scheduling](https://arxiv.org/abs/2608.25523)
+- vLLM Project: [v0.28.0 release notes](https://github.com/vllm-project/vllm/releases/tag/v0.28.0)
 - vLLM Project: [Cross-user response leakage advisory GHSA-7m6h-x95x-82q5](https://github.com/vllm-project/vllm/security/advisories/GHSA-7m6h-x95x-82q5)
+- vLLM Project: [Untrusted model processor code execution advisory GHSA-3c86-2m5g-59q7](https://github.com/vllm-project/vllm/security/advisories/GHSA-3c86-2m5g-59q7)
+- vLLM Project: [Multimodal decode resource-exhaustion advisory GHSA-936p-m5pv-vvjf](https://github.com/vllm-project/vllm/security/advisories/GHSA-936p-m5pv-vvjf)
+- vLLM Project: [Audio decode duration-limit bypass advisory GHSA-99f2-hwrc-gvq8](https://github.com/vllm-project/vllm/security/advisories/GHSA-99f2-hwrc-gvq8)
+- vLLM Project: [Request-selected GPU decode reservation-bypass advisory GHSA-8pw2-6jv3-mj5j](https://github.com/vllm-project/vllm/security/advisories/GHSA-8pw2-6jv3-mj5j)
+- NVIDIA: [NemoClaw and OpenShell August 2026 security bulletin](https://nvidia.custhelp.com/app/answers/detail/a_id/5872)
 
 ### Retrieval and evaluation
 
 - Lewis et al.: [Retrieval-Augmented Generation](https://papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html)
+- Hua et al.: [Practical private dense retrieval at scale](https://arxiv.org/abs/2608.25735)
+- Ghosh et al.: [Downstream utility of evidence-aware retrieval](https://arxiv.org/abs/2608.26379)
+- Chen et al.: [Interaction-aware retrieval for agentic search](https://arxiv.org/abs/2608.27912)
 - Thakur et al.: [BEIR](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html)
 - Muennighoff et al.: [MTEB](https://aclanthology.org/2023.eacl-main.148/)
 - Ru et al.: [RAGChecker](https://arxiv.org/abs/2408.08067)
@@ -825,6 +871,8 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 ### Observability, economics, and security
 
 - OpenTelemetry: [GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai)
+- OpenTelemetry: [Cache-token attribution correction for internal agent spans](https://github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e52464c56eea4389fb793c2690caaea78)
+- Vellaisamy et al.: [Request and token energy costs for LLM inference](https://arxiv.org/abs/2608.28044)
 - NIST: [AI RMF Measure and drift monitoring](https://airc.nist.gov/airmf-resources/playbook/measure/)
 - OpenAI: [Organization Usage and Costs API](https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/usage/methods/costs)
 - FinOps Foundation: [Unit Economics](https://www.finops.org/framework/capabilities/unit-economics/)

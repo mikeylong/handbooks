@@ -3,18 +3,31 @@
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const README_PATH = "README.md";
-const PDF_PATH = "output/pdf/production-ai-engineering.pdf";
+const PDF_DIRECTORY = "output/pdf/";
+const LEGACY_PDF_PATH = `${PDF_DIRECTORY}production-ai-engineering.pdf`;
 const CHANGELOG_PATH = "handbook/changelog.json";
 const SOURCE_PATH = "AI_ENGINEERING_FIELD_GUIDE.md";
-const RELEASE_PATHS = [PDF_PATH, README_PATH, CHANGELOG_PATH];
 const EMPTY_TREE = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
-const STABLE_PDF_LINK = "[Read the book (PDF)](./output/pdf/production-ai-engineering.pdf)";
 const UNCHANGED_SUMMARY = "The handbook's reader-facing content is unchanged.";
+const MONTH_NUMBERS = new Map([
+  ["January", "01"],
+  ["February", "02"],
+  ["March", "03"],
+  ["April", "04"],
+  ["May", "05"],
+  ["June", "06"],
+  ["July", "07"],
+  ["August", "08"],
+  ["September", "09"],
+  ["October", "10"],
+  ["November", "11"],
+  ["December", "12"],
+]);
 
 function fail(message) {
   throw new Error(message);
@@ -86,7 +99,35 @@ function parseArguments(argv) {
   return values;
 }
 
-function parseReadme(source, label) {
+function expectedPdfPath(version, publicationDate) {
+  const versionMatch = /^Version (\d+)\.(\d+)(?:\.(\d+))?$/.exec(version);
+  const dateMatch = /^([A-Z][a-z]+) (\d{1,2}), (\d{4})$/.exec(publicationDate);
+  if (!versionMatch || !dateMatch || !MONTH_NUMBERS.has(dateMatch[1])) {
+    fail(`Cannot derive a versioned PDF filename from ${version} and ${publicationDate}`);
+  }
+
+  const [, major, minor, patch = "0"] = versionMatch;
+  const month = MONTH_NUMBERS.get(dateMatch[1]);
+  const day = dateMatch[2].padStart(2, "0");
+  const year = dateMatch[3];
+  const isoDate = `${year}-${month}-${day}`;
+  const parsedDate = new Date(`${isoDate}T00:00:00Z`);
+  if (Number.isNaN(parsedDate.getTime()) || parsedDate.toISOString().slice(0, 10) !== isoDate) {
+    fail(`Cannot derive a valid PDF filename date from ${publicationDate}`);
+  }
+
+  return `${PDF_DIRECTORY}production-ai-engineering-v${major}.${minor}.${patch}-${isoDate}.pdf`;
+}
+
+function releasePaths(pdfPath) {
+  return [pdfPath, README_PATH, CHANGELOG_PATH];
+}
+
+function productionPdfChanged(changed) {
+  return [...changed].some((path) => path.startsWith(PDF_DIRECTORY) && path.endsWith(".pdf"));
+}
+
+function parseReadme(source, label, { allowLegacyPdfPath = false } = {}) {
   const releaseMatches = [...source.matchAll(
     /^\*\*Current release:\*\* (Version \d+\.\d+(?:\.\d+)?) · ([A-Z][a-z]+ \d{1,2}, \d{4})$/gm,
   )];
@@ -102,14 +143,26 @@ function parseReadme(source, label) {
   }
 
   const markdownLinks = source.match(/\[[^\]]+\]\([^)]+\)/g) ?? [];
-  if (markdownLinks.length !== 1 || markdownLinks[0] !== STABLE_PDF_LINK) {
-    fail(`${label} must keep exactly one Markdown link: ${STABLE_PDF_LINK}`);
+  const linkMatch = markdownLinks.length === 1
+    ? /^\[Read the book \(PDF\)\]\(\.\/(output\/pdf\/[^/)]+\.pdf)\)$/.exec(markdownLinks[0])
+    : null;
+  if (!linkMatch) {
+    fail(`${label} must contain exactly one Markdown link to the current production PDF`);
+  }
+
+  const version = releaseMatches[0][1];
+  const publicationDate = releaseMatches[0][2];
+  const pdfPath = linkMatch[1];
+  const requiredPdfPath = expectedPdfPath(version, publicationDate);
+  if (pdfPath !== requiredPdfPath && !(allowLegacyPdfPath && pdfPath === LEGACY_PDF_PATH)) {
+    fail(`${label} PDF link must be ./${requiredPdfPath}, not ./${pdfPath}`);
   }
 
   return {
-    version: releaseMatches[0][1],
-    publicationDate: releaseMatches[0][2],
+    version,
+    publicationDate,
     pdfSha256: hashMatches[0][1],
+    pdfPath,
   };
 }
 
@@ -182,8 +235,8 @@ function pathsChangedBetween(base, head) {
   return new Set(output.split("\n").filter(Boolean));
 }
 
-function requireReleasePaths(changed, label) {
-  const missing = RELEASE_PATHS.filter((path) => !changed.has(path));
+function requireReleasePaths(changed, label, pdfPath) {
+  const missing = releasePaths(pdfPath).filter((path) => !changed.has(path));
   if (missing.length) {
     fail(
       `${label} must update README.md and handbook/changelog.json with the production PDF. `
@@ -193,13 +246,25 @@ function requireReleasePaths(changed, label) {
 }
 
 function requireChangedReleaseIdentity(current, previous, label) {
-  if (
+  const identityUnchanged = (
     previous.version === current.version
     && previous.publicationDate === current.publicationDate
-  ) {
+  );
+  const checksumUnchanged = previous.pdfSha256 === current.pdfSha256;
+  const legacyFilenameMigration = (
+    identityUnchanged
+    && checksumUnchanged
+    && previous.pdfPath === LEGACY_PDF_PATH
+    && current.pdfPath === expectedPdfPath(current.version, current.publicationDate)
+  );
+
+  if (legacyFilenameMigration) {
+    return;
+  }
+  if (identityUnchanged) {
     fail(`${label} did not change the README release version or publication date`);
   }
-  if (previous.pdfSha256 === current.pdfSha256) {
+  if (checksumUnchanged) {
     fail(`${label} did not change the README production PDF checksum`);
   }
 }
@@ -220,6 +285,10 @@ function validateChangelogAlignment(
   const changelogChecks = {
     previousVersion: changelog.previousVersion === readme.version,
     previousPublicationDate: changelog.previousPublicationDate === readme.publicationDate,
+    publishedPdfFilename: (
+      readme.pdfPath === LEGACY_PDF_PATH
+      || changelog.publishedPdfFilename === basename(readme.pdfPath)
+    ),
     previousPdfSha256: changelog.previousPdfSha256 === pdfSha256,
     currentSourceSha256: changelog.currentSourceSha256 === manuscriptSha256,
     resetSummary: changelog.summary === UNCHANGED_SUMMARY,
@@ -294,26 +363,31 @@ function validateReleaseCommits(base, head) {
       .split(/\s+/);
     const firstParent = commitAndParents[1] || EMPTY_TREE;
     const changed = pathsChangedBetween(firstParent, commit);
-    if (!changed.has(PDF_PATH)) {
+    if (!productionPdfChanged(changed)) {
       continue;
     }
 
     const label = `Commit ${commit.slice(0, 12)} that changes the production PDF`;
-    requireReleasePaths(changed, label);
-
     const currentReadmeSource = fileAtRef(commit, README_PATH);
-    const currentPdfBytes = fileBufferAtRef(commit, PDF_PATH);
     const currentChangelogSource = fileAtRef(commit, CHANGELOG_PATH);
     const currentManuscriptBytes = fileBufferAtRef(commit, SOURCE_PATH);
     if (
       currentReadmeSource === null
-      || currentPdfBytes === null
       || currentChangelogSource === null
       || currentManuscriptBytes === null
     ) {
       fail(`${label} is missing one or more required release files`);
     }
-    const currentReadme = parseReadme(currentReadmeSource, `${README_PATH} at ${commit}`);
+    const currentReadme = parseReadme(
+      currentReadmeSource,
+      `${README_PATH} at ${commit}`,
+      { allowLegacyPdfPath: true },
+    );
+    requireReleasePaths(changed, label, currentReadme.pdfPath);
+    const currentPdfBytes = fileBufferAtRef(commit, currentReadme.pdfPath);
+    if (currentPdfBytes === null) {
+      fail(`${label} is missing ${currentReadme.pdfPath}`);
+    }
 
     if (firstParent !== EMPTY_TREE) {
       const previousReadmeSource = fileAtRef(firstParent, README_PATH);
@@ -323,6 +397,7 @@ function validateReleaseCommits(base, head) {
       const previousReadme = parseReadme(
         previousReadmeSource,
         `${README_PATH} at ${firstParent}`,
+        { allowLegacyPdfPath: true },
       );
       requireChangedReleaseIdentity(currentReadme, previousReadme, label);
     }
@@ -339,16 +414,20 @@ function validateReleaseCommits(base, head) {
 }
 
 function validateAtomicRelease(changed, currentReadme, base) {
-  if (!changed.has(PDF_PATH)) {
+  if (!productionPdfChanged(changed)) {
     return false;
   }
 
-  requireReleasePaths(changed, "A production PDF release");
+  requireReleasePaths(changed, "A production PDF release", currentReadme.pdfPath);
 
   const baselineRef = base ? (zeroRef(base) ? null : base) : "HEAD";
   const baselineReadmeSource = baselineRef ? fileAtRef(baselineRef, README_PATH) : null;
   if (baselineReadmeSource) {
-    const baselineReadme = parseReadme(baselineReadmeSource, `${README_PATH} at ${baselineRef}`);
+    const baselineReadme = parseReadme(
+      baselineReadmeSource,
+      `${README_PATH} at ${baselineRef}`,
+      { allowLegacyPdfPath: true },
+    );
     requireChangedReleaseIdentity(currentReadme, baselineReadme, "A production PDF release");
   }
   return true;
@@ -359,14 +438,14 @@ async function main() {
   if (base && head) {
     cleanWorktreeRequired();
   }
-  const [readmeSource, pdfBytes, changelogSource, manuscriptBytes] = await Promise.all([
-    readFile(resolve(ROOT, README_PATH), "utf8"),
-    readFile(resolve(ROOT, PDF_PATH)),
+  const readmeSource = await readFile(resolve(ROOT, README_PATH), "utf8");
+  const readme = parseReadme(readmeSource, README_PATH);
+  const [pdfBytes, changelogSource, manuscriptBytes] = await Promise.all([
+    readFile(resolve(ROOT, readme.pdfPath)),
     readFile(resolve(ROOT, CHANGELOG_PATH), "utf8"),
     readFile(resolve(ROOT, SOURCE_PATH)),
   ]);
 
-  const readme = parseReadme(readmeSource, README_PATH);
   const changed = changedPaths(base, head);
   validateReleaseCommits(base, head);
   const releaseChanged = validateAtomicRelease(changed, readme, base);
@@ -375,7 +454,7 @@ async function main() {
     pdfBytes,
     changelogSource,
     manuscriptBytes,
-    extractedCoverText: coverText(resolve(ROOT, PDF_PATH)),
+    extractedCoverText: coverText(resolve(ROOT, readme.pdfPath)),
     label: "Current production release",
   });
 
@@ -385,7 +464,8 @@ async function main() {
     version: readme.version,
     publicationDate: readme.publicationDate,
     productionPdfSha256: pdfSha256,
-    changedReleasePaths: RELEASE_PATHS.filter((path) => changed.has(path)),
+    productionPdfPath: readme.pdfPath,
+    changedReleasePaths: releasePaths(readme.pdfPath).filter((path) => changed.has(path)),
   }, null, 2));
 }
 

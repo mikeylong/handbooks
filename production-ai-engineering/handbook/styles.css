@@ -925,20 +925,26 @@ blockquote p {
   text-indent: 0;
 }
 
-.changelog-list {
+.changelog-entries {
   max-width: var(--measure);
   margin: 0;
 }
 
-.changelog-list > div {
-  display: grid;
-  grid-template-columns: minmax(6rem, 0.28fr) minmax(0, 1fr);
-  gap: 1rem;
-  padding: 1rem 0;
+.changelog-entry {
+  padding: 1.4rem 0;
   border-top: 1px solid var(--line);
 }
 
-.changelog-list dt {
+.changelog-entry:first-child {
+  border-top-color: var(--line-strong);
+}
+
+.changelog-entry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.7rem;
+  margin: 0 0 0.55rem;
+  color: var(--muted);
   font-family: var(--sans);
   font-size: 0.72rem;
   font-weight: 700;
@@ -946,8 +952,53 @@ blockquote p {
   text-transform: uppercase;
 }
 
-.changelog-list dd {
+.changelog-entry-meta a {
+  color: inherit;
+}
+
+.changelog-entry h3 {
+  margin: 0 0 1rem;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 550;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.changelog-entry-part + .changelog-entry-part {
+  margin-top: 0.9rem;
+}
+
+.changelog-entry-copy h4,
+.changelog-sources strong {
+  display: block;
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.changelog-entry-copy p,
+.changelog-entry-copy ul {
   margin: 0;
+}
+
+.changelog-entry-copy ul {
+  padding-left: 1.15rem;
+}
+
+.changelog-sources {
+  margin: 1rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.changelog-sources a {
+  overflow-wrap: anywhere;
 }
 
 .changelog-version {
@@ -955,15 +1006,6 @@ blockquote p {
   font-family: var(--sans);
   font-size: 0.78rem;
   font-weight: 650;
-}
-
-.changelog-baseline {
-  max-width: var(--measure);
-  margin-top: 2rem;
-  color: var(--muted);
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  overflow-wrap: anywhere;
 }
 
 .chapter-body h4 {
@@ -3177,33 +3219,65 @@ tbody tr:last-child td {
   .changelog {
     padding-bottom: 0;
     break-before: page;
-    break-inside: avoid-page;
   }
 
   .changelog-header {
-    margin-bottom: 5mm;
+    margin-bottom: 7mm;
   }
 
-  .changelog-list > div {
-    grid-template-columns: 22mm minmax(0, 1fr);
-    gap: 4mm;
-    padding: 3mm 0;
+  .changelog-entry {
+    padding: 5mm 0;
+    break-inside: auto;
+    orphans: 3;
+    widows: 3;
   }
 
-  .changelog-list dt {
-    font-size: 7pt;
+  .changelog-entry > header,
+  .changelog-entry-part,
+  .changelog-sources {
+    break-inside: avoid;
   }
 
-  .changelog-list dd {
-    font-size: 10pt;
+  .changelog-entry > header {
+    break-after: avoid;
+  }
+
+  .changelog-entry-meta {
+    gap: 1.5mm 3mm;
+    margin-bottom: 2mm;
+    font-size: 6.8pt;
+  }
+
+  .changelog-entry h3 {
+    margin-bottom: 3.5mm;
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+
+  .changelog-entry-part + .changelog-entry-part {
+    margin-top: 3mm;
+  }
+
+  .changelog-entry-copy h4,
+  .changelog-sources strong {
+    margin-bottom: 1mm;
+    font-size: 6.6pt;
+  }
+
+  .changelog-entry-copy p,
+  .changelog-entry-copy li {
+    font-size: 9.5pt;
+    line-height: 1.38;
+  }
+
+  .changelog-entry-copy li + li {
+    margin-top: 1mm;
+  }
+
+  .changelog-sources {
+    margin-top: 3mm;
+    font-size: 7.2pt;
     line-height: 1.4;
-  }
-
-  .changelog-baseline {
-    margin-top: 4mm;
-    font-size: 5.8pt;
-    line-height: 1.35;
-    overflow-wrap: anywhere;
   }
 
 }

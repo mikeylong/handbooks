@@ -72,6 +72,18 @@ export const CITATION_GROUPS = [
         "accessed": true
       },
       {
+        "label": "MCP-02",
+        "citation": "Model Context Protocol. \"Key Changes.\" Protocol specification, 28 July 2026.",
+        "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+        "accessed": true
+      },
+      {
+        "label": "MCP-03",
+        "citation": "Model Context Protocol. \"Base Protocol: Overview.\" Protocol specification, 28 July 2026.",
+        "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index",
+        "accessed": true
+      },
+      {
         "label": "AUTH-01",
         "citation": "Model Context Protocol. \"Authorization.\" Protocol specification, 28 July 2026.",
         "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization",
@@ -81,6 +93,12 @@ export const CITATION_GROUPS = [
         "label": "AUTH-02",
         "citation": "Model Context Protocol. \"Security Best Practices.\" Protocol specification, 28 July 2026.",
         "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices",
+        "accessed": true
+      },
+      {
+        "label": "AUTH-03",
+        "citation": "Fisher, Bill, and Ryan Galluzzo. \"Back to the Future: Why Agentic AI Needs a Strong Identity Foundation.\" NIST Cybersecurity Insights, 27 August 2026.",
+        "url": "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation",
         "accessed": true
       },
       {
@@ -145,6 +163,17 @@ export const CITATION_GROUPS = [
         "url": "https://arxiv.org/abs/2607.16892"
       },
       {
+        "label": "SERV-07",
+        "citation": "Ni, Hongqiu, et al. \"TOPAS: Workflow-Aware Prefix-State Scheduling for Multi-Agent LLM Serving.\" arXiv:2608.25523, 2026.",
+        "url": "https://arxiv.org/abs/2608.25523"
+      },
+      {
+        "label": "SERV-08",
+        "citation": "vLLM Project. \"v0.28.0.\" Release notes, 26 August 2026.",
+        "url": "https://github.com/vllm-project/vllm/releases/tag/v0.28.0",
+        "accessed": true
+      },
+      {
         "label": "SPEC-01",
         "citation": "Leviathan, Yaniv, Matan Kalman, and Yossi Matias. \"Fast Inference from Transformers via Speculative Decoding.\" ICML 2023.",
         "url": "https://proceedings.mlr.press/v202/leviathan23a.html"
@@ -197,6 +226,21 @@ export const CITATION_GROUPS = [
         "accessed": true
       },
       {
+        "label": "RETR-06",
+        "citation": "Hua, Peichun, et al. \"Pointing the Way, Hiding the Destination: Practical Private Dense Retrieval at Scale.\" arXiv:2608.25735, 2026.",
+        "url": "https://arxiv.org/abs/2608.25735"
+      },
+      {
+        "label": "RETR-07",
+        "citation": "Ghosh, Utshab Kumar, Debayan Mukhopadhyay, and Shubham Chatterjee. \"Assessing the Downstream Utility of Evidence-Aware Retrieval in RAG.\" arXiv:2608.26379, 2026.",
+        "url": "https://arxiv.org/abs/2608.26379"
+      },
+      {
+        "label": "RETR-09",
+        "citation": "Chen, Haodong, et al. \"ITER: Interaction-Aware Retrieval for Agentic Search.\" arXiv:2608.27912, 2026.",
+        "url": "https://arxiv.org/abs/2608.27912"
+      },
+      {
         "label": "RETR-01",
         "citation": "Thakur, Nandan, et al. \"BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models.\" NeurIPS 2021 Datasets and Benchmarks.",
         "url": "https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html"
@@ -237,6 +281,30 @@ export const CITATION_GROUPS = [
         "citation": "OpenAI. \"Working with evals.\" OpenAI API documentation.",
         "url": "https://developers.openai.com/api/docs/guides/evals",
         "accessed": true
+      },
+      {
+        "label": "EVAL-05",
+        "citation": "OpenAI. \"The Hugging Face incident and the road ahead.\" 26 August 2026.",
+        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "accessed": true
+      },
+      {
+        "label": "EVAL-06",
+        "citation": "OpenAI. OpenAI - Hugging Face Incident Technical Report. 26 August 2026.",
+        "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+        "accessed": true
+      },
+      {
+        "label": "ORIG-05",
+        "citation": "Greenblatt, Ryan, Ajeya Cotra, and Hjalmar Wijk. \"Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident.\" METR and Redwood Research, 26 August 2026.",
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+        "accessed": true
+      },
+      {
+        "label": "EVAL-09",
+        "citation": "Chen, Yueh-Han, Jiaxin Wen, and Jan Hendrik Kirchner. \"Automated Researchers Can Reliably Mitigate Alignment Failures.\" 28 August 2026.",
+        "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+        "accessed": true
       }
     ]
   },
@@ -248,6 +316,17 @@ export const CITATION_GROUPS = [
         "citation": "OpenTelemetry. \"Semantic conventions for generative AI systems.\"",
         "url": "https://github.com/open-telemetry/semantic-conventions-genai",
         "accessed": true
+      },
+      {
+        "label": "OBS-03",
+        "citation": "OpenTelemetry. \"Remove cache token usage attributes from internal agent spans.\" Commit 5f5ae69, 27 August 2026.",
+        "url": "https://github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e52464c56eea4389fb793c2690caaea78",
+        "accessed": true
+      },
+      {
+        "label": "COST-03",
+        "citation": "Vellaisamy, Prabhu, Vanessa Lam, Shawn Blanton, and John Paul Shen. \"Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms.\" arXiv:2608.28044, 2026.",
+        "url": "https://arxiv.org/abs/2608.28044"
       },
       {
         "label": "OBS-02",
@@ -293,6 +372,36 @@ export const CITATION_GROUPS = [
         "label": "SAFE-04",
         "citation": "vLLM Project. \"Integer overflow can lead to cross-user inference response leakage.\" GHSA-7m6h-x95x-82q5, 11 August 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-7m6h-x95x-82q5",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-05",
+        "citation": "vLLM Project. \"LlavaOnevision2 processor loader executes attacker model code with trust_remote_code=False.\" GHSA-3c86-2m5g-59q7, 28 August 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-3c86-2m5g-59q7",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-06",
+        "citation": "vLLM Project. \"Denial of Service NanoNemoTronVL Video Audio Extraction Bomb.\" GHSA-936p-m5pv-vvjf, 28 August 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-936p-m5pv-vvjf",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-07",
+        "citation": "vLLM Project. \"Speech-to-text audio decode duration limit bypass via forged header sample rate.\" GHSA-99f2-hwrc-gvq8, 28 August 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-99f2-hwrc-gvq8",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-08",
+        "citation": "vLLM Project. \"Request-selected PyNvVideoCodec GPU decode bypasses static VRAM reservation.\" GHSA-8pw2-6jv3-mj5j, 28 August 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-8pw2-6jv3-mj5j",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-09",
+        "citation": "NVIDIA. \"Security Bulletin: NVIDIA NemoClaw and OpenShell - August 2026.\" Updated 28 August 2026.",
+        "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5872",
         "accessed": true
       },
       {
@@ -366,7 +475,8 @@ export const SECTION_SOURCES = {
     "labels": [
       "SERV-02",
       "SERV-03",
-      "SERV-04"
+      "SERV-04",
+      "SERV-07"
     ]
   },
   "8": {
@@ -389,7 +499,8 @@ export const SECTION_SOURCES = {
   "10": {
     "labels": [
       "OUT-01",
-      "OUT-02"
+      "OUT-02",
+      "MCP-03"
     ],
     "note": "Author synthesis: repair policy is separated from the rules for consequential actions."
   },
@@ -400,8 +511,11 @@ export const SECTION_SOURCES = {
       "TOOL-03",
       "TOOL-04",
       "MCP-01",
+      "MCP-02",
+      "MCP-03",
       "AUTH-01",
-      "AUTH-02"
+      "AUTH-02",
+      "AUTH-03"
     ],
     "note": "Author synthesis: approval, idempotency, and execution receipts form one tool-safety contract."
   },
@@ -409,7 +523,10 @@ export const SECTION_SOURCES = {
     "labels": [
       "AGT-01",
       "EVAL-02",
-      "AUTH-02"
+      "AUTH-02",
+      "EVAL-05",
+      "EVAL-06",
+      "ORIG-05"
     ],
     "note": "Author synthesis: agent limits are organized as budgets and explicit terminal states."
   },
@@ -430,6 +547,7 @@ export const SECTION_SOURCES = {
       "RAG-01",
       "RAG-02",
       "RAG-03",
+      "RETR-06",
       "TEN-01"
     ]
   },
@@ -439,27 +557,38 @@ export const SECTION_SOURCES = {
       "RETR-02",
       "RETR-03",
       "RETR-04",
-      "RETR-05"
+      "RETR-05",
+      "RETR-07",
+      "RETR-09"
     ]
   },
   "16": {
     "labels": [
       "EVAL-01",
       "EVAL-02",
-      "EVAL-03"
+      "EVAL-03",
+      "EVAL-05",
+      "EVAL-06",
+      "ORIG-05",
+      "EVAL-09"
     ]
   },
   "17": {
     "labels": [
       "OBS-01",
-      "OBS-02"
+      "OBS-03",
+      "OBS-02",
+      "EVAL-06",
+      "ORIG-05"
     ]
   },
   "18": {
     "labels": [
       "COST-01",
       "COST-02",
-      "OBS-01"
+      "OBS-01",
+      "OBS-03",
+      "COST-03"
     ],
     "note": "Author synthesis: the journey-cost formula ties spend to a completed user outcome."
   },
@@ -469,7 +598,11 @@ export const SECTION_SOURCES = {
       "SAFE-02",
       "SAFE-03",
       "AUTH-01",
-      "AUTH-02"
+      "AUTH-02",
+      "AUTH-03",
+      "EVAL-06",
+      "ORIG-05",
+      "SAFE-09"
     ]
   },
   "20": {
@@ -479,6 +612,12 @@ export const SECTION_SOURCES = {
       "AUTH-02",
       "SAFE-03",
       "SAFE-04",
+      "SAFE-05",
+      "SAFE-06",
+      "SAFE-07",
+      "SAFE-08",
+      "SAFE-09",
+      "SERV-08",
       "MOD-02",
       "MOD-04"
     ],
