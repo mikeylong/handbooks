@@ -124,6 +124,24 @@ export const CITATION_GROUPS = [
         "citation": "OpenAI. \"API changelog.\" OpenAI API documentation.",
         "url": "https://developers.openai.com/api/docs/changelog",
         "accessed": true
+      },
+      {
+        "label": "TOOL-05",
+        "citation": "OpenAI. \"Asynchronous tool calling.\"",
+        "url": "https://developers.openai.com/api/docs/guides/async-tool-calling",
+        "accessed": true
+      },
+      {
+        "label": "MOD-05",
+        "citation": "OpenAI. \"Model guidance: GPT-6 Astra.\"",
+        "url": "https://developers.openai.com/api/docs/guides/latest-model",
+        "accessed": true
+      },
+      {
+        "label": "MOD-06",
+        "citation": "AWS. \"Document history for Amazon Bedrock.\"",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html",
+        "accessed": true
       }
     ]
   },
@@ -202,6 +220,12 @@ export const CITATION_GROUPS = [
         "label": "DIST-01",
         "citation": "Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. \"Distilling the Knowledge in a Neural Network.\" arXiv:1503.02531, 2015.",
         "url": "https://arxiv.org/abs/1503.02531"
+      },
+      {
+        "label": "SERV-11",
+        "citation": "Xie, Renjie, et al. \"HeadWiseKV: Budgeted Per-Head Cache Residency for Hybrid Long-Context Language Models.\" arXiv:2609.02029v1, 2 September 2026.",
+        "url": "https://arxiv.org/html/2609.02029v1",
+        "accessed": true
       }
     ]
   },
@@ -305,6 +329,12 @@ export const CITATION_GROUPS = [
         "citation": "Chen, Yueh-Han, Jiaxin Wen, and Jan Hendrik Kirchner. \"Automated Researchers Can Reliably Mitigate Alignment Failures.\" 28 August 2026.",
         "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
         "accessed": true
+      },
+      {
+        "label": "EVAL-10",
+        "citation": "OpenAI. \"GPT-6 Astra system card.\" 2026-09-03.",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra/vision",
+        "accessed": true
       }
     ]
   },
@@ -344,6 +374,12 @@ export const CITATION_GROUPS = [
         "label": "COST-02",
         "citation": "FinOps Foundation. \"Capability: Unit Economics.\"",
         "url": "https://www.finops.org/framework/capabilities/unit-economics/",
+        "accessed": true
+      },
+      {
+        "label": "REL-05",
+        "citation": "OpenAI. \"API error codes.\"",
+        "url": "https://developers.openai.com/api/docs/guides/error-codes",
         "accessed": true
       }
     ]
@@ -409,6 +445,12 @@ export const CITATION_GROUPS = [
         "citation": "Google Cloud. \"Multi-tenant agentic AI system.\" Cloud Architecture Center.",
         "url": "https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system",
         "accessed": true
+      },
+      {
+        "label": "SAFE-11",
+        "citation": "vLLM Project. \"Negative token IDs can poison the vLLM engine.\" 2026-09-03.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf",
+        "accessed": true
       }
     ]
   },
@@ -467,7 +509,8 @@ export const SECTION_SOURCES = {
     "labels": [
       "SERV-01",
       "SERV-04",
-      "SERV-06"
+      "SERV-06",
+      "SERV-11"
     ],
     "note": "The KV footprint example follows directly from the model architecture."
   },
@@ -515,7 +558,8 @@ export const SECTION_SOURCES = {
       "MCP-03",
       "AUTH-01",
       "AUTH-02",
-      "AUTH-03"
+      "AUTH-03",
+      "TOOL-05"
     ],
     "note": "Author synthesis: approval, idempotency, and execution receipts form one tool-safety contract."
   },
@@ -538,7 +582,10 @@ export const SECTION_SOURCES = {
       "MOD-01",
       "MOD-02",
       "MOD-03",
-      "MOD-04"
+      "MOD-04",
+      "MOD-05",
+      "MOD-06",
+      "REL-05"
     ],
     "note": "Author synthesis: routing decisions are tied to the user's degraded-mode experience."
   },
@@ -579,7 +626,8 @@ export const SECTION_SOURCES = {
       "OBS-03",
       "OBS-02",
       "EVAL-06",
-      "ORIG-05"
+      "ORIG-05",
+      "EVAL-10"
     ]
   },
   "18": {
@@ -619,7 +667,8 @@ export const SECTION_SOURCES = {
       "SAFE-09",
       "SERV-08",
       "MOD-02",
-      "MOD-04"
+      "MOD-04",
+      "SAFE-11"
     ],
     "note": "Author synthesis: the isolation checklist spans the cited permission and tenancy boundaries."
   },

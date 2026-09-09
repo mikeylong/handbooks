@@ -19,6 +19,7 @@ import {
   citationEntries,
 } from "./book-data.mjs";
 import { INDEX_ENTRIES } from "./index-data.mjs";
+import { pdfDownloadPageCount } from "./pdf-download.mjs";
 import { renderFallbackFlowDiagram } from "./fallback-flow-diagram.mjs";
 import { renderRagFlowDiagram } from "./rag-flow-diagram.mjs";
 import {
@@ -49,7 +50,7 @@ const BOOK_SUBTITLE = "A Handbook for Building Reliable LLM Systems";
 const AUTHOR = "Michael Long";
 const AUTHOR_SITE = "https://surfaces.systems";
 const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems</a>`;
-const PUBLICATION_DATE = "August 31, 2026";
+const PUBLICATION_DATE = "September 8, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -73,9 +74,9 @@ const formatBibliographyDate = (displayDate) => {
   if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
   return `${match[2]} ${match[1]} ${match[3]}`;
 };
-const PDF_HREF = "../output/pdf/production-ai-engineering-v1.2.0-2026-08-31.pdf";
+const PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.0-2026-09-08.pdf";
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
-  ?? `Version 1.2${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+  ?? `Version 1.3${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 
 const HANDBOOK_CHAPTERS = [
@@ -678,24 +679,7 @@ try {
 } catch (error) {
   if (error.code !== "ENOENT") throw error;
 }
-const mappedPages = Object.values(pageMap).filter(Number.isInteger);
-const minimumMappedPageCount = mappedPages.length ? Math.max(...mappedPages) + 3 : 0;
-const configuredPdfPageCount = process.env.HANDBOOK_PDF_PAGE_COUNT
-  ? Number.parseInt(process.env.HANDBOOK_PDF_PAGE_COUNT, 10)
-  : null;
-if (configuredPdfPageCount !== null && (
-  !Number.isSafeInteger(configuredPdfPageCount)
-  || configuredPdfPageCount < Math.max(1, minimumMappedPageCount)
-  || configuredPdfPageCount > 1000
-)) {
-  throw new Error("HANDBOOK_PDF_PAGE_COUNT must be an integer that covers every mapped page");
-}
-const PDF_PAGE_COUNT = configuredPdfPageCount
-  ?? (
-    process.env.HANDBOOK_CANDIDATE_DATE
-      ? (minimumMappedPageCount || (changelogRequired ? 79 : 78))
-      : Math.max(76, minimumMappedPageCount)
-  );
+const PDF_PAGE_COUNT = pdfDownloadPageCount(HERE, PDF_HREF);
 const sourceHash = createHash("sha256").update(source).digest("hex");
 if (changelog.currentSourceSha256 !== sourceHash) {
   throw new Error("handbook/changelog.json does not match the current handbook source");

@@ -82,13 +82,94 @@ def flatten_outline(items):
             yield item
 
 
-def load_changelog() -> tuple[dict, bool]:
-    ledger_path = Path(__file__).with_name("changelog.json")
+def load_changelog(ledger_path: Path | None = None) -> tuple[dict, bool]:
+    ledger_path = ledger_path or Path(__file__).with_name("changelog.json")
     ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
     summary = ledger.get("summary")
     if not isinstance(summary, str):
         raise AssertionError("Changelog summary is missing")
     return ledger, summary.strip() != UNCHANGED_CHANGELOG_SUMMARY
+
+
+def validate_structure(
+    page_texts: list[str],
+    chapter_opener_pages: list[int],
+    destination_pages: dict[str, int],
+    require_changelog: bool,
+) -> tuple[int, int]:
+    """Check content boundaries and destinations independently of edition length."""
+    assert len(chapter_opener_pages) == len(CHAPTERS), "Missing chapter openers"
+    assert chapter_opener_pages[0] == 4, "Chapter 1 must follow the three front-matter pages"
+    assert all(
+        left < right for left, right in zip(chapter_opener_pages, chapter_opener_pages[1:])
+    ), "Chapter openers are duplicated or out of order"
+    for name, page_index in destination_pages.items():
+        assert isinstance(page_index, int) and 0 <= page_index < len(page_texts), (
+            f"Named destination points outside the PDF: {name} -> {page_index}"
+        )
+
+    def destination(name: str) -> int:
+        assert name in destination_pages, f"Missing required destination: {name}"
+        return destination_pages[name]
+
+    def family_page(prefix: str) -> int:
+        matches = [name for name in destination_pages if name.startswith(prefix)]
+        assert len(matches) == 1, f"Expected one destination for {prefix}, found {matches}"
+        return destination_pages[matches[0]]
+
+    appendix_start = destination("appendix-citations")
+    index_start = destination("term-index")
+    assert chapter_opener_pages[-1] - 1 < appendix_start < index_start, (
+        "Appendix and Index must follow all chapters on separate pages"
+    )
+    assert "APPENDIX A" in page_texts[appendix_start].upper(), "Appendix opener is missing"
+    assert "NOTES AND SOURCES" in page_texts[appendix_start].upper(), "Appendix title is missing"
+    assert "INDEX OF TERMS" in page_texts[index_start].upper(), "Index opener is missing"
+
+    chapter_starts = [page - 1 for page in chapter_opener_pages]
+    for number, (title, page_index) in enumerate(zip(CHAPTERS, chapter_starts), start=1):
+        assert family_page(f"chapter-{number:02d}-") == page_index, (
+            f"Chapter {number} destination does not match its opener"
+        )
+        assert canonical(title) in canonical(page_texts[page_index]), (
+            f"Chapter {number} opener has the wrong title"
+        )
+    section_pages = []
+    for number, (display_number, title) in enumerate(zip(SECTION_DISPLAY_NUMBERS, SECTIONS), start=1):
+        page_index = family_page(f"section-{number:02d}-")
+        chapter_index = int(display_number.split(".")[0]) - 1
+        chapter_end = (chapter_starts + [appendix_start])[chapter_index + 1]
+        assert chapter_starts[chapter_index] <= page_index < chapter_end, (
+            f"Section {display_number} destination is outside its chapter"
+        )
+        assert canonical(f"{display_number} {title}") in canonical(page_texts[page_index]), (
+            f"Section {display_number} heading is missing at its destination"
+        )
+        section_pages.append(page_index)
+    assert section_pages == sorted(section_pages), "Sections are out of order"
+
+    terminal_start = len(page_texts)
+    if require_changelog:
+        terminal_start = destination("changelog")
+        assert index_start < terminal_start, "Changelog must start after the Index"
+        # Chromium may omit the empty end anchor. The page-map extractor then
+        # derives the end from the PDF; the complete ledger is checked below.
+        if "changelog-end" in destination_pages:
+            assert destination_pages["changelog-end"] == len(page_texts) - 1, (
+                "Changelog end destination must be on the final PDF page"
+            )
+    else:
+        assert not {"changelog", "changelog-end"} & destination_pages.keys(), (
+            "Unexpected changelog destination for unchanged content"
+        )
+    for start, end, running_head in [
+        (appendix_start, index_start, "NOTES AND SOURCES"),
+        (index_start, terminal_start, "INDEX OF TERMS"),
+    ]:
+        assert all(running_head in text.upper() for text in page_texts[start:end]), (
+            f"Missing {running_head} content or running head inside its page range"
+        )
+    return appendix_start, index_start
 
 
 def validate_fonts(path: Path) -> int:
@@ -147,9 +228,9 @@ def validate_chapter_art_compatibility(
     )
 
 
-def validate(path: Path) -> None:
+def validate(path: Path, changelog_path: Path | None = None) -> None:
     assert path.is_file(), f"Missing PDF: {path}"
-    changelog, require_changelog = load_changelog()
+    changelog, require_changelog = load_changelog(changelog_path)
     reader = PdfReader(path, strict=True)
     version_match = re.fullmatch(r"%PDF-(\d+)\.(\d+)", reader.pdf_header)
     assert version_match, f"Malformed PDF header: {reader.pdf_header}"
@@ -157,18 +238,15 @@ def validate(path: Path) -> None:
     assert pdf_version >= (1, 4), (
         f"PDF 1.4 or newer is required; found {reader.pdf_header}"
     )
-    minimum_pages = 75 if require_changelog else 74
-    assert minimum_pages <= len(reader.pages) <= 90, (
-        f"Unexpected page count: {len(reader.pages)}"
-    )
+    assert reader.pages, "PDF has no pages"
 
     metadata = reader.metadata
     assert metadata.title == BOOK_TITLE
     assert metadata.author == AUTHOR
     assert metadata.subject == SUBTITLE
     assert reader.page_mode == "/UseOutlines"
-    assert reader.page_labels[:4] == ["Cover", "ii", "iii", "1"]
-    assert reader.page_labels[-1] == str(len(reader.pages) - 3)
+    expected_labels = ["Cover", "ii", "iii"] + [str(page) for page in range(1, len(reader.pages) - 2)]
+    assert reader.page_labels == expected_labels, "Missing or nonsequential page labels"
 
     for page in reader.pages:
         width = float(page.mediabox.width)
@@ -189,6 +267,13 @@ def validate(path: Path) -> None:
             f"Expected one opener for chapter {number:02d}, found {matching_pages}"
         )
         chapter_opener_pages.append(matching_pages[0])
+    destination_pages = {
+        str(name).lstrip("/"): reader.get_destination_page_number(destination)
+        for name, destination in reader.named_destinations.items()
+    }
+    appendix_start, index_start = validate_structure(
+        page_texts, chapter_opener_pages, destination_pages, require_changelog,
+    )
     text = "\n".join(page_texts)
     canonical_text = canonical(text)
     cover_text = " ".join(page_texts[0].split())
@@ -389,20 +474,6 @@ def validate(path: Path) -> None:
             f"Section bookmark lacks a number/title separator: {section_outline_title}"
         )
 
-    appendix_start = next(
-        index
-        for index, page_text in enumerate(page_texts)
-        if "APPENDIX A" in page_text.upper() and "NOTES AND SOURCES" in page_text.upper()
-    )
-    index_start = next(
-        index
-        for index, page_text in enumerate(page_texts)
-        if index > appendix_start and "INDEX OF TERMS" in page_text.upper()
-    )
-    destination_pages = {
-        str(name).lstrip("/"): reader.get_destination_page_number(destination)
-        for name, destination in reader.named_destinations.items()
-    }
     destination_names = set(destination_pages)
     changelog_start: int | None = None
     changelog_end: int | None = None
@@ -497,13 +568,6 @@ def validate(path: Path) -> None:
         assert canonical(changelog["previousPdfSha256"]) not in canonical_text, (
             "Previous-PDF hash was printed despite the omitted changelog"
         )
-    assert "NOTES AND SOURCES" in page_texts[appendix_start + 1].upper(), (
-        "Appendix running head is missing from the page after the opener"
-    )
-    assert "INDEX OF TERMS" in page_texts[index_start + 1].upper(), (
-        "Index running head is missing from the page after the opener"
-    )
-
     external_urls: list[str] = []
     changelog_external_urls: list[str] = []
     internal_links = 0
@@ -644,8 +708,9 @@ def validate(path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("pdf", type=Path)
+    parser.add_argument("--changelog", type=Path, help="The ledger paired with this PDF (defaults to the adjacent edition ledger)")
     args = parser.parse_args()
-    validate(args.pdf)
+    validate(args.pdf, args.changelog)
 
 
 if __name__ == "__main__":
