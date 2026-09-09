@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 2,
+  "entryDate": "September 8, 2026",
+  "previousVersion": "Version 1.2",
+  "previousPublicationDate": "August 31, 2026",
+  "previousPdfSha256": "28f12c16fd380e47ce115fd0d28dc50d292d1d402e06749ee4bfafbc0e1b03c0",
+  "currentSourceSha256": "8192593acc5892516d2efe3b61e055cdcca44fc24be766ab995ed85bd7b504a3",
+  "summary": "This edition makes 12 reader-facing changes: 11 additions, 1 correction. No guidance was removed.",
+  "items": [
+    {
+      "changeId": "CHG-001",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "4. Caching",
+      "title": "Test the cache boundary",
+      "whatChanged": "Added a test that holds the prefix fixed, changes the suffix and checks actual cache reads and writes.",
+      "why": "Shared tokens can still miss the cache when no eligible boundary captures the reusable prefix.",
+      "sources": [
+        {
+          "sourceId": "CACHE-01",
+          "title": "Prompt caching",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/prompt-caching"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-002",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "6. KV memory",
+      "title": "Measure KV retention and peak memory together",
+      "whatChanged": "Added separate checks for retained state, physical allocation, full-invocation peak memory and long-context quality.",
+      "why": "A smaller retained cache can leave the prefill peak unchanged or discard evidence the task still needs.",
+      "sources": [
+        {
+          "sourceId": "SERV-11",
+          "title": "HeadWiseKV: Budgeted Per-Head Cache Residency for Hybrid Long-Context Language Models",
+          "authority": "Renjie Xie et al.",
+          "publicationDate": "2026-09-02",
+          "url": "https://arxiv.org/html/2609.02029v1"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-003",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "11. Tool use",
+      "title": "Track asynchronous tool jobs through completion",
+      "whatChanged": "Added persistent job-to-call identity, separate pending status, and delivery of the eventual result against the original call.",
+      "why": "A job can outlive the initiating turn; treating dispatch as completion or reusing a handle can attach a result to the wrong action.",
+      "sources": [
+        {
+          "sourceId": "TOOL-05",
+          "title": "Asynchronous tool calling",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/async-tool-calling"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-004",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "13. Model routing",
+      "title": "Test omitted and explicit model settings",
+      "whatChanged": "Added migration checks for effective reasoning, output budgets, tool/API support and cache controls, including omitted parameters.",
+      "why": "An omitted setting can change behavior and cost; accepting the same request shape does not prove equivalent operation.",
+      "sources": [
+        {
+          "sourceId": "MOD-05",
+          "title": "Model guidance: GPT-6 Astra",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/latest-model"
+        },
+        {
+          "sourceId": "MOD-06",
+          "title": "Document history for Amazon Bedrock",
+          "authority": "AWS",
+          "publicationDate": "not stated",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-005",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "13. Model routing",
+      "title": "Separate traffic ramp limits from overload",
+      "whatChanged": "Added provider-code classification and coordinated, deadline-bounded recovery for ramp throttling and capacity overload.",
+      "why": "A status-only retry policy can miss the relevant error class or amplify pressure through independent worker retries.",
+      "sources": [
+        {
+          "sourceId": "REL-05",
+          "title": "API error codes",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/error-codes"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-006",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "17. Observability",
+      "title": "Recalibrate monitors after model changes",
+      "whatChanged": "Added channel-specific detection, false-alarm and evasion checks when the model or reasoning configuration changes.",
+      "why": "Changes in reasoning traces can weaken an existing monitor even when task performance improves.",
+      "sources": [
+        {
+          "sourceId": "EVAL-10",
+          "title": "GPT-6 Astra system card",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-03",
+          "url": "https://deploymentsafety.openai.com/gpt-6-astra/vision"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-007",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "20. Multi-tenant isolation",
+      "title": "Validate both token-ID bounds",
+      "whatChanged": "Added host-side integer and vocabulary-bound checks before accelerator work, with endpoint and concurrent-tenant regression tests.",
+      "why": "A negative token ID can pass an upper-bound-only check and poison shared engine state.",
+      "sources": [
+        {
+          "sourceId": "SAFE-11",
+          "title": "Negative token IDs can poison the vLLM engine",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-03",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-008",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail",
+      "title": "Add tool and migration references",
+      "whatChanged": "Added the direct tool, migration, corrected-default and error-code references.",
+      "why": "Readers need the primary evidence to check the scope and limits of the new guidance.",
+      "sources": [
+        {
+          "sourceId": "TOOL-05",
+          "title": "Asynchronous tool calling",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/async-tool-calling"
+        },
+        {
+          "sourceId": "MOD-05",
+          "title": "Model guidance: GPT-6 Astra",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/latest-model"
+        },
+        {
+          "sourceId": "MOD-06",
+          "title": "Document history for Amazon Bedrock",
+          "authority": "AWS",
+          "publicationDate": "not stated",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html"
+        },
+        {
+          "sourceId": "REL-05",
+          "title": "API error codes",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/error-codes"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-009",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail",
+      "title": "Add the KV retention study",
+      "whatChanged": "Added the versioned HeadWiseKV paper to the source trail and appendix.",
+      "why": "Readers need the primary evidence to check the scope and limits of the new guidance.",
+      "sources": [
+        {
+          "sourceId": "SERV-11",
+          "title": "HeadWiseKV: Budgeted Per-Head Cache Residency for Hybrid Long-Context Language Models",
+          "authority": "Renjie Xie et al.",
+          "publicationDate": "2026-09-02",
+          "url": "https://arxiv.org/html/2609.02029v1"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-010",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail",
+      "title": "Add monitorability evidence",
+      "whatChanged": "Added the system-card reference supporting monitor recalibration.",
+      "why": "Readers need the primary evidence to check the scope and limits of the new guidance.",
+      "sources": [
+        {
+          "sourceId": "EVAL-10",
+          "title": "GPT-6 Astra system card",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-03",
+          "url": "https://deploymentsafety.openai.com/gpt-6-astra/vision"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-011",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail",
+      "title": "Add the token-ID security advisory",
+      "whatChanged": "Added the direct advisory behind the new input-validation control.",
+      "why": "Readers need the primary evidence to check the scope and limits of the new guidance.",
+      "sources": [
+        {
+          "sourceId": "SAFE-11",
+          "title": "Negative token IDs can poison the vLLM engine",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-03",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-012",
+      "classification": "correction",
+      "classificationLabel": "Correction",
+      "section": "Evidence-review metadata",
+      "title": "Update the evidence-review date",
+      "whatChanged": "Updated the evidence-review date to September 7, 2026.",
+      "why": "The candidate incorporates a fresh review and should identify when its evidence was checked.",
+      "sources": [
+        {
+          "sourceId": "CACHE-01",
+          "title": "Prompt caching",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/prompt-caching"
+        },
+        {
+          "sourceId": "TOOL-05",
+          "title": "Asynchronous tool calling",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/async-tool-calling"
+        },
+        {
+          "sourceId": "MOD-05",
+          "title": "Model guidance: GPT-6 Astra",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/latest-model"
+        },
+        {
+          "sourceId": "MOD-06",
+          "title": "Document history for Amazon Bedrock",
+          "authority": "AWS",
+          "publicationDate": "not stated",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html"
+        },
+        {
+          "sourceId": "SERV-11",
+          "title": "HeadWiseKV: Budgeted Per-Head Cache Residency for Hybrid Long-Context Language Models",
+          "authority": "Renjie Xie et al.",
+          "publicationDate": "2026-09-02",
+          "url": "https://arxiv.org/html/2609.02029v1"
+        },
+        {
+          "sourceId": "REL-05",
+          "title": "API error codes",
+          "authority": "OpenAI",
+          "publicationDate": "not stated",
+          "url": "https://developers.openai.com/api/docs/guides/error-codes"
+        },
+        {
+          "sourceId": "EVAL-10",
+          "title": "GPT-6 Astra system card",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-03",
+          "url": "https://deploymentsafety.openai.com/gpt-6-astra/vision"
+        },
+        {
+          "sourceId": "SAFE-11",
+          "title": "Negative token IDs can poison the vLLM engine",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-03",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf"
+        }
+      ]
+    }
+  ]
+}

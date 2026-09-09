@@ -127,7 +127,7 @@ AUTOMATION_CONFIG="$WORKSPACE/automation/automation.toml"
 RELEASE_POLICY="$WORKSPACE/automation/release-policy.json"
 RENDER_PDF="$WORKSPACE/automation/render-handbook-pdf.mjs"
 CANONICAL_SOURCE="$WORKSPACE/AI_ENGINEERING_FIELD_GUIDE.md"
-PRODUCTION_PDF="$WORKSPACE/output/pdf/production-ai-engineering-v1.2.0-2026-08-31.pdf"
+PRODUCTION_PDF="$WORKSPACE/output/pdf/production-ai-engineering-v1.3.0-2026-09-08.pdf"
 DEFAULT_CANDIDATE_ROOT="$WORKSPACE/output/candidates"
 CANDIDATE_ROOT="${HANDBOOK_CANDIDATE_ROOT:-$DEFAULT_CANDIDATE_ROOT}"
 CANDIDATE_ROOT="${CANDIDATE_ROOT:A}"
@@ -599,6 +599,9 @@ validate_edit_scope() {
 }
 
 materialize_candidate() {
+  # Keep the download target available at the same relative path as the site.
+  /bin/mkdir -p "$BUILD_DIR/output/pdf" || return 1
+  /bin/cp "$PRODUCTION_PDF" "$BUILD_DIR/output/pdf/${PRODUCTION_PDF:t}" || return 1
   /bin/cp "$PRISTINE_DIR/AI_ENGINEERING_FIELD_GUIDE.md" \
     "$BUILD_DIR/AI_ENGINEERING_FIELD_GUIDE.md" || return 1
   /usr/bin/rsync -a "$PRISTINE_DIR/handbook/" "$BUILD_DIR/handbook/" || return 1

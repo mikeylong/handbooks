@@ -1476,5 +1476,81 @@ export const INDEX_ENTRIES = [
       "evals-adversarial",
       "versioning"
     ]
+  },
+  {
+    "id": "cache-breakpoints",
+    "label": "Cache breakpoints",
+    "sections": [
+      4
+    ],
+    "seeAlso": [
+      "caching-prefix"
+    ]
+  },
+  {
+    "id": "kv-retention",
+    "label": "KV retention",
+    "sections": [
+      6
+    ],
+    "seeAlso": [
+      "kv-cache",
+      "paged-attention"
+    ]
+  },
+  {
+    "id": "asynchronous-tool-calling",
+    "label": "Asynchronous tool calling",
+    "sections": [
+      11
+    ],
+    "seeAlso": [
+      "tool-calling",
+      "tool-receipts"
+    ]
+  },
+  {
+    "id": "effective-model-settings",
+    "label": "Effective model settings",
+    "sections": [
+      13
+    ],
+    "seeAlso": [
+      "model-routing",
+      "sdk-migrations"
+    ]
+  },
+  {
+    "id": "overload-and-traffic-ramp-limits",
+    "label": "Overload and traffic ramp limits",
+    "sections": [
+      13
+    ],
+    "seeAlso": [
+      "fallback-chains",
+      "load-shedding"
+    ]
+  },
+  {
+    "id": "monitor-recalibration",
+    "label": "Monitor recalibration",
+    "sections": [
+      17
+    ],
+    "seeAlso": [
+      "observability",
+      "evals-regression"
+    ]
+  },
+  {
+    "id": "caller-supplied-token-ids",
+    "label": "Caller-supplied token IDs",
+    "sections": [
+      20
+    ],
+    "seeAlso": [
+      "multi-tenant-isolation",
+      "model-server-ingress"
+    ]
   }
 ];

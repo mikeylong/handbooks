@@ -1,6 +1,6 @@
 # Production AI Engineering Field Guide
 
-Last evidence review: **2026-08-31**
+Last evidence review: **2026-09-07**
 
 Production AI engineering works as a system. This handbook lays out an operating model that connects the techniques instead of treating them as isolated fixes. The central idea is simple:
 
@@ -140,6 +140,8 @@ Retrieval context | retrieval corpus/index version + locale + freshness window
 
 Track cache and token hit rates; false-hit, stale-hit, and eviction rates; cache age; latency and cost saved; and cross-scope rejection count. Never share private semantic responses globally based on embedding similarity.
 
+Cache breakpoints determine which shared prefix can actually be reused. Where the API exposes them, place and test an eligible boundary after the stable prefix; an implicit boundary after a changing suffix may never reuse that prefix. Verify with requests that keep the prefix fixed while changing the suffix, and inspect cache-read and cache-write usage. [OpenAI documents this distinction](https://developers.openai.com/api/docs/guides/prompt-caching) for its newer caching contract. Include writes, uncached suffixes, compaction and retention in the net-cost calculation.
+
 ## 5. Prefill and decode optimize differently
 
 Autoregressive inference has two phases that place different demands on the system.
@@ -201,6 +203,8 @@ Apply the controls in this order:
 8. Shed or degrade load before allowing a node-wide OOM.
 
 The [PagedAttention paper](https://arxiv.org/abs/2309.06180) applies virtual-memory-like block management to KV state, reducing allocation waste and enabling sharing. Paging manages memory more efficiently, but the underlying KV capacity limit remains.
+
+KV retention policies decide which past state survives; paging decides how retained state is allocated. Measure retained bytes, physically allocated memory and peak memory across the whole invocation, including prefill. A mask or eviction after prefill may reduce later state without lowering the prefill peak. Evaluate long-context evidence use at the same retention policy and workload used for memory tests. [HeadWiseKV](https://arxiv.org/html/2609.02029v1) illustrates these distinctions in a bounded hybrid-model study; its results do not establish a universal quality or memory gain. Revalidate after changing the model, cache format, context distribution or retention policy.
 
 For bursty multi-tenant traffic, evaluate a reservation policy against real prompt-length, output-length, and arrival traces instead of reserving each request's maximum possible KV footprint. A robust policy can admit more useful work by protecting against plausible distribution shifts while keeping an explicit overload path. Cheng et al.'s [robust KV-cache reservation study](https://arxiv.org/abs/2607.16892) provides one trace-driven formulation; it is a planning method, not a substitute for per-tenant quotas, active-decode reserves, or load shedding.
 
@@ -349,6 +353,8 @@ When a stable, repeated procedure is narrow enough to specify and test, compile 
 
 A network timeout can leave the execution status unknown. Reconcile through the idempotency receipt or authoritative external state before retrying or changing routes. The HTTP specification explains why automatic retry is safe only when the semantics are idempotent or the client knows the original action was not applied; see [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods).
 
+Asynchronous tool calling adds a pending-job lifecycle. Register each dispatched job before waiting on it, persist its handle and original call ID for the conversation, and deliver the eventual result against that call. Keep job status separate from the result; a scheduled job is not a completed action. [OpenAI's async-tool contract](https://developers.openai.com/api/docs/guides/async-tool-calling) makes these distinctions explicit. Apply the same tenant binding, authorization, deadlines and cancellation rules to callbacks and late results, and preserve completed handle records so a later call cannot reuse their identity.
+
 Evaluate tool and protocol behavior directly. Test correct selection, correct non-selection, argument validity, authorization denial, duplicate delivery, timeout-after-commit, partial failure, hostile tool output, protocol-version negotiation, and session-state assumptions. Anthropic's [tool design guidance](https://www.anthropic.com/engineering/writing-tools-for-agents) is a useful primary reference.
 
 Give every agent and workload a distinct identity; never lend it a human credential or allow it to impersonate the delegating user. Bind short-lived, audience-restricted authority to the operating principal, attenuate it at every delegation, and let the least-authorized hop bound the chain.
@@ -412,9 +418,13 @@ Route against measured task requirements. Provider reputation or prompt length a
 
 Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. A fallback that cannot honor the same contract puts the product in a different mode.
 
+Effective model settings belong in the migration record. Test omitted parameters separately from explicit values, record supported reasoning levels and their output-token budget, and verify tool/API support and cache controls on the exact route. [OpenAI's migration guidance](https://developers.openai.com/api/docs/guides/latest-model) changes several of these contracts, while [AWS's adaptive-thinking correction](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html) shows how omission can enable billable reasoning. Reject unsupported settings rather than silently dropping them, and compare the resolved behavior, latency and cost before rollout.
+
 Treat provider SDK upgrades as production migrations. Diff request headers and response types, exercise every mutating method against disposable state, and canary the pinned upgrade before rollout.
 
 Choose the fallback based on the failure class. Never route around a safety refusal, an authorization or policy denial, or a semantic validation failure. After a timeout that may have committed a mutation, reconcile through the idempotency receipt before retrying or changing routes. Every attempt shares one deadline and retry budget. Use circuit breakers to prevent retry and fallback storms.
+
+Overload and traffic ramp limits need separate recovery paths. Classify the HTTP status together with the provider error code: OpenAI distinguishes a 429 `slow_down` ramp limit from a 503 `server_is_overloaded` capacity failure in its [error-code reference](https://developers.openai.com/api/docs/guides/error-codes). Honor `Retry-After` when present, otherwise use bounded backoff with jitter; coordinate pacing across workers instead of letting each retry independently. Keep retries inside the shared deadline and budget, and use a qualified fallback or queued outcome when waiting would exceed them.
 
 A safe chain might be:
 
@@ -599,6 +609,8 @@ Build drift dashboards from directly observed distributions and sampled, version
 
 Agent-, runtime-, and tool-authored transcripts are evidence, not the source of truth. Capture policy decisions, tool invocations, network events, receipts, and terminal state outside the agent-controlled environment in append-only or tamper-evident storage, then reconcile traces against authoritative external state. Reasoning traces, when available, may supplement detection, but neither hidden reasoning nor any single transcript can be a required enforcement dependency.
 
+Monitor recalibration belongs in every model or reasoning-configuration migration. Compare action-only, reasoning-only and combined monitoring where those signals are available and permitted; measure detection, false alarms and evasion on the same task slices. [OpenAI's GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/vision) reports monitorability changes and adversarial evasion in its evaluation setting. Treat those results as a reason to revalidate local monitoring, not as a production detection rate. Keep external receipts and enforceable policy checks independent of the monitor.
+
 ## 18. Attribute cost to the whole workflow
 
 Use the same reliability trace to attribute cost:
@@ -668,6 +680,7 @@ Use this checklist:
 - put an authenticated and authorized ingress boundary in front of every model-server route; treat built-in API-key flags as endpoint-scoped until verified, inventory every reachable route, disable unused compatibility, administration, metrics, and profiling APIs, and negative-test access;
 - treat model repositories, processor and tokenizer code, custom operators, and conversion steps as executable supply-chain inputs; allow only reviewed, digest-pinned artifacts, and load or convert them in an isolated environment without production credentials or broad egress; a runtime flag such as `trust_remote_code=false` is not a security boundary for an unreviewed loader;
 - enforce decoded-byte, duration, frame, pixel, and accelerator-memory limits across every audio, image, and video path; derive limits from bounded decode output rather than trusting caller-controlled container metadata, and reject the request before it can exhaust shared worker or GPU capacity;
+- validate caller-supplied token IDs on the host before accelerator work: require integers within both the lower bound of zero and the loaded model's vocabulary range on every token-ID input path; reject malformed input without poisoning shared engine state, and regression-test the affected endpoints under concurrent tenants; the [vLLM negative-token-ID advisory](https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf) demonstrates why checking only the upper bound is insufficient;
 - do not let request fields select a decoder, kernel, plugin, adapter, or other privileged backend unless an operator allowlisted it and included it in startup resource reservation and isolation policy;
 - treat agent runtimes, sandbox provisioners, gateways and proxies, bridges, installers, updaters, and inference services as privileged policy-enforcement code; pin and patch them, verify certificates and artifact integrity, normalize paths before layer-7 policy, avoid building shell commands from untrusted data, and test escape, injection, traversal, and authorization-bypass paths;
 - treat the serving engine, custom kernels, and batching scheduler as tenant-isolation code; pin and inventory the runtime, monitor its security advisories, patch within the risk window, and test response ownership under concurrent tenants; a model-server flaw can cross-contaminate responses even when cache namespaces are correct;
@@ -819,6 +832,10 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 - OpenAI: [Prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching)
 - OpenAI: [Structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs)
 - OpenAI: [Function calling](https://developers.openai.com/api/docs/guides/function-calling)
+- OpenAI: [Asynchronous tool calling](https://developers.openai.com/api/docs/guides/async-tool-calling)
+- OpenAI: [Model migration guidance](https://developers.openai.com/api/docs/guides/latest-model)
+- AWS: [Bedrock documentation history and adaptive-thinking correction](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html)
+- OpenAI: [API error codes](https://developers.openai.com/api/docs/guides/error-codes)
 - OpenAI: [Latency optimization](https://developers.openai.com/api/docs/guides/latency-optimization)
 - Google: [Gemini API release notes](https://ai.google.dev/gemini-api/docs/changelog)
 - Anthropic: [Developer platform release notes](https://platform.claude.com/docs/en/release-notes/overview)
@@ -834,6 +851,7 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 ### Serving and compression
 
 - Kwon et al.: [Efficient Memory Management for LLM Serving with PagedAttention](https://arxiv.org/abs/2309.06180)
+- Xie et al.: [HeadWiseKV](https://arxiv.org/html/2609.02029v1)
 - Yu et al.: [Orca: iteration-level scheduling](https://www.usenix.org/conference/osdi22/presentation/yu)
 - Agrawal et al.: [Sarathi-Serve](https://www.usenix.org/conference/osdi24/presentation/agrawal)
 - Leviathan et al.: [Speculative decoding](https://proceedings.mlr.press/v202/leviathan23a.html)
@@ -866,6 +884,7 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 - Zheng et al.: [Judging LLM-as-a-Judge](https://papers.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html)
 - Anthropic: [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 - OpenAI: [Working with evals](https://developers.openai.com/api/docs/guides/evals)
+- OpenAI: [GPT-6 Astra system card, monitorability](https://deploymentsafety.openai.com/gpt-6-astra/vision)
 - Microsoft: [Grounding-data freshness design](https://learn.microsoft.com/en-us/azure/well-architected/ai/grounding-data-design)
 
 ### Observability, economics, and security
@@ -880,3 +899,4 @@ Do the optimization work after the system is measured and safe. Otherwise, the c
 - Microsoft: [Defend against indirect prompt injection](https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection)
 - NIST: [AI 600-1 Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
 - Google Cloud: [Multi-tenant agentic AI reference architecture](https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system)
+- vLLM Project: [Negative token-ID engine-poisoning advisory](https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf)

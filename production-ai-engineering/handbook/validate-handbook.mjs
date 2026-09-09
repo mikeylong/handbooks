@@ -6,6 +6,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { citationByUrl, citationEntries } from "./book-data.mjs";
 import { INDEX_ENTRIES } from "./index-data.mjs";
+import { pdfDownloadPageCount } from "./pdf-download.mjs";
 import { buildReleaseSchedule, releaseTimeZoneLabel } from "./release-schedule.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -29,9 +30,10 @@ const expectedReleaseSchedule = buildReleaseSchedule(
   new Date(releaseSchedule.generatedAt),
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
-  ?? `Version 1.2${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
-const PUBLICATION_DATE = "August 31, 2026";
-const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.2.0-2026-08-31.pdf";
+  ?? `Version 1.3${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const PUBLICATION_DATE = "September 8, 2026";
+const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.0-2026-09-08.pdf";
+const expectedPdfPageCount = pdfDownloadPageCount(here, CURRENT_PDF_HREF);
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -421,8 +423,8 @@ const checks = {
   eagerImages: count(/loading="eager"/g, html),
   pdfDownloadLinks: html.split(`href="${CURRENT_PDF_HREF}" download`).length - 1,
   pdfDownloadPageCountExact:
-    count(/aria-label="Download Production AI Engineering as a PDF, 76 pages"/g, html) === 3
-    && count(/<span>76 pages<\/span>/g, html) === 2,
+    count(new RegExp(`aria-label="Download Production AI Engineering as a PDF, ${expectedPdfPageCount} pages"`, "g"), html) === 3
+    && count(new RegExp(`<span>${expectedPdfPageCount} pages<\\/span>`, "g"), html) === 2,
   releaseScheduleValid:
     JSON.stringify(releaseSchedule) === JSON.stringify(expectedReleaseSchedule)
     && Number.isFinite(Date.parse(releaseSchedule.generatedAt))
