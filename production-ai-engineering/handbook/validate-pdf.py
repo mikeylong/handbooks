@@ -82,8 +82,19 @@ def flatten_outline(items):
             yield item
 
 
-def load_changelog(ledger_path: Path | None = None) -> tuple[dict, bool]:
-    ledger_path = ledger_path or Path(__file__).with_name("changelog.json")
+def load_changelog(
+    ledger_path: Path | None = None, *, cover_text: str = "",
+) -> tuple[dict, bool]:
+    if ledger_path is None:
+        handbook_dir = Path(__file__).parent
+        ledger_path = handbook_dir / "changelog.json"
+        # Published PDFs retain their edition history after the working ledger
+        # resets. Candidate suffixes deliberately do not match a saved release.
+        version = re.search(r" · Version (\d+\.\d+(?:\.\d+)?)$", " ".join(cover_text.split()))
+        if version:
+            published_ledger = handbook_dir / "releases" / f"version-{version[1]}.json"
+            if published_ledger.is_file():
+                ledger_path = published_ledger
     ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
     summary = ledger.get("summary")
     if not isinstance(summary, str):
@@ -230,7 +241,6 @@ def validate_chapter_art_compatibility(
 
 def validate(path: Path, changelog_path: Path | None = None) -> None:
     assert path.is_file(), f"Missing PDF: {path}"
-    changelog, require_changelog = load_changelog(changelog_path)
     reader = PdfReader(path, strict=True)
     version_match = re.fullmatch(r"%PDF-(\d+)\.(\d+)", reader.pdf_header)
     assert version_match, f"Malformed PDF header: {reader.pdf_header}"
@@ -256,6 +266,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         )
 
     page_texts = [page.extract_text() or "" for page in reader.pages]
+    changelog, require_changelog = load_changelog(changelog_path, cover_text=page_texts[0])
     chapter_opener_pages: list[int] = []
     for number in range(1, len(CHAPTERS) + 1):
         matching_pages = [
@@ -708,7 +719,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("pdf", type=Path)
-    parser.add_argument("--changelog", type=Path, help="The ledger paired with this PDF (defaults to the adjacent edition ledger)")
+    parser.add_argument("--changelog", type=Path, help="Override the ledger (defaults to the saved cover-version ledger, or the working ledger for candidates and unsaved editions)")
     args = parser.parse_args()
     validate(args.pdf, args.changelog)
 

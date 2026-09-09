@@ -7,7 +7,10 @@ Run with the same Python PDF dependencies as the weekly finalizer.
 from copy import deepcopy
 from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import json
+from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -111,6 +114,27 @@ class StructureTests(unittest.TestCase):
         fixture[2]["changelog"] = len(fixture[0]) - 1
         with self.assertRaisesRegex(AssertionError, "Unexpected changelog"):
             self.check(fixture)
+
+
+class LedgerTests(unittest.TestCase):
+    def test_published_candidate_unsaved_and_explicit_ledgers(self):
+        with TemporaryDirectory() as directory:
+            handbook = Path(directory)
+            (handbook / "releases").mkdir()
+            working = handbook / "changelog.json"
+            published = {"summary": "Published changes", "items": ["saved change"]}
+            (handbook / "releases/version-1.3.json").write_text(json.dumps(published))
+            cover = "September 8, 2026 · Version 1.3"
+            with patch.object(validator, "__file__", str(handbook / "validate-pdf.py")):
+                for summary in [validator.UNCHANGED_CHANGELOG_SUMMARY, "New candidate changes"]:
+                    candidate = {"summary": summary, "items": []}
+                    working.write_text(json.dumps(candidate))
+                    with self.subTest(working_summary=summary):
+                        self.assertEqual(validator.load_changelog(cover_text=cover), (published, True))
+                        expected = (candidate, summary != validator.UNCHANGED_CHANGELOG_SUMMARY)
+                        self.assertEqual(validator.load_changelog(cover_text=cover + "-candidate.20260908.120000"), expected)
+                        self.assertEqual(validator.load_changelog(cover_text=cover.replace("1.3", "1.4")), expected)
+                        self.assertEqual(validator.load_changelog(working, cover_text=cover), expected)
 
 
 if __name__ == "__main__":
