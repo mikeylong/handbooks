@@ -69,6 +69,46 @@ SECTION_DISPLAY_NUMBERS = [
     "11.1", "11.2", "12.1", "12.2", "12.3",
 ]
 
+COVER_TITLE_FONT_PT = 42.0
+FOREWORD_BODY_FONT_PT = 10.0
+FONT_SIZE_TOLERANCE_PT = 0.1
+
+
+def _matched_font_sizes(page, pattern: str, label: str) -> list[float]:
+    matches = page.search(pattern, regex=True, return_chars=True)
+    assert len(matches) == 1, f"Expected one {label} scale anchor, found {len(matches)}"
+    sizes = [
+        float(char["size"])
+        for char in matches[0]["chars"]
+        if str(char.get("text", "")).strip()
+    ]
+    assert sizes, f"The {label} scale anchor has no measurable characters"
+    return sizes
+
+
+def validate_print_scale(pdf) -> None:
+    """Reject whole-document shrinkage caused by an unbreakable print element."""
+    anchors = [
+        (
+            pdf.pages[0],
+            r"Production\s+AI\s+Engineering",
+            "cover title",
+            COVER_TITLE_FONT_PT,
+        ),
+        (
+            pdf.pages[1],
+            r"This\s+handbook\s+lays\s+out\s+an\s+operating\s+model",
+            "foreword body",
+            FOREWORD_BODY_FONT_PT,
+        ),
+    ]
+    for page, pattern, label, expected in anchors:
+        sizes = _matched_font_sizes(page, pattern, label)
+        measured = sum(sizes) / len(sizes)
+        assert abs(measured - expected) <= FONT_SIZE_TOLERANCE_PT, (
+            f"Print scale changed: {label} is {measured:.2f} pt; expected {expected:.2f} pt"
+        )
+
 
 def canonical(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", value.lower())
@@ -240,6 +280,8 @@ def validate_chapter_art_compatibility(
 
 
 def validate(path: Path, changelog_path: Path | None = None) -> None:
+    if not __debug__:
+        raise RuntimeError("PDF validation must not run with Python assertions disabled")
     assert path.is_file(), f"Missing PDF: {path}"
     reader = PdfReader(path, strict=True)
     version_match = re.fullmatch(r"%PDF-(\d+)\.(\d+)", reader.pdf_header)
@@ -644,6 +686,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
     image_pages: list[int] = []
     image_paints_by_page: dict[int, int] = {}
     with pdfplumber.open(path) as pdf:
+        validate_print_scale(pdf)
         for page_number, page in enumerate(pdf.pages, start=1):
             body_words = [
                 word

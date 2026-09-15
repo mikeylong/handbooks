@@ -116,6 +116,27 @@ class StructureTests(unittest.TestCase):
             self.check(fixture)
 
 
+class ScaleTests(unittest.TestCase):
+    class FakePage:
+        def __init__(self, size):
+            self.size = size
+
+        def search(self, _pattern, *, regex, return_chars):
+            self.assert_search_options = (regex, return_chars)
+            return [{"chars": [{"text": "A", "size": self.size}]}]
+
+    class FakePdf:
+        def __init__(self, cover_size, body_size):
+            self.pages = [ScaleTests.FakePage(cover_size), ScaleTests.FakePage(body_size)]
+
+    def test_intended_print_scale_passes(self):
+        validator.validate_print_scale(self.FakePdf(42.0, 10.0))
+
+    def test_whole_document_shrinkage_fails(self):
+        with self.assertRaisesRegex(AssertionError, "Print scale changed: cover title is 28.00 pt"):
+            validator.validate_print_scale(self.FakePdf(28.0, 6.67))
+
+
 class LedgerTests(unittest.TestCase):
     def test_published_candidate_unsaved_and_explicit_ledgers(self):
         with TemporaryDirectory() as directory:

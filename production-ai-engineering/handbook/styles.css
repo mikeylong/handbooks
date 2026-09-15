@@ -718,6 +718,7 @@ blockquote p {
   font-style: normal;
   font-variant-numeric: lining-nums tabular-nums;
   vertical-align: super;
+  white-space: nowrap;
 }
 
 .citation-marker a {
@@ -3157,6 +3158,7 @@ tbody tr:last-child td {
   }
 
   .source-map li {
+    grid-template-columns: minmax(0, 1fr);
     gap: 1mm 3mm;
     padding: 1.7mm 0;
     font-size: 7.9pt;
@@ -3165,6 +3167,7 @@ tbody tr:last-child td {
 
   .source-map-references {
     font-size: 6.2pt;
+    white-space: normal;
   }
 
   .reference-group + .reference-group {
