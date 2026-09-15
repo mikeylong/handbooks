@@ -30,9 +30,9 @@ const expectedReleaseSchedule = buildReleaseSchedule(
   new Date(releaseSchedule.generatedAt),
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
-  ?? `Version 1.3${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
-const PUBLICATION_DATE = "September 8, 2026";
-const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.0-2026-09-08.pdf";
+  ?? `Version 1.3.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const PUBLICATION_DATE = "September 14, 2026";
+const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf";
 const expectedPdfPageCount = pdfDownloadPageCount(here, CURRENT_PDF_HREF);
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
@@ -83,6 +83,8 @@ const missingInternalTargets = [...new Set(internalTargets.filter((target) => !i
 const chapterArtRule = css.match(/\.chapter-art\s*\{([^}]*)\}/s)?.[1] ?? "";
 const printCss = css.slice(css.indexOf("@media print"));
 const chapterArtPrintRule = printCss.match(/\.chapter-art\s*\{([^}]*)\}/s)?.[1] ?? "";
+const sourceMapItemPrintRule = printCss.match(/\.source-map li\s*\{([^}]*)\}/s)?.[1] ?? "";
+const sourceMapReferencesPrintRule = printCss.match(/\.source-map-references\s*\{([^}]*)\}/s)?.[1] ?? "";
 const codeFrameRule = css.match(/\.code-frame\s*\{([^}]*)\}/s)?.[1] ?? "";
 const codeFramePreRule = css.match(/\.code-frame pre\s*\{([^}]*)\}/s)?.[1] ?? "";
 const systemFlowRule = css.match(/\.system-flow-diagram\s*\{([^}]*)\}/s)?.[1] ?? "";
@@ -209,6 +211,9 @@ const checks = {
   sourceMapHierarchyValid:
     expectedSectionDisplayNumbers.every((number) => html.includes(`<strong>§${number}</strong>`))
     && !/<strong>§\d+<\/strong>/.test(html),
+  sourceMapPrintWrapValid:
+    /grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(sourceMapItemPrintRule)
+    && /white-space:\s*normal/.test(sourceMapReferencesPrintRule),
   bibliographySectionHierarchyValid:
     !/<a href="#section-[^"]+">§\d+<\/a>/.test(html),
   bibliographyAccessDateExact:
@@ -628,6 +633,7 @@ const expected = {
   sectionNumberSeparatorValid: true,
   legacyGlobalSectionHeadingsRemoved: true,
   sourceMapHierarchyValid: true,
+  sourceMapPrintWrapValid: true,
   bibliographySectionHierarchyValid: true,
   bibliographyAccessDateExact: true,
   sectionSourceLines: 25,

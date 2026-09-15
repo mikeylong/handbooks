@@ -9,7 +9,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const fixture = mkdtempSync(resolve(tmpdir(), "handbook-download-test-"));
 const env = { ...process.env, HANDBOOK_CANDIDATE_DATE: "2026-09-07" };
 delete env.HANDBOOK_PDF_PAGE_COUNT;
-const pdfPath = resolve(fixture, "output/pdf/production-ai-engineering-v1.3.0-2026-09-08.pdf");
+const pdfPath = resolve(fixture, "output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf");
 const htmlPath = resolve(fixture, "handbook/index.html");
 
 // Real PDF page trees exercise Poppler rather than stubbing the page count.

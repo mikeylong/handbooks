@@ -137,7 +137,7 @@ function requestHostIsAllowed(request) {
 function requestPathIsPublic(pathname) {
   return pathname === "/handbook"
     || pathname.startsWith("/handbook/")
-    || pathname === "/output/pdf/production-ai-engineering-v1.3.0-2026-09-08.pdf";
+    || pathname === "/output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf";
 }
 
 function resolveRequestPath(pathname) {

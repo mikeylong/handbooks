@@ -50,7 +50,7 @@ const BOOK_SUBTITLE = "A Handbook for Building Reliable LLM Systems";
 const AUTHOR = "Michael Long";
 const AUTHOR_SITE = "https://surfaces.systems";
 const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems</a>`;
-const PUBLICATION_DATE = "September 8, 2026";
+const PUBLICATION_DATE = "September 14, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -74,9 +74,9 @@ const formatBibliographyDate = (displayDate) => {
   if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
   return `${match[2]} ${match[1]} ${match[3]}`;
 };
-const PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.0-2026-09-08.pdf";
+const PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf";
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
-  ?? `Version 1.3${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+  ?? `Version 1.3.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 
 const HANDBOOK_CHAPTERS = [
