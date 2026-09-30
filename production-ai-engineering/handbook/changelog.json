@@ -1,11 +1,544 @@
 {
   "schemaVersion": 2,
-  "entryDate": "September 14, 2026",
+  "entryDate": "September 30, 2026",
   "previousVersion": "Version 1.3.1",
   "previousPublicationDate": "September 14, 2026",
-  "publishedPdfFilename": "production-ai-engineering-v1.3.1-2026-09-14.pdf",
   "previousPdfSha256": "ee0dbbb3860ae4068bd2fca1719bced79d28b060c957ea4f4192c71f90912b87",
-  "currentSourceSha256": "8192593acc5892516d2efe3b61e055cdcca44fc24be766ab995ed85bd7b504a3",
-  "summary": "The handbook's reader-facing content is unchanged.",
-  "items": []
+  "currentSourceSha256": "ebd1d781c6d6c9a8ad5abae0d575e08325b9b226becfd870cff696548ebbf1c9",
+  "summary": "This edition makes 16 reader-facing changes: 13 additions, 1 deprecation, 1 correction, 1 clarification. No guidance was removed.",
+  "items": [
+    {
+      "changeId": "CHG-001",
+      "classification": "correction",
+      "classificationLabel": "Correction",
+      "section": "Front matter",
+      "title": "Evidence review advanced to September 30",
+      "whatChanged": "The handbook now identifies September 30, 2026 as its latest evidence review.",
+      "why": "This candidate incorporates primary documentation, advisories, and research published after the prior review date.",
+      "sources": [
+        {
+          "sourceId": "MOD-04",
+          "title": "API changelog",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-10",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-002",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "3. Context engineering, not long prompts",
+      "title": "Compaction is a state transition",
+      "whatChanged": "Section 3 now treats provider-managed compaction as an explicit state transition. It requires exact preservation of signed summaries, compatible instructions and tools, durable storage for evidence that compaction can remove, separate usage accounting, and a successful continuation before state advances.",
+      "why": "Managed compaction can silently omit details, replace prior messages, remove uploaded evidence, and bill summarization outside the top-level request totals.",
+      "sources": [
+        {
+          "sourceId": "CTX-03",
+          "title": "Compaction on demand",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-15",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-003",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "10. Structured outputs: syntax is only the first gate",
+      "title": "Structured outputs need fault containment",
+      "whatChanged": "Section 10 now caps grammar and schema work, isolates it from shared inference, and requires malformed structured-output requests to fail inside the originating request.",
+      "why": "An unhandled constraint error can terminate a shared serving engine and turn one invalid request into a multi-tenant availability failure.",
+      "sources": [
+        {
+          "sourceId": "SAFE-17",
+          "title": "Structured-output request errors can terminate a shared EngineCore",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-004",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "11. Reliable function and tool calling",
+      "title": "Late tool results are reauthorized",
+      "whatChanged": "Section 11 now reauthorizes every late result against the current tenant, principal, conversation, run, call, resource, and state version, and discards results for work that is no longer active.",
+      "why": "A delayed callback can otherwise revive an obsolete plan, spend outside its original budget, or attach to a reused call identifier.",
+      "sources": [
+        {
+          "sourceId": "MOD-01",
+          "title": "Gemini API release notes",
+          "authority": "Google",
+          "publicationDate": "2026-09-17",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+        },
+        {
+          "sourceId": "TOOL-07",
+          "title": "Computer use",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-29",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-005",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "11. Reliable function and tool calling",
+      "title": "Dynamic tools become versioned runtime state",
+      "whatChanged": "Section 11 now requires a server-owned, authorized tool registry, a canonical schema digest on every turn, and rejection when a call targets a different tool version.",
+      "why": "Adding or removing tools during a conversation changes the execution contract and can make replay, authorization, and revocation ambiguous.",
+      "sources": [
+        {
+          "sourceId": "TOOL-06",
+          "title": "Mid-conversation system messages",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-15",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-006",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "11. Reliable function and tool calling",
+      "title": "Plausible tool results need semantic verification",
+      "whatChanged": "Section 11 now verifies consequential tool results against authoritative state and tests fluent, internally consistent falsehoods alongside malformed responses and exceptions.",
+      "why": "A valid schema says nothing about whether an entity, value, unit, provenance record, or timestamp is actually correct.",
+      "sources": [
+        {
+          "sourceId": "ORIG-13",
+          "title": "Agents' Overreliance on Unreliable Tools",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-06",
+          "url": "https://arxiv.org/abs/2609.05587"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-007",
+      "classification": "deprecation",
+      "classificationLabel": "Deprecation",
+      "section": "13. Model routing and degraded mode",
+      "title": "Managed agent surfaces join the deprecation matrix",
+      "whatChanged": "Section 13 now tracks managed agent runtimes, built-in tools, approval and sign-in behavior, retained state, and retirement dates alongside model and API versions.",
+      "why": "A managed surface can retire or change its tool contract independently of the underlying model family.",
+      "sources": [
+        {
+          "sourceId": "MOD-01",
+          "title": "Gemini API release notes",
+          "authority": "Google",
+          "publicationDate": "2026-09-17",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+        },
+        {
+          "sourceId": "MOD-07",
+          "title": "Gemini API deprecations",
+          "authority": "Google",
+          "publicationDate": "not stated",
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-008",
+      "classification": "clarification",
+      "classificationLabel": "Clarification",
+      "section": "13. Model routing and degraded mode",
+      "title": "Preserved reasoning state is route-scoped",
+      "whatChanged": "Section 13 now parses model responses by block type, binds signed reasoning state to the exact provider, model, account, history, and API contract, and requires an explicit compatible checkpoint when a route cannot preserve it.",
+      "why": "Current migrations can change default reasoning, tool-choice rules, structured-output parameters, refusal handling, and the meaning of an effort level.",
+      "sources": [
+        {
+          "sourceId": "MOD-02",
+          "title": "Developer platform release notes",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-28",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "sourceId": "MOD-08",
+          "title": "Migrating to Claude Sonnet 5.5",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-28",
+          "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-009",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "16. Evals as the release contract",
+      "title": "Black-box judges need local stability checks",
+      "whatChanged": "Section 16 now calibrates judges on the exact endpoint, version, rubric, language, and release window, repeats representative judgments, and records disagreement and rank stability.",
+      "why": "Shared judge endpoints can change enough across repeats or days to invalidate a calibration borrowed from another endpoint or time window.",
+      "sources": [
+        {
+          "sourceId": "ORIG-12",
+          "title": "A Stability Audit of Shared Black-Box LLM Judge Endpoints",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-04",
+          "url": "https://arxiv.org/abs/2609.04198"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-010",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "16. Evals as the release contract",
+      "title": "Multimodal injection is measured by carrier and stage",
+      "whatChanged": "Section 16 now tests visible text, metadata, audio, video, files, screenshots, and retrieved media, and separates noticing, planning, tool calls, and completed external effects.",
+      "why": "A low completed-attack rate can still conceal a much higher rate of attempted unsafe action.",
+      "sources": [
+        {
+          "sourceId": "ORIG-15",
+          "title": "MMPIBench: Multimodal Prompt Injection Benchmark",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-10",
+          "url": "https://arxiv.org/abs/2609.09404"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-011",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "19. Safety engineering and permission boundaries",
+      "title": "API keys are governed as production identities",
+      "whatChanged": "Section 19 now requires an owner, purpose, environment, service scope, maximum lifetime, rotation path, last-used visibility, and revocation drill for every production API key.",
+      "why": "Provider-enforced expiry and lifetime policy make credential age a control the system can prove, not a spreadsheet field.",
+      "sources": [
+        {
+          "sourceId": "MOD-04",
+          "title": "API changelog",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-10",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-012",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "19. Safety engineering and permission boundaries",
+      "title": "Agent skills join the software supply chain",
+      "whatChanged": "Section 19 now pins and reviews agent skills, instruction bundles, transitive files, and scripts, limits their privileges, and retests them after updates.",
+      "why": "Reusable skills can carry persistent behavior that activates after installation or in a different run.",
+      "sources": [
+        {
+          "sourceId": "ORIG-14",
+          "title": "SkillShift: Supply-Chain Risks in Agent Skills",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-03",
+          "url": "https://arxiv.org/abs/2609.02564"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-013",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "20. Multi-tenant isolation and cache safety",
+      "title": "Resource limits move to the earliest acquisition point",
+      "whatChanged": "Section 20 now caps fields before hashing or metrics, bounds compressed and remote media before full materialization, rechecks limits after transformation, and contains per-request failures inside the request.",
+      "why": "Recent serving vulnerabilities repeatedly bypassed limits through an earlier input path or a later processor-specific transformation.",
+      "sources": [
+        {
+          "sourceId": "SAFE-12",
+          "title": "Unbounded cache_salt can stall the scheduler",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p"
+        },
+        {
+          "sourceId": "SAFE-13",
+          "title": "Audio compressed-size path can bypass resource limits",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf"
+        },
+        {
+          "sourceId": "SAFE-14",
+          "title": "Remote media can be fully materialized before limits apply",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-p6g9-7v3x-m8mv"
+        },
+        {
+          "sourceId": "SAFE-15",
+          "title": "Sampler subclasses can bypass output limits",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-j682-9xp5-rrf3"
+        },
+        {
+          "sourceId": "SAFE-16",
+          "title": "Qwen video inputs can bypass frame limits",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4"
+        },
+        {
+          "sourceId": "SAFE-17",
+          "title": "Structured-output request errors can terminate a shared EngineCore",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw"
+        },
+        {
+          "sourceId": "SAFE-18",
+          "title": "Unbounded Prometheus label cardinality",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-014",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail",
+      "title": "Primary evidence is linked in the handbook",
+      "whatChanged": "The source trail now includes the official migration documents, deprecation notices, security advisories, and original papers used in this review.",
+      "why": "Every material handbook change should remain auditable from the reader-facing edition.",
+      "sources": [
+        {
+          "sourceId": "CTX-03",
+          "title": "Compaction on demand",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-15",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand"
+        },
+        {
+          "sourceId": "TOOL-06",
+          "title": "Mid-conversation system messages",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-15",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages"
+        },
+        {
+          "sourceId": "MOD-07",
+          "title": "Gemini API deprecations",
+          "authority": "Google",
+          "publicationDate": "not stated",
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+        },
+        {
+          "sourceId": "MOD-08",
+          "title": "Migrating to Claude Sonnet 5.5",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-28",
+          "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide"
+        },
+        {
+          "sourceId": "MOD-04",
+          "title": "API changelog",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-10",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "sourceId": "SAFE-12",
+          "title": "Unbounded cache_salt can stall the scheduler",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p"
+        },
+        {
+          "sourceId": "ORIG-12",
+          "title": "A Stability Audit of Shared Black-Box LLM Judge Endpoints",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-04",
+          "url": "https://arxiv.org/abs/2609.04198"
+        },
+        {
+          "sourceId": "ORIG-13",
+          "title": "Agents' Overreliance on Unreliable Tools",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-06",
+          "url": "https://arxiv.org/abs/2609.05587"
+        },
+        {
+          "sourceId": "ORIG-14",
+          "title": "SkillShift: Supply-Chain Risks in Agent Skills",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-03",
+          "url": "https://arxiv.org/abs/2609.02564"
+        },
+        {
+          "sourceId": "ORIG-15",
+          "title": "MMPIBench: Multimodal Prompt Injection Benchmark",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-10",
+          "url": "https://arxiv.org/abs/2609.09404"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-015",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "Appendix and section-source mappings",
+      "title": "Citation mappings cover every new claim",
+      "whatChanged": "The appendix and section-source data now carry the exact labels and links for every primary source introduced in this review.",
+      "why": "The generated handbook needs the same evidence trail in its prose, appendix, and section-level source mapping.",
+      "sources": [
+        {
+          "sourceId": "TOOL-07",
+          "title": "Computer use",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-29",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+        },
+        {
+          "sourceId": "MOD-01",
+          "title": "Gemini API release notes",
+          "authority": "Google",
+          "publicationDate": "2026-09-17",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+        },
+        {
+          "sourceId": "SAFE-13",
+          "title": "Audio compressed-size path can bypass resource limits",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf"
+        },
+        {
+          "sourceId": "SAFE-14",
+          "title": "Remote media can be fully materialized before limits apply",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-p6g9-7v3x-m8mv"
+        },
+        {
+          "sourceId": "SAFE-15",
+          "title": "Sampler subclasses can bypass output limits",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-j682-9xp5-rrf3"
+        },
+        {
+          "sourceId": "SAFE-16",
+          "title": "Qwen video inputs can bypass frame limits",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4"
+        },
+        {
+          "sourceId": "SAFE-17",
+          "title": "Structured-output request errors can terminate a shared EngineCore",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw"
+        },
+        {
+          "sourceId": "SAFE-18",
+          "title": "Unbounded Prometheus label cardinality",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-016",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "Index",
+      "title": "The index covers the new operating controls",
+      "whatChanged": "The index now includes compaction, structured-output containment, dynamic tools, tool-result integrity, managed-agent migration, preserved reasoning state, judge stability, multimodal injection, workload-key governance, agent-skill supply chains, and pre-inference limits.",
+      "why": "Material production guidance should be findable without knowing which section introduced it.",
+      "sources": [
+        {
+          "sourceId": "CTX-03",
+          "title": "Compaction on demand",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-15",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand"
+        },
+        {
+          "sourceId": "SAFE-17",
+          "title": "Structured-output request errors can terminate a shared EngineCore",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw"
+        },
+        {
+          "sourceId": "TOOL-06",
+          "title": "Mid-conversation system messages",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-15",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages"
+        },
+        {
+          "sourceId": "ORIG-13",
+          "title": "Agents' Overreliance on Unreliable Tools",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-06",
+          "url": "https://arxiv.org/abs/2609.05587"
+        },
+        {
+          "sourceId": "MOD-07",
+          "title": "Gemini API deprecations",
+          "authority": "Google",
+          "publicationDate": "not stated",
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+        },
+        {
+          "sourceId": "MOD-08",
+          "title": "Migrating to Claude Sonnet 5.5",
+          "authority": "Anthropic",
+          "publicationDate": "2026-09-28",
+          "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide"
+        },
+        {
+          "sourceId": "ORIG-12",
+          "title": "A Stability Audit of Shared Black-Box LLM Judge Endpoints",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-04",
+          "url": "https://arxiv.org/abs/2609.04198"
+        },
+        {
+          "sourceId": "ORIG-15",
+          "title": "MMPIBench: Multimodal Prompt Injection Benchmark",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-10",
+          "url": "https://arxiv.org/abs/2609.09404"
+        },
+        {
+          "sourceId": "MOD-04",
+          "title": "API changelog",
+          "authority": "OpenAI",
+          "publicationDate": "2026-09-10",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "sourceId": "ORIG-14",
+          "title": "SkillShift: Supply-Chain Risks in Agent Skills",
+          "authority": "Original research authors",
+          "publicationDate": "2026-09-03",
+          "url": "https://arxiv.org/abs/2609.02564"
+        },
+        {
+          "sourceId": "SAFE-12",
+          "title": "Unbounded cache_salt can stall the scheduler",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-09-25",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p"
+        }
+      ]
+    }
+  ]
 }

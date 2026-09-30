@@ -30,8 +30,8 @@ const expectedReleaseSchedule = buildReleaseSchedule(
   new Date(releaseSchedule.generatedAt),
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
-  ?? `Version 1.3.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
-const PUBLICATION_DATE = "September 14, 2026";
+  ?? `Version 1.4.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const PUBLICATION_DATE = "September 30, 2026";
 const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf";
 const expectedPdfPageCount = pdfDownloadPageCount(here, CURRENT_PDF_HREF);
 const formatCandidateDate = (isoDate) => {

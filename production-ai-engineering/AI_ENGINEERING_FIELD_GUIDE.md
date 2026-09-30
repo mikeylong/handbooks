@@ -1,6 +1,6 @@
 # Production AI Engineering Field Guide
 
-Last evidence review: **2026-09-07**
+Last evidence review: **2026-09-30**
 
 Production AI engineering works as a system. This handbook lays out an operating model that connects the techniques instead of treating them as isolated fixes. The central idea is simple:
 
@@ -112,6 +112,8 @@ output reserve      protected before adding more input
 ```
 
 When the budget gets tight, remove redundant and low-confidence material first. Compress authoritative instructions or evidence only after those cuts.
+
+Treat provider-managed compaction as a state transition, not invisible housekeeping. Persist the signed summary block exactly as returned, remove only the messages the provider says it replaced, and keep system instructions and tool definitions compatible across the handoff. Account for the summarization request separately when usage is reported outside the top-level totals. Because this operation can silently omit details and remove earlier images, documents, uploads, or URL content, preserve durable decisions and required evidence outside the transcript; advance the conversation only after the compacted continuation succeeds. Anthropic's [compaction contract](https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand) makes those failure modes explicit.
 
 ## 4. Four caches that must not be confused
 
@@ -274,6 +276,8 @@ Run every quantized candidate through the same golden and adversarial suite as t
 
 Constrained decoding and provider structured-output features can greatly improve syntactic conformance. Syntactic conformance does not establish whether the values are true, authorized, internally consistent, current, or safe to execute.
 
+Treat every structured-output request as a fault-containment boundary. Cap grammar or schema compilation work, isolate it from the shared inference engine, and reject malformed or unsupported constraints without terminating other tenants' requests. A request-scoped validation error must remain request-scoped; the [vLLM structured-output advisory](https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw) shows how an unhandled request error can otherwise kill a shared engine process.
+
 Use this pipeline:
 
 ```mermaid
@@ -355,6 +359,12 @@ A network timeout can leave the execution status unknown. Reconcile through the 
 
 Asynchronous tool calling adds a pending-job lifecycle. Register each dispatched job before waiting on it, persist its handle and original call ID for the conversation, and deliver the eventual result against that call. Keep job status separate from the result; a scheduled job is not a completed action. [OpenAI's async-tool contract](https://developers.openai.com/api/docs/guides/async-tool-calling) makes these distinctions explicit. Apply the same tenant binding, authorization, deadlines and cancellation rules to callbacks and late results, and preserve completed handle records so a later call cannot reuse their identity.
 
+A late tool result is still untrusted input. Reauthorize its tenant, principal, conversation, run, call, resource, and state version at delivery time; discard results for cancelled, expired, superseded, or completed work. Never let a delayed callback revive an old plan, silently spend a new budget, or attach to a reused call identifier.
+
+If tools can be added or removed mid-conversation, treat the available-tool set as versioned runtime state. Build the registry server-side, authorize every change, persist a canonical schema digest with the turn, and reject a call whose tool version no longer matches. Keep security policy outside model-supplied tool descriptions, and test whether removing a tool truly makes it unavailable. Anthropic's [dynamic-tool contract](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages) is one current example of this pattern.
+
+Schema-valid tool output can still be plausibly wrong. For consequential actions, verify the returned entity, provenance, freshness, units, and relevant state against an authoritative source or an independent deterministic check before using it. Test tools that return fluent, internally consistent falsehoods, not only exceptions and malformed payloads. The study [Agents' Overreliance on Unreliable Tools](https://arxiv.org/abs/2609.05587) found that agents often relied on corrupted but plausible tool results and that explicit verification prompts detected more corrupt results than the baseline prompts.
+
 Evaluate tool and protocol behavior directly. Test correct selection, correct non-selection, argument validity, authorization denial, duplicate delivery, timeout-after-commit, partial failure, hostile tool output, protocol-version negotiation, and session-state assumptions. Anthropic's [tool design guidance](https://www.anthropic.com/engineering/writing-tools-for-agents) is a useful primary reference.
 
 Give every agent and workload a distinct identity; never lend it a human credential or allow it to impersonate the delegating user. Bind short-lived, audience-restricted authority to the operating principal, attenuate it at every delegation, and let the least-authorized hop bound the chain.
@@ -416,9 +426,9 @@ Route against measured task requirements. Provider reputation or prompt length a
 - current provider health and rate limits;
 - router confidence and out-of-distribution detection.
 
-Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. A fallback that cannot honor the same contract puts the product in a different mode.
+Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too: record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date, then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. Google's [Gemini deprecation schedule](https://ai.google.dev/gemini-api/docs/deprecations) demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.
 
-Effective model settings belong in the migration record. Test omitted parameters separately from explicit values, record supported reasoning levels and their output-token budget, and verify tool/API support and cache controls on the exact route. [OpenAI's migration guidance](https://developers.openai.com/api/docs/guides/latest-model) changes several of these contracts, while [AWS's adaptive-thinking correction](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html) shows how omission can enable billable reasoning. Reject unsupported settings rather than silently dropping them, and compare the resolved behavior, latency and cost before rollout.
+Effective model settings and preserved model-generated state belong in the migration record. Test omitted parameters separately from explicit values, record supported reasoning levels and their output-token budget, and verify tool/API support and cache controls on the exact route. Parse responses by block type; bind signed thinking, reasoning, or summary blocks to the exact provider, model, account, conversation history, and API contract; return them unchanged when required; and keep the history append-only. If a route drops or rejects that state, fail or restart from an explicitly compatible checkpoint instead of silently continuing with different semantics. Migration tests must cover default reasoning behavior, forced-tool restrictions, structured-output parameters, refusal categories, and a fresh effort sweep because the same effort label can change across model generations. [OpenAI's migration guidance](https://developers.openai.com/api/docs/guides/latest-model) changes several of these contracts, while [AWS's adaptive-thinking correction](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html) shows how omission can enable billable reasoning. Anthropic's [Sonnet 5.5 migration guide](https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide) documents the signed-state and request-contract changes. Reject unsupported settings rather than silently dropping them, and compare the resolved behavior, latency and cost before rollout.
 
 Treat provider SDK upgrades as production migrations. Diff request headers and response types, exercise every mutating method against disposable state, and canary the pinned upgrade before rollout.
 
@@ -547,11 +557,15 @@ LLM-as-judge is useful when:
 
 An LLM judge is not an independent source of truth. Judges exhibit position, verbosity, self-preference, and reasoning biases; see the [MT-Bench judge study](https://papers.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html).
 
+Calibrate a black-box judge on the exact endpoint, model version, rubric, language, and time window used for the release. Repeat representative judgments, record disagreement and rank stability, and require a human or deterministic fallback when the judge drifts. Do not transfer a calibration result across endpoints or silently updated aliases. A 52,988-attempt study of shared judge endpoints found substantially lower repeat and next-day rank stability than a controlled endpoint, making local calibration an operating requirement rather than a one-time benchmark ([study](https://arxiv.org/abs/2609.04198)).
+
 ### Release gates
 
 Make release gates slice-aware. A one-point global gain cannot offset a large regression in safety, structured outputs, a language, a tenant type, or a critical workflow. Treat any High-severity safety, authorization, or side-effect failure as its own stop condition instead of averaging it into a global score.
 
 Version the test data, graders, judge prompts/models, harness code, and environment. Report task count, trial count, confidence intervals, and per-slice support. Define non-inferiority margins before the run. Then read the failed traces; the score cannot tell you whether the model or the evaluation infrastructure failed.
+
+For multimodal injection, report both attempt rate and completed harmful action by carrier and execution stage. Test visible text, hidden metadata, audio, video, files, screenshots, and retrieved media; distinguish whether the model noticed, planned, called a tool, and produced an external effect. Low end-to-end completion can conceal a much higher rate of attempted unsafe actions. MMPIBench, for example, reports six carrier types and a large gap between attempted and completed attacks across 720 runs ([paper](https://arxiv.org/abs/2609.09404)).
 
 Treat agents and model-generated code in training and evaluation as hostile workloads. Isolate every run and its writable supporting services; apply independent egress controls to the sandbox and every package mirror, cache, metadata service, relay, and shared store; and make direct escape, transitive escape, and cross-run communication tested failure modes.
 
@@ -662,6 +676,10 @@ Build the defense in layers:
 
 Human approval is scarce attention and approval frequency is a security property. Use bounded action plans and risk-triggered reapproval so consent fatigue does not turn review into a rubber stamp. Never use elicitation to collect passwords, bearer tokens, or other secrets.
 
+Govern long-lived API credentials as production identities. Require an owner, purpose, environment, allowed service surface, maximum lifetime, rotation path, last-used visibility, and revocation drill. Prefer short-lived workload credentials; when a static key is unavoidable, enforce expiry and organization-level lifetime policy, alert before expiration, and prove that rotation does not require an outage. OpenAI's [API changelog](https://developers.openai.com/api/docs/changelog) now documents expiry and maximum-lifetime controls, turning credential age from an inventory field into an enforceable policy.
+
+Treat agent skills, instruction bundles, and reusable workflow packages as executable supply-chain inputs. Pin the exact source and digest, review transitive files and scripts, minimize installation and runtime privileges, and re-evaluate the package after any update. Test for instruction smuggling, credential access, unexpected egress, and delayed or cross-run behavior. [SkillShift](https://arxiv.org/abs/2609.02564) demonstrates that apparently useful agent skills can carry persistent behaviors that activate outside the installation moment.
+
 For OAuth or MCP tools, validate the issuer, audience, scopes, actor, and expiry. Prohibit token passthrough. Use separately issued downstream tokens and per-client consent. Treat OAuth metadata, discovery documents, and registration endpoints as untrusted network input: allowlist schemes and destinations, block private and link-local ranges after DNS resolution, disable unsafe redirect following, and revalidate every redirect hop. The MCP [authorization specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) and [security best practices](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices) make these boundaries explicit.
 
 The [OWASP LLM prompt-injection guidance](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) notes that RAG and fine-tuning do not fully mitigate injection. Microsoft's [defense-in-depth pattern](https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection) recommends content isolation, least privilege, monitoring, and human approval. For the broader governance and risk context, use the [NIST Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
@@ -680,6 +698,7 @@ Use this checklist:
 - put an authenticated and authorized ingress boundary in front of every model-server route; treat built-in API-key flags as endpoint-scoped until verified, inventory every reachable route, disable unused compatibility, administration, metrics, and profiling APIs, and negative-test access;
 - treat model repositories, processor and tokenizer code, custom operators, and conversion steps as executable supply-chain inputs; allow only reviewed, digest-pinned artifacts, and load or convert them in an isolated environment without production credentials or broad egress; a runtime flag such as `trust_remote_code=false` is not a security boundary for an unreviewed loader;
 - enforce decoded-byte, duration, frame, pixel, and accelerator-memory limits across every audio, image, and video path; derive limits from bounded decode output rather than trusting caller-controlled container metadata, and reject the request before it can exhaust shared worker or GPU capacity;
+- enforce resource limits at the earliest acquisition step: cap request-field length and label cardinality before hashing or metrics, bound compressed and remote media before full download or decompression, recheck decoded duration, frames, pixels, and sampler output after transformation, and keep per-request failures from poisoning a shared scheduler or engine;
 - validate caller-supplied token IDs on the host before accelerator work: require integers within both the lower bound of zero and the loaded model's vocabulary range on every token-ID input path; reject malformed input without poisoning shared engine state, and regression-test the affected endpoints under concurrent tenants; the [vLLM negative-token-ID advisory](https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf) demonstrates why checking only the upper bound is insufficient;
 - do not let request fields select a decoder, kernel, plugin, adapter, or other privileged backend unless an operator allowlisted it and included it in startup resource reservation and isolation policy;
 - treat agent runtimes, sandbox provisioners, gateways and proxies, bridges, installers, updaters, and inference services as privileged policy-enforcement code; pin and patch them, verify certificates and artifact integrity, normalize paths before layer-7 policy, avoid building shell commands from untrusted data, and test escape, injection, traversal, and authorization-bypass paths;
@@ -823,6 +842,14 @@ Use this checklist before launch and again after any material change.
 Do the optimization work after the system is measured and safe. Otherwise, the change can improve speed while leaving the outcome wrong or unsafe.
 
 ## 26. Primary source trail
+
+### 30 September 2026 review additions
+
+- Anthropic: [Compaction on demand](https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand), [mid-conversation system messages and dynamic tools](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages), and [Sonnet 5.5 migration guide](https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide)
+- Google: [Gemini API deprecations](https://ai.google.dev/gemini-api/docs/deprecations)
+- OpenAI: [API changelog](https://developers.openai.com/api/docs/changelog) and [computer use](https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use)
+- vLLM Project: [cache-salt](https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p), [audio](https://github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf), [remote-media](https://github.com/vllm-project/vllm/security/advisories/GHSA-p6g9-7v3x-m8mv), [sampler](https://github.com/vllm-project/vllm/security/advisories/GHSA-j682-9xp5-rrf3), [Qwen video](https://github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4), [structured-output](https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw), and [metrics-cardinality](https://github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48) advisories
+- Research: [shared black-box judge stability](https://arxiv.org/abs/2609.04198), [unreliable tool outputs](https://arxiv.org/abs/2609.05587), [agent-skill supply chains](https://arxiv.org/abs/2609.02564), and [multimodal prompt injection](https://arxiv.org/abs/2609.09404)
 
 ### Harness, context, tools, and model APIs
 
