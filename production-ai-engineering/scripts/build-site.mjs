@@ -40,7 +40,6 @@ for (const name of ["styles.css", "app.js"]) {
   await cp(resolve(root, `handbook/${name}`), resolve(output, `production-ai-engineering/${name}`));
 }
 await cp(resolve(root, "site/gallery.css"), resolve(output, "gallery.css"));
-await cp(resolve(root, "site/navigation.js"), resolve(output, "navigation.js"));
 await mkdir(resolve(output, "output/pdf"), { recursive: true });
 await cp(resolve(root, pdfPath), resolve(output, pdfPath));
 
@@ -53,8 +52,7 @@ const hostedEvaluationPdf = await readFile(resolve(output, "ai-evaluation", eval
 if (createHash("sha256").update(hostedEvaluationPdf).digest("hex") !== evaluation.sha256) throw new Error("Evaluation reader download mismatch");
 
 const readerBody = book.match(/<body[^>]*>([\s\S]*)<\/body>/)?.[1];
-const readerScript = book.match(/<script src="([^"]+)" defer><\/script>/)?.[1];
-if (!readerBody || !readerScript) throw new Error("Handbook reader markup is missing");
+if (!readerBody) throw new Error("Handbook reader markup is missing");
 const reader = readerBody
   .replace('<aside class="sidebar" aria-label="Handbook navigation">', '<aside class="sidebar" aria-label="Handbook navigation">\n<a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a>')
   .replace('<header class="mobile-bar">', '<header class="mobile-bar">\n<a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a>')
@@ -71,15 +69,17 @@ const reader = readerBody
     return `srcset="${candidates.join(", ")}"`;
   });
 const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
-  .replaceAll("{{VERSION}}", version).replaceAll("{{PAGE_COUNT}}", String(pages))
-  .replace("{{READER_SCRIPT}}", `<script src="/production-ai-engineering/${readerScript}" defer></script>`)
-  .replace("{{READER}}", `<div class="handbook-reader" id="book-top">${reader}</div>`);
-const hostedBook = gallery
-  .replace('class="handbooks-gallery"', 'class="handbooks-reader"')
-  .replace("<title>Handbooks · Michael Long</title>", "<title>Production AI Engineering · Michael Long</title>")
-  .replace('href="https://handbooks.mikelong.ai/"', 'href="https://handbooks.mikelong.ai/production-ai-engineering/"');
+  .replaceAll("{{VERSION}}", version).replaceAll("{{PAGE_COUNT}}", String(pages));
+const hostedBook = book.replace(readerBody, reader)
+  .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
+    const url = new URL(value, "https://handbooks.mikelong.ai/production-ai-engineering/");
+    return `${attribute}="${url.pathname}${url.search}${url.hash}"`;
+  })
+  .replace("</head>", '<link rel="stylesheet" href="/gallery.css">\n<link rel="canonical" href="https://handbooks.mikelong.ai/production-ai-engineering/">\n</head>');
 const evaluationPublication = JSON.parse(await readFile(resolve(evaluationRoot, "publication.json"), "utf8"));
-const evaluationHtml = await readFile(resolve(output, "ai-evaluation/index.html"), "utf8");
+const evaluationHtml = (await readFile(resolve(output, "ai-evaluation/index.html"), "utf8"))
+  .replace("</head>", '<link rel="stylesheet" href="/gallery.css"></head>');
+await writeFile(resolve(output, "ai-evaluation/index.html"), evaluationHtml);
 validatePublicationFront(evaluationHtml, {...evaluationPublication, ...evaluation, pdfUrl:evaluation.pdf.split("/").pop()});
 const productionReview = {
   at:book.match(/data-release-at="([^"]+)"/)?.[1],
