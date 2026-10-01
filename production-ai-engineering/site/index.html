@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="/production-ai-engineering/styles.css">
   <link rel="stylesheet" href="/gallery.css">
   <script src="/navigation.js" defer></script>
-  <link rel="prefetch" href="/production-ai-engineering/" as="document">
+  {{READER_SCRIPT}}
   <title>Handbooks · Michael Long</title>
 </head>
 <body class="handbooks-gallery">
-  <a class="skip-link" href="#main-content">Skip to handbooks</a>
+  <a class="skip-link" href="#gallery-main">Skip to handbooks</a>
   <div class="gallery-shell">
-    <main id="main-content" tabindex="-1">
+    <main id="gallery-main" tabindex="-1">
       <section class="gallery-intro" aria-labelledby="gallery-title">
         <div class="gallery-rule" aria-hidden="true"></div>
         <h1 id="gallery-title">Handbooks</h1>
@@ -37,5 +37,6 @@
       <p>Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>
     </footer>
   </div>
+  {{READER}}
 </body>
 </html>

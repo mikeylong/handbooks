@@ -42,12 +42,24 @@ await cp(resolve(root, "site/gallery.css"), resolve(output, "gallery.css"));
 await cp(resolve(root, "site/navigation.js"), resolve(output, "navigation.js"));
 await mkdir(resolve(output, "output/pdf"), { recursive: true });
 await cp(resolve(root, pdfPath), resolve(output, pdfPath));
-const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
-  .replaceAll("{{VERSION}}", version).replaceAll("{{PAGE_COUNT}}", String(pages));
-const hostedBook = book
-  .replace("</head>", '<link rel="canonical" href="https://handbooks.surfaces.systems/production-ai-engineering/">\n<link rel="stylesheet" href="/gallery.css">\n<script src="/navigation.js" defer></script>\n</head>')
+const readerBody = book.match(/<body[^>]*>([\s\S]*)<\/body>/)?.[1];
+const readerScript = book.match(/<script src="([^"]+)" defer><\/script>/)?.[1];
+if (!readerBody || !readerScript) throw new Error("Handbook reader markup is missing");
+const reader = readerBody
   .replace('<aside class="sidebar" aria-label="Handbook navigation">', '<aside class="sidebar" aria-label="Handbook navigation">\n<a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a>')
-  .replace('<header class="mobile-bar">', '<header class="mobile-bar">\n<a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a>');
+  .replace('<header class="mobile-bar">', '<header class="mobile-bar">\n<a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a>')
+  .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
+    const url = new URL(value, "https://handbooks.surfaces.systems/production-ai-engineering/");
+    return `${attribute}="${url.pathname}${url.search}${url.hash}"`;
+  });
+const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
+  .replaceAll("{{VERSION}}", version).replaceAll("{{PAGE_COUNT}}", String(pages))
+  .replace("{{READER_SCRIPT}}", `<script src="/production-ai-engineering/${readerScript}" defer></script>`)
+  .replace("{{READER}}", `<div class="handbook-reader" id="book-top">${reader}</div>`);
+const hostedBook = gallery
+  .replace('class="handbooks-gallery"', 'class="handbooks-reader"')
+  .replace("<title>Handbooks · Michael Long</title>", "<title>Production AI Engineering · Michael Long</title>")
+  .replace('href="https://handbooks.surfaces.systems/"', 'href="https://handbooks.surfaces.systems/production-ai-engineering/"');
 await writeFile(resolve(output, "index.html"), gallery);
 await writeFile(resolve(output, "production-ai-engineering/index.html"), hostedBook);
 await writeFile(resolve(output, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: https://handbooks.surfaces.systems/sitemap.xml\n");
