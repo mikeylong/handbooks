@@ -42,3 +42,6 @@ jobs:
 
       - name: Build the handbook gallery
         run: npm run build
+
+      - name: Reject incomplete publication front pages
+        run: npm run validate:front-pages
