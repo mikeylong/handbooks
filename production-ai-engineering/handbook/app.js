@@ -92,7 +92,7 @@
 
   function sectionTargetId(section) {
     return section.matches(".chapter")
-      ? section.querySelector(".chapter-header[id]")?.id
+      ? (section.querySelector(".chapter-header[id]")?.id ?? section.id)
       : section.id;
   }
 

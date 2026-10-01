@@ -13,3 +13,5 @@ A context-starved reader review found six substantive ambiguities. They were cor
 The specificity review checked actors, action, referents, conditions, evidence boundaries, illustrative figures, and reader tasks. Broad framework and method claims remain scoped to their cited sources; Trailwise cases and thresholds are explicitly authored practice examples. The mechanical scan and exact source/PDF-text comparisons remain with the local candidate evidence.
 
 Browser verification passed at 1280px and 390px: gallery entry, chapter navigation, contents dialog, Wilson search and destination, PDF metadata, and no horizontal page overflow. The contents-dialog download was corrected to this edition's exact PDF and 100-page count. Existing Production AI Engineering validators pass and its reviewed PDF is unchanged.
+
+The focused PR review found a Medium active-navigation issue: the shared observer expected a chapter-header ID, while this reader names its outer chapter section. The target resolver now falls back to that section ID; browser verification confirms active links during chapter navigation.
