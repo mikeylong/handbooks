@@ -1053,7 +1053,7 @@ const html = `<!doctype html>
   <div class="book-shell">
     <aside class="sidebar" aria-label="Handbook navigation">
       <a class="sidebar-brand" href="#book-top">
-        <span>A handbook for production AI engineering</span>
+        <span>A handbook</span>
         <strong>${BOOK_TITLE}</strong>
       </a>
       <nav class="sidebar-nav" aria-label="Table of contents">
