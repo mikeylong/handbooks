@@ -76,7 +76,7 @@ const formatBibliographyDate = (displayDate) => {
   if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
   return `${match[2]} ${match[1]} ${match[3]}`;
 };
-const PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf";
+const PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf";
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
   ?? `Version 1.4.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
@@ -948,7 +948,10 @@ function indexEntryHtml(entry) {
 }
 
 const indexGroups = new Map();
-for (const entry of INDEX_ENTRIES) {
+const alphabeticalIndexEntries = [...INDEX_ENTRIES].sort((left, right) => (
+  left.label.localeCompare(right.label, "en", { sensitivity: "base" })
+));
+for (const entry of alphabeticalIndexEntries) {
   const letter = entry.label[0].toUpperCase();
   if (!indexGroups.has(letter)) indexGroups.set(letter, []);
   indexGroups.get(letter).push(entry);
@@ -1172,7 +1175,7 @@ const requiredAssets = [
 ];
 await Promise.all(requiredAssets.map((asset) => access(asset)));
 await Promise.all([
-  writeFile(OUTPUT_PATH, html, "utf8"),
+  writeFile(OUTPUT_PATH, html.replace(/[\t ]+$/gm, ""), "utf8"),
   writeFile(RELEASE_SCHEDULE_PATH, `${JSON.stringify(releaseSchedule, null, 2)}\n`, "utf8"),
 ]);
 console.log(`Built ${OUTPUT_PATH}`);

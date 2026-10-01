@@ -38,7 +38,7 @@ CHAPTERS = [
 ]
 SECTIONS = [
     "The full system",
-    "Harness engineering, not just prompt engineering",
+    "Prompt engineering is one part of the harness",
     "Context engineering, not long prompts",
     "Four caches that must not be confused",
     "Prefill and decode optimize differently",
@@ -147,8 +147,10 @@ def validate_structure(
     chapter_opener_pages: list[int],
     destination_pages: dict[str, int],
     require_changelog: bool,
+    section_titles: list[str] | None = None,
 ) -> tuple[int, int]:
     """Check content boundaries and destinations independently of edition length."""
+    section_titles = SECTIONS if section_titles is None else section_titles
     assert len(chapter_opener_pages) == len(CHAPTERS), "Missing chapter openers"
     assert chapter_opener_pages[0] == 4, "Chapter 1 must follow the three front-matter pages"
     assert all(
@@ -186,7 +188,7 @@ def validate_structure(
             f"Chapter {number} opener has the wrong title"
         )
     section_pages = []
-    for number, (display_number, title) in enumerate(zip(SECTION_DISPLAY_NUMBERS, SECTIONS), start=1):
+    for number, (display_number, title) in enumerate(zip(SECTION_DISPLAY_NUMBERS, section_titles), start=1):
         page_index = family_page(f"section-{number:02d}-")
         chapter_index = int(display_number.split(".")[0]) - 1
         chapter_end = (chapter_starts + [appendix_start])[chapter_index + 1]
@@ -308,6 +310,10 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         )
 
     page_texts = [page.extract_text() or "" for page in reader.pages]
+    section_titles = list(SECTIONS)
+    cover_version = re.search(r"Version (\d+)\.(\d+)(?:\.(\d+))?", page_texts[0])
+    if cover_version and tuple(int(part or 0) for part in cover_version.groups()) < (1, 4, 0):
+        section_titles[1] = "Harness engineering, not just prompt engineering"
     changelog, require_changelog = load_changelog(changelog_path, cover_text=page_texts[0])
     chapter_opener_pages: list[int] = []
     for number in range(1, len(CHAPTERS) + 1):
@@ -325,7 +331,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         for name, destination in reader.named_destinations.items()
     }
     appendix_start, index_start = validate_structure(
-        page_texts, chapter_opener_pages, destination_pages, require_changelog,
+        page_texts, chapter_opener_pages, destination_pages, require_changelog, section_titles,
     )
     text = "\n".join(page_texts)
     canonical_text = canonical(text)
@@ -342,7 +348,9 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         "The cover contains missing, unexpected, or malformed reader-facing text"
     )
     assert "EVIDENCE REVIEWED" not in text.upper(), "Removed review label remains"
-    assert "PREMISE" not in page_texts[1].upper(), "Premise label remains on the foreword"
+    assert not re.search(r"(?im)^\s*premise\s*$", page_texts[1]), (
+        "Premise label remains on the foreword"
+    )
     assert canonical("This handbook lays out an operating model") in canonical(page_texts[1]), (
         "Foreword does not use the approved handbook self-reference"
     )
@@ -373,7 +381,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         "Notes and Sources",
         "Index of Terms",
         *CHAPTERS,
-        *SECTIONS,
+        *section_titles,
     ]
     if require_changelog:
         expected_text.append("Changelog")
@@ -381,7 +389,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         assert canonical(expected) in canonical_text, f"Missing text: {expected}"
     assert len(SECTION_DISPLAY_NUMBERS) == len(SECTIONS)
     for old_number, (display_number, title) in enumerate(
-        zip(SECTION_DISPLAY_NUMBERS, SECTIONS), start=1
+        zip(SECTION_DISPLAY_NUMBERS, section_titles), start=1
     ):
         hierarchical_heading = canonical(f"{display_number} {title}")
         assert hierarchical_heading in canonical_text, (
@@ -449,11 +457,9 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         assert canonical(semantic_block_text) in canonical_text, (
             f"Missing semantic block content: {semantic_block_text}"
         )
-    tool_contract_page = next(
-        page_text for page_text in page_texts
-        if "A strong tool contract includes:" in page_text
-    )
-    tool_contract_block = tool_contract_page.split(
+    # A longer edition can move the end of this list to the next physical page.
+    # Check the complete bounded block rather than only its opening page.
+    tool_contract_block = text.split("A strong tool contract includes:", 1)[1].split(
         "The harness then enforces the contract:", 1
     )[0]
     tool_contract_items = [
@@ -506,7 +512,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
     assert changelog_outline_count == (1 if require_changelog else 0), (
         f"Unexpected changelog bookmark count: {changelog_outline_count}"
     )
-    for display_number, title in zip(SECTION_DISPLAY_NUMBERS, SECTIONS):
+    for display_number, title in zip(SECTION_DISPLAY_NUMBERS, section_titles):
         section_outline_title = next(
             (
                 outline_title

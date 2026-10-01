@@ -34,7 +34,7 @@ const expectedBookVersion = process.env.HANDBOOK_VERSION
 const REPOSITORY_HREF = "https://github.com/mikeylong/production-ai-engineering-book";
 const RELEASES_HREF = `${REPOSITORY_HREF}/releases`;
 const PUBLICATION_DATE = "September 30, 2026";
-const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf";
+const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf";
 const expectedPdfPageCount = pdfDownloadPageCount(here, CURRENT_PDF_HREF);
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
@@ -227,6 +227,11 @@ const checks = {
   citationMarkers: count(/class="citation-marker"/g, html),
   bibliographyEntries: count(/class="reference-label"/g, html),
   indexEntries: count(/class="index-term"/g, html),
+  indexAlphabetical:
+    [...html.matchAll(/<li id="index-([^"]+)">/g)].map((match) => match[1]).join("\n")
+    === [...INDEX_ENTRIES].sort((left, right) => (
+      left.label.localeCompare(right.label, "en", { sensitivity: "base" })
+    )).map((entry) => entry.id).join("\n"),
   chapterImages: count(/class="chapter-art"/g, html),
   chapterImageIntrinsicResolutionValid:
     count(/width="1536"/g, html) === 12
@@ -642,6 +647,7 @@ const expected = {
   bibliographyEntries: citationEntries.length,
   indexEntries: INDEX_ENTRIES.length,
   chapterImages: 12,
+  indexAlphabetical: true,
   chapterImageIntrinsicResolutionValid: true,
   responsiveChapterImages: 12,
   chapterArtPrintScaleValid: true,
