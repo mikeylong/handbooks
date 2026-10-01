@@ -35,9 +35,9 @@
   "designSystemVersion": "1.0.0",
   "inputs": {
     ".gitattributes": "c946264169ba03cb2e392755cfe903acbcf25dcbe7d73a915381db6eb8dcfb2c",
-    ".gitignore": "dd7eed9c481a9f900b9175c5f4bccdd5dc6ad144606d89cd36869d3c2ce24208",
+    ".gitignore": "58617550b41fee1bd4788141e64b2a29987761d5039cc0e3dea3cbc3fa4d9c47",
     "README.md": "381ebc12c8d72adc7706ca793d6672ca8b03b025e6d7158aed587a996f0b3478",
-    "SKILL.md": "6a59d0057a3969fa58d3210742fc9807a541b507a4c985261ce0bf6f680b9fdf",
+    "SKILL.md": "6d37ff577d620e773146fdba4738ead5e9b3274df46597842ce83255c899aad0",
     "assets/design-system/fonts/NOTO-SANS-LICENSE.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb",
     "assets/design-system/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
     "assets/design-system/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
@@ -56,9 +56,10 @@
     "references/design-system.md": "aceed697bd136933aded423ec78ce974b6d7ee53a1859f32f6716174ba4a5b9d",
     "references/edition-and-release.md": "90c3989f8b152b385dd375803cd7430fbda3e08d46133722759f3e9bea834d0e",
     "references/editorial-quality.md": "370bf467b94eb1c1109c141275871c4e45b4c0db05b014837722f2dd21bbea0e",
+    "references/hosted-publication-front.md": "fd66a6914ef14de9e8fa0830ac6a85c2594c9cf2bb2d70973822c87cbc8f0935",
     "references/illustration-workflow.md": "396fce09e58da9f205d4fa80da8939f59be52c863396cf04d50bc0af72c1cfdc",
     "references/open-image-fallback.md": "08524843d4a667bb84b0954183a2b3f9f5fd92e19f659f30480558de00447f25",
-    "references/quality-gates.md": "6ab2cc7444a7728bb82c17d72a8c7ed480b51197caea76a0a59cab75ca4fd647",
+    "references/quality-gates.md": "2ebbb2c1b8a068ac6857d7ec5c727cd4ec8c58a3d6e11e16dfc48f8c9dbe9f24",
     "references/research-and-evidence.md": "9efa14246e49e70ef49d99b49e2872e28ec94dec4befc8cc9c14bebaee9e6454",
     "references/specimen/canonical-page-map.json": "96e76966601f638438dbcd29e8544d452096ce39233666bea0a6455c82410832",
     "references/specimen/compatibility-matrix.json": "c53cee9c0ccc6ea887b97fc8c69a283b04da2a10f868b75b4d47d21c7f73f9f6",
@@ -82,9 +83,9 @@
   },
   "schemaVersion": 1,
   "toolchain": {
-    "browser": "Google Chrome 152.0.7977.65",
+    "browser": "Google Chrome 152.0.7977.83",
     "pypdf": "6.10.0",
-    "python": "3.12.13"
+    "python": "3.12.14"
   },
   "visualLineage": {
     "note": "The specimen uses neutral content while preserving the approved A5 editorial grammar and PDFKit-safe illustration contract.",

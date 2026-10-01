@@ -58,6 +58,10 @@ When the PDF will be read across ecosystems, inspect the exact candidate in at l
 
 A successful render in the generator's browser is not proof of compatibility with another PDF engine.
 
+## Hosted publication gate
+
+For the handbooks.mikelong.ai gallery, every online reader must pass [the hosted front-page contract](hosted-publication-front.md). Require author/site credit, linked repository and release metadata, Explore and PDF actions, the exact PDF page count, and a truthful next-review panel. Verify the editable generator and the deployed page, including desktop and mobile behavior.
+
 ## Release-integrity gates
 
 - Candidate hash is recorded before approval.
