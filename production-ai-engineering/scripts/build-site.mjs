@@ -1,3 +1,4 @@
+import { validatePublicationFront } from "./publication-front.mjs";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
@@ -77,6 +78,15 @@ const hostedBook = gallery
   .replace('class="handbooks-gallery"', 'class="handbooks-reader"')
   .replace("<title>Handbooks · Michael Long</title>", "<title>Production AI Engineering · Michael Long</title>")
   .replace('href="https://handbooks.mikelong.ai/"', 'href="https://handbooks.mikelong.ai/production-ai-engineering/"');
+const evaluationPublication = JSON.parse(await readFile(resolve(evaluationRoot, "publication.json"), "utf8"));
+const evaluationHtml = await readFile(resolve(output, "ai-evaluation/index.html"), "utf8");
+validatePublicationFront(evaluationHtml, {...evaluationPublication, ...evaluation, pdfUrl:evaluation.pdf.split("/").pop()});
+const productionReview = {
+  at:book.match(/data-release-at="([^"]+)"/)?.[1],
+  timeZone:book.match(/data-release-time-zone="([^"]+)"/)?.[1],
+  rrule:book.match(/data-release-rrule="([^"]+)"/)?.[1],
+};
+validatePublicationFront(hostedBook, {title:"Production AI Engineering", author:"Michael Long", authorSite:"https://surfaces.systems", repository:"https://github.com/mikeylong/production-ai-engineering-book", releaseUrl:"https://github.com/mikeylong/production-ai-engineering-book/releases", date:pdfPath.match(/(\d{4}-\d{2}-\d{2})\.pdf$/)?.[1], version, pages, pdfUrl:"/"+pdfPath, review:productionReview});
 await writeFile(resolve(output, "index.html"), gallery);
 await writeFile(resolve(output, "production-ai-engineering/index.html"), hostedBook);
 await writeFile(resolve(output, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: https://handbooks.mikelong.ai/sitemap.xml\n");
