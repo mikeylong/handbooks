@@ -2,6 +2,7 @@
   "name": "production-ai-engineering-book",
   "private": true,
   "scripts": {
+    "build": "node scripts/build-site.mjs",
     "dev": "node scripts/dev-server.mjs",
     "validate:handbook": "node handbook/validate-handbook.mjs",
     "validate:release": "node scripts/validate-production-release.mjs"
