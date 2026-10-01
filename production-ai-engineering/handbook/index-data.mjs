@@ -1552,5 +1552,130 @@ export const INDEX_ENTRIES = [
       "multi-tenant-isolation",
       "model-server-ingress"
     ]
+  },
+  {
+    "id": "context-compaction",
+    "label": "Context compaction",
+    "sections": [
+      3
+    ],
+    "seeAlso": [
+      "context-engineering",
+      "context-manifest"
+    ]
+  },
+  {
+    "id": "structured-output-fault-containment",
+    "label": "Structured-output fault containment",
+    "sections": [
+      10
+    ],
+    "seeAlso": [
+      "structured-outputs",
+      "multi-tenant-isolation"
+    ]
+  },
+  {
+    "id": "dynamic-tool-contracts",
+    "label": "Dynamic tool contracts",
+    "sections": [
+      11
+    ],
+    "seeAlso": [
+      "tool-calling",
+      "versioning"
+    ]
+  },
+  {
+    "id": "tool-result-integrity",
+    "label": "Tool-result integrity",
+    "sections": [
+      11
+    ],
+    "seeAlso": [
+      "tool-calling",
+      "schema-validation"
+    ]
+  },
+  {
+    "id": "managed-agent-tool-migrations",
+    "label": "Managed agent and tool migrations",
+    "sections": [
+      13
+    ],
+    "seeAlso": [
+      "model-routing",
+      "sdk-migrations"
+    ]
+  },
+  {
+    "id": "preserved-reasoning-state",
+    "label": "Preserved reasoning state",
+    "sections": [
+      13
+    ],
+    "seeAlso": [
+      "effective-model-settings",
+      "model-routing",
+      "versioning"
+    ]
+  },
+  {
+    "id": "black-box-judge-stability",
+    "label": "Black-box judge stability",
+    "sections": [
+      16
+    ],
+    "seeAlso": [
+      "evals-llm-judge",
+      "evals"
+    ]
+  },
+  {
+    "id": "multimodal-injection-evaluation",
+    "label": "Multimodal injection evaluation",
+    "sections": [
+      16,
+      19
+    ],
+    "seeAlso": [
+      "evals-adversarial",
+      "prompt-injection"
+    ]
+  },
+  {
+    "id": "workload-key-governance",
+    "label": "Workload key governance",
+    "sections": [
+      19
+    ],
+    "seeAlso": [
+      "authorization",
+      "agent-identity",
+      "least-privilege"
+    ]
+  },
+  {
+    "id": "agent-skill-supply-chain",
+    "label": "Agent-skill supply chain",
+    "sections": [
+      19
+    ],
+    "seeAlso": [
+      "model-artifact-security",
+      "agent-runtime-security"
+    ]
+  },
+  {
+    "id": "pre-inference-resource-limits",
+    "label": "Pre-inference resource limits",
+    "sections": [
+      20
+    ],
+    "seeAlso": [
+      "admission-control",
+      "multimodal-input-budgets",
+      "quotas"
+    ]
   }
 ];

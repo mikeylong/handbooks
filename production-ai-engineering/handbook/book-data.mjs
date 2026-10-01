@@ -142,6 +142,36 @@ export const CITATION_GROUPS = [
         "citation": "AWS. \"Document history for Amazon Bedrock.\"",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html",
         "accessed": true
+      },
+      {
+        "label": "CTX-03",
+        "citation": "Anthropic. \"Compaction on demand.\" Claude API documentation, September 2026.",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
+        "accessed": true
+      },
+      {
+        "label": "TOOL-06",
+        "citation": "Anthropic. \"Mid-conversation system messages.\" Claude API documentation, September 2026.",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages",
+        "accessed": true
+      },
+      {
+        "label": "TOOL-07",
+        "citation": "OpenAI. \"Computer use.\" OpenAI Agents API documentation, 29 September 2026.",
+        "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use",
+        "accessed": true
+      },
+      {
+        "label": "MOD-07",
+        "citation": "Google. \"Gemini API deprecations.\" Google AI for Developers.",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "accessed": true
+      },
+      {
+        "label": "MOD-08",
+        "citation": "Anthropic. \"Migrating to Claude Sonnet 5.5.\" Claude API documentation, 28 September 2026.",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide",
+        "accessed": true
       }
     ]
   },
@@ -335,6 +365,30 @@ export const CITATION_GROUPS = [
         "citation": "OpenAI. \"GPT-6 Astra system card.\" 2026-09-03.",
         "url": "https://deploymentsafety.openai.com/gpt-6-astra/vision",
         "accessed": true
+      },
+      {
+        "label": "ORIG-12",
+        "citation": "\"A Stability Audit of Shared Black-Box LLM Judge Endpoints.\" arXiv:2609.04198, September 2026.",
+        "url": "https://arxiv.org/abs/2609.04198",
+        "accessed": true
+      },
+      {
+        "label": "ORIG-13",
+        "citation": "\"Agents' Overreliance on Unreliable Tools.\" arXiv:2609.05587v2, 26 September 2026.",
+        "url": "https://arxiv.org/abs/2609.05587",
+        "accessed": true
+      },
+      {
+        "label": "ORIG-14",
+        "citation": "\"SkillShift: Supply-Chain Risks in Agent Skills.\" arXiv:2609.02564, September 2026.",
+        "url": "https://arxiv.org/abs/2609.02564",
+        "accessed": true
+      },
+      {
+        "label": "ORIG-15",
+        "citation": "\"MMPIBench: Multimodal Prompt Injection Benchmark.\" arXiv:2609.09404, September 2026.",
+        "url": "https://arxiv.org/abs/2609.09404",
+        "accessed": true
       }
     ]
   },
@@ -451,6 +505,48 @@ export const CITATION_GROUPS = [
         "citation": "vLLM Project. \"Negative token IDs can poison the vLLM engine.\" 2026-09-03.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf",
         "accessed": true
+      },
+      {
+        "label": "SAFE-12",
+        "citation": "vLLM Project. \"Unbounded cache_salt can stall the scheduler.\" GHSA-wpww-v874-ph2p, September 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-13",
+        "citation": "vLLM Project. \"Audio compressed-size path can bypass resource limits.\" GHSA-jcq2-4gch-5qhf, September 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-14",
+        "citation": "vLLM Project. \"Remote media can be fully materialized before limits apply.\" GHSA-p6g9-7v3x-m8mv, September 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-p6g9-7v3x-m8mv",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-15",
+        "citation": "vLLM Project. \"Sampler subclasses can bypass output limits.\" GHSA-j682-9xp5-rrf3, September 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-j682-9xp5-rrf3",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-16",
+        "citation": "vLLM Project. \"Qwen video inputs can bypass frame limits.\" GHSA-x6mc-67gf-chw4, September 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-17",
+        "citation": "vLLM Project. \"Structured-output request errors can terminate a shared EngineCore.\" GHSA-85xf-c7hm-whqw, September 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw",
+        "accessed": true
+      },
+      {
+        "label": "SAFE-18",
+        "citation": "vLLM Project. \"Unbounded Prometheus label cardinality.\" GHSA-5fj9-pfhr-6j48, September 2026.",
+        "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48",
+        "accessed": true
       }
     ]
   },
@@ -487,7 +583,8 @@ export const SECTION_SOURCES = {
   "3": {
     "labels": [
       "CTX-01",
-      "CTX-02"
+      "CTX-02",
+      "CTX-03"
     ]
   },
   "4": {
@@ -543,7 +640,8 @@ export const SECTION_SOURCES = {
     "labels": [
       "OUT-01",
       "OUT-02",
-      "MCP-03"
+      "MCP-03",
+      "SAFE-17"
     ],
     "note": "Author synthesis: repair policy is separated from the rules for consequential actions."
   },
@@ -559,7 +657,11 @@ export const SECTION_SOURCES = {
       "AUTH-01",
       "AUTH-02",
       "AUTH-03",
-      "TOOL-05"
+      "TOOL-05",
+      "TOOL-06",
+      "TOOL-07",
+      "MOD-01",
+      "ORIG-13"
     ],
     "note": "Author synthesis: approval, idempotency, and execution receipts form one tool-safety contract."
   },
@@ -585,6 +687,8 @@ export const SECTION_SOURCES = {
       "MOD-04",
       "MOD-05",
       "MOD-06",
+      "MOD-07",
+      "MOD-08",
       "REL-05"
     ],
     "note": "Author synthesis: routing decisions are tied to the user's degraded-mode experience."
@@ -617,7 +721,9 @@ export const SECTION_SOURCES = {
       "EVAL-05",
       "EVAL-06",
       "ORIG-05",
-      "EVAL-09"
+      "EVAL-09",
+      "ORIG-12",
+      "ORIG-15"
     ]
   },
   "17": {
@@ -650,7 +756,10 @@ export const SECTION_SOURCES = {
       "AUTH-03",
       "EVAL-06",
       "ORIG-05",
-      "SAFE-09"
+      "SAFE-09",
+      "MOD-04",
+      "ORIG-14",
+      "ORIG-15"
     ]
   },
   "20": {
@@ -668,7 +777,14 @@ export const SECTION_SOURCES = {
       "SERV-08",
       "MOD-02",
       "MOD-04",
-      "SAFE-11"
+      "SAFE-11",
+      "SAFE-12",
+      "SAFE-13",
+      "SAFE-14",
+      "SAFE-15",
+      "SAFE-16",
+      "SAFE-17",
+      "SAFE-18"
     ],
     "note": "Author synthesis: the isolation checklist spans the cited permission and tenancy boundaries."
   },

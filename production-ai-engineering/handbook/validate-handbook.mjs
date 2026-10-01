@@ -30,9 +30,11 @@ const expectedReleaseSchedule = buildReleaseSchedule(
   new Date(releaseSchedule.generatedAt),
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
-  ?? `Version 1.3.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
-const PUBLICATION_DATE = "September 14, 2026";
-const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf";
+  ?? `Version 1.4.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+const REPOSITORY_HREF = "https://github.com/mikeylong/production-ai-engineering-book";
+const RELEASES_HREF = `${REPOSITORY_HREF}/releases`;
+const PUBLICATION_DATE = "September 30, 2026";
+const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf";
 const expectedPdfPageCount = pdfDownloadPageCount(here, CURRENT_PDF_HREF);
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
@@ -225,6 +227,11 @@ const checks = {
   citationMarkers: count(/class="citation-marker"/g, html),
   bibliographyEntries: count(/class="reference-label"/g, html),
   indexEntries: count(/class="index-term"/g, html),
+  indexAlphabetical:
+    [...html.matchAll(/<li id="index-([^"]+)">/g)].map((match) => match[1]).join("\n")
+    === [...INDEX_ENTRIES].sort((left, right) => (
+      left.label.localeCompare(right.label, "en", { sensitivity: "base" })
+    )).map((entry) => entry.id).join("\n"),
   chapterImages: count(/class="chapter-art"/g, html),
   chapterImageIntrinsicResolutionValid:
     count(/width="1536"/g, html) === 12
@@ -501,7 +508,7 @@ const checks = {
     && /main\s*\{[^}]*background:\s*var\(--paper\);/.test(css),
   sidebarPublicationMetadataExact:
     sidebarHtml.includes('<p class="sidebar-author">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>')
-    && sidebarHtml.includes(`<p class="sidebar-edition">${expectedCoverDate} · ${expectedBookVersion}</p>`)
+    && sidebarHtml.includes(`<p class="sidebar-edition"><a href="${REPOSITORY_HREF}">${expectedCoverDate}</a> · <a href="${RELEASES_HREF}">${expectedBookVersion}</a></p>`)
     && /\.sidebar-meta\s*\{[^}]*display:\s*grid;/.test(css)
     && /\.sidebar-publication\s*\{[^}]*display:\s*grid;/.test(css),
   touchTargetsDefined:
@@ -640,6 +647,7 @@ const expected = {
   bibliographyEntries: citationEntries.length,
   indexEntries: INDEX_ENTRIES.length,
   chapterImages: 12,
+  indexAlphabetical: true,
   chapterImageIntrinsicResolutionValid: true,
   responsiveChapterImages: 12,
   chapterArtPrintScaleValid: true,

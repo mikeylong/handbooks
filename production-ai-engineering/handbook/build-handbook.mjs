@@ -50,7 +50,9 @@ const BOOK_SUBTITLE = "A Handbook for Building Reliable LLM Systems";
 const AUTHOR = "Michael Long";
 const AUTHOR_SITE = "https://surfaces.systems";
 const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems</a>`;
-const PUBLICATION_DATE = "September 14, 2026";
+const REPOSITORY_HREF = "https://github.com/mikeylong/production-ai-engineering-book";
+const RELEASES_HREF = `${REPOSITORY_HREF}/releases`;
+const PUBLICATION_DATE = "September 30, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -74,9 +76,9 @@ const formatBibliographyDate = (displayDate) => {
   if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
   return `${match[2]} ${match[1]} ${match[3]}`;
 };
-const PDF_HREF = "../output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf";
+const PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf";
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
-  ?? `Version 1.3.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+  ?? `Version 1.4.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 
 const HANDBOOK_CHAPTERS = [
@@ -946,7 +948,10 @@ function indexEntryHtml(entry) {
 }
 
 const indexGroups = new Map();
-for (const entry of INDEX_ENTRIES) {
+const alphabeticalIndexEntries = [...INDEX_ENTRIES].sort((left, right) => (
+  left.label.localeCompare(right.label, "en", { sensitivity: "base" })
+));
+for (const entry of alphabeticalIndexEntries) {
   const letter = entry.label[0].toUpperCase();
   if (!indexGroups.has(letter)) indexGroups.set(letter, []);
   indexGroups.get(letter).push(entry);
@@ -1053,7 +1058,7 @@ const html = `<!doctype html>
   <div class="book-shell">
     <aside class="sidebar" aria-label="Handbook navigation">
       <a class="sidebar-brand" href="#book-top">
-        <span>A handbook for production AI engineering</span>
+        <span>A handbook</span>
         <strong>${BOOK_TITLE}</strong>
       </a>
       <nav class="sidebar-nav" aria-label="Table of contents">
@@ -1063,7 +1068,7 @@ const html = `<!doctype html>
       <div class="sidebar-meta">
         <div class="sidebar-publication">
           <p class="sidebar-author">${AUTHOR_CREDIT_HTML}</p>
-          <p class="sidebar-edition">${COVER_DATE} · ${BOOK_VERSION}</p>
+          <p class="sidebar-edition"><a href="${REPOSITORY_HREF}">${COVER_DATE}</a> · <a href="${RELEASES_HREF}">${BOOK_VERSION}</a></p>
         </div>
         <div class="sidebar-actions">
           <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
@@ -1170,7 +1175,7 @@ const requiredAssets = [
 ];
 await Promise.all(requiredAssets.map((asset) => access(asset)));
 await Promise.all([
-  writeFile(OUTPUT_PATH, html, "utf8"),
+  writeFile(OUTPUT_PATH, html.replace(/[\t ]+$/gm, ""), "utf8"),
   writeFile(RELEASE_SCHEDULE_PATH, `${JSON.stringify(releaseSchedule, null, 2)}\n`, "utf8"),
 ]);
 console.log(`Built ${OUTPUT_PATH}`);

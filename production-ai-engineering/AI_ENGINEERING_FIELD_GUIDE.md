@@ -1,8 +1,8 @@
 # Production AI Engineering Field Guide
 
-Last evidence review: **2026-09-07**
+Last evidence review: **2026-09-30**
 
-Production AI engineering works as a system. This handbook lays out an operating model that connects the techniques instead of treating them as isolated fixes. The central idea is simple:
+Production AI engineering is a systems discipline. This handbook lays out an operating model that connects the techniques instead of treating each one as an isolated fix. The operating premise is simple:
 
 > A model can propose an answer or action. The surrounding system decides whether and how it should proceed, and remains responsible for the outcome.
 
@@ -36,7 +36,7 @@ flowchart LR
     E -. improve .-> V
 ```
 
-Each layer has a specific job:
+Each layer has a clear responsibility:
 
 | Layer | Primary responsibility | Typical failure |
 |---|---|---|
@@ -48,7 +48,7 @@ Each layer has a specific job:
 | Validation and policy | Turn probabilistic proposals into safe actions | Valid JSON with invalid business meaning |
 | Evals and observability | Detect regressions and explain production behavior | Silent quality, cost, or safety drift |
 
-## 2. Harness engineering, not just prompt engineering
+## 2. Prompt engineering is one part of the harness
 
 Prompt engineering handles the wording and structure of instructions. Context engineering selects and maintains every token supplied for each model step. Harness engineering runs the software system around the model.
 
@@ -100,7 +100,7 @@ Practical rules:
 - Version and hash the context manifest so the team can reproduce a bad result.
 - Test context ordering and truncation. Models can use relevant information less reliably when it is buried in a long input, a behavior documented by the [Lost in the Middle](https://aclanthology.org/2024.tacl-1.9/) study.
 
-Treat a token budget as a policy, not a universal percentage. One practical version looks like this:
+Treat a token budget as a policy. There is no universal percentage. One practical version looks like this:
 
 ```key-value
 fixed contract      hard cap; cache-friendly prefix
@@ -112,6 +112,8 @@ output reserve      protected before adding more input
 ```
 
 When the budget gets tight, remove redundant and low-confidence material first. Compress authoritative instructions or evidence only after those cuts.
+
+Treat provider-managed compaction as a state transition, not invisible housekeeping. Persist the signed summary block exactly as returned. Remove only the messages the provider says it replaced, and keep system instructions and tool definitions compatible across the handoff. Account for the summarization request separately when usage is reported outside the top-level totals. Compaction can silently omit details and remove earlier images, documents, uploads, or URL content. Preserve durable decisions and required evidence outside the transcript, and advance the conversation only after the compacted continuation succeeds. Anthropic's [compaction contract](https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand) makes those failure modes explicit.
 
 ## 4. Four caches that must not be confused
 
@@ -140,7 +142,7 @@ Retrieval context | retrieval corpus/index version + locale + freshness window
 
 Track cache and token hit rates; false-hit, stale-hit, and eviction rates; cache age; latency and cost saved; and cross-scope rejection count. Never share private semantic responses globally based on embedding similarity.
 
-Cache breakpoints determine which shared prefix can actually be reused. Where the API exposes them, place and test an eligible boundary after the stable prefix; an implicit boundary after a changing suffix may never reuse that prefix. Verify with requests that keep the prefix fixed while changing the suffix, and inspect cache-read and cache-write usage. [OpenAI documents this distinction](https://developers.openai.com/api/docs/guides/prompt-caching) for its newer caching contract. Include writes, uncached suffixes, compaction and retention in the net-cost calculation.
+Cache breakpoints determine which shared prefix can actually be reused. Where the API exposes them, place and test an eligible boundary after the stable prefix. An implicit boundary after a changing suffix may never reuse that prefix. Verify with requests that keep the prefix fixed while changing the suffix, and inspect cache-read and cache-write usage. [OpenAI documents this distinction](https://developers.openai.com/api/docs/guides/prompt-caching) for its newer caching contract. Include writes, uncached suffixes, compaction, and retention in the net-cost calculation.
 
 ## 5. Prefill and decode optimize differently
 
@@ -164,7 +166,7 @@ Generation and execution | prefill + decode + tools + validation and retries
 
 Track p50, p95, and p99 for end-to-end latency, queue time, TTFT, TPOT/ITL, and tool latency. A low average can still hide an unusable tail.
 
-Chunked prefill can reduce interference with active decodes and improve tail inter-token latency, but it can also increase TTFT for the long prompt being split. Use prefill/decode disaggregation only when its SLO benefit outweighs the cost of duplicated model weights, KV transfer, interconnect, routing, and operations.
+Chunked prefill can reduce interference with active decodes and improve tail inter-token latency. Chunking can also increase TTFT for the long prompt being split. Use prefill/decode disaggregation only when its SLO benefit outweighs the cost of duplicated model weights, KV transfer, interconnect, routing, and operations.
 
 ## 6. KV cache management and memory pressure
 
@@ -202,15 +204,15 @@ Apply the controls in this order:
 7. Evaluate KV quantization or offload on long-context quality and tail latency before enabling it.
 8. Shed or degrade load before allowing a node-wide OOM.
 
-The [PagedAttention paper](https://arxiv.org/abs/2309.06180) applies virtual-memory-like block management to KV state, reducing allocation waste and enabling sharing. Paging manages memory more efficiently, but the underlying KV capacity limit remains.
+The [PagedAttention paper](https://arxiv.org/abs/2309.06180) applies virtual-memory-like block management to KV state. This reduces allocation waste and enables sharing. Paging manages memory more efficiently, but the underlying KV capacity limit remains.
 
-KV retention policies decide which past state survives; paging decides how retained state is allocated. Measure retained bytes, physically allocated memory and peak memory across the whole invocation, including prefill. A mask or eviction after prefill may reduce later state without lowering the prefill peak. Evaluate long-context evidence use at the same retention policy and workload used for memory tests. [HeadWiseKV](https://arxiv.org/html/2609.02029v1) illustrates these distinctions in a bounded hybrid-model study; its results do not establish a universal quality or memory gain. Revalidate after changing the model, cache format, context distribution or retention policy.
+KV retention policies decide which past state survives; paging decides how retained state is allocated. Measure retained bytes, physically allocated memory, and peak memory across the whole invocation, including prefill. A mask or eviction after prefill may reduce later state without lowering the prefill peak. Evaluate long-context evidence use with the same retention policy and workload used for memory tests. [HeadWiseKV](https://arxiv.org/html/2609.02029v1) illustrates these distinctions in a bounded hybrid-model study. Its results do not establish a universal quality or memory gain. Revalidate after changing the model, cache format, context distribution, or retention policy.
 
-For bursty multi-tenant traffic, evaluate a reservation policy against real prompt-length, output-length, and arrival traces instead of reserving each request's maximum possible KV footprint. A robust policy can admit more useful work by protecting against plausible distribution shifts while keeping an explicit overload path. Cheng et al.'s [robust KV-cache reservation study](https://arxiv.org/abs/2607.16892) provides one trace-driven formulation; it is a planning method, not a substitute for per-tenant quotas, active-decode reserves, or load shedding.
+For bursty multi-tenant traffic, evaluate a reservation policy against real prompt-length, output-length, and arrival traces instead of reserving each request's maximum possible KV footprint. A reservation policy can admit more useful work when it protects against plausible distribution shifts and keeps an explicit overload path. Cheng et al.'s [robust KV-cache reservation study](https://arxiv.org/abs/2607.16892) provides one trace-driven formulation. The formulation is a planning method, not a substitute for per-tenant quotas, active-decode reserves, or load shedding.
 
 ## 7. Continuous batching, paged attention, and goodput
 
-Static batching waits for a fixed group of requests. Continuous, or iteration-level, batching releases completed sequences at each engine iteration and may admit queued work into the capacity they free, subject to token, KV, deadline, and fairness limits. The approach removes static-batch head-of-line blocking, although requests can still queue. The [Orca paper](https://www.usenix.org/conference/osdi22/presentation/yu) established iteration-level scheduling as a core serving technique.
+Static batching waits for a fixed group of requests. Continuous, or iteration-level, batching releases completed sequences at each engine iteration and may admit queued work into the capacity they free, subject to token, KV, deadline, and fairness limits. Continuous batching removes static-batch head-of-line blocking, although requests can still queue. The [Orca paper](https://www.usenix.org/conference/osdi22/presentation/yu) established iteration-level scheduling as a core serving technique.
 
 Large prefills can still stall active decodes. Chunked prefill splits prompt processing into schedulable pieces and interleaves those pieces with decode work. The tradeoff is lower decode interference and potentially longer TTFT for the split request. [Sarathi-Serve](https://www.usenix.org/conference/osdi24/presentation/agrawal) analyzes this prefill/decode interference and stall-free scheduling.
 
@@ -239,7 +241,7 @@ Speculative decoding, quantization, and distillation change different parts of t
 | Quantization | Represents weights and sometimes activations/KV with fewer bits | Memory/bandwidth-constrained inference with supported kernels | Calibration and numerical error can cause task-specific tail regressions |
 | Distillation | Trains a smaller student to imitate a larger teacher | Stable, narrow, high-volume tasks with governed training data and clear evals | Up-front teacher-data/training cost; broad and long-tail capabilities or teacher biases can transfer or regress |
 
-When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use it to reduce latency, not to approximate an answer. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. See [Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html).
+When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use it to reduce latency, not to approximate an answer. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. [Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html) describe the method.
 
 Distillation changes the deployed model and usually changes its behavior. Distillation can greatly lower steady-state cost, but the target workflow first needs to be stable enough for teacher data and evals to represent production. [Hinton, Vinyals, and Dean](https://arxiv.org/abs/1503.02531) describe the foundational method.
 
@@ -247,7 +249,7 @@ Distillation changes the deployed model and usually changes its behavior. Distil
 
 AWQ and GPTQ describe quantization methods. Numeric formats are a separate choice. Always spell out the precision tuple: `W8A8`, `W8A16`, `W4A16`, or `KV8`, for example. `INT8` and `INT4` leave too much unspecified on their own.
 
-Weight storage is approximately `parameters × bits / 8 + scales + zero-points + unquantized modules`. W4A16 reduces weight storage, but it does not shrink activations or KV. Calling a model “4-bit” therefore does not imply 4× lower total VRAM. Whether smaller storage lowers latency depends on the actual kernel and hardware.
+Weight storage is approximately `parameters × bits / 8 + scales + zero-points + unquantized modules`. W4A16 reduces weight storage, but it does not shrink activations or KV. Calling a model “4-bit” therefore does not imply 4× lower total VRAM. Any latency reduction depends on the actual kernel and hardware.
 
 | Choice | What it usually means | When it is attractive | Watch for |
 |---|---|---|---|
@@ -273,6 +275,8 @@ Run every quantized candidate through the same golden and adversarial suite as t
 ## 10. Structured outputs: syntax is only the first gate
 
 Constrained decoding and provider structured-output features can greatly improve syntactic conformance. Syntactic conformance does not establish whether the values are true, authorized, internally consistent, current, or safe to execute.
+
+Treat every structured-output request as a fault-containment boundary. Cap grammar or schema compilation work, isolate it from the shared inference engine, and reject malformed or unsupported constraints without terminating other tenants' requests. A request-scoped validation error must remain request-scoped; the [vLLM structured-output advisory](https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw) shows how an unhandled request error can otherwise kill a shared engine process.
 
 Use this pipeline:
 
@@ -353,13 +357,19 @@ When a stable, repeated procedure is narrow enough to specify and test, compile 
 
 A network timeout can leave the execution status unknown. Reconcile through the idempotency receipt or authoritative external state before retrying or changing routes. The HTTP specification explains why automatic retry is safe only when the semantics are idempotent or the client knows the original action was not applied; see [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods).
 
-Asynchronous tool calling adds a pending-job lifecycle. Register each dispatched job before waiting on it, persist its handle and original call ID for the conversation, and deliver the eventual result against that call. Keep job status separate from the result; a scheduled job is not a completed action. [OpenAI's async-tool contract](https://developers.openai.com/api/docs/guides/async-tool-calling) makes these distinctions explicit. Apply the same tenant binding, authorization, deadlines and cancellation rules to callbacks and late results, and preserve completed handle records so a later call cannot reuse their identity.
+Asynchronous tool calling adds a pending-job lifecycle. Register each dispatched job before waiting on it. Persist its handle and original call ID for the conversation, and deliver the eventual result against that call. Keep job status separate from the result; a scheduled job is not a completed action. [OpenAI's async-tool contract](https://developers.openai.com/api/docs/guides/async-tool-calling) makes these distinctions explicit. Apply the same tenant binding, authorization, deadlines, and cancellation rules to callbacks and late results. Preserve completed handle records so a later call cannot reuse their identity.
 
-Evaluate tool and protocol behavior directly. Test correct selection, correct non-selection, argument validity, authorization denial, duplicate delivery, timeout-after-commit, partial failure, hostile tool output, protocol-version negotiation, and session-state assumptions. Anthropic's [tool design guidance](https://www.anthropic.com/engineering/writing-tools-for-agents) is a useful primary reference.
+A late tool result is still untrusted input. Reauthorize its tenant, principal, conversation, run, call, resource, and state version at delivery time; discard results for cancelled, expired, superseded, or completed work. Never let a delayed callback revive an old plan, silently spend a new budget, or attach to a reused call identifier.
+
+If tools can be added or removed mid-conversation, treat the available-tool set as versioned runtime state. Build the registry server-side and authorize every change. Persist a canonical schema digest with the turn, and reject a call whose tool version no longer matches. Keep security policy outside model-supplied tool descriptions, and test whether removing a tool truly makes it unavailable. Anthropic's [dynamic-tool contract](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages) is one current example of this pattern.
+
+Schema-valid tool output can still be plausibly wrong. For consequential actions, verify the returned entity, provenance, freshness, units, and relevant state against an authoritative source or an independent deterministic check before using it. Test tools that return fluent, internally consistent falsehoods, not only exceptions and malformed payloads. The study [Agents' Overreliance on Unreliable Tools](https://arxiv.org/abs/2609.05587) found that agents often relied on corrupted but plausible tool results and that explicit verification prompts detected more corrupt results than the baseline prompts.
+
+Evaluate tool and protocol behavior directly. Test correct selection, correct non-selection, argument validity, authorization denial, duplicate delivery, timeout-after-commit, partial failure, hostile tool output, protocol-version negotiation, and session-state assumptions. For the source behind this guidance, see Anthropic's [tool design guidance](https://www.anthropic.com/engineering/writing-tools-for-agents).
 
 Give every agent and workload a distinct identity; never lend it a human credential or allow it to impersonate the delegating user. Bind short-lived, audience-restricted authority to the operating principal, attenuate it at every delegation, and let the least-authorized hop bound the chain.
 
-Protocol migrations are architecture migrations. MCP 2026-07-28 removed protocol sessions, `Mcp-Session-Id`, and the initialization handshake. A connection or stdio process is not a conversation: carry protocol version and capabilities on every request, discover server support before selection, and pass cross-call state through explicit handles. Treat `clientInfo` and `serverInfo` as self-reported diagnostics, never authenticated identity or policy input.
+Protocol migrations are architecture migrations. MCP 2026-07-28 removed protocol sessions, `Mcp-Session-Id`, and the initialization handshake. A connection or stdio process is not a conversation. Carry protocol version and capabilities on every request, discover server support before selection, and pass cross-call state through explicit handles. Treat `clientInfo` and `serverInfo` as self-reported diagnostics, never authenticated identity or policy input.
 
 Model protocol results as a state machine. `resultType: "input_required"` is nonterminal; preserve the logical operation, policy decision, approval scope, and budget across the next round. If a response stream breaks, issue a new protocol request ID, but preserve the application idempotency key and reconcile external state before repeating a mutation. Pin the protocol and SDK, test mixed-version clients and servers, and roll through a compatibility window.
 
@@ -396,7 +406,7 @@ Give every run explicit terminal conditions:
 - repeated state, repeated action, or no measurable progress;
 - insufficient evidence under an externally measured sufficiency check, or a calibrated product score that requires abstention; never use the model's self-reported confidence alone.
 
-Broken or impossible tasks must terminate safely; persistence or additional reasoning may not unlock wider tools, egress, or credentials. Define severity triggers for boundary circumvention and unauthorized cross-agent coordination, provide a reliable fleet or workload kill path, name the authority to pause, contain, restart, and restore, and fail closed when a severe alert cannot be cleared.
+Broken or impossible tasks must terminate safely. Persistence or additional reasoning may not unlock wider tools, egress, or credentials. Define severity triggers for boundary circumvention and unauthorized cross-agent coordination. Provide a reliable fleet or workload kill path, name the authority to pause, contain, restart, and restore, and fail closed when a severe alert cannot be cleared.
 
 Treat `awaiting_input` and `awaiting_approval` as persisted, resumable interrupts rather than success or failure terminals. Keep their deadlines and reserved budgets explicit.
 
@@ -406,7 +416,7 @@ When the run ends, return a typed state such as `succeeded`, `partial`, `blocked
 
 ## 13. Model routing and degraded mode
 
-Route against measured task requirements. Provider reputation or prompt length alone is not enough. Useful routing features include:
+Route against measured task requirements, not provider reputation or prompt length alone. Include:
 
 - task class and required capability;
 - risk and consequence of error;
@@ -416,15 +426,15 @@ Route against measured task requirements. Provider reputation or prompt length a
 - current provider health and rate limits;
 - router confidence and out-of-distribution detection.
 
-Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. A fallback that cannot honor the same contract puts the product in a different mode.
+Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. Google's [Gemini deprecation schedule](https://ai.google.dev/gemini-api/docs/deprecations) demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.
 
-Effective model settings belong in the migration record. Test omitted parameters separately from explicit values, record supported reasoning levels and their output-token budget, and verify tool/API support and cache controls on the exact route. [OpenAI's migration guidance](https://developers.openai.com/api/docs/guides/latest-model) changes several of these contracts, while [AWS's adaptive-thinking correction](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html) shows how omission can enable billable reasoning. Reject unsupported settings rather than silently dropping them, and compare the resolved behavior, latency and cost before rollout.
+The resolved model settings and preserved model-generated state belong in the migration record. Test omitted parameters separately from explicit values, record supported reasoning levels and their output-token budget, and verify tool/API support and cache controls on the exact route. Parse responses by block type. Bind signed thinking, reasoning, or summary blocks to the exact provider, model, account, conversation history, and API contract. Return them unchanged when required, and keep the history append-only. If a route drops or rejects that state, fail or restart from an explicitly compatible checkpoint instead of silently continuing with different semantics. Migration tests must cover default reasoning behavior, forced-tool restrictions, structured-output parameters, refusal categories, and a fresh effort sweep because the same effort label can change across model generations. [OpenAI's migration guidance](https://developers.openai.com/api/docs/guides/latest-model) documents changes to these contracts, while [AWS's adaptive-thinking correction](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html) shows how omission can enable billable reasoning. Anthropic's [Sonnet 5.5 migration guide](https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide) documents the signed-state and request-contract changes. Reject unsupported settings rather than silently dropping them. Compare the resolved behavior, latency, and cost before rollout.
 
 Treat provider SDK upgrades as production migrations. Diff request headers and response types, exercise every mutating method against disposable state, and canary the pinned upgrade before rollout.
 
 Choose the fallback based on the failure class. Never route around a safety refusal, an authorization or policy denial, or a semantic validation failure. After a timeout that may have committed a mutation, reconcile through the idempotency receipt before retrying or changing routes. Every attempt shares one deadline and retry budget. Use circuit breakers to prevent retry and fallback storms.
 
-Overload and traffic ramp limits need separate recovery paths. Classify the HTTP status together with the provider error code: OpenAI distinguishes a 429 `slow_down` ramp limit from a 503 `server_is_overloaded` capacity failure in its [error-code reference](https://developers.openai.com/api/docs/guides/error-codes). Honor `Retry-After` when present, otherwise use bounded backoff with jitter; coordinate pacing across workers instead of letting each retry independently. Keep retries inside the shared deadline and budget, and use a qualified fallback or queued outcome when waiting would exceed them.
+Overload and traffic ramp limits need separate recovery paths. Classify the HTTP status together with the provider error code. OpenAI distinguishes a 429 `slow_down` ramp limit from a 503 `server_is_overloaded` capacity failure in its [error-code reference](https://developers.openai.com/api/docs/guides/error-codes). Honor `Retry-After` when present. Otherwise, use bounded backoff with jitter and coordinate pacing across workers instead of letting each retry independently. Keep retries inside the shared deadline and budget, and use a qualified fallback or queued outcome when waiting would exceed them.
 
 A safe chain might be:
 
@@ -479,7 +489,7 @@ Query and answer | Query + identity | filters + lexical/dense candidates | fusio
 
 Track `source_version`, `indexed_at`, validity interval, and deletion state. Measure source-to-index lag and define a freshness SLO. Use change-data capture, event-driven reindexing, or scheduled reconciliation based on the source. Invalidate retrieval and semantic caches with corpus/index versions, not only TTLs.
 
-The foundational [RAG paper](https://papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html) emphasizes non-parametric memory, provenance, and updatable knowledge. A production system also needs authorization, freshness, hybrid retrieval, reranking, context packing, and the operations that support them.
+The foundational [RAG paper](https://papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html) emphasizes non-parametric memory, provenance, and updatable knowledge. A production system also needs authorization, freshness, hybrid retrieval, reranking, context packing, and supporting operations.
 
 ## 15. Retrieval and answer evals
 
@@ -513,15 +523,15 @@ Coverage and risk | important slice labels + risk class
 
 Test typo, acronym, exact-identifier, paraphrase, multi-hop, conflicting-source, stale-source, newly updated, deleted, unauthorized, poisoned-document, no-answer, and long-tail queries.
 
-Use [BEIR](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html) for heterogeneous retrieval evaluation, [RAGAS](https://aclanthology.org/2024.eacl-demo.16/) for component-level RAG evaluation, and [ALCE](https://aclanthology.org/2023.emnlp-main.398/) for citation quality. Treat every retrieval or evaluator score as decision-specific evidence: validate it against the comparison, training choice, system selection, downstream prediction, or filtering decision it will drive, and test whether evaluator conclusions remain stable across the relevant slices. A metric that ranks retrievers well may still fail to predict answer quality or justify a different generator. Automated metrics surface problems; calibrated human review remains part of the evaluation.
+Use [BEIR](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html) for heterogeneous retrieval evaluation, [RAGAS](https://aclanthology.org/2024.eacl-demo.16/) for component-level RAG evaluation, and [ALCE](https://aclanthology.org/2023.emnlp-main.398/) for citation quality. Treat every retrieval or evaluator score as decision-specific evidence. Validate it against the comparison, training choice, system selection, downstream prediction, or filtering decision it will drive. Test whether evaluator conclusions remain stable across the relevant slices. A metric that ranks retrievers well may still fail to predict answer quality or justify a different generator. Automated metrics surface problems; calibrated human review remains part of the evaluation.
 
-For iterative search agents, evaluate retrieval in trajectory context. Condition the retriever and its evaluation on the original task and prior search interactions, not only the latest sub-query. Measure marginal evidence gain, duplicate resurfacing, and task-level outcome; a locally relevant result can still waste a step or steer the investigation away from the remaining evidence gap.
+For iterative search agents, evaluate retrieval in trajectory context. Condition the retriever and its evaluation on the original task and prior search interactions, not only the latest sub-query. Measure marginal evidence gain, duplicate resurfacing, and task-level outcome. A locally relevant result can still waste a step or steer the investigation away from the remaining evidence gap.
 
 ## 16. Evals as the release contract
 
 Build the evals before you optimize. Without them, every caching, routing, quantization, prompt, retrieval, or model change can quietly exchange quality for speed or cost.
 
-Use several layers together:
+Use these layers together:
 
 1. **Deterministic unit tests:** parsers, schemas, invariants, ACL filters, idempotency, budgets, termination, and cost math.
 2. **Component evals:** retrieval, reranking, routing, tool selection/arguments, structured output, safety classifiers.
@@ -535,7 +545,7 @@ Keep capability evals separate from regression tests. Capability sets should sta
 
 Keep the iteration set separate from a blinded release holdout. Deduplicate related prompts, source documents, and generated variants across splits. Prevent fine-tuning data, few-shot examples, and prompt-optimizer inputs from contaminating the holdout.
 
-For nondeterministic workflows, report both first-try success and consistency. `pass@k` answers whether at least one of k trials succeeds; `pass^k` asks whether all k trials succeed. Customer-facing reliability often depends much more on the latter than benchmark demos do. Always report pass@1, the exact k, trials per task, estimator, and confidence interval. Do not compare pass@k or pass^k across different k values. Repeated retries are not equivalent to first-attempt product reliability.
+For nondeterministic workflows, report both first-try success and consistency. `pass@k` answers whether at least one of k trials succeeds; `pass^k` asks whether all k trials succeed. Customer-facing reliability often depends much more on the latter than benchmark demos do. Always report pass@1, the exact k, trials per task, estimator, and confidence interval. Do not compare pass@k or pass^k across different k values. Repeated retries do not equal first-attempt product reliability.
 
 LLM-as-judge is useful when:
 
@@ -547,23 +557,27 @@ LLM-as-judge is useful when:
 
 An LLM judge is not an independent source of truth. Judges exhibit position, verbosity, self-preference, and reasoning biases; see the [MT-Bench judge study](https://papers.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html).
 
+Calibrate a black-box judge on the exact endpoint, model version, rubric, language, and time window used for the release. Repeat representative judgments, record disagreement and rank stability, and require a human or deterministic fallback when the judge drifts. Do not transfer a calibration result across endpoints or silently updated aliases. A 52,988-attempt [study](https://arxiv.org/abs/2609.04198) of shared judge endpoints found substantially lower repeat and next-day rank stability than a controlled endpoint. This makes local calibration an operating requirement rather than a one-time benchmark.
+
 ### Release gates
 
 Make release gates slice-aware. A one-point global gain cannot offset a large regression in safety, structured outputs, a language, a tenant type, or a critical workflow. Treat any High-severity safety, authorization, or side-effect failure as its own stop condition instead of averaging it into a global score.
 
 Version the test data, graders, judge prompts/models, harness code, and environment. Report task count, trial count, confidence intervals, and per-slice support. Define non-inferiority margins before the run. Then read the failed traces; the score cannot tell you whether the model or the evaluation infrastructure failed.
 
-Treat agents and model-generated code in training and evaluation as hostile workloads. Isolate every run and its writable supporting services; apply independent egress controls to the sandbox and every package mirror, cache, metadata service, relay, and shared store; and make direct escape, transitive escape, and cross-run communication tested failure modes.
+For multimodal injection, report both attempt rate and completed harmful action by carrier and execution stage. Test visible text, hidden metadata, audio, video, files, screenshots, and retrieved media. Distinguish whether the model noticed, planned, called a tool, and produced an external effect. Low end-to-end completion can conceal a much higher rate of attempted unsafe actions. MMPIBench, for example, reports six carrier types and a large gap between attempted and completed attacks across 720 runs ([paper](https://arxiv.org/abs/2609.09404)).
+
+Treat agents and model-generated code in training and evaluation as hostile workloads. Isolate every run and its writable supporting services. Apply independent egress controls to the sandbox and every package mirror, cache, metadata service, relay, and shared store. Make direct escape, transitive escape, and cross-run communication tested failure modes.
 
 Grade the trajectory and external effect, not only the reward or final answer. Include broken or impossible tasks, grader and tool tampering, unauthorized peer instructions, side channels, boundary probing, safe clarification or stop behavior, and cross-run coordination. Keep grader secrets outside agent-visible surfaces.
 
-When model-generated code changes the system under evaluation, bind approval to an immutable artifact digest; any edit invalidates approval. Keep held-out data inaccessible to the agent through operating-system isolation, have a separate evaluator refuse unapproved artifacts, use capability regressions as hard gates, and review sampled trajectories for gaming. Monitoring is detection, not a substitute for isolation or deterministic enforcement.
+When model-generated code changes the system under evaluation, bind approval to an immutable artifact digest. Any edit invalidates approval. Keep held-out data inaccessible to the agent through operating-system isolation. Have a separate evaluator refuse unapproved artifacts, use capability regressions as hard gates, and review sampled trajectories for gaming. Monitoring is detection, not a substitute for isolation or deterministic enforcement.
 
 Anthropic's [agent-eval guidance](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) and OpenAI's [eval guide](https://developers.openai.com/api/docs/guides/evals) both emphasize evaluating the full system or harness instead of stopping at isolated model text.
 
 ## 17. LLM observability as a first-class discipline
 
-Give each bounded workflow execution its own trace. Use a stable journey or group ID and span links to connect retries, background jobs, queued continuations, and multi-session journeys. Do not stretch one trace across an unbounded conversation. A useful span structure looks like this:
+Give each bounded workflow execution its own trace. Use a stable journey or group ID and span links to connect retries, background jobs, queued continuations, and multi-session journeys. Do not stretch one trace across an unbounded conversation. One span structure looks like this:
 
 ```trace-tree
 request
@@ -603,13 +617,13 @@ Do not use source IDs, trace IDs, pseudonymous user or tenant IDs, prompts, or f
 
 By default, do not record raw prompts, retrieved private documents, tool arguments, or model outputs. Use redaction, sampling, encryption, access control, short retention, and content-free hashes or manifests. The observability system cannot become the largest data-leak path.
 
-Build drift dashboards from directly observed distributions and sampled, versioned evaluator estimates for retrieval relevance, citation support, grounding, and outcome quality. Show evaluation coverage, grader version, calibration status, and confidence intervals alongside input length, route mix, cache behavior, tool errors, validation and repair rate, tokens, latency, and cost. Alert on user-impacting SLOs and regression slices instead of every noisy model event.
+Build drift dashboards from directly observed distributions and sampled, versioned evaluator estimates for retrieval relevance, citation support, grounding, and outcome quality. Show evaluation coverage, grader version, calibration status, and confidence intervals. Put them alongside input length, route mix, cache behavior, tool errors, validation and repair rate, tokens, latency, and cost. Alert on user-impacting SLOs and regression slices instead of every noisy model event.
 
 [OpenTelemetry's GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai) provide a vendor-neutral starting vocabulary for inference, agents, tools, tokens, and timing. The conventions are evolving, so pin the version your telemetry contract uses.
 
-Agent-, runtime-, and tool-authored transcripts are evidence, not the source of truth. Capture policy decisions, tool invocations, network events, receipts, and terminal state outside the agent-controlled environment in append-only or tamper-evident storage, then reconcile traces against authoritative external state. Reasoning traces, when available, may supplement detection, but neither hidden reasoning nor any single transcript can be a required enforcement dependency.
+Agent-, runtime-, and tool-authored transcripts are evidence, not the source of truth. Capture policy decisions, tool invocations, network events, receipts, and terminal state outside the agent-controlled environment in append-only or tamper-evident storage. Then reconcile traces against authoritative external state. Reasoning traces, when available, may supplement detection, but neither hidden reasoning nor any single transcript can be a required enforcement dependency.
 
-Monitor recalibration belongs in every model or reasoning-configuration migration. Compare action-only, reasoning-only and combined monitoring where those signals are available and permitted; measure detection, false alarms and evasion on the same task slices. [OpenAI's GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/vision) reports monitorability changes and adversarial evasion in its evaluation setting. Treat those results as a reason to revalidate local monitoring, not as a production detection rate. Keep external receipts and enforceable policy checks independent of the monitor.
+Monitor recalibration belongs in every model or reasoning-configuration migration. Compare action-only, reasoning-only, and combined monitoring where those signals are available and permitted. Measure detection, false alarms, and evasion on the same task slices. [OpenAI's GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/vision) reports monitorability changes and adversarial evasion in its evaluation setting. Treat those results as a reason to revalidate local monitoring, not as a production detection rate. Keep external receipts and enforceable policy checks independent of the monitor.
 
 ## 18. Attribute cost to the whole workflow
 
@@ -643,7 +657,7 @@ Compare complete workflows across quality, latency, cost, and reliability. Model
 
 ## 19. Safety engineering and permission boundaries
 
-A stronger system prompt, fine-tuning, or RAG will not solve prompt injection. User text, web pages, documents, emails, images, and tool outputs can all carry adversarial instructions. Assume a probabilistic detector will eventually miss an attack. Deterministic controls must limit the blast radius when it does.
+A stronger system prompt, fine-tuning, or RAG will not solve prompt injection. User text, web pages, documents, emails, images, and tool outputs can all carry adversarial instructions. Assume a probabilistic detector will eventually miss an attack. Deterministic controls must limit the blast radius when that happens.
 
 Build the defense in layers:
 
@@ -662,7 +676,11 @@ Build the defense in layers:
 
 Human approval is scarce attention and approval frequency is a security property. Use bounded action plans and risk-triggered reapproval so consent fatigue does not turn review into a rubber stamp. Never use elicitation to collect passwords, bearer tokens, or other secrets.
 
-For OAuth or MCP tools, validate the issuer, audience, scopes, actor, and expiry. Prohibit token passthrough. Use separately issued downstream tokens and per-client consent. Treat OAuth metadata, discovery documents, and registration endpoints as untrusted network input: allowlist schemes and destinations, block private and link-local ranges after DNS resolution, disable unsafe redirect following, and revalidate every redirect hop. The MCP [authorization specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) and [security best practices](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices) make these boundaries explicit.
+Govern long-lived API credentials as production identities. Require an owner, purpose, environment, allowed service surface, maximum lifetime, rotation path, last-used visibility, and revocation drill. Prefer short-lived workload credentials. When a static key is unavoidable, enforce expiry and organization-level lifetime policy, alert before expiration, and prove that rotation does not require an outage. OpenAI's [API changelog](https://developers.openai.com/api/docs/changelog) now documents expiry and maximum-lifetime controls, turning credential age from an inventory field into an enforceable policy.
+
+Treat agent skills, instruction bundles, and reusable workflow packages as executable supply-chain inputs. Pin the exact source and digest. Review transitive files and scripts, minimize installation and runtime privileges, and re-evaluate the package after any update. Test for instruction smuggling, credential access, unexpected egress, and delayed or cross-run behavior. [SkillShift](https://arxiv.org/abs/2609.02564) demonstrates that apparently useful agent skills can carry persistent behaviors that activate outside the installation moment.
+
+For OAuth or MCP tools, validate the issuer, audience, scopes, actor, and expiry. Prohibit token passthrough. Use separately issued downstream tokens and per-client consent. Treat OAuth metadata, discovery documents, and registration endpoints as untrusted network input. Allowlist schemes and destinations, block private and link-local ranges after DNS resolution, disable unsafe redirect following, and revalidate every redirect hop. The MCP [authorization specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) and [security best practices](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices) make these boundaries explicit.
 
 The [OWASP LLM prompt-injection guidance](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) notes that RAG and fine-tuning do not fully mitigate injection. Microsoft's [defense-in-depth pattern](https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection) recommends content isolation, least privilege, monitoring, and human approval. For the broader governance and risk context, use the [NIST Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
 
@@ -680,6 +698,7 @@ Use this checklist:
 - put an authenticated and authorized ingress boundary in front of every model-server route; treat built-in API-key flags as endpoint-scoped until verified, inventory every reachable route, disable unused compatibility, administration, metrics, and profiling APIs, and negative-test access;
 - treat model repositories, processor and tokenizer code, custom operators, and conversion steps as executable supply-chain inputs; allow only reviewed, digest-pinned artifacts, and load or convert them in an isolated environment without production credentials or broad egress; a runtime flag such as `trust_remote_code=false` is not a security boundary for an unreviewed loader;
 - enforce decoded-byte, duration, frame, pixel, and accelerator-memory limits across every audio, image, and video path; derive limits from bounded decode output rather than trusting caller-controlled container metadata, and reject the request before it can exhaust shared worker or GPU capacity;
+- enforce resource limits at the earliest acquisition step: cap request-field length and label cardinality before hashing or metrics, bound compressed and remote media before full download or decompression, recheck decoded duration, frames, pixels, and sampler output after transformation, and keep per-request failures from poisoning a shared scheduler or engine;
 - validate caller-supplied token IDs on the host before accelerator work: require integers within both the lower bound of zero and the loaded model's vocabulary range on every token-ID input path; reject malformed input without poisoning shared engine state, and regression-test the affected endpoints under concurrent tenants; the [vLLM negative-token-ID advisory](https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf) demonstrates why checking only the upper bound is insufficient;
 - do not let request fields select a decoder, kernel, plugin, adapter, or other privileged backend unless an operator allowlisted it and included it in startup resource reservation and isolation policy;
 - treat agent runtimes, sandbox provisioners, gateways and proxies, bridges, installers, updaters, and inference services as privileged policy-enforcement code; pin and patch them, verify certificates and artifact integrity, normalize paths before layer-7 policy, avoid building shell commands from untrusted data, and test escape, injection, traversal, and authorization-bypass paths;
@@ -692,7 +711,7 @@ Use this checklist:
 - test deleted users, changed roles, revoked documents, cache hits after ACL changes, and concurrent tenants;
 - seed cross-tenant canaries and alert if they are retrieved, generated, logged, or cached outside their scope.
 
-Physical isolation is not always required. The boundary still has to match the data and threat model. High-risk workloads may require separate projects or accounts, networks, encryption keys, compute, and tool servers. Google's [multi-tenant agentic AI reference architecture](https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system) shows what that stricter topology looks like.
+Physical isolation is not always required. The isolation boundary still has to match the data and threat model. High-risk workloads may require separate projects or accounts, networks, encryption keys, compute, and tool servers. Google's [multi-tenant agentic AI reference architecture](https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system) shows what that stricter topology looks like.
 
 ## 21. In-context learning, RAG, fine-tuning, and distillation
 
@@ -772,7 +791,7 @@ Use this checklist before launch and again after any material change.
 
 - [ ] Context is minimal, authorized, source-attributed, versioned, and reproducible.
 - [ ] Retrieval recall and generation grounding are measured separately.
-- [ ] The retrieval strategy—lexical, dense, or hybrid—plus chunking, k, fusion, and reranking when used is selected and tuned through evals.
+- [ ] The retrieval strategy (lexical, dense, or hybrid), plus chunking, k, fusion, and reranking when used, is selected and tuned through evals.
 - [ ] Updates, deletions, ACL changes, and cache invalidation meet a freshness SLO.
 
 ### Inference and caching
@@ -823,6 +842,14 @@ Use this checklist before launch and again after any material change.
 Do the optimization work after the system is measured and safe. Otherwise, the change can improve speed while leaving the outcome wrong or unsafe.
 
 ## 26. Primary source trail
+
+### 30 September 2026 review additions
+
+- Anthropic: [Compaction on demand](https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand), [mid-conversation system messages and dynamic tools](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages), and [Sonnet 5.5 migration guide](https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide)
+- Google: [Gemini API deprecations](https://ai.google.dev/gemini-api/docs/deprecations)
+- OpenAI: [API changelog](https://developers.openai.com/api/docs/changelog) and [computer use](https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use)
+- vLLM Project: [cache-salt](https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p), [audio](https://github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf), [remote-media](https://github.com/vllm-project/vllm/security/advisories/GHSA-p6g9-7v3x-m8mv), [sampler](https://github.com/vllm-project/vllm/security/advisories/GHSA-j682-9xp5-rrf3), [Qwen video](https://github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4), [structured-output](https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw), and [metrics-cardinality](https://github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48) advisories
+- Research: [shared black-box judge stability](https://arxiv.org/abs/2609.04198), [unreliable tool outputs](https://arxiv.org/abs/2609.05587), [agent-skill supply chains](https://arxiv.org/abs/2609.02564), and [multimodal prompt injection](https://arxiv.org/abs/2609.09404)
 
 ### Harness, context, tools, and model APIs
 
