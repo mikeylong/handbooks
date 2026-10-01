@@ -8,26 +8,29 @@
     } catch { /* Navigation still works when browser storage is unavailable. */ }
   };
 
-  const revealArrival = (event) => {
+  const revealArrival = () => {
     let arrival;
-    try { arrival = sessionStorage.getItem(arrivalKey); } catch { return; }
+    try { arrival = sessionStorage.getItem(arrivalKey); } catch { /* No saved arrival. */ }
     rememberArrival(null);
-    if (arrival !== location.pathname || reducedMotion.matches || event?.viewTransition) return;
-    document.querySelector(".book-shell")?.animate([
+    if (arrival !== location.pathname || reducedMotion.matches) return;
+    document.querySelector(".book-shell")?.animate?.([
       { opacity: 0, transform: "translateY(8px)" },
       { opacity: 1, transform: "translateY(0)" },
     ], { duration: 480, easing: "cubic-bezier(0.22, 1, 0.36, 1)" });
   };
-  if ("onpagereveal" in window) window.addEventListener("pagereveal", revealArrival);
-  else document.addEventListener("DOMContentLoaded", () => revealArrival());
+  revealArrival();
 
   const card = document.querySelector(".handbook-card-link");
   const cover = card?.querySelector(".handbook-cover");
   if (!card || !cover?.animate) return;
   let opening = false;
+  let openingAnimations = [];
   const reset = () => {
     opening = false;
-    cover.getAnimations().forEach((animation) => animation.cancel());
+    openingAnimations.forEach((animation) => animation.cancel());
+    openingAnimations = [];
+    cover.style.position = "";
+    cover.style.zIndex = "";
     rememberArrival(null);
   };
   window.addEventListener("pageshow", reset);
@@ -38,11 +41,24 @@
     if (opening) return;
     opening = true;
     rememberArrival(new URL(card.href).pathname);
+    const bounds = cover.getBoundingClientRect();
+    const scale = Math.max(1, Math.min(1.6, innerWidth * 0.96 / bounds.width, innerHeight * 0.88 / bounds.height));
+    const x = innerWidth / 2 - (bounds.left + bounds.width / 2);
+    const y = innerHeight / 2 - (bounds.top + bounds.height / 2);
+    const destination = `translate(${x}px, ${y}px) scale(${scale})`;
+    cover.style.position = "relative";
+    cover.style.zIndex = "2";
+    document.querySelectorAll(".gallery-intro, .gallery-footer").forEach((element) => {
+      openingAnimations.push(element.animate([{ opacity: 1 }, { opacity: 0 }],
+        { duration: 240, fill: "forwards" }));
+    });
     const lift = cover.animate([
-      { transform: getComputedStyle(cover).transform },
-      { transform: "translateY(-8px) scale(1.025)", boxShadow: "0 20px 44px -22px rgb(0 0 0 / 26%)" },
-    ], { duration: 220, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "forwards" });
-    const navigate = () => location.assign(card.href);
+      { transform: getComputedStyle(cover).transform, opacity: 1 },
+      { transform: destination, opacity: 1, boxShadow: "0 20px 44px -22px rgb(0 0 0 / 26%)", offset: 0.7 },
+      { transform: destination, opacity: 0 },
+    ], { duration: 420, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "forwards" });
+    openingAnimations.push(lift);
+    const navigate = () => { if (opening) location.assign(card.href); };
     lift.finished.then(navigate, navigate);
   });
 })();
