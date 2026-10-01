@@ -819,7 +819,7 @@ blockquote p {
   font-family: var(--sans);
   font-size: 0.68rem;
   font-variant-numeric: lining-nums tabular-nums;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .source-map li > span:last-child:not(.source-map-references) {
@@ -2301,6 +2301,10 @@ tbody tr:last-child td {
     flex: none;
     gap: 0.65rem;
     align-items: center;
+  }
+
+  .source-map li {
+    grid-template-columns: 1fr;
   }
 
   .menu-button {
