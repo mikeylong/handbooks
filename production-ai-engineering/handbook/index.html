@@ -2420,22 +2420,19 @@
     </div>
   </dialog>
 
-  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-dialog-title">
-    <div class="dialog-header">
-      <div>
-        <p class="section-label">Companion search</p>
-        <h2 id="search-dialog-title">Find a section</h2>
-      </div>
-      <button class="dialog-close" type="button" data-close-search aria-label="Close search">Close</button>
-    </div>
+  <dialog class="search-dialog" id="search-dialog" aria-label="Search the handbook">
     <div class="search-panel">
       <label class="sr-only" for="handbook-search">Search the handbook</label>
-      <div class="search-field">
-        <input id="handbook-search" type="search" inputmode="search" autocomplete="off" spellcheck="false" placeholder="Try “latency”, “retrieval”, or “agents”" aria-describedby="search-guidance search-status">
-        <kbd aria-hidden="true">/</kbd>
+      <div class="search-toolbar">
+        <div class="search-field">
+          <input id="handbook-search" type="search" inputmode="search" autocomplete="off" spellcheck="false" placeholder="Try “latency”, “retrieval”, or “agents”">
+          <kbd aria-hidden="true">/</kbd>
+        </div>
+        <button class="dialog-close" type="button" data-close-search aria-label="Close search">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg>
+        </button>
       </div>
-      <p class="search-guidance" id="search-guidance">Searches all 25 handbook sections. Choose a result to jump directly to it.</p>
-      <p class="search-status" id="search-status" aria-live="polite">Search all 25 sections.</p>
+      <p class="sr-only" id="search-status" aria-live="polite"></p>
       <ol class="search-results" data-search-results></ol>
     </div>
   </dialog>

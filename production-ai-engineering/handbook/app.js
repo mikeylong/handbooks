@@ -165,7 +165,7 @@
     searchResults.replaceChildren();
     const normalizedQuery = normalize(query);
     if (normalizedQuery.length < 2) {
-      searchStatus.textContent = `Search all ${searchableSections.length} sections.`;
+      searchStatus.textContent = "";
       return;
     }
 
@@ -193,6 +193,10 @@
     const visibleMatches = matches.slice(0, 8);
     if (!matches.length) {
       searchStatus.textContent = `No sections found for “${query.trim()}”. Try a broader term.`;
+      const empty = document.createElement("li");
+      empty.className = "search-empty";
+      empty.textContent = searchStatus.textContent;
+      searchResults.append(empty);
       return;
     }
 

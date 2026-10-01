@@ -2128,16 +2128,20 @@ tbody tr:last-child td {
   backdrop-filter: blur(2px);
 }
 
-.search-dialog .dialog-header > div {
-  min-width: 0;
+.search-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.search-dialog .dialog-header h2 {
-  margin-top: 0.2rem;
+.search-toolbar .dialog-close {
+  flex: 0 0 2.75rem;
+  min-width: 2.75rem;
+  padding: 0;
 }
 
 .search-panel {
-  max-height: calc(100dvh - 8rem);
+  max-height: calc(100dvh - 1.5rem);
   padding: 1.25rem 1.25rem max(1.25rem, env(safe-area-inset-bottom));
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -2145,6 +2149,8 @@ tbody tr:last-child td {
 
 .search-field {
   position: relative;
+  flex: 1;
+  min-width: 0;
 }
 
 .search-field input {
@@ -2187,17 +2193,11 @@ tbody tr:last-child td {
   text-align: center;
 }
 
-.search-guidance,
-.search-status {
+.search-empty {
   margin: 0.75rem 0 0;
   color: var(--muted);
   font-size: 0.7rem;
   line-height: 1.45;
-}
-
-.search-status {
-  color: var(--ink);
-  font-weight: 650;
 }
 
 .search-results {
