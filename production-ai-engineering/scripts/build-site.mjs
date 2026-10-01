@@ -1,4 +1,4 @@
-import { validatePublicationFront } from "./publication-front.mjs";
+import { validatePublicationFront, validateGalleryPublications } from "./publication-front.mjs";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
@@ -87,6 +87,7 @@ const productionReview = {
   rrule:book.match(/data-release-rrule="([^"]+)"/)?.[1],
 };
 validatePublicationFront(hostedBook, {title:"Production AI Engineering", author:"Michael Long", authorSite:"https://surfaces.systems", repository:"https://github.com/mikeylong/production-ai-engineering-book", releaseUrl:"https://github.com/mikeylong/production-ai-engineering-book/releases", date:pdfPath.match(/(\d{4}-\d{2}-\d{2})\.pdf$/)?.[1], version, pages, pdfUrl:"/"+pdfPath, review:productionReview});
+validateGalleryPublications(gallery, ["/production-ai-engineering/", "/ai-evaluation/"]);
 await writeFile(resolve(output, "index.html"), gallery);
 await writeFile(resolve(output, "production-ai-engineering/index.html"), hostedBook);
 await writeFile(resolve(output, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: https://handbooks.mikelong.ai/sitemap.xml\n");

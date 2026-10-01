@@ -22,12 +22,12 @@ export function validatePublicationFront(html, edition) {
   const download = [...cover.matchAll(/<a\b[^>]*\bdownload\b[^>]*>[\s\S]*?<\/a>/g)].map(x=>x[0]);
   const review = element(cover, 'section', 'release-window');
   const required = {
-    title: includes(cover, edition.title) && /<h1\b/.test(cover),
+    title: includes(cover.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? "", edition.title),
     subtitle: /class="cover-subtitle"[^>]*>[^<]+/.test(cover),
     authorCredit: includes(credit, edition.author) && hasHref(credit, edition.authorSite),
     edition: includes(cover, dateLine),
     exploreAction: /<a\b[^>]*href="#contents"[^>]*>Explore the handbook<\/a>/.test(cover) && /id="contents"/.test(html),
-    pdfAction: download.some(x=>hasHref(x, edition.pdfUrl) && includes(x, `${edition.pages} pages`)),
+    pdfAction: download.some(x=>hasHref(x, edition.pdfUrl) && includes(x.replace(/<[^>]+>/g, ""), `${edition.pages} pages`)),
     sidebarAuthor: includes(sidebar, edition.author) && hasHref(sidebar, edition.authorSite),
     sidebarRepository: hasHref(sidebar, edition.repository) && includes(sidebar, date),
     sidebarRelease: hasHref(sidebar, edition.releaseUrl) && includes(sidebar, `Version ${edition.version}`),
@@ -41,4 +41,13 @@ export function validatePublicationFront(html, edition) {
   const failed = Object.entries(required).filter(([,passed])=>!passed).map(([name])=>name);
   if (failed.length) throw new Error(`${edition.title}: incomplete publication front page (${failed.join(', ')})`);
   return {title:edition.title, status:'passed', checks:Object.keys(required).length};
+}
+
+export function validateGalleryPublications(html, validatedPaths) {
+  const cards = [...html.matchAll(/<a\b[^>]*class="[^"]*\bhandbook-card-link\b[^"]*"[^>]*>/g)];
+  if (!cards.length) throw new Error('The gallery has no published titles');
+  for (const [card] of cards) {
+    const path = card.match(/href="([^"]+)"/)?.[1];
+    if (!validatedPaths.includes(path)) throw new Error(`Gallery title lacks publication-front validation: ${path}`);
+  }
 }

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {validatePublicationFront} from './publication-front.mjs';
+import {validatePublicationFront, validateGalleryPublications} from './publication-front.mjs';
 const book = new URL('../books/ai-evaluation/', import.meta.url);
 const manifest = JSON.parse(await readFile(new URL('release-manifest.json', book)));
 const publication = JSON.parse(await readFile(new URL('publication.json', book)));
@@ -13,6 +13,8 @@ const regressions = [
  ['wrong PDF page count', html.replaceAll('100 pages', '105 pages'), /pdfAction/],
  ['broken Explore action', html.replace('href="#contents">Explore the handbook', 'href="#missing">Explore the handbook'), /exploreAction/],
  ['wrong release link', html.replaceAll(publication.releaseUrl, 'https://example.invalid/other-release'), /sidebarRelease/],
+ ['wrong cover title', html.replace('<h1 id="cover-title">AI Evaluation Field Guide</h1>', '<h1 id="cover-title">Other handbook</h1>'), /title/],
+ ['wrong visible page count', html.replace('<span>100 pages</span>', '<span>105 pages</span>'), /pdfAction/],
  ['missing review policy', html.replace('Site and PDF updates publish together after manual review.', ''), /reviewPolicy/],
 ];
 for (const [name, broken, expected] of regressions) {
@@ -20,3 +22,6 @@ for (const [name, broken, expected] of regressions) {
  assert.throws(()=>validatePublicationFront(broken, edition), expected, name);
 }
 console.log(`Publication front page passed; ${regressions.length} omissions or stale-copy regressions rejected.`);
+
+assert.throws(()=>validateGalleryPublications('<a class="handbook-card-link" href="/new-book/">New book</a>', ['/ai-evaluation/']), /lacks publication-front validation/);
+console.log('An unvalidated new gallery title is also rejected.');
