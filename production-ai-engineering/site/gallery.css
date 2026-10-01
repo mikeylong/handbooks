@@ -28,55 +28,32 @@
 .handbook-cover { border: 1px solid var(--line); background: var(--paper); }
 .handbook-cover img { display: block; width: 100%; height: auto; }
 
-@view-transition { navigation: none; }
-
-/* Clip the long reader during the opening so the compositor only moves one
-   viewport of paper, rather than a layer containing the entire handbook. */
+/* One cross-document transition for the gallery and every hosted reader.
+   Ordinary links retain native history, modifier-click, and no-JS behavior. */
 html { scrollbar-gutter: stable; }
-.handbook-reader.is-opening { height: 100svh; overflow: clip; }
 
-/* Both views are built into the page, including the no-JavaScript routes. */
-.handbooks-gallery .handbook-reader,
-.handbooks-reader .gallery-shell,
-.handbooks-reader > .skip-link { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
 
-.handbook-departure {
-  position: fixed;
-  z-index: 1000;
-  min-height: 100svh;
-  padding-inline: var(--page-gutter);
-  background: var(--paper);
-  pointer-events: none;
+  ::view-transition-group(root) { animation-duration: 240ms; }
+  ::view-transition-old(root) {
+    animation: handbook-fade-out 240ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+  ::view-transition-new(root) {
+    animation: handbook-fade-in 240ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
 }
 
-.handbook-opening-cover {
-  position: fixed;
-  z-index: 1001;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  transform-origin: left center;
-  backface-visibility: hidden;
-  box-shadow: 0 16px 38px -20px rgb(0 0 0 / 24%);
-  pointer-events: none;
-  will-change: transform;
-}
-
-.handbook-opening-cover img { display: block; width: 100%; height: 100%; }
+@keyframes handbook-fade-out { to { opacity: 0; } }
+@keyframes handbook-fade-in { from { opacity: 0; } }
 
 @media (hover: hover) and (pointer: fine) {
-  .handbook-cover {
-    transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 450ms ease, border-color 250ms ease;
-  }
-  .handbook-card-link:hover .handbook-cover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px -20px rgb(0 0 0 / 22%);
-  }
+  .handbook-cover { transition: border-color 160ms ease; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
   .handbook-cover { transition: none; }
-  .handbook-card-link:hover .handbook-cover { transform: none; }
 }
 
 .handbook-card-link:hover .handbook-cover,
@@ -113,6 +90,6 @@ html { scrollbar-gutter: stable; }
 }
 
 @media print {
-  .handbooks-return, .handbooks-return-mobile, .handbook-departure, .handbook-opening-cover { display: none; }
+  .handbooks-return, .handbooks-return-mobile { display: none; }
   .handbook-card { break-inside: avoid; }
 }
