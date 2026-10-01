@@ -27,7 +27,7 @@
       document.body.classList.toggle("handbooks-gallery", !book);
       document.body.classList.toggle("handbooks-reader", book);
       document.title = book ? "Production AI Engineering · Michael Long" : "Handbooks · Michael Long";
-      document.querySelector('link[rel="canonical"]').href = `https://handbooks.surfaces.systems${book ? bookPath : "/"}`;
+      document.querySelector('link[rel="canonical"]').href = `https://handbooks.mikelong.ai${book ? bookPath : "/"}`;
       if (push) history.pushState(null, "", book ? bookPath : "/");
       window.scrollTo({ top: 0, behavior: "instant" });
       window.dispatchEvent(new Event("scroll"));

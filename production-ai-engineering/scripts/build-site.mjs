@@ -42,6 +42,15 @@ await cp(resolve(root, "site/gallery.css"), resolve(output, "gallery.css"));
 await cp(resolve(root, "site/navigation.js"), resolve(output, "navigation.js"));
 await mkdir(resolve(output, "output/pdf"), { recursive: true });
 await cp(resolve(root, pdfPath), resolve(output, pdfPath));
+
+const evaluationRoot = resolve(root, "books/ai-evaluation");
+const evaluation = JSON.parse(await readFile(resolve(evaluationRoot, "release-manifest.json"), "utf8"));
+const evaluationPdf = await readFile(resolve(evaluationRoot, evaluation.pdf));
+if (createHash("sha256").update(evaluationPdf).digest("hex") !== evaluation.sha256) throw new Error("Evaluation PDF checksum mismatch");
+await cp(resolve(evaluationRoot, "reader"), resolve(output, "ai-evaluation"), {recursive:true});
+const hostedEvaluationPdf = await readFile(resolve(output, "ai-evaluation", evaluation.pdf.split("/").pop()));
+if (createHash("sha256").update(hostedEvaluationPdf).digest("hex") !== evaluation.sha256) throw new Error("Evaluation reader download mismatch");
+
 const readerBody = book.match(/<body[^>]*>([\s\S]*)<\/body>/)?.[1];
 const readerScript = book.match(/<script src="([^"]+)" defer><\/script>/)?.[1];
 if (!readerBody || !readerScript) throw new Error("Handbook reader markup is missing");
@@ -49,13 +58,13 @@ const reader = readerBody
   .replace('<aside class="sidebar" aria-label="Handbook navigation">', '<aside class="sidebar" aria-label="Handbook navigation">\n<a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a>')
   .replace('<header class="mobile-bar">', '<header class="mobile-bar">\n<a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a>')
   .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
-    const url = new URL(value, "https://handbooks.surfaces.systems/production-ai-engineering/");
+    const url = new URL(value, "https://handbooks.mikelong.ai/production-ai-engineering/");
     return `${attribute}="${url.pathname}${url.search}${url.hash}"`;
   })
   .replace(/srcset="([^"]+)"/g, (_, value) => {
     const candidates = value.split(",").map((candidate) => {
       const [source, ...descriptor] = candidate.trim().split(/\s+/);
-      const url = new URL(source, "https://handbooks.surfaces.systems/production-ai-engineering/");
+      const url = new URL(source, "https://handbooks.mikelong.ai/production-ai-engineering/");
       return [url.pathname + url.search + url.hash, ...descriptor].join(" ");
     });
     return `srcset="${candidates.join(", ")}"`;
@@ -67,9 +76,9 @@ const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
 const hostedBook = gallery
   .replace('class="handbooks-gallery"', 'class="handbooks-reader"')
   .replace("<title>Handbooks · Michael Long</title>", "<title>Production AI Engineering · Michael Long</title>")
-  .replace('href="https://handbooks.surfaces.systems/"', 'href="https://handbooks.surfaces.systems/production-ai-engineering/"');
+  .replace('href="https://handbooks.mikelong.ai/"', 'href="https://handbooks.mikelong.ai/production-ai-engineering/"');
 await writeFile(resolve(output, "index.html"), gallery);
 await writeFile(resolve(output, "production-ai-engineering/index.html"), hostedBook);
-await writeFile(resolve(output, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: https://handbooks.surfaces.systems/sitemap.xml\n");
-await writeFile(resolve(output, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://handbooks.surfaces.systems/</loc></url><url><loc>https://handbooks.surfaces.systems/production-ai-engineering/</loc></url></urlset>\n');
+await writeFile(resolve(output, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: https://handbooks.mikelong.ai/sitemap.xml\n");
+await writeFile(resolve(output, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://handbooks.mikelong.ai/</loc></url><url><loc>https://handbooks.mikelong.ai/production-ai-engineering/</loc></url><url><loc>https://handbooks.mikelong.ai/ai-evaluation/</loc></url></urlset>\n');
 console.log(`Built ${output}: gallery + Production AI Engineering ${version}, ${pages} pages`);
