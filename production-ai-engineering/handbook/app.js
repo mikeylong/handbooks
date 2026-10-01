@@ -92,7 +92,7 @@
 
   function sectionTargetId(section) {
     return section.matches(".chapter")
-      ? section.querySelector(".chapter-header[id]")?.id
+      ? (section.querySelector(".chapter-header[id]")?.id ?? section.id)
       : section.id;
   }
 
@@ -125,7 +125,7 @@
     .trim();
 
   const searchableSections = [...document.querySelectorAll(".source-section")].map((section, order) => {
-    const heading = section.querySelector("h3")?.innerText.replace(/\s+/g, " ").trim() ?? "Untitled section";
+    const heading = section.querySelector("h3, h2")?.innerText.replace(/\s+/g, " ").trim() ?? "Untitled section";
     const chapter = section.closest(".chapter");
     const chapterTitle = chapter?.querySelector(".chapter-header h2")?.innerText.replace(/\s+/g, " ").trim() ?? "Handbook";
     const chapterNumber = chapter?.dataset.chapter?.padStart(2, "0") ?? "";

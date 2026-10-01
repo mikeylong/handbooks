@@ -36,3 +36,9 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before }}
           HEAD_SHA: ${{ github.event.merge_group.head_sha || github.sha }}
         run: node scripts/validate-production-release.mjs --base "$BASE_SHA" --head "$HEAD_SHA"
+
+      - name: Validate the AI Evaluation release
+        run: npm run validate:evaluation
+
+      - name: Build the handbook gallery
+        run: npm run build
