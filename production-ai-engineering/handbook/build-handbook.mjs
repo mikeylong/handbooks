@@ -50,6 +50,8 @@ const BOOK_SUBTITLE = "A Handbook for Building Reliable LLM Systems";
 const AUTHOR = "Michael Long";
 const AUTHOR_SITE = "https://surfaces.systems";
 const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems</a>`;
+const REPOSITORY_HREF = "https://github.com/mikeylong/production-ai-engineering-book";
+const RELEASES_HREF = `${REPOSITORY_HREF}/releases`;
 const PUBLICATION_DATE = "September 30, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
@@ -1063,7 +1065,7 @@ const html = `<!doctype html>
       <div class="sidebar-meta">
         <div class="sidebar-publication">
           <p class="sidebar-author">${AUTHOR_CREDIT_HTML}</p>
-          <p class="sidebar-edition">${COVER_DATE} · ${BOOK_VERSION}</p>
+          <p class="sidebar-edition"><a href="${REPOSITORY_HREF}">${COVER_DATE}</a> · <a href="${RELEASES_HREF}">${BOOK_VERSION}</a></p>
         </div>
         <div class="sidebar-actions">
           <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
