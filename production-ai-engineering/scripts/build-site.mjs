@@ -51,6 +51,14 @@ const reader = readerBody
   .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
     const url = new URL(value, "https://handbooks.surfaces.systems/production-ai-engineering/");
     return `${attribute}="${url.pathname}${url.search}${url.hash}"`;
+  })
+  .replace(/srcset="([^"]+)"/g, (_, value) => {
+    const candidates = value.split(",").map((candidate) => {
+      const [source, ...descriptor] = candidate.trim().split(/\s+/);
+      const url = new URL(source, "https://handbooks.surfaces.systems/production-ai-engineering/");
+      return [url.pathname + url.search + url.hash, ...descriptor].join(" ");
+    });
+    return `srcset="${candidates.join(", ")}"`;
   });
 const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
   .replaceAll("{{VERSION}}", version).replaceAll("{{PAGE_COUNT}}", String(pages))
