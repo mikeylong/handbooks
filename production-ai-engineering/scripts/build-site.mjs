@@ -39,12 +39,13 @@ for (const name of ["styles.css", "app.js"]) {
   await cp(resolve(root, `handbook/${name}`), resolve(output, `production-ai-engineering/${name}`));
 }
 await cp(resolve(root, "site/gallery.css"), resolve(output, "gallery.css"));
+await cp(resolve(root, "site/navigation.js"), resolve(output, "navigation.js"));
 await mkdir(resolve(output, "output/pdf"), { recursive: true });
 await cp(resolve(root, pdfPath), resolve(output, pdfPath));
 const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
   .replaceAll("{{VERSION}}", version).replaceAll("{{PAGE_COUNT}}", String(pages));
 const hostedBook = book
-  .replace("</head>", '<link rel="canonical" href="https://handbooks.surfaces.systems/production-ai-engineering/">\n<link rel="stylesheet" href="/gallery.css">\n</head>')
+  .replace("</head>", '<link rel="canonical" href="https://handbooks.surfaces.systems/production-ai-engineering/">\n<link rel="stylesheet" href="/gallery.css">\n<script src="/navigation.js" defer></script>\n</head>')
   .replace('<aside class="sidebar" aria-label="Handbook navigation">', '<aside class="sidebar" aria-label="Handbook navigation">\n<a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a>')
   .replace('<header class="mobile-bar">', '<header class="mobile-bar">\n<a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a>');
 await writeFile(resolve(output, "index.html"), gallery);
