@@ -1,5 +1,6 @@
 import { validatePublicationFront, validateGalleryPublications } from "./publication-front.mjs";
 import { renderGalleryCover, validateGalleryCover } from "./gallery-covers.mjs";
+import { addSiteTheme, validateSiteTheme } from "./site-theme.mjs";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
@@ -37,6 +38,7 @@ for (const name of ["styles.css", "app.js"]) {
 }
 await cp(resolve(root, "site/gallery.css"), resolve(output, "gallery.css"));
 await cp(resolve(root, "site/gallery-focus.js"), resolve(output, "gallery-focus.js"));
+for (const name of ["theme.css", "theme.js"]) await cp(resolve(root, `site/${name}`), resolve(output, name));
 await mkdir(resolve(output, "output/pdf"), { recursive: true });
 await cp(resolve(root, pdfPath), resolve(output, pdfPath));
 
@@ -65,15 +67,15 @@ const reader = readerBody
     });
     return `srcset="${candidates.join(", ")}"`;
   });
-const hostedBook = book.replace(readerBody, reader)
+const hostedBook = addSiteTheme(book.replace(readerBody, reader)
   .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
     const url = new URL(value, "https://handbooks.mikelong.ai/production-ai-engineering/");
     return `${attribute}="${url.pathname}${url.search}${url.hash}"`;
   })
-  .replace("</head>", '<link rel="stylesheet" href="/gallery.css">\n<script src="/gallery-focus.js" defer></script>\n<link rel="canonical" href="https://handbooks.mikelong.ai/production-ai-engineering/">\n</head>');
+  .replace("</head>", '<link rel="stylesheet" href="/gallery.css">\n<script src="/gallery-focus.js" defer></script>\n<link rel="canonical" href="https://handbooks.mikelong.ai/production-ai-engineering/">\n</head>'));
 const evaluationPublication = JSON.parse(await readFile(resolve(evaluationRoot, "publication.json"), "utf8"));
-const evaluationHtml = (await readFile(resolve(output, "ai-evaluation/index.html"), "utf8"))
-  .replace("</head>", '<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>');
+const evaluationHtml = addSiteTheme((await readFile(resolve(output, "ai-evaluation/index.html"), "utf8"))
+  .replace("</head>", '<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>'));
 await writeFile(resolve(output, "ai-evaluation/index.html"), evaluationHtml);
 validatePublicationFront(evaluationHtml, {...evaluationPublication, ...evaluation, pdfUrl:evaluation.pdf.split("/").pop()});
 const productionReview = {
@@ -82,9 +84,12 @@ const productionReview = {
   rrule:book.match(/data-release-rrule="([^"]+)"/)?.[1],
 };
 validatePublicationFront(hostedBook, {title:"Production AI Engineering", author:"Michael Long", authorSite:"https://surfaces.systems", repository:"https://github.com/mikeylong/production-ai-engineering-book", releaseUrl:"https://github.com/mikeylong/production-ai-engineering-book/releases", date:pdfPath.match(/(\d{4}-\d{2}-\d{2})\.pdf$/)?.[1], version, pages, pdfUrl:"/"+pdfPath, review:productionReview});
-const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
+const gallery = addSiteTheme((await readFile(resolve(root, "site/index.html"), "utf8"))
   .replace("{{PRODUCTION_COVER}}", renderGalleryCover(hostedBook))
-  .replace("{{EVALUATION_COVER}}", renderGalleryCover(evaluationHtml));
+  .replace("{{EVALUATION_COVER}}", renderGalleryCover(evaluationHtml)), true);
+validateSiteTheme(gallery, true);
+validateSiteTheme(hostedBook);
+validateSiteTheme(evaluationHtml);
 validateGalleryCover(gallery, "/production-ai-engineering/", hostedBook);
 validateGalleryCover(gallery, "/ai-evaluation/", evaluationHtml);
 validateGalleryPublications(gallery, ["/production-ai-engineering/", "/ai-evaluation/"]);
