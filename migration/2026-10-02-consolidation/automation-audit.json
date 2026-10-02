@@ -5,6 +5,7 @@
   "sourcePath": "production-ai-engineering/automation/prepare-weekly-handbook-review.sh",
   "gitRootsOrRemotesInPrepareAndFinalize": false,
   "localBookPathsRetained": true,
-  "appProjectContextNeedsCollectionRebinding": true,
-  "obsoleteChildWorkflows": "moved to former-workflows; root CI replaces validation"
+  "appProjectContextNeedsCollectionRebinding": false,
+  "obsoleteChildWorkflows": "moved to former-workflows; root CI replaces validation",
+  "appProjectContext": "Saved automation runs from /Users/mike; scripts retain canonical book paths and require no child Git root. Compatibility project links remain at their existing paths."
 }

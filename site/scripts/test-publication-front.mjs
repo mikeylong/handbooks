@@ -75,3 +75,13 @@ for(const path of await hostedHtmlPages(new URL('../output/site/',import.meta.ur
 }
 assert(!/handbooks\.mikelong\.(?:ai|design)/.test(await readFile(new URL('../output/site/sitemap.xml',import.meta.url),'utf8')));
 console.log('All canonical HTML links and sitemap entries use Surfaces.');
+
+// Edition downloads resolve even when the host normalizes away the trailing slash.
+const catalog=JSON.parse(await readFile(new URL('../../catalog.json',import.meta.url),'utf8'));
+for(const book of catalog.books.filter(book=>book.status==='published')){
+ const editionPath=new URL(book.editionUrl).pathname;
+ const page=await readFile(new URL('../output/site'+editionPath+'index.html',import.meta.url),'utf8');
+ const download=page.match(/href="([^"]+)" download/)[1];
+ assert(download.startsWith(editionPath),'Edition download must use its explicit path');
+ assert.equal(new URL(download,book.editionUrl).pathname,new URL(download,book.editionUrl.replace(/\/$/, '')).pathname);
+}
