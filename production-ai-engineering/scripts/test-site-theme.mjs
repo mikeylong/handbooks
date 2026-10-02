@@ -80,6 +80,7 @@ try {
   const themed = await readFile(futurePath, 'utf8');
   validateSiteTheme(themed);
   validateSiteTheme(themed.replace('alt="Original engraving"', 'alt="value > threshold and style=\'filter:invert(1)\'"'), false);
+  validateSiteTheme(themed.replace('</head>', '<script>const sample = "<img style=\'filter:invert(1)\'>";</script></head>'));
   assert.equal(addSiteTheme(themed), themed, 'Repeated finalization cannot duplicate controls');
   assert(themed.includes('<figure class="future-illustration"><img'), 'Art remains unmodified inside the shared styling surface');
   await finalizeSiteThemes(temporary);
@@ -97,6 +98,8 @@ try {
     ['wrapper inversion', futureReader.replace('<img ', '<picture style="filter:invert(1)"><img ').replace('</figure>', '</picture></figure>'), /local theme override on picture/],
     ['wrapper clipping', futureReader.replace('<img ', '<div style="clip-path:inset(20%)"><img ').replace('</figure>', '</div></figure>'), /local theme override on div/],
     ['main inversion', futureReader.replace('<main id=', '<main style="filter:invert(1)" id='), /local theme override on main/],
+    ['body inversion', futureReader.replace('<body>', '<body style="filter:invert(1)">'), /local theme override on body/],
+    ['html clipping', futureReader.replace('<html>', '<html style="clip-path:inset(20%)">'), /local theme override on html/],
     ['missing mobile surface', futureReader.replace('class="mobile-actions"', 'class="other"'), /Site lacks/],
     ['partial theme assets', themed.replace('href="/theme.css"', 'href="/other.css"'), /Site lacks/],
   ]) {

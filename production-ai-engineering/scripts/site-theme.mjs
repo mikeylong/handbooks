@@ -36,11 +36,12 @@ export function validateSiteTheme(html, gallery = false) {
       const contents = html.match(new RegExp(`<div\\b[^>]*class="${container}"[^>]*>([\\s\\S]*?)</div>`))?.[1];
       if (!contents?.includes('data-theme-select')) throw new Error(`Site lacks ${container} appearance control`);
     }
-    const main = html.match(new RegExp(`(${tagSource.replace('[a-z]', 'main\\b')})([\\s\\S]*?)</main>`, 'i'));
-    if (!main || attributes(main[1]).get('id') !== 'main-content') throw new Error('Reader lacks main-content for shared image styling');
-    const ancestors = [{name:'main', tag:main[1]}];
+    const ancestors = [];
+    let mainFound = false;
     const voidTags = new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
-    const tags = main[2].replace(/<!--[\s\S]*?-->/g, '').match(new RegExp(tagSource, 'gi')) ?? [];
+    // Raw-text elements can contain apparent tags that are not document nodes.
+    const markup = html.replace(/<!--[\s\S]*?-->/g, '').replace(new RegExp(`(${tagSource.replace('[a-z]', '(script|style|textarea|title)\\b')})[\\s\\S]*?</\\2\\s*>`, 'gi'), '$1</$2>');
+    const tags = markup.match(new RegExp(tagSource, 'gi')) ?? [];
     for (const tag of tags) {
       const name = tag.match(/^<\/?([a-z][\w:-]*)/i)[1].toLowerCase();
       if (tag.startsWith('</')) {
@@ -48,7 +49,9 @@ export function validateSiteTheme(html, gallery = false) {
         if (index >= 0) ancestors.length = index;
         continue;
       }
-      if (name === 'img') {
+      const isMain = name === 'main' && attributes(tag).get('id') === 'main-content';
+      if (isMain) mainFound = true;
+      if (name === 'img' && ancestors.some(element => element.isMain)) {
         if (!ancestors.some(element => element.name === 'figure')) {
           throw new Error('Reader raster image must be inside a figure for shared dark styling');
         }
@@ -58,8 +61,9 @@ export function validateSiteTheme(html, gallery = false) {
           }
         }
       }
-      if (!voidTags.has(name)) ancestors.push({name, tag});
+      if (!voidTags.has(name)) ancestors.push({name, tag, isMain});
     }
+    if (!mainFound) throw new Error('Reader lacks main-content for shared image styling');
   }
 }
 
