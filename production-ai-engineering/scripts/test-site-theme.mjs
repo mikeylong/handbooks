@@ -90,6 +90,9 @@ try {
     ['local edge mask', futureReader.replace('<figure ', '<figure style="mask-image:linear-gradient(black,transparent)" '), /local theme override/],
     ['local figure clipping', futureReader.replace('<figure ', '<figure style="clip-path:inset(20%)" '), /local theme override/],
     ['local image clipping', futureReader.replace('<img ', '<img style="clip-path:circle(30%)" '), /local theme override/],
+    ['wrapper inversion', futureReader.replace('<img ', '<picture style="filter:invert(1)"><img ').replace('</figure>', '</picture></figure>'), /local theme override on picture/],
+    ['wrapper clipping', futureReader.replace('<img ', '<div style="clip-path:inset(20%)"><img ').replace('</figure>', '</div></figure>'), /local theme override on div/],
+    ['main inversion', futureReader.replace('<main id=', '<main style="filter:invert(1)" id='), /local theme override on main/],
     ['missing mobile surface', futureReader.replace('class="mobile-actions"', 'class="other"'), /Site lacks/],
     ['partial theme assets', themed.replace('href="/theme.css"', 'href="/other.css"'), /Site lacks/],
   ]) {

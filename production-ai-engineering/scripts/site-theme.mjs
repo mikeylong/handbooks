@@ -25,16 +25,29 @@ export function validateSiteTheme(html, gallery = false) {
       const contents = html.match(new RegExp(`<div\\b[^>]*class="${container}"[^>]*>([\\s\\S]*?)</div>`))?.[1];
       if (!contents?.includes('data-theme-select')) throw new Error(`Site lacks ${container} appearance control`);
     }
-    const main = html.match(/<main\b[^>]*id=["']main-content["'][^>]*>([\s\S]*?)<\/main>/)?.[1];
-    if (main === undefined) throw new Error('Reader lacks main-content for shared image styling');
-    let figureDepth = 0;
-    for (const tag of main.match(/<\/?figure\b[^>]*>|<img\b[^>]*>/g) ?? []) {
-      if (tag.startsWith('</figure')) figureDepth--;
-      else if (tag.startsWith('<figure')) figureDepth++;
-      else if (figureDepth < 1) throw new Error('Reader raster image must be inside a figure for shared dark styling');
-      if (/\bstyle=["'][^"']*(?:filter|(?:-webkit-)?mask[\w-]*|clip-path|mix-blend-mode|background[\w-]*)\s*:/i.test(tag)) {
-        throw new Error('Reader image has a local theme override');
+    const main = html.match(/(<main\b[^>]*id=["']main-content["'][^>]*>)([\s\S]*?)<\/main>/);
+    if (!main) throw new Error('Reader lacks main-content for shared image styling');
+    const ancestors = [{name:'main', tag:main[1]}];
+    const voidTags = new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
+    const tags = main[2].replace(/<!--[\s\S]*?-->/g, '').match(/<\/?[a-z][^>]*>/gi) ?? [];
+    for (const tag of tags) {
+      const name = tag.match(/^<\/?([a-z][\w:-]*)/i)[1].toLowerCase();
+      if (tag.startsWith('</')) {
+        const index = ancestors.findLastIndex(element => element.name === name);
+        if (index >= 0) ancestors.length = index;
+        continue;
       }
+      if (name === 'img') {
+        if (!ancestors.some(element => element.name === 'figure')) {
+          throw new Error('Reader raster image must be inside a figure for shared dark styling');
+        }
+        for (const element of [...ancestors, {name, tag}]) {
+          if (/\bstyle=["'][^"']*(?:filter|(?:-webkit-)?mask[\w-]*|clip-path|mix-blend-mode|background[\w-]*)\s*:/i.test(element.tag)) {
+            throw new Error(`Reader image has a local theme override on ${element.name}`);
+          }
+        }
+      }
+      if (!voidTags.has(name)) ancestors.push({name, tag});
     }
   }
 }
