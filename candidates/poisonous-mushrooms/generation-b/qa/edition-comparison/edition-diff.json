@@ -1,0 +1,67 @@
+{
+  "artifacts": {
+    "pdfTextPatch": "exact-pdf-text.patch",
+    "readerFacingContentPatch": "reader-facing-content.patch",
+    "sourcePatch": "exact-source.patch"
+  },
+  "candidate": {
+    "ignoredChangelogPages": [],
+    "ignoredNavigationPages": [
+      3,
+      20
+    ],
+    "metadata": {
+      "author": "Evidence-backed research candidate",
+      "subject": "Recognizing mushroom risk, documenting specimens, and responding to exposure",
+      "title": "Poisonous Mushrooms: A Safety-First Field Handbook"
+    },
+    "pages": 20,
+    "pdf": "candidate/poisonous-mushroom-identification-handbook-generation-b.pdf",
+    "pdfSha256": "741223fb6f8c1408f8164ffc5d3b4418337f6369dd37cb839f16b5a68c0dff63"
+  },
+  "comparisons": {
+    "metadataChanged": false,
+    "navigationTextChanged": false,
+    "normalizedSubstantiveTextChanged": true,
+    "outlineIncludingChangelogChanged": false,
+    "rawPdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": true,
+    "substantiveOutlineChanged": false
+  },
+  "decisionProjection": {
+    "excludedSurfaces": [
+      "changelog pages",
+      "contents and index pages",
+      "changelog outline entries"
+    ],
+    "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed."
+  },
+  "limitations": [
+    "Rendering-only differences require visual comparison.",
+    "Semantic change categories and rationales must be authored from accepted exact diffs.",
+    "Pass page maps to avoid relying on heading heuristics for surface roles."
+  ],
+  "previous": {
+    "ignoredChangelogPages": [],
+    "ignoredNavigationPages": [
+      3,
+      20
+    ],
+    "metadata": {
+      "author": "Evidence-backed research candidate",
+      "subject": "Recognizing mushroom risk, documenting specimens, and responding to exposure",
+      "title": "Poisonous Mushrooms: A Safety-First Field Handbook"
+    },
+    "pages": 20,
+    "pdf": "previous/poisonous-mushroom-identification-handbook.pdf",
+    "pdfSha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7"
+  },
+  "readerFacingContentChanged": true,
+  "schemaVersion": 2,
+  "sourceSha256": {
+    "candidate": "f3a8893379a7577951584464220db714f3ab9834713fc2edc167ce3cdb4507a0",
+    "previous": "78a437833bccc7be98c7e6ff59fbdae753418538f71780584f42583bc3d889f0"
+  },
+  "summary": "The candidate contains reader-facing changes that require semantic classification."
+}
