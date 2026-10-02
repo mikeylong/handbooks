@@ -1,0 +1,968 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-evaluation",
+  "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+  "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+  "artwork": [
+    {
+      "chapter": 1,
+      "light": "reader/assets/chapter-01.png",
+      "lightSha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-01.png",
+      "darkSha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 1.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-01.png",
+        "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-01.png",
+          "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 1.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-a11f2e23-b5d5-4927-bdf8-6cad02917f3f.png",
+          "generatedOriginalSha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 2,
+      "light": "reader/assets/chapter-02.png",
+      "lightSha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-02.png",
+      "darkSha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e",
+      "darkDimensions": [
+        1658,
+        949
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 2.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-02.png",
+        "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-02.png",
+          "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 2.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-d20b9e87-d29a-4c64-8046-bc33c26e308f.png",
+          "generatedOriginalSha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 3,
+      "light": "reader/assets/chapter-03.png",
+      "lightSha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-03.png",
+      "darkSha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac",
+      "darkDimensions": [
+        1658,
+        949
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 3.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-03.png",
+        "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-03.png",
+          "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 3.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-c6d062fc-be4f-4e22-b879-193997416eac.png",
+          "generatedOriginalSha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 4,
+      "light": "reader/assets/chapter-04.png",
+      "lightSha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-04.png",
+      "darkSha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5",
+      "darkDimensions": [
+        1658,
+        949
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 4.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-04.png",
+        "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-04.png",
+          "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 4.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-0d934cf2-e675-4864-9adb-0c4aa8b941a7.png",
+          "generatedOriginalSha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 5,
+      "light": "reader/assets/chapter-05.png",
+      "lightSha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-05.png",
+      "darkSha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88",
+      "darkDimensions": [
+        1658,
+        949
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 5.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-05.png",
+        "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-05.png",
+          "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 5.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-8411802c-a1b4-4b81-aa6c-ea3fc8179b57.png",
+          "generatedOriginalSha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 6,
+      "light": "reader/assets/chapter-06.png",
+      "lightSha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-06.png",
+      "darkSha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 6.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-06.png",
+        "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-06.png",
+          "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 6.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-4b532883-c52f-47a8-ad15-392e35f2b8f7.png",
+          "generatedOriginalSha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 7,
+      "light": "reader/assets/chapter-07.png",
+      "lightSha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-07.png",
+      "darkSha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 7.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-07.png",
+        "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-07.png",
+          "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 7.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-fc5f79cc-4a72-49d8-a3b2-06b770461d13.png",
+          "generatedOriginalSha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 8,
+      "light": "reader/assets/chapter-08.png",
+      "lightSha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-08.png",
+      "darkSha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 8.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-08.png",
+        "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-08.png",
+          "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 8.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-2d0c4a55-ed90-4046-b74d-e04dd52faf4b.png",
+          "generatedOriginalSha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 9,
+      "light": "reader/assets/chapter-09.png",
+      "lightSha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-09.png",
+      "darkSha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 9.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-09.png",
+        "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-09.png",
+          "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 9.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-9ed09484-19a9-434c-8d33-6c3df8a9f594.png",
+          "generatedOriginalSha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 10,
+      "light": "reader/assets/chapter-10.png",
+      "lightSha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-10.png",
+      "darkSha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313",
+      "darkDimensions": [
+        1658,
+        949
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 10.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-10.png",
+        "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-10.png",
+          "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 10.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-7cc3c191-e312-4aca-b398-cd98ad390c36.png",
+          "generatedOriginalSha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 11,
+      "light": "reader/assets/chapter-11.png",
+      "lightSha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-11.png",
+      "darkSha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2",
+      "darkDimensions": [
+        1658,
+        949
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 11.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-11.png",
+        "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-11.png",
+          "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 11.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-3d18f8a9-b6d3-41d8-ab20-b281ec031e88.png",
+          "generatedOriginalSha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 12,
+      "light": "reader/assets/chapter-12.png",
+      "lightSha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78",
+      "lightDimensions": [
+        1200,
+        686
+      ],
+      "dark": "assets/chapter-art/dark/chapter-12.png",
+      "darkSha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 12.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "reader/assets/chapter-12.png",
+        "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-12.png",
+          "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for ai-evaluation, chapter 12.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-4bac0f19-702d-4550-9074-91a7312ed577.png",
+          "generatedOriginalSha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "skipContentsText": false,
+  "skipStyles": [
+    "TOC_KICKER",
+    "TOC_TITLE"
+  ],
+  "chapterNumbers": false,
+  "semanticLists": false,
+  "tableHeaders": false,
+  "illustrationClass": "ChapterIllustration",
+  "artAlt": "Engraved illustration for chapter {number}",
+  "diagramClasses": [
+    "EvidenceLoop",
+    "DataSplitDiagram"
+  ],
+  "storyFunction": "build_release_story",
+  "downloadTitle": "AI Evaluation Field Guide",
+  "subtitle": "From a first test case to a defensible launch decision",
+  "canonicalUrl": "https://handbooks.surfaces.systems/ai-evaluation/",
+  "extraCss": "",
+  "releaseChecks": {
+    "chapters": 12,
+    "sources": 25,
+    "sourcePrefix": "S",
+    "semanticLists": false,
+    "forbiddenText": [
+      "linkedin",
+      "linkedin.com",
+      "/Users/mike",
+      "Review pilot",
+      "Not a release"
+    ]
+  }
+}

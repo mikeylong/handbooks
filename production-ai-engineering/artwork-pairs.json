@@ -1,0 +1,1058 @@
+{
+  "schemaVersion": 1,
+  "book": "production-ai-engineering",
+  "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+  "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+  "artwork": [
+    {
+      "chapter": 1,
+      "light": "handbook/assets/chapters/chapter-01.webp",
+      "lightSha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082",
+      "lightDimensions": [
+        1536,
+        1364
+      ],
+      "dark": "assets/chapter-art/dark/chapter-01.png",
+      "darkSha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa",
+      "darkDimensions": [
+        1331,
+        1181
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-01.webp",
+        "sha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-01.png",
+          "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+          "prompt": "# Dark-specific artwork sample\n\nBuilt-in image generation. Composition reference: `assets/production-ai-engineering.webp`. Isolated design proposal.\n\nUse case: style-transfer.\nAsset type: dark-theme chapter-opener engraving for Production AI Engineering, isolated design-review candidate.\nInput image 1 is the composition and object reference. Redraw this same antique mechanical gantry surrounding a small cube-like model engine specifically for dark paper. Preserve the complete apparatus, the cube face with its two dark dots, gears, rods, rails, base, three-quarter viewpoint, proportions, and object footprint. No added objects.\nCreate a newly authored technical engraving, not a color inversion. Use a flat uniform opaque warm charcoal background matching #191918 and restrained warm ivory highlights approaching #eeece6, with intermediate neutral gray modeling. Establish coherent lighting from upper left: upward-facing and front lit surfaces are lighter, recesses, undersides, joints, holes and contact shadows remain DARK. The cube face stays a softly lit pale surface with two dark dots. Cylindrical rods read as solid volumes with dark undersides, not glowing wireframes. Keep the interior gearing and recessed structure dark. Use fine nineteenth-century engraved hatching, stippling, and precise etched contours. Reduce bright perimeter tracing; reserve highlights for lit edges and planes. Preserve natural three-dimensional form and quiet editorial tone.\nComposition: same apparatus fully inside frame with comfortable charcoal margins, isolated without a landscape or props, matching the reference's framing. Background solid #191918 right to the edges, no vignette, texture or gradient.\nAvoid photographic gloss, CGI, neon, bloom, glow, x-ray look, white shadows, inverted shading, luminous contour around every edge, glossy chrome, color, text, captions, logos, watermark, border, white panel. This is a separate screen asset; do not change or overwrite the original light artwork.\n",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-8d4c12ab-1b43-4e0c-82ee-0899f99d61d0.png",
+          "generatedOriginalSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-01.png",
+          "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-2120dc2a-3f19-49fd-ae1c-321a5bcae940.png",
+          "generatedOriginalSha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 2,
+      "light": "handbook/assets/chapters/chapter-02.webp",
+      "lightSha256": "048323887348b33716a20f39c5ac4a6026e117ef044b9adc259ce881c84d4f87",
+      "lightDimensions": [
+        1536,
+        1364
+      ],
+      "dark": "assets/chapter-art/dark/chapter-02.png",
+      "darkSha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487",
+      "darkDimensions": [
+        1331,
+        1181
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-02.webp",
+        "sha256": "048323887348b33716a20f39c5ac4a6026e117ef044b9adc259ce881c84d4f87"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-02.png",
+          "sha256": "5f898e32f988d127a1d74bdf9ffedb6b78a5a57dca076f9633933dbfcbe9ae8e",
+          "prompt": "Use case: style-transfer. Asset: dark-theme chapter illustration for production-ai-engineering, chapter 2.\nImage 1 is the sole subject and composition reference. Image 2 is the user-approved dark engraving STYLE reference only: borrow its tonal modeling, dark paper, line density and palette, never its machine or objects.\nRedraw exactly the scene in Image 1 for dark paper, preserving its complete objects, their count, relationships, camera viewpoint, relative scale and footprint. Preserve the source's meaning, instruments, geometry, any incidental engraved dial marks, and quiet editorial character. Add no props. Do not copy any subject from Image 2.\nUse naturally modeled nineteenth-century technical engraving in muted warm ivory (#eeece6) and gray on a uniform flat opaque warm charcoal background (#191918), right to every edge. Use coherent upper-left lighting: lit planes are pale, undersides, cavities, mechanical recesses and contact shadows remain dark. Paper pages and dial faces stay softly pale with dark markings. Fine etched hatching and stippling model solid volumes. Limit bright contours to genuinely lit edges, never every perimeter. This must be newly authored dark artwork, not a color inversion, negative, x-ray or glowing outline drawing.\nPreserve the framing and aspect ratio of Image 1. Keep complete object silhouettes and the same negative-space margins. No cropping of complete objects, no vignette, no gradient, no paper texture or gray rectangular panel.\nAvoid neon, glow, bloom, photographic gloss, shiny CGI, white shadows, reversed tonal shading, luminous wireframe, color accents, added lettering, titles, captions, logos, watermark and borders.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-67914690-8f12-4dd0-83e2-293ca533b5c7.png",
+          "generatedOriginalSha256": "5f898e32f988d127a1d74bdf9ffedb6b78a5a57dca076f9633933dbfcbe9ae8e",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-02.png",
+          "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-255c123d-6d84-49b6-84a8-ed9609787298.png",
+          "generatedOriginalSha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 3,
+      "light": "handbook/assets/chapters/chapter-03.webp",
+      "lightSha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+      "lightDimensions": [
+        1536,
+        1364
+      ],
+      "dark": "assets/chapter-art/dark/chapter-03.png",
+      "darkSha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca",
+      "darkDimensions": [
+        1331,
+        1181
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-03.webp",
+        "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-03.png",
+          "sha256": "92894ca053ca8904a238fda76b54890f8b1bea3be024b549d0f2dc194246cd55",
+          "prompt": "Use case: style-transfer. Asset: dark-theme chapter illustration for production-ai-engineering, chapter 3.\nImage 1 is the sole subject and composition reference. Image 2 is the user-approved dark engraving STYLE reference only: borrow its tonal modeling, dark paper, line density and palette, never its machine or objects.\nRedraw exactly the scene in Image 1 for dark paper, preserving its complete objects, their count, relationships, camera viewpoint, relative scale and footprint. Preserve the source's meaning, instruments, geometry, any incidental engraved dial marks, and quiet editorial character. Add no props. Do not copy any subject from Image 2.\nUse naturally modeled nineteenth-century technical engraving in muted warm ivory (#eeece6) and gray on a uniform flat opaque warm charcoal background (#191918), right to every edge. Use coherent upper-left lighting: lit planes are pale, undersides, cavities, mechanical recesses and contact shadows remain dark. Paper pages and dial faces stay softly pale with dark markings. Fine etched hatching and stippling model solid volumes. Limit bright contours to genuinely lit edges, never every perimeter. This must be newly authored dark artwork, not a color inversion, negative, x-ray or glowing outline drawing.\nPreserve the framing and aspect ratio of Image 1. Keep complete object silhouettes and the same negative-space margins. No cropping of complete objects, no vignette, no gradient, no paper texture or gray rectangular panel.\nAvoid neon, glow, bloom, photographic gloss, shiny CGI, white shadows, reversed tonal shading, luminous wireframe, color accents, added lettering, titles, captions, logos, watermark and borders.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-e62f46b6-ab53-432d-8caf-79cb19e4314b.png",
+          "generatedOriginalSha256": "92894ca053ca8904a238fda76b54890f8b1bea3be024b549d0f2dc194246cd55",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-03.png",
+          "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-894b6313-385b-4d81-9054-99ace0d6ff09.png",
+          "generatedOriginalSha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 4,
+      "light": "handbook/assets/chapters/chapter-04.webp",
+      "lightSha256": "11e28dff8905d3d490a9da0e23a9539cd77494c250237a8bfe0819a041c61b35",
+      "lightDimensions": [
+        1536,
+        1364
+      ],
+      "dark": "assets/chapter-art/dark/chapter-04.png",
+      "darkSha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b",
+      "darkDimensions": [
+        1331,
+        1181
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-04.webp",
+        "sha256": "11e28dff8905d3d490a9da0e23a9539cd77494c250237a8bfe0819a041c61b35"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-04.png",
+          "sha256": "545a69c901c8e8ff226acbd1596e1157254495dfbee5cc43e0ce8e6c3487f6e5",
+          "prompt": "Use case: style-transfer. Asset: dark-theme chapter illustration for production-ai-engineering, chapter 4.\nImage 1 is the sole subject and composition reference. Image 2 is the user-approved dark engraving STYLE reference only: borrow its tonal modeling, dark paper, line density and palette, never its machine or objects.\nRedraw exactly the scene in Image 1 for dark paper, preserving its complete objects, their count, relationships, camera viewpoint, relative scale and footprint. Preserve the source's meaning, instruments, geometry, any incidental engraved dial marks, and quiet editorial character. Add no props. Do not copy any subject from Image 2.\nUse naturally modeled nineteenth-century technical engraving in muted warm ivory (#eeece6) and gray on a uniform flat opaque warm charcoal background (#191918), right to every edge. Use coherent upper-left lighting: lit planes are pale, undersides, cavities, mechanical recesses and contact shadows remain dark. Paper pages and dial faces stay softly pale with dark markings. Fine etched hatching and stippling model solid volumes. Limit bright contours to genuinely lit edges, never every perimeter. This must be newly authored dark artwork, not a color inversion, negative, x-ray or glowing outline drawing.\nPreserve the framing and aspect ratio of Image 1. Keep complete object silhouettes and the same negative-space margins. No cropping of complete objects, no vignette, no gradient, no paper texture or gray rectangular panel.\nAvoid neon, glow, bloom, photographic gloss, shiny CGI, white shadows, reversed tonal shading, luminous wireframe, color accents, added lettering, titles, captions, logos, watermark and borders.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-41ab12af-e799-458a-a715-3f999e5681a8.png",
+          "generatedOriginalSha256": "545a69c901c8e8ff226acbd1596e1157254495dfbee5cc43e0ce8e6c3487f6e5",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-04.png",
+          "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-bc71d35a-31e8-4092-a7ac-4a72905f06c6.png",
+          "generatedOriginalSha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 5,
+      "light": "handbook/assets/chapters/chapter-05.webp",
+      "lightSha256": "c4200794335556db916297a8026193bacb2e9c69c18c0e59f71e797705369ed8",
+      "lightDimensions": [
+        1536,
+        1368
+      ],
+      "dark": "assets/chapter-art/dark/chapter-05.png",
+      "darkSha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e",
+      "darkDimensions": [
+        1328,
+        1184
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-05.webp",
+        "sha256": "c4200794335556db916297a8026193bacb2e9c69c18c0e59f71e797705369ed8"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          254
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-05.png",
+          "sha256": "d53d1b60982258bb8ac0ded2d701a7e05acc3a957b89e0df71b04e618d3f8931",
+          "prompt": "Use case: style-transfer. Asset: dark-theme chapter illustration for production-ai-engineering, chapter 5.\nImage 1 is the sole subject and composition reference. Image 2 is the user-approved dark engraving STYLE reference only: borrow its tonal modeling, dark paper, line density and palette, never its machine or objects.\nRedraw exactly the scene in Image 1 for dark paper, preserving its complete objects, their count, relationships, camera viewpoint, relative scale and footprint. Preserve the source's meaning, instruments, geometry, any incidental engraved dial marks, and quiet editorial character. Add no props. Do not copy any subject from Image 2.\nUse naturally modeled nineteenth-century technical engraving in muted warm ivory (#eeece6) and gray on a uniform flat opaque warm charcoal background (#191918), right to every edge. Use coherent upper-left lighting: lit planes are pale, undersides, cavities, mechanical recesses and contact shadows remain dark. Paper pages and dial faces stay softly pale with dark markings. Fine etched hatching and stippling model solid volumes. Limit bright contours to genuinely lit edges, never every perimeter. This must be newly authored dark artwork, not a color inversion, negative, x-ray or glowing outline drawing.\nPreserve the framing and aspect ratio of Image 1. Keep complete object silhouettes and the same negative-space margins. No cropping of complete objects, no vignette, no gradient, no paper texture or gray rectangular panel.\nAvoid neon, glow, bloom, photographic gloss, shiny CGI, white shadows, reversed tonal shading, luminous wireframe, color accents, added lettering, titles, captions, logos, watermark and borders.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-fe6105e1-ecd7-4888-9eb5-571349ade56a.png",
+          "generatedOriginalSha256": "d53d1b60982258bb8ac0ded2d701a7e05acc3a957b89e0df71b04e618d3f8931",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-05.png",
+          "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-5f8a8321-3960-40b6-a3bb-335d1c244302.png",
+          "generatedOriginalSha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 6,
+      "light": "handbook/assets/chapters/chapter-06.webp",
+      "lightSha256": "4fbcd259d9418105be0e736b25052aba65f0aeca795f92c32248b0903bf2dcc4",
+      "lightDimensions": [
+        1536,
+        1368
+      ],
+      "dark": "assets/chapter-art/dark/chapter-06.png",
+      "darkSha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f",
+      "darkDimensions": [
+        1328,
+        1184
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-06.webp",
+        "sha256": "4fbcd259d9418105be0e736b25052aba65f0aeca795f92c32248b0903bf2dcc4"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          254
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-06.png",
+          "sha256": "ee11fd07a53985e494504f2efc1a4783643f1c8c6a2fc4800e6541816bf3450e",
+          "prompt": "Use case: style-transfer. Asset: dark-theme chapter illustration for production-ai-engineering, chapter 6.\nImage 1 is the sole subject and composition reference. Image 2 is the user-approved dark engraving STYLE reference only: borrow its tonal modeling, dark paper, line density and palette, never its machine or objects.\nRedraw exactly the scene in Image 1 for dark paper, preserving its complete objects, their count, relationships, camera viewpoint, relative scale and footprint. Preserve the source's meaning, instruments, geometry, any incidental engraved dial marks, and quiet editorial character. Add no props. Do not copy any subject from Image 2.\nUse naturally modeled nineteenth-century technical engraving in muted warm ivory (#eeece6) and gray on a uniform flat opaque warm charcoal background (#191918), right to every edge. Use coherent upper-left lighting: lit planes are pale, undersides, cavities, mechanical recesses and contact shadows remain dark. Paper pages and dial faces stay softly pale with dark markings. Fine etched hatching and stippling model solid volumes. Limit bright contours to genuinely lit edges, never every perimeter. This must be newly authored dark artwork, not a color inversion, negative, x-ray or glowing outline drawing.\nPreserve the framing and aspect ratio of Image 1. Keep complete object silhouettes and the same negative-space margins. No cropping of complete objects, no vignette, no gradient, no paper texture or gray rectangular panel.\nAvoid neon, glow, bloom, photographic gloss, shiny CGI, white shadows, reversed tonal shading, luminous wireframe, color accents, added lettering, titles, captions, logos, watermark and borders.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-c5a41f09-72dd-429c-9d3d-65bd4d3a1e87.png",
+          "generatedOriginalSha256": "ee11fd07a53985e494504f2efc1a4783643f1c8c6a2fc4800e6541816bf3450e",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-06.png",
+          "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-7e4c1f02-9924-47da-8cf7-79ee55c8582b.png",
+          "generatedOriginalSha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 7,
+      "light": "handbook/assets/chapters/chapter-07.webp",
+      "lightSha256": "7449c5a1a8a496d38a93cdd0b4c1b570aeee71c2c831ef0bedd808a0f179b2b7",
+      "lightDimensions": [
+        1536,
+        1368
+      ],
+      "dark": "assets/chapter-art/dark/chapter-07.png",
+      "darkSha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4",
+      "darkDimensions": [
+        1329,
+        1183
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-07.webp",
+        "sha256": "7449c5a1a8a496d38a93cdd0b4c1b570aeee71c2c831ef0bedd808a0f179b2b7"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-07.png",
+          "sha256": "3654b5c31b8254496d8a6a7d8a2a988920413894e34bfb193e9c1be3afcb0ec5",
+          "prompt": "Use case: style-transfer. Asset: dark-theme chapter illustration for production-ai-engineering, chapter 7.\nImage 1 is the sole subject and composition reference. Image 2 is the user-approved dark engraving STYLE reference only: borrow its tonal modeling, dark paper, line density and palette, never its machine or objects.\nRedraw exactly the scene in Image 1 for dark paper, preserving its complete objects, their count, relationships, camera viewpoint, relative scale and footprint. Preserve the source's meaning, instruments, geometry, any incidental engraved dial marks, and quiet editorial character. Add no props. Do not copy any subject from Image 2.\nUse naturally modeled nineteenth-century technical engraving in muted warm ivory (#eeece6) and gray on a uniform flat opaque warm charcoal background (#191918), right to every edge. Use coherent upper-left lighting: lit planes are pale, undersides, cavities, mechanical recesses and contact shadows remain dark. Paper pages and dial faces stay softly pale with dark markings. Fine etched hatching and stippling model solid volumes. Limit bright contours to genuinely lit edges, never every perimeter. This must be newly authored dark artwork, not a color inversion, negative, x-ray or glowing outline drawing.\nPreserve the framing and aspect ratio of Image 1. Keep complete object silhouettes and the same negative-space margins. No cropping of complete objects, no vignette, no gradient, no paper texture or gray rectangular panel.\nAvoid neon, glow, bloom, photographic gloss, shiny CGI, white shadows, reversed tonal shading, luminous wireframe, color accents, added lettering, titles, captions, logos, watermark and borders.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-030893cf-0157-4a2b-928e-a164375a64bf.png",
+          "generatedOriginalSha256": "3654b5c31b8254496d8a6a7d8a2a988920413894e34bfb193e9c1be3afcb0ec5",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-07.png",
+          "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-76b1e3a7-17d3-4e2a-b90e-84a81d2ab8f9.png",
+          "generatedOriginalSha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 8,
+      "light": "handbook/assets/chapters/chapter-08.webp",
+      "lightSha256": "fa229d39cf79680aa0a194f67832d01d5f4408165722facd65fdc627cee475c2",
+      "lightDimensions": [
+        1536,
+        1368
+      ],
+      "dark": "assets/chapter-art/dark/chapter-08.png",
+      "darkSha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d",
+      "darkDimensions": [
+        1329,
+        1183
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-08.webp",
+        "sha256": "fa229d39cf79680aa0a194f67832d01d5f4408165722facd65fdc627cee475c2"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-08.png",
+          "sha256": "98dfe6c525acbe04a07db67bab30dbf352c2132697fb3c69aa4cf891c0c0ac5c",
+          "prompt": "Use case: style-transfer. Asset: dark-theme chapter illustration for production-ai-engineering, chapter 8.\nImage 1 is the sole subject and composition reference. Image 2 is the user-approved dark engraving STYLE reference only: borrow its tonal modeling, dark paper, line density and palette, never its machine or objects.\nRedraw exactly the scene in Image 1 for dark paper, preserving its complete objects, their count, relationships, camera viewpoint, relative scale and footprint. Preserve the source's meaning, instruments, geometry, any incidental engraved dial marks, and quiet editorial character. Add no props. Do not copy any subject from Image 2.\nUse naturally modeled nineteenth-century technical engraving in muted warm ivory (#eeece6) and gray on a uniform flat opaque warm charcoal background (#191918), right to every edge. Use coherent upper-left lighting: lit planes are pale, undersides, cavities, mechanical recesses and contact shadows remain dark. Paper pages and dial faces stay softly pale with dark markings. Fine etched hatching and stippling model solid volumes. Limit bright contours to genuinely lit edges, never every perimeter. This must be newly authored dark artwork, not a color inversion, negative, x-ray or glowing outline drawing.\nPreserve the framing and aspect ratio of Image 1. Keep complete object silhouettes and the same negative-space margins. No cropping of complete objects, no vignette, no gradient, no paper texture or gray rectangular panel.\nAvoid neon, glow, bloom, photographic gloss, shiny CGI, white shadows, reversed tonal shading, luminous wireframe, color accents, added lettering, titles, captions, logos, watermark and borders.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-771aa727-11ce-4338-92cb-4b0eb366f642.png",
+          "generatedOriginalSha256": "98dfe6c525acbe04a07db67bab30dbf352c2132697fb3c69aa4cf891c0c0ac5c",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-08.png",
+          "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-2c9165aa-5c90-4ea7-9e27-0bbee2d96ca0.png",
+          "generatedOriginalSha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 9,
+      "light": "handbook/assets/chapters/chapter-09.webp",
+      "lightSha256": "e99b92b1b5b95de2e3f66a07cc58c67b30c2268a3a6066b0352b40a0448f99a1",
+      "lightDimensions": [
+        1536,
+        1364
+      ],
+      "dark": "assets/chapter-art/dark/chapter-09.png",
+      "darkSha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04",
+      "darkDimensions": [
+        1331,
+        1181
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for production-ai-engineering, chapter 9.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-09.webp",
+        "sha256": "e99b92b1b5b95de2e3f66a07cc58c67b30c2268a3a6066b0352b40a0448f99a1"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-09.png",
+          "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for production-ai-engineering, chapter 9.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-aac7e4e7-a581-4314-aa23-4f89f2c11fb2.png",
+          "generatedOriginalSha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 10,
+      "light": "handbook/assets/chapters/chapter-10.webp",
+      "lightSha256": "0339bda79e48dd049a96ce0517cc699ea804904da32fae5ee03ab51b5bb84533",
+      "lightDimensions": [
+        1536,
+        1364
+      ],
+      "dark": "assets/chapter-art/dark/chapter-10.png",
+      "darkSha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28",
+      "darkDimensions": [
+        1331,
+        1181
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-10.webp",
+        "sha256": "0339bda79e48dd049a96ce0517cc699ea804904da32fae5ee03ab51b5bb84533"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Authored dark scene before background extraction",
+          "output": "assets/chapter-art/dark/original/chapter-10.png",
+          "sha256": "159b526291b4c138e0246356d8ccbe7e19645b029d854246c4affd59b40753fd",
+          "prompt": "Use case: style-transfer. Asset: dark-theme chapter illustration for production-ai-engineering, chapter 10.\nImage 1 is the sole subject and composition reference. Image 2 is the user-approved dark engraving STYLE reference only: borrow its tonal modeling, dark paper, line density and palette, never its machine or objects.\nRedraw exactly the scene in Image 1 for dark paper, preserving its complete objects, their count, relationships, camera viewpoint, relative scale and footprint. Preserve the source's meaning, instruments, geometry, any incidental engraved dial marks, and quiet editorial character. Add no props. Do not copy any subject from Image 2.\nUse naturally modeled nineteenth-century technical engraving in muted warm ivory (#eeece6) and gray on a uniform flat opaque warm charcoal background (#191918), right to every edge. Use coherent upper-left lighting: lit planes are pale, undersides, cavities, mechanical recesses and contact shadows remain dark. Paper pages and dial faces stay softly pale with dark markings. Fine etched hatching and stippling model solid volumes. Limit bright contours to genuinely lit edges, never every perimeter. This must be newly authored dark artwork, not a color inversion, negative, x-ray or glowing outline drawing.\nPreserve the framing and aspect ratio of Image 1. Keep complete object silhouettes and the same negative-space margins. No cropping of complete objects, no vignette, no gradient, no paper texture or gray rectangular panel.\nAvoid neon, glow, bloom, photographic gloss, shiny CGI, white shadows, reversed tonal shading, luminous wireframe, color accents, added lettering, titles, captions, logos, watermark and borders.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-85453b37-8116-43d8-b81c-4efc4ba09441.png",
+          "generatedOriginalSha256": "159b526291b4c138e0246356d8ccbe7e19645b029d854246c4affd59b40753fd",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Opaque generated RGB pixels retained unchanged."
+        },
+        {
+          "role": "Existing authored dark illustration; background removal only",
+          "output": "assets/chapter-art/dark/chapter-10.png",
+          "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28",
+          "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-b899d9ef-e30c-481b-a472-099170721516.png",
+          "generatedOriginalSha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 11,
+      "light": "handbook/assets/chapters/chapter-11.webp",
+      "lightSha256": "a232f00e82d2ebf0761f52581800f4a725454586f71ddd8462dd8e355ecd2114",
+      "lightDimensions": [
+        1536,
+        1364
+      ],
+      "dark": "assets/chapter-art/dark/chapter-11.png",
+      "darkSha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e",
+      "darkDimensions": [
+        1331,
+        1181
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for production-ai-engineering, chapter 11.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-11.webp",
+        "sha256": "a232f00e82d2ebf0761f52581800f4a725454586f71ddd8462dd8e355ecd2114"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-11.png",
+          "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for production-ai-engineering, chapter 11.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-4cea3002-1c87-4bf1-befc-9457b2eb3f06.png",
+          "generatedOriginalSha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    },
+    {
+      "chapter": 12,
+      "light": "handbook/assets/chapters/chapter-12.webp",
+      "lightSha256": "4228d7836c7b3f9138ef372489d82e839474eba2c60c1e7609432e919facba70",
+      "lightDimensions": [
+        1536,
+        1364
+      ],
+      "dark": "assets/chapter-art/dark/chapter-12.png",
+      "darkSha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800",
+      "darkDimensions": [
+        1331,
+        1181
+      ],
+      "acquisitionMode": "generated",
+      "generator": "built-in image_gen.imagegen; model identifier not exposed",
+      "acquisitionDate": "2026-10-02",
+      "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for production-ai-engineering, chapter 12.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+      "compositionReference": {
+        "path": "handbook/assets/chapters/chapter-12.webp",
+        "sha256": "4228d7836c7b3f9138ef372489d82e839474eba2c60c1e7609432e919facba70"
+      },
+      "styleReference": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "outerBackground": "transparent",
+      "transparencyReview": {
+        "mode": "RGBA",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "pageBackground": "#191918",
+        "compositedCornerPixels": [
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ],
+          [
+            25,
+            25,
+            24,
+            255
+          ]
+        ]
+      },
+      "generationSteps": [
+        {
+          "role": "Image 1 original composition; image 2 approved dark style",
+          "output": "assets/chapter-art/dark/chapter-12.png",
+          "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800",
+          "prompt": "Use case: style-transfer. Asset: transparent dark-theme chapter illustration for production-ai-engineering, chapter 12.\nImage 1 is the sole subject/composition reference. Image 2 is the approved dark engraving style only: borrow tonal modeling and line density, NEVER its subject.\nRedraw the complete scene in Image 1 specifically to be placed on a warm charcoal #191918 webpage. Deliver genuine transparent background including empty negative space; no opaque paper, rectangle, gradient, vignette, checkerboard or backdrop.\nPreserve all objects, their count and relationships, viewpoint, proportions, complete silhouettes, scene footprint and source aspect ratio. No added props. Fine nineteenth-century etched linework and stippling, muted ivory highlights (#eeece6) and gray. Coherent upper-left lighting: lit planes stay pale, recesses, holes, undersides and material shadows remain dark and opaque. Dial faces and paper are softly pale with dark markings. Model solid volumes rather than luminous wireframes. Preserve composition and mental model from Image 1. No inverted shading, negative, x-ray, neon, glow, bloom, photographic gloss, shiny CGI, white shadows, added lettering, title, caption, logos, watermark or border. Keep comfortable transparent margins matching the source.",
+          "generatedOriginal": "/Users/mike/.codex/generated_images/01a0fdd7-cb33-7de0-af55-951ba3989e84/exec-22cc39af-eac4-4cd6-8232-dd988dd5d21a.png",
+          "generatedOriginalSha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800",
+          "generator": "built-in image_gen.imagegen; model identifier not exposed",
+          "normalization": "None. Generated RGBA pixels retained unchanged."
+        }
+      ],
+      "reviewStatus": "accepted",
+      "visualReview": "Inspected all twelve chapter counterparts on shared charcoal paper against original light compositions. Natural shading, complete subject relationships, transparent outer margins, no inversion or plate."
+    }
+  ]
+}

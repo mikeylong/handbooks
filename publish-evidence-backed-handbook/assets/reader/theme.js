@@ -10,6 +10,11 @@
   const apply = () => {
     const theme = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
     root.dataset.theme = theme;
+    // A screen-only source respects explicit appearance and falls back to the
+    // original bitmap for browser print. Without JS its media follows System.
+    document.querySelectorAll('[data-dark-artwork]').forEach(source => {
+      source.media = theme === 'dark' ? 'screen' : 'not all';
+    });
     const label = preference[0].toUpperCase() + preference.slice(1);
     document.querySelectorAll('[data-theme-trigger]').forEach(button => button.setAttribute('aria-label', `Appearance: ${label}`));
     document.querySelectorAll('[data-theme-label]').forEach(span => { span.textContent = label; });

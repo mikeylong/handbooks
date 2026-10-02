@@ -1,6 +1,6 @@
 ---
 name: publish-evidence-backed-handbook
-description: Research, create, revise, compare, validate, and prepare releases for evidence-backed PDF handbooks when editorial quality, a canonical visual system, exact change reporting, or cross-renderer reliability matters. Use for handbook production and maintenance, not generic one-off PDFs or publishing without explicit authorization.
+description: Research, create, revise, compare, validate, and prepare releases for evidence-backed PDF handbooks when editorial quality, a canonical visual system, exact change reporting, shared hosted-reader behavior, or cross-renderer reliability matters. Use for handbook production and maintenance, not generic one-off PDFs or publishing without explicit authorization.
 ---
 
 # Publish Evidence-Backed Handbook
@@ -10,6 +10,7 @@ Produce a candidate handbook whose claims, editorial decisions, visual system, e
 ## Non-negotiable contract
 
 - Work from an editable canonical source. Never hand-edit a generated PDF.
+- Keep reusable reader rendering, appearance assets, artwork and diagram processing, and validation in this skill. Books own content, assets, and semantic definitions and use thin adapters. Do not maintain copied runtime implementations in individual handbooks.
 - Preserve the target project's approved voice and visual system. Use this package's specimen as the default system only when no different house style governs the project.
 - Before layout or illustration work, visually render `references/specimen/canonical-handbook-specimen.pdf`, consult `references/specimen/canonical-page-map.json`, and read `references/design-system.md`.
 - When the governing visual system calls for raster illustration, prefer original art made with the host's image-generation skill. If generation is missing or unavailable and the user did not require original art, use only the provenance-gated public-domain or openly licensed fallback in `references/open-image-fallback.md`. Do not substitute deterministic SVG, HTML, CSS, or programmatic geometry for an illustration; reserve those methods for diagrams and other code-native visuals.
@@ -43,7 +44,8 @@ Identify the canonical source, previous approved PDF, candidate output path, int
 - For external research or claim changes, read `references/research-and-evidence.md`.
 - For edition comparison, changelogs, versioning, or publication, read `references/edition-and-release.md`.
 - Before calling a candidate ready, read `references/quality-gates.md`.
-- For hosted handbooks at handbooks.surfaces.systems, read `references/hosted-publication-front.md` and `references/hosted-appearance.md`. Validate the cover, sidebar, shared appearance controls, and illustrations before publication.
+- For hosted reader creation, new editions, future titles, or shared rendering changes, read [references/shared-reader-workflow.md](references/shared-reader-workflow.md). Consolidate reusable code into the skill before extending duplicated builders.
+- For hosted handbooks at handbooks.surfaces.systems, read `references/hosted-publication-front.md` and `references/hosted-appearance.md`. Every chapter opener requires an accepted light/dark artwork pair: retain the original light/print art and author a separate dark screen illustration with a transparent outer background. Follow `references/illustration-workflow.md` for acquisition and provenance. Validate the cover, sidebar, shared appearance controls, and illustrations before publication.
 
 ### 3. Research and edit
 
@@ -51,11 +53,13 @@ Build a claim-level source ledger before changing factual content. Distinguish d
 
 ### 4. Acquire and freeze required illustration
 
-Classify the art change before acquisition. A create or redesign under the bundled visual system requires chapter-opener raster illustration. A text-only update preserves approved art, and a build repair replaces art only when the illustration defect is in scope. Follow `references/illustration-workflow.md`: prefer generation, then use the documented open-image fallback only when generation is missing or unavailable, or when the user explicitly requests sourced open art. Inspect and select each image, normalize it into an opaque project asset, and record mode-specific provenance and hashes. If neither path yields a license-compatible, accurate, style-matched asset, fail the illustration gate. Never conceal the missing capability with a vector stand-in.
+Classify the art change before acquisition. A create or redesign under the bundled visual system requires chapter-opener raster illustration. A text-only update preserves approved art, and a build repair replaces art only when the illustration defect is in scope. Follow `references/illustration-workflow.md`: prefer generation, then use the documented open-image fallback only when generation is missing or unavailable, or when the user explicitly requests sourced open art. Inspect and select each image, freeze its light/print version as an opaque project asset, and record mode-specific provenance and hashes. For hosted chapters, separately freeze an authored dark screen counterpart with transparent outer margins. If neither path yields a license-compatible, accurate, style-matched asset, fail the illustration gate. Never conceal the missing capability with a vector stand-in.
 
 ### 5. Build reproducibly
 
 Generate the PDF from the frozen manuscript, styles, and selected illustration assets using a recorded toolchain. Determinism begins after creative asset selection; it does not replace that selection. Stabilize any page map before finalization. Add metadata, outlines, page labels, running furniture, and links through the generator or a reproducible post-processing step. Preserve the input PDF version when post-processing uses features from that version.
+
+For hosted readers, invoke the shared skill runtime through the collection build. Keep book-specific inputs in the book and common rendering code in this package. Follow `references/shared-reader-workflow.md`; do not copy reusable scripts or themes into a new title.
 
 ### 6. Compare editions
 
@@ -70,6 +74,8 @@ Generate a candidate-specific page map after pagination stabilizes. Never valida
 ### 8. Validate and inspect
 
 Run `scripts/validate-pdf.py` in `candidate` profile with the final PDF, candidate-specific page map, and changelog decision. The page map must mark every required illustration placement so validation fails when an opener has no raster image, more than one image paint, a mask, or insufficient effective resolution. Re-run edition comparison on that final PDF and confirm the decision remains stable. Then render every page with `scripts/render-proof.py`, inspect a full contact sheet, and compare representative candidate pages with the specimen roles in the page map. Use `scripts/render-pdfkit.swift` when Apple PDFKit evidence matters. Automated checks do not replace perceptual review in at least two independent PDF renderers when cross-viewer support matters.
+
+For hosted candidates, also apply the shared reader gates in `references/shared-reader-workflow.md` and `references/hosted-appearance.md`. Report missing runtime integration or regression coverage as open work.
 
 ### 9. Report or release
 

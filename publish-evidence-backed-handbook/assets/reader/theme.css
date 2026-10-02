@@ -1,4 +1,4 @@
-/* Keep source artwork unchanged in every appearance, including legacy plates. */
+/* Preserve the selected artwork pixels, including legacy light plates. */
 #main-content figure:has(img),
 #main-content figure img,
 #main-content figure .chapter-art {
@@ -60,7 +60,7 @@ html[data-theme] .theme-control { display: inline-block; }
   .search-result:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
   .action-link-primary:hover { background: color-mix(in srgb, var(--ink) 88%, var(--paper)); }
   p code, li code, td code { background: color-mix(in srgb, var(--ink) 6%, transparent); }
-  :root[data-theme="dark"] #main-content figure:has(img) {
+  :root[data-theme="dark"] #main-content figure:has(img):not([data-artwork-paired]):not([data-diagram-rendered]) {
     background: var(--image-paper);
     color: #171716;
     padding: 1rem;
@@ -77,6 +77,17 @@ html[data-theme] .theme-control { display: inline-block; }
     -webkit-mask-image: none;
   }
 }
+@media screen {
+  #main-content figure[data-artwork-paired] {
+    width: min(100%, 30rem);
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--ink);
+  }
+  #main-content figure[data-artwork-paired] picture { display: block; }
+  #main-content figure[data-artwork-paired] img { display: block; width: 100%; max-width: 100%; height: auto; }
+}
 /* With JavaScript disabled, follow the system and keep the control hidden. */
 @media screen and (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
@@ -91,7 +102,7 @@ html[data-theme] .theme-control { display: inline-block; }
     --highlight: #494126;
     --image-paper: #e4e1d9;
   }
-  :root:not([data-theme]) #main-content figure:has(img) {
+  :root:not([data-theme]) #main-content figure:has(img):not([data-artwork-paired]):not([data-diagram-rendered]) {
     background: var(--image-paper);
     color: #171716;
     padding: 1rem;
@@ -116,3 +127,21 @@ html[data-theme] .theme-control { display: inline-block; }
   :root { color-scheme: light; }
   html[data-theme] .theme-control { display: none; }
 }
+@media screen {
+  #main-content figure[data-diagram-rendered] { background: transparent; padding: 0; margin-inline: 0; }
+  .diagram-print { display: none; }
+  .semantic-diagram { color: var(--ink); font-family: var(--sans); font-size: 1rem; line-height: 1.5; }
+  .semantic-diagram strong { font-size: 1rem; font-weight: 600; }
+  .semantic-diagram span { display: block; color: var(--muted); font-size: .9375rem; }
+  .semantic-diagram ol, .semantic-diagram ul { margin: 0; padding: 0; }
+  .semantic-diagram .diagram-sequence { list-style: none; counter-reset: diagram-stage; }
+  .diagram-sequence > li, .diagram-branches > li, .diagram-source { border: 1px solid currentColor; padding: .75rem 1rem; border-radius: .25rem; overflow-wrap: anywhere; }
+  .diagram-sequence > li { counter-increment: diagram-stage; position: relative; margin-bottom: 2rem; }
+  .diagram-sequence > li::before { content: counter(diagram-stage) '. '; }
+  .diagram-sequence > li:not(:last-child)::after { content: '↓'; position: absolute; left: 50%; top: 100%; line-height: 2rem; }
+  .semantic-diagram .diagram-branches { list-style: none; display: grid; gap: .75rem; }
+  .diagram-branch-label, .diagram-note, .diagram-relationships { font-size: .9375rem; color: var(--muted); }
+  .diagram-relationships ul { padding-left: 1.5rem; }
+  .diagram-relationships summary { cursor: pointer; }
+}
+@media print { .semantic-diagram { display: none; } .diagram-print { display: block; } }

@@ -51,3 +51,11 @@ Mark every required opener illustration in the candidate-specific page map. Vali
 - perceptual match to the governing specimen or project system.
 
 Render every opener in each required renderer and inspect it both at page scale and full size. A page-map label or a generated-file manifest cannot substitute for the PDF-side check.
+
+## Hosted light and dark pairs
+
+For this collection, every chapter illustration in a hosted reader requires a light/print original and a separately authored dark screen asset. Apply this rule to existing and new handbooks. Follow `hosted-appearance.md` for shared integration and validation. Draft books need their pairs before a hosted edition; their PDFs do not acquire a dark appearance.
+
+Use the approved light image as the composition reference and the selected dark sample as the style reference. Preserve object count, relationships, viewpoint, silhouette, and optical framing. Render dark artwork with natural pale lit surfaces and dark recesses, rather than reversing the original values. Ask the built-in image tool for a genuine transparent outer background so the page supplies its exact charcoal color. Dark material inside an object must stay opaque. Inspect thin linework, object edges, and the spaces between parts on the actual reader background. Reject glowing outlines, inverted shadows, pale fringes, and colored paper rectangles.
+
+Freeze the dark PNG with its prompt, reference roles and hashes, generator identifier when exposed, dimensions, output hash, and visual acceptance. Screen-only dark assets may have alpha transparency; the opaque-white normalization and PDF paint gates above continue to govern light/print assets. Keep the original selected generated output. Do not generate again during a deterministic build.

@@ -1,0 +1,58 @@
+{
+  "title": "Evidence loop",
+  "kind": "sequence",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "Decision"
+    },
+    {
+      "id": "2",
+      "label": "Failure modes"
+    },
+    {
+      "id": "3",
+      "label": "Evidence sets"
+    },
+    {
+      "id": "4",
+      "label": "Graders"
+    },
+    {
+      "id": "5",
+      "label": "Analysis"
+    },
+    {
+      "id": "6",
+      "label": "Launch or learn"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1",
+      "to": "2"
+    },
+    {
+      "from": "2",
+      "to": "3"
+    },
+    {
+      "from": "3",
+      "to": "4"
+    },
+    {
+      "from": "4",
+      "to": "5"
+    },
+    {
+      "from": "5",
+      "to": "6"
+    },
+    {
+      "from": "6",
+      "to": "1",
+      "feedback": true
+    }
+  ],
+  "note": "Production evidence creates new failure cases and restarts the loop"
+}

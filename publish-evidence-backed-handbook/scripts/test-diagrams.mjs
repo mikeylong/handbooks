@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {renderDiagram,validateDiagram,installDiagrams} from './diagrams.mjs';
+import {digest} from './reader-paths.mjs';
+const definition={title:'Feedback fixture',kind:'sequence',nodes:[{id:'1',label:'Decide'},{id:'2',label:'Test'},{id:'3',label:'Learn'}],edges:[{from:'1',to:'2'},{from:'2',to:'3'},{from:'3',to:'1',feedback:true}],note:'New evidence restarts the loop.'};
+const html=renderDiagram(definition);
+for(const node of definition.nodes) assert(html.includes(`data-diagram-node="${node.id}"`) && html.includes(node.label));
+for(const edge of definition.edges) assert(html.includes(`data-diagram-from="${edge.from}" data-diagram-to="${edge.to}"`));
+assert(html.includes('(feedback)'));
+assert.throws(()=>validateDiagram({...definition,edges:definition.edges.slice(1)}),/ordered edge/);
+assert.throws(()=>validateDiagram({...definition,nodes:[...definition.nodes,definition.nodes[0]]}),/duplicate/);
+const temp=await mkdtemp(join(tmpdir(),'handbook-diagrams-'));
+try {
+ await mkdir(join(temp,'reader/assets'),{recursive:true});await mkdir(join(temp,'source'));
+ const asset=Buffer.from('frozen print diagram'),bytes=Buffer.from(JSON.stringify(definition));
+ await writeFile(join(temp,'reader/assets/diagram.png'),asset);await writeFile(join(temp,'source/diagram.json'),bytes);
+ const binding={asset:'reader/assets/diagram.png',assetSha256:digest(asset),definition:'source/diagram.json',definitionSha256:digest(bytes),placements:2};
+ const manifest={schemaVersion:1,diagrams:[binding]};const save=()=>writeFile(join(temp,'diagram-bindings.json'),JSON.stringify(manifest));await save();
+ const pkg={readerDirectory:'reader',files:{[binding.asset]:binding.assetSha256}};
+ const input='<figure><img src="assets/diagram.png" alt="Original"></figure>'.repeat(2);
+ const result=await installDiagrams(temp,input,pkg);
+ assert.equal((result.match(/class="semantic-diagram"/g)||[]).length,2);
+ assert.equal((result.match(/class="diagram-print"/g)||[]).length,2);
+ await writeFile(join(temp,'source/diagram.json'),JSON.stringify({...definition,note:'Revised'}));
+ await assert.rejects(()=>installDiagrams(temp,input,pkg),/Stale semantic/);
+ await writeFile(join(temp,'source/diagram.json'),bytes);
+ await assert.rejects(()=>installDiagrams(temp,input.replaceAll('diagram.png','unmapped.png'),pkg),/Unmapped/);
+ await assert.rejects(()=>installDiagrams(temp,input,{...pkg,files:{}}),/Stale or duplicate/);
+ await rm(join(temp,'diagram-bindings.json'));
+ await assert.rejects(()=>installDiagrams(temp,input,pkg),/missing diagram-bindings/);
+} finally {await rm(temp,{recursive:true,force:true});}
+console.log('Diagram semantics, repeated placements, print fallback, stale definitions/assets and unmapped diagrams passed.');
