@@ -32,7 +32,7 @@ export function validateSiteTheme(html, gallery = false) {
       if (tag.startsWith('</figure')) figureDepth--;
       else if (tag.startsWith('<figure')) figureDepth++;
       else if (figureDepth < 1) throw new Error('Reader raster image must be inside a figure for shared dark styling');
-      if (/\bstyle=["'][^"']*(?:filter|(?:-webkit-)?mask[\w-]*|mix-blend-mode|background[\w-]*)\s*:/i.test(tag)) {
+      if (/\bstyle=["'][^"']*(?:filter|(?:-webkit-)?mask[\w-]*|clip-path|mix-blend-mode|background[\w-]*)\s*:/i.test(tag)) {
         throw new Error('Reader image has a local theme override');
       }
     }

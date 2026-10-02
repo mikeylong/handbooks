@@ -88,6 +88,8 @@ try {
     ['image outside figure', futureReader.replace('<figure class="future-illustration">', '').replace('</figure>', ''), /inside a figure/],
     ['local inversion', futureReader.replace('<img ', '<img style="filter:invert(1)" '), /local theme override/],
     ['local edge mask', futureReader.replace('<figure ', '<figure style="mask-image:linear-gradient(black,transparent)" '), /local theme override/],
+    ['local figure clipping', futureReader.replace('<figure ', '<figure style="clip-path:inset(20%)" '), /local theme override/],
+    ['local image clipping', futureReader.replace('<img ', '<img style="clip-path:circle(30%)" '), /local theme override/],
     ['missing mobile surface', futureReader.replace('class="mobile-actions"', 'class="other"'), /Site lacks/],
     ['partial theme assets', themed.replace('href="/theme.css"', 'href="/other.css"'), /Site lacks/],
   ]) {
