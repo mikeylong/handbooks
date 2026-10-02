@@ -200,9 +200,9 @@
     "assets/chapter-art/print/chapter-12.png": "3a4e10b37791b209f1ecf7542411f7460e2ed8860c20cc82b7f831f66bb2b67c",
     "assets/chapter-art/print/contact-sheet.png": "d592067ad27af400909e7396e73dfd4b2e449a7a7fe5c158a4ca97fd14539088",
     "changelog-decision.json": "edc45833a0079c13f56fb8aebfde525f6e9ded18ced57b7358ffd05f19ff2182",
-    "publication.json": "4f97d0b2ce1d556fb3bc2a6bd1ab2250959204297d4d22610aea1db3d7e99838",
+    "publication.json": "b8bd654db361a90fde32f0aa7a3da7eb041b96f2b473b92a1e1f4b9040e070e7",
     "source/build_handbook.py": "1bf4b020db3f00cbc5bbd605b260aabf85ed2d90fcea20d8116b685db2bf1993",
-    "source/build_reader.py": "14982aeafee5ba4c153b8300451855d7e56ac7ad5145ad2ca75b57fb2ea540ce",
+    "source/build_reader.py": "ba27906c6a5d32d1453f1a84ade01246cf85795366ea461fb585982e7d3a7eb6",
     "source/fonts/NOTO-SANS-LICENSE.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb",
     "source/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
     "source/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
@@ -221,7 +221,8 @@
     "source/refresh_manifest.py": "b10e2858a6c53c5d99d66c6350ad5e1db057509eabad2b2ea2f35b0a5cded135",
     "source/requirements.txt": "fb02f69a7015efe60654e75b7dd4de3ba061ba2bf23eaa3b761d653e6d3cdf43",
     "assets/chapter-art/illustration-manifest.json": "63285abe3588feca74ec80e7837ca91dd518114e05d87baf6cf033cf329510ad",
-    "release-manifest.json": "1e35dcad946bbe5533ca352c7e6500e4d08c5f56522afbd0175dda7f7491fbf0"
+    "release-manifest.json": "1e35dcad946bbe5533ca352c7e6500e4d08c5f56522afbd0175dda7f7491fbf0",
+    "source/reader-chrome.html": "a9134940b413496edeeec70392807f207c2f75a4d7f3281571e65100c51ff5ad"
   },
   "toolchain": {
     "python": "3.12.14",
@@ -274,5 +275,13 @@
     "sourceSha256": "14982aeafee5ba4c153b8300451855d7e56ac7ad5145ad2ca75b57fb2ea540ce",
     "readerSha256": "a7a0c4c70a9082c5d4db79db12373b1bdbf6c2a16eec41880eef191317d61910",
     "pdfRebuilt": false
+  },
+  "repositoryMigration": {
+    "date": "2026-10-02",
+    "repository": "https://github.com/mikeylong/ai-consulting-playbook",
+    "readerSha256": "074a6f66432ce32d4ade1b5cb95000b4a8afff2631a3d4a882a41d73660db5e9",
+    "pdfRebuilt": false,
+    "readerChrome": "source/reader-chrome.html; frozen dialog and review chrome, no sibling source dependency",
+    "sharedWebAssets": "mikeylong/handbooks-site: /reader.css, /reader.js, /assets/favicon.png"
   }
 }
