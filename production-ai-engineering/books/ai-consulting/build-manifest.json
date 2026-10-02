@@ -202,7 +202,7 @@
     "changelog-decision.json": "edc45833a0079c13f56fb8aebfde525f6e9ded18ced57b7358ffd05f19ff2182",
     "publication.json": "4f97d0b2ce1d556fb3bc2a6bd1ab2250959204297d4d22610aea1db3d7e99838",
     "source/build_handbook.py": "1bf4b020db3f00cbc5bbd605b260aabf85ed2d90fcea20d8116b685db2bf1993",
-    "source/build_reader.py": "b250b853b36787d511c591753239118973794ced03c5425bb52ce4eb338ac6d8",
+    "source/build_reader.py": "14982aeafee5ba4c153b8300451855d7e56ac7ad5145ad2ca75b57fb2ea540ce",
     "source/fonts/NOTO-SANS-LICENSE.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb",
     "source/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
     "source/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
@@ -263,9 +263,16 @@
       "index.html": "467e6cbb6ead740ca60820083919245230b892b4b994797ecbedf6775d58f933",
       "production-ai-engineering/index.html": "5575a57754a32e325297bffc63977933092cbe8931d9db637fb2a99ef4773f95",
       "ai-evaluation/index.html": "d2a8826f3013970da3f6f9a67c9590896abebdf624f29f011f352b048d263170",
-      "ai-consulting/index.html": "9445718eb0ea9a40b72297598e87149f84fb4e689b47fb186a25091cfec2c01f"
+      "ai-consulting/index.html": "54bdd4afc889cfcbc648b11935c14648a5171c6df5e0ee8adb34e0f4b1b58214"
     },
     "report": "qa/appearance/review.json",
     "reportSha256": "c68cc7aed1bbdb17fc901fbb8fe21298cfb195e76eee4e95bc5b063cb85ae9e9"
+  },
+  "readerReviewFixes": {
+    "report": "qa/reader-semantics/review.json",
+    "reportSha256": "28c1cfb87a2901f552843029efceea822986b726fc5941a9005d64fccde9233c",
+    "sourceSha256": "14982aeafee5ba4c153b8300451855d7e56ac7ad5145ad2ca75b57fb2ea540ce",
+    "readerSha256": "a7a0c4c70a9082c5d4db79db12373b1bdbf6c2a16eec41880eef191317d61910",
+    "pdfRebuilt": false
   }
 }

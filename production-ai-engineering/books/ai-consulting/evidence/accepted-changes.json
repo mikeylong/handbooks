@@ -597,5 +597,23 @@
     "rationale": "Mike reported that the selector felt janky. The revised control fits the reader and preserves System/Light/Dark preferences across navigation and tabs.",
     "sourceIds": [],
     "evidenceType": "user feedback and local browser verification: qa/appearance/review.json"
+  },
+  {
+    "category": "Interface repair",
+    "section": "Consulting reader prose lists",
+    "before": "Bullets, steps and checklists emitted as two-column layout tables.",
+    "after": "Semantic ul and ol elements wrap at narrow widths; data tables retain their table structure.",
+    "rationale": "Address the Medium review finding on mobile reading and list semantics.",
+    "sourceIds": [],
+    "evidenceType": "GitHub review and browser verification: qa/reader-semantics/review.json"
+  },
+  {
+    "category": "Accessibility repair",
+    "section": "Consulting chapter artwork",
+    "before": "Decorative chapter engravings announced mechanical descriptions.",
+    "after": "Empty alt text excludes decorative artwork from the reading sequence.",
+    "rationale": "Address the Medium review finding on noisy alternative text.",
+    "sourceIds": [],
+    "evidenceType": "GitHub review and browser verification: qa/reader-semantics/review.json"
   }
 ]

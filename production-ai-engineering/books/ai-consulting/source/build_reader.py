@@ -8,6 +8,24 @@ def txt(s):
  s=re.sub(r"<link href=['\"]([^'\"]+)['\"]>",r'<a href="\1">',s).replace('</link>','</a>').replace('<br/>','<br>');return s
 headings=[];blocks=[];section_open=False;subsection_open=False;index=0
 
+def prose_list_kind(table):
+ if not table._cellvalues or any(len(row)!=2 for row in table._cellvalues):return None
+ markers=[]
+ for row in table._cellvalues:
+  marker=row[0]
+  while isinstance(marker,Table) and len(marker._cellvalues)==1 and len(marker._cellvalues[0])==1:
+   marker=marker._cellvalues[0][0]
+  if not isinstance(marker,Paragraph):return None
+  markers.append(marker)
+ styles={marker.style.name for marker in markers}
+ if styles=={'BulletMark'}:return 'bullet'
+ if styles=={'Checkbox'}:return 'checklist'
+ if styles=={'StepNumber'}:
+  if [marker.getPlainText() for marker in markers]!=[str(i) for i in range(1,len(markers)+1)]:
+   raise ValueError('Numbered prose steps must preserve their sequence')
+  return 'numbered'
+ return None
+
 def item(x):
  global section_open,subsection_open,index
  if isinstance(x,Paragraph):
@@ -30,6 +48,13 @@ def item(x):
    if s=='H1':blocks.append('</header>')
   elif s not in ['CoverDeck','ChapterKicker']:blocks.append(f'<p>{t}</p>')
  elif isinstance(x,Table):
+  kind=prose_list_kind(x)
+  if kind:
+   tag='ol' if kind=='numbered' else 'ul'
+   css='reader-prose-list'+(' reader-checklist' if kind=='checklist' else '')
+   mark='<span aria-hidden="true">☐</span>' if kind=='checklist' else ''
+   blocks.append(f'<{tag} class="{css}">'+''.join('<li>'+mark+cell(row[1])+'</li>' for row in x._cellvalues)+f'</{tag}>')
+   return
   if len(x._cellvalues)==1 and len(x._cellvalues[0])==1:
    blocks.append('<aside class="reader-callout">'+cell(x._cellvalues[0][0])+'</aside>')
    return
@@ -46,7 +71,7 @@ def item(x):
   blocks.append('<div class="table-scroll" tabindex="0"><table>'+''.join(rows)+'</table></div>')
  elif isinstance(x,KeepTogether):
   for c in x._content:item(c)
- elif isinstance(x,m.OpticallyFitChapterIllustration):blocks.append(f'<figure class="chapter-art"><img src="assets/chapter-{x.number:02d}.png" alt="Mechanical engraving for chapter {x.number}; decorative" loading="lazy"></figure>')
+ elif isinstance(x,m.OpticallyFitChapterIllustration):blocks.append(f'<figure class="chapter-art"><img src="assets/chapter-{x.number:02d}.png" alt="" loading="lazy"></figure>')
  elif isinstance(x,(m.ConsultingLifecycle,m.ExposureLadder)):
   # Preserve original authored diagrams by rendering their existing ReportLab flowable.
   from reportlab.pdfgen import canvas
@@ -99,6 +124,6 @@ body=''.join(blocks)
 body=re.sub(r'(<section class="chapter"[^>]*>)(.*?)(?=<section class="chapter"|$)',lambda a:a[1].replace('class="chapter"','class="chapter source-section"')+a[2] if 'class="source-section"' not in a[2] else a[0],body,flags=re.S)
 markup=f'''<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Michael Long"><meta name="color-scheme" content="light"><link rel="icon" type="image/png" href="/production-ai-engineering/assets/favicon.png"><title>{html.escape(title)} · Michael Long</title><link rel="canonical" href="https://handbooks.mikelong.ai/ai-consulting/"><link rel="stylesheet" href="/production-ai-engineering/styles.css"><link rel="stylesheet" href="reader.css"><script src="/production-ai-engineering/app.js" defer></script></head><body id="book-top"><a class="skip-link" href="#main-content">Skip to handbook</a><div class="reading-progress" aria-hidden="true"><span></span></div><header class="mobile-bar"><a href="/">← All handbooks</a><div class="mobile-actions"><button class="text-button search-trigger js-only" data-open-search type="button" aria-haspopup="dialog" aria-controls="search-dialog">Search</button><button class="text-button js-only" data-open-toc type="button" aria-haspopup="dialog" aria-controls="toc-dialog">Contents</button></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a><a class="sidebar-brand" href="#book-top"><span>A handbook</span><strong>{html.escape(title)}</strong></a><nav class="sidebar-nav" aria-label="Table of contents">{nav}</nav>{sidebar}</aside><main id="main-content" tabindex="-1">{cover}<section class="contents-page" id="contents"><h2>Contents</h2>{nav}</section>{body}</main></div>{dialogs}</body></html>'''
 (out/'index.html').write_text(markup)
-(out/'reader.css').write_text('.chapter{margin-block:4rem}figure{margin-inline:0}.chapter-art{max-width:100%}.chapter-art img{max-height:360px;object-fit:contain}figure img{width:100%;height:auto}table table{margin:0;min-width:0}table td{vertical-align:top}td p{margin:.3rem 0}.table-scroll{overflow-x:auto}h2,h3,h4{scroll-margin-top:5rem}.contents-page a{display:block}.sidebar-nav ol{padding-left:1rem}.sidebar-nav a{display:block}button{cursor:pointer}.sidebar-meta{padding-top:1rem}#main-content a{overflow-wrap:anywhere}.reader-callout{border-left:2px solid var(--ink);padding:1rem;margin-block:1.5rem}.reader-callout p:first-child{font-family:var(--sans);font-size:.85rem;font-weight:600}.reader-callout p:last-child{margin-bottom:0}')
+(out/'reader.css').write_text('.chapter{margin-block:4rem}figure{margin-inline:0}.chapter-art{max-width:100%}.chapter-art img{max-height:360px;object-fit:contain}figure img{width:100%;height:auto}table table{margin:0;min-width:0}table td{vertical-align:top}td p{margin:.3rem 0}.table-scroll{overflow-x:auto}h2,h3,h4{scroll-margin-top:5rem}.contents-page a{display:block}.sidebar-nav ol{padding-left:1rem}.sidebar-nav a{display:block}button{cursor:pointer}.sidebar-meta{padding-top:1rem}#main-content a{overflow-wrap:anywhere}.reader-callout{border-left:2px solid var(--ink);padding:1rem;margin-block:1.5rem}.reader-callout p:first-child{font-family:var(--sans);font-size:.85rem;font-weight:600}.reader-callout p:last-child{margin-bottom:0}.reader-prose-list{padding-left:1.5rem}.reader-prose-list li{padding-left:.25rem}.reader-prose-list li p{margin:.35rem 0}.reader-checklist{list-style:none;padding-left:0}.reader-checklist li{display:flex;align-items:baseline;gap:.65rem}.reader-checklist li>span{flex:none}.reader-checklist li>p{min-width:0}')
 shutil.copy2(r/'output/pdf'/pdf,out/pdf)
 print(len(headings),'sections',len(markup),'HTML bytes')

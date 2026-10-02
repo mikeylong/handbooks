@@ -24,8 +24,17 @@ if(digest(await readFile(resolve(book,'reader',basename(pdf))))!==manifest.sha25
 const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
 if(new Set(ids).size!==ids.length) throw new Error('Duplicate reader IDs');
 for(const link of html.matchAll(/href="#([^"]+)"/g)) if(!ids.includes(link[1])) throw new Error(`Missing target ${link[1]}`);
+const proseLists = {
+ bullets: [...html.matchAll(/<ul class="reader-prose-list">/g)].length,
+ steps: [...html.matchAll(/<ol class="reader-prose-list">/g)].length,
+ checklists: [...html.matchAll(/<ul class="reader-prose-list reader-checklist">/g)].length,
+};
+if (Object.values(proseLists).some(count => count === 0)
+ || /<td><p>(?:-|\[ \])<\/p><\/td>/.test(html)) throw new Error('Prose lists must use list semantics rather than data tables');
+const openers = [...html.matchAll(/<figure class="chapter-art"><img\b[^>]*>/g)];
+if (openers.length !== 12 || openers.some(([tag]) => !tag.includes('alt=""'))) throw new Error('Decorative chapter art must have an empty alternative');
 const sources=[...text.matchAll(/\[C\d+\]/g)];
 if(new Set(sources.map(x=>x[0])).size!==28) throw new Error('Expected 28 sources');
 const validation=JSON.parse(await readFile(resolve(book,'qa/validation.json'),'utf8'));
 if(validation.status!=='passed'||validation.artifactSha256!==manifest.sha256||validation.stats.pages!==pages) throw new Error('Reviewed PDF differs from release');
-console.log(JSON.stringify({status:'passed',version:manifest.version,pages,sha256:manifest.sha256,chapters:12,worksheets:12,sources:28,courseRemoval:'passed',readerDownload:'passed',frozenArt:'passed'},null,2));
+console.log(JSON.stringify({status:'passed',version:manifest.version,pages,sha256:manifest.sha256,chapters:12,worksheets:12,sources:28,courseRemoval:'passed',readerDownload:'passed',frozenArt:'passed',proseLists,decorativeArt:'passed'},null,2));
