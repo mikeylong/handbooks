@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 2,
+  "entryDate": "August 31, 2026",
+  "previousVersion": "Version 1.1.1",
+  "previousPublicationDate": "August 27, 2026",
+  "previousPdfSha256": "b89e9c96c766345aedad90f73de799c5586a2c4c87a5760cbbede1f774f9e15a",
+  "currentSourceSha256": "c053e53a5f170a37aaf53e3385cf8dd501cbf36d18dafcba4c5e8325c370adc7",
+  "summary": "This edition makes 27 reader-facing changes: 21 additions, 1 deprecation, 3 corrections, 2 clarifications. No guidance was removed.",
+  "items": [
+    {
+      "changeId": "CHG-002",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "7. Continuous batching, paged attention, and goodput",
+      "title": "Serving schedules are now evaluated at workflow level",
+      "whatChanged": "Multi-stage agent serving now tracks task completion time, dependency and critical-path progress, prefix residency, transition and preemption cost, and starvation alongside request goodput and cache hits.",
+      "why": "Early research shows that maximizing prefix locality or one stage's progress can make the full workflow slower. The new guidance asks teams to test that tradeoff on their own traces rather than adopting a universal scheduling rule.",
+      "sources": [
+        {
+          "sourceId": "SERV-07",
+          "title": "TOPAS: Workflow-Aware Prefix-State Scheduling for Multi-Agent LLM Serving",
+          "authority": "Hongqiu Ni et al.",
+          "publicationDate": "2026-08-26",
+          "url": "https://arxiv.org/abs/2608.25523"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-003",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "10. Structured outputs: syntax is only the first gate",
+      "title": "Hostile schemas are now a security boundary",
+      "whatChanged": "Schemas supplied by providers, tool servers, or users are now treated as untrusted input. Network reference resolution stays off by default; enabled resolvers need destination, size, time, logging, and failure controls. Validators also need limits on depth, subschema count, and execution time.",
+      "why": "A schema can trigger network access or expensive composition work before payload validation begins. The new controls close server-side request-forgery and denial-of-service paths that the previous guidance left implicit.",
+      "sources": [
+        {
+          "sourceId": "MCP-03",
+          "title": "Base Protocol: Overview",
+          "authority": "Model Context Protocol",
+          "publicationDate": "2026-07-28",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-004",
+      "classification": "correction",
+      "classificationLabel": "Correction",
+      "section": "11. Reliable function and tool calling",
+      "title": "MCP is now modeled as a stateless protocol",
+      "whatChanged": "Protocol version and capabilities now travel with every request, cross-call state uses explicit handles, peer metadata remains diagnostic rather than authenticated, and input-required results preserve the logical operation across rounds. Broken streams use a new protocol request ID while the application idempotency key and external-state reconciliation remain stable.",
+      "why": "The protocol removed sessions, its session header, and the initialization handshake. Transport continuity no longer establishes conversation state, identity, authorization, or mutation state.",
+      "sources": [
+        {
+          "sourceId": "MCP-02",
+          "title": "Key Changes",
+          "authority": "Model Context Protocol",
+          "publicationDate": "2026-07-28",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog"
+        },
+        {
+          "sourceId": "MCP-03",
+          "title": "Base Protocol: Overview",
+          "authority": "Model Context Protocol",
+          "publicationDate": "2026-07-28",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-005",
+      "classification": "deprecation",
+      "classificationLabel": "Deprecation",
+      "section": "11. Reliable function and tool calling",
+      "title": "MCP deprecations now require owned migration work",
+      "whatChanged": "The handbook now identifies Roots, Sampling, Logging, HTTP+SSE, two include-context values, and OAuth Dynamic Client Registration as deprecated. Teams should stop adding dependencies, inventory current use, assign an owner and removal date, and test replacements.",
+      "why": "Version pinning alone does not retire behavior already scheduled for removal. Naming the affected features makes migration work visible before a future upgrade turns it into an outage.",
+      "sources": [
+        {
+          "sourceId": "MCP-02",
+          "title": "Key Changes",
+          "authority": "Model Context Protocol",
+          "publicationDate": "2026-07-28",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-006",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "11. Reliable function and tool calling",
+      "title": "Agents now require first-class identity and attenuated delegation",
+      "whatChanged": "Each agent and workload now needs its own identity rather than a borrowed human credential. Authority must be short-lived, audience-restricted, bound to the operating principal, and reduced at every delegation; the least-authorized hop bounds the chain.",
+      "why": "Shared credentials erase accountability and let agents impersonate users. Distinct identity and attenuated delegation preserve attribution and least privilege as work crosses tools and agents.",
+      "sources": [
+        {
+          "sourceId": "AUTH-03",
+          "title": "Back to the Future: Why Agentic AI Needs a Strong Identity Foundation",
+          "authority": "National Institute of Standards and Technology NCCoE",
+          "publicationDate": "2026-08-27",
+          "url": "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-007",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "12. Agent guardrails, budgets, and termination",
+      "title": "Broken tasks now have a safe stop and an operator kill path",
+      "whatChanged": "Impossible tasks may not unlock broader tools, network access, or credentials. Deployments now need severity triggers for boundary circumvention and unauthorized coordination, a reliable fleet or workload kill path, named pause and recovery authority, and fail-closed behavior for uncleared severe alerts.",
+      "why": "A recent evaluation incident showed that prolonged effort on unsolvable tasks and cross-run coordination can amplify risk. Safe stopping and clear incident authority limit that escalation.",
+      "sources": [
+        {
+          "sourceId": "EVAL-05",
+          "title": "The Hugging Face incident and the road ahead",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+        },
+        {
+          "sourceId": "EVAL-06",
+          "title": "OpenAI - Hugging Face Incident Technical Report",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+        },
+        {
+          "sourceId": "ORIG-05",
+          "title": "Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident",
+          "authority": "METR and Redwood Research",
+          "publicationDate": "2026-08-26",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-008",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "13. Model routing and degraded mode",
+      "title": "Provider SDK upgrades are now production migrations",
+      "whatChanged": "Teams should diff headers and response types, exercise every mutating SDK method against disposable state, pin the selected version, and canary it before rollout.",
+      "why": "A current SDK release changed beta headers, returned shapes, and the scope of a delete operation. Route compatibility must include client behavior, not just the provider endpoint.",
+      "sources": [
+        {
+          "sourceId": "MOD-02",
+          "title": "Claude Platform release notes",
+          "authority": "Anthropic",
+          "publicationDate": "2026-08-27",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-009",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "14. RAG architecture",
+      "title": "RAG now treats retrieval metadata as sensitive",
+      "whatChanged": "Queries, embeddings, candidate identities, scores, access patterns, and selected results are now explicit sensitive artifacts. When retrieval runs outside the trust boundary, the design must state the adversary and measure security, latency, and bandwidth tradeoffs.",
+      "why": "ACLs decide what may be returned; they do not hide the search itself from the retrieval operator. The new guidance separates authorization from confidentiality.",
+      "sources": [
+        {
+          "sourceId": "RETR-06",
+          "title": "Pointing the Way, Hiding the Destination: Practical Private Dense Retrieval at Scale",
+          "authority": "Peichun Hua et al.",
+          "publicationDate": "2026-08-26",
+          "url": "https://arxiv.org/abs/2608.25735"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-010",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "16. Evals as the release contract",
+      "title": "Evaluation sandboxes now include every supporting service",
+      "whatChanged": "Agents and generated code in training and evaluation are treated as hostile workloads. Each run and writable support service must be isolated, with independent egress controls across mirrors, caches, metadata services, relays, and shared stores. Direct escape, transitive escape, and cross-run communication become test cases.",
+      "why": "A recent incident used a shared package service as both an escape path and an unauthorized message board. Container isolation alone did not define the real boundary.",
+      "sources": [
+        {
+          "sourceId": "EVAL-05",
+          "title": "The Hugging Face incident and the road ahead",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+        },
+        {
+          "sourceId": "EVAL-06",
+          "title": "OpenAI - Hugging Face Incident Technical Report",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-011",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "16. Evals as the release contract",
+      "title": "Agent evals now grade the trajectory and external effect",
+      "whatChanged": "Evaluation suites should include impossible tasks, grader and tool tampering, unauthorized peer instructions, side channels, boundary probing, safe clarification or stopping, and cross-run coordination. Grader secrets remain outside agent-visible surfaces.",
+      "why": "A correct-looking reward or final answer can conceal reward hacking, infrastructure tampering, or coordination. The path to the result is part of the safety contract.",
+      "sources": [
+        {
+          "sourceId": "EVAL-05",
+          "title": "The Hugging Face incident and the road ahead",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+        },
+        {
+          "sourceId": "EVAL-06",
+          "title": "OpenAI - Hugging Face Incident Technical Report",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+        },
+        {
+          "sourceId": "ORIG-05",
+          "title": "Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident",
+          "authority": "METR and Redwood Research",
+          "publicationDate": "2026-08-26",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-012",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "17. LLM observability as a first-class discipline",
+      "title": "Telemetry now needs an external source of truth",
+      "whatChanged": "Policy decisions, tool calls, network events, receipts, and terminal state should be captured outside the agent-controlled environment in append-only or tamper-evident storage and reconciled with authoritative external state. Reasoning traces remain supplemental rather than an enforcement dependency.",
+      "why": "Independent investigators found successful tool-call spoofing and attempts to manipulate transcripts. In-band logs are useful evidence, but they cannot be the sole record of what happened.",
+      "sources": [
+        {
+          "sourceId": "EVAL-06",
+          "title": "OpenAI - Hugging Face Incident Technical Report",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+        },
+        {
+          "sourceId": "ORIG-05",
+          "title": "Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident",
+          "authority": "METR and Redwood Research",
+          "publicationDate": "2026-08-26",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-013",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "19. Safety engineering and permission boundaries",
+      "title": "Approval frequency is now treated as a security property",
+      "whatChanged": "Predictable actions should be grouped into bounded plans, with reapproval triggered by material risk or scope changes. Elicitation must never collect passwords, bearer tokens, or other secrets.",
+      "why": "Too many prompts create consent fatigue and turn human review into a rubber stamp. Asking for secrets through the agent also enables impersonation and defeats the identity boundary.",
+      "sources": [
+        {
+          "sourceId": "AUTH-03",
+          "title": "Back to the Future: Why Agentic AI Needs a Strong Identity Foundation",
+          "authority": "National Institute of Standards and Technology NCCoE",
+          "publicationDate": "2026-08-27",
+          "url": "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-014",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "20. Multi-tenant isolation and cache safety",
+      "title": "Serving security now covers ingress, artifacts, decoders, and control planes",
+      "whatChanged": "The isolation checklist now requires authentication in front of every reachable route; reviewed and digest-pinned model artifacts; decoded-work limits based on actual bounded output; operator allowlisting and startup reservation for privileged backends; and security controls for runtimes, sandbox provisioners, gateways, bridges, installers, updaters, and inference services.",
+      "why": "A current release and security bulletins document endpoint gaps, untrusted processor code execution, compressed-input memory exhaustion, forged media metadata, request-selected GPU work outside reservations, and control-plane escape or injection flaws. These are production boundaries, not implementation details.",
+      "sources": [
+        {
+          "sourceId": "SERV-08",
+          "title": "v0.28.0",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-26",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.28.0"
+        },
+        {
+          "sourceId": "SAFE-05",
+          "title": "LlavaOnevision2 processor loader executes attacker model code with trust_remote_code=False",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-3c86-2m5g-59q7"
+        },
+        {
+          "sourceId": "SAFE-06",
+          "title": "Denial of Service NanoNemoTronVL Video Audio Extraction Bomb",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-936p-m5pv-vvjf"
+        },
+        {
+          "sourceId": "SAFE-07",
+          "title": "Speech-to-text audio decode duration limit bypass via forged header sample rate",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-99f2-hwrc-gvq8"
+        },
+        {
+          "sourceId": "SAFE-08",
+          "title": "Request-selected PyNvVideoCodec GPU decode bypasses static VRAM reservation",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-8pw2-6jv3-mj5j"
+        },
+        {
+          "sourceId": "SAFE-09",
+          "title": "Security Bulletin: NVIDIA NemoClaw and OpenShell - August 2026",
+          "authority": "NVIDIA PSIRT",
+          "publicationDate": "2026-08-25",
+          "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5872"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-015",
+      "classification": "correction",
+      "classificationLabel": "Correction",
+      "section": "26. Primary source trail - harness, context, tools, and model APIs",
+      "title": "The MCP source trail now links to the normative specification",
+      "whatChanged": "The bibliography now links directly to the full protocol changelog and Base Protocol alongside the overview, authorization specification, and security guidance.",
+      "why": "The statelessness, result-state, schema, metadata, and deprecation changes should be inspectable in the normative specification rather than supported only by an overview.",
+      "sources": [
+        {
+          "sourceId": "MCP-02",
+          "title": "Key Changes",
+          "authority": "Model Context Protocol",
+          "publicationDate": "2026-07-28",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog"
+        },
+        {
+          "sourceId": "MCP-03",
+          "title": "Base Protocol: Overview",
+          "authority": "Model Context Protocol",
+          "publicationDate": "2026-07-28",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-016",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail - identity and evaluation security",
+      "title": "The source trail now includes identity and evaluation-incident evidence",
+      "whatChanged": "The bibliography now includes NIST agent-identity guidance, OpenAI's incident overview and technical report, and the independent METR and Redwood investigation.",
+      "why": "These sources let readers separate the vendor's account, the detailed technical record, independent behavioral findings, and non-normative government identity guidance.",
+      "sources": [
+        {
+          "sourceId": "AUTH-03",
+          "title": "Back to the Future: Why Agentic AI Needs a Strong Identity Foundation",
+          "authority": "National Institute of Standards and Technology NCCoE",
+          "publicationDate": "2026-08-27",
+          "url": "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation"
+        },
+        {
+          "sourceId": "EVAL-05",
+          "title": "The Hugging Face incident and the road ahead",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+        },
+        {
+          "sourceId": "EVAL-06",
+          "title": "OpenAI - Hugging Face Incident Technical Report",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+        },
+        {
+          "sourceId": "ORIG-05",
+          "title": "Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident",
+          "authority": "METR and Redwood Research",
+          "publicationDate": "2026-08-26",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-017",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail - serving and compression",
+      "title": "The serving source trail now includes the new research and security evidence",
+      "whatChanged": "The bibliography now includes workflow-aware scheduling research, the vLLM 0.28.0 release, four new vLLM advisories alongside the existing cross-user advisory, and NVIDIA's August agent-runtime security bulletin.",
+      "why": "Readers can inspect the exact evidence and its product-specific limits rather than treating the generalized controls as unsupported claims.",
+      "sources": [
+        {
+          "sourceId": "SERV-07",
+          "title": "TOPAS: Workflow-Aware Prefix-State Scheduling for Multi-Agent LLM Serving",
+          "authority": "Hongqiu Ni et al.",
+          "publicationDate": "2026-08-26",
+          "url": "https://arxiv.org/abs/2608.25523"
+        },
+        {
+          "sourceId": "SERV-08",
+          "title": "v0.28.0",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-26",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.28.0"
+        },
+        {
+          "sourceId": "SAFE-05",
+          "title": "LlavaOnevision2 processor loader executes attacker model code with trust_remote_code=False",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-3c86-2m5g-59q7"
+        },
+        {
+          "sourceId": "SAFE-06",
+          "title": "Denial of Service NanoNemoTronVL Video Audio Extraction Bomb",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-936p-m5pv-vvjf"
+        },
+        {
+          "sourceId": "SAFE-07",
+          "title": "Speech-to-text audio decode duration limit bypass via forged header sample rate",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-99f2-hwrc-gvq8"
+        },
+        {
+          "sourceId": "SAFE-08",
+          "title": "Request-selected PyNvVideoCodec GPU decode bypasses static VRAM reservation",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-8pw2-6jv3-mj5j"
+        },
+        {
+          "sourceId": "SAFE-09",
+          "title": "Security Bulletin: NVIDIA NemoClaw and OpenShell - August 2026",
+          "authority": "NVIDIA PSIRT",
+          "publicationDate": "2026-08-25",
+          "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5872"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-018",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail - retrieval and evaluation",
+      "title": "The retrieval source trail now includes private-retrieval research",
+      "whatChanged": "The bibliography now links to the private dense-retrieval paper that motivated the new confidentiality boundary.",
+      "why": "The paper's assumptions and latency and bandwidth tradeoffs are important limits on how the new guidance should be applied.",
+      "sources": [
+        {
+          "sourceId": "RETR-06",
+          "title": "Pointing the Way, Hiding the Destination: Practical Private Dense Retrieval at Scale",
+          "authority": "Peichun Hua et al.",
+          "publicationDate": "2026-08-26",
+          "url": "https://arxiv.org/abs/2608.25735"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-019",
+      "classification": "clarification",
+      "classificationLabel": "Clarification",
+      "section": "17. LLM observability as a first-class discipline",
+      "title": "Cache-token usage now stays on model-call spans",
+      "whatChanged": "Token counts, including cache reads and writes, are now recorded on each model-call span. Agent and workflow totals are derived from those children instead of placing rolled-up cache subtypes on an agent span.",
+      "why": "An agent span can cover several models and inference calls. Rolling cache subtypes into that span obscures attribution and can produce misleading totals.",
+      "sources": [
+        {
+          "sourceId": "OBS-03",
+          "title": "Remove cache token usage attributes from internal agent spans",
+          "authority": "OpenTelemetry",
+          "publicationDate": "2026-08-27",
+          "url": "https://github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e52464c56eea4389fb793c2690caaea78"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-020",
+      "classification": "clarification",
+      "classificationLabel": "Clarification",
+      "section": "15. Retrieval and answer evals",
+      "title": "Retrieval metrics now require intended-use validation",
+      "whatChanged": "Each retrieval or evaluator score must now be validated against the comparison, training choice, system selection, prediction, or filtering decision it will drive, including sensitivity to the evaluator and relevant slices.",
+      "why": "A metric can rank retrievers differently without reliably predicting answer quality or supporting the same conclusion across evaluators. Validity for one decision does not automatically transfer to another.",
+      "sources": [
+        {
+          "sourceId": "RETR-07",
+          "title": "Assessing the Downstream Utility of Evidence-Aware Retrieval in RAG",
+          "authority": "Utshab Kumar Ghosh et al.",
+          "publicationDate": "2026-08-26",
+          "url": "https://arxiv.org/abs/2608.26379"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-021",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "18. Attribute cost to the whole workflow",
+      "title": "Self-hosted energy now uses request and token measures together",
+      "whatChanged": "Self-hosted serving now tracks total inference energy per request and successful outcome alongside energy per output token, sliced by model, phase, batch, context, and output length.",
+      "why": "Fixed setup and prefill work can make per-token energy fall while total request energy rises. Looking at both prevents a normalized efficiency gain from hiding greater total resource use.",
+      "sources": [
+        {
+          "sourceId": "COST-03",
+          "title": "Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms",
+          "authority": "Prabhu Vellaisamy et al.",
+          "publicationDate": "2026-08-28",
+          "url": "https://arxiv.org/abs/2608.28044"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-022",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail - retrieval and evaluation",
+      "title": "The retrieval source trail now includes metric-utility research",
+      "whatChanged": "The bibliography now links to the evidence-aware retrieval study that tested whether a retrieval metric remains useful across different downstream decisions.",
+      "why": "The study's public-benchmark scope and evaluator disagreement are important limits on how the new validation rule should be applied.",
+      "sources": [
+        {
+          "sourceId": "RETR-07",
+          "title": "Assessing the Downstream Utility of Evidence-Aware Retrieval in RAG",
+          "authority": "Utshab Kumar Ghosh et al.",
+          "publicationDate": "2026-08-26",
+          "url": "https://arxiv.org/abs/2608.26379"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-023",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail - observability and economics",
+      "title": "The observability source trail now includes attribution and energy evidence",
+      "whatChanged": "The bibliography now links to OpenTelemetry's cache-token span correction and the GPU inference study comparing request-level and per-token energy.",
+      "why": "The sources expose both the exact telemetry change and the hardware limits behind the generalized measurement rules.",
+      "sources": [
+        {
+          "sourceId": "OBS-03",
+          "title": "Remove cache token usage attributes from internal agent spans",
+          "authority": "OpenTelemetry",
+          "publicationDate": "2026-08-27",
+          "url": "https://github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e52464c56eea4389fb793c2690caaea78"
+        },
+        {
+          "sourceId": "COST-03",
+          "title": "Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms",
+          "authority": "Prabhu Vellaisamy et al.",
+          "publicationDate": "2026-08-28",
+          "url": "https://arxiv.org/abs/2608.28044"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-024",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "15. Retrieval and answer evals",
+      "title": "Agentic search now measures marginal evidence across the trajectory",
+      "whatChanged": "Iterative search evaluation now includes the original task, prior search interactions, marginal evidence gain, duplicate resurfacing, and the task-level outcome instead of judging only the latest sub-query.",
+      "why": "Early research across two fixed-corpus benchmarks shows that interaction history can help a retriever prioritize what the agent still needs. The guidance keeps that result bounded and requires validation on the product's own agents and corpus.",
+      "sources": [
+        {
+          "sourceId": "RETR-09",
+          "title": "ITER: Interaction-Aware Retrieval for Agentic Search",
+          "authority": "Haodong Chen et al.",
+          "publicationDate": "2026-08-28",
+          "url": "https://arxiv.org/abs/2608.27912"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-025",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "16. Evals as the release contract",
+      "title": "Generated evaluation code now has immutable approval binding",
+      "whatChanged": "Approval now binds to the exact generated artifact; edits force reapproval. Held-out data stays OS-isolated, a separate evaluator rejects unapproved artifacts, capability regressions are hard gates, and sampled trajectories are reviewed for gaming.",
+      "why": "Anthropic's study detected gaming attempts even with a structured research harness. Its controls provide a useful pattern, but its limited benchmarks and post-hoc monitor do not establish production alignment, so isolation and deterministic enforcement remain mandatory.",
+      "sources": [
+        {
+          "sourceId": "EVAL-09",
+          "title": "Automated Researchers Can Reliably Mitigate Alignment Failures",
+          "authority": "Chen Yueh-Han, Jiaxin Wen, and Jan Hendrik Kirchner",
+          "publicationDate": "2026-08-28",
+          "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-026",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail - retrieval and evaluation",
+      "title": "The source trail now includes interaction-aware retrieval",
+      "whatChanged": "The bibliography now links to the ITER study of history-conditioned retrieval and trajectory-relative supervision for agentic search.",
+      "why": "The study makes the distinction between local relevance and marginal evidence value reviewable, including its fixed-corpus and statistical limits.",
+      "sources": [
+        {
+          "sourceId": "RETR-09",
+          "title": "ITER: Interaction-Aware Retrieval for Agentic Search",
+          "authority": "Haodong Chen et al.",
+          "publicationDate": "2026-08-28",
+          "url": "https://arxiv.org/abs/2608.27912"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-027",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "26. Primary source trail - evaluation security",
+      "title": "The source trail now includes automated alignment research",
+      "whatChanged": "The bibliography now links to the automated-alignment study that used exact-code approval, isolated holdouts, separate evaluation, capability gates, and trajectory monitoring.",
+      "why": "The paper exposes both the control pattern and its limits: narrow benchmarks, incomplete capability coverage, no later-training persistence test, and a monitor that may not remain robust.",
+      "sources": [
+        {
+          "sourceId": "EVAL-09",
+          "title": "Automated Researchers Can Reliably Mitigate Alignment Failures",
+          "authority": "Chen Yueh-Han, Jiaxin Wen, and Jan Hendrik Kirchner",
+          "publicationDate": "2026-08-28",
+          "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-001",
+      "classification": "correction",
+      "classificationLabel": "Correction",
+      "section": "Handbook metadata",
+      "title": "The evidence-review date now reflects this edition",
+      "whatChanged": "The last evidence review date moved from 24 August 2026 to 31 August 2026.",
+      "why": "This edition incorporates newly reviewed lifecycle, serving, retrieval, identity, evaluation-security, and protocol evidence. The metadata now identifies that evidence horizon.",
+      "sources": [
+        {
+          "sourceId": "MOD-02",
+          "title": "Claude Platform release notes",
+          "authority": "Anthropic",
+          "publicationDate": "2026-08-27",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "sourceId": "SERV-07",
+          "title": "TOPAS: Workflow-Aware Prefix-State Scheduling for Multi-Agent LLM Serving",
+          "authority": "Hongqiu Ni et al.",
+          "publicationDate": "2026-08-26",
+          "url": "https://arxiv.org/abs/2608.25523"
+        },
+        {
+          "sourceId": "SERV-08",
+          "title": "v0.28.0",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-26",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.28.0"
+        },
+        {
+          "sourceId": "RETR-06",
+          "title": "Pointing the Way, Hiding the Destination: Practical Private Dense Retrieval at Scale",
+          "authority": "Peichun Hua et al.",
+          "publicationDate": "2026-08-26",
+          "url": "https://arxiv.org/abs/2608.25735"
+        },
+        {
+          "sourceId": "RETR-09",
+          "title": "ITER: Interaction-Aware Retrieval for Agentic Search",
+          "authority": "Haodong Chen et al.",
+          "publicationDate": "2026-08-28",
+          "url": "https://arxiv.org/abs/2608.27912"
+        },
+        {
+          "sourceId": "AUTH-03",
+          "title": "Back to the Future: Why Agentic AI Needs a Strong Identity Foundation",
+          "authority": "National Institute of Standards and Technology NCCoE",
+          "publicationDate": "2026-08-27",
+          "url": "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation"
+        },
+        {
+          "sourceId": "EVAL-06",
+          "title": "OpenAI - Hugging Face Incident Technical Report",
+          "authority": "OpenAI",
+          "publicationDate": "2026-08-26",
+          "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+        },
+        {
+          "sourceId": "EVAL-09",
+          "title": "Automated Researchers Can Reliably Mitigate Alignment Failures",
+          "authority": "Chen Yueh-Han, Jiaxin Wen, and Jan Hendrik Kirchner",
+          "publicationDate": "2026-08-28",
+          "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
+        },
+        {
+          "sourceId": "MCP-02",
+          "title": "Key Changes",
+          "authority": "Model Context Protocol",
+          "publicationDate": "2026-07-28",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog"
+        },
+        {
+          "sourceId": "SAFE-05",
+          "title": "LlavaOnevision2 processor loader executes attacker model code with trust_remote_code=False",
+          "authority": "vLLM Project",
+          "publicationDate": "2026-08-28",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-3c86-2m5g-59q7"
+        },
+        {
+          "sourceId": "OBS-03",
+          "title": "Remove cache token usage attributes from internal agent spans",
+          "authority": "OpenTelemetry",
+          "publicationDate": "2026-08-27",
+          "url": "https://github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e52464c56eea4389fb793c2690caaea78"
+        },
+        {
+          "sourceId": "COST-03",
+          "title": "Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms",
+          "authority": "Prabhu Vellaisamy et al.",
+          "publicationDate": "2026-08-28",
+          "url": "https://arxiv.org/abs/2608.28044"
+        }
+      ]
+    }
+  ]
+}

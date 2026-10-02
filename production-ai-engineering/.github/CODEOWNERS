@@ -1,0 +1,4 @@
+# Protect the production release contract from unreviewed changes.
+/.github/CODEOWNERS @mikeylong
+/.github/workflows/release-contract.yml @mikeylong
+/scripts/validate-production-release.mjs @mikeylong

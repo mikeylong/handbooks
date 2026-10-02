@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local browser and build scratch data
+.playwright-cli/
+tmp/
+.vercel/
+
+# Preserve versioned published PDF editions
+output/*
+!output/pdf/
+output/pdf/*
+!output/pdf/production-ai-engineering-v1.3.1-2026-09-14.pdf
+!output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf
