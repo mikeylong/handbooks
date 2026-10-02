@@ -1,6 +1,6 @@
 # Hosted handbook front page
 
-For handbooks at handbooks.mikelong.ai, use Production AI Engineering as the publication front-page reference. Apply this contract to each approved title when building or publishing its online reader.
+For this collection at handbooks.mikelong.ai and handbooks.surfaces.systems, use Production AI Engineering as the publication front-page reference. Both domains serve the same approved handbooks and share this contract. Apply this contract to each approved title when building or publishing its online reader.
 
 The cover must include:
 
@@ -22,3 +22,5 @@ Before publication, validate every hosted title against this contract. Check the
 The current gallery builder enforces this contract through `scripts/publication-front.mjs` in the Production AI Engineering repository. Other publishing implementations must provide an equivalent check; prose guidance alone does not establish that the delivered page includes these elements.
 
 Treat the shared navigation style as a publication requirement. The build must reject a missing return class, missing shared stylesheet, inline return-link overrides, or a broken gallery destination for every published title. Test those failures against newly built output; do not validate stale generated files. During browser review, compare computed font size, padding, and line height with the Production AI left-rail link, then verify the mobile return remains available.
+
+Every hosted reader must also pass [the shared appearance contract](hosted-appearance.md). Adding a gallery card or passing the front-page metadata checks does not establish light/dark image quality.
