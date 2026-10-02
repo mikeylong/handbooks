@@ -30,7 +30,7 @@ console.log('An unvalidated new gallery title is also rejected.');
 
 // Exercise the actual hosted readers, including the original missing-class bug.
 const gallery = await readFile(new URL('../output/site/index.html', import.meta.url), 'utf8');
-for (const path of ['ai-evaluation', 'production-ai-engineering']) {
+for (const path of ['ai-evaluation', 'production-ai-engineering', 'ai-consulting']) {
  const reader = await readFile(new URL(`../output/site/${path}/index.html`, import.meta.url), 'utf8');
  validateGalleryCover(gallery, `/${path}/`, reader);
  const preview = renderGalleryCover(reader);
@@ -62,6 +62,6 @@ for (const path of ['ai-evaluation', 'production-ai-engineering']) {
   assert.throws(()=>validateReaderNavigation(broken, path), expected, `${path}: ${name}`);
  }
 }
-console.log('Both hosted readers pass navigation parity; missing styles, local overrides, and broken return links are rejected.');
-console.log('Both hosted readers reject stray cover content between Contents and the first chapter.');
-console.log('Both gallery previews follow reader title, subtitle, credit, and edition; stale raster covers are rejected.');
+console.log('All hosted readers pass navigation parity; missing styles, local overrides, and broken return links are rejected.');
+console.log('All hosted readers reject stray cover content between Contents and the first chapter.');
+console.log('All gallery previews follow reader title, subtitle, credit, and edition; stale raster covers are rejected.');

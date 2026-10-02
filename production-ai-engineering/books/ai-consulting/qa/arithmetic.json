@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "checks": {
+    "cohorts": true,
+    "citations": true,
+    "required_fields": true,
+    "eligible_use": true,
+    "final_use": true,
+    "first_review": true,
+    "Low": true,
+    "Expected": true,
+    "High": true
+  },
+  "scenarios": [
+    {
+      "scenario": "Low",
+      "capacity": "300.0000000000000000000000000",
+      "platform": "54.40",
+      "ownership": 1080,
+      "cleanupAmortization": 500,
+      "netPerMonthYear1": "-1334.400000000000000000000000",
+      "rounded": "-1334.40"
+    },
+    {
+      "scenario": "Expected",
+      "capacity": "1477.440",
+      "platform": "98.9520",
+      "ownership": 1080,
+      "cleanupAmortization": 500,
+      "netPerMonthYear1": "-201.5120",
+      "rounded": "-201.51"
+    },
+    {
+      "scenario": "High",
+      "capacity": "3528.00",
+      "platform": "113.40",
+      "ownership": 1080,
+      "cleanupAmortization": 500,
+      "netPerMonthYear1": "1834.60",
+      "rounded": "1834.60"
+    }
+  ],
+  "assumptions": "Fictional monthly planning inputs; time association is not causal; no cash conversion demonstrated."
+}

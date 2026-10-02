@@ -9,17 +9,20 @@ import {addSiteTheme, validateSiteTheme, finalizeSiteThemes, hostedHtmlPages} fr
 const source = await readFile(new URL('../site/theme.js', import.meta.url), 'utf8');
 function page({saved = null, dark = false, blocked = false} = {}) {
   const root = {dataset:{}}, color = {}, events = {}, documentEvents = {}, systemEvents = {};
-  const selects = [0,1].map(() => ({value:'system', matches:selector => selector === '[data-theme-select]'}));
+  const triggers = [0,1].map(() => ({setAttribute:(key,value) => {}, focus:() => {}}));
+  const labels = [0,1].map(() => ({textContent:''}));
+  const choices = [0,1].flatMap(() => ['system','light','dark'].map(value => ({dataset:{themeChoice:value}, attributes:{}, setAttribute(key,value){this.attributes[key]=value;}})));
+  const controls = triggers.map(trigger => ({querySelector:selector => selector === '.theme-menu' ? {hidden:true} : trigger}));
   const storage = new Map(saved === null ? [] : [['handbook-theme', saved]]);
   const system = {matches:dark, addEventListener:(name, fn) => systemEvents[name] = fn};
   runInNewContext(source, {
     matchMedia:() => system,
     localStorage:{getItem:key => {if(blocked) throw Error(); return storage.get(key) ?? null;}, setItem:(key, value) => {if(blocked) throw Error(); storage.set(key, value);}},
-    document:{documentElement:root, querySelectorAll:() => selects, querySelector:() => color, addEventListener:(name, fn) => documentEvents[name] = fn},
+    document:{documentElement:root, querySelectorAll:selector => ({'[data-theme-trigger]':triggers,'[data-theme-label]':labels,'[data-theme-choice]':choices,'.theme-control':controls}[selector]), querySelector:() => color, addEventListener:(name, fn) => documentEvents[name] = fn},
     window:{addEventListener:(name, fn) => events[name] = fn},
   });
-  return {root, color, events, documentEvents, systemEvents, system, selects, storage,
-    choose:value => {selects[0].value = value; documentEvents.change({target:selects[0]});}};
+  return {root, color, events, documentEvents, systemEvents, system, labels, choices, storage,
+    choose:value => {const choice=choices.find(button=>button.dataset.themeChoice===value); documentEvents.click({target:{closest:selector=>selector==='.theme-control'?controls[0]:selector==='[data-theme-choice]'?choice:null}});}};
 }
 for (const dark of [false,true]) {
   const system = page({dark});
@@ -39,7 +42,8 @@ const manual = page();
 manual.choose('dark');
 assert.equal(manual.root.dataset.theme, 'dark');
 assert.equal(manual.color.content, '#191918');
-assert(manual.selects.every(select => select.value === 'dark'), 'Desktop and mobile controls stay synchronized');
+assert(manual.labels.every(label => label.textContent === 'Dark'), 'Desktop and mobile controls stay synchronized');
+assert.equal(manual.choices.filter(choice => choice.attributes['aria-checked'] === 'true').length, 2, 'Each control exposes exactly one checked choice');
 assert.equal(page({saved:manual.storage.get('handbook-theme')}).root.dataset.theme, 'dark', 'Preference survives navigation');
 manual.storage.set('handbook-theme', 'light');
 manual.events.pageshow();
@@ -49,7 +53,7 @@ manual.events.storage({key:'handbook-theme'});
 assert.equal(manual.root.dataset.theme, 'dark', 'Other tabs update the current page');
 manual.storage.clear();
 manual.events.storage({key:null});
-assert.equal(manual.selects[0].value, 'system', 'Cleared storage restores system mode');
+assert.equal(manual.labels[0].textContent, 'System', 'Cleared storage restores system mode');
 assert.equal(page({saved:'invalid',dark:true}).root.dataset.theme, 'dark', 'Invalid saved values fall back to system');
 const blocked = page({blocked:true});
 blocked.choose('dark');
@@ -62,7 +66,7 @@ for (const pagePath of await hostedHtmlPages(output)) {
   const gallery = path === 'index.html';
   const html = await readFile(pagePath, 'utf8');
   validateSiteTheme(html, gallery);
-  for (const broken of [html.replace('src="/theme.js"', 'src="/missing.js"'), html.replace('href="/theme.css"', 'href="/missing.css"'), html.replace('data-theme-select', 'missing-select')]) {
+  for (const broken of [html.replace('src="/theme.js"', 'src="/missing.js"'), html.replace('href="/theme.css"', 'href="/missing.css"'), html.replace('data-theme-trigger', 'missing-trigger')]) {
     assert.throws(() => validateSiteTheme(broken, gallery), /Site lacks/, `${path}: missing shared theme surface`);
   }
 }

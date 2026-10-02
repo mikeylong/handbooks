@@ -78,6 +78,18 @@ const evaluationHtml = (await readFile(resolve(output, "ai-evaluation/index.html
   .replace("</head>", '<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>');
 await writeFile(resolve(output, "ai-evaluation/index.html"), evaluationHtml);
 validatePublicationFront(evaluationHtml, {...evaluationPublication, ...evaluation, pdfUrl:evaluation.pdf.split("/").pop()});
+const consultingRoot = resolve(root, "books/ai-consulting");
+const consulting = JSON.parse(await readFile(resolve(consultingRoot, "release-manifest.json"), "utf8"));
+const consultingPublication = JSON.parse(await readFile(resolve(consultingRoot, "publication.json"), "utf8"));
+const consultingPdf = await readFile(resolve(consultingRoot, consulting.pdf));
+if (createHash("sha256").update(consultingPdf).digest("hex") !== consulting.sha256) throw new Error("Consulting PDF checksum mismatch");
+await cp(resolve(consultingRoot, "reader"), resolve(output, "ai-consulting"), {recursive:true});
+const hostedConsultingPdf = await readFile(resolve(output, "ai-consulting", consulting.pdf.split("/").pop()));
+if (createHash("sha256").update(hostedConsultingPdf).digest("hex") !== consulting.sha256) throw new Error("Consulting reader download mismatch");
+const consultingHtml = (await readFile(resolve(output, "ai-consulting/index.html"), "utf8"))
+  .replace("</head>", '<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>');
+await writeFile(resolve(output, "ai-consulting/index.html"), consultingHtml);
+validatePublicationFront(consultingHtml, {...consultingPublication, ...consulting, pdfUrl:consulting.pdf.split("/").pop()});
 const productionReview = {
   at:book.match(/data-release-at="([^"]+)"/)?.[1],
   timeZone:book.match(/data-release-time-zone="([^"]+)"/)?.[1],
@@ -86,13 +98,15 @@ const productionReview = {
 validatePublicationFront(hostedBook, {title:"Production AI Engineering", author:"Michael Long", authorSite:"https://surfaces.systems", repository:"https://github.com/mikeylong/production-ai-engineering-book", releaseUrl:"https://github.com/mikeylong/production-ai-engineering-book/releases", date:pdfPath.match(/(\d{4}-\d{2}-\d{2})\.pdf$/)?.[1], version, pages, pdfUrl:"/"+pdfPath, review:productionReview});
 const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
   .replace("{{PRODUCTION_COVER}}", renderGalleryCover(hostedBook))
-  .replace("{{EVALUATION_COVER}}", renderGalleryCover(evaluationHtml));
+  .replace("{{EVALUATION_COVER}}", renderGalleryCover(evaluationHtml))
+  .replace("{{CONSULTING_COVER}}", renderGalleryCover(consultingHtml));
 validateGalleryCover(gallery, "/production-ai-engineering/", hostedBook);
 validateGalleryCover(gallery, "/ai-evaluation/", evaluationHtml);
-validateGalleryPublications(gallery, ["/production-ai-engineering/", "/ai-evaluation/"]);
+validateGalleryCover(gallery, "/ai-consulting/", consultingHtml);
+validateGalleryPublications(gallery, ["/production-ai-engineering/", "/ai-evaluation/", "/ai-consulting/"]);
 await writeFile(resolve(output, "index.html"), gallery);
 await writeFile(resolve(output, "production-ai-engineering/index.html"), hostedBook);
 await writeFile(resolve(output, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: https://handbooks.mikelong.ai/sitemap.xml\n");
-await writeFile(resolve(output, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://handbooks.mikelong.ai/</loc></url><url><loc>https://handbooks.mikelong.ai/production-ai-engineering/</loc></url><url><loc>https://handbooks.mikelong.ai/ai-evaluation/</loc></url></urlset>\n');
+await writeFile(resolve(output, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://handbooks.mikelong.ai/</loc></url><url><loc>https://handbooks.mikelong.ai/production-ai-engineering/</loc></url><url><loc>https://handbooks.mikelong.ai/ai-evaluation/</loc></url><url><loc>https://handbooks.mikelong.ai/ai-consulting/</loc></url></urlset>\n');
 await finalizeSiteThemes(output);
 console.log(`Built ${output}: gallery + Production AI Engineering ${version}, ${pages} pages`);

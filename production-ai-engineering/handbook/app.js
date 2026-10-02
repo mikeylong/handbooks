@@ -213,7 +213,7 @@
 
       link.href = `#${item.id}`;
       meta.className = "search-result-meta";
-      meta.textContent = `Chapter ${item.chapterNumber} · ${item.chapterTitle}`;
+      meta.textContent = item.chapterNumber ? `Chapter ${item.chapterNumber} · ${item.chapterTitle}` : item.chapterTitle;
       title.textContent = item.heading;
       excerpt.className = "search-result-excerpt";
       excerpt.textContent = excerptFor(item, terms);

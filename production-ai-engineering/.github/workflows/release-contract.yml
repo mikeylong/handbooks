@@ -40,5 +40,8 @@ jobs:
       - name: Validate the AI Evaluation release
         run: npm run validate:evaluation
 
+      - name: Validate the AI Consulting release
+        run: npm run validate:consulting
+
       - name: Reject incomplete publication front pages
         run: npm run validate:front-pages

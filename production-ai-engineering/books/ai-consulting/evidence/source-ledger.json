@@ -1,0 +1,499 @@
+{
+  "researchCutoff": "2026-10-01",
+  "policy": "Unavailable bodies are further reading, not verified support. Author method and all Harborline figures are synthesis/fiction. No demand or sales claims are made.",
+  "sources": [
+    {
+      "id": "C1",
+      "citation": "NIST. Artificial Intelligence Risk Management Framework (AI RMF 1.0), January 26, 2023. Voluntary framework.",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official abstract",
+      "supportedClaim": "Voluntary risk framework; use-specific risk work.",
+      "claimLocations": [
+        "Further reading",
+        "C1"
+      ],
+      "freshnessAndLimit": "Jan 26, 2023; no claim about an announced revision.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "C1",
+          "rationale": "Removes an unnecessary living-status claim."
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "citation": "NIST AI 600-1. Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile, July 26, 2024.",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official abstract",
+      "supportedClaim": "Generative-AI profile and publication date.",
+      "claimLocations": [
+        "Further reading",
+        "C2"
+      ],
+      "freshnessAndLimit": "July 26, 2024; profile is guidance, not certification.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "C2",
+          "rationale": "Separates publication from website updates."
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "citation": "NIST. AI RMF Playbook, complete version 2023. Suggested actions rather than a mandatory checklist.",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official page",
+      "supportedClaim": "Suggested actions for Govern, Map, Measure, Manage.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Complete Playbook; not a mandatory checklist.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C4",
+      "citation": "ISO. ISO/IEC 42001:2023 AI management systems, free official summary.",
+      "url": "https://www.iso.org/standard/42001",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "free official summary",
+      "supportedClaim": "Organizational AI management system.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "ISO/IEC 42001:2023; full paid requirements not inspected.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C5",
+      "citation": "OECD. Recommendation of the Council on Artificial Intelligence, adopted 2019 and amended 2024.",
+      "url": "https://www.oecd.org/en/topics/ai-principles.html",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official overview",
+      "supportedClaim": "Trustworthy AI principles and adoption/amendment dates.",
+      "claimLocations": [
+        "Further reading",
+        "C5"
+      ],
+      "freshnessAndLimit": "2019 recommendation updated 2024; nonbinding.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "C5",
+          "rationale": "Uses an accessible official overview; records legal-instrument access limitation."
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "citation": "European Union. Regulation (EU) 2024/1689, the Artificial Intelligence Act.",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=en",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "blocked body",
+      "supportedClaim": "Further reading: original AI Act text.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Bot/JavaScript barrier; no changed legal claim supported.",
+      "disposition": "contextual only; body not verified",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C7",
+      "citation": "European Union. AI Omnibus Regulation, July 2026. Consult the final legal text alongside the Commission timeline in C8.",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32026R1744",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "blocked body",
+      "supportedClaim": "Further reading: final AI Omnibus legal text.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Bot/JavaScript barrier; identity/timeline attributed to C8, not asserted from this body.",
+      "disposition": "contextual only; body not verified",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C8",
+      "citation": "European Commission. AI Act implementation timeline, accessed October 1, 2026.",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official page",
+      "supportedClaim": "Attributed implementation dates in Chapter 5.",
+      "claimLocations": [
+        "Further reading",
+        "C7"
+      ],
+      "freshnessAndLimit": "Living Commission summary accessed October 1, 2026; counsel must verify current law.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "C7",
+          "rationale": "Keeps the legal reference without treating the inaccessible body as verified support."
+        }
+      ]
+    },
+    {
+      "id": "C9",
+      "citation": "European Commission. AI literacy questions and answers. Further reading; page body unavailable at the October 1, 2026 check.",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "unavailable body",
+      "supportedClaim": "Contextual AI literacy FAQ.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Repeated tool Internal Error; C8 supports literacy date.",
+      "disposition": "contextual only; body not verified",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C10",
+      "citation": "European Union. Regulation (EU) 2016/679, General Data Protection Regulation.",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "full official text",
+      "supportedClaim": "Privacy obligations must be assessed for the actual data and role.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "GDPR consolidated legal publication; no engagement-specific legal conclusion.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C11",
+      "citation": "European Data Protection Board. Opinion 28/2024 on AI models and personal data.",
+      "url": "https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-282024-on-certain-data-protection-aspects-related-to_en",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official landing page",
+      "supportedClaim": "Privacy questions around AI models.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Opinion 28/2024; PDF opinion not independently inspected.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C12",
+      "citation": "NIST. Cybersecurity Framework 2.0, 2024.",
+      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official abstract",
+      "supportedClaim": "Cybersecurity governance and management.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "CSF 2.0, Feb 26, 2024; voluntary.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C13",
+      "citation": "NIST SP 800-218A. Secure Software Development Practices for Generative AI, 2024.",
+      "url": "https://csrc.nist.gov/pubs/sp/800/218/a/final",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official abstract",
+      "supportedClaim": "Secure AI software development lifecycle.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "SP 800-218A, July 2024; no clause-level interpretation.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C14",
+      "citation": "CISA and UK NCSC. Guidelines for Secure AI System Development, 2023.",
+      "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official co-publisher page",
+      "supportedClaim": "Secure AI design, development, deployment and operation.",
+      "claimLocations": [
+        "Further reading",
+        "C14"
+      ],
+      "freshnessAndLimit": "2023 guidelines; NCSC accessible where CISA route was unavailable.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "C14",
+          "rationale": "Uses the co-publisher primary source when the CISA page is inaccessible."
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "citation": "OWASP. Top 10 for LLM Applications 2025, released November 2024.",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official resource page",
+      "supportedClaim": "Threat-model review for LLM applications.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "2025 edition; not an exhaustive threat model.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C16",
+      "citation": "UK Government. Artificial Intelligence Playbook for the UK Government, 2025.",
+      "url": "https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "full official HTML",
+      "supportedClaim": "Problem-led public-sector AI delivery and operating controls.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Feb 10, 2025; jurisdiction and organizational context require adaptation.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C17",
+      "citation": "UK Government. Guidance for evaluating the impact of AI tools, 2025.",
+      "url": "https://www.gov.uk/government/news/new-guidance-for-evaluating-the-impact-of-ai-tools",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official announcement; linked PDF identified",
+      "supportedClaim": "Separate impact evaluation from model assurance; causal limits of nonrandom comparisons.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Announcement Jan 27, 2025, linked guidance dated 2024; 54-page linked PDF identified, not reviewed in full.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C18",
+      "citation": "U.S. Government Accountability Office. AI Accountability Framework, 2021.",
+      "url": "https://www.gao.gov/products/gao-21-519sp",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official summary",
+      "supportedClaim": "Accountability through governance, data, performance and monitoring.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "GAO-21-519SP 2021; no legal certification.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C19",
+      "citation": "OECD. The Adoption of Artificial Intelligence in Firms, 2025.",
+      "url": "https://www.oecd.org/en/publications/the-adoption-of-artificial-intelligence-in-firms_f9ef33c3-en/full-report.html",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "full official HTML",
+      "supportedClaim": "Organizational adoption depends on practical conditions.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "2025 report uses older survey data; no current prevalence claim retained.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C20",
+      "citation": "European Commission. Updated EU AI Model Contractual Clauses, March 5, 2025. Adapt these examples to the current law and contract; they are not a compliance certificate.",
+      "url": "https://public-buyers-community.ec.europa.eu/communities/procurement-ai/resources/updated-eu-ai-model-contractual-clauses",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official resource page and commentary PDF",
+      "supportedClaim": "Contract diligence examples need adaptation and do not establish compliance.",
+      "claimLocations": [
+        "Further reading",
+        "C20"
+      ],
+      "freshnessAndLimit": "Mar 5, 2025; public procurement context, not a complete contract; older legal references require review.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "C20",
+          "rationale": "Preserves the model-clause and legal-review distinction."
+        }
+      ]
+    },
+    {
+      "id": "C21",
+      "citation": "NIST SP 1326. Cybersecurity Supply Chain Risk Management: Due Diligence Assessment Quick-Start Guide, July 2026.",
+      "url": "https://csrc.nist.gov/pubs/sp/1326/final",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official abstract",
+      "supportedClaim": "Supplier provenance, resilience, cyber and supply-chain diligence.",
+      "claimLocations": [
+        "Further reading",
+        "C21"
+      ],
+      "freshnessAndLimit": "Final SP 1326 July 2026; use title and scope shown by NIST.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "C21",
+          "rationale": "Uses the verified publication title and date."
+        }
+      ]
+    },
+    {
+      "id": "C22",
+      "citation": "UK Government. Guidelines for AI Procurement, 2020.",
+      "url": "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "full official HTML",
+      "supportedClaim": "AI procurement question patterns.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "2020 guidance; older public-sector context, not current law.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C23",
+      "citation": "OpenAI. Evaluation best practices, living documentation accessed October 1, 2026.",
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official living documentation",
+      "supportedClaim": "Custom test cases, human calibration and recurring evaluation.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Provider-specific details change; no sample thresholds treated as universal.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C24",
+      "citation": "U.S. Department of Labor. Artificial Intelligence Literacy Framework, 2026. Further reading; source body unavailable at this edition check.",
+      "url": "https://www.dol.gov/agencies/eta/advisories/ten-07-25",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "unavailable body",
+      "supportedClaim": "Contextual literacy framework reading.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Official search result identifies framework; full body blocked. Not support for changed claims.",
+      "disposition": "contextual only; body not verified",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C25",
+      "citation": "Government of Canada. Algorithmic Impact Assessment tool, current page accessed October 1, 2026.",
+      "url": "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making/algorithmic-impact-assessment.html",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "full official HTML",
+      "supportedClaim": "Impact assessment questions for Canadian government automated decisions.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Accessible replacement nested URL; Canadian scope, not universal scoring authority.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C26",
+      "citation": "U.S. Department of Labor. Artificial Intelligence and Worker Well-being: Principles for Developers and Employers, 2024. Further reading; source body unavailable at this edition check.",
+      "url": "https://www.dol.gov/newsroom/releases/osec/osec20240516",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "unavailable body",
+      "supportedClaim": "Contextual worker-wellbeing principles reading.",
+      "claimLocations": [
+        "Further reading",
+        "chapter source-note groups; author synthesis separately identified"
+      ],
+      "freshnessAndLimit": "Source body blocked; not support for changed claims.",
+      "disposition": "contextual only; body not verified",
+      "acceptedChanges": []
+    },
+    {
+      "id": "C27",
+      "citation": "OECD. OECD Due Diligence Guidance for Responsible AI, February 19, 2026.",
+      "url": "https://www.oecd.org/en/publications/oecd-due-diligence-guidance-for-responsible-ai_41671712-en.html",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "official page and executive summary",
+      "supportedClaim": "Six-part voluntary responsible-AI due diligence in Chapter 5.",
+      "claimLocations": [
+        "Further reading",
+        "Chapter 5"
+      ],
+      "freshnessAndLimit": "Published Feb 19, 2026; organizational process, not legal safe harbor.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "Chapter 5",
+          "rationale": "Broadens current primary-source coverage for supplier diligence."
+        }
+      ]
+    },
+    {
+      "id": "C28",
+      "citation": "W3C. Web Content Accessibility Guidelines (WCAG) 2.2. Testable web criteria; evaluate the actual workflow.",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "accessDate": "2026-10-01",
+      "authority": "Primary publisher or official co-publisher",
+      "inspectionExtent": "full normative HTML",
+      "supportedClaim": "Test the accessible web workflow, not only its visual appearance.",
+      "claimLocations": [
+        "Further reading",
+        "Chapter 9"
+      ],
+      "freshnessAndLimit": "WCAG 2.2; does not cover every usability problem or legal duty.",
+      "disposition": "retained within inspected scope",
+      "acceptedChanges": [
+        {
+          "section": "Chapter 9",
+          "rationale": "Adds an actionable accessibility check without claiming compliance."
+        }
+      ]
+    }
+  ]
+}
