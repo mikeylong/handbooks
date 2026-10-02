@@ -3,7 +3,7 @@ import {readFile} from 'node:fs/promises';
 import {runInNewContext} from 'node:vm';
 
 const source = await readFile(new URL('../site/gallery-focus.js', import.meta.url), 'utf8');
-const paths = ['/production-ai-engineering/', '/ai-evaluation/'];
+const paths = ['/production-ai-engineering/', '/ai-evaluation/', '/ai-consulting/'];
 function page({reader, referrer = '', type = 'navigate', state = null, storage = new Map(), blocked = false} = {}) {
   const events = {}, documentEvents = {};
   const makeLink = path => {

@@ -1,7 +1,9 @@
 import {readFile, readdir, writeFile} from 'node:fs/promises';
 import {join, relative} from 'node:path';
 
-const control = '<label class="theme-control"><span>Appearance</span><select data-theme-select aria-label="Appearance"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>';
+function control(id) {
+  return `<div class="theme-control"><button class="theme-trigger" type="button" data-theme-trigger aria-label="Appearance: System" aria-haspopup="menu" aria-expanded="false" aria-controls="${id}"><svg class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg><span data-theme-label>System</span><svg class="theme-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.2"/></svg></button><div class="theme-menu" id="${id}" role="menu" aria-label="Appearance" hidden>${['system','light','dark'].map(value => `<button type="button" role="menuitemradio" data-theme-choice="${value}" aria-checked="${value === 'system'}" tabindex="-1"><span>${value[0].toUpperCase()+value.slice(1)}</span><span class="theme-check" aria-hidden="true">✓</span></button>`).join('')}</div></div>`;
+}
 // Quoted attribute values may contain >, including ordinary image descriptions.
 const tagSource = String.raw`<\/?[a-z](?:"[^"]*"|'[^']*'|[^'">])*>`;
 function attributes(tag) {
@@ -21,20 +23,20 @@ export function addSiteTheme(html, gallery = false) {
     .replace('<meta name="color-scheme" content="light">', '<meta name="color-scheme" content="light dark">')
     .replace('<head>', '<head><script src="/theme.js"></script>')
     .replace('</head>', '<link rel="stylesheet" href="/theme.css"></head>')
-    .replace(gallery ? '<div class="gallery-rule"' : '<div class="sidebar-meta">', gallery ? `${control}<div class="gallery-rule"` : `<div class="sidebar-meta">${control}`)
-    .replace('<div class="mobile-actions">', `<div class="mobile-actions">${control}`);
+    .replace(gallery ? '<div class="gallery-rule"' : '<div class="sidebar-meta">', gallery ? `${control('appearance-gallery')}<div class="gallery-rule"` : `<div class="sidebar-meta">${control('appearance-desktop')}`)
+    .replace('<div class="mobile-actions">', `<div class="mobile-actions">${control('appearance-mobile')}`);
 }
 
 export function validateSiteTheme(html, gallery = false) {
   if (!html.includes('<script src="/theme.js"></script>') || html.indexOf('/theme.js') > html.indexOf('rel="stylesheet"')
     || !html.includes('href="/theme.css"') || !html.includes('content="light dark"')
-    || [...html.matchAll(/data-theme-select/g)].length !== (gallery ? 1 : 2)) {
+    || [...html.matchAll(/data-theme-trigger/g)].length !== (gallery ? 1 : 2)) {
     throw new Error('Site lacks shared appearance controls or theme initialization before paint');
   }
   if (!gallery) {
     for (const container of ['sidebar-meta', 'mobile-actions']) {
       const contents = html.match(new RegExp(`<div\\b[^>]*class="${container}"[^>]*>([\\s\\S]*?)</div>`))?.[1];
-      if (!contents?.includes('data-theme-select')) throw new Error(`Site lacks ${container} appearance control`);
+      if (!contents?.includes('data-theme-trigger')) throw new Error(`Site lacks ${container} appearance control`);
     }
     const ancestors = [];
     let mainFound = false;

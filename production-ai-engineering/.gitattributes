@@ -1,2 +1,8 @@
 
 books/ai-evaluation/**/*.pdf binary
+books/ai-consulting/**/*.pdf binary
+# Preserve the exact archived comparison and research bytes.
+books/ai-consulting/evidence/*.patch whitespace=-blank-at-eol,-blank-at-eof
+books/ai-consulting/evidence/research*-web.txt whitespace=-blank-at-eol,-blank-at-eof
+# This layout is a frozen source snapshot, including its final blank lines.
+books/ai-consulting/source/layout_reference.py whitespace=-blank-at-eof
