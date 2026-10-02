@@ -1,6 +1,6 @@
 # Hosted handbook front page
 
-For handbooks at handbooks.mikelong.ai, use Production AI Engineering as the publication front-page reference. Apply this contract to each approved title when building or publishing its online reader.
+For this collection at handbooks.mikelong.ai and handbooks.surfaces.systems, use Production AI Engineering as the publication front-page reference. Both domains serve the same approved handbooks and share this contract. Apply this contract to each approved title when building or publishing its online reader.
 
 The cover must include:
 
