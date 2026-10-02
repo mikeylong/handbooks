@@ -1,0 +1,67 @@
+.theme-control { display: none; align-items: center; gap: 0.5rem; font-family: var(--sans); font-size: 0.72rem; }
+html[data-theme] .theme-control { display: inline-flex; }
+.theme-control select {
+  min-height: 2.75rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.theme-control select:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.gallery-intro > .theme-control { float: right; }
+.sidebar-meta > .theme-control { margin-bottom: 0.8rem; }
+.mobile-actions .theme-control > span { display: none; }
+
+@media screen {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #191918;
+    --paper-raised: #222221;
+    --ink: #eeece6;
+    --muted: #b5b2aa;
+    --faint: #aaa79e;
+    --line: #49473f;
+    --line-strong: #9b978a;
+    --highlight: #494126;
+  }
+  .sidebar { background: var(--paper-raised); }
+  .sidebar-nav a:hover,
+  .action-link:not(.action-link-primary):hover,
+  .search-result:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+  .action-link-primary:hover { background: color-mix(in srgb, var(--ink) 88%, var(--paper)); }
+  p code, li code, td code { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+  :root[data-theme="dark"] main figure img {
+    filter: grayscale(1) invert(1) contrast(1.1);
+    mix-blend-mode: screen;
+  }
+  :root[data-theme="dark"] figure.chapter-art { filter: none; clip-path: none; }
+}
+/* With JavaScript disabled, follow the system and keep the control hidden. */
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --paper: #191918;
+    --paper-raised: #222221;
+    --ink: #eeece6;
+    --muted: #b5b2aa;
+    --faint: #aaa79e;
+    --line: #49473f;
+    --line-strong: #9b978a;
+    --highlight: #494126;
+  }
+  :root:not([data-theme]) main figure img { filter: grayscale(1) invert(1) contrast(1.1); mix-blend-mode: screen; }
+  :root:not([data-theme]) figure.chapter-art { filter: none; clip-path: none; }
+}
+@media (max-width: 600px) {
+  .mobile-title { display: none; }
+  .gallery-intro > .theme-control > span { display: none; }
+  .mobile-actions { gap: 0.55rem; }
+  .mobile-actions .theme-control select { max-width: 5.6rem; padding-inline: 0.25rem; }
+}
+@media print {
+  :root { color-scheme: light; }
+  html[data-theme] .theme-control { display: none; }
+}
