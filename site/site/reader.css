@@ -3299,3 +3299,9 @@ tbody tr:last-child td {
   }
 
 }
+
+/* Public handbook URLs must wrap at narrow reader widths. */
+#main-content p { overflow-wrap: anywhere; }
+
+.edition-details h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.04; letter-spacing: -.04em; }
+.edition-details code { overflow-wrap: anywhere; }

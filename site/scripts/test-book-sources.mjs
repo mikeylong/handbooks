@@ -19,5 +19,8 @@ try {
  await writeFile(resolve(directory,books[1].pdf),'changed PDF');await assert.rejects(validatePackage(directory,books[1]),/Approved package changed/);
  await cp(new URL(books[1].pdf,source),resolve(directory,books[1].pdf));
  await writeFile(resolve(directory,'reader/index.html'),'new unapproved reader');await assert.rejects(validatePackage(directory,books[1]),/Approved package changed/);
- console.log('Draft publication, unsafe paths, changed PDF and unapproved reader are rejected.');
+ await cp(new URL('reader/index.html',source),resolve(directory,'reader/index.html'));
+ const packageManifest=JSON.parse(await readFile(resolve(directory,'publication-package.json'),'utf8'));const asset=Object.keys(packageManifest.files).find(path=>path.startsWith('reader/assets/'));
+ await writeFile(resolve(directory,asset),'changed artwork');await assert.rejects(validatePackage(directory,books[1]),/Approved package changed/);
+ console.log('Draft publication, unsafe paths, changed PDF, unapproved reader and changed artwork are rejected.');
 } finally {await rm(directory,{recursive:true,force:true});}

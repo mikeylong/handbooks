@@ -64,3 +64,14 @@ for (const path of ['ai-evaluation', 'production-ai-engineering', 'ai-consulting
 console.log('All hosted readers pass navigation parity; missing styles, local overrides, and broken return links are rejected.');
 console.log('All hosted readers reject stray cover content between Contents and the first chapter.');
 console.log('All gallery previews follow reader title, subtitle, credit, and edition; stale raster covers are rejected.');
+
+// Every published HTML surface and sitemap uses the supported public host.
+const {hostedHtmlPages}=await import('./site-theme.mjs');
+for(const path of await hostedHtmlPages(new URL('../output/site/',import.meta.url).pathname)){
+ const page=await readFile(path,'utf8');
+ assert(!/handbooks\.mikelong\.(?:ai|design)/.test(page),'Legacy host remains in '+path);
+ const canonical=page.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/);
+ assert(canonical?.[1].startsWith('https://handbooks.surfaces.systems/'),'Canonical host mismatch: '+path);
+}
+assert(!/handbooks\.mikelong\.(?:ai|design)/.test(await readFile(new URL('../output/site/sitemap.xml',import.meta.url),'utf8')));
+console.log('All canonical HTML links and sitemap entries use Surfaces.');
