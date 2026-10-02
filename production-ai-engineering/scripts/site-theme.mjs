@@ -1,6 +1,10 @@
+import {readFile, readdir, writeFile} from 'node:fs/promises';
+import {join, relative} from 'node:path';
+
 const control = '<label class="theme-control"><span>Appearance</span><select data-theme-select aria-label="Appearance"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>';
 
 export function addSiteTheme(html, gallery = false) {
+  if (html.includes('src="/theme.js"')) return html;
   return html
     .replace('<header class="mobile-bar"><a href="/">← All handbooks</a>', '<header class="mobile-bar"><a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a>')
     .replace('<meta name="color-scheme" content="light">', '<meta name="color-scheme" content="light dark">')
@@ -16,4 +20,44 @@ export function validateSiteTheme(html, gallery = false) {
     || [...html.matchAll(/data-theme-select/g)].length !== (gallery ? 1 : 2)) {
     throw new Error('Site lacks shared appearance controls or theme initialization before paint');
   }
+  if (!gallery) {
+    for (const container of ['sidebar-meta', 'mobile-actions']) {
+      const contents = html.match(new RegExp(`<div\\b[^>]*class="${container}"[^>]*>([\\s\\S]*?)</div>`))?.[1];
+      if (!contents?.includes('data-theme-select')) throw new Error(`Site lacks ${container} appearance control`);
+    }
+    const main = html.match(/<main\b[^>]*id=["']main-content["'][^>]*>([\s\S]*?)<\/main>/)?.[1];
+    if (main === undefined) throw new Error('Reader lacks main-content for shared image styling');
+    let figureDepth = 0;
+    for (const tag of main.match(/<\/?figure\b[^>]*>|<img\b[^>]*>/g) ?? []) {
+      if (tag.startsWith('</figure')) figureDepth--;
+      else if (tag.startsWith('<figure')) figureDepth++;
+      else if (figureDepth < 1) throw new Error('Reader raster image must be inside a figure for shared dark styling');
+      if (/\bstyle=["'][^"']*(?:filter|(?:-webkit-)?mask[\w-]*|mix-blend-mode|background[\w-]*)\s*:/i.test(tag)) {
+        throw new Error('Reader image has a local theme override');
+      }
+    }
+  }
+}
+
+// Discover output pages rather than maintaining a second list of handbook titles.
+export async function hostedHtmlPages(directory) {
+  const pages = [];
+  for (const entry of await readdir(directory, {withFileTypes:true})) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) pages.push(...await hostedHtmlPages(path));
+    else if (entry.isFile() && entry.name.endsWith('.html')) pages.push(path);
+  }
+  return pages.sort();
+}
+
+export async function finalizeSiteThemes(output) {
+  const pages = await hostedHtmlPages(output);
+  for (const path of pages) {
+    const gallery = relative(output, path) === 'index.html';
+    const html = addSiteTheme(await readFile(path, 'utf8'), gallery);
+    try { validateSiteTheme(html, gallery); }
+    catch (error) { throw new Error(`${relative(output, path)}: ${error.message}`); }
+    await writeFile(path, html);
+  }
+  return pages;
 }
