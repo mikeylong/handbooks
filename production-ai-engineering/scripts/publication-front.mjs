@@ -11,7 +11,21 @@ function element(html, tag, className) {
   }
   return '';
 }
+export function validateReaderNavigation(html, title) {
+  const sidebar = element(html, 'aside', 'sidebar');
+  const returns = [...sidebar.matchAll(/<a\b[^>]*href="\/"[^>]*>[\s\S]*?<\/a>/g)].map(match => match[0]);
+  const links = [...html.matchAll(/<link\b[^>]*>/g)].map(match => match[0]);
+  const failed = [];
+  if (returns.length !== 1 || !(returns[0].match(/\bclass="([^"]*)"/)?.[1].split(/\s+/) ?? []).includes('handbooks-return')
+    || !/aria-label="All handbooks"/.test(returns[0]) || !returns[0].includes('← All handbooks')) failed.push('sidebarReturn');
+  if (returns.some(link => /\bstyle=/.test(link))) failed.push('sidebarReturnInlineStyle');
+  if (!links.some(link => /rel="stylesheet"/.test(link) && /href="\/gallery\.css"/.test(link))) failed.push('sharedNavigationStyles');
+  if (failed.length) throw new Error(`${title}: inconsistent reader navigation (${failed.join(', ')})`);
+  return {title, status:'passed'};
+}
+
 export function validatePublicationFront(html, edition) {
+  validateReaderNavigation(html, edition.title);
   const cover = element(html, 'section', 'cover');
   const sidebar = element(html, 'div', 'sidebar-meta');
   const credit = element(cover, 'p', 'cover-credit');
