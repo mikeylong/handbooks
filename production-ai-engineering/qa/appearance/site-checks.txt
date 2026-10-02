@@ -1,0 +1,17 @@
+
+> validate:front-pages
+> npm run build && node scripts/test-publication-front.mjs && node scripts/test-gallery-focus.mjs && node scripts/test-site-theme.mjs
+
+
+> build
+> node scripts/build-site.mjs
+
+Built /Users/mike/handbooks/ai-consulting/candidate-2026-10-01/site-repository/output/site: gallery + Production AI Engineering 1.4.0, 105 pages
+Publication front page passed; 8 omissions or stale-copy regressions rejected.
+An unvalidated new gallery title is also rejected.
+All hosted readers pass navigation parity; missing styles, local overrides, and broken return links are rejected.
+All hosted readers reject stray cover content between Contents and the first chapter.
+All gallery previews follow reader title, subtitle, credit, and edition; stale raster covers are rejected.
+Gallery return focus passed for both titles, Back/cache restores, return links, blocked storage, and fresh visits.
+Future reader discovery passed; missing controls, image containers, and local inversion are rejected.
+Shared appearance passed: system/manual choices, navigation, cache return, cross-tab changes, blocked storage, and all published pages.
