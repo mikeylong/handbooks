@@ -40,8 +40,5 @@ jobs:
       - name: Validate the AI Evaluation release
         run: npm run validate:evaluation
 
-      - name: Build the handbook gallery
-        run: npm run build
-
       - name: Reject incomplete publication front pages
         run: npm run validate:front-pages

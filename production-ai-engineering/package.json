@@ -7,6 +7,6 @@
     "validate:handbook": "node handbook/validate-handbook.mjs",
     "validate:release": "node scripts/validate-production-release.mjs",
     "validate:evaluation": "node scripts/validate-evaluation-release.mjs",
-    "validate:front-pages": "node scripts/test-publication-front.mjs"
+    "validate:front-pages": "npm run build && node scripts/test-publication-front.mjs"
   }
 }
