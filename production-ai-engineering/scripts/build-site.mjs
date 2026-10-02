@@ -1,4 +1,5 @@
 import { validatePublicationFront, validateGalleryPublications } from "./publication-front.mjs";
+import { renderGalleryCover, validateGalleryCover } from "./gallery-covers.mjs";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
@@ -22,10 +23,6 @@ if (edition.pdfPath !== pdfPath || edition.version !== version || edition.pdfSha
   || !Number.isSafeInteger(edition.pdfPages) || edition.pdfPages < 1) {
   throw new Error("Site edition metadata does not match the published PDF");
 }
-const coverBytes = await readFile(resolve(root, "site/assets/production-ai-engineering-cover.png"));
-if (createHash("sha256").update(coverBytes).digest("hex") !== edition.coverSha256) {
-  throw new Error("Cover thumbnail does not match the reviewed edition");
-}
 const pages = edition.pdfPages;
 const book = await readFile(resolve(root, "handbook/index.html"), "utf8");
 if (!book.includes(`../${pdfPath}`) || !book.includes(`${pages} pages`)) {
@@ -35,7 +32,6 @@ if (!book.includes(`../${pdfPath}`) || !book.includes(`${pages} pages`)) {
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(resolve(root, "handbook/assets"), resolve(output, "production-ai-engineering/assets"), { recursive: true });
-await cp(resolve(root, "site/assets"), resolve(output, "assets"), { recursive: true });
 for (const name of ["styles.css", "app.js"]) {
   await cp(resolve(root, `handbook/${name}`), resolve(output, `production-ai-engineering/${name}`));
 }
@@ -69,8 +65,6 @@ const reader = readerBody
     });
     return `srcset="${candidates.join(", ")}"`;
   });
-const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
-  .replaceAll("{{VERSION}}", version).replaceAll("{{PAGE_COUNT}}", String(pages));
 const hostedBook = book.replace(readerBody, reader)
   .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
     const url = new URL(value, "https://handbooks.mikelong.ai/production-ai-engineering/");
@@ -88,6 +82,11 @@ const productionReview = {
   rrule:book.match(/data-release-rrule="([^"]+)"/)?.[1],
 };
 validatePublicationFront(hostedBook, {title:"Production AI Engineering", author:"Michael Long", authorSite:"https://surfaces.systems", repository:"https://github.com/mikeylong/production-ai-engineering-book", releaseUrl:"https://github.com/mikeylong/production-ai-engineering-book/releases", date:pdfPath.match(/(\d{4}-\d{2}-\d{2})\.pdf$/)?.[1], version, pages, pdfUrl:"/"+pdfPath, review:productionReview});
+const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
+  .replace("{{PRODUCTION_COVER}}", renderGalleryCover(hostedBook))
+  .replace("{{EVALUATION_COVER}}", renderGalleryCover(evaluationHtml));
+validateGalleryCover(gallery, "/production-ai-engineering/", hostedBook);
+validateGalleryCover(gallery, "/ai-evaluation/", evaluationHtml);
 validateGalleryPublications(gallery, ["/production-ai-engineering/", "/ai-evaluation/"]);
 await writeFile(resolve(output, "index.html"), gallery);
 await writeFile(resolve(output, "production-ai-engineering/index.html"), hostedBook);

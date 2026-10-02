@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
+import {renderGalleryCover, validateGalleryCover} from './gallery-covers.mjs';
 const book = new URL('../books/ai-evaluation/', import.meta.url);
 const manifest = JSON.parse(await readFile(new URL('release-manifest.json', book)));
 const publication = JSON.parse(await readFile(new URL('publication.json', book)));
@@ -28,8 +29,21 @@ assert.throws(()=>validateGalleryPublications('<a class="handbook-card-link" hre
 console.log('An unvalidated new gallery title is also rejected.');
 
 // Exercise the actual hosted readers, including the original missing-class bug.
+const gallery = await readFile(new URL('../output/site/index.html', import.meta.url), 'utf8');
 for (const path of ['ai-evaluation', 'production-ai-engineering']) {
  const reader = await readFile(new URL(`../output/site/${path}/index.html`, import.meta.url), 'utf8');
+ validateGalleryCover(gallery, `/${path}/`, reader);
+ const preview = renderGalleryCover(reader);
+ assert(!preview.includes('<a '), 'Cover credit must not create a nested link');
+ for (const name of ['title', 'subtitle', 'credit', 'date']) {
+  const changed = name === 'title'
+   ? reader.replace(/(<h1 id="cover-title">)[^<]+/, '$1Future title')
+   : reader.replace(new RegExp(`(<p class="cover-${name}">)[\\s\\S]*?</p>`), '$1Future edition detail</p>');
+  assert.notEqual(changed, reader, `${path}: ${name} fixture changed`);
+  assert.throws(() => validateGalleryCover(gallery, `/${path}/`, changed), /does not match/, `${path}: stale ${name}`);
+  assert(renderGalleryCover(changed).includes(name === 'title' ? 'Future title' : 'Future edition detail'), `${path}: rebuild follows ${name}`);
+ }
+ assert.throws(() => validateGalleryCover(gallery.replace(preview, '<img src="/old-cover.png">'), `/${path}/`, reader), /does not match/, `${path}: old raster cover`);
  assert.equal(validateReaderNavigation(reader, path).status, 'passed');
  assert.equal(validateReaderBodyStart(reader, path).status, 'passed');
  for (const leaked of ['October 2026 | Version 1.0.0', 'Future PDF cover metadata']) {
@@ -50,3 +64,4 @@ for (const path of ['ai-evaluation', 'production-ai-engineering']) {
 }
 console.log('Both hosted readers pass navigation parity; missing styles, local overrides, and broken return links are rejected.');
 console.log('Both hosted readers reject stray cover content between Contents and the first chapter.');
+console.log('Both gallery previews follow reader title, subtitle, credit, and edition; stale raster covers are rejected.');
