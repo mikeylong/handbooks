@@ -27,6 +27,7 @@ export function validateReaderNavigation(html, title) {
 
 export function validatePublicationFront(html, edition) {
   validateReaderNavigation(html, edition.title);
+  validateReaderBodyStart(html, edition.title);
   const cover = element(html, 'section', 'cover');
   const sidebar = element(html, 'div', 'sidebar-meta');
   const credit = element(cover, 'p', 'cover-credit');
@@ -56,6 +57,16 @@ export function validatePublicationFront(html, edition) {
   const failed = Object.entries(required).filter(([,passed])=>!passed).map(([name])=>name);
   if (failed.length) throw new Error(`${edition.title}: incomplete publication front page (${failed.join(', ')})`);
   return {title:edition.title, status:'passed', checks:Object.keys(required).length};
+}
+
+export function validateReaderBodyStart(html, title) {
+  const main = html.match(/<main\b[^>]*id="main-content"[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
+  const contents = element(main, 'section', 'contents-page');
+  const body = contents ? main.slice(main.indexOf(contents) + contents.length).trimStart() : '';
+  if (!/^<section\b[^>]*class="[^"]*\bchapter\b/.test(body)) {
+    throw new Error(`${title}: stray content between Contents and the first chapter`);
+  }
+  return {title, status:'passed'};
 }
 
 export function validateGalleryPublications(html, validatedPaths) {
