@@ -26,6 +26,7 @@ html[data-theme] .theme-control { display: inline-flex; }
     --line: #49473f;
     --line-strong: #9b978a;
     --highlight: #494126;
+    --image-paper: #e4e1d9;
   }
   .sidebar { background: var(--paper-raised); }
   .sidebar-nav a:hover,
@@ -33,11 +34,22 @@ html[data-theme] .theme-control { display: inline-flex; }
   .search-result:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
   .action-link-primary:hover { background: color-mix(in srgb, var(--ink) 88%, var(--paper)); }
   p code, li code, td code { background: color-mix(in srgb, var(--ink) 6%, transparent); }
-  :root[data-theme="dark"] main figure img {
-    filter: grayscale(1) invert(1) contrast(1.1);
-    mix-blend-mode: screen;
+  :root[data-theme="dark"] #main-content figure:has(img) {
+    background: var(--image-paper);
+    color: #171716;
+    padding: 1rem;
+    filter: none;
+    clip-path: none;
   }
-  :root[data-theme="dark"] figure.chapter-art { filter: none; clip-path: none; }
+  :root[data-theme="dark"] #main-content figure.chapter-figure,
+  :root[data-theme="dark"] #main-content figure.chapter-art { width: min(100%, 30rem); }
+  :root[data-theme="dark"] #main-content figure img {
+    filter: none;
+    mix-blend-mode: multiply;
+    clip-path: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 }
 /* With JavaScript disabled, follow the system and keep the control hidden. */
 @media screen and (prefers-color-scheme: dark) {
@@ -51,9 +63,24 @@ html[data-theme] .theme-control { display: inline-flex; }
     --line: #49473f;
     --line-strong: #9b978a;
     --highlight: #494126;
+    --image-paper: #e4e1d9;
   }
-  :root:not([data-theme]) main figure img { filter: grayscale(1) invert(1) contrast(1.1); mix-blend-mode: screen; }
-  :root:not([data-theme]) figure.chapter-art { filter: none; clip-path: none; }
+  :root:not([data-theme]) #main-content figure:has(img) {
+    background: var(--image-paper);
+    color: #171716;
+    padding: 1rem;
+    filter: none;
+    clip-path: none;
+  }
+  :root:not([data-theme]) #main-content figure.chapter-figure,
+  :root:not([data-theme]) #main-content figure.chapter-art { width: min(100%, 30rem); }
+  :root:not([data-theme]) #main-content figure img {
+    filter: none;
+    mix-blend-mode: multiply;
+    clip-path: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 }
 @media (max-width: 600px) {
   .mobile-title { display: none; }

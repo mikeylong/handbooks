@@ -11,3 +11,5 @@ For a new edition, refresh `site/production-ai-engineering.json` with the publis
 New handbooks belong in `site/index.html` as additional cover cards inside `.handbook-grid`, with their own reading routes and assets. Keep the gallery's shared handbook typography and color styles.
 
 Every hosted page uses the shared `site/theme.css` and `site/theme.js`. Appearance defaults to System; readers can choose Light or Dark in the gallery, desktop sidebar, or mobile header. The choice persists for the site and updates other open tabs. The build injects and validates these controls for both readers. Dark styles apply only to screens; browser printing and the released PDFs remain light. Keep theme changes in these site files rather than the PDF styles or source.
+
+In dark mode, raster engravings and diagrams retain their original shading on a muted light background. Keep image filters and chapter edge masks disabled in that mode. Check both readers, including labeled diagrams, on desktop and mobile when changing image treatment; also verify that light mode and printing retain their existing appearance.
