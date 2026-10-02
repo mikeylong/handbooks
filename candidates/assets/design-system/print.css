@@ -1,0 +1,651 @@
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/source-serif-4-latin-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/source-serif-4-latin-variable-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("fonts/NotoSans-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("fonts/NotoSans-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("fonts/SourceCodePro-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("fonts/SourceCodePro-Semibold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --paper: #fff;
+  --ink: #000;
+  --muted: #333;
+  --line: #bbb;
+  --line-strong: #777;
+  --table-header: #f4f4f2;
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "Noto Sans", Arial, sans-serif;
+  --mono: "Source Code Pro", monospace;
+}
+
+@page {
+  size: A5;
+  margin: 15mm 13mm 18mm;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--serif);
+  font-size: 10pt;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.18em;
+}
+
+p {
+  margin: 0.9em 0;
+  orphans: 3;
+  widows: 3;
+}
+
+strong {
+  font-weight: 650;
+}
+
+.handbook {
+  display: block;
+}
+
+.cover,
+.foreword,
+.contents,
+.chapter-opener,
+.back-matter,
+.changelog {
+  break-after: page;
+}
+
+.cover {
+  position: relative;
+  min-height: 165mm;
+}
+
+.cover-rule {
+  width: 22mm;
+  margin-bottom: 34mm;
+  border-top: 0.8pt solid var(--ink);
+}
+
+.cover-label,
+.section-label,
+.chapter-kicker,
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.cover h1 {
+  max-width: 7ch;
+  margin: 3mm 0 6mm;
+  font-size: 42pt;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.cover-subtitle {
+  max-width: 62mm;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13pt;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.cover-byline {
+  margin-top: 13mm;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+}
+
+.cover-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 7pt;
+}
+
+.foreword,
+.contents,
+.back-matter,
+.changelog {
+  padding-top: 8mm;
+}
+
+.display-title {
+  margin: 3mm 0 7mm;
+  font-size: 28pt;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.lede {
+  max-width: 90mm;
+  color: var(--muted);
+  font-size: 12pt;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+blockquote {
+  margin: 7mm 0;
+  padding-left: 6mm;
+  border-left: 0.8pt solid var(--ink);
+}
+
+blockquote p {
+  margin: 0;
+  font-size: 14pt;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.contents-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 8mm;
+  margin: 4mm 0 0;
+  padding: 0;
+  border-top: 0.8pt solid var(--ink);
+  list-style: none;
+}
+
+.contents-list li {
+  border-bottom: 0.35pt solid var(--line);
+}
+
+.contents-list a {
+  display: grid;
+  grid-template-columns: 7mm minmax(0, 1fr) auto;
+  gap: 2mm;
+  align-items: baseline;
+  padding: 2.4mm 0;
+  font-size: 9.2pt;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.contents-number,
+.contents-page {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.chapter-opener {
+  position: relative;
+  min-height: 165mm;
+  padding-top: 10mm;
+  border-top: 0.35pt solid var(--line);
+}
+
+.chapter-title {
+  max-width: 15ch;
+  margin: 3mm 0 6mm;
+  font-size: 28pt;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.chapter-deck {
+  max-width: 96mm;
+  margin: 0 0 8mm;
+  color: var(--muted);
+  font-size: 11.5pt;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.chapter-figure {
+  margin: 0;
+  text-align: center;
+}
+
+.chapter-art {
+  display: inline-block;
+  width: 104mm;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  background: #fff;
+  clip-path: none !important;
+  filter: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1;
+  print-color-adjust: exact;
+}
+
+.chapter-body {
+  max-width: 100%;
+}
+
+.section-heading {
+  margin: 0 0 4mm;
+  font-size: 18pt;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  break-after: avoid-page;
+}
+
+.section-number {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.6em;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  vertical-align: 0.12em;
+  white-space: nowrap;
+}
+
+.subheading {
+  margin: 7mm 0 2.5mm;
+  font-size: 14pt;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  break-after: avoid-page;
+}
+
+ul,
+ol {
+  margin: 2.8mm 0;
+  padding-left: 1.35em;
+}
+
+li {
+  margin: 0.28em 0;
+  padding-left: 0.2em;
+  break-inside: avoid;
+}
+
+li::marker {
+  color: var(--muted);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.source-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm 1.5mm;
+  margin-top: 4mm;
+  padding-top: 2mm;
+  border-top: 0.35pt solid var(--line);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 7.2pt;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.3;
+  break-inside: avoid;
+}
+
+.source-line strong {
+  color: var(--ink);
+  font-size: 6.5pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.source-line .synthesis {
+  flex-basis: 100%;
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+.citation-marker {
+  margin-left: 0.12em;
+  font-family: var(--sans);
+  font-size: 0.62em;
+  font-style: normal;
+  font-variant-numeric: lining-nums tabular-nums;
+  vertical-align: super;
+}
+
+.callout,
+.editorial-example,
+.code-frame,
+.diagram,
+.table-wrap {
+  margin: 3mm 0;
+  break-inside: avoid;
+}
+
+.callout {
+  padding: 3mm 0 3mm 5mm;
+  border-left: 0.8pt solid var(--ink);
+}
+
+.callout-label {
+  margin: 0 0 1mm;
+  font-family: var(--sans);
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.editorial-example {
+  border-block: 0.8pt solid var(--ink);
+  font-family: var(--sans);
+}
+
+.example-row {
+  display: grid;
+  grid-template-columns: 31mm minmax(0, 1fr);
+  gap: 3mm;
+  align-items: center;
+  padding: 1.5mm 0;
+  border-bottom: 0.35pt solid var(--line);
+}
+
+.example-row:last-child {
+  border-bottom: 0;
+}
+
+.example-row dt {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.example-row dd {
+  margin: 0;
+  font-size: 7.6pt;
+  line-height: 1.35;
+}
+
+code {
+  font-family: var(--mono);
+}
+
+p code,
+li code,
+td code {
+  padding: 0.05em 0.2em;
+  border: 0.35pt solid var(--line);
+  overflow-wrap: anywhere;
+}
+
+.code-frame pre {
+  margin: 0;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 7.8pt;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.table-wrap {
+  overflow: visible;
+  border-block: 0.8pt solid var(--ink);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: var(--sans);
+  font-size: 7.2pt;
+  line-height: 1.3;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr {
+  break-inside: avoid-page;
+}
+
+th,
+td {
+  padding: 1.5mm;
+  border-bottom: 0.35pt solid var(--line);
+  overflow-wrap: break-word;
+  vertical-align: top;
+}
+
+th {
+  background: var(--table-header);
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 82mm;
+}
+
+.diagram text {
+  fill: var(--ink);
+  font-family: var(--sans);
+}
+
+.diagram .muted {
+  fill: var(--muted);
+}
+
+.diagram .node {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+.diagram .flow {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.2;
+}
+
+.checklist {
+  padding-left: 0;
+  list-style: none;
+}
+
+.checklist li {
+  display: grid;
+  grid-template-columns: 4mm 1fr;
+  gap: 2mm;
+  padding-left: 0;
+}
+
+.check-box {
+  display: inline-block;
+  width: 3.2mm;
+  height: 3.2mm;
+  margin-top: 1mm;
+  border: 0.6pt solid var(--ink);
+}
+
+.reference-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reference-list li {
+  padding: 2mm 0;
+  border-top: 0.35pt solid var(--line);
+  font-size: 8pt;
+}
+
+.reference-label {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+}
+
+.index-grid {
+  columns: 2;
+  column-gap: 7mm;
+  font-family: var(--sans);
+  font-size: 7pt;
+  line-height: 1.35;
+}
+
+.index-group {
+  break-inside: avoid;
+}
+
+.index-letter {
+  margin: 0 0 1.5mm;
+  padding-bottom: 1mm;
+  border-bottom: 0.8pt solid var(--ink);
+  font-family: var(--serif);
+  font-size: 18pt;
+  font-weight: 400;
+}
+
+.changelog-list {
+  margin: 0;
+}
+
+.changelog-list > div {
+  display: grid;
+  grid-template-columns: 38mm minmax(0, 1fr);
+  gap: 4mm;
+  padding: 3mm 0;
+  border-top: 0.35pt solid var(--line);
+}
+
+.changelog-list dt {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.changelog-list dd {
+  margin: 0;
+}
+
+.changelog-list dd p {
+  margin: 0;
+}
+
+.changelog-source {
+  margin-top: 1mm !important;
+  font-family: var(--sans);
+  font-size: 6.2pt;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.changelog-version,
+.changelog-baseline {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 7pt;
+}
+
+.running-head,
+.folio {
+  display: none;
+}
+
+@media print {
+  .site-only {
+    display: none !important;
+  }
+
+  .pdf-only {
+    display: block !important;
+  }
+
+  .chapter-art {
+    clip-path: none !important;
+    filter: none !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    opacity: 1 !important;
+  }
+}

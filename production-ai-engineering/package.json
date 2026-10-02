@@ -7,5 +7,10 @@
     "validate:handbook": "node handbook/validate-handbook.mjs",
     "validate:release": "node scripts/validate-production-release.mjs",
     "validate:front-pages": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/handbooks",
+    "directory": "production-ai-engineering"
   }
 }

@@ -43,7 +43,7 @@ Identify the canonical source, previous approved PDF, candidate output path, int
 - For external research or claim changes, read `references/research-and-evidence.md`.
 - For edition comparison, changelogs, versioning, or publication, read `references/edition-and-release.md`.
 - Before calling a candidate ready, read `references/quality-gates.md`.
-- For hosted handbooks at handbooks.mikelong.ai or handbooks.surfaces.systems, read `references/hosted-publication-front.md` and `references/hosted-appearance.md`. Validate the cover, sidebar, shared appearance controls, and illustrations before publication.
+- For hosted handbooks at handbooks.surfaces.systems, read `references/hosted-publication-front.md` and `references/hosted-appearance.md`. Validate the cover, sidebar, shared appearance controls, and illustrations before publication.
 
 ### 3. Research and edit
 

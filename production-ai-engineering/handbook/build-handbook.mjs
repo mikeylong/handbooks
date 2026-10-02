@@ -50,8 +50,9 @@ const BOOK_SUBTITLE = "A Handbook for Building Reliable LLM Systems";
 const AUTHOR = "Michael Long";
 const AUTHOR_SITE = "https://surfaces.systems";
 const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems</a>`;
-const REPOSITORY_HREF = "https://github.com/mikeylong/production-ai-engineering-book";
-const RELEASES_HREF = `${REPOSITORY_HREF}/releases`;
+const publication = JSON.parse(await readFile(resolve(HERE, "../publication.json"), "utf8"));
+const REPOSITORY_HREF = publication.editionUrl;
+const RELEASES_HREF = publication.releaseUrl;
 const PUBLICATION_DATE = "September 30, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {

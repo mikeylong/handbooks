@@ -1,0 +1,602 @@
+{
+  "status": "COMPLETE",
+  "collection": {
+    "status": "PASS",
+    "handbooks": [
+      {
+        "id": "production-ai-engineering",
+        "directory": "/Users/mike/handbooks/production-ai-engineering",
+        "repository": "https://github.com/mikeylong/production-ai-engineering-book",
+        "head": "1ac55ab66a10ba9a446bface1824cb292c52cee6"
+      },
+      {
+        "id": "claude-design",
+        "directory": "/Users/mike/handbooks/claude-design",
+        "repository": "https://github.com/mikeylong/claude-design-field-guide",
+        "head": "292399808de0b0c5df616c5912a7fa1cf39269e1"
+      },
+      {
+        "id": "ai-evaluation",
+        "directory": "/Users/mike/handbooks/ai-evaluation",
+        "repository": "https://github.com/mikeylong/ai-evaluation-field-guide",
+        "head": "50e6b1e0279b3db0f0b9d41dec8e4fd1a96ba14a"
+      },
+      {
+        "id": "ai-consulting",
+        "directory": "/Users/mike/handbooks/ai-consulting",
+        "repository": "https://github.com/mikeylong/ai-consulting-playbook",
+        "head": "fe59574e6c821481870167dd4659c41f2a4c0d25"
+      },
+      {
+        "id": "poisonous-mushrooms",
+        "directory": "/Users/mike/handbooks/candidates/poisonous-mushrooms",
+        "repository": "https://github.com/mikeylong/poisonous-mushrooms-handbook",
+        "head": "ece50e4f000ff1bbbe0f99a27accd08aaba37b91"
+      },
+      {
+        "id": "ai-product-design",
+        "directory": "/Users/mike/handbooks/drafts/ai-product-design",
+        "repository": "https://github.com/mikeylong/ai-product-design-handbook",
+        "head": "ab2dc0f505310765e6f12484e4b7571acd044875"
+      }
+    ],
+    "siteRepository": "https://github.com/mikeylong/handbooks-site",
+    "collectionRootIsGit": false,
+    "failures": []
+  },
+  "repositories": [
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "isPrivate": false,
+      "url": "https://github.com/mikeylong/production-ai-engineering-book"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "isPrivate": false,
+      "url": "https://github.com/mikeylong/ai-consulting-playbook"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "isPrivate": false,
+      "url": "https://github.com/mikeylong/ai-evaluation-field-guide"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "isPrivate": true,
+      "url": "https://github.com/mikeylong/claude-design-field-guide"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "isPrivate": true,
+      "url": "https://github.com/mikeylong/poisonous-mushrooms-handbook"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "isPrivate": true,
+      "url": "https://github.com/mikeylong/ai-product-design-handbook"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "isPrivate": false,
+      "url": "https://github.com/mikeylong/handbooks-site"
+    }
+  ],
+  "localState": [
+    {
+      "directory": "/Users/mike/handbooks/production-ai-engineering",
+      "branch": "main",
+      "head": "1ac55ab66a10ba9a446bface1824cb292c52cee6",
+      "upstream": "origin/main",
+      "aheadBehind": "0\t0",
+      "status": ""
+    },
+    {
+      "directory": "/Users/mike/handbooks/ai-consulting",
+      "branch": "main",
+      "head": "fe59574e6c821481870167dd4659c41f2a4c0d25",
+      "upstream": "origin/main",
+      "aheadBehind": "0\t0",
+      "status": ""
+    },
+    {
+      "directory": "/Users/mike/handbooks/ai-evaluation",
+      "branch": "main",
+      "head": "50e6b1e0279b3db0f0b9d41dec8e4fd1a96ba14a",
+      "upstream": "origin/main",
+      "aheadBehind": "0\t0",
+      "status": ""
+    },
+    {
+      "directory": "/Users/mike/handbooks/claude-design",
+      "branch": "main",
+      "head": "292399808de0b0c5df616c5912a7fa1cf39269e1",
+      "upstream": "origin/main",
+      "aheadBehind": "0\t0",
+      "status": ""
+    },
+    {
+      "directory": "/Users/mike/handbooks/candidates/poisonous-mushrooms",
+      "branch": "main",
+      "head": "ece50e4f000ff1bbbe0f99a27accd08aaba37b91",
+      "upstream": "origin/main",
+      "aheadBehind": "0\t0",
+      "status": ""
+    },
+    {
+      "directory": "/Users/mike/handbooks/drafts/ai-product-design",
+      "branch": "main",
+      "head": "ab2dc0f505310765e6f12484e4b7571acd044875",
+      "upstream": "origin/main",
+      "aheadBehind": "0\t0",
+      "status": ""
+    },
+    {
+      "directory": "/Users/mike/handbooks/site",
+      "branch": "main",
+      "head": "2d414d1e056a323b0dccbba6ce86f14d2b0c1c52",
+      "upstream": "origin/main",
+      "aheadBehind": "0\t0",
+      "status": ""
+    }
+  ],
+  "mergedPR": {
+    "mergeCommit": {
+      "oid": "1ac55ab66a10ba9a446bface1824cb292c52cee6"
+    },
+    "mergedAt": "2026-10-02T14:35:02Z",
+    "state": "MERGED",
+    "url": "https://github.com/mikeylong/production-ai-engineering-book/pull/29"
+  },
+  "hostedChecks": {
+    "runs": [
+      {
+        "conclusion": "success",
+        "headSha": "fe59574e6c821481870167dd4659c41f2a4c0d25",
+        "status": "completed",
+        "url": "https://github.com/mikeylong/ai-consulting-playbook/actions/runs/37017374512"
+      },
+      {
+        "conclusion": "success",
+        "headSha": "50e6b1e0279b3db0f0b9d41dec8e4fd1a96ba14a",
+        "status": "completed",
+        "url": "https://github.com/mikeylong/ai-evaluation-field-guide/actions/runs/37017949406"
+      },
+      {
+        "conclusion": "success",
+        "headSha": "2d414d1e056a323b0dccbba6ce86f14d2b0c1c52",
+        "status": "completed",
+        "url": "https://github.com/mikeylong/handbooks-site/actions/runs/37021403903"
+      }
+    ],
+    "engineeringPR": {
+      "mergeCommit": {
+        "oid": "1ac55ab66a10ba9a446bface1824cb292c52cee6"
+      },
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-02T14:27:12Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/mikeylong/production-ai-engineering-book/actions/runs/37019908209/job/110880021579",
+          "name": "validate-production-release",
+          "startedAt": "2026-10-02T14:26:46Z",
+          "status": "COMPLETED",
+          "workflowName": "Production release contract"
+        }
+      ],
+      "url": "https://github.com/mikeylong/production-ai-engineering-book/pull/29"
+    }
+  },
+  "liveDeployments": {
+    "handbooks.mikelong.ai": {
+      "id": "dpl_EQQd8AvEWZMyCDqH99nWy3K82Zwt",
+      "readyState": "READY",
+      "gitSource": {
+        "ref": "main",
+        "repoId": 1401866709,
+        "sha": "2d414d1e056a323b0dccbba6ce86f14d2b0c1c52",
+        "type": "github",
+        "prId": null
+      }
+    },
+    "handbooks.surfaces.systems": {
+      "id": "dpl_BXVwYf6BF1oQw2vCKL7RUd7HTZ6f",
+      "readyState": "READY",
+      "gitSource": {
+        "ref": "main",
+        "repoId": 1401866709,
+        "sha": "2d414d1e056a323b0dccbba6ce86f14d2b0c1c52",
+        "type": "github",
+        "prId": null
+      }
+    }
+  },
+  "browserVerification": {
+    "stage": {
+      "status": "passed",
+      "checks": 668,
+      "records": [
+        {
+          "route": "/",
+          "width": 1280,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/production-ai-engineering/",
+          "width": 1280,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/ai-evaluation/",
+          "width": 1280,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/ai-consulting/",
+          "width": 1280,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/",
+          "width": 768,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/production-ai-engineering/",
+          "width": 768,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/ai-evaluation/",
+          "width": 768,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/ai-consulting/",
+          "width": 768,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/",
+          "width": 390,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/production-ai-engineering/",
+          "width": 390,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/ai-evaluation/",
+          "width": 390,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/ai-consulting/",
+          "width": 390,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/",
+          "width": 320,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/production-ai-engineering/",
+          "width": 320,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/ai-evaluation/",
+          "width": 320,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        },
+        {
+          "route": "/ai-consulting/",
+          "width": 320,
+          "choices": "Light/Dark/System",
+          "keyboard": "passed",
+          "layout": "stable",
+          "persistence": "passed"
+        }
+      ],
+      "additional": [
+        "search and mobile contents for all three readers",
+        "cross-tab preference",
+        "navigation and Back",
+        "blocked storage",
+        "no JavaScript",
+        "white printing",
+        "original artwork"
+      ],
+      "screenshots": 16
+    },
+    "repositoryClicks": {
+      "status": "passed",
+      "records": [
+        {
+          "book": "production-ai-engineering",
+          "repository": "https://github.com/mikeylong/production-ai-engineering-book",
+          "release": "https://github.com/mikeylong/production-ai-engineering-book/releases",
+          "font": "loaded"
+        },
+        {
+          "book": "ai-evaluation",
+          "repository": "https://github.com/mikeylong/ai-evaluation-field-guide",
+          "release": "https://github.com/mikeylong/ai-evaluation-field-guide/releases/tag/v1.0.0",
+          "font": "loaded"
+        },
+        {
+          "book": "ai-consulting",
+          "repository": "https://github.com/mikeylong/ai-consulting-playbook",
+          "release": "https://github.com/mikeylong/ai-consulting-playbook/releases/tag/v1.0.0",
+          "font": "loaded"
+        }
+      ]
+    },
+    "mikelong": {
+      "status": "passed",
+      "records": [
+        {
+          "route": "/",
+          "finalUrl": "https://handbooks.mikelong.ai/",
+          "appearance": "passed",
+          "searchAndDownload": "not applicable"
+        },
+        {
+          "route": "/production-ai-engineering/",
+          "finalUrl": "https://handbooks.mikelong.ai/production-ai-engineering/",
+          "appearance": "passed",
+          "searchAndDownload": "passed"
+        },
+        {
+          "route": "/ai-evaluation/",
+          "finalUrl": "https://handbooks.mikelong.ai/ai-evaluation/",
+          "appearance": "passed",
+          "searchAndDownload": "passed"
+        },
+        {
+          "route": "/ai-consulting/",
+          "finalUrl": "https://handbooks.mikelong.ai/ai-consulting/",
+          "appearance": "passed",
+          "searchAndDownload": "passed"
+        }
+      ]
+    },
+    "surfaces": {
+      "status": "passed",
+      "records": [
+        {
+          "route": "/",
+          "finalUrl": "https://handbooks.surfaces.systems/",
+          "appearance": "passed",
+          "searchAndDownload": "not applicable"
+        },
+        {
+          "route": "/production-ai-engineering/",
+          "finalUrl": "https://handbooks.surfaces.systems/production-ai-engineering/",
+          "appearance": "passed",
+          "searchAndDownload": "passed"
+        },
+        {
+          "route": "/ai-evaluation/",
+          "finalUrl": "https://handbooks.surfaces.systems/ai-evaluation/",
+          "appearance": "passed",
+          "searchAndDownload": "passed"
+        },
+        {
+          "route": "/ai-consulting/",
+          "finalUrl": "https://handbooks.surfaces.systems/ai-consulting/",
+          "appearance": "passed",
+          "searchAndDownload": "passed"
+        }
+      ]
+    }
+  },
+  "publicBytes": {
+    "status": "passed",
+    "records": [
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "index.html",
+        "sha256": "467e6cbb6ead740ca60820083919245230b892b4b994797ecbedf6775d58f933"
+      },
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "production-ai-engineering/index.html",
+        "sha256": "c486bb92c872a3b832cc0e97f93c371c0aa0145f91c8a53038b7fd53a1e4b3c3"
+      },
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "ai-evaluation/index.html",
+        "sha256": "a19eb2d78ecc7906b30f228cdb4c97afd1940882f259cc272c76e3eea07d4778"
+      },
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "ai-consulting/index.html",
+        "sha256": "da33fbf604a4e994583822918ceab2765502f581d753b9387cea381dddca224b"
+      },
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "theme.js",
+        "sha256": "6d2dd09b254ff5c9d4e8ae0bc1ac5f9a04e0f0a9294464bcff3aa3871387a660"
+      },
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "theme.css",
+        "sha256": "717c9e85649cf8f1da0278497b0d8507d7e7cf9b96a97f87e8b8d6e0ed53f2f5"
+      },
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "reader.css",
+        "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+      },
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "reader.js",
+        "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+      },
+      {
+        "host": "handbooks.mikelong.ai",
+        "file": "assets/fonts/source-serif-4-latin-variable.woff2",
+        "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "index.html",
+        "sha256": "467e6cbb6ead740ca60820083919245230b892b4b994797ecbedf6775d58f933"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "production-ai-engineering/index.html",
+        "sha256": "c486bb92c872a3b832cc0e97f93c371c0aa0145f91c8a53038b7fd53a1e4b3c3"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "ai-evaluation/index.html",
+        "sha256": "a19eb2d78ecc7906b30f228cdb4c97afd1940882f259cc272c76e3eea07d4778"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "ai-consulting/index.html",
+        "sha256": "da33fbf604a4e994583822918ceab2765502f581d753b9387cea381dddca224b"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "theme.js",
+        "sha256": "6d2dd09b254ff5c9d4e8ae0bc1ac5f9a04e0f0a9294464bcff3aa3871387a660"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "theme.css",
+        "sha256": "717c9e85649cf8f1da0278497b0d8507d7e7cf9b96a97f87e8b8d6e0ed53f2f5"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "reader.css",
+        "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "reader.js",
+        "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+      },
+      {
+        "host": "handbooks.surfaces.systems",
+        "file": "assets/fonts/source-serif-4-latin-variable.woff2",
+        "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+      }
+    ],
+    "pdfDownloads": "all three approved digests on both hosts"
+  },
+  "canonicalReleases": {
+    "consulting": {
+      "assets": [
+        {
+          "apiUrl": "https://api.github.com/repos/mikeylong/ai-consulting-playbook/releases/assets/605755862",
+          "contentType": "application/pdf",
+          "createdAt": "2026-10-02T14:14:46Z",
+          "digest": "sha256:4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+          "downloadCount": 0,
+          "id": "RA_kwDOU45hQc4kGxnW",
+          "label": "",
+          "name": "ai-consulting-v1.0.0-2026-10-01.pdf",
+          "size": 24097061,
+          "state": "uploaded",
+          "updatedAt": "2026-10-02T14:14:48Z",
+          "url": "https://github.com/mikeylong/ai-consulting-playbook/releases/download/v1.0.0/ai-consulting-v1.0.0-2026-10-01.pdf"
+        }
+      ],
+      "targetCommitish": "fe59574e6c821481870167dd4659c41f2a4c0d25",
+      "url": "https://github.com/mikeylong/ai-consulting-playbook/releases/tag/v1.0.0"
+    },
+    "evaluation": {
+      "assets": [
+        {
+          "apiUrl": "https://api.github.com/repos/mikeylong/ai-evaluation-field-guide/releases/assets/605755942",
+          "contentType": "application/pdf",
+          "createdAt": "2026-10-02T14:14:50Z",
+          "digest": "sha256:91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+          "downloadCount": 0,
+          "id": "RA_kwDOU45wvs4kGxom",
+          "label": "",
+          "name": "ai-evaluation-v1.0.0-2026-10-01.pdf",
+          "size": 5103884,
+          "state": "uploaded",
+          "updatedAt": "2026-10-02T14:14:50Z",
+          "url": "https://github.com/mikeylong/ai-evaluation-field-guide/releases/download/v1.0.0/ai-evaluation-v1.0.0-2026-10-01.pdf"
+        }
+      ],
+      "targetCommitish": "50e6b1e0279b3db0f0b9d41dec8e4fd1a96ba14a",
+      "url": "https://github.com/mikeylong/ai-evaluation-field-guide/releases/tag/v1.0.0"
+    }
+  },
+  "preservation": [
+    "Approved PDFs, manuscripts, original history and release assets retained",
+    "Historical local book links resolve to independent repositories through ignored compatibility symlinks",
+    "Shared hosting and assets owned by separate handbooks-site repository",
+    "Collection root remains outside Git"
+  ],
+  "review": "Final focused Codex review of 16bc13d3efe522d1f93bfe7105d412d07994e49e completed with no actionable findings",
+  "approvalReview": "Initial public-source review rejection resolved through byte comparison against already-public source and inspected metadata; authorized retry completed"
+}

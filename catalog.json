@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "publicGallery": "site/output/site",
+  "books": [
+    {
+      "id": "production-ai-engineering",
+      "title": "Production AI Engineering",
+      "directory": "production-ai-engineering",
+      "status": "published",
+      "pages": 105,
+      "source": "AI_ENGINEERING_FIELD_GUIDE.md",
+      "pdf": "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf",
+      "build": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "validate": [
+        [
+          "npm",
+          "run",
+          "validate:handbook"
+        ],
+        [
+          "npm",
+          "run",
+          "validate:release"
+        ]
+      ],
+      "publicUrl": "https://handbooks.surfaces.systems/production-ai-engineering/",
+      "pdfSha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0",
+      "historicalRepository": "https://github.com/mikeylong/production-ai-engineering-book",
+      "repository": "https://github.com/mikeylong/handbooks",
+      "version": "1.4.0",
+      "editionUrl": "https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.0/",
+      "coverPlaceholder": "{{PRODUCTION_COVER}}"
+    },
+    {
+      "id": "claude-design",
+      "title": "Claude Design Field Guide",
+      "directory": "claude-design",
+      "status": "pdf-draft",
+      "pages": 109,
+      "source": "Claude_Design_Field_Guide_Source.md",
+      "pdf": "Claude_Design_End_to_End_Field_Guide.pdf",
+      "build": [
+        "{python}",
+        "build_claude_design_field_guide.py"
+      ],
+      "validate": [
+        [
+          "{python}",
+          "validate_claude_design_field_guide.py"
+        ]
+      ],
+      "pdfSha256": "4da564de91223f86c5d1e0fcf48e173bc99d4d3d057e96e917c46da6173e93cf",
+      "historicalRepository": "https://github.com/mikeylong/claude-design-field-guide",
+      "repository": "https://github.com/mikeylong/handbooks"
+    },
+    {
+      "id": "ai-evaluation",
+      "title": "AI Evaluation Field Guide",
+      "directory": "ai-evaluation",
+      "status": "published",
+      "pages": 100,
+      "source": "source/build_handbook.py",
+      "pdf": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
+      "build": [
+        "{python}",
+        "source/build_handbook.py"
+      ],
+      "validate": [
+        [
+          "npm",
+          "run",
+          "validate"
+        ]
+      ],
+      "pdfSha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+      "historicalDraft": {
+        "directory": "ai-evaluation",
+        "source": "work/build_ai_eval_field_guide.py",
+        "pdf": "outputs/AI_Evaluation_Field_Guide.pdf",
+        "pages": 94,
+        "pdfSha256": "2a96ca9dc852daa922c88a29abba634005004f8da811b24dabf8288248d42f84"
+      },
+      "version": "1.0.0",
+      "publicUrl": "https://handbooks.surfaces.systems/ai-evaluation/",
+      "dependencies": [],
+      "historicalRepository": "https://github.com/mikeylong/ai-evaluation-field-guide",
+      "repository": "https://github.com/mikeylong/handbooks",
+      "editionUrl": "https://handbooks.surfaces.systems/ai-evaluation/editions/v1.0.0/",
+      "coverPlaceholder": "{{EVALUATION_COVER}}"
+    },
+    {
+      "id": "ai-consulting",
+      "title": "AI Consulting Playbook",
+      "directory": "ai-consulting",
+      "status": "published",
+      "pages": 138,
+      "source": "source/build_handbook.py",
+      "pdf": "output/pdf/ai-consulting-v1.0.0-2026-10-01.pdf",
+      "build": [
+        "{python}",
+        "source/build_handbook.py"
+      ],
+      "validate": [
+        [
+          "npm",
+          "run",
+          "validate"
+        ]
+      ],
+      "dependencies": [],
+      "pdfSha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+      "historicalDraft": {
+        "directory": "ai-consulting",
+        "source": "work/build_ai_consulting_playbook.py",
+        "pdf": "outputs/AI_Consulting_Playbook.pdf",
+        "pages": 128,
+        "pdfSha256": "7c27cd42a6b082d6d6aae278af7728b5b1af58d38a8c3709e46f1211265a64d9"
+      },
+      "version": "1.0.0",
+      "publicUrl": "https://handbooks.surfaces.systems/ai-consulting/",
+      "historicalRepository": "https://github.com/mikeylong/ai-consulting-playbook",
+      "repository": "https://github.com/mikeylong/handbooks",
+      "editionUrl": "https://handbooks.surfaces.systems/ai-consulting/editions/v1.0.0/",
+      "coverPlaceholder": "{{CONSULTING_COVER}}"
+    },
+    {
+      "id": "poisonous-mushrooms",
+      "title": "Poisonous Mushrooms: A Safety-First Field Handbook",
+      "directory": "candidates/poisonous-mushrooms",
+      "status": "unapproved-candidate",
+      "source": "generation-a/source/handbook.html",
+      "validate": [],
+      "dependencies": [
+        "publish-evidence-backed-handbook"
+      ],
+      "variants": [
+        {
+          "id": "generation-a",
+          "pages": 20,
+          "source": "generation-a/source/handbook.html",
+          "pdf": "generation-a/output/pdf/poisonous-mushroom-identification-handbook.pdf",
+          "build": [
+            "{python}",
+            "generation-a/build.py"
+          ],
+          "pdfSha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7"
+        },
+        {
+          "id": "generation-b",
+          "pages": 20,
+          "source": "generation-b/source/handbook.html",
+          "pdf": "generation-b/output/pdf/poisonous-mushroom-identification-handbook-generation-b.pdf",
+          "build": [
+            "{python}",
+            "generation-b/build.py"
+          ],
+          "pdfSha256": "741223fb6f8c1408f8164ffc5d3b4418337f6369dd37cb839f16b5a68c0dff63"
+        }
+      ],
+      "visibility": "private",
+      "historicalRepository": "https://github.com/mikeylong/poisonous-mushrooms-handbook",
+      "repository": "https://github.com/mikeylong/handbooks"
+    },
+    {
+      "id": "ai-product-design",
+      "title": "AI Product Design Curriculum",
+      "directory": "drafts/ai-product-design",
+      "status": "outline",
+      "source": "docs/ai-product-design-curriculum-training-plan.md",
+      "build": null,
+      "validate": [],
+      "scaffold": "/Users/mike/ai-product-design-curriculum",
+      "visibility": "private",
+      "historicalRepository": "https://github.com/mikeylong/ai-product-design-handbook",
+      "repository": "https://github.com/mikeylong/handbooks"
+    }
+  ],
+  "site": {
+    "directory": "site",
+    "repository": "https://github.com/mikeylong/handbooks",
+    "historicalRepository": "https://github.com/mikeylong/handbooks-site"
+  },
+  "repository": "https://github.com/mikeylong/handbooks",
+  "publicHost": "https://handbooks.surfaces.systems",
+  "approvedPublicEditions": {
+    "production-ai-engineering": "1.4.0",
+    "ai-evaluation": "1.0.0",
+    "ai-consulting": "1.0.0"
+  }
+}
