@@ -23,10 +23,6 @@ if (edition.pdfPath !== pdfPath || edition.version !== version || edition.pdfSha
   || !Number.isSafeInteger(edition.pdfPages) || edition.pdfPages < 1) {
   throw new Error("Site edition metadata does not match the published PDF");
 }
-const coverBytes = await readFile(resolve(root, "site/assets/production-ai-engineering-cover.png"));
-if (createHash("sha256").update(coverBytes).digest("hex") !== edition.coverSha256) {
-  throw new Error("Cover thumbnail does not match the reviewed edition");
-}
 const pages = edition.pdfPages;
 const book = await readFile(resolve(root, "handbook/index.html"), "utf8");
 if (!book.includes(`../${pdfPath}`) || !book.includes(`${pages} pages`)) {
@@ -36,7 +32,6 @@ if (!book.includes(`../${pdfPath}`) || !book.includes(`${pages} pages`)) {
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(resolve(root, "handbook/assets"), resolve(output, "production-ai-engineering/assets"), { recursive: true });
-await cp(resolve(root, "site/assets"), resolve(output, "assets"), { recursive: true });
 for (const name of ["styles.css", "app.js"]) {
   await cp(resolve(root, `handbook/${name}`), resolve(output, `production-ai-engineering/${name}`));
 }
