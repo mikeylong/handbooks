@@ -40,6 +40,7 @@ for (const name of ["styles.css", "app.js"]) {
   await cp(resolve(root, `handbook/${name}`), resolve(output, `production-ai-engineering/${name}`));
 }
 await cp(resolve(root, "site/gallery.css"), resolve(output, "gallery.css"));
+await cp(resolve(root, "site/gallery-focus.js"), resolve(output, "gallery-focus.js"));
 await mkdir(resolve(output, "output/pdf"), { recursive: true });
 await cp(resolve(root, pdfPath), resolve(output, pdfPath));
 
@@ -75,10 +76,10 @@ const hostedBook = book.replace(readerBody, reader)
     const url = new URL(value, "https://handbooks.mikelong.ai/production-ai-engineering/");
     return `${attribute}="${url.pathname}${url.search}${url.hash}"`;
   })
-  .replace("</head>", '<link rel="stylesheet" href="/gallery.css">\n<link rel="canonical" href="https://handbooks.mikelong.ai/production-ai-engineering/">\n</head>');
+  .replace("</head>", '<link rel="stylesheet" href="/gallery.css">\n<script src="/gallery-focus.js" defer></script>\n<link rel="canonical" href="https://handbooks.mikelong.ai/production-ai-engineering/">\n</head>');
 const evaluationPublication = JSON.parse(await readFile(resolve(evaluationRoot, "publication.json"), "utf8"));
 const evaluationHtml = (await readFile(resolve(output, "ai-evaluation/index.html"), "utf8"))
-  .replace("</head>", '<link rel="stylesheet" href="/gallery.css"></head>');
+  .replace("</head>", '<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>');
 await writeFile(resolve(output, "ai-evaluation/index.html"), evaluationHtml);
 validatePublicationFront(evaluationHtml, {...evaluationPublication, ...evaluation, pdfUrl:evaluation.pdf.split("/").pop()});
 const productionReview = {

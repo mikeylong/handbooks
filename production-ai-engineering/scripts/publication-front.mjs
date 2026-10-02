@@ -20,6 +20,7 @@ export function validateReaderNavigation(html, title) {
     || !/aria-label="All handbooks"/.test(returns[0]) || !returns[0].includes('← All handbooks')) failed.push('sidebarReturn');
   if (returns.some(link => /\bstyle=/.test(link))) failed.push('sidebarReturnInlineStyle');
   if (!links.some(link => /rel="stylesheet"/.test(link) && /href="\/gallery\.css"/.test(link))) failed.push('sharedNavigationStyles');
+  if (!/<script\b[^>]*src="\/gallery-focus\.js"[^>]*\bdefer\b/.test(html)) failed.push('galleryReturnFocus');
   if (failed.length) throw new Error(`${title}: inconsistent reader navigation (${failed.join(', ')})`);
   return {title, status:'passed'};
 }
@@ -58,6 +59,7 @@ export function validatePublicationFront(html, edition) {
 }
 
 export function validateGalleryPublications(html, validatedPaths) {
+  if (!/<script\b[^>]*src="\/gallery-focus\.js"[^>]*\bdefer\b/.test(html)) throw new Error('Gallery lacks return-focus behavior');
   const cards = [...html.matchAll(/<a\b[^>]*class="[^"]*\bhandbook-card-link\b[^"]*"[^>]*>/g)];
   if (!cards.length) throw new Error('The gallery has no published titles');
   for (const [card] of cards) {

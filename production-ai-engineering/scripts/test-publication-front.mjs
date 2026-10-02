@@ -23,7 +23,8 @@ for (const [name, broken, expected] of regressions) {
 }
 console.log(`Publication front page passed; ${regressions.length} omissions or stale-copy regressions rejected.`);
 
-assert.throws(()=>validateGalleryPublications('<a class="handbook-card-link" href="/new-book/">New book</a>', ['/ai-evaluation/']), /lacks publication-front validation/);
+assert.throws(()=>validateGalleryPublications('<script src="/gallery-focus.js" defer></script><a class="handbook-card-link" href="/new-book/">New book</a>', ['/ai-evaluation/']), /lacks publication-front validation/);
+assert.throws(()=>validateGalleryPublications('<a class="handbook-card-link" href="/ai-evaluation/">Book</a>', ['/ai-evaluation/']), /lacks return-focus behavior/);
 console.log('An unvalidated new gallery title is also rejected.');
 
 // Exercise the actual hosted readers, including the original missing-class bug.
@@ -33,6 +34,7 @@ for (const path of ['ai-evaluation', 'production-ai-engineering']) {
  for (const [name, broken, expected] of [
   ['unstyled return link', reader.replace('class="handbooks-return"', 'class="unstyled-return"'), /sidebarReturn/],
   ['missing shared stylesheet', reader.replace('href="/gallery.css"', 'href="/missing.css"'), /sharedNavigationStyles/],
+  ['missing return focus behavior', reader.replace('src="/gallery-focus.js"', 'src="/missing.js"'), /galleryReturnFocus/],
   ['local font override', reader.replace('class="handbooks-return"', 'class="handbooks-return" style="font-size:1rem"'), /sidebarReturnInlineStyle/],
   ['broken gallery destination', reader.replace('class="handbooks-return" href="/"', 'class="handbooks-return" href="/wrong/"'), /sidebarReturn/],
  ]) {
