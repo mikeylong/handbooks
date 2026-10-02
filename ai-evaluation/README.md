@@ -1,20 +1,17 @@
 # AI Evaluation Field Guide
 
-First public edition: **1.0.0 · October 1, 2026 · 100 pages**.
+This repository owns this handbook’s editable source, illustrations, review evidence, reader and released PDF.
 
-[Read online](https://handbooks.mikelong.ai/ai-evaluation/) or [download the reviewed PDF](output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf).
-
-This guide takes a beginner through an evaluation brief, behavior contract, evidence sets, graders, statistical interpretation, launch decisions, and production monitoring. It includes 12 chapters, 12 worksheets, a guided capstone, and 25 sources.
-
-From the repository root, validate the frozen release with:
+Validate the approved release and build its reader:
 
 ```sh
-npm run validate:evaluation
-npm run build
+npm run validate
 ```
 
-Validation requires Node.js and Poppler (`pdfinfo` and `pdftotext`). It verifies the PDF's manifest digest, measured page count, complete chapters and worksheets, source count, frozen illustrations, reader links, and identical download. `qa/validation.json` records the deeper PDF structural review for that exact digest.
+Requires Node.js 22 and Poppler (`pdfinfo` and `pdftotext`). No npm packages are needed. The build writes only `output/reader/`; it copies the approved PDF rather than rebuilding it. The published reader is https://handbooks.mikelong.ai/ai-evaluation/.
 
-For an authoring revision, use Python with ReportLab, pypdf, pdfplumber, and Pillow. The preserved fonts are in `source/fonts`. Build the reader from the same authored flowables with `python3 books/ai-evaluation/source/build_reader.py`; its two diagrams use Poppler. Rebuilding a PDF creates a candidate that needs a new manifest and the full structural, reader, visual, and cross-renderer review before publication. Do not rebuild during promotion.
+The approved edition is v1.0.0. Its exact PDF, page count and SHA-256 are in `release-manifest.json`. GitHub releases are in this repository. The site at https://github.com/mikeylong/handbooks-site combines readers from pinned book commits and adds the shared appearance and gallery navigation.
 
-The previous 94-page PDF was an unpublished draft. Its comparison evidence remains in the local handbook workspace. This edition has no edition changelog because it is the first public release.
+For a new authoring candidate, use Python 3.12 with the dependencies in `source/requirements.txt`, then run `python source/build_handbook.py` and `python source/build_reader.py`. The manuscript is in the PDF builder. This creates a candidate requiring its own manifest, comparisons, PDF validation, visual proof and publication authorization. Do not rebuild an approved PDF during promotion.
+
+`qa/release-review.md`, `qa/validation.json`, `qa/page-map.json` and `evidence/` preserve the review evidence and source-access limits. Their original paths and preparation statements describe the review at that time. `REPOSITORY_MIGRATION.md` records the repository extraction. Historical local draft files remain in `work/` and `outputs/`, outside the approved package tracked here.
