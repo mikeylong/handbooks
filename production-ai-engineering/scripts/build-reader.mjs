@@ -1,3 +1,4 @@
+import {editionLinks} from '../../site/scripts/edition-links.mjs';
 import {validatePublicationFront} from './publication-front.mjs';
 import {cp,mkdir,readFile,rm,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
@@ -42,26 +43,27 @@ const reader = readerBody
   .replace('<aside class="sidebar" aria-label="Handbook navigation">', '<aside class="sidebar" aria-label="Handbook navigation">\n<a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a>')
   .replace('<header class="mobile-bar">', '<header class="mobile-bar">\n<a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a>')
   .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
-    const url = new URL(value, "https://handbooks.mikelong.ai/production-ai-engineering/");
+    const url = new URL(value, "https://handbooks.surfaces.systems/production-ai-engineering/");
     return `${attribute}="${url.pathname}${url.search}${url.hash}"`;
   })
   .replace(/srcset="([^"]+)"/g, (_, value) => {
     const candidates = value.split(",").map((candidate) => {
       const [source, ...descriptor] = candidate.trim().split(/\s+/);
-      const url = new URL(source, "https://handbooks.mikelong.ai/production-ai-engineering/");
+      const url = new URL(source, "https://handbooks.surfaces.systems/production-ai-engineering/");
       return [url.pathname + url.search + url.hash, ...descriptor].join(" ");
     });
     return `srcset="${candidates.join(", ")}"`;
   });
-const hostedBook = book.replace(readerBody, reader)
+let hostedBook = book.replace(readerBody, reader)
   .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
-    const url = new URL(value, "https://handbooks.mikelong.ai/production-ai-engineering/");
+    const url = new URL(value, "https://handbooks.surfaces.systems/production-ai-engineering/");
     return `${attribute}="${url.pathname}${url.search}${url.hash}"`;
   })
-  .replace("</head>", '<link rel="stylesheet" href="/gallery.css">\n<script src="/gallery-focus.js" defer></script>\n<link rel="canonical" href="https://handbooks.mikelong.ai/production-ai-engineering/">\n</head>');
+  .replace("</head>", '<link rel="stylesheet" href="/gallery.css">\n<script src="/gallery-focus.js" defer></script>\n<link rel="canonical" href="https://handbooks.surfaces.systems/production-ai-engineering/">\n</head>');
 const manifest=JSON.parse(await readFile(resolve(root,'release-manifest.json'),'utf8'));
 const publication=JSON.parse(await readFile(resolve(root,'publication.json'),'utf8'));
 if(manifest.pdf!==pdfPath || manifest.sha256!==expectedHash || manifest.version!==version || manifest.pages!==pages)throw Error('Reader release manifest does not match approved edition');
+hostedBook=editionLinks(hostedBook,publication);
 validatePublicationFront(hostedBook,{...publication,...manifest,pdfUrl:'/'+pdfPath});
 await writeFile(resolve(output,'production-ai-engineering/index.html'),hostedBook);
 console.log(`Built Production AI Engineering reader ${version}; PDF ${expectedHash}`);

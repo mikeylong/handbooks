@@ -51,6 +51,8 @@ function run(command, args, { allowFailure = false, input } = {}) {
   return result;
 }
 
+const gitPrefix = run('git',['rev-parse','--show-prefix']).stdout.trim();
+function bookPaths(output) { return output.split('\n').filter(path=>path.startsWith(gitPrefix)).map(path=>path.slice(gitPrefix.length)); }
 function git(args, options) {
   return run("git", args, options);
 }
@@ -194,19 +196,19 @@ function refExists(ref) {
 }
 
 function fileAtRef(ref, path) {
-  const result = git(["show", `${ref}:${path}`], { allowFailure: true });
+  const result = git(["show", `${ref}:${gitPrefix}${path}`], { allowFailure: true });
   return result.status === 0 ? result.stdout : null;
 }
 
 function fileBufferAtRef(ref, path) {
-  const result = gitBuffer(["show", `${ref}:${path}`], { allowFailure: true });
+  const result = gitBuffer(["show", `${ref}:${gitPrefix}${path}`], { allowFailure: true });
   return result.status === 0 ? result.stdout : null;
 }
 
 function changedPaths(base, head) {
   if (!base && !head) {
     const output = git(["diff", "--name-only", "HEAD", "--"]).stdout;
-    return new Set(output.split("\n").filter(Boolean));
+    return new Set(bookPaths(output));
   }
 
   const resolvedHead = git(["rev-parse", head]).stdout.trim();
@@ -220,7 +222,7 @@ function changedPaths(base, head) {
   }
   const resolvedBase = zeroRef(base) ? EMPTY_TREE : git(["rev-parse", base]).stdout.trim();
   const output = git(["diff", "--name-only", resolvedBase, resolvedHead, "--"]).stdout;
-  return new Set(output.split("\n").filter(Boolean));
+  return new Set(bookPaths(output));
 }
 
 function cleanWorktreeRequired() {
@@ -232,7 +234,7 @@ function cleanWorktreeRequired() {
 
 function pathsChangedBetween(base, head) {
   const output = git(["diff", "--name-only", base, head, "--"]).stdout;
-  return new Set(output.split("\n").filter(Boolean));
+  return new Set(bookPaths(output));
 }
 
 function requireReleasePaths(changed, label, pdfPath) {

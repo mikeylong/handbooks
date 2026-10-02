@@ -3,7 +3,8 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikeylong/handbooks-site"
+    "url": "https://github.com/mikeylong/handbooks",
+    "directory": "site"
   },
   "scripts": {
     "build": "node scripts/build-site.mjs",

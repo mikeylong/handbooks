@@ -60,7 +60,7 @@ A successful render in the generator's browser is not proof of compatibility wit
 
 ## Hosted publication gate
 
-For this collection at handbooks.mikelong.ai and handbooks.surfaces.systems, every online reader must pass [the hosted front-page contract](hosted-publication-front.md). Require author/site credit, linked repository and release metadata, Explore and PDF actions, the exact PDF page count, and a truthful next-review panel. Verify the editable generator and the deployed page, including desktop and mobile behavior. Also require [the shared appearance contract](hosted-appearance.md) for every hosted title: System/Light/Dark controls, original raster shading on a muted light background in dark mode, and light PDFs and printing.
+For this collection at handbooks.surfaces.systems, every online reader must pass [the hosted front-page contract](hosted-publication-front.md). Require author/site credit, linked public edition metadata, Explore and PDF actions, the exact PDF page count, and a truthful next-review panel. Verify the editable generator and the deployed page, including desktop and mobile behavior. Also require [the shared appearance contract](hosted-appearance.md) for every hosted title: System/Light/Dark controls, original raster shading on a muted light background in dark mode, and light PDFs and printing.
 
 ## Release-integrity gates
 

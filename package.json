@@ -1,0 +1,15 @@
+{
+  "name": "handbooks",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/handbooks"
+  },
+  "scripts": {
+    "build": "npm --prefix site run build",
+    "preview": "npm --prefix site run preview",
+    "validate": "python3 scripts/validate-repositories.py && npm run validate:releases && npm run build && npm --prefix site test",
+    "validate:releases": "npm --prefix production-ai-engineering run validate:release && npm --prefix production-ai-engineering run validate:handbook && npm --prefix ai-evaluation run validate && npm --prefix ai-consulting run validate",
+    "validate:migration-2026-10-01": "python3 scripts/validate-collection.py"
+  }
+}

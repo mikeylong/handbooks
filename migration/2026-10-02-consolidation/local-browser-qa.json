@@ -1,0 +1,203 @@
+{
+  "status": "passed",
+  "checks": 668,
+  "records": [
+    {
+      "route": "/",
+      "width": 1280,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/production-ai-engineering/",
+      "width": 1280,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/ai-evaluation/",
+      "width": 1280,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/ai-consulting/",
+      "width": 1280,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/production-ai-engineering/",
+      "width": 768,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/ai-evaluation/",
+      "width": 768,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/ai-consulting/",
+      "width": 768,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/production-ai-engineering/",
+      "width": 390,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/ai-evaluation/",
+      "width": 390,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/ai-consulting/",
+      "width": 390,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/production-ai-engineering/",
+      "width": 320,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/ai-evaluation/",
+      "width": 320,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    },
+    {
+      "route": "/ai-consulting/",
+      "width": 320,
+      "choices": "Light/Dark/System",
+      "keyboard": "passed",
+      "layout": "stable",
+      "persistence": "passed"
+    }
+  ],
+  "additional": [
+    "search and mobile contents for all three readers",
+    "cross-tab preference",
+    "navigation and Back",
+    "blocked storage",
+    "no JavaScript",
+    "white printing",
+    "original artwork"
+  ],
+  "screenshots": 16,
+  "editions": {
+    "status": "passed",
+    "records": [
+      {
+        "slug": "production-ai-engineering",
+        "width": 1280,
+        "editionLink": "public",
+        "download": "saved",
+        "fonts": "loaded",
+        "rasterArt": "loaded"
+      },
+      {
+        "slug": "ai-evaluation",
+        "width": 1280,
+        "editionLink": "public",
+        "download": "saved",
+        "fonts": "loaded",
+        "rasterArt": "loaded"
+      },
+      {
+        "slug": "ai-consulting",
+        "width": 1280,
+        "editionLink": "public",
+        "download": "saved",
+        "fonts": "loaded",
+        "rasterArt": "loaded"
+      },
+      {
+        "slug": "production-ai-engineering",
+        "width": 390,
+        "editionLink": "public",
+        "download": "saved",
+        "fonts": "loaded",
+        "rasterArt": "loaded"
+      },
+      {
+        "slug": "ai-evaluation",
+        "width": 390,
+        "editionLink": "public",
+        "download": "saved",
+        "fonts": "loaded",
+        "rasterArt": "loaded"
+      },
+      {
+        "slug": "ai-consulting",
+        "width": 390,
+        "editionLink": "public",
+        "download": "saved",
+        "fonts": "loaded",
+        "rasterArt": "loaded"
+      }
+    ],
+    "privatePaths": "404"
+  },
+  "versionedDownloadHashes": "PASS",
+  "visualReview": "Gallery and every reader inspected in light/dark desktop/mobile states; edition layout uses shared reader gutters. Original figure shading and raster identity preserved.",
+  "draftValidation": {
+    "claude-design": "PASS; existing 109-page draft validated without regeneration"
+  }
+}

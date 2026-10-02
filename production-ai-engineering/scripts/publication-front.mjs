@@ -45,7 +45,7 @@ export function validatePublicationFront(html, edition) {
     exploreAction: /<a\b[^>]*href="#contents"[^>]*>Explore the handbook<\/a>/.test(cover) && /id="contents"/.test(html),
     pdfAction: download.some(x=>hasHref(x, edition.pdfUrl) && includes(x.replace(/<[^>]+>/g, ""), `${edition.pages} pages`)),
     sidebarAuthor: includes(sidebar, edition.author) && hasHref(sidebar, edition.authorSite),
-    sidebarRepository: hasHref(sidebar, edition.repository) && includes(sidebar, date),
+    sidebarEdition: hasHref(sidebar, edition.editionUrl) && includes(sidebar, date),
     sidebarRelease: hasHref(sidebar, edition.releaseUrl) && includes(sidebar, `Version ${edition.version}`),
     sidebarSearch: /data-open-search/.test(sidebar) && /aria-controls="search-dialog"/.test(sidebar),
     sidebarDownload: hasHref(sidebar, edition.pdfUrl) && /\bdownload\b/.test(sidebar),

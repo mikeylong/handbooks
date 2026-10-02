@@ -1,0 +1,3 @@
+# Hosting QA inventory
+
+Verify the gallery, all three readers, and all three edition pages at desktop and mobile widths. Exercise navigation, search, mobile contents, public edition links, original and versioned PDF downloads, Light/Dark/System controls, keyboard behavior, persistence across reload and navigation, fonts, and original artwork. Check unauthorized draft paths and changed-package publication as negative cases. Inspect screenshots separately for clipping, overflow, theme contrast, controls, and illustrations. Verify the actual Vercel deployment SHA and every public asset against the staged build.
