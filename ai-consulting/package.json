@@ -1,0 +1,13 @@
+{
+  "name": "ai-consulting-playbook",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/ai-consulting-playbook"
+  },
+  "scripts": {
+    "build": "node scripts/build-reader.mjs",
+    "validate:release": "node scripts/validate-release.mjs",
+    "validate": "npm run validate:release && npm run build"
+  }
+}
