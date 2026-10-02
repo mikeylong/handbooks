@@ -32,6 +32,9 @@
 .handbook-cover { border: 1px solid var(--line); background: var(--paper); }
 .handbook-cover img { display: block; width: 100%; height: auto; }
 
+/* Section destinations retain focus for navigation without a content outline. */
+main section[tabindex="-1"]:focus { outline: none; }
+
 /* One cross-document transition for the gallery and every hosted reader.
    Ordinary links retain native history, modifier-click, and no-JS behavior. */
 html { scrollbar-gutter: stable; }
