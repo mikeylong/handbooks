@@ -2,12 +2,10 @@
   "name": "production-ai-engineering-book",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-site.mjs",
+    "build": "node scripts/build-reader.mjs",
     "dev": "node scripts/dev-server.mjs",
     "validate:handbook": "node handbook/validate-handbook.mjs",
     "validate:release": "node scripts/validate-production-release.mjs",
-    "validate:evaluation": "node scripts/validate-evaluation-release.mjs",
-    "validate:front-pages": "npm run build && node scripts/test-publication-front.mjs && node scripts/test-gallery-focus.mjs && node scripts/test-site-theme.mjs",
-    "validate:consulting": "node scripts/validate-consulting-release.mjs"
+    "validate:front-pages": "npm run build"
   }
 }

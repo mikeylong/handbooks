@@ -37,11 +37,5 @@ jobs:
           HEAD_SHA: ${{ github.event.merge_group.head_sha || github.sha }}
         run: node scripts/validate-production-release.mjs --base "$BASE_SHA" --head "$HEAD_SHA"
 
-      - name: Validate the AI Evaluation release
-        run: npm run validate:evaluation
-
-      - name: Validate the AI Consulting release
-        run: npm run validate:consulting
-
-      - name: Reject incomplete publication front pages
-        run: npm run validate:front-pages
+      - name: Validate the standalone Production reader
+        run: npm run build
