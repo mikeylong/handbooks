@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 2,
+  "status": "not-applicable",
+  "operatingMode": "create-first-edition-variant-test",
+  "includeChangelog": false,
+  "readerFacingContentChangedFromPeerBaseline": true,
+  "summary": "No previous approved edition exists; an edition changelog is not applicable.",
+  "detail": "Generation A is an unapproved peer baseline; its differences from Generation B are recorded in the separate change ledger and exact comparison.",
+  "entryCount": 0,
+  "expectedEntries": [],
+  "failures": [],
+  "placement": null,
+  "requiredPdfState": {
+    "changelogPages": 0,
+    "finalPage": false,
+    "navigationEntry": false,
+    "outlineEntry": false
+  },
+  "comparisonBasis": {
+    "previousApprovedEdition": null,
+    "peerBaselinePdf": "output/pdf/poisonous-mushroom-identification-handbook.pdf",
+    "peerBaselineSha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7",
+    "peerBaselineIsApprovedEdition": false
+  },
+  "changeLedger": "candidates/poisonous-mushroom-identification-generation-b/change-ledger.json",
+  "validationDisposition": "Passed to validate-pdf.py as an explicit first-edition not-applicable decision. The validator records decisionStatus not-applicable, firstEdition true, and verifies the absence of changelog pages, navigation entries, and outline entries."
+}

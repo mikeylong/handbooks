@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-08-28",
+  "generationMode": "built-in image_gen",
+  "generationTool": "image_gen.imagegen",
+  "model": "not exposed by the built-in tool",
+  "governingStyleReference": {
+    "path": "assets/design-system/illustration-reference.webp",
+    "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+    "role": "style reference only"
+  },
+  "normalization": {
+    "tool": "ImageMagick",
+    "transform": "magick <selected.png> -background white -alpha remove -alpha off -colorspace Gray -strip -define webp:lossless=true <final.webp>",
+    "background": "opaque white",
+    "format": "lossless WebP",
+    "intendedPrintWidthMillimetres": 116,
+    "minimumEffectivePpi": 240
+  },
+  "assets": [
+    {
+      "assetId": "amanita-warning-constellation",
+      "chapter": 3,
+      "placement": "section 3.1 warning-pattern illustration",
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification/source/assets/section-illustrations/originals/amanita-warning-constellation-selected.png",
+      "selectedSourceSha256": "626fd429790d2a7471f2023b847a2bd8fba4830121b4972fc6f2db9fae993ed8",
+      "finalPath": "candidates/poisonous-mushroom-identification/source/assets/section-illustrations/amanita-warning-constellation.webp",
+      "finalSha256": "649b72e70220d7ecdddfaeac42fcc5666b7ed1b7b98d20b934d79aae564841af",
+      "pixelWidth": 1860,
+      "pixelHeight": 846,
+      "effectivePpiAt116mm": 407.28,
+      "references": [
+        {
+          "path": "assets/design-system/illustration-reference.webp",
+          "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+          "role": "governing style reference"
+        },
+        {
+          "path": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/originals/chapter-01-safety-boundary-selected.png",
+          "sha256": "6fb31091807bc03893ebcfa5ef56e8d5c5945bb93bc6a2adfadeba3c656908b0",
+          "role": "selected handbook-set style anchor"
+        }
+      ],
+      "prompt": "Use case: scientific-educational\nAsset type: wide A5 field-guide section illustration, intended to print about 116 mm wide and no more than 52 mm high\nInput images: Image 1 is the governing style reference only. Image 2 is a selected illustration from the same handbook and is also a style reference only. Preserve their meticulous black-ink engraving craft, fine stippling and cross-hatching, technical realism, line weight, contrast, and pure-white paper. Do not copy either reference's machine, objects, or composition.\nPrimary request: Create an original, unlabeled natural-history engraving for 'the Amanita warning constellation.' Show one deliberately generic Amanita-form mushroom specimen excavated intact and angled in a graceful three-quarter botanical-study pose. The cap is slightly tipped so pale free gills are clearly visible underneath; the stem carries a delicate, plausibly fragile ring; the complete base is visible with a rounded bulb emerging from a torn saclike volva and a few loose crumbs of soil. The image must communicate a warning pattern for stopping and seeking expert review, not a species portrait or an edibility verdict.\nScene/backdrop: pure opaque white paper, no horizon and no environment\nSubject: one complete generic Amanita-form specimen only; no humans, no equipment\nStyle/medium: meticulous nineteenth-century scientific natural-history engraving in black ink, fine stippling and cross-hatching, consistent in craft and contrast with both reference images\nComposition/framing: very wide horizontal composition around 2.2:1; specimen centered and fully visible; cap, gills, entire stem, ring, bulb, and volva all inside the frame; calm editorial scale; generous crop-safe white margins on every side; no element cut off\nColor palette: black ink only on pure white\nConstraints: illustration only; no text, letters, numbers, labels, captions, leader lines, arrows, icons, logos, border, frame, watermark, color, gray paper, transparency, cast shadow, or decorative background; morphologically plausible but deliberately not identifiable to a particular species; do not imply that these features prove toxicity or edibility\nAvoid: vector schematic, infographic, labeled anatomy plate, callout boxes, flowchart, cartoon, generic clip art, photorealistic photograph, decorative botanical scene, multiple mushroom species, basket, food, kitchen, skull, hazard symbol, gore, dramatic horror",
+      "selectionRationale": "The single fully excavated specimen makes the gills, fragile ring, bulb, and saclike volva visible without labels or a taxonomic key. Its wide natural-history engraving treatment matches the handbook while the adjacent prose retains the safety limits."
+    },
+    {
+      "assetId": "morel-warning-comparison",
+      "chapter": 3,
+      "placement": "section 3.3 comparison illustration",
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification/source/assets/section-illustrations/originals/morel-warning-comparison-selected.png",
+      "selectedSourceSha256": "62d480b693fac5f5fc2bcbca42fb3934e064401f68021f07565d45645d5c72b2",
+      "finalPath": "candidates/poisonous-mushroom-identification/source/assets/section-illustrations/morel-warning-comparison.webp",
+      "finalSha256": "e1e42c8c15a5d9f1bb5edeb265e493989c495f01c92a1865745985cbfe226e49",
+      "pixelWidth": 1869,
+      "pixelHeight": 842,
+      "effectivePpiAt116mm": 409.28,
+      "sourceEvidence": [
+        {
+          "claimId": "C10",
+          "sourceId": "S09",
+          "role": "morphology and safety constraints"
+        }
+      ],
+      "references": [
+        {
+          "path": "assets/design-system/illustration-reference.webp",
+          "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+          "role": "governing style reference"
+        },
+        {
+          "path": "candidates/poisonous-mushroom-identification/source/assets/section-illustrations/originals/amanita-warning-constellation-selected.png",
+          "sha256": "626fd429790d2a7471f2023b847a2bd8fba4830121b4972fc6f2db9fae993ed8",
+          "role": "selected handbook-set style anchor"
+        }
+      ],
+      "prompt": "Use case: scientific-educational\nAsset type: wide A5 field-guide comparison illustration, intended to print about 116 mm wide and about 45-50 mm high\nInput images: Image 1 is the governing style reference only. Image 2 is a selected illustration from the same handbook and is also a style reference only. Preserve their meticulous black-ink engraving craft, fine stippling and cross-hatching, technical natural-history realism, line weight, contrast, and pure-white paper. Do not copy either reference's machine, mushroom specimen, or composition.\nPrimary request: Create one original, unlabeled paired botanical comparison plate supporting a handbook warning about true morels versus false-morel look-alikes. The illustration must communicate a structural comparison for stopping and seeking expert review, never an edibility certification.\nScene/backdrop: pure opaque white paper, no horizon and no environment\nSubject: two clearly separated specimen groups with equal visual weight. LEFT GROUP: one generic true-morel-form specimen with a conical cap whose surface has unmistakable deep hole-like pits bounded by raised ridges, plus a clean longitudinal half-section beside it showing one continuous open hollow cavity through cap and stalk. RIGHT GROUP: one generic Gyromitra-like false-morel-form specimen with an irregular lobed, folded, brainlike cap, plus a clean longitudinal half-section beside it showing irregular internal chambers and folded or solid-looking tissue rather than one continuous hollow cavity. Keep both groups morphologically plausible but deliberately generic, not portraits of named species.\nStyle/medium: meticulous nineteenth-century scientific natural-history engraving in black ink, fine stippling and cross-hatching, consistent in craft and contrast with both reference images\nComposition/framing: very wide horizontal composition around 2.2:1; left group occupies the left half and right group the right half with a generous blank center gutter; all whole specimens and longitudinal sections fully visible; calm editorial scale; generous crop-safe white margins on every side; no element cut off; no ground line or cast shadow\nColor palette: black ink only on pure white\nConstraints: illustration only; no text, letters, numbers, labels, captions, leader lines, arrows, brackets, icons, logos, border, frame, watermark, color, gray paper, transparency, cast shadow, decorative background, people, tools, basket, food, or kitchen; the left form must visibly read as pitted rather than merely wrinkled; the right form must visibly read as lobed/brainlike rather than pitted; the cut sections must not be swapped; do not imply that appearance alone proves toxicity or edibility\nAvoid: vector schematic, infographic, diagram boxes, callout marks, cartoon, generic clip art, photorealistic photograph, decorative botanical scene, hazard symbol, skull, gore, dramatic horror",
+      "refinementPrompt": "Use case: scientific-educational\nAsset type: targeted correction to an A5 field-guide comparison illustration\nInput images: Image 1 is the edit target. Images 2 and 3 are style references only.\nPrimary request: Change only the longitudinal cut section of the true-morel form, which is the second specimen from the left. Make its single continuous interior cavity unmistakably empty and hollow: pure white paper inside the cavity, bounded by a thin engraved inner wall from cap through stalk, with no stippling, gray fill, tissue, septa, or chambers inside that cavity.\nConstraints: Preserve the positions, proportions, exterior morphology, pitted true-morel whole specimen, lobed false-morel whole specimen, false-morel cut section and its irregular filled/chambered interior, black-ink natural-history engraving style, pure white background, wide composition, margins, and all other details exactly. No text, labels, arrows, border, color, or watermark. Do not redesign any specimen.",
+      "selectionRationale": "The paired whole and longitudinal-section studies make the pitted continuous-hollow pattern visibly distinct from the irregular brainlike non-hollow warning pattern without embedding labels or presenting the image as an edibility key. A targeted refinement removed ambiguous shading from the true-morel cavity; the adjacent editable prose retains the poison warning and safety limit."
+    }
+  ]
+}

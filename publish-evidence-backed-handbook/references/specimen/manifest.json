@@ -1,0 +1,95 @@
+{
+  "artifact": {
+    "pageDimensionsPoints": [
+      [
+        420.0,
+        594.96
+      ]
+    ],
+    "pages": 12,
+    "path": "references/specimen/canonical-handbook-specimen.pdf",
+    "pdfHeader": "%PDF-1.4",
+    "roles": [
+      "cover",
+      "editorial-premise",
+      "contents",
+      "chapter-opener",
+      "narrative-and-sources",
+      "diagram-and-table",
+      "editorial-examples",
+      "code-and-checklist",
+      "dense-table-stress",
+      "notes-and-sources",
+      "index",
+      "conditional-final-changelog"
+    ],
+    "sha256": "f2b35119784796cbc6a1da72b11842bb02f90667d90a3dffc1b68622bd1bca85"
+  },
+  "build": {
+    "command": "python3 scripts/build-specimen.py --changelog-mode include --output references/specimen/canonical-handbook-specimen.pdf --update-canonical",
+    "ordinaryRunsMayUpdateCanonical": false,
+    "package": "python3 scripts/package-skill.py --output <archive.zip>",
+    "preflight": "python3 scripts/preflight.py",
+    "workflowRegression": "python3 scripts/test-edition-workflow.py --output <report.json>"
+  },
+  "designSystemVersion": "1.0.0",
+  "inputs": {
+    ".gitattributes": "c946264169ba03cb2e392755cfe903acbcf25dcbe7d73a915381db6eb8dcfb2c",
+    ".gitignore": "58617550b41fee1bd4788141e64b2a29987761d5039cc0e3dea3cbc3fa4d9c47",
+    "README.md": "381ebc12c8d72adc7706ca793d6672ca8b03b025e6d7158aed587a996f0b3478",
+    "SKILL.md": "f1cc653ee2033395585514949534fa031b21f1590735a7c5b17e7fa19fc997b0",
+    "assets/design-system/fonts/NOTO-SANS-LICENSE.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb",
+    "assets/design-system/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
+    "assets/design-system/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
+    "assets/design-system/fonts/SOURCE-CODE-PRO-LICENSE.md": "0b2c3168605cb4f3ba54cf3cf2003f67ff894c66484c75702007f23eda92c353",
+    "assets/design-system/fonts/SOURCE-SERIF-4-LICENSE.txt": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+    "assets/design-system/fonts/SourceCodePro-Regular.ttf": "f144137f557805c7327fc4b14d1d730f6e1822e0124170251ff1bcd723a693f1",
+    "assets/design-system/fonts/SourceCodePro-Semibold.ttf": "1b61c980d75de8216228a2603bcabe51394013452df26a04c99326bbc035c5a5",
+    "assets/design-system/fonts/source-serif-4-latin-variable-italic.woff2": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5",
+    "assets/design-system/fonts/source-serif-4-latin-variable.woff2": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb",
+    "assets/design-system/illustration-reference.webp": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+    "assets/design-system/print.css": "d8c765b5488aa7a8ad98c842e42c3c8f408f1dc70c9959ec0b6bc5d42c3fce06",
+    "assets/design-system/templates/change-ledger.json": "f48446aa758708db63a444c9131dc01bbd27c6162d090403eaab0db048032039",
+    "assets/design-system/templates/handbook.html": "b801044c7a349f1039039f4305990d2a596bac7379139abd8d525bfeb80287cc",
+    "assets/design-system/tokens.json": "191a9d3ebeb37edda97817bda64bce3150795d7ace07dc0590b004c32b96d9b0",
+    "handbook-spec.json": "87f4a9491eca40d340e1c4387f75189bad6db129a429a273957975f06be980f8",
+    "references/design-system.md": "aceed697bd136933aded423ec78ce974b6d7ee53a1859f32f6716174ba4a5b9d",
+    "references/edition-and-release.md": "90c3989f8b152b385dd375803cd7430fbda3e08d46133722759f3e9bea834d0e",
+    "references/editorial-quality.md": "370bf467b94eb1c1109c141275871c4e45b4c0db05b014837722f2dd21bbea0e",
+    "references/hosted-appearance.md": "650a236a8ed87637d38b9c05f01782c07645b22e6f622344bed1864618e82408",
+    "references/hosted-publication-front.md": "107c8af480b8c979449c3a1588a28902726a482ffa4d2519b0a9cecedeeb3610",
+    "references/illustration-workflow.md": "396fce09e58da9f205d4fa80da8939f59be52c863396cf04d50bc0af72c1cfdc",
+    "references/open-image-fallback.md": "08524843d4a667bb84b0954183a2b3f9f5fd92e19f659f30480558de00447f25",
+    "references/quality-gates.md": "aa7b417520387b6a2cf53a1e72678c5818685402fb52869fddeaf437a4e20355",
+    "references/research-and-evidence.md": "9efa14246e49e70ef49d99b49e2872e28ec94dec4befc8cc9c14bebaee9e6454",
+    "references/specimen/canonical-page-map.json": "96e76966601f638438dbcd29e8544d452096ce39233666bea0a6455c82410832",
+    "references/specimen/compatibility-matrix.json": "c53cee9c0ccc6ea887b97fc8c69a283b04da2a10f868b75b4d47d21c7f73f9f6",
+    "references/specimen/source/specimen.html": "83e1776a31fe1cf5a115b368267a11a4344e4639d031bea60923dc86dcbc1d81",
+    "references/specimen/validation.json": "b54c2dc29e2614860a1190e6492233be59931d1cf7febc8a21db9a1bfcf94389",
+    "references/specimen/workflow-regression.json": "c20557dde55426ef1781cb1ff133613a48f1e7d6ceff0450d2acdfacff40b348",
+    "requirements.txt": "3ec8922905dc4e3a10c3b46bd7fba023c37ffc309d51c6bed2a13ec3e98177fd",
+    "scripts/build-manifest.py": "94e641408ee28e6521f56ca69e7245973c09e1e3159b933a1e966cb563e5b91c",
+    "scripts/build-specimen.py": "a0d7dd15ba2db559c3db37f8eb3e42b897e2338450d55e36311d1fbeff227738",
+    "scripts/compare-editions.py": "d42412f21f2767567c091341b84b5a1dcbf367049836b2b7f97f587d8fa4146a",
+    "scripts/decide-changelog.py": "8d410bdb7e4d129c84bb0bd9367799387eeed8742f9c5ee3049f186b6860426d",
+    "scripts/package-skill.py": "eb58be38ec99d177b59123f1ca1c4a9c73567c06eeafc9a318635956eb92eaaf",
+    "scripts/preflight.py": "af086feae8d0b6c4e50048e5e2c78097d339f9f4d5b8b6f140824e7d048990bd",
+    "scripts/render-pdfkit.swift": "67864d7b1eb1d08c9552c162ef77515c6e06880f083a3f799951024f28df65ef",
+    "scripts/render-proof.py": "c46436972f9b25793b35754659c93fc3c133d6e75c964d8dfbb42b2bf287dee8",
+    "scripts/runtime_support.py": "8c38cf7b432696455f4b51e95fb0bef78a50fb1984cd889e5ea160fb6652b0f6",
+    "scripts/test-edition-workflow.py": "406141e6f3d6c05b29fc4e59bd2c8acd274f63afabfcdff9fbb9bf9a11b66e05",
+    "scripts/test-illustration-gate.py": "a7d52d6e335e6813f300771415781168f3e93483cf069854765137798e6dc552",
+    "scripts/validate-package.py": "56624285a485cee36a4569e712b7bb099766babe7e91c8e2af8ec37742b1175f",
+    "scripts/validate-pdf.py": "6cf7574e2bec4f2c0a53b38e65abca0c6a33adecd24bde0b590610a8494da06a"
+  },
+  "schemaVersion": 1,
+  "toolchain": {
+    "browser": "Google Chrome 152.0.7977.83",
+    "pypdf": "6.10.0",
+    "python": "3.12.14"
+  },
+  "visualLineage": {
+    "note": "The specimen uses neutral content while preserving the approved A5 editorial grammar and PDFKit-safe illustration contract.",
+    "reference": "canonical design-system specimen"
+  }
+}

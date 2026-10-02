@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Canonical Handbook Design System Specimen</title>
+  <script>
+    document.documentElement.dataset.changelogMode =
+      new URLSearchParams(window.location.search).get("changelog") === "omit"
+        ? "omit"
+        : "include";
+  </script>
+  <link rel="stylesheet" href="../../../assets/design-system/print.css">
+  <style>
+    @page { size: A5; margin: 0; }
+    body { margin: 0; }
+    .specimen-page {
+      position: relative;
+      width: 148mm;
+      height: 210mm;
+      padding: 15mm 13mm 18mm;
+      overflow: hidden;
+      break-after: page;
+      background: #fff;
+    }
+    .specimen-page:last-child { break-after: auto; }
+    .specimen-page.cover,
+    .specimen-page.foreword,
+    .specimen-page.contents,
+    .specimen-page.chapter-opener,
+    .specimen-page.back-matter,
+    .specimen-page.changelog { break-after: page; }
+    .specimen-page:last-child { break-after: auto; }
+    .specimen-running {
+      position: absolute;
+      top: 6.8mm;
+      right: 13mm;
+      left: 13mm;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 2.2mm;
+      border-bottom: 0.35pt solid var(--line);
+      color: #4d4a45;
+      font-family: var(--sans);
+      font-size: 6.2pt;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .specimen-folio {
+      position: absolute;
+      right: 13mm;
+      bottom: 6.7mm;
+      left: 13mm;
+      padding-top: 2.2mm;
+      border-top: 0.35pt solid var(--line);
+      color: #4d4a45;
+      font-family: var(--sans);
+      font-size: 7pt;
+      line-height: 1;
+      text-align: center;
+    }
+    .opener .specimen-running,
+    .front .specimen-running { display: none; }
+    .cover .specimen-folio { display: none; }
+    .compact p { margin: 0.65em 0; }
+    .dense-table table { font-size: 6.6pt; line-height: 1.22; }
+    .dense-table th,
+    .dense-table td { padding: 1mm; }
+    .specimen-note {
+      margin: 2mm 0 4mm;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 7pt;
+      line-height: 1.35;
+    }
+    .mini-principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-top: 7mm;
+      padding-top: 4mm;
+      border-top: 0.8pt solid var(--ink);
+    }
+    .mini-principles strong {
+      display: block;
+      margin-bottom: 1mm;
+      font-family: var(--sans);
+      font-size: 7pt;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .mini-principles p { margin: 0; font-size: 8.5pt; }
+    .illustration-crop { margin-top: 4mm; }
+    .illustration-crop .chapter-art { width: 108mm; }
+    .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+    .source-map { margin: 0; padding: 0; list-style: none; }
+    .source-map li {
+      display: grid;
+      grid-template-columns: 22mm 1fr;
+      gap: 3mm;
+      padding: 2mm 0;
+      border-top: 0.35pt solid var(--line);
+      font-size: 8pt;
+    }
+    .source-map strong { font-family: var(--sans); font-size: 7pt; }
+    .index-grid p { margin: 0 0 1.3mm; break-inside: avoid; }
+    .index-see { display: block; padding-left: 3mm; color: var(--muted); font-style: italic; }
+    html[data-changelog-mode="omit"] .changelog,
+    html[data-changelog-mode="omit"] .changelog-navigation,
+    html[data-changelog-mode="include"] .without-changelog { display: none !important; }
+    html[data-changelog-mode="omit"] .with-changelog { display: none !important; }
+  </style>
+</head>
+<body>
+  <main class="handbook" aria-label="Canonical handbook design system specimen">
+    <section class="specimen-page cover front" aria-label="Cover specimen">
+      <div class="cover-rule"></div>
+      <p class="cover-label">Canonical reference</p>
+      <h1>Evidence-Backed Handbook</h1>
+      <p class="cover-subtitle">A design-system specimen for rigorous technical publishing.</p>
+      <p class="cover-byline">Reference edition</p>
+      <p class="cover-meta">Design system 1.0.0 · Reusable production package</p>
+    </section>
+
+    <section class="specimen-page foreword front" aria-label="Editorial premise specimen">
+      <p class="section-label">Editorial premise</p>
+      <h2 class="display-title">Build trust into the artifact</h2>
+      <p class="lede">A handbook succeeds when its evidence, decisions, visual language, and release history remain understandable after the original author steps away.</p>
+      <blockquote><p>The PDF is not the end of the process. It is the durable expression of a traceable system.</p></blockquote>
+      <div class="mini-principles">
+        <div><strong>Evidence</strong><p>Map consequential claims to direct sources.</p></div>
+        <div><strong>Design</strong><p>Use a coherent hierarchy instead of decorative variety.</p></div>
+        <div><strong>Proof</strong><p>Validate the final artifact in the environments readers use.</p></div>
+      </div>
+      <div class="specimen-folio">ii</div>
+    </section>
+
+    <section class="specimen-page contents front" aria-label="Contents specimen">
+      <p class="section-label">Navigation</p>
+      <h2 class="display-title">Contents</h2>
+      <ol class="contents-list">
+        <li><a href="#chapter-opener"><span class="contents-number">01</span><span>Start with the reader's decision</span><span class="contents-page">1</span></a></li>
+        <li><a href="#narrative"><span class="contents-number">02</span><span>Separate evidence from synthesis</span><span class="contents-page">2</span></a></li>
+        <li><a href="#diagram"><span class="contents-number">03</span><span>Explain the system visually</span><span class="contents-page">3</span></a></li>
+        <li><a href="#examples"><span class="contents-number">04</span><span>Turn prose into usable contracts</span><span class="contents-page">4</span></a></li>
+        <li><a href="#code"><span class="contents-number">05</span><span>Make examples teachable</span><span class="contents-page">5</span></a></li>
+        <li><a href="#stress"><span class="contents-number">06</span><span>Design for dense information</span><span class="contents-page">6</span></a></li>
+        <li><a href="#sources"><span class="contents-number">A</span><span>Notes and sources</span><span class="contents-page">7</span></a></li>
+        <li><a href="#index"><span class="contents-number">I</span><span>Index of terms</span><span class="contents-page">8</span></a></li>
+        <li class="changelog-navigation"><a href="#changelog"><span class="contents-number">Δ</span><span>Conditional changelog specimen</span><span class="contents-page">9</span></a></li>
+      </ol>
+      <div class="specimen-folio">iii</div>
+    </section>
+
+    <section id="chapter-opener" class="specimen-page chapter-opener opener" aria-label="Chapter opener specimen">
+      <p class="chapter-kicker">Chapter 01</p>
+      <h2 class="chapter-title">Start with the Reader's Decision</h2>
+      <p class="chapter-deck">The structure of the handbook should follow the work the reader needs to perform, not the order in which the author discovered the material.</p>
+      <figure class="chapter-figure illustration-crop">
+        <img class="chapter-art" src="../../../assets/design-system/illustration-reference.webp" width="1536" height="1364" alt="">
+      </figure>
+      <div class="specimen-folio">1</div>
+    </section>
+
+    <section id="narrative" class="specimen-page compact" aria-label="Narrative hierarchy and citation specimen">
+      <div class="specimen-running"><span>Evidence-Backed Handbook</span><span>Reader Decisions</span></div>
+      <h2 class="section-heading"><span class="section-number">1.1&nbsp;</span>Separate evidence from synthesis</h2>
+      <p>A factual claim, an interpretation, and a recommendation do different work. The reader should be able to tell which kind of statement they are seeing and inspect the evidence behind consequential claims.<sup class="citation-marker">[EVD-01]</sup></p>
+      <p>Use direct sources for documented behavior. When several sources inform a new framework or sequence, label it as author synthesis instead of implying that a single source contains the whole model.</p>
+      <h3 class="subheading">Make the distinction operational</h3>
+      <ol>
+        <li>Write the claim in the smallest testable form.</li>
+        <li>Attach the strongest available source and exact locator.</li>
+        <li>Record access limits, conflicts, and freshness risk.</li>
+        <li>State what the author concludes beyond the source.</li>
+      </ol>
+      <aside class="callout">
+        <p class="callout-label">Decision rule</p>
+        <p>If a source cannot be inspected, it can guide discovery but cannot serve as verified support.</p>
+      </aside>
+      <p class="source-line"><strong>Sources</strong><span>[EVD-01] [EVD-02]</span><span class="synthesis">Author synthesis: the sequence above turns evidence hygiene into an editorial control.</span></p>
+      <div class="specimen-folio">2</div>
+    </section>
+
+    <section id="diagram" class="specimen-page compact" aria-label="Diagram and decision table specimen">
+      <div class="specimen-running"><span>Evidence-Backed Handbook</span><span>Reader Decisions</span></div>
+      <h2 class="section-heading"><span class="section-number">1.2&nbsp;</span>Explain the system visually</h2>
+      <p>Use a diagram when sequence, ownership, or branching is materially harder to understand in prose.</p>
+      <figure class="diagram" aria-label="Evidence-to-release workflow">
+        <svg viewBox="0 0 760 250" role="img" aria-labelledby="workflow-title">
+          <title id="workflow-title">Evidence-to-release workflow</title>
+          <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#000"/></marker></defs>
+          <rect class="node" x="20" y="75" width="150" height="70" rx="2"/>
+          <rect class="node" x="215" y="75" width="150" height="70" rx="2"/>
+          <rect class="node" x="410" y="75" width="150" height="70" rx="2"/>
+          <rect class="node" x="605" y="75" width="135" height="70" rx="2"/>
+          <path class="flow" marker-end="url(#arrow)" d="M170 110 H205"/>
+          <path class="flow" marker-end="url(#arrow)" d="M365 110 H400"/>
+          <path class="flow" marker-end="url(#arrow)" d="M560 110 H595"/>
+          <text x="95" y="102" text-anchor="middle" font-size="16" font-weight="700">RESEARCH</text>
+          <text class="muted" x="95" y="126" text-anchor="middle" font-size="13">inspect and map</text>
+          <text x="290" y="102" text-anchor="middle" font-size="16" font-weight="700">AUTHOR</text>
+          <text class="muted" x="290" y="126" text-anchor="middle" font-size="13">change with intent</text>
+          <text x="485" y="102" text-anchor="middle" font-size="16" font-weight="700">VALIDATE</text>
+          <text class="muted" x="485" y="126" text-anchor="middle" font-size="13">structure and sight</text>
+          <text x="672" y="102" text-anchor="middle" font-size="16" font-weight="700">RELEASE</text>
+          <text class="muted" x="672" y="126" text-anchor="middle" font-size="13">exact approved hash</text>
+        </svg>
+      </figure>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Question</th><th>Evidence</th><th>Decision</th></tr></thead>
+          <tbody>
+            <tr><td>What changed?</td><td>Exact source and PDF-text diffs</td><td>Classify only observed changes</td></tr>
+            <tr><td>Is it supported?</td><td>Claim-level source mappings</td><td>Accept, qualify, or reject</td></tr>
+            <tr><td>Is it ready?</td><td>Structural and perceptual proof</td><td>Release or stop with the failed gate</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="specimen-folio">3</div>
+    </section>
+
+    <section id="examples" class="specimen-page compact" aria-label="Editorial examples specimen">
+      <div class="specimen-running"><span>Evidence-Backed Handbook</span><span>Usable Contracts</span></div>
+      <h2 class="section-heading"><span class="section-number">2.1&nbsp;</span>Turn prose into usable contracts</h2>
+      <p>Use structured examples when the reader needs to compare responsibilities or evaluate a budget.</p>
+      <dl class="editorial-example">
+        <div class="example-row"><dt>Reader job</dt><dd>Choose, implement, diagnose, or verify a production decision.</dd></div>
+        <div class="example-row"><dt>Evidence</dt><dd>Direct sources, access dates, locators, and known limitations.</dd></div>
+        <div class="example-row"><dt>Output</dt><dd>Canonical source, candidate PDF, diffs, ledgers, and proof.</dd></div>
+        <div class="example-row"><dt>Release gate</dt><dd>Explicit approval for the exact validated artifact hash.</dd></div>
+      </dl>
+      <h3 class="subheading">A review budget</h3>
+      <dl class="editorial-example">
+        <div class="example-row"><dt>Source review</dt><dd>Authority + relevance + currency + access completeness</dd></div>
+        <div class="example-row"><dt>Editorial review</dt><dd>Reader progress + precision + examples + synthesis labels</dd></div>
+        <div class="example-row"><dt>Artifact review</dt><dd>Structure + typography + images + links + renderer behavior</dd></div>
+      </dl>
+      <div class="specimen-folio">4</div>
+    </section>
+
+    <section id="code" class="specimen-page compact" aria-label="Code and checklist specimen">
+      <div class="specimen-running"><span>Evidence-Backed Handbook</span><span>Teachable Examples</span></div>
+      <h2 class="section-heading"><span class="section-number">2.2&nbsp;</span>Make examples teachable</h2>
+      <p>A compact schema can make the release contract inspectable without turning the handbook into API documentation.</p>
+      <div class="code-frame"><pre><code>{
+  "candidate": "handbook.pdf",
+  "readerFacingContentChanged": true,
+  "changeCategories": [
+    "Addition",
+    "Correction or clarification"
+  ],
+  "validation": "passed",
+  "releaseAuthorized": false
+}</code></pre></div>
+      <h3 class="subheading">Before approval</h3>
+      <ul class="checklist">
+        <li><span class="check-box"></span><span>Every changed factual claim maps to inspected evidence.</span></li>
+        <li><span class="check-box"></span><span>The source and PDF-text diffs agree with the change ledger.</span></li>
+        <li><span class="check-box"></span><span>Every page has been rendered and visually inspected.</span></li>
+        <li><span class="check-box"></span><span>The candidate hash is recorded before release authorization.</span></li>
+      </ul>
+      <div class="specimen-folio">5</div>
+    </section>
+
+    <section id="stress" class="specimen-page compact dense-table" aria-label="Dense table stress specimen">
+      <div class="specimen-running"><span>Evidence-Backed Handbook</span><span>Dense Information</span></div>
+      <h2 class="section-heading"><span class="section-number">3.1&nbsp;</span>Design for dense information</h2>
+      <p>A dense table is acceptable when it reduces cognitive work and remains legible at final size.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Failure</th><th>Detect</th><th>Contain</th><th>Prevent or regress</th></tr></thead>
+          <tbody>
+            <tr><td>Unsupported claim</td><td>Missing claim-to-source mapping</td><td>Hold the change</td><td>Evidence coverage gate</td></tr>
+            <tr><td>Stale product behavior</td><td>Version or access date outside review window</td><td>Qualify or remove</td><td>Current primary-source check</td></tr>
+            <tr><td>Broken reading order</td><td>Extracted text sequence differs from source</td><td>Stop candidate</td><td>Exact PDF-text diff</td></tr>
+            <tr><td>Missing illustration</td><td>Image count or page placement mismatch</td><td>Reject PDF</td><td>Single-paint image assertion</td></tr>
+            <tr><td>Viewer-specific artifact</td><td>Independent renderer disagreement</td><td>Replace live effects</td><td>Opaque image and cross-renderer proof</td></tr>
+            <tr><td>Changelog drift</td><td>Entry lacks an exact corresponding diff</td><td>Remove entry</td><td>Ledger-to-diff validation</td></tr>
+            <tr><td>Wrong artifact promoted</td><td>Release hash differs from approved hash</td><td>Abort promotion</td><td>Pre-release hash recheck</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="specimen-note">Stress case: minimum table type, four comparison columns, wrapped cells, and a section transition on one A5 page.</p>
+      <h3 class="subheading">Keep density purposeful</h3>
+      <p>Split the table when scanning becomes harder than reading the equivalent prose. Never reduce type below the documented floor simply to preserve pagination.</p>
+      <div class="specimen-folio">6</div>
+    </section>
+
+    <section id="sources" class="specimen-page back-matter compact" aria-label="Notes and sources specimen">
+      <div class="specimen-running"><span>Evidence-Backed Handbook</span><span>Notes and Sources</span></div>
+      <p class="section-label">Appendix A</p>
+      <h2 class="display-title">Notes and Sources</h2>
+      <p class="lede">Stable labels connect claims, section source strips, and the bibliography without turning the prose into a citation wall.</p>
+      <ul class="source-map">
+        <li><strong>§1.1</strong><span>[EVD-01] [EVD-02] — evidence, synthesis, and access limitations</span></li>
+        <li><strong>§1.2</strong><span>[VIS-01] — visual explanation and page-role selection</span></li>
+        <li><strong>§2.1</strong><span>[EDT-01] — structured editorial examples</span></li>
+        <li><strong>§3.1</strong><span>[PDF-01] [PDF-02] — final-artifact and renderer validation</span></li>
+      </ul>
+      <h3 class="subheading">Artifact and accessibility</h3>
+      <ol class="reference-list">
+        <li><span class="reference-label">[PDF-01]</span> W3C. “CSS Paged Media Module Level 3.” <a href="https://www.w3.org/TR/css-page-3/">w3.org/TR/css-page-3/</a></li>
+        <li><span class="reference-label">[PDF-02]</span> PDF Association. “PDF specifications.” <a href="https://pdfa.org/resource/pdf-specification-index/">pdfa.org/resource/pdf-specification-index/</a></li>
+        <li><span class="reference-label">[A11Y-01]</span> W3C. “Web Content Accessibility Guidelines 2.2.” <a href="https://www.w3.org/TR/WCAG22/">w3.org/TR/WCAG22/</a></li>
+      </ol>
+      <div class="specimen-folio">7</div>
+    </section>
+
+    <section id="index" class="specimen-page back-matter" aria-label="Index specimen">
+      <div class="specimen-running"><span>Evidence-Backed Handbook</span><span>Index of Terms</span></div>
+      <p class="section-label">Index</p>
+      <h2 class="display-title">Index of Terms</h2>
+      <div class="index-grid">
+        <div class="index-group"><h3 class="index-letter">A</h3><p>Access limitations · 2, 7</p><p>Artifact hash · 5, 6<span class="index-see">See also Release integrity</span></p><p>Author synthesis · 2</p></div>
+        <div class="index-group"><h3 class="index-letter">C</h3><p>Canonical source · 2, 5</p><p class="changelog-navigation">Changelog · 6, 9</p><p>Citations · 2, 7</p><p>Cross-renderer proof · 6</p></div>
+        <div class="index-group"><h3 class="index-letter">D</h3><p>Design system · <span class="with-changelog">1–9</span><span class="without-changelog">1–8</span></p><p>Diagrams · 3</p><p>Diffs, exact · 3, 5, 6</p></div>
+        <div class="index-group"><h3 class="index-letter">E</h3><p>Evidence hierarchy · 2</p><p>Evidence ledger · 2, 5</p><p>External links · 7</p></div>
+        <div class="index-group"><h3 class="index-letter">I</h3><p>Illustrations, opaque · 1, 6</p><p>Index · 8</p></div>
+        <div class="index-group"><h3 class="index-letter">P</h3><p>Page geometry · <span class="with-changelog">1–9</span><span class="without-changelog">1–8</span></p><p>Primary sources · 2, 7</p><p>Production artifact · 6</p></div>
+        <div class="index-group"><h3 class="index-letter">R</h3><p>Reader-facing change · <span class="with-changelog">5, 9</span><span class="without-changelog">5</span></p><p>Release authorization · 3, 5</p><p>Release integrity · 6</p></div>
+        <div class="index-group"><h3 class="index-letter">V</h3><p>Validation · 3, 5, 6</p><p class="changelog-navigation">Version bump · 9</p><p>Visual proof · 3, 6</p></div>
+      </div>
+      <div class="specimen-folio">8</div>
+    </section>
+
+    <section id="changelog" class="specimen-page changelog compact" aria-label="Conditional changelog specimen">
+      <div class="specimen-running"><span>Evidence-Backed Handbook</span><span>Changelog</span></div>
+      <p class="section-label">Version history</p>
+      <h2 class="display-title">Changelog</h2>
+      <p class="changelog-version">Conditional design example · final page only</p>
+      <p class="specimen-note">Include this page only when reader-facing content changed. If the exact result is “The handbook's reader-facing content is unchanged.”, omit the page, contents entry, and bookmark.</p>
+      <dl class="changelog-list">
+        <div><dt>Addition</dt><dd><p>Added a claim-level evidence ledger. This lets readers trace important assertions to direct sources.</p><p class="changelog-source">Source example: <a href="https://www.w3.org/TR/WCAG22/">W3C WCAG 2.2</a></p></dd></div>
+        <div><dt>Deprecation or removal</dt><dd><p>Removed an outdated recommendation. The governing specification changed.</p><p class="changelog-source">Source example: <a href="https://www.w3.org/TR/css-page-3/">W3C CSS Paged Media</a></p></dd></div>
+        <div><dt>Correction or clarification</dt><dd><p>Clarified that successful browser rendering does not establish compatibility with every PDF engine. This prevents browser-only output from being mistaken for cross-renderer proof.</p><p class="changelog-source">Source example: <a href="https://pdfa.org/resource/pdf-specification-index/">PDF Association specifications</a></p></dd></div>
+      </dl>
+      <p class="changelog-baseline">Compared with the previous approved edition. Each entry must map to an exact diff and, when factual, direct source evidence.</p>
+      <div class="specimen-folio">9</div>
+    </section>
+  </main>
+</body>
+</html>

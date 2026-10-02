@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate-ready-for-review",
+  "operatingMode": "generation-b-open-image-fallback",
+  "artifact": {
+    "title": "Poisonous Mushrooms: A Safety-First Field Handbook",
+    "variant": "Generation B - open-image fallback",
+    "path": "output/pdf/poisonous-mushroom-identification-handbook-generation-b.pdf",
+    "sha256": "741223fb6f8c1408f8164ffc5d3b4418337f6369dd37cb839f16b5a68c0dff63",
+    "bytes": 4216123,
+    "pages": 20,
+    "trim": "A5 portrait, 420 x 594.96 points",
+    "pdfVersion": "1.4"
+  },
+  "canonicalSource": {
+    "html": "candidates/poisonous-mushroom-identification-generation-b/source/handbook.html",
+    "htmlSha256": "f3a8893379a7577951584464220db714f3ab9834713fc2edc167ce3cdb4507a0",
+    "css": "candidates/poisonous-mushroom-identification-generation-b/source/print.css",
+    "cssSha256": "acba3589e14b5b1d0029f70e3da472e439f2fe15b1c334a76a41f4570d689d42",
+    "builder": "candidates/poisonous-mushroom-identification-generation-b/build.py",
+    "builderSha256": "1de66bae489cd7ccb063dbfe60be85dc6a11aca1917ec2473e84239b958175d9",
+    "pageMap": "candidates/poisonous-mushroom-identification-generation-b/candidate-page-map.json",
+    "pageMapSha256": "6c7161fab54446e7a7cbfb2fe64e76d8421108316b1d30ea760e69b57eb05e94"
+  },
+  "toolchain": {
+    "preflight": "candidates/poisonous-mushroom-identification-generation-b/qa/preflight.json",
+    "preflightSha256": "afd7d26bfa77f6326e55db7750bf24792e03ace8935b98a0cb77c8accc61e89a",
+    "pythonExecutable": "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "python": "3.12.13",
+    "pypdf": "6.10.0",
+    "browser": "Google Chrome 152.0.7977.65",
+    "imagemagick": "7.1.2-27 Q16-HDRI aarch64",
+    "poppler": "26.02.0",
+    "swift": "6.3.3",
+    "buildCommand": "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 candidates/poisonous-mushroom-identification-generation-b/build.py",
+    "systemPythonDisposition": "not used; pypdf is unavailable in the host system Python"
+  },
+  "illustrations": {
+    "acquisitionMode": "open-licensed-web",
+    "imageGenerationState": "blocked by user for Generation B; no image-generation call was made",
+    "sourceWork": "Léon Dufour, Atlas des champignons comestibles et vénéneux (1891)",
+    "sourceRepository": "Biodiversity Heritage Library via Wikimedia Commons",
+    "rightsApplication": "CC BY 2.0 applied conservatively to the source scans; underlying 1891 work and mechanical scans are also recorded as public domain",
+    "count": 6,
+    "chapterOpenerManifest": "candidates/poisonous-mushroom-identification-generation-b/source/assets/chapter-openers/manifest.json",
+    "chapterOpenerManifestSha256": "27fc485070b75c9a3da35319fcaaccfb975d2f457b804504e33dee6a60eeb87f",
+    "sectionIllustrationManifest": "candidates/poisonous-mushroom-identification-generation-b/source/assets/section-illustrations/manifest.json",
+    "sectionIllustrationManifestSha256": "9075306b4beb39b08d0094ce4b72b600e8a602bb68976b5e203eabaf3b4376ca",
+    "provenanceEvidence": "candidates/poisonous-mushroom-identification-generation-b/evidence/open-image-provenance.json",
+    "provenanceEvidenceSha256": "c6eed8a1c2904655035ede6c65f4a10bd3013948c3cd98d209bfd678005e3357",
+    "rawCommonsEvidence": "candidates/poisonous-mushroom-identification-generation-b/evidence/wikimedia-commons-imageinfo.json",
+    "rawCommonsEvidenceSha256": "ba3d794250fca0cfb08ef59636726d952ec4e059a04306e94f9147a47f602df5",
+    "canonicalStyleReference": "assets/design-system/illustration-reference.webp",
+    "frozenFinalFormat": "opaque lossless WebP",
+    "requiredPages": [4, 7, 10, 11, 13, 14],
+    "minimumEffectivePpi": 313.18,
+    "maximumEffectivePpi": 425.21,
+    "oneOpaquePaintPerRequiredPage": true,
+    "imageMasks": 0,
+    "readerVisibleCredit": true,
+    "readerVisibleSpeciesFitLimit": true,
+    "visualReferenceNotIdentificationKey": true
+  },
+  "evidence": {
+    "researchCutoff": "2026-08-28",
+    "accessDate": "2026-08-28",
+    "sourceLedger": "candidates/poisonous-mushroom-identification-generation-b/evidence/source-ledger.json",
+    "sourceLedgerSha256": "5dacd4b2723fcdd9b98ea43623f5f5421135026a6af77f31b121e1e275bbb63f",
+    "acceptedSources": 17,
+    "mappedClaims": 19,
+    "sourceClaimEdgesSymmetric": true,
+    "integrityReport": "candidates/poisonous-mushroom-identification-generation-b/qa/evidence-integrity.json",
+    "integrityReportSha256": "c4f429b3738cd7361248ab74d9caaef8e8f031de229666b0b245e1c07da36451"
+  },
+  "edition": {
+    "previousApprovedEdition": null,
+    "comparisonType": "peer-variant comparison; not an edition comparison",
+    "peerBaseline": {
+      "pdf": "output/pdf/poisonous-mushroom-identification-handbook.pdf",
+      "sha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7",
+      "approvedEdition": false
+    },
+    "comparisonStatus": "candidates/poisonous-mushroom-identification-generation-b/comparison-status.json",
+    "comparisonStatusSha256": "37f443909cda44d20e8c5ceafdd47adf6b2514b169352c00bf9828af2f249f42",
+    "semanticChangeLedger": "candidates/poisonous-mushroom-identification-generation-b/change-ledger.json",
+    "semanticChangeLedgerSha256": "6165aa70a1c9ead171e8337a8c884222547c4bf48557fc7002bd87af384f0926",
+    "exactComparison": "candidates/poisonous-mushroom-identification-generation-b/qa/edition-comparison/edition-diff.json",
+    "exactComparisonSha256": "6556f122c0034c4eac74aa365dcaa8b2e69f5522a2e889e6169cd6e150541422",
+    "changelogDecision": "candidates/poisonous-mushroom-identification-generation-b/changelog-decision.json",
+    "changelogDecisionSha256": "0b97f45c10dbb669c72511a9ae4c0f415bcf2e066661f06682e01b62a8f15769",
+    "changelogStatus": "not-applicable because no previous approved edition exists",
+    "readerFacingContentChangedFromPeerBaseline": true,
+    "recommendedInitialVersion": "1.0.0",
+    "peerVariantVersionImpact": "Patch"
+  },
+  "validation": {
+    "buildReproducibility": {
+      "status": "passed",
+      "consecutiveBuildSha256": "741223fb6f8c1408f8164ffc5d3b4418337f6369dd37cb839f16b5a68c0dff63"
+    },
+    "structural": "candidates/poisonous-mushroom-identification-generation-b/qa/validation.json",
+    "structuralSha256": "edf49c4e3e9e216920237985f67d5b76b17ffeab095cb2066244c8bf153f674b",
+    "textAndLinks": "candidates/poisonous-mushroom-identification-generation-b/qa/text-and-link-check.json",
+    "textAndLinksSha256": "26461453028a9a6543cb84e8e766c42119e1f7aa8a6ac55c6467905897074ad2",
+    "visualReview": "candidates/poisonous-mushroom-identification-generation-b/qa/visual-review.md",
+    "visualReviewSha256": "85c33efe8f4e38bae519ce8bb6f1fb34d6e4f49acb3ff720f533290d8ba7b55b",
+    "illustrationGateRegression": "candidates/poisonous-mushroom-identification-generation-b/qa/illustration-gate-regression.json",
+    "illustrationGateRegressionSha256": "f4c9695d985b608165a85db0e5c54f0837e4630eec7d57933dd048de08ee8ce7",
+    "editionWorkflowRegression": "candidates/poisonous-mushroom-identification-generation-b/qa/edition-workflow-regression.json",
+    "editionWorkflowRegressionSha256": "c20557dde55426ef1781cb1ff133613a48f1e7d6ceff0450d2acdfacff40b348",
+    "skillPackageValidation": "candidates/poisonous-mushroom-identification-generation-b/qa/skill-package-validation.json",
+    "skillPackageValidationSha256": "c9f4633e1b93952269f2c98d7d31570d3cde13342c36156a21b37cee5c7815b6",
+    "popplerProof": "candidates/poisonous-mushroom-identification-generation-b/qa/poppler-proof/",
+    "popplerContactSheetSha256": "83acd12ec1cded3b239b50e7b21926680adc9555176dfc6c1dde2fec5126976d",
+    "pdfkitProof": "candidates/poisonous-mushroom-identification-generation-b/qa/pdfkit-proof/",
+    "pdfkitContactSheetSha256": "bfd897c1ecd51d429bd91eb112e18a724a48f0005b69bfc61f30d9c9df8a2eb5",
+    "renderers": [
+      "Poppler pdftoppm 26.02.0",
+      "Apple PDFKit on macOS 26.6.2 via Swift 6.3.3"
+    ],
+    "structuralStats": {
+      "outlineEntries": 8,
+      "internalLinks": 6,
+      "externalLinkAnnotations": 26,
+      "uniqueExternalUrls": 20,
+      "embeddedFontResources": 27,
+      "rasterImages": 6,
+      "rasterImagePaints": 6,
+      "requiredRasterIllustrationPages": 6,
+      "imageMasks": 0,
+      "blankPages": 0
+    }
+  },
+  "skillIntegrityChange": {
+    "reason": "The candidate exposed a validator contradiction for true first editions: omitting a changelog previously required a false unchanged-content summary.",
+    "validator": "scripts/validate-pdf.py",
+    "validatorSha256": "6cf7574e2bec4f2c0a53b38e65abca0c6a33adecd24bde0b590610a8494da06a",
+    "regression": "scripts/test-edition-workflow.py",
+    "regressionSha256": "406141e6f3d6c05b29fc4e59bd2c8acd274f63afabfcdff9fbb9bf9a11b66e05",
+    "packageManifest": "references/specimen/manifest.json",
+    "packageManifestSha256": "c66858daa6dc8c8bfafd69e10dafc41e342ee3cc599db425934e828017805b8f",
+    "result": "First-edition not-applicable decisions now validate explicitly; unchanged and changed-edition regression paths still pass."
+  },
+  "buildWarnings": [
+    "While reading Chrome's temporary raw PDF, pypdf reported that the object count exceeded the raw trailer size by three. The finalized PDF parses in strict mode and passes the structural validator in two consecutive identical builds."
+  ],
+  "limitations": [
+    "No local mycologist or medical toxicologist reviewed this candidate.",
+    "Species coverage is intentionally non-exhaustive and morphology varies with age, damage, weather, and region.",
+    "Clinical latency ranges overlap and cannot diagnose a toxin.",
+    "Sources S11 and S17 were accepted from complete PubMed abstracts; their full texts were not inspected.",
+    "Historical botanical plates are visual references, not identification keys; modern safety claims remain in source-backed text.",
+    "Three exploratory chapter-opener crop commands were not captured; their frozen full-resolution intermediates, hashes, and final normalization commands are preserved in the illustration manifest.",
+    "No previous approved edition exists; Generation A is only a peer comparison baseline."
+  ],
+  "authority": {
+    "candidateGeneration": "authorized and complete",
+    "imageGeneration": "blocked by user and not invoked",
+    "productionReplacement": "not authorized and not run",
+    "commit": "not authorized for this Generation B run and not run",
+    "push": "not authorized for this Generation B run and not run",
+    "release": "not authorized and not run",
+    "publish": "not authorized and not run",
+    "deploy": "not authorized and not run",
+    "readerOutreach": "not authorized and not run"
+  },
+  "productionStatus": "Generation A remains byte-for-byte unchanged at SHA-256 507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7. Generation B exists only in its isolated candidate directory and separately named PDF output."
+}

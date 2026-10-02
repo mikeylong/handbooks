@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate-ready",
+  "operatingMode": "create-first-edition",
+  "artifact": {
+    "title": "Poisonous Mushrooms: A Safety-First Field Handbook",
+    "path": "output/pdf/poisonous-mushroom-identification-handbook.pdf",
+    "sha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7",
+    "bytes": 10405485,
+    "pages": 20,
+    "trim": "A5 portrait, 420 x 594.96 points",
+    "pdfVersion": "1.4"
+  },
+  "canonicalSource": {
+    "html": "candidates/poisonous-mushroom-identification/source/handbook.html",
+    "htmlSha256": "78a437833bccc7be98c7e6ff59fbdae753418538f71780584f42583bc3d889f0",
+    "css": "candidates/poisonous-mushroom-identification/source/print.css",
+    "cssSha256": "fc0b82bf73c1809614e5d74c2d4835d3b135d205c012ad556c7f165975239881",
+    "builder": "candidates/poisonous-mushroom-identification/build.py",
+    "builderSha256": "811aadc9dd484ffb7cbfd11d6acaf333b0cb1059f5149919a91fe4c6fc7c37c9",
+    "pageMap": "candidates/poisonous-mushroom-identification/candidate-page-map.json",
+    "pageMapSha256": "b87133f89c39b91f003f5f2b36946e4dafe2e3fa63b34b1f82c77aadaf0bb43d"
+  },
+  "illustrations": {
+    "generationMode": "OpenAI built-in image generation",
+    "count": 6,
+    "chapterOpenerManifest": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/manifest.json",
+    "chapterOpenerManifestSha256": "b0111609dac40f52e38e4bde8682a0c1f601c047ba3b73306c12e6b508248bb5",
+    "sectionIllustrationManifest": "candidates/poisonous-mushroom-identification/source/assets/section-illustrations/manifest.json",
+    "sectionIllustrationManifestSha256": "9a660548274e1619c079e6ab9592b1eb2afff5aa809ebf5619794f4b115f80b2",
+    "canonicalStyleReference": "assets/design-system/illustration-reference.webp",
+    "frozenFinalFormat": "opaque lossless WebP",
+    "requiredPages": [4, 7, 10, 11, 13, 14],
+    "minimumEffectivePpi": 313.18,
+    "oneOpaquePaintPerRequiredPage": true,
+    "imageMasks": 0
+  },
+  "evidence": {
+    "researchCutoff": "2026-08-28",
+    "accessDate": "2026-08-28",
+    "sourceLedger": "candidates/poisonous-mushroom-identification/evidence/source-ledger.json",
+    "sourceLedgerSha256": "9ea5fd796871c218097f4f8475d2ba9285e47b1fbd164ca1cf1ee8787375fdc9",
+    "acceptedSources": 17,
+    "mappedClaims": 19
+  },
+  "edition": {
+    "previousApprovedEdition": null,
+    "comparisonStatus": "candidates/poisonous-mushroom-identification/comparison-status.json",
+    "sourceDiff": null,
+    "pdfTextDiff": null,
+    "changelogDecision": "candidates/poisonous-mushroom-identification/changelog-decision.json",
+    "recommendedInitialVersion": "1.0.0",
+    "recommendation": "Initial release; no prior approved edition exists."
+  },
+  "validation": {
+    "buildReproducibility": {
+      "status": "passed",
+      "consecutiveBuildSha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7"
+    },
+    "structural": "candidates/poisonous-mushroom-identification/qa/validation.json",
+    "textAndLinks": "candidates/poisonous-mushroom-identification/qa/text-and-link-check.json",
+    "visualReview": "candidates/poisonous-mushroom-identification/qa/visual-review.md",
+    "popplerProof": "candidates/poisonous-mushroom-identification/qa/poppler-proof/",
+    "pdfkitProof": "candidates/poisonous-mushroom-identification/qa/pdfkit-proof/",
+    "renderers": [
+      "Poppler pdftoppm 26.02.0",
+      "Apple PDFKit on macOS 26.6.2 via Swift 6.3.3"
+    ],
+    "structuralStats": {
+      "outlineEntries": 8,
+      "internalLinks": 6,
+      "externalLinkAnnotations": 23,
+      "uniqueExternalUrls": 17,
+      "embeddedFontResources": 25,
+      "rasterImages": 6,
+      "rasterImagePaints": 6,
+      "requiredRasterIllustrationPages": 6,
+      "imageMasks": 0,
+      "blankPages": 0
+    }
+  },
+  "limitations": [
+    "No local mycologist or medical toxicologist reviewed this candidate.",
+    "Species coverage is intentionally non-exhaustive and morphology varies with age, damage, weather, and region.",
+    "Clinical latency ranges overlap and cannot diagnose a toxin.",
+    "Sources S11 and S17 were accepted from complete PubMed abstracts; their full texts were not inspected.",
+    "No prior approved edition exists, so edition source and PDF-text comparisons are not applicable."
+  ],
+  "authority": {
+    "candidateGeneration": "authorized",
+    "productionReplacement": "not authorized and not run",
+    "commit": "not authorized for this revision and not run",
+    "push": "not authorized for this revision and not run",
+    "release": "not authorized and not run",
+    "publish": "not authorized and not run",
+    "deploy": "not authorized and not run",
+    "readerOutreach": "not authorized and not run"
+  },
+  "productionStatus": "No production handbook was replaced; this revision remains in the isolated candidate and output paths. The previously pushed skill-package commit 57305f4 does not contain this later candidate revision."
+}

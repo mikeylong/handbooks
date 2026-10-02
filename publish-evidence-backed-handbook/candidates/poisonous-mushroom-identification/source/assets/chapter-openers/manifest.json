@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-08-28",
+  "generationMode": "built-in image_gen",
+  "generationTool": "image_gen.imagegen",
+  "model": "not exposed by the built-in tool",
+  "governingStyleReference": {
+    "path": "assets/design-system/illustration-reference.webp",
+    "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+    "role": "style reference only"
+  },
+  "normalization": {
+    "tool": "ImageMagick",
+    "transform": "magick <selected.png> -background white -alpha remove -alpha off -colorspace Gray -strip -define webp:lossless=true <final.webp>",
+    "background": "opaque white",
+    "format": "lossless WebP",
+    "intendedPrintWidthMillimetres": 108,
+    "minimumEffectivePpi": 240
+  },
+  "assets": [
+    {
+      "assetId": "chapter-01-safety-boundary",
+      "chapter": 1,
+      "placement": "chapter opener",
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/originals/chapter-01-safety-boundary-selected.png",
+      "selectedSourceSha256": "6fb31091807bc03893ebcfa5ef56e8d5c5945bb93bc6a2adfadeba3c656908b0",
+      "finalPath": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/chapter-01-safety-boundary.webp",
+      "finalSha256": "f0b451b754fa310e97db757e330ad68a5c5625c22dcf40145d3c6b3dfce8f1c0",
+      "pixelWidth": 1331,
+      "pixelHeight": 1182,
+      "effectivePpiAt108mm": 313.04,
+      "references": [
+        {
+          "path": "assets/design-system/illustration-reference.webp",
+          "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+          "role": "governing style reference"
+        }
+      ],
+      "prompt": "Use case: stylized-concept\nAsset type: A5 editorial field-guide chapter-opener illustration, printed about 108 mm wide\nInput images: Image 1 is the governing style reference only; preserve its engraving density, monochrome ink treatment, three-quarter perspective, technical object realism, contrast, and generous white-space behavior. Do not reproduce its machine or composition literally.\nPrimary request: Create an original visual metaphor for 'draw the safety boundary.' Show one coherent mechanical field-inspection instrument: an intact generic wild mushroom specimen rests on a small specimen tray before a precise optical inspection gate, while a substantial closed barrier mechanism on the far side makes the stop boundary unmistakable. The apparatus should imply careful observation and comparison before any decision, not mushroom identification.\nScene/backdrop: pure opaque white paper with no horizon or environment\nSubject: one integrated inspection apparatus and one intact generic mushroom specimen; no humans\nStyle/medium: meticulous nineteenth-century scientific engraving in black ink, stippling and fine cross-hatching, richly rendered mechanical detail, visually consistent with Image 1\nComposition/framing: centered single-object composition in three-quarter perspective, calm editorial scale, generous crop-safe white margins on all sides, complete silhouette, no element cut off\nColor palette: black ink only on pure white\nConstraints: illustration only; no text, letters, numbers, labels, captions, arrows, icons, logos, borders, frames, watermarks, UI, color, gray paper, transparency, or drop shadow; no recognizable edible or poisonous species; do not imply that the apparatus can certify edibility\nAvoid: vector schematic, flowchart, infographic, cartoon, generic clip art, photorealistic photograph, decorative botanical plate, skulls, hazard symbols, dramatic horror imagery",
+      "selectionRationale": "The closed physical barrier communicates a hard stop while the optical instrument and intact specimen preserve the evidence-chain mental model. The result matches the canonical engraving treatment without becoming a labeled diagram."
+    },
+    {
+      "assetId": "chapter-02-evidence-packet",
+      "chapter": 2,
+      "placement": "chapter opener",
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/originals/chapter-02-evidence-packet-selected.png",
+      "selectedSourceSha256": "103b2fdc3b84ab7f3acfb1d378a6218cc3db60c13cce6a506fe689f03a9efd29",
+      "finalPath": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/chapter-02-evidence-packet.webp",
+      "finalSha256": "7c2110203c3fc32d2b64bf8d488cb62de22a5f951f5f030fc40c11d4a928453f",
+      "pixelWidth": 1331,
+      "pixelHeight": 1182,
+      "effectivePpiAt108mm": 313.04,
+      "references": [
+        {
+          "path": "assets/design-system/illustration-reference.webp",
+          "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+          "role": "governing style reference"
+        },
+        {
+          "path": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/originals/chapter-01-safety-boundary-selected.png",
+          "sha256": "6fb31091807bc03893ebcfa5ef56e8d5c5945bb93bc6a2adfadeba3c656908b0",
+          "role": "selected set anchor"
+        }
+      ],
+      "prompt": "Use case: stylized-concept\nAsset type: A5 editorial field-guide chapter-opener illustration, printed about 108 mm wide\nInput images: Image 1 is the governing style reference; Image 2 is the selected first illustration in this handbook set. Use them only to preserve black-ink engraving craft, stipple and cross-hatch density, technical object realism, three-quarter perspective, line weight, contrast, scale, and generous white-space behavior. Do not copy their specific machines.\nPrimary request: Create an original visual metaphor for 'build an evidence packet.' Show one coherent portable field-documentation station built around an intact generic wild mushroom with its complete stem and excavated base visible: a bellows camera or inspection lens, precision calipers, specimen tray, and a closed paper specimen envelope arranged as integrated parts of one compact mechanical apparatus. The image should communicate collecting multiple observations before comparison, not identification or edibility.\nScene/backdrop: pure opaque white paper with no horizon or environment\nSubject: one integrated documentation apparatus and one complete generic mushroom specimen; no humans\nStyle/medium: meticulous nineteenth-century scientific engraving in black ink, fine stippling and cross-hatching, visually inseparable from Images 1 and 2 as a series\nComposition/framing: centered single-object composition in three-quarter perspective, calm editorial scale, generous crop-safe white margins, complete silhouette, no element cut off\nColor palette: black ink only on pure white\nConstraints: illustration only; no text, letters, numbers, labels, captions, arrows, icons, logos, borders, frames, watermarks, UI, color, gray paper, transparency, or drop shadow; no recognizable edible or poisonous species; do not imply that photography or equipment certifies edibility\nAvoid: vector schematic, flowchart, infographic, anatomy plate, cartoon, generic clip art, photorealistic photograph, decorative botanical scene",
+      "selectionRationale": "The camera, calipers, complete specimen, and envelope read as an integrated documentation station while avoiding labels and species-key claims. Its perspective and engraving density match the set anchor."
+    },
+    {
+      "assetId": "chapter-03-high-risk-patterns",
+      "chapter": 3,
+      "placement": "chapter opener",
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/originals/chapter-03-high-risk-patterns-selected.png",
+      "selectedSourceSha256": "57731450352518de0c75a1ad72171c3eb63ab7e03e87b3c3410c33e57cf2b917",
+      "finalPath": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/chapter-03-high-risk-patterns.webp",
+      "finalSha256": "d4ed7f8ba21d172746d5fb3e64e125ca4d04967e596f55788030702a9a1568c3",
+      "pixelWidth": 1332,
+      "pixelHeight": 1181,
+      "effectivePpiAt108mm": 313.27,
+      "references": [
+        {
+          "path": "assets/design-system/illustration-reference.webp",
+          "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+          "role": "governing style reference"
+        },
+        {
+          "path": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/originals/chapter-01-safety-boundary-selected.png",
+          "sha256": "6fb31091807bc03893ebcfa5ef56e8d5c5945bb93bc6a2adfadeba3c656908b0",
+          "role": "selected set anchor"
+        }
+      ],
+      "prompt": "Use case: stylized-concept\nAsset type: A5 editorial field-guide chapter-opener illustration, printed about 108 mm wide\nInput images: Image 1 is the governing style reference; Image 2 is the selected first illustration in this handbook set. Use them only to preserve black-ink engraving craft, stipple and cross-hatch density, technical object realism, three-quarter perspective, line weight, contrast, scale, and generous white-space behavior. Do not copy their specific machines.\nPrimary request: Create an original visual metaphor for 'recognize high-risk patterns.' Show one coherent mechanical comparison carousel: several deliberately generic, visibly different mushroom forms rest on separate specimen holders around a central bank of optical lenses, and every inspection path terminates at the same substantial closed stop gate. The apparatus should communicate that different warning constellations all justify stopping for expert review, never that one visual feature identifies poison or edibility.\nScene/backdrop: pure opaque white paper with no horizon or environment\nSubject: one integrated comparator apparatus with four generic mushroom forms; no humans\nStyle/medium: meticulous nineteenth-century scientific engraving in black ink, fine stippling and cross-hatching, visually inseparable from Images 1 and 2 as a series\nComposition/framing: centered single-object composition in three-quarter perspective, calm editorial scale, generous crop-safe white margins, complete silhouette, no element cut off\nColor palette: black ink only on pure white\nConstraints: illustration only; no text, letters, numbers, labels, captions, arrows, icons, logos, borders, frames, watermarks, UI, color, gray paper, transparency, or drop shadow; mushroom forms must be generic and must not function as a species key; no skulls or hazard symbols\nAvoid: vector schematic, flowchart, infographic, labeled taxonomy plate, cartoon, generic clip art, photorealistic photograph, dramatic horror imagery",
+      "selectionRationale": "The comparison carousel presents several generic forms but routes them to one closed gate, preserving the stop-pattern lesson without presenting a labeled taxonomy key."
+    },
+    {
+      "assetId": "chapter-04-triage-signal",
+      "chapter": 4,
+      "placement": "chapter opener",
+      "selectedSourcePath": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/originals/chapter-04-triage-signal-selected.png",
+      "selectedSourceSha256": "45e50cfc4bcbdc2b32a2d953fd7ae56380e5deb4d2f24f1e778877761e479cf8",
+      "finalPath": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/chapter-04-triage-signal.webp",
+      "finalSha256": "477c8695a9c080edee0c060c130e2348eae6cd771a6cd0a66bf7ab6858855cef",
+      "pixelWidth": 1331,
+      "pixelHeight": 1182,
+      "effectivePpiAt108mm": 313.04,
+      "references": [
+        {
+          "path": "assets/design-system/illustration-reference.webp",
+          "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+          "role": "governing style reference"
+        },
+        {
+          "path": "candidates/poisonous-mushroom-identification/source/assets/chapter-openers/originals/chapter-01-safety-boundary-selected.png",
+          "sha256": "6fb31091807bc03893ebcfa5ef56e8d5c5945bb93bc6a2adfadeba3c656908b0",
+          "role": "selected set anchor"
+        }
+      ],
+      "prompt": "Use case: stylized-concept\nAsset type: A5 editorial field-guide chapter-opener illustration, printed about 108 mm wide\nInput images: Image 1 is the governing style reference; Image 2 is the selected first illustration in this handbook set. Use them only to preserve black-ink engraving craft, stipple and cross-hatch density, technical object realism, three-quarter perspective, line weight, contrast, scale, and generous white-space behavior. Do not copy their specific machines.\nPrimary request: Create an original visual metaphor for 'treat time as a triage signal.' Show one coherent clockwork emergency-call apparatus: a generic mushroom specimen on a small evidence tray is mechanically linked to a large exposed clock movement and a raised old-fashioned telephone handset ready for immediate use. A tensioned spring and moving escapement should imply urgency, while the telephone is the clear destination. The image should communicate call now and use timing as evidence, not wait for a diagnosis.\nScene/backdrop: pure opaque white paper with no horizon or environment\nSubject: one integrated clockwork telephone apparatus, one evidence tray, and one generic mushroom specimen; no humans\nStyle/medium: meticulous nineteenth-century scientific engraving in black ink, fine stippling and cross-hatching, visually inseparable from Images 1 and 2 as a series\nComposition/framing: centered single-object composition in three-quarter perspective, calm editorial scale, generous crop-safe white margins, complete silhouette, no element cut off\nColor palette: black ink only on pure white\nConstraints: illustration only; no text, letters, numbers, labels, captions, arrows, icons, logos, borders, frames, watermarks, UI, color, gray paper, transparency, or drop shadow; clock face, if visible, has no numerals; telephone has no printed digits; no recognizable edible or poisonous species; do not imply that timing identifies a toxin\nAvoid: vector schematic, timeline infographic, cartoon, generic clip art, photorealistic photograph, ambulance scene, dramatic medical horror",
+      "selectionRationale": "The clock movement and raised telephone make urgency legible without embedding a number or diagnosis. The specimen remains evidence, not the source of an automated verdict."
+    }
+  ]
+}

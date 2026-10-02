@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "sourceClaimEdgeMismatches": [],
+  "usedPlates": [2, 3, 4, 54, 78],
+  "provenancePlates": [2, 3, 4, 54, 78],
+  "rawSnapshot": {
+    "path": "candidates/poisonous-mushroom-identification-generation-b/evidence/wikimedia-commons-imageinfo.json",
+    "sha256": "ba3d794250fca0cfb08ef59636726d952ec4e059a04306e94f9147a47f602df5",
+    "hashMatches": true,
+    "unusedPlate5DispositionRecorded": true
+  },
+  "originalIdentity": {
+    "checkedOriginals": 5,
+    "fields": ["Wikimedia SHA-1", "byte size", "pixel dimensions"],
+    "mismatches": []
+  },
+  "assetIntegrity": {
+    "checkedFinalAssets": 6,
+    "hashMismatches": [],
+    "sourceEvidenceMappingMismatches": []
+  },
+  "changeLedger": {
+    "entries": 4,
+    "allowedCategories": ["Addition", "Deprecation or removal", "Correction or clarification"],
+    "invalidEntries": [],
+    "requiredFieldsChecked": ["section", "text", "readerImpact", "rationale", "sources", "sourceLimitations", "recommendedVersionImpact"],
+    "directSourceUrlsValid": true
+  },
+  "note": "The source-ledger supports edges exactly match the reverse claim-source edges. All five used Commons originals match the frozen API evidence, all six final asset hashes match their manifests, and every asset claim mapping is a subset of the corresponding claim ledger sources."
+}
