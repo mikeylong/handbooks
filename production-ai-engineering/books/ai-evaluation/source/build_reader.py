@@ -52,7 +52,11 @@ def cell(c):
  if isinstance(c,Table):return '<table>'+''.join('<tr>'+''.join('<td>'+cell(v)+'</td>' for v in row)+'</tr>' for row in c._cellvalues)+'</table>'
  if isinstance(c,(list,tuple)):return ''.join(cell(v) for v in c)
  return html.escape(str(c)) if c else '<br>'
-for x in m.build_release_story():item(x)
+# The web cover is rendered from the publication manifest below. Convert only
+# the PDF body, starting at its first chapter, so cover metadata cannot leak.
+story=m.build_release_story()
+body_start=next(i for i,x in enumerate(story) if isinstance(x,Paragraph) and x.style.name=='H1')
+for x in story[body_start:]:item(x)
 if subsection_open:blocks.append('</section>')
 if section_open:blocks.append('</section>')
 nav='<ol>'+''.join(f'<li><a href="#{key}">{html.escape(title)}</a></li>' for key,title in headings)+'</ol>'

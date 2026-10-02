@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {validatePublicationFront, validateGalleryPublications, validateReaderNavigation} from './publication-front.mjs';
+import {validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
 const book = new URL('../books/ai-evaluation/', import.meta.url);
 const manifest = JSON.parse(await readFile(new URL('release-manifest.json', book)));
 const publication = JSON.parse(await readFile(new URL('publication.json', book)));
@@ -31,6 +31,12 @@ console.log('An unvalidated new gallery title is also rejected.');
 for (const path of ['ai-evaluation', 'production-ai-engineering']) {
  const reader = await readFile(new URL(`../output/site/${path}/index.html`, import.meta.url), 'utf8');
  assert.equal(validateReaderNavigation(reader, path).status, 'passed');
+ assert.equal(validateReaderBodyStart(reader, path).status, 'passed');
+ for (const leaked of ['October 2026 | Version 1.0.0', 'Future PDF cover metadata']) {
+  const broken = reader.replace('<section class="chapter', `<p>${leaked}</p><section class="chapter`);
+  assert.notEqual(broken, reader, `Body-start fixture did not change: ${path}`);
+  assert.throws(()=>validateReaderBodyStart(broken, path), /stray content between Contents/, `${path}: leaked cover text`);
+ }
  for (const [name, broken, expected] of [
   ['unstyled return link', reader.replace('class="handbooks-return"', 'class="unstyled-return"'), /sidebarReturn/],
   ['missing shared stylesheet', reader.replace('href="/gallery.css"', 'href="/missing.css"'), /sharedNavigationStyles/],
@@ -43,3 +49,4 @@ for (const path of ['ai-evaluation', 'production-ai-engineering']) {
  }
 }
 console.log('Both hosted readers pass navigation parity; missing styles, local overrides, and broken return links are rejected.');
+console.log('Both hosted readers reject stray cover content between Contents and the first chapter.');
