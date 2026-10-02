@@ -1,0 +1,174 @@
+{
+  "artifactSha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7",
+  "changelogDecision": {
+    "changelogPages": [],
+    "directSourceLinks": [],
+    "expectedEntryCount": 0,
+    "includeChangelog": false,
+    "navigationEntries": [],
+    "outlineEntries": []
+  },
+  "failures": [],
+  "limitations": [
+    "This structural validator does not establish visual quality.",
+    "Apple PDFKit compatibility remains unverified unless an Apple-native render was inspected."
+  ],
+  "pdf": "output/pdf/poisonous-mushroom-identification-handbook.pdf",
+  "profile": "candidate",
+  "requiredRasterIllustrations": [
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 4,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1182,
+          "isImageMask": false,
+          "name": "/X26",
+          "object": "292 0",
+          "opaque": true,
+          "page": 4,
+          "width": 1331,
+          "xPpi": 313.18,
+          "yPpi": 313.46
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 7,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1182,
+          "isImageMask": false,
+          "name": "/X40",
+          "object": "501 0",
+          "opaque": true,
+          "page": 7,
+          "width": 1331,
+          "xPpi": 313.18,
+          "yPpi": 313.46
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 10,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1181,
+          "isImageMask": false,
+          "name": "/X48",
+          "object": "511 0",
+          "opaque": true,
+          "page": 10,
+          "width": 1332,
+          "xPpi": 313.41,
+          "yPpi": 313.19
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 11,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 846,
+          "isImageMask": false,
+          "name": "/X51",
+          "object": "515 0",
+          "opaque": true,
+          "page": 11,
+          "width": 1860,
+          "xPpi": 406.74,
+          "yPpi": 408.12
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 13,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 842,
+          "isImageMask": false,
+          "name": "/X57",
+          "object": "521 0",
+          "opaque": true,
+          "page": 13,
+          "width": 1869,
+          "xPpi": 408.71,
+          "yPpi": 408.24
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 14,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1182,
+          "isImageMask": false,
+          "name": "/X60",
+          "object": "546 0",
+          "opaque": true,
+          "page": 14,
+          "width": 1331,
+          "xPpi": 313.18,
+          "yPpi": 313.46
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    }
+  ],
+  "schemaVersion": 1,
+  "stats": {
+    "blankPages": [],
+    "externalLinks": 23,
+    "fonts": 25,
+    "imageMasks": 0,
+    "internalLinks": 6,
+    "outlineEntries": 8,
+    "pageMapEntries": 20,
+    "pages": 20,
+    "pdfVersion": "1.4",
+    "rasterImagePaints": 6,
+    "rasterImages": 6,
+    "requiredRasterIllustrationPages": 6
+  },
+  "status": "passed"
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "pdf": "output/pdf/poisonous-mushroom-identification-handbook-generation-b.pdf",
+  "artifactSha256": "741223fb6f8c1408f8164ffc5d3b4418337f6369dd37cb839f16b5a68c0dff63",
+  "pages": 20,
+  "allPagesExtractable": true,
+  "replacementGlyphPages": [],
+  "requiredTextChecks": {
+    "coverTitle": true,
+    "contents": true,
+    "allChapterTitles": true,
+    "emergencyNumber": true,
+    "internationalGuidance": true,
+    "completeSourceSequenceThroughS17": true,
+    "preservedAmanitaWarnings": true,
+    "visibleAmanitaSpeciesScope": true,
+    "morelImageClaimsLimitedToVisibleFeatures": true,
+    "fallbackCreditsVisible": true,
+    "finalSafetyRule": true,
+    "firstEditionNote": true
+  },
+  "links": {
+    "externalAnnotations": 26,
+    "uniqueExternalUrls": 20,
+    "ledgerSourceUrls": 17,
+    "creditUrls": 3,
+    "missingExpectedUrlsFromPdf": [],
+    "unexpectedPdfUrls": []
+  },
+  "metadata": {
+    "variant": "Generation B - open-image fallback"
+  },
+  "note": "All 20 pages yield extractable text without replacement glyphs. The 17 accepted research URLs and three reader-visible illustration-credit URLs are present with no missing or unexpected external URL. The Amanita safety limits remain editable text, and the visible caption identifies the plate as A. muscaria rather than a death-cap portrait. The morel image captions claim only visible exterior morphology; hollow-versus-chambered anatomy remains in adjacent source-backed prose."
+}

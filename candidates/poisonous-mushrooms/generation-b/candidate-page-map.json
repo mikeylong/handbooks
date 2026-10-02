@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "designSystemVersion": "1.0.0",
+  "artifactProfile": "candidate",
+  "changelogMode": "omit",
+  "pageNumbering": "pdfPage is one-based; folio is the printed label",
+  "pages": [
+    {"pdfPage": 1, "folio": "Cover", "role": "cover", "inspect": ["title hierarchy", "negative space", "safety subtitle"]},
+    {"pdfPage": 2, "folio": "ii", "role": "editorial-premise", "inspect": ["direct answer", "emergency box", "scope"]},
+    {"pdfPage": 3, "folio": "iii", "role": "contents", "inspect": ["navigation", "page labels", "internal links"]},
+    {"pdfPage": 4, "folio": "1", "role": "chapter-opener-safety-boundary", "inspect": ["kicker", "deck", "opaque open-image fallback illustration"], "requiredRasterIllustration": {"paintCount": 1, "minimumEffectivePpi": 240, "requireOpaque": true}},
+    {"pdfPage": 5, "folio": "2", "role": "safety-boundary", "inspect": ["hierarchy", "callout", "source strip"]},
+    {"pdfPage": 6, "folio": "3", "role": "myths-and-apps", "inspect": ["myth table", "app evidence", "table type"]},
+    {"pdfPage": 7, "folio": "4", "role": "chapter-opener-evidence-packet", "inspect": ["kicker", "deck", "opaque open-image fallback illustration"], "requiredRasterIllustration": {"paintCount": 1, "minimumEffectivePpi": 240, "requireOpaque": true}},
+    {"pdfPage": 8, "folio": "5", "role": "field-documentation", "inspect": ["photo sequence", "morphology labels", "checklist"]},
+    {"pdfPage": 9, "folio": "6", "role": "specimen-packet", "inspect": ["evidence table", "emergency preservation"]},
+    {"pdfPage": 10, "folio": "7", "role": "chapter-opener-high-risk-patterns", "inspect": ["kicker", "deck", "opaque open-image fallback illustration"], "requiredRasterIllustration": {"paintCount": 1, "minimumEffectivePpi": 240, "requireOpaque": true}},
+    {"pdfPage": 11, "folio": "8", "role": "amanita-warning-pattern", "inspect": ["opaque open-image fallback illustration", "limits", "source strip"], "requiredRasterIllustration": {"paintCount": 1, "minimumEffectivePpi": 240, "requireOpaque": true}},
+    {"pdfPage": 12, "folio": "9", "role": "small-brown-and-parasol-patterns", "inspect": ["comparison table", "warning labels"]},
+    {"pdfPage": 13, "folio": "10", "role": "false-morel-and-other-patterns", "inspect": ["opaque open-image fallback comparison illustration", "editable comparison labels", "regional caveats"], "requiredRasterIllustration": {"paintCount": 1, "minimumEffectivePpi": 240, "requireOpaque": true}},
+    {"pdfPage": 14, "folio": "11", "role": "chapter-opener-exposure-response", "inspect": ["kicker", "deck", "opaque open-image fallback illustration"], "requiredRasterIllustration": {"paintCount": 1, "minimumEffectivePpi": 240, "requireOpaque": true}},
+    {"pdfPage": 15, "folio": "12", "role": "symptom-clock", "inspect": ["timeline", "dense table", "timing caveat"]},
+    {"pdfPage": 16, "folio": "13", "role": "emergency-response", "inspect": ["action sequence", "phone number", "global routing"]},
+    {"pdfPage": 17, "folio": "14", "role": "field-decision-card", "inspect": ["branching diagram", "print usability"]},
+    {"pdfPage": 18, "folio": "15", "role": "notes-and-sources-one", "inspect": ["source links", "readability"]},
+    {"pdfPage": 19, "folio": "16", "role": "notes-and-sources-two", "inspect": ["source links", "limitations"]},
+    {"pdfPage": 20, "folio": "17", "role": "index", "inspect": ["two-column density", "final-page state"]}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "pdf": "output/pdf/poisonous-mushroom-identification-handbook.pdf",
+  "artifactSha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7",
+  "pages": 20,
+  "allPagesExtractable": true,
+  "replacementGlyphPages": [],
+  "requiredTextChecks": {
+    "coverTitle": true,
+    "contents": true,
+    "allChapterTitles": true,
+    "emergencyNumber": true,
+    "internationalGuidance": true,
+    "completeSourceSequenceThroughS17": true,
+    "preservedAmanitaWarnings": true,
+    "preservedMorelComparisonLabelsAndLimit": true,
+    "finalSafetyRule": true,
+    "firstEditionNote": true
+  },
+  "links": {
+    "externalAnnotations": 23,
+    "uniqueExternalUrls": 17,
+    "ledgerSourceUrls": 17,
+    "missingLedgerUrlsFromPdf": [],
+    "unexpectedPdfUrls": []
+  },
+  "note": "Poppler text extraction preserves displayed word boundaries. PyPDF extracts all required content and glyphs but may concatenate adjacent words in some large display headings. All six generated illustrations contain no text. The four warning details formerly embedded in the page-11 SVG remain present in editable prose; the four page-13 comparison labels formerly inside paired SVGs remain editable, and the safety-limit sentence remains extractable."
+}

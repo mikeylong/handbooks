@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "operatingMode": "generation-b-open-image-fallback",
+  "comparisonType": "peer-variant comparison; not an edition comparison",
+  "previousApprovedSource": null,
+  "previousApprovedPdf": null,
+  "comparisonBaseline": {
+    "status": "peer candidate only; not an approved edition",
+    "source": "candidates/poisonous-mushroom-identification/source/handbook.html",
+    "sourceSha256": "78a437833bccc7be98c7e6ff59fbdae753418538f71780584f42583bc3d889f0",
+    "pdf": "output/pdf/poisonous-mushroom-identification-handbook.pdf",
+    "pdfSha256": "507df2b77bf37821032ba7f31b6c16e03aaced47602125a446178ecd62be18e7"
+  },
+  "candidate": {
+    "source": "candidates/poisonous-mushroom-identification-generation-b/source/handbook.html",
+    "sourceSha256": "f3a8893379a7577951584464220db714f3ab9834713fc2edc167ce3cdb4507a0",
+    "pdf": "output/pdf/poisonous-mushroom-identification-handbook-generation-b.pdf",
+    "pdfSha256": "741223fb6f8c1408f8164ffc5d3b4418337f6369dd37cb839f16b5a68c0dff63"
+  },
+  "readerFacingContentChanged": true,
+  "comparisonResults": {
+    "rawPdfTextChanged": true,
+    "substantivePdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": true,
+    "navigationTextChanged": false,
+    "substantiveOutlineChanged": false,
+    "outlineIncludingChangelogChanged": false,
+    "readerVisibleMetadataChanged": false
+  },
+  "semanticChangeLedger": "candidates/poisonous-mushroom-identification-generation-b/change-ledger.json",
+  "semanticCategories": ["Addition", "Correction or clarification"],
+  "recommendedInitialVersion": "1.0.0",
+  "peerVariantVersionImpact": "Patch",
+  "exactArtifacts": {
+    "editionDiff": "candidates/poisonous-mushroom-identification-generation-b/qa/edition-comparison/edition-diff.json",
+    "sourcePatch": "candidates/poisonous-mushroom-identification-generation-b/qa/edition-comparison/exact-source.patch",
+    "pdfTextPatch": "candidates/poisonous-mushroom-identification-generation-b/qa/edition-comparison/exact-pdf-text.patch",
+    "readerFacingContentPatch": "candidates/poisonous-mushroom-identification-generation-b/qa/edition-comparison/reader-facing-content.patch"
+  },
+  "changelogDecision": "changelog-decision.json",
+  "changelogReason": "Neither Generation A nor Generation B is an approved edition. Generation A is used only as a peer comparison baseline, so no edition changelog surface is presented to readers."
+}
