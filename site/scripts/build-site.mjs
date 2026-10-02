@@ -1,3 +1,4 @@
+import {readerAssets, toolkitModule} from './handbook-toolkit.mjs';
 import {editionLinks} from './edition-links.mjs';
 import {cp,mkdir,readFile,rm,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
@@ -7,14 +8,17 @@ import {validateLibrary,sourceFor,validatePackage,safePath} from './book-sources
 import {validatePublicationFront,validateGalleryPublications} from './publication-front.mjs';
 import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
 import {finalizeSiteThemes} from './site-theme.mjs';
+import {installArtworkPairs} from './artwork-pairs.mjs';
 
+const {installDiagrams} = await toolkitModule('diagrams.mjs');
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const catalog=JSON.parse(await readFile(resolve(root,'../catalog.json'),'utf8'));
 const books=validateLibrary(catalog);
 const output=resolve(root,'output/site');
 await rm(output,{recursive:true,force:true});await mkdir(output,{recursive:true});
 await mkdir(resolve(root,'output/publications'),{recursive:true});
-for(const file of ['gallery.css','gallery-focus.js','theme.css','theme.js','reader.css','reader.js'])await cp(resolve(root,'site',file),resolve(output,file));
+for(const file of ['gallery.css','gallery-focus.js'])await cp(resolve(root,'site',file),resolve(output,file));
+for(const file of ['theme.css','theme.js','reader.css','reader.js'])await cp(resolve(readerAssets,file),resolve(output,file));
 await mkdir(resolve(output,'assets'),{recursive:true});
 const publicAssets=JSON.parse(await readFile(resolve(root,'public-assets.json'),'utf8'));
 for(const [path,sha] of Object.entries(publicAssets)){const file=safePath(root,path);if(createHash('sha256').update(await readFile(file)).digest('hex')!==sha)throw Error('Shared public asset changed: '+path);const dest=resolve(output,path.slice(5));await mkdir(dirname(dest),{recursive:true});await cp(file,dest);}
@@ -55,6 +59,8 @@ for(const pin of books){
   if(manifest.version!==pin.version||manifest.pdf!==pin.pdf||!Number.isSafeInteger(manifest.pages)||manifest.pages<1)throw Error('Approved edition metadata differs from catalog');
   if(publication.sourceRepository!==catalog.repository||publication.editionUrl!==pin.editionUrl||publication.releaseUrl!==pin.editionUrl)throw Error('Public edition links disagree with catalog');
   html=editionLinks(html,publication);
+  html=await installArtworkPairs(source,pin,output,html,approvedPackage);
+  html=await installDiagrams(source,html,approvedPackage);
   const digest=b=>createHash('sha256').update(b).digest('hex');
   if(manifest.sha256!==pin.pdfSha256||digest(await readFile(resolve(source,manifest.pdf)))!==pin.pdfSha256)throw Error('Pinned approved PDF differs from source');
   const pdfUrl=pin.id==='production-ai-engineering'?'/'+manifest.pdf:basename(manifest.pdf);

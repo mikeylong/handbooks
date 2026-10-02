@@ -72,14 +72,16 @@ def main() -> None:
         PACKAGE_ROOT / "references/specimen/validation.json",
         PACKAGE_ROOT / "references/specimen/compatibility-matrix.json",
         PACKAGE_ROOT / "references/specimen/workflow-regression.json",
-        *sorted((PACKAGE_ROOT / "scripts").glob("*")),
+        *sorted((PACKAGE_ROOT / "scripts").rglob("*")),
+        *sorted((PACKAGE_ROOT / "assets/reader").rglob("*")),
+        PACKAGE_ROOT / "assets/design-system/dark-illustration-reference.png",
         PACKAGE_ROOT / "assets/design-system/tokens.json",
         PACKAGE_ROOT / "assets/design-system/print.css",
         PACKAGE_ROOT / "assets/design-system/illustration-reference.webp",
         *sorted((PACKAGE_ROOT / "assets/design-system/templates").glob("*")),
         *sorted((PACKAGE_ROOT / "assets/design-system/fonts").glob("*")),
     ]
-    tracked = [path for path in tracked if path.is_file()]
+    tracked = [path for path in tracked if path.is_file() and "__pycache__" not in path.parts and path.suffix != ".pyc"]
 
     browser = find_browser(str(args.browser) if args.browser else None)
     result = subprocess.run(

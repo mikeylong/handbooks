@@ -1,0 +1,52 @@
+{
+  "title": "Exposure ladder",
+  "kind": "sequence",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "Demo",
+      "detail": "Illustrate"
+    },
+    {
+      "id": "2",
+      "label": "Sandbox",
+      "detail": "Verify"
+    },
+    {
+      "id": "3",
+      "label": "Shadow",
+      "detail": "Observe"
+    },
+    {
+      "id": "4",
+      "label": "Human-approved",
+      "detail": "Assist"
+    },
+    {
+      "id": "5",
+      "label": "Limited live",
+      "detail": "Operate"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1",
+      "to": "2"
+    },
+    {
+      "from": "2",
+      "to": "3"
+    },
+    {
+      "from": "3",
+      "to": "4"
+    },
+    {
+      "from": "4",
+      "to": "5"
+    }
+  ],
+  "note": "Increase exposure only when the prior boundary is supported",
+  "printAlt": "Exposure increases from Demo (Illustrate), Sandbox (Verify), and Shadow (Observe) to Human-approved (Assist) and Limited live (Operate), only when evidence supports the prior boundary.",
+  "printCaption": "Demo: Illustrate \u2192 Sandbox: Verify \u2192 Shadow: Observe \u2192 Human-approved: Assist \u2192 Limited live: Operate. Increase exposure only when evidence supports the prior boundary."
+}

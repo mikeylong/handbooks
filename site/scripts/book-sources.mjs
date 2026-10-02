@@ -1,11 +1,9 @@
 import {readFile,lstat,realpath} from 'node:fs/promises';
-import {createHash} from 'node:crypto';
+import {toolkitModule} from './handbook-toolkit.mjs';
+const {safePath, digest} = await toolkitModule('reader-paths.mjs');
 import {resolve,relative,isAbsolute} from 'node:path';
 export const PUBLIC_EDITIONS = Object.freeze({'production-ai-engineering':'1.4.0','ai-evaluation':'1.0.0','ai-consulting':'1.0.0'});
-export function safePath(root,path) {
- if(typeof path!=='string'||!path||isAbsolute(path)||path.split(/[\\/]/).includes('..'))throw Error('Unsafe collection path');
- const result=resolve(root,path);if(relative(root,result).startsWith('..'))throw Error('Unsafe collection path');return result;
-}
+export {safePath, digest};
 export function validateLibrary(catalog) {
  if(catalog.publicHost!=='https://handbooks.surfaces.systems'||catalog.repository!=='https://github.com/mikeylong/handbooks')throw Error('Invalid collection ownership or public host');
  if(JSON.stringify(catalog.approvedPublicEditions)!==JSON.stringify(PUBLIC_EDITIONS))throw Error('Public edition allowlist changed without approval');
@@ -21,7 +19,6 @@ export async function sourceFor(siteRoot,book) {
  const root=resolve(siteRoot,'..'),source=safePath(root,book.directory);
  if(await realpath(source)!==source)throw Error('Book source must be a canonical local directory');return source;
 }
-export const digest = b=>createHash('sha256').update(b).digest('hex');
 export async function validatePackage(source,book) {
  const pkg=JSON.parse(await readFile(resolve(source,'publication-package.json'),'utf8'));
  if(pkg.id!==book.id||pkg.version!==book.version||pkg.files?.[book.pdf]!==book.pdfSha256||!pkg.files?.[pkg.html]||pkg.html!==pkg.readerDirectory+'/index.html')throw Error('Approved package identity mismatch');

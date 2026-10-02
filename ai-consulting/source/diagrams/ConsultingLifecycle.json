@@ -1,0 +1,68 @@
+{
+  "title": "Consulting lifecycle",
+  "kind": "sequence",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "Decision"
+    },
+    {
+      "id": "2",
+      "label": "Work"
+    },
+    {
+      "id": "3",
+      "label": "Boundary"
+    },
+    {
+      "id": "4",
+      "label": "Pilot"
+    },
+    {
+      "id": "5",
+      "label": "Evidence"
+    },
+    {
+      "id": "6",
+      "label": "Decision"
+    },
+    {
+      "id": "7",
+      "label": "Ownership"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1",
+      "to": "2"
+    },
+    {
+      "from": "2",
+      "to": "3"
+    },
+    {
+      "from": "3",
+      "to": "4"
+    },
+    {
+      "from": "4",
+      "to": "5"
+    },
+    {
+      "from": "5",
+      "to": "6"
+    },
+    {
+      "from": "6",
+      "to": "7"
+    },
+    {
+      "from": "7",
+      "to": "1",
+      "feedback": true
+    }
+  ],
+  "note": "Operating evidence creates the next decision and restarts the loop",
+  "printAlt": "Seven stages: Decision, Work, Boundary, Pilot, Evidence, Decision, Ownership. Operating evidence restarts the loop.",
+  "printCaption": "Decision \u2192 Work \u2192 Boundary \u2192 Pilot \u2192 Evidence \u2192 Decision \u2192 Ownership. Operating evidence restarts the loop."
+}

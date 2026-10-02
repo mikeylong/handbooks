@@ -8,14 +8,8 @@ npm run validate:front-pages
 
 Requires Node.js 22, npm, tar and network access to the public book repositories on GitHub. No npm packages or GitHub credentials are needed. The build writes `output/site/` and downloads source snapshots into ignored `.cache/books/`. It copies approved PDFs; it never regenerates them.
 
-This repository owns the gallery, shared reader appearance, navigation and hosting at https://handbooks.mikelong.ai and https://handbooks.surfaces.systems. Each handbook owns its manuscript, illustrations, evidence and releases in its own repository:
+The collection repository owns the gallery, approved hosted readers, and hosting at https://handbooks.surfaces.systems. `catalog.json` selects approved local book packages; the build verifies their exact PDF and reader hashes before assembling the public site. Books retain manuscripts, artwork, evidence, edition metadata, and semantic diagram definitions.
 
-- Production AI Engineering: https://github.com/mikeylong/production-ai-engineering-book
-- AI Evaluation Field Guide: https://github.com/mikeylong/ai-evaluation-field-guide
-- AI Consulting Playbook: https://github.com/mikeylong/ai-consulting-playbook
+Reusable reader rendering, browser assets, light/dark artwork processing, responsive diagrams, and validation live in `../publish-evidence-backed-handbook/`. Book and site adapters invoke that runtime; do not copy its scripts or styles into a new handbook. Follow the toolkit's [shared reader workflow](../publish-evidence-backed-handbook/references/shared-reader-workflow.md) for new editions and titles. Publication approval remains explicit.
 
-`library.json` pins each public book to an exact Git commit and approved PDF hash. Updating a title means reviewing its own repository, validating the exact PDF and reader, and updating that pin. The build rejects duplicate book repositories, mutable Git references, wrong repository/release links, changed PDF bytes, incomplete publication fronts and missing shared appearance controls.
-
-To preview locally, run `npm run preview` and open http://127.0.0.1:4181/. Reuse the existing preview if that port is already serving the handbooks. The collection root `/Users/mike/handbooks` remains outside Git.
-
-The shared appearance and gallery code were extracted from the previously public Production AI Engineering site at commit `39d2d281653ac72642813569bc03e9b68b85397d`. Book source and review evidence are not committed here. Both existing Vercel projects publish this site repository.
+Run `npm run validate` from the collection root to validate the released books and site, or `npm run validate:front-pages` from this directory for hosted checks. To preview, run `npm run preview` and open http://127.0.0.1:4181/. Reuse the existing preview when the port is already serving this collection.

@@ -4,6 +4,11 @@ import importlib.util
 from collections import deque
 from io import BytesIO
 from pathlib import Path
+import os
+import sys
+_toolkit = Path(os.environ['HANDBOOK_PUBLISHING_TOOLKIT']).expanduser().resolve() if os.environ.get('HANDBOOK_PUBLISHING_TOOLKIT') else Path(__file__).resolve().parents[2]/'publish-evidence-backed-handbook'
+sys.path.insert(0,str(_toolkit/'scripts'))
+from diagram_data import load_diagram
 from xml.sax.saxutils import escape
 
 from PIL import Image as PILImage
@@ -207,7 +212,8 @@ class ConsultingLifecycle(Flowable):
     def draw(self) -> None:
         c = self.canv
         c.saveState()
-        labels = ["Decision", "Work", "Boundary", "Pilot", "Evidence", "Decision", "Ownership"]
+        definition = load_diagram(ROOT, "ConsultingLifecycle", kind="sequence", count=7, feedback=True)
+        labels = [node["label"] for node in definition["nodes"]]
         track_w = self.width / len(labels)
         gutter = 8
         box_w = track_w - gutter
@@ -237,7 +243,7 @@ class ConsultingLifecycle(Flowable):
         c.drawCentredString(
             self.width / 2,
             12,
-            "Operating evidence creates the next decision and restarts the loop",
+            definition["note"],
         )
         c.restoreState()
 
@@ -253,13 +259,9 @@ class ExposureLadder(Flowable):
     def draw(self) -> None:
         c = self.canv
         c.saveState()
-        labels = [
-            ("Demo", "Illustrate"),
-            ("Sandbox", "Verify"),
-            ("Shadow", "Observe"),
-            ("Human-approved", "Assist"),
-            ("Limited live", "Operate"),
-        ]
+        definition = load_diagram(ROOT, "ExposureLadder", kind="sequence", count=5, feedback=False)
+        labels = [(node["label"], node["detail"]) for node in definition["nodes"]]
+
         step_w = self.width / len(labels)
         for index, (title, verb) in enumerate(labels):
             x = index * step_w
@@ -276,7 +278,7 @@ class ExposureLadder(Flowable):
             c.drawCentredString(x + step_w / 2, y + 10, verb)
         c.setFont(SERIF_ITALIC, 7.1)
         c.setFillColor(MID_GRAY)
-        c.drawString(2, self.height - 8, "Increase exposure only when the prior boundary is supported")
+        c.drawString(2, self.height - 8, definition["note"])
         c.restoreState()
 
 

@@ -1,6 +1,11 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
+import sys
+_toolkit = Path(os.environ['HANDBOOK_PUBLISHING_TOOLKIT']).expanduser().resolve() if os.environ.get('HANDBOOK_PUBLISHING_TOOLKIT') else Path(__file__).resolve().parents[2]/'publish-evidence-backed-handbook'
+sys.path.insert(0,str(_toolkit/'scripts'))
+from diagram_data import load_diagram
 from typing import Iterable, Sequence
 from xml.sax.saxutils import escape
 
@@ -1901,14 +1906,9 @@ class EvidenceLoop(Flowable):
             5: (node_w + x_gap, bottom_y),
             6: (0, bottom_y),
         }
-        labels = {
-            1: "Decision",
-            2: "Failure modes",
-            3: "Evidence sets",
-            4: "Graders",
-            5: "Analysis",
-            6: "Launch or learn",
-        }
+        definition = load_diagram(ROOT, "EvidenceLoop", kind="sequence", count=6, feedback=True)
+        labels = {index + 1: node["label"] for index, node in enumerate(definition["nodes"])}
+
 
         def arrowhead(x: float, y: float, direction: str, color=MID_GRAY) -> None:
             size = 4.2
@@ -1990,7 +1990,7 @@ class EvidenceLoop(Flowable):
 
         c.setFont(SERIF_ITALIC, 6.8)
         c.setFillColor(CORAL)
-        c.drawCentredString(self.width / 2, 6, "Production evidence creates new failure cases and restarts the loop")
+        c.drawCentredString(self.width / 2, 6, definition["note"])
         c.restoreState()
 
 
@@ -2013,12 +2013,9 @@ class DataSplitDiagram(Flowable):
         card_h = 26
         card_gap = 8
         title_col = 78
-        boxes = [
-            ("Calibration", "Revise rubric and align raters"),
-            ("Held-out test", "Estimate candidate performance"),
-            ("Challenge", "Stress rare and severe hazards"),
-            ("Regression", "Prevent known failures returning"),
-        ]
+        definition = load_diagram(ROOT, "DataSplitDiagram", kind="branch", count=5, feedback=False)
+        boxes = [(node["label"], node["detail"]) for node in definition["nodes"][1:]]
+
 
         total_cards_h = len(boxes) * card_h + (len(boxes) - 1) * card_gap
         bottom_y = (self.height - total_cards_h) / 2
@@ -2049,9 +2046,9 @@ class DataSplitDiagram(Flowable):
         c.roundRect(source_x, center_y - source_h / 2, source_w, source_h, 4, fill=1, stroke=0)
         c.setFillColor(WHITE)
         c.setFont(SANS_BOLD, 7.7)
-        c.drawCentredString(source_x + source_w / 2, center_y + 5, "Candidate cases")
+        c.drawCentredString(source_x + source_w / 2, center_y + 5, definition["nodes"][0]["label"])
         c.setFont(SANS, 6.1)
-        c.drawCentredString(source_x + source_w / 2, center_y - 8, "logs + experts + synthetic")
+        c.drawCentredString(source_x + source_w / 2, center_y - 8, definition["nodes"][0]["detail"])
 
         for (title, desc), y in zip(boxes, card_positions):
             c.setFillColor(PALE_TEAL)

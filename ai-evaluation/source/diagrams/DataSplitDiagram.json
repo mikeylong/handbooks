@@ -1,0 +1,49 @@
+{
+  "title": "Data split",
+  "kind": "branch",
+  "nodes": [
+    {
+      "id": "source",
+      "label": "Candidate cases",
+      "detail": "logs + experts + synthetic"
+    },
+    {
+      "id": "1",
+      "label": "Calibration",
+      "detail": "Revise rubric and align raters"
+    },
+    {
+      "id": "2",
+      "label": "Held-out test",
+      "detail": "Estimate candidate performance"
+    },
+    {
+      "id": "3",
+      "label": "Challenge",
+      "detail": "Stress rare and severe hazards"
+    },
+    {
+      "id": "4",
+      "label": "Regression",
+      "detail": "Prevent known failures returning"
+    }
+  ],
+  "edges": [
+    {
+      "from": "source",
+      "to": "1"
+    },
+    {
+      "from": "source",
+      "to": "2"
+    },
+    {
+      "from": "source",
+      "to": "3"
+    },
+    {
+      "from": "source",
+      "to": "4"
+    }
+  ]
+}
