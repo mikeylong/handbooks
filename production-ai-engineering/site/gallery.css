@@ -24,7 +24,11 @@
 }
 
 .handbook-card { min-width: 0; }
-.handbook-card-link { display: block; text-decoration: none; }
+.handbook-card-link { display: block; text-decoration: none; scroll-margin-block: 8px; }
+.handbook-card-link.is-return-focus:focus {
+  outline: 2px solid var(--ink);
+  outline-offset: 6px;
+}
 .handbook-cover { border: 1px solid var(--line); background: var(--paper); }
 .handbook-cover img { display: block; width: 100%; height: auto; }
 
