@@ -2,6 +2,17 @@ import {readFile, readdir, writeFile} from 'node:fs/promises';
 import {join, relative} from 'node:path';
 
 const control = '<label class="theme-control"><span>Appearance</span><select data-theme-select aria-label="Appearance"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>';
+// Quoted attribute values may contain >, including ordinary image descriptions.
+const tagSource = String.raw`<\/?[a-z](?:"[^"]*"|'[^']*'|[^'">])*>`;
+function attributes(tag) {
+  const values = new Map();
+  const contents = tag.replace(/^<\/?[\w:-]+/, '').replace(/\/?\s*>$/, '');
+  for (const match of contents.matchAll(/([^\s=<>/'"]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+)))?/g)) {
+    const name = match[1].toLowerCase();
+    if (!values.has(name)) values.set(name, match[2] ?? match[3] ?? match[4] ?? '');
+  }
+  return values;
+}
 
 export function addSiteTheme(html, gallery = false) {
   if (html.includes('src="/theme.js"')) return html;
@@ -25,11 +36,11 @@ export function validateSiteTheme(html, gallery = false) {
       const contents = html.match(new RegExp(`<div\\b[^>]*class="${container}"[^>]*>([\\s\\S]*?)</div>`))?.[1];
       if (!contents?.includes('data-theme-select')) throw new Error(`Site lacks ${container} appearance control`);
     }
-    const main = html.match(/(<main\b[^>]*id=["']main-content["'][^>]*>)([\s\S]*?)<\/main>/);
-    if (!main) throw new Error('Reader lacks main-content for shared image styling');
+    const main = html.match(new RegExp(`(${tagSource.replace('[a-z]', 'main\\b')})([\\s\\S]*?)</main>`, 'i'));
+    if (!main || attributes(main[1]).get('id') !== 'main-content') throw new Error('Reader lacks main-content for shared image styling');
     const ancestors = [{name:'main', tag:main[1]}];
     const voidTags = new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
-    const tags = main[2].replace(/<!--[\s\S]*?-->/g, '').match(/<\/?[a-z][^>]*>/gi) ?? [];
+    const tags = main[2].replace(/<!--[\s\S]*?-->/g, '').match(new RegExp(tagSource, 'gi')) ?? [];
     for (const tag of tags) {
       const name = tag.match(/^<\/?([a-z][\w:-]*)/i)[1].toLowerCase();
       if (tag.startsWith('</')) {
@@ -42,7 +53,7 @@ export function validateSiteTheme(html, gallery = false) {
           throw new Error('Reader raster image must be inside a figure for shared dark styling');
         }
         for (const element of [...ancestors, {name, tag}]) {
-          if (/\bstyle=["'][^"']*(?:filter|(?:-webkit-)?mask[\w-]*|clip-path|mix-blend-mode|background[\w-]*)\s*:/i.test(element.tag)) {
+          if (/(?:filter|(?:-webkit-)?mask[\w-]*|clip-path|mix-blend-mode|background[\w-]*)\s*:/i.test(attributes(element.tag).get('style') ?? '')) {
             throw new Error(`Reader image has a local theme override on ${element.name}`);
           }
         }

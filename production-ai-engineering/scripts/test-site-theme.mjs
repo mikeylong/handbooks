@@ -79,6 +79,7 @@ try {
   assert.equal((await finalizeSiteThemes(temporary)).length, 2, 'New nested reader is automatically discovered');
   const themed = await readFile(futurePath, 'utf8');
   validateSiteTheme(themed);
+  validateSiteTheme(themed.replace('alt="Original engraving"', 'alt="value > threshold and style=\'filter:invert(1)\'"'), false);
   assert.equal(addSiteTheme(themed), themed, 'Repeated finalization cannot duplicate controls');
   assert(themed.includes('<figure class="future-illustration"><img'), 'Art remains unmodified inside the shared styling surface');
   await finalizeSiteThemes(temporary);
@@ -87,6 +88,9 @@ try {
     ['missing image styling scope', futureReader.replace('id="main-content"', 'id="other"'), /main-content/],
     ['image outside figure', futureReader.replace('<figure class="future-illustration">', '').replace('</figure>', ''), /inside a figure/],
     ['local inversion', futureReader.replace('<img ', '<img style="filter:invert(1)" '), /local theme override/],
+    ['quoted delimiter before image effect', futureReader.replace('alt="Original engraving"', 'alt="value > threshold" style="filter:invert(1)"'), /local theme override on img/],
+    ['quoted delimiter before wrapper effect', futureReader.replace('<img ', '<picture title=\'value > threshold\' style = \'filter:invert(1)\'><img ').replace('</figure>', '</picture></figure>'), /local theme override on picture/],
+    ['quoted delimiter before main effect', futureReader.replace('<main id=', '<main title="value > threshold" style="filter:invert(1)" id='), /local theme override on main/],
     ['local edge mask', futureReader.replace('<figure ', '<figure style="mask-image:linear-gradient(black,transparent)" '), /local theme override/],
     ['local figure clipping', futureReader.replace('<figure ', '<figure style="clip-path:inset(20%)" '), /local theme override/],
     ['local image clipping', futureReader.replace('<img ', '<img style="clip-path:circle(30%)" '), /local theme override/],
