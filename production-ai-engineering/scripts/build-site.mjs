@@ -1,4 +1,5 @@
 import { validatePublicationFront, validateGalleryPublications } from "./publication-front.mjs";
+import { renderGalleryCover, validateGalleryCover } from "./gallery-covers.mjs";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
@@ -69,8 +70,6 @@ const reader = readerBody
     });
     return `srcset="${candidates.join(", ")}"`;
   });
-const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
-  .replaceAll("{{VERSION}}", version).replaceAll("{{PAGE_COUNT}}", String(pages));
 const hostedBook = book.replace(readerBody, reader)
   .replace(/(href|src)="(?!#|\/|https?:|mailto:)([^"]+)"/g, (_, attribute, value) => {
     const url = new URL(value, "https://handbooks.mikelong.ai/production-ai-engineering/");
@@ -88,6 +87,11 @@ const productionReview = {
   rrule:book.match(/data-release-rrule="([^"]+)"/)?.[1],
 };
 validatePublicationFront(hostedBook, {title:"Production AI Engineering", author:"Michael Long", authorSite:"https://surfaces.systems", repository:"https://github.com/mikeylong/production-ai-engineering-book", releaseUrl:"https://github.com/mikeylong/production-ai-engineering-book/releases", date:pdfPath.match(/(\d{4}-\d{2}-\d{2})\.pdf$/)?.[1], version, pages, pdfUrl:"/"+pdfPath, review:productionReview});
+const gallery = (await readFile(resolve(root, "site/index.html"), "utf8"))
+  .replace("{{PRODUCTION_COVER}}", renderGalleryCover(hostedBook))
+  .replace("{{EVALUATION_COVER}}", renderGalleryCover(evaluationHtml));
+validateGalleryCover(gallery, "/production-ai-engineering/", hostedBook);
+validateGalleryCover(gallery, "/ai-evaluation/", evaluationHtml);
 validateGalleryPublications(gallery, ["/production-ai-engineering/", "/ai-evaluation/"]);
 await writeFile(resolve(output, "index.html"), gallery);
 await writeFile(resolve(output, "production-ai-engineering/index.html"), hostedBook);

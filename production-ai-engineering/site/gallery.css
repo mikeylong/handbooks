@@ -29,8 +29,47 @@
   outline: 2px solid var(--ink);
   outline-offset: 6px;
 }
-.handbook-cover { border: 1px solid var(--line); background: var(--paper); }
-.handbook-cover img { display: block; width: 100%; height: auto; }
+.handbook-cover {
+  position: relative;
+  container-type: inline-size;
+  aspect-ratio: 706 / 1000;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+.gallery-cover-rule,
+.gallery-cover-footer-rule { position: absolute; left: 8.5%; height: 1px; background: var(--line); }
+.gallery-cover-rule { top: 24%; width: 9%; background: var(--ink); }
+.gallery-cover-footer-rule { bottom: 12%; width: 83%; }
+.gallery-cover-copy { position: absolute; top: 34%; left: 8.5%; width: 83%; }
+.gallery-cover-copy h2 {
+  margin: 0;
+  max-width: 86%;
+  font-family: var(--serif);
+  font-size: 9.6cqw;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+.handbook-card-link[href="/production-ai-engineering/"] .gallery-cover-copy h2 { max-width: 72%; }
+.gallery-cover-copy .gallery-cover-subtitle {
+  margin: 3cqw 0 0;
+  font-size: 3.1cqw;
+  font-style: italic;
+  line-height: 1.3;
+}
+.handbook-cover .gallery-cover-credit,
+.handbook-cover .gallery-cover-date {
+  position: absolute;
+  left: 8.5%;
+  width: 83%;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 2.1cqw;
+  font-variant-numeric: lining-nums;
+  line-height: 1.4;
+}
+.gallery-cover-credit { top: 67%; }
+.gallery-cover-date { top: 81%; }
 
 /* Section destinations retain focus for navigation without a content outline. */
 main section[tabindex="-1"]:focus { outline: none; }
