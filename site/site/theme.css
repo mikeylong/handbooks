@@ -1,0 +1,118 @@
+/* Keep source artwork unchanged in every appearance, including legacy plates. */
+#main-content figure:has(img),
+#main-content figure img,
+#main-content figure .chapter-art {
+  filter: none !important;
+  clip-path: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  mix-blend-mode: normal !important;
+}
+.theme-control { display: none; position: relative; font-family: var(--sans); font-size: 0.75rem; }
+html[data-theme] .theme-control { display: inline-block; }
+.theme-trigger {
+  display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem;
+  width: 7rem; height: 2.75rem; padding: 0 0.5rem;
+  border: 0; border-radius: 3px; background: transparent; color: var(--muted);
+  font: inherit; cursor: pointer;
+}
+.theme-trigger:hover, .theme-trigger[aria-expanded="true"] { color: var(--ink); background: color-mix(in srgb, var(--ink) 6%, transparent); }
+.theme-icon, .theme-chevron { flex-shrink: 0; }
+.theme-chevron { margin-left: auto; }
+.theme-trigger:focus-visible, .theme-menu button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.theme-menu {
+  position: absolute; z-index: 100; top: calc(100% + 0.4rem); left: 0;
+  width: 10rem; padding: 0.3rem; border: 1px solid var(--line); border-radius: 5px;
+  background: var(--paper); color: var(--ink); box-shadow: 0 4px 16px #0002;
+}
+.theme-menu[hidden] { display: none; }
+.theme-menu button {
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+  min-height: 2.75rem; padding: 0.5rem 0.75rem; border: 0; border-radius: 2px;
+  color: inherit; background: transparent; font: inherit; text-align: left; cursor: pointer;
+}
+.theme-menu button:hover, .theme-menu button:focus { background: color-mix(in srgb, var(--ink) 7%, transparent); }
+.theme-check { visibility: hidden; }
+.theme-menu [aria-checked="true"] .theme-check { visibility: visible; }
+.gallery-intro > .theme-control { float: right; }
+.gallery-intro .theme-menu { left: auto; right: 0; }
+.sidebar-meta > .theme-control { margin: -0.5rem 0 0.6rem -0.5rem; }
+.sidebar-meta .theme-menu { top: auto; bottom: calc(100% + 0.4rem); }
+.mobile-actions .theme-trigger { width: 2.75rem; justify-content: center; padding: 0; }
+.mobile-actions [data-theme-label], .mobile-actions .theme-chevron { display: none; }
+
+@media screen {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #191918;
+    --paper-raised: #222221;
+    --ink: #eeece6;
+    --muted: #b5b2aa;
+    --faint: #aaa79e;
+    --line: #49473f;
+    --line-strong: #9b978a;
+    --highlight: #494126;
+    --image-paper: #e4e1d9;
+  }
+  .sidebar { background: var(--paper-raised); }
+  .sidebar-nav a:hover,
+  .action-link:not(.action-link-primary):hover,
+  .search-result:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+  .action-link-primary:hover { background: color-mix(in srgb, var(--ink) 88%, var(--paper)); }
+  p code, li code, td code { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+  :root[data-theme="dark"] #main-content figure:has(img) {
+    background: var(--image-paper);
+    color: #171716;
+    padding: 1rem;
+    filter: none;
+    clip-path: none;
+  }
+  :root[data-theme="dark"] #main-content figure.chapter-figure,
+  :root[data-theme="dark"] #main-content figure.chapter-art { width: min(100%, 30rem); }
+  :root[data-theme="dark"] #main-content figure img {
+    filter: none;
+    mix-blend-mode: normal;
+    clip-path: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+/* With JavaScript disabled, follow the system and keep the control hidden. */
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --paper: #191918;
+    --paper-raised: #222221;
+    --ink: #eeece6;
+    --muted: #b5b2aa;
+    --faint: #aaa79e;
+    --line: #49473f;
+    --line-strong: #9b978a;
+    --highlight: #494126;
+    --image-paper: #e4e1d9;
+  }
+  :root:not([data-theme]) #main-content figure:has(img) {
+    background: var(--image-paper);
+    color: #171716;
+    padding: 1rem;
+    filter: none;
+    clip-path: none;
+  }
+  :root:not([data-theme]) #main-content figure.chapter-figure,
+  :root:not([data-theme]) #main-content figure.chapter-art { width: min(100%, 30rem); }
+  :root:not([data-theme]) #main-content figure img {
+    filter: none;
+    mix-blend-mode: normal;
+    clip-path: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+@media (max-width: 600px) {
+  .mobile-title { display: none; }
+  .mobile-actions { gap: 0.55rem; }
+}
+@media print {
+  :root { color-scheme: light; }
+  html[data-theme] .theme-control { display: none; }
+}

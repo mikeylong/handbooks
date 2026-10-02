@@ -1,0 +1,14 @@
+{
+  "name": "handbooks-site",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/handbooks-site"
+  },
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "test": "node scripts/test-book-sources.mjs && node scripts/test-publication-front.mjs && node scripts/test-gallery-focus.mjs && node scripts/test-site-theme.mjs",
+    "validate:front-pages": "npm run build && npm test",
+    "preview": "python3 -m http.server 4181 --bind 127.0.0.1 --directory output/site"
+  }
+}
