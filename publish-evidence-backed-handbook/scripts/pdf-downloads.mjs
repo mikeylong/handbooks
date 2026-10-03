@@ -47,6 +47,10 @@ export function downloadLinks(edition,variants,{compact=false}={}) {
  return `<span class="pdf-downloads" data-pdf-downloads>${compact?'PDF:':'<span class="pdf-download-title">Download PDF</span>'} ${variants.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages">${v.displayName}${compact?'':` <span>${v.pages} pages</span>`}</a>`).join('<span aria-hidden="true"> · </span>')}</span>`;
 }
 export function installReaderDownloads(html,edition,variants) {
+ html=html.replace(/<header\b[^>]*class="mobile-bar"[^>]*>[\s\S]*?<\/header>/,header=>{
+  if(/class="mobile-title"/.test(header)) return header;
+  return header.replace(/<div class="mobile-actions"/,`<a class="mobile-title" href="#book-top">${escape(edition.title)}</a><div class="mobile-actions"`);
+ });
  let count=0;html=html.replace(/<a\b[^>]*\bdownload(?:="[^"]*")?[^>]*>[\s\S]*?<\/a>/g,a=>{
   if(!/\.pdf(?:["?])/.test(a))return a;
   count++;return downloadLinks(edition,variants,{compact:!a.includes('action-link')});
