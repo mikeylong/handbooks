@@ -126,7 +126,7 @@ html[data-theme] .theme-control { display: inline-block; }
   }
 }
 @media (max-width: 600px) {
-  .mobile-title { display: none; }
+  .mobile-title { min-width: 0; }
   .mobile-actions { gap: 0.55rem; }
 }
 @media print {
