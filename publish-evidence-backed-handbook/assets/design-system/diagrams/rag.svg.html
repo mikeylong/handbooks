@@ -1,0 +1,101 @@
+
+<figure class="rag-flow-diagram" role="region" aria-label="{{text25}}" tabindex="0">
+  <svg viewBox="0 0 760 400" role="img" aria-labelledby="rag-flow-title rag-flow-description">
+    <title id="rag-flow-title">{{text1}}</title>
+    <desc id="rag-flow-description">{{text2}}</desc>
+    <defs>
+      <marker id="rag-flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" class="rag-arrowhead" />
+      </marker>
+    </defs>
+
+    <text class="rag-lane-label" x="24" y="16">{{text3}}</text>
+    <line class="rag-lane-rule" x1="126" y1="12" x2="736" y2="12" />
+
+    <g class="rag-lines" aria-hidden="true">
+      <path class="rag-arrow" data-from="S" data-to="P" d="M144 76 H162" />
+      <path class="rag-arrow" data-from="P" data-to="C" d="M324 76 H342" />
+      <path class="rag-arrow" data-from="C" data-to="I" d="M518 76 H540" />
+    </g>
+
+    <g class="rag-stage rag-ingestion-stage" data-label="{{text26}}" transform="translate(28 38)">
+      <text class="rag-stage-title" x="0" y="18">{{text4}}</text>
+      <line class="rag-stage-rule" x1="0" y1="38" x2="110" y2="38" />
+    </g>
+
+    <g class="rag-stage rag-ingestion-stage" data-label="{{text27}}" transform="translate(168 32)">
+      <text class="rag-stage-title" x="0" y="16"><tspan x="0">{{text5}}</tspan><tspan x="0" dy="20">{{text6}}</tspan></text>
+      <line class="rag-stage-rule" x1="0" y1="44" x2="150" y2="44" />
+    </g>
+
+    <g class="rag-stage rag-ingestion-stage" data-label="{{text28}}" transform="translate(348 32)">
+      <text class="rag-stage-title" x="0" y="16"><tspan x="0">{{text7}}</tspan><tspan x="0" dy="20">{{text8}}</tspan></text>
+      <line class="rag-stage-rule" x1="0" y1="44" x2="164" y2="44" />
+    </g>
+
+    <g class="rag-datastore-node" data-label="{{text29}}" transform="translate(540 24)">
+      <path class="rag-datastore" d="M6 14 V82 C6 91 39 98 89 98 C139 98 172 91 172 82 V14" />
+      <ellipse class="rag-datastore-rim" cx="89" cy="14" rx="83" ry="11" />
+      <text class="rag-datastore-title" x="89" y="42" text-anchor="middle">{{text9}}</text>
+      <text class="rag-datastore-detail" x="89" y="65" text-anchor="middle"><tspan x="89">{{text10}}</tspan><tspan x="89" dy="18">{{text11}}</tspan></text>
+    </g>
+
+    <text class="rag-lane-label" x="24" y="156">{{text12}}</text>
+    <line class="rag-lane-rule" x1="171" y1="152" x2="617" y2="152" />
+    <line class="rag-lane-rule" x1="641" y1="152" x2="736" y2="152" />
+
+    <g class="rag-lines" aria-hidden="true">
+      <path class="rag-arrow" data-from="Q" data-to="F" d="M166 224 H204" />
+      <path class="rag-arrow rag-merge-input" data-from="F" data-to="R" d="M412 224 H458" />
+      <path class="rag-arrow rag-index-link rag-merge-input" data-from="I" data-to="R" d="M629 122 V166 H458 V224" />
+      <path class="rag-junction-link" d="M462 224 H494" marker-end="url(#rag-flow-arrow)" />
+      <circle class="rag-junction" cx="458" cy="224" r="4" />
+
+      <path class="rag-arrow rag-turn" data-from="R" data-to="U" d="M724 224 H730 V314 H714" />
+      <path class="rag-arrow" data-from="U" data-to="D" d="M504 314 H430" />
+
+      <path class="rag-branch" d="M334 317 V336 M164 336 H568" />
+      <path class="rag-arrow rag-terminal-link" data-from="D" data-to="A" d="M164 336 V345" />
+      <path class="rag-arrow rag-terminal-link" data-from="D" data-to="X" d="M568 336 V345" />
+    </g>
+
+    <g class="rag-stage rag-query-stage" data-label="{{text30}}" transform="translate(28 186)">
+      <text class="rag-stage-title" x="0" y="18">{{text13}}</text>
+      <line class="rag-stage-rule" x1="0" y1="38" x2="132" y2="38" />
+    </g>
+
+    <g class="rag-stage rag-query-stage" data-label="{{text31}}" transform="translate(210 180)">
+      <text class="rag-stage-title" x="0" y="16"><tspan x="0">{{text14}}</tspan><tspan x="0" dy="20">{{text15}}</tspan></text>
+      <line class="rag-stage-rule" x1="0" y1="44" x2="196" y2="44" />
+    </g>
+
+    <g class="rag-merge-note" aria-hidden="true">
+      <text x="458" y="250" text-anchor="middle">{{text16}}</text>
+    </g>
+
+    <g class="rag-stage rag-query-stage" data-label="{{text32}}" transform="translate(500 180)">
+      <text class="rag-stage-title" x="0" y="16"><tspan x="0">{{text17}}</tspan><tspan x="0" dy="20">{{text18}}</tspan></text>
+      <line class="rag-stage-rule" x1="0" y1="44" x2="218" y2="44" />
+    </g>
+
+    <g class="rag-stage rag-query-stage" data-label="{{text33}}" transform="translate(510 276)">
+      <text class="rag-stage-title" x="0" y="18">{{text19}}</text>
+      <line class="rag-stage-rule" x1="0" y1="38" x2="198" y2="38" />
+    </g>
+
+    <g class="rag-stage rag-query-stage" data-label="{{text34}}" transform="translate(244 270)">
+      <text class="rag-stage-title" x="0" y="16"><tspan x="0">{{text20}}</tspan><tspan x="0" dy="20">{{text21}}</tspan></text>
+      <line class="rag-stage-rule" x1="0" y1="44" x2="180" y2="44" />
+    </g>
+
+    <g class="rag-outcome rag-answer-outcome" data-label="{{text35}}" transform="translate(164 350)">
+      <circle class="rag-outcome-marker" cx="0" cy="0" r="5" />
+      <text class="rag-outcome-title" x="0" y="19" text-anchor="middle"><tspan x="0">{{text22}}</tspan><tspan x="0" dy="17">{{text23}}</tspan></text>
+    </g>
+
+    <g class="rag-outcome rag-abstain-outcome" data-label="{{text36}}" transform="translate(568 350)">
+      <circle class="rag-outcome-marker" cx="0" cy="0" r="5" />
+      <text class="rag-outcome-title" x="0" y="19" text-anchor="middle">{{text24}}</text>
+    </g>
+  </svg>
+</figure>

@@ -87,7 +87,7 @@ Notes and sources use grouped references with stable labels and direct URLs. The
 - Use coherent black-and-white technical, engraved, or stippled line art on an opaque white background.
 - The illustration should embody the chapter's mental model, not merely decorate its topic.
 - Maintain consistent camera angle, line density, scale, contrast, and white-space behavior across a set.
-- Hosted chapter art uses separately authored light/dark appearances under `hosted-appearance.md`. Dark screen art keeps natural shading on a transparent outer background; the page supplies its exact charcoal. This screen exception does not change the print specimen or print artwork.
+- Hosted chapter art uses separately authored light/dark appearances under `hosted-appearance.md`. Dark screen art keeps natural shading on a transparent outer background; the page supplies its exact charcoal. The canonical Daytime specimen and artwork remain unchanged. Explicit Late night PDF derivatives follow [PDF appearances](pdf-appearances.md).
 - Final print images must be precomposed and opaque. Remove live filters, clip paths, masks, blend modes, and soft-mask transparency before PDF generation.
 - Prefer 300 effective PPI at final size; 240 PPI is the minimum acceptance threshold for print-critical raster art.
 - Require one intended image paint per illustration placement. Duplicate paints or fragmented image masks are blockers.

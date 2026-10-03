@@ -71,3 +71,7 @@ For this collection at handbooks.surfaces.systems, every online reader must pass
 - The promoted artifact hash equals the approved candidate hash.
 
 If a hard gate fails, stop at the candidate stage and report the failed gate plus its log or proof path.
+
+## Paired PDF appearances
+
+Apply [PDF appearances](pdf-appearances.md) to explicit Daytime version and Late night version downloads, shared generation, retained releases, additive appearance revisions, exact-hash approval, cross-renderer proof and future editions. An appearance companion preserves its content edition and existing Daytime bytes. Browser printing stays Light. A failed companion blocks the initial three-title launch.

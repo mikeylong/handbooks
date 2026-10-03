@@ -2,7 +2,9 @@ import {readFile,lstat,realpath} from 'node:fs/promises';
 import {toolkitModule} from './handbook-toolkit.mjs';
 const {safePath, digest} = await toolkitModule('reader-paths.mjs');
 import {resolve,relative,isAbsolute} from 'node:path';
-export const PUBLIC_EDITIONS = Object.freeze({'production-ai-engineering':'1.4.0','ai-evaluation':'1.0.0','ai-consulting':'1.0.0'});
+import {readFileSync} from 'node:fs';
+export const APPROVAL_REGISTRY=JSON.parse(readFileSync(new URL('../approval-registry.json',import.meta.url),'utf8'));
+export const PUBLIC_EDITIONS=Object.freeze(Object.fromEntries(APPROVAL_REGISTRY.books.map(b=>[b.id,b.version])));
 export {safePath, digest};
 export function validateLibrary(catalog) {
  if(catalog.publicHost!=='https://handbooks.surfaces.systems'||catalog.repository!=='https://github.com/mikeylong/handbooks')throw Error('Invalid collection ownership or public host');
@@ -20,7 +22,10 @@ export async function sourceFor(siteRoot,book) {
  if(await realpath(source)!==source)throw Error('Book source must be a canonical local directory');return source;
 }
 export async function validatePackage(source,book) {
- const pkg=JSON.parse(await readFile(resolve(source,'publication-package.json'),'utf8'));
+ const bytes=await readFile(resolve(source,'publication-package.json'));
+ const approval=APPROVAL_REGISTRY.books.find(b=>b.id===book.id&&b.version===book.version);
+ if(!approval||digest(bytes)!==approval.packageSha256)throw Error('Unapproved package manifest');
+ const pkg=JSON.parse(bytes);
  if(pkg.id!==book.id||pkg.version!==book.version||pkg.files?.[book.pdf]!==book.pdfSha256||!pkg.files?.[pkg.html]||pkg.html!==pkg.readerDirectory+'/index.html')throw Error('Approved package identity mismatch');
  const expectedReader=book.id==='production-ai-engineering'?'handbook':'reader';if(pkg.readerDirectory!==expectedReader)throw Error('Invalid approved reader directory');
  for(const [path,sha] of Object.entries(pkg.files)) {

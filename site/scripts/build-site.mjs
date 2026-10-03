@@ -4,25 +4,38 @@ import {cp,mkdir,readFile,rm,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {dirname,resolve,basename} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {validateLibrary,sourceFor,validatePackage,safePath} from './book-sources.mjs';
+import {APPROVAL_REGISTRY,validateLibrary,sourceFor,validatePackage,safePath} from './book-sources.mjs';
 import {validatePublicationFront,validateGalleryPublications} from './publication-front.mjs';
 import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
 import {finalizeSiteThemes} from './site-theme.mjs';
 import {installArtworkPairs} from './artwork-pairs.mjs';
 
+const {resolvePdfVariants,installReaderDownloads,downloadLinks,editionDownloadDetails,validateDownloads}=await toolkitModule('pdf-downloads.mjs');
 const {installDiagrams} = await toolkitModule('diagrams.mjs');
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const catalog=JSON.parse(await readFile(resolve(root,'../catalog.json'),'utf8'));
 const books=validateLibrary(catalog);
-const output=resolve(root,'output/site');
+const reviewRegistryPath=process.env.HANDBOOK_PDF_REVIEW_REGISTRY;
+if(reviewRegistryPath&&!process.env.HANDBOOK_SITE_OUTPUT)throw Error('Review registry requires an isolated site output');
+const registry=reviewRegistryPath?JSON.parse(await readFile(reviewRegistryPath,'utf8')):APPROVAL_REGISTRY;
+if(reviewRegistryPath&&(registry.mode!=='candidate'||registry.books.length!==books.length))throw Error('Initial candidate preview requires all approved titles');
+const output=process.env.HANDBOOK_SITE_OUTPUT?resolve(process.env.HANDBOOK_SITE_OUTPUT):resolve(root,'output/site');
+if(reviewRegistryPath&&output===resolve(root,'output/site'))throw Error('Candidates cannot enter public output');
 await rm(output,{recursive:true,force:true});await mkdir(output,{recursive:true});
-await mkdir(resolve(root,'output/publications'),{recursive:true});
+await mkdir(resolve(output,'../publications'),{recursive:true});
 for(const file of ['gallery.css','gallery-focus.js'])await cp(resolve(root,'site',file),resolve(output,file));
-for(const file of ['theme.css','theme.js','reader.css','reader.js'])await cp(resolve(readerAssets,file),resolve(output,file));
+for(const file of ['theme.css','theme.js','reader.css','reader.js','pdf-downloads.css'])await cp(resolve(readerAssets,file),resolve(output,file));
 await mkdir(resolve(output,'assets'),{recursive:true});
 const publicAssets=JSON.parse(await readFile(resolve(root,'public-assets.json'),'utf8'));
 for(const [path,sha] of Object.entries(publicAssets)){const file=safePath(root,path);if(createHash('sha256').update(await readFile(file)).digest('hex')!==sha)throw Error('Shared public asset changed: '+path);const dest=resolve(output,path.slice(5));await mkdir(dirname(dest),{recursive:true});await cp(file,dest);}
 let gallery=await readFile(resolve(root,'site/index.html'),'utf8');
+const retained=JSON.parse(await readFile(resolve(root,'retained-releases.json'),'utf8'));
+for(const route of retained.routes){
+ if(!/^\/[A-Za-z0-9/_.-]+\.pdf$/.test(route.url)||route.url.includes('..'))throw Error('Unsafe retained route');
+ const source=safePath(resolve(root,'..'),route.source),bytes=await readFile(source);
+ if(createHash('sha256').update(bytes).digest('hex')!==route.sha256)throw Error('Retained PDF changed: '+route.url);
+ const dest=safePath(output,route.url.slice(1));await mkdir(dirname(dest),{recursive:true});await cp(source,dest);
+}
 const editions=[];
 for(const pin of books){
   const source=await sourceFor(root,pin);
@@ -63,23 +76,36 @@ for(const pin of books){
   html=await installDiagrams(source,html,approvedPackage);
   const digest=b=>createHash('sha256').update(b).digest('hex');
   if(manifest.sha256!==pin.pdfSha256||digest(await readFile(resolve(source,manifest.pdf)))!==pin.pdfSha256)throw Error('Pinned approved PDF differs from source');
-  const pdfUrl=pin.id==='production-ai-engineering'?'/'+manifest.pdf:basename(manifest.pdf);
-  const hostedPdf=pin.id==='production-ai-engineering'?resolve(output,manifest.pdf):resolve(output,pin.id,pdfUrl);
+  const pdfUrl=pin.id==='production-ai-engineering'?'/'+manifest.pdf:'/'+pin.id+'/'+basename(manifest.pdf);
+  const hostedPdf=pin.id==='production-ai-engineering'?resolve(output,manifest.pdf):resolve(output,pin.id,basename(manifest.pdf));
   if(digest(await readFile(hostedPdf))!==pin.pdfSha256)throw Error('Hosted PDF differs from approved source');
   if(!html.includes('href="/gallery.css"'))html=html.replace('</head>','<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>');
-  const edition={...publication,...manifest,pdfUrl,sourceRepository:catalog.repository,approvedReaderSha256:approvedPackage.files[approvedPackage.html]};
+  const edition={id:pin.id,...publication,...manifest,pdfUrl,sourceRepository:catalog.repository,approvedReaderSha256:approvedPackage.files[approvedPackage.html]};
+  const registryBook=registry.books.find(b=>b.id===pin.id&&b.version===pin.version);
+  if(!registryBook||registryBook.packageSha256!==APPROVAL_REGISTRY.books.find(b=>b.id===pin.id).packageSha256)throw Error('Review package identity mismatch');
+  const variants=await resolvePdfVariants(source,edition,registryBook.variantManifest,{candidate:!!reviewRegistryPath,collectionRoot:resolve(root,'..'),measurePdfPages:false});
+  html=installReaderDownloads(html,edition,variants);
+  html=html.replace('</head>','<link rel="stylesheet" href="/pdf-downloads.css"></head>');
+  validateDownloads(html,edition,variants);edition.pdfVariants=variants;
+  for(const v of variants){
+   const src=registryBook.variantManifest?safePath(resolve(root,'..'),v.path):safePath(source,v.path);
+   const dest=safePath(output,v.publicUrl.slice(1));await mkdir(dirname(dest),{recursive:true});await cp(src,dest);
+  }
   const editionDirectory=resolve(output,pin.id,'editions','v'+manifest.version);
   await mkdir(editionDirectory,{recursive:true});
   await cp(resolve(source,manifest.pdf),resolve(editionDirectory,basename(manifest.pdf)));
   const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
-  await writeFile(resolve(editionDirectory,'index.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>${escape(manifest.title)} · Version ${escape(manifest.version)}</title><link rel="canonical" href="${pin.editionUrl}"><link rel="stylesheet" href="/gallery.css"><link rel="stylesheet" href="/reader.css"></head><body><header class="mobile-bar"><a href="/">← All handbooks</a><div class="mobile-actions"></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/">← All handbooks</a><div class="sidebar-meta"></div></aside><main id="main-content"><section class="chapter edition-details"><p><a href="/${pin.id}/">Read ${escape(manifest.title)}</a></p><h1>${escape(manifest.title)}</h1><p>Version ${escape(manifest.version)} · ${escape(manifest.date)} · ${manifest.pages} pages</p><p><a href="/${pin.id}/editions/v${manifest.version}/${escape(basename(manifest.pdf))}" download>Download PDF</a></p><p>PDF SHA-256: <code>${manifest.sha256}</code></p><p><a href="/">All handbooks</a></p></section></main></div></body></html>`);
+  await writeFile(resolve(editionDirectory,'index.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>${escape(manifest.title)} · Version ${escape(manifest.version)}</title><link rel="canonical" href="${pin.editionUrl}"><link rel="stylesheet" href="/gallery.css"><link rel="stylesheet" href="/reader.css"><link rel="stylesheet" href="/pdf-downloads.css"></head><body><header class="mobile-bar"><a href="/">← All handbooks</a><div class="mobile-actions"></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/">← All handbooks</a><div class="sidebar-meta"></div></aside><main id="main-content"><section class="chapter edition-details"><p><a href="/${pin.id}/">Read ${escape(manifest.title)}</a></p><h1>${escape(manifest.title)}</h1><p>Version ${escape(manifest.version)} · ${escape(manifest.date)} · ${manifest.pages} pages</p>${editionDownloadDetails(edition,variants.map(v=>({...v,publicUrl:`/${pin.id}/editions/v${manifest.version}/${basename(v.publicUrl)}`})))}<p><a href="/">All handbooks</a></p></section></main></div></body></html>`);
   validatePublicationFront(html,edition);
   await writeFile(resolve(output,pin.id,'index.html'),html);
-  await writeFile(resolve(root,'output/publications',pin.id+'.json'),JSON.stringify(edition,null,2)+'\n');
-  gallery=gallery.replace(pin.coverPlaceholder,renderGalleryCover(html));editions.push({pin,html});
+  await writeFile(resolve(output,'../publications',pin.id+'.json'),JSON.stringify(edition,null,2)+'\n');
+  gallery=gallery.replace(pin.coverPlaceholder,renderGalleryCover(html));
+  gallery=gallery.replace(new RegExp(`(<a class="handbook-card-link" href="/${pin.id}/"[^>]*>[\\s\\S]*?</a>)`),`$1${downloadLinks(edition,variants,{compact:true})}`);
+  validateDownloads(gallery,edition,variants);editions.push({pin,html});
 }
 for(const {pin,html} of editions)validateGalleryCover(gallery,'/'+pin.id+'/',html);
 validateGalleryPublications(gallery,books.map(book=>'/'+book.id+'/'));
+gallery=gallery.replace('</head>','<link rel="stylesheet" href="/pdf-downloads.css"></head>');
 await writeFile(resolve(output,'index.html'),gallery);
 await writeFile(resolve(output,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://handbooks.surfaces.systems/sitemap.xml\n');
 await writeFile(resolve(output,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+['/',...books.flatMap(book=>['/'+book.id+'/',new URL(book.editionUrl).pathname])].map(path=>`<url><loc>https://handbooks.surfaces.systems${path}</loc></url>`).join('')+'</urlset>\n');

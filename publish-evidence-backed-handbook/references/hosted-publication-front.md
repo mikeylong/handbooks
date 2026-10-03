@@ -24,3 +24,7 @@ The current gallery builder enforces this contract through `scripts/publication-
 Treat the shared navigation style as a publication requirement. The build must reject a missing return class, missing shared stylesheet, inline return-link overrides, or a broken gallery destination for every published title. Test those failures against newly built output; do not validate stale generated files. During browser review, compare computed font size, padding, and line height with the Production AI left-rail link, then verify the mobile return remains available.
 
 Every hosted reader must also pass [the shared appearance contract](hosted-appearance.md). Adding a gallery card or passing the front-page metadata checks does not establish light/dark image quality.
+
+## Paired PDF appearances
+
+Apply [PDF appearances](pdf-appearances.md) to explicit Daytime version and Late night version downloads, shared generation, retained releases, additive appearance revisions, exact-hash approval, cross-renderer proof and future editions. An appearance companion preserves its content edition and existing Daytime bytes. Browser printing stays Light. A failed companion blocks the initial three-title launch.

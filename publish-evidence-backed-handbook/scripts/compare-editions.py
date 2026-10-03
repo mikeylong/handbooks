@@ -269,8 +269,16 @@ def main() -> None:
     previous_metadata = metadata_view(previous_reader)
     candidate_metadata = metadata_view(candidate_reader)
     metadata_changed = previous_metadata != candidate_metadata
+    def content_metadata(value):
+        result = dict(value)
+        for suffix in (" · Daytime version", " · Late night version"):
+            if result["title"].endswith(suffix):
+                result["title"] = result["title"][:-len(suffix)]
+                break
+        return result
+    content_metadata_changed = content_metadata(previous_metadata) != content_metadata(candidate_metadata)
 
-    reader_facing_changed = any((substantive_text_changed, outline_changed, links_changed, metadata_changed))
+    reader_facing_changed = any((substantive_text_changed, outline_changed, links_changed, content_metadata_changed))
     summary = (
         "The candidate contains reader-facing changes that require semantic classification."
         if reader_facing_changed
@@ -343,6 +351,7 @@ def main() -> None:
             "outlineIncludingChangelogChanged": outline_navigation_changed,
             "substantiveLinksChanged": links_changed,
             "metadataChanged": metadata_changed,
+            "contentMetadataChanged": content_metadata_changed,
             "sourceChanged": source_changed,
         },
         "sourceSha256": source_hashes,
@@ -352,7 +361,7 @@ def main() -> None:
             "sourcePatch": "exact-source.patch" if source_hashes else None,
         },
         "decisionProjection": {
-            "excludedSurfaces": ["changelog pages", "contents and index pages", "changelog outline entries"],
+            "excludedSurfaces": ["changelog pages", "contents and index pages", "changelog outline entries", "exact PDF appearance title suffixes"],
             "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed.",
         },
         "limitations": [

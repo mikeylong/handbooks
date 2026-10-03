@@ -8,6 +8,10 @@ import os
 import sys
 _toolkit = Path(os.environ['HANDBOOK_PUBLISHING_TOOLKIT']).expanduser().resolve() if os.environ.get('HANDBOOK_PUBLISHING_TOOLKIT') else Path(__file__).resolve().parents[2]/'publish-evidence-backed-handbook'
 sys.path.insert(0,str(_toolkit/'scripts'))
+import json
+_book_root = Path(__file__).resolve().parents[1]
+os.environ.setdefault('HANDBOOK_BOOK_ROOT',str(_book_root))
+os.environ.setdefault('HANDBOOK_PDF_CONFIG',(_book_root/'pdf-config.json').read_text())
 from diagram_data import load_diagram
 from xml.sax.saxutils import escape
 
@@ -46,14 +50,15 @@ def _load_reference():
 
 
 guide = _load_reference()
+from reportlab_layout import OpticallyFitChapterIllustration, ConsultingLifecycle, ExposureLadder, paint_page
 guide.ROOT = ROOT
 # Tables must use an embedded default, including empty worksheet cells.
 from reportlab.platypus.tables import CellStyle
 CellStyle.fontname = guide.SERIF
 guide.CALLOUTS.update(
     {
-        "Field note": (colors.white, guide.INK),
-        "Client conversation": (colors.white, guide.INK),
+        "Field note": (guide.WHITE, guide.INK),
+        "Client conversation": (guide.WHITE, guide.INK),
     }
 )
 
@@ -96,83 +101,6 @@ SECTION_LABEL = guide.SECTION_LABEL
 COVER_CREDIT = guide.COVER_CREDIT
 
 
-class OpticallyFitChapterIllustration(Flowable):
-    """Scale each chapter plate from its visible ink instead of its white canvas."""
-
-    def __init__(self, number: int, width: float = CONTENT_W, height: float = 4.0 * inch):
-        super().__init__()
-        self.number = number
-        self.width = width
-        self.height = height
-
-    @staticmethod
-    def _ink_bounds(image: PILImage.Image) -> tuple[int, int, int, int]:
-        """Union meaningful dark components while ignoring isolated scan noise."""
-        grayscale = image.convert("L")
-        pixels = grayscale.load()
-        width, height = grayscale.size
-        visited = bytearray(width * height)
-        components: list[tuple[int, int, int, int]] = []
-
-        for y in range(height):
-            for x in range(width):
-                start = y * width + x
-                if visited[start] or pixels[x, y] >= 245:
-                    continue
-                visited[start] = 1
-                queue = deque([(x, y)])
-                count = 0
-                min_x = max_x = x
-                min_y = max_y = y
-                while queue:
-                    current_x, current_y = queue.popleft()
-                    count += 1
-                    min_x = min(min_x, current_x)
-                    max_x = max(max_x, current_x)
-                    min_y = min(min_y, current_y)
-                    max_y = max(max_y, current_y)
-                    for next_x, next_y in (
-                        (current_x - 1, current_y),
-                        (current_x + 1, current_y),
-                        (current_x, current_y - 1),
-                        (current_x, current_y + 1),
-                    ):
-                        if not (0 <= next_x < width and 0 <= next_y < height):
-                            continue
-                        offset = next_y * width + next_x
-                        if visited[offset] or pixels[next_x, next_y] >= 245:
-                            continue
-                        visited[offset] = 1
-                        queue.append((next_x, next_y))
-                if count >= 20:
-                    components.append((min_x, min_y, max_x + 1, max_y + 1))
-
-        if not components:
-            return (0, 0, width, height)
-        return (
-            min(bounds[0] for bounds in components),
-            min(bounds[1] for bounds in components),
-            max(bounds[2] for bounds in components),
-            max(bounds[3] for bounds in components),
-        )
-
-    def draw(self) -> None:
-        c = self.canv
-        c.saveState()
-        image_path = ROOT / "assets" / "chapter-art" / "print" / f"chapter-{self.number:02d}.png"
-        if not image_path.exists():
-            raise FileNotFoundError(f"Missing chapter illustration: {image_path}")
-
-        image_path = ROOT / 'assets/chapter-art/pdf' / f'chapter-{self.number:02d}.png'
-        image = ImageReader(str(image_path))
-        image_w, image_h = image.getSize()
-        scale = min((self.width - 6 * mm) / image_w, self.height / image_h)
-        draw_w, draw_h = image_w * scale, image_h * scale
-        c.drawImage(image, (self.width - draw_w) / 2, (self.height - draw_h) / 2,
-                    width=draw_w, height=draw_h, preserveAspectRatio=True, mask=None)
-        c.restoreState()
-
-
 def module_start(number: str, title: str, deck: str) -> list[Flowable]:
     """Use an optically fitted illustration plate on every chapter opener."""
     flowables = reference_module_start(number, title, deck)
@@ -201,87 +129,6 @@ class CompactTwoColumnTOC(TwoColumnTOC):
         return table
 
 
-class ConsultingLifecycle(Flowable):
-    """Seven-stage engagement loop in the field-guide visual language."""
-
-    def __init__(self, width: float = CONTENT_W, height: float = 1.72 * inch):
-        super().__init__()
-        self.width = width
-        self.height = height
-
-    def draw(self) -> None:
-        c = self.canv
-        c.saveState()
-        definition = load_diagram(ROOT, "ConsultingLifecycle", kind="sequence", count=7, feedback=True)
-        labels = [node["label"] for node in definition["nodes"]]
-        track_w = self.width / len(labels)
-        gutter = 8
-        box_w = track_w - gutter
-        box_h = 32
-        y = self.height / 2 - box_h / 2 + 5
-        for index, label in enumerate(labels):
-            x = index * track_w + gutter / 2
-            c.setStrokeColor(INK)
-            c.setLineWidth(0.65)
-            c.roundRect(x, y, box_w, box_h, 3, fill=0, stroke=1)
-            c.setFillColor(MID_GRAY)
-            c.setFont(SANS, 5.6)
-            c.drawString(x + 4, y + box_h - 8, str(index + 1))
-            c.setFillColor(INK)
-            c.setFont(SANS_BOLD, 6.1)
-            c.drawCentredString(x + box_w / 2, y + 11, label)
-            if index < len(labels) - 1:
-                next_x = (index + 1) * track_w + gutter / 2
-                line_start = x + box_w + 1.5
-                arrow_tip = next_x - 1.5
-                ay = y + box_h / 2
-                c.line(line_start, ay, arrow_tip, ay)
-                c.line(arrow_tip - 2.5, ay + 2, arrow_tip, ay)
-                c.line(arrow_tip - 2.5, ay - 2, arrow_tip, ay)
-        c.setFillColor(MID_GRAY)
-        c.setFont(SERIF_ITALIC, 7.1)
-        c.drawCentredString(
-            self.width / 2,
-            12,
-            definition["note"],
-        )
-        c.restoreState()
-
-
-class ExposureLadder(Flowable):
-    """A simple diagram showing how evidence earns wider exposure."""
-
-    def __init__(self, width: float = CONTENT_W, height: float = 1.8 * inch):
-        super().__init__()
-        self.width = width
-        self.height = height
-
-    def draw(self) -> None:
-        c = self.canv
-        c.saveState()
-        definition = load_diagram(ROOT, "ExposureLadder", kind="sequence", count=5, feedback=False)
-        labels = [(node["label"], node["detail"]) for node in definition["nodes"]]
-
-        step_w = self.width / len(labels)
-        for index, (title, verb) in enumerate(labels):
-            x = index * step_w
-            y = 10 + index * 13
-            h = 35
-            c.setStrokeColor(INK)
-            c.setFillColor(WHITE if index % 2 == 0 else PALE_GRAY)
-            c.rect(x + 2, y, step_w - 4, h, fill=1, stroke=1)
-            c.setFillColor(INK)
-            c.setFont(SANS_BOLD, 6.5)
-            c.drawCentredString(x + step_w / 2, y + 21, title)
-            c.setFont(SANS, 5.8)
-            c.setFillColor(MID_GRAY)
-            c.drawCentredString(x + step_w / 2, y + 10, verb)
-        c.setFont(SERIF_ITALIC, 7.1)
-        c.setFillColor(MID_GRAY)
-        c.drawString(2, self.height - 8, definition["note"])
-        c.restoreState()
-
-
 class ConsultingGuideTemplate(guide.GuideDocTemplate):
     def __init__(self, filename: str):
         super().__init__(filename)
@@ -301,6 +148,7 @@ class ConsultingGuideTemplate(guide.GuideDocTemplate):
 
     def _on_body_page(self, canvas, doc) -> None:
         canvas.saveState()
+        paint_page(canvas, PAGE_W, PAGE_H)
         self._set_metadata(canvas)
         canvas.setStrokeColor(LINE_GRAY)
         canvas.setLineWidth(0.4)
@@ -2678,24 +2526,12 @@ def build_story() -> list[Flowable]:
     )
 
 
-def finalize_pdf(path):
-    from pypdf import PdfReader, PdfWriter
-    from pypdf.generic import DictionaryObject,ArrayObject,NameObject,NumberObject
-    reader=PdfReader(path,strict=True);writer=PdfWriter(clone_from=reader);writer.pdf_header=reader.pdf_header
-    opener=next(i for i,p in enumerate(reader.pages) if 'CHAPTER 01' in (p.extract_text() or ''))
-    writer._root_object[NameObject('/PageLabels')]=DictionaryObject({NameObject('/Nums'):ArrayObject([NumberObject(0),DictionaryObject({NameObject('/S'):NameObject('/r')}),NumberObject(opener),DictionaryObject({NameObject('/S'):NameObject('/D'),NameObject('/St'):NumberObject(1)})])})
-    writer.add_metadata({'/CreationDate':'D:20261001220000Z','/ModDate':'D:20261001220000Z'})
-    writer.write(path)
-
-
 def build_pdf() -> Path:
-    OUTPUT_PDF.parent.mkdir(parents=True, exist_ok=True)
-    doc = ConsultingGuideTemplate(str(OUTPUT_PDF))
-    from reportlab.pdfgen.canvas import Canvas
-    doc.multiBuild(build_story(), canvasmaker=lambda *a, **kw: Canvas(*a, **dict(kw, invariant=1, pdfVersion=(1,7), initialFontName=SERIF)))
-    finalize_pdf(OUTPUT_PDF)
-    return OUTPUT_PDF
+    raise RuntimeError('Use the toolkit build-pdf-variants.mjs with explicit --book, --config, --theme and --output. Released outputs are immutable.')
 
 
 if __name__ == "__main__":
-    print(build_pdf())
+    import argparse, subprocess
+    parser=argparse.ArgumentParser();parser.add_argument('--theme',choices=['light','dark'],required=True);parser.add_argument('--output',required=True)
+    args=parser.parse_args()
+    subprocess.run(['node',str(_toolkit/'scripts/build-pdf-variants.mjs'),'--book',str(_book_root),'--config',str(_book_root/'pdf-config.json'),'--theme',args.theme,'--output',args.output,'--python',sys.executable],check=True)

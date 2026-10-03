@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "production-ai-engineering",
+  "title": "Production AI Engineering",
+  "version": "1.4.0",
+  "date": "2026-09-30",
+  "renderer": "chromium",
+  "releasedPdf": "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf",
+  "releasedSha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0",
+  "pages": 105,
+  "story": null,
+  "source": "handbook/index.html",
+  "fonts": "handbook/assets/fonts",
+  "pageSizePoints": [
+    420,
+    594.96
+  ],
+  "runningDeck": "FROM OPPORTUNITY TO GOVERNED DECISION",
+  "author": "Michael Long",
+  "subtitle": "A Handbook for Building Reliable LLM Systems",
+  "chapters": [
+    "Build the System Around the Model",
+    "Treat Context as a Budget",
+    "Prefill and Decode Are Different Jobs",
+    "Choose the Optimization That Fits",
+    "Turn Model Output into a Contract",
+    "Put Clear Limits on Agents",
+    "Keep Retrieval Grounded",
+    "Make Evals the Release Gate",
+    "Trace the Whole User Journey",
+    "Build Safety into the Architecture",
+    "Choose What to Change",
+    "Design for Production Failure"
+  ],
+  "runningFont": "/System/Library/Fonts/Supplemental/Arial.ttf",
+  "chapterCount": 12,
+  "authoring": {
+    "command": [
+      "node",
+      "handbook/build-handbook.mjs"
+    ],
+    "inputs": [
+      "handbook",
+      "AI_ENGINEERING_FIELD_GUIDE.md",
+      "publication.json",
+      "reader-edition.json",
+      "release-manifest.json",
+      "automation/automation.toml",
+      "automation/release-policy.json",
+      "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf"
+    ],
+    "frozenChangelog": "handbook/releases/version-1.4.0.json",
+    "targetChangelog": "handbook/changelog.json",
+    "date": "2026-09-30"
+  }
+}

@@ -44,6 +44,7 @@ Identify the canonical source, previous approved PDF, candidate output path, int
 - For external research or claim changes, read `references/research-and-evidence.md`.
 - For edition comparison, changelogs, versioning, or publication, read `references/edition-and-release.md`.
 - Before calling a candidate ready, read `references/quality-gates.md`.
+- For PDF generation, appearance companions, new editions or future titles, read [references/pdf-appearances.md](references/pdf-appearances.md). Both explicit downloads use shared PDF generation and validation.
 - For hosted reader creation, new editions, future titles, or shared rendering changes, read [references/shared-reader-workflow.md](references/shared-reader-workflow.md). Consolidate reusable code into the skill before extending duplicated builders.
 - For hosted handbooks at handbooks.surfaces.systems, read `references/hosted-publication-front.md` and `references/hosted-appearance.md`. Every chapter opener requires an accepted light/dark artwork pair: retain the original light/print art and author a separate dark screen illustration with a transparent outer background. Follow `references/illustration-workflow.md` for acquisition and provenance. Validate the cover, sidebar, shared appearance controls, and illustrations before publication.
 

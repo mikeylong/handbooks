@@ -80,3 +80,7 @@ Report:
 - gated-source limitations;
 - whether the canonical source and production PDF remained unchanged;
 - every publication action actually completed and every action not run.
+
+## Paired PDF appearances
+
+Apply [PDF appearances](pdf-appearances.md) to explicit Daytime version and Late night version downloads, shared generation, retained releases, additive appearance revisions, exact-hash approval, cross-renderer proof and future editions. An appearance companion preserves its content edition and existing Daytime bytes. Browser printing stays Light. A failed companion blocks the initial three-title launch.

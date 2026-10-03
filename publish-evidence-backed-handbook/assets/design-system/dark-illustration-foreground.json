@@ -1,0 +1,51 @@
+{
+  "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca",
+  "generator": "built-in image_gen.imagegen; model identifier not exposed",
+  "prompt": "Use case: background-extraction. Asset: transparent dark-theme chapter engraving.\nImage 1 is the edit target: the newly authored dark illustration approved for this collection. Remove ONLY its outer charcoal paper/background and negative-space background between independent object parts. Deliver genuine alpha transparency, not a checkerboard or black fill. Keep the apparatus, every object, position, crop, linework, pale lit planes, dark eyes/dial marks, dark opaque materials, mechanical recesses, and physically modeled shadows unchanged. Dark material inside each solid object must stay opaque, not be mistaken for background. Preserve the original aspect ratio and the clean contour without a halo or fringe. Do not invert, redraw, add props, recolor, brighten shadows, add text, or alter the tonal modeling. The retained dark foreground must remain naturally shaded and readable when displayed on a #191918 webpage.",
+  "dimensions": [
+    1331,
+    1181
+  ],
+  "transparencyReview": {
+    "mode": "RGBA",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "pageBackground": "#191918",
+    "compositedCornerPixels": [
+      [
+        25,
+        25,
+        24,
+        255
+      ],
+      [
+        25,
+        25,
+        24,
+        255
+      ],
+      [
+        25,
+        25,
+        24,
+        255
+      ],
+      [
+        25,
+        25,
+        24,
+        255
+      ]
+    ]
+  },
+  "acquisitionDate": "2026-10-02",
+  "purpose": "Authored turbine foreground paired with the canonical Light turbine; opaque PDF-paper compositing preserves the reference frame."
+}

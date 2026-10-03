@@ -126,6 +126,10 @@ VALIDATE_REVIEW_STATUS="$WORKSPACE/automation/validate-review-status.mjs"
 AUTOMATION_CONFIG="$WORKSPACE/automation/automation.toml"
 RELEASE_POLICY="$WORKSPACE/automation/release-policy.json"
 RENDER_PDF="$WORKSPACE/automation/render-handbook-pdf.mjs"
+PUBLISHING_TOOLKIT="${HANDBOOK_PUBLISHING_TOOLKIT:-${WORKSPACE:h}/publish-evidence-backed-handbook}"
+PUBLISHING_TOOLKIT="${PUBLISHING_TOOLKIT:A}"
+export HANDBOOK_PUBLISHING_TOOLKIT="$PUBLISHING_TOOLKIT"
+PDF_CONFIG="$WORKSPACE/pdf-config.json"
 CANONICAL_SOURCE="$WORKSPACE/AI_ENGINEERING_FIELD_GUIDE.md"
 PRODUCTION_PDF="$WORKSPACE/output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf"
 DEFAULT_CANDIDATE_ROOT="$WORKSPACE/output/candidates"
@@ -223,8 +227,10 @@ write_file_hash() {
 }
 
 write_canonical_manifest() {
+  "$NODE_BIN" "$WORKSPACE/automation/verify-publishing-toolkit.mjs" "$PUBLISHING_TOOLKIT" || return 1
   {
-    /usr/bin/printf '%s\n' "$CANONICAL_SOURCE" "$PRODUCTION_PDF"
+    /usr/bin/printf '%s\n' "$CANONICAL_SOURCE" "$PRODUCTION_PDF" "$PDF_CONFIG" "$WORKSPACE/publication.json"
+    "$NODE_BIN" -e 'const fs=require("node:fs"),path=require("node:path"),root=process.argv[1];const manifest=JSON.parse(fs.readFileSync(path.join(root,"references/specimen/manifest.json")));for(const name of ["references/specimen/manifest.json",...Object.keys(manifest.inputs)])console.log(path.join(root,name));' "$PUBLISHING_TOOLKIT"
     /usr/bin/find "$WORKSPACE/handbook" -type f \
       ! -path '*/__pycache__/*' \
       -print
@@ -599,6 +605,7 @@ validate_edit_scope() {
 }
 
 materialize_candidate() {
+  /bin/cp "$PRISTINE_DIR/publication.json" "$BUILD_DIR/publication.json" || return 1
   # Keep the download target available at the same relative path as the site.
   /bin/mkdir -p "$BUILD_DIR/output/pdf" || return 1
   /bin/cp "$PRODUCTION_PDF" "$BUILD_DIR/output/pdf/${PRODUCTION_PDF:t}" || return 1
@@ -1096,7 +1103,8 @@ run_phase "pdf_render" "$RUN_DIR/pdf-render.log" \
 run_phase "pdf_finalize" "$RUN_DIR/pdf-finalize.log" \
   run_python "$BUILD_DIR/handbook/finalize-pdf.py" \
     --input "$RUN_DIR/raw.pdf" \
-    --output "$CANDIDATE_PDF"
+    --output "$CANDIDATE_PDF" \
+    --config "$PDF_CONFIG"
 run_phase "pdf_validation" "$RUN_DIR/pdf-validation.log" \
   run_python "$BUILD_DIR/handbook/validate-pdf.py" "$CANDIDATE_PDF"
 run_phase "page_map" "$RUN_DIR/page-map.log" \

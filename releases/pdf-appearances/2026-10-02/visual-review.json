@@ -1,0 +1,88 @@
+{
+  "status": "agent-review-passed",
+  "ownerCandidateApproval": null,
+  "scope": "Whole-document paired sheets plus reading-size role samples; no publication approval inferred.",
+  "books": [
+    {
+      "book": "production-ai-engineering",
+      "agentVisualReview": "passed",
+      "ownerCandidateApproval": null,
+      "variants": [
+        {
+          "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf",
+          "sha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0",
+          "pages": 105,
+          "proofDirectory": "deployments/light-dark-pdfs/proof/production-ai-engineering/daytime",
+          "rendererProofCounts": {
+            "poppler": 105,
+            "pdfkit": 105
+          }
+        },
+        {
+          "path": "candidates/light-dark-pdfs/production-ai-engineering/v4/production-ai-engineering-v1.4.0-2026-09-30-late-night-r1.pdf",
+          "sha256": "c866ef08809167d9038ceb40c3132a3a5583718f29a9341b38a0dea8cb54fade",
+          "pages": 105,
+          "proofDirectory": "deployments/light-dark-pdfs/proof/production-ai-engineering/late-night-v4",
+          "rendererProofCounts": {
+            "poppler": 105,
+            "pdfkit": 105
+          }
+        }
+      ]
+    },
+    {
+      "book": "ai-evaluation",
+      "agentVisualReview": "passed",
+      "ownerCandidateApproval": null,
+      "variants": [
+        {
+          "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
+          "sha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+          "pages": 100,
+          "proofDirectory": "deployments/light-dark-pdfs/proof/ai-evaluation/daytime",
+          "rendererProofCounts": {
+            "poppler": 100,
+            "pdfkit": 100
+          }
+        },
+        {
+          "path": "candidates/light-dark-pdfs/ai-evaluation/v2/ai-evaluation-v1.0.0-2026-10-01-late-night-r1.pdf",
+          "sha256": "bc9bbaaace135a3b0f5a4a711d4f72a30888bdd9749c680153834271f44d0ce2",
+          "pages": 100,
+          "proofDirectory": "deployments/light-dark-pdfs/proof/ai-evaluation/late-night-v2",
+          "rendererProofCounts": {
+            "poppler": 100,
+            "pdfkit": 100
+          }
+        }
+      ]
+    },
+    {
+      "book": "ai-consulting",
+      "agentVisualReview": "passed",
+      "ownerCandidateApproval": null,
+      "variants": [
+        {
+          "path": "ai-consulting/output/pdf/ai-consulting-v1.0.0-2026-10-01.pdf",
+          "sha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+          "pages": 138,
+          "proofDirectory": "deployments/light-dark-pdfs/proof/ai-consulting/daytime",
+          "rendererProofCounts": {
+            "poppler": 138,
+            "pdfkit": 138
+          }
+        },
+        {
+          "path": "candidates/light-dark-pdfs/ai-consulting/v2/ai-consulting-v1.0.0-2026-10-01-late-night-r1.pdf",
+          "sha256": "181576ce86aac2ba73ab6d5c7aabad43ea5e1a04d10956286c2846653ed86fd7",
+          "pages": 138,
+          "proofDirectory": "deployments/light-dark-pdfs/proof/ai-consulting/late-night-v2",
+          "rendererProofCounts": {
+            "poppler": 138,
+            "pdfkit": 138
+          }
+        }
+      ]
+    }
+  ]
+}
