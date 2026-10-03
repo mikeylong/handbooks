@@ -227,6 +227,7 @@ write_file_hash() {
 }
 
 write_canonical_manifest() {
+  "$NODE_BIN" "$WORKSPACE/automation/verify-publishing-toolkit.mjs" "$PUBLISHING_TOOLKIT" || return 1
   {
     /usr/bin/printf '%s\n' "$CANONICAL_SOURCE" "$PRODUCTION_PDF" "$PDF_CONFIG" "$WORKSPACE/publication.json"
     "$NODE_BIN" -e 'const fs=require("node:fs"),path=require("node:path"),root=process.argv[1];const manifest=JSON.parse(fs.readFileSync(path.join(root,"references/specimen/manifest.json")));for(const name of ["references/specimen/manifest.json",...Object.keys(manifest.inputs)])console.log(path.join(root,name));' "$PUBLISHING_TOOLKIT"

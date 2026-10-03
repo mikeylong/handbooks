@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify shared toolkit imports and finalization in the weekly copied-book layout."""
 from pathlib import Path
-import json, os, shutil, subprocess, sys, tempfile
+import hashlib, json, os, shutil, subprocess, sys, tempfile
 from reportlab.pdfgen.canvas import Canvas
 from pypdf import PdfReader
 
@@ -15,6 +15,15 @@ def run(args, env, succeeds=True):
 
 with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     root = Path(directory)
+    verifier = BOOK/'automation/verify-publishing-toolkit.mjs'
+    run(['node',str(verifier),str(TOOLKIT)], os.environ)
+    fixture = root/'toolkit'
+    (fixture/'references/specimen').mkdir(parents=True)
+    (fixture/'input.txt').write_text('governed')
+    (fixture/'references/specimen/manifest.json').write_text(json.dumps({'inputs':{'input.txt':hashlib.sha256(b'governed').hexdigest()}}))
+    run(['node',str(verifier),str(fixture)], os.environ)
+    (fixture/'input.txt').write_text('drift before preparation')
+    run(['node',str(verifier),str(fixture)], os.environ,False)
     build = root / 'build-source'
     shutil.copytree(BOOK/'handbook', build/'handbook', ignore=shutil.ignore_patterns('__pycache__'))
     shutil.copyfile(BOOK/'AI_ENGINEERING_FIELD_GUIDE.md', build/'AI_ENGINEERING_FIELD_GUIDE.md')
