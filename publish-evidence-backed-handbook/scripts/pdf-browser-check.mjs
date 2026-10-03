@@ -1,3 +1,21 @@
+async function checkTocLayout(page) {
+ if(await page.locator('.mobile-bar [data-pdf-downloads]').count()) throw Error('PDF downloads remain in mobile header');
+ if(!(await page.locator('#toc-dialog .dialog-footer [data-pdf-downloads]').count())) throw Error('Missing Contents PDF downloads');
+ await page.evaluate(() => document.fonts.ready);
+ const failures = await page.locator('#toc-dialog nav a').evaluateAll(links => links.flatMap(link => {
+  const title = link.querySelector('.toc-title') || link;
+  const style = getComputedStyle(title), width = title.clientWidth;
+  const range = document.createRange();range.selectNodeContents(title);
+  const lines = new Set([...range.getClientRects()].filter(r => r.width > 0 && r.height > 0).map(r => Math.round(r.top))).size;
+  const canvas = document.createElement('canvas').getContext('2d');canvas.font = `${style.fontSize} ${style.fontFamily}`;
+  const text = title.textContent.trim().replace(/\s+/g,' ');
+  const expected = Math.ceil(canvas.measureText(text).width / Math.max(1,width)) + 1;
+  return width < link.clientWidth * .6 || lines > expected || link.scrollWidth > link.clientWidth + 1
+   ? [{text,width,linkWidth:link.clientWidth,lines,expected}] : [];
+ }));
+ if(failures.length) throw Error('Contents titles collapse or overflow: '+JSON.stringify(failures));
+}
+
 /** Shared browser QA. Supply records and paths through the host Playwright CLI. */
 export async function checkPdfBrowser(page,{baseUrl,books,screenshotDirectory,downloadDirectory}){
  const records=[];const paths=['/',...books.flatMap(b=>[`/${b.id}/`,`/${b.id}/editions/v${b.version}/`,`/${b.id}/editions/v${b.version}`])];
@@ -27,7 +45,7 @@ export async function checkPdfBrowser(page,{baseUrl,books,screenshotDirectory,do
    if(/^\/[a-z-]+\/$/.test(path)){
     await page.locator('.cover a[href="#contents"]').click();if(!page.url().endsWith('#contents'))throw Error('Explore failed');
     await page.locator('[data-open-search]:visible').first().click();if(!(await page.locator('#search-dialog').isVisible()))throw Error('Search failed');await page.keyboard.press('Escape');
-    const toc=page.locator('[data-open-toc]:visible').first();if(await toc.count()){await toc.click();if(!(await page.locator('#toc-dialog').isVisible()))throw Error('Contents failed');await page.keyboard.press('Escape');}
+    const toc=page.locator('[data-open-toc]:visible').first();if(await toc.count()){await toc.click();if(!(await page.locator('#toc-dialog').isVisible()))throw Error('Contents failed');await checkTocLayout(page);await page.keyboard.press('Escape');}
     await page.emulateMedia({media:'print'});await page.waitForFunction(()=>[...document.querySelectorAll('figure[data-artwork-paired] img')].every(i=>!i.currentSrc.includes('/assets/dark/')));
     if(await page.evaluate(()=>getComputedStyle(document.body).backgroundColor)!=='rgb(255, 255, 255)')throw Error('Browser printing is dark');await page.emulateMedia({media:'screen'});
     await page.locator('a.handbooks-return:visible,a.handbooks-return-mobile:visible').first().click();if(new URL(page.url()).pathname!=='/')throw Error('Gallery return failed');
