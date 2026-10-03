@@ -156,7 +156,7 @@ def main() -> None:
     parser.add_argument(
         "--disable-browser-sandbox",
         action="store_true",
-        help="Disable the browser sandbox only inside an already isolated runner",
+        help="Disable the browser sandbox only inside an already isolated environment",
     )
     parser.add_argument(
         "--update-canonical",
