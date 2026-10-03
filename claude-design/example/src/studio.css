@@ -1,0 +1,225 @@
+.teaching-label,
+.test-controls {
+  padding: var(--sds-size-space-300);
+  background: var(--sds-color-background-default-secondary);
+  font: var(--sds-font-body-small);
+}
+.app-shell {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  min-height: 90vh;
+}
+nav {
+  border-right: 1px solid var(--sds-color-border-default-default);
+  padding: var(--sds-size-space-400);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-600);
+}
+nav a {
+  color: var(--sds-color-text-default-default);
+}
+main {
+  min-width: 0;
+  padding: var(--sds-size-space-600);
+}
+h1 {
+  font: var(--sds-font-heading);
+  font-size: var(--sds-typography-scale-06);
+  margin: var(--sds-size-space-200) 0;
+}
+h2 {
+  font: var(--sds-font-subheading);
+  margin: var(--sds-size-space-200) 0;
+}
+p {
+  margin: var(--sds-size-space-200) 0;
+}
+header,
+.sheet-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sds-size-space-300);
+  align-items: center;
+}
+.actions,
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sds-size-space-200);
+  align-items: center;
+}
+.status {
+  padding: var(--sds-size-space-300) 0;
+  min-height: 50px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: var(--sds-size-space-600);
+}
+.canvas,
+aside,
+.sheet {
+  border: 1px solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+  padding: var(--sds-size-space-400);
+  min-width: 0;
+}
+.canvas {
+  overflow: auto;
+}
+.graph {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: var(--sds-size-space-400);
+  padding: var(--sds-size-space-400) 0;
+}
+.linear {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-300);
+}
+.pipeline-node {
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  white-space: normal !important;
+  text-align: left;
+  touch-action: none;
+}
+.pipeline-node span {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.pipeline-node small {
+  font: var(--sds-font-body-small);
+}
+.connections {
+  font: var(--sds-font-body-small);
+}
+.connections p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sds-size-space-200);
+}
+.connect-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--sds-size-space-200);
+  align-items: end;
+  margin: var(--sds-size-space-300) 0;
+}
+.sheet {
+  margin-top: var(--sds-size-space-600);
+  overflow: auto;
+}
+.sheet input[type="range"] {
+  width: 160px;
+}
+.dropzone {
+  border: 1px dashed var(--sds-color-border-default-default);
+  padding: var(--sds-size-space-400);
+}
+:focus-visible,
+[data-focus-visible] {
+  outline: var(--sds-size-stroke-focus-ring) solid
+    var(--global-focus-ring-color);
+  outline-offset: 2px;
+}
+@media (max-width: 1200px) {
+  .app-shell {
+    grid-template-columns: 130px 1fr;
+  }
+  main {
+    padding: var(--sds-size-space-300);
+  }
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: var(--sds-size-space-300);
+  }
+  header {
+    align-items: flex-start;
+  }
+  .connect-controls {
+    grid-template-columns: 1fr;
+  }
+  .sheet-heading {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1023px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sds-size-space-400);
+  }
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+  }
+  .graph {
+    grid-template-columns: 1fr;
+  }
+  .sheet {
+    max-height: 380px !important;
+  }
+  .toolbar {
+    gap: var(--sds-size-space-100);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.workspace {
+  height: min(54vh, 490px);
+}
+.canvas,
+aside {
+  overflow: auto;
+}
+.pipeline-node {
+  width: 100%;
+}
+@media (max-width: 1023px) {
+  .workspace {
+    height: auto;
+  }
+}
+
+.sheet-heading {
+  position: sticky;
+  top: 0;
+  background: var(--sds-color-background-default-default);
+  z-index: 1;
+}
+.sheet {
+  scroll-padding-top: 80px;
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.sheet-heading {
+  position: static;
+  flex-shrink: 0;
+}
+.sheet-body {
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+  scroll-padding-top: 24px;
+}

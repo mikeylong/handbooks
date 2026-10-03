@@ -1,0 +1,538 @@
+{
+  "previous_cutoff": "2026-08-05",
+  "research_access_date": "2026-10-02",
+  "evidence_mode": "Documentation refresh; no hands-on product workflow validation",
+  "sources": [
+    {
+      "id": "A1",
+      "title": "Get started with Claude Design",
+      "publisher": "Anthropic",
+      "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Where you can use Claude Design; Export and share; Usage and pricing; Known limitations",
+      "limitation": "Live help article; relative update time only. General Design guidance may not describe every /design artifact.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "A2",
+      "title": "Set up your design system in Claude Design",
+      "publisher": "Anthropic",
+      "url": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Create a design system; Manage your design systems; Set up a design system at claude.ai/design",
+      "limitation": "Integrated and standalone instructions coexist. Migration and cleanup were not executed.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "A3",
+      "title": "Artifacts admin guide for Team and Enterprise plans",
+      "publisher": "Anthropic",
+      "url": "https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Templates; custom roles; design systems; Monitor usage; Data handling and privacy",
+      "limitation": "Artifact-level compliance recording is distinct from standalone audit logs. Actual tenant settings unobserved.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "A4",
+      "title": "Claude Design admin guide for Team and Enterprise plans",
+      "publisher": "Anthropic",
+      "url": "https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Turn on Claude Design for your organization",
+      "limitation": "Article explicitly scopes standalone settings separately from integrated Artifacts controls.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "A5",
+      "title": "Commands",
+      "publisher": "Anthropic",
+      "url": "https://code.claude.com/docs/en/commands",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Built-in commands: /design, /design-login, /design-sync",
+      "limitation": "CLI reference is more specific than broad product/help wording. Version and provider requirements documented, not tested.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "A6",
+      "title": "Share session output as artifacts",
+      "publisher": "Anthropic",
+      "url": "https://code.claude.com/docs/en/artifacts",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Start from a Slides, Design, or Docs template; Draft a design canvas; Availability; Review the audit log",
+      "limitation": "A /design artifact is documented as artboards. Do not infer interactive prototype/export parity from standalone Design.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "A7",
+      "title": "Using Claude Design for prototypes and UX",
+      "publisher": "Anthropic",
+      "url": "https://academy.claude.com/tutorials/using-claude-design-for-prototypes-and-ux",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Connecting your codebase; Hand off to Claude Code",
+      "limitation": "Original claude.com tutorial redirects here. Default bundle contents documented; export manifest still unobserved.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "A8",
+      "title": "Claude Design product page",
+      "publisher": "Anthropic",
+      "url": "https://claude.com/product/design",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official product/maintainer source",
+      "access": "Complete relevant text via web tool",
+      "locator": "FAQ: plans; access; design systems",
+      "limitation": "Broad all-paid-plans wording says admins must enable. Prefer precise plan defaults in A1-A4. Marketing claims are not quality proof.",
+      "disposition": "contextual"
+    },
+    {
+      "id": "A9",
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "access_date": "2026-10-02",
+      "publication_date": "2026-04-17 (historical launch)",
+      "authority": "Official product/maintainer source",
+      "access": "Complete relevant text via web tool",
+      "locator": "Handoff to Claude Code; Export anywhere",
+      "limitation": "Historical launch context; does not govern current setup or plan controls.",
+      "disposition": "contextual"
+    },
+    {
+      "id": "F1",
+      "title": "Figma MCP Server: Introduction",
+      "publisher": "Figma",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "How to connect",
+      "limitation": "Use current remote tools and skills. Capability documentation does not prove library reuse in a generated file.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "F2",
+      "title": "Set up the remote server (recommended)",
+      "publisher": "Figma",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Claude Code: plugin and manual setup",
+      "limitation": "Setup commands were not installed or authenticated in this stage.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "F3",
+      "title": "Write to canvas",
+      "publisher": "Figma",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Get started; Current limitations",
+      "limitation": "Full seat and file edit permission required; image assets and custom fonts unsupported; 20kb output response limit; manual component publication before Code Connect completes.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "F4",
+      "title": "Code to canvas",
+      "publisher": "Figma",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Get started; Supported Clients",
+      "limitation": "Drafts exception permits any seat; existing file outside Drafts needs Full plus edit permission. Capture is distinct from library identity.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "F5",
+      "title": "Rate limits & access",
+      "publisher": "Figma",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Who can access; permission errors",
+      "limitation": "Limits vary by seat/plan and may change. HTML text flattens quota table ambiguously; no exact Dev/Full quota transcribed. Runtime whoami and current table must be checked.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "F6",
+      "title": "Code Connect: Introduction",
+      "publisher": "Figma",
+      "url": "https://developers.figma.com/docs/code-connect/",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Availability; Template files; Legacy framework-specific APIs",
+      "limitation": "Dev or Full on Organization/Enterprise. Template approach recommended; existing SDS mappings are separate versioned inputs.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "F7",
+      "title": "Getting started with Code Connect CLI",
+      "publisher": "Figma",
+      "url": "https://developers.figma.com/docs/code-connect/quickstart-guide/",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "Before you begin; Requirements; Write template files",
+      "limitation": "Node 18+ and Code Connect Write/File content Read token scopes. Publishing mappings is an external write requiring project authority.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "F8",
+      "title": "Code Connect integration",
+      "publisher": "Figma",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official documentation",
+      "access": "Complete relevant text via web tool",
+      "locator": "CLI mappings; UI mappings",
+      "limitation": "CLI snippets can omit imports if source/imports missing. UI mappings do not include full snippets by default.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "F9",
+      "title": "Simple Design System (alpha)",
+      "publisher": "Figma",
+      "url": "https://github.com/figma/sds",
+      "access_date": "2026-10-02",
+      "publication_date": "Not stated in inspected current body",
+      "authority": "Official product/maintainer source",
+      "access": "Complete relevant text via web tool",
+      "locator": "Structure; Connecting this repo to a duplicated Figma file",
+      "limitation": "README rechecked; historical 396-component inventory and node IDs not re-measured. Stage 2 must pin and inspect its chosen revision.",
+      "disposition": "accepted"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Design is available in conversations, Artifacts and standalone; record which surface is used.",
+      "source_ids": [
+        "A1",
+        "A8"
+      ],
+      "target": "Orientation; README; Setup",
+      "evidence_kind": "Documentation",
+      "limitation": "No surface opened in stage 1.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C02",
+      "claim": "Pro/Max/Team defaults and Enterprise enablement; Design, Design systems, and standalone controls are separate.",
+      "source_ids": [
+        "A1",
+        "A2",
+        "A3",
+        "A4"
+      ],
+      "target": "Before you begin; Chapter 3; Setup; Checklist",
+      "evidence_kind": "Documentation",
+      "limitation": "Tenant access and role assignment untested; A8 is less precise.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C03",
+      "claim": "/design-login authorizes /design-sync; /design-sync converts and uploads React systems, with optional hint and potentially hours for first verification.",
+      "source_ids": [
+        "A5",
+        "A2"
+      ],
+      "target": "Chapter 3; Setup; Prompt pack",
+      "evidence_kind": "Documentation",
+      "limitation": "Upload effects and code conversion fidelity untested. Manual Design MCP registration is absent from current reviewed instructions; no claim that endpoint is retired.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C04",
+      "claim": "/design drafts artboards, requires v2.1.265+, enabled Design template and artifact-capable session.",
+      "source_ids": [
+        "A5",
+        "A6"
+      ],
+      "target": "Chapter 3; Setup; Prompt pack",
+      "evidence_kind": "Documentation",
+      "limitation": "Broad A1 /design import/export/sync wording is not a detailed CLI contract.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C05",
+      "claim": "Claude Code artifact publishing requires claude.ai login, supported plan/provider/policy; API-key-only sessions cannot publish.",
+      "source_ids": [
+        "A6",
+        "A5"
+      ],
+      "target": "Before you begin; Setup; Checklist",
+      "evidence_kind": "Documentation",
+      "limitation": "No credentials, settings or provider were changed.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C06",
+      "claim": "React product systems use /design-sync; brand systems can be created in chat; manage Settings > Design systems.",
+      "source_ids": [
+        "A2"
+      ],
+      "target": "Chapter 3; Setup",
+      "evidence_kind": "Documentation",
+      "limitation": "Import correctness and exact source component reuse require samples.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C07",
+      "claim": "Standalone organization onboarding/Published and integrated migration/default selection are separate paths.",
+      "source_ids": [
+        "A2",
+        "A3"
+      ],
+      "target": "Chapter 3; Setup; Checklist",
+      "evidence_kind": "Documentation",
+      "limitation": "No system published, default set, or migration performed.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C08",
+      "claim": "Design exports include ZIP/PDF/PPTX/HTML and Code handoff; Google Slides is standalone-only; /design artboard PNG/PDF is a separate documented export.",
+      "source_ids": [
+        "A1",
+        "A6"
+      ],
+      "target": "Chapter 9; Setup; Prompt pack; Handoff",
+      "evidence_kind": "Documentation",
+      "limitation": "Actual export controls and usable package require stage 2; no native Figma export established.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C09",
+      "claim": "Tutorial documents default bundle with files, chat and README plus URL prompt and Web option. Inspect actual contents before handoff.",
+      "source_ids": [
+        "A7",
+        "A1"
+      ],
+      "target": "Chapter 9; Handoff; Checklist",
+      "evidence_kind": "Documentation",
+      "limitation": "Default bundle content not observed; exactness and recipient access untested.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C10",
+      "claim": "No Design version history yet; save request is documented but export reviewed baseline independently.",
+      "source_ids": [
+        "A1"
+      ],
+      "target": "Chapter 3; Prompt pack; Checklist",
+      "evidence_kind": "Documentation plus author practice",
+      "limitation": "No guarantee of reliable restore, complete history or conflict resolution.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C11",
+      "claim": "Comments, multi-editor reliability, large repositories, mobile editing and incomplete imports have documented limits.",
+      "source_ids": [
+        "A1"
+      ],
+      "target": "Appendix E; Setup; Checklist",
+      "evidence_kind": "Documentation",
+      "limitation": "No runtime incidence tested.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C12",
+      "claim": "Usage shares Claude limits, with no separate Design allowance; billing differs by Enterprise arrangement.",
+      "source_ids": [
+        "A1",
+        "A3"
+      ],
+      "target": "Appendix E; Setup",
+      "evidence_kind": "Documentation",
+      "limitation": "No price or tenant allowance inferred.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C13",
+      "claim": "Persistent assets, unsupported Design residency and special-configuration restrictions need tenant review.",
+      "source_ids": [
+        "A3"
+      ],
+      "target": "Before you begin; Appendix E; Checklist",
+      "evidence_kind": "Documentation",
+      "limitation": "Tenant governance requirements unobserved.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C14",
+      "claim": "Standalone audit logs unsupported; integrated artifact-level compliance recording is documented separately.",
+      "source_ids": [
+        "A3",
+        "A6"
+      ],
+      "target": "Appendix E; Handoff",
+      "evidence_kind": "Documentation",
+      "limitation": "Do not interpret as complete edit/comment event auditability.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C15",
+      "claim": "Remote Figma plugin bundles server/skills; manual HTTP endpoint with /mcp OAuth is supported.",
+      "source_ids": [
+        "F1",
+        "F2"
+      ],
+      "target": "Setup; Chapter 10",
+      "evidence_kind": "Documentation",
+      "limitation": "No installation/authentication executed.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C16",
+      "claim": "Figma read permission differs from native write; use_figma requires Full seat and edit permission for existing files.",
+      "source_ids": [
+        "F3",
+        "F5"
+      ],
+      "target": "Chapter 2; Chapter 10; Setup; Prompt pack",
+      "evidence_kind": "Documentation",
+      "limitation": "Historical Community account denial is not a universal editor-only read requirement.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C17",
+      "claim": "Native write limits include 20kb responses, no image assets/custom fonts, manual component publication.",
+      "source_ids": [
+        "F3"
+      ],
+      "target": "Chapter 10; Appendix E; Setup",
+      "evidence_kind": "Documentation",
+      "limitation": "Limits are tool-specific, not blanket limits on all Figma workflows.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C18",
+      "claim": "Code-to-canvas uses generate_figma_design; any seat in Drafts, Full+edit outside Drafts.",
+      "source_ids": [
+        "F4"
+      ],
+      "target": "Chapter 10; Setup; Prompt pack",
+      "evidence_kind": "Documentation",
+      "limitation": "Editable layers alone do not establish component instances or variable bindings.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C19",
+      "claim": "Figma MCP quotas depend on seat/plan; check whoami and live limits.",
+      "source_ids": [
+        "F5"
+      ],
+      "target": "Setup; Checklist; Appendix E",
+      "evidence_kind": "Documentation",
+      "limitation": "No exact quota copied from ambiguous flattened table.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C20",
+      "claim": "Code Connect eligibility differs from MCP access; template CLI is recommended, existing SDS mappings remain versioned.",
+      "source_ids": [
+        "F6",
+        "F7",
+        "F9"
+      ],
+      "target": "Chapter 2; Setup",
+      "evidence_kind": "Documentation",
+      "limitation": "No mapping publication or parser migration authorized here.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C21",
+      "claim": "Code Connect CLI and UI supply different detail; sample imports/props/snippets rather than assume uniform completeness.",
+      "source_ids": [
+        "F8"
+      ],
+      "target": "Chapter 2; Handoff; Checklist",
+      "evidence_kind": "Documentation",
+      "limitation": "Actual sample response required.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C22",
+      "claim": "SDS README still documents substitution URLs and file-key changes; verify node IDs in selected copy.",
+      "source_ids": [
+        "F9",
+        "F7"
+      ],
+      "target": "Chapter 2; Setup; Appendix D",
+      "evidence_kind": "Documentation plus author practice",
+      "limitation": "396 components/19 pages and Table/Figma discrepancy retained as August snapshot, not current measurement.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C23",
+      "claim": "Data Pipeline Studio is a fictional teaching scenario; worked example has not been executed by this refresh.",
+      "source_ids": [
+        "A7"
+      ],
+      "target": "Orientation; README; companion README",
+      "evidence_kind": "Author scope statement",
+      "limitation": "No prior rejected scaffold can serve as workflow evidence.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C24",
+      "claim": "Keep export/import inspection separate from permission to edit a repository or publish a system.",
+      "source_ids": [
+        "A5",
+        "A3"
+      ],
+      "target": "Prompt pack; Handoff; Checklist",
+      "evidence_kind": "Author practice",
+      "limitation": "Guide prompts describe future authorized workflows; this stage only changes source.",
+      "status": "accepted for guidance"
+    },
+    {
+      "id": "C25",
+      "claim": "Broad Design help and narrow CLI artboard guidance differ; test interactive behavior and export parity by surface.",
+      "source_ids": [
+        "A1",
+        "A5",
+        "A6"
+      ],
+      "target": "Orientation; Chapter 3; stage 2 handoff",
+      "evidence_kind": "Unresolved documentation scope",
+      "limitation": "Do not claim those surfaces are equivalent.",
+      "status": "open, bounded in guidance"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "artwork": [
+    {
+      "chapter": 1,
+      "light": "reader/assets/chapter-01.png",
+      "lightSha256": "45a4950a0ea2f97e2db2b656a374b127d359b59575677d276e982f9cc3f28268",
+      "dark": "assets/chapter-art/dark/chapter-01.png",
+      "darkSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Use case: stylized-concept. Author chapter 1 dark-screen counterpart for an A5 editorial handbook. Image 1 is the existing LIGHT composition reference, preserve this exact optical instrument, four side plates, object count, arrangement, proportions, camera viewpoint, complete silhouette and generous margins. Image 2 is a STYLE reference for natural ivory engraving highlights and dark material shadows, not an edit target. Re-draw as precise stippled technical engraving for charcoal #191918 viewing. Natural pale illuminated metal faces, opaque dark recesses inside objects. Genuine transparent outer background and gaps between objects, no background plate, no gray paper, no vignette, no glow or white fringe. Do not invert the Light values. No text, labels, logos, watermark or added objects. Landscape frame matching the Light reference. Output high resolution with at least 1536 pixels wide.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          35,
+          1633,
+          890
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 2,
+      "light": "reader/assets/chapter-02.png",
+      "lightSha256": "85061834917459495362c885405f978b39007b575b217c31c7af4b7bef0f926d",
+      "dark": "assets/chapter-art/dark/chapter-02.png",
+      "darkSha256": "87ad6f7c1b1c5b105b9a4d829be953b3bc6081030c1186f9c512ff66d1934df5",
+      "darkDimensions": [
+        1660,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Use case: stylized-concept. Chapter 2 dark-screen counterpart for an A5 field guide. Image 1 is the LIGHT composition reference: preserve the open precision tool case, six drawers, central upright divider rack, three foreground instrument boards and loose calipers, the complete object silhouette, exact layout and three-quarter viewpoint. Image 2 is the selected chapter 1 DARK style reference. Author a matching stippled technical engraving with ivory illuminated metal and naturally opaque dark recesses. Transparent outer background and gaps between objects, no rectangular plate, paper, vignette, glow or pale fringe. No inversion, text, labels, logos, watermarks, new objects or cropped edges. Landscape at least 1536 px wide.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          241,
+          32,
+          1361,
+          926
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 3,
+      "light": "reader/assets/chapter-03.png",
+      "lightSha256": "e33beecf78f3c7efebd28e391a1b69609feae960f87a4293ad9c11bee09d749c",
+      "dark": "assets/chapter-art/dark/chapter-03.png",
+      "darkSha256": "9954fdf87a553be572e97d604e8cf984ad084015813d601fd57749235bde9023",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Use case: stylized-concept. Chapter 3 dark-screen counterpart. Image 1 LIGHT reference governs the complete three-station precision inspection bench, overhead bar with three dial gauges, left control panel, central pin rack, right small linkage, base rails, exact relationships and viewpoint. Image 2 DARK reference governs engraving density and natural light. Re-author technical stippled engraving with ivory illuminated metal, opaque dark material and recesses; transparent outer background and gaps so charcoal page shows through. Preserve framing and all subjects. No text, labels, logo, watermark, color, inversion, plate, glow, vignette, fringe or crop. Landscape high resolution at least 1536px wide.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          32,
+          1635,
+          948
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 4,
+      "light": "reader/assets/chapter-04.png",
+      "lightSha256": "2436be42c35e5398f9d0c3b6517f63cbbd66053a503941669fa3beb19e4d10f6",
+      "dark": "assets/chapter-art/dark/chapter-04.png",
+      "darkSha256": "37e24f9373171f59f8a934c47814c3bc2c3234f9b52ba65cc42ed5e60311a1d4",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Correct only framing of this authored dark engraving. Keep its exact industrial transmission, object relationships, natural ivory illumination, opaque dark metal shadows, perspective and fine engraving. Scale the whole subject down to fit entirely inside a landscape transparent canvas with at least 8% clear transparent margin on ALL four sides. The rightmost shaft support and knob must be complete and visible; restore the clipped rightmost edge using the second image LIGHT composition reference. Do not add, remove, rearrange, invert, recolor, glow, label, or put a background plate behind it. Genuine transparent outer background. Minimum 1536px wide.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          86,
+          1558,
+          861
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 5,
+      "light": "reader/assets/chapter-05.png",
+      "lightSha256": "718e066ccdbc3531ec428591dc4727801b99113b784d865bc2f2fee9f3a97c3b",
+      "dark": "assets/chapter-art/dark/chapter-05.png",
+      "darkSha256": "0edde223057cba70468756ed2b0f6deb9978bf305c9b68063a636fb9e84d4c65",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Use case: stylized-concept. Chapter 5 separately authored dark-screen engraving. Image 1 LIGHT composition reference: preserve the left circular node-network plate, central shared shaft hub, right six-slider inspector plate, foreground hopper and divided shape tray, all connections, objects and three-quarter viewpoint. Image 2 DARK reference: match natural ivory illuminated metal and fine stippled shading, opaque dark recesses. Transparent outer background and all empty gaps. Entire subject fits with at least 6% clear outer margins on every side. Landscape at least 1536px wide. No text, labels, logo, watermark, inverted values, glow, fringe, plate, vignette, cropped edges or additional objects.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          37,
+          1544,
+          884
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 6,
+      "light": "reader/assets/chapter-06.png",
+      "lightSha256": "2bc8eab509f777387d6c69693d0299e2b57b755feeb14b99c62d2a0f1b281d07",
+      "dark": "assets/chapter-art/dark/chapter-06.png",
+      "darkSha256": "bd414cc93774d0b7bcd12c2c344b0c68101cda2f47d46b3cdac2c9fdac8365d8",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Use case: stylized-concept. Chapter 6 dark-screen engraving. Image 1 LIGHT reference governs central six-lobed rotary cam and circular base with six surrounding linked gated stations carrying cube, sphere, pyramid, cylinder, polyhedron and prism. Preserve every gate, arrow-like linkage, central spring latch, object count, connections, viewpoint and complete framing. Image 2 DARK reference governs fine stippled natural metal illumination. Re-author ivory illuminated surfaces with opaque dark recesses and shadows, no inversion. Genuine transparent empty gaps and outer background; at least 6% transparent margins all sides, high resolution landscape. No text, labels, logo, watermark, glow, fringe, plate, vignette or added objects.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          29,
+          1653,
+          948
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 7,
+      "light": "reader/assets/chapter-07.png",
+      "lightSha256": "0a186b5d3674b6c85e2310246794f4f64ee5c8772e3df4472d36b6c1140799c0",
+      "dark": "assets/chapter-art/dark/chapter-07.png",
+      "darkSha256": "a6e93001baa030bea8790dd7890aa3aca373ec216faf90338087684900a1b5ab",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Correct only framing and the two ghost-cube/arrow overlays in image 1, preserving the exact machinery, natural lighting, stippled engraving, objects and connections. The complete five-lever bank on the right and left handwheel handle must fit inside a transparent landscape frame with at least 8% transparent margins on all sides. Scale down the composition; do not crop any part. Draw the travel arrow and two ghost blocks as fine pale ivory dashed lines with completely transparent interiors, so they remain readable on charcoal. Remove their pale gray filled plate artifacts. Image 2 is the original LIGHT composition reference. Preserve perspective and silhouette. No new objects, lettering, inversion, glow, paper backdrop or fringe. Genuine transparent background.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          94,
+          35,
+          1585,
+          948
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 8,
+      "light": "reader/assets/chapter-08.png",
+      "lightSha256": "4967cbe54ab195b7273539298eaa75787a62dc4d85a56aa41ade58cafc850364",
+      "dark": "assets/chapter-art/dark/chapter-08.png",
+      "darkSha256": "ba72494f3deecc2bfea58b35a402adb73239f4850b1bb5dab6c7b22c34d56d83",
+      "darkDimensions": [
+        1662,
+        946
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Framing correction only. Keep this exact four-gauge inspection machinery and cube gate, all object relationships, stippled engraving and lighting. Reduce the full subject to 75% of its current size and center it within an otherwise transparent landscape canvas. ALL object edges must be complete. Leave large empty transparent padding, at least 12% of frame width at left and right and 10% height above and below. Do not zoom or crop. Do not add text, glow, paper, background plate, fringe, color, inversion, or new objects. Genuine transparent background.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          45,
+          1521,
+          874
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 9,
+      "light": "reader/assets/chapter-09.png",
+      "lightSha256": "aa5c18546d6090f5299d4f044d427f3a35102710f9d31fcecc32b00bcd65c445",
+      "dark": "assets/chapter-art/dark/chapter-09.png",
+      "darkSha256": "4f01b5a3a057fa1e577bdbd8b60896fd5d31686f0f7d0ffaf6cf546eaae80d0d",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Use case: stylized-concept. Chapter 9 dark-screen counterpart. Image 1 LIGHT composition reference governs two linked precision trays: left horizontal foam-fitted tray containing five mechanical parts, right upright matching sockets, connected rails and bases. Preserve five parts and corresponding shapes, arrangements, three-quarter viewpoint and silhouette. Image 2 DARK reference governs ivory illuminated faces and opaque dark recesses in fine stippled technical engraving. Re-author naturally, no inversion. Keep subject centered at 78% of canvas width with large empty transparent padding on all sides; genuine transparent gaps and outer background. No text, labels, logo, watermark, paper plate, glow, fringe, vignette, cropping or new objects. Landscape at least 1536px.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          34,
+          21,
+          1630,
+          948
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 10,
+      "light": "reader/assets/chapter-10.png",
+      "lightSha256": "6c40f541db193d8e256da824208545f549030d0e53582c74dcac82d3063628d7",
+      "dark": "assets/chapter-art/dark/chapter-10.png",
+      "darkSha256": "cbd8da16323d25c0ffb9376d482395da1e48694cc2e2804893f79799ff024d9f",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Use case: stylized-concept. Chapter 10 dark-screen counterpart. Image 1 LIGHT composition reference governs two large equal gears, central differential and gauge, end supports and right screw adjustment with linked lever on a single base. Preserve exact gears, supports, axis, complete mechanical connections, silhouette, three-quarter viewpoint and framing. Image 2 DARK reference governs natural ivory highlights and fine stippled engraving on opaque dark recesses. Re-author, not invert. Transparent outer background and gaps, full subject centered with generous empty padding on all sides, no crop. No words, labels, logo, watermark, glow, pale fringe, paper plate, vignette or added objects. Landscape at least 1536px wide.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          100,
+          9,
+          1605,
+          948
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "attached style image",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    },
+    {
+      "chapter": 11,
+      "light": "reader/assets/chapter-11.png",
+      "lightSha256": "d81af04b927f6a5869aaeb054539d3b5947c93d0ab0a50980c8468d23d270411",
+      "dark": "assets/chapter-art/dark/chapter-11.png",
+      "darkSha256": "4cdcc14cc9c3214c335a6092d2f019c269d9431dceb1458c940a2f065be456b7",
+      "darkDimensions": [
+        1659,
+        948
+      ],
+      "outerBackground": "transparent",
+      "generator": "image_gen built-in; model identifier not exposed",
+      "prompt": "Create the dark/late-night counterpart of the supplied chapter 11 engraving. Composition reference: retain the complete marble process machine: tall hopper on the left full of spheres, arched inspection gate, central raised perforated tray, branching conveyor with spheres and a lower return loop, bell over the right branch, and right pressure gauge above transparent spherical collection vessel. Match all functional parts and counts, avoid adding labels. Style: a finely engraved Victorian technical illustration with natural warm ivory metal, pale highlights and charcoal internal hatching, readable on #191918. Use transparent background, no paper rectangle, no gray floor rectangle, no drop shadow outside the machinery. Keep the entire apparatus within the image with at least 7 percent clear transparent margins on every side. No clipped gauges, conveyor, or hopper. High quality precise fine-line engraving with restrained pale ivory tones; no text or numbers. Preserve subject and visual weight of light counterpart, independently redraw for dark background, do not invert/filter recolor.",
+      "acquisitionMode": "generated",
+      "styleReferenceSha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+      "reviewStatus": "accepted",
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          21,
+          1612,
+          948
+        ],
+        "reviewBackground": "#191918",
+        "completeSubject": true
+      },
+      "styleReferenceRole": "governing style target supplied as textual direction",
+      "provenance": "assets/chapter-art/dark/generation-records.json"
+    }
+  ]
+}

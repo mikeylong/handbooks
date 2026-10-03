@@ -39,23 +39,29 @@
       "id": "claude-design",
       "title": "Claude Design Field Guide",
       "directory": "claude-design",
-      "status": "pdf-draft",
-      "pages": 109,
+      "status": "published",
+      "pages": 126,
       "source": "Claude_Design_Field_Guide_Source.md",
-      "pdf": "Claude_Design_End_to_End_Field_Guide.pdf",
+      "pdf": "output/pdf/claude-design-v1.0.0-2026-10-02-daytime-r1.pdf",
       "build": [
-        "{python}",
-        "build_claude_design_field_guide.py"
+        "npm",
+        "run",
+        "build"
       ],
       "validate": [
         [
-          "{python}",
-          "validate_claude_design_field_guide.py"
+          "npm",
+          "run",
+          "validate"
         ]
       ],
-      "pdfSha256": "4da564de91223f86c5d1e0fcf48e173bc99d4d3d057e96e917c46da6173e93cf",
+      "pdfSha256": "4c0b1392f09dc792df4fe486abf8e8ac6a6849adcccafbbe622195633dc76341",
       "historicalRepository": "https://github.com/mikeylong/claude-design-field-guide",
-      "repository": "https://github.com/mikeylong/handbooks"
+      "repository": "https://github.com/mikeylong/handbooks",
+      "version": "1.0.0",
+      "publicUrl": "https://handbooks.surfaces.systems/claude-design/",
+      "editionUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.0.0/",
+      "coverPlaceholder": "{{CLAUDE_DESIGN_COVER}}"
     },
     {
       "id": "ai-evaluation",
@@ -189,6 +195,7 @@
   "approvedPublicEditions": {
     "production-ai-engineering": "1.4.0",
     "ai-evaluation": "1.0.0",
-    "ai-consulting": "1.0.0"
+    "ai-consulting": "1.0.0",
+    "claude-design": "1.0.0"
   }
 }

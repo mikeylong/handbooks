@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "onlyChangedMembers": [
+    "publish-evidence-backed-handbook/references/specimen/manifest.json",
+    "publish-evidence-backed-handbook/scripts/build-reader-fixtures.mjs"
+  ],
+  "allPdfAndReaderBuildInputsByteIdentical": true,
+  "priorReproducibilityEvidence": "reproducibility.json",
+  "retainedUnchangedChecks": [
+    "portable-unit-checks-final.json",
+    "portable-markdown-reviewed/markdown-runtime-tests.json",
+    "portable-reviewed-runtime-tests/runtime-tests.json"
+  ],
+  "affectedBrowserChecks": "portable-reader-browser-r2.json",
+  "fixtureFontHttpErrors": [],
+  "fixtureFontSuccessfulResponses": 14
+}

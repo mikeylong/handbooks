@@ -1,0 +1,218 @@
+{
+  "profile": "Source and local teaching evidence; no PDF or external workflow readiness claim",
+  "result": "pass_with_external_checkout_change",
+  "checks": [
+    {
+      "check": "Canonical sources match frozen stage 2 source",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Frozen stage 1 sources remain original",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Protected baseline preserved",
+      "status": "pass",
+      "details": {
+        "protected": 345,
+        "changed": []
+      }
+    },
+    {
+      "check": "README.md: fences balanced",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "README.md: local links resolve",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "check": "README.md: authored punctuation",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Field_Guide_Source.md: fences balanced",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Field_Guide_Source.md: local links resolve",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "check": "Claude_Design_Field_Guide_Source.md: authored punctuation",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Prompt_Pack.md: fences balanced",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Prompt_Pack.md: local links resolve",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "check": "Claude_Design_Prompt_Pack.md: authored punctuation",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Validation_Checklist.md: fences balanced",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Validation_Checklist.md: local links resolve",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "check": "Claude_Design_Validation_Checklist.md: authored punctuation",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Simple_Design_System_Setup.md: fences balanced",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Simple_Design_System_Setup.md: local links resolve",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "check": "Simple_Design_System_Setup.md: authored punctuation",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Handoff_Template.md: fences balanced",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Handoff_Template.md: local links resolve",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "check": "Claude_Design_Handoff_Template.md: authored punctuation",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Field_Guide_README.md: fences balanced",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Claude_Design_Field_Guide_README.md: local links resolve",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "check": "Claude_Design_Field_Guide_README.md: authored punctuation",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Eleven chapter and diagram markers preserved",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Manuscript directives balanced",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "check": "Stage 1 command/permission guidance retained",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Scoped source whitespace",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "No nested Git repository created",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Executable/vendor source matches frozen hashes",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Fixture bytes frozen",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Twenty local browser checks pass",
+      "status": "pass",
+      "details": {
+        "checks": 20
+      }
+    },
+    {
+      "check": "Eight model checks pass",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Final production bundle build passed",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "Actual Claude Code returned High-finding resolution",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "check": "No concurrent committed changes to stage 2 handbook paths",
+      "status": "pass",
+      "details": {
+        "baseline_head": "a39969b4d884595d0ec1300b72134dd3ebf17f4d",
+        "observed_head": "87c9dd6d28772e156ae0263fd3e152a61ff836b4",
+        "committed_paths": [
+          "publish-evidence-backed-handbook/assets/reader/pdf-downloads.css",
+          "publish-evidence-backed-handbook/assets/reader/reader.css",
+          "publish-evidence-backed-handbook/assets/reader/theme.css",
+          "publish-evidence-backed-handbook/references/specimen/manifest.json",
+          "publish-evidence-backed-handbook/scripts/pdf-browser-check.mjs",
+          "publish-evidence-backed-handbook/scripts/pdf-downloads.mjs"
+        ]
+      }
+    },
+    {
+      "check": "Original Git HEAD observation",
+      "status": "warning",
+      "details": {
+        "baseline_head": "a39969b4d884595d0ec1300b72134dd3ebf17f4d",
+        "observed_head": "87c9dd6d28772e156ae0263fd3e152a61ff836b4",
+        "reason": "Shared checkout changed externally; no stage 2 handbook paths in committed delta"
+      }
+    },
+    {
+      "check": "Required handoff files exist",
+      "status": "pass",
+      "details": null
+    }
+  ],
+  "external_workflow": "hold / unverified",
+  "stage_3": "May prepare review candidate with disclosed limitations; release not authorized"
+}

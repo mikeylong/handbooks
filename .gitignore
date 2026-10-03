@@ -29,3 +29,6 @@ migration/2026-10-02-independent-repositories/*
 
 # Isolated PDF review candidates and renderer scratch stay local.
 /candidates/light-dark-pdfs/
+
+# Large Claude review snapshots and renderer scratch remain local. Selected reports are tracked explicitly.
+/claude-design/review/

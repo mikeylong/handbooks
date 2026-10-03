@@ -8,6 +8,30 @@
 **Design approval:** `[Reviewer and date]`  
 **Target repository revision:** `[Commit or branch]`
 
+## Workflow and evidence
+
+**Documentation checked:** `[October 2, 2026 for this guidance; record a new access date only after rechecking]`
+
+**Workflow observed:** `[experiment date/time and evidence record; unverified until executed]`
+
+**Claude Design surface:** `[conversation / Artifacts / Claude Code / standalone]`
+
+**Account / organization / plan:** `[record without credentials]`
+
+**Claude Code version / provider:** `[version and provider]`
+
+**Design and Design systems access:** `[settings / role result]`
+
+**Source system / revision:** `[selected system and source revision]`
+
+**Sync result:** `[authorization, converted/uploaded package, destination, completion or exact failure]`
+
+**Evidence type:** `[documentation / observed / inference / unverified, per claim]`
+
+**Repository edit authority:** `[approved feature scope, or inspection only]`
+
+Use the [current command reference](https://code.claude.com/docs/en/commands) for setup. A documented command or generated artboard does not establish observed interaction behavior.
+
 ## Decision
 
 `[One paragraph: what is changing, for whom, and why.]`
@@ -55,6 +79,42 @@
 - Claude Design handoff bundle: `[URL]`
 - Decision log: `[link]`
 
+## Export inspection
+
+**Export surface / format / time:** `[source surface, format, date/time]`
+
+**Local export path / SHA-256:** `[path and hash, when a file exists]`
+
+**Reviewed baseline:** `[preserved export and open result]`
+
+**Recipient access:** `[intended account, view result, access scope]`
+
+| Expected input | Actually received | Evidence path | Missing content / owner |
+|---|---|---|---|
+| Design files and states | `[inventory]` | `[path]` | `[gap]` |
+| Chat / decision history | `[present / partial / absent]` | `[path]` | `[gap]` |
+| README | `[present / partial / absent]` | `[path]` | `[gap]` |
+| Component map and tokens | `[inventory]` | `[path]` | `[gap]` |
+| Fixtures and acceptance tests | `[inventory]` | `[path]` | `[gap]` |
+
+The [official tutorial](https://academy.claude.com/tutorials/using-claude-design-for-prototypes-and-ux) describes default files, chat, and README. Record actual contents; supply the team's missing artifacts before implementation. Read/import the bundle before changing the repository.
+
+## Figma branch when required
+
+**Workflow / tool:** `[native writing: use_figma / live-UI capture: generate_figma_design]`
+
+**Account / seat / plan / file access:** `[read and write results separately]`
+
+**Destination:** `[Drafts or existing file outside Drafts]`
+
+**Code Connect mapping type / sample:** `[CLI / UI, returned import/props/snippet evidence]`
+
+**Node IDs / instances / variable bindings:** `[observed identity and unresolved gaps]`
+
+**Tool-specific limits:** `[current applicable limits and consequence]`
+
+See [native writing](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/) and [code-to-canvas](https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/) for their different seat rules. A captured layer is not proof of a reusable component instance.
+
 ## Component-to-code map
 
 | Design element | Disposition | Production import or path | Props / variants | Notes |
@@ -86,6 +146,16 @@
 | Fixture | Path | Purpose | Expected result |
 |---|---|---|---|
 | `[fixture]` | `[path]` | `[state or test]` | `[observable result]` |
+
+**Package origin:** `[actual Claude Design export / manually assembled local teaching package / implementation package]`
+
+**Fixture hashes and mapping confirmation:** `[CSV and JSON hashes, explicit mappings, source ID and replacement rule]`
+
+**Expected record outcomes:** `[normalized rows, invalid row/column pairs, publish/quarantine/reject IDs, failure and repair]`
+
+**Save failure rule:** `[draft remains unsaved; Run stays disabled until successful Save]`
+
+**Local versus external coverage:** `[actual commands/screens/exports, local tests, documented-only states, inaccessible checks]`
 
 **Data provenance rules:** `[live, cached, stale, truncated, sample]`
 

@@ -1,0 +1,5905 @@
+{
+  "status": "passed",
+  "pdfSha256": "4c0b1392f09dc792df4fe486abf8e8ac6a6849adcccafbbe622195633dc76341",
+  "sourceSha256": "47ec09947605c2f64eb0d39a1155750ff5c31b22a2fc648217e84a9dcd52e5de",
+  "units": 1472,
+  "missing": [],
+  "normalization": [
+    "Unicode punctuation and ligatures",
+    "whitespace and line wrapping",
+    "uppercase prompt titles",
+    "Markdown syntax",
+    "repeated running heads and prompt headers",
+    "page labels"
+  ],
+  "unitsChecked": [
+    {
+      "sourceLine": 11,
+      "text": "Orientation"
+    },
+    {
+      "sourceLine": 13,
+      "text": "Use this guide to ground a product prototype in existing components, extend a bounded screen, and prepare an engineering handoff. The worked example is a teaching scenario. The October 2 review exercised a local executable example with SDS React primitives; it did not verify Claude Design generation, system sync, export, or native Figma reuse."
+    },
+    {
+      "sourceLine": 15,
+      "text": "Anthropic documents interactive prototyping and a Claude Code handoff in Claude Design. Design is now available in conversations and the Artifacts tab as well as at claude.ai/design. The Claude Code reference describes /design more narrowly: it drafts artboards on a canvas. Record the surface you use and test the required interactions and exports there. A generated artboard alone does not prove the prototype journey works. Direct native-Figma export is not established by the reviewed documentation. Use Figma MCP when editable Figma content is required. See the Design getting-started guide and Claude Code artifact guide."
+    },
+    {
+      "sourceLine": 17,
+      "text": "This guide shows how to make that division practical. For product work, start with the current system and screen, then prepare a handoff engineers can inspect. The local exercise uses a synthetic baseline with browser-only persistence and run behavior."
+    },
+    {
+      "sourceLine": 19,
+      "text": "The operating model"
+    },
+    {
+      "sourceLine": 20,
+      "text": "Use Claude Design for system-grounded exploration and interaction design. Use Claude Code for repository-aware implementation. Add Figma MCP and Code Connect when the team needs native Figma editing, component mappings, or a code-to-canvas loop."
+    },
+    {
+      "sourceLine": 23,
+      "text": "What you will build"
+    },
+    {
+      "sourceLine": 25,
+      "text": "The recurring example is Data Pipeline Studio, a fictional extension to a teaching baseline at /pipelines/customer-health/edit. The current product lets an analyst inspect a linear pipeline and edit one step at a time. The extension adds a directed acyclic graph editor, a richer node inspector, a resizable data sheet, and a file importer with mapping and recovery states."
+    },
+    {
+      "sourceLine": 27,
+      "text": "The guide never treats the example as a blank canvas. The global shell, route, permissions, persistence, run APIs, typography, spacing, forms, buttons, tables, dialogs, notifications, and status patterns already exist. The assignment is to preserve that working product while changing a bounded part of it."
+    },
+    {
+      "sourceLine": 29,
+      "text": "What the guide produces"
+    },
+    {
+      "sourceLine": 31,
+      "text": "By the end, you will have:"
+    },
+    {
+      "sourceLine": 33,
+      "text": "A source-of-truth map that says which artifact governs each decision."
+    },
+    {
+      "sourceLine": 34,
+      "text": "A verified Claude Design system based on Figma's Simple Design System and its React codebase."
+    },
+    {
+      "sourceLine": 35,
+      "text": "A preservation brief for an existing screen."
+    },
+    {
+      "sourceLine": 36,
+      "text": "A working prompt sequence for a DAG canvas, node inspector, data sheet, and importer."
+    },
+    {
+      "sourceLine": 37,
+      "text": "A state matrix covering loading, error, permissions, stale data, conflicts, and recovery."
+    },
+    {
+      "sourceLine": 38,
+      "text": "A component-to-code map that separates reuse, composition, and legitimate extensions."
+    },
+    {
+      "sourceLine": 39,
+      "text": "A design review record and evidence gate."
+    },
+    {
+      "sourceLine": 40,
+      "text": "A Claude Code implementation prompt and handoff README."
+    },
+    {
+      "sourceLine": 41,
+      "text": "A Figma-native branch for teams that require editable frames."
+    },
+    {
+      "sourceLine": 42,
+      "text": "A guided capstone, answer key, scoring rubric, and final validation checklist."
+    },
+    {
+      "sourceLine": 44,
+      "text": "How to use the field guide"
+    },
+    {
+      "sourceLine": 46,
+      "text": "Read Chapters 1 through 3 before opening Claude Design. Those chapters settle scope, sources, and the design-system baseline. Chapters 4 through 7 are the design loop. Chapters 8 through 10 cover review, handoff, implementation, and drift. The capstone runs the whole sequence with a single feature journey."
+    },
+    {
+      "sourceLine": 48,
+      "text": "Each checkpoint asks for a small artifact. Keep the artifacts together. They become the handoff package; they are not homework that gets discarded after the prototype looks good."
+    },
+    {
+      "sourceLine": 50,
+      "text": "The core discipline"
+    },
+    {
+      "sourceLine": 51,
+      "text": "A prototype can look like the product while quietly replacing its components, losing its states, and disconnecting itself from real data. Visual resemblance is only one form of evidence. Traceability, behavior, and recovery paths are the other three."
+    },
+    {
+      "sourceLine": 54,
+      "text": "Before you begin"
+    },
+    {
+      "sourceLine": 56,
+      "text": "You need an approved source package, repository access for implementation, and a Figma account for the native-Figma branch. Claude Design is beta on Pro, Max, Team, and Enterprise. Pro, Max, and Team have Design enabled by default; Enterprise owners enable the Design template under Organization settings > Artifacts. Design systems and standalone Claude Design have separate controls. Confirm the intended organization and surface before importing sources. See the Design admin guide."
+    },
+    {
+      "sourceLine": 58,
+      "text": "Claude Code /design requires version 2.1.265 or later, an enabled Design template, and an artifact-capable session. Sign in with /login using claude.ai. API-key-only sessions cannot publish artifacts, and third-party cloud-provider sessions are unsupported. The artifact guide also lists organization-policy restrictions. Confirm account, provider, and policy before treating a missing command as a setup defect. See artifact availability."
+    },
+    {
+      "sourceLine": 60,
+      "text": "Uploaded assets persist under the applicable retention policies. Anthropic documents unsupported Design data residency and restrictions for CMEK, ZDR, and HIPAA-ready configurations in the new Artifacts experience. Standalone audit logging and integrated artifact records have different coverage. Confirm those requirements with the organization owner before uploading proprietary work. See the Artifacts admin guide."
+    },
+    {
+      "sourceLine": 62,
+      "text": "For this guide, use the public Simple Design System Community file and Figma's open-source figma/sds React repository. Duplicate the Community file into your own drafts before attempting connected inspection or editing. The public source remains untouched."
+    },
+    {
+      "sourceLine": 64,
+      "text": "The workflow at a glance"
+    },
+    {
+      "sourceLine": 66,
+      "text": "The work is a loop. Frame the change, ground it in the real system, extend one bounded surface, specify the missing behavior, map every element, hand it off, implement it, and reconcile the rendered result. Drift and new evidence restart the loop."
+    },
+    {
+      "sourceLine": 70,
+      "text": "Stage"
+    },
+    {
+      "sourceLine": 70,
+      "text": "Working tool"
+    },
+    {
+      "sourceLine": 70,
+      "text": "Governing evidence"
+    },
+    {
+      "sourceLine": 70,
+      "text": "Exit condition"
+    },
+    {
+      "sourceLine": 72,
+      "text": "Frame"
+    },
+    {
+      "sourceLine": 72,
+      "text": "Team artifact"
+    },
+    {
+      "sourceLine": 72,
+      "text": "Product brief, current route, shipped behavior"
+    },
+    {
+      "sourceLine": 72,
+      "text": "Scope and preservation boundary approved"
+    },
+    {
+      "sourceLine": 73,
+      "text": "Ground"
+    },
+    {
+      "sourceLine": 73,
+      "text": "Claude Design"
+    },
+    {
+      "sourceLine": 73,
+      "text": "System code, tokens, representative screens"
+    },
+    {
+      "sourceLine": 73,
+      "text": "System test passes"
+    },
+    {
+      "sourceLine": 74,
+      "text": "Extend"
+    },
+    {
+      "sourceLine": 74,
+      "text": "Claude Design"
+    },
+    {
+      "sourceLine": 74,
+      "text": "Current screen plus interaction contract"
+    },
+    {
+      "sourceLine": 74,
+      "text": "Proposed flow works end to end"
+    },
+    {
+      "sourceLine": 75,
+      "text": "Specify"
+    },
+    {
+      "sourceLine": 75,
+      "text": "Claude Design and team review"
+    },
+    {
+      "sourceLine": 75,
+      "text": "State matrix, copy, data fixtures, accessibility notes"
+    },
+    {
+      "sourceLine": 75,
+      "text": "No critical state is missing"
+    },
+    {
+      "sourceLine": 76,
+      "text": "Map"
+    },
+    {
+      "sourceLine": 76,
+      "text": "Design and engineering"
+    },
+    {
+      "sourceLine": 76,
+      "text": "Component inventory and code paths"
+    },
+    {
+      "sourceLine": 76,
+      "text": "Every visible element has a disposition"
+    },
+    {
+      "sourceLine": 77,
+      "text": "Hand off"
+    },
+    {
+      "sourceLine": 77,
+      "text": "Claude Design to Claude Code"
+    },
+    {
+      "sourceLine": 77,
+      "text": "Bundle, README, decision log, acceptance tests"
+    },
+    {
+      "sourceLine": 77,
+      "text": "Engineer can implement without guessing intent"
+    },
+    {
+      "sourceLine": 78,
+      "text": "Implement"
+    },
+    {
+      "sourceLine": 78,
+      "text": "Claude Code and repository tools"
+    },
+    {
+      "sourceLine": 78,
+      "text": "Production conventions, tests, rendered application"
+    },
+    {
+      "sourceLine": 78,
+      "text": "Tests and visual checks pass"
+    },
+    {
+      "sourceLine": 79,
+      "text": "Reconcile"
+    },
+    {
+      "sourceLine": 79,
+      "text": "Figma MCP if required"
+    },
+    {
+      "sourceLine": 79,
+      "text": "Approved rendered behavior and native Figma file"
+    },
+    {
+      "sourceLine": 79,
+      "text": "Drift is logged and resolved"
+    },
+    {
+      "sourceLine": 81,
+      "text": "Keep the product surfaces on one state spine"
+    },
+    {
+      "sourceLine": 83,
+      "text": "The DAG canvas, node inspector, data sheet, and importer are coordinated views of the same selected node, fixture data, and document state. A change that appears on only one surface is a product defect, even when that surface looks polished in isolation."
+    },
+    {
+      "sourceLine": 91,
+      "text": "Decide what is authoritative"
+    },
+    {
+      "sourceLine": 93,
+      "text": "The phrase \u201cuse our design system\u201d hides several different sources. A Figma library may define component anatomy and variants. A React package may define actual props and accessibility behavior. A shipped screen may reveal composition rules that appear nowhere in documentation. Product code and APIs determine what the interface can really do."
+    },
+    {
+      "sourceLine": 95,
+      "text": "Claude can read several of these sources. It cannot resolve an unspoken conflict between them. The team needs a declared hierarchy before generation begins."
+    },
+    {
+      "sourceLine": 97,
+      "text": "Build the source-of-truth stack"
+    },
+    {
+      "sourceLine": 99,
+      "text": "Use five layers:"
+    },
+    {
+      "sourceLine": 101,
+      "text": "Production behavior. The current application, routes, permissions, persistence, data contracts, and tested interaction rules."
+    },
+    {
+      "sourceLine": 102,
+      "text": "Production component code. The components, props, tokens, accessibility semantics, and imports that engineers can actually ship."
+    },
+    {
+      "sourceLine": 103,
+      "text": "Published design library. Component anatomy, variants, variables, layouts, and design guidance."
+    },
+    {
+      "sourceLine": 104,
+      "text": "Representative shipped screens. Evidence for composition, density, hierarchy, responsive behavior, and local conventions."
+    },
+    {
+      "sourceLine": 105,
+      "text": "Product intent. The approved problem, target user, success journey, non-goals, and acceptance tests for the change."
+    },
+    {
+      "sourceLine": 107,
+      "text": "When two layers disagree, record the conflict. Do not let Claude select a winner through visual improvisation."
+    },
+    {
+      "sourceLine": 109,
+      "text": "Data Pipeline Studio"
+    },
+    {
+      "sourceLine": 110,
+      "text": "In the teaching baseline, the route, Save, Run, permissions, and persistence are simulated behavior. In a real product extension, the current implementation and API contracts govern those decisions. The Simple Design System React package governs reusable primitives. The duplicated Figma file governs component anatomy and variables. The current Pipeline Detail screen governs shell and density. The capstone brief governs the new DAG journey."
+    },
+    {
+      "sourceLine": 113,
+      "text": "Freeze the preservation boundary"
+    },
+    {
+      "sourceLine": 115,
+      "text": "An extension prompt needs two lists: what may change and what must remain stable. The second list is usually more important."
+    },
+    {
+      "sourceLine": 117,
+      "text": "For Data Pipeline Studio, preserve:"
+    },
+    {
+      "sourceLine": 119,
+      "text": "The global app shell and left navigation."
+    },
+    {
+      "sourceLine": 120,
+      "text": "Breadcrumb, pipeline name, environment badge, and last-run metadata."
+    },
+    {
+      "sourceLine": 121,
+      "text": "Save, Run, and overflow actions."
+    },
+    {
+      "sourceLine": 122,
+      "text": "Existing typography, spacing, controls, tables, dialogs, status badges, and notifications."
+    },
+    {
+      "sourceLine": 123,
+      "text": "Permissions, routing, persistence, and run APIs."
+    },
+    {
+      "sourceLine": 124,
+      "text": "Current copy outside the approved feature surface."
+    },
+    {
+      "sourceLine": 126,
+      "text": "Change:"
+    },
+    {
+      "sourceLine": 128,
+      "text": "The central linear editor becomes a DAG workspace."
+    },
+    {
+      "sourceLine": 129,
+      "text": "The right-side editor becomes a schema-driven node inspector."
+    },
+    {
+      "sourceLine": 130,
+      "text": "The collapsed preview becomes a resizable data sheet."
+    },
+    {
+      "sourceLine": 131,
+      "text": "The basic file-upload dialog becomes a multi-stage importer."
+    },
+    {
+      "sourceLine": 133,
+      "text": "The boundary lets the team review a small diff. Without it, every generated screen becomes a redesign proposal."
+    },
+    {
+      "sourceLine": 135,
+      "text": "Name the baseline fixture"
+    },
+    {
+      "sourceLine": 137,
+      "text": "Claude needs a stable example that can appear in every screen and state. Use one fixture pipeline:"
+    },
+    {
+      "sourceLine": 139,
+      "text": "Customers CSV \u2014 source"
+    },
+    {
+      "sourceLine": 140,
+      "text": "Normalize Email \u2014 transform"
+    },
+    {
+      "sourceLine": 141,
+      "text": "Validate Customer Schema \u2014 quality gate"
+    },
+    {
+      "sourceLine": 142,
+      "text": "Publish to Warehouse \u2014 destination"
+    },
+    {
+      "sourceLine": 143,
+      "text": "Quarantine Invalid Rows \u2014 proposed branch"
+    },
+    {
+      "sourceLine": 145,
+      "text": "Use customers-august.csv and its JSON equivalent for one six-record dataset. The importer proposes customer_id and health_score mappings, but leaves the required contact_email to email mapping unresolved. The final confirmation accepts all three mappings and the chosen recovery policy. No graph change occurs before confirmation."
+    },
+    {
+      "sourceLine": 147,
+      "text": "CSV row"
+    },
+    {
+      "sourceLine": 147,
+      "text": "Customer ID"
+    },
+    {
+      "sourceLine": 147,
+      "text": "Raw contact_email"
+    },
+    {
+      "sourceLine": 147,
+      "text": "Raw health_score"
+    },
+    {
+      "sourceLine": 147,
+      "text": "Expected result"
+    },
+    {
+      "sourceLine": 149,
+      "text": "2"
+    },
+    {
+      "sourceLine": 149,
+      "text": "C001"
+    },
+    {
+      "sourceLine": 149,
+      "text": "ALICE@EXAMPLE.COM"
+    },
+    {
+      "sourceLine": 149,
+      "text": "82"
+    },
+    {
+      "sourceLine": 149,
+      "text": "Publish as alice@example.com"
+    },
+    {
+      "sourceLine": 150,
+      "text": "3"
+    },
+    {
+      "sourceLine": 150,
+      "text": "C002"
+    },
+    {
+      "sourceLine": 150,
+      "text": "bob@example.com"
+    },
+    {
+      "sourceLine": 150,
+      "text": "65"
+    },
+    {
+      "sourceLine": 150,
+      "text": "Publish as bob@example.com"
+    },
+    {
+      "sourceLine": 151,
+      "text": "4"
+    },
+    {
+      "sourceLine": 151,
+      "text": "C003"
+    },
+    {
+      "sourceLine": 151,
+      "text": "invalid-email"
+    },
+    {
+      "sourceLine": 151,
+      "text": "50"
+    },
+    {
+      "sourceLine": 151,
+      "text": "Invalid email"
+    },
+    {
+      "sourceLine": 152,
+      "text": "5"
+    },
+    {
+      "sourceLine": 152,
+      "text": "C004"
+    },
+    {
+      "sourceLine": 152,
+      "text": "empty"
+    },
+    {
+      "sourceLine": 152,
+      "text": "77"
+    },
+    {
+      "sourceLine": 152,
+      "text": "Email is required"
+    },
+    {
+      "sourceLine": 153,
+      "text": "6"
+    },
+    {
+      "sourceLine": 153,
+      "text": "C005"
+    },
+    {
+      "sourceLine": 153,
+      "text": "eve@example.com"
+    },
+    {
+      "sourceLine": 153,
+      "text": "not-a-number"
+    },
+    {
+      "sourceLine": 153,
+      "text": "Invalid health_score"
+    },
+    {
+      "sourceLine": 154,
+      "text": "7"
+    },
+    {
+      "sourceLine": 154,
+      "text": "C006"
+    },
+    {
+      "sourceLine": 154,
+      "text": "FRANK@EXAMPLE.COM"
+    },
+    {
+      "sourceLine": 154,
+      "text": "91"
+    },
+    {
+      "sourceLine": 154,
+      "text": "Publish as frank@example.com"
+    },
+    {
+      "sourceLine": 156,
+      "text": "Normalize Email trims outer whitespace and lowercases all six emails. The schema gate requires a nonempty unique customer ID, an email with a domain suffix, and a numeric health score from 0 to 100. Three records pass. C003, C004, and C005 go to quarantine or are excluded under Reject invalid rows. CSV row numbers include the header; JSON uses the corresponding record ordinal plus one. A production parser must track physical file locations separately, including blank and multiline records."
+    },
+    {
+      "sourceLine": 158,
+      "text": "Use the executable teaching contract"
+    },
+    {
+      "sourceLine": 160,
+      "text": "Start from the preserved linear baseline at /pipelines/customer-health/edit?baseline=1. Open the extension at the same route without the query. Preserve the shell text, navigation, pipeline identity, environment badge, Save, Run, permissions, and browser persistence. This baseline was authored for the exercise; it is not a shipped product or a Claude Design export."
+    },
+    {
+      "sourceLine": 162,
+      "text": "Choose the fixture through the file picker or drop zone. Confirm contact_email \u2192 email and all proposed mappings. Choose Send to quarantine for the main journey."
+    },
+    {
+      "sourceLine": 163,
+      "text": "Confirmation replaces the unconfigured Customers CSV placeholder with a new source ID, august, named Customers CSV (August import). It preserves downstream nodes, removes the placeholder's old edge, selects the new source, and opens its raw preview. Import is atomic; cancel or failure leaves the graph unchanged. The local exercise supports one committed import per reset."
+    },
+    {
+      "sourceLine": 164,
+      "text": "Connect august to normalize. The normalized preview contains the same six customer IDs. Add quarantine, then connect validate to quarantine. Keep normalize \u2192 validate \u2192 warehouse intact."
+    },
+    {
+      "sourceLine": 165,
+      "text": "Save before Run. The configured warehouse target starts as missing-warehouse, so the intended first run fails at warehouse. The fixture's required target is customer_health; a helper hint must not claim it is already configured. Preserve the failure across reload."
+    },
+    {
+      "sourceLine": 166,
+      "text": "Select the failing node, set its target to customer_health, Save, and Run again. Expect three published IDs (C001, C002, C006), three quarantined IDs (C003, C004, C005), and zero rejected rows. Under Reject invalid rows, expect three published, zero quarantined, and three rejected."
+    },
+    {
+      "sourceLine": 167,
+      "text": "Attempt validate \u2192 august and normalize \u2192 quarantine. The first would create a cycle; the second has incompatible ports. Each attempt must explain the reason and leave the graph unchanged. Deleting a required downstream edge must block Run."
+    },
+    {
+      "sourceLine": 169,
+      "text": "Save failure must preserve the draft and keep Run disabled until Save succeeds. The local conflict control changes only a simulated revision; explicit reapply is safe for that fixture. A real concurrent edit needs a content comparison and reviewed merge. Warehouse lookup, row publication, quarantine storage, server authorization, and telemetry remain implementation requirements."
+    },
+    {
+      "sourceLine": 171,
+      "text": "The local example exercises buttons, inputs, selects, dialogs, tags, and tables from a pinned SDS React snapshot. Its named connection list supplies the non-pointer graph path. Pointer port dragging, drawn edge geometry, virtualized large datasets, resizable columns, a complete schema-driven inspector, and screen-reader behavior remain separate acceptance work. Local screenshots and passing tests do not establish that Claude Design produced the workflow."
+    },
+    {
+      "sourceLine": 173,
+      "text": "Define the success journey"
+    },
+    {
+      "sourceLine": 175,
+      "text": "The recurring journey is:"
+    },
+    {
+      "sourceLine": 177,
+      "text": "Open the existing pipeline."
+    },
+    {
+      "sourceLine": 178,
+      "text": "Import customers-august.csv."
+    },
+    {
+      "sourceLine": 179,
+      "text": "Resolve one required column mapping."
+    },
+    {
+      "sourceLine": 180,
+      "text": "Create a source node from the import."
+    },
+    {
+      "sourceLine": 181,
+      "text": "Connect it to Normalize Email."
+    },
+    {
+      "sourceLine": 182,
+      "text": "Inspect transformed rows in the data sheet."
+    },
+    {
+      "sourceLine": 183,
+      "text": "Add a quarantine branch for invalid records."
+    },
+    {
+      "sourceLine": 184,
+      "text": "Save and run the pipeline."
+    },
+    {
+      "sourceLine": 185,
+      "text": "Identify and repair a failed node."
+    },
+    {
+      "sourceLine": 186,
+      "text": "Run the pipeline successfully."
+    },
+    {
+      "sourceLine": 188,
+      "text": "Every surface in the guide serves this journey. Anything else is either a reusable system concern or a non-goal."
+    },
+    {
+      "sourceLine": 190,
+      "text": "Write the first artifact: the extension brief"
+    },
+    {
+      "sourceLine": 192,
+      "text": "Use a one-page brief with these fields:"
+    },
+    {
+      "sourceLine": 194,
+      "text": "Current route and baseline screen."
+    },
+    {
+      "sourceLine": 195,
+      "text": "Primary and secondary users."
+    },
+    {
+      "sourceLine": 196,
+      "text": "User problem and job to complete."
+    },
+    {
+      "sourceLine": 197,
+      "text": "Success journey."
+    },
+    {
+      "sourceLine": 198,
+      "text": "Change boundary."
+    },
+    {
+      "sourceLine": 199,
+      "text": "Preservation boundary."
+    },
+    {
+      "sourceLine": 200,
+      "text": "Supported viewports."
+    },
+    {
+      "sourceLine": 201,
+      "text": "Data fixture."
+    },
+    {
+      "sourceLine": 202,
+      "text": "Existing behavior that cannot regress."
+    },
+    {
+      "sourceLine": 203,
+      "text": "Open product decisions."
+    },
+    {
+      "sourceLine": 204,
+      "text": "Approval owner for each decision."
+    },
+    {
+      "sourceLine": 206,
+      "text": "Baseline analysis"
+    },
+    {
+      "sourceLine": 207,
+      "text": "You are preparing to extend an existing production screen. Do not generate a new design yet."
+    },
+    {
+      "sourceLine": 209,
+      "text": "Review the attached current screen, route context, relevant code, and design-system sources. Produce:"
+    },
+    {
+      "sourceLine": 211,
+      "text": "a factual inventory of the current screen,"
+    },
+    {
+      "sourceLine": 212,
+      "text": "the visible component and layout patterns,"
+    },
+    {
+      "sourceLine": 213,
+      "text": "the behaviors and regions that should be preserved,"
+    },
+    {
+      "sourceLine": 214,
+      "text": "ambiguities or source conflicts,"
+    },
+    {
+      "sourceLine": 215,
+      "text": "a proposed change boundary for the requested feature."
+    },
+    {
+      "sourceLine": 217,
+      "text": "Separate direct observations from inferences. Do not invent missing behavior. End with the questions that require a product, design, or engineering owner."
+    },
+    {
+      "sourceLine": 220,
+      "text": "Extension brief"
+    },
+    {
+      "sourceLine": 221,
+      "text": "Current route and screen"
+    },
+    {
+      "sourceLine": 222,
+      "text": "Primary user and job"
+    },
+    {
+      "sourceLine": 223,
+      "text": "Success journey"
+    },
+    {
+      "sourceLine": 224,
+      "text": "May change"
+    },
+    {
+      "sourceLine": 225,
+      "text": "Must remain stable"
+    },
+    {
+      "sourceLine": 226,
+      "text": "Supported viewports"
+    },
+    {
+      "sourceLine": 227,
+      "text": "Data fixture"
+    },
+    {
+      "sourceLine": 228,
+      "text": "Open decisions and owners"
+    },
+    {
+      "sourceLine": 231,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 233,
+      "text": "The team can point to the authoritative source for behavior, components, Figma anatomy, and product intent."
+    },
+    {
+      "sourceLine": 234,
+      "text": "The existing screen has a named preservation boundary."
+    },
+    {
+      "sourceLine": 235,
+      "text": "One fixture carries through the complete journey."
+    },
+    {
+      "sourceLine": 236,
+      "text": "Non-goals are explicit."
+    },
+    {
+      "sourceLine": 237,
+      "text": "Claude has analyzed the baseline without generating a replacement screen."
+    },
+    {
+      "sourceLine": 243,
+      "text": "Prepare Simple Design System"
+    },
+    {
+      "sourceLine": 245,
+      "text": "Simple Design System is a useful teaching source because the Figma library and React codebase were designed to work together. The repository includes variables, styles, primitives, compositions, icons, Storybook stories, and Code Connect mappings. It also exposes the limits of the example: it is a responsive web foundation, not a ready-made graph editor."
+    },
+    {
+      "sourceLine": 247,
+      "text": "Duplicate before you connect"
+    },
+    {
+      "sourceLine": 249,
+      "text": "Open the Simple Design System Community file and choose Make a copy. Work in the copy. Figma MCP can read content the authenticated account has permission to view or edit; native writing to an existing file requires edit permission and a Full seat. The August research account could not inspect the Community source through its connected tools. That historical denial does not establish an editor-only rule for all reads. Confirm the current account and working-file access separately. See Figma access and permissions and write to canvas."
+    },
+    {
+      "sourceLine": 251,
+      "text": "Keep the original source URL in the project record:"
+    },
+    {
+      "sourceLine": 253,
+      "text": "https://www.figma.com/design/AIulMBySUibjRtykdngCUp/Simple-Design-System--Community-?node-id=3-5"
+    },
+    {
+      "sourceLine": 255,
+      "text": "Record the duplicate's file URL separately. Do not overwrite the original URL in source notes; the two links serve different purposes."
+    },
+    {
+      "sourceLine": 257,
+      "text": "Why the copy matters"
+    },
+    {
+      "sourceLine": 258,
+      "text": "The public Community file is the provenance source. The duplicate is the working file. Connected agents need permissions on the working file, and your edits should never change the public source."
+    },
+    {
+      "sourceLine": 261,
+      "text": "Pair the Figma file with the codebase"
+    },
+    {
+      "sourceLine": 263,
+      "text": "Use Figma's public figma/sds repository as the code counterpart. The project identifies itself as an alpha base system that demonstrates Variables, Styles, Components, Code Connect, and a React implementation."
+    },
+    {
+      "sourceLine": 265,
+      "text": "The code is organized into:"
+    },
+    {
+      "sourceLine": 267,
+      "text": "src/ui/primitives \u2014 reusable controls that should not be reduced further."
+    },
+    {
+      "sourceLine": 268,
+      "text": "src/ui/compositions \u2014 example arrangements of primitives."
+    },
+    {
+      "sourceLine": 269,
+      "text": "src/ui/layout \u2014 Flex, Grid, and Section helpers that may not have direct Figma equivalents."
+    },
+    {
+      "sourceLine": 270,
+      "text": "src/ui/icons \u2014 generated icon components."
+    },
+    {
+      "sourceLine": 271,
+      "text": "src/figma \u2014 Code Connect mappings."
+    },
+    {
+      "sourceLine": 272,
+      "text": "src/stories \u2014 Storybook examples and component states."
+    },
+    {
+      "sourceLine": 273,
+      "text": "src/theme.css \u2014 generated CSS variables from Figma tokens."
+    },
+    {
+      "sourceLine": 275,
+      "text": "Inventory the components you can reuse"
+    },
+    {
+      "sourceLine": 277,
+      "text": "The August code inspection identified these primitives. Confirm them in the selected repository revision:"
+    },
+    {
+      "sourceLine": 279,
+      "text": "Product need"
+    },
+    {
+      "sourceLine": 279,
+      "text": "Existing Simple Design System material"
+    },
+    {
+      "sourceLine": 279,
+      "text": "Disposition"
+    },
+    {
+      "sourceLine": 281,
+      "text": "Save, Run, cancel, confirm"
+    },
+    {
+      "sourceLine": 281,
+      "text": "Button, IconButton"
+    },
+    {
+      "sourceLine": 281,
+      "text": "Reuse"
+    },
+    {
+      "sourceLine": 282,
+      "text": "Node settings fields"
+    },
+    {
+      "sourceLine": 282,
+      "text": "InputField, SelectField, TextareaField, CheckboxField, RadioGroup, SwitchField, SliderField"
+    },
+    {
+      "sourceLine": 282,
+      "text": "Reuse"
+    },
+    {
+      "sourceLine": 283,
+      "text": "Field errors and descriptions"
+    },
+    {
+      "sourceLine": 283,
+      "text": "Field, Label, Description, FieldError, Fieldset"
+    },
+    {
+      "sourceLine": 283,
+      "text": "Reuse"
+    },
+    {
+      "sourceLine": 284,
+      "text": "Inspector sections"
+    },
+    {
+      "sourceLine": 284,
+      "text": "Accordion, Tabs, Text"
+    },
+    {
+      "sourceLine": 284,
+      "text": "Reuse or compose"
+    },
+    {
+      "sourceLine": 285,
+      "text": "Table preview"
+    },
+    {
+      "sourceLine": 285,
+      "text": "Table, Pagination, Search, Tag"
+    },
+    {
+      "sourceLine": 285,
+      "text": "Reuse and compose"
+    },
+    {
+      "sourceLine": 286,
+      "text": "Menus and overflow actions"
+    },
+    {
+      "sourceLine": 286,
+      "text": "Menu, ListBox, Tooltip"
+    },
+    {
+      "sourceLine": 286,
+      "text": "Reuse"
+    },
+    {
+      "sourceLine": 287,
+      "text": "Confirmations and blocking flows"
+    },
+    {
+      "sourceLine": 287,
+      "text": "Dialog"
+    },
+    {
+      "sourceLine": 287,
+      "text": "Reuse"
+    },
+    {
+      "sourceLine": 288,
+      "text": "Status and feedback"
+    },
+    {
+      "sourceLine": 288,
+      "text": "Notification, Tag, icons"
+    },
+    {
+      "sourceLine": 288,
+      "text": "Reuse and compose"
+    },
+    {
+      "sourceLine": 289,
+      "text": "Shell navigation"
+    },
+    {
+      "sourceLine": 289,
+      "text": "Navigation, Headers, Flex, Grid, Section"
+    },
+    {
+      "sourceLine": 289,
+      "text": "Reuse where the current app already uses them"
+    },
+    {
+      "sourceLine": 290,
+      "text": "DAG nodes, ports, edges"
+    },
+    {
+      "sourceLine": 290,
+      "text": "No direct primitive"
+    },
+    {
+      "sourceLine": 290,
+      "text": "Proposed product-specific components"
+    },
+    {
+      "sourceLine": 291,
+      "text": "Resizable data sheet"
+    },
+    {
+      "sourceLine": 291,
+      "text": "No direct primitive"
+    },
+    {
+      "sourceLine": 291,
+      "text": "Proposed composition using existing primitives"
+    },
+    {
+      "sourceLine": 292,
+      "text": "File drop zone and mapping row"
+    },
+    {
+      "sourceLine": 292,
+      "text": "No direct primitive"
+    },
+    {
+      "sourceLine": 292,
+      "text": "Proposed composition or product component"
+    },
+    {
+      "sourceLine": 294,
+      "text": "The inventory prevents two opposite mistakes: inventing controls the system already has, and forcing an application-specific graph element into a generic primitive."
+    },
+    {
+      "sourceLine": 296,
+      "text": "Inventory the tokens"
+    },
+    {
+      "sourceLine": 298,
+      "text": "Simple Design System exposes semantic color families for background, border, icon, and text across brand, default, neutral, positive, warning, danger, disabled, and utility roles. Its spacing scale runs from space-050 through large layout values; radius, focus-ring stroke, icon sizes, and typography scales are also defined."
+    },
+    {
+      "sourceLine": 300,
+      "text": "Use semantic tokens rather than literal values in every prompt and handoff. A node failure should resolve to the system's danger roles. A selected node may use the brand border and focus-ring rules. A canvas grid may require one new semantic token, but the grid should still derive from existing neutral primitives."
+    },
+    {
+      "sourceLine": 302,
+      "text": "Build a compact context packet"
+    },
+    {
+      "sourceLine": 304,
+      "text": "Claude Design can import a repository, but a focused package is easier to validate than an entire monorepo. Include:"
+    },
+    {
+      "sourceLine": 306,
+      "text": "The duplicated Figma working-file link."
+    },
+    {
+      "sourceLine": 307,
+      "text": "src/ui/primitives, src/ui/layout, and only the relevant compositions."
+    },
+    {
+      "sourceLine": 308,
+      "text": "src/theme.css and token-generation notes."
+    },
+    {
+      "sourceLine": 309,
+      "text": "Relevant src/figma Code Connect files."
+    },
+    {
+      "sourceLine": 310,
+      "text": "Relevant Storybook stories."
+    },
+    {
+      "sourceLine": 311,
+      "text": "The current Pipeline Detail route and nearby tests."
+    },
+    {
+      "sourceLine": 312,
+      "text": "Two or three representative shipped screens."
+    },
+    {
+      "sourceLine": 313,
+      "text": "The extension brief and fixture schema."
+    },
+    {
+      "sourceLine": 315,
+      "text": "Exclude:"
+    },
+    {
+      "sourceLine": 317,
+      "text": ".git, node_modules, build output, generated caches, and unrelated packages."
+    },
+    {
+      "sourceLine": 318,
+      "text": "Deprecated components."
+    },
+    {
+      "sourceLine": 319,
+      "text": "Concept work that does not match production."
+    },
+    {
+      "sourceLine": 320,
+      "text": "Screens containing private customer data."
+    },
+    {
+      "sourceLine": 321,
+      "text": "Large asset folders that do not affect the target feature."
+    },
+    {
+      "sourceLine": 323,
+      "text": "Connect Code Connect after duplication"
+    },
+    {
+      "sourceLine": 325,
+      "text": "The Simple Design System README still documents documentUrlSubstitutions in figma.config.json and expects a fresh duplicate to preserve node IDs. Verify sample IDs in the chosen copy, then update the file keys. Record the repository revision and mapping format before validating."
+    },
+    {
+      "sourceLine": 327,
+      "text": "Code Connect is documented for Dev or Full seats on Organization and Enterprise plans. The current CLI quickstart recommends framework-agnostic template files; existing SDS mappings remain inputs from their own repository revision. Do not migrate parsers or publish mappings merely to run the example. Follow the team's approved process if mapping publication is authorized. The CLI requires Node.js 18 or newer and a locally stored token with Code Connect Write and File content Read scopes. See the Code Connect introduction and CLI quickstart."
+    },
+    {
+      "sourceLine": 329,
+      "text": "Code Connect can supply imports, properties, snippets, source paths, and team instructions. CLI mappings and UI mappings provide different detail: a CLI mapping can omit an import when its source/import fields are missing, and UI mappings do not include full snippets by default. Inspect one returned mapping before relying on it. Keep mappings current. See Code Connect integration."
+    },
+    {
+      "sourceLine": 331,
+      "text": "Inspect the system package"
+    },
+    {
+      "sourceLine": 332,
+      "text": "Inspect the attached Simple Design System package and the current Pipeline Detail implementation. Do not edit files."
+    },
+    {
+      "sourceLine": 334,
+      "text": "Return four inventories:"
+    },
+    {
+      "sourceLine": 336,
+      "text": "production components available for reuse, with import paths and relevant props,"
+    },
+    {
+      "sourceLine": 337,
+      "text": "semantic tokens available for color, spacing, typography, radius, and focus,"
+    },
+    {
+      "sourceLine": 338,
+      "text": "current screen composition and state-management patterns,"
+    },
+    {
+      "sourceLine": 339,
+      "text": "missing product-specific patterns required by the Data Pipeline Studio brief."
+    },
+    {
+      "sourceLine": 341,
+      "text": "For every proposed missing pattern, explain why existing primitives cannot cover it through composition. Flag any difference between Figma naming, Code Connect mapping, and production code."
+    },
+    {
+      "sourceLine": 344,
+      "text": "Design-system intake"
+    },
+    {
+      "sourceLine": 345,
+      "text": "Working Figma file and owner"
+    },
+    {
+      "sourceLine": 346,
+      "text": "Code package and revision"
+    },
+    {
+      "sourceLine": 347,
+      "text": "Token source and generation path"
+    },
+    {
+      "sourceLine": 348,
+      "text": "Relevant primitives"
+    },
+    {
+      "sourceLine": 349,
+      "text": "Relevant compositions"
+    },
+    {
+      "sourceLine": 350,
+      "text": "Code Connect status"
+    },
+    {
+      "sourceLine": 351,
+      "text": "Known gaps"
+    },
+    {
+      "sourceLine": 352,
+      "text": "Excluded or unsafe sources"
+    },
+    {
+      "sourceLine": 355,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 357,
+      "text": "The Community source is untouched and a working duplicate exists."
+    },
+    {
+      "sourceLine": 358,
+      "text": "The Figma file and React package are paired."
+    },
+    {
+      "sourceLine": 359,
+      "text": "Components, tokens, Storybook examples, and Code Connect mappings are inspectable."
+    },
+    {
+      "sourceLine": 360,
+      "text": "The context package excludes unrelated or unsafe material."
+    },
+    {
+      "sourceLine": 361,
+      "text": "DAG-specific gaps are named before generation."
+    },
+    {
+      "sourceLine": 367,
+      "text": "Validate the imported system"
+    },
+    {
+      "sourceLine": 369,
+      "text": "Claude Design can extract a reusable system from codebases, design files, screenshots, decks, and brand assets. The useful question is not whether extraction ran. The useful question is whether a generated screen resolves back to the system the team ships."
+    },
+    {
+      "sourceLine": 371,
+      "text": "Validate the system before asking for Data Pipeline Studio."
+    },
+    {
+      "sourceLine": 373,
+      "text": "Establish the system in Claude Design"
+    },
+    {
+      "sourceLine": 375,
+      "text": "Choose the setup path that matches the source. For a React product system, the current Claude Code command reference documents /design-login to authorize design-system access and /design-sync [hint] to convert and upload the repository's system to Claude Design. First-time verification can take hours for a large repository. Treat conversion and upload as part of the operation; scope the source package before running it. These commands require the Anthropic path and claude.ai access, and are unavailable through the documented cloud-provider and apps-gateway paths."
+    },
+    {
+      "sourceLine": 377,
+      "text": "For a brand system, use chat with approved fonts, logos, files, and design references. Manage integrated systems in Settings > Design systems. A system created at claude.ai/design can move through the Design sidebar's migration banner, but the migrated guide, tokens, and components need review. See the design-system setup guide."
+    },
+    {
+      "sourceLine": 379,
+      "text": "Standalone setup remains a separate path: select the organization at claude.ai/design, upload or link approved assets, review the generated system, and test it before using the Published toggle. In integrated Artifacts, confirm the attached system and selected organization default. Publishing a system and setting a default are separate decisions. Enterprise administrators can reserve publication, default selection, and deletion for designated users. See the Artifacts admin guide."
+    },
+    {
+      "sourceLine": 381,
+      "text": "The August guide required manual registration of the Claude Design MCP endpoint. Current reviewed setup instructions use the built-in commands and do not establish that registration as a prerequisite. Omit it from the default path; this is not a claim that the endpoint has been retired. If a command is absent or authorization fails, record the installed version, account/provider, enabled template, and exact error before changing configuration."
+    },
+    {
+      "sourceLine": 383,
+      "text": "Use /design [brief] for the documented Claude Code artboard workflow. Inspect the returned artifact in a desktop browser. Test whether the chosen surface supports the interactive states your product example needs; broad Design help and the CLI reference describe different scopes. Do not infer complete import/export/sync parity from the command name."
+    },
+    {
+      "sourceLine": 385,
+      "text": "Do not paste private tokens into chat or commit local credentials. Follow the repository's existing secret-handling rules."
+    },
+    {
+      "sourceLine": 387,
+      "text": "Preserve the reviewed baseline"
+    },
+    {
+      "sourceLine": 389,
+      "text": "Anthropic documents asking Claude to save the current project before trying another direction, but also lists version history as unavailable. Export a reviewed baseline, record its date and system revision, and verify that the saved artifact opens before experimenting. Treat reliable restore and correction persistence as tests, not assumptions. See Design revisions and limitations."
+    },
+    {
+      "sourceLine": 391,
+      "text": "Give sources a clear authority order"
+    },
+    {
+      "sourceLine": 393,
+      "text": "Create the draft system"
+    },
+    {
+      "sourceLine": 394,
+      "text": "Build a draft design system from the attached sources."
+    },
+    {
+      "sourceLine": 396,
+      "text": "Treat the component-library code and design tokens as authoritative. Use the attached shipped screens to learn composition and product patterns. Use the Figma file for component anatomy, variants, variables, and layout intent."
+    },
+    {
+      "sourceLine": 398,
+      "text": "Preserve existing component, token, and pattern names exactly. Separate:"
+    },
+    {
+      "sourceLine": 400,
+      "text": "directly observed components and tokens,"
+    },
+    {
+      "sourceLine": 401,
+      "text": "inferred composition patterns,"
+    },
+    {
+      "sourceLine": 402,
+      "text": "missing or ambiguous areas."
+    },
+    {
+      "sourceLine": 404,
+      "text": "Do not silently invent a component. Label any missing pattern as a proposed addition. Generate a settings screen, a dense operational table, and a confirmation flow. Record the selected system and source revision. Keep the system in draft; publication and organization-default changes need owner approval."
+    },
+    {
+      "sourceLine": 407,
+      "text": "Run three known-screen tests"
+    },
+    {
+      "sourceLine": 409,
+      "text": "Choose tests that expose different parts of the system:"
+    },
+    {
+      "sourceLine": 411,
+      "text": "A settings form tests fields, labels, descriptions, errors, toggles, actions, and vertical rhythm."
+    },
+    {
+      "sourceLine": 412,
+      "text": "A dense operational table tests data density, search, filters, pagination, status, empty states, and overflow."
+    },
+    {
+      "sourceLine": 413,
+      "text": "A confirmation flow tests dialog anatomy, destructive language, focus handling, and notification behavior."
+    },
+    {
+      "sourceLine": 415,
+      "text": "Do not judge the tests from memory. Compare them to the components, tokens, and representative screens in the source package."
+    },
+    {
+      "sourceLine": 417,
+      "text": "Score system fidelity"
+    },
+    {
+      "sourceLine": 419,
+      "text": "Use a ten-point sample on each test screen. Select visible elements across the page and classify each one:"
+    },
+    {
+      "sourceLine": 421,
+      "text": "Exact reuse \u2014 correct component, variant, token, and composition."
+    },
+    {
+      "sourceLine": 422,
+      "text": "Valid composition \u2014 existing primitives combined according to known patterns."
+    },
+    {
+      "sourceLine": 423,
+      "text": "Cosmetic match \u2014 looks close but does not resolve to an approved component or token."
+    },
+    {
+      "sourceLine": 424,
+      "text": "Invented \u2014 no source evidence and no explicit proposal label."
+    },
+    {
+      "sourceLine": 425,
+      "text": "Unverifiable \u2014 source package is insufficient."
+    },
+    {
+      "sourceLine": 427,
+      "text": "The system passes when every sampled element is exact reuse or valid composition, or when an exception is explicitly documented and approved. A visual match with unverifiable implementation identity does not pass."
+    },
+    {
+      "sourceLine": 429,
+      "text": "Test correction behavior"
+    },
+    {
+      "sourceLine": 431,
+      "text": "Deliberately introduce one correction: ask Claude to replace an invented filter control with the named SelectField and existing Tag pattern. Then regenerate a nearby state. If the correction holds only on one frame and disappears in the next, the system is not stable enough for feature work."
+    },
+    {
+      "sourceLine": 433,
+      "text": "Conformance audit"
+    },
+    {
+      "sourceLine": 434,
+      "text": "Audit the generated test screens against the linked design system and codebase."
+    },
+    {
+      "sourceLine": 436,
+      "text": "For every visible element, classify it as:"
+    },
+    {
+      "sourceLine": 438,
+      "text": "reused existing component,"
+    },
+    {
+      "sourceLine": 439,
+      "text": "existing component with an approved variant,"
+    },
+    {
+      "sourceLine": 440,
+      "text": "composed from existing primitives,"
+    },
+    {
+      "sourceLine": 441,
+      "text": "proposed new component,"
+    },
+    {
+      "sourceLine": 442,
+      "text": "unverified."
+    },
+    {
+      "sourceLine": 444,
+      "text": "Correct token, typography, spacing, radius, color, and component deviations. List anything you could not verify from the sources. Do not describe the system as production-ready. Produce a short validation report for the design lead."
+    },
+    {
+      "sourceLine": 447,
+      "text": "Decide whether to publish"
+    },
+    {
+      "sourceLine": 449,
+      "text": "Publish the organization system only when:"
+    },
+    {
+      "sourceLine": 451,
+      "text": "Component names and variants match the source."
+    },
+    {
+      "sourceLine": 452,
+      "text": "Semantic tokens are used consistently."
+    },
+    {
+      "sourceLine": 453,
+      "text": "Known-screen composition matches the product."
+    },
+    {
+      "sourceLine": 454,
+      "text": "Corrections persist across regeneration."
+    },
+    {
+      "sourceLine": 455,
+      "text": "Missing patterns remain visibly labeled."
+    },
+    {
+      "sourceLine": 456,
+      "text": "A design-system owner has reviewed the output."
+    },
+    {
+      "sourceLine": 458,
+      "text": "If the system fails, improve the sources before adding more prompt detail. Claude's own documentation says import quality depends on source quality. Prompting cannot repair an ambiguous or contradictory system indefinitely."
+    },
+    {
+      "sourceLine": 460,
+      "text": "Large repositories"
+    },
+    {
+      "sourceLine": 461,
+      "text": "Attach the focused component and feature directories for a large monorepo. Anthropic warns that very large repositories can cause lag or browser instability. Smaller context also makes component identity easier to audit."
+    },
+    {
+      "sourceLine": 464,
+      "text": "System validation record"
+    },
+    {
+      "sourceLine": 465,
+      "text": "Test screen and source comparator"
+    },
+    {
+      "sourceLine": 466,
+      "text": "Sampled elements"
+    },
+    {
+      "sourceLine": 467,
+      "text": "Exact reuse count"
+    },
+    {
+      "sourceLine": 468,
+      "text": "Valid composition count"
+    },
+    {
+      "sourceLine": 469,
+      "text": "Cosmetic-only or invented count"
+    },
+    {
+      "sourceLine": 470,
+      "text": "Unverifiable count"
+    },
+    {
+      "sourceLine": 471,
+      "text": "Correction test and result"
+    },
+    {
+      "sourceLine": 472,
+      "text": "Decision and reviewer"
+    },
+    {
+      "sourceLine": 475,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 477,
+      "text": "The imported system has been tested on known work, not only on a new concept."
+    },
+    {
+      "sourceLine": 478,
+      "text": "Component identity and token use have been sampled."
+    },
+    {
+      "sourceLine": 479,
+      "text": "One correction has persisted through regeneration."
+    },
+    {
+      "sourceLine": 480,
+      "text": "Missing patterns are explicit."
+    },
+    {
+      "sourceLine": 481,
+      "text": "A human owner has approved publication or recorded why it remains a draft."
+    },
+    {
+      "sourceLine": 487,
+      "text": "Extend the existing screen"
+    },
+    {
+      "sourceLine": 489,
+      "text": "The first feature prompt should describe an extension, not a destination. Claude needs the baseline screen, the preservation boundary, the exact route, and a narrow first change."
+    },
+    {
+      "sourceLine": 491,
+      "text": "Start from the current route"
+    },
+    {
+      "sourceLine": 493,
+      "text": "Create a Claude Design project with the validated system attached. Add the current Pipeline Detail screen as a screenshot, existing design asset, web capture, or linked code reference. Include the relevant feature directory and current tests."
+    },
+    {
+      "sourceLine": 495,
+      "text": "Extend Pipeline Detail"
+    },
+    {
+      "sourceLine": 496,
+      "text": "Extend the existing /pipelines/customer-health/edit screen into the first version of Data Pipeline Studio."
+    },
+    {
+      "sourceLine": 498,
+      "text": "Starting context:"
+    },
+    {
+      "sourceLine": 500,
+      "text": "current screen: the attached Pipeline Detail baseline,"
+    },
+    {
+      "sourceLine": 501,
+      "text": "relevant code: the attached route, shell, editor, preview, and test files,"
+    },
+    {
+      "sourceLine": 502,
+      "text": "existing components: the linked Simple Design System package,"
+    },
+    {
+      "sourceLine": 503,
+      "text": "target viewport: 1440 x 900, with a supported minimum of 1024 x 768,"
+    },
+    {
+      "sourceLine": 504,
+      "text": "mobile: view-only and out of scope for editing."
+    },
+    {
+      "sourceLine": 506,
+      "text": "Preserve the global shell, navigation, breadcrumb, pipeline identity, environment badge, last-run metadata, Save, Run, overflow actions, permissions, routing, persistence, and run behavior. Preserve the existing typography, spacing, forms, tables, dialogs, status, and notification language."
+    },
+    {
+      "sourceLine": 508,
+      "text": "Replace only the central linear step list with a DAG workspace. Keep the current right-side configuration panel and collapsed data preview in place for this first pass."
+    },
+    {
+      "sourceLine": 510,
+      "text": "Use the fixture pipeline: Customers CSV \u2192 Normalize Email \u2192 Validate Customer Schema \u2192 Publish to Warehouse. Add a proposed branch from Validate Customer Schema to Quarantine Invalid Rows."
+    },
+    {
+      "sourceLine": 512,
+      "text": "Reuse named system components. Label every proposed component or token. Produce one interactive desktop prototype and a short change log. Do not redesign unrelated regions."
+    },
+    {
+      "sourceLine": 515,
+      "text": "Review the first diff"
+    },
+    {
+      "sourceLine": 517,
+      "text": "The first review asks five questions:"
+    },
+    {
+      "sourceLine": 519,
+      "text": "Did the shell remain stable?"
+    },
+    {
+      "sourceLine": 520,
+      "text": "Did the central editor change without moving unrelated controls?"
+    },
+    {
+      "sourceLine": 521,
+      "text": "Are the pipeline steps the same fixture throughout?"
+    },
+    {
+      "sourceLine": 522,
+      "text": "Can the user select a node and understand the graph direction?"
+    },
+    {
+      "sourceLine": 523,
+      "text": "Are new graph elements labeled as proposals rather than disguised system components?"
+    },
+    {
+      "sourceLine": 525,
+      "text": "Reject the first pass if the answer to either of the first two questions is no. A prettier shell is still scope drift."
+    },
+    {
+      "sourceLine": 527,
+      "text": "Add graph behavior in small increments"
+    },
+    {
+      "sourceLine": 529,
+      "text": "The DAG interaction contract includes:"
+    },
+    {
+      "sourceLine": 531,
+      "text": "Pan, zoom, fit-to-view, and reset."
+    },
+    {
+      "sourceLine": 532,
+      "text": "Pointer and keyboard node selection."
+    },
+    {
+      "sourceLine": 533,
+      "text": "Node movement without changing pipeline semantics."
+    },
+    {
+      "sourceLine": 534,
+      "text": "Edge creation between compatible ports."
+    },
+    {
+      "sourceLine": 535,
+      "text": "Cycle rejection and incompatible-connection explanations."
+    },
+    {
+      "sourceLine": 536,
+      "text": "Undo and redo for movement, connection, and deletion."
+    },
+    {
+      "sourceLine": 537,
+      "text": "Inspectable nodes while a run is active, with structural edits locked."
+    },
+    {
+      "sourceLine": 538,
+      "text": "Status communicated through icon, label, and color."
+    },
+    {
+      "sourceLine": 540,
+      "text": "Add one group at a time. After each change, replay the baseline journey and inspect the preservation boundary."
+    },
+    {
+      "sourceLine": 542,
+      "text": "Add canvas navigation"
+    },
+    {
+      "sourceLine": 543,
+      "text": "Keep the approved screen and fixture unchanged. Add only canvas navigation: pan, zoom in, zoom out, fit to view, and reset. Use existing IconButton and Tooltip patterns for controls. Show visible keyboard focus and accessible labels. Do not add node editing or connection behavior yet."
+    },
+    {
+      "sourceLine": 546,
+      "text": "Add selection and movement"
+    },
+    {
+      "sourceLine": 547,
+      "text": "Keep all approved regions unchanged. Add pointer and keyboard node selection, a visible selected state, and node movement. Moving a node changes layout only; it must not change graph semantics. Show a dirty document state after movement and include undo and redo using existing action patterns."
+    },
+    {
+      "sourceLine": 550,
+      "text": "Add connections and rejection"
+    },
+    {
+      "sourceLine": 551,
+      "text": "Add input and output ports plus edge creation between compatible nodes. Use the existing fixture. Demonstrate one valid connection, one incompatible connection, and one attempted cycle. Rejected actions must leave the graph unchanged and explain why the connection is invalid. Use icon, label, and color for status. In this fixture, attempt validate \u2192 august for a cycle and normalize \u2192 quarantine for a type mismatch; neither may change the graph. Keep every other surface unchanged."
+    },
+    {
+      "sourceLine": 554,
+      "text": "Define proposed graph components"
+    },
+    {
+      "sourceLine": 556,
+      "text": "Do not add a generic \u201cCard\u201d variant for a graph node merely because both are rectangles. A pipeline node has operational semantics, ports, selection, validation, execution states, and keyboard behavior. Treat it as a product-specific component composed from system primitives."
+    },
+    {
+      "sourceLine": 558,
+      "text": "Proposed component"
+    },
+    {
+      "sourceLine": 558,
+      "text": "Required variants or states"
+    },
+    {
+      "sourceLine": 558,
+      "text": "Reused foundation"
+    },
+    {
+      "sourceLine": 560,
+      "text": "PipelineNode"
+    },
+    {
+      "sourceLine": 560,
+      "text": "Source, transform, quality, destination; idle, selected, running, success, warning, failed, disabled"
+    },
+    {
+      "sourceLine": 560,
+      "text": "Text, Tag, Tooltip, icons, semantic tokens"
+    },
+    {
+      "sourceLine": 561,
+      "text": "PipelinePort"
+    },
+    {
+      "sourceLine": 561,
+      "text": "Input/output; compatible/incompatible; connected/unconnected; focused"
+    },
+    {
+      "sourceLine": 561,
+      "text": "Tooltip, focus-ring and semantic tokens"
+    },
+    {
+      "sourceLine": 562,
+      "text": "PipelineEdge"
+    },
+    {
+      "sourceLine": 562,
+      "text": "Default, selected, transferring, warning, failed"
+    },
+    {
+      "sourceLine": 562,
+      "text": "Semantic tokens; no color-only meaning"
+    },
+    {
+      "sourceLine": 563,
+      "text": "CanvasToolbar"
+    },
+    {
+      "sourceLine": 563,
+      "text": "Default, disabled actions, keyboard focus"
+    },
+    {
+      "sourceLine": 563,
+      "text": "IconButton, Tooltip, ButtonGroup pattern"
+    },
+    {
+      "sourceLine": 564,
+      "text": "RunProgressSummary"
+    },
+    {
+      "sourceLine": 564,
+      "text": "Queued, running, partial failure, success, cancelled"
+    },
+    {
+      "sourceLine": 564,
+      "text": "Notification, Tag, progress copy"
+    },
+    {
+      "sourceLine": 566,
+      "text": "Each proposed component needs a design owner, a code owner, a variant model, accessibility notes, and a production import path before the team promotes it to a shared library."
+    },
+    {
+      "sourceLine": 568,
+      "text": "Compare alternatives without multiplying scope"
+    },
+    {
+      "sourceLine": 570,
+      "text": "Use alternatives for a specific decision, such as node density or branch readability. Do not ask for three complete product redesigns."
+    },
+    {
+      "sourceLine": 572,
+      "text": "Compare node density"
+    },
+    {
+      "sourceLine": 573,
+      "text": "Before generating alternatives, export the approved baseline, record the source revision and date, and confirm the export opens. Keep that artifact intact. Then create two alternatives for PipelineNode density only:"
+    },
+    {
+      "sourceLine": 575,
+      "text": "compact: optimized for large graphs,"
+    },
+    {
+      "sourceLine": 576,
+      "text": "detailed: exposes key configuration and last-run status."
+    },
+    {
+      "sourceLine": 578,
+      "text": "Preserve the shell, canvas dimensions, fixture, inspector, and data preview. Use the same components and tokens in both. Compare scanability, graph capacity, error visibility, and keyboard focus. Recommend one default and one zoom-level rule."
+    },
+    {
+      "sourceLine": 581,
+      "text": "DAG review"
+    },
+    {
+      "sourceLine": 582,
+      "text": "Preserved regions verified"
+    },
+    {
+      "sourceLine": 583,
+      "text": "Graph direction and fixture"
+    },
+    {
+      "sourceLine": 584,
+      "text": "Navigation behavior"
+    },
+    {
+      "sourceLine": 585,
+      "text": "Selection and movement"
+    },
+    {
+      "sourceLine": 586,
+      "text": "Valid connection behavior"
+    },
+    {
+      "sourceLine": 587,
+      "text": "Cycle and incompatibility rejection"
+    },
+    {
+      "sourceLine": 588,
+      "text": "Undo and redo"
+    },
+    {
+      "sourceLine": 589,
+      "text": "Proposed component disposition"
+    },
+    {
+      "sourceLine": 590,
+      "text": "Open decisions"
+    },
+    {
+      "sourceLine": 593,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 595,
+      "text": "The baseline shell remains intact."
+    },
+    {
+      "sourceLine": 596,
+      "text": "The DAG uses the same pipeline fixture and real product language."
+    },
+    {
+      "sourceLine": 597,
+      "text": "Navigation, selection, movement, connections, and rejection are shown."
+    },
+    {
+      "sourceLine": 598,
+      "text": "Proposed graph components are visible in the system delta."
+    },
+    {
+      "sourceLine": 599,
+      "text": "Undo, keyboard focus, and running-state locks are part of the design."
+    },
+    {
+      "sourceLine": 605,
+      "text": "Design the adjacent surfaces"
+    },
+    {
+      "sourceLine": 607,
+      "text": "A graph alone does not complete the job. Data Pipeline Studio also needs a configuration surface, a data-inspection surface, and an importer. The surfaces share one selected node, one fixture, and one document state."
+    },
+    {
+      "sourceLine": 609,
+      "text": "Upgrade the node inspector"
+    },
+    {
+      "sourceLine": 611,
+      "text": "Selecting a node opens its schema-driven configuration. The inspector must:"
+    },
+    {
+      "sourceLine": 613,
+      "text": "Load the correct schema for the selected node."
+    },
+    {
+      "sourceLine": 614,
+      "text": "Show valid, dirty, invalid, testing, success, failure, and locked states."
+    },
+    {
+      "sourceLine": 615,
+      "text": "Preserve valid drafts when the user switches nodes."
+    },
+    {
+      "sourceLine": 616,
+      "text": "Warn before discarding invalid edits."
+    },
+    {
+      "sourceLine": 617,
+      "text": "Block Save when required fields are invalid and link the error summary to the affected controls."
+    },
+    {
+      "sourceLine": 618,
+      "text": "Run Test node against the fixture data without running the complete pipeline."
+    },
+    {
+      "sourceLine": 619,
+      "text": "Use the existing confirmation-dialog pattern for destructive actions."
+    },
+    {
+      "sourceLine": 621,
+      "text": "Extend the node inspector"
+    },
+    {
+      "sourceLine": 622,
+      "text": "Keep the approved DAG and shell unchanged. Replace the existing right-side step editor with a schema-driven node inspector for the selected node."
+    },
+    {
+      "sourceLine": 624,
+      "text": "Reuse InputField, SelectField, TextareaField, CheckboxField, SwitchField, FieldError, Accordion, Tabs, Button, Dialog, and Notification patterns from the linked system where appropriate."
+    },
+    {
+      "sourceLine": 626,
+      "text": "Show these states for Validate Customer Schema: no selection, loading schema, pristine, dirty, one required-field error, testing, test success, test failure, and locked during a pipeline run. Switching to another node must preserve a valid draft and warn before discarding an invalid one."
+    },
+    {
+      "sourceLine": 628,
+      "text": "Annotate the state transitions and the data each action reads or writes. Do not change the graph layout or application shell."
+    },
+    {
+      "sourceLine": 631,
+      "text": "Turn the preview into a data sheet"
+    },
+    {
+      "sourceLine": 633,
+      "text": "The data sheet is a resizable bottom surface with collapsed, half, and expanded positions. It shows the selected node's actual input or output fixture. It supports column resizing, sorting, filtering, and cell inspection."
+    },
+    {
+      "sourceLine": 635,
+      "text": "The sheet must distinguish:"
+    },
+    {
+      "sourceLine": 637,
+      "text": "Live data."
+    },
+    {
+      "sourceLine": 638,
+      "text": "Cached data."
+    },
+    {
+      "sourceLine": 639,
+      "text": "Stale data."
+    },
+    {
+      "sourceLine": 640,
+      "text": "Truncated data."
+    },
+    {
+      "sourceLine": 641,
+      "text": "Sample data."
+    },
+    {
+      "sourceLine": 642,
+      "text": "No available data."
+    },
+    {
+      "sourceLine": 643,
+      "text": "Load failure."
+    },
+    {
+      "sourceLine": 645,
+      "text": "The distinction needs language and status treatment. A green dot with no label is not sufficient."
+    },
+    {
+      "sourceLine": 647,
+      "text": "Add the data sheet"
+    },
+    {
+      "sourceLine": 648,
+      "text": "Keep the approved shell, DAG, and inspector unchanged. Replace the collapsed preview with a resizable data sheet using existing Table, Search, Tag, Pagination, IconButton, Tooltip, and Notification patterns."
+    },
+    {
+      "sourceLine": 650,
+      "text": "Support collapsed, half, and expanded positions. Show the output of Normalize Email from the shared fixture. Include column resizing, sorting, filtering, and a cell detail interaction."
+    },
+    {
+      "sourceLine": 652,
+      "text": "Create separate states for loading, rows, empty, truncated, stale, and error. Label whether the data is live, cached, stale, truncated, or sample. Selecting an error row should focus the responsible node. Annotate the connection between node selection and the rows displayed."
+    },
+    {
+      "sourceLine": 655,
+      "text": "Extend the importer"
+    },
+    {
+      "sourceLine": 657,
+      "text": "The importer accepts CSV and JSON through a file picker or drop zone. It should:"
+    },
+    {
+      "sourceLine": 659,
+      "text": "Show parsing progress and allow cancellation."
+    },
+    {
+      "sourceLine": 660,
+      "text": "Infer headers and types without silently committing them."
+    },
+    {
+      "sourceLine": 661,
+      "text": "Require mapping for mandatory fields."
+    },
+    {
+      "sourceLine": 662,
+      "text": "Identify malformed rows by row and column."
+    },
+    {
+      "sourceLine": 663,
+      "text": "Offer Reject invalid rows or Send to quarantine."
+    },
+    {
+      "sourceLine": 664,
+      "text": "Create a configured source node after a successful import."
+    },
+    {
+      "sourceLine": 665,
+      "text": "Open the imported data in the preview."
+    },
+    {
+      "sourceLine": 667,
+      "text": "Use a staged flow because the user is making a series of consequential choices. A single overloaded dialog makes progress, validation, and recovery difficult to read."
+    },
+    {
+      "sourceLine": 669,
+      "text": "Extend the importer"
+    },
+    {
+      "sourceLine": 670,
+      "text": "Extend the existing file-upload dialog into a staged CSV and JSON importer. Keep all approved product surfaces unchanged."
+    },
+    {
+      "sourceLine": 672,
+      "text": "Use customers-august.csv as the fixture. Use the exact six rows from Chapter 1. Require explicit confirmation of contact_email \u2192 email and the proposed customer ID and health-score mappings. Preserve the three valid and three invalid record identities across every surface."
+    },
+    {
+      "sourceLine": 674,
+      "text": "Show these stages and states:"
+    },
+    {
+      "sourceLine": 676,
+      "text": "initial file picker and drop zone,"
+    },
+    {
+      "sourceLine": 677,
+      "text": "drag-over,"
+    },
+    {
+      "sourceLine": 678,
+      "text": "parsing with progress and cancel,"
+    },
+    {
+      "sourceLine": 679,
+      "text": "inferred headers and types pending confirmation,"
+    },
+    {
+      "sourceLine": 680,
+      "text": "required mapping unresolved,"
+    },
+    {
+      "sourceLine": 681,
+      "text": "malformed rows with row and column references,"
+    },
+    {
+      "sourceLine": 682,
+      "text": "the choice to reject invalid rows or send them to quarantine,"
+    },
+    {
+      "sourceLine": 683,
+      "text": "ready to import,"
+    },
+    {
+      "sourceLine": 684,
+      "text": "importing,"
+    },
+    {
+      "sourceLine": 685,
+      "text": "partial success,"
+    },
+    {
+      "sourceLine": 686,
+      "text": "success that creates a configured source node and opens its preview,"
+    },
+    {
+      "sourceLine": 687,
+      "text": "cancelled and failed."
+    },
+    {
+      "sourceLine": 689,
+      "text": "Reuse existing Dialog, Button, Input, Select, Table, Notification, Tag, and progress patterns. Mark FileDropzone and ColumnMappingRow as proposed compositions if no approved pattern exists. Do not silently accept inferred mappings."
+    },
+    {
+      "sourceLine": 692,
+      "text": "Make the surfaces agree"
+    },
+    {
+      "sourceLine": 694,
+      "text": "After designing the three surfaces, run a cross-surface review:"
+    },
+    {
+      "sourceLine": 696,
+      "text": "The selected node in the DAG matches the inspector title and data sheet source."
+    },
+    {
+      "sourceLine": 697,
+      "text": "Dirty state appears once at the document level and is explained locally where needed."
+    },
+    {
+      "sourceLine": 698,
+      "text": "Import success creates the same source node that appears in the graph."
+    },
+    {
+      "sourceLine": 699,
+      "text": "Mapping errors use the same field-error language as the inspector."
+    },
+    {
+      "sourceLine": 700,
+      "text": "A data-sheet error row focuses the exact failed node."
+    },
+    {
+      "sourceLine": 701,
+      "text": "Running-state locks are consistent across graph, inspector, importer, and Save actions."
+    },
+    {
+      "sourceLine": 702,
+      "text": "The data sheet never displays unrelated placeholder rows."
+    },
+    {
+      "sourceLine": 704,
+      "text": "Cross-surface consistency audit"
+    },
+    {
+      "sourceLine": 705,
+      "text": "Audit the approved DAG, node inspector, data sheet, and importer as one product state."
+    },
+    {
+      "sourceLine": 707,
+      "text": "Trace the shared fixture from file selection through mapping, source-node creation, transformation preview, schema validation, quarantine routing, Save, Run, failure, repair, and successful re-run."
+    },
+    {
+      "sourceLine": 709,
+      "text": "Identify every point where node selection, dirty state, run state, fixture data, status language, or permissions disagree across surfaces. Correct only those inconsistencies. Preserve all approved layout and component decisions. Return a short before-and-after change log."
+    },
+    {
+      "sourceLine": 712,
+      "text": "Adjacent-surface review"
+    },
+    {
+      "sourceLine": 713,
+      "text": "Selected node consistency"
+    },
+    {
+      "sourceLine": 714,
+      "text": "Inspector state coverage"
+    },
+    {
+      "sourceLine": 715,
+      "text": "Data provenance labels"
+    },
+    {
+      "sourceLine": 716,
+      "text": "Data sheet interactions"
+    },
+    {
+      "sourceLine": 717,
+      "text": "Importer stages"
+    },
+    {
+      "sourceLine": 718,
+      "text": "Mapping and malformed-row recovery"
+    },
+    {
+      "sourceLine": 719,
+      "text": "Cross-surface dirty and run states"
+    },
+    {
+      "sourceLine": 720,
+      "text": "Proposed compositions"
+    },
+    {
+      "sourceLine": 723,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 725,
+      "text": "The inspector, data sheet, and importer share one fixture and state model."
+    },
+    {
+      "sourceLine": 726,
+      "text": "The system's existing form, table, dialog, status, and feedback patterns are reused."
+    },
+    {
+      "sourceLine": 727,
+      "text": "Proposed product patterns are explicit."
+    },
+    {
+      "sourceLine": 728,
+      "text": "Import success creates a real graph consequence."
+    },
+    {
+      "sourceLine": 729,
+      "text": "Error rows, fields, and nodes link to one another."
+    },
+    {
+      "sourceLine": 735,
+      "text": "Specify states and transitions"
+    },
+    {
+      "sourceLine": 737,
+      "text": "Generated prototypes often appear complete because the default state is coherent. Production work fails at the transitions: data arrives late, permission changes, Save conflicts, imports partially succeed, and runs stop between nodes."
+    },
+    {
+      "sourceLine": 739,
+      "text": "A state matrix makes those transitions reviewable before they become implementation bugs."
+    },
+    {
+      "sourceLine": 741,
+      "text": "Build the product state matrix"
+    },
+    {
+      "sourceLine": 743,
+      "text": "Surface"
+    },
+    {
+      "sourceLine": 743,
+      "text": "Required states"
+    },
+    {
+      "sourceLine": 745,
+      "text": "Document"
+    },
+    {
+      "sourceLine": 745,
+      "text": "Loading, pristine, dirty, saving, saved, save failed, read-only, version conflict"
+    },
+    {
+      "sourceLine": 746,
+      "text": "Canvas"
+    },
+    {
+      "sourceLine": 746,
+      "text": "Empty, populated, invalid graph, executing, stale, load failed"
+    },
+    {
+      "sourceLine": 747,
+      "text": "Node"
+    },
+    {
+      "sourceLine": 747,
+      "text": "Idle, hover, focused, selected, dragging, disabled, invalid, queued, running, success, warning, failed"
+    },
+    {
+      "sourceLine": 748,
+      "text": "Inspector"
+    },
+    {
+      "sourceLine": 748,
+      "text": "No selection, loading schema, valid, dirty, field error, testing, test success, test failed, locked"
+    },
+    {
+      "sourceLine": 749,
+      "text": "Data sheet"
+    },
+    {
+      "sourceLine": 749,
+      "text": "Closed, loading, rows, empty, truncated, stale, error"
+    },
+    {
+      "sourceLine": 750,
+      "text": "Importer"
+    },
+    {
+      "sourceLine": 750,
+      "text": "Initial, drag-over, parsing, mapping required, invalid rows, ready, importing, partial success, success, cancelled, failed"
+    },
+    {
+      "sourceLine": 751,
+      "text": "Run"
+    },
+    {
+      "sourceLine": 751,
+      "text": "Ready, validating, queued, running, partially failed, failed, cancelled, succeeded"
+    },
+    {
+      "sourceLine": 752,
+      "text": "Permissions"
+    },
+    {
+      "sourceLine": 752,
+      "text": "Editable, view-only, action forbidden, session expired"
+    },
+    {
+      "sourceLine": 754,
+      "text": "The matrix is not a request for one frame per cell. Use representative screens, component states, and annotated transitions. The goal is to prove coverage without burying the team under artboards."
+    },
+    {
+      "sourceLine": 756,
+      "text": "Write transitions as contracts"
+    },
+    {
+      "sourceLine": 758,
+      "text": "For each consequential action, specify:"
+    },
+    {
+      "sourceLine": 760,
+      "text": "Trigger \u2014 what the user or system does."
+    },
+    {
+      "sourceLine": 761,
+      "text": "Precondition \u2014 what must already be true."
+    },
+    {
+      "sourceLine": 762,
+      "text": "Immediate feedback \u2014 what changes before the result returns."
+    },
+    {
+      "sourceLine": 763,
+      "text": "Success result \u2014 data, UI, focus, and status."
+    },
+    {
+      "sourceLine": 764,
+      "text": "Failure result \u2014 what remains stable and what recovery appears."
+    },
+    {
+      "sourceLine": 765,
+      "text": "Persistence \u2014 what survives navigation or reload."
+    },
+    {
+      "sourceLine": 766,
+      "text": "Telemetry \u2014 the event or error the product records."
+    },
+    {
+      "sourceLine": 768,
+      "text": "Example:"
+    },
+    {
+      "sourceLine": 770,
+      "text": "Field"
+    },
+    {
+      "sourceLine": 770,
+      "text": "Create edge contract"
+    },
+    {
+      "sourceLine": 772,
+      "text": "Trigger"
+    },
+    {
+      "sourceLine": 772,
+      "text": "User drags from an output port to an input port or uses the keyboard connect command"
+    },
+    {
+      "sourceLine": 773,
+      "text": "Precondition"
+    },
+    {
+      "sourceLine": 773,
+      "text": "Ports are compatible, user can edit, graph is not structurally locked"
+    },
+    {
+      "sourceLine": 774,
+      "text": "Immediate feedback"
+    },
+    {
+      "sourceLine": 774,
+      "text": "Connection preview and compatible targets appear"
+    },
+    {
+      "sourceLine": 775,
+      "text": "Success"
+    },
+    {
+      "sourceLine": 775,
+      "text": "Edge is added, document becomes dirty, focus moves to the new edge or destination node"
+    },
+    {
+      "sourceLine": 776,
+      "text": "Failure"
+    },
+    {
+      "sourceLine": 776,
+      "text": "Graph remains unchanged; explanation names cycle, type mismatch, permission, or lock"
+    },
+    {
+      "sourceLine": 777,
+      "text": "Persistence"
+    },
+    {
+      "sourceLine": 777,
+      "text": "Edge exists after Save and reload; rejected attempt does not"
+    },
+    {
+      "sourceLine": 778,
+      "text": "Telemetry"
+    },
+    {
+      "sourceLine": 778,
+      "text": "pipeline_edge_created or pipeline_edge_rejected with reason"
+    },
+    {
+      "sourceLine": 780,
+      "text": "Use named evidence for each state"
+    },
+    {
+      "sourceLine": 782,
+      "text": "Every state should connect to one of these evidence types:"
+    },
+    {
+      "sourceLine": 784,
+      "text": "A current production pattern."
+    },
+    {
+      "sourceLine": 785,
+      "text": "A design-system component or token."
+    },
+    {
+      "sourceLine": 786,
+      "text": "A product requirement."
+    },
+    {
+      "sourceLine": 787,
+      "text": "An API or data contract."
+    },
+    {
+      "sourceLine": 788,
+      "text": "An accessibility requirement."
+    },
+    {
+      "sourceLine": 789,
+      "text": "A recovery rule."
+    },
+    {
+      "sourceLine": 791,
+      "text": "If a state has only visual evidence, it is not ready for handoff."
+    },
+    {
+      "sourceLine": 793,
+      "text": "Complete the state model"
+    },
+    {
+      "sourceLine": 794,
+      "text": "Extend the approved prototype to cover the complete state model without changing approved layout or components."
+    },
+    {
+      "sourceLine": 796,
+      "text": "Use the supplied state matrix. For each surface, show the minimum representative frames or component variants needed to prove coverage. Annotate transitions rather than duplicating screens when that is clearer."
+    },
+    {
+      "sourceLine": 798,
+      "text": "For every consequential action, state the trigger, precondition, immediate feedback, success result, failure result, persistence rule, and recovery action. Preserve the shared fixture and real product language. Mark any state that depends on an unresolved API or product decision."
+    },
+    {
+      "sourceLine": 801,
+      "text": "Specify version conflicts and stale data"
+    },
+    {
+      "sourceLine": 803,
+      "text": "Two failure modes deserve explicit treatment:"
+    },
+    {
+      "sourceLine": 805,
+      "text": "Version conflict. Another person or process changes the pipeline after the user begins editing. The product must not overwrite the newer version silently. Show what is compared, what can be reapplied, what must be reviewed, and how the user exits safely."
+    },
+    {
+      "sourceLine": 807,
+      "text": "Stale preview. The graph or node configuration changes after preview data was generated. The data sheet must keep the rows inspectable while clearly marking them stale and offering a refresh. \u201cSample\u201d and \u201cstale\u201d are different conditions and should not share ambiguous copy."
+    },
+    {
+      "sourceLine": 809,
+      "text": "Conflict and stale-data recovery"
+    },
+    {
+      "sourceLine": 810,
+      "text": "Using the approved Data Pipeline Studio design, add two recovery sequences:"
+    },
+    {
+      "sourceLine": 812,
+      "text": "a Save version conflict after another editor changed the pipeline,"
+    },
+    {
+      "sourceLine": 813,
+      "text": "a stale data preview after the selected node configuration changed."
+    },
+    {
+      "sourceLine": 815,
+      "text": "Preserve the user's work. Show the comparison or refresh action, the exact status language, focus behavior, and the safe exit. Reuse existing Dialog and Notification patterns. Do not use a generic destructive confirmation for a merge decision."
+    },
+    {
+      "sourceLine": 820,
+      "text": "Keep copy operational"
+    },
+    {
+      "sourceLine": 822,
+      "text": "Error copy should answer four questions:"
+    },
+    {
+      "sourceLine": 824,
+      "text": "What happened?"
+    },
+    {
+      "sourceLine": 825,
+      "text": "What was preserved?"
+    },
+    {
+      "sourceLine": 826,
+      "text": "What can the user do next?"
+    },
+    {
+      "sourceLine": 827,
+      "text": "Where can they get more detail?"
+    },
+    {
+      "sourceLine": 829,
+      "text": "Avoid messages such as \u201cSomething went wrong\u201d when the product knows the failed node, row, column, connection reason, or permission rule."
+    },
+    {
+      "sourceLine": 831,
+      "text": "Weak"
+    },
+    {
+      "sourceLine": 831,
+      "text": "Operational"
+    },
+    {
+      "sourceLine": 833,
+      "text": "Invalid connection"
+    },
+    {
+      "sourceLine": 833,
+      "text": "Validate Customer Schema cannot connect to Customers CSV because the connection would create a cycle. The graph was not changed."
+    },
+    {
+      "sourceLine": 834,
+      "text": "Import failed"
+    },
+    {
+      "sourceLine": 834,
+      "text": "18 rows could not be parsed. Review rows 42\u201359 or send them to quarantine. No source node was created."
+    },
+    {
+      "sourceLine": 835,
+      "text": "Save failed"
+    },
+    {
+      "sourceLine": 835,
+      "text": "Your changes are still in this browser. Reconnect and try Save again."
+    },
+    {
+      "sourceLine": 836,
+      "text": "Data unavailable"
+    },
+    {
+      "sourceLine": 836,
+      "text": "Preview is unavailable because the selected node has not run. Test this node to generate sample rows."
+    },
+    {
+      "sourceLine": 838,
+      "text": "Transition contract"
+    },
+    {
+      "sourceLine": 839,
+      "text": "Action"
+    },
+    {
+      "sourceLine": 840,
+      "text": "Trigger and precondition"
+    },
+    {
+      "sourceLine": 841,
+      "text": "Immediate feedback"
+    },
+    {
+      "sourceLine": 842,
+      "text": "Success result"
+    },
+    {
+      "sourceLine": 843,
+      "text": "Failure result"
+    },
+    {
+      "sourceLine": 844,
+      "text": "Persistence"
+    },
+    {
+      "sourceLine": 845,
+      "text": "Recovery"
+    },
+    {
+      "sourceLine": 846,
+      "text": "Telemetry"
+    },
+    {
+      "sourceLine": 849,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 851,
+      "text": "The complete state matrix has a disposition."
+    },
+    {
+      "sourceLine": 852,
+      "text": "Consequential actions have transition contracts."
+    },
+    {
+      "sourceLine": 853,
+      "text": "Version conflict and stale data have distinct recovery paths."
+    },
+    {
+      "sourceLine": 854,
+      "text": "Errors say what happened, what was preserved, and what to do next."
+    },
+    {
+      "sourceLine": 855,
+      "text": "Unresolved API or product dependencies remain visible."
+    },
+    {
+      "sourceLine": 861,
+      "text": "Prove responsive and accessible behavior"
+    },
+    {
+      "sourceLine": 863,
+      "text": "A DAG tool is a hard accessibility and responsive problem. The answer is not to promise that the generated prototype \u201csupports accessibility.\u201d The team needs observable keyboard behavior, focus movement, labels, announcements, hit targets, and layout rules."
+    },
+    {
+      "sourceLine": 865,
+      "text": "Set the viewport contract"
+    },
+    {
+      "sourceLine": 867,
+      "text": "Data Pipeline Studio supports:"
+    },
+    {
+      "sourceLine": 869,
+      "text": "Primary: 1440 \u00d7 900 editing."
+    },
+    {
+      "sourceLine": 870,
+      "text": "Minimum: 1024 \u00d7 768 editing."
+    },
+    {
+      "sourceLine": 871,
+      "text": "Mobile: view-only; editing is explicitly out of scope."
+    },
+    {
+      "sourceLine": 873,
+      "text": "At the minimum viewport, the canvas, inspector, and data sheet cannot all keep desktop dimensions. Define how the layout reallocates space:"
+    },
+    {
+      "sourceLine": 875,
+      "text": "The inspector may become an overlay or a narrower dock."
+    },
+    {
+      "sourceLine": 876,
+      "text": "The data sheet may open to a fixed half-height with an explicit expand action."
+    },
+    {
+      "sourceLine": 877,
+      "text": "The canvas toolbar remains reachable and does not cover nodes."
+    },
+    {
+      "sourceLine": 878,
+      "text": "The selected node stays visible when adjacent surfaces open."
+    },
+    {
+      "sourceLine": 879,
+      "text": "Save and Run remain available without horizontal scrolling."
+    },
+    {
+      "sourceLine": 881,
+      "text": "Minimum-viewport layout"
+    },
+    {
+      "sourceLine": 882,
+      "text": "Create the approved Data Pipeline Studio editing state at 1024 x 768."
+    },
+    {
+      "sourceLine": 884,
+      "text": "Preserve the application shell and all required actions. Show how the canvas, node inspector, and data sheet share space without collisions. Keep the selected node visible when the inspector or data sheet opens. Do not shrink text or pointer targets below the design-system standards."
+    },
+    {
+      "sourceLine": 886,
+      "text": "Annotate which surfaces resize, dock, overlay, collapse, or scroll. Compare the result to the 1440 x 900 version and list every behavior change."
+    },
+    {
+      "sourceLine": 889,
+      "text": "Provide a keyboard model for the graph"
+    },
+    {
+      "sourceLine": 891,
+      "text": "The graph needs an equivalent non-pointer path. A practical contract may include:"
+    },
+    {
+      "sourceLine": 893,
+      "text": "Tab enters the canvas toolbar and graph region in a predictable order."
+    },
+    {
+      "sourceLine": 894,
+      "text": "Arrow keys move focus among nearby nodes or use a documented list order."
+    },
+    {
+      "sourceLine": 895,
+      "text": "Enter opens the selected node in the inspector."
+    },
+    {
+      "sourceLine": 896,
+      "text": "A keyboard command starts connection mode; compatible destinations are announced."
+    },
+    {
+      "sourceLine": 897,
+      "text": "Escape cancels connection, drag, menu, or dialog states without changing the graph."
+    },
+    {
+      "sourceLine": 898,
+      "text": "Delete asks for confirmation when removal has downstream consequences."
+    },
+    {
+      "sourceLine": 899,
+      "text": "Undo and redo are available through standard shortcuts and visible actions."
+    },
+    {
+      "sourceLine": 900,
+      "text": "Focus returns to a sensible element after Save, import completion, deletion, or error recovery."
+    },
+    {
+      "sourceLine": 902,
+      "text": "The exact shortcut set needs usability and assistive-technology review. The prototype should show the model and surface conflicts before implementation."
+    },
+    {
+      "sourceLine": 904,
+      "text": "Make operational status redundant"
+    },
+    {
+      "sourceLine": 906,
+      "text": "Node and run status must use more than color. Combine:"
+    },
+    {
+      "sourceLine": 908,
+      "text": "A semantic icon."
+    },
+    {
+      "sourceLine": 909,
+      "text": "A short label."
+    },
+    {
+      "sourceLine": 910,
+      "text": "A semantic color token."
+    },
+    {
+      "sourceLine": 911,
+      "text": "An accessible name or announcement."
+    },
+    {
+      "sourceLine": 912,
+      "text": "Optional timing or progress detail."
+    },
+    {
+      "sourceLine": 914,
+      "text": "Animation should communicate change without becoming the only way to notice it. Respect reduced-motion preferences in implementation."
+    },
+    {
+      "sourceLine": 916,
+      "text": "Audit fields, dialogs, and the data sheet"
+    },
+    {
+      "sourceLine": 918,
+      "text": "Check:"
+    },
+    {
+      "sourceLine": 920,
+      "text": "Every field has a programmatic label and linked description or error."
+    },
+    {
+      "sourceLine": 921,
+      "text": "Required fields are identified without color alone."
+    },
+    {
+      "sourceLine": 922,
+      "text": "Error summaries link to the affected controls."
+    },
+    {
+      "sourceLine": 923,
+      "text": "Dialogs have a clear title, initial focus, trapped focus, Escape behavior, and return focus."
+    },
+    {
+      "sourceLine": 924,
+      "text": "Sort direction and selected rows are announced."
+    },
+    {
+      "sourceLine": 925,
+      "text": "Resizable columns and the sheet handle have keyboard equivalents."
+    },
+    {
+      "sourceLine": 926,
+      "text": "Truncated cells can be inspected without hover."
+    },
+    {
+      "sourceLine": 927,
+      "text": "Import progress and cancellation are announced."
+    },
+    {
+      "sourceLine": 928,
+      "text": "View-only and forbidden actions are explained before or when invoked."
+    },
+    {
+      "sourceLine": 930,
+      "text": "Accessibility behavior review"
+    },
+    {
+      "sourceLine": 931,
+      "text": "Review the approved prototype for keyboard, focus, labeling, status, dialog, table, and motion behavior."
+    },
+    {
+      "sourceLine": 933,
+      "text": "Do not return a generic checklist. Annotate the actual flow from opening the pipeline through import, mapping, node creation, connection, preview, Save, Run, failure, repair, and successful re-run."
+    },
+    {
+      "sourceLine": 935,
+      "text": "For each step, specify the focused element, available keyboard action, visible focus treatment, accessible name, announcement if state changes, and focus destination after completion or error. Mark anything the prototype cannot prove and assign it to implementation or human testing."
+    },
+    {
+      "sourceLine": 938,
+      "text": "Separate design evidence from implementation evidence"
+    },
+    {
+      "sourceLine": 940,
+      "text": "The design can prove visible focus treatment, intended tab order, status redundancy, copy, layouts, and annotated semantics. It cannot prove DOM order, ARIA behavior, screen-reader output, pointer target size in the rendered application, or reduced-motion implementation. Those become engineering acceptance tests."
+    },
+    {
+      "sourceLine": 942,
+      "text": "Accessibility gate"
+    },
+    {
+      "sourceLine": 943,
+      "text": "A review annotation is a specification. A rendered keyboard and assistive-technology test is evidence. The handoff must include both the intended contract and the tests that will prove it."
+    },
+    {
+      "sourceLine": 946,
+      "text": "Responsive and accessibility review"
+    },
+    {
+      "sourceLine": 947,
+      "text": "1440 \u00d7 900 behavior"
+    },
+    {
+      "sourceLine": 948,
+      "text": "1024 \u00d7 768 behavior"
+    },
+    {
+      "sourceLine": 949,
+      "text": "Mobile view-only boundary"
+    },
+    {
+      "sourceLine": 950,
+      "text": "Keyboard graph model"
+    },
+    {
+      "sourceLine": 951,
+      "text": "Focus restoration"
+    },
+    {
+      "sourceLine": 952,
+      "text": "Status redundancy"
+    },
+    {
+      "sourceLine": 953,
+      "text": "Field and dialog semantics"
+    },
+    {
+      "sourceLine": 954,
+      "text": "Table and resize behavior"
+    },
+    {
+      "sourceLine": 955,
+      "text": "Implementation-only tests"
+    },
+    {
+      "sourceLine": 958,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 960,
+      "text": "Both supported editing viewports are designed and compared."
+    },
+    {
+      "sourceLine": 961,
+      "text": "The mobile boundary is explicit."
+    },
+    {
+      "sourceLine": 962,
+      "text": "The graph has a non-pointer interaction model."
+    },
+    {
+      "sourceLine": 963,
+      "text": "Focus, status, errors, and dialog behavior are specified."
+    },
+    {
+      "sourceLine": 964,
+      "text": "Design evidence is separated from rendered implementation evidence."
+    },
+    {
+      "sourceLine": 970,
+      "text": "Run the design evidence gate"
+    },
+    {
+      "sourceLine": 972,
+      "text": "The handoff begins after review, not after generation. A clean gate makes the review repeatable and produces the records engineering will need."
+    },
+    {
+      "sourceLine": 974,
+      "text": "Review four kinds of evidence"
+    },
+    {
+      "sourceLine": 976,
+      "text": "1. Scope evidence"
+    },
+    {
+      "sourceLine": 978,
+      "text": "Baseline and final screenshots show the approved diff."
+    },
+    {
+      "sourceLine": 979,
+      "text": "Preserve annotations identify regions that should not change."
+    },
+    {
+      "sourceLine": 980,
+      "text": "The change log names every intentional modification."
+    },
+    {
+      "sourceLine": 981,
+      "text": "Rejected directions are removed or clearly archived."
+    },
+    {
+      "sourceLine": 983,
+      "text": "2. System evidence"
+    },
+    {
+      "sourceLine": 985,
+      "text": "Every visible primitive resolves to an approved component, an approved variant, a valid composition, or a documented proposal."
+    },
+    {
+      "sourceLine": 986,
+      "text": "Semantic tokens replace raw color, spacing, type, radius, and focus values."
+    },
+    {
+      "sourceLine": 987,
+      "text": "Component names match the Figma library and code package."
+    },
+    {
+      "sourceLine": 988,
+      "text": "Code Connect mappings exist for shared production components where the workflow depends on them."
+    },
+    {
+      "sourceLine": 990,
+      "text": "3. Behavior and data evidence"
+    },
+    {
+      "sourceLine": 992,
+      "text": "The success journey is interactive from import to successful re-run."
+    },
+    {
+      "sourceLine": 993,
+      "text": "Invalid actions do not mutate the graph."
+    },
+    {
+      "sourceLine": 994,
+      "text": "The shared fixture appears consistently across surfaces."
+    },
+    {
+      "sourceLine": 995,
+      "text": "State and transition contracts cover failure and recovery."
+    },
+    {
+      "sourceLine": 996,
+      "text": "Data provenance is visible."
+    },
+    {
+      "sourceLine": 998,
+      "text": "4. Accessibility and responsive evidence"
+    },
+    {
+      "sourceLine": 1000,
+      "text": "Keyboard and focus behavior are specified."
+    },
+    {
+      "sourceLine": 1001,
+      "text": "Status never depends on color alone."
+    },
+    {
+      "sourceLine": 1002,
+      "text": "The two supported viewports have collision-free layouts."
+    },
+    {
+      "sourceLine": 1003,
+      "text": "Implementation-only tests are listed."
+    },
+    {
+      "sourceLine": 1005,
+      "text": "Use the component disposition table"
+    },
+    {
+      "sourceLine": 1007,
+      "text": "Classification"
+    },
+    {
+      "sourceLine": 1007,
+      "text": "Meaning"
+    },
+    {
+      "sourceLine": 1007,
+      "text": "Handoff requirement"
+    },
+    {
+      "sourceLine": 1009,
+      "text": "Reuse"
+    },
+    {
+      "sourceLine": 1009,
+      "text": "Existing production component and approved usage"
+    },
+    {
+      "sourceLine": 1009,
+      "text": "Import path, prop or variant mapping"
+    },
+    {
+      "sourceLine": 1010,
+      "text": "Approved variant"
+    },
+    {
+      "sourceLine": 1010,
+      "text": "Existing component with an already supported variant"
+    },
+    {
+      "sourceLine": 1010,
+      "text": "Variant name and implementation evidence"
+    },
+    {
+      "sourceLine": 1011,
+      "text": "Composition"
+    },
+    {
+      "sourceLine": 1011,
+      "text": "Existing primitives arranged into a product pattern"
+    },
+    {
+      "sourceLine": 1011,
+      "text": "Composition owner, interaction notes, code location"
+    },
+    {
+      "sourceLine": 1012,
+      "text": "Proposed product component"
+    },
+    {
+      "sourceLine": 1012,
+      "text": "New reusable behavior local to the product domain"
+    },
+    {
+      "sourceLine": 1012,
+      "text": "State model, API proposal, accessibility contract, owner"
+    },
+    {
+      "sourceLine": 1013,
+      "text": "Proposed shared component"
+    },
+    {
+      "sourceLine": 1013,
+      "text": "New pattern intended for the system"
+    },
+    {
+      "sourceLine": 1013,
+      "text": "Design-system review and promotion decision"
+    },
+    {
+      "sourceLine": 1014,
+      "text": "Reference only"
+    },
+    {
+      "sourceLine": 1014,
+      "text": "Prototype code or visual idea not suitable for production"
+    },
+    {
+      "sourceLine": 1014,
+      "text": "Explicit warning and replacement plan"
+    },
+    {
+      "sourceLine": 1015,
+      "text": "Unverified"
+    },
+    {
+      "sourceLine": 1015,
+      "text": "No reliable mapping"
+    },
+    {
+      "sourceLine": 1015,
+      "text": "Hold handoff; assign an owner to resolve the identity gap before it can pass"
+    },
+    {
+      "sourceLine": 1017,
+      "text": "Audit Simple Design System precisely"
+    },
+    {
+      "sourceLine": 1019,
+      "text": "The August 5 code inspection found a Table primitive, while its checked-in component metadata did not list a Figma Table component, only a Table icon. Until the working Figma duplicate is inspected, treat the data grid as a product-specific Figma extension even if the code can reuse the Table implementation."
+    },
+    {
+      "sourceLine": 1021,
+      "text": "This distinction is the point of the gate. \u201cTable exists\u201d is not one fact. It can be true in code and unverified in Figma at the same time."
+    },
+    {
+      "sourceLine": 1023,
+      "text": "Run a challenge review"
+    },
+    {
+      "sourceLine": 1025,
+      "text": "Ask one reviewer to look for reasons the work should not pass. Useful challenges include:"
+    },
+    {
+      "sourceLine": 1027,
+      "text": "Show where the selected node, inspector schema, and preview data disagree."
+    },
+    {
+      "sourceLine": 1028,
+      "text": "Find a visible value that does not resolve to a semantic token."
+    },
+    {
+      "sourceLine": 1029,
+      "text": "Attempt to create a cycle and confirm the graph remains unchanged."
+    },
+    {
+      "sourceLine": 1030,
+      "text": "Shrink to the minimum viewport and open both adjacent surfaces."
+    },
+    {
+      "sourceLine": 1031,
+      "text": "Navigate the critical journey without a pointer."
+    },
+    {
+      "sourceLine": 1032,
+      "text": "Reload after Save, failure, and repair."
+    },
+    {
+      "sourceLine": 1033,
+      "text": "Identify every piece of prototype code that should not enter production."
+    },
+    {
+      "sourceLine": 1035,
+      "text": "Final design audit"
+    },
+    {
+      "sourceLine": 1036,
+      "text": "Run a final evidence audit of the approved Data Pipeline Studio prototype."
+    },
+    {
+      "sourceLine": 1038,
+      "text": "Return five sections:"
+    },
+    {
+      "sourceLine": 1040,
+      "text": "preservation-boundary comparison,"
+    },
+    {
+      "sourceLine": 1041,
+      "text": "component and token disposition for every visible pattern,"
+    },
+    {
+      "sourceLine": 1042,
+      "text": "success-journey and state coverage,"
+    },
+    {
+      "sourceLine": 1043,
+      "text": "responsive and accessibility specification coverage,"
+    },
+    {
+      "sourceLine": 1044,
+      "text": "unresolved or unverified items with owners."
+    },
+    {
+      "sourceLine": 1046,
+      "text": "Do not correct the design silently. List each proposed correction first, then apply only corrections that do not change approved product decisions. Do not call the design production-ready; state whether it is ready for engineering handoff and why."
+    },
+    {
+      "sourceLine": 1049,
+      "text": "Gate decision"
+    },
+    {
+      "sourceLine": 1051,
+      "text": "Use one of three outcomes:"
+    },
+    {
+      "sourceLine": 1053,
+      "text": "Pass for handoff. No unresolved High finding; component and behavior evidence are complete."
+    },
+    {
+      "sourceLine": 1054,
+      "text": "Conditional pass. Bounded Medium or Low follow-up has a named owner and does not change the implementation approach."
+    },
+    {
+      "sourceLine": 1055,
+      "text": "Hold. A High finding, unverified component identity, missing recovery path, or unresolved product decision would force engineering to guess."
+    },
+    {
+      "sourceLine": 1057,
+      "text": "Design evidence gate"
+    },
+    {
+      "sourceLine": 1058,
+      "text": "Scope evidence"
+    },
+    {
+      "sourceLine": 1059,
+      "text": "Component and token traceability"
+    },
+    {
+      "sourceLine": 1060,
+      "text": "Behavior and data evidence"
+    },
+    {
+      "sourceLine": 1061,
+      "text": "State and recovery coverage"
+    },
+    {
+      "sourceLine": 1062,
+      "text": "Responsive and accessibility specification"
+    },
+    {
+      "sourceLine": 1063,
+      "text": "Challenge review results"
+    },
+    {
+      "sourceLine": 1064,
+      "text": "Unresolved items and owners"
+    },
+    {
+      "sourceLine": 1065,
+      "text": "Gate decision and reviewers"
+    },
+    {
+      "sourceLine": 1068,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 1070,
+      "text": "The review covers scope, system, behavior, data, accessibility, and responsiveness."
+    },
+    {
+      "sourceLine": 1071,
+      "text": "Every visible pattern has a disposition."
+    },
+    {
+      "sourceLine": 1072,
+      "text": "Code and Figma evidence are not conflated."
+    },
+    {
+      "sourceLine": 1073,
+      "text": "A challenge review has tried to break the proposal."
+    },
+    {
+      "sourceLine": 1074,
+      "text": "The gate decision and unresolved items are recorded."
+    },
+    {
+      "sourceLine": 1080,
+      "text": "Hand off to Claude Code and developers"
+    },
+    {
+      "sourceLine": 1082,
+      "text": "The official product-design tutorial describes a default handoff bundle containing design files, chat, and a README, with a URL-bearing prompt for a local agent and an option for Claude Code Web. Inspect the actual export before relying on those contents. Record missing decisions or files and supply them explicitly. The bundle still needs component mapping, engineering review, and repository tests."
+    },
+    {
+      "sourceLine": 1084,
+      "text": "Clean the design project first"
+    },
+    {
+      "sourceLine": 1086,
+      "text": "Before export:"
+    },
+    {
+      "sourceLine": 1088,
+      "text": "Name screens, components, states, and flows clearly."
+    },
+    {
+      "sourceLine": 1089,
+      "text": "Remove unused experiments or move them to an explicit archive."
+    },
+    {
+      "sourceLine": 1090,
+      "text": "Record key product decisions in the conversation or decision log."
+    },
+    {
+      "sourceLine": 1091,
+      "text": "Add edge states, data assumptions, and unresolved items."
+    },
+    {
+      "sourceLine": 1092,
+      "text": "Confirm the final frames use the shared fixture."
+    },
+    {
+      "sourceLine": 1093,
+      "text": "Label prototype-only code and simulated behavior."
+    },
+    {
+      "sourceLine": 1094,
+      "text": "Run the design evidence gate."
+    },
+    {
+      "sourceLine": 1096,
+      "text": "Build the handoff bundle"
+    },
+    {
+      "sourceLine": 1098,
+      "text": "Engineering should receive:"
+    },
+    {
+      "sourceLine": 1100,
+      "text": "Baseline screenshots with preserve annotations."
+    },
+    {
+      "sourceLine": 1101,
+      "text": "Final screens and interactive flow."
+    },
+    {
+      "sourceLine": 1102,
+      "text": "Screen-by-screen change log."
+    },
+    {
+      "sourceLine": 1103,
+      "text": "Component-to-code import map."
+    },
+    {
+      "sourceLine": 1104,
+      "text": "Design-system delta and token changes."
+    },
+    {
+      "sourceLine": 1105,
+      "text": "State matrix and transition contracts."
+    },
+    {
+      "sourceLine": 1106,
+      "text": "Exact interface and error copy."
+    },
+    {
+      "sourceLine": 1107,
+      "text": "Keyboard and accessibility contract."
+    },
+    {
+      "sourceLine": 1108,
+      "text": "Responsive snapshots."
+    },
+    {
+      "sourceLine": 1109,
+      "text": "Pipeline and import fixtures."
+    },
+    {
+      "sourceLine": 1110,
+      "text": "Scope, non-goals, and unresolved decisions."
+    },
+    {
+      "sourceLine": 1111,
+      "text": "Suggested file and path impact map."
+    },
+    {
+      "sourceLine": 1112,
+      "text": "Acceptance-test checklist."
+    },
+    {
+      "sourceLine": 1113,
+      "text": "Visual-regression baselines."
+    },
+    {
+      "sourceLine": 1114,
+      "text": "A README that says which prototype code is reference only."
+    },
+    {
+      "sourceLine": 1116,
+      "text": "Write the component-to-code map"
+    },
+    {
+      "sourceLine": 1118,
+      "text": "Design element"
+    },
+    {
+      "sourceLine": 1118,
+      "text": "System disposition"
+    },
+    {
+      "sourceLine": 1118,
+      "text": "Production mapping"
+    },
+    {
+      "sourceLine": 1118,
+      "text": "Notes"
+    },
+    {
+      "sourceLine": 1120,
+      "text": "Save"
+    },
+    {
+      "sourceLine": 1120,
+      "text": "Reuse"
+    },
+    {
+      "sourceLine": 1120,
+      "text": "Existing route action and SDS Button"
+    },
+    {
+      "sourceLine": 1120,
+      "text": "No behavior change"
+    },
+    {
+      "sourceLine": 1121,
+      "text": "Canvas zoom"
+    },
+    {
+      "sourceLine": 1121,
+      "text": "Composition"
+    },
+    {
+      "sourceLine": 1121,
+      "text": "SDS IconButton + Tooltip; new toolbar container"
+    },
+    {
+      "sourceLine": 1121,
+      "text": "Existing icon set"
+    },
+    {
+      "sourceLine": 1122,
+      "text": "Pipeline node"
+    },
+    {
+      "sourceLine": 1122,
+      "text": "Product component"
+    },
+    {
+      "sourceLine": 1122,
+      "text": "Proposed PipelineNode"
+    },
+    {
+      "sourceLine": 1122,
+      "text": "Composes Text, Tag, icons, semantic tokens"
+    },
+    {
+      "sourceLine": 1123,
+      "text": "Node field"
+    },
+    {
+      "sourceLine": 1123,
+      "text": "Reuse"
+    },
+    {
+      "sourceLine": 1123,
+      "text": "SDS InputField / SelectField"
+    },
+    {
+      "sourceLine": 1123,
+      "text": "Use schema-driven field adapter"
+    },
+    {
+      "sourceLine": 1124,
+      "text": "Data preview"
+    },
+    {
+      "sourceLine": 1124,
+      "text": "Composition"
+    },
+    {
+      "sourceLine": 1124,
+      "text": "Existing table implementation + sheet container"
+    },
+    {
+      "sourceLine": 1124,
+      "text": "Figma Table component unverified"
+    },
+    {
+      "sourceLine": 1125,
+      "text": "Import mapping row"
+    },
+    {
+      "sourceLine": 1125,
+      "text": "Product composition"
+    },
+    {
+      "sourceLine": 1125,
+      "text": "SelectField, field error, sample-value text"
+    },
+    {
+      "sourceLine": 1125,
+      "text": "New orchestration, existing controls"
+    },
+    {
+      "sourceLine": 1126,
+      "text": "Failure notice"
+    },
+    {
+      "sourceLine": 1126,
+      "text": "Reuse/composition"
+    },
+    {
+      "sourceLine": 1126,
+      "text": "SDS Notification + focus link"
+    },
+    {
+      "sourceLine": 1126,
+      "text": "Copy includes node and recovery"
+    },
+    {
+      "sourceLine": 1128,
+      "text": "The final map should contain real repository import paths, not the generic examples above."
+    },
+    {
+      "sourceLine": 1130,
+      "text": "Export from Claude Design"
+    },
+    {
+      "sourceLine": 1132,
+      "text": "The Design help guide lists ZIP, PDF, PPTX, standalone HTML, and handoff to a local coding agent or Claude Code Web. Google Slides export is available only at claude.ai/design. For Claude Code /design artboards, the artifact guide specifically documents per-artboard PNG or PDF. Choose the format and handoff on the actual surface; the lists do not prove every surface has identical controls."
+    },
+    {
+      "sourceLine": 1134,
+      "text": "When available, choose Export > Hand off to Claude Code and the intended local or web destination. Record the bundle URL, access scope, export time, and a file/content inventory. Test recipient access. Add the team-owned handoff template, component map, fixtures, acceptance tests, and decision log when the export does not contain them. Read/import the bundle first; allow repository edits only under the feature's implementation authority."
+    },
+    {
+      "sourceLine": 1136,
+      "text": "Implement the approved handoff"
+    },
+    {
+      "sourceLine": 1137,
+      "text": "Implement the attached Claude Design handoff in the existing repository."
+    },
+    {
+      "sourceLine": 1139,
+      "text": "Before editing:"
+    },
+    {
+      "sourceLine": 1141,
+      "text": "Read the repository instructions."
+    },
+    {
+      "sourceLine": 1142,
+      "text": "Inspect the current route, application shell, component library, tokens, tests, and nearby implementation patterns."
+    },
+    {
+      "sourceLine": 1143,
+      "text": "Map each design element to an existing production component."
+    },
+    {
+      "sourceLine": 1144,
+      "text": "Compare that map to the supplied component-to-code table."
+    },
+    {
+      "sourceLine": 1145,
+      "text": "Report any design element that has no valid implementation mapping."
+    },
+    {
+      "sourceLine": 1147,
+      "text": "During implementation:"
+    },
+    {
+      "sourceLine": 1149,
+      "text": "Modify the existing route and files where appropriate; do not create a parallel UI or duplicate existing components."
+    },
+    {
+      "sourceLine": 1150,
+      "text": "Preserve behavior outside the approved feature scope."
+    },
+    {
+      "sourceLine": 1151,
+      "text": "Use the repository's established state, data, accessibility, responsive, and testing patterns."
+    },
+    {
+      "sourceLine": 1152,
+      "text": "Use the supplied fixtures for the importer, preview, validation, quarantine, and run states."
+    },
+    {
+      "sourceLine": 1153,
+      "text": "Treat prototype code as design intent unless the handoff explicitly identifies a production mapping."
+    },
+    {
+      "sourceLine": 1154,
+      "text": "Stop before broadening scope or promoting a new shared component without approval."
+    },
+    {
+      "sourceLine": 1156,
+      "text": "After implementation:"
+    },
+    {
+      "sourceLine": 1158,
+      "text": "Run the relevant unit, integration, accessibility, type, lint, and build checks."
+    },
+    {
+      "sourceLine": 1159,
+      "text": "Verify the rendered states at 1440 x 900 and 1024 x 768."
+    },
+    {
+      "sourceLine": 1160,
+      "text": "Compare the rendered feature to the preservation and visual-regression baselines."
+    },
+    {
+      "sourceLine": 1161,
+      "text": "Report reused components, new components, deviations from the prototype, and anything still requiring human approval."
+    },
+    {
+      "sourceLine": 1164,
+      "text": "Give engineering acceptance tests, not adjectives"
+    },
+    {
+      "sourceLine": 1166,
+      "text": "Critical tests:"
+    },
+    {
+      "sourceLine": 1168,
+      "text": "The existing shell, route, permissions, Save action, and Run action remain functional."
+    },
+    {
+      "sourceLine": 1169,
+      "text": "Every visible primitive resolves to an approved component or documented extension."
+    },
+    {
+      "sourceLine": 1170,
+      "text": "A valid connection is created; a cycle and incompatible connection are rejected without modifying the graph."
+    },
+    {
+      "sourceLine": 1171,
+      "text": "Editing a node marks the document dirty, persists after Save and reload, and protects invalid drafts. Save failure keeps Run disabled and must not persist the unsaved draft through Run."
+    },
+    {
+      "sourceLine": 1172,
+      "text": "Import is blocked until all mappings and the recovery choice are confirmed; cancel and parse failure create no source. Completion replaces the placeholder with source ID august."
+    },
+    {
+      "sourceLine": 1173,
+      "text": "Preview after Normalize Email shows transformed fixture data."
+    },
+    {
+      "sourceLine": 1174,
+      "text": "The warehouse run fails with target missing-warehouse, focuses that node, and preserves the error after reload. Changing the target to customer_health, saving, and re-running yields three published and three quarantined records."
+    },
+    {
+      "sourceLine": 1175,
+      "text": "Undo and redo restore node position and graph structure."
+    },
+    {
+      "sourceLine": 1176,
+      "text": "Keyboard actions have visible focus and an equivalent non-pointer path."
+    },
+    {
+      "sourceLine": 1177,
+      "text": "Loading, empty, stale, truncated, permission, conflict, and error states are rendered and recoverable."
+    },
+    {
+      "sourceLine": 1178,
+      "text": "No raw colors, duplicate primitives, inline production styles, or undocumented components are introduced."
+    },
+    {
+      "sourceLine": 1179,
+      "text": "Visual checks pass at both supported viewports without inspector or sheet collisions."
+    },
+    {
+      "sourceLine": 1181,
+      "text": "Record implementation deviations"
+    },
+    {
+      "sourceLine": 1183,
+      "text": "Engineering will discover constraints the prototype did not model. A deviation log keeps the design and product record honest."
+    },
+    {
+      "sourceLine": 1185,
+      "text": "Deviation"
+    },
+    {
+      "sourceLine": 1185,
+      "text": "Reason"
+    },
+    {
+      "sourceLine": 1185,
+      "text": "User consequence"
+    },
+    {
+      "sourceLine": 1185,
+      "text": "Owner"
+    },
+    {
+      "sourceLine": 1185,
+      "text": "Reconcile where?"
+    },
+    {
+      "sourceLine": 1187,
+      "text": "Example: data sheet opens at 45% rather than 50%"
+    },
+    {
+      "sourceLine": 1187,
+      "text": "Minimum viewport collision"
+    },
+    {
+      "sourceLine": 1187,
+      "text": "More canvas remains visible"
+    },
+    {
+      "sourceLine": 1187,
+      "text": "Design + engineering"
+    },
+    {
+      "sourceLine": 1187,
+      "text": "Code and Figma"
+    },
+    {
+      "sourceLine": 1189,
+      "text": "The goal is not pixel identity at any cost. The goal is an approved explanation for every meaningful difference."
+    },
+    {
+      "sourceLine": 1191,
+      "text": "Handoff readiness"
+    },
+    {
+      "sourceLine": 1192,
+      "text": "Bundle and access"
+    },
+    {
+      "sourceLine": 1193,
+      "text": "Baseline and final references"
+    },
+    {
+      "sourceLine": 1194,
+      "text": "Component-to-code map"
+    },
+    {
+      "sourceLine": 1195,
+      "text": "Design-system delta"
+    },
+    {
+      "sourceLine": 1196,
+      "text": "State and transition package"
+    },
+    {
+      "sourceLine": 1197,
+      "text": "Fixtures"
+    },
+    {
+      "sourceLine": 1198,
+      "text": "Acceptance tests"
+    },
+    {
+      "sourceLine": 1199,
+      "text": "Prototype-only warnings"
+    },
+    {
+      "sourceLine": 1200,
+      "text": "Unresolved items"
+    },
+    {
+      "sourceLine": 1201,
+      "text": "Implementation owner and review date"
+    },
+    {
+      "sourceLine": 1204,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 1206,
+      "text": "The design project is clean and named."
+    },
+    {
+      "sourceLine": 1207,
+      "text": "The bundle includes intent, mappings, data, states, tests, and unresolved items."
+    },
+    {
+      "sourceLine": 1208,
+      "text": "Prototype code is visibly separated from production mappings."
+    },
+    {
+      "sourceLine": 1209,
+      "text": "Claude Code has an inspect-before-edit prompt."
+    },
+    {
+      "sourceLine": 1210,
+      "text": "Engineering has objective acceptance tests and a deviation log."
+    },
+    {
+      "sourceLine": 1216,
+      "text": "Implement, verify, and reconcile"
+    },
+    {
+      "sourceLine": 1218,
+      "text": "The final proof lives in the running product. Source inspection and passing tests matter, but neither proves that the right tab, route, state, and viewport render correctly."
+    },
+    {
+      "sourceLine": 1220,
+      "text": "Implement in bounded slices"
+    },
+    {
+      "sourceLine": 1222,
+      "text": "A practical order is:"
+    },
+    {
+      "sourceLine": 1224,
+      "text": "Graph data model and read-only rendering."
+    },
+    {
+      "sourceLine": 1225,
+      "text": "Selection, navigation, and inspector integration."
+    },
+    {
+      "sourceLine": 1226,
+      "text": "Movement, connection validation, undo, and redo."
+    },
+    {
+      "sourceLine": 1227,
+      "text": "Data sheet bound to the selected node's fixture."
+    },
+    {
+      "sourceLine": 1228,
+      "text": "Importer parsing, mapping, recovery, and source-node creation."
+    },
+    {
+      "sourceLine": 1229,
+      "text": "Save, run, failure, repair, and successful re-run."
+    },
+    {
+      "sourceLine": 1230,
+      "text": "Version conflict, permissions, stale data, and remaining edge states."
+    },
+    {
+      "sourceLine": 1231,
+      "text": "Responsive and accessibility implementation."
+    },
+    {
+      "sourceLine": 1233,
+      "text": "Each slice should pass its local tests and the preservation checks before the next slice begins."
+    },
+    {
+      "sourceLine": 1235,
+      "text": "Use four verification layers"
+    },
+    {
+      "sourceLine": 1237,
+      "text": "Static checks"
+    },
+    {
+      "sourceLine": 1239,
+      "text": "Run the repository's type check, lint, formatting, dependency, and build commands. Confirm that no raw design values or duplicate primitives entered the feature."
+    },
+    {
+      "sourceLine": 1241,
+      "text": "Automated behavior checks"
+    },
+    {
+      "sourceLine": 1243,
+      "text": "Test graph rules, state transitions, persistence, importer parsing and mapping, fixture transformation, run errors, retry, permissions, conflict handling, and undo/redo."
+    },
+    {
+      "sourceLine": 1245,
+      "text": "Rendered visual checks"
+    },
+    {
+      "sourceLine": 1247,
+      "text": "Capture the exact route and required states at 1440 \u00d7 900 and 1024 \u00d7 768. Compare the shell, major geometry, focus treatment, status, dialogs, sheet positions, and error states to approved references."
+    },
+    {
+      "sourceLine": 1249,
+      "text": "Human review"
+    },
+    {
+      "sourceLine": 1251,
+      "text": "Design reviews conformance and intentional deviations. Engineering reviews architecture, state, data, and maintainability. Product reviews scope, copy, and success journey. Accessibility review covers keyboard and assistive-technology behavior in the rendered application."
+    },
+    {
+      "sourceLine": 1253,
+      "text": "Report proof boundaries directly"
+    },
+    {
+      "sourceLine": 1255,
+      "text": "Use language such as:"
+    },
+    {
+      "sourceLine": 1257,
+      "text": "\u201cUnit and integration tests passed.\u201d"
+    },
+    {
+      "sourceLine": 1258,
+      "text": "\u201cThe route rendered at both required viewports.\u201d"
+    },
+    {
+      "sourceLine": 1259,
+      "text": "\u201cKeyboard navigation was checked through the critical journey.\u201d"
+    },
+    {
+      "sourceLine": 1260,
+      "text": "\u201cScreen-reader output remains unverified.\u201d"
+    },
+    {
+      "sourceLine": 1261,
+      "text": "\u201cThe design-system owner approved the two proposed product components.\u201d"
+    },
+    {
+      "sourceLine": 1263,
+      "text": "Do not collapse these into \u201cproduction-ready\u201d unless the team has defined and met that gate."
+    },
+    {
+      "sourceLine": 1265,
+      "text": "Use the native-Figma branch when required"
+    },
+    {
+      "sourceLine": 1267,
+      "text": "Direct native-Figma export is not established by the reviewed Claude Design documentation. If editable Figma content is required, use Figma's separate remote MCP workflow. Figma recommends its Claude Code plugin, which bundles server settings and skills; manual HTTP setup is also documented. Code Connect adds implementation context where eligible and configured."
+    },
+    {
+      "sourceLine": 1269,
+      "text": "Figma documents two paths with different permissions:"
+    },
+    {
+      "sourceLine": 1271,
+      "text": "Figma-first: use_figma creates or updates native frames, components, variables, and Auto Layout. Writing needs a Full seat; modifying an existing file also needs edit permission. Load the installed Figma write-to-canvas skills and inspect first. The tool currently has a 20kb output-response limit, no image-asset or custom-font support, and requires manual component publication before Code Connect completes. See write to canvas."
+    },
+    {
+      "sourceLine": 1272,
+      "text": "Code-first: generate_figma_design captures live browser UI into editable layers. Any seat can use this tool in Drafts; an existing file outside Drafts needs a Full seat and edit permission. This path is distinct from native writing. Inspect captured instances and variable bindings before claiming design-system reuse. See code to canvas."
+    },
+    {
+      "sourceLine": 1274,
+      "text": "The August /prototype-to-figma instruction is replaced with the documented code-to-canvas tool workflow. A client-specific prompt shortcut is not a universal Figma command. MCP read quotas vary by plan and seat; check the current access table and authenticated account before planning a full-file inventory."
+    },
+    {
+      "sourceLine": 1276,
+      "text": "Extend an existing native screen"
+    },
+    {
+      "sourceLine": 1277,
+      "text": "Using the working Figma file and the selected existing Pipeline Detail screen, add the approved Data Pipeline Studio feature beside the current version for review."
+    },
+    {
+      "sourceLine": 1279,
+      "text": "Inspect the file and connected libraries first. Reuse existing components, variables, styles, layer naming, and Auto Layout conventions. Preserve the surrounding screen. Use the approved component disposition, state matrix, and responsive rules. Create only the documented product-specific extensions."
+    },
+    {
+      "sourceLine": 1281,
+      "text": "Return the IDs of created or changed frames and components, plus a short list of any mapping you could not verify. Do not edit the public Community source."
+    },
+    {
+      "sourceLine": 1284,
+      "text": "Capture the implemented flow"
+    },
+    {
+      "sourceLine": 1285,
+      "text": "Capture the complete local Data Pipeline Studio flow in the working Figma file as editable frames."
+    },
+    {
+      "sourceLine": 1287,
+      "text": "Inspect captured component instances and variable bindings, and record reuse or gaps separately from visual resemblance. Include each unique critical state at 1440 x 900 and 1024 x 768. Create a summary page that records the journey, component mappings, implementation deviations, and unresolved differences from production."
+    },
+    {
+      "sourceLine": 1289,
+      "text": "Keep the approved source frames intact. Place captured implementation frames in a separate named section with capture date and repository revision."
+    },
+    {
+      "sourceLine": 1292,
+      "text": "Reconcile without hiding drift"
+    },
+    {
+      "sourceLine": 1294,
+      "text": "At the end of implementation:"
+    },
+    {
+      "sourceLine": 1296,
+      "text": "Update the design decision record with approved changes."
+    },
+    {
+      "sourceLine": 1297,
+      "text": "Update Figma frames if Figma is an active source of truth."
+    },
+    {
+      "sourceLine": 1298,
+      "text": "Update Code Connect mappings for approved shared components."
+    },
+    {
+      "sourceLine": 1299,
+      "text": "Keep the baseline, approved design, and rendered implementation distinguishable."
+    },
+    {
+      "sourceLine": 1300,
+      "text": "Close or assign every deviation."
+    },
+    {
+      "sourceLine": 1301,
+      "text": "Add regression baselines for the final states."
+    },
+    {
+      "sourceLine": 1303,
+      "text": "Avoid overwriting the approved design with a capture that removes the record of what changed. Reconciliation should preserve the chain of evidence."
+    },
+    {
+      "sourceLine": 1305,
+      "text": "Monitor future changes"
+    },
+    {
+      "sourceLine": 1307,
+      "text": "The handoff is a starting point for ongoing maintenance. Track:"
+    },
+    {
+      "sourceLine": 1309,
+      "text": "Component or token changes that affect the feature."
+    },
+    {
+      "sourceLine": 1310,
+      "text": "Graph-schema or API changes."
+    },
+    {
+      "sourceLine": 1311,
+      "text": "Import error and mapping rates."
+    },
+    {
+      "sourceLine": 1312,
+      "text": "Save conflicts and failed runs."
+    },
+    {
+      "sourceLine": 1313,
+      "text": "Accessibility regressions."
+    },
+    {
+      "sourceLine": 1314,
+      "text": "Layout regressions at supported viewports."
+    },
+    {
+      "sourceLine": 1315,
+      "text": "Design/code drift and stale Code Connect mappings."
+    },
+    {
+      "sourceLine": 1317,
+      "text": "Implementation proof record"
+    },
+    {
+      "sourceLine": 1318,
+      "text": "Repository revision"
+    },
+    {
+      "sourceLine": 1319,
+      "text": "Static checks"
+    },
+    {
+      "sourceLine": 1320,
+      "text": "Behavior tests"
+    },
+    {
+      "sourceLine": 1321,
+      "text": "Rendered routes and states"
+    },
+    {
+      "sourceLine": 1322,
+      "text": "Viewport evidence"
+    },
+    {
+      "sourceLine": 1323,
+      "text": "Keyboard and assistive-technology evidence"
+    },
+    {
+      "sourceLine": 1324,
+      "text": "Human reviewers"
+    },
+    {
+      "sourceLine": 1325,
+      "text": "Approved deviations"
+    },
+    {
+      "sourceLine": 1326,
+      "text": "Unverified items"
+    },
+    {
+      "sourceLine": 1327,
+      "text": "Figma or Code Connect reconciliation"
+    },
+    {
+      "sourceLine": 1330,
+      "text": "Chapter checkpoint"
+    },
+    {
+      "sourceLine": 1332,
+      "text": "Implementation proceeded in bounded slices."
+    },
+    {
+      "sourceLine": 1333,
+      "text": "Static, behavioral, rendered, and human evidence are reported separately."
+    },
+    {
+      "sourceLine": 1334,
+      "text": "The actual route and states were rendered at both supported viewports."
+    },
+    {
+      "sourceLine": 1335,
+      "text": "The native-Figma branch was used only if the team requires it."
+    },
+    {
+      "sourceLine": 1336,
+      "text": "Design and code drift remain visible and assigned."
+    },
+    {
+      "sourceLine": 1342,
+      "text": "Guided capstone"
+    },
+    {
+      "sourceLine": 1344,
+      "text": "The capstone asks you to extend the existing Pipeline Detail screen into Data Pipeline Studio without redesigning the surrounding product. Work in a small cross-functional group if possible: one product owner, one designer or design-system owner, and one engineer."
+    },
+    {
+      "sourceLine": 1346,
+      "text": "The deliverable is not a single screen. It is an evidence-backed design and handoff package for this journey:"
+    },
+    {
+      "sourceLine": 1348,
+      "text": "Import customers-august.csv."
+    },
+    {
+      "sourceLine": 1349,
+      "text": "Resolve a required column mapping."
+    },
+    {
+      "sourceLine": 1350,
+      "text": "Create a source node."
+    },
+    {
+      "sourceLine": 1351,
+      "text": "Connect it to Normalize Email."
+    },
+    {
+      "sourceLine": 1352,
+      "text": "Preview transformed rows."
+    },
+    {
+      "sourceLine": 1353,
+      "text": "Add a quarantine branch after schema validation."
+    },
+    {
+      "sourceLine": 1354,
+      "text": "Save and run."
+    },
+    {
+      "sourceLine": 1355,
+      "text": "Find and repair a failed node."
+    },
+    {
+      "sourceLine": 1356,
+      "text": "Re-run successfully."
+    },
+    {
+      "sourceLine": 1358,
+      "text": "Capstone rules"
+    },
+    {
+      "sourceLine": 1360,
+      "text": "Work from the duplicated Simple Design System file and relevant React package."
+    },
+    {
+      "sourceLine": 1361,
+      "text": "Keep the public Community source untouched."
+    },
+    {
+      "sourceLine": 1362,
+      "text": "Preserve the existing shell, route, permissions, Save, Run, persistence, and unrelated copy."
+    },
+    {
+      "sourceLine": 1363,
+      "text": "Use the exact six-row fixture and expected outputs from Chapter 1 throughout. Record CSV/JSON hashes and each invalid row and column. Label a local executable exercise separately from observed Claude Design output."
+    },
+    {
+      "sourceLine": 1364,
+      "text": "Label new product components and tokens."
+    },
+    {
+      "sourceLine": 1365,
+      "text": "Do not treat generated prototype code as production code without a real mapping."
+    },
+    {
+      "sourceLine": 1366,
+      "text": "Do not pass the capstone with an unresolved High finding."
+    },
+    {
+      "sourceLine": 1368,
+      "text": "Phase 1 \u2014 Frame and ground"
+    },
+    {
+      "sourceLine": 1370,
+      "text": "Produce:"
+    },
+    {
+      "sourceLine": 1372,
+      "text": "A source-of-truth stack."
+    },
+    {
+      "sourceLine": 1373,
+      "text": "An extension brief."
+    },
+    {
+      "sourceLine": 1374,
+      "text": "Baseline and preserve annotations."
+    },
+    {
+      "sourceLine": 1375,
+      "text": "A compact context package."
+    },
+    {
+      "sourceLine": 1376,
+      "text": "A design-system inventory and gap list."
+    },
+    {
+      "sourceLine": 1378,
+      "text": "Use the baseline-analysis, system-inspection, and draft-system prompts from Chapters 1 through 3. Run the settings form, dense table, and confirmation-flow tests before starting the DAG."
+    },
+    {
+      "sourceLine": 1380,
+      "text": "Capstone phase 1"
+    },
+    {
+      "sourceLine": 1381,
+      "text": "Authoritative sources"
+    },
+    {
+      "sourceLine": 1382,
+      "text": "Baseline and preservation boundary"
+    },
+    {
+      "sourceLine": 1383,
+      "text": "Fixture and success journey"
+    },
+    {
+      "sourceLine": 1384,
+      "text": "Context-package contents"
+    },
+    {
+      "sourceLine": 1385,
+      "text": "Known-screen tests"
+    },
+    {
+      "sourceLine": 1386,
+      "text": "System gaps"
+    },
+    {
+      "sourceLine": 1387,
+      "text": "Approval to proceed"
+    },
+    {
+      "sourceLine": 1390,
+      "text": "Phase 2 \u2014 Build the bounded DAG extension"
+    },
+    {
+      "sourceLine": 1392,
+      "text": "Produce:"
+    },
+    {
+      "sourceLine": 1394,
+      "text": "The approved shell with a DAG replacing only the linear editor."
+    },
+    {
+      "sourceLine": 1395,
+      "text": "Canvas navigation."
+    },
+    {
+      "sourceLine": 1396,
+      "text": "Node selection and movement."
+    },
+    {
+      "sourceLine": 1397,
+      "text": "Valid and rejected connections."
+    },
+    {
+      "sourceLine": 1398,
+      "text": "Undo and redo."
+    },
+    {
+      "sourceLine": 1399,
+      "text": "A proposed component sheet for nodes, ports, edges, toolbar, and run status."
+    },
+    {
+      "sourceLine": 1401,
+      "text": "Demonstrate that a cycle and incompatible connection leave the graph unchanged."
+    },
+    {
+      "sourceLine": 1403,
+      "text": "Capstone phase 2"
+    },
+    {
+      "sourceLine": 1404,
+      "text": "Shell preservation evidence"
+    },
+    {
+      "sourceLine": 1405,
+      "text": "DAG fixture fidelity"
+    },
+    {
+      "sourceLine": 1406,
+      "text": "Canvas navigation"
+    },
+    {
+      "sourceLine": 1407,
+      "text": "Selection and movement"
+    },
+    {
+      "sourceLine": 1408,
+      "text": "Connection success and rejection"
+    },
+    {
+      "sourceLine": 1409,
+      "text": "Undo and redo"
+    },
+    {
+      "sourceLine": 1410,
+      "text": "Component proposals"
+    },
+    {
+      "sourceLine": 1413,
+      "text": "Phase 3 \u2014 Complete the working surfaces"
+    },
+    {
+      "sourceLine": 1415,
+      "text": "Produce:"
+    },
+    {
+      "sourceLine": 1417,
+      "text": "A schema-driven inspector for Validate Customer Schema."
+    },
+    {
+      "sourceLine": 1418,
+      "text": "A data sheet showing the output of Normalize Email."
+    },
+    {
+      "sourceLine": 1419,
+      "text": "A staged importer for customers-august.csv."
+    },
+    {
+      "sourceLine": 1420,
+      "text": "Cross-surface consistency annotations."
+    },
+    {
+      "sourceLine": 1422,
+      "text": "The importer must block completion until the required mapping is resolved. Successful import must create the configured source node and open its preview."
+    },
+    {
+      "sourceLine": 1424,
+      "text": "Capstone phase 3"
+    },
+    {
+      "sourceLine": 1425,
+      "text": "Inspector states"
+    },
+    {
+      "sourceLine": 1426,
+      "text": "Data sheet states and provenance"
+    },
+    {
+      "sourceLine": 1427,
+      "text": "Importer stages"
+    },
+    {
+      "sourceLine": 1428,
+      "text": "Required mapping behavior"
+    },
+    {
+      "sourceLine": 1429,
+      "text": "Malformed-row recovery"
+    },
+    {
+      "sourceLine": 1430,
+      "text": "Source-node creation"
+    },
+    {
+      "sourceLine": 1431,
+      "text": "Cross-surface consistency"
+    },
+    {
+      "sourceLine": 1434,
+      "text": "Phase 4 \u2014 Specify states, accessibility, and viewports"
+    },
+    {
+      "sourceLine": 1436,
+      "text": "Produce:"
+    },
+    {
+      "sourceLine": 1438,
+      "text": "A complete state matrix."
+    },
+    {
+      "sourceLine": 1439,
+      "text": "Transition contracts for Create edge, Import, Save, Run, and Repair."
+    },
+    {
+      "sourceLine": 1440,
+      "text": "A version-conflict sequence."
+    },
+    {
+      "sourceLine": 1441,
+      "text": "A stale-preview sequence."
+    },
+    {
+      "sourceLine": 1442,
+      "text": "1440 \u00d7 900 and 1024 \u00d7 768 layouts."
+    },
+    {
+      "sourceLine": 1443,
+      "text": "A keyboard and focus contract."
+    },
+    {
+      "sourceLine": 1444,
+      "text": "An implementation-only accessibility test list."
+    },
+    {
+      "sourceLine": 1446,
+      "text": "Capstone phase 4"
+    },
+    {
+      "sourceLine": 1447,
+      "text": "State-matrix coverage"
+    },
+    {
+      "sourceLine": 1448,
+      "text": "Transition contracts"
+    },
+    {
+      "sourceLine": 1449,
+      "text": "Conflict and stale-data recovery"
+    },
+    {
+      "sourceLine": 1450,
+      "text": "Viewport layouts"
+    },
+    {
+      "sourceLine": 1451,
+      "text": "Keyboard model"
+    },
+    {
+      "sourceLine": 1452,
+      "text": "Focus and announcement behavior"
+    },
+    {
+      "sourceLine": 1453,
+      "text": "Implementation-only tests"
+    },
+    {
+      "sourceLine": 1456,
+      "text": "Phase 5 \u2014 Review and hand off"
+    },
+    {
+      "sourceLine": 1458,
+      "text": "Run the design evidence gate. Produce:"
+    },
+    {
+      "sourceLine": 1460,
+      "text": "A component disposition for every visible pattern."
+    },
+    {
+      "sourceLine": 1461,
+      "text": "A token audit."
+    },
+    {
+      "sourceLine": 1462,
+      "text": "A challenge-review record."
+    },
+    {
+      "sourceLine": 1463,
+      "text": "A gate decision."
+    },
+    {
+      "sourceLine": 1464,
+      "text": "A handoff README."
+    },
+    {
+      "sourceLine": 1465,
+      "text": "A component-to-code map with real import paths."
+    },
+    {
+      "sourceLine": 1466,
+      "text": "The state matrix, transition contracts, fixtures, copy, responsive references, accessibility contract, acceptance tests, and unresolved items."
+    },
+    {
+      "sourceLine": 1468,
+      "text": "Export the Claude Design handoff only after the gate passes or receives a bounded conditional pass."
+    },
+    {
+      "sourceLine": 1470,
+      "text": "Capstone phase 5"
+    },
+    {
+      "sourceLine": 1471,
+      "text": "Scope evidence"
+    },
+    {
+      "sourceLine": 1472,
+      "text": "Component and token disposition"
+    },
+    {
+      "sourceLine": 1473,
+      "text": "Challenge review"
+    },
+    {
+      "sourceLine": 1474,
+      "text": "Gate decision"
+    },
+    {
+      "sourceLine": 1475,
+      "text": "Handoff README"
+    },
+    {
+      "sourceLine": 1476,
+      "text": "Production import map"
+    },
+    {
+      "sourceLine": 1477,
+      "text": "Fixtures, states, and tests"
+    },
+    {
+      "sourceLine": 1478,
+      "text": "Unresolved items and owners"
+    },
+    {
+      "sourceLine": 1481,
+      "text": "Phase 6 \u2014 Plan implementation and proof"
+    },
+    {
+      "sourceLine": 1483,
+      "text": "You do not need to implement a production application to complete the design capstone, but the implementation plan must be executable."
+    },
+    {
+      "sourceLine": 1485,
+      "text": "Produce:"
+    },
+    {
+      "sourceLine": 1487,
+      "text": "The exact Claude Code implementation prompt."
+    },
+    {
+      "sourceLine": 1488,
+      "text": "A bounded implementation sequence."
+    },
+    {
+      "sourceLine": 1489,
+      "text": "Static, behavior, visual, and human review commands or procedures."
+    },
+    {
+      "sourceLine": 1490,
+      "text": "Required rendered states and viewports."
+    },
+    {
+      "sourceLine": 1491,
+      "text": "A deviation log template."
+    },
+    {
+      "sourceLine": 1492,
+      "text": "A Figma reconciliation choice: not required, Figma-first, or code-to-canvas."
+    },
+    {
+      "sourceLine": 1494,
+      "text": "Capstone phase 6"
+    },
+    {
+      "sourceLine": 1495,
+      "text": "Implementation prompt"
+    },
+    {
+      "sourceLine": 1496,
+      "text": "Bounded slices"
+    },
+    {
+      "sourceLine": 1497,
+      "text": "Static and behavior proof"
+    },
+    {
+      "sourceLine": 1498,
+      "text": "Rendered proof"
+    },
+    {
+      "sourceLine": 1499,
+      "text": "Human review"
+    },
+    {
+      "sourceLine": 1500,
+      "text": "Deviation log"
+    },
+    {
+      "sourceLine": 1501,
+      "text": "Figma reconciliation choice"
+    },
+    {
+      "sourceLine": 1506,
+      "text": "Capstone scoring"
+    },
+    {
+      "sourceLine": 1508,
+      "text": "Category"
+    },
+    {
+      "sourceLine": 1508,
+      "text": "Points"
+    },
+    {
+      "sourceLine": 1510,
+      "text": "Baseline fidelity and scope discipline"
+    },
+    {
+      "sourceLine": 1510,
+      "text": "15"
+    },
+    {
+      "sourceLine": 1511,
+      "text": "Design-system reuse and extension quality"
+    },
+    {
+      "sourceLine": 1511,
+      "text": "20"
+    },
+    {
+      "sourceLine": 1512,
+      "text": "DAG, inspector, data-sheet, and importer behavior"
+    },
+    {
+      "sourceLine": 1512,
+      "text": "20"
+    },
+    {
+      "sourceLine": 1513,
+      "text": "State completeness and recovery"
+    },
+    {
+      "sourceLine": 1513,
+      "text": "15"
+    },
+    {
+      "sourceLine": 1514,
+      "text": "Data correctness and fixture traceability"
+    },
+    {
+      "sourceLine": 1514,
+      "text": "10"
+    },
+    {
+      "sourceLine": 1515,
+      "text": "Accessibility and responsive behavior"
+    },
+    {
+      "sourceLine": 1515,
+      "text": "10"
+    },
+    {
+      "sourceLine": 1516,
+      "text": "Handoff completeness and implementation readiness"
+    },
+    {
+      "sourceLine": 1516,
+      "text": "10"
+    },
+    {
+      "sourceLine": 1517,
+      "text": "Total"
+    },
+    {
+      "sourceLine": 1517,
+      "text": "100"
+    },
+    {
+      "sourceLine": 1519,
+      "text": "Interpretation:"
+    },
+    {
+      "sourceLine": 1521,
+      "text": "90\u2013100: Production-ready candidate for implementation review."
+    },
+    {
+      "sourceLine": 1522,
+      "text": "80\u201389: Ready for implementation with bounded follow-up."
+    },
+    {
+      "sourceLine": 1523,
+      "text": "70\u201379: Useful prototype; handoff gaps remain."
+    },
+    {
+      "sourceLine": 1524,
+      "text": "Below 70: Exploration only."
+    },
+    {
+      "sourceLine": 1526,
+      "text": "Mandatory gates apply regardless of score:"
+    },
+    {
+      "sourceLine": 1528,
+      "text": "No unresolved High finding."
+    },
+    {
+      "sourceLine": 1529,
+      "text": "All critical acceptance tests have a design and implementation disposition."
+    },
+    {
+      "sourceLine": 1530,
+      "text": "Production components and tokens are traceable."
+    },
+    {
+      "sourceLine": 1531,
+      "text": "Design and engineering have reviewed the rendered implementation before release."
+    },
+    {
+      "sourceLine": 1535,
+      "text": "Capstone answer key"
+    },
+    {
+      "sourceLine": 1537,
+      "text": "The answer key does not prescribe one visual layout. It defines the evidence a strong submission contains."
+    },
+    {
+      "sourceLine": 1539,
+      "text": "Phase 1 answer"
+    },
+    {
+      "sourceLine": 1541,
+      "text": "A strong source stack ranks current production behavior and component code above visual inference. The duplicated Figma file and React package are paired, while shipped screens supply composition evidence. The preservation brief names the shell, route, permissions, Save, Run, persistence, and unrelated copy. The context package is focused and excludes private data, dependencies, build output, and unrelated packages."
+    },
+    {
+      "sourceLine": 1543,
+      "text": "The system test samples component identity and token use. It does not pass because the screen \u201clooks like SDS.\u201d The record shows exact reuse, valid composition, proposals, and unverified areas."
+    },
+    {
+      "sourceLine": 1545,
+      "text": "Phase 2 answer"
+    },
+    {
+      "sourceLine": 1547,
+      "text": "The DAG replaces only the current linear editor. PipelineNode, PipelinePort, and PipelineEdge are product-specific extensions rather than disguised card or button variants. Canvas controls reuse existing buttons, icons, and tooltips. The graph rejects a cycle and incompatible ports without mutation and explains the reason. Node status uses icon, text, and semantic color. Undo and redo cover both layout and structure."
+    },
+    {
+      "sourceLine": 1549,
+      "text": "Phase 3 answer"
+    },
+    {
+      "sourceLine": 1551,
+      "text": "The selected node, inspector title, and data sheet provenance agree. Import creates source ID august after confirmation. Normalize Email produces six rows; C001 and C006 become alice@example.com and frank@example.com. Validation retains C001, C002, and C006, while C003, C004, and C005 are invalid at CSV rows 4, 5, and 6. The warehouse repair changes missing-warehouse to customer_health, then saves before re-running. The importer does not commit inferred mappings silently. The required mapping blocks completion, malformed rows point to row and column, and the user can reject them or route them to quarantine. Success creates the same source node shown on the graph."
+    },
+    {
+      "sourceLine": 1553,
+      "text": "Phase 4 answer"
+    },
+    {
+      "sourceLine": 1555,
+      "text": "The state matrix covers document, canvas, node, inspector, data sheet, importer, run, and permissions. Transition contracts say what remains stable after failure. Version conflict preserves local work and supports review; stale preview remains inspectable and clearly marked. The minimum viewport uses an explicit docking or overlay rule rather than shrinking everything. Keyboard focus can complete the critical journey, and implementation-only evidence remains a test plan rather than an unsupported claim."
+    },
+    {
+      "sourceLine": 1557,
+      "text": "Phase 5 answer"
+    },
+    {
+      "sourceLine": 1559,
+      "text": "Every visible element has a disposition. The record distinguishes the code Table primitive from the unverified Figma Table component. The challenge reviewer attempts invalid connections, minimum-viewport collisions, keyboard navigation, reload persistence, and data inconsistency. The handoff contains real imports, fixtures, exact copy, states, transitions, acceptance tests, prototype-only warnings, and named unresolved items."
+    },
+    {
+      "sourceLine": 1561,
+      "text": "Phase 6 answer"
+    },
+    {
+      "sourceLine": 1563,
+      "text": "The Claude Code prompt requires inspection before editing, updates the current route rather than creating a parallel application, uses repository conventions, and asks for rendered proof. The implementation plan proceeds in bounded slices. The proof record separates local model tests, actual browser actions, tool observations, documentation, and human approval. A local exercise can pass its bounded tests while the Claude Design workflow remains unverified. Neither a local package nor Claude Code reading it proves that Design exported it. The team chooses a Figma reconciliation path based on whether editable Figma remains a source of truth."
+    },
+    {
+      "sourceLine": 1565,
+      "text": "Common deductions"
+    },
+    {
+      "sourceLine": 1567,
+      "text": "Finding"
+    },
+    {
+      "sourceLine": 1567,
+      "text": "Typical deduction"
+    },
+    {
+      "sourceLine": 1569,
+      "text": "Shell or unrelated regions redesigned"
+    },
+    {
+      "sourceLine": 1569,
+      "text": "10\u201320"
+    },
+    {
+      "sourceLine": 1570,
+      "text": "Prototype code presented as production mapping"
+    },
+    {
+      "sourceLine": 1570,
+      "text": "10\u201320"
+    },
+    {
+      "sourceLine": 1571,
+      "text": "Graph cycle or incompatible connection mutates state"
+    },
+    {
+      "sourceLine": 1571,
+      "text": "8\u201315"
+    },
+    {
+      "sourceLine": 1572,
+      "text": "Importer has only a happy path"
+    },
+    {
+      "sourceLine": 1572,
+      "text": "8\u201312"
+    },
+    {
+      "sourceLine": 1573,
+      "text": "Preview data is unrelated to selected node output"
+    },
+    {
+      "sourceLine": 1573,
+      "text": "8\u201312"
+    },
+    {
+      "sourceLine": 1574,
+      "text": "New raw colors or duplicate controls"
+    },
+    {
+      "sourceLine": 1574,
+      "text": "5\u201310"
+    },
+    {
+      "sourceLine": 1575,
+      "text": "No minimum-viewport evidence"
+    },
+    {
+      "sourceLine": 1575,
+      "text": "5\u201310"
+    },
+    {
+      "sourceLine": 1576,
+      "text": "Status depends on color"
+    },
+    {
+      "sourceLine": 1576,
+      "text": "5\u201310"
+    },
+    {
+      "sourceLine": 1577,
+      "text": "No keyboard graph path"
+    },
+    {
+      "sourceLine": 1577,
+      "text": "5\u201310"
+    },
+    {
+      "sourceLine": 1578,
+      "text": "Unresolved items have no owner"
+    },
+    {
+      "sourceLine": 1578,
+      "text": "3\u20138"
+    },
+    {
+      "sourceLine": 1582,
+      "text": "Appendix A \u2014 Prompt sequence"
+    },
+    {
+      "sourceLine": 1584,
+      "text": "Use prompts in order. Each prompt should preserve approved work, name the exact surface being changed, and request a small auditable result."
+    },
+    {
+      "sourceLine": 1586,
+      "text": "Use the setup path in Chapter 3 before these prompts. Record the chosen surface and system. /design-sync converts and uploads a React system; /design drafts artboards. Export a reviewed baseline before alternatives and test required interactions on the actual surface."
+    },
+    {
+      "sourceLine": 1588,
+      "text": "A1. Baseline analysis"
+    },
+    {
+      "sourceLine": 1590,
+      "text": "Copy-ready prompt"
+    },
+    {
+      "sourceLine": 1591,
+      "text": "Review the attached existing screen, route context, relevant code, and design-system sources. Do not generate a new design yet."
+    },
+    {
+      "sourceLine": 1593,
+      "text": "Return a factual screen inventory, visible component and layout patterns, preservation boundary, source conflicts, change boundary, and unresolved questions. Separate observations from inferences. Do not invent missing behavior."
+    },
+    {
+      "sourceLine": 1596,
+      "text": "A2. Draft design system"
+    },
+    {
+      "sourceLine": 1598,
+      "text": "Copy-ready prompt"
+    },
+    {
+      "sourceLine": 1599,
+      "text": "Build a draft system from the attached component code, tokens, Figma working file, and representative shipped screens. Treat code and tokens as authoritative. Preserve names. Separate directly observed components, inferred compositions, proposed additions, and unverified areas. Generate a settings form, dense table, and confirmation flow. Record source revision and selected system. Keep the system in draft; publication and default selection require owner approval."
+    },
+    {
+      "sourceLine": 1602,
+      "text": "A3. Bounded screen extension"
+    },
+    {
+      "sourceLine": 1604,
+      "text": "Copy-ready prompt"
+    },
+    {
+      "sourceLine": 1605,
+      "text": "Extend the attached existing screen with the approved feature. Preserve the named shell, navigation, route behavior, actions, permissions, spacing, typography, and interaction language. Change only the approved region. Reuse existing components and variants; label every proposal. Produce an interactive prototype and change log."
+    },
+    {
+      "sourceLine": 1608,
+      "text": "A4. Full state coverage"
+    },
+    {
+      "sourceLine": 1610,
+      "text": "Copy-ready prompt"
+    },
+    {
+      "sourceLine": 1611,
+      "text": "Apply the supplied state matrix to the approved prototype. Cover loading, empty, populated, dirty, saving, success, validation, system error, permission, conflict, stale, truncated, and recovery behavior. Annotate transitions and data assumptions. Preserve approved layout and components."
+    },
+    {
+      "sourceLine": 1614,
+      "text": "A5. Conformance audit"
+    },
+    {
+      "sourceLine": 1616,
+      "text": "Copy-ready prompt"
+    },
+    {
+      "sourceLine": 1617,
+      "text": "Audit every visible element against the linked system and codebase. Classify it as reuse, approved variant, composition, proposed product component, proposed shared component, reference only, or unverified. Correct objective token and component deviations. List changes before applying them. Return unresolved items with owners."
+    },
+    {
+      "sourceLine": 1620,
+      "text": "A6. Claude Code implementation"
+    },
+    {
+      "sourceLine": 1622,
+      "text": "Copy-ready prompt"
+    },
+    {
+      "sourceLine": 1623,
+      "text": "Implement the attached approved handoff in the existing repository. Inspect repository instructions, the current route, shell, component library, tokens, tests, data layer, and nearby patterns before editing. Map each design element to production code and report gaps. Modify the existing feature rather than creating a parallel UI. Preserve out-of-scope behavior. Use the supplied fixtures and acceptance tests. Run static, behavioral, accessibility, build, and rendered checks. Report mappings, deviations, proof, and unverified items."
+    },
+    {
+      "sourceLine": 1626,
+      "text": "A7. Native Figma update"
+    },
+    {
+      "sourceLine": 1628,
+      "text": "Copy-ready prompt"
+    },
+    {
+      "sourceLine": 1629,
+      "text": "Inspect the working Figma file and connected libraries. Extend the selected current screen using approved components, variables, styles, names, and Auto Layout. Preserve the source frame and create the proposed version beside it. Apply the supplied component disposition and state matrix. Return changed node IDs and unverified mappings. Do not edit a public Community source."
+    },
+    {
+      "sourceLine": 1634,
+      "text": "Appendix B \u2014 Handoff README template"
+    },
+    {
+      "sourceLine": 1636,
+      "text": "Feature"
+    },
+    {
+      "sourceLine": 1638,
+      "text": "[Feature name and route]"
+    },
+    {
+      "sourceLine": 1640,
+      "text": "Workflow and export evidence"
+    },
+    {
+      "sourceLine": 1642,
+      "text": "[Design surface, organization, plan, Claude Code version/provider, selected system, source revision, sync result]"
+    },
+    {
+      "sourceLine": 1644,
+      "text": "[Export format/date, actual file inventory, chat/README completeness, recipient access, missing inputs and owners]"
+    },
+    {
+      "sourceLine": 1646,
+      "text": "[Reviewed baseline path/hash and open result; repository edit authority]"
+    },
+    {
+      "sourceLine": 1648,
+      "text": "Inspect the bundle before implementation. Use the companion handoff template for the full evidence fields and the separate Figma write/capture eligibility checks."
+    },
+    {
+      "sourceLine": 1650,
+      "text": "Decision"
+    },
+    {
+      "sourceLine": 1652,
+      "text": "[One paragraph: what is changing, for whom, and why]"
+    },
+    {
+      "sourceLine": 1654,
+      "text": "Scope"
+    },
+    {
+      "sourceLine": 1656,
+      "text": "Change: [Approved surfaces and behavior]"
+    },
+    {
+      "sourceLine": 1658,
+      "text": "Preserve: [Shell, routes, actions, data, permissions, and unaffected behavior]"
+    },
+    {
+      "sourceLine": 1660,
+      "text": "Non-goals: [Explicit exclusions]"
+    },
+    {
+      "sourceLine": 1662,
+      "text": "Source-of-truth stack"
+    },
+    {
+      "sourceLine": 1664,
+      "text": "[Production behavior and route]"
+    },
+    {
+      "sourceLine": 1665,
+      "text": "[Component package and revision]"
+    },
+    {
+      "sourceLine": 1666,
+      "text": "[Working Figma file and design-library revision]"
+    },
+    {
+      "sourceLine": 1667,
+      "text": "[Representative shipped screens]"
+    },
+    {
+      "sourceLine": 1668,
+      "text": "[Product brief and approval date]"
+    },
+    {
+      "sourceLine": 1670,
+      "text": "Approved journey"
+    },
+    {
+      "sourceLine": 1672,
+      "text": "[Numbered end-to-end user journey]"
+    },
+    {
+      "sourceLine": 1674,
+      "text": "Design references"
+    },
+    {
+      "sourceLine": 1676,
+      "text": "Baseline: [link or path]"
+    },
+    {
+      "sourceLine": 1677,
+      "text": "Approved design: [link]"
+    },
+    {
+      "sourceLine": 1678,
+      "text": "Responsive references: [links]"
+    },
+    {
+      "sourceLine": 1679,
+      "text": "Prototype: [link]"
+    },
+    {
+      "sourceLine": 1680,
+      "text": "Claude Design bundle: [URL]"
+    },
+    {
+      "sourceLine": 1682,
+      "text": "Component-to-code map"
+    },
+    {
+      "sourceLine": 1684,
+      "text": "[Link to map with real imports, props, variants, and proposal owners]"
+    },
+    {
+      "sourceLine": 1686,
+      "text": "Product-specific extensions"
+    },
+    {
+      "sourceLine": 1688,
+      "text": "[Component, state model, accessibility contract, owner, intended code path]"
+    },
+    {
+      "sourceLine": 1690,
+      "text": "Data and fixtures"
+    },
+    {
+      "sourceLine": 1692,
+      "text": "[Fixture paths, schemas, expected transformations, error cases]"
+    },
+    {
+      "sourceLine": 1694,
+      "text": "States and transitions"
+    },
+    {
+      "sourceLine": 1696,
+      "text": "[State matrix and transition-contract links]"
+    },
+    {
+      "sourceLine": 1698,
+      "text": "Copy"
+    },
+    {
+      "sourceLine": 1700,
+      "text": "[Approved labels, helper text, errors, confirmations, empty states]"
+    },
+    {
+      "sourceLine": 1702,
+      "text": "Accessibility and responsiveness"
+    },
+    {
+      "sourceLine": 1704,
+      "text": "[Keyboard model, focus rules, announcements, viewports, mobile boundary, implementation-only tests]"
+    },
+    {
+      "sourceLine": 1706,
+      "text": "Acceptance tests"
+    },
+    {
+      "sourceLine": 1708,
+      "text": "[Critical numbered tests]"
+    },
+    {
+      "sourceLine": 1710,
+      "text": "Prototype-code warning"
+    },
+    {
+      "sourceLine": 1712,
+      "text": "Prototype code demonstrates design intent. Use only the mappings explicitly identified in the component-to-code table. Do not copy scratch components, simulated data, local styles, or generated state management into production without review."
+    },
+    {
+      "sourceLine": 1714,
+      "text": "Open decisions and deviations"
+    },
+    {
+      "sourceLine": 1716,
+      "text": "[Item, severity, owner, due date, implementation consequence]"
+    },
+    {
+      "sourceLine": 1718,
+      "text": "Verification record"
+    },
+    {
+      "sourceLine": 1720,
+      "text": "[Commands, rendered routes and states, screenshots, reviewers, unverified items]"
+    },
+    {
+      "sourceLine": 1724,
+      "text": "Appendix C \u2014 Final validation checklist"
+    },
+    {
+      "sourceLine": 1726,
+      "text": "Setup and observation"
+    },
+    {
+      "sourceLine": 1728,
+      "text": "Surface, organization, plan, provider, installed version, and selected system are recorded."
+    },
+    {
+      "sourceLine": 1729,
+      "text": "Design, Design systems, and standalone controls are checked separately."
+    },
+    {
+      "sourceLine": 1730,
+      "text": "Sync upload destination and completed source revision are confirmed."
+    },
+    {
+      "sourceLine": 1731,
+      "text": "Read, native-write, capture, and Code Connect eligibility are checked separately when Figma is used."
+    },
+    {
+      "sourceLine": 1732,
+      "text": "A reviewed baseline export opens and is preserved."
+    },
+    {
+      "sourceLine": 1733,
+      "text": "Documentation claims and observed runtime results are recorded separately."
+    },
+    {
+      "sourceLine": 1735,
+      "text": "Source and scope"
+    },
+    {
+      "sourceLine": 1737,
+      "text": "Current route and production behavior are named."
+    },
+    {
+      "sourceLine": 1738,
+      "text": "The source-of-truth hierarchy is approved."
+    },
+    {
+      "sourceLine": 1739,
+      "text": "The public Community file is untouched."
+    },
+    {
+      "sourceLine": 1740,
+      "text": "A working Figma duplicate is used when connected inspection or editing is required."
+    },
+    {
+      "sourceLine": 1741,
+      "text": "The preservation boundary is visible."
+    },
+    {
+      "sourceLine": 1742,
+      "text": "Non-goals are explicit."
+    },
+    {
+      "sourceLine": 1743,
+      "text": "One fixture carries through the complete journey."
+    },
+    {
+      "sourceLine": 1745,
+      "text": "Design system"
+    },
+    {
+      "sourceLine": 1747,
+      "text": "The focused code package, tokens, stories, and mappings are linked."
+    },
+    {
+      "sourceLine": 1748,
+      "text": "Settings form, dense table, and confirmation-flow tests pass; a correction persists in a neighboring state."
+    },
+    {
+      "sourceLine": 1749,
+      "text": "Component and token identity were sampled."
+    },
+    {
+      "sourceLine": 1750,
+      "text": "Every visible pattern has a disposition."
+    },
+    {
+      "sourceLine": 1751,
+      "text": "Raw values and duplicate primitives are absent."
+    },
+    {
+      "sourceLine": 1752,
+      "text": "Proposed components have owners, states, behavior, accessibility notes, and code paths."
+    },
+    {
+      "sourceLine": 1754,
+      "text": "Behavior and data"
+    },
+    {
+      "sourceLine": 1756,
+      "text": "The complete success journey is interactive."
+    },
+    {
+      "sourceLine": 1757,
+      "text": "Invalid graph actions do not mutate state."
+    },
+    {
+      "sourceLine": 1758,
+      "text": "Undo and redo cover layout and structure."
+    },
+    {
+      "sourceLine": 1759,
+      "text": "The importer blocks unresolved required mappings."
+    },
+    {
+      "sourceLine": 1760,
+      "text": "Malformed rows have row and column references."
+    },
+    {
+      "sourceLine": 1761,
+      "text": "Import success creates the configured source node."
+    },
+    {
+      "sourceLine": 1762,
+      "text": "Preview data belongs to the selected node and shared fixture."
+    },
+    {
+      "sourceLine": 1763,
+      "text": "Save, reload, failure, repair, and re-run are covered."
+    },
+    {
+      "sourceLine": 1764,
+      "text": "Conflict, stale, permission, empty, loading, and error states recover safely."
+    },
+    {
+      "sourceLine": 1766,
+      "text": "Accessibility and responsiveness"
+    },
+    {
+      "sourceLine": 1768,
+      "text": "The 1440 \u00d7 900 and 1024 \u00d7 768 layouts are reviewed."
+    },
+    {
+      "sourceLine": 1769,
+      "text": "Mobile editing is supported or explicitly out of scope."
+    },
+    {
+      "sourceLine": 1770,
+      "text": "Critical actions have a non-pointer path."
+    },
+    {
+      "sourceLine": 1771,
+      "text": "Focus is visible and restored after dialogs and state changes."
+    },
+    {
+      "sourceLine": 1772,
+      "text": "Status uses icon, label, and color."
+    },
+    {
+      "sourceLine": 1773,
+      "text": "Fields, errors, tables, progress, and dialogs have semantic behavior specified."
+    },
+    {
+      "sourceLine": 1774,
+      "text": "Reduced-motion and assistive-technology tests are assigned to implementation."
+    },
+    {
+      "sourceLine": 1776,
+      "text": "Handoff"
+    },
+    {
+      "sourceLine": 1778,
+      "text": "Baseline, final design, prototype, and change log are present."
+    },
+    {
+      "sourceLine": 1779,
+      "text": "Component-to-code map uses real import paths."
+    },
+    {
+      "sourceLine": 1780,
+      "text": "State matrix, transition contracts, copy, and fixtures are included."
+    },
+    {
+      "sourceLine": 1781,
+      "text": "Prototype-only code is labeled."
+    },
+    {
+      "sourceLine": 1782,
+      "text": "Acceptance tests are objective."
+    },
+    {
+      "sourceLine": 1783,
+      "text": "Unresolved items have severity, owner, and consequence."
+    },
+    {
+      "sourceLine": 1784,
+      "text": "Export inventory and recipient access are checked; missing files or decisions are supplied or assigned."
+    },
+    {
+      "sourceLine": 1785,
+      "text": "The Claude Code prompt requires inspection before editing."
+    },
+    {
+      "sourceLine": 1787,
+      "text": "Implementation proof"
+    },
+    {
+      "sourceLine": 1789,
+      "text": "Static checks pass."
+    },
+    {
+      "sourceLine": 1790,
+      "text": "Behavior and data tests pass."
+    },
+    {
+      "sourceLine": 1791,
+      "text": "The actual route renders in required states and viewports."
+    },
+    {
+      "sourceLine": 1792,
+      "text": "Keyboard and assistive-technology checks are reported separately."
+    },
+    {
+      "sourceLine": 1793,
+      "text": "Design, engineering, and product review are recorded."
+    },
+    {
+      "sourceLine": 1794,
+      "text": "Deviations are approved or assigned."
+    },
+    {
+      "sourceLine": 1795,
+      "text": "Figma and Code Connect are reconciled if they remain sources of truth."
+    },
+    {
+      "sourceLine": 1799,
+      "text": "Appendix D \u2014 Simple Design System reference"
+    },
+    {
+      "sourceLine": 1801,
+      "text": "The following inventory retains the August 5, 2026 SDS code/metadata findings. The local review pinned SDS React commit 05525f75192a3aa5d5690c5e41277ebd19d2efe1 and used its actual primitives. Native Figma node IDs, counts, and the Table discrepancy were not re-measured; the working duplicate was unavailable. The October review rechecked the official repository README and setup guidance. Pin the repository revision used for a new experiment and verify its metadata against the working Figma copy. The August connected account could not inspect the Community source; current Figma documentation separates read access from Full-seat native writing."
+    },
+    {
+      "sourceLine": 1803,
+      "text": "Component-bearing metadata pages"
+    },
+    {
+      "sourceLine": 1805,
+      "text": "The August metadata inventory recorded 396 components across 19 component-bearing pages: Accordion, Avatars, Buttons, Cards, Dialog, Examples, Forms, Icons, Inputs, Menu, Navigation, Notification, Pagination, Sections, Tabs, Tags, Text, Tooltip, and Utilities. This list is not a verified inventory of every top-level page in the live Community file."
+    },
+    {
+      "sourceLine": 1807,
+      "text": "Useful component node IDs"
+    },
+    {
+      "sourceLine": 1809,
+      "text": "Family"
+    },
+    {
+      "sourceLine": 1809,
+      "text": "Examples"
+    },
+    {
+      "sourceLine": 1811,
+      "text": "Buttons"
+    },
+    {
+      "sourceLine": 1811,
+      "text": "Button 9762:426; Icon Button 11:11508; Button Group 2072:9432; Button Danger 185:852"
+    },
+    {
+      "sourceLine": 1812,
+      "text": "Inputs"
+    },
+    {
+      "sourceLine": 1812,
+      "text": "Select 2136:2336; Input 2136:2263; Textarea 9762:3088; Search 2236:14989; Checkbox 9762:1441; Radio 9762:1412; Switch 9762:1902"
+    },
+    {
+      "sourceLine": 1813,
+      "text": "Navigation"
+    },
+    {
+      "sourceLine": 1813,
+      "text": "Navigation Button 515:5459; Button List 524:503; Pill 7768:19970; Pill List 2194:14984"
+    },
+    {
+      "sourceLine": 1814,
+      "text": "Feedback"
+    },
+    {
+      "sourceLine": 1814,
+      "text": "Notification 124:8256; Tooltip 315:32700; Tag 56:8830; Button Danger 185:852"
+    },
+    {
+      "sourceLine": 1815,
+      "text": "Structure"
+    },
+    {
+      "sourceLine": 1815,
+      "text": "Accordion 7753:4779; Tabs 3729:13362; Dialog 192:31534; Header 2287:22651; Footer 321:11357"
+    },
+    {
+      "sourceLine": 1816,
+      "text": "Pagination"
+    },
+    {
+      "sourceLine": 1816,
+      "text": "Root 9762:899; Page 9762:890; Next 9762:870; Previous 9762:880; Gap 9762:868"
+    },
+    {
+      "sourceLine": 1817,
+      "text": "Pipeline icons"
+    },
+    {
+      "sourceLine": 1817,
+      "text": "Database 4049:13478; Git Branch 4049:13513; Grid 4049:13518; Table 4049:13630; Play 4049:13586; Upload 4049:13656; Settings 4049:13606; Alert Circle 4039:13020; Check Circle 4039:13060"
+    },
+    {
+      "sourceLine": 1819,
+      "text": "Token collections"
+    },
+    {
+      "sourceLine": 1821,
+      "text": "Collection"
+    },
+    {
+      "sourceLine": 1821,
+      "text": "Modes"
+    },
+    {
+      "sourceLine": 1821,
+      "text": "Use"
+    },
+    {
+      "sourceLine": 1823,
+      "text": "@typography_primitives"
+    },
+    {
+      "sourceLine": 1823,
+      "text": "default"
+    },
+    {
+      "sourceLine": 1823,
+      "text": "Inter, Noto Serif, Roboto Mono, scale 01\u201310, weights"
+    },
+    {
+      "sourceLine": 1824,
+      "text": "@responsive"
+    },
+    {
+      "sourceLine": 1824,
+      "text": "desktop, mobile, tablet"
+    },
+    {
+      "sourceLine": 1824,
+      "text": "Device, device width, root size, scale"
+    },
+    {
+      "sourceLine": 1825,
+      "text": "@typography"
+    },
+    {
+      "sourceLine": 1825,
+      "text": "mode_1"
+    },
+    {
+      "sourceLine": 1825,
+      "text": "Semantic title, subtitle, heading, body, and code roles"
+    },
+    {
+      "sourceLine": 1826,
+      "text": "@size"
+    },
+    {
+      "sourceLine": 1826,
+      "text": "default"
+    },
+    {
+      "sourceLine": 1826,
+      "text": "Space, radius, blur, depth, stroke, icon size"
+    },
+    {
+      "sourceLine": 1827,
+      "text": "@color_primitives"
+    },
+    {
+      "sourceLine": 1827,
+      "text": "value"
+    },
+    {
+      "sourceLine": 1827,
+      "text": "Brand and raw black, white, green, gray, pink, red, slate, yellow palettes"
+    },
+    {
+      "sourceLine": 1828,
+      "text": "@color"
+    },
+    {
+      "sourceLine": 1828,
+      "text": "sds_light, sds_dark, brand_b_light"
+    },
+    {
+      "sourceLine": 1828,
+      "text": "Semantic background, text, border, icon roles"
+    },
+    {
+      "sourceLine": 1830,
+      "text": "Use @color semantic roles in product design. Raw primitive palettes are inputs to the system, not interface decisions."
+    },
+    {
+      "sourceLine": 1832,
+      "text": "Product gaps for Data Pipeline Studio"
+    },
+    {
+      "sourceLine": 1834,
+      "text": "SDS is a strong source for the shell, forms, controls, typography, themes, layout, and basic feedback. It does not provide the product-defining graph, port, edge, schema-mapping, importer, or operational run-state model. The August inspection found a code Table primitive but no Table component in its Figma metadata. Verify that distinction in the chosen revision and working file. Build confirmed gaps as explicit product extensions from SDS primitives and tokens."
+    },
+    {
+      "sourceLine": 1838,
+      "text": "Appendix E \u2014 Product boundaries and operating risks"
+    },
+    {
+      "sourceLine": 1840,
+      "text": "Tool roles"
+    },
+    {
+      "sourceLine": 1842,
+      "text": "Tool"
+    },
+    {
+      "sourceLine": 1842,
+      "text": "Proper role"
+    },
+    {
+      "sourceLine": 1842,
+      "text": "Boundary"
+    },
+    {
+      "sourceLine": 1844,
+      "text": "Claude Design"
+    },
+    {
+      "sourceLine": 1844,
+      "text": "System-grounded visual exploration and interactive prototyping"
+    },
+    {
+      "sourceLine": 1844,
+      "text": "Works in its own canvas; direct native-Figma round-trip is not documented"
+    },
+    {
+      "sourceLine": 1845,
+      "text": "Claude Code"
+    },
+    {
+      "sourceLine": 1845,
+      "text": "Repository-aware implementation from the handoff"
+    },
+    {
+      "sourceLine": 1845,
+      "text": "Requires engineering review, tests, and rendered verification"
+    },
+    {
+      "sourceLine": 1846,
+      "text": "Figma MCP + Code Connect"
+    },
+    {
+      "sourceLine": 1846,
+      "text": "Native Figma editing and structured design/code mapping"
+    },
+    {
+      "sourceLine": 1846,
+      "text": "Separate integration with its own permissions and mappings"
+    },
+    {
+      "sourceLine": 1847,
+      "text": "Figma Make"
+    },
+    {
+      "sourceLine": 1847,
+      "text": "Figma's prompt-to-app product"
+    },
+    {
+      "sourceLine": 1847,
+      "text": "Uses Claude models but is a different product from Claude Design"
+    },
+    {
+      "sourceLine": 1849,
+      "text": "Current Claude Design limitations"
+    },
+    {
+      "sourceLine": 1851,
+      "text": "Claude Design remains beta. Large repositories, intermittent comments, incomplete source imports, and simultaneous editing have documented limits. Mobile can request and view designs; canvas editing and sharing changes require web or desktop. Version history is not yet available. See the Design help guide."
+    },
+    {
+      "sourceLine": 1852,
+      "text": "Usage draws from the existing Claude allowance, including Claude Code. Confirm the organization's billing arrangement; usage-based Enterprise differs from seat-based plans. See the Artifacts admin guide."
+    },
+    {
+      "sourceLine": 1853,
+      "text": "Design and Design systems have separate Enterprise template controls. Standalone Design uses its own setting. An enabled organization setting is required before a custom role can grant access."
+    },
+    {
+      "sourceLine": 1854,
+      "text": "Uploaded assets persist under the applicable retention policies, Design data residency is unsupported, and the new Artifacts experience is unavailable for the documented CMEK, ZDR, and HIPAA-ready configurations. Confirm tenant requirements before upload."
+    },
+    {
+      "sourceLine": 1855,
+      "text": "Standalone Design lacks audit logs. Integrated designs in conversations and Artifacts have artifact-level Compliance API recording. Verify the event coverage required by the team; artifact-level records do not establish complete edit or comment history."
+    },
+    {
+      "sourceLine": 1856,
+      "text": "Generated accessibility reviews and conformance checks assist the reviewer. They do not establish human approval, component identity, or production behavior."
+    },
+    {
+      "sourceLine": 1858,
+      "text": "Figma workflow limits"
+    },
+    {
+      "sourceLine": 1860,
+      "text": "The write-to-canvas documentation lists unsupported image assets and custom fonts, a 20kb output-response limit, and manual component publication before Code Connect completes. Those limits apply to that tool. The code-to-canvas path has different seat rules, and editable captured layers still need component and variable inspection. Confirm read quotas, Code Connect eligibility, and file permissions separately."
+    },
+    {
+      "sourceLine": 1862,
+      "text": "Operational controls"
+    },
+    {
+      "sourceLine": 1864,
+      "text": "Pilot with a small design-system group before broad rollout."
+    },
+    {
+      "sourceLine": 1865,
+      "text": "Use non-sensitive fixtures and sanitize screenshots."
+    },
+    {
+      "sourceLine": 1866,
+      "text": "Define who can publish or revise the organization system."
+    },
+    {
+      "sourceLine": 1867,
+      "text": "Sample generated projects for system compliance."
+    },
+    {
+      "sourceLine": 1868,
+      "text": "Keep a feedback path for source and mapping errors."
+    },
+    {
+      "sourceLine": 1869,
+      "text": "Record the repository and design revisions used for each handoff."
+    },
+    {
+      "sourceLine": 1870,
+      "text": "Treat field reports and vendor testimonials as adoption signals, not controlled quality evidence."
+    },
+    {
+      "sourceLine": 1874,
+      "text": "Glossary"
+    },
+    {
+      "sourceLine": 1876,
+      "text": "Approved variant \u2014 A variant already supported by the design component and production implementation."
+    },
+    {
+      "sourceLine": 1878,
+      "text": "Baseline \u2014 The current screen, behavior, data, and system state before the proposed change."
+    },
+    {
+      "sourceLine": 1880,
+      "text": "Code Connect \u2014 Figma's mapping layer that can provide component imports, prop mappings, snippets, source paths, and instructions to connected agents."
+    },
+    {
+      "sourceLine": 1882,
+      "text": "Component disposition \u2014 The classification that says whether a visible pattern is reused, composed, proposed, reference-only, or unverified."
+    },
+    {
+      "sourceLine": 1884,
+      "text": "Design evidence gate \u2014 The review that checks scope, system traceability, behavior, data, accessibility, and responsiveness before handoff."
+    },
+    {
+      "sourceLine": 1886,
+      "text": "Design-system delta \u2014 The explicit list of proposed components, variants, tokens, or guidance introduced by a feature."
+    },
+    {
+      "sourceLine": 1888,
+      "text": "Deviation log \u2014 A record of meaningful differences between approved design and implementation, including reason, consequence, owner, and reconciliation path."
+    },
+    {
+      "sourceLine": 1890,
+      "text": "Fixture \u2014 Stable example data used across design, tests, and review so surfaces can be compared consistently."
+    },
+    {
+      "sourceLine": 1892,
+      "text": "Grounded prototype \u2014 A prototype generated with source evidence from the current product, design system, codebase, and requirements."
+    },
+    {
+      "sourceLine": 1894,
+      "text": "Native Figma content \u2014 Editable Figma frames, components, variables, and Auto Layout rather than a flattened image or external prototype link."
+    },
+    {
+      "sourceLine": 1896,
+      "text": "Preservation boundary \u2014 The regions and behaviors that must remain stable while a bounded feature changes."
+    },
+    {
+      "sourceLine": 1898,
+      "text": "Product component \u2014 A reusable element with product-domain behavior that is not necessarily appropriate for the shared design system."
+    },
+    {
+      "sourceLine": 1900,
+      "text": "Prototype code \u2014 Code created to demonstrate interaction or appearance; it is not production code unless it maps to repository conventions and passes implementation review."
+    },
+    {
+      "sourceLine": 1902,
+      "text": "Semantic token \u2014 A named design value based on purpose, such as danger text or default border, rather than a raw color or number."
+    },
+    {
+      "sourceLine": 1904,
+      "text": "Source-of-truth stack \u2014 The ordered set of artifacts that govern product behavior, components, design anatomy, composition, and intent."
+    },
+    {
+      "sourceLine": 1906,
+      "text": "Transition contract \u2014 A specification of trigger, precondition, immediate feedback, success, failure, persistence, recovery, and telemetry for an action."
+    },
+    {
+      "sourceLine": 1910,
+      "text": "Further reading and source notes"
+    },
+    {
+      "sourceLine": 1912,
+      "text": "Primary product sources"
+    },
+    {
+      "sourceLine": 1914,
+      "text": "Anthropic. \u201cGet started with Claude Design.\u201d Accessed October 2, 2026. https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
+    },
+    {
+      "sourceLine": 1915,
+      "text": "Anthropic. \u201cSet up your design system in Claude Design.\u201d Accessed October 2, 2026. https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design"
+    },
+    {
+      "sourceLine": 1916,
+      "text": "Anthropic. \u201cUsing Claude Design for prototypes and UX.\u201d Accessed October 2, 2026. https://academy.claude.com/tutorials/using-claude-design-for-prototypes-and-ux"
+    },
+    {
+      "sourceLine": 1917,
+      "text": "Anthropic. \u201cClaude Design admin guide for Team and Enterprise plans.\u201d Accessed October 2, 2026. https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans"
+    },
+    {
+      "sourceLine": 1918,
+      "text": "Anthropic. \u201cIntroducing Claude Design, an Anthropic Labs research preview.\u201d April 17, 2026. https://www.anthropic.com/news/claude-design-anthropic-labs"
+    },
+    {
+      "sourceLine": 1920,
+      "text": "Figma and design-system sources"
+    },
+    {
+      "sourceLine": 1922,
+      "text": "Figma. \u201cFigma MCP Server: Introduction.\u201d Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/"
+    },
+    {
+      "sourceLine": 1923,
+      "text": "Figma. \u201cCode Connect integration.\u201d Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/"
+    },
+    {
+      "sourceLine": 1924,
+      "text": "Figma. \u201cStructure your Figma file for better code.\u201d Accessed August 5, 2026. https://developers.figma.com/docs/figma-mcp-server/structure-figma-file/"
+    },
+    {
+      "sourceLine": 1925,
+      "text": "Figma. \u201cWorkflow lab: Code to canvas.\u201d May 2026. https://help.figma.com/hc/en-us/articles/40219873508247-Workflow-lab-Code-to-canvas"
+    },
+    {
+      "sourceLine": 1926,
+      "text": "Figma. \u201cGetting started with Code Connect CLI.\u201d Accessed October 2, 2026. https://developers.figma.com/docs/code-connect/quickstart-guide/"
+    },
+    {
+      "sourceLine": 1927,
+      "text": "Figma. \u201cSimple Design System\u201d open-source repository. README accessed October 2, 2026; detailed inventory retains August 5 cutoff. https://github.com/figma/sds"
+    },
+    {
+      "sourceLine": 1928,
+      "text": "Figma. Simple Design System Community file supplied for this guide. https://www.figma.com/design/AIulMBySUibjRtykdngCUp/Simple-Design-System--Community-?node-id=3-5"
+    },
+    {
+      "sourceLine": 1930,
+      "text": "Current setup and operating references"
+    },
+    {
+      "sourceLine": 1932,
+      "text": "Anthropic. \u201cCommands.\u201d Accessed October 2, 2026. https://code.claude.com/docs/en/commands"
+    },
+    {
+      "sourceLine": 1933,
+      "text": "Anthropic. \u201cShare session output as artifacts.\u201d Accessed October 2, 2026. https://code.claude.com/docs/en/artifacts"
+    },
+    {
+      "sourceLine": 1934,
+      "text": "Anthropic. \u201cArtifacts admin guide for Team and Enterprise plans.\u201d Accessed October 2, 2026. https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans"
+    },
+    {
+      "sourceLine": 1935,
+      "text": "Figma. \u201cSet up the remote server.\u201d Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+    },
+    {
+      "sourceLine": 1936,
+      "text": "Figma. \u201cWrite to canvas.\u201d Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/"
+    },
+    {
+      "sourceLine": 1937,
+      "text": "Figma. \u201cCode to canvas.\u201d Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/"
+    },
+    {
+      "sourceLine": 1938,
+      "text": "Figma. \u201cRate limits & access.\u201d Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/"
+    },
+    {
+      "sourceLine": 1939,
+      "text": "Figma. \u201cCode Connect: Introduction.\u201d Accessed October 2, 2026. https://developers.figma.com/docs/code-connect/"
+    },
+    {
+      "sourceLine": 1941,
+      "text": "Field evidence \u2014 directional, not governing"
+    },
+    {
+      "sourceLine": 1943,
+      "text": "Paul Kuo. \u201cClaude Design sync codebase\u201d field test. https://paulkuo.tw/articles/claude-design-sync-codebase/"
+    },
+    {
+      "sourceLine": 1944,
+      "text": "Sebastian Proost. Claude Design case study. https://blog.4dcu.be/ai/programming/2026/04/27/claude-design.html"
+    },
+    {
+      "sourceLine": 1945,
+      "text": "byCrawford. Claude Design review. https://bycrawford.squarespace.com/blog/claude-design-review"
+    },
+    {
+      "sourceLine": 1946,
+      "text": "Builder.io. Claude Design review. https://www.builder.io/blog/claude-design"
+    },
+    {
+      "sourceLine": 1947,
+      "text": "Creative Bloq. Claude Code and Figma MCP review. https://www.creativebloq.com/ai/designing-using-claude-code-and-figma-mcp-how-good-are-they"
+    },
+    {
+      "sourceLine": 1949,
+      "text": "The editable guidance was refreshed from official documentation accessed October 2, 2026. The original August PDF and package remain separate artifacts. This source revision is a review candidate. Its local executable worked example passed the bounded October 2 tests; Claude Design generation, system sync, export, and native Figma reuse remain unverified. SDS metadata counts and node IDs retain their labeled August cutoff. The claim ledger in review/2026-10-02 records sources, accepted changes, and open workflow tests. Field reports remain historical context and do not support current capability claims."
+    }
+  ]
+}

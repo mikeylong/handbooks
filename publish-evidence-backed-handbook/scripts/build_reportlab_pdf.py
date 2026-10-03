@@ -3,6 +3,7 @@
 import argparse, importlib.util, json, os
 from pathlib import Path
 from pdf_theme import isolated_output, theme_tokens
+from pdf_font_resources import prune_unpainted_unembedded_fonts
 from pypdf import PdfReader, PdfWriter
 from pypdf.constants import PageLabelStyle
 from pypdf.generic import NameObject
@@ -19,13 +20,20 @@ def build(book, config_path, theme, output, art=None):
     from reportlab.pdfgen.canvas import Canvas
     doc_class=getattr(module,config.get('docClass','GuideDocTemplate'))
     doc=doc_class(str(output)); doc.multiBuild(getattr(module,config['story'])(),canvasmaker=lambda *a,**kw:Canvas(*a,**dict(kw,invariant=1,pdfVersion=tuple(int(x) for x in (PdfReader(book/config['releasedPdf']).pdf_header.removeprefix('%PDF-') if config.get('releasedPdf') else '1.4').split('.')),initialFontName=module.SERIF)))
-    reader=PdfReader(output,strict=True); writer=PdfWriter(clone_from=reader); writer.pdf_header=reader.pdf_header
+    reader=PdfReader(output,strict=True)
+    writer=PdfWriter(clone_from=reader); writer.pdf_header=reader.pdf_header
+    if not config.get('releasedPdf'): prune_unpainted_unembedded_fonts(writer)
     # Initial migration must preserve actual release labels; baseline files have them.
     baseline=PdfReader(book/config['releasedPdf'],strict=True) if config.get('releasedPdf') else None
     if baseline and len(reader.pages)!=len(baseline.pages): raise ValueError(f'Pagination mismatch: {len(reader.pages)} != {len(baseline.pages)}')
     if baseline and '/PageLabels' in baseline.trailer['/Root']:
         writer._root_object.update({NameObject('/PageLabels'):baseline.trailer['/Root']['/PageLabels'].clone(writer)})
-    if not baseline: writer.set_page_label(0,len(reader.pages)-1,style=PageLabelStyle.DECIMAL,start=1)
+    if not baseline:
+        offset=getattr(doc,'logical_page_offset',None) if config.get('pageLabelStyle')=='frontmatter-roman' else None
+        if offset:
+            writer.set_page_label(0,offset-1,style=PageLabelStyle.LOWERCASE_ROMAN,start=1)
+            writer.set_page_label(offset,len(reader.pages)-1,style=PageLabelStyle.DECIMAL,start=1)
+        else: writer.set_page_label(0,len(reader.pages)-1,style=PageLabelStyle.DECIMAL,start=1)
     writer.add_metadata({'/Title':config['title']+' · '+theme_tokens(theme)['displayName'],'/Subject':f"Content edition {config['version']} · {config['date']} · PDF appearance revision 1",'/Author':'Michael Long','/CreationDate':'D:20261002000000Z','/ModDate':'D:20261002000000Z'})
     writer.write(output)
     print(output)

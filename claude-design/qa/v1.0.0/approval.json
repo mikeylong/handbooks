@@ -1,0 +1,18 @@
+{
+  "status": "approved",
+  "date": "2026-10-02",
+  "authority": "Mike explicitly answered Approved to publication of edition 1.0.0, both reviewed PDFs, reader, gallery and required PR/merge/deployment.",
+  "pdfs": [
+    {
+      "theme": "light",
+      "sha256": "4c0b1392f09dc792df4fe486abf8e8ac6a6849adcccafbbe622195633dc76341"
+    },
+    {
+      "theme": "dark",
+      "sha256": "9f057149c6284833c21a3fcea050a5768c5afce8a67068c8eccf80299d74321a"
+    }
+  ],
+  "nativeWorkflow": "Unverified; disclosures retained. Publication of bounded guidance does not certify native workflow.",
+  "browserLimitation": "Low: native Chromium transition diagnostics retained; reduced-motion and functional checks pass.",
+  "frozenPdfNote": "Printed review-candidate label remains in the exact approved bytes."
+}

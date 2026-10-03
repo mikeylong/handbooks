@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "artwork": [
+    {
+      "chapter": 1,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-4c6c1668-c492-4e29-86b5-2da3d00bcf39.png",
+      "prompt": "Use case: stylized-concept. Author chapter 1 dark-screen counterpart for an A5 editorial handbook. Image 1 is the existing LIGHT composition reference, preserve this exact optical instrument, four side plates, object count, arrangement, proportions, camera viewpoint, complete silhouette and generous margins. Image 2 is a STYLE reference for natural ivory engraving highlights and dark material shadows, not an edit target. Re-draw as precise stippled technical engraving for charcoal #191918 viewing. Natural pale illuminated metal faces, opaque dark recesses inside objects. Genuine transparent outer background and gaps between objects, no background plate, no gray paper, no vignette, no glow or white fringe. Do not invert the Light values. No text, labels, logos, watermark or added objects. Landscape frame matching the Light reference. Output high resolution with at least 1536 pixels wide.",
+      "attempts": [],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-01.png",
+      "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        35,
+        1633,
+        890
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-01.png",
+        "sha256": "150499b63865dc1fa52b27a8bccf96166da7c86f8f4fd86f9c845b4d78b8211f",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "dark engraving treatment"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/original/chapter-01.png",
+          "sha256": "150499b63865dc1fa52b27a8bccf96166da7c86f8f4fd86f9c845b4d78b8211f",
+          "role": "subject and composition"
+        },
+        {
+          "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+          "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+          "role": "dark engraving treatment"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-94acad2a-797e-4ea8-991b-8e1a2537d315.png",
+      "prompt": "Use case: stylized-concept. Chapter 2 dark-screen counterpart for an A5 field guide. Image 1 is the LIGHT composition reference: preserve the open precision tool case, six drawers, central upright divider rack, three foreground instrument boards and loose calipers, the complete object silhouette, exact layout and three-quarter viewpoint. Image 2 is the selected chapter 1 DARK style reference. Author a matching stippled technical engraving with ivory illuminated metal and naturally opaque dark recesses. Transparent outer background and gaps between objects, no rectangular plate, paper, vignette, glow or pale fringe. No inversion, text, labels, logos, watermarks, new objects or cropped edges. Landscape at least 1536 px wide.",
+      "attempts": [],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-02.png",
+      "sha256": "87ad6f7c1b1c5b105b9a4d829be953b3bc6081030c1186f9c512ff66d1934df5",
+      "dimensions": [
+        1660,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        241,
+        32,
+        1361,
+        926
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-02.png",
+        "sha256": "bdc40205f69bb1aa47e837d21a0d9e8f1da0e332ee3bcca950c2fa845eb88922",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/original/chapter-02.png",
+          "sha256": "bdc40205f69bb1aa47e837d21a0d9e8f1da0e332ee3bcca950c2fa845eb88922",
+          "role": "subject and composition"
+        },
+        {
+          "path": "assets/chapter-art/dark/chapter-01.png",
+          "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+          "role": "attached dark engraving style reference"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-d5d61144-15f1-4647-a6ac-c791bbb14fcb.png",
+      "prompt": "Use case: stylized-concept. Chapter 3 dark-screen counterpart. Image 1 LIGHT reference governs the complete three-station precision inspection bench, overhead bar with three dial gauges, left control panel, central pin rack, right small linkage, base rails, exact relationships and viewpoint. Image 2 DARK reference governs engraving density and natural light. Re-author technical stippled engraving with ivory illuminated metal, opaque dark material and recesses; transparent outer background and gaps so charcoal page shows through. Preserve framing and all subjects. No text, labels, logo, watermark, color, inversion, plate, glow, vignette, fringe or crop. Landscape high resolution at least 1536px wide.",
+      "attempts": [],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-03.png",
+      "sha256": "9954fdf87a553be572e97d604e8cf984ad084015813d601fd57749235bde9023",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        32,
+        1635,
+        948
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-03.png",
+        "sha256": "b6950424cc89583d27326970e9761fc50c3587a5476685f985f00888cd62fe6d",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/original/chapter-03.png",
+          "sha256": "b6950424cc89583d27326970e9761fc50c3587a5476685f985f00888cd62fe6d",
+          "role": "subject and composition"
+        },
+        {
+          "path": "assets/chapter-art/dark/chapter-01.png",
+          "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+          "role": "attached dark engraving style reference"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-4b52be67-cfbd-4936-bf80-be787deb5e99.png",
+      "prompt": "Correct only framing of this authored dark engraving. Keep its exact industrial transmission, object relationships, natural ivory illumination, opaque dark metal shadows, perspective and fine engraving. Scale the whole subject down to fit entirely inside a landscape transparent canvas with at least 8% clear transparent margin on ALL four sides. The rightmost shaft support and knob must be complete and visible; restore the clipped rightmost edge using the second image LIGHT composition reference. Do not add, remove, rearrange, invert, recolor, glow, label, or put a background plate behind it. Genuine transparent outer background. Minimum 1536px wide.",
+      "attempts": [
+        {
+          "source": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-82ffc80d-e402-4565-9209-edb0e5df63fd.png",
+          "prompt": "Use case: stylized-concept. Chapter 4 dark-screen counterpart. Image 1 LIGHT reference governs the industrial mechanical transmission on a base: large enclosed cylindrical left housing, rectangular opening, extended right gear assembly with two meshing gears and rack, shafts and adjustment rail. Preserve exact object count, mechanical relationships, full silhouette, three-quarter viewpoint and framing. Image 2 DARK reference governs natural ivory metal highlights and stippled engraving. Separately redraw opaque dark recesses with pale illuminated faces for charcoal viewing. Genuine transparent outer margins and empty gaps. No text, labels, logos, watermarks, inversion, white fringe, glow, vignette, paper rectangle or cropped parts. Landscape, at least 1536px wide.",
+          "reviewStatus": "rejected",
+          "reason": "Insufficient margins or clipped machinery",
+          "sha256": "c3ba4bf95261b20f018400990ad56105f317061cf808f535f4d39ecddcc9a444",
+          "retainedPath": "assets/chapter-art/dark/rejected/chapter-04-attempt-1.png"
+        }
+      ],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-04.png",
+      "sha256": "37e24f9373171f59f8a934c47814c3bc2c3234f9b52ba65cc42ed5e60311a1d4",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        86,
+        1558,
+        861
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-04.png",
+        "sha256": "c7f34cb72b0d7dd5ad7c302d1148d4485e4bbab54e22e9fdab3a6b86644acd9e",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/dark/rejected/chapter-04-attempt-1.png",
+          "role": "previous generated attempt to repair framing"
+        },
+        {
+          "path": "assets/chapter-art/original/chapter-04.png",
+          "sha256": "c7f34cb72b0d7dd5ad7c302d1148d4485e4bbab54e22e9fdab3a6b86644acd9e",
+          "role": "subject and composition"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-9ebab0ee-92af-49fd-b5b9-7d8ccb559626.png",
+      "prompt": "Use case: stylized-concept. Chapter 5 separately authored dark-screen engraving. Image 1 LIGHT composition reference: preserve the left circular node-network plate, central shared shaft hub, right six-slider inspector plate, foreground hopper and divided shape tray, all connections, objects and three-quarter viewpoint. Image 2 DARK reference: match natural ivory illuminated metal and fine stippled shading, opaque dark recesses. Transparent outer background and all empty gaps. Entire subject fits with at least 6% clear outer margins on every side. Landscape at least 1536px wide. No text, labels, logo, watermark, inverted values, glow, fringe, plate, vignette, cropped edges or additional objects.",
+      "attempts": [],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-05.png",
+      "sha256": "0edde223057cba70468756ed2b0f6deb9978bf305c9b68063a636fb9e84d4c65",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        37,
+        1544,
+        884
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-05.png",
+        "sha256": "d884e3588d7e0ab850cd97ed0c228b9e14c9dda159ee49b915a8626bc82ca431",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/original/chapter-05.png",
+          "sha256": "d884e3588d7e0ab850cd97ed0c228b9e14c9dda159ee49b915a8626bc82ca431",
+          "role": "subject and composition"
+        },
+        {
+          "path": "assets/chapter-art/dark/chapter-01.png",
+          "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+          "role": "attached dark engraving style reference"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-afe4e925-b237-4e3f-ad0e-e4d5da2175ec.png",
+      "prompt": "Use case: stylized-concept. Chapter 6 dark-screen engraving. Image 1 LIGHT reference governs central six-lobed rotary cam and circular base with six surrounding linked gated stations carrying cube, sphere, pyramid, cylinder, polyhedron and prism. Preserve every gate, arrow-like linkage, central spring latch, object count, connections, viewpoint and complete framing. Image 2 DARK reference governs fine stippled natural metal illumination. Re-author ivory illuminated surfaces with opaque dark recesses and shadows, no inversion. Genuine transparent empty gaps and outer background; at least 6% transparent margins all sides, high resolution landscape. No text, labels, logo, watermark, glow, fringe, plate, vignette or added objects.",
+      "attempts": [],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-06.png",
+      "sha256": "bd414cc93774d0b7bcd12c2c344b0c68101cda2f47d46b3cdac2c9fdac8365d8",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        29,
+        1653,
+        948
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-06.png",
+        "sha256": "a6fb3c0b8288f3aa3669b8aaa8528b507d4d3845daa5aa263f3dce673dacae80",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/original/chapter-06.png",
+          "sha256": "a6fb3c0b8288f3aa3669b8aaa8528b507d4d3845daa5aa263f3dce673dacae80",
+          "role": "subject and composition"
+        },
+        {
+          "path": "assets/chapter-art/dark/chapter-01.png",
+          "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+          "role": "attached dark engraving style reference"
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-d4763580-16ad-4932-82c9-3527d04703a7.png",
+      "prompt": "Correct only framing and the two ghost-cube/arrow overlays in image 1, preserving the exact machinery, natural lighting, stippled engraving, objects and connections. The complete five-lever bank on the right and left handwheel handle must fit inside a transparent landscape frame with at least 8% transparent margins on all sides. Scale down the composition; do not crop any part. Draw the travel arrow and two ghost blocks as fine pale ivory dashed lines with completely transparent interiors, so they remain readable on charcoal. Remove their pale gray filled plate artifacts. Image 2 is the original LIGHT composition reference. Preserve perspective and silhouette. No new objects, lettering, inversion, glow, paper backdrop or fringe. Genuine transparent background.",
+      "attempts": [
+        {
+          "source": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-b38ce896-f06e-47e8-b0f2-37ba9662de30.png",
+          "prompt": "Use case: stylized-concept. Chapter 7 dark-screen counterpart. Image 1 LIGHT reference governs left handwheel and mechanism, center carriage with flag and bell, right five-lever bank, continuous shaft and front track, dashed travel arrow and outlined ghost blocks. Preserve exact count, relationships, perspective, and complete optical framing. Image 2 DARK reference governs restrained ivory highlights, opaque dark recesses and technical stipple engraving. Empty outer background and gaps genuinely transparent. Fit all parts with at least 6% clear margin all sides. No words, labels, logos, watermark, inversion, glow, white fringe, paper plate, vignette or added shapes. Landscape high resolution at least 1536px.",
+          "reviewStatus": "rejected",
+          "reason": "Insufficient margins or clipped machinery",
+          "sha256": "053396f70e7f30e3885719e96dabe19c5bf0ebe3db7531add36e5c3ee8733a76",
+          "retainedPath": "assets/chapter-art/dark/rejected/chapter-07-attempt-1.png"
+        }
+      ],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-07.png",
+      "sha256": "a6e93001baa030bea8790dd7890aa3aca373ec216faf90338087684900a1b5ab",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        94,
+        35,
+        1585,
+        948
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-07.png",
+        "sha256": "e5ff2bcd3fbde29c2a28ba1440c517920359841449ec3b9d8a08837f2234b435",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/dark/rejected/chapter-07-attempt-1.png",
+          "role": "previous generated attempt to repair framing"
+        },
+        {
+          "path": "assets/chapter-art/original/chapter-07.png",
+          "sha256": "e5ff2bcd3fbde29c2a28ba1440c517920359841449ec3b9d8a08837f2234b435",
+          "role": "subject and composition"
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-8d194eaa-5d89-45a6-8ed1-ddcdbace5129.png",
+      "prompt": "Framing correction only. Keep this exact four-gauge inspection machinery and cube gate, all object relationships, stippled engraving and lighting. Reduce the full subject to 75% of its current size and center it within an otherwise transparent landscape canvas. ALL object edges must be complete. Leave large empty transparent padding, at least 12% of frame width at left and right and 10% height above and below. Do not zoom or crop. Do not add text, glow, paper, background plate, fringe, color, inversion, or new objects. Genuine transparent background.",
+      "attempts": [
+        {
+          "source": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-3541b975-3917-49cd-bc6c-c02994e8bf62.png",
+          "prompt": "Use case: stylized-concept. Chapter 8 dark-screen counterpart. Image 1 LIGHT reference governs precision inspection assembly with four dial gauges pointing to central faceted object, linked mechanical base, right lever and sliding gate carrying a cube. Preserve all four gauges, object count, mechanical relationships, three-quarter view and full silhouette. Image 2 DARK reference governs fine stippled engraving and natural ivory highlights against dark opaque metal recesses. Re-author, never invert. Genuine transparent outer background and gaps; at least 6% clear margin around complete subject. No text, labels, logo, watermark, glow, fringe, plate, vignette, crop or added objects. Landscape high resolution at least 1536px.",
+          "reviewStatus": "rejected",
+          "reason": "Insufficient margins or clipped machinery",
+          "sha256": "823bd8d438ed5c0426d0fefc475fd97765ced7eaf9eef54e34a0bc3d12046d0a",
+          "retainedPath": "assets/chapter-art/dark/rejected/chapter-08-attempt-1.png"
+        }
+      ],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-08.png",
+      "sha256": "ba72494f3deecc2bfea58b35a402adb73239f4850b1bb5dab6c7b22c34d56d83",
+      "dimensions": [
+        1662,
+        946
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        45,
+        1521,
+        874
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-08.png",
+        "sha256": "00bf478a24a6ee48133866166d4d16e9da47d81dee14898a8a8aa4e49d9e3567",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/dark/rejected/chapter-08-attempt-1.png",
+          "role": "previous generated attempt to repair framing"
+        },
+        {
+          "path": "assets/chapter-art/original/chapter-08.png",
+          "sha256": "00bf478a24a6ee48133866166d4d16e9da47d81dee14898a8a8aa4e49d9e3567",
+          "role": "subject and composition"
+        }
+      ]
+    },
+    {
+      "chapter": 9,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-186c8121-a7ca-4329-a793-d5e56635bfd6.png",
+      "prompt": "Use case: stylized-concept. Chapter 9 dark-screen counterpart. Image 1 LIGHT composition reference governs two linked precision trays: left horizontal foam-fitted tray containing five mechanical parts, right upright matching sockets, connected rails and bases. Preserve five parts and corresponding shapes, arrangements, three-quarter viewpoint and silhouette. Image 2 DARK reference governs ivory illuminated faces and opaque dark recesses in fine stippled technical engraving. Re-author naturally, no inversion. Keep subject centered at 78% of canvas width with large empty transparent padding on all sides; genuine transparent gaps and outer background. No text, labels, logo, watermark, paper plate, glow, fringe, vignette, cropping or new objects. Landscape at least 1536px.",
+      "attempts": [],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-09.png",
+      "sha256": "4f01b5a3a057fa1e577bdbd8b60896fd5d31686f0f7d0ffaf6cf546eaae80d0d",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        34,
+        21,
+        1630,
+        948
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-09.png",
+        "sha256": "2da7481415047513db47f24ab4a76e4b6bfc6f9d86d9306eadf01ff55d91d76e",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/original/chapter-09.png",
+          "sha256": "2da7481415047513db47f24ab4a76e4b6bfc6f9d86d9306eadf01ff55d91d76e",
+          "role": "subject and composition"
+        },
+        {
+          "path": "assets/chapter-art/dark/chapter-01.png",
+          "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+          "role": "attached dark engraving style reference"
+        }
+      ]
+    },
+    {
+      "chapter": 10,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-2021a722-997b-46ab-bd82-82adb8c7d6c2.png",
+      "prompt": "Use case: stylized-concept. Chapter 10 dark-screen counterpart. Image 1 LIGHT composition reference governs two large equal gears, central differential and gauge, end supports and right screw adjustment with linked lever on a single base. Preserve exact gears, supports, axis, complete mechanical connections, silhouette, three-quarter viewpoint and framing. Image 2 DARK reference governs natural ivory highlights and fine stippled engraving on opaque dark recesses. Re-author, not invert. Transparent outer background and gaps, full subject centered with generous empty padding on all sides, no crop. No words, labels, logo, watermark, glow, pale fringe, paper plate, vignette or added objects. Landscape at least 1536px wide.",
+      "attempts": [],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-10.png",
+      "sha256": "cbd8da16323d25c0ffb9376d482395da1e48694cc2e2804893f79799ff024d9f",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        100,
+        9,
+        1605,
+        948
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-10.png",
+        "sha256": "2ab8fe2d2ac214d3da037179f7ac99edc732f46a90b3450e2325006fcaaa6349",
+        "role": "subject and composition"
+      },
+      "styleReference": {
+        "path": "assets/chapter-art/dark/chapter-01.png",
+        "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+        "role": "attached dark engraving style reference"
+      },
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/original/chapter-10.png",
+          "sha256": "2ab8fe2d2ac214d3da037179f7ac99edc732f46a90b3450e2325006fcaaa6349",
+          "role": "subject and composition"
+        },
+        {
+          "path": "assets/chapter-art/dark/chapter-01.png",
+          "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+          "role": "attached dark engraving style reference"
+        }
+      ]
+    },
+    {
+      "chapter": 11,
+      "selected": "/Users/mike/.codex/generated_images/01a0ffc0-7daf-7d50-a2ce-259be448f89f/exec-32659363-eb64-44ea-bc7c-06097481cb25.png",
+      "prompt": "Create the dark/late-night counterpart of the supplied chapter 11 engraving. Composition reference: retain the complete marble process machine: tall hopper on the left full of spheres, arched inspection gate, central raised perforated tray, branching conveyor with spheres and a lower return loop, bell over the right branch, and right pressure gauge above transparent spherical collection vessel. Match all functional parts and counts, avoid adding labels. Style: a finely engraved Victorian technical illustration with natural warm ivory metal, pale highlights and charcoal internal hatching, readable on #191918. Use transparent background, no paper rectangle, no gray floor rectangle, no drop shadow outside the machinery. Keep the entire apparatus within the image with at least 7 percent clear transparent margins on every side. No clipped gauges, conveyor, or hopper. High quality precise fine-line engraving with restrained pale ivory tones; no text or numbers. Preserve subject and visual weight of light counterpart, independently redraw for dark background, do not invert/filter recolor.",
+      "attempts": [],
+      "generator": "image_gen built-in; model identifier not exposed",
+      "selectedPath": "assets/chapter-art/dark/chapter-11.png",
+      "sha256": "4cdcc14cc9c3214c335a6092d2f019c269d9431dceb1458c940a2f065be456b7",
+      "dimensions": [
+        1659,
+        948
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        21,
+        1612,
+        948
+      ],
+      "outerBackground": "transparent",
+      "compositionReference": {
+        "path": "assets/chapter-art/original/chapter-11.png",
+        "sha256": "ebbd91c42cc192784faf37f4d3a4f906898cc4f271d393ee7f86c0aecd0e5708",
+        "role": "subject and composition"
+      },
+      "styleReference": null,
+      "governingStyleTarget": {
+        "path": "publish-evidence-backed-handbook/assets/design-system/dark-illustration-reference.png",
+        "sha256": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+        "role": "governing toolkit style target"
+      },
+      "attachedGenerationReferences": [
+        {
+          "path": "assets/chapter-art/original/chapter-11.png",
+          "sha256": "ebbd91c42cc192784faf37f4d3a4f906898cc4f271d393ee7f86c0aecd0e5708",
+          "role": "subject and composition"
+        }
+      ]
+    }
+  ]
+}

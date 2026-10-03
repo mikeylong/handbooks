@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "title": "WorkflowLoop",
+  "kind": "sequence",
+  "nodes": [
+    {
+      "id": "n1",
+      "label": "Frame"
+    },
+    {
+      "id": "n2",
+      "label": "Ground"
+    },
+    {
+      "id": "n3",
+      "label": "Extend"
+    },
+    {
+      "id": "n4",
+      "label": "Specify"
+    },
+    {
+      "id": "n5",
+      "label": "Map"
+    },
+    {
+      "id": "n6",
+      "label": "Hand off"
+    },
+    {
+      "id": "n7",
+      "label": "Implement"
+    },
+    {
+      "id": "n8",
+      "label": "Reconcile"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n1",
+      "to": "n2"
+    },
+    {
+      "from": "n2",
+      "to": "n3"
+    },
+    {
+      "from": "n3",
+      "to": "n4"
+    },
+    {
+      "from": "n4",
+      "to": "n5"
+    },
+    {
+      "from": "n5",
+      "to": "n6"
+    },
+    {
+      "from": "n6",
+      "to": "n7"
+    },
+    {
+      "from": "n7",
+      "to": "n8"
+    },
+    {
+      "from": "n8",
+      "to": "n1",
+      "feedback": true
+    }
+  ],
+  "note": "Rendered evidence and drift restart the loop",
+  "printAlt": "Frame; Ground; Extend; Specify; Map; Hand off; Implement; Reconcile. Rendered evidence and drift restart the loop",
+  "printCaption": "Rendered evidence and drift restart the loop"
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "title": "CoverDiagram",
+  "kind": "sequence",
+  "nodes": [
+    {
+      "id": "n1",
+      "label": "SYSTEM"
+    },
+    {
+      "id": "n2",
+      "label": "SCREEN"
+    },
+    {
+      "id": "n3",
+      "label": "STATES"
+    },
+    {
+      "id": "n4",
+      "label": "HANDOFF"
+    },
+    {
+      "id": "n5",
+      "label": "CODE"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n1",
+      "to": "n2"
+    },
+    {
+      "from": "n2",
+      "to": "n3"
+    },
+    {
+      "from": "n3",
+      "to": "n4"
+    },
+    {
+      "from": "n4",
+      "to": "n5"
+    }
+  ],
+  "note": "",
+  "printAlt": "SYSTEM; SCREEN; STATES; HANDOFF; CODE",
+  "printCaption": "Coordinated surfaces use the same state."
+}
