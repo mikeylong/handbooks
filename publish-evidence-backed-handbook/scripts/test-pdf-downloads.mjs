@@ -14,7 +14,7 @@ assert.match(rendered,/<a class="mobile-title" href="#book-top">Future &amp; han
 const existing=installReaderDownloads(reader.replace('<div class="mobile-actions">','<a class="mobile-title" href="#book-top">Existing title</a><div class="mobile-actions">'),edition,m.variants);
 assert.equal((existing.match(/class="mobile-title"/g)||[]).length,1);
 const {externalLinks}=await import('./edition-links.mjs');
-for(const source of ['<a href="#chapter">Chapter</a>','<a href="/book.pdf" download>PDF</a>','<a href="https://handbooks.surfaces.systems/book/">Book</a>','<a href="mailto:hello@example.com">Email</a>'])assert.equal(externalLinks(source),source);
+for(const source of ['<a href="#chapter">Chapter</a>','<a href="/book.pdf" download>PDF</a>','<a href="https://handbooks.surfaces.systems/book/">Book</a>','<a href="mailto:">Email</a>'])assert.equal(externalLinks(source),source);
 const external=externalLinks('<a href="https://example.org/" target="_self" rel="external">Source</a>');
 assert.match(external,/target="_blank"/);assert.match(external,/rel="external noopener noreferrer"/);assert.equal(externalLinks(external),external);
 const html=downloadLinks(edition,m.variants);validateDownloads(html,edition,m.variants);
