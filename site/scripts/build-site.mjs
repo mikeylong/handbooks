@@ -83,7 +83,7 @@ for(const pin of books){
   const edition={id:pin.id,...publication,...manifest,pdfUrl,sourceRepository:catalog.repository,approvedReaderSha256:approvedPackage.files[approvedPackage.html]};
   const registryBook=registry.books.find(b=>b.id===pin.id&&b.version===pin.version);
   if(!registryBook||registryBook.packageSha256!==APPROVAL_REGISTRY.books.find(b=>b.id===pin.id).packageSha256)throw Error('Review package identity mismatch');
-  const variants=await resolvePdfVariants(source,edition,registryBook.variantManifest,{candidate:!!reviewRegistryPath,collectionRoot:resolve(root,'..')});
+  const variants=await resolvePdfVariants(source,edition,registryBook.variantManifest,{candidate:!!reviewRegistryPath,collectionRoot:resolve(root,'..'),measurePdfPages:false});
   html=installReaderDownloads(html,edition,variants);
   html=html.replace('</head>','<link rel="stylesheet" href="/pdf-downloads.css"></head>');
   validateDownloads(html,edition,variants);edition.pdfVariants=variants;

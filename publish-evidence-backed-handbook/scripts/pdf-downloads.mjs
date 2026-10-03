@@ -21,7 +21,7 @@ export function validateVariantIdentity(manifest, edition, {candidate=false}={})
  if(!themes.has('light')||!themes.has('dark'))throw Error('New appearance manifest requires both downloads');
  return manifest.variants;
 }
-export async function resolvePdfVariants(source,edition,manifestPin,{candidate=false,collectionRoot=source}={}){
+export async function resolvePdfVariants(source,edition,manifestPin,{candidate=false,collectionRoot=source,measurePdfPages=true}={}){
  if(!manifestPin)return [{theme:'light',displayName:PDF_NAMES.light,appearanceRevision:1,approvalStatus:'approved',path:edition.pdf,publicUrl:edition.pdfUrl,downloadFilename:`${edition.id}-v${edition.version}-${edition.date}-daytime-r1.pdf`,sha256:edition.sha256,pages:edition.pages,bytes:(await lstat(safePath(source,edition.pdf))).size}];
  const file=safePath(collectionRoot,manifestPin.path),bytes=await readFile(file);
  if(digest(bytes)!==manifestPin.sha256)throw Error('Stale PDF manifest hash');
@@ -29,7 +29,11 @@ export async function resolvePdfVariants(source,edition,manifestPin,{candidate=f
  for(const v of variants){
   const p=safePath(collectionRoot,v.path);if(await realpath(p)!==p)throw Error('PDF cannot be a symlink');
   const b=await readFile(p);if(digest(b)!==v.sha256||b.length!==v.bytes)throw Error('Stale PDF artifact');
-  const pages=Number(execFileSync('pdfinfo',[p],{encoding:'utf8'}).match(/^Pages:\s+(\d+)/m)?.[1]);if(pages!==v.pages)throw Error('Wrong measured PDF page count');
+  // Release checks measure the PDF directly. Static assembly consumes exact-hash
+  // approved artifacts and their measured maps, without requiring Poppler on hosts.
+  if(measurePdfPages){
+   const pages=Number(execFileSync('pdfinfo',[p],{encoding:'utf8'}).match(/^Pages:\s+(\d+)/m)?.[1]);if(pages!==v.pages)throw Error('Wrong measured PDF page count');
+  }
   const mapPath=safePath(collectionRoot,v.pageMap.path),mapBytes=await readFile(mapPath);if(digest(mapBytes)!==v.pageMap.sha256)throw Error('Stale page map hash');
   const map=JSON.parse(mapBytes);if(map.sha256!==v.sha256||map.pages.length!==v.pages)throw Error('Wrong page map identity');
   if(v.theme==='dark'){
