@@ -1,5 +1,6 @@
 import {readerAssets, toolkitModule} from './handbook-toolkit.mjs';
 import {editionLinks} from './edition-links.mjs';
+import {editionChangelog} from './edition-changelog.mjs';
 import {cp,mkdir,readFile,rm,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {dirname,resolve,basename} from 'node:path';
@@ -10,7 +11,7 @@ import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
 import {finalizeSiteThemes} from './site-theme.mjs';
 import {installArtworkPairs} from './artwork-pairs.mjs';
 
-const {resolvePdfVariants,installReaderDownloads,downloadLinks,editionDownloadDetails,validateDownloads}=await toolkitModule('pdf-downloads.mjs');
+const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads}=await toolkitModule('pdf-downloads.mjs');
 const {installDiagrams} = await toolkitModule('diagrams.mjs');
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const catalog=JSON.parse(await readFile(resolve(root,'../catalog.json'),'utf8'));
@@ -36,6 +37,7 @@ for(const route of retained.routes){
  if(createHash('sha256').update(bytes).digest('hex')!==route.sha256)throw Error('Retained PDF changed: '+route.url);
  const dest=safePath(output,route.url.slice(1));await mkdir(dirname(dest),{recursive:true});await cp(source,dest);
 }
+const changelogs=JSON.parse(await readFile(resolve(root,'changelogs.json'),'utf8'));
 const editions=[];
 for(const pin of books){
   const source=await sourceFor(root,pin);
@@ -95,7 +97,8 @@ for(const pin of books){
   await mkdir(editionDirectory,{recursive:true});
   await cp(resolve(source,manifest.pdf),resolve(editionDirectory,basename(manifest.pdf)));
   const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
-  await writeFile(resolve(editionDirectory,'index.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>${escape(manifest.title)} · Version ${escape(manifest.version)}</title><link rel="canonical" href="${pin.editionUrl}"><link rel="stylesheet" href="/gallery.css"><link rel="stylesheet" href="/reader.css"><link rel="stylesheet" href="/pdf-downloads.css"></head><body><header class="mobile-bar"><a href="/">← All handbooks</a><div class="mobile-actions"></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/">← All handbooks</a><div class="sidebar-meta"></div></aside><main id="main-content"><section class="chapter edition-details"><p><a href="/${pin.id}/">Read ${escape(manifest.title)}</a></p><h1>${escape(manifest.title)}</h1><p>Version ${escape(manifest.version)} · ${escape(manifest.date)} · ${manifest.pages} pages</p>${editionDownloadDetails(edition,variants.map(v=>({...v,publicUrl:`/${pin.id}/editions/v${manifest.version}/${basename(v.publicUrl)}`})))}<p><a href="/">All handbooks</a></p></section></main></div></body></html>`);
+  const changes=await editionChangelog(source,edition,changelogs[pin.id]);
+  await writeFile(resolve(editionDirectory,'index.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>${escape(manifest.title)} · Changelog · v${escape(manifest.version)}</title><link rel="canonical" href="${pin.editionUrl}"><link rel="stylesheet" href="/gallery.css"><link rel="stylesheet" href="/reader.css"><link rel="stylesheet" href="/pdf-downloads.css"></head><body id="book-top"><header class="mobile-bar"><a href="/">← All handbooks</a><a class="mobile-title" href="/${pin.id}/">${escape(manifest.title)}</a><div class="mobile-actions"></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/">← All handbooks</a><div class="sidebar-brand"><span>Changelog</span><strong>${escape(manifest.title)}</strong></div><div class="sidebar-meta"><p><a href="/${pin.id}/">Read the handbook</a></p></div></aside><main id="main-content"><section class="chapter edition-details"><p><a href="/${pin.id}/">${escape(manifest.title)}</a></p><h1>Changelog</h1><p>Version ${escape(manifest.version)} · ${escape(manifest.date)}</p>${changes}<div class="edition-downloads">${downloadLinks(edition,variants.map(v=>({...v,publicUrl:`/${pin.id}/editions/v${manifest.version}/${basename(v.publicUrl)}`})))}</div></section></main></div></body></html>`);
   validatePublicationFront(html,edition);
   await writeFile(resolve(output,pin.id,'index.html'),html);
   await writeFile(resolve(output,'../publications',pin.id+'.json'),JSON.stringify(edition,null,2)+'\n');

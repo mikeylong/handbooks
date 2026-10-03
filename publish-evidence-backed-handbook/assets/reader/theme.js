@@ -29,7 +29,11 @@
   const closeAll = () => document.querySelectorAll('.theme-control').forEach(close);
   const open = control => {
     closeAll();
-    control.querySelector('.theme-menu').hidden = false;
+    const menu = control.querySelector('.theme-menu');
+    menu.hidden = false;
+    const triggerRect = control.querySelector('[data-theme-trigger]').getBoundingClientRect();
+    const roomBelow = innerHeight - triggerRect.bottom;
+    control.dataset.menuPlacement = roomBelow >= menu.offsetHeight + 8 || roomBelow >= triggerRect.top ? 'below' : 'above';
     control.querySelector('[data-theme-trigger]').setAttribute('aria-expanded', 'true');
     control.querySelector('[aria-checked="true"]').focus({preventScroll:true});
   };
