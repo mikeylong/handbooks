@@ -56,6 +56,12 @@ html[data-theme] .theme-control { display: inline-block; }
   }
   .sidebar { background: var(--paper-raised); }
   .sidebar-nav a:hover,
+  .toc-dialog nav li > a:hover,
+  .contents-page a:hover,
+  .contents-page a:focus-visible {
+    background: color-mix(in srgb, var(--ink) 6%, transparent);
+    color: var(--ink);
+  }
   .action-link:not(.action-link-primary):hover,
   .search-result:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
   .action-link-primary:hover { background: color-mix(in srgb, var(--ink) 88%, var(--paper)); }

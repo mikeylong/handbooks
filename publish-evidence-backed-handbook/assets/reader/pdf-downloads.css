@@ -3,21 +3,16 @@
 .pdf-download-link { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: .4rem; min-height: 2.75rem; align-content: center; }
 .pdf-download-link span { color: var(--muted); font-size: .7rem; }
 .sidebar-meta .pdf-downloads { margin-top: .5rem; }
-.pdf-mobile-downloads { display: none; }
 .pdf-end-downloads { padding: 3rem var(--reading-pad, 1.5rem); border-top: 1px solid var(--line); }
 .pdf-print-guidance { color: var(--muted); font-family: var(--sans, sans-serif); font-size: .75rem; }
 .pdf-edition-artifact code { overflow-wrap: anywhere; }
 .handbook-card > .pdf-downloads { margin-top: .5rem; }
-@media screen and (max-width: 60rem) {
- .mobile-bar { flex-wrap: wrap; height: auto; }
- .pdf-mobile-downloads { display: block; flex-basis: 100%; padding: 0 .75rem; border-top: 1px solid var(--line); }
- .pdf-mobile-downloads .pdf-downloads { font-size: .75rem; }
- body { --mobile-bar-height: 7rem; }
-}
-@media print { .pdf-downloads, .pdf-mobile-downloads, .pdf-end-downloads, .pdf-print-guidance {display: none !important;} }
+@media print { .pdf-downloads, .pdf-end-downloads, .pdf-print-guidance {display: none !important;} }
 
 .sidebar-actions { flex-wrap: wrap; }
 .sidebar-actions > .pdf-downloads { flex-basis: 100%; margin-top: .25rem; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .25rem .5rem; align-items: baseline; }
 .sidebar-actions > .pdf-downloads > .pdf-download-link { grid-column: 2; min-height: 0; display: block; white-space: nowrap; }
 .sidebar-actions > .pdf-downloads > span[aria-hidden] { display: none; }
 .cover-actions > .pdf-downloads { flex-basis: 100%; }
+
+.dialog-footer .pdf-download-link span { display: none; }

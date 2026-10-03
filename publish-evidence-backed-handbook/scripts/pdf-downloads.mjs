@@ -53,7 +53,6 @@ export function installReaderDownloads(html,edition,variants) {
  });
  if(count<2)throw Error('Missing cover/sidebar PDF downloads');
  html=html.replace(/(<section\b[^>]*class="[^"]*\bcover\b[^"]*"[^>]*>[\s\S]*?)(<section\b[^>]*class="release-window)/,`$1<p class="pdf-print-guidance">Use the Daytime version for printing.</p>$2`);
- html=html.replace(/(<header\b[^>]*class="mobile-bar"[^>]*>[\s\S]*?)(<\/header>)/,`$1<div class="pdf-mobile-downloads">${downloadLinks(edition,variants,{compact:true})}</div>$2`);
  html=html.replace('</main>',`<section class="pdf-end-downloads" aria-label="PDF downloads">${downloadLinks(edition,variants)}</section></main>`);
  return html;
 }
