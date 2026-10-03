@@ -47,7 +47,7 @@ jobs:
           python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/build-pdf-fixtures.py" --output "$RUNNER_TEMP/pdf-fixtures" --browser "$browser" --playwright-module "$RUNNER_TEMP/pdf-browser/node_modules/playwright"
       - run: python publish-evidence-backed-handbook/scripts/test-pdf-runtime.py --fixtures "$RUNNER_TEMP/pdf-fixtures" --output "$RUNNER_TEMP/pdf-evidence"
       - run: node "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-pdf-downloads.mjs" "$RUNNER_TEMP/pdf-fixtures/pdfs/next-edition"
-      - run: python publish-evidence-backed-handbook/scripts/validate-package.py
+      - run: python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/validate-package.py"
       - uses: actions/upload-artifact@v6
         with:
           name: pdf-fixtures
