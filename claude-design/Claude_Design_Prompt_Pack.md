@@ -2,6 +2,12 @@
 
 Copy-ready prompts for the workflow in the *Claude Design Field Guide*. Replace bracketed fields and keep approved preservation language in every follow-up.
 
+## Setup before using the prompts
+
+These prompts describe work to perform. The October 2 review tested a local SDS React teaching example. Claude Design generation, sync, export, and native Figma reuse remain unverified. Follow [Simple Design System Setup](./Simple_Design_System_Setup.md) and record the surface, account/organization, version, provider, selected system, and source revision.
+
+For React systems, the [Claude Code command reference](https://code.claude.com/docs/en/commands) documents `/design-login` followed by `/design-sync [hint]`. Sync converts and uploads the system; scope the source and confirm the destination. Manual Design MCP registration is not a prerequisite in the current reviewed instructions. `/design [brief]` drafts artboards and requires v2.1.265+, enabled Design, and an artifact-capable session. Test interactivity and exports on the chosen surface before treating the result as a working product prototype.
+
 ## 1. Analyze the baseline before generating
 
 **Tool:** Claude Design
@@ -45,7 +51,7 @@ Code Connect mapping, and production code.
 
 ## 3. Create and validate the draft system
 
-**Tool:** Claude Design
+**Tool:** Claude Design after source import, or Claude Code `/design-sync` for the React system. Keep publication and default selection subject to the system owner's approval.
 
 ```text
 Build a draft design system from the attached sources.
@@ -61,8 +67,10 @@ Preserve existing component, token, and pattern names exactly. Separate:
 3. missing or ambiguous areas.
 
 Do not silently invent a component. Label any missing pattern as a proposed
-addition. Generate a representative settings screen and dense operational table
-so we can validate the system before publishing it.
+addition. Generate a settings screen, a dense operational table, and a
+confirmation flow for validation. Record the selected system and source
+revision. Keep the system in draft. Do not publish or set an organization
+default as part of this prompt.
 ```
 
 ## 4. Extend an existing screen
@@ -204,6 +212,21 @@ or hold. Do not correct product decisions silently. State whether the work is
 ready for engineering handoff and why.
 ```
 
+## Inspect the handoff before implementation
+
+**Tool:** Claude Code or the intended local agent
+
+```text
+Read the supplied handoff from [BUNDLE URL OR LOCAL PATH]. Do not edit the
+repository yet. List the files, design states, decisions, component mappings,
+fixtures, and acceptance tests actually received. Separate documented default
+bundle contents from observed contents. Record the source system/revision,
+export surface/date, recipient access result, and missing inputs. Do not
+invent absent decisions or treat prototype code as production code.
+```
+
+The [official tutorial](https://academy.claude.com/tutorials/using-claude-design-for-prototypes-and-ux) describes a default bundle with files, chat, and README. Test the actual export before using that expectation as evidence. The implementation prompt below requires separate authority to edit the scoped feature.
+
 ## 11. Implement the approved handoff
 
 **Tool:** Claude Code
@@ -239,7 +262,7 @@ After implementation:
 
 ## 12. Extend an existing native Figma screen
 
-**Tool:** Figma MCP
+**Tool:** Remote Figma MCP `use_figma`, with the installed Figma write-to-canvas skills. Verify Full seat and edit permission first. See [native-writing requirements](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/).
 
 ```text
 Using the working Figma file and selected existing screen, add the approved
@@ -257,14 +280,15 @@ could not verify. Do not edit a public Community source.
 
 ## 13. Capture the implemented flow in Figma
 
-**Tool:** Figma MCP
+**Tool:** Remote Figma MCP `generate_figma_design`. Any seat can capture in Drafts; outside Drafts, an existing file needs Full plus edit permission. See [capture requirements](https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/).
 
 ```text
 Capture the complete local feature flow in [WORKING FIGMA FILE URL] as editable
 Figma frames.
 
-Reuse connected design-system components, variables, and styles. Include each
-unique critical state and required viewport. Create a summary page that records
+Inspect whether captured layers use real connected components, variables,
+and styles. Record matches and gaps without claiming identity from visual
+similarity. Include each unique critical state and required viewport. Create a summary page that records
 the journey, component mappings, implementation deviations, and unresolved
 differences from production.
 
@@ -275,9 +299,35 @@ separate named section with capture date and repository revision.
 ## Operating reminders
 
 - Duplicate Community files before connected inspection or editing.
-- Use `/design-login` and `/design-sync` only after the Claude Design MCP server is configured.
+- Use the current built-in command path and confirm what `/design-sync` uploads; record authorization and sync errors.
 - Use focused repository directories for large codebases.
-- Save approved versions before asking for alternatives.
+- Export a reviewed baseline before alternatives; Design has no version history yet.
 - Use chat for structural changes, comments for targeted changes, and direct canvas edits for quick layout adjustments.
 - Treat conformance checks as assistance; a design-system owner still approves the result.
 - Treat generated code as reference until it maps to production components and passes repository checks.
+
+## 14. Check the fixture before building the example
+
+**Tool:** Claude Code or local repository tools. This is a local fixture test, not a Claude Design observation.
+
+```text
+Inspect customers-august.csv, its JSON equivalent, and expected-results.json.
+Use the six-row contract in Chapter 1. Do not replace records with placeholder data.
+
+Require confirmation of contact_email → email and both proposed mappings before
+importing. Create source ID august only after confirmation. Connect august to
+normalize, retain normalize → validate → warehouse, and add validate → quarantine.
+
+Expect normalized emails alice@example.com and frank@example.com for C001 and
+C006. Report row 4/email, row 5/email, and row 6/health_score as invalid. The first
+intended run fails at warehouse with missing-warehouse; repair to customer_health,
+Save, then re-run for 3 published and 3 quarantined rows. Test Reject invalid rows
+separately for 3 published, 0 quarantined, and 3 rejected.
+
+Cancel and parse failure must leave the graph unchanged. Save failure must keep
+Run disabled and preserve the unsaved draft. Attempt a cycle and an incompatible
+connection without graph mutation. Test the same journey with keyboard actions.
+
+Report actual tool observations, local execution, documentation, and inaccessible
+checks separately. Do not call a manually assembled package a Design export.
+```

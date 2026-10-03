@@ -1,0 +1,175 @@
+--- stage-2-source/Claude_Design_Field_Guide_Source.md
++++ stage-3-candidate/book/Claude_Design_Field_Guide_Source.md
+@@ -1945,4 +1945,4 @@
+ 16. Builder.io. Claude Design review. https://www.builder.io/blog/claude-design
+ 17. Creative Bloq. Claude Code and Figma MCP review. https://www.creativebloq.com/ai/designing-using-claude-code-and-figma-mcp-how-good-are-they
+ 
+-The editable guidance was refreshed from official documentation accessed October 2, 2026. The original August PDF and package remain separate artifacts. This source revision is a candidate, and its worked example remains untested. SDS metadata counts and node IDs retain their labeled August cutoff. The claim ledger in review/2026-10-02 records sources, accepted changes, and open workflow tests. Field reports remain historical context and do not support current capability claims.
++The editable guidance was refreshed from official documentation accessed October 2, 2026. The original August PDF and package remain separate artifacts. This source revision is a review candidate. Its local executable worked example passed the bounded October 2 tests; Claude Design generation, system sync, export, and native Figma reuse remain unverified. SDS metadata counts and node IDs retain their labeled August cutoff. The claim ledger in review/2026-10-02 records sources, accepted changes, and open workflow tests. Field reports remain historical context and do not support current capability claims.
+--- stage-2-source/README.md
++++ stage-3-candidate/book/README.md
+@@ -1,61 +1,17 @@
+-# Claude Design Field Guide
++# Claude Design Field Guide — review candidate
+ 
+-Most AI design examples begin with a blank canvas. Product teams usually begin somewhere harder: a shipped screen, an established design system, real interaction rules, and developers who need a clear path from design intent to production code.
++Use the guide to extend an existing product screen from its design-system sources and prepare an engineering handoff. This October 2 candidate includes the refreshed guidance, a tested local Data Pipeline Studio exercise, and matching Daytime and Late night PDFs.
+ 
+-This field guide gives product teams a way to ground a prototype in real components, extend a bounded screen, and give developers the decisions and evidence they need. Official documentation supports the workflow capabilities; the teaching example still needs hands-on testing.
++[Read the Daytime version](./output/pdf/claude-design-v1.0.0-2026-10-02-daytime-r1.pdf) · [Read the Late night version](./output/pdf/claude-design-v1.0.0-2026-10-02-late-night-r1.pdf) · [Read the manuscript](./Claude_Design_Field_Guide_Source.md)
+ 
+-[Read the retained August field guide PDF](./Claude_Design_End_to_End_Field_Guide.pdf) or [read the refreshed editable guide](./Claude_Design_Field_Guide_Source.md). The October guidance is a source candidate and has not been rebuilt into that PDF or the retained ZIP package.
++Use the Daytime version for printing. Both appearances contain the same 126-page content edition. Version 1.0.0 is proposed for the first approved edition. The August PDF is an unpublished peer draft, so the candidate has no release changelog.
+ 
+-## What the guide helps you do
++The local example passed eight model tests, twenty Chromium checks and its Vite build. Actual Claude Code inspected the manually assembled handoff and rechecked three repaired High findings. Save, Run, permissions and conflicts in the example are browser simulations. The example is not a Claude Design export.
+ 
+-- Establish which product, design-system, and code sources are authoritative.
+-- Bring an existing design system into the work without treating visual similarity as proof of reuse.
+-- Extend a current screen while preserving its shell, behavior, permissions, and interaction language.
+-- Design richer product behavior across a DAG canvas, node inspector, data sheet, and data importer.
+-- Define loading, failure, recovery, responsive, keyboard, and accessibility behavior before handoff.
+-- Review the design against evidence instead of approving it because it looks plausible.
+-- Give developers a usable package of decisions, mappings, states, fixtures, acceptance tests, and unresolved questions.
++Claude Design generation, system sync, the three imported-system tests, correction persistence, comments, baseline export and restore, actual export inventory, recipient access and native Figma identity remain unverified. Organization-policy, production API, full graph and assistive-technology gates remain open. See [the stage 2 test matrix](./review/2026-10-02/stage-2-test-matrix.md).
+ 
+-## The example application
++The package includes the [setup guide](./Simple_Design_System_Setup.md), [prompt pack](./Claude_Design_Prompt_Pack.md), [handoff template](./Claude_Design_Handoff_Template.md), [validation checklist](./Claude_Design_Validation_Checklist.md), [local example](./example/README.md), pinned SDS source and license, [claim ledger](./review/2026-10-02/claim-ledger.md), artwork provenance and build adapters.
+ 
+-The guide follows a fictional Data Pipeline Studio and uses the [Simple Design System Community](https://www.figma.com/design/AIulMBySUibjRtykdngCUp/Simple-Design-System--Community-?node-id=3-5&p=f&t=LcQ0i6R6QKYOxHcm-0).
++Follow [the build instructions](./Claude_Design_Field_Guide_README.md) to reproduce the PDFs and reader. The reader uses the shared publishing toolkit. Extract the toolkit archive beside this book and set `HANDBOOK_PUBLISHING_TOOLKIT` to that directory when running outside the collection.
+ 
+-The example starts with an existing linear pipeline editor and extends it into a node-based workflow. The work then moves through the surrounding surfaces: an inspector, data preview, importer, state and recovery model, responsive behavior, accessibility, design review, developer handoff, implementation planning, and reconciliation.
+-
+-The varied surfaces make the example useful for testing the real question: can the tool preserve one product model across several connected interactions, or does each screen become a separate approximation?
+-
+-## What is included
+-
+-- The [end-to-end field guide](./Claude_Design_End_to_End_Field_Guide.pdf), with 11 chapters, worksheets, prompts, a capstone, and an answer key.
+-- A [copy-ready prompt pack](./Claude_Design_Prompt_Pack.md) for Claude Design, Claude Code, and the native-Figma branch.
+-- A [design-to-development handoff template](./Claude_Design_Handoff_Template.md).
+-- A [validation checklist](./Claude_Design_Validation_Checklist.md) covering source grounding, interaction behavior, accessibility, handoff, and implementation proof.
+-- A focused [Simple Design System setup guide](./Simple_Design_System_Setup.md).
+-- The editable manuscript, chapter artwork, and QA record behind the guide.
+-
+-## The boundary that matters
+-
+-Claude Design can provide a grounded place to explore, specify, and review product behavior. Claude Code or another repository-aware engineering workflow still needs to map those decisions into the existing application, run the real tests, and reconcile any differences. Native Figma remains a separate path when the team needs editable frames, component updates, or a design-to-code round trip.
+-
+-The guide keeps those boundaries visible so a strong prototype does not quietly become an unsupported production claim.
+-
+-## Source note
+-
+-The editable guide and companion Markdown files use official documentation accessed October 2, 2026. Claude Design now works in conversations and Artifacts alongside the standalone experience; Claude Code `/design` has its own documented artboard workflow. Follow the [setup guide](./Simple_Design_System_Setup.md), choose the intended surface, and verify the generated interactions and export before handoff.
+-
+-The original PDF, ZIP package, and artwork are preserved. The [stage 1 handoff](./review/2026-10-02/stage-1-handoff.md) and [claim ledger](./review/2026-10-02/claim-ledger.md) record the refresh and tests still required. Publication is not approved.
+-
+-## Try the local worked example
+-
+-The [isolated teaching example](./review/2026-10-02/stage-2-candidate/data-pipeline-studio/README.md)
+-contains the baseline and extension, exact CSV/JSON fixtures, expected row
+-outcomes, and local tests. It uses SDS React primitives and browser simulations
+-for Save, Run, permissions, and conflicts. The package is a manually assembled example,
+-not a Claude Design export or a replacement for an existing product repository.
+-
+-The [stage 2 handoff](./review/2026-10-02/stage-2-handoff.md) and
+-[test matrix](./review/2026-10-02/stage-2-test-matrix.md) distinguish actual tool
+-observations, local execution, documentation, and inaccessible checks. Claude
+-Design generation/sync/export and native Figma reuse remain unverified. Stage 3
+-can prepare a review candidate with those limits visible; publication remains
+-unapproved.
++Publication has not been approved. The collection catalog remains `pdf-draft`. The original August PDF, ZIP and artwork are preserved separately and unchanged.
+--- stage-2-source/Claude_Design_Field_Guide_README.md
++++ stage-3-candidate/book/Claude_Design_Field_Guide_README.md
+@@ -1,70 +1,39 @@
+-# Claude Design Field Guide package
++# Build the Claude Design review candidate
+ 
+-This package answers a specific workflow question: can Claude Design work from a real design system, extend an existing product screen, and hand the result to developers without forcing them to reconstruct the design intent?
++The candidate uses the shared publishing toolkit for PDF layout, hosted reader conversion, themes, diagrams, artwork normalization and download identity. The book owns its Markdown, semantic diagram definitions, configuration and frozen artwork.
+ 
+-Use Claude Design to explore product behavior with source context, Claude Code to implement in the repository, and Figma MCP when native editable content is required. The October 2 guidance is based on documentation, and the worked example has not been tested by this refresh. The retained August PDF and ZIP do not contain these source changes.
++The manuscript reflects official documentation accessed October 2, 2026. It includes the bounded local worked-example results and keeps Claude Design generation, sync, export and native Figma reuse unverified.
+ 
+-## Files
++## Reproduce a PDF pair
+ 
+-- `Claude_Design_End_to_End_Field_Guide.pdf` — polished A5 field guide.
+-- `Claude_Design_Field_Guide_Source.md` — editable manuscript and source of the PDF's content.
+-- `build_claude_design_field_guide.py` — reproducible ReportLab builder.
+-- `Claude_Design_Prompt_Pack.md` — copy-ready prompts for Claude Design, Claude Code, and Figma MCP.
+-- `Claude_Design_Handoff_Template.md` — editable design-to-development handoff template.
+-- `Claude_Design_Validation_Checklist.md` — design, handoff, and implementation validation checklist.
+-- `Simple_Design_System_Setup.md` — focused setup and inspection instructions for the example design system.
+-- `Claude_Design_Diagram_and_Illustration_QA.md` — rendered evidence for the instructional diagrams and chapter-opening art.
+-- `validate_claude_design_field_guide.py` — reproducible PDF-structure and chapter-asset checks.
+-- `prepare_chapter_art.py` — reproducible conversion from ImageGen originals to PDF-ready grayscale assets.
+-- `assets/chapter-art/PROMPTS.md` — compact creative specification and chapter-to-asset mapping.
+-- `assets/chapter-art/GENERATION_RECORD.md` — exact submitted prompts, ImageGen call evidence, reference identities, hashes, transformation recipe, and approval status.
+-- `assets/chapter-art/original/` — 11 built-in ImageGen originals.
+-- `assets/chapter-art/pdf/` — 11 normalized 1200×686 grayscale derivatives at 280 ppi.
++Use Python with the versions in the toolkit's `requirements.txt`, Node.js, Poppler and ImageMagick. The shared toolkit includes all fonts. A PDFKit proof requires macOS and Swift.
+ 
+-## Preserve the retained PDF
+-
+-The canonical builder writes over the PDF beside it. Do not run it in the canonical book for this refresh. The isolated source candidate is review/2026-10-02/stage-1-candidate/. Later candidate generation must run in a separately copied build directory with the frozen artwork, leaving the original PDF and package intact. No PDF was built in stage 1.
+-
+-### Historical build instructions (isolated copy only)
+-
+-Use a Python environment with ReportLab, Pillow, pypdf, and pdfplumber installed.
+-ReportLab builds the PDF, Pillow prepares and inspects the artwork, pypdf runs
+-the structural checks, and pdfplumber verifies panel geometry, object bounds,
+-and overlap regressions.
++Set `HANDBOOK_PUBLISHING_TOOLKIT` to the extracted `publish-evidence-backed-handbook` directory. Run the shared preflight, then build each appearance into a new output directory outside the book's `output/pdf`, `reader` and `assets` directories. Existing PDF paths cannot be overwritten.
+ 
+ ```sh
+-python3 build_claude_design_field_guide.py
++python "$HANDBOOK_PUBLISHING_TOOLKIT/scripts/preflight.py"
++node "$HANDBOOK_PUBLISHING_TOOLKIT/scripts/build-pdf-variants.mjs" \
++  --book ./book --config ./book/pdf-config.json --theme light \
++  --output ./rebuild/daytime.pdf --python python
++node "$HANDBOOK_PUBLISHING_TOOLKIT/scripts/build-pdf-variants.mjs" \
++  --book ./book --config ./book/pdf-config.json --theme dark \
++  --output ./rebuild/late-night.pdf --python python
+ ```
+ 
+-The builder reads `Claude_Design_Field_Guide_Source.md` from the same directory and writes `Claude_Design_End_to_End_Field_Guide.pdf` beside it.
++The dark build verifies the artwork pair hashes, proportionally places selected originals in the same frames as the light artwork, then freezes opaque RGB derivatives on the shared charcoal background. The normalizer preserves the selected illustrations.
+ 
+-The builder also expects `assets/chapter-art/pdf/chapter-01.png` through `chapter-11.png`. To regenerate those derivatives from the included ImageGen originals, run:
++## Reproduce the reader
+ 
+ ```sh
+-python3 prepare_chapter_art.py
++python ./book/source/build_reader.py --output ./reader-rebuild
+ ```
+ 
+-Then validate the finished PDF and art package:
++The collection's isolated review command then installs the paired artwork, responsive semantic diagrams, explicit PDF controls, shared System/Light/Dark appearance controls and exact download headers. Its registry must pin the actual reader and PDF hashes. The public catalog and approval registry are separate inputs and remain unchanged.
+ 
+-```sh
+-python3 validate_claude_design_field_guide.py
+-```
++## Evidence and limits
+ 
+-## Source notes
++See `release-manifest.json`, `artwork-pairs.json`, `assets/chapter-art/dark/generation-records.json`, `diagram-bindings.json`, and the packaged review evidence. The candidate-specific maps mark all eleven required chapter images. The first-edition decision requires no changelog page, navigation entry or bookmark.
+ 
+-The guide uses the supplied Community URL as provenance and Figma's `figma/sds` as the code counterpart. The August connected account could not inspect the Community source. Current Figma guidance distinguishes view/edit access for reads from Full-seat native writing. Make a working copy and verify account, seat, file access, repository revision, component identities, and tokens. Historical metadata counts and node IDs are labeled as August findings.
++The PDFs have searchable text, embedded fonts, outlines, internal links and matching printed/logical page labels. The PDFs are untagged; PDF/UA and screen-reader usability are not claimed. The HTML reader supplies semantic lists, table headers, navigation and diagram relationships.
+ 
+-Editable product guidance reflects official documentation accessed October 2, 2026. Read Simple_Design_System_Setup.md for integrated Artifacts versus standalone setup, `/design-login`, `/design-sync`, `/design`, Figma tool permissions, and export checks. The exact source patch, claim ledger, preservation report, and stage 2 test assumptions live under review/2026-10-02/. No workflow observation, publication approval, or release readiness is implied.
+-
+-Chapter-opening illustrations were generated with the built-in ImageGen workflow, one chapter-specific prompt per asset. The prompt record, untouched originals, normalized PDF derivatives, and rendered QA record are included so the visual system can be inspected rather than inferred.
+-
+-`Claude_Design_Prompt_Pack.md` covers the product-design and engineering workflow. It is separate from the chapter-art generation record under `assets/chapter-art/`.
+-
+-## Worked-example test handoff
+-
+-Stage 2 added a tested local teaching example and repaired the fixture, prompts,
+-answer key, and acceptance criteria. Use `review/2026-10-02/stage-2-handoff.md`
+-and its frozen source manifest for stage 3. The original PDF and ZIP are still
+-the August draft artifacts. A new review candidate must include the exact
+-fixture contract and disclose unavailable Claude Design and native Figma checks.
+-Do not replace the original PDF, package, or chapter artwork.
++The retained August builder and PDF are historical artifacts. These instructions apply to the isolated October review candidate.

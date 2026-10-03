@@ -33,7 +33,8 @@ def build_reader(book_root, config, output, chrome=None):
   if styles=={'BulletMark'}:return 'bullet'
   if styles=={'Checkbox'}:return 'checklist'
   if styles=={'StepNumber'}:
-   if [marker.getPlainText() for marker in markers]!=[str(i) for i in range(1,len(markers)+1)]:
+   start=int(markers[0].getPlainText())
+   if [marker.getPlainText() for marker in markers]!=[str(i) for i in range(start,start+len(markers))]:
     raise ValueError('Numbered prose steps must preserve their sequence')
    return 'numbered'
   return None
@@ -65,7 +66,12 @@ def build_reader(book_root, config, output, chrome=None):
     tag='ol' if kind=='numbered' else 'ul'
     css='reader-prose-list'+(' reader-checklist' if kind=='checklist' else '')
     mark='<span aria-hidden="true">☐</span>' if kind=='checklist' else ''
-    blocks.append(f'<{tag} class="{css}">'+''.join('<li>'+mark+cell(row[1])+'</li>' for row in x._cellvalues)+f'</{tag}>')
+    start_attr=''
+    if kind=='numbered':
+     marker=x._cellvalues[0][0]
+     while isinstance(marker,Table):marker=marker._cellvalues[0][0]
+     if marker.getPlainText()!='1':start_attr=f' start="{int(marker.getPlainText())}"'
+    blocks.append(f'<{tag}{start_attr} class="{css}">'+''.join('<li>'+mark+cell(row[1])+'</li>' for row in x._cellvalues)+f'</{tag}>')
     return
    if config['semanticLists'] and len(x._cellvalues)==1 and len(x._cellvalues[0])==1:
     blocks.append('<aside class="reader-callout">'+cell(x._cellvalues[0][0])+'</aside>')
@@ -77,7 +83,7 @@ def build_reader(book_root, config, output, chrome=None):
      old=blocks; temp=[]
      # nested tables retained as HTML with their original content
      cells.append(cell(c))
-    is_header=config['tableHeaders'] and not rows and all(re.sub('<[^>]+>','',v).isupper() for v in cells)
+    is_header=config['tableHeaders'] and not rows and (all(re.sub('<[^>]+>','',v).isupper() for v in cells) or all(isinstance(c,Paragraph) and c.style.name=='TableHead' for c in row))
     tag='th' if is_header else 'td'
     rows.append('<tr>'+''.join(f'<{tag}'+(' scope="col"' if is_header else '')+'>'+v+f'</{tag}>' for v in cells)+'</tr>')
    blocks.append('<div class="table-scroll" tabindex="0"><table>'+''.join(rows)+'</table></div>')
@@ -136,10 +142,10 @@ def build_reader(book_root, config, output, chrome=None):
  else:
   release_window='<section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-policy" data-review-state="unscheduled"><div class="release-window-heading"><p class="release-window-label" id="release-window-title">Next version review</p><p class="release-window-products">Site + PDF</p></div><p class="release-window-schedule">The next review has not been scheduled.</p><p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p></section>'
  sidebar=f'<div class="sidebar-meta"><div class="sidebar-publication"><p class="sidebar-author">{credit}</p><p class="sidebar-edition"><a href="{publication["editionUrl"]}">{date_label}</a> · <a href="{publication["releaseUrl"]}">Version {version}</a></p></div><div class="sidebar-actions"><button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button><a class="text-link" href="{pdf}" download aria-label="Download {html.escape(config["downloadTitle"])} as a PDF, {pages} pages">PDF</a></div></div>'
- cover=f'<section class="cover" aria-labelledby="cover-title"><div class="cover-rule" aria-hidden="true"></div><h1 id="cover-title">{html.escape(title)}</h1><p class="cover-subtitle">{html.escape(config["subtitle"])}</p><p class="cover-credit">{credit}</p><p class="cover-date">{date_label} · Version {version}</p>{release_window}<nav class="cover-actions site-only" aria-label="Handbook actions"><a class="action-link action-link-primary" href="#contents">Explore the handbook</a><a class="action-link" href="{pdf}" download aria-label="Download {html.escape(config["downloadTitle"])} as a PDF, {pages} pages">Download PDF <span>{pages} pages</span></a></nav></section>'
+ cover=f'<section class="cover" aria-labelledby="cover-title"><div class="cover-rule" aria-hidden="true"></div><h1 id="cover-title">{html.escape(title)}</h1><p class="cover-subtitle">{html.escape(config["subtitle"])}</p><p class="cover-credit">{credit}</p><p class="cover-date"><a href="{html.escape(publication["editionUrl"],quote=True)}">{date_label} · Version {version}</a></p>{release_window}<nav class="cover-actions site-only" aria-label="Handbook actions"><a class="action-link action-link-primary" href="#contents">Explore the handbook</a><a class="action-link" href="{pdf}" download aria-label="Download {html.escape(config["downloadTitle"])} as a PDF, {pages} pages">Download PDF <span>{pages} pages</span></a></nav></section>'
  body=''.join(blocks)
  body=re.sub(r'(<section class="chapter"[^>]*>)(.*?)(?=<section class="chapter"|$)',lambda a:a[1].replace('class="chapter"','class="chapter source-section"')+a[2] if 'class="source-section"' not in a[2] else a[0],body,flags=re.S)
- markup=f'''<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Michael Long"><meta name="color-scheme" content="light"><link rel="icon" type="image/png" href="/assets/favicon.png"><title>{html.escape(title)} · Michael Long</title><link rel="canonical" href="{html.escape(config["canonicalUrl"])}"><link rel="stylesheet" href="/reader.css"><link rel="stylesheet" href="reader.css"><script src="/reader.js" defer></script></head><body id="book-top"><a class="skip-link" href="#main-content">Skip to handbook</a><div class="reading-progress" aria-hidden="true"><span></span></div><header class="mobile-bar"><a href="/">← All handbooks</a><div class="mobile-actions"><button class="text-button search-trigger js-only" data-open-search type="button" aria-haspopup="dialog" aria-controls="search-dialog">Search</button><button class="text-button js-only" data-open-toc type="button" aria-haspopup="dialog" aria-controls="toc-dialog">Contents</button></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a><a class="sidebar-brand" href="#book-top"><span>A handbook</span><strong>{html.escape(title)}</strong></a><nav class="sidebar-nav" aria-label="Table of contents">{nav}</nav>{sidebar}</aside><main id="main-content" tabindex="-1">{cover}<section class="contents-page" id="contents"><h2>Contents</h2>{nav}</section>{body}</main></div>{dialogs}</body></html>'''
+ markup=f'''<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Michael Long"><meta name="color-scheme" content="light"><link rel="icon" type="image/png" href="/assets/favicon.png"><title>{html.escape(title)} · Michael Long</title><link rel="canonical" href="{html.escape(config["canonicalUrl"])}"><link rel="stylesheet" href="/reader.css"><link rel="stylesheet" href="reader.css"><link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script><script src="/reader.js" defer></script></head><body id="book-top"><a class="skip-link" href="#main-content">Skip to handbook</a><div class="reading-progress" aria-hidden="true"><span></span></div><header class="mobile-bar"><a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a><div class="mobile-actions"><button class="text-button search-trigger js-only" data-open-search type="button" aria-haspopup="dialog" aria-controls="search-dialog">Search</button><button class="text-button js-only" data-open-toc type="button" aria-haspopup="dialog" aria-controls="toc-dialog">Contents</button></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a><a class="sidebar-brand" href="#book-top"><span>A handbook</span><strong>{html.escape(title)}</strong></a><nav class="sidebar-nav" aria-label="Table of contents">{nav}</nav>{sidebar}</aside><main id="main-content" tabindex="-1">{cover}<section class="contents-page" id="contents"><h2>Contents</h2>{nav}</section>{body}</main></div>{dialogs}</body></html>'''
  markup=markup.replace('https://handbooks.mikelong.ai','https://handbooks.surfaces.systems')
  (out/'index.html').write_text(markup)
  (out/'reader.css').write_text((Path(__file__).resolve().parent.parent/'assets/reader/flowable-reader.css').read_text().rstrip('\n')+config['extraCss'])

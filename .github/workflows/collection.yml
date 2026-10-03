@@ -42,6 +42,8 @@ jobs:
           unzip -q "$RUNNER_TEMP/toolkit.zip" -d "$RUNNER_TEMP/toolkit"
           python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/validate-package.py"
           node "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-pdf-downloads.mjs"
+          python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-font-resources.py"
+          python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-markdown-runtime.py" --output "$RUNNER_TEMP/markdown-regression"
       - name: Generate both portable rendering paths
         run: |
           browser=$(find "$HOME/.cache/ms-playwright" -path '*/chrome-linux64/chrome' -print -quit)

@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {digest} from '../../publish-evidence-backed-handbook/scripts/reader-paths.mjs';
+import {resolvePdfVariants} from '../../publish-evidence-backed-handbook/scripts/pdf-downloads.mjs';
+import {validateLibrary,validatePackage,APPROVAL_REGISTRY} from '../../site/scripts/book-sources.mjs';
+const root=resolve(import.meta.dirname,'../..'),book=resolve(root,'claude-design');
+const catalog=JSON.parse(await readFile(resolve(root,'catalog.json'),'utf8'));
+const pin=validateLibrary(catalog).find(b=>b.id==='claude-design');assert.ok(pin);
+const pkg=await validatePackage(book,pin);
+const manifest=JSON.parse(await readFile(resolve(book,'release-manifest.json'),'utf8'));
+const registry=APPROVAL_REGISTRY.books.find(b=>b.id===pin.id);
+const variants=await resolvePdfVariants(book,{id:pin.id,...manifest},registry.variantManifest,{collectionRoot:root});
+for(const v of variants){
+ const bytes=await readFile(resolve(root,v.path));assert.equal(digest(bytes),v.sha256);
+ const validation=JSON.parse(await readFile(resolve(book,'qa/v1.0.0',v.theme==='light'?'daytime-validation.json':'late-night-validation.json'),'utf8'));
+ assert.equal(validation.status,'passed');assert.equal(validation.artifactSha256,v.sha256);
+ const text=execFileSync('pdftotext',[resolve(root,v.path),'-'],{encoding:'utf8'});
+ assert.match(text,/native.{0,20}identity.{0,30}unverified/is);
+}
+const html=await readFile(resolve(book,pkg.html),'utf8');
+const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length);
+for(const link of html.matchAll(/href="#([^"]+)"/g))assert.ok(ids.includes(link[1]),'Missing target '+link[1]);
+assert.equal((html.match(/class="chapter-art"/g)||[]).length,11);
+assert.match(html,/class="handbooks-return-mobile"/);assert.match(html,/href="\/gallery.css"/);
+assert.match(html,/https:\/\/handbooks.surfaces.systems\/claude-design\//);
+assert.doesNotMatch(html,/Publication has not been approved/);
+assert.match(html,/native Figma reuse remain unverified/);
+console.log(JSON.stringify({status:'passed',edition:'1.0.0',pages:126,pdfs:variants.map(v=>({theme:v.theme,sha256:v.sha256})),readerSha256:pkg.files[pkg.html],chapters:11,nativeLimitations:'retained',navigation:'passed'},null,2));

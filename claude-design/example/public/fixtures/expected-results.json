@@ -1,0 +1,146 @@
+{
+  "raw": [
+    {
+      "customer_id": "C001",
+      "contact_email": " ALICE@EXAMPLE.COM ",
+      "health_score": "82"
+    },
+    {
+      "customer_id": "C002",
+      "contact_email": "bob@example.com",
+      "health_score": "65"
+    },
+    {
+      "customer_id": "C003",
+      "contact_email": "invalid-email",
+      "health_score": "50"
+    },
+    {
+      "customer_id": "C004",
+      "contact_email": "",
+      "health_score": "77"
+    },
+    {
+      "customer_id": "C005",
+      "contact_email": "eve@example.com",
+      "health_score": "not-a-number"
+    },
+    {
+      "customer_id": "C006",
+      "contact_email": " FRANK@EXAMPLE.COM ",
+      "health_score": "91"
+    }
+  ],
+  "normalized": [
+    {
+      "customer_id": "C001",
+      "email": "alice@example.com",
+      "health_score": "82",
+      "fileRow": 2
+    },
+    {
+      "customer_id": "C002",
+      "email": "bob@example.com",
+      "health_score": "65",
+      "fileRow": 3
+    },
+    {
+      "customer_id": "C003",
+      "email": "invalid-email",
+      "health_score": "50",
+      "fileRow": 4
+    },
+    {
+      "customer_id": "C004",
+      "email": "",
+      "health_score": "77",
+      "fileRow": 5
+    },
+    {
+      "customer_id": "C005",
+      "email": "eve@example.com",
+      "health_score": "not-a-number",
+      "fileRow": 6
+    },
+    {
+      "customer_id": "C006",
+      "email": "frank@example.com",
+      "health_score": "91",
+      "fileRow": 7
+    }
+  ],
+  "validation": {
+    "valid": [
+      {
+        "customer_id": "C001",
+        "email": "alice@example.com",
+        "health_score": "82",
+        "fileRow": 2
+      },
+      {
+        "customer_id": "C002",
+        "email": "bob@example.com",
+        "health_score": "65",
+        "fileRow": 3
+      },
+      {
+        "customer_id": "C006",
+        "email": "frank@example.com",
+        "health_score": "91",
+        "fileRow": 7
+      }
+    ],
+    "invalid": [
+      {
+        "customer_id": "C003",
+        "email": "invalid-email",
+        "health_score": "50",
+        "fileRow": 4
+      },
+      {
+        "customer_id": "C004",
+        "email": "",
+        "health_score": "77",
+        "fileRow": 5
+      },
+      {
+        "customer_id": "C005",
+        "email": "eve@example.com",
+        "health_score": "not-a-number",
+        "fileRow": 6
+      }
+    ],
+    "errors": [
+      {
+        "id": "C003",
+        "row": 4,
+        "column": "email",
+        "reason": "Invalid email"
+      },
+      {
+        "id": "C004",
+        "row": 5,
+        "column": "email",
+        "reason": "Email is required"
+      },
+      {
+        "id": "C005",
+        "row": 6,
+        "column": "health_score",
+        "reason": "Use a number from 0 to 100"
+      }
+    ]
+  },
+  "successful_run": {
+    "status": "succeeded",
+    "published": 3,
+    "quarantined": 3,
+    "rejected": 0,
+    "ids": [
+      "C001",
+      "C002",
+      "C006"
+    ]
+  },
+  "expectation_authority": "Authored fixture contract; numeric and ID outcomes manually recomputed and asserted in model.test.mjs."
+}

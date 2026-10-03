@@ -1,0 +1,43 @@
+{
+  "review_date": "2026-10-02",
+  "observations": [
+    {
+      "id": "TOOL-01",
+      "kind": "actual-tool",
+      "tool": "Claude Code",
+      "version": "2.1.285",
+      "observed": "CLI installed; auth status loggedIn=true, firstParty Claude Team; interactive slash menu lists /design, /design-sync, /design-login",
+      "limit": "No generation, sync, exported bundle or developer import verified by this check."
+    },
+    {
+      "id": "TOOL-02",
+      "kind": "inaccessible",
+      "tool": "Claude Design",
+      "url": "https://claude.ai/design",
+      "observed": "Isolated headless Chromium returned HTTP 403, Just a moment..., security verification screen",
+      "evidence": "page-2026-10-03T03-24-29-659Z.png",
+      "limit": "No bypass attempted. No authenticated canvas, edit, prototype or export observed."
+    },
+    {
+      "id": "TOOL-03",
+      "kind": "inaccessible",
+      "tool": "computer-use runtime",
+      "observed": "cua.getState failed because configured writable root is a symlink",
+      "limit": "Existing signed-in browser/Claude desktop session not inspected."
+    },
+    {
+      "id": "TOOL-04",
+      "kind": "actual-tool",
+      "tool": "Figma connector",
+      "observed": "One linked account whoami succeeded with Full seat on pro plan. Second connection requested accepted authentication and retry.",
+      "limit": "No book-specific file key or node inspected. Account access is not native design-system reuse proof."
+    },
+    {
+      "id": "TOOL-05",
+      "kind": "actual-tool",
+      "tool": "Playwright CLI",
+      "observed": "Installed wrapper opened, snapshotted and screenshotted headless Chromium successfully",
+      "limit": "Local behavior testing available; not proof of Claude Design output."
+    }
+  ]
+}

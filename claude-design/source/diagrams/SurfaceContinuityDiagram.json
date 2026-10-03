@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "title": "SurfaceContinuityDiagram",
+  "kind": "branch",
+  "nodes": [
+    {
+      "id": "n1",
+      "label": "SHARED STATE",
+      "detail": "node / fixture / document"
+    },
+    {
+      "id": "n2",
+      "label": "DAG canvas",
+      "detail": "selection + graph"
+    },
+    {
+      "id": "n3",
+      "label": "Inspector",
+      "detail": "schema + draft"
+    },
+    {
+      "id": "n4",
+      "label": "Data sheet",
+      "detail": "input / output rows"
+    },
+    {
+      "id": "n5",
+      "label": "Importer",
+      "detail": "mapping + source"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n1",
+      "to": "n2"
+    },
+    {
+      "from": "n1",
+      "to": "n3"
+    },
+    {
+      "from": "n1",
+      "to": "n4"
+    },
+    {
+      "from": "n1",
+      "to": "n5"
+    }
+  ],
+  "note": "",
+  "printAlt": "SHARED STATE; DAG canvas; Inspector; Data sheet; Importer",
+  "printCaption": "Coordinated surfaces use the same state."
+}

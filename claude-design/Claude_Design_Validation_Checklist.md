@@ -1,6 +1,20 @@
 # Claude Design End-to-End Validation Checklist
 
-Use this checklist at the design evidence gate, again at engineering handoff, and once more against the rendered implementation.
+Use this checklist at the design evidence gate, again at engineering handoff, and once more against the rendered implementation. Mark a branch-specific item not applicable only with a recorded reason; use unverified for a required check without evidence.
+
+## 0. Availability and evidence mode
+
+- [ ] Chosen surface is recorded: conversation, Artifacts, Claude Code, or standalone.
+- [ ] Plan, organization, selected system, and Claude Code version/provider when used are recorded.
+- [ ] Design, Design systems, and standalone settings are checked separately where applicable.
+- [ ] If using `/design`, v2.1.265+, enabled Design, and an artifact-capable claude.ai session are confirmed.
+- [ ] If using the React `/design-sync` path, authorization, conversion/upload destination, source revision, and completion evidence are recorded.
+- [ ] Persistent storage, retention, residency, and restricted-organization requirements are checked with the owner.
+- [ ] If using Figma, account/read access, native-writing seat/edit access, capture destination, Code Connect eligibility when needed, and quotas are checked separately.
+- [ ] Each finding uses High, Medium, or Low and distinguishes documentation, observation, inference, and unverified behavior.
+- [ ] No checklist item passes solely because the vendor documents the capability.
+
+Official prerequisites: [Claude Code commands](https://code.claude.com/docs/en/commands), [Artifacts availability](https://code.claude.com/docs/en/artifacts), [Artifacts administration](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans), [Figma access](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/).
 
 ## 1. Source and scope
 
@@ -11,23 +25,26 @@ Use this checklist at the design evidence gate, again at engineering handoff, an
 - [ ] Repository and design revisions are recorded.
 - [ ] The preservation boundary is visible.
 - [ ] Non-goals are explicit.
-- [ ] One deterministic fixture carries through the complete journey.
+- [ ] CSV, JSON, and authored expected-output hashes are recorded; the six customer IDs carry through the complete journey.
 - [ ] Private data, secrets, dependency trees, and unrelated packages are excluded.
 
 ## 2. Design-system grounding
 
 - [ ] Focused component code, tokens, stories, and mappings are linked.
-- [ ] The imported system passed at least two known-screen tests.
+- [ ] The imported system passed all three known-screen tests: settings form, dense table, and confirmation flow.
 - [ ] Component identity and semantic-token use were sampled.
 - [ ] A correction persisted through regeneration.
 - [ ] Every visible pattern is classified as reuse, approved variant, composition, proposal, reference only, or unverified.
 - [ ] Figma and code evidence are not conflated.
 - [ ] Raw colors, arbitrary spacing, duplicate controls, and inline production styles are absent.
 - [ ] Proposed components have owners, states, behavior, accessibility notes, and intended code paths.
-- [ ] Code Connect mappings are current where the workflow depends on them.
+- [ ] Code Connect mapping type and sampled imports/props/snippets match current code; absent fields are recorded.
+- [ ] Historical SDS counts and node IDs are rechecked against the selected revision and working file.
+- [ ] Required interactive behavior is observed on the selected surface, including when `/design` supplies artboards.
 
 ## 3. Existing-screen fidelity
 
+- [ ] A reviewed baseline export opens and is preserved separately from later alternatives.
 - [ ] Baseline and final references show a bounded diff.
 - [ ] Shell, navigation, route identity, permissions, Save, Run, and persistence remain stable.
 - [ ] Unrelated copy and product areas are unchanged.
@@ -48,7 +65,11 @@ Use this checklist at the design evidence gate, again at engineering handoff, an
 - [ ] Malformed rows include row and column references.
 - [ ] Import success creates the configured source node and opens its preview.
 - [ ] Preview rows are the selected node's real fixture output.
-- [ ] Save, reload, run, failure, repair, and successful re-run are covered.
+- [ ] Save, reload, warehouse failure, repair to customer_health, and successful re-run are covered with exact 3/3/0 counts.
+- [ ] Save failure keeps Run disabled; Run cannot persist an unsaved draft.
+- [ ] Cancelled parsing/import leaves the graph unchanged, including delayed completion callbacks.
+- [ ] Preview provenance remains visible when the sheet scrolls.
+- [ ] Reject invalid rows produces 3 published, 0 quarantined, and 3 rejected.
 
 ## 5. State and recovery
 
@@ -103,6 +124,9 @@ Use this checklist at the design evidence gate, again at engineering handoff, an
 - [ ] Acceptance tests are objective.
 - [ ] Prototype-only code is labeled.
 - [ ] Unresolved items have severity, owner, due date, and consequence.
+- [ ] Export format/surface/time, file inventory, and intended-recipient access result are recorded.
+- [ ] Files, chat, README, mappings, fixtures, and decisions actually received are inspected; absent inputs are supplied or assigned.
+- [ ] Bundle inspection is complete before implementation edits begin.
 - [ ] The Claude Design bundle is accessible to the implementation team.
 
 ## 9. Claude Code implementation prompt
@@ -131,6 +155,14 @@ Use this checklist at the design evidence gate, again at engineering handoff, an
 - [ ] Meaningful design deviations are approved or assigned.
 - [ ] Design, Figma, code, and Code Connect are reconciled where they remain sources of truth.
 
+## Native-Figma evidence when required
+
+- [ ] Native writing and live-UI capture are recorded as different workflows.
+- [ ] `use_figma` prerequisites and current image/font/response-size limits are checked.
+- [ ] `generate_figma_design` destination is Drafts or an editable Full-seat file outside Drafts.
+- [ ] Captured component instances and variable bindings are inspected; editable layers alone do not pass reuse.
+- [ ] The baseline frames remain intact, and changed node IDs are recorded.
+
 ## 11. Field-guide production QA
 
 - [ ] Peer diagram elements use equal geometry, even gutters, and aligned ports.
@@ -155,3 +187,13 @@ Use this checklist at the design evidence gate, again at engineering handoff, an
 **Remaining High findings:** `[must be none for pass]`  
 **Bounded follow-up:** `[item, severity, owner, due date]`  
 **Unverified:** `[item and consequence]`
+
+## Worked-example review status
+
+The October 2 local experiment is a bounded teaching harness. Read the stage 2
+handoff and test matrix under `review/2026-10-02/` for exact coverage and failures.
+Claude Design generation, three imported-system tests, correction persistence,
+conversion/upload, actual export contents, recipient access, and native Figma
+identity remain unverified. Leave those checklist items open. The local graph
+uses named connections; pointer port dragging and drawn-edge behavior need their
+own evidence. Automated keyboard actions do not establish screen-reader usability.

@@ -1,7 +1,7 @@
 ---
 title: Claude Design Field Guide
 subtitle: From a living design system to a production-ready handoff
-edition: August 2026 | Version 1.0
+edition: October 2, 2026 | Guidance refresh candidate (baseline: August 2026, Version 1.0)
 audience: Product managers, product designers, design-system leads, and engineers
 chapter_art: Built-in ImageGen originals and PDF derivatives live under assets/chapter-art; exact prompts, hashes, and call evidence are in assets/chapter-art/GENERATION_RECORD.md
 diagram_system: Vector figures are inserted from DIAGRAM markers; cover and chapter art are inserted by the PDF builder
@@ -9,11 +9,11 @@ diagram_system: Vector figures are inserted from DIAGRAM markers; cover and chap
 
 # Orientation
 
-Claude Design can do the job described in this guide, with one boundary that should stay visible from the first prompt to the final handoff.
+Use this guide to ground a product prototype in existing components, extend a bounded screen, and prepare an engineering handoff. The worked example is a teaching scenario. The October 2 review exercised a local executable example with SDS React primitives; it did not verify Claude Design generation, system sync, export, or native Figma reuse.
 
-Claude Design can generate and iterate on interactive prototypes grounded in an existing design system, linked codebase, current screens, and design references. It can then package the design files, conversation, and implementation context for Claude Code. Claude Design is not currently documented as a native Figma round-trip. When editable Figma frames are the source of truth, use Figma MCP and Code Connect as a separate bridge.
+Anthropic documents interactive prototyping and a Claude Code handoff in Claude Design. Design is now available in conversations and the Artifacts tab as well as at claude.ai/design. The Claude Code reference describes `/design` more narrowly: it drafts artboards on a canvas. Record the surface you use and test the required interactions and exports there. A generated artboard alone does not prove the prototype journey works. Direct native-Figma export is not established by the reviewed documentation. Use Figma MCP when editable Figma content is required. See the [Design getting-started guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) and [Claude Code artifact guide](https://code.claude.com/docs/en/artifacts).
 
-This guide shows how to make that division practical. The work starts with a real system, extends a real screen, and ends with a handoff that engineers can inspect rather than reinterpret.
+This guide shows how to make that division practical. For product work, start with the current system and screen, then prepare a handoff engineers can inspect. The local exercise uses a synthetic baseline with browser-only persistence and run behavior.
 
 ::: callout decision | The operating model
 Use Claude Design for system-grounded exploration and interaction design. Use Claude Code for repository-aware implementation. Add Figma MCP and Code Connect when the team needs native Figma editing, component mappings, or a code-to-canvas loop.
@@ -21,7 +21,7 @@ Use Claude Design for system-grounded exploration and interaction design. Use Cl
 
 ## What you will build
 
-The recurring example is **Data Pipeline Studio**, an extension to an existing production screen at `/pipelines/customer-health/edit`. The current product lets an analyst inspect a linear pipeline and edit one step at a time. The extension adds a directed acyclic graph editor, a richer node inspector, a resizable data sheet, and a file importer with mapping and recovery states.
+The recurring example is **Data Pipeline Studio**, a fictional extension to a teaching baseline at `/pipelines/customer-health/edit`. The current product lets an analyst inspect a linear pipeline and edit one step at a time. The extension adds a directed acyclic graph editor, a richer node inspector, a resizable data sheet, and a file importer with mapping and recovery states.
 
 The guide never treats the example as a blank canvas. The global shell, route, permissions, persistence, run APIs, typography, spacing, forms, buttons, tables, dialogs, notifications, and status patterns already exist. The assignment is to preserve that working product while changing a bounded part of it.
 
@@ -52,7 +52,11 @@ A prototype can look like the product while quietly replacing its components, lo
 
 ## Before you begin
 
-You need access to Claude Design, Claude Code, the relevant application repository, and a Figma account if you will use the native-Figma branch. Claude Design is a beta product. Enterprise organizations must enable it, and uploaded assets follow Anthropic's persistent storage and retention policies. Teams with data residency or audit-log requirements should clear those constraints before uploading proprietary work.
+You need an approved source package, repository access for implementation, and a Figma account for the native-Figma branch. Claude Design is beta on Pro, Max, Team, and Enterprise. Pro, Max, and Team have Design enabled by default; Enterprise owners enable the Design template under Organization settings > Artifacts. Design systems and standalone Claude Design have separate controls. Confirm the intended organization and surface before importing sources. See the [Design admin guide](https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans).
+
+Claude Code `/design` requires version 2.1.265 or later, an enabled Design template, and an artifact-capable session. Sign in with `/login` using claude.ai. API-key-only sessions cannot publish artifacts, and third-party cloud-provider sessions are unsupported. The artifact guide also lists organization-policy restrictions. Confirm account, provider, and policy before treating a missing command as a setup defect. See [artifact availability](https://code.claude.com/docs/en/artifacts).
+
+Uploaded assets persist under the applicable retention policies. Anthropic documents unsupported Design data residency and restrictions for CMEK, ZDR, and HIPAA-ready configurations in the new Artifacts experience. Standalone audit logging and integrated artifact records have different coverage. Confirm those requirements with the organization owner before uploading proprietary work. See the [Artifacts admin guide](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans).
 
 For this guide, use the public Simple Design System Community file and Figma's open-source `figma/sds` React repository. Duplicate the Community file into your own drafts before attempting connected inspection or editing. The public source remains untouched.
 
@@ -102,7 +106,7 @@ Use five layers:
 When two layers disagree, record the conflict. Do not let Claude select a winner through visual improvisation.
 
 ::: callout example | Data Pipeline Studio
-The existing route, Save and Run behavior, permissions, and persistence are production behavior. The Simple Design System React package governs reusable primitives. The duplicated Figma file governs component anatomy and variables. The current Pipeline Detail screen governs shell and density. The capstone brief governs the new DAG journey.
+In the teaching baseline, the route, Save, Run, permissions, and persistence are simulated behavior. In a real product extension, the current implementation and API contracts govern those decisions. The Simple Design System React package governs reusable primitives. The duplicated Figma file governs component anatomy and variables. The current Pipeline Detail screen governs shell and density. The capstone brief governs the new DAG journey.
 :::
 
 ## Freeze the preservation boundary
@@ -137,7 +141,33 @@ Claude needs a stable example that can appear in every screen and state. Use one
 4. `Publish to Warehouse` — destination
 5. `Quarantine Invalid Rows` — proposed branch
 
-Use one import fixture: `customers-august.csv`. It contains one missing required column mapping and several malformed rows. The same records appear in the importer, preview, validation error, quarantine branch, and run result. That continuity prevents attractive but disconnected mock data.
+Use `customers-august.csv` and its JSON equivalent for one six-record dataset. The importer proposes `customer_id` and `health_score` mappings, but leaves the required `contact_email` to `email` mapping unresolved. The final confirmation accepts all three mappings and the chosen recovery policy. No graph change occurs before confirmation.
+
+| CSV row | Customer ID | Raw contact_email | Raw health_score | Expected result |
+|---|---|---|---|---|
+| 2 | C001 | ` ALICE@EXAMPLE.COM ` | 82 | Publish as `alice@example.com` |
+| 3 | C002 | `bob@example.com` | 65 | Publish as `bob@example.com` |
+| 4 | C003 | `invalid-email` | 50 | Invalid email |
+| 5 | C004 | empty | 77 | Email is required |
+| 6 | C005 | `eve@example.com` | `not-a-number` | Invalid health_score |
+| 7 | C006 | ` FRANK@EXAMPLE.COM ` | 91 | Publish as `frank@example.com` |
+
+`Normalize Email` trims outer whitespace and lowercases all six emails. The schema gate requires a nonempty unique customer ID, an email with a domain suffix, and a numeric health score from 0 to 100. Three records pass. C003, C004, and C005 go to quarantine or are excluded under Reject invalid rows. CSV row numbers include the header; JSON uses the corresponding record ordinal plus one. A production parser must track physical file locations separately, including blank and multiline records.
+
+## Use the executable teaching contract
+
+Start from the preserved linear baseline at `/pipelines/customer-health/edit?baseline=1`. Open the extension at the same route without the query. Preserve the shell text, navigation, pipeline identity, environment badge, Save, Run, permissions, and browser persistence. This baseline was authored for the exercise; it is not a shipped product or a Claude Design export.
+
+1. Choose the fixture through the file picker or drop zone. Confirm `contact_email → email` and all proposed mappings. Choose Send to quarantine for the main journey.
+2. Confirmation replaces the unconfigured `Customers CSV` placeholder with a new source ID, `august`, named `Customers CSV (August import)`. It preserves downstream nodes, removes the placeholder's old edge, selects the new source, and opens its raw preview. Import is atomic; cancel or failure leaves the graph unchanged. The local exercise supports one committed import per reset.
+3. Connect `august` to `normalize`. The normalized preview contains the same six customer IDs. Add `quarantine`, then connect `validate` to `quarantine`. Keep `normalize → validate → warehouse` intact.
+4. Save before Run. The configured warehouse target starts as `missing-warehouse`, so the intended first run fails at `warehouse`. The fixture's required target is `customer_health`; a helper hint must not claim it is already configured. Preserve the failure across reload.
+5. Select the failing node, set its target to `customer_health`, Save, and Run again. Expect three published IDs (C001, C002, C006), three quarantined IDs (C003, C004, C005), and zero rejected rows. Under Reject invalid rows, expect three published, zero quarantined, and three rejected.
+6. Attempt `validate → august` and `normalize → quarantine`. The first would create a cycle; the second has incompatible ports. Each attempt must explain the reason and leave the graph unchanged. Deleting a required downstream edge must block Run.
+
+Save failure must preserve the draft and keep Run disabled until Save succeeds. The local conflict control changes only a simulated revision; explicit reapply is safe for that fixture. A real concurrent edit needs a content comparison and reviewed merge. Warehouse lookup, row publication, quarantine storage, server authorization, and telemetry remain implementation requirements.
+
+The local example exercises buttons, inputs, selects, dialogs, tags, and tables from a pinned SDS React snapshot. Its named connection list supplies the non-pointer graph path. Pointer port dragging, drawn edge geometry, virtualized large datasets, resizable columns, a complete schema-driven inspector, and screen-reader behavior remain separate acceptance work. Local screenshots and passing tests do not establish that Claude Design produced the workflow.
 
 ## Define the success journey
 
@@ -215,7 +245,7 @@ Simple Design System is a useful teaching source because the Figma library and R
 
 ## Duplicate before you connect
 
-Open the Simple Design System Community file and choose **Make a copy**. Work in the copy. A public Community link may be viewable in the browser while connected tools still require edit access to inspect metadata, variables, or components. The duplicate creates a file that your account can inspect and, if needed, edit.
+Open the Simple Design System Community file and choose **Make a copy**. Work in the copy. Figma MCP can read content the authenticated account has permission to view or edit; native writing to an existing file requires edit permission and a Full seat. The August research account could not inspect the Community source through its connected tools. That historical denial does not establish an editor-only rule for all reads. Confirm the current account and working-file access separately. See [Figma access and permissions](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/) and [write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/).
 
 Keep the original source URL in the project record:
 
@@ -243,7 +273,7 @@ The code is organized into:
 
 ## Inventory the components you can reuse
 
-The current repository includes these relevant primitives:
+The August code inspection identified these primitives. Confirm them in the selected repository revision:
 
 | Product need | Existing Simple Design System material | Disposition |
 |---|---|---|
@@ -291,9 +321,11 @@ Exclude:
 
 ## Connect Code Connect after duplication
 
-The Simple Design System repository uses `documentUrlSubstitutions` in `figma.config.json`. A fresh Figma duplicate should retain component node IDs. Update only the file keys in those URLs unless you have intentionally recreated components. Then publish the mappings through the normal Code Connect process.
+The Simple Design System README still documents `documentUrlSubstitutions` in `figma.config.json` and expects a fresh duplicate to preserve node IDs. Verify sample IDs in the chosen copy, then update the file keys. Record the repository revision and mapping format before validating.
 
-Code Connect gives agents more than a screenshot. It can supply import statements, current design properties, prop mappings, component snippets, source paths, and team instructions. Keep mappings current; stale mappings create confident errors.
+Code Connect is documented for Dev or Full seats on Organization and Enterprise plans. The current CLI quickstart recommends framework-agnostic template files; existing SDS mappings remain inputs from their own repository revision. Do not migrate parsers or publish mappings merely to run the example. Follow the team's approved process if mapping publication is authorized. The CLI requires Node.js 18 or newer and a locally stored token with Code Connect Write and File content Read scopes. See the [Code Connect introduction](https://developers.figma.com/docs/code-connect/) and [CLI quickstart](https://developers.figma.com/docs/code-connect/quickstart-guide/).
+
+Code Connect can supply imports, properties, snippets, source paths, and team instructions. CLI mappings and UI mappings provide different detail: a CLI mapping can omit an import when its source/import fields are missing, and UI mappings do not include full snippets by default. Inspect one returned mapping before relying on it. Keep mappings current. See [Code Connect integration](https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/).
 
 ::: prompt Claude Code | Inspect the system package
 Inspect the attached Simple Design System package and the current Pipeline Detail implementation. Do not edit files.
@@ -339,17 +371,21 @@ Validate the system before asking for Data Pipeline Studio.
 
 ## Establish the system in Claude Design
 
-For an organization-level setup, a design or brand owner uploads the approved sources, reviews the generated UI kit, tests representative outputs, and publishes it only after review. New Team and Enterprise projects can then inherit the published system.
+Choose the setup path that matches the source. For a React product system, the current [Claude Code command reference](https://code.claude.com/docs/en/commands) documents `/design-login` to authorize design-system access and `/design-sync [hint]` to convert and upload the repository's system to Claude Design. First-time verification can take hours for a large repository. Treat conversion and upload as part of the operation; scope the source package before running it. These commands require the Anthropic path and claude.ai access, and are unavailable through the documented cloud-provider and apps-gateway paths.
 
-From Claude Code, the documented setup is:
+For a brand system, use chat with approved fonts, logos, files, and design references. Manage integrated systems in Settings > Design systems. A system created at claude.ai/design can move through the Design sidebar's migration banner, but the migrated guide, tokens, and components need review. See the [design-system setup guide](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design).
 
-```sh
-claude mcp add --scope user --transport http claude-design https://api.anthropic.com/v1/design/mcp
-```
+Standalone setup remains a separate path: select the organization at claude.ai/design, upload or link approved assets, review the generated system, and test it before using the Published toggle. In integrated Artifacts, confirm the attached system and selected organization default. Publishing a system and setting a default are separate decisions. Enterprise administrators can reserve publication, default selection, and deletion for designated users. See the [Artifacts admin guide](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans).
 
-Run `/design-login`, then use `/design-sync` to bring the system into the workflow.
+The August guide required manual registration of the Claude Design MCP endpoint. Current reviewed setup instructions use the built-in commands and do not establish that registration as a prerequisite. Omit it from the default path; this is not a claim that the endpoint has been retired. If a command is absent or authorization fails, record the installed version, account/provider, enabled template, and exact error before changing configuration.
+
+Use `/design [brief]` for the documented Claude Code artboard workflow. Inspect the returned artifact in a desktop browser. Test whether the chosen surface supports the interactive states your product example needs; broad Design help and the CLI reference describe different scopes. Do not infer complete import/export/sync parity from the command name.
 
 Do not paste private tokens into chat or commit local credentials. Follow the repository's existing secret-handling rules.
+
+## Preserve the reviewed baseline
+
+Anthropic documents asking Claude to save the current project before trying another direction, but also lists version history as unavailable. Export a reviewed baseline, record its date and system revision, and verify that the saved artifact opens before experimenting. Treat reliable restore and correction persistence as tests, not assumptions. See [Design revisions and limitations](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
 
 ## Give sources a clear authority order
 
@@ -364,7 +400,7 @@ Preserve existing component, token, and pattern names exactly. Separate:
 2. inferred composition patterns,
 3. missing or ambiguous areas.
 
-Do not silently invent a component. Label any missing pattern as a proposed addition. Generate a representative settings screen and a dense operational table so we can validate the system before publishing it.
+Do not silently invent a component. Label any missing pattern as a proposed addition. Generate a settings screen, a dense operational table, and a confirmation flow. Record the selected system and source revision. Keep the system in draft; publication and organization-default changes need owner approval.
 :::
 
 ## Run three known-screen tests
@@ -511,7 +547,7 @@ Keep all approved regions unchanged. Add pointer and keyboard node selection, a 
 :::
 
 ::: prompt Claude Design | Add connections and rejection
-Add input and output ports plus edge creation between compatible nodes. Use the existing fixture. Demonstrate one valid connection, one incompatible connection, and one attempted cycle. Rejected actions must leave the graph unchanged and explain why the connection is invalid. Use icon, label, and color for status. Keep every other surface unchanged.
+Add input and output ports plus edge creation between compatible nodes. Use the existing fixture. Demonstrate one valid connection, one incompatible connection, and one attempted cycle. Rejected actions must leave the graph unchanged and explain why the connection is invalid. Use icon, label, and color for status. In this fixture, attempt `validate → august` for a cycle and `normalize → quarantine` for a type mismatch; neither may change the graph. Keep every other surface unchanged.
 :::
 
 ## Define proposed graph components
@@ -533,7 +569,7 @@ Each proposed component needs a design owner, a code owner, a variant model, acc
 Use alternatives for a specific decision, such as node density or branch readability. Do not ask for three complete product redesigns.
 
 ::: prompt Claude Design | Compare node density
-Save the approved version. Create two alternatives for `PipelineNode` density only:
+Before generating alternatives, export the approved baseline, record the source revision and date, and confirm the export opens. Keep that artifact intact. Then create two alternatives for `PipelineNode` density only:
 
 - compact: optimized for large graphs,
 - detailed: exposes key configuration and last-run status.
@@ -632,7 +668,7 @@ Use a staged flow because the user is making a series of consequential choices. 
 ::: prompt Claude Design | Extend the importer
 Extend the existing file-upload dialog into a staged CSV and JSON importer. Keep all approved product surfaces unchanged.
 
-Use `customers-august.csv` as the fixture. The file has one required column that is not mapped and several malformed rows.
+Use `customers-august.csv` as the fixture. Use the exact six rows from Chapter 1. Require explicit confirmation of `contact_email → email` and the proposed customer ID and health-score mappings. Preserve the three valid and three invalid record identities across every surface.
 
 Show these stages and states:
 
@@ -975,11 +1011,11 @@ The handoff begins after review, not after generation. A clean gate makes the re
 | Proposed product component | New reusable behavior local to the product domain | State model, API proposal, accessibility contract, owner |
 | Proposed shared component | New pattern intended for the system | Design-system review and promotion decision |
 | Reference only | Prototype code or visual idea not suitable for production | Explicit warning and replacement plan |
-| Unverified | No reliable mapping | Block handoff or assign a named resolution owner |
+| Unverified | No reliable mapping | Hold handoff; assign an owner to resolve the identity gap before it can pass |
 
 ## Audit Simple Design System precisely
 
-The current open-source React package includes a `Table` primitive. The official component metadata fallback does not list a Figma Table component; it lists a Table icon. Until the working Figma duplicate is inspected, treat the data grid as a product-specific Figma extension even if the code can reuse the Table implementation.
+The August 5 code inspection found a `Table` primitive, while its checked-in component metadata did not list a Figma Table component, only a Table icon. Until the working Figma duplicate is inspected, treat the data grid as a product-specific Figma extension even if the code can reuse the Table implementation.
 
 This distinction is the point of the gate. “Table exists” is not one fact. It can be true in code and unverified in Figma at the same time.
 
@@ -1042,7 +1078,7 @@ Gate decision and reviewers | 3
 
 # Hand off to Claude Code and developers
 
-Claude Design's documented handoff can include the project design files, the design conversation, and a README, plus a prompt containing the bundle URL. That context reduces reinterpretation. It does not turn prototype code into production code or remove engineering review.
+The [official product-design tutorial](https://academy.claude.com/tutorials/using-claude-design-for-prototypes-and-ux) describes a default handoff bundle containing design files, chat, and a README, with a URL-bearing prompt for a local agent and an option for Claude Code Web. Inspect the actual export before relying on those contents. Record missing decisions or files and supply them explicitly. The bundle still needs component mapping, engineering review, and repository tests.
 
 ## Clean the design project first
 
@@ -1092,7 +1128,9 @@ The final map should contain real repository import paths, not the generic examp
 
 ## Export from Claude Design
 
-Choose **Export → Hand off to Claude Code**. Select the local coding agent or Claude Code Web according to the team's implementation environment. Store the exported bundle URL in the handoff record and respect its access controls.
+The [Design help guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) lists ZIP, PDF, PPTX, standalone HTML, and handoff to a local coding agent or Claude Code Web. Google Slides export is available only at claude.ai/design. For Claude Code `/design` artboards, the [artifact guide](https://code.claude.com/docs/en/artifacts) specifically documents per-artboard PNG or PDF. Choose the format and handoff on the actual surface; the lists do not prove every surface has identical controls.
+
+When available, choose **Export > Hand off to Claude Code** and the intended local or web destination. Record the bundle URL, access scope, export time, and a file/content inventory. Test recipient access. Add the team-owned handoff template, component map, fixtures, acceptance tests, and decision log when the export does not contain them. Read/import the bundle first; allow repository edits only under the feature's implementation authority.
 
 ::: prompt Claude Code | Implement the approved handoff
 Implement the attached Claude Design handoff in the existing repository.
@@ -1129,10 +1167,10 @@ Critical tests:
 1. The existing shell, route, permissions, Save action, and Run action remain functional.
 2. Every visible primitive resolves to an approved component or documented extension.
 3. A valid connection is created; a cycle and incompatible connection are rejected without modifying the graph.
-4. Editing a node marks the document dirty, persists after Save and reload, and protects invalid drafts.
-5. Import is blocked until the required mapping is resolved; completion creates the correct source node.
+4. Editing a node marks the document dirty, persists after Save and reload, and protects invalid drafts. Save failure keeps Run disabled and must not persist the unsaved draft through Run.
+5. Import is blocked until all mappings and the recovery choice are confirmed; cancel and parse failure create no source. Completion replaces the placeholder with source ID `august`.
 6. Preview after `Normalize Email` shows transformed fixture data.
-7. A failed run focuses the failing node and preserves its error after reload.
+7. The warehouse run fails with target `missing-warehouse`, focuses that node, and preserves the error after reload. Changing the target to `customer_health`, saving, and re-running yields three published and three quarantined records.
 8. Undo and redo restore node position and graph structure.
 9. Keyboard actions have visible focus and an equivalent non-pointer path.
 10. Loading, empty, stale, truncated, permission, conflict, and error states are rendered and recoverable.
@@ -1225,12 +1263,14 @@ Do not collapse these into “production-ready” unless the team has defined an
 
 ## Use the native-Figma branch when required
 
-Claude Design does not currently document direct native-Figma export. If the team requires editable Figma frames, connect Claude Code to Figma's remote MCP server and use Code Connect.
+Direct native-Figma export is not established by the reviewed Claude Design documentation. If editable Figma content is required, use Figma's separate remote MCP workflow. Figma recommends its [Claude Code plugin](https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/), which bundles server settings and skills; manual HTTP setup is also documented. Code Connect adds implementation context where eligible and configured.
 
-Figma documents two useful paths:
+Figma documents two paths with different permissions:
 
-- **Figma-first:** use the Figma write workflow to inspect and extend the existing working file with real components, variables, styles, and Auto Layout.
-- **Code-first:** run the approved prototype or implementation, then use `/prototype-to-figma` to capture unique screens as editable frames connected to the design system.
+1. **Figma-first:** `use_figma` creates or updates native frames, components, variables, and Auto Layout. Writing needs a Full seat; modifying an existing file also needs edit permission. Load the installed Figma write-to-canvas skills and inspect first. The tool currently has a 20kb output-response limit, no image-asset or custom-font support, and requires manual component publication before Code Connect completes. See [write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/).
+2. **Code-first:** `generate_figma_design` captures live browser UI into editable layers. Any seat can use this tool in Drafts; an existing file outside Drafts needs a Full seat and edit permission. This path is distinct from native writing. Inspect captured instances and variable bindings before claiming design-system reuse. See [code to canvas](https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/).
+
+The August `/prototype-to-figma` instruction is replaced with the documented code-to-canvas tool workflow. A client-specific prompt shortcut is not a universal Figma command. MCP read quotas vary by plan and seat; check the current [access table](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/) and authenticated account before planning a full-file inventory.
 
 ::: prompt Figma MCP | Extend an existing native screen
 Using the working Figma file and the selected existing Pipeline Detail screen, add the approved Data Pipeline Studio feature beside the current version for review.
@@ -1243,7 +1283,7 @@ Return the IDs of created or changed frames and components, plus a short list of
 ::: prompt Figma MCP | Capture the implemented flow
 Capture the complete local Data Pipeline Studio flow in the working Figma file as editable frames.
 
-Reuse connected design-system components, variables, and styles. Include each unique critical state at 1440 x 900 and 1024 x 768. Create a summary page that records the journey, component mappings, implementation deviations, and unresolved differences from production.
+Inspect captured component instances and variable bindings, and record reuse or gaps separately from visual resemblance. Include each unique critical state at 1440 x 900 and 1024 x 768. Create a summary page that records the journey, component mappings, implementation deviations, and unresolved differences from production.
 
 Keep the approved source frames intact. Place captured implementation frames in a separate named section with capture date and repository revision.
 :::
@@ -1319,7 +1359,7 @@ The deliverable is not a single screen. It is an evidence-backed design and hand
 - Work from the duplicated Simple Design System file and relevant React package.
 - Keep the public Community source untouched.
 - Preserve the existing shell, route, permissions, Save, Run, persistence, and unrelated copy.
-- Use the supplied fixture throughout.
+- Use the exact six-row fixture and expected outputs from Chapter 1 throughout. Record CSV/JSON hashes and each invalid row and column. Label a local executable exercise separately from observed Claude Design output.
 - Label new product components and tokens.
 - Do not treat generated prototype code as production code without a real mapping.
 - Do not pass the capstone with an unresolved High finding.
@@ -1334,7 +1374,7 @@ Produce:
 - A compact context package.
 - A design-system inventory and gap list.
 
-Use the baseline-analysis, system-inspection, and draft-system prompts from Chapters 1 through 3. Run at least two known-screen system tests before starting the DAG.
+Use the baseline-analysis, system-inspection, and draft-system prompts from Chapters 1 through 3. Run the settings form, dense table, and confirmation-flow tests before starting the DAG.
 
 ::: worksheet Capstone phase 1
 Authoritative sources | 5
@@ -1507,7 +1547,7 @@ The DAG replaces only the current linear editor. `PipelineNode`, `PipelinePort`,
 
 ## Phase 3 answer
 
-The selected node, inspector title, and data sheet provenance agree. `Normalize Email` produces the rows shown in preview. The importer does not commit inferred mappings silently. The required mapping blocks completion, malformed rows point to row and column, and the user can reject them or route them to quarantine. Success creates the same source node shown on the graph.
+The selected node, inspector title, and data sheet provenance agree. Import creates source ID `august` after confirmation. `Normalize Email` produces six rows; C001 and C006 become `alice@example.com` and `frank@example.com`. Validation retains C001, C002, and C006, while C003, C004, and C005 are invalid at CSV rows 4, 5, and 6. The warehouse repair changes `missing-warehouse` to `customer_health`, then saves before re-running. The importer does not commit inferred mappings silently. The required mapping blocks completion, malformed rows point to row and column, and the user can reject them or route them to quarantine. Success creates the same source node shown on the graph.
 
 ## Phase 4 answer
 
@@ -1519,7 +1559,7 @@ Every visible element has a disposition. The record distinguishes the code Table
 
 ## Phase 6 answer
 
-The Claude Code prompt requires inspection before editing, updates the current route rather than creating a parallel application, uses repository conventions, and asks for rendered proof. The implementation plan proceeds in bounded slices. The proof record separates tests from rendered evidence and human approval. The team chooses a Figma reconciliation path based on whether editable Figma remains a source of truth.
+The Claude Code prompt requires inspection before editing, updates the current route rather than creating a parallel application, uses repository conventions, and asks for rendered proof. The implementation plan proceeds in bounded slices. The proof record separates local model tests, actual browser actions, tool observations, documentation, and human approval. A local exercise can pass its bounded tests while the Claude Design workflow remains unverified. Neither a local package nor Claude Code reading it proves that Design exported it. The team chooses a Figma reconciliation path based on whether editable Figma remains a source of truth.
 
 ## Common deductions
 
@@ -1542,6 +1582,8 @@ The Claude Code prompt requires inspection before editing, updates the current r
 
 Use prompts in order. Each prompt should preserve approved work, name the exact surface being changed, and request a small auditable result.
 
+Use the setup path in Chapter 3 before these prompts. Record the chosen surface and system. `/design-sync` converts and uploads a React system; `/design` drafts artboards. Export a reviewed baseline before alternatives and test required interactions on the actual surface.
+
 ## A1. Baseline analysis
 
 ::: prompt Claude Design | Copy-ready prompt
@@ -1553,7 +1595,7 @@ Return a factual screen inventory, visible component and layout patterns, preser
 ## A2. Draft design system
 
 ::: prompt Claude Design | Copy-ready prompt
-Build a draft system from the attached component code, tokens, Figma working file, and representative shipped screens. Treat code and tokens as authoritative. Preserve names. Separate directly observed components, inferred compositions, proposed additions, and unverified areas. Generate a settings form and dense operational table for validation before publishing.
+Build a draft system from the attached component code, tokens, Figma working file, and representative shipped screens. Treat code and tokens as authoritative. Preserve names. Separate directly observed components, inferred compositions, proposed additions, and unverified areas. Generate a settings form, dense table, and confirmation flow. Record source revision and selected system. Keep the system in draft; publication and default selection require owner approval.
 :::
 
 ## A3. Bounded screen extension
@@ -1593,6 +1635,16 @@ Inspect the working Figma file and connected libraries. Extend the selected curr
 ## Feature
 
 `[Feature name and route]`
+
+## Workflow and export evidence
+
+`[Design surface, organization, plan, Claude Code version/provider, selected system, source revision, sync result]`
+
+`[Export format/date, actual file inventory, chat/README completeness, recipient access, missing inputs and owners]`
+
+`[Reviewed baseline path/hash and open result; repository edit authority]`
+
+Inspect the bundle before implementation. Use the companion handoff template for the full evidence fields and the separate Figma write/capture eligibility checks.
 
 ## Decision
 
@@ -1670,6 +1722,15 @@ Prototype code demonstrates design intent. Use only the mappings explicitly iden
 
 # Appendix C — Final validation checklist
 
+## Setup and observation
+
+- [ ] Surface, organization, plan, provider, installed version, and selected system are recorded.
+- [ ] Design, Design systems, and standalone controls are checked separately.
+- [ ] Sync upload destination and completed source revision are confirmed.
+- [ ] Read, native-write, capture, and Code Connect eligibility are checked separately when Figma is used.
+- [ ] A reviewed baseline export opens and is preserved.
+- [ ] Documentation claims and observed runtime results are recorded separately.
+
 ## Source and scope
 
 - [ ] Current route and production behavior are named.
@@ -1683,7 +1744,7 @@ Prototype code demonstrates design intent. Use only the mappings explicitly iden
 ## Design system
 
 - [ ] The focused code package, tokens, stories, and mappings are linked.
-- [ ] The imported system passed known-screen tests.
+- [ ] Settings form, dense table, and confirmation-flow tests pass; a correction persists in a neighboring state.
 - [ ] Component and token identity were sampled.
 - [ ] Every visible pattern has a disposition.
 - [ ] Raw values and duplicate primitives are absent.
@@ -1719,6 +1780,7 @@ Prototype code demonstrates design intent. Use only the mappings explicitly iden
 - [ ] Prototype-only code is labeled.
 - [ ] Acceptance tests are objective.
 - [ ] Unresolved items have severity, owner, and consequence.
+- [ ] Export inventory and recipient access are checked; missing files or decisions are supplied or assigned.
 - [ ] The Claude Code prompt requires inspection before editing.
 
 ## Implementation proof
@@ -1735,11 +1797,11 @@ Prototype code demonstrates design intent. Use only the mappings explicitly iden
 
 # Appendix D — Simple Design System reference
 
-The following inventory comes from Figma's current open-source SDS repository and its checked-in component metadata. The supplied public Community file could not be queried by the connected account because the tools required editor access. Treat live-file page structure and variants as unverified until the file is copied into an editable Drafts file and inspected.
+The following inventory retains the August 5, 2026 SDS code/metadata findings. The local review pinned SDS React commit `05525f75192a3aa5d5690c5e41277ebd19d2efe1` and used its actual primitives. Native Figma node IDs, counts, and the Table discrepancy were not re-measured; the working duplicate was unavailable. The October review rechecked the official repository README and setup guidance. Pin the repository revision used for a new experiment and verify its metadata against the working Figma copy. The August connected account could not inspect the Community source; current Figma documentation separates read access from Full-seat native writing.
 
 ## Component-bearing metadata pages
 
-The official metadata currently records 396 components across 19 component-bearing pages: Accordion, Avatars, Buttons, Cards, Dialog, Examples, Forms, Icons, Inputs, Menu, Navigation, Notification, Pagination, Sections, Tabs, Tags, Text, Tooltip, and Utilities. This list is not a verified inventory of every top-level page in the live Community file.
+The August metadata inventory recorded 396 components across 19 component-bearing pages: Accordion, Avatars, Buttons, Cards, Dialog, Examples, Forms, Icons, Inputs, Menu, Navigation, Notification, Pagination, Sections, Tabs, Tags, Text, Tooltip, and Utilities. This list is not a verified inventory of every top-level page in the live Community file.
 
 ## Useful component node IDs
 
@@ -1768,7 +1830,7 @@ Use `@color` semantic roles in product design. Raw primitive palettes are inputs
 
 ## Product gaps for Data Pipeline Studio
 
-SDS is a strong source for the shell, forms, controls, typography, themes, layout, and basic feedback. It does not provide the product-defining graph, port, edge, schema-mapping, importer, or operational run-state model. The code repository has a Table primitive, while the checked-in Figma component metadata does not list a Table component. Build those gaps as explicit product extensions from SDS primitives and tokens.
+SDS is a strong source for the shell, forms, controls, typography, themes, layout, and basic feedback. It does not provide the product-defining graph, port, edge, schema-mapping, importer, or operational run-state model. The August inspection found a code Table primitive but no Table component in its Figma metadata. Verify that distinction in the chosen revision and working file. Build confirmed gaps as explicit product extensions from SDS primitives and tokens.
 
 <pagebreak>
 
@@ -1785,17 +1847,16 @@ SDS is a strong source for the shell, forms, controls, typography, themes, layou
 
 ## Current Claude Design limitations
 
-- The product is beta.
-- Large repositories can cause lag or browser instability.
-- Inline comments can intermittently disappear or fail to reach Claude; chat is the documented workaround.
-- Simultaneous multi-person editing is basic and may be unreliable.
-- System import is only as accurate as the source material.
-- Usage is shared with Claude chat, Claude Code, and Cowork.
-- Enterprise access is off by default.
-- Uploaded assets are stored persistently under Anthropic's retention policies.
-- Data residency is not currently supported.
-- Audit logs are not currently supported.
-- A generated accessibility review or design-system check is not human approval.
+1. Claude Design remains beta. Large repositories, intermittent comments, incomplete source imports, and simultaneous editing have documented limits. Mobile can request and view designs; canvas editing and sharing changes require web or desktop. Version history is not yet available. See the [Design help guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
+2. Usage draws from the existing Claude allowance, including Claude Code. Confirm the organization's billing arrangement; usage-based Enterprise differs from seat-based plans. See the [Artifacts admin guide](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans).
+3. Design and Design systems have separate Enterprise template controls. Standalone Design uses its own setting. An enabled organization setting is required before a custom role can grant access.
+4. Uploaded assets persist under the applicable retention policies, Design data residency is unsupported, and the new Artifacts experience is unavailable for the documented CMEK, ZDR, and HIPAA-ready configurations. Confirm tenant requirements before upload.
+5. Standalone Design lacks audit logs. Integrated designs in conversations and Artifacts have artifact-level Compliance API recording. Verify the event coverage required by the team; artifact-level records do not establish complete edit or comment history.
+6. Generated accessibility reviews and conformance checks assist the reviewer. They do not establish human approval, component identity, or production behavior.
+
+## Figma workflow limits
+
+The [write-to-canvas documentation](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/) lists unsupported image assets and custom fonts, a 20kb output-response limit, and manual component publication before Code Connect completes. Those limits apply to that tool. The [code-to-canvas path](https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/) has different seat rules, and editable captured layers still need component and variable inspection. Confirm read quotas, Code Connect eligibility, and file permissions separately.
 
 ## Operational controls
 
@@ -1849,21 +1910,32 @@ SDS is a strong source for the shell, forms, controls, typography, themes, layou
 
 ## Primary product sources
 
-1. Anthropic. “Get started with Claude Design.” June 30, 2026. https://support.claude.com/en/articles/14604416-get-started-with-claude-design
-2. Anthropic. “Set up your design system in Claude Design.” June 17, 2026. https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design
-3. Anthropic. “Using Claude Design for prototypes and UX.” Accessed August 5, 2026. https://claude.com/resources/tutorials/using-claude-design-for-prototypes-and-ux
-4. Anthropic. “Claude Design admin guide for Team and Enterprise plans.” Accessed August 5, 2026. https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans
+1. Anthropic. “Get started with Claude Design.” Accessed October 2, 2026. https://support.claude.com/en/articles/14604416-get-started-with-claude-design
+2. Anthropic. “Set up your design system in Claude Design.” Accessed October 2, 2026. https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design
+3. Anthropic. “Using Claude Design for prototypes and UX.” Accessed October 2, 2026. https://academy.claude.com/tutorials/using-claude-design-for-prototypes-and-ux
+4. Anthropic. “Claude Design admin guide for Team and Enterprise plans.” Accessed October 2, 2026. https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans
 5. Anthropic. “Introducing Claude Design, an Anthropic Labs research preview.” April 17, 2026. https://www.anthropic.com/news/claude-design-anthropic-labs
 
 ## Figma and design-system sources
 
-6. Figma. “Figma MCP Server: Introduction.” Accessed August 5, 2026. https://developers.figma.com/docs/figma-mcp-server/
-7. Figma. “Code Connect integration.” Accessed August 5, 2026. https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/
+6. Figma. “Figma MCP Server: Introduction.” Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/
+7. Figma. “Code Connect integration.” Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/
 8. Figma. “Structure your Figma file for better code.” Accessed August 5, 2026. https://developers.figma.com/docs/figma-mcp-server/structure-figma-file/
 9. Figma. “Workflow lab: Code to canvas.” May 2026. https://help.figma.com/hc/en-us/articles/40219873508247-Workflow-lab-Code-to-canvas
-10. Figma. “Getting started with Code Connect CLI.” Accessed August 5, 2026. https://developers.figma.com/docs/code-connect/quickstart-guide/
-11. Figma. “Simple Design System” open-source repository. Accessed August 5, 2026. https://github.com/figma/sds
+10. Figma. “Getting started with Code Connect CLI.” Accessed October 2, 2026. https://developers.figma.com/docs/code-connect/quickstart-guide/
+11. Figma. “Simple Design System” open-source repository. README accessed October 2, 2026; detailed inventory retains August 5 cutoff. https://github.com/figma/sds
 12. Figma. Simple Design System Community file supplied for this guide. https://www.figma.com/design/AIulMBySUibjRtykdngCUp/Simple-Design-System--Community-?node-id=3-5
+
+## Current setup and operating references
+
+18. Anthropic. “Commands.” Accessed October 2, 2026. https://code.claude.com/docs/en/commands
+19. Anthropic. “Share session output as artifacts.” Accessed October 2, 2026. https://code.claude.com/docs/en/artifacts
+20. Anthropic. “Artifacts admin guide for Team and Enterprise plans.” Accessed October 2, 2026. https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans
+21. Figma. “Set up the remote server.” Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/
+22. Figma. “Write to canvas.” Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/
+23. Figma. “Code to canvas.” Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/
+24. Figma. “Rate limits & access.” Accessed October 2, 2026. https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/
+25. Figma. “Code Connect: Introduction.” Accessed October 2, 2026. https://developers.figma.com/docs/code-connect/
 
 ## Field evidence — directional, not governing
 
@@ -1873,4 +1945,4 @@ SDS is a strong source for the shell, forms, controls, typography, themes, layou
 16. Builder.io. Claude Design review. https://www.builder.io/blog/claude-design
 17. Creative Bloq. Claude Code and Figma MCP review. https://www.creativebloq.com/ai/designing-using-claude-code-and-figma-mcp-how-good-are-they
 
-Product details in this edition reflect sources available on August 5, 2026. Claude Design, Figma MCP, and related integrations are changing quickly. Verify setup commands, plan availability, exports, permissions, governance, and known limitations against current official documentation before adopting the workflow.
+The editable guidance was refreshed from official documentation accessed October 2, 2026. The original August PDF and package remain separate artifacts. This source revision is a review candidate. Its local executable worked example passed the bounded October 2 tests; Claude Design generation, system sync, export, and native Figma reuse remain unverified. SDS metadata counts and node IDs retain their labeled August cutoff. The claim ledger in review/2026-10-02 records sources, accepted changes, and open workflow tests. Field reports remain historical context and do not support current capability claims.
