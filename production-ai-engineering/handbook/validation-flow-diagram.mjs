@@ -1,3 +1,7 @@
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const toolkit=process.env.HANDBOOK_PUBLISHING_TOOLKIT || resolve(import.meta.dirname,'../../publish-evidence-backed-handbook');
+const {renderFixedFlowDiagram}=await import(pathToFileURL(resolve(toolkit,'scripts/fixed-flow-diagrams.mjs')));
 const EXPECTED_RELATIONSHIPS = [
   "R[Model response] --> T[Inspect transport status, finish reason, refusal, and incomplete state]",
   "T --> P[Parse]",
@@ -79,60 +83,14 @@ const EDGES = [
   ["E", "C"],
 ];
 
-const STEP_START_Y = 58;
-const STEP_INTERVAL = 54;
 
-function stepNode({ id, number, label, action, detail }, index) {
-  const y = STEP_START_Y + index * STEP_INTERVAL;
-  return `
-    <g class="validation-node validation-step" data-step="${id}" data-label="${label}" transform="translate(0 ${y})">
-      <line class="validation-step-tick" x1="48" y1="0" x2="72" y2="0" />
-      <text class="validation-step-number" x="84" y="5">${number}</text>
-      <text class="validation-step-title" x="122" y="-6">${action}</text>
-      <text class="validation-step-detail" x="122" y="16">${detail}</text>
-      <line class="validation-row-rule" x1="122" y1="28" x2="730" y2="28" />
-    </g>`;
-}
-
-function edgePath([from, to], index) {
-  const startY = index === 0 ? 25 : STEP_START_Y + (index - 1) * STEP_INTERVAL + 1;
-  const endY = STEP_START_Y + index * STEP_INTERVAL;
-  return `<path class="validation-spine-link" data-from="${from}" data-to="${to}" d="M48 ${startY} V${endY}" />`;
-}
-
+const BINDINGS = {
+  "text1": "From model response to verified outcome",
+  "text2": "The mainline path inspects the response state and continues only when the response is usable. It parses the payload, validates its raw structure, applies only allowed normalization, revalidates the schema and domain invariants, authorizes the exact action, executes or publishes, and verifies the postcondition. Refused or incomplete responses do not proceed to parsing.",
+  "text3": "MODEL RESPONSE",
+  "text4": "Structured output validation flow diagram",
+  "text5": "Model response"
+};
 export function renderValidationFlowDiagram(source) {
-  if (!/^flowchart\s+TD\s*$/m.test(source)) {
-    throw new Error("The validation-flow renderer expects a Mermaid TD flowchart");
-  }
-
-  const sourceRelationships = source
-    .split("\n")
-    .map((line) => line.trim())
-    .filter((line) => line && !line.startsWith("flowchart"));
-  const missing = EXPECTED_RELATIONSHIPS.filter((relationship) => !sourceRelationships.includes(relationship));
-  if (missing.length) {
-    throw new Error(`Validation-flow diagram source changed; missing: ${missing.join(" | ")}`);
-  }
-  const unknown = sourceRelationships.filter((relationship) => !EXPECTED_RELATIONSHIPS.includes(relationship));
-  if (unknown.length) {
-    throw new Error(`Validation-flow diagram source changed; unsupported: ${unknown.join(" | ")}`);
-  }
-
-  return `
-<figure class="validation-flow-diagram" role="region" aria-label="Structured output validation flow diagram" tabindex="0">
-  <svg viewBox="0 0 760 478" role="img" aria-labelledby="validation-flow-title validation-flow-description">
-    <title id="validation-flow-title">From model response to verified outcome</title>
-    <desc id="validation-flow-description">The mainline path inspects the response state and continues only when the response is usable. It parses the payload, validates its raw structure, applies only allowed normalization, revalidates the schema and domain invariants, authorizes the exact action, executes or publishes, and verifies the postcondition. Refused or incomplete responses do not proceed to parsing.</desc>
-    <g class="validation-lines" aria-hidden="true">
-      ${EDGES.map(edgePath).join("\n      ")}
-    </g>
-
-    <g class="validation-origin" data-step="R" data-label="Model response">
-      <line class="validation-origin-rule" x1="48" y1="18" x2="66" y2="18" />
-      <text x="76" y="22">MODEL RESPONSE</text>
-    </g>
-
-    ${STEPS.map(stepNode).join("\n")}
-  </svg>
-</figure>`;
+ return renderFixedFlowDiagram("validation",source,{expected:EXPECTED_RELATIONSHIPS,bindings:BINDINGS,steps:STEPS,edges:EDGES});
 }

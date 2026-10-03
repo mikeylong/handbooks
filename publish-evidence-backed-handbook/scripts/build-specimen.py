@@ -46,24 +46,29 @@ def render_html(
     changelog_mode: str,
 ) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
-    command = [
-        browser,
-        "--headless=new",
-        "--disable-gpu",
-        "--disable-dev-shm-usage",
-        "--allow-file-access-from-files",
-        "--run-all-compositor-stages-before-draw",
-        "--virtual-time-budget=5000",
-        "--no-pdf-header-footer",
-        f"--print-to-pdf={destination}",
-        f"{source.as_uri()}?{urlencode({'changelog': changelog_mode})}",
-    ]
-    if disable_browser_sandbox:
-        command.insert(3, "--no-sandbox")
-    result = subprocess.run(command, capture_output=True, text=True, check=False)
-    if result.returncode != 0 or not destination.is_file():
-        message = (result.stderr or result.stdout).strip()
-        raise SystemExit(f"Browser PDF rendering failed: {message}")
+    module = os.environ.get('HANDBOOK_PLAYWRIGHT_MODULE')
+    if not module: raise SystemExit('Set HANDBOOK_PLAYWRIGHT_MODULE to a pinned Playwright installation')
+    from pdf_theme import theme_tokens
+    from PIL import Image, ImageOps
+    theme = os.environ.get('HANDBOOK_SPECIMEN_THEME','light')
+    html = source.read_text()
+    import re
+    html = re.sub(r'(href|src)="([^":#]+)"',lambda m:m[1]+'="'+(source.parent/m[2]).resolve().as_uri()+'"',html)
+    if theme == 'dark':
+        art = PACKAGE_ROOT/'assets/design-system/dark-illustration-foreground.png'
+        image = Image.open(art).convert('RGBA')
+        frame = Image.open(PACKAGE_ROOT/'assets/design-system/illustration-reference.webp').size
+        image = ImageOps.contain(image,frame,Image.Resampling.LANCZOS)
+        plate=Image.new('RGBA',frame,theme_tokens(theme)['paper'])
+        plate.alpha_composite(image,((frame[0]-image.width)//2,(frame[1]-image.height)//2))
+        derivative=destination.parent/'dark-reference.png';plate.convert('RGB').save(derivative)
+        html=html.replace((PACKAGE_ROOT/'assets/design-system/illustration-reference.webp').as_uri(),derivative.as_uri())
+    isolated=destination.parent/'specimen.html';isolated.write_text(html)
+    css=destination.parent/'theme.css'
+    result=subprocess.run(['node','--input-type=module','-e',"import {pdfThemeCss} from './scripts/pdf-css.mjs';process.stdout.write(pdfThemeCss(process.argv[1]));",theme],cwd=PACKAGE_ROOT,capture_output=True,text=True,check=True)
+    css.write_text(result.stdout)
+    command=['node',str(PACKAGE_ROOT/'scripts/render-chromium-pdf.mjs'),'--browser',browser,'--html',str(isolated),'--output',str(destination),'--theme',theme,'--theme-css',str(css),'--playwright-module',module,'--query',urlencode({'changelog':changelog_mode})]
+    subprocess.run(command,check=True)
 
 
 def effective_page_map(page_map_path: Path, changelog_mode: str) -> dict:
@@ -92,10 +97,12 @@ def finalize(raw_pdf: Path, output: Path, page_map: dict) -> None:
         )
 
     writer = PdfWriter(clone_from=reader)
+    # The governed page map supplies specimen outlines, as in the retained baseline.
+    writer._root_object.pop("/Outlines", None)
     writer.pdf_header = reader.pdf_header
     writer.add_metadata(
         {
-            "/Title": "Canonical Handbook Design System Specimen",
+            "/Title": "Canonical Handbook Design System Specimen · "+ __import__('pdf_theme').theme_tokens(os.environ.get('HANDBOOK_SPECIMEN_THEME','light'))['displayName'],
             "/Author": "Reusable handbook production system",
             "/Subject": "Editorial technical handbook design-system reference",
             "/Keywords": "handbook, editorial design, PDF, evidence, publishing",
@@ -143,6 +150,8 @@ def main() -> None:
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     parser.add_argument("--page-map", type=Path, default=DEFAULT_PAGE_MAP)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--theme",choices=("light","dark"),default="light")
+    parser.add_argument("--playwright-module")
     parser.add_argument("--browser", help="Path to a Chromium-family browser executable")
     parser.add_argument(
         "--disable-browser-sandbox",
@@ -167,6 +176,8 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    os.environ['HANDBOOK_SPECIMEN_THEME']=args.theme
+    if args.playwright_module: os.environ['HANDBOOK_PLAYWRIGHT_MODULE']=args.playwright_module
     source = regular_file(args.source, "Specimen source")
     page_map = regular_file(args.page_map, "Page map")
     output = safe_output_file(args.output, "Output")
@@ -174,6 +185,8 @@ def main() -> None:
         raise SystemExit(
             "Refusing to update the canonical specimen without --update-canonical"
         )
+    if output.exists() and not args.update_canonical: raise SystemExit('Refusing to overwrite an existing specimen')
+    if args.theme=='dark' and output==CANONICAL_OUTPUT.resolve():raise SystemExit('Canonical Light specimen is frozen')
     browser = find_browser(args.browser)
     page_map_data = effective_page_map(page_map, args.changelog_mode)
     if output == CANONICAL_OUTPUT.resolve() and args.changelog_mode != "include":

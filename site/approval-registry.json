@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "publicHost": "https://handbooks.surfaces.systems",
+  "books": [
+    {
+      "id": "production-ai-engineering",
+      "version": "1.4.0",
+      "packageSha256": "fba41dc8be499d14611b2509e14478535b237ae38fcf15e7a4ed14e714377fb6",
+      "variantManifest": {
+        "path": "production-ai-engineering/pdf-variants.json",
+        "sha256": "b438cc0aa492250a40810a49da7aa3e12d4e7946dc221eef6c51a490c35b058a"
+      }
+    },
+    {
+      "id": "ai-evaluation",
+      "version": "1.0.0",
+      "packageSha256": "c0208ca89082f28a200c9fad11a6f64a529b1050debebffed5bfd3e5fe725804",
+      "variantManifest": {
+        "path": "ai-evaluation/pdf-variants.json",
+        "sha256": "26f7306c98127dd081488ab5e8e53f91391dd494f2961bb81faf0c7f968073c9"
+      }
+    },
+    {
+      "id": "ai-consulting",
+      "version": "1.0.0",
+      "packageSha256": "2d604d9ee16e5f3a0e5f33c1afb4e0e71995f0b36249ac0d1082667fa8b66110",
+      "variantManifest": {
+        "path": "ai-consulting/pdf-variants.json",
+        "sha256": "fb346e80b3564a0460be421a2d96cfe6dd3627160ef02007886d78a92639ff53"
+      }
+    }
+  ]
+}

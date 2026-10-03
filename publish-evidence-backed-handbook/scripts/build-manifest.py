@@ -75,10 +75,14 @@ def main() -> None:
         *sorted((PACKAGE_ROOT / "scripts").rglob("*")),
         *sorted((PACKAGE_ROOT / "assets/reader").rglob("*")),
         PACKAGE_ROOT / "assets/design-system/dark-illustration-reference.png",
+        PACKAGE_ROOT / "assets/design-system/dark-illustration-foreground.png",
+        PACKAGE_ROOT / "assets/design-system/dark-illustration-foreground.json",
         PACKAGE_ROOT / "assets/design-system/tokens.json",
+        PACKAGE_ROOT / "assets/design-system/pdf-appearance.json",
         PACKAGE_ROOT / "assets/design-system/print.css",
         PACKAGE_ROOT / "assets/design-system/illustration-reference.webp",
         *sorted((PACKAGE_ROOT / "assets/design-system/templates").glob("*")),
+        *sorted((PACKAGE_ROOT / "assets/design-system/diagrams").glob("*")),
         *sorted((PACKAGE_ROOT / "assets/design-system/fonts").glob("*")),
     ]
     tracked = [path for path in tracked if path.is_file() and "__pycache__" not in path.parts and path.suffix != ".pyc"]

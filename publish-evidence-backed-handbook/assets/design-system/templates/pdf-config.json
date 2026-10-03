@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "handbook-slug",
+  "title": "Handbook title",
+  "version": "1.0.0",
+  "date": "YYYY-MM-DD",
+  "renderer": "reportlab",
+  "source": "source/manuscript.py",
+  "story": "build_story",
+  "docClass": "GuideDocTemplate",
+  "fonts": "toolkit",
+  "pageSizePoints": [420.0, 594.96],
+  "chapterCount": 25,
+  "runningDeck": "Handbook subtitle",
+  "releasedPdf": null,
+  "releasedSha256": null
+}

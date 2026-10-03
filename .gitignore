@@ -26,3 +26,6 @@ migration/2026-10-02-independent-repositories/*
 !migration/2026-10-02-independent-repositories/baseline-pdfs.json
 !migration/2026-10-02-independent-repositories/local-compatibility-links.json
 !migration/2026-10-02-independent-repositories/final-local-state.json
+
+# Isolated PDF review candidates and renderer scratch stay local.
+/candidates/light-dark-pdfs/

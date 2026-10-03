@@ -69,3 +69,7 @@ Each `source/diagrams/<name>.json` defines `title`, `kind` (`sequence` or `branc
 Evaluation and Consulting use the shared flowable converter, package assembler, and release validator. All hosted titles use the skill-owned appearance and artwork runtime. Their four raster diagram types use shared responsive rendering across five placements, with original print fallbacks. Production's existing inline diagrams retain their approved rendering. Book-specific manuscript and PDF layout builders remain book-owned; this consolidation does not certify those builders as a general-purpose shared PDF layout engine.
 
 Rendered regression proof and visual review remain required before a candidate is called ready. Passing fixture tests does not approve a title, edition, or deployment.
+
+## Paired PDF appearances
+
+Apply [PDF appearances](pdf-appearances.md) to explicit Daytime version and Late night version downloads, shared generation, retained releases, additive appearance revisions, exact-hash approval, cross-renderer proof and future editions. An appearance companion preserves its content edition and existing Daytime bytes. Browser printing stays Light. A failed companion blocks the initial three-title launch.

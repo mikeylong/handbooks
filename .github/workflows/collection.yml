@@ -20,3 +20,59 @@ jobs:
           python-version: '3.12'
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: npm run validate
+
+  pdf-runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - run: pip install -r publish-evidence-backed-handbook/requirements.txt
+      - run: npm install --prefix "$RUNNER_TEMP/pdf-browser" playwright@1.62.1
+      - run: npx --prefix "$RUNNER_TEMP/pdf-browser" playwright install --with-deps chromium
+      - name: Extract and validate portable package
+        run: |
+          python publish-evidence-backed-handbook/scripts/package-skill.py --output "$RUNNER_TEMP/toolkit.zip"
+          unzip -q "$RUNNER_TEMP/toolkit.zip" -d "$RUNNER_TEMP/toolkit"
+          python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/validate-package.py"
+          node "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-pdf-downloads.mjs"
+      - name: Generate both portable rendering paths
+        run: |
+          browser=$(find "$HOME/.cache/ms-playwright" -path '*/chrome-linux64/chrome' -print -quit)
+          python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/build-pdf-fixtures.py" --output "$RUNNER_TEMP/pdf-fixtures" --browser "$browser" --playwright-module "$RUNNER_TEMP/pdf-browser/node_modules/playwright"
+      - run: python publish-evidence-backed-handbook/scripts/test-pdf-runtime.py --fixtures "$RUNNER_TEMP/pdf-fixtures" --output "$RUNNER_TEMP/pdf-evidence"
+      - run: node "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-pdf-downloads.mjs" "$RUNNER_TEMP/pdf-fixtures/pdfs/next-edition"
+      - run: python publish-evidence-backed-handbook/scripts/validate-package.py
+      - uses: actions/upload-artifact@v6
+        with:
+          name: pdf-fixtures
+          path: ${{ runner.temp }}/pdf-fixtures/pdfs
+      - uses: actions/upload-artifact@v6
+        with:
+          name: pdf-structural-evidence
+          path: ${{ runner.temp }}/pdf-evidence
+
+  pdfkit-evidence:
+    needs: pdf-runtime
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v7
+        with:
+          name: pdf-fixtures
+          path: pdf-fixtures
+      - name: Render every portable fixture page with Apple PDFKit
+        run: |
+          swiftc publish-evidence-backed-handbook/scripts/render-pdfkit.swift -o "$RUNNER_TEMP/render-pdfkit"
+          while IFS= read -r pdf; do
+            "$RUNNER_TEMP/render-pdfkit" --pdf "$pdf" --output-dir "pdfkit-proof/${pdf%.pdf}" --dpi 144
+          done < <(find pdf-fixtures -name '*.pdf' -type f)
+      - uses: actions/upload-artifact@v6
+        with:
+          name: pdfkit-proof
+          path: pdfkit-proof
