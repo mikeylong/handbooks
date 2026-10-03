@@ -39,6 +39,10 @@ VALIDATE_REVIEW_STATUS="$WORKSPACE/automation/validate-review-status.mjs"
 AUTOMATION_CONFIG="$WORKSPACE/automation/automation.toml"
 RELEASE_POLICY="$WORKSPACE/automation/release-policy.json"
 RENDER_PDF="$WORKSPACE/automation/render-handbook-pdf.mjs"
+PUBLISHING_TOOLKIT="${HANDBOOK_PUBLISHING_TOOLKIT:-${WORKSPACE:h}/publish-evidence-backed-handbook}"
+PUBLISHING_TOOLKIT="${PUBLISHING_TOOLKIT:A}"
+export HANDBOOK_PUBLISHING_TOOLKIT="$PUBLISHING_TOOLKIT"
+PDF_CONFIG="$WORKSPACE/pdf-config.json"
 CANONICAL_SOURCE="$WORKSPACE/AI_ENGINEERING_FIELD_GUIDE.md"
 PRODUCTION_PDF="$WORKSPACE/output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf"
 WRITE_LIKE_MIKE_SKILL="${HANDBOOK_WRITE_LIKE_MIKE_SKILL:-${CODEX_HOME:-${HOME:-}/.codex}/skills/write-like-mike/SKILL.md}"
@@ -86,7 +90,8 @@ write_file_hash() {
 
 write_canonical_manifest() {
   {
-    /usr/bin/printf '%s\n' "$CANONICAL_SOURCE" "$PRODUCTION_PDF"
+    /usr/bin/printf '%s\n' "$CANONICAL_SOURCE" "$PRODUCTION_PDF" "$PDF_CONFIG" "$WORKSPACE/publication.json"
+    "$NODE_BIN" -e 'const fs=require("node:fs"),path=require("node:path"),root=process.argv[1];const manifest=JSON.parse(fs.readFileSync(path.join(root,"references/specimen/manifest.json")));for(const name of ["references/specimen/manifest.json",...Object.keys(manifest.inputs)])console.log(path.join(root,name));' "$PUBLISHING_TOOLKIT"
     /usr/bin/find "$WORKSPACE/handbook" -type f \
       ! -path '*/__pycache__/*' \
       -print
@@ -273,6 +278,7 @@ snapshot_source() {
     "$RELEASE_POLICY" \
     "$RENDER_PDF" \
     "$TOOLCHAIN_DIR/" || return 1
+  /bin/cp "$WORKSPACE/publication.json" "$PRISTINE_DIR/publication.json" || return 1
   /usr/bin/printf 'Immutable baseline staged at %s\n' "$PRISTINE_DIR"
 }
 
@@ -380,6 +386,7 @@ write_context() {
     "$PRISTINE_DIR/AI_ENGINEERING_FIELD_GUIDE.md" \
     "$PRISTINE_DIR/handbook-data/book-data.json" \
     "$PRISTINE_DIR/handbook-data/index-data.json" \
+    "$PRISTINE_DIR/publication.json" \
     "$PRODUCTION_PDF" > "$RUN_DIR/prepared-input-sha256.txt" || return 1
 
   {

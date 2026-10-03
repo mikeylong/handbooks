@@ -79,8 +79,6 @@
           "path": "releases/pdf-appearances/2026-10-02/ai-consulting/parity.json",
           "sha256": "05963814bb05d627c807961b2d090f86f96a6fb4a147e724c87809d98c3dc196"
         },
-        "poppler": "deployments/light-dark-pdfs/proof/ai-consulting/late-night-v2/poppler",
-        "pdfkit": "deployments/light-dark-pdfs/proof/ai-consulting/late-night-v2/pdfkit",
         "visualApproval": {
           "status": "approved",
           "sha256": "181576ce86aac2ba73ab6d5c7aabad43ea5e1a04d10956286c2846653ed86fd7",
@@ -94,6 +92,14 @@
         "appearanceAudit": {
           "path": "releases/pdf-appearances/2026-10-02/ai-consulting/appearance-audit.json",
           "sha256": "ea8a654693ecad1689d7682a3c0a640ba0e12769d5c099af4655df281f3144d5"
+        },
+        "renderInventory": {
+          "path": "releases/pdf-appearances/2026-10-02/ai-consulting/render-proof-inventory.json",
+          "sha256": "79e31b48bdfbf0fb0c545cbee344e26bb7b8c6e2b040fb88afb616081fd50740"
+        },
+        "localPageProofs": {
+          "poppler": "deployments/light-dark-pdfs/proof/ai-consulting/late-night-v2/poppler",
+          "pdfkit": "deployments/light-dark-pdfs/proof/ai-consulting/late-night-v2/pdfkit"
         }
       }
     }
@@ -104,10 +110,10 @@
     "tokenPath": "publish-evidence-backed-handbook/assets/design-system/pdf-appearance.json",
     "tokenSha256": "bffef43a064c4fc6544f118bdf7bd53725f7537bdb50f5e556ace6a95e59eec3",
     "renderer": "reportlab",
-    "toolchainReport": "deployments/light-dark-pdfs/preflight.json",
+    "toolchainReport": "releases/pdf-appearances/2026-10-02/preflight.json",
     "toolkitRevision": "uncommitted implementation based on 394442daf2529d8008abc20db67b130d37f1f120",
     "finalizerVersion": 1,
-    "artworkDerivatives": "candidates/light-dark-pdfs/ai-consulting/v2/ai-consulting-v1.0.0-2026-10-01-late-night-r1-artwork/manifest.json",
+    "artworkDerivatives": "releases/pdf-appearances/2026-10-02/ai-consulting/artwork-derivatives.json",
     "toolkitInputs": {
       "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs": "85cb4af6951eb69829aacb4ad158a70ad81f580b84b783dcbd959945c81045fa",
       "publish-evidence-backed-handbook/scripts/finalize_chromium_pdf.py": "0a3d1f751e4494872650585934d7485027acfe93d8feaf21ee3061f9bc4425b3",
@@ -148,7 +154,13 @@
       "candidates/light-dark-pdfs/ai-consulting/v2/ai-consulting-v1.0.0-2026-10-01-late-night-r1.pdf",
       "--python",
       "<pinned Python from toolchain report>"
-    ]
+    ],
+    "toolchainReportSha256": "1f53aeaf3a5875b297584af7369219648d80a2280cf894598041d549a3b6f1a0",
+    "generationToolkitArchive": {
+      "path": "releases/pdf-appearances/2026-10-02/generation-toolkit.zip",
+      "sha256": "ea5082082437c7738b4e013879eff066450ac134bcae6f0d2958b47e867b47fb",
+      "purpose": "Frozen distribution whose generation scripts exactly match the recorded toolkit input hashes."
+    }
   },
   "releaseAuthorization": {
     "date": "2026-10-02",

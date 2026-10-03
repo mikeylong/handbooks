@@ -82,8 +82,6 @@
           "path": "releases/pdf-appearances/2026-10-02/production-ai-engineering/parity.json",
           "sha256": "32a323f8b4f473e37e386203488d70ffc78f9440fa0f64834225c2d1ce596813"
         },
-        "poppler": "deployments/light-dark-pdfs/proof/production-ai-engineering/late-night-v4/poppler",
-        "pdfkit": "deployments/light-dark-pdfs/proof/production-ai-engineering/late-night-v4/pdfkit",
         "visualApproval": {
           "status": "approved",
           "sha256": "c866ef08809167d9038ceb40c3132a3a5583718f29a9341b38a0dea8cb54fade",
@@ -95,6 +93,14 @@
         "appearanceAudit": {
           "path": "releases/pdf-appearances/2026-10-02/production-ai-engineering/appearance-audit.json",
           "sha256": "3a1c72e233ca80d546b6ec76aa6c92aa881f2fa2e0f0979ccd05c74116889ef6"
+        },
+        "renderInventory": {
+          "path": "releases/pdf-appearances/2026-10-02/production-ai-engineering/render-proof-inventory.json",
+          "sha256": "151ace88931a095fba79a5adc4b09e9e95da21102e2c16a2f04ea1739c8a5391"
+        },
+        "localPageProofs": {
+          "poppler": "deployments/light-dark-pdfs/proof/production-ai-engineering/late-night-v4/poppler",
+          "pdfkit": "deployments/light-dark-pdfs/proof/production-ai-engineering/late-night-v4/pdfkit"
         }
       }
     }
@@ -105,10 +111,10 @@
     "tokenPath": "publish-evidence-backed-handbook/assets/design-system/pdf-appearance.json",
     "tokenSha256": "bffef43a064c4fc6544f118bdf7bd53725f7537bdb50f5e556ace6a95e59eec3",
     "renderer": "chromium",
-    "toolchainReport": "deployments/light-dark-pdfs/preflight.json",
+    "toolchainReport": "releases/pdf-appearances/2026-10-02/preflight.json",
     "toolkitRevision": "uncommitted implementation based on 394442daf2529d8008abc20db67b130d37f1f120",
     "finalizerVersion": 1,
-    "artworkDerivatives": "candidates/light-dark-pdfs/production-ai-engineering/v3/production-ai-engineering-v1.4.0-2026-09-30-late-night-r1-artwork/manifest.json",
+    "artworkDerivatives": "releases/pdf-appearances/2026-10-02/production-ai-engineering/artwork-derivatives.json",
     "toolkitInputs": {
       "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs": "85cb4af6951eb69829aacb4ad158a70ad81f580b84b783dcbd959945c81045fa",
       "publish-evidence-backed-handbook/scripts/finalize_chromium_pdf.py": "0a3d1f751e4494872650585934d7485027acfe93d8feaf21ee3061f9bc4425b3",
@@ -155,21 +161,27 @@
       "<pinned Python from toolchain report>"
     ],
     "rawPdf": {
-      "path": "candidates/light-dark-pdfs/production-ai-engineering/v3/chromium-dark/raw.pdf",
+      "path": "releases/pdf-appearances/2026-10-02/production-ai-engineering/chromium-raw.pdf",
       "sha256": "c687c5bdb2c7f70680a746b95d03ef01b12112b7ccd76e9767e98fe70efbac49"
     },
     "finalizationCommand": [
       "<pinned Python from toolchain report>",
       "publish-evidence-backed-handbook/scripts/finalize_chromium_pdf.py",
       "--input",
-      "candidates/light-dark-pdfs/production-ai-engineering/v3/chromium-dark/raw.pdf",
+      "releases/pdf-appearances/2026-10-02/production-ai-engineering/chromium-raw.pdf",
       "--output",
       "candidates/light-dark-pdfs/production-ai-engineering/v4/production-ai-engineering-v1.4.0-2026-09-30-late-night-r1.pdf",
       "--config",
       "production-ai-engineering/pdf-config.json",
       "--theme",
       "dark"
-    ]
+    ],
+    "toolchainReportSha256": "1f53aeaf3a5875b297584af7369219648d80a2280cf894598041d549a3b6f1a0",
+    "generationToolkitArchive": {
+      "path": "releases/pdf-appearances/2026-10-02/generation-toolkit.zip",
+      "sha256": "ea5082082437c7738b4e013879eff066450ac134bcae6f0d2958b47e867b47fb",
+      "purpose": "Frozen distribution whose generation scripts exactly match the recorded toolkit input hashes."
+    }
   },
   "releaseAuthorization": {
     "date": "2026-10-02",

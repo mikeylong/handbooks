@@ -33,6 +33,7 @@ jobs:
           python-version: '3.12'
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: pip install -r publish-evidence-backed-handbook/requirements.txt
+      - run: python production-ai-engineering/scripts/test-weekly-toolkit.py
       - run: npm install --prefix "$RUNNER_TEMP/pdf-browser" playwright@1.62.1
       - run: npx --prefix "$RUNNER_TEMP/pdf-browser" playwright install --with-deps chromium
       - name: Extract and validate portable package
