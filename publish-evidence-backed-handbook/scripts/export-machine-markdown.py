@@ -35,7 +35,7 @@ def export(source, diagrams, status, companion=None):
     out += ['## Contents', '', '@@CONTENTS@@', '']
     index = {'schemaVersion': 1, 'sourceSha256': digest(source.encode()),
              'nativeExecutionStatus': status, 'sections': [], 'prompts': [],
-             'diagrams': [], 'stopConditionExcerpts': [], 'commands': []}
+             'diagrams': [], 'callouts': [], 'worksheets': [], 'stopConditionExcerpts': [], 'commands': []}
     seen = {}
     chapter = None
     pending = None
@@ -100,6 +100,35 @@ def export(source, diagrams, status, companion=None):
             out.append('')
             index['diagrams'].append({'id': key, 'sourceLine': i + 1, 'definition': definition})
             transformations.append({'sourceLine': i + 1, 'kind': 'diagram-text-equivalent'})
+            i += 1
+            continue
+        directive = re.fullmatch(r'::: (callout|worksheet) (.*)', line)
+        if directive:
+            start = i
+            kind, title = directive.groups()
+            variant = None
+            if kind == 'callout':
+                variant, title = title.split(' | ', 1)
+            i += 1
+            body = []
+            while i < len(lines) and lines[i] != ':::':
+                if lines[i].startswith(':::'):
+                    raise ValueError('Nested or unsupported block directive')
+                body.append(lines[i])
+                copied.append(i + 1)
+                i += 1
+            if i == len(lines):
+                raise ValueError('Unclosed ' + kind)
+            parent = section
+            label = 'Worksheet: ' if kind == 'worksheet' else f'Callout ({variant}): '
+            heading(4, label + title, start + 1)
+            out += ['', *body, '']
+            index['worksheets' if kind == 'worksheet' else 'callouts'].append({
+                'title': title, 'variant': variant, 'section': parent,
+                'sourceStartLine': start + 1, 'sourceEndLine': i + 1,
+                'body': '\n'.join(body)})
+            section = parent
+            transformations.append({'sourceLine': start + 1, 'kind': kind + '-markdown', 'endLine': i + 1})
             i += 1
             continue
         prompt = re.fullmatch(r'::: prompt (.*?) \| (.*)', line)

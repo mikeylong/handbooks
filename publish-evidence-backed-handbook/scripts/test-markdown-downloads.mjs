@@ -38,3 +38,10 @@ try{
  assert.throws(()=>markdownLink({...edition,markdown:{...edition.markdown,version:'4.0.0'}}),/wrong/);
 }finally{await rm(root,{recursive:true,force:true});}
 console.log('Markdown content, code whitespace, prompts, lists, tables, links, diagrams, edition safety, required placement, and 25-chapter future edition passed.');
+
+// Publication is determined by the catalog, separately from artifact approval.
+assert.match(readerMarkdown(html,{...edition,approvalStatus:'approved',publicationStatus:'published'}).markdown,/publication_status: "published"/);
+assert.match(readerMarkdown(html,{...edition,approvalStatus:'approved'}).markdown,/publication_status: "candidate"/);
+const worksheet='<main id="main-content"><section class="chapter"><h2>Worksheet</h2><table><caption>Extension brief</caption><tr><th>Field</th></tr><tr><td>Chosen robot</td></tr><tr><td>Accessories</td></tr></table></section></main>';
+const single=readerMarkdown(worksheet,edition).markdown;
+assert.ok(single.includes('| Field |\n| --- |\n| Chosen robot |\n| Accessories |'));

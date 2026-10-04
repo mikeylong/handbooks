@@ -83,7 +83,6 @@ export function readerMarkdown(html,edition){
    collect(n);if(!rows.length)return '';
    const cells=rows.map(row=>row.children.filter(c=>['th','td'].includes(c.tag)));
    const caption=n.children.filter(c=>c.tag==='caption').map(render).join('');
-   if(cells.every(row=>row.length===1))return caption+cells.map(row=>render(row[0])).join('\n\n');
    const width=Math.max(...cells.map(row=>row.length));
    const data=cells.map(row=>Array.from({length:width},(_,i)=>(row[i]?render(row[i]).trim():'').replace(/\n+/g,'<br>').replace(/\|/g,'\\|')));
    const header=cells[0].some(c=>c.tag==='th')?data.shift():Array(width).fill('');
@@ -96,7 +95,7 @@ export function readerMarkdown(html,edition){
  }
  let content=body.map(render).join('').replace(/[ \t]+\n/g,'\n').replace(/\n{3,}/g,'\n\n').trim();
  content=content.replace(/@@MARKDOWN-CODE-(\d+)@@/g,(_,n)=>codeBlocks[Number(n)].trim());
- const metadata={title:edition.title,version:edition.version,date:edition.date,format:'machine-readable-markdown-v1',publication_status:edition.approvalStatus??'published',canonical_url:`https://handbooks.surfaces.systems/${edition.id}/`,source_reader_sha256:digest(html),...(edition.approvedReaderSha256?{approved_reader_sha256:edition.approvedReaderSha256}:{})};
+ const metadata={title:edition.title,version:edition.version,date:edition.date,format:'machine-readable-markdown-v1',publication_status:edition.publicationStatus??'candidate',canonical_url:`https://handbooks.surfaces.systems/${edition.id}/`,source_reader_sha256:digest(html),...(edition.approvedReaderSha256?{approved_reader_sha256:edition.approvedReaderSha256}:{})};
  const markdown='---\n'+Object.entries(metadata).map(([k,v])=>k+': '+JSON.stringify(v)).join('\n')+'\n---\n\n# '+esc(edition.title)+'\n\n'+content+'\n';
  return {markdown,index:{schemaVersion:1,book:edition.id,version:edition.version,sourceReaderSha256:digest(html),sha256:digest(markdown),sections,prompts}};
 }
