@@ -29,7 +29,7 @@ r=PdfReader(out/'light.pdf');pages=len(r.pages);shutil.copytree(book/'assets/cha
 rc={'skipContentsText':True,'skipStyles':['TOC_TITLE'],'chapterNumbers':True,'semanticLists':True,'tableHeaders':True,'illustrationClass':'ChapterIllustration','artAlt':'Synthetic illustration {number}','diagramClasses':['CoverDiagram','WorkflowLoop'],'storyFunction':'parse_markdown','downloadTitle':cfg['title'],'subtitle':cfg['subtitle'],'canonicalUrl':'/fixture/','extraCss':''}
 env.update(HANDBOOK_BOOK_ROOT=str(book),HANDBOOK_PDF_CONFIG=json.dumps(cfg),HANDBOOK_PDF_THEME='light',PYTHONPATH=str(kit/'scripts'))
 subprocess.run([sys.executable,'-c','from flowable_reader import build_reader;import json,sys;build_reader(sys.argv[1],json.loads(sys.argv[2]),sys.argv[3])',str(book),json.dumps(rc),str(book/'reader')],env=env,check=True)
-html=(book/'reader/index.html').read_text();assert html.count('<ol start="18" class="reader-prose-list">')==25;assert html.count('<th scope="col"><p>Meaning</p></th>')==25;assert html.count('class="chapter-art"')==25
+html=(book/'reader/index.html').read_text();assert html.count('class="reader-prompt"')==25;assert html.count('class="reader-prompt-label">Prompt')==25;assert html.count('<ol start="18" class="reader-prose-list">')==25;assert html.count('<th scope="col"><p>Meaning</p></th>')==25;assert html.count('class="chapter-art"')==25
 for n in range(1,26):assert f'Source note for chapter {n}.' in html
 assert list(r.pages[0].mediabox)==[0,0,420,594.96];assert r.page_labels[0]=='i';assert '1' in r.page_labels
 subprocess.run([sys.executable,str(kit/'scripts/validate_pdf_pair.py'),'--retained',str(out/'light.pdf'),'--candidate',str(out/'dark.pdf'),'--output',str(out/'parity')],check=True)

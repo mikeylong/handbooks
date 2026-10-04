@@ -13,6 +13,7 @@ import {installArtworkPairs} from './artwork-pairs.mjs';
 
 const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads}=await toolkitModule('pdf-downloads.mjs');
 const {installDiagrams} = await toolkitModule('diagrams.mjs');
+const {installPromptBlocks} = await toolkitModule('prompt-blocks.mjs');
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const catalog=JSON.parse(await readFile(resolve(root,'../catalog.json'),'utf8'));
 const books=validateLibrary(catalog);
@@ -73,6 +74,7 @@ for(const pin of books){
   }
   if(manifest.version!==pin.version||manifest.pdf!==pin.pdf||!Number.isSafeInteger(manifest.pages)||manifest.pages<1)throw Error('Approved edition metadata differs from catalog');
   if(publication.sourceRepository!==catalog.repository||publication.editionUrl!==pin.editionUrl||publication.releaseUrl!==pin.editionUrl)throw Error('Public edition links disagree with catalog');
+  html=await installPromptBlocks(source,html,approvedPackage);
   html=editionLinks(html,publication);
   html=await installArtworkPairs(source,pin,output,html,approvedPackage);
   html=await installDiagrams(source,html,approvedPackage);
