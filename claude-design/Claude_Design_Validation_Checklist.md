@@ -188,12 +188,8 @@ Official prerequisites: [Claude Code commands](https://code.claude.com/docs/en/c
 **Bounded follow-up:** `[item, severity, owner, due date]`  
 **Unverified:** `[item and consequence]`
 
-## Worked-example review status
+## Complete the workflow checks
 
-The October 2 local experiment is a bounded teaching harness. Read the stage 2
-handoff and test matrix under `review/2026-10-02/` for exact coverage and failures.
-Claude Design generation, three imported-system tests, correction persistence,
-conversion/upload, actual export contents, recipient access, and native Figma
-identity remain unverified. Leave those checklist items open. The local graph
-uses named connections; pointer port dragging and drawn-edge behavior need their
-own evidence. Automated keyboard actions do not establish screen-reader usability.
+Run this checklist against the prototype you generate, its actual export, and the resulting implementation. Check imported-system fidelity and correction persistence in Claude Design, recipient access to the export, and component instances and variable bindings in Figma. Leave each required item open until you have inspected its result.
+
+The companion graph uses named connections. Test pointer port dragging and drawn edges separately when your prototype includes them. Test screen-reader usability with assistive technology alongside the keyboard checks.

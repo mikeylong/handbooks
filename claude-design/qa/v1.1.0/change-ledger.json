@@ -1,0 +1,25 @@
+{
+  "readerFacingContentChanged": true,
+  "summary": "Runnable local exercise and clearer application handoffs.",
+  "changes": [
+    {
+      "category": "Addition",
+      "section": "Chapter 1 and Chapter 10",
+      "text": "Added local setup commands, a downloadable exercise, and application handoffs with access checks.",
+      "rationale": "Readers can run the fixture journey and carry its artifacts between tools.",
+      "sources": [
+        "https://code.claude.com/docs/en/commands",
+        "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Orientation, chapter notes, and SDS reference",
+      "text": "Replaced review history with instructions for checking prototypes, exports, and component mappings.",
+      "rationale": "The handbook now explains the reader's workflow while review findings remain separate.",
+      "sources": [
+        "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/"
+      ]
+    }
+  ]
+}

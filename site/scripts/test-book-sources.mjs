@@ -6,7 +6,7 @@ import {validateLibrary,safePath,validatePackage} from './book-sources.mjs';
 const catalog=JSON.parse(await readFile(new URL('../../catalog.json',import.meta.url),'utf8'));
 const books=validateLibrary(catalog);
 const fixture=books.find(b=>b.id==='ai-evaluation');
-assert.ok(books.some(b=>b.id==='claude-design'&&b.version==='1.0.0'));
+assert.ok(books.some(b=>b.id==='claude-design'&&b.version==='1.1.0'));
 const stale=structuredClone(catalog);stale.books.find(b=>b.id==='claude-design').version='2.0.0';assert.throws(()=>validateLibrary(stale),/Unapproved public edition/);
 for(const id of ['poisonous-mushrooms','ai-product-design']) {
  const modified=structuredClone(catalog);const draft=modified.books.find(b=>b.id===id);draft.status='published';draft.version='1.0.0';draft.pdfSha256='a'.repeat(64);
