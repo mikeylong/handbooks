@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {validateVariantIdentity,downloadLinks,validateDownloads,installReaderDownloads} from './pdf-downloads.mjs';
-const edition={id:'future-title',title:'Future title',version:'2.0.0',date:'2026-10-02',pdf:'previous.pdf',sha256:'a'.repeat(64),pages:25};
+const edition={id:'future-title',title:'Future title',version:'2.0.0',date:'2026-10-02',pdf:'previous.pdf',sha256:'a'.repeat(64),pages:25,markdown:{version:'2.0.0',publicUrl:'/future-title/editions/v2.0.0/future-title-v2.0.0.md',downloadFilename:'future-title-v2.0.0.md',sha256:'c'.repeat(64)}};
 const m={schemaVersion:1,book:edition.id,...edition,variants:['light','dark'].map((theme,i)=>({theme,displayName:i?'Late night version':'Daytime version',appearanceRevision:1,approvalStatus:'candidate',sha256:(i?'b':'a').repeat(64),bytes:1000,pages:25,publicUrl:`/future-title/editions/v2.0.0/future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,downloadFilename:`future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,pageMap:{path:'map.json',sha256:'c'.repeat(64)}}))};
 assert.equal(validateVariantIdentity(m,edition,{candidate:true}).length,2);
 assert.throws(()=>validateVariantIdentity(m,edition),/Unapproved/);

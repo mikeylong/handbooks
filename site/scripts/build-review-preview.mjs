@@ -8,6 +8,7 @@ import {digest,safePath} from '../../publish-evidence-backed-handbook/scripts/re
 import {installArtworkPairs} from '../../publish-evidence-backed-handbook/scripts/artwork-pairs.mjs';
 import {installDiagrams} from '../../publish-evidence-backed-handbook/scripts/diagrams.mjs';
 import {resolvePdfVariants,installReaderDownloads,downloadLinks,editionDownloadDetails,validateDownloads} from '../../publish-evidence-backed-handbook/scripts/pdf-downloads.mjs';
+import {writeMarkdownEdition} from '../../publish-evidence-backed-handbook/scripts/markdown-downloads.mjs';
 import {addSiteTheme,validateSiteTheme} from '../../publish-evidence-backed-handbook/scripts/site-theme.mjs';
 import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
 const {values:v}=parseArgs({options:{registry:{type:'string'},output:{type:'string'}}});
@@ -26,7 +27,7 @@ const edition={id:registry.book,...manifest,...publication,pdfUrl:`/${registry.b
 const variants=await resolvePdfVariants(source,edition,registry.variantManifest,{candidate:true,collectionRoot:root});
 await mkdir(resolve(output,edition.id),{recursive:true});await cp(resolve(source,pkg.readerDirectory),resolve(output,edition.id),{recursive:true});
 let html=await readFile(resolve(output,edition.id,'index.html'),'utf8');
-html=await installArtworkPairs(source,edition,output,html,pkg);html=await installDiagrams(source,html,pkg);html=installReaderDownloads(html,edition,variants);
+html=await installArtworkPairs(source,edition,output,html,pkg);html=await installDiagrams(source,html,pkg);edition.markdown=await writeMarkdownEdition(output,edition,html);html=installReaderDownloads(html,edition,variants);
 html=html.replace('<p class="cover-date">','<p class="review-candidate" role="note">Review candidate · Publication has not been approved.</p><p class="cover-date">').replace('</head>','<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/gallery.css"><link rel="stylesheet" href="/pdf-downloads.css"></head>');
 html=addSiteTheme(html);validateSiteTheme(html);validateDownloads(html,edition,variants);await writeFile(resolve(output,edition.id,'index.html'),html);
 const headers=[];

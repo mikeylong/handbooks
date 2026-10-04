@@ -10,6 +10,7 @@ Produce a candidate handbook whose claims, editorial decisions, visual system, e
 ## Non-negotiable contract
 
 - Work from an editable canonical source. Never hand-edit a generated PDF.
+- Every hosted handbook must offer a machine-readable Markdown edition beside its PDF links. Use the shared Markdown/download runtime for current and future editions, preserving exact content-edition identity and released PDF bytes. Validate content coverage, code/prompt preservation, links, and responsive placement.
 - Keep reusable reader rendering, appearance assets, artwork and diagram processing, and validation in this skill. Books own content, assets, and semantic definitions and use thin adapters. Do not maintain copied runtime implementations in individual handbooks.
 - Preserve the target project's approved voice and visual system. Use this package's specimen as the default system only when no different house style governs the project.
 - Before layout or illustration work, visually render `references/specimen/canonical-handbook-specimen.pdf`, consult `references/specimen/canonical-page-map.json`, and read `references/design-system.md`.

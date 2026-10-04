@@ -12,6 +12,7 @@ import {finalizeSiteThemes} from './site-theme.mjs';
 import {installArtworkPairs} from './artwork-pairs.mjs';
 
 const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads}=await toolkitModule('pdf-downloads.mjs');
+const {writeMarkdownEdition}=await toolkitModule('markdown-downloads.mjs');
 const {installDiagrams} = await toolkitModule('diagrams.mjs');
 const {installPromptBlocks} = await toolkitModule('prompt-blocks.mjs');
 const {installTerminalBlocks} = await toolkitModule('terminal-blocks.mjs');
@@ -90,6 +91,7 @@ for(const pin of books){
   const registryBook=registry.books.find(b=>b.id===pin.id&&b.version===pin.version);
   if(!registryBook||registryBook.packageSha256!==APPROVAL_REGISTRY.books.find(b=>b.id===pin.id).packageSha256)throw Error('Review package identity mismatch');
   const variants=await resolvePdfVariants(source,edition,registryBook.variantManifest,{candidate:!!reviewRegistryPath,collectionRoot:resolve(root,'..'),measurePdfPages:false});
+  edition.markdown=await writeMarkdownEdition(output,edition,html);
   html=installReaderDownloads(html,edition,variants);
   html=html.replace('</head>','<link rel="stylesheet" href="/pdf-downloads.css"></head>');
   validateDownloads(html,edition,variants);edition.pdfVariants=variants;
