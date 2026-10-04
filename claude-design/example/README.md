@@ -12,7 +12,7 @@ For the full walkthrough, including application handoffs and access checks, use 
 4. Select the imported source, press C, and choose Connect. Add quarantine, then connect Validate Customer Schema to Quarantine Invalid Rows.
 5. Save and Run. The warehouse target `missing-warehouse` fails. Select Publish to Warehouse, set Configuration to `customer_health`, Save, and Run again.
 6. Expect 3 published, 3 quarantined, and 0 rejected rows. The exact IDs and normalized values live in `public/fixtures/expected-results.json`. The JSON fixture has the same six logical records.
-7. Run `npm run check` for model and fixture assertions and `npm run build` for the production bundle check. The browser action scripts and screenshots are in [the local test evidence](../review/2026-10-02/stage-2-evidence/).
+7. Run `npm run check` for model and fixture assertions and `npm run build` for the production bundle check. The recorded test results are in [the test matrix](../review/2026-10-02/stage-2-test-matrix.md).
 
 The server binds only to 127.0.0.1:4192. Reset fixture clears only this example's named localStorage key. Save writes local browser storage. Run does not call a warehouse or publish customer rows. The controls under Teaching test controls simulate view-only access, session expiry, Save failure, a newer revision, and preview errors.
 
