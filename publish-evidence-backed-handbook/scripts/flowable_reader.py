@@ -61,6 +61,14 @@ def build_reader(book_root, config, output, chrome=None):
     if s=='H1':blocks.append('</header>')
    elif s not in ['CoverDeck','ChapterKicker']:blocks.append(f'<p>{t}</p>')
   elif isinstance(x,Table):
+   if hasattr(x, '_code_body'):
+    language=getattr(x, '_code_language', '').lower()
+    terminal=language in {'sh','shell','bash','zsh','fish','console','powershell','ps1'}
+    label='Terminal' if terminal else 'Code'
+    css='reader-code'+(' reader-terminal' if terminal else '')
+    language_class=' class="language-'+html.escape(language,quote=True)+'"' if language else ''
+    blocks.append('<figure class="'+css+'"><figcaption class="reader-code-heading"><span class="reader-code-label">'+label+'</span></figcaption><pre><code'+language_class+'>'+html.escape(x._code_body)+'</code></pre></figure>')
+    return
    # Markdown prompt directives retain their semantic paragraph styles in the
    # PDF story. Render them as examples, rather than ordinary data tables.
    if (len(x._cellvalues)>1 and all(len(row)==1 and isinstance(row[0],Paragraph) for row in x._cellvalues)

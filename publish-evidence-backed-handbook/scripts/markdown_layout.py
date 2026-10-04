@@ -409,7 +409,7 @@ def prompt_block(tool: str, title: str, body: str) -> list[Flowable]:
     return [table]
 
 
-def code_block(body: str) -> Table:
+def code_block(body: str, language: str = "") -> Table:
     rows = [[paragraph] for paragraph in _preformatted_paragraphs(body, CODE)]
     table = Table(rows, colWidths=[CONTENT_W], hAlign="LEFT", splitByRow=1, splitInRow=1, spaceAfter=7)
     table.setStyle(TableStyle([
@@ -423,6 +423,9 @@ def code_block(body: str) -> Table:
         ("TOPPADDING", (0, 0), (-1, 0), 8),
         ("BOTTOMPADDING", (0, -1), (-1, -1), 8),
     ]))
+    # Retain the fence source for semantic hosted rendering without changing PDF layout.
+    table._code_body = body
+    table._code_language = language
     return table
 
 
@@ -1024,13 +1027,14 @@ def parse_markdown() -> list[Flowable]:
             continue
 
         if stripped.startswith("```"):
+            language = stripped[3:].strip().split()[0] if stripped[3:].strip() else ""
             index += 1
             code_lines: list[str] = []
             while index < len(lines) and not lines[index].strip().startswith("```"):
                 code_lines.append(lines[index])
                 index += 1
             index += 1
-            story.append(code_block("\n".join(code_lines)))
+            story.append(code_block("\n".join(code_lines), language))
             continue
 
         if stripped.startswith("|") and index + 1 < len(lines) and re.match(r"^\|?\s*:?-{3,}", lines[index + 1].strip()):

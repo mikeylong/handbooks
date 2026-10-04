@@ -48,6 +48,10 @@ Keep these tests in the skill so every caller uses the same checks:
 
 Prompt directives render with a compact “Prompt” indicator, a tool/task heading, and a monospace body. For frozen legacy readers, a book-owned `prompt-bindings.json` records the approved reader hash and each prompt table's hash, title, and placement count. The collection build applies `scripts/prompt-blocks.mjs` without changing the frozen reader or PDFs. Unbound data tables remain unchanged; stale bindings fail the build.
 
+## Terminal commands
+
+Shell fences render in a bordered block with a compact “Terminal” label and a monospace `pre`/`code` body. Preserve exact source text, indentation, and line breaks. Do not add a shell prompt to copyable commands. Other code fences use the “Code” label. Frozen readers use book-owned `terminal-bindings.json` hashes to bind their original command callouts and exact source bodies; stale readers, changed commands, and missing placements fail the build.
+
 ## Runtime dependencies
 
 Use Node.js 22 or newer for the hosted modules and tests. Install this package's pinned Python requirements for the ReportLab reader converter. PDF diagram raster fallbacks also require Poppler; cross-renderer proof uses Apple PDFKit through the supplied Swift renderer.
