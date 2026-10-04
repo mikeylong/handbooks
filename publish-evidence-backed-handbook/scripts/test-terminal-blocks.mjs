@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {renderBoundTerminals} from './terminal-blocks.mjs';
+const body='printf "<ready> & done"\n\n  npm run handoff -- 4207';
+const block='<aside class="reader-callout"><p>printf "&lt;ready&gt; &amp; done"<br><br>  npm run handoff -- 4207</p></aside>';
+const ordinary='<aside class="reader-callout"><p>Ordinary note.</p></aside>';
+const sha256=createHash('sha256').update(block).digest('hex');
+const manifest={schemaVersion:1,readerSha256:'reader',terminals:[{sha256,body,placements:1}]};
+const rendered=renderBoundTerminals(block+ordinary,manifest,'reader');
+assert.ok(rendered.includes('<code class="language-sh">printf "&lt;ready&gt; &amp; done"\n\n  npm run handoff -- 4207</code>'));
+assert.ok(rendered.includes(ordinary));
+assert.equal((rendered.match(/reader-terminal/g)||[]).length,1);
+assert.throws(()=>renderBoundTerminals(block,manifest,'stale'),/Stale/);
+assert.throws(()=>renderBoundTerminals(ordinary,manifest,'reader'),/placement/);
+assert.throws(()=>renderBoundTerminals(block+block,manifest,'reader'),/placement/);
+assert.throws(()=>renderBoundTerminals(block,{...manifest,terminals:[{sha256,body:'changed',placements:1}]},'reader'),/source/);
+assert.throws(()=>renderBoundTerminals(block,{...manifest,terminals:[...manifest.terminals,...manifest.terminals]},'reader'),/Invalid/);
+console.log('PASS frozen terminal overlay, exact commands, ordinary callouts and stale binding rejection');

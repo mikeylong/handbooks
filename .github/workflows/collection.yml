@@ -44,6 +44,7 @@ jobs:
           node "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-pdf-downloads.mjs"
           python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-font-resources.py"
           python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-markdown-runtime.py" --output "$RUNNER_TEMP/markdown-regression"
+          python "$RUNNER_TEMP/toolkit/publish-evidence-backed-handbook/scripts/test-code-blocks.py"
       - name: Generate both portable rendering paths
         run: |
           browser=$(find "$HOME/.cache/ms-playwright" -path '*/chrome-linux64/chrome' -print -quit)

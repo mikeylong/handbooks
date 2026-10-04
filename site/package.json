@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "node scripts/build-site.mjs",
-    "test": "node scripts/test-book-sources.mjs && node scripts/test-artwork-pairs.mjs && node ../publish-evidence-backed-handbook/scripts/test-diagrams.mjs && node scripts/test-publication-front.mjs && node scripts/test-gallery-focus.mjs && node scripts/test-site-theme.mjs && node scripts/test-pdf-headers.mjs && node scripts/test-edition-changelog.mjs && node ../publish-evidence-backed-handbook/scripts/test-prompt-blocks.mjs",
+    "test": "node scripts/test-book-sources.mjs && node scripts/test-artwork-pairs.mjs && node ../publish-evidence-backed-handbook/scripts/test-diagrams.mjs && node scripts/test-publication-front.mjs && node scripts/test-gallery-focus.mjs && node scripts/test-site-theme.mjs && node scripts/test-pdf-headers.mjs && node scripts/test-edition-changelog.mjs && node ../publish-evidence-backed-handbook/scripts/test-prompt-blocks.mjs && node ../publish-evidence-backed-handbook/scripts/test-terminal-blocks.mjs",
     "validate:front-pages": "npm run build && npm test",
     "preview": "python3 -m http.server 4181 --bind 127.0.0.1 --directory output/site"
   }

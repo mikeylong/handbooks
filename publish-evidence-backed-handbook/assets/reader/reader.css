@@ -1951,6 +1951,44 @@ pre {
   border: 0;
 }
 
+
+.reader-code {
+  margin: 2rem 0;
+  min-width: 0;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-raised);
+}
+
+.reader-code-heading {
+  margin: 0;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.reader-code-label {
+  display: inline-block;
+  border: 1px solid var(--line-strong);
+  padding: 0.12rem 0.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.reader-code pre {
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.reader-code code {
+  font: inherit;
+}
+
 .reader-prompt {
   margin: 2rem 0;
   border-block: 1px solid var(--line-strong);

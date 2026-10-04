@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "readerSha256": "137b0ae9e13d9f19186e099e0577fc4c6cfaa51c43b2b5addb31ded5c277a151",
+  "terminals": [
+    {
+      "sha256": "d8d02301fe747218dcd96399c7da086fa49ae6d5530d004dcd7dd8608e90cfb3",
+      "body": "cd example\nnpm ci --ignore-scripts\nnpm run check\nnpm run build\nnpm run dev",
+      "placements": 1
+    }
+  ]
+}
