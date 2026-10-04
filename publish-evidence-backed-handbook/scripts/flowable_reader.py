@@ -61,6 +61,15 @@ def build_reader(book_root, config, output, chrome=None):
     if s=='H1':blocks.append('</header>')
    elif s not in ['CoverDeck','ChapterKicker']:blocks.append(f'<p>{t}</p>')
   elif isinstance(x,Table):
+   # Markdown prompt directives retain their semantic paragraph styles in the
+   # PDF story. Render them as examples, rather than ordinary data tables.
+   if (len(x._cellvalues)>1 and all(len(row)==1 and isinstance(row[0],Paragraph) for row in x._cellvalues)
+       and x._cellvalues[0][0].style.name=='PromptHead'
+       and all(row[0].style.name=='PromptBody' for row in x._cellvalues[1:])):
+    heading=txt(x._cellvalues[0][0].text)
+    body=''.join(cell(row[0]) for row in x._cellvalues[1:])
+    blocks.append('<figure class="reader-prompt"><figcaption class="reader-prompt-heading"><span class="reader-prompt-label">Prompt</span><span class="reader-prompt-title">'+heading+'</span></figcaption><div class="reader-prompt-body">'+body+'</div></figure>')
+    return
    kind=prose_list_kind(x) if config['semanticLists'] else None
    if kind:
     tag='ol' if kind=='numbered' else 'ul'
