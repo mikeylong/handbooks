@@ -1,0 +1,7 @@
+# Version 1.1.0 release review
+
+The focused review covered the manuscript and companion prose, exercise archive, PDF pair, reader, edition records, catalog pins, retained routes, and download headers. The handbook now gives readers setup and application handoff steps. Historical access failures remain in a separate review report. The guide distinguishes an attempted access denial from a connection failure or an action not attempted. No claim of native Claude Design or Figma verification was added.
+
+Validation passed: collection npm run validate, both exact-hash PDF structural checks, 129-page theme text parity, Poppler and Apple PDFKit rendering, final-page changelog checks, safe archive extraction, clean dependency installation, eight exercise model tests, Vite production build, and the recorded import/failure/reload/repair browser journey. The complete collection validates all four approved books and rejects changed package hashes, unapproved drafts, unsafe paths, missing download identities, and stale edition records.
+
+Version 1.0.0 PDF bytes and their public routes are preserved. The archived first-edition page is included in the approved package. Other books, shared artwork, and publishing runtime sources have no changes. The released PDFs remain untagged; this release does not certify native Design generation, system sync, export, or Figma reuse. No actionable in-scope finding remains after adding the new download headers.

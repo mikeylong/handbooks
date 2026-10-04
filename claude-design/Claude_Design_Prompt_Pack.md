@@ -4,7 +4,7 @@ Copy-ready prompts for the workflow in the *Claude Design Field Guide*. Replace 
 
 ## Setup before using the prompts
 
-These prompts describe work to perform. The October 2 review tested a local SDS React teaching example. Claude Design generation, sync, export, and native Figma reuse remain unverified. Follow [Simple Design System Setup](./Simple_Design_System_Setup.md) and record the surface, account/organization, version, provider, selected system, and source revision.
+Follow [Simple Design System Setup](./Simple_Design_System_Setup.md) before using these prompts. Record the surface, account/organization, version, provider, selected system, and source revision.
 
 For React systems, the [Claude Code command reference](https://code.claude.com/docs/en/commands) documents `/design-login` followed by `/design-sync [hint]`. Sync converts and uploads the system; scope the source and confirm the destination. Manual Design MCP registration is not a prerequisite in the current reviewed instructions. `/design [brief]` drafts artboards and requires v2.1.265+, enabled Design, and an artifact-capable session. Test interactivity and exports on the chosen surface before treating the result as a working product prototype.
 
@@ -308,7 +308,7 @@ separate named section with capture date and repository revision.
 
 ## 14. Check the fixture before building the example
 
-**Tool:** Claude Code or local repository tools. This is a local fixture test, not a Claude Design observation.
+**Tool:** Claude Code or local repository tools.
 
 ```text
 Inspect customers-august.csv, its JSON equivalent, and expected-results.json.

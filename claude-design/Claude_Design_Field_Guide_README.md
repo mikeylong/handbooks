@@ -32,8 +32,8 @@ The collection build then installs the paired artwork, responsive semantic diagr
 
 ## Evidence and limits
 
-See `release-manifest.json`, `artwork-pairs.json`, `assets/chapter-art/dark/generation-records.json`, `diagram-bindings.json`, and the packaged review evidence. The candidate-specific maps mark all eleven required chapter images. The first-edition decision requires no changelog page, navigation entry or bookmark.
+See `release-manifest.json`, `artwork-pairs.json`, `assets/chapter-art/dark/generation-records.json`, `diagram-bindings.json`, and the packaged review evidence. The candidate-specific maps mark all eleven required chapter images. Version 1.1.0 includes a final-page changelog, navigation entry, and bookmark.
 
 The PDFs have searchable text, embedded fonts, outlines, internal links and matching printed/logical page labels. The PDFs are untagged; PDF/UA and screen-reader usability are not claimed. The HTML reader supplies semantic lists, table headers, navigation and diagram relationships.
 
-The retained August builder and PDF are historical artifacts. These instructions reproduce the October first edition in an isolated directory. The exact approved PDFs retain their printed candidate label.
+The retained August builder and PDF are historical artifacts. These instructions reproduce the current edition in an isolated directory. Version 1.0.0 remains archived with its original bytes and printed candidate label.

@@ -42,7 +42,7 @@
       "status": "published",
       "pages": 126,
       "source": "Claude_Design_Field_Guide_Source.md",
-      "pdf": "output/pdf/claude-design-v1.0.0-2026-10-02-daytime-r1.pdf",
+      "pdf": "output/pdf/claude-design-v1.1.0-2026-10-03-daytime-r1.pdf",
       "build": [
         "npm",
         "run",
@@ -55,12 +55,12 @@
           "validate"
         ]
       ],
-      "pdfSha256": "4c0b1392f09dc792df4fe486abf8e8ac6a6849adcccafbbe622195633dc76341",
+      "pdfSha256": "115003a4a47c92d10d0a59b0e43cbbb2401a19bb6ea606d95c037d0d7697801c",
       "historicalRepository": "https://github.com/mikeylong/claude-design-field-guide",
       "repository": "https://github.com/mikeylong/handbooks",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "publicUrl": "https://handbooks.surfaces.systems/claude-design/",
-      "editionUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.0.0/",
+      "editionUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.1.0/",
       "coverPlaceholder": "{{CLAUDE_DESIGN_COVER}}"
     },
     {
@@ -196,6 +196,6 @@
     "production-ai-engineering": "1.4.0",
     "ai-evaluation": "1.0.0",
     "ai-consulting": "1.0.0",
-    "claude-design": "1.0.0"
+    "claude-design": "1.1.0"
   }
 }

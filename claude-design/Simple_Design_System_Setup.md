@@ -1,6 +1,6 @@
 # Simple Design System Setup for Claude Design
 
-Use this setup to pair a working Figma copy with the SDS React package and give Claude Design a focused source package. Official documentation was checked October 2, 2026. These instructions have not been executed by the guidance refresh; record observed results as you work. The original August PDF and ZIP remain unchanged.
+Use this setup to pair a working Figma copy with the SDS React package and give Claude Design a focused source package.
 
 ## 1. Create the working Figma file
 
@@ -13,7 +13,7 @@ Use this setup to pair a working Figma copy with the SDS React package and give 
    - Working file: the new editable `/design/<fileKey>/...` URL.
 6. Confirm the account used by connected tools can edit the working file.
 
-Keep the public Community source untouched. The August connected account could not inspect it. Current Figma MCP documentation permits reads of content the authenticated account can view or edit; native writes require a Full seat and edit permission for an existing file. Confirm account, seat, file membership, and available tools rather than treating every read as editor-only. Use `whoami` for identity/seat evidence and a small read of the copied file. See [MCP access](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/) and [native writing](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/).
+Keep the public Community source untouched. Figma MCP permits reads of content the authenticated account can view or edit; native writes require a Full seat and edit permission for an existing file. Confirm the account, seat, file membership, and available tools. Use `whoami` to check identity and seat, then inspect a small selection in the copied file. See [MCP access](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/) and [native writing](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/).
 
 ## 2. Pair the codebase
 
@@ -195,14 +195,8 @@ The Design help guide lists ZIP, PDF, PPTX, HTML, and Claude Code handoff; Googl
 - [Anthropic design-system setup](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design)
 - [Anthropic Claude Design getting started](https://support.claude.com/en/articles/14604416-get-started-with-claude-design)
 
-## October 2 worked-example evidence
+## Check the system in each tool
 
-Stage 2 pinned `figma/sds` commit `05525f75192a3aa5d5690c5e41277ebd19d2efe1`
-and rendered its React Button, InputField, SelectField, Dialog, Tag, and Table
-primitives in the isolated teaching example. The runtime imports are recorded
-in the stage 2 component map. The imported primitives establish code reuse for this local app.
-Local code reuse does not prove Claude Design imported the system or that Figma instances and
-variable bindings match. No working Figma duplicate was supplied. The connected
-account's Full seat on a Pro plan also does not establish Code Connect eligibility.
-Keep sync, three known-screen tests, correction persistence, Figma identity, and
-export checks open until their actual destination and evidence are available.
+The companion application uses `figma/sds` commit `05525f75192a3aa5d5690c5e41277ebd19d2efe1` for its React Button, InputField, SelectField, Dialog, Tag, and Table primitives. Pin your chosen revision before importing the system.
+
+After sync, generate the three known screens in Claude Design and inspect their component and token mappings. Apply a correction and confirm that it persists. In Figma, inspect the matching component instances and variable bindings in your working copy. Confirm Code Connect eligibility separately. Export the reviewed prototype and check that the intended recipient can open the complete handoff.

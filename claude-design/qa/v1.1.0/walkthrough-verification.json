@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-03",
+  "node": "22.16.0",
+  "cleanDependencyInstall": "pass",
+  "modelTests": {
+    "pass": 8,
+    "fail": 0
+  },
+  "viteBuild": "pass",
+  "readerBuild": "pass",
+  "localLinks": "pass",
+  "browser": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "csvImport": "six rows",
+    "firstRun": "failed",
+    "failureSurvivesReload": true,
+    "repairTarget": "customer_health",
+    "repairedRun": "succeeded",
+    "published": 3,
+    "quarantined": 3,
+    "rejected": 0,
+    "publishedIds": [
+      "C001",
+      "C002",
+      "C006"
+    ]
+  },
+  "externalWorkflowExecuted": false,
+  "published": false
+}
