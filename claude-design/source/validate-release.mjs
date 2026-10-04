@@ -10,6 +10,12 @@ const catalog=JSON.parse(await readFile(resolve(root,'catalog.json'),'utf8'));
 const pin=validateLibrary(catalog).find(b=>b.id==='claude-design');assert.ok(pin);
 const pkg=await validatePackage(book,pin);
 const manifest=JSON.parse(await readFile(resolve(book,'release-manifest.json'),'utf8'));
+assert.equal(pin.pages,manifest.pages,'Catalog page count differs from the approved PDF');
+const comparison=JSON.parse(await readFile(resolve(book,'qa','v'+manifest.version,'edition-diff.json'),'utf8'));
+for(const path of Object.values(comparison.artifacts)){
+ assert.match(path,/^[A-Za-z0-9-]+\.patch$/);
+ assert.ok((await readFile(resolve(book,'qa','v'+manifest.version,path))).length,'Missing edition comparison patch');
+}
 const registry=APPROVAL_REGISTRY.books.find(b=>b.id===pin.id);
 const variants=await resolvePdfVariants(book,{id:pin.id,...manifest},registry.variantManifest,{collectionRoot:root});
 for(const v of variants){
