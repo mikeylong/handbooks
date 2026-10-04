@@ -2,6 +2,7 @@
 import {readFile,lstat,realpath} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {safePath,digest} from './reader-paths.mjs';
+import {markdownLink} from './markdown-downloads.mjs';
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 export const PDF_NAMES=Object.freeze({light:'Daytime version',dark:'Late night version'});
 export function validateVariantIdentity(manifest, edition, {candidate=false}={}) {
@@ -44,7 +45,7 @@ export async function resolvePdfVariants(source,edition,manifestPin,{candidate=f
  return variants;
 }
 export function downloadLinks(edition,variants,{compact=false}={}) {
- return `<span class="pdf-downloads" data-pdf-downloads>${compact?'PDF:':'<span class="pdf-download-title">Download PDF</span>'} ${variants.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages">${v.displayName}${compact?'':` <span>${v.pages} pages</span>`}</a>`).join('<span aria-hidden="true"> · </span>')}</span>`;
+ return `<span class="pdf-downloads" data-pdf-downloads>${compact?'Download:':'<span class="pdf-download-title">Download</span>'} ${variants.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages">${v.displayName}${compact?'':` <span>${v.pages} pages</span>`}</a>`).join('<span aria-hidden="true"> · </span>')}<span aria-hidden="true"> · </span>${markdownLink(edition)}</span>`;
 }
 export function installReaderDownloads(html,edition,variants) {
  html=html.replace(/<header\b[^>]*class="mobile-bar"[^>]*>[\s\S]*?<\/header>/,header=>{
@@ -64,6 +65,8 @@ export function editionDownloadDetails(edition,variants){
  return variants.map(v=>`<section class="pdf-edition-artifact"><h2>${v.displayName}</h2><p>${v.pages} pages · ${v.bytes.toLocaleString('en-US')} bytes</p><p>PDF appearance revision ${v.appearanceRevision}${v.appearanceDate?' · '+escape(v.appearanceDate):''}</p>${downloadLinks(edition,[v])}<p>SHA-256: <code>${v.sha256}</code></p></section>`).join('')+(variants.some(v=>v.theme==='dark')?'':'<p>The Late night version is not available for this edition.</p>');
 }
 export function validateDownloads(html,edition,variants){
+ markdownLink(edition);
+ if(!html.includes(`href="${edition.markdown.publicUrl}"`)||!html.includes(`download="${edition.markdown.downloadFilename}"`)||!html.includes('data-markdown-download'))throw Error('Missing Markdown edition download');
  for(const v of variants){
   if(!html.includes(`download="${v.downloadFilename}"`)||!html.includes(`href="${v.publicUrl}"`)||!html.includes(`data-pdf-theme="${v.theme}"`)||!html.includes(`content edition ${edition.version}, ${v.pages} pages`))throw Error('Missing download or accessible identity: '+v.displayName);
  }

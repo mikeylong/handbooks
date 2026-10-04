@@ -20,7 +20,7 @@ function discover(folder) {
     }
   }
 }
-discover(path.join(root,'site/output/site'));
+discover(process.env.HANDBOOK_SITE_OUTPUT || path.join(root,'site/output/site'));
 assert.ok(links.size >= 6, 'Build the site before validating its hosted download headers');
 function check(headers) {
   for (const [href,filename] of links) {
@@ -30,6 +30,12 @@ function check(headers) {
   }
 }
 check(config.headers);
-const missing = structuredClone(config.headers);missing.splice(1,1);assert.throws(() => check(missing));
-const stale = structuredClone(config.headers);stale[1].headers[0].value = 'inline; filename="old.pdf"';assert.throws(() => check(stale));
+const pdfRule = config.headers.findIndex(rule=>rule.source===links.keys().next().value);
+const missing = structuredClone(config.headers);missing.splice(pdfRule,1);assert.throws(() => check(missing));
+const stale = structuredClone(config.headers);stale[pdfRule].headers[0].value = 'inline; filename="old.pdf"';assert.throws(() => check(stale));
 console.log(`Hosted PDF headers match all ${links.size} emitted download routes; missing and stale filenames are rejected.`);
+
+const markdown = config.headers.find(rule=>rule.source==="/:book/editions/:edition/:file.md");
+assert.equal(markdown?.headers.find(h=>h.key==="Content-Type")?.value,"text/markdown; charset=utf-8");
+assert.equal(markdown?.headers.find(h=>h.key==="Content-Disposition")?.value,"attachment");
+console.log("Future Markdown routes have UTF-8 content type and attachment headers.");

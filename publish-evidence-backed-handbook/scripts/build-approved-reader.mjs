@@ -3,6 +3,9 @@ import {createHash} from 'node:crypto';
 import {dirname,resolve,basename} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {resolvePdfVariants,installReaderDownloads,validateDownloads} from './pdf-downloads.mjs';
+import {installDiagrams} from './diagrams.mjs';
+import {installPromptBlocks} from './prompt-blocks.mjs';
+import {writeMarkdownEdition} from './markdown-downloads.mjs';
 import {safePath} from './reader-paths.mjs';
 import {editionLinks} from './edition-links.mjs';
 export async function buildApprovedReader(root, slug, {variantManifest=null,collectionRoot=root}={}) {
@@ -19,8 +22,17 @@ if(digest(await readFile(resolve(output,slug,basename(manifest.pdf))))!==manifes
 let html=editionLinks(await readFile(resolve(output,slug,'index.html'),'utf8'),publication);
 if(!html.includes(publication.editionUrl)||!html.includes(publication.releaseUrl))throw Error('Stale repository or release link');
 if(!html.includes('href="/gallery.css"'))html=html.replace('</head>','<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>');
-const edition={id:slug,...manifest,pdfUrl:'/'+slug+'/'+basename(manifest.pdf)};
+const edition={id:slug,...manifest,publicationStatus:'candidate',pdfUrl:'/'+slug+'/'+basename(manifest.pdf)};
+try {
+ const catalog=JSON.parse(await readFile(resolve(root,'../catalog.json'),'utf8'));
+ const book=catalog.books.find(b=>b.id===slug&&b.version===edition.version);
+ if(book?.status==='published')edition.publicationStatus=book.status;
+} catch(error) {if(error.code!=='ENOENT')throw error;}
 const variants=await resolvePdfVariants(root,edition,variantManifest,{collectionRoot});
+const approvedPackage=JSON.parse(await readFile(resolve(root,'publication-package.json'),'utf8'));
+const markdownHtml=await installPromptBlocks(root,await installDiagrams(root,html,approvedPackage),approvedPackage);
+edition.approvedReaderSha256=approvedPackage.files[approvedPackage.html];
+edition.markdown=await writeMarkdownEdition(output,edition,markdownHtml);
 html=installReaderDownloads(html,edition,variants);
 validateDownloads(html,edition,variants);
 html=html.replace('</head>','<link rel="stylesheet" href="/pdf-downloads.css"></head>');

@@ -171,6 +171,19 @@
           "value": "attachment; filename=\"claude-design-v1.1.0-local-exercise.zip\""
         }
       ]
+    },
+    {
+      "source": "/:book/editions/:edition/:file.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment"
+        }
+      ]
     }
   ]
 }

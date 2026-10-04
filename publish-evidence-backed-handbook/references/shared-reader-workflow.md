@@ -54,6 +54,8 @@ Shell fences render in a bordered block with a compact “Terminal” label and 
 
 ## Runtime dependencies
 
+Every current and future hosted handbook includes a Markdown edition alongside its PDF links through the shared download builders. For a portable text edition, use the [machine-readable Markdown export](machine-readable-markdown.md). It converts manuscript directives to standard Markdown and supplies a source index without changing the manuscript or hosted reader.
+
 Use Node.js 22 or newer for the hosted modules and tests. Install this package's pinned Python requirements for the ReportLab reader converter. PDF diagram raster fallbacks also require Poppler; cross-renderer proof uses Apple PDFKit through the supplied Swift renderer.
 
 ## Runtime entry points
