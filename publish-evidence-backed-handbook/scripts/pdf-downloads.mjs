@@ -6,6 +6,10 @@ import {markdownLink} from './markdown-downloads.mjs';
 import {downloadRow,downloadSize} from './download-row.mjs';
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 export const PDF_NAMES=Object.freeze({light:'Daytime version',dark:'Late night version'});
+export function editionPdfUrl(edition,publicUrl){
+ if(!/^[a-z0-9-]+$/.test(edition.id)||!/^\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/.test(edition.version)||!/^\/[A-Za-z0-9/_.-]+\.pdf$/.test(publicUrl)||publicUrl.includes('..'))throw Error('Unsafe PDF edition route');
+ return `/${edition.id}/editions/v${edition.version}/${publicUrl.split('/').pop()}`;
+}
 export function validateVariantIdentity(manifest, edition, {candidate=false}={}) {
  if(manifest.schemaVersion!==1||manifest.book!==edition.id||manifest.title!==edition.title||manifest.version!==edition.version||manifest.date!==edition.date||manifest.pdf!==edition.pdf||manifest.sha256!==edition.sha256||manifest.pages!==edition.pages)throw Error('PDF variant content-edition mismatch');
  const themes=new Set();
@@ -24,7 +28,7 @@ export function validateVariantIdentity(manifest, edition, {candidate=false}={})
  return manifest.variants;
 }
 export async function resolvePdfVariants(source,edition,manifestPin,{candidate=false,collectionRoot=source,measurePdfPages=true}={}){
- if(!manifestPin)return [{theme:'light',displayName:PDF_NAMES.light,appearanceRevision:1,approvalStatus:'approved',path:edition.pdf,publicUrl:edition.pdfUrl,downloadFilename:`${edition.id}-v${edition.version}-${edition.date}-daytime-r1.pdf`,sha256:edition.sha256,pages:edition.pages,bytes:(await lstat(safePath(source,edition.pdf))).size}];
+ if(!manifestPin)return [{theme:'light',displayName:PDF_NAMES.light,appearanceRevision:1,approvalStatus:'approved',path:edition.pdf,publicUrl:editionPdfUrl(edition,edition.pdfUrl),downloadFilename:`${edition.id}-v${edition.version}-${edition.date}-daytime-r1.pdf`,sha256:edition.sha256,pages:edition.pages,bytes:(await lstat(safePath(source,edition.pdf))).size}];
  const file=safePath(collectionRoot,manifestPin.path),bytes=await readFile(file);
  if(digest(bytes)!==manifestPin.sha256)throw Error('Stale PDF manifest hash');
  const manifest=JSON.parse(bytes);const variants=validateVariantIdentity(manifest,edition,{candidate});
@@ -43,10 +47,10 @@ export async function resolvePdfVariants(source,edition,manifestPin,{candidate=f
    if(!candidate&&(!v.proof.visualApproval||v.proof.visualApproval.sha256!==v.sha256||v.proof.visualApproval.status!=='approved'))throw Error('Missing exact-hash visual approval');
   }
  }
- return variants;
+ return variants.map(v=>({...v,publicUrl:editionPdfUrl(edition,v.publicUrl)}));
 }
 export function downloadLinks(edition,variants,{compact=false}={}) {
- const ordered=[...variants].sort((a,b)=>['light','dark'].indexOf(a.theme)-['light','dark'].indexOf(b.theme));
+ const ordered=variants.map(v=>({...v,publicUrl:editionPdfUrl(edition,v.publicUrl)})).sort((a,b)=>['light','dark'].indexOf(a.theme)-['light','dark'].indexOf(b.theme));
  return `<span class="pdf-downloads${compact?' downloads-compact':''}" data-pdf-downloads role="group" aria-label="Download ${escape(edition.title)}"><span class="pdf-download-title">Download</span>${markdownLink(edition)}${ordered.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages, ${downloadSize(v.bytes)}">${downloadRow(v.displayName,'PDF',v.theme==='light'?'For printing':'For dark reading',`${v.pages} pages, ${downloadSize(v.bytes)}`)}</a>`).join('')}</span>`;
 }
 export function installReaderDownloads(html,edition,variants) {
@@ -71,7 +75,7 @@ export function validateDownloads(html,edition,variants){
  if(!html.includes(`href="${edition.markdown.publicUrl}"`)||!html.includes(`download="${edition.markdown.downloadFilename}"`)||!html.includes('data-markdown-download'))throw Error('Missing Markdown edition download');
  for(const group of html.matchAll(/<span\b[^>]*data-pdf-downloads[^>]*>[\s\S]*?<a\b[^>]*>/g))if(!group[0].includes('data-markdown-download'))throw Error('Markdown must be the first download option');
  for(const v of variants){
-  if(!html.includes(`download="${v.downloadFilename}"`)||!html.includes(`href="${v.publicUrl}"`)||!html.includes(`data-pdf-theme="${v.theme}"`)||!html.includes(`content edition ${edition.version}, ${v.pages} pages`))throw Error('Missing download or accessible identity: '+v.displayName);
+  if(!html.includes(`download="${v.downloadFilename}"`)||!html.includes(`href="${editionPdfUrl(edition,v.publicUrl)}"`)||!html.includes(`data-pdf-theme="${v.theme}"`)||!html.includes(`content edition ${edition.version}, ${v.pages} pages`))throw Error('Missing download or accessible identity: '+v.displayName);
  }
  for(const anchor of html.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g))if(/<a\b/.test(anchor[0].slice(2)))throw Error('Nested download');
  return {status:'passed',variants:variants.length};

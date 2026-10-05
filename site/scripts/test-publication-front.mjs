@@ -62,6 +62,15 @@ for (const path of ['ai-evaluation', 'production-ai-engineering', 'ai-consulting
  const reader = await readFile(resolve(output,path,'index.html'), 'utf8');
  assert.doesNotMatch(reader, /release-window-products|Site \+ PDF/, `${path}: review badge must be omitted`);
  validateGalleryCover(gallery, `/${path}/`, reader);
+ const metadata=JSON.parse(await readFile(resolve(publications,path+'.json'),'utf8'));
+ for(const link of reader.matchAll(/<a\b[^>]*(?:data-pdf-theme|data-markdown-download)[^>]*>/g)){
+  const href=link[0].match(/href="([^"]+)"/)?.[1];
+  assert(href?.startsWith(`/${path}/editions/v${metadata.version}/`),`${path}: current download must use its edition route`);
+ }
+ for(const variant of metadata.pdfVariants){
+  const emitted=await readFile(resolve(output,variant.publicUrl.slice(1)));
+  assert.equal(emitted.length,variant.bytes,`${path}: unchanged edition PDF bytes`);
+ }
  const preview = renderGalleryCover(reader);
  assert(!preview.includes('<a '), 'Cover credit must not create a nested link');
  for (const name of ['title', 'subtitle', 'credit', 'date']) {

@@ -21,6 +21,25 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: npm run validate
 
+  validate-velori:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: claude-design/samples/velori-store
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+      - run: python scripts/package-candidate.py --audience public --output "$RUNNER_TEMP/velori-store.zip"
+      - run: python scripts/validate-package.py "$RUNNER_TEMP/velori-store.zip"
+
   pdf-runtime:
     runs-on: ubuntu-latest
     steps:

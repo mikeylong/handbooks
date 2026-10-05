@@ -11,7 +11,7 @@ import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
 import {finalizeSiteThemes} from './site-theme.mjs';
 import {installArtworkPairs} from './artwork-pairs.mjs';
 
-const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads}=await toolkitModule('pdf-downloads.mjs');
+const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads,editionPdfUrl}=await toolkitModule('pdf-downloads.mjs');
 const {writeMarkdownEdition}=await toolkitModule('markdown-downloads.mjs');
 const {installDiagrams} = await toolkitModule('diagrams.mjs');
 const {installPromptBlocks} = await toolkitModule('prompt-blocks.mjs');
@@ -84,7 +84,7 @@ for(const pin of books){
   html=await installDiagrams(source,html,approvedPackage);
   const digest=b=>createHash('sha256').update(b).digest('hex');
   if(manifest.sha256!==pin.pdfSha256||digest(await readFile(resolve(source,manifest.pdf)))!==pin.pdfSha256)throw Error('Pinned approved PDF differs from source');
-  const pdfUrl=pin.id==='production-ai-engineering'?'/'+manifest.pdf:'/'+pin.id+'/'+basename(manifest.pdf);
+  const pdfUrl=editionPdfUrl({id:pin.id,version:manifest.version},pin.id==='production-ai-engineering'?'/'+manifest.pdf:'/'+pin.id+'/'+basename(manifest.pdf));
   const hostedPdf=pin.id==='production-ai-engineering'?resolve(output,manifest.pdf):resolve(output,pin.id,basename(manifest.pdf));
   if(digest(await readFile(hostedPdf))!==pin.pdfSha256)throw Error('Hosted PDF differs from approved source');
   if(!html.includes('href="/gallery.css"'))html=html.replace('</head>','<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>');

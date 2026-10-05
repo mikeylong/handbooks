@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {validateVariantIdentity,downloadLinks,validateDownloads,installReaderDownloads} from './pdf-downloads.mjs';
+import {validateVariantIdentity,downloadLinks,validateDownloads,installReaderDownloads,editionPdfUrl} from './pdf-downloads.mjs';
 const edition={id:'future-title',title:'Future title',version:'2.0.0',date:'2026-10-02',pdf:'previous.pdf',sha256:'a'.repeat(64),pages:25,markdown:{version:'2.0.0',publicUrl:'/future-title/editions/v2.0.0/future-title-v2.0.0.md',downloadFilename:'future-title-v2.0.0.md',sha256:'c'.repeat(64),bytes:12345}};
 const m={schemaVersion:1,book:edition.id,...edition,variants:['light','dark'].map((theme,i)=>({theme,displayName:i?'Late night version':'Daytime version',appearanceRevision:1,approvalStatus:'candidate',sha256:(i?'b':'a').repeat(64),bytes:1000,pages:25,publicUrl:`/future-title/editions/v2.0.0/future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,downloadFilename:`future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,pageMap:{path:'map.json',sha256:'c'.repeat(64)}}))};
 assert.equal(validateVariantIdentity(m,edition,{candidate:true}).length,2);
@@ -18,6 +18,14 @@ for(const source of ['<a href="#chapter">Chapter</a>','<a href="/book.pdf" downl
 const external=externalLinks('<a href="https://example.org/" target="_self" rel="external">Source</a>');
 assert.match(external,/target="_blank"/);assert.match(external,/rel="external noopener noreferrer"/);assert.equal(externalLinks(external),external);
 const html=downloadLinks(edition,m.variants);validateDownloads(html,edition,m.variants);
+const legacy=[{...m.variants[0],publicUrl:'/output/pdf/old-daytime.pdf'},m.variants[1]];
+const canonical=downloadLinks(edition,legacy);
+assert.match(canonical,/href="\/future-title\/editions\/v2\.0\.0\/old-daytime\.pdf"/);
+assert.doesNotMatch(canonical,/href="\/output\/pdf\//);
+validateDownloads(canonical,edition,legacy);
+assert.equal(editionPdfUrl(edition,'/future-title/daytime.pdf'),'/future-title/editions/v2.0.0/daytime.pdf');
+assert.throws(()=>editionPdfUrl(edition,'/../private.pdf'),/Unsafe PDF edition route/);
+assert.throws(()=>validateDownloads(canonical.replace('/future-title/editions/v2.0.0/old-daytime.pdf','/output/pdf/old-daytime.pdf'),edition,legacy),/Missing download/);
 // Ordering must survive reversed manifest input and compact placements.
 for(const compact of [false,true]){
  const ordered=downloadLinks(edition,[...m.variants].reverse(),{compact});

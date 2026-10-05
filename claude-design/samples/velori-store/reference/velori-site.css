@@ -1,0 +1,51 @@
+/* The consumer site is a fixed 1024 × 768 landscape viewport inside the canvas.
+   Host controls and existing storyboard frames keep their own presentation. */
+body:not([data-step]) #artifact,
+body:not([data-step]) #artifact .screen{width:1024px;height:768px}
+body:not([data-step]) #artifact{font-family:Arial,Helvetica,sans-serif;color:var(--velori-color-ink)}
+body:not([data-step]) #artifact .screen{padding:0;background:var(--velori-color-canvas);border:1px solid var(--velori-color-border);box-shadow:0 8px 32px #0b0d0e14;overflow:hidden}
+#artifact .screen-header{height:80px;flex:none;align-items:center;margin:0;padding:0 40px;border-bottom:1px solid var(--velori-color-border);background:var(--velori-color-canvas)}
+#artifact .velori-wordmark{display:flex;align-items:center;gap:20px}
+#artifact .velori-wordmark b{font-size:22px;font-weight:600;letter-spacing:4px}
+#artifact .velori-wordmark>span{font-size:12px;color:var(--velori-color-secondary);padding-left:20px;border-left:1px solid var(--velori-color-border)}
+#artifact .velori-steps{display:flex;align-items:center;gap:28px;list-style:none;padding:0;margin:0;font-size:12px;color:var(--velori-color-subtle)}
+#artifact .velori-steps li{display:flex;align-items:center;gap:8px}
+#artifact .velori-steps li>span{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid var(--velori-color-border);border-radius:50%;font-size:11px}
+#artifact .velori-steps li[aria-current]{font-weight:600;color:var(--velori-color-ink)}
+#artifact .velori-steps li[aria-current]>span{background:var(--velori-color-ink);border-color:var(--velori-color-ink);color:#fff}
+#artifact .config{grid-template-columns:544px minmax(0,1fr);gap:0;min-height:0}
+#artifact .product{position:relative;justify-content:center;padding:40px 24px 36px;background:var(--velori-color-soft);border-right:1px solid var(--velori-color-border)}
+#artifact .product .product-eyebrow{position:absolute;left:32px;top:28px;font:500 10px/16px Arial,sans-serif;letter-spacing:1.5px;color:var(--velori-color-secondary)}
+#artifact .product-view{width:496px;height:496px;margin:0 0 24px}
+#artifact .product-view .product-photo{mix-blend-mode:multiply}
+#artifact .product .product-title{font:400 27px/36px Georgia,'Times New Roman',serif;letter-spacing:-.6px;color:var(--velori-color-text)}
+#artifact .product .caption{max-width:450px;font-size:12px;line-height:20px;color:var(--velori-color-secondary);margin-top:8px}
+#artifact .options{padding:32px 40px 24px;align-self:stretch}
+#artifact .configure-eyebrow{font-size:10px;line-height:16px;letter-spacing:1.2px;color:var(--velori-color-secondary);margin-bottom:8px}
+#artifact .options h2{font-size:32px;line-height:40px;font-weight:500;letter-spacing:-1.1px;margin:0}
+#artifact .options .sub{font-size:14px;line-height:20px;color:var(--velori-color-secondary);margin:4px 0 24px}
+#artifact .rowlabel{font-size:13px;line-height:20px;font-weight:600;margin:20px 0 8px}
+#artifact .rowlabel>span+span{font-weight:400;color:var(--velori-color-secondary)}
+#artifact .options>.rowlabel:first-of-type{margin-top:0}
+#artifact .card{height:72px;border:1px solid var(--velori-color-border);border-radius:12px;gap:8px}
+#artifact .option-row button{font-size:12px;line-height:16px;background:var(--velori-color-canvas);color:var(--velori-color-ink)}
+#artifact .swatch{width:24px;height:24px;border:1px solid #20262b25;border-radius:50%;box-shadow:inset 0 0 0 2px #ffffff70}
+#artifact .option-row button.chosen,#artifact .face button.chosen{border:2px solid var(--velori-color-selectedBorder);background:var(--velori-color-selectedFill)}
+#artifact .face{gap:12px}
+#artifact .face button{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;height:44px;padding:8px 12px;border:1px solid var(--velori-color-border);border-radius:12px;font-size:13px;line-height:20px;background:var(--velori-color-canvas)}
+#artifact .face-symbol{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+#artifact .face-symbol circle{fill:currentColor;stroke:none}
+#artifact .face-color{margin:20px 0 0}
+#artifact .face-color>label{font-size:13px;line-height:20px;font-weight:600;margin-bottom:8px}
+#artifact .description{font-size:12px;line-height:20px;min-height:20px;color:var(--velori-color-secondary);margin:8px 0 20px}
+#artifact .continue{font:600 14px/20px Arial,sans-serif;letter-spacing:.1px;box-shadow:none}
+/* Required examples keep their authored measurements: 24px finish gaps,
+   8px accessory gaps, and the original purple 48px pill action. */
+#artifact .finish{gap:24px}
+#artifact .accessory{gap:8px}
+#artifact button:not(:disabled):hover{background:var(--velori-color-selectedFill);filter:none;border-color:var(--velori-color-secondary)}
+#artifact button:not(:disabled):active{background:var(--velori-color-hover);filter:none}
+#artifact .option-row button.chosen:hover,#artifact .face button.chosen:hover{border-color:var(--velori-color-selectedBorder)}
+#artifact .option-row button:focus-visible,#artifact .face button:focus-visible{outline-color:var(--velori-color-selectedBorder)}
+#artifact #configuration-status.image-error{font-size:12px;line-height:20px;margin-top:8px;max-width:440px}
+@media(forced-colors:active){#artifact .option-row button.chosen,#artifact .face button.chosen{border-color:Highlight}}

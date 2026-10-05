@@ -1,0 +1,62 @@
+:root{--face-mask:url("assets/velori/face-friendly.png?v=a6c5ca57ed77")}
+/* Velori's consumer controls retain their own type, spacing, and colors. */
+#artifact,#artifact .screen{height:612px}
+#artifact .product-view{position:relative;width:100%;height:240px;flex:none}
+#artifact .product-render{position:relative;width:100%;aspect-ratio:1;top:50%;transform:translateY(-50%)}
+#artifact .product-view .product-photo{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain}
+#artifact .product-shell{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;mask:var(--robot-mask) center/contain no-repeat;-webkit-mask:var(--robot-mask) center/contain no-repeat}
+#artifact .product-shell[hidden]{display:none}
+#artifact .face-light{position:absolute;inset:0;pointer-events:none;clip-path:polygon(33% 14%,72% 14%,74% 41%,33% 42%)}
+#artifact .expression-layer{position:absolute;inset:0;transform-origin:0 0;background:var(--velori-color-white);mask:var(--face-mask) center/contain no-repeat;-webkit-mask:var(--face-mask) center/contain no-repeat}
+#artifact .face-light[data-face=friendly] .expression-layer{transform:translate(17.854%,2.926%) matrix(.706,-.02,0,.75,0,0)}
+#artifact .face-light[data-face=simple] .expression-layer{transform:translate(18.34%,-7.74%) matrix(.694,-.032,0,.83,0,0)}
+#artifact .face-light[hidden]{display:none}
+#artifact .face-light[data-color=mint] .expression-layer{background:var(--velori-expression-mint)}
+#artifact .face-light[data-color=blue] .expression-layer{background:var(--velori-expression-blue)}
+#artifact .face-light[data-color=amber] .expression-layer{background:var(--velori-expression-amber)}
+#artifact .option-row button,#artifact .face button,#artifact .face-color select{pointer-events:auto;cursor:pointer;font-family:Arial,sans-serif;color:var(--velori-color-ink);background:#fff}
+#artifact .option-row button{padding:0 4px;font-size:12px;line-height:16px}
+#artifact .face button{font-size:14px;line-height:20px;padding:4px 8px;border:1px solid var(--velori-color-border);border-radius:4px;min-height:32px}
+#artifact .face .choice-name,#artifact .face .choice-check{padding:0;border:0;border-radius:0}
+#artifact .option-row button.chosen,#artifact .face button.chosen{border:2px solid var(--velori-color-ink);background:var(--velori-color-selectedFill)}
+#artifact button:disabled,#artifact select:disabled{opacity:1;cursor:default!important}
+#artifact .choice-check[hidden]{display:none}
+#artifact .choice-name{white-space:nowrap}
+#artifact .face-color{margin:12px 0 0}
+#artifact .face-color label{display:block;font-size:14px;line-height:20px;margin:0 0 4px}
+#artifact .face-color select{display:block;width:100%;height:36px;font-size:14px;line-height:20px;padding:4px 8px;border:1px solid var(--velori-color-border);border-radius:4px;color-scheme:light}
+#artifact .color-select{position:relative}
+#artifact .select-caret{display:none;position:absolute;right:var(--velori-select-caretInset);top:50%;transform:translateY(-50%);width:var(--velori-select-caretSize);height:var(--velori-select-caretSize);fill:none;stroke:var(--velori-color-secondary);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+#artifact .dropdown-corrected .face-color select{appearance:none;-webkit-appearance:none;height:var(--velori-select-height);padding:8px var(--velori-select-paddingRight) 8px var(--velori-select-paddingLeft);border-color:var(--velori-select-border);border-radius:var(--velori-select-radius);background:var(--velori-select-fill);font-weight:500;box-shadow:0 1px 2px #20262b08}
+#artifact .dropdown-corrected .select-caret{display:block}
+#artifact .dropdown-corrected .face-color select:hover{background:var(--velori-color-hover);border-color:var(--velori-color-secondary)}
+@media(forced-colors:active){#artifact .dropdown-corrected .face-color select{appearance:auto;-webkit-appearance:auto;box-shadow:none}#artifact .dropdown-corrected .select-caret{display:none}}
+#artifact .option-row button:focus-visible,#artifact .face button:focus-visible,#artifact .face-color select:focus-visible{outline:3px solid var(--velori-color-ink);outline-offset:3px;box-shadow:0 0 0 3px #fff}
+#artifact button:not(:disabled):hover{background:var(--velori-color-selectedFill);filter:none}
+#artifact button:not(:disabled):active{background:var(--velori-color-hover);filter:none}
+#artifact #configuration-status{position:absolute}
+#artifact #configuration-status.image-error{position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal;color:#704b23;font-size:12px;margin-top:8px}
+/* Four visible color choices are an optional pattern, not a select rule. */
+#artifact .color-select[hidden],#artifact .color-chips-group[hidden]{display:none!important}
+#artifact .color-chips-group{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+#artifact .color-chips-group .color-chip{position:relative;display:flex;align-items:center;justify-content:center;gap:4px;height:40px;box-sizing:border-box;margin:0;padding:8px 4px;border:1px solid var(--velori-color-border);border-radius:20px;background:var(--velori-color-soft);color:var(--velori-color-ink);font:500 12px/16px Arial,sans-serif;cursor:pointer;pointer-events:auto}
+#artifact .color-chip input{pointer-events:auto;position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+#artifact .color-chip-dot{position:relative;flex:none;width:12px;height:12px;border:1px solid #20262b30;border-radius:50%;box-shadow:inset 0 0 0 1px #ffffff70}
+#artifact .color-chip:has(input:checked){border:2px solid var(--velori-color-ink);padding:7px 3px;background:var(--velori-color-selectedFill);font-weight:700}
+#artifact .color-chip:has(input:focus-visible){outline:3px solid var(--velori-color-ink);outline-offset:3px;box-shadow:0 0 0 3px #fff}
+#artifact .color-chip:hover{background:var(--velori-color-selectedFill);border-color:var(--velori-color-ink)}
+@media(forced-colors:active){#artifact .color-chip-dot{forced-color-adjust:none}#artifact .color-chip:has(input:checked){border-color:Highlight}#artifact .color-chip:has(input:focus-visible){outline-color:Highlight}}
+/* Compatible accessories are independent native checkboxes in Velori's cards. */
+#artifact .product-dock{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:translateY(4%);pointer-events:none;filter:drop-shadow(0 4px 3px #20262b20)}
+#artifact .product-dock[hidden],#artifact .accessory-checkboxes[hidden],#artifact .accessory button[hidden]{display:none}
+#artifact .accessory-checkboxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:inherit;width:100%;margin:0;padding:0;border:0;min-width:0}
+#artifact .accessory-checkbox-card{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;height:72px;border:1px solid var(--velori-color-border);border-radius:12px;background:var(--velori-color-canvas);font:400 12px/16px Arial,sans-serif;cursor:pointer;pointer-events:auto}
+#artifact .accessory-checkbox-card input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;pointer-events:auto}
+#artifact .accessory-check{width:16px;height:16px;border:1px solid var(--velori-color-secondary);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--velori-color-white);pointer-events:none}
+#artifact .accessory-check svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;visibility:hidden}
+#artifact .accessory-checkbox-card:has(input:checked){border:2px solid var(--velori-color-ink);background:var(--velori-color-selectedFill)}
+#artifact .accessory-checkbox-card:has(input:checked) .accessory-check{background:var(--velori-color-ink);border-color:var(--velori-color-ink)}
+#artifact .accessory-checkbox-card:has(input:checked) svg{visibility:visible}
+#artifact .accessory-checkbox-card:hover{background:var(--velori-color-hover)}
+#artifact .accessory-checkbox-card:has(input:focus-visible){outline:3px solid var(--velori-color-focus);outline-offset:3px}
+@media(forced-colors:active){#artifact .accessory-checkbox-card:has(input:checked) .accessory-check{background:Highlight;color:HighlightText}#artifact .accessory-checkbox-card:has(input:focus-visible){outline-color:Highlight}}
