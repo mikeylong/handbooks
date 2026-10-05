@@ -51,6 +51,7 @@ console.log('An unvalidated new gallery title is also rejected.');
 const gallery = await readFile(new URL('../output/site/index.html', import.meta.url), 'utf8');
 for (const path of ['ai-evaluation', 'production-ai-engineering', 'ai-consulting', 'claude-design']) {
  const reader = await readFile(new URL(`../output/site/${path}/index.html`, import.meta.url), 'utf8');
+ assert.doesNotMatch(reader, /release-window-products|Site \+ PDF/, `${path}: review badge must be omitted`);
  validateGalleryCover(gallery, `/${path}/`, reader);
  const preview = renderGalleryCover(reader);
  assert(!preview.includes('<a '), 'Cover credit must not create a nested link');

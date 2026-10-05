@@ -400,8 +400,7 @@ main {
   gap: 1rem;
 }
 
-.release-window-label,
-.release-window-products {
+.release-window-label {
   color: var(--ink);
   font-size: 0.66rem;
   font-weight: 650;
@@ -410,11 +409,6 @@ main {
   text-transform: uppercase;
 }
 
-.release-window-products {
-  color: var(--muted);
-  font-weight: 500;
-  white-space: nowrap;
-}
 
 .js .release-countdown {
   display: grid;

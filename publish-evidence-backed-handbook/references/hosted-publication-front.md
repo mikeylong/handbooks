@@ -9,7 +9,7 @@ The cover must include:
 - The edition's publication date and version.
 - An “Explore the handbook” action that reaches the contents.
 - A PDF download action with the measured page count of that exact release artifact.
-- A “Next version review” panel identifying the site and PDF, with the policy that both publish together after manual review.
+- A “Next version review” panel with the countdown and scheduled time, plus the policy that site and PDF updates publish together after manual review. Omit the redundant “Site + PDF” badge.
 
 The sidebar must include the same author/site credit and date/version, with the date and version linked to public edition details on the website. Preserve Search and PDF actions, accessible dialog controls, and the return to the gallery. The left-rail return must use the shared `handbooks-return` class and the hosted page must load `/gallery.css`. Do not set font size or spacing locally on this link. A return link that merely points to the gallery does not establish visual parity.
 

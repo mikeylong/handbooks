@@ -447,7 +447,6 @@ const checks = {
     && releaseWindowHtml.includes(`data-release-at="${releaseSchedule.nextReviewAt}"`)
     && releaseWindowHtml.includes(`datetime="${releaseSchedule.nextReviewAt}"`)
     && releaseWindowHtml.includes("Next version review")
-    && releaseWindowHtml.includes("Site + PDF")
     && releaseWindowHtml.includes(releaseTimeZoneLabel(releaseSchedule.timeZone))
     && releaseWindowHtml.includes("Site and PDF updates publish together after manual review.")
     && count(/data-countdown-(?:days|hours|minutes|seconds)/g, releaseWindowHtml) === 4
