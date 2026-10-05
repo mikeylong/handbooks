@@ -1,12 +1,23 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
+import {installPublicationReview, validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
 import {renderGalleryCover, validateGalleryCover} from './gallery-covers.mjs';
 const manifest=JSON.parse(await readFile(new URL('../output/publications/ai-evaluation.json',import.meta.url),'utf8'));
 const publication=manifest;
 const edition=manifest;
 const html = await readFile(new URL('../output/site/ai-evaluation/index.html', import.meta.url), 'utf8');
 assert.equal(validatePublicationFront(html, edition).status, 'passed');
+const unscheduled = installPublicationReview(html, null);
+validatePublicationFront(unscheduled, {...edition, review: null});
+const scheduled = installPublicationReview(unscheduled, edition.review);
+validatePublicationFront(scheduled, edition);
+assert.equal(installPublicationReview(scheduled, edition.review), scheduled);
+const futureReview = {...edition.review, at: '2026-10-12T16:00:00.000Z', label: 'Monday, October 12, 2026 at 9:00 AM Pacific time'};
+validatePublicationFront(installPublicationReview(scheduled, futureReview), {...edition, review: futureReview});
+assert.throws(() => installPublicationReview(html, {...edition.review, at: 'invalid'}), /Incomplete publication review schedule/);
+for (const hook of ['data-release-status', 'data-countdown-seconds', 'data-release-window ']) {
+ assert.throws(() => validatePublicationFront(scheduled.replace(hook, 'removed-hook '), edition), /reviewState/);
+}
 const regressions = [
  ['missing author', html.replace('class="cover-credit"', 'class="removed-credit"'), /authorCredit/],
  ['stale edition', html.replaceAll('Version 1.0.0', 'Version 1.4.0'), /edition/],
@@ -29,7 +40,7 @@ console.log('An unvalidated new gallery title is also rejected.');
 
 // Exercise the actual hosted readers, including the original missing-class bug.
 const gallery = await readFile(new URL('../output/site/index.html', import.meta.url), 'utf8');
-for (const path of ['ai-evaluation', 'production-ai-engineering', 'ai-consulting']) {
+for (const path of ['ai-evaluation', 'production-ai-engineering', 'ai-consulting', 'claude-design']) {
  const reader = await readFile(new URL(`../output/site/${path}/index.html`, import.meta.url), 'utf8');
  validateGalleryCover(gallery, `/${path}/`, reader);
  const preview = renderGalleryCover(reader);
