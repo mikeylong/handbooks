@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 import {dirname,resolve,basename} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {APPROVAL_REGISTRY,validateLibrary,sourceFor,validatePackage,safePath} from './book-sources.mjs';
-import {validatePublicationFront,validateGalleryPublications} from './publication-front.mjs';
+import {installPublicationReview,validatePublicationFront,validateGalleryPublications} from './publication-front.mjs';
 import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
 import {finalizeSiteThemes} from './site-theme.mjs';
 import {installArtworkPairs} from './artwork-pairs.mjs';
@@ -76,6 +76,7 @@ for(const pin of books){
   }
   if(manifest.version!==pin.version||manifest.pdf!==pin.pdf||!Number.isSafeInteger(manifest.pages)||manifest.pages<1)throw Error('Approved edition metadata differs from catalog');
   if(publication.sourceRepository!==catalog.repository||publication.editionUrl!==pin.editionUrl||publication.releaseUrl!==pin.editionUrl)throw Error('Public edition links disagree with catalog');
+  html=installPublicationReview(html,publication.review);
   html=await installPromptBlocks(source,html,approvedPackage);
   html=await installTerminalBlocks(source,html,approvedPackage);
   html=editionLinks(html,publication);
