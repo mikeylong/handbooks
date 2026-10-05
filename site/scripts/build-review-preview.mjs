@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Explicit isolated review assembly; catalog and approval registry are read-only inputs.
-import {readFile,writeFile,mkdir,cp} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,cp,mkdtemp,rm,rename} from 'node:fs/promises';
 import {resolve,dirname,basename} from 'node:path';
+import {pathToFileURL} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {parseArgs} from 'node:util';
 import {digest,safePath} from '../../publish-evidence-backed-handbook/scripts/reader-paths.mjs';
@@ -12,9 +13,31 @@ import {installTerminalBlocks} from '../../publish-evidence-backed-handbook/scri
 import {resolvePdfVariants,installReaderDownloads,editionDownloadDetails,validateDownloads,editionPdfUrl} from '../../publish-evidence-backed-handbook/scripts/pdf-downloads.mjs';
 import {writeMarkdownEdition} from '../../publish-evidence-backed-handbook/scripts/markdown-downloads.mjs';
 import {reviewEditionSummary,installReviewGalleryCard} from '../../publish-evidence-backed-handbook/scripts/review-edition.mjs';
+import {installRetainedReleases} from '../../publish-evidence-backed-handbook/scripts/retained-releases.mjs';
 import {addSiteTheme,validateSiteTheme} from '../../publish-evidence-backed-handbook/scripts/site-theme.mjs';
 import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
 import {validateGalleryPublications} from './publication-front.mjs';
+
+// Replace one book from its pinned inputs; approved destination-only files cannot fill gaps.
+export async function installCandidateBookRoot(collectionRoot,output,book,source,pkg,retained) {
+ if(!/^[-a-z0-9]+$/.test(book)||!pkg.files?.[pkg.readerDirectory+'/index.html'])throw Error('Invalid candidate reader root');
+ const destination=safePath(output,book),stage=await mkdtemp(resolve(output,'.review-book-'));
+ const stagedBook=safePath(stage,book),prefix=pkg.readerDirectory+'/';
+ try {
+  await mkdir(stagedBook,{recursive:true});
+  for(const [path,sha] of Object.entries(pkg.files)) {
+   if(!path.startsWith(prefix))continue;
+   const bytes=await readFile(safePath(source,path));
+   if(digest(bytes)!==sha)throw Error('Stale candidate reader: '+path);
+   const target=safePath(stagedBook,path.slice(prefix.length));
+   await mkdir(dirname(target),{recursive:true});await writeFile(target,bytes);
+  }
+  await installRetainedReleases(collectionRoot,stage,{schemaVersion:retained.schemaVersion,routes:retained.routes.filter(route=>route.url.startsWith('/'+book+'/'))});
+  await rm(destination,{recursive:true,force:true});await rename(stagedBook,destination);
+ } finally {await rm(stage,{recursive:true,force:true});}
+}
+
+async function main() {
 const {values:v}=parseArgs({options:{registry:{type:'string'},output:{type:'string'}}});
 if(!v.registry||!v.output)throw Error('Use --registry and --output');
 const root=resolve(import.meta.dirname,'../..'),output=resolve(v.output);
@@ -38,7 +61,8 @@ const previous=approved?JSON.parse(await readFile(safePath(root,approved.directo
 if(previous&&(previous.version!==approved.version||previous.sha256!==approved.pdfSha256))throw Error('Approved previous edition identity mismatch');
 const edition={id:registry.book,...manifest,...publication,publicationStatus:'candidate',pdfUrl:editionPdfUrl({id:registry.book,version:manifest.version},`/${registry.book}/${basename(manifest.pdf)}`)};
 const variants=await resolvePdfVariants(source,edition,registry.variantManifest,{candidate:true,collectionRoot:root});
-await mkdir(resolve(output,edition.id),{recursive:true});await cp(resolve(source,pkg.readerDirectory),resolve(output,edition.id),{recursive:true});
+const retained=JSON.parse(await readFile(resolve(root,'site/retained-releases.json'),'utf8'));
+await installCandidateBookRoot(root,output,edition.id,source,pkg,retained);
 let html=await readFile(resolve(output,edition.id,'index.html'),'utf8');
 html=await installPromptBlocks(source,html,pkg);html=await installTerminalBlocks(source,html,pkg);html=await installArtworkPairs(source,edition,output,html,pkg);html=await installDiagrams(source,html,pkg);edition.markdown=await writeMarkdownEdition(output,edition,html);html=installReaderDownloads(html,edition,variants);
 html=html.replace('<p class="cover-date">','<p class="review-candidate" role="note">Review candidate · Publication has not been approved.</p><p class="cover-date">').replace('</head>','<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/gallery.css"><link rel="stylesheet" href="/pdf-downloads.css"></head>');
@@ -62,3 +86,5 @@ await writeFile(resolve(output,'robots.txt'),'User-agent: *\nDisallow: /\n');awa
 await writeFile(resolve(output,'../candidate-headers.json'),JSON.stringify({headers},null,2)+'\n');
 await writeFile(resolve(output,'../preview-build.json'),JSON.stringify({status:'passed',mode:'candidate',publicationApproved:false,edition,variants,readerInputSha256:pkg.files[pkg.html],headers},null,2)+'\n');
 console.log('Built isolated review collection: '+output);
+}
+if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href)await main();

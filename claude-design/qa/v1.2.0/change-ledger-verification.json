@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "Final source, tracked comparison, accepted grouping and MIT sample identity only. No manuscript, PDF, changelog or reader bytes changed.",
+  "ledger": {
+    "path": "claude-design/change-ledger.json",
+    "sha256": "8845c1eb1258c7797dccea82084216c48318b5bcc948795a0286996b6afaa815"
+  },
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198",
+    "previousSourceSha256": "d3f709cd9af84f0b23c21ecc3bf86932dd431941535b7a9ddcefa0ca18258636"
+  },
+  "comparisonEvidence": {
+    "exactSourcePatch": {
+      "path": "claude-design/qa/v1.2.0/exact-source.patch",
+      "sha256": "183472dbfb2dfdc741d8fdd40e455677b0bc3e9cfc9a3721d35e9debca5c32f9"
+    },
+    "editionDiff": {
+      "path": "claude-design/qa/v1.2.0/edition-diff.json",
+      "sha256": "91ef19e64b6f8899c18edf7d872231d894d5ead4ef7db613c0bfda979c97063c"
+    },
+    "exactPdfTextPatch": {
+      "path": "claude-design/qa/v1.2.0/exact-pdf-text.patch",
+      "sha256": "c595c0436a127c8cef26aa7e530bac034ade26c66d42bb660a5b84f33732b203"
+    },
+    "readerFacingContentPatch": {
+      "path": "claude-design/qa/v1.2.0/reader-facing-content.patch",
+      "sha256": "cff5a1d38f5164199d5ebfd889faf9c2a6125c3123aa5f5cb0e05f20fab1c181"
+    },
+    "acceptedChangelogDecision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "a9b312752b21bd3158e99eab0f491a1a824c7b7ac02b3c1680bc9ce2eaddf4d5"
+    }
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/velori-store-0.2.0-mit-release.zip",
+    "repositoryPath": "claude-design/reader/velori-store-0.2.0-mit-release.zip",
+    "sha256": "70597da07ac7f257e1b573c6bb3d5b7b280ba359bd7a61106c8c1006cf61d54c",
+    "bytes": 35149230,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "1dd443b32f01f3129f8bc6dd48b40de1fd6e8eab1a8d3c5c9b4dfe9fcd224f98"
+    }
+  },
+  "checks": {
+    "status": "passed",
+    "canonicalSource": {
+      "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+      "sha256": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198"
+    },
+    "previousSourceSha256": "d3f709cd9af84f0b23c21ecc3bf86932dd431941535b7a9ddcefa0ca18258636",
+    "originalLedgerSha256": "6cc88051f903cb0d82c2a2d109e0a43371660c1a83b182a463537635f28180b8",
+    "sourcePatchRecomputedExactly": true,
+    "sourceDiffHashesMatch": true,
+    "fourAcceptedChangesMatchDecisionExactly": true,
+    "allEightDraftIdsCoveredExactlyOnce": true,
+    "allFourEntriesMatchFinalChangelogTextRationaleAndLinks": true,
+    "sampleReleaseMatchesFinalPackage": true,
+    "directSampleUrlMatchesCanonicalSourceAndAcceptedEntries": true,
+    "sharedChangelogDecision": "passed; four accepted entries unchanged",
+    "protectedSourcePdfChangelogReaderBytesUnchanged": true
+  },
+  "grouping": [
+    {
+      "acceptedGroup": "G01",
+      "privateDraftEntries": [
+        "C01",
+        "C08"
+      ],
+      "readerImpact": "One supplied configurator carries the practical exercise through the guide and capstone.",
+      "sourceLimitations": "Historical Data Pipeline Studio editions and artifacts remain separate from the current Velori exercise."
+    },
+    {
+      "acceptedGroup": "G02",
+      "privateDraftEntries": [
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "readerImpact": "Readers can resolve source rules, inspect converted components and test a correction before generating the new review screen.",
+      "sourceLimitations": "Current installed native instructions and actual rendered/imported evidence are required for each reader run."
+    },
+    {
+      "acceptedGroup": "G03",
+      "privateDraftEntries": [
+        "C05",
+        "C07"
+      ],
+      "readerImpact": "Readers can test the four configuration values, keyboard focus, image recovery and narrow layouts against the native Figma journey.",
+      "sourceLimitations": "Figma prototype visits do not prove browser reload persistence; different font families do not establish pixel parity."
+    },
+    {
+      "acceptedGroup": "G04",
+      "privateDraftEntries": [
+        "C06"
+      ],
+      "readerImpact": "Readers must capture complete native source and dependencies, disclose host adaptations and validate each new packet independently.",
+      "sourceLimitations": "Captured native runtime remains private and excluded from the MIT sample. The answer key does not validate a reader's new generation."
+    }
+  ],
+  "preservedPrivateHistory": {
+    "eightEntryDraftLedger": {
+      "path": "claude-design/review/2026-10-05-v120-resume/artifact-assembly/change-ledger.draft.json",
+      "sha256": "5d9f1a53a00589af95e9615a5dddd23bb6857e0db0c003b6f2335d58fa55fc7d"
+    },
+    "acceptedLedgerBeforeFinalBinding": {
+      "path": "claude-design/review/2026-10-05-v120-resume/artifact-assembly/book/change-ledger.json",
+      "sha256": "6cc88051f903cb0d82c2a2d109e0a43371660c1a83b182a463537635f28180b8"
+    },
+    "compactProposal": {
+      "path": "claude-design/review/2026-10-05-v120-resume/artifact-assembly/change-ledger.compact.proposal.json",
+      "sha256": "18a0a14562a324f3959b1a8fc2360fb2e535cda1ba1e41bf8144fdb633968e48"
+    },
+    "note": "These historical private records remain unchanged. Current source classification is auditable through the tracked comparison evidence above."
+  },
+  "protectedBytes": {
+    "claude-design/Claude_Design_Field_Guide_Source.md": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198",
+    "claude-design/changelog-decision.json": "a9b312752b21bd3158e99eab0f491a1a824c7b7ac02b3c1680bc9ce2eaddf4d5",
+    "claude-design/reader/index.html": "3729bbdeea2b7e74c80d76789cf3269ad9b60fc5963537fb5d1bf4f1148ace6a",
+    "claude-design/output/pdf/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
+    "claude-design/output/pdf/claude-design-v1.2.0-2026-10-05-late-night-r1.pdf": "3bc0d489dd4b46d21a78073d45b3985cc51f0cf8d8beeb411903feb94febd7f3"
+  },
+  "networkChecksPerformed": false,
+  "publicationActionPerformed": false
+}
