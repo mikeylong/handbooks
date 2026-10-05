@@ -50,6 +50,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     output = safe_output_file(args.output, "Output") if args.output else None
+    page_role_regression = json.loads(run([sys.executable, str(SCRIPTS / "test-edition-page-roles.py")]).stdout)
 
     build_base = [
         sys.executable,
@@ -323,6 +324,7 @@ def main() -> None:
             "schemaVersion": 1,
             "status": "passed",
             "tests": {
+                "explicitPageRoleRegression": page_role_regression["status"],
                 "unchangedBuildOmitsChangelog": True,
                 "unchangedFixturePages": len(load(candidate_map)["pages"]),
                 "unchangedDecisionSummary": identical_diff["summary"],

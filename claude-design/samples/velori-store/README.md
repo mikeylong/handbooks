@@ -14,7 +14,7 @@ Open http://127.0.0.1:4197. Use Node.js 22 and npm. The first install needs acce
 
 1. Choose Graphite, Simple, Amber, and Carry bag. The photo, face, selection marks, and caption should agree.
 2. Open **View accessory details**. Explore Carry bag and Charging dock, then use **Back to configurator**. Browsing an accessory does not select it.
-3. Select **Continue**. Review configuration shows the same robot and all four choices. This review screen is newly implemented sample behavior, adapted from the captured Claude Design result.
+3. Select **Continue**. Review configuration shows the same robot and all four choices. The Review screen checks your four chosen values.
 4. Select **Edit configuration**. The configurator keeps your choices and returns focus to Continue. Browser Back also returns to the configurator.
 5. Reload. Your choices should survive. Use **Reset configuration** below the store to restore Chalk, Friendly, White, and Dock.
 
@@ -49,13 +49,13 @@ The browser check covers all 72 configurations, the complete journey, keyboard d
 
 ## Capture a native handoff
 
-Follow [the tool walkthrough](docs/walkthrough.md) to import the prepared system, generate the bounded change, and capture an executable handoff from your own Design project. Preserve and validate that new packet independently. The public sample includes the React adaptation; the historical captured runtime remains in the private review archive.
+Follow [the tool walkthrough](docs/walkthrough.md) to import the prepared system, generate the bounded change, and capture an executable handoff from your own Design project. Preserve and validate that new packet independently. The public sample includes a bounded React Review adaptation. All captured native source and runtime remain in the private review archive and outside the MIT download.
 
 ## Start a new native exercise
 
-The running app is the completed answer key. Use Configure, its expression menu, accessory details, and the unavailable-image configurator as the starting screens. Import the 13 baseline exports from `src/library.jsx`; exclude `src/ReviewConfiguration.jsx` and `handoff/` from initial generation context. Ask Design to create a new review screen only after source definition, known-screen fidelity, and correction persistence pass.
+The running app is the completed answer key. Use Configure, its expression menu, accessory details, and the unavailable-image configurator as the starting screens. Import the 13 baseline exports from `src/library.jsx` with the configured host entry and [accepted baseline guidance](docs/native-baseline.md); exclude `src/ReviewConfiguration.jsx` and `handoff/` from initial generation context. Ask Design to create a new review screen only after source definition, known-screen fidelity, and correction persistence pass.
 
-The React review screen was adapted from an earlier native run. It is an answer key; it cannot verify your new system or generation. Follow [the walkthrough](docs/walkthrough.md) and keep a new handoff record.
+The public archive omits historical native metadata and projects a reader configuration without any owner project pin. Packaging preserves the private source config. The bounded React Review configuration column was adapted from the native Review source accepted on October 5, 2026, SHA-256 `03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b976b68f0f46811150a`. The existing app retains configuration, routing, persistence, focus, and image recovery. Capture and validate your own new packet; the answer key does not verify your generation. Follow [the walkthrough](docs/walkthrough.md) and keep a new handoff record.
 
 ## Extend Velori
 

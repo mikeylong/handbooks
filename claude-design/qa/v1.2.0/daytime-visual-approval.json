@@ -1,0 +1,1235 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewer": "Codex handbook audit agent",
+  "reviewedAt": "2026-10-05T22:12:19.374533+00:00",
+  "appearance": "Daytime",
+  "pdf": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/pdf/final/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf",
+  "sha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
+  "bytes": 4953829,
+  "pages": 56,
+  "basis": "Actual visual inspection of all 56 pages in both Poppler and macOS PDFKit. Native-resolution paired sheets retain 840 pixels per page; selected high-risk pages were also opened individually at original resolution.",
+  "scope": {
+    "allPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "renderers": [
+      "poppler",
+      "pdfkit"
+    ],
+    "renderedPagesInspected": 112,
+    "contactSheetsInspected": 28,
+    "individualFullPageChecks": [
+      4,
+      5,
+      11,
+      21,
+      41,
+      42,
+      45,
+      54,
+      55,
+      56
+    ],
+    "chapterOpenersInspected": 11,
+    "pdfsAuthored": 0,
+    "releaseApproval": false
+  },
+  "checks": [
+    "Cover, contents, all eleven chapter openers, diagrams, prompt panels, code blocks, tables, appendices, references, and final changelog are legible and complete in both renderers.",
+    "No visible clipping, overlapping text, missing glyphs, misplaced artwork, or broken table rows were found.",
+    "The three-line shell panel moves intact from page 41 to page 42 with its final padding. No empty continuation strip remains.",
+    "Page 54 running header reads APPENDIX C: PACKAGE MAP. Page 55 reads FURTHER READING. Chapter continuation headers and opener suppression remain correct.",
+    "Page 56 contains the complete changelog on a single final page, with previous edition identity, prior Daytime SHA-256, four grouped changes, and source links."
+  ],
+  "issues": [],
+  "paginationObservation": "Page 52 is a short two-line continuation of the capstone answer key. It remains readable and is accepted without a content or layout change.",
+  "pageLabels": [
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "v",
+    "vi",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "source": {
+    "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/book/Claude_Design_Field_Guide_Source.md",
+    "sha256": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198"
+  },
+  "renders": [
+    {
+      "page": 1,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-01.png",
+      "sha256": "d4311744e077617568c07aebfdf59cf19e7cb8591325e8547206dd04def228ca"
+    },
+    {
+      "page": 1,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-001.png",
+      "sha256": "8f66045a6b3699ed572b42a05be972917f92117e8e6d3d048baa9c0b748530d4"
+    },
+    {
+      "page": 2,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-02.png",
+      "sha256": "0eac99fcc352e031f33dc793e42bc7b13b24cd92f04ab844c6a3b78ff6bfc6ef"
+    },
+    {
+      "page": 2,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-002.png",
+      "sha256": "5c146f70bd562ab9976336c7bc53e9bd36e74b09de9eae61d26a3c7c1f3d9ba7"
+    },
+    {
+      "page": 3,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-03.png",
+      "sha256": "969b77418c7ebeee00bee0c59cf661492ae76b0d9cfabf1a2cd2273dbe33a51b"
+    },
+    {
+      "page": 3,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-003.png",
+      "sha256": "001c2f2ad9ae1241cae8c963065c32259cd403fb3e28dba81da19a50f3d76cb3"
+    },
+    {
+      "page": 4,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-04.png",
+      "sha256": "aabb5c4c9003cc0b9bb775b5e6c27d38ffdb30f16aa0f59fef79d245523169fb"
+    },
+    {
+      "page": 4,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-004.png",
+      "sha256": "c67bed88c8c1003d71d57239115044a3b412ca65bb0a27e470c85920083185c0"
+    },
+    {
+      "page": 5,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-05.png",
+      "sha256": "2ce3c88ea97bb8819d69e0a73a3f912b2e64f0da21797a8d23e9763fa184f430"
+    },
+    {
+      "page": 5,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-005.png",
+      "sha256": "b9aa668d270e24df6b594d73b4dedeeeb3b068d05bc8f316b8212e7565302cb2"
+    },
+    {
+      "page": 6,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-06.png",
+      "sha256": "aa873472e9cfe795fd064195144b945ebad62794a94c455c9dd68c9346e26bae"
+    },
+    {
+      "page": 6,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-006.png",
+      "sha256": "58c41a121afee8c3a308035e559f0a37749e76cdb647dd400f2c2506ec5b6981"
+    },
+    {
+      "page": 7,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-07.png",
+      "sha256": "7e787e64994e60725880cbd14a9be1a166c274107a854db5147bb8a459159021"
+    },
+    {
+      "page": 7,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-007.png",
+      "sha256": "14757dba2519ca1e848304c8a74c6350560bee4bd35c5e1fd1b68c12faaee00a"
+    },
+    {
+      "page": 8,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-08.png",
+      "sha256": "2139af676197686ee4e2df8e5ca9da734a0fa49a1d5b8bb7588b59d52bdc5f86"
+    },
+    {
+      "page": 8,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-008.png",
+      "sha256": "0d1f0aa0a6fe5b99e1d4a033a6c93e263a7579818cfdbc2a0ec106170f36deba"
+    },
+    {
+      "page": 9,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-09.png",
+      "sha256": "073691adbd59adcc8464ab0f9e9a433c3f9b2ee241e78f6252e89990865b3e41"
+    },
+    {
+      "page": 9,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-009.png",
+      "sha256": "106f21572c40310c1cb831bbe5a852ed39966a23261d28f440350b0f3bf94ef5"
+    },
+    {
+      "page": 10,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-10.png",
+      "sha256": "90b79f086d2e100568ba9e7b104eb73825ee2edf4103807507f5e2d1080fff50"
+    },
+    {
+      "page": 10,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-010.png",
+      "sha256": "2d4cfcf8f4535c3d44a5792594edc89cbbf8d6eda9622732cfaab49e6b702d75"
+    },
+    {
+      "page": 11,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-11.png",
+      "sha256": "5538097acf6f89171da33b0cef2c4ba1a72bdc010865abd9b79f86fa488135d7"
+    },
+    {
+      "page": 11,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-011.png",
+      "sha256": "fc1da31a59d131cb3dd122cf17d7058de1c5be08a6e1b369f997f520650e0372"
+    },
+    {
+      "page": 12,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-12.png",
+      "sha256": "9cae10e1ccfae0a5513783b8168b3379ba29b685e9512ecd6d743de768a6fbc0"
+    },
+    {
+      "page": 12,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-012.png",
+      "sha256": "bdab2ebb306d0222794ccfcf837a393e36c0e64e1fb834c22f7d3ee4dbc2a6ae"
+    },
+    {
+      "page": 13,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-13.png",
+      "sha256": "26176d9a899d61322456e3d7c65aa3f1ab60e9e24bee694c8b152e7ca7955c31"
+    },
+    {
+      "page": 13,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-013.png",
+      "sha256": "15b26b77bc0bc7067abc8679d2a1b5297d14f9c1dc29fbe1606e645f9d57f0e5"
+    },
+    {
+      "page": 14,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-14.png",
+      "sha256": "492b28a839a3f582bd62a41615a673bd3035d6ddad33e78004d95091f2e1c9ac"
+    },
+    {
+      "page": 14,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-014.png",
+      "sha256": "b5cadb4fcc7f63b4995a4f165f60a64a5c386fc6c562df0e94e5a4d1468e18a8"
+    },
+    {
+      "page": 15,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-15.png",
+      "sha256": "8da2d0f06d43f948c0208f7766498f4033defbbd35317cb3ab18ce6d27885c4b"
+    },
+    {
+      "page": 15,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-015.png",
+      "sha256": "9e565cd906aeaab0882951756a8ea3e5069947c6578677e34e5fdcb01c5bdd34"
+    },
+    {
+      "page": 16,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-16.png",
+      "sha256": "b7077fd549058c31468231ff85f57848174e37fb168351b485583948b11ae004"
+    },
+    {
+      "page": 16,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-016.png",
+      "sha256": "c4402f6f4e579b0ce929a537fb943f2dea24d9b22860bc2f62df92fb09427a43"
+    },
+    {
+      "page": 17,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-17.png",
+      "sha256": "f2604735ca427f2407f43d6c326c49a2d9e26b12949346167caf457333237798"
+    },
+    {
+      "page": 17,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-017.png",
+      "sha256": "2875fe6508ff7e3f8e859cc373ff787adf33e16c48806521a2761e383e4e2b20"
+    },
+    {
+      "page": 18,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-18.png",
+      "sha256": "af42e549eb59cc0fe10b24a10389a369e8c36c47bb3a833b567c11be56ba9b8f"
+    },
+    {
+      "page": 18,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-018.png",
+      "sha256": "666e63dd46c5016329d194e4823d07bcc94df204efbe2c5118d0d4d9d1ec8f40"
+    },
+    {
+      "page": 19,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-19.png",
+      "sha256": "56c410d774d7f8902eb49221b31bc91ccb1c597cf735133f577eb1e429dc6e42"
+    },
+    {
+      "page": 19,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-019.png",
+      "sha256": "e04fc3befcfaf43cb78838422da54bc2d8f132833e290952bf3f7229a686012c"
+    },
+    {
+      "page": 20,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-20.png",
+      "sha256": "6f1f54e9859401d6398c37b1e0dd4203e7d26321b15ec724e5bb3e7501590fb3"
+    },
+    {
+      "page": 20,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-020.png",
+      "sha256": "2731f4c33c1119a947348807cdf7d993d902932cee77f4ea8947ff99334d6b75"
+    },
+    {
+      "page": 21,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-21.png",
+      "sha256": "5f170228941bacfcb8009e76a58bb39c7c20b05fcde2903160a84df6b70e3630"
+    },
+    {
+      "page": 21,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-021.png",
+      "sha256": "a1423c8404a4dedbfd2ad018b6f382d0d1ba307f3bc50926ba1d5653f04b455e"
+    },
+    {
+      "page": 22,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-22.png",
+      "sha256": "10355c47801ebbd3c2f10743734bcf55b2ff722aa92d2f291c6759ae71999298"
+    },
+    {
+      "page": 22,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-022.png",
+      "sha256": "b4704b159a263cb2285ae80dad8b07abf7907ced333ee4450ac8b91361924ec4"
+    },
+    {
+      "page": 23,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-23.png",
+      "sha256": "a5fe15537e20f8cd4005ffbf9d8a9cb07241adb5c8a3dc247968c96d3172901b"
+    },
+    {
+      "page": 23,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-023.png",
+      "sha256": "214ebbb8ed169c1e52b27e561f3726d4ea30add7476569f17ccb7203604dd16e"
+    },
+    {
+      "page": 24,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-24.png",
+      "sha256": "244837ea3ab026514f91edfc406e7cc5f62b97302519e63cc749c14f0c2ab581"
+    },
+    {
+      "page": 24,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-024.png",
+      "sha256": "811ef7e5ad5d452a191cfc0a52d2dc68c2688223425406c4c9bed00b3d9450c5"
+    },
+    {
+      "page": 25,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-25.png",
+      "sha256": "1357177b11871f30c7799a485e259ac91295a68f066d9d59543e95569a7e2e06"
+    },
+    {
+      "page": 25,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-025.png",
+      "sha256": "dd54791d7201af2ffde0abef59243f8de1fe2a95fb85af533b3d7d77e5b59a87"
+    },
+    {
+      "page": 26,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-26.png",
+      "sha256": "290326ef538368533e5ad7995a22cc06aeb89974582981ab861bdf4add54cfd8"
+    },
+    {
+      "page": 26,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-026.png",
+      "sha256": "18e7719f6696ec644d10e713e6374f2d0f4dd3ac0d60a79a8accfbeb71de432e"
+    },
+    {
+      "page": 27,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-27.png",
+      "sha256": "2bb25d2ffe81087bc77ed32d29baccb8cff108f8e5442c1709b18d28eb722153"
+    },
+    {
+      "page": 27,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-027.png",
+      "sha256": "62876628a0ce0f739a22c71ea75c7e35d3d89c9c332ad2b39d198a97da009813"
+    },
+    {
+      "page": 28,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-28.png",
+      "sha256": "a4c0229c5f40dcb25e300b65631e8d037726cdb1acdc68b0af86bb4fa71a0eac"
+    },
+    {
+      "page": 28,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-028.png",
+      "sha256": "dbcf09ea1b9134c5bbe061d859cd4eb73150d56be28c9dd633748215f19d0bd0"
+    },
+    {
+      "page": 29,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-29.png",
+      "sha256": "dcfddaf86b89d7292f12393fc71aff3b530ff98f74100cf79f3fd339ec20d088"
+    },
+    {
+      "page": 29,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-029.png",
+      "sha256": "9be1b83ed5cf2c8d1c4eb44242385476dd156bcdeddfa9da8c74bf620ba137ba"
+    },
+    {
+      "page": 30,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-30.png",
+      "sha256": "316b91663ea2cc71e89bd3f5200d2b0fa8ed4f0bc5bb61ad4a588ce3c3c1a199"
+    },
+    {
+      "page": 30,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-030.png",
+      "sha256": "b65878f177a1cd811b784a1c440891eabb1a43e8de55fbbb2a16b1a4fab848cc"
+    },
+    {
+      "page": 31,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-31.png",
+      "sha256": "aadb0e7bf40e0454023ab47628c5e54c7361ae1eb8528a5340acf968ebb094d0"
+    },
+    {
+      "page": 31,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-031.png",
+      "sha256": "b0c85c93ceeb7eb73a8e3d5c00e57951e7d88ab6c9c172f2c58649cb248ad588"
+    },
+    {
+      "page": 32,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-32.png",
+      "sha256": "9290eb33c06ba5f953728f557cd7036d6a8f030db17c02fc3b845e25ee3eb8ed"
+    },
+    {
+      "page": 32,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-032.png",
+      "sha256": "80833f4bb2789eda0270a8e060c7bc7b6a29e55266f65cc6370471dd7bfb2500"
+    },
+    {
+      "page": 33,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-33.png",
+      "sha256": "595cb3c07055e9de529f8901af260416f273a4937b7e60e5c39fcce28f3d2f04"
+    },
+    {
+      "page": 33,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-033.png",
+      "sha256": "5e04a23d84e777269541a59daae64b434a3755b61809c53339a9fcb140767751"
+    },
+    {
+      "page": 34,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-34.png",
+      "sha256": "20974b0f3bd01558f77f880628804b398a0de85c0750af9b8ad477e8155508ee"
+    },
+    {
+      "page": 34,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-034.png",
+      "sha256": "ccee32d51b81e39fe782ec51ebff56a70c338e989fcd5b209c284bad1adbed58"
+    },
+    {
+      "page": 35,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-35.png",
+      "sha256": "79db9a98f7da412b9736ee1178e8125bd42411521f3c6298a487660a1140d54b"
+    },
+    {
+      "page": 35,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-035.png",
+      "sha256": "27f5a52711fdf945100c6e8addc8fdefbb9b7519e88d7648068a3a03821f3e40"
+    },
+    {
+      "page": 36,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-36.png",
+      "sha256": "5bbeb3650ee9c58f31ba82dff27d9ddcf4503cbc40fbf39fae15b55891875ab4"
+    },
+    {
+      "page": 36,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-036.png",
+      "sha256": "f68e74fd06e84c936750f26f36da3b8854935836afc06c2e7f53f95b110cfcf1"
+    },
+    {
+      "page": 37,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-37.png",
+      "sha256": "806bcacd8580cb601a7ad905b35bbb84c9d4f715a39012fd00828c90f93872ef"
+    },
+    {
+      "page": 37,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-037.png",
+      "sha256": "e15f7fa1955e1405048bc2952876c643d8a80b406ef21975ca025becddf278fb"
+    },
+    {
+      "page": 38,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-38.png",
+      "sha256": "9a5c36264099fca5a660766e4ed001a452aa7e854eda5d88bcc17a2044e19c58"
+    },
+    {
+      "page": 38,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-038.png",
+      "sha256": "0baf5d3fce88d8e5e06d860664232bc3ad8c75af8161d14d80e0644a9a5ba3bd"
+    },
+    {
+      "page": 39,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-39.png",
+      "sha256": "1a699db6b83835e98d719750ab7437bd73a2fffe110b527c69cb489553d1febd"
+    },
+    {
+      "page": 39,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-039.png",
+      "sha256": "3b64f5c40ac222e3088881bb28748010b11741dfeb25252559aba2499b0b74fc"
+    },
+    {
+      "page": 40,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-40.png",
+      "sha256": "06b05a7d7e8aa6b33307c46586ffe20f53bf3cfc040adc834ca3f27878aa7bce"
+    },
+    {
+      "page": 40,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-040.png",
+      "sha256": "05e7ac4a01f0f15ad5bac096594a5c2257e7a5a153e9fb912b1bbd0d835a2a91"
+    },
+    {
+      "page": 41,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-41.png",
+      "sha256": "ae99f5f3808fca525d4921949b6bce5dd4bb9fc3873f9fd9d59a3ae3183e4ce1"
+    },
+    {
+      "page": 41,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-041.png",
+      "sha256": "bc4c9d7f37aac1f3af941ddd556e3b22d6eeadf94842a0d715fa7c7656b4aec4"
+    },
+    {
+      "page": 42,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-42.png",
+      "sha256": "3bb8b8e211ac36eabcf787f3e1719f38fe2dadf50cbac9efd35677cb8b8087a6"
+    },
+    {
+      "page": 42,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-042.png",
+      "sha256": "6ac095639202d7476b9ff68120acaa87658bf101654b8c6ea04d2f2444d7203b"
+    },
+    {
+      "page": 43,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-43.png",
+      "sha256": "68a8ac9613042ef197405b073c85e609ee4f94f10f6ee6b6df3278996232d7fe"
+    },
+    {
+      "page": 43,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-043.png",
+      "sha256": "75e9dd538c7fb64522c16a934385d225bc8c935662109a64508dcddcfb3c9d9f"
+    },
+    {
+      "page": 44,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-44.png",
+      "sha256": "dfe85d32a829985e9a11881327a6d54262a0c087a7cb62c4c6803b8b12cab793"
+    },
+    {
+      "page": 44,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-044.png",
+      "sha256": "65e255cfc96a4f9dae58c41b6e8b7946e247f6ff8438d9758724b93182b2b3d5"
+    },
+    {
+      "page": 45,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-45.png",
+      "sha256": "36e995e79a806b55ad62e55b4618ff821d511dde490282a864c7bfcbdb57134d"
+    },
+    {
+      "page": 45,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-045.png",
+      "sha256": "ac7056cd3025345116576050ac2d0e259a5a76101a89663f24f5fb9ec7b35913"
+    },
+    {
+      "page": 46,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-46.png",
+      "sha256": "8139ffb7c344e9f48e89daf5e98a79a8a5287d28463e1fe27fa31f716fcfb585"
+    },
+    {
+      "page": 46,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-046.png",
+      "sha256": "f1845260b4416620ee7cb8e7d8d370b7e7033f793806bc14c66bb02db5bb8e07"
+    },
+    {
+      "page": 47,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-47.png",
+      "sha256": "b0ddd7ac4d8b352f35667860c9b6d712128f02801ebd7be107c7b747fb608feb"
+    },
+    {
+      "page": 47,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-047.png",
+      "sha256": "0847678a03a054d81bad0ba7e5b4244986580b93c78247314c883ee7683fd651"
+    },
+    {
+      "page": 48,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-48.png",
+      "sha256": "4db01483d8ae696cba5d0fa4a6b50327c576cd7896bb0d4ffb7593e5044d5d35"
+    },
+    {
+      "page": 48,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-048.png",
+      "sha256": "857daf0b6e72898c00d02fc1c01f3f1485fdb2df187ca03673f1d33a81b811a2"
+    },
+    {
+      "page": 49,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-49.png",
+      "sha256": "4c23989c7ec4cb2d385bd88b2e8527b02457ead24da1381b166c90326508fbb0"
+    },
+    {
+      "page": 49,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-049.png",
+      "sha256": "300db13432324ddc9e5136c8a73f75f3090a4521f575967e786d877cc08d2700"
+    },
+    {
+      "page": 50,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-50.png",
+      "sha256": "b239ae552ff065ccb6305102539e89a5f73059e2d54e2dd76e292397bbb68955"
+    },
+    {
+      "page": 50,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-050.png",
+      "sha256": "72c2e06ea4a55c135aff940d94610e757e401b6b7be6919597615f124f61ad1e"
+    },
+    {
+      "page": 51,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-51.png",
+      "sha256": "0f9c1d650cdc0a821fa8b055d67e68472627feccb845047d5473f29e2423614f"
+    },
+    {
+      "page": 51,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-051.png",
+      "sha256": "f514475ba25e6a1b9ae2eca14d48f3cb3e3b9aae82eeac4bbd759725bc76be90"
+    },
+    {
+      "page": 52,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-52.png",
+      "sha256": "aff65fd84b85e9350a79faeb94b7cc4c33911c33e111526225a55e63f0b7206c"
+    },
+    {
+      "page": 52,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-052.png",
+      "sha256": "905452b648259cde65f03aa2ffe181bbfd0c1241e5629f957a6845db1b50eef0"
+    },
+    {
+      "page": 53,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-53.png",
+      "sha256": "b1cd39912ad75392ea698bd76317dc47ea4d1a43116163ec9eea8a759e0ed357"
+    },
+    {
+      "page": 53,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-053.png",
+      "sha256": "3ee154357a871f798718121593dbfdd9fb06f3293b8e5c42fde22455241ed8d8"
+    },
+    {
+      "page": 54,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-54.png",
+      "sha256": "9fb186783a39a36fe36b8eed0769ab5384ed00b4c478e7f4d90950bff7c8b607"
+    },
+    {
+      "page": 54,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-054.png",
+      "sha256": "17d31ee3a9789cd57593c1ab8fcd9bc4f2a4c368302b9f7f1e7bcae836ee9641"
+    },
+    {
+      "page": 55,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-55.png",
+      "sha256": "608be31d9db9109d8766208f318b5c90d4a1f61af2af97e9bc51f2fea10f9ed5"
+    },
+    {
+      "page": 55,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-055.png",
+      "sha256": "c97bf13c59807dd942ba0cfe4384850335c4efcd5d03cda51940f11843172516"
+    },
+    {
+      "page": 56,
+      "renderer": "poppler",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-poppler/page-56.png",
+      "sha256": "5a4cfbd93d21484edb1d97e95319d662112b2bdfb7e0128299d30e4a24e0d990"
+    },
+    {
+      "page": 56,
+      "renderer": "pdfkit",
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/renders/final/daytime-pdfkit/page-056.png",
+      "sha256": "eb62aaaa4faebff51532e010c45e522c5882d2e713738683ff53972d5a8f7ea0"
+    }
+  ],
+  "contactSheets": [
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-01-02.png",
+      "sha256": "7f72e62e7be39ecf23a95855023d60677e2471f7b5b195f3093e3a937bd260fe"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-03-04.png",
+      "sha256": "81645edcc88c7f975fc9ce48a51c55f2d9d4b2bab223dabfa844cc848d89de43"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-05-06.png",
+      "sha256": "cd57d7d03d64b1dc9c9d37916082b10163e4eb6f9e78a81360e0441b6210af23"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-07-08.png",
+      "sha256": "1a6bd6fddf5147c8c6132dcedd2c00cd4dc6e35480fe9db523e91ea6881570bb"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-09-10.png",
+      "sha256": "b4b2f56c37cbe98430924cf05d4a1aa46adc45b391f2ab2c00c177ac312abdd4"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-11-12.png",
+      "sha256": "7a5d95046e9a748f830140d58f0c15b101e09b87a4acc763394f24ba824bb4fa"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-13-14.png",
+      "sha256": "437fcb1babad16833ae409bf6a644839ace78a68d2de59e13bf7d974d7e36cf6"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-15-16.png",
+      "sha256": "54aa48b83cc8de1567f011ce01190275a32582d39117d149b76b7e5a9b964006"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-17-18.png",
+      "sha256": "1a677ce37b85ed0c981b6773f1f086fd26aef880ae14d9fea083d33ba6c74cf5"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-19-20.png",
+      "sha256": "e1563b2e96aa3c23d4323efdf56b01c4e8c28f8b514db08122458fd5cb1a5b82"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-21-22.png",
+      "sha256": "cb6cc78a883196371b82a64260fa911c2517743fe2c73621aa85114ee7b10d49"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-23-24.png",
+      "sha256": "4e5f4f0be615c935482ac255f0588cf221c17678abe6dea3df9669a81d1582a8"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-25-26.png",
+      "sha256": "d9623d3bbb52fc504ff5875dc1a12b4ac93b1c3ba2b19e6623d741337ed7ed85"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-27-28.png",
+      "sha256": "34ced49993fbf3643c94289b644837477e850ff0ddebd8cf747f07454ffd09a9"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-29-30.png",
+      "sha256": "e61571d16496be84b85c2f63a9ed444f4b53146f69d429ede75f110258192756"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-31-32.png",
+      "sha256": "51feb13b2944fe9c74947dacfd3e985c551f6d8a9f0c02280c29c3e86537db55"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-33-34.png",
+      "sha256": "2d33ddb592e00f7808377587b28dca3e793b277ddc0b43946fe02a196b09ba15"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-35-36.png",
+      "sha256": "6275e5e705d8f188222db22a8bea12be5e16c7a69b5bdc95e6f8a3d4e229638e"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-37-38.png",
+      "sha256": "f4c8d03e75934b2fd054f6e623198ef0582bbd23c5d4e5d49d6aee7f5c5a8db0"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-39-40.png",
+      "sha256": "b70f62a4cb35d7dad7e77b2ba28c674e4a7db75ce8eb576ce64d96eac837de16"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-41-42.png",
+      "sha256": "63bdde445817f08b4c1054e2d03413488a485a7b56ca72e2eb30223b3040e32c"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-43-44.png",
+      "sha256": "647571691d8126b8b18520e505ef0aabd6c064d53369e4e807ad641371b6f3d6"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-45-46.png",
+      "sha256": "c784590215edf2792dcbaf6975b8918d23e8fc7861931fb2027ed33a270343f7"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-47-48.png",
+      "sha256": "40175043e6c9aa00b349f8d9f631a606838f665ff4796fd22020438b402ae11b"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-49-50.png",
+      "sha256": "81102104f72edcf7cab0c2be4d52136b98b7a04a7130aae7222a7043da69946c"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-51-52.png",
+      "sha256": "1b6c3c513896b81776d5b92392d2ca2214a666399625394e19c75fdcf92c7bc6"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-53-54.png",
+      "sha256": "4960e580063496b1063679e3a6822a3f78d7e731832ead57c283770803e76ef7"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-v120-resume/artifact-assembly/qa/daytime-final-visual/paired-55-56.png",
+      "sha256": "4e75e864250af5debe516abbd40a15502394be140437e10db31b395bcf984863"
+    }
+  ],
+  "pageVerdicts": [
+    {
+      "page": 1,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 2,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 3,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 4,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 5,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 6,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 7,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 8,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 9,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 10,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 11,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 12,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 13,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 14,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 15,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 16,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 17,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 18,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 19,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 20,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 21,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 22,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 23,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 24,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 25,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 26,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 27,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 28,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 29,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 30,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 31,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 32,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 33,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 34,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 35,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 36,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 37,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 38,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 39,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 40,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 41,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 42,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 43,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 44,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 45,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 46,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 47,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 48,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 49,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 50,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 51,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 52,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 53,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 54,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 55,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 56,
+      "poppler": "good",
+      "pdfkit": "good"
+    }
+  ],
+  "limitations": "Visual approval binds only these exact Daytime PDF bytes. Paired appearance parity, Markdown/reader validation, public package assembly, and release/deployment acceptance have separate evidence and owners."
+}

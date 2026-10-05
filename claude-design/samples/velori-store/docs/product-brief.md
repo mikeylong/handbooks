@@ -1,11 +1,9 @@
-# Review a configured Velori
+# Extend the Velori configurator
 
-Let a shopper configure a personal robot, inspect its accessory, and review the finished combination before returning to edit.
+The starting product lets a shopper choose shell finish, face, expression color, and one accessory. Preserve Velori's name, photographs, masks, captions, controlled choices, and 1024 × 768 composition. Use the accepted rules in [native-baseline.md](native-baseline.md). Keep the expression dropdown and one dock, bag, or none value. Continue uses Ink/white, 12px corners, and 48px height; accessory gaps are 24px.
 
-Preserve the Velori name, product photos, face masks, captions, finish choices, expression colors, and 1024 × 768 composition. Keep the v1.4 dropdown and one accessory selection. Continue uses Ink with white text, 12px corners, and 48px height. Accessory cards have 24px gaps.
+After known-screen fidelity and correction persistence pass, generate one new Review configuration screen. Show the chosen robot and all four choices. Edit configuration and Back return without losing values. Preserve keyboard navigation, heading and return focus, reload persistence, and product-image failure/retry. The application owns shared state and navigation; the review composes accepted library components.
 
-The bounded extension makes Continue open Review configuration. Show the selected robot and a summary of finish, face, expression color, and accessory. Edit configuration returns to the configurator without losing values. The sample includes the completed extension so you can compare your result with a working implementation.
+Payment, stock, accounts, shipping, and order submission are outside the result. Details photography keeps its current direct image behavior; adding details-image loading, retry, or recovery is outside this change. Narrow finish and face gaps remain 16px, while accessories stay at 24px.
 
-Require pointer and keyboard navigation, useful return focus, correct Back behavior, reload persistence, and an unavailable-image state that retains choices. Browsing accessory details must not change the selected accessory.
-
-Payment, inventory, accounts, shipping, and order submission are outside this exercise. Later exercises can introduce color chips or compatible accessory combinations, with explicit rules for retaining existing configuration values. Independent accessory checkboxes are a proposed extension, not the baseline.
+This brief specifies the bounded assignment. It supplies no completed screen implementation, historical destination, or native completion evidence.

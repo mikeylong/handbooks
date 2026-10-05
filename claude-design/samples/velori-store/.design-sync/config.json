@@ -1,12 +1,12 @@
 {
+  "projectId": "5afb9ef4-3f37-4e44-96ff-4580188bd278",
   "pkg": "velori-store-handbook-sample",
   "globalName": "Velori",
   "shape": "package",
   "entry": "./.design-sync/host-entry.mjs",
   "guidelinesGlob": [
-    "docs/product-brief.md",
-    "docs/inventory.md",
-    "docs/expected-results.md"
+    "docs/native-baseline.md",
+    "docs/product-brief.md"
   ],
   "componentSrcMap": {
     "AccessoryChoice": "src/library.jsx",
@@ -21,7 +21,8 @@
     "ProductPreview": "src/library.jsx",
     "SelectionMark": "src/library.jsx",
     "StoreHeader": "src/library.jsx",
-    "VeloriIcon": "src/library.jsx"
+    "VeloriIcon": "src/library.jsx",
+    "ReviewConfiguration": null
   },
   "dtsPropsFor": {
     "VeloriIcon": "name: 'check' | 'chevron' | 'friendly' | 'simple'; className?: string; [svgAttr: string]: unknown;",
@@ -70,5 +71,8 @@
       "cardMode": "column"
     }
   },
-  "readmeHeader": ".design-sync/conventions.md"
+  "readmeHeader": ".design-sync/conventions.md",
+  "libOverrides": {
+    "source-kit.mjs": "Delegate installed package discovery unchanged; copy Velori assets and deterministic SHA inventory before native hashes, validation and capture."
+  }
 }

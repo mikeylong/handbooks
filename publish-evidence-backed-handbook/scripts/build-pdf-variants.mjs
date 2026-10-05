@@ -14,6 +14,8 @@ const book=resolve(v.book),config=JSON.parse(await readFile(v.config,'utf8')),ou
 const run=(command,args)=>{const r=spawnSync(command,args,{stdio:'inherit',env:{...process.env,HANDBOOK_PUBLISHING_TOOLKIT:toolkit}});if(r.status!==0)throw Error(command+' failed: '+r.status);};
 // Use the Python guard before any directory copy/render step.
 run(v.python,['-c',`import sys;sys.path.insert(0,sys.argv[1]);from pdf_theme import isolated_output;isolated_output(sys.argv[2],sys.argv[3])`,scripts,book,out]);
+// Verify the previous artifact before conversion, artwork or source execution.
+run(v.python,['-c',`import sys,json;sys.path.insert(0,sys.argv[1]);from pdf_baseline import load_baseline;load_baseline(sys.argv[2],json.load(open(sys.argv[3])))`,scripts,book,resolve(v.config)]);
 let art;
 if(v.theme==='dark'){
  art=resolve(dirname(out),out.split('/').at(-1).replace('.pdf','')+'-artwork');
@@ -48,6 +50,6 @@ else if(config.renderer==='chromium'){
  await writeFile(resolve(work,'pdf-theme.css'),css);
  const raw=resolve(work,'raw.pdf');
  run(process.execPath,[resolve(scripts,'render-chromium-pdf.mjs'),'--browser',v.browser,'--html',resolve(work,'index.html'),'--output',raw,'--theme',v.theme,'--theme-css',resolve(work,'pdf-theme.css'),'--playwright-module',v['playwright-module']]);
- run(v.python,[resolve(scripts,'finalize_chromium_pdf.py'),'--input',raw,'--output',out,'--theme',v.theme,'--config',resolve(v.config)]);
+ run(v.python,[resolve(scripts,'finalize_chromium_pdf.py'),'--input',raw,'--output',out,'--theme',v.theme,'--config',resolve(v.config),'--book',book]);
 }else throw Error('Unsupported renderer');
 console.log('Candidate: '+out);

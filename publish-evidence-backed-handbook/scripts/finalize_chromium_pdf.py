@@ -17,6 +17,7 @@ from reportlab.lib.colors import HexColor
 
 import json
 from pdf_theme import theme_tokens
+from pdf_baseline import load_baseline, preserve_companion_labels
 CONFIG = {}
 BOOK_TITLE = ''
 AUTHOR = ''
@@ -104,10 +105,11 @@ def build_overlay(reader: PdfReader) -> PdfReader:
     return PdfReader(buffer)
 
 
-def finalize(input_path: Path, output_path: Path, config=None, theme='light') -> None:
+def finalize(input_path: Path, output_path: Path, config=None, theme='light', book=None) -> None:
     global CONFIG, BOOK_TITLE, AUTHOR, SUBTITLE, CHAPTERS, RUNNING_FONT_PATH, THEME
     CONFIG=config or {}; BOOK_TITLE=CONFIG['title']; AUTHOR=CONFIG['author']; SUBTITLE=CONFIG['subtitle']; CHAPTERS=CONFIG['chapters']; THEME=theme
     RUNNING_FONT_PATH=Path(CONFIG['runningFont'])
+    mode, baseline = load_baseline(book or input_path.parent, CONFIG)
     if output_path.exists(): raise ValueError('Refusing to overwrite an existing PDF')
     reader = PdfReader(input_path)
     overlay = build_overlay(reader)
@@ -136,14 +138,10 @@ def finalize(input_path: Path, output_path: Path, config=None, theme='light') ->
             "/Creator": "Chromium; ReportLab",
         }
     )
-    writer.set_page_label(0, 0, prefix="Cover")
-    writer.set_page_label(1, 2, style=PageLabelStyle.LOWERCASE_ROMAN, start=2)
-    writer.set_page_label(
-        3,
-        len(writer.pages) - 1,
-        style=PageLabelStyle.DECIMAL,
-        start=1,
-    )
+    if not preserve_companion_labels(writer, reader, mode, baseline):
+        writer.set_page_label(0, 0, prefix="Cover")
+        writer.set_page_label(1, 2, style=PageLabelStyle.LOWERCASE_ROMAN, start=2)
+        writer.set_page_label(3, len(writer.pages) - 1, style=PageLabelStyle.DECIMAL, start=1)
     writer.page_mode = "/UseOutlines"
     writer.create_viewer_preferences().display_doctitle = True
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -156,9 +154,10 @@ def main() -> None:
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--config",type=Path,required=True)
+    parser.add_argument("--book",type=Path)
     parser.add_argument("--theme",choices=["light","dark"],required=True)
     args = parser.parse_args()
-    finalize(args.input, args.output,json.loads(args.config.read_text()),args.theme)
+    finalize(args.input, args.output,json.loads(args.config.read_text()),args.theme,args.book or args.config.parent)
 
 
 if __name__ == "__main__":

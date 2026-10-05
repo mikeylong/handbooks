@@ -411,7 +411,7 @@ def prompt_block(tool: str, title: str, body: str) -> list[Flowable]:
 
 def code_block(body: str, language: str = "") -> Table:
     rows = [[paragraph] for paragraph in _preformatted_paragraphs(body, CODE)]
-    table = Table(rows, colWidths=[CONTENT_W], hAlign="LEFT", splitByRow=1, splitInRow=1, spaceAfter=7)
+    table = Table(rows, colWidths=[CONTENT_W], hAlign="LEFT", splitByRow=1, splitInRow=0, spaceAfter=7)
     table.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("BACKGROUND", (0, 0), (-1, -1), PALE_2),
@@ -841,6 +841,17 @@ class GuideDocTemplate(BaseDocTemplate):
     def _body(self, canvas, doc) -> None:
         canvas.saveState()
         self._metadata(canvas)
+        self._footer(canvas, self._display_page(doc.page))
+        canvas.restoreState()
+
+    def afterPage(self) -> None:
+        # H1 flowables establish this page's section before its running head.
+        # Chapter openers and frontmatter retain their existing furniture.
+        if self.pageTemplate.id == "Body":
+            self._body_running_head(self.canv)
+
+    def _body_running_head(self, canvas) -> None:
+        canvas.saveState()
         canvas.setStrokeColor(LINE)
         canvas.setLineWidth(0.4)
         canvas.line(LEFT, PAGE_H - 10 * mm, PAGE_W - RIGHT, PAGE_H - 10 * mm)
@@ -851,7 +862,6 @@ class GuideDocTemplate(BaseDocTemplate):
         while pdfmetrics.stringWidth(running, SANS, 5.7) > CONTENT_W * 0.55 and len(running) > 12:
             running = running[:-4].rstrip() + "..."
         canvas.drawRightString(PAGE_W - RIGHT, PAGE_H - 7.2 * mm, running)
-        self._footer(canvas, self._display_page(doc.page))
         canvas.restoreState()
 
     def _chapter(self, canvas, doc) -> None:
@@ -987,8 +997,6 @@ def parse_markdown() -> list[Flowable]:
         if stripped == "<pagebreak>":
             next_line = _next_nonblank(lines, index + 1)
             if not next_line.startswith("<!-- CHAPTER"):
-                if next_line.startswith("# "):
-                    story.append(SetNextRunningHead(next_line[2:]))
                 story.append(PageBreak())
             index += 1
             continue

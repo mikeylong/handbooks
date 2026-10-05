@@ -73,8 +73,8 @@ def heading_lines(text: str) -> list[str]:
 
 
 def is_changelog_surface(text: str, role: str) -> bool:
-    if any(word in role for word in CHANGELOG_WORDS):
-        return True
+    if role:
+        return any(word in role for word in CHANGELOG_WORDS)
     headings = heading_lines(text)
     return "changelog" in headings or (
         "version history" in headings and "changelog" in headings
@@ -82,8 +82,8 @@ def is_changelog_surface(text: str, role: str) -> bool:
 
 
 def is_navigation_surface(text: str, role: str) -> bool:
-    if any(word in role for word in NAVIGATION_ROLE_WORDS):
-        return True
+    if role:
+        return any(word in role for word in NAVIGATION_ROLE_WORDS)
     headings = heading_lines(text)
     return "contents" in headings or "index of terms" in headings
 

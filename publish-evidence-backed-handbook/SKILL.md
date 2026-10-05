@@ -43,7 +43,7 @@ Identify the canonical source, previous approved PDF, candidate output path, int
 - When new illustration is required or existing illustration is being replaced, read `references/illustration-workflow.md`. If its preferred image-generation path is missing or unavailable, or the user explicitly requests sourced open art, also read `references/open-image-fallback.md`.
 - For authoring or substantive revision, read `references/editorial-quality.md`.
 - For external research or claim changes, read `references/research-and-evidence.md`.
-- For edition comparison, changelogs, versioning, or publication, read `references/edition-and-release.md`.
+- For edition comparison, changelogs, versioning, or publication, read `references/edition-and-release.md`. Also read [references/retained-editions.md](references/retained-editions.md) before advancing a hosted edition.
 - Before calling a candidate ready, read `references/quality-gates.md`.
 - For PDF generation, appearance companions, new editions or future titles, read [references/pdf-appearances.md](references/pdf-appearances.md). Both explicit downloads use shared PDF generation and validation.
 - For hosted reader creation, new editions, future titles, or shared rendering changes, read [references/shared-reader-workflow.md](references/shared-reader-workflow.md). Consolidate reusable code into the skill before extending duplicated builders.

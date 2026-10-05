@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Exercise Markdown fences through the shared hosted reader without altering commands."""
-import json, os, tempfile
+import json, os, tempfile, subprocess, sys
 from pathlib import Path
 from html.parser import HTMLParser
 from flowable_reader import build_reader
@@ -43,3 +43,6 @@ with tempfile.TemporaryDirectory(prefix='handbook-code-') as directory:
     assert html.count('class="reader-prompt"')==1
     assert 'This remains prose.' in html and html.count('reader-terminal')==1
 print('PASS shell identity, exact whitespace and escaping, non-shell code, prompts and prose callouts')
+
+# CI invokes this entry point; include shared PDF page-layout boundary checks.
+subprocess.run([sys.executable, str(Path(__file__).with_name("test-markdown-page-layout.py"))], check=True)
