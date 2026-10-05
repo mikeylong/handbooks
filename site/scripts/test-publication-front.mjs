@@ -1,11 +1,14 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const output=process.env.HANDBOOK_SITE_OUTPUT || new URL('../output/site/',import.meta.url).pathname;
+const publications=resolve(output,'../publications');
 import {installPublicationReview, validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
 import {renderGalleryCover, validateGalleryCover} from './gallery-covers.mjs';
-const manifest=JSON.parse(await readFile(new URL('../output/publications/ai-evaluation.json',import.meta.url),'utf8'));
+const manifest=JSON.parse(await readFile(resolve(publications,'ai-evaluation.json'),'utf8'));
 const publication=manifest;
 const edition=manifest;
-const html = await readFile(new URL('../output/site/ai-evaluation/index.html', import.meta.url), 'utf8');
+const html = await readFile(resolve(output,'ai-evaluation/index.html'), 'utf8');
 assert.equal(validatePublicationFront(html, edition).status, 'passed');
 const unscheduled = installPublicationReview(html, null);
 validatePublicationFront(unscheduled, {...edition, review: null});
@@ -34,7 +37,7 @@ const regressions = [
  ['broken Explore action', html.replace('href="#contents">Explore the handbook', 'href="#missing">Explore the handbook'), /exploreAction/],
  ['wrong release link', html.replaceAll(publication.releaseUrl, 'https://example.invalid/other-release'), /sidebarRelease/],
  ['wrong cover title', html.replace('<h1 id="cover-title">AI Evaluation Field Guide</h1>', '<h1 id="cover-title">Other handbook</h1>'), /title/],
- ['wrong visible page count', html.replace('<span>100 pages</span>', '<span>105 pages</span>'), /pdfAction/],
+ ['wrong visible page count', html.replace(/(<span(?: class="download-metadata")?>)100 pages/g, (_,open)=>open+'105 pages'), /pdfAction/],
  ['missing review policy', html.replace('Site and PDF updates publish together after manual review.', ''), /reviewPolicy/],
 ];
 for (const [name, broken, expected] of regressions) {
@@ -48,9 +51,15 @@ assert.throws(()=>validateGalleryPublications('<a class="handbook-card-link" hre
 console.log('An unvalidated new gallery title is also rejected.');
 
 // Exercise the actual hosted readers, including the original missing-class bug.
-const gallery = await readFile(new URL('../output/site/index.html', import.meta.url), 'utf8');
+const gallery = await readFile(resolve(output,'index.html'), 'utf8');
+const galleryPaths=[...gallery.matchAll(/class="handbook-card-link" href="([^"]+)"/g)].map(match=>match[1]);
+validateGalleryPublications(gallery,galleryPaths);
+for(const leaked of ['<span data-pdf-downloads></span>','<a data-markdown-download href="/book.md">Markdown</a>','<a download href="/book.pdf">PDF</a>']){
+ assert.throws(()=>validateGalleryPublications(gallery.replace('</main>',leaked+'</main>'),galleryPaths),/without download controls/);
+}
+console.log('Gallery download controls are rejected; reader downloads remain available.');
 for (const path of ['ai-evaluation', 'production-ai-engineering', 'ai-consulting', 'claude-design']) {
- const reader = await readFile(new URL(`../output/site/${path}/index.html`, import.meta.url), 'utf8');
+ const reader = await readFile(resolve(output,path,'index.html'), 'utf8');
  assert.doesNotMatch(reader, /release-window-products|Site \+ PDF/, `${path}: review badge must be omitted`);
  validateGalleryCover(gallery, `/${path}/`, reader);
  const preview = renderGalleryCover(reader);

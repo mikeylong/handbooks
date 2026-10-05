@@ -1,4 +1,5 @@
 /** Portable Markdown editions derived from the exact assembled reader body. */
+import {downloadRow,downloadSize} from './download-row.mjs';
 import {readFile,mkdir,writeFile} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {digest,safePath} from './reader-paths.mjs';
@@ -109,5 +110,5 @@ export function markdownLink(edition){
  const m=edition.markdown;
  if(!m||m.version!==edition.version||m.downloadFilename!==`${edition.id}-v${edition.version}.md`||m.publicUrl!==`/${edition.id}/editions/v${edition.version}/${m.downloadFilename}`||! /^[a-f0-9]{64}$/.test(m.sha256))throw Error('Missing or wrong Markdown edition');
  const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
- return `<a class="pdf-download-link markdown-download-link" href="${m.publicUrl}" download="${m.downloadFilename}" data-markdown-download aria-label="Download ${escape(edition.title)}, Markdown edition, content edition ${escape(edition.version)}">Markdown edition</a>`;
+ return `<a class="pdf-download-link markdown-download-link" href="${m.publicUrl}" download="${m.downloadFilename}" data-markdown-download aria-label="Download ${escape(edition.title)}, Markdown edition, content edition ${escape(edition.version)}, ${downloadSize(m.bytes)}">${downloadRow('Markdown edition','MD','Plain text for tools and reuse',downloadSize(m.bytes))}</a>`;
 }

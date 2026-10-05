@@ -110,12 +110,10 @@ for(const pin of books){
   await writeFile(resolve(output,pin.id,'index.html'),html);
   await writeFile(resolve(output,'../publications',pin.id+'.json'),JSON.stringify(edition,null,2)+'\n');
   gallery=gallery.replace(pin.coverPlaceholder,renderGalleryCover(html));
-  gallery=gallery.replace(new RegExp(`(<a class="handbook-card-link" href="/${pin.id}/"[^>]*>[\\s\\S]*?</a>)`),`$1${downloadLinks(edition,variants,{compact:true})}`);
-  validateDownloads(gallery,edition,variants);editions.push({pin,html});
+  editions.push({pin,html});
 }
 for(const {pin,html} of editions)validateGalleryCover(gallery,'/'+pin.id+'/',html);
 validateGalleryPublications(gallery,books.map(book=>'/'+book.id+'/'));
-gallery=gallery.replace('</head>','<link rel="stylesheet" href="/pdf-downloads.css"></head>');
 await writeFile(resolve(output,'index.html'),gallery);
 await writeFile(resolve(output,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://handbooks.surfaces.systems/sitemap.xml\n');
 await writeFile(resolve(output,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+['/',...books.flatMap(book=>['/'+book.id+'/',new URL(book.editionUrl).pathname])].map(path=>`<url><loc>https://handbooks.surfaces.systems${path}</loc></url>`).join('')+'</urlset>\n');

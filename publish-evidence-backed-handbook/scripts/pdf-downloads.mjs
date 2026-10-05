@@ -3,6 +3,7 @@ import {readFile,lstat,realpath} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {safePath,digest} from './reader-paths.mjs';
 import {markdownLink} from './markdown-downloads.mjs';
+import {downloadRow,downloadSize} from './download-row.mjs';
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 export const PDF_NAMES=Object.freeze({light:'Daytime version',dark:'Late night version'});
 export function validateVariantIdentity(manifest, edition, {candidate=false}={}) {
@@ -45,7 +46,8 @@ export async function resolvePdfVariants(source,edition,manifestPin,{candidate=f
  return variants;
 }
 export function downloadLinks(edition,variants,{compact=false}={}) {
- return `<span class="pdf-downloads" data-pdf-downloads>${compact?'Download:':'<span class="pdf-download-title">Download</span>'} ${variants.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages">${v.displayName}${compact?'':` <span>${v.pages} pages</span>`}</a>`).join('<span aria-hidden="true"> · </span>')}<span aria-hidden="true"> · </span>${markdownLink(edition)}</span>`;
+ const ordered=[...variants].sort((a,b)=>['light','dark'].indexOf(a.theme)-['light','dark'].indexOf(b.theme));
+ return `<span class="pdf-downloads${compact?' downloads-compact':''}" data-pdf-downloads role="group" aria-label="Download ${escape(edition.title)}"><span class="pdf-download-title">Download</span>${markdownLink(edition)}${ordered.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages, ${downloadSize(v.bytes)}">${downloadRow(v.displayName,'PDF',v.theme==='light'?'For printing':'For dark reading',`${v.pages} pages, ${downloadSize(v.bytes)}`)}</a>`).join('')}</span>`;
 }
 export function installReaderDownloads(html,edition,variants) {
  html=html.replace(/<header\b[^>]*class="mobile-bar"[^>]*>[\s\S]*?<\/header>/,header=>{
@@ -58,7 +60,7 @@ export function installReaderDownloads(html,edition,variants) {
  });
  if(count<2)throw Error('Missing cover/sidebar PDF downloads');
  html=html.replace(/(<section\b[^>]*class="[^"]*\bcover\b[^"]*"[^>]*>[\s\S]*?)(<section\b[^>]*class="release-window)/,`$1<p class="pdf-print-guidance">Use the Daytime version for printing.</p>$2`);
- html=html.replace('</main>',`<section class="pdf-end-downloads" aria-label="PDF downloads">${downloadLinks(edition,variants)}</section></main>`);
+ html=html.replace('</main>',`<section class="pdf-end-downloads" aria-label="Handbook downloads">${downloadLinks(edition,variants)}</section></main>`);
  return html;
 }
 export function editionDownloadDetails(edition,variants){
@@ -67,6 +69,7 @@ export function editionDownloadDetails(edition,variants){
 export function validateDownloads(html,edition,variants){
  markdownLink(edition);
  if(!html.includes(`href="${edition.markdown.publicUrl}"`)||!html.includes(`download="${edition.markdown.downloadFilename}"`)||!html.includes('data-markdown-download'))throw Error('Missing Markdown edition download');
+ for(const group of html.matchAll(/<span\b[^>]*data-pdf-downloads[^>]*>[\s\S]*?<a\b[^>]*>/g))if(!group[0].includes('data-markdown-download'))throw Error('Markdown must be the first download option');
  for(const v of variants){
   if(!html.includes(`download="${v.downloadFilename}"`)||!html.includes(`href="${v.publicUrl}"`)||!html.includes(`data-pdf-theme="${v.theme}"`)||!html.includes(`content edition ${edition.version}, ${v.pages} pages`))throw Error('Missing download or accessible identity: '+v.displayName);
  }
