@@ -32,11 +32,17 @@ function reviewTimeLabel(review) {
     .format(new Date(review.at)).replace(/[\u00a0\u202f]/g, ' ').replace(/\bTime\b/g, 'time');
 }
 export function installPublicationReview(html, review) {
-  const current = element(html, 'section', 'release-window');
+  let current = element(html, 'section', 'release-window');
   if (!current) throw new Error('Reader lacks a publication review panel');
+  const products = element(current, 'p', 'release-window-products');
+  if (products) {
+    const cleaned = current.replace(products, '');
+    html = html.replace(current, cleaned);
+    current = cleaned;
+  }
   if (!review) {
     if (current.includes('data-review-state="unscheduled"')) return html;
-    return html.replace(current, `<section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-policy" data-review-state="unscheduled"><div class="release-window-heading"><p class="release-window-label" id="release-window-title">Next version review</p><p class="release-window-products">Site + PDF</p></div><p class="release-window-schedule">The next review has not been scheduled.</p><p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p></section>`);
+    return html.replace(current, `<section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-policy" data-review-state="unscheduled"><div class="release-window-heading"><p class="release-window-label" id="release-window-title">Next version review</p></div><p class="release-window-schedule">The next review has not been scheduled.</p><p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p></section>`);
   }
   if (Number.isNaN(Date.parse(review.at)) || !review.timeZone || !review.rrule) {
     throw new Error('Incomplete publication review schedule');
@@ -48,7 +54,7 @@ export function installPublicationReview(html, review) {
     && ['days', 'hours', 'minutes', 'seconds'].every(unit => current.includes(`data-countdown-${unit}`))) return html;
   const countdown = ['days', 'hours', 'minutes', 'seconds'].map(unit => `<span><strong data-countdown-${unit}>00</strong><small>${unit[0].toUpperCase() + unit.slice(1)}</small></span>`).join('');
   return html.replace(current, `<section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-schedule release-window-policy" ${attributes}>
-<div class="release-window-heading"><p class="release-window-label" id="release-window-title" data-release-status>Next version review</p><p class="release-window-products">Site + PDF</p></div>
+<div class="release-window-heading"><p class="release-window-label" id="release-window-title" data-release-status>Next version review</p></div>
 <div class="release-countdown js-only" data-release-countdown aria-hidden="true">${countdown}</div>
 <p class="release-window-schedule" id="release-window-schedule">Scheduled for ${time}.</p>
 <p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p></section>`);
@@ -78,7 +84,8 @@ export function validatePublicationFront(html, edition) {
     sidebarRelease: hasHref(sidebar, edition.releaseUrl) && includes(sidebar, `Version ${edition.version}`),
     sidebarSearch: /data-open-search/.test(sidebar) && /aria-controls="search-dialog"/.test(sidebar),
     sidebarDownload: hasHref(sidebar, edition.pdfUrl) && /\bdownload\b/.test(sidebar),
-    reviewPolicy: review.includes('Site + PDF') && review.includes('Site and PDF updates publish together after manual review.'),
+    reviewPolicy: review.includes('Site and PDF updates publish together after manual review.'),
+    reviewLabel: !review.includes('release-window-products') && !review.includes('Site + PDF'),
     reviewState: edition.review
       ? review.includes(`data-release-at="${escape(edition.review.at)}"`) && review.includes(`data-release-time-zone="${escape(edition.review.timeZone)}"`) && review.includes(`data-release-rrule="${escape(edition.review.rrule)}"`) && review.includes('data-release-window') && review.includes('data-release-status') && review.includes('data-release-countdown') && ['days', 'hours', 'minutes', 'seconds'].every(unit => review.includes(`data-countdown-${unit}`)) && !Number.isNaN(Date.parse(edition.review.at)) && review.includes(`<time datetime="${escape(edition.review.at)}" data-release-time>${escape(reviewTimeLabel(edition.review))}</time>`)
       : review.includes('data-review-state="unscheduled"') && review.includes('The next review has not been scheduled.') && !review.includes('data-release-countdown') && !review.includes('data-release-at'),

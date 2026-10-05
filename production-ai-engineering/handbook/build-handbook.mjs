@@ -1088,7 +1088,6 @@ const html = `<!doctype html>
         <section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-schedule release-window-policy" data-release-window data-release-at="${releaseSchedule.nextReviewAt}" data-release-time-zone="${releaseSchedule.timeZone}" data-release-rrule="${releaseSchedule.rrule}">
           <div class="release-window-heading">
             <p class="release-window-label" id="release-window-title" data-release-status>Next version review</p>
-            <p class="release-window-products">Site + PDF</p>
           </div>
           <div class="release-countdown js-only" data-release-countdown aria-hidden="true">
             <span><strong data-countdown-days>00</strong><small>Days</small></span>
