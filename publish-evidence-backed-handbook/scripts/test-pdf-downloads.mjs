@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {validateVariantIdentity,downloadLinks,validateDownloads,installReaderDownloads} from './pdf-downloads.mjs';
-const edition={id:'future-title',title:'Future title',version:'2.0.0',date:'2026-10-02',pdf:'previous.pdf',sha256:'a'.repeat(64),pages:25,markdown:{version:'2.0.0',publicUrl:'/future-title/editions/v2.0.0/future-title-v2.0.0.md',downloadFilename:'future-title-v2.0.0.md',sha256:'c'.repeat(64)}};
+const edition={id:'future-title',title:'Future title',version:'2.0.0',date:'2026-10-02',pdf:'previous.pdf',sha256:'a'.repeat(64),pages:25,markdown:{version:'2.0.0',publicUrl:'/future-title/editions/v2.0.0/future-title-v2.0.0.md',downloadFilename:'future-title-v2.0.0.md',sha256:'c'.repeat(64),bytes:12345}};
 const m={schemaVersion:1,book:edition.id,...edition,variants:['light','dark'].map((theme,i)=>({theme,displayName:i?'Late night version':'Daytime version',appearanceRevision:1,approvalStatus:'candidate',sha256:(i?'b':'a').repeat(64),bytes:1000,pages:25,publicUrl:`/future-title/editions/v2.0.0/future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,downloadFilename:`future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,pageMap:{path:'map.json',sha256:'c'.repeat(64)}}))};
 assert.equal(validateVariantIdentity(m,edition,{candidate:true}).length,2);
 assert.throws(()=>validateVariantIdentity(m,edition),/Unapproved/);
@@ -18,6 +18,20 @@ for(const source of ['<a href="#chapter">Chapter</a>','<a href="/book.pdf" downl
 const external=externalLinks('<a href="https://example.org/" target="_self" rel="external">Source</a>');
 assert.match(external,/target="_blank"/);assert.match(external,/rel="external noopener noreferrer"/);assert.equal(externalLinks(external),external);
 const html=downloadLinks(edition,m.variants);validateDownloads(html,edition,m.variants);
+// Ordering must survive reversed manifest input and compact placements.
+for(const compact of [false,true]){
+ const ordered=downloadLinks(edition,[...m.variants].reverse(),{compact});
+ assert.ok(ordered.indexOf('Markdown edition')<ordered.indexOf('Daytime version'));
+ assert.ok(ordered.indexOf('Daytime version')<ordered.indexOf('Late night version'));
+ assert.doesNotMatch(ordered,/aria-hidden="true">\s*[·•]/);
+ assert.match(ordered,/role="group" aria-label="Download Future title"/);
+ const anchors=[...ordered.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)].map(a=>a[0]);
+ const reordered=ordered.replace(anchors.join(''),[anchors[1],anchors[0],anchors[2]].join(''));
+ assert.throws(()=>validateDownloads(reordered,edition,m.variants),/first download/);
+}
+const {downloadSize}=await import('./download-row.mjs');
+assert.equal(downloadSize(26300935),'26.3 MB');assert.equal(downloadSize(207145),'208 KB');
+assert.throws(()=>downloadSize(undefined),/measured download size/);
 assert.throws(()=>validateDownloads(html.replace('late-night-r1.pdf','removed.pdf'),edition,m.variants),/Missing download/);
 console.log('PDF variant identity, approval, edition, safe paths, duplicate variants, measured labels and missing controls passed.');
 

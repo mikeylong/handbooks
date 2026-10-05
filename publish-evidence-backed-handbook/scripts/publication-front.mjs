@@ -106,6 +106,7 @@ export function validateReaderBodyStart(html, title) {
 }
 
 export function validateGalleryPublications(html, validatedPaths) {
+  if (/\bdata-(?:pdf-downloads|pdf-theme|markdown-download)\b|<a\b[^>]*\bdownload(?:\s|=|>)/.test(html)) throw new Error('Gallery must open handbooks without download controls');
   if (!/<script\b[^>]*src="\/gallery-focus\.js"[^>]*\bdefer\b/.test(html)) throw new Error('Gallery lacks return-focus behavior');
   const cards = [...html.matchAll(/<a\b[^>]*class="[^"]*\bhandbook-card-link\b[^"]*"[^>]*>/g)];
   if (!cards.length) throw new Error('The gallery has no published titles');

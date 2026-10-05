@@ -1,3 +1,25 @@
+/** Reject CTA stretching, clipping, and collisions introduced by download layout. */
+export async function checkCoverActionLayout(page) {
+ const result=await page.evaluate(()=>{
+  const button=document.querySelector('.cover a[href="#contents"]');
+  const downloads=button?.parentElement.querySelector('[data-pdf-downloads]');
+  if(!button||!downloads)return {failures:['Missing cover actions']};
+  const b=button.getBoundingClientRect(),p=button.parentElement.getBoundingClientRect(),d=downloads.getBoundingClientRect(),style=getComputedStyle(button);
+  const range=document.createRange();range.selectNodeContents(button);const text=range.getBoundingClientRect();
+  const pixels=value=>+value.replace('px','');
+  const normalHeight=Math.max(64,2*pixels(style.lineHeight)+pixels(style.paddingTop)+pixels(style.paddingBottom)+pixels(style.borderTopWidth)+pixels(style.borderBottomWidth));
+  const failures=[];
+  if(b.height<44||b.height>normalHeight+1)failures.push('Explore button has an abnormal height');
+  if(b.left<p.left-1||b.right>p.right+1||button.scrollWidth>button.clientWidth+1||text.left<b.left-1||text.right>b.right+1)failures.push('Explore button or label is clipped');
+  if(d.top<b.bottom+8)failures.push('Downloads must follow Explore on a separate row');
+  if(innerWidth<=640&&Math.abs(b.width-d.width)>1)failures.push('Mobile Explore and download widths differ');
+  if(!downloads.querySelector('a')?.hasAttribute('data-markdown-download'))failures.push('Markdown is not first');
+  return {width:innerWidth,buttonWidth:b.width,buttonHeight:b.height,downloadWidth:d.width,gap:d.top-b.bottom,failures};
+ });
+ if(result.failures.length)throw Error('Cover action layout: '+JSON.stringify(result));
+ return result;
+}
+
 async function checkTocLayout(page) {
  if(await page.locator('.mobile-bar [data-pdf-downloads]').count()) throw Error('PDF downloads remain in mobile header');
  if(!(await page.locator('#toc-dialog .dialog-footer [data-pdf-downloads]').count())) throw Error('Missing Contents PDF downloads');
@@ -24,7 +46,7 @@ export async function checkPdfBrowser(page,{baseUrl,books,screenshotDirectory,do
   await page.goto(baseUrl+'/');await page.evaluate(mode=>localStorage.setItem('handbook-theme',mode),mode);
   for(const path of paths){
    await page.goto(baseUrl+path);await page.evaluate(()=>document.fonts.ready);
-   const links=page.locator('a[data-pdf-theme]');const count=await links.count();if(count<2)throw Error('Missing paired PDF controls: '+path);
+   const links=page.locator('a[data-pdf-theme]');const count=await links.count();if(path==='/'){if(await page.locator('[data-pdf-downloads],a[download]').count())throw Error('Gallery contains download controls');}else if(count<2)throw Error('Missing paired PDF controls: '+path);
    if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Page overflow '+path+' '+width);
    const entries=[];
    for(let i=0;i<count;i++){
@@ -43,6 +65,7 @@ export async function checkPdfBrowser(page,{baseUrl,books,screenshotDirectory,do
    }
    if(path==='/'||path===`/${books[0].id}/`){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:`${screenshotDirectory}/${width}-${mode}-${path==='/'?'gallery':'reader'}.png`});}
    if(/^\/[a-z-]+\/$/.test(path)){
+    await checkCoverActionLayout(page);
     await page.locator('.cover a[href="#contents"]').click();if(!page.url().endsWith('#contents'))throw Error('Explore failed');
     await page.locator('[data-open-search]:visible').first().click();if(!(await page.locator('#search-dialog').isVisible()))throw Error('Search failed');await page.keyboard.press('Escape');
     const toc=page.locator('[data-open-toc]:visible').first();if(await toc.count()){await toc.click();if(!(await page.locator('#toc-dialog').isVisible()))throw Error('Contents failed');await checkTocLayout(page);await page.keyboard.press('Escape');}
@@ -56,7 +79,7 @@ export async function checkPdfBrowser(page,{baseUrl,books,screenshotDirectory,do
  for(const fallback of ['no-js','blocked-storage']){
   const context=await page.context().browser().newContext({javaScriptEnabled:fallback!=='no-js',viewport:{width:390,height:900},colorScheme:'dark'});
   if(fallback==='blocked-storage')await context.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw Error('Storage blocked')}}));
-  const p=await context.newPage();for(const path of paths){await p.goto(baseUrl+path);if(await p.locator('a[data-pdf-theme="light"]').count()<1||await p.locator('a[data-pdf-theme="dark"]').count()<1)throw Error('Missing fallback download');records.push({fallback,path,status:'passed'});}await context.close();
+  const p=await context.newPage();for(const path of paths){await p.goto(baseUrl+path);if(path==='/'){if(await p.locator('[data-pdf-downloads],a[download]').count())throw Error('Gallery contains fallback download controls');}else if(await p.locator('a[data-pdf-theme="light"]').count()<1||await p.locator('a[data-pdf-theme="dark"]').count()<1)throw Error('Missing fallback download');records.push({fallback,path,status:'passed'});}await context.close();
  }
  return {status:'passed',records};
 }
