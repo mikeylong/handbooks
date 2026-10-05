@@ -7,7 +7,7 @@ import {parseArgs} from 'node:util';
 import {digest,safePath} from '../../publish-evidence-backed-handbook/scripts/reader-paths.mjs';
 import {installArtworkPairs} from '../../publish-evidence-backed-handbook/scripts/artwork-pairs.mjs';
 import {installDiagrams} from '../../publish-evidence-backed-handbook/scripts/diagrams.mjs';
-import {resolvePdfVariants,installReaderDownloads,editionDownloadDetails,validateDownloads} from '../../publish-evidence-backed-handbook/scripts/pdf-downloads.mjs';
+import {resolvePdfVariants,installReaderDownloads,editionDownloadDetails,validateDownloads,editionPdfUrl} from '../../publish-evidence-backed-handbook/scripts/pdf-downloads.mjs';
 import {writeMarkdownEdition} from '../../publish-evidence-backed-handbook/scripts/markdown-downloads.mjs';
 import {addSiteTheme,validateSiteTheme} from '../../publish-evidence-backed-handbook/scripts/site-theme.mjs';
 import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
@@ -24,7 +24,7 @@ const result=spawnSync(process.execPath,[resolve(root,'site/scripts/build-site.m
 if(result.status!==0)throw Error('Approved collection preview assembly failed');
 const manifest=JSON.parse(await readFile(resolve(source,'release-manifest.json'),'utf8')),publication=JSON.parse(await readFile(resolve(source,'publication.json'),'utf8'));
 if(manifest.approvalStatus!=='candidate'||publication.approvalStatus!=='candidate')throw Error('Review candidate status required');
-const edition={id:registry.book,...manifest,...publication,publicationStatus:'candidate',pdfUrl:`/${registry.book}/${basename(manifest.pdf)}`};
+const edition={id:registry.book,...manifest,...publication,publicationStatus:'candidate',pdfUrl:editionPdfUrl({id:registry.book,version:manifest.version},`/${registry.book}/${basename(manifest.pdf)}`)};
 const variants=await resolvePdfVariants(source,edition,registry.variantManifest,{candidate:true,collectionRoot:root});
 await mkdir(resolve(output,edition.id),{recursive:true});await cp(resolve(source,pkg.readerDirectory),resolve(output,edition.id),{recursive:true});
 let html=await readFile(resolve(output,edition.id,'index.html'),'utf8');

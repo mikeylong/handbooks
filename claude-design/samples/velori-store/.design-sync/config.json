@@ -1,0 +1,74 @@
+{
+  "pkg": "velori-store-handbook-sample",
+  "globalName": "Velori",
+  "shape": "package",
+  "entry": "./.design-sync/host-entry.mjs",
+  "guidelinesGlob": [
+    "docs/product-brief.md",
+    "docs/inventory.md",
+    "docs/expected-results.md"
+  ],
+  "componentSrcMap": {
+    "AccessoryChoice": "src/library.jsx",
+    "AccessoryPhoto": "src/library.jsx",
+    "Brand": "src/library.jsx",
+    "ChoiceGroup": "src/library.jsx",
+    "ConfigurationSummary": "src/library.jsx",
+    "ExpressionSelect": "src/library.jsx",
+    "FaceChoice": "src/library.jsx",
+    "FinishChoice": "src/library.jsx",
+    "PrimaryButton": "src/library.jsx",
+    "ProductPreview": "src/library.jsx",
+    "SelectionMark": "src/library.jsx",
+    "StoreHeader": "src/library.jsx",
+    "VeloriIcon": "src/library.jsx"
+  },
+  "dtsPropsFor": {
+    "VeloriIcon": "name: 'check' | 'chevron' | 'friendly' | 'simple'; className?: string; [svgAttr: string]: unknown;",
+    "SelectionMark": "",
+    "PrimaryButton": "children: React.ReactNode; onClick?: () => void; id?: string;",
+    "ChoiceGroup": "group: 'shell' | 'face' | 'accessory'; value: string; onChange: (value: string) => void;",
+    "FinishChoice": "value: 'chalk' | 'pebble' | 'graphite'; onChange: (value: 'chalk' | 'pebble' | 'graphite') => void;",
+    "FaceChoice": "value: 'friendly' | 'simple'; onChange: (value: 'friendly' | 'simple') => void;",
+    "AccessoryChoice": "value: 'dock' | 'bag' | 'none'; onChange: (value: 'dock' | 'bag' | 'none') => void;",
+    "ExpressionSelect": "value: 'white' | 'mint' | 'blue' | 'amber'; onChange: (value: 'white' | 'mint' | 'blue' | 'amber') => void;",
+    "ProductPreview": "configuration: { shell: 'chalk' | 'pebble' | 'graphite'; face: 'friendly' | 'simple'; color: 'white' | 'mint' | 'blue' | 'amber'; accessory: 'dock' | 'bag' | 'none' }; unavailable?: boolean; onDetails?: () => void;",
+    "Brand": "",
+    "StoreHeader": "review?: boolean; onBack?: () => void;",
+    "ConfigurationSummary": "configuration: { shell: 'chalk' | 'pebble' | 'graphite'; face: 'friendly' | 'simple'; color: 'white' | 'mint' | 'blue' | 'amber'; accessory: 'dock' | 'bag' | 'none' };",
+    "AccessoryPhoto": "accessory: 'dock' | 'bag';"
+  },
+  "overrides": {
+    "StoreHeader": {
+      "cardMode": "column"
+    },
+    "ProductPreview": {
+      "cardMode": "column"
+    },
+    "AccessoryPhoto": {
+      "cardMode": "column"
+    },
+    "AccessoryChoice": {
+      "cardMode": "column"
+    },
+    "ChoiceGroup": {
+      "cardMode": "column"
+    },
+    "ConfigurationSummary": {
+      "cardMode": "column"
+    },
+    "ExpressionSelect": {
+      "cardMode": "column"
+    },
+    "FaceChoice": {
+      "cardMode": "column"
+    },
+    "FinishChoice": {
+      "cardMode": "column"
+    },
+    "PrimaryButton": {
+      "cardMode": "column"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}

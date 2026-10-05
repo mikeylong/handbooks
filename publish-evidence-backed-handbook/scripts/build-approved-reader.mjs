@@ -2,7 +2,7 @@ import {cp,mkdir,readFile,rm,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {dirname,resolve,basename} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {resolvePdfVariants,installReaderDownloads,validateDownloads} from './pdf-downloads.mjs';
+import {resolvePdfVariants,installReaderDownloads,validateDownloads,editionPdfUrl} from './pdf-downloads.mjs';
 import {installDiagrams} from './diagrams.mjs';
 import {installPromptBlocks} from './prompt-blocks.mjs';
 import {writeMarkdownEdition} from './markdown-downloads.mjs';
@@ -22,7 +22,7 @@ if(digest(await readFile(resolve(output,slug,basename(manifest.pdf))))!==manifes
 let html=editionLinks(await readFile(resolve(output,slug,'index.html'),'utf8'),publication);
 if(!html.includes(publication.editionUrl)||!html.includes(publication.releaseUrl))throw Error('Stale repository or release link');
 if(!html.includes('href="/gallery.css"'))html=html.replace('</head>','<link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script></head>');
-const edition={id:slug,...manifest,publicationStatus:'candidate',pdfUrl:'/'+slug+'/'+basename(manifest.pdf)};
+const edition={id:slug,...manifest,publicationStatus:'candidate',pdfUrl:editionPdfUrl({id:slug,version:manifest.version},'/'+slug+'/'+basename(manifest.pdf))};
 try {
  const catalog=JSON.parse(await readFile(resolve(root,'../catalog.json'),'utf8'));
  const book=catalog.books.find(b=>b.id===slug&&b.version===edition.version);

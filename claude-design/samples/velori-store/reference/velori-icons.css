@@ -1,0 +1,19 @@
+/* Decorative icons never replace labels or the controls' selected semantics. */
+.velori-icon{display:block;width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:var(--velori-icon-stroke,1.5);stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+#artifact .choice-check{position:absolute;top:8px;right:8px;display:flex;align-items:center;justify-content:center;width:16px;height:16px;min-width:16px;padding:0;border:0;border-radius:50%;background:var(--velori-color-selectedBorder);color:#fff}
+#artifact .choice-check[hidden]{display:none}
+#artifact .choice-check .velori-icon{width:12px;height:12px}
+#artifact .option-row button,#artifact .face button{position:relative}
+#artifact .face button{padding-right:32px}
+#artifact .face .choice-check{top:50%;right:12px;transform:translateY(-50%);border-radius:50%;background:var(--velori-color-selectedBorder);color:#fff}
+#artifact .color-chip-dot .velori-icon{position:absolute;inset:-1px;width:12px;height:12px;color:var(--velori-color-ink);display:none}
+#artifact .color-chip:has(input:checked) .color-chip-dot .velori-icon{display:block}
+.icon-catalog{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0}
+.icon-catalog>div{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid var(--velori-color-border);border-radius:12px;background:var(--velori-color-soft);font-size:12px}
+.icon-catalog .velori-icon{width:24px;height:24px}
+.canonical-options .option{position:relative;height:72px;border-color:var(--velori-color-border);border-radius:12px;background:var(--velori-color-canvas)}
+.canonical-options .option.selected{background:var(--velori-color-selectedFill);border-color:var(--velori-color-selectedBorder)}
+.canonical-options .selection-mark{position:absolute;top:8px;right:8px;display:flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--velori-color-selectedBorder);color:var(--velori-color-white);margin:0}
+.canonical-options .selection-mark .velori-icon{width:12px;height:12px}
+@media(max-width:600px){.icon-catalog{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(forced-colors:active){#artifact .choice-check,.canonical-options .selection-mark{background:Highlight;color:HighlightText;border:1px solid ButtonText}.icon-catalog>div{border-color:CanvasText}}

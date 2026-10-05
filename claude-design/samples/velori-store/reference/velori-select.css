@@ -1,0 +1,20 @@
+/* Velori's consumer component. Shared by the canonical specimen and issue 3. */
+[data-velori-select]>.velori-select-trigger[hidden],[data-velori-select]>select[hidden],.velori-select-menu[hidden]{display:none!important}
+.velori-select-trigger{position:relative;display:flex;align-items:center;gap:12px;width:100%;height:var(--velori-select-height);padding:8px var(--velori-select-paddingRight) 8px var(--velori-select-paddingLeft);border:1px solid var(--velori-select-border);border-radius:var(--velori-select-radius);background:var(--velori-select-fill);color:var(--velori-color-ink);font:500 14px/20px Arial,sans-serif;text-align:left;cursor:pointer;box-shadow:0 1px 2px #20262b08;pointer-events:auto}
+#artifact .color-select .velori-select-trigger{background:var(--velori-select-fill);color:var(--velori-color-ink)}
+.velori-select-trigger:hover,#artifact .color-select .velori-select-trigger:hover{background:var(--velori-color-hover);border-color:var(--velori-color-secondary);filter:none}
+.velori-select-trigger[aria-expanded=true]{border-color:var(--velori-color-ink);box-shadow:0 0 0 3px #20262b16}
+.velori-select-trigger:focus-visible{outline:2px solid var(--velori-color-focus);outline-offset:3px}
+.velori-select-swatch{display:block;flex:none;width:16px;height:16px;border:1px solid #20262b24;border-radius:50%;box-shadow:inset 0 0 0 2px #ffffff70}
+.velori-select-value{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.velori-select-arrow,.canonical-select .velori-select-arrow{position:absolute;right:var(--velori-select-caretInset);top:50%;transform:translateY(-50%);width:var(--velori-select-caretSize);height:var(--velori-select-caretSize);fill:none;stroke:var(--velori-color-secondary);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.velori-select-trigger[aria-expanded=true] .velori-select-arrow{transform:translateY(-50%) rotate(180deg)}
+[data-velori-select].velori-select-enhanced>.select-caret,[data-velori-select].velori-select-enhanced>svg{display:none!important}
+.velori-select-menu{position:fixed;inset:auto;margin:0;padding:var(--velori-select-menu-padding);border:1px solid var(--velori-color-border);border-radius:var(--velori-select-menu-radius);background:var(--velori-color-white);color:var(--velori-color-ink);font:400 14px/20px Arial,sans-serif;box-shadow:0 16px 40px #20262b24,0 2px 8px #20262b0a;overflow:auto;overscroll-behavior:contain;z-index:10000;box-sizing:border-box;pointer-events:auto}
+.velori-select-option{display:flex;align-items:center;gap:12px;min-height:var(--velori-select-menu-optionHeight);padding:8px 12px;border-radius:8px;cursor:pointer;box-sizing:border-box}
+.velori-select-option-label{flex:1}
+.velori-select-option[aria-selected=true]{background:var(--velori-color-selectedFill);font-weight:600}
+.velori-select-option[data-active=true]{background:var(--velori-color-hover);box-shadow:inset 0 0 0 1px var(--velori-color-border)}
+.velori-select-check{width:14px;height:14px;flex:none;fill:none;stroke:var(--velori-color-selectionMark);stroke-width:var(--velori-icon-stroke,1.5);stroke-linecap:round;stroke-linejoin:round;visibility:hidden}
+.velori-select-option[aria-selected=true] .velori-select-check{visibility:visible}
+@media(forced-colors:active){.velori-select-trigger,.velori-select-menu{border-color:ButtonText;box-shadow:none}.velori-select-trigger:focus-visible{outline-color:Highlight}.velori-select-option[aria-selected=true],.velori-select-option[data-active=true]{outline:1px solid Highlight;outline-offset:-1px}.velori-select-arrow,.velori-select-check{stroke:ButtonText}.velori-select-swatch{forced-color-adjust:none}}

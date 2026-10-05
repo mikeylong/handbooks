@@ -32,7 +32,7 @@ The gallery, collection navigation, and hosting integration live in `site/`, for
 
 ## Markdown editions
 
-Every current and future hosted handbook must provide a machine-readable Markdown edition beside its PDF links. Generate it through the shared publishing toolkit from the same edition's reader content. Include it in the reader cover/sidebar/end and edition page. Gallery cards open handbooks; do not place download controls on the gallery. Preserve released source packages and PDF bytes. Validate the Markdown content, edition identity, saved filename, download route, and responsive placement before release. Private drafts remain private; adding a format does not approve publication.
+Every current and future hosted handbook must provide a machine-readable Markdown edition beside its PDF links. Generate it through the shared publishing toolkit from the same edition's reader content. Include it in the reader cover/sidebar/end and edition page. Gallery cards open handbooks; do not place download controls on the gallery. Current Markdown and PDF links use the same /book/editions/v<version>/ path; preserve existing download URLs as aliases. Preserve released source packages and PDF bytes. Validate the Markdown content, edition identity, saved filename, download route, and responsive placement before release. Private drafts remain private; adding a format does not approve publication.
 
 ## Hosted chapter artwork
 

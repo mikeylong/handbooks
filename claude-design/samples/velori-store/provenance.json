@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 1,
+  "package": "velori-store",
+  "version": "0.2.0",
+  "distribution": "MIT public-download candidate; unpublished",
+  "license": {
+    "ownedMaterials": "MIT",
+    "notice": "LICENSE",
+    "thirdPartyNotices": [
+      "docs/LUCIDE-LICENSE",
+      "docs/REACT-LICENSE"
+    ],
+    "historicalRuntime": "excluded from public payload; preserved in private review archive"
+  },
+  "sourceFreeze": "provenance/source-freeze.json",
+  "adaptations": [
+    "Standalone React/Vite application with ordinary layout and state; no CLEAR reviewer coordination",
+    "v1.4 dropdown and one accessory choice; color chips and multiple accessories remain extensions",
+    "Ink/white Continue, 12px corners, 48px height, 24px accessory gaps; original violations retained as named fixtures",
+    "New Review configuration and return paths, accessory details, image failure and retry",
+    "Sample-only storage namespace, no inherited owner fixes, proposals, or review state",
+    "Consumer Arial/Georgia fonts retained; native Figma system uses Arimo/Lora",
+    "Reference extraction retains consumer photo composition and original violation styles",
+    "ReviewConfiguration adapted from an earlier native Design source; historical runtime retained in private review archive"
+  ],
+  "exclusions": [
+    "node_modules",
+    "dist",
+    "runtime validation",
+    "converter tooling and intermediate bundle outside the captured handoff",
+    "native authentication and upload records",
+    "owner browser state",
+    "private review files"
+  ],
+  "publicPayloadExclusions": [
+    "historical captured native packet and runtime",
+    "historical native server and validator"
+  ],
+  "files": {
+    ".design-sync/config.json": {
+      "sha256": "d9b0ecbb0d2f2a34e2ab0a678eab97a16973307d1b9585ae00f005200527fb00",
+      "bytes": 2839
+    },
+    ".design-sync/conventions.md": {
+      "sha256": "33ca0b2c5ddf630bfb9417293e91b03fd5c63371c54e5f57ed1ebab6c1ca9d1c",
+      "bytes": 3618
+    },
+    ".design-sync/host-entry.mjs": {
+      "sha256": "d95e4125972f66a02a13b31f1bbb778e46e35795b434e0d84fc64b8131837c97",
+      "bytes": 993
+    },
+    ".design-sync/package-assets.mjs": {
+      "sha256": "e9aeff9bb7ab8c8950c80771e3e750d683954601a6971591b574ec5696d0efaa",
+      "bytes": 864
+    },
+    ".design-sync/previews/AccessoryChoice.tsx": {
+      "sha256": "22c5fbb8c4e9c94a601e4654691f5fd85203e0494cf8a1cced564c0e752e5212",
+      "bytes": 322
+    },
+    ".design-sync/previews/AccessoryPhoto.tsx": {
+      "sha256": "b5ada82cc2b748533f505992c5a70788766b17d5d51e58e456d9f88a62c5ddba",
+      "bytes": 260
+    },
+    ".design-sync/previews/Brand.tsx": {
+      "sha256": "31ca4c6d5a398f7a75b025be8f842886f78e58f6d82927735de2c19ed710b96b",
+      "bytes": 94
+    },
+    ".design-sync/previews/ChoiceGroup.tsx": {
+      "sha256": "a0e7de8dfaad5985415e60a791a458295b7c327f6a45f96e1a6aa25d09c0bbfa",
+      "bytes": 458
+    },
+    ".design-sync/previews/ConfigurationSummary.tsx": {
+      "sha256": "47074d59dd5c2037702f38a96347fb6d63fd035423571656b66c4904d6474730",
+      "bytes": 425
+    },
+    ".design-sync/previews/ExpressionSelect.tsx": {
+      "sha256": "60ee44a2f7f935040cffcef9060be7a4b1ad267ccb52e67859b5a8e03c5a15c5",
+      "bytes": 425
+    },
+    ".design-sync/previews/FaceChoice.tsx": {
+      "sha256": "1543e8f1d1eaf8a4cfdef7ef063642c26b0c86529aeed61626f83faae8b15cc5",
+      "bytes": 314
+    },
+    ".design-sync/previews/FinishChoice.tsx": {
+      "sha256": "ad50a1326ccd813109dfe6c366369e449ff56aaac00d2d4330709aebf62869fd",
+      "bytes": 319
+    },
+    ".design-sync/previews/PrimaryButton.tsx": {
+      "sha256": "2a646ab9f603fa7de0ffd584e87510ac7c0e4c44ff0baaecd087ada8529725e8",
+      "bytes": 291
+    },
+    ".design-sync/previews/ProductPreview.tsx": {
+      "sha256": "a30a3856012421339602286b55c9cc6b720d49372ec9d3f28e972bc4398f1102",
+      "bytes": 609
+    },
+    ".design-sync/previews/SelectionMark.tsx": {
+      "sha256": "a46a8c4856765d2d6b884bcba4ee97dd5c276df956bd2508c8b53a3392bb668b",
+      "bytes": 676
+    },
+    ".design-sync/previews/StoreHeader.tsx": {
+      "sha256": "5a87de79bf5e44dd26d06c3696206d9d5f3fd39b2745cb39e83e792ca279d8bd",
+      "bytes": 339
+    },
+    ".design-sync/previews/VeloriIcon.tsx": {
+      "sha256": "8e4055132e783e12c3d2423f1b3bd2fedc60798a51bdea2b64d0e853802c33f0",
+      "bytes": 780
+    },
+    ".gitattributes": {
+      "sha256": "27d20876ca3bc0bbaa27e04d528befeeab135ba9bee160e7b946fd214df3cf00",
+      "bytes": 101
+    },
+    ".gitignore": {
+      "sha256": "2bbe92d1e0ab3b4c258a786caef04bcc3c853eedc2e8881879e8f7e9a466b379",
+      "bytes": 444
+    },
+    "LICENSE": {
+      "sha256": "bb16009dc22992890f69d46d7babb7d6dd3bba1eb91e02b66289d6d82a7df1ec",
+      "bytes": 1069
+    },
+    "README.md": {
+      "sha256": "fac6f85cf9f8512dcdd0a22d4f9ea5b3233d69ad64d119e155c5ed3c6187e0ce",
+      "bytes": 5109
+    },
+    "docs/LUCIDE-LICENSE": {
+      "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
+      "bytes": 3208
+    },
+    "docs/REACT-LICENSE": {
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85",
+      "bytes": 1086
+    },
+    "docs/asset-terms.md": {
+      "sha256": "e12be7c62045ed4a20cd3b6a0105d7754a3f7ba23922a9b9a53de63a2ab58706",
+      "bytes": 1296
+    },
+    "docs/expected-results.md": {
+      "sha256": "391a34cb029bcc306764848bb482670e612ac3127421f1c31f9e418ae4341006",
+      "bytes": 2285
+    },
+    "docs/generated-image-prompts.json": {
+      "sha256": "e8d1df80246d8952f1d463b2dffeb57bf6f335d1936e86925d0c3231c1e39697",
+      "bytes": 17143
+    },
+    "docs/handoff-template.md": {
+      "sha256": "7503c5b2fa9adb35076c32793057a30f8ceb79b44a02998bf140704b7bf3b938",
+      "bytes": 1578
+    },
+    "docs/image-provenance.md": {
+      "sha256": "341139b865d365db0267eeb2323c342b0ff05a636bcb56e0bdec1d9720dd5028",
+      "bytes": 5949
+    },
+    "docs/inventory.md": {
+      "sha256": "ce637d88e61d0ce5c4468faad0f38c466497e1f2963b56808a30194c0d991567",
+      "bytes": 3987
+    },
+    "docs/product-brief.md": {
+      "sha256": "300359063f6f8e4216df258cf4a531d21bcecf3df7519998be50bd8e1ec071fa",
+      "bytes": 1302
+    },
+    "docs/prompts.md": {
+      "sha256": "511f3cdca68f1aa60b7d3b6508b7a56505669089048ee1c1d350d48977a65d35",
+      "bytes": 9546
+    },
+    "docs/walkthrough.md": {
+      "sha256": "36054699abf4e8c1226f06361a4877daf9412c6f1ce3fffdd759c009651e8a1e",
+      "bytes": 8715
+    },
+    "index.html": {
+      "sha256": "fde4db892480d16d53cd2b5fab494321a845f1a8459f7a0c176b94da214d1846",
+      "bytes": 310
+    },
+    "package-lock.json": {
+      "sha256": "7ebcfa01437b039c4a4c80a75ed202864eb0ab373452dd2a8590de8e95636d0c",
+      "bytes": 61449
+    },
+    "package.json": {
+      "sha256": "7cd3869cb1750f84fe80e69c7038fd43d7495e5d558dbdc886f4b4d773bcf4f9",
+      "bytes": 765
+    },
+    "provenance/native-handoff.json": {
+      "sha256": "88f078e105a6882a77d381d31f310b859743ad5a383e5a9ff73c8c7c7d49d0de",
+      "bytes": 994
+    },
+    "provenance/source-freeze.json": {
+      "sha256": "262b1b41ff6e67cf2b0f42a26ffd2bd0fa956fe4c7609c48fd8cb007bfece37b",
+      "bytes": 8720
+    },
+    "public/assets/velori/bag-robot-mask.svg": {
+      "sha256": "5c603119ad76d86be3353a2aa3090c492c12b5824cc45408e4c03cd9a754b9eb",
+      "bytes": 785
+    },
+    "public/assets/velori/chalk-bag.png": {
+      "sha256": "d945d3ccda8ad17c84a24b8b351a11c0af3445701a7e01d584a0351a5c7367c7",
+      "bytes": 1679995
+    },
+    "public/assets/velori/chalk-dock.png": {
+      "sha256": "69199dfe293b5fac4ca8408edc01b60dee4c8f8f4eab6db1ec2922c66c963133",
+      "bytes": 1372168
+    },
+    "public/assets/velori/chalk-none.png": {
+      "sha256": "6fce5c78206067f33b253c7671ae562cc44a057d16d8be6351a5af725f0be4c2",
+      "bytes": 1363702
+    },
+    "public/assets/velori/dock-layer.png": {
+      "sha256": "5fa746a7244475bf961fa7041be535c9ee92594711fa01eecdcd8e64542083be",
+      "bytes": 154363
+    },
+    "public/assets/velori/face-friendly.png": {
+      "sha256": "a6c5ca57ed770247b5d53fa7a4254e8f8233e324a7ab177532600c253c737b87",
+      "bytes": 110532
+    },
+    "public/assets/velori/face-simple.png": {
+      "sha256": "e3c23b6a47a846c8e5fec6667abe7b0ba5f26a9cd219d22fea8f716ec9552b93",
+      "bytes": 85648
+    },
+    "public/assets/velori/graphite-bag-shell-v2.png": {
+      "sha256": "469c51fcda413faa530a0597abb006cc358d1cab77af213b99219746cc54ff68",
+      "bytes": 1659739
+    },
+    "public/assets/velori/graphite-bag.png": {
+      "sha256": "563175ee2f65d0266c35d46ff53a3bbb1590c11faf1d56e5ec27cf9a611b2eaa",
+      "bytes": 1955013
+    },
+    "public/assets/velori/graphite-dock.png": {
+      "sha256": "bec2e3123c9c2c8379422bea102cef572815b46f028d8996abc661280997de64",
+      "bytes": 1489693
+    },
+    "public/assets/velori/graphite-none.png": {
+      "sha256": "6dd86f8ef92d8dd84bbad26b5efca9b7657d51c816dd863a23ab2fa2b66c6839",
+      "bytes": 1517528
+    },
+    "public/assets/velori/manifest.json": {
+      "sha256": "05890ca379bc627bed2527867822d39c8151c44c95ce3ba412380ab1e0497e40",
+      "bytes": 1020
+    },
+    "public/assets/velori/pebble-bag-shell-v2.png": {
+      "sha256": "5f5db0d9196c0d742793cc3439ec5ab6a56af89ab0d08693e5373fd09d859713",
+      "bytes": 1597844
+    },
+    "public/assets/velori/pebble-bag.png": {
+      "sha256": "b4cf121d070387d07433de9040f91335f0e6be7ade6395b20714c776125d5c92",
+      "bytes": 1846339
+    },
+    "public/assets/velori/pebble-dock.png": {
+      "sha256": "0b387ab55f7128508e1c904eb1c0fa6160a283f00adc0f92521a9b68b4a760f5",
+      "bytes": 1398129
+    },
+    "public/assets/velori/pebble-none.png": {
+      "sha256": "f15487166b5a060131c7d9bfefbea20ab737f9c29d0239de14a51113cab62e19",
+      "bytes": 1474358
+    },
+    "reference/assets/velori/bag-robot-mask.svg": {
+      "sha256": "5c603119ad76d86be3353a2aa3090c492c12b5824cc45408e4c03cd9a754b9eb",
+      "bytes": 785
+    },
+    "reference/assets/velori/chalk-bag.png": {
+      "sha256": "d945d3ccda8ad17c84a24b8b351a11c0af3445701a7e01d584a0351a5c7367c7",
+      "bytes": 1679995
+    },
+    "reference/assets/velori/chalk-dock.png": {
+      "sha256": "69199dfe293b5fac4ca8408edc01b60dee4c8f8f4eab6db1ec2922c66c963133",
+      "bytes": 1372168
+    },
+    "reference/assets/velori/chalk-none.png": {
+      "sha256": "6fce5c78206067f33b253c7671ae562cc44a057d16d8be6351a5af725f0be4c2",
+      "bytes": 1363702
+    },
+    "reference/assets/velori/dock-layer.png": {
+      "sha256": "5fa746a7244475bf961fa7041be535c9ee92594711fa01eecdcd8e64542083be",
+      "bytes": 154363
+    },
+    "reference/assets/velori/face-friendly.png": {
+      "sha256": "a6c5ca57ed770247b5d53fa7a4254e8f8233e324a7ab177532600c253c737b87",
+      "bytes": 110532
+    },
+    "reference/assets/velori/face-simple.png": {
+      "sha256": "e3c23b6a47a846c8e5fec6667abe7b0ba5f26a9cd219d22fea8f716ec9552b93",
+      "bytes": 85648
+    },
+    "reference/assets/velori/graphite-bag-shell-v2.png": {
+      "sha256": "469c51fcda413faa530a0597abb006cc358d1cab77af213b99219746cc54ff68",
+      "bytes": 1659739
+    },
+    "reference/assets/velori/graphite-bag.png": {
+      "sha256": "563175ee2f65d0266c35d46ff53a3bbb1590c11faf1d56e5ec27cf9a611b2eaa",
+      "bytes": 1955013
+    },
+    "reference/assets/velori/graphite-dock.png": {
+      "sha256": "bec2e3123c9c2c8379422bea102cef572815b46f028d8996abc661280997de64",
+      "bytes": 1489693
+    },
+    "reference/assets/velori/graphite-none.png": {
+      "sha256": "6dd86f8ef92d8dd84bbad26b5efca9b7657d51c816dd863a23ab2fa2b66c6839",
+      "bytes": 1517528
+    },
+    "reference/assets/velori/manifest.json": {
+      "sha256": "05890ca379bc627bed2527867822d39c8151c44c95ce3ba412380ab1e0497e40",
+      "bytes": 1020
+    },
+    "reference/assets/velori/pebble-bag-shell-v2.png": {
+      "sha256": "5f5db0d9196c0d742793cc3439ec5ab6a56af89ab0d08693e5373fd09d859713",
+      "bytes": 1597844
+    },
+    "reference/assets/velori/pebble-bag.png": {
+      "sha256": "b4cf121d070387d07433de9040f91335f0e6be7ade6395b20714c776125d5c92",
+      "bytes": 1846339
+    },
+    "reference/assets/velori/pebble-dock.png": {
+      "sha256": "0b387ab55f7128508e1c904eb1c0fa6160a283f00adc0f92521a9b68b4a760f5",
+      "bytes": 1398129
+    },
+    "reference/assets/velori/pebble-none.png": {
+      "sha256": "f15487166b5a060131c7d9bfefbea20ab737f9c29d0239de14a51113cab62e19",
+      "bytes": 1474358
+    },
+    "reference/design-system.js": {
+      "sha256": "da1e34fc9e81bdab3da3ab9539b37aabd5d70d44f81cdf449a51fc57802f13a3",
+      "bytes": 4813
+    },
+    "reference/extraction-manifest.json": {
+      "sha256": "ec29582f0d8ebbd59cde00a37f808bb20946c26e1584ccc139f4567eb5207d63",
+      "bytes": 3220
+    },
+    "reference/index.html": {
+      "sha256": "de3ad905e57a2a3f1fa3a439312f65326c4948b6956b217287e37b4e07f66f58",
+      "bytes": 8238
+    },
+    "reference/storyboard.css": {
+      "sha256": "8618025204bb135466b29eb629c4592bab9fec070ba528dbf8ac2b532c21a84b",
+      "bytes": 16873
+    },
+    "reference/velori-config.css": {
+      "sha256": "7da53c10b459f613a5d7b8aea0331a9ada7ccad042c59edc89c23a15cc1f1e5e",
+      "bytes": 8341
+    },
+    "reference/velori-config.js": {
+      "sha256": "8fafc402bd465a72a6facb0ba0e7808f75c224d58eb203fc3ced0aead9a2d3fd",
+      "bytes": 7913
+    },
+    "reference/velori-icons.css": {
+      "sha256": "dd2256d0732b66e57ba5ce04dba44255f95a59d79daf3d957e38717fe4f4d034",
+      "bytes": 2352
+    },
+    "reference/velori-icons.js": {
+      "sha256": "9ddc5a0c946a8377e835e266a7983cff3d4fa49f4f4501ed8a5ca5094a697978",
+      "bytes": 1190
+    },
+    "reference/velori-product-assets.js": {
+      "sha256": "865addd5805817c5965f652d98ca210a0ee96b67d10ea558c51b57519a593f2a",
+      "bytes": 1066
+    },
+    "reference/velori-select.css": {
+      "sha256": "eb4af6bca35cf2c696154468cfd577c8399456c40eb2161649959e24cd10d986",
+      "bytes": 3636
+    },
+    "reference/velori-select.js": {
+      "sha256": "09ee38e6ee7c512cf1de491ddd189c8dc13cebdb9054f9a1081119d1cc57a528",
+      "bytes": 8105
+    },
+    "reference/velori-site.css": {
+      "sha256": "b22b2be59f858e9d3734ea74edbea3c80e1caa2c9f3847c2f725b4db42d118cf",
+      "bytes": 5346
+    },
+    "scripts/package-candidate.py": {
+      "sha256": "ad7b333f4909d552a53fd6eafbcc944b1b07751432dac31072327e59300b8b85",
+      "bytes": 4470
+    },
+    "scripts/validate-assets.mjs": {
+      "sha256": "d1c10fe2613374fdbafddaff52cda083652c0636822c76d558930b4b02ecd270",
+      "bytes": 431
+    },
+    "scripts/validate-browser.mjs": {
+      "sha256": "6ac5d7d77dc87d140f13c592a4a9dfc0d40e7cc3f2c5b0fdef1448256e4d8310",
+      "bytes": 9155
+    },
+    "scripts/validate-package.py": {
+      "sha256": "21bc73ffbb4111fd1bf187980701e6df21a541836b5f5e5664a510e26c12aa71",
+      "bytes": 1710
+    },
+    "src/ReviewConfiguration.jsx": {
+      "sha256": "f121023445ff32eeaa42bd1fd3e559aca1939b6f4f88a58b9decbaa2f328297d",
+      "bytes": 858
+    },
+    "src/index.js": {
+      "sha256": "62d7f9aa5ee876a8d607c47e6e2a70c6efdcbb9d407a61028b837066ed107ab6",
+      "bytes": 470
+    },
+    "src/library.jsx": {
+      "sha256": "634cf3802efe934b10d86958e8339649eeda80ac8acf0981f70d6ac0408b73ea",
+      "bytes": 7408
+    },
+    "src/main.jsx": {
+      "sha256": "56b9e74f5f869af62bc5e5435b58f599e16a0d7f38ae8c5ea797ec69dc748950",
+      "bytes": 6643
+    },
+    "src/model.mjs": {
+      "sha256": "26555075b2e1fcc07cdf3d296a5e052a53ca0950c0395c7fa4531dcf645b6b2d",
+      "bytes": 2373
+    },
+    "src/model.test.mjs": {
+      "sha256": "d6503025f2bd6b823489f77b88cc34c8a864d1f9857429a5b1b48852e9f94c6d",
+      "bytes": 2010
+    },
+    "src/tokens.css": {
+      "sha256": "f3c1ac263d33aaa92941a617049ef5ce906b55d6fa6ac208b84267165f0abcab",
+      "bytes": 848
+    },
+    "src/velori.css": {
+      "sha256": "6fa156bf66843cd5b072e75a951fef75b297cf845b3a4f5907d2b7d117f07e31",
+      "bytes": 12554
+    },
+    "tokens.json": {
+      "sha256": "84d9516c7c291d1dfd9f23709b23ca9fe00e001fed8ed8ad5623e69799f53c8d",
+      "bytes": 993
+    },
+    "vite.config.js": {
+      "sha256": "4ebe818953bbeb45b4a7da57fbe0208307d4de01b5bbd7c77b06d31bf711bcd9",
+      "bytes": 144
+    }
+  }
+}
