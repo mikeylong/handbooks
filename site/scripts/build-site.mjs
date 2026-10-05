@@ -76,7 +76,7 @@ for(const pin of books){
   }
   if(manifest.version!==pin.version||manifest.pdf!==pin.pdf||!Number.isSafeInteger(manifest.pages)||manifest.pages<1)throw Error('Approved edition metadata differs from catalog');
   if(publication.sourceRepository!==catalog.repository||publication.editionUrl!==pin.editionUrl||publication.releaseUrl!==pin.editionUrl)throw Error('Public edition links disagree with catalog');
-  if(pin.id!=='production-ai-engineering')html=installPublicationReview(html,publication.review);
+  html=installPublicationReview(html,publication.review);
   html=await installPromptBlocks(source,html,approvedPackage);
   html=await installTerminalBlocks(source,html,approvedPackage);
   html=editionLinks(html,publication);

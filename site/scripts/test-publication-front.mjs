@@ -14,6 +14,15 @@ validatePublicationFront(scheduled, edition);
 assert.equal(installPublicationReview(scheduled, edition.review), scheduled);
 const futureReview = {...edition.review, at: '2026-10-12T16:00:00.000Z', label: 'Monday, October 12, 2026 at 9:00 AM Pacific time'};
 validatePublicationFront(installPublicationReview(scheduled, futureReview), {...edition, review: futureReview});
+const staleLabel = {...futureReview, label: edition.review.label};
+const refreshed = installPublicationReview(scheduled, staleLabel);
+assert(refreshed.includes('Monday, October 12, 2026 at 9:00 AM Pacific time'));
+validatePublicationFront(refreshed, {...edition, review: staleLabel});
+assert.throws(() => validatePublicationFront(refreshed.replace('Monday, October 12, 2026', 'Monday, October 5, 2026'), {...edition, review: staleLabel}), /reviewState/);
+const dstReview = {...futureReview, at: '2026-11-02T17:00:00.000Z'};
+assert(installPublicationReview(scheduled, dstReview).includes('Monday, November 2, 2026 at 9:00 AM Pacific time'));
+const easternReview = {...futureReview, timeZone: 'America/New_York'};
+assert(installPublicationReview(scheduled, easternReview).includes('Monday, October 12, 2026 at 12:00 PM Eastern time'));
 assert.throws(() => installPublicationReview(html, {...edition.review, at: 'invalid'}), /Incomplete publication review schedule/);
 for (const hook of ['data-release-status', 'data-countdown-seconds', 'data-release-window ']) {
  assert.throws(() => validatePublicationFront(scheduled.replace(hook, 'removed-hook '), edition), /reviewState/);
