@@ -1,0 +1,43 @@
+// Verify asset-only changes through the actual staged native hash/diff implementation.
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {appendFileSync,copyFileSync,cpSync,existsSync,mkdtempSync,readFileSync,rmSync,symlinkSync} from 'node:fs';
+import {join,relative} from 'node:path';
+import {tmpdir} from 'node:os';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../',import.meta.url));
+assert.ok(existsSync(join(root,'.ds-sync/package-build.mjs')),'Stage the installed converter before this test.');
+const scratch=mkdtempSync(join(process.env.VELORI_SCRATCH_ROOT??tmpdir(),'velori-native-assets-'));
+const clone=join(scratch,'sample');
+const skip=new Set(['node_modules','.ds-sync','ds-bundle','dist','validation','.cache','__pycache__']);
+const hash=data=>createHash('sha256').update(data).digest('hex');
+const liveAsset=join(root,'public/assets/velori/graphite-bag-shell-v2.png');
+const liveHash=hash(readFileSync(liveAsset));
+try{
+ cpSync(root,clone,{recursive:true,filter:source=>!relative(root,source).split(/[\\/]/).some(part=>skip.has(part))});
+ symlinkSync(join(root,'.ds-sync'),join(clone,'.ds-sync'),'dir');
+ symlinkSync(join(root,'node_modules'),join(clone,'node_modules'),'dir');
+ const run=args=>{const result=spawnSync(process.execPath,args,{cwd:clone,encoding:'utf8',maxBuffer:8*1024*1024});assert.equal(result.status,0,result.stdout+result.stderr);return result;};
+ const build=['.ds-sync/package-build.mjs','--config','.design-sync/config.json','--node-modules',join(clone,'node_modules'),'--out','ds-bundle'];
+ const first=run(build);
+ const bundle=join(clone,'ds-bundle');const baseline=JSON.parse(readFileSync(join(bundle,'_ds_sync.json')));
+ const asset=join(clone,'public/assets/velori/graphite-bag-shell-v2.png');
+ assert.equal(hash(readFileSync(join(bundle,'assets/velori/graphite-bag-shell-v2.png'))),liveHash,'Assets absent or changed during converter build.');
+ assert.ok(first.stderr.indexOf('before native hashing/validation/capture')<first.stderr.indexOf('_ds_sync.json:'),'Asset hook ran after native hash emission.');
+ const inventoryPath=join(bundle,'guidelines/velori-runtime-assets.md');const inventoryBefore=readFileSync(inventoryPath);
+ const inventoryRows=inventoryBefore.toString().split('\n').filter(line=>line.startsWith('| `assets/velori/'));assert.equal(inventoryRows.length,16,'Asset inventory is not the scoped16files.');
+ const inventoryNames=inventoryRows.map(line=>line.split('`')[1]);assert.deepEqual(inventoryNames,[...inventoryNames].sort(),'Asset inventory is not sorted.');
+ run(['.design-sync/package-assets.mjs','ds-bundle']);assert.deepEqual(readFileSync(inventoryPath),inventoryBefore,'Idempotent copy changed deterministic inventory.');
+ const anchor=join(scratch,'baseline-sync.json');copyFileSync(join(bundle,'_ds_sync.json'),anchor);
+ appendFileSync(asset,'\nasset-only-regression');run(build);
+ const changed=JSON.parse(readFileSync(join(bundle,'_ds_sync.json')));
+ assert.notEqual(changed.auxSha,baseline.auxSha,'Asset-only change did not move native auxiliary hash.');
+ assert.deepEqual(changed.sourceKeys,baseline.sourceKeys,'Asset-only change moved component source keys.');
+ assert.deepEqual(changed.renderHashes,baseline.renderHashes,'Asset-only change moved card render artifacts.');
+ run(['.ds-sync/lib/remote-diff.mjs','--local','ds-bundle','--remote',anchor]);
+ const diff=JSON.parse(readFileSync(join(bundle,'.sync-diff.json')));
+ assert.equal(diff.upload.any,true);assert.equal(diff.upload.aux,true);assert.equal(diff.changed.length,0);assert.equal(diff.unchanged.length,13);
+ assert.equal(hash(readFileSync(liveAsset)),liveHash,'Regression changed protected source asset.');
+ console.log(JSON.stringify({passed:true,checks:['assets before native hashing','deterministic/idempotent16file inventory','asset-only change flips native auxSha','asset-only change triggers native upload.any/aux','13component source keys/render hashes stable','protected source asset unchanged'],beforeAuxSha:baseline.auxSha,afterAuxSha:changed.auxSha,upload:diff.upload,unchangedComponents:diff.unchanged}));
+}finally{rmSync(scratch,{recursive:true,force:true});}

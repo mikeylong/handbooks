@@ -13,6 +13,7 @@ import {installArtworkPairs} from './artwork-pairs.mjs';
 
 const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads,editionPdfUrl}=await toolkitModule('pdf-downloads.mjs');
 const {writeMarkdownEdition}=await toolkitModule('markdown-downloads.mjs');
+const {installRetainedReleases}=await toolkitModule('retained-releases.mjs');
 const {installDiagrams} = await toolkitModule('diagrams.mjs');
 const {installPromptBlocks} = await toolkitModule('prompt-blocks.mjs');
 const {installTerminalBlocks} = await toolkitModule('terminal-blocks.mjs');
@@ -34,12 +35,6 @@ const publicAssets=JSON.parse(await readFile(resolve(root,'public-assets.json'),
 for(const [path,sha] of Object.entries(publicAssets)){const file=safePath(root,path);if(createHash('sha256').update(await readFile(file)).digest('hex')!==sha)throw Error('Shared public asset changed: '+path);const dest=resolve(output,path.slice(5));await mkdir(dirname(dest),{recursive:true});await cp(file,dest);}
 let gallery=await readFile(resolve(root,'site/index.html'),'utf8');
 const retained=JSON.parse(await readFile(resolve(root,'retained-releases.json'),'utf8'));
-for(const route of retained.routes){
- if(!/^\/[A-Za-z0-9/_.-]+\.pdf$/.test(route.url)||route.url.includes('..'))throw Error('Unsafe retained route');
- const source=safePath(resolve(root,'..'),route.source),bytes=await readFile(source);
- if(createHash('sha256').update(bytes).digest('hex')!==route.sha256)throw Error('Retained PDF changed: '+route.url);
- const dest=safePath(output,route.url.slice(1));await mkdir(dirname(dest),{recursive:true});await cp(source,dest);
-}
 const changelogs=JSON.parse(await readFile(resolve(root,'changelogs.json'),'utf8'));
 const editions=[];
 for(const pin of books){
@@ -118,4 +113,6 @@ await writeFile(resolve(output,'index.html'),gallery);
 await writeFile(resolve(output,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://handbooks.surfaces.systems/sitemap.xml\n');
 await writeFile(resolve(output,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+['/',...books.flatMap(book=>['/'+book.id+'/',new URL(book.editionUrl).pathname])].map(path=>`<url><loc>https://handbooks.surfaces.systems${path}</loc></url>`).join('')+'</urlset>\n');
 await finalizeSiteThemes(output);
+// Frozen historical HTML must remain byte-identical after current-reader transforms.
+await installRetainedReleases(resolve(root,'..'),output,retained);
 console.log(`Built gallery from ${books.length} approved local handbook packages`);

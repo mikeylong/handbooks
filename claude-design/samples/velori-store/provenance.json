@@ -1,8 +1,9 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "package": "velori-store",
   "version": "0.2.0",
-  "distribution": "MIT public-download candidate; unpublished",
+  "audience": "public",
+  "distribution": "MIT public-download payload",
   "license": {
     "ownedMaterials": "MIT",
     "notice": "LICENSE",
@@ -10,48 +11,60 @@
       "docs/LUCIDE-LICENSE",
       "docs/REACT-LICENSE"
     ],
-    "historicalRuntime": "excluded from public payload; preserved in private review archive"
+    "historicalRuntime": "excluded from public payload; preserved privately"
   },
   "sourceFreeze": "provenance/source-freeze.json",
   "adaptations": [
-    "Standalone React/Vite application with ordinary layout and state; no CLEAR reviewer coordination",
-    "v1.4 dropdown and one accessory choice; color chips and multiple accessories remain extensions",
-    "Ink/white Continue, 12px corners, 48px height, 24px accessory gaps; original violations retained as named fixtures",
-    "New Review configuration and return paths, accessory details, image failure and retry",
-    "Sample-only storage namespace, no inherited owner fixes, proposals, or review state",
-    "Consumer Arial/Georgia fonts retained; native Figma system uses Arimo/Lora",
-    "Reference extraction retains consumer photo composition and original violation styles",
-    "ReviewConfiguration adapted from an earlier native Design source; historical runtime retained in private review archive"
+    "Standalone React/Vite app with local assets and sample-only storage",
+    "Expression dropdown and one accessory choice; 72 configurations",
+    "Ink/white Continue, 12px corners, 48px height and 24px accessory gaps",
+    "Narrow finish/face gaps remain 16px; details-photo recovery is outside the current scope",
+    "Bounded React Review column adapted from native Review source accepted 2026-10-05, SHA-256 03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b976b68f0f46811150a; existing configuration/routing/persistence/focus/image recovery retained; captured source/runtime private",
+    "Native import uses the 13 library exports and the accepted baseline guidance; completed screen source is excluded"
   ],
+  "nativeEvidence": "The bounded Review adaptation cites its accepted native source above. All captured native source/runtime remain private and outside this MIT payload. Readers must capture and validate their own new packet; this archive does not certify a new import, generation or handoff.",
   "exclusions": [
     "node_modules",
     "dist",
     "runtime validation",
-    "converter tooling and intermediate bundle outside the captured handoff",
-    "native authentication and upload records",
+    "converter output",
+    "native credentials and upload records",
     "owner browser state",
     "private review files"
   ],
   "publicPayloadExclusions": [
-    "historical captured native packet and runtime",
-    "historical native server and validator"
+    "captured native packet and runtime",
+    "historical native handoff metadata",
+    "historical native server and validator",
+    "native project pin and private owner config fields"
   ],
+  "projections": {
+    ".design-sync/config.json": "Portable approved fields only; no native project pin or private owner fields. Source config is unchanged."
+  },
   "files": {
+    ".design-sync/NOTES.md": {
+      "sha256": "bb77e8ebf3e46df3f29bd9a5e0dbded33f61bdbb6e2dd73d9722c5c0ce795887",
+      "bytes": 3058
+    },
     ".design-sync/config.json": {
-      "sha256": "d9b0ecbb0d2f2a34e2ab0a678eab97a16973307d1b9585ae00f005200527fb00",
-      "bytes": 2839
+      "sha256": "88c0282fbff7adfe296f55904e02efe90a281432154f36a8383c5f5c62a00ecb",
+      "bytes": 3040
     },
     ".design-sync/conventions.md": {
-      "sha256": "33ca0b2c5ddf630bfb9417293e91b03fd5c63371c54e5f57ed1ebab6c1ca9d1c",
-      "bytes": 3618
+      "sha256": "f06c0c14e0743f04e3e48804ea4ccd697c6031cc329af2ed8f6e3cbb88de7618",
+      "bytes": 4986
     },
     ".design-sync/host-entry.mjs": {
       "sha256": "d95e4125972f66a02a13b31f1bbb778e46e35795b434e0d84fc64b8131837c97",
       "bytes": 993
     },
+    ".design-sync/overrides/source-kit.mjs": {
+      "sha256": "154ee356eccb0193c19596c390eb444eedb8213347e102e8fd261d013d542531",
+      "bytes": 433
+    },
     ".design-sync/package-assets.mjs": {
-      "sha256": "e9aeff9bb7ab8c8950c80771e3e750d683954601a6971591b574ec5696d0efaa",
-      "bytes": 864
+      "sha256": "5ad8c250a877c028cfe0a6215b3e3ca14eb45328dcaad5ae2317eb381441d355",
+      "bytes": 2580
     },
     ".design-sync/previews/AccessoryChoice.tsx": {
       "sha256": "22c5fbb8c4e9c94a601e4654691f5fd85203e0494cf8a1cced564c0e752e5212",
@@ -110,16 +123,16 @@
       "bytes": 101
     },
     ".gitignore": {
-      "sha256": "2bbe92d1e0ab3b4c258a786caef04bcc3c853eedc2e8881879e8f7e9a466b379",
-      "bytes": 444
+      "sha256": "2699578409e98c0ce17b41d648696d9ff8ae017082dbc624d0c8c5537c6f70d8",
+      "bytes": 617
     },
     "LICENSE": {
       "sha256": "bb16009dc22992890f69d46d7babb7d6dd3bba1eb91e02b66289d6d82a7df1ec",
       "bytes": 1069
     },
     "README.md": {
-      "sha256": "fac6f85cf9f8512dcdd0a22d4f9ea5b3233d69ad64d119e155c5ed3c6187e0ce",
-      "bytes": 5109
+      "sha256": "3d7b4757234ac73a4a66be03a5b2cd2773e9191fac91f5bbe9470a03922fba15",
+      "bytes": 5596
     },
     "docs/LUCIDE-LICENSE": {
       "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
@@ -130,8 +143,8 @@
       "bytes": 1086
     },
     "docs/asset-terms.md": {
-      "sha256": "e12be7c62045ed4a20cd3b6a0105d7754a3f7ba23922a9b9a53de63a2ab58706",
-      "bytes": 1296
+      "sha256": "90fcbf29e7c3b872e971c4e4916244de9bc31ed1ed1f371d61252e0987bd37f9",
+      "bytes": 1451
     },
     "docs/expected-results.md": {
       "sha256": "391a34cb029bcc306764848bb482670e612ac3127421f1c31f9e418ae4341006",
@@ -150,20 +163,32 @@
       "bytes": 5949
     },
     "docs/inventory.md": {
-      "sha256": "ce637d88e61d0ce5c4468faad0f38c466497e1f2963b56808a30194c0d991567",
-      "bytes": 3987
+      "sha256": "f93a3967b1cb811c2e5e47f3ea158bdd3e05c6e1e2c70d5a073f02accd6e19c6",
+      "bytes": 4474
+    },
+    "docs/native-baseline.md": {
+      "sha256": "7f1c6d32c06765be8892139b922c9fa981217e6f7bb6018e80d33b43fc944a49",
+      "bytes": 15037
     },
     "docs/product-brief.md": {
-      "sha256": "300359063f6f8e4216df258cf4a531d21bcecf3df7519998be50bd8e1ec071fa",
-      "bytes": 1302
+      "sha256": "77c40d938eaa35844367ec7eb9963df8214e68dd881f519488856af46c971e52",
+      "bytes": 1305
     },
     "docs/prompts.md": {
-      "sha256": "511f3cdca68f1aa60b7d3b6508b7a56505669089048ee1c1d350d48977a65d35",
-      "bytes": 9546
+      "sha256": "feaf8c2c1d99db4ef1ef02b8bf2bd0d885ec0cab95ce741b30b6b82529121371",
+      "bytes": 11735
+    },
+    "docs/source-conflicts.md": {
+      "sha256": "719eeed2031096a65eef2b281b7bfd9bab12f481f87520029ea33b02f01b3f20",
+      "bytes": 9222
+    },
+    "docs/system-definition.md": {
+      "sha256": "52442373a57adac763bfa2cc1e1c8d402bb406abe2b6b0aaab290accba83c99f",
+      "bytes": 48907
     },
     "docs/walkthrough.md": {
-      "sha256": "36054699abf4e8c1226f06361a4877daf9412c6f1ce3fffdd759c009651e8a1e",
-      "bytes": 8715
+      "sha256": "1aa5679c8cd56d5b1c68cbc0e6f0d8be09334f33110f4874f0f7469f5c6a251c",
+      "bytes": 12545
     },
     "index.html": {
       "sha256": "fde4db892480d16d53cd2b5fab494321a845f1a8459f7a0c176b94da214d1846",
@@ -176,10 +201,6 @@
     "package.json": {
       "sha256": "7cd3869cb1750f84fe80e69c7038fd43d7495e5d558dbdc886f4b4d773bcf4f9",
       "bytes": 765
-    },
-    "provenance/native-handoff.json": {
-      "sha256": "88f078e105a6882a77d381d31f310b859743ad5a383e5a9ff73c8c7c7d49d0de",
-      "bytes": 994
     },
     "provenance/source-freeze.json": {
       "sha256": "262b1b41ff6e67cf2b0f42a26ffd2bd0fa956fe4c7609c48fd8cb007bfece37b",
@@ -362,8 +383,20 @@
       "bytes": 5346
     },
     "scripts/package-candidate.py": {
-      "sha256": "ad7b333f4909d552a53fd6eafbcc944b1b07751432dac31072327e59300b8b85",
-      "bytes": 4470
+      "sha256": "4e1ec81a54a3358465822cc893e2419d4c15019ba64eae6f57211c0ea1099a43",
+      "bytes": 5315
+    },
+    "scripts/package_policy.py": {
+      "sha256": "343d843953a1bd5d2e84db38038c38688d1f1412668185181d407b869918bbd6",
+      "bytes": 4412
+    },
+    "scripts/test-native-assets.mjs": {
+      "sha256": "88efb47befd4ba5abc866896a1e08c679507d08ec241577919d8ca7a400ece41",
+      "bytes": 4231
+    },
+    "scripts/test-package.py": {
+      "sha256": "27518d07fe0831ac3adb22e2ccfde3f6c91315c075eac45ad8c4e6b7d946641d",
+      "bytes": 3806
     },
     "scripts/validate-assets.mjs": {
       "sha256": "d1c10fe2613374fdbafddaff52cda083652c0636822c76d558930b4b02ecd270",
@@ -374,12 +407,12 @@
       "bytes": 9155
     },
     "scripts/validate-package.py": {
-      "sha256": "21bc73ffbb4111fd1bf187980701e6df21a541836b5f5e5664a510e26c12aa71",
-      "bytes": 1710
+      "sha256": "d4485306dd8b768a6a996110c4d3c40048d0fcb4ef5200f94540cd10ab39c6d3",
+      "bytes": 2248
     },
     "src/ReviewConfiguration.jsx": {
-      "sha256": "f121023445ff32eeaa42bd1fd3e559aca1939b6f4f88a58b9decbaa2f328297d",
-      "bytes": 858
+      "sha256": "2dc2844d45a3dcbfa8e1f9b03809eec375a2939e8de5587f697b8068aefa8608",
+      "bytes": 880
     },
     "src/index.js": {
       "sha256": "62d7f9aa5ee876a8d607c47e6e2a70c6efdcbb9d407a61028b837066ed107ab6",

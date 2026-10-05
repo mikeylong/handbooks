@@ -16,3 +16,9 @@ ds-bundle/
 handoff/
 scripts/serve-native-handoff.mjs
 scripts/validate-native-handoff.mjs
+
+# MIT-owned native asset adapter is a durable reader input.
+!.design-sync/overrides/
+.design-sync/overrides/*
+!.design-sync/overrides/source-kit.mjs
+!.design-sync/NOTES.md

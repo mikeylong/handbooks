@@ -1,19 +1,15 @@
 # Claude Design Field Guide
 
-Use the guide to extend an existing product screen from its design-system sources and prepare an engineering handoff. The October 3 version 1.1.0 includes reader-focused guidance, a runnable local Data Pipeline Studio exercise, and matching Daytime and Late night PDFs.
+Extend a product from its existing design system, prove the result, and carry it into code and Figma. Version 1.2.0, published October 5, 2026, follows Velori through one Review configuration extension. It includes a runnable React sample, a machine-readable Markdown edition, and matching 56-page Daytime and Late night PDFs.
 
-[Read the Daytime version](./output/pdf/claude-design-v1.1.0-2026-10-03-daytime-r1.pdf) · [Read the Late night version](./output/pdf/claude-design-v1.1.0-2026-10-03-late-night-r1.pdf) · [Read the manuscript](./Claude_Design_Field_Guide_Source.md)
+[Read online](https://handbooks.surfaces.systems/claude-design/) · [Edition and downloads](https://handbooks.surfaces.systems/claude-design/editions/v1.2.0/) · [Read the manuscript](./Claude_Design_Field_Guide_Source.md)
 
-Use the Daytime version for printing. Both appearances contain the same 129-page content edition. The final changelog compares version 1.1.0 with the preserved first edition, version 1.0.0.
+Use the Daytime version for printing and the Late night version for dark reading. Both contain the same content, links, page labels and final-page changelog, compared with the preserved version 1.1.0.
 
-The local example passed eight model tests, twenty Chromium checks and its Vite build. Actual Claude Code inspected the manually assembled handoff and rechecked three repaired High findings. Save, Run, permissions and conflicts in the example are browser simulations. The example is not a Claude Design export.
+Start with [the Velori sample](./samples/velori-store/README.md). Its walkthrough gives the inputs, terminal commands, browser journey, expected results and reset instructions. The package includes product sources, asset and token manifests, import rules, source-conflict records, thirteen prompts and validation scripts. Download the MIT sample from the edition's reader; private native packets and runtime records are excluded.
 
-Claude Design generation, system sync, the three imported-system tests, correction persistence, comments, baseline export and restore, actual export inventory, recipient access and native Figma identity remain unverified. Organization-policy, production API, full graph and assistive-technology gates remain open. See [the stage 2 test matrix](./review/2026-10-02/stage-2-test-matrix.md).
+The release was checked in a new private Claude Design system: imported-system fidelity, a correction followed by a second generation, a fresh Review configuration, and an authentic Code handoff. Complete native archive bytes were preserved before an offline host adapter was validated. The bounded React adaptation and native Figma correspondence were checked separately. Figma uses substituted fonts and prototype navigation; its simulated unavailable state does not prove real image failure or browser reload persistence. Full pixel parity, organization-wide access policy, production APIs and assistive-technology acceptance are not claimed.
 
-Start with [Run the local coding exercise](./Local_Coding_Exercise.md) for the terminal commands, browser journey, expected results, and handoffs between Claude Design, Claude Code, and Figma. Its access checklist explains what each step needs; the separate [access-gap follow-up](./review/2026-10-03-prose/access-gap-follow-up.md) explains why our earlier review stopped.
+Follow [the build instructions](./Claude_Design_Field_Guide_README.md) to reproduce the PDFs and reader. The reader and PDF layout use the shared publishing toolkit. Extract that toolkit beside this book and set `HANDBOOK_PUBLISHING_TOOLKIT` to its directory when working outside the collection.
 
-The package includes the [setup guide](./Simple_Design_System_Setup.md), [prompt pack](./Claude_Design_Prompt_Pack.md), [handoff template](./Claude_Design_Handoff_Template.md), [validation checklist](./Claude_Design_Validation_Checklist.md), [local example](./example/README.md), pinned SDS source and license, [claim ledger](./review/2026-10-02/claim-ledger.md), artwork provenance and build adapters.
-
-Follow [the build instructions](./Claude_Design_Field_Guide_README.md) to reproduce the PDFs and reader. The reader uses the shared publishing toolkit. Extract the toolkit archive beside this book and set `HANDBOOK_PUBLISHING_TOOLKIT` to that directory when running outside the collection.
-
-Mike authorized this release with Land this on October 3, 2026. [Read online](https://handbooks.surfaces.systems/claude-design/). The preserved version 1.0.0 PDFs retain their original bytes and printed candidate label. The original August PDF, ZIP and artwork are preserved separately and unchanged.
+Data Pipeline Studio, its [local coding exercise](./Local_Coding_Exercise.md), and the earlier Simple Design System materials remain historical examples. Earlier PDFs, public download routes, artwork and review records are preserved. The version 1.1.0 metadata and binding records are retained in [baselines/v1.1.0](./baselines/v1.1.0/).

@@ -38,7 +38,13 @@ Before release, check 390 px and 1440 px in System, Light and Dark, plus blocked
 
 ## A first title or next edition
 
-Start with [the PDF configuration template](../assets/design-system/templates/pdf-config.json). `source` is relative to the book root. `story` names the story function; `docClass` defaults to `GuideDocTemplate`. `fonts: "toolkit"` uses the packaged fonts. `pageSizePoints` records the governing media box; `chapterCount` must match every required opener. A first edition leaves `releasedPdf` and `releasedSha256` null. A next edition sets them to the actual previously approved PDF and records its content comparison before approval. An initial appearance companion must match its retained content exactly; a failed retained baseline blocks that companion until a separately authorized repair edition exists.
+Start with [the PDF configuration template](../assets/design-system/templates/pdf-config.json). `source` is relative to the book root. `story` names the story function; `docClass` defaults to `GuideDocTemplate`. `fonts: "toolkit"` uses the packaged fonts. `pageSizePoints` records the governing media box; `chapterCount` must match every required opener.
+
+A first edition leaves `releasedPdf`, `releasedSha256`, and `baselineMode` null. For a next content edition, set `releasedPdf` to the actual previously approved PDF, `releasedSha256` to its SHA-256, and `baselineMode: "content-edition"`. The runtime verifies the frozen baseline before source execution, permits new pagination, and generates labels from the current document. Compare Daytime with the previous approved PDF for the content decision, then compare Late night with that edition's Daytime for appearance parity.
+
+For a same-content appearance companion, set `baselineMode: "appearance-companion"` with the retained Daytime PDF and its SHA-256. The runtime verifies that input, requires the same page count, and retains its page labels. Exact text and structural parity remain separate mandatory checks. A failed retained baseline blocks the companion until a separately authorized repair edition exists. Historical configs with `releasedPdf` but no mode keep the appearance-companion behavior; new configs must choose the mode explicitly. A mode or hash without a PDF, an invalid mode, and a missing or mismatched hash fail generation.
+
+For a Chromium finalizer config stored outside a copied book, pass `--book <book-root>` explicitly. Its optional `--baseline-mode content-edition` or `--baseline-mode appearance-companion` overrides the configured mode for that invocation only; without the flag, the configuration and historical companion default apply. A content-edition override permits new pagination and keeps the frozen PDF path and SHA-256 checks.
 
 Each artwork-pair entry supplies `chapter`, safe relative `light` and `dark` paths, `lightSha256`, `darkSha256`, `darkDimensions`, and `transparencyReview.alphaRange`. Follow [the artwork-pair contract](illustration-workflow.md) for authorship and composition evidence. The normalizer fits the authored foreground proportionally into the released Light frame, composites on the exact paper color, and records the frame hash, scale and padding. Originals stay frozen. The generation command creates this derivative manifest beside its isolated PDF automatically.
 
@@ -63,6 +69,7 @@ Create renderer output directories before rendering. Repeat rendering for retain
 ```sh
 "$python" scripts/build-pdf-fixtures.py --output "$new_fixture_directory" --browser "$browser" --playwright-module "$playwright_module"
 "$python" scripts/test-pdf-runtime.py --fixtures "$new_fixture_directory" --output "$fixture_evidence"
+"$python" scripts/test-pdf-baseline.py --output "$new_baseline_evidence"
 node scripts/test-pdf-downloads.mjs
 "$python" scripts/validate-package.py --output "$package_report"
 ```

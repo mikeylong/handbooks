@@ -37,6 +37,7 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     assert '<svg' in (build/'handbook/index.html').read_text()
     config = json.loads((BOOK/'pdf-config.json').read_text())
     config['runningFont'] = str(TOOLKIT/'assets/design-system/fonts/NotoSans-Regular.ttf')
+    config['baselineMode'] = 'appearance-companion'
     config_path = root/'explicit-config.json'
     config_path.write_text(json.dumps(config))
     raw = root/'raw.pdf'
@@ -47,11 +48,35 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     canvas.save()
     finalizer = build/'handbook/finalize-pdf.py'
     run([sys.executable,str(finalizer),'--input',str(raw),'--output',str(root/'missing-config.pdf')],env,False)
+    def finalizer_args(output_path, mode=None):
+        command=[sys.executable,str(finalizer),'--input',str(raw),'--output',str(output_path),'--config',str(config_path),'--book',str(build)]
+        if mode is not None:command += ['--baseline-mode',mode]
+        return command
+    baseline=build/config['releasedPdf']
+    baseline_sha=hashlib.sha256(baseline.read_bytes()).hexdigest()
+    baseline_pages=len(PdfReader(baseline).pages)
+    config_bytes=config_path.read_bytes()
+    unchanged_mode=root/'configured-companion.pdf'
+    result=run(finalizer_args(unchanged_mode),env,False)
+    assert 'Pagination mismatch' in result.stderr and not unchanged_mode.exists()
     output = root/'final.pdf'
-    run([sys.executable,str(finalizer),'--input',str(raw),'--output',str(output),'--config',str(config_path)],env)
-    assert len(PdfReader(output).pages)==6
+    run(finalizer_args(output,'content-edition'),env)
+    output_reader=PdfReader(output)
+    assert len(output_reader.pages)==6 and baseline_pages!=6
+    assert output_reader.page_labels==['Cover','ii','iii','1','2','3']
+    assert config_path.read_bytes()==config_bytes
+    for name, change, expected_error in [
+        ('missing-baseline',{'releasedPdf':'output/pdf/absent.pdf'},'releasedPdf must be a regular file'),
+        ('missing-hash',{'releasedSha256':None},'Missing or invalid releasedSha256'),
+        ('stale-hash',{'releasedSha256':'0'*64},'releasedSha256 mismatch'),
+    ]:
+        config_path.write_text(json.dumps({**config,**change}))
+        rejected=root/(name+'.pdf')
+        result=run(finalizer_args(rejected,'content-edition'),env,False)
+        assert expected_error in result.stderr and not rejected.exists(),result.stderr
+    assert hashlib.sha256(baseline.read_bytes()).hexdigest()==baseline_sha
     assert not (build/'pdf-config.json').exists()
     without_toolkit = dict(env)
     without_toolkit.pop('HANDBOOK_PUBLISHING_TOOLKIT')
     run(['node',str(build/'handbook/build-handbook.mjs')],without_toolkit,False)
-print('Copied weekly HTML and finalizer resolve the toolkit and explicit config; missing dependencies fail.')
+print('Copied weekly HTML and explicit book/content-edition finalization pass changed pagination; configured companion, missing/stale baseline and missing dependencies retain their guards.')

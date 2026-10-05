@@ -4,12 +4,13 @@ import argparse, importlib.util, json, os
 from pathlib import Path
 from pdf_theme import isolated_output, theme_tokens
 from pdf_font_resources import prune_unpainted_unembedded_fonts
+from pdf_baseline import load_baseline, preserve_companion_labels
 from pypdf import PdfReader, PdfWriter
 from pypdf.constants import PageLabelStyle
-from pypdf.generic import NameObject
 
 def build(book, config_path, theme, output, art=None):
     book=Path(book).resolve(); config=json.loads(Path(config_path).read_text())
+    mode, baseline = load_baseline(book, config)
     output=isolated_output(book,output)
     if config['renderer']!='reportlab': raise ValueError('Wrong renderer')
     if theme=='dark' and not art: raise ValueError('Missing frozen Dark derivatives')
@@ -19,16 +20,11 @@ def build(book, config_path, theme, output, art=None):
     spec=importlib.util.spec_from_file_location('book_manuscript',source); module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     from reportlab.pdfgen.canvas import Canvas
     doc_class=getattr(module,config.get('docClass','GuideDocTemplate'))
-    doc=doc_class(str(output)); doc.multiBuild(getattr(module,config['story'])(),canvasmaker=lambda *a,**kw:Canvas(*a,**dict(kw,invariant=1,pdfVersion=tuple(int(x) for x in (PdfReader(book/config['releasedPdf']).pdf_header.removeprefix('%PDF-') if config.get('releasedPdf') else '1.4').split('.')),initialFontName=module.SERIF)))
+    doc=doc_class(str(output)); doc.multiBuild(getattr(module,config['story'])(),canvasmaker=lambda *a,**kw:Canvas(*a,**dict(kw,invariant=1,pdfVersion=tuple(int(x) for x in (baseline.pdf_header.removeprefix('%PDF-') if baseline else '1.4').split('.')),initialFontName=module.SERIF)))
     reader=PdfReader(output,strict=True)
     writer=PdfWriter(clone_from=reader); writer.pdf_header=reader.pdf_header
-    if not config.get('releasedPdf'): prune_unpainted_unembedded_fonts(writer)
-    # Initial migration must preserve actual release labels; baseline files have them.
-    baseline=PdfReader(book/config['releasedPdf'],strict=True) if config.get('releasedPdf') else None
-    if baseline and len(reader.pages)!=len(baseline.pages): raise ValueError(f'Pagination mismatch: {len(reader.pages)} != {len(baseline.pages)}')
-    if baseline and '/PageLabels' in baseline.trailer['/Root']:
-        writer._root_object.update({NameObject('/PageLabels'):baseline.trailer['/Root']['/PageLabels'].clone(writer)})
-    if not baseline:
+    prune_unpainted_unembedded_fonts(writer)
+    if not preserve_companion_labels(writer, reader, mode, baseline):
         offset=getattr(doc,'logical_page_offset',None) if config.get('pageLabelStyle')=='frontmatter-roman' else None
         if offset:
             writer.set_page_label(0,offset-1,style=PageLabelStyle.LOWERCASE_ROMAN,start=1)

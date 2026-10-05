@@ -1,0 +1,58 @@
+{
+  "title": "Claude Design Field Guide",
+  "version": "1.1.0",
+  "date": "2026-10-03",
+  "pdf": "output/pdf/claude-design-v1.1.0-2026-10-03-daytime-r1.pdf",
+  "sha256": "115003a4a47c92d10d0a59b0e43cbbb2401a19bb6ea606d95c037d0d7697801c",
+  "pages": 129,
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-03",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v1.1.0-2026-10-03-daytime-r1.pdf",
+      "publicUrl": "/claude-design/claude-design-v1.1.0-2026-10-03-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v1.1.0-2026-10-03-daytime-r1.pdf",
+      "sha256": "115003a4a47c92d10d0a59b0e43cbbb2401a19bb6ea606d95c037d0d7697801c",
+      "pages": 129,
+      "bytes": 5443387,
+      "pageMap": {
+        "path": "claude-design/qa/v1.1.0/daytime-map.json",
+        "sha256": "16508d2810c2be181c41f017b0d5b71e90346da8044663aa7bb3ede3e836e738"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-03",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v1.1.0-2026-10-03-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v1.1.0/claude-design-v1.1.0-2026-10-03-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v1.1.0-2026-10-03-late-night-r1.pdf",
+      "sha256": "ca05ee8a3fd6a834b567bc8faba9053ef4921a24ed5e88e79706b304ab4526aa",
+      "pages": 129,
+      "bytes": 49503718,
+      "pageMap": {
+        "path": "claude-design/qa/v1.1.0/late-night-map.json",
+        "sha256": "7411e6f8a4512313ec35846c7e4fd954ad96910eae4142e85d37fe9314424c1b"
+      },
+      "proof": {
+        "parity": {
+          "path": "claude-design/qa/v1.1.0/parity.json",
+          "sha256": "90947027c834c04187bad8a8feb31d966bc5ca24bd6a583afa4982514e6d8418"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "ca05ee8a3fd6a834b567bc8faba9053ef4921a24ed5e88e79706b304ab4526aa",
+          "date": "2026-10-03",
+          "basis": "All 129 pages rendered in Poppler and Apple PDFKit for both appearances; all-page contact review and full-page checks of the new exercise, handoff table, and changelog passed."
+        }
+      }
+    }
+  ]
+}

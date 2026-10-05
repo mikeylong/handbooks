@@ -1,0 +1,71 @@
+{
+  "artifacts": {
+    "pdfTextPatch": "exact-pdf-text.patch",
+    "readerFacingContentPatch": "reader-facing-content.patch",
+    "sourcePatch": "exact-source.patch"
+  },
+  "candidate": {
+    "ignoredChangelogPages": [
+      56
+    ],
+    "ignoredNavigationPages": [
+      6
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 1.2.0 \u00b7 2026-10-05 \u00b7 PDF appearance revision 1",
+      "title": "Claude Design Field Guide \u00b7 Daytime version"
+    },
+    "pages": 56,
+    "pdf": "candidate/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf",
+    "pdfSha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c"
+  },
+  "comparisons": {
+    "contentMetadataChanged": true,
+    "metadataChanged": true,
+    "navigationTextChanged": true,
+    "normalizedSubstantiveTextChanged": true,
+    "outlineIncludingChangelogChanged": true,
+    "rawPdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": true,
+    "substantiveOutlineChanged": true
+  },
+  "decisionProjection": {
+    "excludedSurfaces": [
+      "changelog pages",
+      "contents and index pages",
+      "changelog outline entries",
+      "exact PDF appearance title suffixes"
+    ],
+    "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed."
+  },
+  "limitations": [
+    "Rendering-only differences require visual comparison.",
+    "Semantic change categories and rationales must be authored from accepted exact diffs.",
+    "Pass page maps to avoid relying on heading heuristics for surface roles."
+  ],
+  "previous": {
+    "ignoredChangelogPages": [
+      129
+    ],
+    "ignoredNavigationPages": [
+      7
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 1.1.0 \u00b7 2026-10-03 \u00b7 PDF appearance revision 1",
+      "title": "Claude Design Field Guide \u00b7 Daytime version"
+    },
+    "pages": 129,
+    "pdf": "previous/daytime.pdf",
+    "pdfSha256": "115003a4a47c92d10d0a59b0e43cbbb2401a19bb6ea606d95c037d0d7697801c"
+  },
+  "readerFacingContentChanged": true,
+  "schemaVersion": 2,
+  "sourceSha256": {
+    "candidate": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198",
+    "previous": "d3f709cd9af84f0b23c21ecc3bf86932dd431941535b7a9ddcefa0ca18258636"
+  },
+  "summary": "The candidate contains reader-facing changes that require semantic classification."
+}

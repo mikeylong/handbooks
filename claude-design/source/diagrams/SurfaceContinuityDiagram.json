@@ -5,28 +5,28 @@
   "nodes": [
     {
       "id": "n1",
-      "label": "SHARED STATE",
-      "detail": "node / fixture / document"
+      "label": "CONFIGURATION",
+      "detail": "finish / face / color / accessory"
     },
     {
       "id": "n2",
-      "label": "DAG canvas",
-      "detail": "selection + graph"
+      "label": "Configurator",
+      "detail": "choices + photo"
     },
     {
       "id": "n3",
-      "label": "Inspector",
-      "detail": "schema + draft"
+      "label": "Details",
+      "detail": "browse + return"
     },
     {
       "id": "n4",
-      "label": "Data sheet",
-      "detail": "input / output rows"
+      "label": "Review",
+      "detail": "summary + edit"
     },
     {
       "id": "n5",
-      "label": "Importer",
-      "detail": "mapping + source"
+      "label": "Recovery",
+      "detail": "retain + retry"
     }
   ],
   "edges": [
@@ -48,6 +48,6 @@
     }
   ],
   "note": "",
-  "printAlt": "SHARED STATE; DAG canvas; Inspector; Data sheet; Importer",
-  "printCaption": "Coordinated surfaces use the same state."
+  "printAlt": "Configuration feeds the configurator, details, review, and image recovery.",
+  "printCaption": "Every surface keeps the same four configuration values."
 }

@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "version": "1.1.0",
+  "sourceReaderSha256": "82e89a99b737794ef9f918e7301aea6f6feaa6fd5d5e78936985462ea3fd3fce",
+  "sha256": "c23ec9fafc40002b4242d602a22670bec1faad05123380872e0765d66b70b9a7",
+  "sections": [
+    {
+      "title": "Orientation",
+      "anchor": "orientation",
+      "level": 2
+    },
+    {
+      "title": "What you will build",
+      "anchor": "what-you-will-build",
+      "level": 3
+    },
+    {
+      "title": "What the guide produces",
+      "anchor": "what-the-guide-produces",
+      "level": 3
+    },
+    {
+      "title": "How to use the field guide",
+      "anchor": "how-to-use-the-field-guide",
+      "level": 3
+    },
+    {
+      "title": "Before you begin",
+      "anchor": "before-you-begin",
+      "level": 3
+    },
+    {
+      "title": "The workflow at a glance",
+      "anchor": "the-workflow-at-a-glance",
+      "level": 3
+    },
+    {
+      "title": "Keep the product surfaces on one state spine",
+      "anchor": "keep-the-product-surfaces-on-one-state-spine",
+      "level": 3
+    },
+    {
+      "title": "Decide what is authoritative",
+      "anchor": "decide-what-is-authoritative",
+      "level": 2
+    },
+    {
+      "title": "Build the source-of-truth stack",
+      "anchor": "build-the-source-of-truth-stack",
+      "level": 3
+    },
+    {
+      "title": "Freeze the preservation boundary",
+      "anchor": "freeze-the-preservation-boundary",
+      "level": 3
+    },
+    {
+      "title": "Name the baseline fixture",
+      "anchor": "name-the-baseline-fixture",
+      "level": 3
+    },
+    {
+      "title": "Use the executable teaching contract",
+      "anchor": "use-the-executable-teaching-contract",
+      "level": 3
+    },
+    {
+      "title": "Define the success journey",
+      "anchor": "define-the-success-journey",
+      "level": 3
+    },
+    {
+      "title": "Write the first artifact: the extension brief",
+      "anchor": "write-the-first-artifact-the-extension-brief",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint",
+      "level": 3
+    },
+    {
+      "title": "Prepare Simple Design System",
+      "anchor": "prepare-simple-design-system",
+      "level": 2
+    },
+    {
+      "title": "Duplicate before you connect",
+      "anchor": "duplicate-before-you-connect",
+      "level": 3
+    },
+    {
+      "title": "Pair the Figma file with the codebase",
+      "anchor": "pair-the-figma-file-with-the-codebase",
+      "level": 3
+    },
+    {
+      "title": "Inventory the components you can reuse",
+      "anchor": "inventory-the-components-you-can-reuse",
+      "level": 3
+    },
+    {
+      "title": "Inventory the tokens",
+      "anchor": "inventory-the-tokens",
+      "level": 3
+    },
+    {
+      "title": "Build a compact context packet",
+      "anchor": "build-a-compact-context-packet",
+      "level": 3
+    },
+    {
+      "title": "Connect Code Connect after duplication",
+      "anchor": "connect-code-connect-after-duplication",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-1",
+      "level": 3
+    },
+    {
+      "title": "Validate the imported system",
+      "anchor": "validate-the-imported-system",
+      "level": 2
+    },
+    {
+      "title": "Establish the system in Claude Design",
+      "anchor": "establish-the-system-in-claude-design",
+      "level": 3
+    },
+    {
+      "title": "Preserve the reviewed baseline",
+      "anchor": "preserve-the-reviewed-baseline",
+      "level": 3
+    },
+    {
+      "title": "Give sources a clear authority order",
+      "anchor": "give-sources-a-clear-authority-order",
+      "level": 3
+    },
+    {
+      "title": "Run three known-screen tests",
+      "anchor": "run-three-known-screen-tests",
+      "level": 3
+    },
+    {
+      "title": "Score system fidelity",
+      "anchor": "score-system-fidelity",
+      "level": 3
+    },
+    {
+      "title": "Test correction behavior",
+      "anchor": "test-correction-behavior",
+      "level": 3
+    },
+    {
+      "title": "Decide whether to publish",
+      "anchor": "decide-whether-to-publish",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-2",
+      "level": 3
+    },
+    {
+      "title": "Extend the existing screen",
+      "anchor": "extend-the-existing-screen",
+      "level": 2
+    },
+    {
+      "title": "Start from the current route",
+      "anchor": "start-from-the-current-route",
+      "level": 3
+    },
+    {
+      "title": "Review the first diff",
+      "anchor": "review-the-first-diff",
+      "level": 3
+    },
+    {
+      "title": "Add graph behavior in small increments",
+      "anchor": "add-graph-behavior-in-small-increments",
+      "level": 3
+    },
+    {
+      "title": "Define proposed graph components",
+      "anchor": "define-proposed-graph-components",
+      "level": 3
+    },
+    {
+      "title": "Compare alternatives without multiplying scope",
+      "anchor": "compare-alternatives-without-multiplying-scope",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-3",
+      "level": 3
+    },
+    {
+      "title": "Design the adjacent surfaces",
+      "anchor": "design-the-adjacent-surfaces",
+      "level": 2
+    },
+    {
+      "title": "Upgrade the node inspector",
+      "anchor": "upgrade-the-node-inspector",
+      "level": 3
+    },
+    {
+      "title": "Turn the preview into a data sheet",
+      "anchor": "turn-the-preview-into-a-data-sheet",
+      "level": 3
+    },
+    {
+      "title": "Extend the importer",
+      "anchor": "extend-the-importer",
+      "level": 3
+    },
+    {
+      "title": "Make the surfaces agree",
+      "anchor": "make-the-surfaces-agree",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-4",
+      "level": 3
+    },
+    {
+      "title": "Specify states and transitions",
+      "anchor": "specify-states-and-transitions",
+      "level": 2
+    },
+    {
+      "title": "Build the product state matrix",
+      "anchor": "build-the-product-state-matrix",
+      "level": 3
+    },
+    {
+      "title": "Write transitions as contracts",
+      "anchor": "write-transitions-as-contracts",
+      "level": 3
+    },
+    {
+      "title": "Use named evidence for each state",
+      "anchor": "use-named-evidence-for-each-state",
+      "level": 3
+    },
+    {
+      "title": "Specify version conflicts and stale data",
+      "anchor": "specify-version-conflicts-and-stale-data",
+      "level": 3
+    },
+    {
+      "title": "Keep copy operational",
+      "anchor": "keep-copy-operational",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-5",
+      "level": 3
+    },
+    {
+      "title": "Prove responsive and accessible behavior",
+      "anchor": "prove-responsive-and-accessible-behavior",
+      "level": 2
+    },
+    {
+      "title": "Set the viewport contract",
+      "anchor": "set-the-viewport-contract",
+      "level": 3
+    },
+    {
+      "title": "Provide a keyboard model for the graph",
+      "anchor": "provide-a-keyboard-model-for-the-graph",
+      "level": 3
+    },
+    {
+      "title": "Make operational status redundant",
+      "anchor": "make-operational-status-redundant",
+      "level": 3
+    },
+    {
+      "title": "Audit fields, dialogs, and the data sheet",
+      "anchor": "audit-fields-dialogs-and-the-data-sheet",
+      "level": 3
+    },
+    {
+      "title": "Separate design evidence from implementation evidence",
+      "anchor": "separate-design-evidence-from-implementation-evidence",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-6",
+      "level": 3
+    },
+    {
+      "title": "Run the design evidence gate",
+      "anchor": "run-the-design-evidence-gate",
+      "level": 2
+    },
+    {
+      "title": "Review four kinds of evidence",
+      "anchor": "review-four-kinds-of-evidence",
+      "level": 3
+    },
+    {
+      "title": "1. Scope evidence",
+      "anchor": "1-scope-evidence",
+      "level": 4
+    },
+    {
+      "title": "2. System evidence",
+      "anchor": "2-system-evidence",
+      "level": 4
+    },
+    {
+      "title": "3. Behavior and data evidence",
+      "anchor": "3-behavior-and-data-evidence",
+      "level": 4
+    },
+    {
+      "title": "4. Accessibility and responsive evidence",
+      "anchor": "4-accessibility-and-responsive-evidence",
+      "level": 4
+    },
+    {
+      "title": "Use the component disposition table",
+      "anchor": "use-the-component-disposition-table",
+      "level": 3
+    },
+    {
+      "title": "Audit Simple Design System precisely",
+      "anchor": "audit-simple-design-system-precisely",
+      "level": 3
+    },
+    {
+      "title": "Run a challenge review",
+      "anchor": "run-a-challenge-review",
+      "level": 3
+    },
+    {
+      "title": "Gate decision",
+      "anchor": "gate-decision",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-7",
+      "level": 3
+    },
+    {
+      "title": "Hand off to Claude Code and developers",
+      "anchor": "hand-off-to-claude-code-and-developers",
+      "level": 2
+    },
+    {
+      "title": "Clean the design project first",
+      "anchor": "clean-the-design-project-first",
+      "level": 3
+    },
+    {
+      "title": "Build the handoff bundle",
+      "anchor": "build-the-handoff-bundle",
+      "level": 3
+    },
+    {
+      "title": "Write the component-to-code map",
+      "anchor": "write-the-component-to-code-map",
+      "level": 3
+    },
+    {
+      "title": "Export from Claude Design",
+      "anchor": "export-from-claude-design",
+      "level": 3
+    },
+    {
+      "title": "Give engineering acceptance tests, not adjectives",
+      "anchor": "give-engineering-acceptance-tests-not-adjectives",
+      "level": 3
+    },
+    {
+      "title": "Record implementation deviations",
+      "anchor": "record-implementation-deviations",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-8",
+      "level": 3
+    },
+    {
+      "title": "Implement, verify, and reconcile",
+      "anchor": "implement-verify-and-reconcile",
+      "level": 2
+    },
+    {
+      "title": "Move between the applications",
+      "anchor": "move-between-the-applications",
+      "level": 3
+    },
+    {
+      "title": "Implement in bounded slices",
+      "anchor": "implement-in-bounded-slices",
+      "level": 3
+    },
+    {
+      "title": "Use four verification layers",
+      "anchor": "use-four-verification-layers",
+      "level": 3
+    },
+    {
+      "title": "Static checks",
+      "anchor": "static-checks",
+      "level": 4
+    },
+    {
+      "title": "Automated behavior checks",
+      "anchor": "automated-behavior-checks",
+      "level": 4
+    },
+    {
+      "title": "Rendered visual checks",
+      "anchor": "rendered-visual-checks",
+      "level": 4
+    },
+    {
+      "title": "Human review",
+      "anchor": "human-review",
+      "level": 4
+    },
+    {
+      "title": "Report proof boundaries directly",
+      "anchor": "report-proof-boundaries-directly",
+      "level": 3
+    },
+    {
+      "title": "Use the native-Figma branch when required",
+      "anchor": "use-the-native-figma-branch-when-required",
+      "level": 3
+    },
+    {
+      "title": "Reconcile without hiding drift",
+      "anchor": "reconcile-without-hiding-drift",
+      "level": 3
+    },
+    {
+      "title": "Monitor future changes",
+      "anchor": "monitor-future-changes",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-9",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone",
+      "anchor": "guided-capstone",
+      "level": 2
+    },
+    {
+      "title": "Capstone rules",
+      "anchor": "capstone-rules",
+      "level": 3
+    },
+    {
+      "title": "Phase 1 - Frame and ground",
+      "anchor": "phase-1---frame-and-ground",
+      "level": 3
+    },
+    {
+      "title": "Phase 2 - Build the bounded DAG extension",
+      "anchor": "phase-2---build-the-bounded-dag-extension",
+      "level": 3
+    },
+    {
+      "title": "Phase 3 - Complete the working surfaces",
+      "anchor": "phase-3---complete-the-working-surfaces",
+      "level": 3
+    },
+    {
+      "title": "Phase 4 - Specify states, accessibility, and viewports",
+      "anchor": "phase-4---specify-states-accessibility-and-viewports",
+      "level": 3
+    },
+    {
+      "title": "Phase 5 - Review and hand off",
+      "anchor": "phase-5---review-and-hand-off",
+      "level": 3
+    },
+    {
+      "title": "Phase 6 - Plan implementation and proof",
+      "anchor": "phase-6---plan-implementation-and-proof",
+      "level": 3
+    },
+    {
+      "title": "Capstone scoring",
+      "anchor": "capstone-scoring",
+      "level": 3
+    },
+    {
+      "title": "Capstone answer key",
+      "anchor": "capstone-answer-key",
+      "level": 2
+    },
+    {
+      "title": "Phase 1 answer",
+      "anchor": "phase-1-answer",
+      "level": 3
+    },
+    {
+      "title": "Phase 2 answer",
+      "anchor": "phase-2-answer",
+      "level": 3
+    },
+    {
+      "title": "Phase 3 answer",
+      "anchor": "phase-3-answer",
+      "level": 3
+    },
+    {
+      "title": "Phase 4 answer",
+      "anchor": "phase-4-answer",
+      "level": 3
+    },
+    {
+      "title": "Phase 5 answer",
+      "anchor": "phase-5-answer",
+      "level": 3
+    },
+    {
+      "title": "Phase 6 answer",
+      "anchor": "phase-6-answer",
+      "level": 3
+    },
+    {
+      "title": "Common deductions",
+      "anchor": "common-deductions",
+      "level": 3
+    },
+    {
+      "title": "Appendix A - Prompt sequence",
+      "anchor": "appendix-a---prompt-sequence",
+      "level": 2
+    },
+    {
+      "title": "A1. Baseline analysis",
+      "anchor": "a1-baseline-analysis",
+      "level": 3
+    },
+    {
+      "title": "A2. Draft design system",
+      "anchor": "a2-draft-design-system",
+      "level": 3
+    },
+    {
+      "title": "A3. Bounded screen extension",
+      "anchor": "a3-bounded-screen-extension",
+      "level": 3
+    },
+    {
+      "title": "A4. Full state coverage",
+      "anchor": "a4-full-state-coverage",
+      "level": 3
+    },
+    {
+      "title": "A5. Conformance audit",
+      "anchor": "a5-conformance-audit",
+      "level": 3
+    },
+    {
+      "title": "A6. Claude Code implementation",
+      "anchor": "a6-claude-code-implementation",
+      "level": 3
+    },
+    {
+      "title": "A7. Native Figma update",
+      "anchor": "a7-native-figma-update",
+      "level": 3
+    },
+    {
+      "title": "Appendix B - Handoff README template",
+      "anchor": "appendix-b---handoff-readme-template",
+      "level": 2
+    },
+    {
+      "title": "Feature",
+      "anchor": "feature",
+      "level": 3
+    },
+    {
+      "title": "Workflow and export evidence",
+      "anchor": "workflow-and-export-evidence",
+      "level": 3
+    },
+    {
+      "title": "Decision",
+      "anchor": "decision",
+      "level": 3
+    },
+    {
+      "title": "Scope",
+      "anchor": "scope",
+      "level": 3
+    },
+    {
+      "title": "Source-of-truth stack",
+      "anchor": "source-of-truth-stack",
+      "level": 3
+    },
+    {
+      "title": "Approved journey",
+      "anchor": "approved-journey",
+      "level": 3
+    },
+    {
+      "title": "Design references",
+      "anchor": "design-references",
+      "level": 3
+    },
+    {
+      "title": "Component-to-code map",
+      "anchor": "component-to-code-map",
+      "level": 3
+    },
+    {
+      "title": "Product-specific extensions",
+      "anchor": "product-specific-extensions",
+      "level": 3
+    },
+    {
+      "title": "Data and fixtures",
+      "anchor": "data-and-fixtures",
+      "level": 3
+    },
+    {
+      "title": "States and transitions",
+      "anchor": "states-and-transitions",
+      "level": 3
+    },
+    {
+      "title": "Copy",
+      "anchor": "copy",
+      "level": 3
+    },
+    {
+      "title": "Accessibility and responsiveness",
+      "anchor": "accessibility-and-responsiveness",
+      "level": 3
+    },
+    {
+      "title": "Acceptance tests",
+      "anchor": "acceptance-tests",
+      "level": 3
+    },
+    {
+      "title": "Prototype-code warning",
+      "anchor": "prototype-code-warning",
+      "level": 3
+    },
+    {
+      "title": "Open decisions and deviations",
+      "anchor": "open-decisions-and-deviations",
+      "level": 3
+    },
+    {
+      "title": "Verification record",
+      "anchor": "verification-record",
+      "level": 3
+    },
+    {
+      "title": "Appendix C - Final validation checklist",
+      "anchor": "appendix-c---final-validation-checklist",
+      "level": 2
+    },
+    {
+      "title": "Setup and observation",
+      "anchor": "setup-and-observation",
+      "level": 3
+    },
+    {
+      "title": "Source and scope",
+      "anchor": "source-and-scope",
+      "level": 3
+    },
+    {
+      "title": "Design system",
+      "anchor": "design-system",
+      "level": 3
+    },
+    {
+      "title": "Behavior and data",
+      "anchor": "behavior-and-data",
+      "level": 3
+    },
+    {
+      "title": "Accessibility and responsiveness",
+      "anchor": "accessibility-and-responsiveness-1",
+      "level": 3
+    },
+    {
+      "title": "Handoff",
+      "anchor": "handoff",
+      "level": 3
+    },
+    {
+      "title": "Implementation proof",
+      "anchor": "implementation-proof",
+      "level": 3
+    },
+    {
+      "title": "Appendix D - Simple Design System reference",
+      "anchor": "appendix-d---simple-design-system-reference",
+      "level": 2
+    },
+    {
+      "title": "Component-bearing metadata pages",
+      "anchor": "component-bearing-metadata-pages",
+      "level": 3
+    },
+    {
+      "title": "Useful component node IDs",
+      "anchor": "useful-component-node-ids",
+      "level": 3
+    },
+    {
+      "title": "Token collections",
+      "anchor": "token-collections",
+      "level": 3
+    },
+    {
+      "title": "Product gaps for Data Pipeline Studio",
+      "anchor": "product-gaps-for-data-pipeline-studio",
+      "level": 3
+    },
+    {
+      "title": "Appendix E - Product boundaries and operating risks",
+      "anchor": "appendix-e---product-boundaries-and-operating-risks",
+      "level": 2
+    },
+    {
+      "title": "Tool roles",
+      "anchor": "tool-roles",
+      "level": 3
+    },
+    {
+      "title": "Current Claude Design limitations",
+      "anchor": "current-claude-design-limitations",
+      "level": 3
+    },
+    {
+      "title": "Figma workflow limits",
+      "anchor": "figma-workflow-limits",
+      "level": 3
+    },
+    {
+      "title": "Operational controls",
+      "anchor": "operational-controls",
+      "level": 3
+    },
+    {
+      "title": "Glossary",
+      "anchor": "glossary",
+      "level": 2
+    },
+    {
+      "title": "Further reading and source notes",
+      "anchor": "further-reading-and-source-notes",
+      "level": 2
+    },
+    {
+      "title": "Primary product sources",
+      "anchor": "primary-product-sources",
+      "level": 3
+    },
+    {
+      "title": "Figma and design-system sources",
+      "anchor": "figma-and-design-system-sources",
+      "level": 3
+    },
+    {
+      "title": "Current setup and operating references",
+      "anchor": "current-setup-and-operating-references",
+      "level": 3
+    },
+    {
+      "title": "Field evidence - directional, not governing",
+      "anchor": "field-evidence---directional-not-governing",
+      "level": 3
+    },
+    {
+      "title": "Changelog",
+      "anchor": "changelog",
+      "level": 2
+    }
+  ],
+  "prompts": 28
+}

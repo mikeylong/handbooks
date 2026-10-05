@@ -32,8 +32,16 @@ if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--browser');p.add_argument('--playwright-module');a=p.parse_args();out=Path(a.output).resolve()
     if out.exists():raise SystemExit('Use a new fixture output directory')
     out.mkdir(parents=True)
+    previous=out/'previous-edition';create(previous,2,'1.0.0')
+    previous_pdf=out/'baselines/previous.pdf'
+    subprocess.run(['node',str(TOOLKIT/'scripts/build-pdf-variants.mjs'),'--book',str(previous),'--config',str(previous/'pdf-config.json'),'--theme','light','--output',str(previous_pdf),'--python',sys.executable],check=True)
     for name,count,version in [('next-edition',3,'1.1.0'),('future-title',25,'1.0.0')]:
         root=out/name;create(root,count,version)
+        if name=='next-edition':
+            (root/'reference').mkdir();shutil.copy2(previous_pdf,root/'reference/previous.pdf')
+            config=json.loads((root/'pdf-config.json').read_text())
+            config.update(releasedPdf='reference/previous.pdf',releasedSha256=h(previous_pdf),baselineMode='content-edition')
+            (root/'pdf-config.json').write_text(json.dumps(config))
         for theme in ['light','dark']:
             subprocess.run(['node',str(TOOLKIT/'scripts/build-pdf-variants.mjs'),'--book',str(root),'--config',str(root/'pdf-config.json'),'--theme',theme,'--output',str(out/'pdfs'/name/(theme+'.pdf')),'--python',sys.executable],check=True)
     # Same shared Chromium adapter, governing fixture geometry; no sibling-book imports.

@@ -16,7 +16,7 @@ Preview serves `site/output/site` on http://127.0.0.1:4181. Optional manuscript 
 
 ## Published editions
 
-Production AI Engineering v1.4.0, AI Evaluation v1.0.0, AI Consulting v1.0.0, and Claude Design v1.0.0 are the approved public packages. The catalog selects locations and public eligibility. Each book retains its release manifest, approved PDF, and `publication-package.json` with hashes for its frozen reader and assets. A changed package fails the build until a new edition is explicitly approved.
+Production AI Engineering v1.4.0, AI Evaluation v1.0.0, AI Consulting v1.0.0, and Claude Design v1.2.0 are the approved public packages. The catalog selects locations and public eligibility. Each book retains its release manifest, approved PDF, and `publication-package.json` with hashes for its frozen reader and assets. A changed package fails the build until a new edition is explicitly approved.
 
 Public edition details and versioned downloads live on the website. Source access requires private GitHub access. New release tags use `<book-id>/v<version>` and identify a collection commit; the book's manifests identify the distributed artifacts.
 

@@ -1,0 +1,4719 @@
+--- previous/daytime.pdf
++++ candidate/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf
+@@ -9,123 +9,84 @@
+ HANDOFF
+ CODE
+ Michael Long
+-October 3, 2026 | Version 1.1.0
++October 5, 2026 | Version 1.2.0
+ --- PDF page 2 ---
+ ii
+ Orientation
+-Use this guide to ground a product prototype in existing components,
+-extend a bounded screen, and prepare an engineering handoff. Data
+-Pipeline Studio is a fictional teaching example built with Simple Design
+-System React primitives.
+-Anthropic documents interactive prototyping and a Claude Code handoff
+-in Claude Design. Design is now available in conversations and the
+-Artifacts tab as well as at claude.ai/design. The Claude Code reference
+-describes /design more narrowly: it drafts artboards on a canvas.
+-Record the surface you use and test the required interactions and
+-exports there. A generated artboard alone does not prove the prototype
+-journey works. Direct native-Figma export is not established by the
+-reviewed documentation. Use Figma MCP when editable Figma content
+-is required. See the Design getting-started guide and Claude Code artifact
+-guide.
+-Start with the current system and screen, then prepare a handoff
+-engineers can inspect. The companion application simulates persistence
+-and pipeline runs in the browser. Use it to explore the interaction
+-patterns and acceptance tests.
+-DECISION: The operating model
+-Use Claude Design for system-grounded exploration and interaction design.
+-Use Claude Code for repository-aware implementation. Add Figma MCP and
+-Code Connect when the team needs native Figma editing, component
+-mappings, or a code-to-canvas loop.
++Use this guide to extend an existing product through Claude Design,
++Claude Code, and Figma. The recurring example is Velori, a
++personal-robot store. A shopper chooses a finish, face, expression color,
++and accessory, then checks the configuration before returning to edit.
++The assignment starts with a working configurator. Preserve its identity,
++product photographs, choices, captions, and selection behavior. Add one
++bounded review journey. The public package includes a completed React
++answer key, frozen reference, reusable components, prompts, and local
++validation scripts. Historical native packets and their metadata remain
++private and are excluded from the download. Follow Chapters 2 and 3 to
++define and validate your source system before creating a new review
++screen.
++Claude Design supports interactive prototypes and a Claude Code
++handoff. Claude Code also provides a /design command for artboards.
++Choose the surface that can produce the required result, then test its
++interactions and handoff. See the Design getting-started guide and
++Claude Code command reference.
++Start the sample
++Download the Velori sample, extract it, then run these commands from
++its velori-store folder:
++cd velori-store
++npm ci
++npm run dev
++Open http://127.0.0.1:4197. Use Node.js 22 and npm. The first install
++requires the npm registry. Product assets ship in the folder, and the store
++runs without CLEAR, a Claude account, or a Figma account. If the port is
++occupied, choose another port and use the address Vite prints.
+ --- PDF page 3 ---
+ iii
+-What you will build
+-The recurring example is Data Pipeline Studio, a fictional extension to a
+-teaching baseline at /pipelines/customer-health/edit. The current
+-product lets an analyst inspect a linear pipeline and edit one step at a
+-time. The extension adds a directed acyclic graph editor, a richer node
+-inspector, a resizable data sheet, and a file importer with mapping and
+-recovery states.
+-The guide never treats the example as a blank canvas. The global shell,
+-route, permissions, persistence, run APIs, typography, spacing, forms,
+-buttons, tables, dialogs, notifications, and status patterns already exist.
+-The assignment is to preserve that working product while changing a
+-bounded part of it.
+-What the guide produces
+-By the end, you will have:
+--
+-A source-of-truth map that says which artifact governs each decision.
+--
+-A verified Claude Design system based on Figma's Simple Design System and
+-its React codebase.
+--
+-A preservation brief for an existing screen.
+--
+-A working prompt sequence for a DAG canvas, node inspector, data sheet, and
+-importer.
+--
+-A state matrix covering loading, error, permissions, stale data, conflicts, and
+-recovery.
+--
+-A component-to-code map that separates reuse, composition, and legitimate
+-extensions.
+--
+-A design review record and evidence gate.
+--
+-A Claude Code implementation prompt and handoff README.
+--
+-A Figma-native branch for teams that require editable frames.
+--
+-A guided capstone, answer key, scoring rubric, and final validation checklist.
++Select Graphite, Simple, Amber, and Carry bag. Open accessory details,
++browse Charging dock, and return. Continue to review, then edit.
++Reload. The robot, caption, controls, and summary should still agree.
++The completed review screen is new sample behavior. For the exercise,
++provide the configurator and accessory details as the baseline and ask
++Claude Design to recreate the review journey. Keep the worked sample
++beside your result for comparison. Payment, inventory, accounts,
++shipping, and order submission remain outside the brief.
++What you will produce
++ 1
++A preservation brief with a named configuration fixture.
++ 2
++A React system imported into your chosen Claude Design workspace.
++ 3
++A generated review journey that retains the selected values.
++ 4
++An actual handoff that runs from a new local folder.
++ 5
++A bounded React implementation with navigation and persistence checks.
++ 6
++A native Figma working copy with component and variable identity
++verified.
++ 7
++A review record that separates the app, native tools, candidate package,
++and publication.
++Choose the destination first
++Confirm the intended account, organization, selected system, and
++project before uploading. Claude Code login and Design read/write
++authorization are separate steps when /design-login requests
++authorization. Use the same intended account for that browser flow. If
++access fails, check the active organization and Design eligibility before
++retrying the upload. The Design admin guide describes organization
++settings.
+ --- PDF page 4 ---
+ iv
+-How to use the field guide
+-Read Chapters 1 through 3 before opening Claude Design. Those
+-chapters settle scope, sources, and the design-system baseline. Chapters
+-4 through 7 are the design loop. Chapters 8 through 10 cover review,
+-handoff, implementation, and drift. The capstone runs the whole
+-sequence with a single feature journey.
+-Each checkpoint asks for a small artifact. Keep the artifacts together.
+-They become the handoff package; they are not homework that gets
+-discarded after the prototype looks good.
+-FIELD NOTE: The core discipline
+-A prototype can look like the product while quietly replacing its components,
+-losing its states, and disconnecting itself from real data. Visual resemblance
+-is only one form of evidence. Traceability, behavior, and recovery paths are
+-the other three.
+-Before you begin
+-You need an approved source package, repository access for
+-implementation, and a Figma account for the native-Figma branch.
+-Claude Design is beta on Pro, Max, Team, and Enterprise. Pro, Max, and
+-Team have Design enabled by default; Enterprise owners enable the
+-Design template under Organization settings > Artifacts. Design systems
+-and standalone Claude Design have separate controls. Confirm the
+-intended organization and surface before importing sources. See the
+-Design admin guide.
+-Claude Code /design requires version 2.1.265 or later, an enabled
+-Design template, and an artifact-capable session. Sign in with /login
+-using claude.ai. API-key-only sessions cannot publish artifacts, and
+-third-party cloud-provider sessions are unsupported. The artifact guide
+-also lists organization-policy restrictions. Confirm account, provider,
+---- PDF page 5 ---
+-v
+-and policy before treating a missing command as a setup defect. See
+-artifact availability.
+-Uploaded assets persist under the applicable retention policies.
+-Anthropic documents unsupported Design data residency and
+-restrictions for CMEK, ZDR, and HIPAA-ready configurations in the new
+-Artifacts experience. Standalone audit logging and integrated artifact
+-records have different coverage. Confirm those requirements with the
+-organization owner before uploading proprietary work. See the Artifacts
+-admin guide.
+-For this guide, use the public Simple Design System Community file and
+-Figma's open-source figma/sds React repository. Duplicate the
+-Community file into your own drafts before attempting connected
+-inspection or editing. The public source remains untouched.
+-The workflow at a glance
+-The work is a loop. Frame the change, ground it in the real system,
+-extend one bounded surface, specify the missing behavior, map every
+-element, hand it off, implement it, and reconcile the rendered result.
+-Drift and new evidence restart the loop.
++Choose a Figma working file you can inspect and edit. The supplied
++Velori Design System & Configurator contains a Store handbook exercise
++page. Its link requires file access. Duplicate or identify your working
++copy before editing; preserve the original reference frames.
++The Velori sample source, documentation, frozen reference, and
++imagery use the MIT license. Keep its copyright notice and third-party
++notices when redistributing it. The public sample contains the React app
++and exercise materials. All captured native source and runtime remain
++in the private review archive and outside the MIT download.
++The workflow
+ 1
+ Frame
+ 2
+@@ -145,3360 +106,1243 @@
+ Rendered evidence and drift restart the loop
+ Stage
+ Working tool
+-Governing evidence
+-Exit condition
++Observable result
+ Frame
+-Team artifact
+-Product brief, current
+-route, shipped behavior
+-Scope and preservation
+-boundary approved
+---- PDF page 6 ---
+-vi
++Product brief and local app
++Preserved choices and bounded
++extension
++Ground
++Claude Code and Claude Design
++Imported components and photos load
++Extend
++Claude Design
++Configure, details, review, and edit agree
++Specify
++Design and team review
++Navigation, focus, reload, and recovery
++defined
++Map
++Design and engineering
++Components and state ownership
++identified
++Hand off
++Claude Design to Claude Code
++Captured source and dependencies run
++locally
++Implement
++Claude Code
++React change passes the journey checks
++--- PDF page 5 ---
++v
+ Stage
+ Working tool
+-Governing evidence
+-Exit condition
+-Ground
+-Claude Design
+-System code, tokens,
+-representative screens
+-System test passes
+-Extend
+-Claude Design
+-Current screen plus
+-interaction contract
+-Proposed flow works end
+-to end
+-Specify
+-Claude Design and team
+-review
+-State matrix, copy, data
+-fixtures, accessibility notes
+-No critical state is
+-missing
+-Map
+-Design and engineering
+-Component inventory and
+-code paths
+-Every visible element has
+-a disposition
+-Hand off
+-Claude Design to Claude
+-Code
+-Bundle, README, decision
+-log, acceptance tests
+-Engineer can implement
+-without guessing intent
+-Implement
+-Claude Code and
+-repository tools
+-Production conventions,
+-tests, rendered application
+-Tests and visual checks
+-pass
++Observable result
+ Reconcile
+-Figma MCP if required
+-Approved rendered
+-behavior and native Figma
+-file
+-Drift is logged and
+-resolved
+-Keep the product surfaces on one state
+-spine
+-The DAG canvas, node inspector, data sheet, and importer are
+-coordinated views of the same selected node, fixture data, and document
+-state. A change that appears on only one surface is a product defect, even
+-when that surface looks polished in isolation.
+-SHARED STATE
+-node / fixture / document
+-DAG canvas
+-selection + graph
+-Inspector
+-schema + draft
+-Data sheet
+-input / output rows
+-Importer
+-mapping + source
+---- PDF page 8 ---
++Figma
++Editable frames and native prototype
++agree
++The configurator, accessory details, review, and image recovery share
++the same four configuration values. Browsing an accessory must not
++change the selected accessory. An unavailable photo must not erase the
++shopper's choices.
++CONFIGURATION
++finish / face / color / accessory
++Configurator
++choices + photo
++Details
++browse + return
++Review
++summary + edit
++Recovery
++retain + retry
++--- PDF page 7 ---
+ 1
+ CHAPTER 01
+ Decide what is
+ authoritative
+-A clean workflow begins by deciding which source governs visual
+-language, behavior, data, and implementation.
++Preserve a working product before asking an assistant to extend it.
++--- PDF page 8 ---
++2
++A design-system request can refer to component anatomy, React
++behavior, tokens, screenshots, or product rules. Each source answers a
++different question. Declare which source governs each decision before
++generation.
++Run your working copy
++From the extracted package, run npm ci and npm run dev. Open
++http://127.0.0.1:4197. Use Node.js 22 and a free local port. Choose
++Graphite, Simple, Amber, and Carry bag, follow details -> review -> edit,
++and reload before changing the app. The README provides reset and
++keyboard instructions. The assignment adds review to the supplied
++configurator; the completed sample is the expected result. Commerce
++remains outside the brief.
++Establish the source order
++ 1
++The consumer application governs identity, imagery, configuration values,
++and captions.
++ 2
++The React components govern props, selection behavior, keyboard
++interaction, and rendering.
++ 3
++Tokens govern color, typography, spacing, and control dimensions.
++ 4
++The Figma working copy governs native anatomy, variants, variables, and
++prototype wiring.
++ 5
++The approved brief governs the new review journey.
++The source snapshot and manifest retain copied file hashes, source
++commit, exclusions, and the copy date. The reference is frozen. New
++implementation belongs beside it, so a later correction cannot quietly
++rewrite the starting point.
++CLAUDE DESIGN FIELD GUIDE
++1. DECIDE WHAT IS AUTHORITATIVE
+ --- PDF page 9 ---
++3
++Define the clean baseline
++Preserve the 1024 × 768 composition, finish and face choices, expression
++colors, accessory photographs, captions, and configuration persistence.
++The baseline uses a dropdown for expression and one accessory choice.
++Normalize the two teaching violations: Continue uses Ink with white
++text, 12px corners, and 48px height. Accessory cards have 24px gaps.
++Keep the purple Continue button and 8px accessory gaps as separately
++named fixtures. Color chips and independent accessory checkboxes
++remain follow-up exercises.
++The package uses its own storage namespace. The package does not
++import the source owner's fixes, proposals, review state, or saved
++configuration. Reset changes only the sample key.
++Name the fixture
++Value
++Default
++Review fixture
++Finish
++Chalk
++Graphite
++Face
++Friendly
++Simple
++Expression
++White
++Amber
++Accessory
++Dock
++Carry bag
++Use the non-default fixture in every review. A screen that always
++displays the defaults can appear correct while ignoring the shopper's
++choices.
++CLAUDE DESIGN / PRESERVE THE CONFIGURATOR
++Inspect the supplied Velori configurator and component library. Record
++the choices, asset composition, captions, storage behavior, and
++reusable exports. Preserve the existing identity and 1024 × 768
++reference layout. Use the documented expression dropdown and one
++accessory choice. Describe the bounded change needed for Continue to
++open Review configuration, with edit and Back retaining the four
+ CLAUDE DESIGN FIELD GUIDE
+ 1. DECIDE WHAT IS AUTHORITATIVE
+-2
+-The phrase "use our design system" hides several different sources. A
+-Figma library may define component anatomy and variants. A React
+-package may define actual props and accessibility behavior. A shipped
+-screen may reveal composition rules that appear nowhere in
+-documentation. Product code and APIs determine what the interface can
+-really do.
+-Claude can read several of these sources. It cannot resolve an unspoken
+-conflict between them. The team needs a declared hierarchy before
+-generation begins.
+-Build the source-of-truth stack
+-Use five layers:
+- 1
+-Production behavior. The current application, routes, permissions,
+-persistence, data contracts, and tested interaction rules.
+- 2
+-Production component code. The components, props, tokens,
+-accessibility semantics, and imports that engineers can actually ship.
+- 3
+-Published design library. Component anatomy, variants, variables,
+-layouts, and design guidance.
+- 4
+-Representative shipped screens. Evidence for composition, density,
+-hierarchy, responsive behavior, and local conventions.
+- 5
+-Product intent. The approved problem, target user, success journey,
+-non-goals, and acceptance tests for the change.
+-When two layers disagree, record the conflict. Do not let Claude select a
+-winner through visual improvisation.
+ --- PDF page 10 ---
++4
++CLAUDE DESIGN / PRESERVE THE CONFIGURATOR
++values. Do not add payment, stock, accounts, shipping, or order
++submission.
++Chapter checkpoint
++Record the source revision, working package, default and review
++fixtures, allowed changes, and preserved behavior. Keep any unresolved
++disagreement between code, tokens, and Figma in the review record.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 1. DECIDE WHAT IS AUTHORITATIVE
+-3
+-EXAMPLE: Data Pipeline Studio
+-In the teaching baseline, the route, Save, Run, permissions, and persistence
+-are simulated behavior. In a real product extension, the current
+-implementation and API contracts govern those decisions. The Simple Design
+-System React package governs reusable primitives. The duplicated Figma file
+-governs component anatomy and variables. The current Pipeline Detail
+-screen governs shell and density. The capstone brief governs the new DAG
+-journey.
+-Freeze the preservation boundary
+-An extension prompt needs two lists: what may change and what must
+-remain stable. The second list is usually more important.
+-For Data Pipeline Studio, preserve:
+--
+-The global app shell and left navigation.
+--
+-Breadcrumb, pipeline name, environment badge, and last-run metadata.
+--
+-Save, Run, and overflow actions.
+--
+-Existing typography, spacing, controls, tables, dialogs, status badges, and
+-notifications.
+--
+-Permissions, routing, persistence, and run APIs.
+--
+-Current copy outside the approved feature surface.
+-Change:
+--
+-The central linear editor becomes a DAG workspace.
+--
+-The right-side editor becomes a schema-driven node inspector.
+--
+-The collapsed preview becomes a resizable data sheet.
+--
+-The basic file-upload dialog becomes a multi-stage importer.
+-The boundary lets the team review a small diff. Without it, every
+-generated screen becomes a redesign proposal.
+ --- PDF page 11 ---
+-CLAUDE DESIGN FIELD GUIDE
+-1. DECIDE WHAT IS AUTHORITATIVE
+-4
+-Name the baseline fixture
+-Claude needs a stable example that can appear in every screen and state.
+-Use one fixture pipeline:
+- 1
+-Customers CSV - source
+- 2
+-Normalize Email - transform
+- 3
+-Validate Customer Schema - quality gate
+- 4
+-Publish to Warehouse - destination
+- 5
+-Quarantine Invalid Rows - proposed branch
+-Use customers-august.csv and its JSON equivalent for one six-record
+-dataset. The importer proposes customer_id and health_score
+-mappings, but leaves the required contact_email to email mapping
+-unresolved. The final confirmation accepts all three mappings and the
+-chosen recovery policy. No graph change occurs before confirmation.
+-CSV
+-row
+-Customer
+-ID
+-Raw contact_email
+-Raw
+-health_score
+-Expected result
+-2
+-C001
+-ALICE@EXAMPLE.COM
+-82
+-Publish as
+-alice@example.com
+-3
+-C002
+-bob@example.com
+-65
+-Publish as
+-bob@example.com
+-4
+-C003
+-invalid-email
+-50
+-Invalid email
+ 5
+-C004
+-empty
+-77
+-Email is required
++CHAPTER 02
++Prepare the Velori system
++Define the source rules before importing the React library.
++--- PDF page 12 ---
+ 6
+-C005
+-eve@example.com
+-not-a-number
+-Invalid health_score
++Prepare a reusable source system before asking Claude Design to
++generate a screen. A collection of working components can still leave
++type, spacing, layout, and usage rules undefined. Claude Code can help
++inspect and document those rules. The source preparation and checks
++below are this handbook's recommended procedure.
++Velori uses the React codebase route described in Claude's design-system
++setup guidance. /design-sync converts and imports that source. The
++asset-based setup route is an alternative for other inputs; the Velori
++exercise does not require both routes or manual entry of every design
++value.
++Separate the starting screen from the
++answer key
++Start an extracted copy using its README. Keep a second, unchanged
++copy for comparison. The public package contains a completed React
++review screen for comparison. It contains no historical native Code
++packet or native project pin. The answer key does not complete your new
++native exercise.
++Supply the configurator, expression menu, accessory details, and
++unavailable-image configurator as the generation baseline. Use the 13
++exports in src/library.jsx through
++.design-sync/host-entry.mjs. The application barrel
++src/index.js also exposes the completed Review screen and is not the
++import entry. Exclude src/ReviewConfiguration.jsx, completed
++answer-key guidance, historical native mappings, and reference/ from
++the import and initial generation context. After the system passes
++Chapter 3, ask Design to create a new review screen, then compare it
++with the answer key.
++CLAUDE DESIGN FIELD GUIDE
++2. PREPARE THE VELORI SYSTEM
++--- PDF page 13 ---
+ 7
+-C006
+-FRANK@EXAMPLE.COM
+-91
+-Publish as
+-frank@example.com
+-Normalize Email trims outer whitespace and lowercases all six emails.
+-The schema gate requires a nonempty unique customer ID, an email
+-with a domain suffix, and a numeric health score from 0 to 100. Three
+-records pass. C003, C004, and C005 go to quarantine or are excluded
+---- PDF page 12 ---
+-CLAUDE DESIGN FIELD GUIDE
+-1. DECIDE WHAT IS AUTHORITATIVE
+-5
+-under Reject invalid rows. CSV row numbers include the header; JSON
+-uses the corresponding record ordinal plus one. A production parser
+-must track physical file locations separately, including blank and
+-multiline records.
+-Use the executable teaching contract
+-Download the local exercise package and extract it. From the extracted
+-folder, start the companion application:
+-cd example
+-npm ci --ignore-scripts
+-npm run check
+-npm run build
+-npm run dev
+-Use Node.js 22 or later and keep the bundled sds/ folder beside
+-example/. Dependency installation needs the npm registry or a
+-populated local cache. Leave the server running while you use the
+-browser; stop it with Ctrl+C when finished. No Claude or Figma account
+-is needed to run this application.
+-Open http://127.0.0.1:4192/pipelines/customer-health/edit?
+-baseline=1 for the baseline, then remove the query to open the
+-extension. If you have used the application before, choose Teaching test
+-controls > Reset fixture before starting a fresh journey.
+-Start from the preserved linear baseline at
+-/pipelines/customer-health/edit?baseline=1. Open the
+-extension at the same route without the query. Preserve the shell text,
+-navigation, pipeline identity, environment badge, Save, Run,
+-permissions, and browser persistence. This baseline was authored for
+-the exercise; it is not a shipped product or a Claude Design export.
+---- PDF page 13 ---
+-CLAUDE DESIGN FIELD GUIDE
+-1. DECIDE WHAT IS AUTHORITATIVE
+-6
+- 1
+-Choose the fixture through the file picker or drop zone. Confirm
+-contact_email -> email and all proposed mappings. Choose Send to
+-quarantine for the main journey.
+- 2
+-Confirmation replaces the unconfigured Customers CSV placeholder with
+-a new source ID, august, named Customers CSV (August import). It
+-preserves downstream nodes, removes the placeholder's old edge, selects
+-the new source, and opens its raw preview. Import is atomic; cancel or
+-failure leaves the graph unchanged. The local exercise supports one
+-committed import per reset.
+- 3
+-Connect august to normalize. The normalized preview contains the same
+-six customer IDs. Add quarantine, then connect validate to
+-quarantine. Keep normalize -> validate -> warehouse intact.
+- 4
+-Save before Run. The configured warehouse target starts as
+-missing-warehouse, so the intended first run fails at warehouse. The
+-fixture's required target is customer_health; a helper hint must not claim
+-it is already configured. Preserve the failure across reload.
+- 5
+-Select the failing node, set its target to customer_health, Save, and Run
+-again. Expect three published IDs (C001, C002, C006), three quarantined
+-IDs (C003, C004, C005), and zero rejected rows. Under Reject invalid rows,
+-expect three published, zero quarantined, and three rejected.
+- 6
+-Attempt validate -> august and normalize -> quarantine. The first
+-would create a cycle; the second has incompatible ports. Each attempt
+-must explain the reason and leave the graph unchanged. Deleting a
+-required downstream edge must block Run.
+-Save failure must preserve the draft and keep Run disabled until Save
+-succeeds. The local conflict control changes only a simulated revision;
+-explicit reapply is safe for that fixture. A real concurrent edit needs a
+-content comparison and reviewed merge. Warehouse lookup, row
+-publication, quarantine storage, server authorization, and telemetry
+-remain implementation requirements.
+-The local example exercises buttons, inputs, selects, dialogs, tags, and
+-tables from a pinned SDS React snapshot. Its named connection list
+-supplies the non-pointer graph path. Pointer port dragging, drawn edge
+-geometry, virtualized large datasets, resizable columns, a complete
++Inspect the source package
++Input
++What it establishes
++reference/index.html and
++reference/design-system.js
++Frozen composition and documented
++consumer rules
++src/library.jsx and src/index.js
++Named components, props, controlled
++values, and interactions
++tokens.json and src/tokens.css
++Existing named colors, shapes, sizes, and
++font families
++src/velori.css
++Applied type, spacing, layout, and state
++rules, including literal values
++/#specimens and reference/
++Component states and screen comparators
++public/assets/velori/ and its manifest
++Product photos, masks, layers, captions, and
++asset identity
++.design-sync/conventions.md and previews/
++Import usage guidance and preview cases
++Identified Figma working file
++Native anatomy, variants, variables, and font
++correspondence
++Read docs/inventory.md and provenance/source-freeze.json
++before changing the source. Record the source revision and manifest
++hash. Keep the frozen reference unchanged. Use code for executable
++behavior, documented consumer rules for the normalized baseline, and
++Figma for native correspondence. Record disagreements before
++choosing a value.
++Define rules and component use
++Inventory every color role, type role, spacing value, radius, control size,
++layout dimension, and interaction state used by the starting screens.
++Include CSS literals: the token files alone do not define the complete
++system. For each rule, record its value, source path and selector or
++export, intended use, and whether it is observed, inferred, proposed, or
++unresolved.
++CLAUDE DESIGN FIELD GUIDE
++2. PREPARE THE VELORI SYSTEM
+ --- PDF page 14 ---
+-CLAUDE DESIGN FIELD GUIDE
+-1. DECIDE WHAT IS AUTHORITATIVE
+-7
+-schema-driven inspector, and screen-reader behavior remain separate
+-acceptance work. Local screenshots and passing tests do not establish
+-that Claude Design produced the workflow.
+-Define the success journey
+-The recurring journey is:
+- 1
+-Open the existing pipeline.
+- 2
+-Import customers-august.csv.
+- 3
+-Resolve one required column mapping.
+- 4
+-Create a source node from the import.
+- 5
+-Connect it to Normalize Email.
+- 6
+-Inspect transformed rows in the data sheet.
+- 7
+-Add a quarantine branch for invalid records.
+- 8
+-Save and run the pipeline.
+- 9
+-Identify and repair a failed node.
+- 10
+-Run the pipeline successfully.
+-Every surface in the guide serves this journey. Anything else is either a
+-reusable system concern or a non-goal.
+-Write the first artifact: the extension
+-brief
+-Use a one-page brief with these fields:
+--
+-Current route and baseline screen.
+--
+-Primary and secondary users.
+--
+-User problem and job to complete.
++8
++Document each component's anatomy, valid props, states, composition
++constraints, and usage. A prop type can tell you that accessory accepts
++bag; usage guidance should also tell you that browsing bag details does
++not change the selected accessory. The app owns configuration and
++navigation. Controlled components receive values and callbacks.
++Export
++Responsibility
++Brand, StoreHeader
++Product identity and navigation shell
++PrimaryButton, VeloriIcon
++Reusable actions and icon roles
++FinishChoice, FaceChoice
++Controlled finish and face choices
++ExpressionSelect
++Dropdown, selected value, open state, and
++keyboard behavior
++AccessoryChoice, ChoiceGroup
++One accessory choice and grouped controls
++SelectionMark
++Selected-state marker inside a positioned
++choice tile
++ProductPreview
++Photo, finish, face, expression, caption, and
++recovery
++AccessoryPhoto
++Carry bag or Charging dock detail imagery
++ConfigurationSummary
++The four chosen values
++Three finishes, two faces, four expression colors, and three accessory
++values produce 72 configurations. Preserve those values. Color chips and
++independent accessory checkboxes remain extension exercises.
++CLAUDE CODE / PREPARE THE SOURCE SYSTEM
++Work in this extracted Velori package. Inspect reference/index.html,
++reference/design-system.js, src/library.jsx, src/index.js,
++src/main.jsx for starting-screen copy and navigation, src/model.mjs
++for labels and captions, tokens.json, src/tokens.css, src/velori.css,
++docs/inventory.md, the component previews, the asset manifest, and the
++identified Figma working file. Prepare docs/system-definition.md and
++docs/source-conflicts.md before uploading. Inventory colors,
++typography, spacing, layout, component anatomy, valid props, states,
++and usage. Include CSS literals. Cite the source path and selector,
++export, or Figma identity for each rule. Separate directly observed
++CLAUDE DESIGN FIELD GUIDE
++2. PREPARE THE VELORI SYSTEM
+ --- PDF page 15 ---
+-CLAUDE DESIGN FIELD GUIDE
+-1. DECIDE WHAT IS AUTHORITATIVE
+-8
+--
+-Success journey.
+--
+-Change boundary.
+--
+-Preservation boundary.
+--
+-Supported viewports.
+--
+-Data fixture.
+--
+-Existing behavior that cannot regress.
+--
+-Open product decisions.
+--
+-Approval owner for each decision.
+-CLAUDE DESIGN / BASELINE ANALYSIS
+-You are preparing to extend an existing production screen. Do not
+-generate a new design yet.
+-Review the attached current screen, route context, relevant code, and
+-design-system sources. Produce:
+-1. a factual inventory of the current screen,
+-2. the visible component and layout patterns,
+-3. the behaviors and regions that should be preserved,
+-4. ambiguities or source conflicts,
+-5. a proposed change boundary for the requested feature.
+-Separate direct observations from inferences. Do not invent missing
+-behavior. End with the questions that require a product, design, or
+-engineering owner.
+-Extension brief
+-Current route and screen
+-Primary user and job
++9
++CLAUDE CODE / PREPARE THE SOURCE SYSTEM
++rules, inferred compositions, proposed additions, and unresolved
++conflicts. Preserve existing names and consumer behavior. Explain
++which useful values need named tokens or usage guidance; make source
++changes only after the choices are settled. Preserve the frozen
++reference, product imagery, dropdown, one-accessory rule, and 72
++configurations. Normalize Continue to Ink/white, 12px corners, and
++48px height, with 24px accessory gaps. Keep purple Continue and 8px
++gaps only as named teaching fixtures. Record Arial/Georgia to
++Arimo/Lora mapping and weight or measurement differences. Project
++exact configure and accessory-details wording, caption construction,
++and details routing into docs/native-baseline.md. Map original source
++references to their imported bundle, CSS, and component guidance paths.
++Exclude ReviewConfiguration, completed Review implementation, and the
++historical handoff from the baseline system. Stop before upload if an
++unresolved decision affects the starting screens. Do not invent a
++component or silently accept a proposed pattern.
++Review the two documents and any proposed source diff. Resolve
++required conflicts before importing. Project their accepted
++starting-screen rules into docs/native-baseline.md; include that
++document and the bounded product brief in the configured guidelines.
++Include exact configure and accessory-details copy, caption
++construction, and details routing, including the no-accessory case.
++Record both the original source identities and the paths actually present
++in the imported bundle. Page-level copy is not supplied by component
++prop types. Keep completed Review answers, historical mappings, and
++the frozen comparison source outside the uploaded context. Verify the
++actual converted guidance inventory, not only the local files. The React
++package uses Arial and Georgia; the native Figma system uses Arimo and
++Lora. Record the differing type weights and measurements. A font
++substitution does not establish pixel parity.
++Open /#specimens and compare the prepared source with the frozen
++1024 × 768 reference. Inspect default, selected, focus, open, loading, and
++unavailable states where applicable. Compare
++CLAUDE DESIGN FIELD GUIDE
++2. PREPARE THE VELORI SYSTEM
+ --- PDF page 16 ---
+-CLAUDE DESIGN FIELD GUIDE
+-1. DECIDE WHAT IS AUTHORITATIVE
+-9
+-Extension brief
+-Success journey
+-May change
+-Must remain stable
+-Supported viewports
+-Data fixture
++10
++/?fixture=purple-continue and /?fixture=accessory-gap-8
++with the accepted baseline. Run npm run check, npm run build, and
++the README's browser validation after any source change.
++Import the prepared draft
++Open Claude Code in the extracted folder. Check the installed
++/design-sync and /design-login commands. Complete separate
++Design authorization when requested. In Claude Design, verify the
++intended account and organization in the switcher. Record whether you
++will create a new system or update an explicitly chosen system, and
++record its destination before uploading. The reader configuration has no
++owner project pinned.
++This walkthrough uses the standalone claude.ai/design project
++surface. If that address redirects to conversation artifacts, use the visible
++Visit standalone homepage link before continuing. Inspect the returned
++system there before creating a project. Conversation design-system
++artifacts are a separate route outside this capstone; their inventory does
++not establish that a standalone system exists. If the installed skill cannot
++target the chosen surface, stop and resolve the destination before
++creating anything.
++New-system creation may require its own approval. The inspected native
++tool reports that a new system initially uses organization-wide visibility.
++Check the intended visibility before creation and inspect the Share menu
++before uploading files. Stop if the selected destination cannot meet the
++agreed access boundary.
++Type /design-sync yourself at the Claude Code prompt and submit the
++native command. Asking Claude to run it in a pasted message does not
++invoke the command. After it opens, supply the import instruction
++below with the library, prepared tokens and CSS, conventions, previews,
++and assets. Preserve the local conversion report and the returned upload
++result. Inspect the returned system URL in the intended organization.
++CLAUDE DESIGN FIELD GUIDE
++2. PREPARE THE VELORI SYSTEM
+ --- PDF page 17 ---
+-CLAUDE DESIGN FIELD GUIDE
+-1. DECIDE WHAT IS AUTHORITATIVE
+-10
+-Extension brief
+-Open decisions and owners
++11
++CLAUDE CODE / IMPORT THE PREPARED VELORI DRAFT
++Import the prepared Velori source system into the recorded destination
++using the native command already opened. Use .design-sync/config.json,
++src/library.jsx, src/tokens.css, src/velori.css,
++docs/native-baseline.md derived from the reviewed system definition
++and resolved source-conflict decisions, conventions, previews, and
++packaged assets. Exclude the frozen reference, ReviewConfiguration,
++completed answer-key guidance, historical handoff and mappings,
++node_modules, validation outputs, and private owner state from upload.
++Confirm the account, organization, new or existing system, and
++destination before sending files. Check all 13 baseline exports and
++their usage guidance. Use the supplied declared source adapter so
++assets and their hash inventory exist before native validation and
++capture. Include assets/** in the upload scope, review obsolete asset
++paths, and verify the product files reached the recorded destination.
++Recapture asset-dependent previews whenever the asset inventory
++changes. Preserve the conversion report, file inventory, returned
++result, and system URL. Stop on a rejected upload or unresolved source
++conflict. Keep the system private; do not publish it or change the
++organization default.
++The supplied source adapter copies the product assets during
++conversion, before the native driver validates and captures cards. It
++records their hashes in guidelines/velori-runtime-assets.md,
++which participates in the native upload fingerprint. node
++.design-sync/package-assets.mjs ds-bundle can repeat that same
++copy. Include assets/** in the approved upload scope and review
++obsolete asset paths before deletion. Verify the files in the returned
++inventory. The native skill's default path list omits this sample-specific
++directory.
++An asset-only change can trigger upload without invalidating
++component grades. Recapture and visually inspect ProductPreview and
++AccessoryPhoto whenever that asset inventory changes. If a capture
++reports a missing SVG mask, inspect its response type: the mask must be
++served as image/svg+xml. Preserve and document a local
++CLAUDE DESIGN FIELD GUIDE
++2. PREPARE THE VELORI SYSTEM
++--- PDF page 18 ---
++12
++capture-helper correction before repeating the native validation; do not
++replace the product image or accept a failure placeholder as a successful
++preview.
++The import adapter resolves product assets relative to the compiled
++system script. Inspect those paths after conversion. A preview at the
++local origin root can work while the same code fails beneath a hosted
++project path.
+ Chapter checkpoint
+--
+-The team can point to the authoritative source for behavior, components,
+-Figma anatomy, and product intent.
+--
+-The existing screen has a named preservation boundary.
+--
+-One fixture carries through the complete journey.
+--
+-Non-goals are explicit.
+--
+-Claude has analyzed the baseline without generating a replacement screen.
+-Sources 1-4, 18-20. Author synthesis: the source-of-truth method.
+---- PDF page 18 ---
+-11
+-CHAPTER 02
+-Prepare Simple Design
+-System
+-Turn a public design kit and its React library into a compact, inspectable
+-source package.
++Keep the source definition, resolved conflict record, component usage,
++source diff, local checks, and actual import receipt together. Proceed to
++native inspection only when the destination matches and the accepted
++source describes the starting screens.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
++CLAUDE DESIGN FIELD GUIDE
++2. PREPARE THE VELORI SYSTEM
+ --- PDF page 19 ---
+-CLAUDE DESIGN FIELD GUIDE
+-2. PREPARE SIMPLE DESIGN SYSTEM
+-12
+-Simple Design System is a useful teaching source because the Figma
+-library and React codebase were designed to work together. The
+-repository includes variables, styles, primitives, compositions, icons,
+-Storybook stories, and Code Connect mappings. It also exposes the limits
+-of the example: it is a responsive web foundation, not a ready-made
+-graph editor.
+-Duplicate before you connect
+-Open the Simple Design System Community file and choose Make a
+-copy. Work in the copy. Figma MCP can read content the authenticated
+-account has permission to view or edit; native writing to an existing file
+-requires edit permission and a Full seat. Confirm that the connected
+-account can access your working copy before inspecting or editing it.
+-See Figma access and permissions and write to canvas.
+-Keep the original source URL in the project record:
+-https://www.figma.com/design/AIulMBySUibjRtykdngCUp/Simpl
+-e-Design-System--Community-?node-id=3-5
+-Record the duplicate's file URL separately. Do not overwrite the original
+-URL in source notes; the two links serve different purposes.
+-FIELD NOTE: Why the copy matters
+-The public Community file is the provenance source. The duplicate is the
+-working file. Connected agents need permissions on the working file, and
+-your edits should never change the public source.
+-Pair the Figma file with the codebase
+-Use Figma's public figma/sds repository as the code counterpart. The
+-project identifies itself as an alpha base system that demonstrates
+-Variables, Styles, Components, Code Connect, and a React
+-implementation.
+---- PDF page 20 ---
+-CLAUDE DESIGN FIELD GUIDE
+-2. PREPARE SIMPLE DESIGN SYSTEM
+ 13
+-The code is organized into:
+--
+-src/ui/primitives - reusable controls that should not be reduced further.
+--
+-src/ui/compositions - example arrangements of primitives.
+--
+-src/ui/layout - Flex, Grid, and Section helpers that may not have direct
+-Figma equivalents.
+--
+-src/ui/icons - generated icon components.
+--
+-src/figma - Code Connect mappings.
+--
+-src/stories - Storybook examples and component states.
+--
+-src/theme.css - generated CSS variables from Figma tokens.
+-Inventory the components you can
+-reuse
+-Use the following SDS React primitives as a starting point. Confirm their
+-names and supported variants in your selected repository revision:
+-Product need
+-Existing Simple Design System
+-material
+-Disposition
+-Save, Run, cancel, confirm
+-Button, IconButton
+-Reuse
+-Node settings fields
+-InputField, SelectField,
+-TextareaField, CheckboxField,
+-RadioGroup, SwitchField,
+-SliderField
+-Reuse
+-Field errors and descriptions
+-Field, Label, Description,
+-FieldError, Fieldset
+-Reuse
+-Inspector sections
+-Accordion, Tabs, Text
+-Reuse or compose
+-Table preview
+-Table, Pagination, Search, Tag
+-Reuse and compose
+-Menus and overflow actions
+-Menu, ListBox, Tooltip
+-Reuse
+-Confirmations and blocking
+-flows
+-Dialog
+-Reuse
+-Status and feedback
+-Notification, Tag, icons
+-Reuse and compose
+-Shell navigation
+-Navigation, Headers, Flex,
+-Grid, Section
+-Reuse where the current app
+-already uses them
+-DAG nodes, ports, edges
+-No direct primitive
+-Proposed product-specific
+-components
+---- PDF page 21 ---
+-CLAUDE DESIGN FIELD GUIDE
+-2. PREPARE SIMPLE DESIGN SYSTEM
+-14
+-Product need
+-Existing Simple Design System
+-material
+-Disposition
+-Resizable data sheet
+-No direct primitive
+-Proposed composition using
+-existing primitives
+-File drop zone and mapping
+-row
+-No direct primitive
+-Proposed composition or
+-product component
+-The inventory prevents two opposite mistakes: inventing controls the
+-system already has, and forcing an application-specific graph element
+-into a generic primitive.
+-Inventory the tokens
+-Simple Design System exposes semantic color families for background,
+-border, icon, and text across brand, default, neutral, positive, warning,
+-danger, disabled, and utility roles. Its spacing scale runs from
+-space-050 through large layout values; radius, focus-ring stroke, icon
+-sizes, and typography scales are also defined.
+-Use semantic tokens rather than literal values in every prompt and
+-handoff. A node failure should resolve to the system's danger roles. A
+-selected node may use the brand border and focus-ring rules. A canvas
+-grid may require one new semantic token, but the grid should still derive
+-from existing neutral primitives.
+-Build a compact context packet
+-Claude Design can import a repository, but a focused package is easier to
+-validate than an entire monorepo. Include:
+--
+-The duplicated Figma working-file link.
+--
+-src/ui/primitives, src/ui/layout, and only the relevant compositions.
+--
+-src/theme.css and token-generation notes.
+--
+-Relevant src/figma Code Connect files.
+--
+-Relevant Storybook stories.
+--
+-The current Pipeline Detail route and nearby tests.
+---- PDF page 22 ---
+-CLAUDE DESIGN FIELD GUIDE
+-2. PREPARE SIMPLE DESIGN SYSTEM
+-15
+--
+-Two or three representative shipped screens.
+--
+-The extension brief and fixture schema.
+-Exclude:
+--
+-.git, node_modules, build output, generated caches, and unrelated packages.
+--
+-Deprecated components.
+--
+-Concept work that does not match production.
+--
+-Screens containing private customer data.
+--
+-Large asset folders that do not affect the target feature.
+-Connect Code Connect after
+-duplication
+-The Simple Design System README still documents
+-documentUrlSubstitutions in figma.config.json and expects a
+-fresh duplicate to preserve node IDs. Verify sample IDs in the chosen
+-copy, then update the file keys. Record the repository revision and
+-mapping format before validating.
+-Code Connect is documented for Dev or Full seats on Organization and
+-Enterprise plans. The current CLI quickstart recommends
+-framework-agnostic template files; existing SDS mappings remain inputs
+-from their own repository revision. Do not migrate parsers or publish
+-mappings merely to run the example. Follow the team's approved
+-process if mapping publication is authorized. The CLI requires Node.js
+-18 or newer and a locally stored token with Code Connect Write and File
+-content Read scopes. See the Code Connect introduction and CLI
+-quickstart.
+-Code Connect can supply imports, properties, snippets, source paths,
+-and team instructions. CLI mappings and UI mappings provide different
+-detail: a CLI mapping can omit an import when its source/import fields
+-are missing, and UI mappings do not include full snippets by default.
+---- PDF page 23 ---
+-CLAUDE DESIGN FIELD GUIDE
+-2. PREPARE SIMPLE DESIGN SYSTEM
+-16
+-Inspect one returned mapping before relying on it. Keep mappings
+-current. See Code Connect integration.
+-CLAUDE CODE / INSPECT THE SYSTEM PACKAGE
+-Inspect the attached Simple Design System package and the current
+-Pipeline Detail implementation. Do not edit files.
+-Return four inventories:
+-1. production components available for reuse, with import paths and
+-relevant props,
+-2. semantic tokens available for color, spacing, typography, radius,
+-and focus,
+-3. current screen composition and state-management patterns,
+-4. missing product-specific patterns required by the Data Pipeline
+-Studio brief.
+-For every proposed missing pattern, explain why existing primitives
+-cannot cover it through composition. Flag any difference between Figma
+-naming, Code Connect mapping, and production code.
+-Design-system intake
+-Working Figma file and owner
+-Code package and revision
+-Token source and generation path
+---- PDF page 24 ---
+-CLAUDE DESIGN FIELD GUIDE
+-2. PREPARE SIMPLE DESIGN SYSTEM
+-17
+-Design-system intake
+-Relevant primitives
+-Relevant compositions
+-Code Connect status
+-Known gaps
+-Excluded or unsafe sources
+---- PDF page 25 ---
+-CLAUDE DESIGN FIELD GUIDE
+-2. PREPARE SIMPLE DESIGN SYSTEM
+-18
+-Chapter checkpoint
+--
+-The Community source is untouched and a working duplicate exists.
+--
+-The Figma file and React package are paired.
+--
+-Components, tokens, Storybook examples, and Code Connect mappings are
+-inspectable.
+--
+-The context package excludes unrelated or unsafe material.
+--
+-DAG-specific gaps are named before generation.
+-Sources 2, 6-12, 18-25. Pairing the Figma library with its React implementation.
+---- PDF page 26 ---
+-19
+ CHAPTER 03
+ Validate the imported
+ system
+-Test the system on known screens before trusting it with a new feature.
+---- PDF page 27 ---
++Prove source reuse and correction before extending the store.
++--- PDF page 20 ---
++14
++Open the imported Velori system in Claude Design. Inspect its
++component cards, usage guidance, type and spacing rules, and
++photographs. Select that exact system in a new project. Recreate known
++screens before generating Review configuration.
++Generate the known screens
++Use the frozen reference and accepted source definition as comparators
++at 1024 × 768. Generate the default configurator with Chalk, Friendly,
++White, and Dock, then change to Graphite, Simple, Amber, and Carry
++bag. Open the expression menu and both accessory-detail screens.
++Browsing Charging dock must leave Carry bag selected. Return to the
++configurator and inspect its caption and selected controls.
++Render the unavailable-image configurator with the same four
++non-default values retained. Check that recovery preserves them. Keep
++Review configuration out of these tests; it is the new composition
++introduced in Chapter 4.
++CLAUDE DESIGN / RECREATE KNOWN VELORI SCREENS
++Use the selected Velori system and accepted source definition. Create
++one responsive interactive store with one shared configuration and one
++mounted screen at a time. Use fixture controls or routes to inspect the
++required states while keeping component IDs unique. Preserve the
++supplied storage and focus behavior. Recreate the configurator at 1024
++× 768 with Chalk, Friendly, White, and Dock, then Graphite, Simple,
++Amber, and Carry bag. Show the expression menu, Carry bag details,
++Charging dock details, and unavailable-image configurator. Use the
++actual named components, controlled props, tokens, and product assets.
++Keep selection, photograph, mask, caption, and labels consistent.
++Browsing another accessory must not change selection. Preserve
++dropdown keyboard behavior. Identify missing or unverifiable source
++rules before substituting them. Do not add Review configuration yet.
++Inspect the actual interactive result. Check pointer and keyboard
++selection, menu cancellation, details return, asset loading, and image
+ CLAUDE DESIGN FIELD GUIDE
+ 3. VALIDATE THE IMPORTED SYSTEM
+-20
+-Claude Design can extract a reusable system from codebases, design
+-files, screenshots, decks, and brand assets. The useful question is not
+-whether extraction ran. The useful question is whether a generated
+-screen resolves back to the system the team ships.
+-Validate the system before asking for Data Pipeline Studio.
+-Establish the system in Claude Design
+-Choose the setup path that matches the source. For a React product
+-system, the current Claude Code command reference documents
+-/design-login to authorize design-system access and /design-sync
+-[hint] to convert and upload the repository's system to Claude Design.
+-First-time verification can take hours for a large repository. Treat
+-conversion and upload as part of the operation; scope the source
+-package before running it. These commands require the Anthropic path
+-and claude.ai access, and are unavailable through the documented
+-cloud-provider and apps-gateway paths.
+-For a brand system, use chat with approved fonts, logos, files, and design
+-references. Manage integrated systems in Settings > Design systems. A
+-system created at claude.ai/design can move through the Design
+-sidebar's migration banner, but the migrated guide, tokens, and
+-components need review. See the design-system setup guide.
+-Standalone setup remains a separate path: select the organization at
+-claude.ai/design, upload or link approved assets, review the generated
+-system, and test it before using the Published toggle. In integrated
+-Artifacts, confirm the attached system and selected organization default.
+-Publishing a system and setting a default are separate decisions.
+-Enterprise administrators can reserve publication, default selection, and
+-deletion for designated users. See the Artifacts admin guide.
+-Use the built-in Claude Code commands for setup. If a command is
+-absent or authorization fails, record the installed version,
+---- PDF page 28 ---
++--- PDF page 21 ---
++15
++recovery. Save screenshots and the generated source or component
++references. A matching static photograph does not establish controlled
++state.
++Sample ten elements for fidelity
++Element
++Source to inspect
++Brand and navigation
++Brand, StoreHeader, identity and icon rules
++Page heading
++Accepted type role and applied CSS
++Continue
++PrimaryButton, Ink/white, 12px radius, 48px height
++Finish choice
++FinishChoice anatomy and selected state
++Face choice
++FaceChoice anatomy and selected state
++Expression dropdown
++ExpressionSelect anatomy, menu, focus, and keyboard use
++Accessory choice
++AccessoryChoice, one value, 24px gaps
++Product imagery
++ProductPreview, original assets, masks, and composition
++Caption
++Configuration-derived copy and accepted caption type
++Screen layout
++Accepted columns, spacing, alignment, and narrow behavior
++For each element, save its source identity or rule reference and classify
++the result as exact reuse, valid composition, cosmetic resemblance,
++invented replacement, or unverifiable. Exact reuse points to the actual
++source component or token. A valid composition assembles accepted
++components and rules without replacing them. Appearance alone cannot
++establish either classification.
++CLAUDE DESIGN / AUDIT SOURCE CONFORMANCE
++Audit these ten elements: brand/navigation, heading, Continue, finish,
++face, expression dropdown, single accessory choice, product imagery,
++caption, and layout. For each, cite the actual component/export and
++token or accepted CSS rule used, with its size, type, spacing, radius,
++and color where applicable. Classify it as exact reuse, valid
++composition, cosmetic resemblance, invented replacement, or
++unverifiable. Separate observed source evidence from inference. Flag
+ CLAUDE DESIGN FIELD GUIDE
+ 3. VALIDATE THE IMPORTED SYSTEM
+-21
+-account/provider, enabled template, and exact error before changing
+-configuration.
+-Use /design [brief] for the documented Claude Code artboard
+-workflow. Inspect the returned artifact in a desktop browser. Test
+-whether the chosen surface supports the interactive states your product
+-example needs; broad Design help and the CLI reference describe
+-different scopes. Do not infer complete import/export/sync parity from
+-the command name.
+-Do not paste private tokens into chat or commit local credentials. Follow
+-the repository's existing secret-handling rules.
+-Preserve the reviewed baseline
+-Anthropic documents asking Claude to save the current project before
+-trying another direction, but also lists version history as unavailable.
+-Export a reviewed baseline, record its date and system revision, and
+-verify that the saved artifact opens before experimenting. Treat reliable
+-restore and correction persistence as tests, not assumptions. See Design
+-revisions and limitations.
+---- PDF page 29 ---
++--- PDF page 22 ---
++16
++CLAUDE DESIGN / AUDIT SOURCE CONFORMANCE
++altered props, substituted imagery, literal values that disagree with
++the definition, and missing states. Do not infer reuse from a
++screenshot. Stop before the review extension if any element lacks
++accepted source evidence.
++Inspect the cited evidence yourself. Pass only exact reuse and valid
++composition, or a specifically reviewed exception with its reason
++recorded. Correct an invented replacement or unresolved rule at its
++source, rerun the import where necessary, and repeat the affected
++known-screen test.
++Check that a correction persists
++Use an isolated generated test screen and one named teaching fixture.
++Supply either purple Continue or 8px accessory gaps as the deliberate
++defect. Ask Design to restore the accepted rule. Keep the source system's
++accepted PrimaryButton and 24px gap rule unchanged; fixture styling
++must not become a new system variant.
++CLAUDE DESIGN / CORRECT AND REGENERATE
++In this isolated test screen, correct the named purple-continue or
++accessory-gap-8 fixture using the accepted Velori source system.
++Continue must use PrimaryButton with Ink/white, 12px corners, and 48px
++height. Accessory choices must have 24px gaps. Identify the source rule
++used for the correction. Then generate a second configurator state with
++Pebble, Friendly, Mint, and no accessory. Confirm that the corrected
++rule persists there and that the fixture has not become an accepted
++variant. Record any unresolved replacement before proceeding.
++Save the before, corrected, and second-generation results with the rule
++references. If the second generation repeats the defect, improve the
++source usage guidance or correct the generation context, resync when
++the source changes, and rerun the test. Keep the unsuccessful attempt in
++the review record.
+ CLAUDE DESIGN FIELD GUIDE
+ 3. VALIDATE THE IMPORTED SYSTEM
+-22
+-Give sources a clear authority order
+-CLAUDE DESIGN / CREATE THE DRAFT SYSTEM
+-Build a draft design system from the attached sources.
+-Treat the component-library code and design tokens as authoritative.
+-Use the attached shipped screens to learn composition and product
+-patterns. Use the Figma file for component anatomy, variants,
+-variables, and layout intent.
+-Preserve existing component, token, and pattern names exactly.
+-Separate:
+-1. directly observed components and tokens,
+-2. inferred composition patterns,
+-3. missing or ambiguous areas.
+-Do not silently invent a component. Label any missing pattern as a
+-proposed addition. Generate a settings screen, a dense operational
+-table, and a confirmation flow. Record the selected system and source
+-revision. Keep the system in draft; publication and
+-organization-default changes need owner approval.
+-Run three known-screen tests
+-Choose tests that expose different parts of the system:
+- 1
+-A settings form tests fields, labels, descriptions, errors, toggles, actions,
+-and vertical rhythm.
+- 2
+-A dense operational table tests data density, search, filters, pagination,
+-status, empty states, and overflow.
+- 3
+-A confirmation flow tests dialog anatomy, destructive language, focus
+-handling, and notification behavior.
+-Do not judge the tests from memory. Compare them to the components,
+-tokens, and representative screens in the source package.
+---- PDF page 30 ---
++--- PDF page 23 ---
++17
++Chapter checkpoint
++Proceed to Review configuration only after the actual selected system
++renders the known screens, the ten-element sample passes, and the
++correction survives another generation. Record accepted exceptions and
++font differences. Keep source completeness, conversion, upload, native
++rendering, and system publication as separate results.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 3. VALIDATE THE IMPORTED SYSTEM
+-23
+-Score system fidelity
+-Use a ten-point sample on each test screen. Select visible elements across
+-the page and classify each one:
+--
+-Exact reuse - correct component, variant, token, and composition.
+--
+-Valid composition - existing primitives combined according to known
+-patterns.
+--
+-Cosmetic match - looks close but does not resolve to an approved component
+-or token.
+--
+-Invented - no source evidence and no explicit proposal label.
+--
+-Unverifiable - source package is insufficient.
+-The system passes when every sampled element is exact reuse or valid
+-composition, or when an exception is explicitly documented and
+-approved. A visual match with unverifiable implementation identity
+-does not pass.
+-Test correction behavior
+-Deliberately introduce one correction: ask Claude to replace an invented
+-filter control with the named SelectField and existing Tag pattern.
+-Then regenerate a nearby state. If the correction holds only on one frame
+-and disappears in the next, the system is not stable enough for feature
+-work.
+-CLAUDE DESIGN / CONFORMANCE AUDIT
+-Audit the generated test screens against the linked design system and
+-codebase.
+-For every visible element, classify it as:
+-- reused existing component,
+-- existing component with an approved variant,
+-- composed from existing primitives,
+-- proposed new component,
+---- PDF page 31 ---
+-CLAUDE DESIGN FIELD GUIDE
+-3. VALIDATE THE IMPORTED SYSTEM
+-24
+-CLAUDE DESIGN / CONFORMANCE AUDIT
+-- unverified.
+-Correct token, typography, spacing, radius, color, and component
+-deviations. List anything you could not verify from the sources. Do not
+-describe the system as production-ready. Produce a short validation
+-report for the design lead.
+-Decide whether to publish
+-Publish the organization system only when:
+--
+-Component names and variants match the source.
+--
+-Semantic tokens are used consistently.
+--
+-Known-screen composition matches the product.
+--
+-Corrections persist across regeneration.
+--
+-Missing patterns remain visibly labeled.
+--
+-A design-system owner has reviewed the output.
+-If the system fails, improve the sources before adding more prompt
+-detail. Claude's own documentation says import quality depends on
+-source quality. Prompting cannot repair an ambiguous or contradictory
+-system indefinitely.
+-FIELD NOTE: Large repositories
+-Attach the focused component and feature directories for a large monorepo.
+-Anthropic warns that very large repositories can cause lag or browser
+-instability. Smaller context also makes component identity easier to audit.
+-System validation record
+-Test screen and source comparator
+---- PDF page 32 ---
+-CLAUDE DESIGN FIELD GUIDE
+-3. VALIDATE THE IMPORTED SYSTEM
+-25
+-System validation record
+-Sampled elements
+-Exact reuse count
+-Valid composition count
+-Cosmetic-only or invented count
+-Unverifiable count
+-Correction test and result
+---- PDF page 33 ---
+-CLAUDE DESIGN FIELD GUIDE
+-3. VALIDATE THE IMPORTED SYSTEM
+-26
+-System validation record
+-Decision and reviewer
+-Chapter checkpoint
+--
+-The imported system has been tested on known work, not only on a new
+-concept.
+--
+-Component identity and token use have been sampled.
+--
+-One correction has persisted through regeneration.
+--
+-Missing patterns are explicit.
+--
+-A human owner has approved publication or recorded why it remains a draft.
+-Sources 1-4, 11, 19-20. Product-preservation synthesis.
+---- PDF page 34 ---
+-27
++--- PDF page 24 ---
++18
+ CHAPTER 04
+ Extend the existing
+ screen
+-Generate a bounded diff, then build the DAG flow one interaction at a
+-time.
+---- PDF page 35 ---
++Make Continue open one useful review step.
++--- PDF page 25 ---
++19
++The shopper needs to check the chosen robot and accessories before
++returning to edit. Continue opens Review configuration. The review
++screen displays the chosen robot and all four values, with Edit
++configuration and Back returning to the configurator.
++Generate the bounded change
++CLAUDE DESIGN / ADD REVIEW CONFIGURATION
++Use the selected Velori system and supplied configurator as the
++baseline. Make Continue open Review configuration. Show the chosen
++product photo and finish, face, expression color, and single accessory.
++Add Edit configuration and Back. Both return without losing values.
++Support pointer and keyboard navigation. Focus the Review heading when
++it opens; when Edit configuration, Back, or browser Back returns to the
++configurator, restore focus to Continue. Preserve reload persistence
++and an unavailable-image state that retains the summary. Reuse the
++system components and tokens. Identify the review screen as new sample
++behavior. Keep payment, inventory, accounts, shipping, and order
++submission outside the result.
++Review the first diff
++Inspect the current and proposed configurator beside each other. The
++extension should not replace the brand, photographs, choice
++vocabulary, dropdown, or one-accessory rule. The review column can
++change composition, but its values must come from the same
++configuration object.
++Use Graphite, Simple, Amber, and Carry bag. A review screen with a
++hard-coded default photo fails even when its summary is correct. A
++correct photo with a stale summary also fails.
+ CLAUDE DESIGN FIELD GUIDE
+ 4. EXTEND THE EXISTING SCREEN
+-28
+-The first feature prompt should describe an extension, not a destination.
+-Claude needs the baseline screen, the preservation boundary, the exact
+-route, and a narrow first change.
+-Start from the current route
+-Create a Claude Design project with the validated system attached. Add
+-the current Pipeline Detail screen as a screenshot, existing design asset,
+-web capture, or linked code reference. Include the relevant feature
+-directory and current tests.
+-CLAUDE DESIGN / EXTEND PIPELINE DETAIL
+-Extend the existing `/pipelines/customer-health/edit` screen into the
+-first version of Data Pipeline Studio.
+-Starting context:
+-- current screen: the attached Pipeline Detail baseline,
+-- relevant code: the attached route, shell, editor, preview, and test
+-files,
+-- existing components: the linked Simple Design System package,
+-- target viewport: 1440 x 900, with a supported minimum of 1024 x 768,
+-- mobile: view-only and out of scope for editing.
+-Preserve the global shell, navigation, breadcrumb, pipeline identity,
+-environment badge, last-run metadata, Save, Run, overflow actions,
+-permissions, routing, persistence, and run behavior. Preserve the
+-existing typography, spacing, forms, tables, dialogs, status, and
+-notification language.
+-Replace only the central linear step list with a DAG workspace. Keep
+-the current right-side configuration panel and collapsed data preview
+-in place for this first pass.
+-Use the fixture pipeline: Customers CSV -> Normalize Email -> Validate
+-Customer Schema -> Publish to Warehouse. Add a proposed branch from
+-Validate Customer Schema to Quarantine Invalid Rows.
+---- PDF page 36 ---
++--- PDF page 26 ---
++20
++Keep navigation explicit
++Continue creates a review route. Edit and Back return to configure.
++Heading focus identifies the newly opened screen; returning restores
++focus to the control that led there. Browser history should behave
++predictably when the shopper moves through details and review.
++Do not add an order action to fill the space. Review is the last step of this
++exercise, and editing is its useful next action.
++Chapter checkpoint
++The generated result completes configure -> review -> edit with a
++non-default configuration. The selected system and new product
++composition remain identifiable.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 4. EXTEND THE EXISTING SCREEN
+-29
+-CLAUDE DESIGN / EXTEND PIPELINE DETAIL
+-Reuse named system components. Label every proposed component or token.
+-Produce one interactive desktop prototype and a short change log. Do
+-not redesign unrelated regions.
+-Review the first diff
+-The first review asks five questions:
+- 1
+-Did the shell remain stable?
+- 2
+-Did the central editor change without moving unrelated controls?
+- 3
+-Are the pipeline steps the same fixture throughout?
+- 4
+-Can the user select a node and understand the graph direction?
+- 5
+-Are new graph elements labeled as proposals rather than disguised system
+-components?
+-Reject the first pass if the answer to either of the first two questions is no.
+-A prettier shell is still scope drift.
+-Add graph behavior in small
+-increments
+-The DAG interaction contract includes:
+--
+-Pan, zoom, fit-to-view, and reset.
+--
+-Pointer and keyboard node selection.
+--
+-Node movement without changing pipeline semantics.
+--
+-Edge creation between compatible ports.
+--
+-Cycle rejection and incompatible-connection explanations.
+--
+-Undo and redo for movement, connection, and deletion.
+--
+-Inspectable nodes while a run is active, with structural edits locked.
+--
+-Status communicated through icon, label, and color.
+---- PDF page 37 ---
+-CLAUDE DESIGN FIELD GUIDE
+-4. EXTEND THE EXISTING SCREEN
+-30
+-Add one group at a time. After each change, replay the baseline journey
+-and inspect the preservation boundary.
+-CLAUDE DESIGN / ADD CANVAS NAVIGATION
+-Keep the approved screen and fixture unchanged. Add only canvas
+-navigation: pan, zoom in, zoom out, fit to view, and reset. Use
+-existing IconButton and Tooltip patterns for controls. Show visible
+-keyboard focus and accessible labels. Do not add node editing or
+-connection behavior yet.
+-CLAUDE DESIGN / ADD SELECTION AND MOVEMENT
+-Keep all approved regions unchanged. Add pointer and keyboard node
+-selection, a visible selected state, and node movement. Moving a node
+-changes layout only; it must not change graph semantics. Show a dirty
+-document state after movement and include undo and redo using existing
+-action patterns.
+-CLAUDE DESIGN / ADD CONNECTIONS AND REJECTION
+-Add input and output ports plus edge creation between compatible nodes.
+-Use the existing fixture. Demonstrate one valid connection, one
+-incompatible connection, and one attempted cycle. Rejected actions
+-must leave the graph unchanged and explain why the connection is
+-invalid. Use icon, label, and color for status. In this fixture,
+-attempt `validate -> august` for a cycle and `normalize -> quarantine`
+-for a type mismatch; neither may change the graph. Keep every other
+-surface unchanged.
+-Define proposed graph components
+-Do not add a generic "Card" variant for a graph node merely because
+-both are rectangles. A pipeline node has operational semantics, ports,
+-selection, validation, execution states, and keyboard behavior. Treat it as
+-a product-specific component composed from system primitives.
+---- PDF page 38 ---
+-CLAUDE DESIGN FIELD GUIDE
+-4. EXTEND THE EXISTING SCREEN
+-31
+-Proposed component
+-Required variants or states
+-Reused foundation
+-PipelineNode
+-Source, transform, quality,
+-destination; idle, selected, running,
+-success, warning, failed, disabled
+-Text, Tag, Tooltip, icons,
+-semantic tokens
+-PipelinePort
+-Input/output;
+-compatible/incompatible;
+-connected/unconnected; focused
+-Tooltip, focus-ring and
+-semantic tokens
+-PipelineEdge
+-Default, selected, transferring,
+-warning, failed
+-Semantic tokens; no
+-color-only meaning
+-CanvasToolbar
+-Default, disabled actions, keyboard
+-focus
+-IconButton, Tooltip,
+-ButtonGroup pattern
+-RunProgressSummary
+-Queued, running, partial failure,
+-success, cancelled
+-Notification, Tag, progress
+-copy
+-Each proposed component needs a design owner, a code owner, a
+-variant model, accessibility notes, and a production import path before
+-the team promotes it to a shared library.
+-Compare alternatives without
+-multiplying scope
+-Use alternatives for a specific decision, such as node density or branch
+-readability. Do not ask for three complete product redesigns.
+-CLAUDE DESIGN / COMPARE NODE DENSITY
+-Before generating alternatives, export the approved baseline, record
+-the source revision and date, and confirm the export opens. Keep that
+-artifact intact. Then create two alternatives for `PipelineNode`
+-density only:
+-- compact: optimized for large graphs,
+-- detailed: exposes key configuration and last-run status.
+-Preserve the shell, canvas dimensions, fixture, inspector, and data
+-preview. Use the same components and tokens in both. Compare
+-scanability, graph capacity, error visibility, and keyboard focus.
+-Recommend one default and one zoom-level rule.
+---- PDF page 39 ---
+-CLAUDE DESIGN FIELD GUIDE
+-4. EXTEND THE EXISTING SCREEN
+-32
+-DAG review
+-Preserved regions verified
+-Graph direction and fixture
+-Navigation behavior
+-Selection and movement
+-Valid connection behavior
+---- PDF page 40 ---
+-CLAUDE DESIGN FIELD GUIDE
+-4. EXTEND THE EXISTING SCREEN
+-33
+-DAG review
+-Cycle and incompatibility rejection
+-Undo and redo
+-Proposed component disposition
+-Open decisions
++--- PDF page 27 ---
++21
++CHAPTER 05
++Connect the adjacent
++surfaces
++Details, review, and editing keep the same choices.
++--- PDF page 28 ---
++22
++Accessory details answer a product question without changing the
++configuration. Review answers whether the shopper has chosen the
++intended combination. Both depend on the configurator's existing
++values.
++Browse without selecting
++Open Carry bag details when Carry bag is selected. Browse Charging
++dock. The detail photograph and title should change, while the selected
++accessory stays Carry bag. Returning to configure restores the original
++selection and caption.
++The detail view describes the accessory being browsed. The selected
++accessory remains in the parent configuration and appears unchanged
++when you return. A details tab must not silently commit a selection.
++Make all surfaces agree
++Surface
++Read from shared configuration
++Local view state
++Configurator
++Four values, photo, caption, marks
++Open expression menu
++Accessory details
++Parent configuration retained
++unchanged
++Accessory being browsed
++Review
++Photo and four summary values
++Review route
++Image recovery
++Configuration and summary
++Loading, failure, retry
++A missing image changes rendering state. Image failure does not change
++the configuration. A details tab changes the browsed accessory.
++Browsing does not change the selected accessory.
++CLAUDE DESIGN / AUDIT THE COMPLETE JOURNEY
++Select Graphite, Simple, Amber, and Carry bag. Open accessory details,
++browse Charging dock, and return. Continue to review, then edit.
++Inspect photographs, captions, selected marks, and summaries after
++each transition. Keep Carry bag selected while browsing Dock. Show the
++CLAUDE DESIGN FIELD GUIDE
++5. CONNECT THE ADJACENT SURFACES
++--- PDF page 29 ---
++23
++CLAUDE DESIGN / AUDIT THE COMPLETE JOURNEY
++unavailable-image state on review with the four values still visible.
++Report any surface that reads stale or independent values.
+ Chapter checkpoint
+--
+-The baseline shell remains intact.
+--
+-The DAG uses the same pipeline fixture and real product language.
+--
+-Navigation, selection, movement, connections, and rejection are shown.
+--
+-Proposed graph components are visible in the system delta.
+--
+-Undo, keyboard focus, and running-state locks are part of the design.
+-Sources 1-3, 19. Prompts are author synthesis.
+---- PDF page 41 ---
+-34
+-CHAPTER 05
+-Design the adjacent
+-surfaces
+-Complete the inspector, data sheet, and importer without creating three
+-separate products.
+---- PDF page 42 ---
+-CLAUDE DESIGN FIELD GUIDE
+-5. DESIGN THE ADJACENT SURFACES
+-35
+-A graph alone does not complete the job. Data Pipeline Studio also needs
+-a configuration surface, a data-inspection surface, and an importer. The
+-surfaces share one selected node, one fixture, and one document state.
+-Upgrade the node inspector
+-Selecting a node opens its schema-driven configuration. The inspector
+-must:
+--
+-Load the correct schema for the selected node.
+--
+-Show valid, dirty, invalid, testing, success, failure, and locked states.
+--
+-Preserve valid drafts when the user switches nodes.
+--
+-Warn before discarding invalid edits.
+--
+-Block Save when required fields are invalid and link the error summary to the
+-affected controls.
+--
+-Run Test node against the fixture data without running the complete pipeline.
+--
+-Use the existing confirmation-dialog pattern for destructive actions.
+-CLAUDE DESIGN / EXTEND THE NODE INSPECTOR
+-Keep the approved DAG and shell unchanged. Replace the existing
+-right-side step editor with a schema-driven node inspector for the
+-selected node.
+-Reuse InputField, SelectField, TextareaField, CheckboxField,
+-SwitchField, FieldError, Accordion, Tabs, Button, Dialog, and
+-Notification patterns from the linked system where appropriate.
+-Show these states for `Validate Customer Schema`: no selection, loading
+-schema, pristine, dirty, one required-field error, testing, test
+-success, test failure, and locked during a pipeline run. Switching to
+-another node must preserve a valid draft and warn before discarding an
+-invalid one.
+-Annotate the state transitions and the data each action reads or
+-writes. Do not change the graph layout or application shell.
+---- PDF page 43 ---
+-CLAUDE DESIGN FIELD GUIDE
+-5. DESIGN THE ADJACENT SURFACES
+-36
+-Turn the preview into a data sheet
+-The data sheet is a resizable bottom surface with collapsed, half, and
+-expanded positions. It shows the selected node's actual input or output
+-fixture. It supports column resizing, sorting, filtering, and cell
+-inspection.
+-The sheet must distinguish:
+--
+-Live data.
+--
+-Cached data.
+--
+-Stale data.
+--
+-Truncated data.
+--
+-Sample data.
+--
+-No available data.
+--
+-Load failure.
+-The distinction needs language and status treatment. A green dot with no
+-label is not sufficient.
+-CLAUDE DESIGN / ADD THE DATA SHEET
+-Keep the approved shell, DAG, and inspector unchanged. Replace the
+-collapsed preview with a resizable data sheet using existing Table,
+-Search, Tag, Pagination, IconButton, Tooltip, and Notification
+-patterns.
+-Support collapsed, half, and expanded positions. Show the output of
+-`Normalize Email` from the shared fixture. Include column resizing,
+-sorting, filtering, and a cell detail interaction.
+-Create separate states for loading, rows, empty, truncated, stale, and
+-error. Label whether the data is live, cached, stale, truncated, or
+-sample. Selecting an error row should focus the responsible node.
+-Annotate the connection between node selection and the rows displayed.
+---- PDF page 44 ---
+-CLAUDE DESIGN FIELD GUIDE
+-5. DESIGN THE ADJACENT SURFACES
+-37
+-Extend the importer
+-The importer accepts CSV and JSON through a file picker or drop zone. It
+-should:
+--
+-Show parsing progress and allow cancellation.
+--
+-Infer headers and types without silently committing them.
+--
+-Require mapping for mandatory fields.
+--
+-Identify malformed rows by row and column.
+--
+-Offer Reject invalid rows or Send to quarantine.
+--
+-Create a configured source node after a successful import.
+--
+-Open the imported data in the preview.
+-Use a staged flow because the user is making a series of consequential
+-choices. A single overloaded dialog makes progress, validation, and
+-recovery difficult to read.
+-CLAUDE DESIGN / EXTEND THE IMPORTER
+-Extend the existing file-upload dialog into a staged CSV and JSON
+-importer. Keep all approved product surfaces unchanged.
+-Use `customers-august.csv` as the fixture. Use the exact six rows from
+-Chapter 1. Require explicit confirmation of `contact_email -> email`
+-and the proposed customer ID and health-score mappings. Preserve the
+-three valid and three invalid record identities across every surface.
+-Show these stages and states:
+-1. initial file picker and drop zone,
+-2. drag-over,
+-3. parsing with progress and cancel,
+-4. inferred headers and types pending confirmation,
+-5. required mapping unresolved,
+-6. malformed rows with row and column references,
+-7. the choice to reject invalid rows or send them to quarantine,
+-8. ready to import,
+-9. importing,
+-10. partial success,
+---- PDF page 45 ---
+-CLAUDE DESIGN FIELD GUIDE
+-5. DESIGN THE ADJACENT SURFACES
+-38
+-CLAUDE DESIGN / EXTEND THE IMPORTER
+-11. success that creates a configured source node and opens its
+-preview,
+-12. cancelled and failed.
+-Reuse existing Dialog, Button, Input, Select, Table, Notification,
+-Tag, and progress patterns. Mark FileDropzone and ColumnMappingRow as
+-proposed compositions if no approved pattern exists. Do not silently
+-accept inferred mappings.
+-Make the surfaces agree
+-After designing the three surfaces, run a cross-surface review:
+--
+-The selected node in the DAG matches the inspector title and data sheet
+-source.
+--
+-Dirty state appears once at the document level and is explained locally where
+-needed.
+--
+-Import success creates the same source node that appears in the graph.
+--
+-Mapping errors use the same field-error language as the inspector.
+--
+-A data-sheet error row focuses the exact failed node.
+--
+-Running-state locks are consistent across graph, inspector, importer, and Save
+-actions.
+--
+-The data sheet never displays unrelated placeholder rows.
+-CLAUDE DESIGN / CROSS-SURFACE CONSISTENCY AUDIT
+-Audit the approved DAG, node inspector, data sheet, and importer as one
+-product state.
+-Trace the shared fixture from file selection through mapping,
+-source-node creation, transformation preview, schema validation,
+-quarantine routing, Save, Run, failure, repair, and successful re-run.
+-Identify every point where node selection, dirty state, run state,
+-fixture data, status language, or permissions disagree across
+-surfaces. Correct only those inconsistencies. Preserve all approved
+-layout and component decisions. Return a short before-and-after change
+-log.
+---- PDF page 46 ---
+-CLAUDE DESIGN FIELD GUIDE
+-5. DESIGN THE ADJACENT SURFACES
+-39
+-CLAUDE DESIGN / CROSS-SURFACE CONSISTENCY AUDIT
+-Adjacent-surface review
+-Selected node consistency
+-Inspector state coverage
+-Data provenance labels
+-Data sheet interactions
+---- PDF page 47 ---
+-CLAUDE DESIGN FIELD GUIDE
+-5. DESIGN THE ADJACENT SURFACES
+-40
+-Adjacent-surface review
+-Importer stages
+-Mapping and malformed-row recovery
+-Cross-surface dirty and run states
+-Proposed compositions
+---- PDF page 48 ---
+-CLAUDE DESIGN FIELD GUIDE
+-5. DESIGN THE ADJACENT SURFACES
+-41
+-Chapter checkpoint
+--
+-The inspector, data sheet, and importer share one fixture and state model.
+--
+-The system's existing form, table, dialog, status, and feedback patterns are
+-reused.
+--
+-Proposed product patterns are explicit.
+--
+-Import success creates a real graph consequence.
+--
+-Error rows, fields, and nodes link to one another.
+-Sources 1-3, 11, 19-20. Author synthesis: extending the node editor and inspector.
+---- PDF page 49 ---
+-42
++The full configure -> accessory details -> review -> edit journey retains
++the fixture. Each screen has a clear return path and owns only its
++view-specific state.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
++CLAUDE DESIGN FIELD GUIDE
++5. CONNECT THE ADJACENT SURFACES
++--- PDF page 30 ---
++24
+ CHAPTER 06
+ Specify states and
+ transitions
+-Turn a convincing happy path into a complete product contract.
+---- PDF page 50 ---
++Define loading, failure, persistence, and recovery before handoff.
++--- PDF page 31 ---
++25
++The normal journey is only part of the contract. Photographs load
++asynchronously. The shopper can change choices rapidly. Browser
++storage can be unavailable. Reload can occur on review.
++State matrix
++State
++Visible behavior
++Values retained
++Recovery
++Loading product
++Loading treatment with
++current caption
++All four
++Wait or keep editing
++Product ready
++Correct photo, mask, caption
++All four
++Continue or edit
++Image unavailable
++Plain explanation and
++available summary
++All four
++Retry actual failed load
++Simulated unavailable
++Teaching placeholder
++All four
++Clear teaching
++simulation
++Storage unavailable
++Notice below the store
++Current visit
++Continue using the app
++Reload with storage
++Route and saved values
++restored
++All four
++Resume or edit
++Reset
++Default choices
++Defaults only
++Begin a fresh journey
++Teaching controls belong outside the shopper's review column. They
++help demonstrate states without making reset or image simulation part
++of the product flow.
++Transition contract
++For every transition, name the trigger, values read, values changed,
++visible result, focus destination, and return path. For Continue, the
++trigger is the action, the four values stay unchanged, Review
++configuration opens, and its heading receives focus. Edit returns to
++configure and restores focus to Continue.
+ CLAUDE DESIGN FIELD GUIDE
+ 6. SPECIFY STATES AND TRANSITIONS
+-43
+-Generated prototypes often appear complete because the default state is
+-coherent. Production work fails at the transitions: data arrives late,
+-permission changes, Save conflicts, imports partially succeed, and runs
+-stop between nodes.
+-A state matrix makes those transitions reviewable before they become
+-implementation bugs.
+-Build the product state matrix
+-Surface
+-Required states
+-Document
+-Loading, pristine, dirty, saving, saved, save failed, read-only,
+-version conflict
+-Canvas
+-Empty, populated, invalid graph, executing, stale, load failed
+-Node
+-Idle, hover, focused, selected, dragging, disabled, invalid, queued,
+-running, success, warning, failed
+-Inspector
+-No selection, loading schema, valid, dirty, field error, testing, test
+-success, test failed, locked
+-Data sheet
+-Closed, loading, rows, empty, truncated, stale, error
+-Importer
+-Initial, drag-over, parsing, mapping required, invalid rows, ready,
+-importing, partial success, success, cancelled, failed
+-Run
+-Ready, validating, queued, running, partially failed, failed,
+-cancelled, succeeded
+-Permissions
+-Editable, view-only, action forbidden, session expired
+-The matrix is not a request for one frame per cell. Use representative
+-screens, component states, and annotated transitions. The goal is to
+-prove coverage without burying the team under artboards.
+-Write transitions as contracts
+-For each consequential action, specify:
+--
+-Trigger - what the user or system does.
+--
+-Precondition - what must already be true.
+--
+-Immediate feedback - what changes before the result returns.
+---- PDF page 51 ---
++--- PDF page 32 ---
++26
++Avoid stale images
++Rapidly change finish, face, expression, and accessory. The final
++photograph and caption must describe the last configuration. A previous
++image load must not replace the newer result. An unavailable image
++must retain its caption and summary while retrying.
++CLAUDE CODE / VERIFY RECOVERY
++Test rapid changes and a genuinely failed product-image request.
++Confirm the final image and caption agree, a failed image retains
++choices, and Retry reloads the asset after it becomes available. Test
++reload on review, blocked browser storage, and reset isolation. Keep
++unrelated storage values intact. Record actual results rather than
++adding untested behavior claims.
++Chapter checkpoint
++The handoff includes normal, loading, unavailable, rapid-change,
++reload, blocked-storage, and reset behavior. The configuration has one
++owner throughout.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 6. SPECIFY STATES AND TRANSITIONS
+-44
+--
+-Success result - data, UI, focus, and status.
+--
+-Failure result - what remains stable and what recovery appears.
+--
+-Persistence - what survives navigation or reload.
+--
+-Telemetry - the event or error the product records.
+-Example:
+-Field
+-Create edge contract
+-Trigger
+-User drags from an output port to an input port or uses the
+-keyboard connect command
+-Precondition
+-Ports are compatible, user can edit, graph is not structurally
+-locked
+-Immediate feedback
+-Connection preview and compatible targets appear
+-Success
+-Edge is added, document becomes dirty, focus moves to the
+-new edge or destination node
+-Failure
+-Graph remains unchanged; explanation names cycle, type
+-mismatch, permission, or lock
+-Persistence
+-Edge exists after Save and reload; rejected attempt does not
+-Telemetry
+-pipeline_edge_created or pipeline_edge_rejected with
+-reason
+-Use named evidence for each state
+-Every state should connect to one of these evidence types:
+--
+-A current production pattern.
+--
+-A design-system component or token.
+--
+-A product requirement.
+--
+-An API or data contract.
+--
+-An accessibility requirement.
+--
+-A recovery rule.
+-If a state has only visual evidence, it is not ready for handoff.
+---- PDF page 52 ---
+-CLAUDE DESIGN FIELD GUIDE
+-6. SPECIFY STATES AND TRANSITIONS
+-45
+-CLAUDE DESIGN / COMPLETE THE STATE MODEL
+-Extend the approved prototype to cover the complete state model without
+-changing approved layout or components.
+-Use the supplied state matrix. For each surface, show the minimum
+-representative frames or component variants needed to prove coverage.
+-Annotate transitions rather than duplicating screens when that is
+-clearer.
+-For every consequential action, state the trigger, precondition,
+-immediate feedback, success result, failure result, persistence rule,
+-and recovery action. Preserve the shared fixture and real product
+-language. Mark any state that depends on an unresolved API or product
+-decision.
+-Specify version conflicts and stale data
+-Two failure modes deserve explicit treatment:
+-Version conflict. Another person or process changes the pipeline after
+-the user begins editing. The product must not overwrite the newer
+-version silently. Show what is compared, what can be reapplied, what
+-must be reviewed, and how the user exits safely.
+-Stale preview. The graph or node configuration changes after preview
+-data was generated. The data sheet must keep the rows inspectable while
+-clearly marking them stale and offering a refresh. "Sample" and "stale"
+-are different conditions and should not share ambiguous copy.
+-CLAUDE DESIGN / CONFLICT AND STALE-DATA RECOVERY
+-Using the approved Data Pipeline Studio design, add two recovery
+-sequences:
+-1. a Save version conflict after another editor changed the pipeline,
+-2. a stale data preview after the selected node configuration changed.
+-Preserve the user's work. Show the comparison or refresh action, the
+---- PDF page 53 ---
+-CLAUDE DESIGN FIELD GUIDE
+-6. SPECIFY STATES AND TRANSITIONS
+-46
+-CLAUDE DESIGN / CONFLICT AND STALE-DATA RECOVERY
+-exact status language, focus behavior, and the safe exit. Reuse
+-existing Dialog and Notification patterns. Do not use a generic
+-destructive confirmation for a merge decision.
+---- PDF page 54 ---
+-CLAUDE DESIGN FIELD GUIDE
+-6. SPECIFY STATES AND TRANSITIONS
+-47
+-Keep copy operational
+-Error copy should answer four questions:
++--- PDF page 33 ---
++27
++CHAPTER 07
++Prove keyboard and
++responsive behavior
++Check the actual controls and return paths at the reference and narrow
++widths.
++--- PDF page 34 ---
++28
++Test the real journey with the keyboard. Labels, focus movement,
++selection marks, and return paths must be observable. A promise of
++accessibility does not establish those behaviors.
++Operate the dropdown
++Tab to the expression trigger. Enter or Space opens the menu. Arrows
++move through options; Home and End reach the first and last. Enter
++commits. Escape cancels the pending change. Typing an option's name
++moves to it. Tab closes the menu, and the committed result returns focus
++to the trigger.
++Finish, face, and accessory choices respond to Enter or Space. A visible
++selected mark supplements their pressed state. Preserve the names and
++values when introducing a follow-up control pattern.
++Check focus through the journey
+  1
+-What happened?
++Open details with the keyboard and confirm heading focus.
+  2
+-What was preserved?
++Return and confirm focus on the accessory-details control.
+  3
+-What can the user do next?
++Activate Continue and confirm focus on Review configuration.
+  4
+-Where can they get more detail?
+-Avoid messages such as "Something went wrong" when the product
+-knows the failed node, row, column, connection reason, or permission
+-rule.
+-Weak
+-Operational
+-Invalid connection
+-Validate Customer Schema cannot connect to
+-Customers CSV because the connection would create a
+-cycle. The graph was not changed.
+-Import failed
+-18 rows could not be parsed. Review rows 42-59 or send
+-them to quarantine. No source node was created.
+-Save failed
+-Your changes are still in this browser. Reconnect and try
+-Save again.
+-Data unavailable
+-Preview is unavailable because the selected node has not
+-run. Test this node to generate sample rows.
+-Transition contract
+-Action
+-Trigger and precondition
+---- PDF page 55 ---
+-CLAUDE DESIGN FIELD GUIDE
+-6. SPECIFY STATES AND TRANSITIONS
+-48
+-Transition contract
+-Immediate feedback
+-Success result
+-Failure result
+-Persistence
+-Recovery
+-Telemetry
+---- PDF page 56 ---
+-CLAUDE DESIGN FIELD GUIDE
+-6. SPECIFY STATES AND TRANSITIONS
+-49
++Activate Edit and confirm focus returns to Continue.
++ 5
++Use Browser Back and confirm the route and values remain coherent.
++Automated focus checks support this contract. A screen-reader audit
++remains a separate check if the team requires a claim of complete
++assistive-technology support.
++Compare viewports
++At 1024 × 768, compare the product image bounds, composition, control
++column, and captions against the frozen reference. The normalized
++Continue and accessory gaps are intentional differences.
++CLAUDE DESIGN FIELD GUIDE
++7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR
++--- PDF page 35 ---
++29
++At 390px width, product and controls stack without horizontal overflow.
++Test the review and detail screens too. A dropdown or return action
++hidden outside the viewport fails the journey.
++The consumer uses Arial and Georgia. The native Figma system uses
++Arimo and Lora. Record that mapping instead of presenting the
++renderers as typographically identical.
+ Chapter checkpoint
+--
+-The complete state matrix has a disposition.
+--
+-Consequential actions have transition contracts.
+--
+-Version conflict and stale data have distinct recovery paths.
+--
+-Errors say what happened, what was preserved, and what to do next.
+--
+-Unresolved API or product dependencies remain visible.
+-Author synthesis: application states and transitions.
+---- PDF page 57 ---
+-50
+-CHAPTER 07
+-Prove responsive and
+-accessible behavior
+-Design the interaction at the supported viewports and through more than
+-one input path.
+---- PDF page 58 ---
+-CLAUDE DESIGN FIELD GUIDE
+-7. PROVE RESPONSIVE AND ACCESSIBLE BEHAVIOR
+-51
+-A DAG tool is a hard accessibility and responsive problem. The answer is
+-not to promise that the generated prototype "supports accessibility." The
+-team needs observable keyboard behavior, focus movement, labels,
+-announcements, hit targets, and layout rules.
+-Set the viewport contract
+-Data Pipeline Studio supports:
+--
+-Primary: 1440 × 900 editing.
+--
+-Minimum: 1024 × 768 editing.
+--
+-Mobile: view-only; editing is explicitly out of scope.
+-At the minimum viewport, the canvas, inspector, and data sheet cannot
+-all keep desktop dimensions. Define how the layout reallocates space:
+--
+-The inspector may become an overlay or a narrower dock.
+--
+-The data sheet may open to a fixed half-height with an explicit expand action.
+--
+-The canvas toolbar remains reachable and does not cover nodes.
+--
+-The selected node stays visible when adjacent surfaces open.
+--
+-Save and Run remain available without horizontal scrolling.
+-CLAUDE DESIGN / MINIMUM-VIEWPORT LAYOUT
+-Create the approved Data Pipeline Studio editing state at 1024 x 768.
+-Preserve the application shell and all required actions. Show how the
+-canvas, node inspector, and data sheet share space without collisions.
+-Keep the selected node visible when the inspector or data sheet opens.
+-Do not shrink text or pointer targets below the design-system
+-standards.
+-Annotate which surfaces resize, dock, overlay, collapse, or scroll.
+-Compare the result to the 1440 x 900 version and list every behavior
+-change.
+---- PDF page 59 ---
+-CLAUDE DESIGN FIELD GUIDE
+-7. PROVE RESPONSIVE AND ACCESSIBLE BEHAVIOR
+-52
+-Provide a keyboard model for the
+-graph
+-The graph needs an equivalent non-pointer path. A practical contract
+-may include:
+--
+-Tab enters the canvas toolbar and graph region in a predictable order.
+--
+-Arrow keys move focus among nearby nodes or use a documented list order.
+--
+-Enter opens the selected node in the inspector.
+--
+-A keyboard command starts connection mode; compatible destinations are
+-announced.
+--
+-Escape cancels connection, drag, menu, or dialog states without changing the
+-graph.
+--
+-Delete asks for confirmation when removal has downstream consequences.
+--
+-Undo and redo are available through standard shortcuts and visible actions.
+--
+-Focus returns to a sensible element after Save, import completion, deletion, or
+-error recovery.
+-The exact shortcut set needs usability and assistive-technology review.
+-The prototype should show the model and surface conflicts before
+-implementation.
+-Make operational status redundant
+-Node and run status must use more than color. Combine:
+--
+-A semantic icon.
+--
+-A short label.
+--
+-A semantic color token.
+--
+-An accessible name or announcement.
+--
+-Optional timing or progress detail.
+-Animation should communicate change without becoming the only way
+-to notice it. Respect reduced-motion preferences in implementation.
+---- PDF page 60 ---
+-CLAUDE DESIGN FIELD GUIDE
+-7. PROVE RESPONSIVE AND ACCESSIBLE BEHAVIOR
+-53
+-Audit fields, dialogs, and the data sheet
+-Check:
+--
+-Every field has a programmatic label and linked description or error.
+--
+-Required fields are identified without color alone.
+--
+-Error summaries link to the affected controls.
+--
+-Dialogs have a clear title, initial focus, trapped focus, Escape behavior, and
+-return focus.
+--
+-Sort direction and selected rows are announced.
+--
+-Resizable columns and the sheet handle have keyboard equivalents.
+--
+-Truncated cells can be inspected without hover.
+--
+-Import progress and cancellation are announced.
+--
+-View-only and forbidden actions are explained before or when invoked.
+-CLAUDE DESIGN / ACCESSIBILITY BEHAVIOR REVIEW
+-Review the approved prototype for keyboard, focus, labeling, status,
+-dialog, table, and motion behavior.
+-Do not return a generic checklist. Annotate the actual flow from
+-opening the pipeline through import, mapping, node creation,
+-connection, preview, Save, Run, failure, repair, and successful
+-re-run.
+-For each step, specify the focused element, available keyboard action,
+-visible focus treatment, accessible name, announcement if state
+-changes, and focus destination after completion or error. Mark anything
+-the prototype cannot prove and assign it to implementation or human
+-testing.
+---- PDF page 61 ---
+-CLAUDE DESIGN FIELD GUIDE
+-7. PROVE RESPONSIVE AND ACCESSIBLE BEHAVIOR
+-54
+-Separate design evidence from
+-implementation evidence
+-The design can prove visible focus treatment, intended tab order, status
+-redundancy, copy, layouts, and annotated semantics. It cannot prove
+-DOM order, ARIA behavior, screen-reader output, pointer target size in
+-the rendered application, or reduced-motion implementation. Those
+-become engineering acceptance tests.
+-DECISION: Accessibility gate
+-A review annotation is a specification. A rendered keyboard and
+-assistive-technology test is evidence. The handoff must include both the
+-intended contract and the tests that will prove it.
+-Responsive and accessibility review
+-1440 × 900 behavior
+-1024 × 768 behavior
+-Mobile view-only boundary
+---- PDF page 62 ---
+-CLAUDE DESIGN FIELD GUIDE
+-7. PROVE RESPONSIVE AND ACCESSIBLE BEHAVIOR
+-55
+-Responsive and accessibility review
+-Keyboard graph model
+-Focus restoration
+-Status redundancy
+-Field and dialog semantics
+-Table and resize behavior
+---- PDF page 63 ---
+-CLAUDE DESIGN FIELD GUIDE
+-7. PROVE RESPONSIVE AND ACCESSIBLE BEHAVIOR
+-56
+-Responsive and accessibility review
+-Implementation-only tests
+-Chapter checkpoint
+--
+-Both supported editing viewports are designed and compared.
+--
+-The mobile boundary is explicit.
+--
+-The graph has a non-pointer interaction model.
+--
+-Focus, status, errors, and dialog behavior are specified.
+--
+-Design evidence is separated from rendered implementation evidence.
+-Sources 3, 6-10, 21-25. Component-disposition synthesis.
+---- PDF page 64 ---
+-57
++Keyboard choices, dropdown cancellation, heading and return focus,
++reference composition, and narrow layout have recorded results.
++Broader accessibility claims match the checks actually performed.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
++CLAUDE DESIGN FIELD GUIDE
++7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR
++--- PDF page 36 ---
++30
+ CHAPTER 08
+ Run the design evidence
+ gate
+-Review component identity, behavior, data, and scope before creating a
+-handoff bundle.
+---- PDF page 65 ---
++Review component use, behavior, and handoff evidence together.
++--- PDF page 37 ---
++31
++Review the extension against the brief, components, tested journey, and
++actual artifacts. Keep a small disposition table so an engineer can
++identify reuse and new behavior.
++Element
++Disposition
++Governing source
++Brand and store header
++Reuse
++Velori exports
++Finish, face, expression,
++accessory
++Reuse
++Controlled component props
++Product preview and recovery
++Reuse
++Asset and image-state contract
++Review summary
++Reuse
++ConfigurationSummary
++Review column
++Product composition
++Generated result and bounded brief
++Navigation and persistence
++Application behavior
++Route and state contract
++Native Figma review
++Native composition
++Linked components and variables
++Challenge the result
++Use non-default choices and ask whether each surface reads the same
++values. Inspect a real image failure. Reload at review. Check the browser
++history. Compare native component identity rather than relying on a
++screenshot.
++CLAUDE DESIGN / REVIEW AGAINST EVIDENCE
++Audit the Velori journey against the preserved baseline and bounded
++review brief. Name each reused component, product composition, changed
++behavior, and unresolved issue. Test the non-default fixture, detail
++browsing, review, edit, keyboard return, reload, and unavailable
++images. Keep conclusions tied to the rendered result and actual
++handoff. Do not infer interactive behavior from an artboard or PNG.
+ CLAUDE DESIGN FIELD GUIDE
+ 8. RUN THE DESIGN EVIDENCE GATE
+-58
+-The handoff begins after review, not after generation. A clean gate
+-makes the review repeatable and produces the records engineering will
+-need.
+-Review four kinds of evidence
+-1. Scope evidence
+--
+-Baseline and final screenshots show the approved diff.
+--
+-Preserve annotations identify regions that should not change.
+--
+-The change log names every intentional modification.
+--
+-Rejected directions are removed or clearly archived.
+-2. System evidence
+--
+-Every visible primitive resolves to an approved component, an approved
+-variant, a valid composition, or a documented proposal.
+--
+-Semantic tokens replace raw color, spacing, type, radius, and focus values.
+--
+-Component names match the Figma library and code package.
+--
+-Code Connect mappings exist for shared production components where the
+-workflow depends on them.
+-3. Behavior and data evidence
+--
+-The success journey is interactive from import to successful re-run.
+--
+-Invalid actions do not mutate the graph.
+--
+-The shared fixture appears consistently across surfaces.
+--
+-State and transition contracts cover failure and recovery.
+--
+-Data provenance is visible.
+-4. Accessibility and responsive evidence
+--
+-Keyboard and focus behavior are specified.
+--
+-Status never depends on color alone.
+--
+-The two supported viewports have collision-free layouts.
+--
+-Implementation-only tests are listed.
+---- PDF page 66 ---
++--- PDF page 38 ---
++32
++Record the decision
++Use High, Medium, and Low for findings. A High issue blocks the
++intended journey or loses configuration. A Medium issue affects a
++required control, return path, or handoff. A Low issue is a local polish
++defect with a working journey.
++Approve only the bounded result that was inspected. A successful local
++build does not establish native generation. An accepted upload does not
++establish rendered photos. A generated screen does not establish a
++portable export.
++Chapter checkpoint
++No unresolved issue blocks the handoff. The review record identifies the
++actual project, selected system, inspected journey, accepted findings,
++and remaining limits. Capture the files and record the implemented
++change in Chapter 09.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 8. RUN THE DESIGN EVIDENCE GATE
+-59
+-Use the component disposition table
+-Classification
+-Meaning
+-Handoff requirement
+-Reuse
+-Existing production
+-component and approved
+-usage
+-Import path, prop or variant
+-mapping
+-Approved variant
+-Existing component with an
+-already supported variant
+-Variant name and implementation
+-evidence
+-Composition
+-Existing primitives arranged
+-into a product pattern
+-Composition owner, interaction
+-notes, code location
+-Proposed product
+-component
+-New reusable behavior local to
+-the product domain
+-State model, API proposal,
+-accessibility contract, owner
+-Proposed shared
+-component
+-New pattern intended for the
+-system
+-Design-system review and
+-promotion decision
+-Reference only
+-Prototype code or visual idea
+-not suitable for production
+-Explicit warning and replacement
+-plan
+-Unverified
+-No reliable mapping
+-Hold handoff; assign an owner to
+-resolve the identity gap before it
+-can pass
+-Audit Simple Design System precisely
+-The SDS React package used for this example includes a Table primitive.
+-Its checked-in Figma component metadata lists a Table icon but no Table
+-component. Inspect your working Figma copy before assigning a native
+-component to the data grid. If no matching component exists, build a
+-product-specific Figma extension using SDS tokens and primitives.
+-This distinction is the point of the gate. "Table exists" is not one fact. It
+-can be true in code and unverified in Figma at the same time.
+-Run a challenge review
+-Ask one reviewer to look for reasons the work should not pass. Useful
+-challenges include:
+--
+-Show where the selected node, inspector schema, and preview data disagree.
+---- PDF page 67 ---
+-CLAUDE DESIGN FIELD GUIDE
+-8. RUN THE DESIGN EVIDENCE GATE
+-60
+--
+-Find a visible value that does not resolve to a semantic token.
+--
+-Attempt to create a cycle and confirm the graph remains unchanged.
+--
+-Shrink to the minimum viewport and open both adjacent surfaces.
+--
+-Navigate the critical journey without a pointer.
+--
+-Reload after Save, failure, and repair.
+--
+-Identify every piece of prototype code that should not enter production.
+-CLAUDE DESIGN / FINAL DESIGN AUDIT
+-Run a final evidence audit of the approved Data Pipeline Studio
+-prototype.
+-Return five sections:
+-1. preservation-boundary comparison,
+-2. component and token disposition for every visible pattern,
+-3. success-journey and state coverage,
+-4. responsive and accessibility specification coverage,
+-5. unresolved or unverified items with owners.
+-Do not correct the design silently. List each proposed correction
+-first, then apply only corrections that do not change approved product
+-decisions. Do not call the design production-ready; state whether it is
+-ready for engineering handoff and why.
+-Gate decision
+-Use one of three outcomes:
+--
+-Pass for handoff. No unresolved High finding; component and behavior
+-evidence are complete.
+--
+-Conditional pass. Bounded Medium or Low follow-up has a named owner and
+-does not change the implementation approach.
+--
+-Hold. A High finding, unverified component identity, missing recovery path,
+-or unresolved product decision would force engineering to guess.
+---- PDF page 68 ---
+-CLAUDE DESIGN FIELD GUIDE
+-8. RUN THE DESIGN EVIDENCE GATE
+-61
+-Design evidence gate
+-Scope evidence
+-Component and token traceability
+-Behavior and data evidence
+-State and recovery coverage
+---- PDF page 69 ---
+-CLAUDE DESIGN FIELD GUIDE
+-8. RUN THE DESIGN EVIDENCE GATE
+-62
+-Design evidence gate
+-Responsive and accessibility specification
+-Challenge review results
+-Unresolved items and owners
+-Gate decision and reviewers
+---- PDF page 70 ---
+-CLAUDE DESIGN FIELD GUIDE
+-8. RUN THE DESIGN EVIDENCE GATE
+-63
+-Chapter checkpoint
+--
+-The review covers scope, system, behavior, data, accessibility, and
+-responsiveness.
+--
+-Every visible pattern has a disposition.
+--
+-Code and Figma evidence are not conflated.
+--
+-A challenge review has tried to break the proposal.
+--
+-The gate decision and unresolved items are recorded.
+-Sources 1-3, 19, 22-23. Review framework is author synthesis.
+---- PDF page 71 ---
+-64
++--- PDF page 39 ---
++33
+ CHAPTER 09
+ Hand off to Claude Code
+-and developers
+-Package intent, mappings, fixtures, and proof so implementation starts
+-from the approved work.
+---- PDF page 72 ---
+-CLAUDE DESIGN FIELD GUIDE
+-9. HAND OFF TO CLAUDE CODE AND DEVELOPERS
+-65
+-The official product-design tutorial describes a default handoff bundle
+-containing design files, chat, and a README, with a URL-bearing prompt
+-for a local agent and an option for Claude Code Web. Inspect the actual
+-export before relying on those contents. Record missing decisions or
+-files and supply them explicitly. The bundle still needs component
+-mapping, engineering review, and repository tests.
+-Clean the design project first
+-Before export:
+--
+-Name screens, components, states, and flows clearly.
+--
+-Remove unused experiments or move them to an explicit archive.
+--
+-Record key product decisions in the conversation or decision log.
+--
+-Add edge states, data assumptions, and unresolved items.
+--
+-Confirm the final frames use the shared fixture.
+--
+-Label prototype-only code and simulated behavior.
+--
+-Run the design evidence gate.
+-Build the handoff bundle
+-Engineering should receive:
+--
+-Baseline screenshots with preserve annotations.
+--
+-Final screens and interactive flow.
+--
+-Screen-by-screen change log.
+--
+-Component-to-code import map.
+--
+-Design-system delta and token changes.
+--
+-State matrix and transition contracts.
+--
+-Exact interface and error copy.
+--
+-Keyboard and accessibility contract.
+--
+-Responsive snapshots.
+--
+-Pipeline and import fixtures.
+--
+-Scope, non-goals, and unresolved decisions.
+--
+-Suggested file and path impact map.
+---- PDF page 73 ---
+-CLAUDE DESIGN FIELD GUIDE
+-9. HAND OFF TO CLAUDE CODE AND DEVELOPERS
+-66
+--
+-Acceptance-test checklist.
+--
+-Visual-regression baselines.
+--
+-A README that says which prototype code is reference only.
+-Write the component-to-code map
+-Design
+-element
+-System disposition
+-Production mapping
+-Notes
+-Save
+-Reuse
+-Existing route action and
+-SDS Button
+-No behavior change
+-Canvas zoom
+-Composition
+-SDS IconButton +
+-Tooltip; new toolbar
+-container
+-Existing icon set
+-Pipeline node
+-Product component
+-Proposed PipelineNode
+-Composes Text, Tag,
+-icons, semantic tokens
+-Node field
+-Reuse
+-SDS InputField /
+-SelectField
+-Use schema-driven field
+-adapter
+-Data preview
+-Composition
+-Existing table
+-implementation + sheet
+-container
+-Figma Table component
+-unverified
+-Import
+-mapping row
+-Product composition
+-SelectField, field error,
+-sample-value text
+-New orchestration,
+-existing controls
+-Failure notice
+-Reuse/composition
+-SDS Notification +
+-focus link
+-Copy includes node and
+-recovery
+-The final map should contain real repository import paths, not the
+-generic examples above.
+-Export from Claude Design
+-The Design help guide lists ZIP, PDF, PPTX, standalone HTML, and
+-handoff to a local coding agent or Claude Code Web. Google Slides export
+-is available only at claude.ai/design. For Claude Code /design
+-artboards, the artifact guide specifically documents per-artboard PNG or
+-PDF. Choose the format and handoff on the actual surface; the lists do
+-not prove every surface has identical controls.
+---- PDF page 74 ---
+-CLAUDE DESIGN FIELD GUIDE
+-9. HAND OFF TO CLAUDE CODE AND DEVELOPERS
+-67
+-When available, choose Export > Hand off to Claude Code and the
+-intended local or web destination. Record the bundle URL, access scope,
+-export time, and a file/content inventory. Test recipient access. Add the
+-team-owned handoff template, component map, fixtures, acceptance
+-tests, and decision log when the export does not contain them.
+-Read/import the bundle first; allow repository edits only under the
+-feature's implementation authority.
+-CLAUDE CODE / IMPLEMENT THE APPROVED HANDOFF
+-Implement the attached Claude Design handoff in the existing
+-repository.
+-Before editing:
+-1. Read the repository instructions.
+-2. Inspect the current route, application shell, component library,
+-tokens, tests, and nearby implementation patterns.
+-3. Map each design element to an existing production component.
+-4. Compare that map to the supplied component-to-code table.
+-5. Report any design element that has no valid implementation mapping.
+-During implementation:
+-- Modify the existing route and files where appropriate; do not create
+-a parallel UI or duplicate existing components.
+-- Preserve behavior outside the approved feature scope.
+-- Use the repository's established state, data, accessibility,
+-responsive, and testing patterns.
+-- Use the supplied fixtures for the importer, preview, validation,
+-quarantine, and run states.
+-CLAUDE CODE / IMPLEMENT THE APPROVED HANDOFF
+-- Treat prototype code as design intent unless the handoff explicitly
+-identifies a production mapping.
+-- Stop before broadening scope or promoting a new shared component
+-without approval.
+-After implementation:
+---- PDF page 75 ---
+-CLAUDE DESIGN FIELD GUIDE
+-9. HAND OFF TO CLAUDE CODE AND DEVELOPERS
+-68
+-CLAUDE CODE / IMPLEMENT THE APPROVED HANDOFF
+-- Run the relevant unit, integration, accessibility, type, lint, and
+-build checks.
+-- Verify the rendered states at 1440 x 900 and 1024 x 768.
+-- Compare the rendered feature to the preservation and
+-visual-regression baselines.
+-- Report reused components, new components, deviations from the
+-prototype, and anything still requiring human approval.
+-Give engineering acceptance tests, not
+-adjectives
+-Critical tests:
+- 1
+-The existing shell, route, permissions, Save action, and Run action remain
+-functional.
+- 2
+-Every visible primitive resolves to an approved component or documented
+-extension.
+- 3
+-A valid connection is created; a cycle and incompatible connection are
+-rejected without modifying the graph.
+- 4
+-Editing a node marks the document dirty, persists after Save and reload,
+-and protects invalid drafts. Save failure keeps Run disabled and must not
+-persist the unsaved draft through Run.
+- 5
+-Import is blocked until all mappings and the recovery choice are
+-confirmed; cancel and parse failure create no source. Completion replaces
+-the placeholder with source ID august.
+- 6
+-Preview after Normalize Email shows transformed fixture data.
+- 7
+-The warehouse run fails with target missing-warehouse, focuses that
+-node, and preserves the error after reload. Changing the target to
+-customer_health, saving, and re-running yields three published and
+-three quarantined records.
+- 8
+-Undo and redo restore node position and graph structure.
+- 9
+-Keyboard actions have visible focus and an equivalent non-pointer path.
+---- PDF page 76 ---
+-CLAUDE DESIGN FIELD GUIDE
+-9. HAND OFF TO CLAUDE CODE AND DEVELOPERS
+-69
+- 10
+-Loading, empty, stale, truncated, permission, conflict, and error states are
+-rendered and recoverable.
+- 11
+-No raw colors, duplicate primitives, inline production styles, or
+-undocumented components are introduced.
+- 12
+-Visual checks pass at both supported viewports without inspector or sheet
+-collisions.
+-Record implementation deviations
+-Engineering will discover constraints the prototype did not model. A
+-deviation log keeps the design and product record honest.
+-Deviation
+-Reason
+-User consequence
+-Owner
+-Reconcile
+-where?
+-Example: data
+-sheet opens at 45%
+-rather than 50%
+-Minimum
+-viewport
+-collision
+-More canvas remains
+-visible
+-Design +
+-engineering
+-Code and
+-Figma
+-The goal is not pixel identity at any cost. The goal is an approved
+-explanation for every meaningful difference.
+-Handoff readiness
+-Bundle and access
+-Baseline and final references
+---- PDF page 77 ---
+-CLAUDE DESIGN FIELD GUIDE
+-9. HAND OFF TO CLAUDE CODE AND DEVELOPERS
+-70
+-Handoff readiness
+-Component-to-code map
+-Design-system delta
+-State and transition package
+-Fixtures
+-Acceptance tests
+---- PDF page 78 ---
+-CLAUDE DESIGN FIELD GUIDE
+-9. HAND OFF TO CLAUDE CODE AND DEVELOPERS
+-71
+-Handoff readiness
+-Prototype-only warnings
+-Unresolved items
+-Implementation owner and review date
++Preserve the actual source and make it run outside the design project.
++--- PDF page 40 ---
++34
++Keep the generated source, dependencies, assets, accepted decisions,
++and expected journey together. Test the handoff from an extracted folder
++before calling it portable.
++Capture your generated result
++Open the new generated project in the intended organization. Choose
++Share -> More formats and apps. Under Your destinations, choose
++Claude Code, then Send. In Hand off to Claude Code, select Local agent
++and Copy prompt. Paste the copied prompt into Claude Code working in
++your extracted package.
++The copied prompt identifies the project URL, selected generated HTML
++and imported files for the authenticated claude_design MCP. Complete
++/design-login in the intended account only if authorization is
++requested. Confirm the source and dependency reads succeed before
++starting adaptation. Save the copied prompt, actual returned files and
++read receipts unchanged in handoff/new-run/captured/, with project
++URL, selected file, handoff method, date, hashes and dependency origins
++in handoff/new-run/HANDOFF.json.
++A binary read can return truncated data even when the request succeeds.
++Preserve that read receipt and obtain the full project archive through
++Share -> Project HTML -> Project archive -> Export. Use the archive as a
++companion to the copied handoff prompt and MCP reads. Preserve its
++original bytes and extracted entries unchanged, hash both, and compare
++complete overlapping files with the MCP reads. Stop until every required
++dependency has complete bytes; do not substitute assets from the
++sample or a historical packet. See Design's export workflow.
++Ask Code to inspect the returned source before implementation. Include
++support.js, referenced system bundles and styles, runtime
++dependencies, and product assets. A copied prompt starts the import;
++successful file reads establish the capture. Preserve captured bytes and
++make any host adaptation beside them. Stop for unresolved failed reads
++CLAUDE DESIGN FIELD GUIDE
++9. HAND OFF TO CLAUDE CODE
++--- PDF page 41 ---
++35
++or missing source or dependencies. The local packet must resolve its
++private project references before it can pass independent validation.
++CLAUDE CODE / PREPARE THE NEW CODE PACKET
++Use the copied native handoff prompt to read the recorded Velori
++project through the authenticated claude_design MCP. Confirm the
++intended account and complete /design-login only if authorization is
++requested. Read the selected generated HTML, support.js, every
++referenced system bundle and stylesheet, and all referenced assets.
++Preserve the copied prompt, returned files and read receipts unchanged
++in handoff/new-run/captured/, and record their hashes, project URL,
++selected file, handoff method and dependency origins in
++handoff/new-run/HANDOFF.json. Treat a truncated binary response or an
++incomplete decode as a failed read, and preserve its receipt. Obtain
++full bytes through Share -> Project HTML -> Project archive -> Export.
++Preserve the original archive and extracted entries unchanged, hash
++both, and compare complete overlapping files with the MCP reads. Do not
++fill missing files from the sample or a historical packet. Stop until
++every required source file and dependency has complete bytes. After
++capture is complete, create a separate runnable adaptation in
++handoff/new-run/ with package.json, lockfile, local assets, README, a
++dev script serving localhost:4206, and a validate script. Do not reuse
++the historical packet as the new handoff. Inspect the received runtime
++for globals, CDN URLs and resource mappings; provision required
++dependencies locally and document every URL or asset-route mapping
++separately from captured source. Validation must target this new packet
++and test all 72 configurations, configure -> details -> review -> edit,
++dropdown keyboard behavior, Back, reload persistence, rapid changes,
++unavailable-image recovery, and storage independence. Install
++Playwright as a development dependency for browser checks. Run without
++external HTTPS requests after installation. Preserve the sample
++application.
++Review the packet's README and handoff/new-run/HANDOFF.json,
++then install and start it from that folder:
++CLAUDE DESIGN FIELD GUIDE
++9. HAND OFF TO CLAUDE CODE
++--- PDF page 42 ---
++36
++npm ci
++npx playwright install chromium
++npm run dev
++Open http://127.0.0.1:4206. Leave that server running and run npm run
++validate in another terminal in the same folder. Keep the test output
++and screenshots. These scripts are outputs of the packet-preparation
++step; stop if they are missing or target the historical packet. Only a
++passing new packet establishes your new handoff.
++Use the sample as an answer key
++The public sample includes a bounded React Review configuration
++column adapted from the native Review source accepted on October 5,
++2026, SHA-256 03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b
++976b68f0f46811150a. The existing app retains configuration, routing,
++persistence, focus, and image recovery. Run the sample from the
++extracted velori-store folder using the README. All captured native
++source and runtime remain private and outside the MIT download.
++Capture and validate your own new packet; the answer key does not
++verify your generation.
++Keep the adaptations visible
++If the received source needs a localhost adapter, inspect support.js and
++the selected system runtime for globals, CDN URLs, resource mappings
++and asset paths. Provision the required runtime dependencies locally
++and map the received system and asset routes beside the captured
++source. Preserve captured bytes and record hashes, dependency origins
++and every host adaptation in handoff/new-run/HANDOFF.json.
++For MCP capture or a separately downloaded archive, inspect the full
++runtime and asset closure before treating the result as portable. Keep
++CLAUDE DESIGN FIELD GUIDE
++9. HAND OFF TO CLAUDE CODE
++--- PDF page 43 ---
++37
++unsuccessful reads or downloads in the review record and document the
++working setup path.
++Bring the bounded change into React
++src/ReviewConfiguration.jsx adapts the generated review column.
++It reuses ConfigurationSummary and the primary action while the
++parent application retains routing, state, persistence, and focus. The
++shopper's column omits prototype inspection controls.
++CLAUDE CODE / IMPLEMENT THE EXPORTED REVIEW
++Inspect handoff/new-run/captured/ and HANDOFF.json from the passing
++new packet. Adapt only the bounded Review configuration column into the
++React sample. Preserve named exports, tokens, photos, all four values,
++the expression dropdown, and one accessory choice. Keep routing,
++persistence, focus, and image recovery in their existing owners. Test
++configure -> details -> review -> edit with Graphite, Simple, Amber,
++and Carry bag. Record the source-to-implementation mapping and
++deviations. Do not edit CLEAR or publish.
+ Chapter checkpoint
+--
+-The design project is clean and named.
+--
+-The bundle includes intent, mappings, data, states, tests, and unresolved
+-items.
+--
+-Prototype code is visibly separated from production mappings.
+--
+-Claude Code has an inspect-before-edit prompt.
+--
+-Engineering has objective acceptance tests and a deviation log.
+-Sources 1, 3, 19. Engineering handoff and implementation review.
+---- PDF page 79 ---
+-72
++The packet runs outside the native project, and the implemented review
++can be traced to its actual source. Dependencies and host changes are
++disclosed. A PNG, PDF, or artboard is appearance evidence, not the
++interactive Code handoff.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
++CLAUDE DESIGN FIELD GUIDE
++9. HAND OFF TO CLAUDE CODE
++--- PDF page 44 ---
++38
+ CHAPTER 10
+-Implement, verify, and
++Implement in Figma and
+ reconcile
+-Close the loop in the running product and update the design record
+-without erasing evidence.
+---- PDF page 80 ---
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT, VERIFY, AND RECONCILE
+-73
+-Move between the applications
+-A person owns the sign-ins, organization and file choices, and review of
+-results. Use a coding agent for source inspection, implementation, tests,
+-and connected design tools. Carry the same brief and fixtures between
+-applications.
+-Application
+-Your next action
+-Carry forward
+-Claude Code
+-Authorize system access, sync the
+-focused React package, and
+-inspect the completion result
+-Source revision, system name, and
+-upload destination
+-Claude Design
+-Inspect the imported system,
+-generate the known-screen tests,
+-correct mismatches, and review
+-the feature prototype
+-Selected system, prototype URL,
+-reviewed baseline, and actual export
+-Claude Code
+-Inspect the export, map
+-components, implement a
+-bounded slice, and run repository
+-and browser checks
+-Implementation diff, route, and test
+-results
+-Figma, when required
+-Inspect the working copy,
+-reconcile the changed screens,
+-and check component instances
+-and variable bindings
+-Working-file link and changed frame
+-or component IDs
+-At each handoff, confirm that the next account can open the artifact. If
+-automation cannot reach a signed-in application, continue there
+-yourself and bring the resulting URL or files back to the coding agent.
+-Record permission denials, connection failures, and actions not
+-attempted separately. A successful login alone does not establish access
+-to a particular system, export, or file.
+-The final proof lives in the running product. Source inspection and
+-passing tests matter, but neither proves that the right tab, route, state,
+-and viewport render correctly.
+-Implement in bounded slices
+-A practical order is:
+---- PDF page 81 ---
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT, VERIFY, AND RECONCILE
+-74
+- 1
+-Graph data model and read-only rendering.
+- 2
+-Selection, navigation, and inspector integration.
+- 3
+-Movement, connection validation, undo, and redo.
+- 4
+-Data sheet bound to the selected node's fixture.
+- 5
+-Importer parsing, mapping, recovery, and source-node creation.
+- 6
+-Save, run, failure, repair, and successful re-run.
+- 7
+-Version conflict, permissions, stale data, and remaining edge states.
+- 8
+-Responsive and accessibility implementation.
+-Each slice should pass its local tests and the preservation checks before
+-the next slice begins.
+-Use four verification layers
+-Static checks
+-Run the repository's type check, lint, formatting, dependency, and build
+-commands. Confirm that no raw design values or duplicate primitives
+-entered the feature.
+-Automated behavior checks
+-Test graph rules, state transitions, persistence, importer parsing and
+-mapping, fixture transformation, run errors, retry, permissions, conflict
+-handling, and undo/redo.
+-Rendered visual checks
+-Capture the exact route and required states at 1440 × 900 and 1024 × 768.
+-Compare the shell, major geometry, focus treatment, status, dialogs,
+-sheet positions, and error states to approved references.
+---- PDF page 82 ---
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT, VERIFY, AND RECONCILE
+-75
+-Human review
+-Design reviews conformance and intentional deviations. Engineering
+-reviews architecture, state, data, and maintainability. Product reviews
+-scope, copy, and success journey. Accessibility review covers keyboard
+-and assistive-technology behavior in the rendered application.
+-Report proof boundaries directly
+-Use language such as:
+--
+-"Unit and integration tests passed."
+--
+-"The route rendered at both required viewports."
+--
+-"Keyboard navigation was checked through the critical journey."
+--
+-"Screen-reader output remains unverified."
+--
+-"The design-system owner approved the two proposed product components."
+-Do not collapse these into "production-ready" unless the team has
+-defined and met that gate.
+-Use the native-Figma branch when
+-required
+-Direct native-Figma export is not established by the reviewed Claude
+-Design documentation. If editable Figma content is required, use Figma's
+-separate remote MCP workflow. Figma recommends its Claude Code
+-plugin, which bundles server settings and skills; manual HTTP setup is
+-also documented. Code Connect adds implementation context where
+-eligible and configured.
+-Figma documents two paths with different permissions:
+---- PDF page 83 ---
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT, VERIFY, AND RECONCILE
+-76
+- 1
+-Figma-first: use_figma creates or updates native frames, components,
+-variables, and Auto Layout. Writing needs a Full seat; modifying an
+-existing file also needs edit permission. Load the installed Figma
+-write-to-canvas skills and inspect first. The tool currently has a 20kb
+-output-response limit, no image-asset or custom-font support, and
+-requires manual component publication before Code Connect completes.
+-See write to canvas.
+- 2
+-Code-first: generate_figma_design captures live browser UI into
+-editable layers. Any seat can use this tool in Drafts; an existing file outside
+-Drafts needs a Full seat and edit permission. This path is distinct from
+-native writing. Inspect captured instances and variable bindings before
+-claiming design-system reuse. See code to canvas.
+-Use the documented code-to-canvas workflow to capture browser UI into
+-Figma. MCP read quotas vary by plan and seat; check the current access
+-table and authenticated account before planning a full-file inventory.
+-FIGMA MCP / EXTEND AN EXISTING NATIVE SCREEN
+-Using the working Figma file and the selected existing Pipeline Detail
+-screen, add the approved Data Pipeline Studio feature beside the
+-current version for review.
+-Inspect the file and connected libraries first. Reuse existing
+-components, variables, styles, layer naming, and Auto Layout
+-conventions. Preserve the surrounding screen. Use the approved
+-component disposition, state matrix, and responsive rules. Create only
+-the documented product-specific extensions.
+-Return the IDs of created or changed frames and components, plus a
+-short list of any mapping you could not verify. Do not edit the public
+-Community source.
+-FIGMA MCP / CAPTURE THE IMPLEMENTED FLOW
+-Capture the complete local Data Pipeline Studio flow in the working
+-Figma file as editable frames.
+-Inspect captured component instances and variable bindings, and record
+-reuse or gaps separately from visual resemblance. Include each unique
+---- PDF page 84 ---
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT, VERIFY, AND RECONCILE
+-77
+-FIGMA MCP / CAPTURE THE IMPLEMENTED FLOW
+-critical state at 1440 x 900 and 1024 x 768. Create a summary page that
+-records the journey, component mappings, implementation deviations,
+-and unresolved differences from production.
+-Keep the approved source frames intact. Place captured implementation
+-frames in a separate named section with capture date and repository
+-revision.
+-Reconcile without hiding drift
+-At the end of implementation:
+--
+-Update the design decision record with approved changes.
+--
+-Update Figma frames if Figma is an active source of truth.
+--
+-Update Code Connect mappings for approved shared components.
+--
+-Keep the baseline, approved design, and rendered implementation
+-distinguishable.
+--
+-Close or assign every deviation.
+--
+-Add regression baselines for the final states.
+-Avoid overwriting the approved design with a capture that removes the
+-record of what changed. Reconciliation should preserve the chain of
+-evidence.
+-Monitor future changes
+-The handoff is a starting point for ongoing maintenance. Track:
+--
+-Component or token changes that affect the feature.
+--
+-Graph-schema or API changes.
+--
+-Import error and mapping rates.
+--
+-Save conflicts and failed runs.
+--
+-Accessibility regressions.
+--
+-Layout regressions at supported viewports.
+--
+-Design/code drift and stale Code Connect mappings.
+---- PDF page 85 ---
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT, VERIFY, AND RECONCILE
+-78
+-Implementation proof record
+-Repository revision
+-Static checks
+-Behavior tests
+-Rendered routes and states
+-Viewport evidence
+---- PDF page 86 ---
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT, VERIFY, AND RECONCILE
+-79
+-Implementation proof record
+-Keyboard and assistive-technology evidence
+-Human reviewers
+-Approved deviations
+-Unverified items
+-Figma or Code Connect reconciliation
+---- PDF page 87 ---
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT, VERIFY, AND RECONCILE
+-80
++Verify editable components, variables, and the native prototype.
++--- PDF page 45 ---
++39
++Figma is part of this exercise. Keep editable frames for configure, the
++open expression menu, accessory details, review, and unavailable
++review. Preserve the original reference page and build the extension in
++an identified working page.
++Keep native identity
++Use linked instances for the existing Velori components. Bind finish,
++face, expression, accessory, captions, and summaries to shared
++variables. Inspect component IDs and variable IDs in the actual file. A
++flattened screenshot or a collection of look-alike rectangles does not
++preserve native reuse.
++Configure and Review compose the product photograph, face and
++expression from the four selected values. Accessory details use the
++original Chalk Carry bag and Charging dock reference photographs.
++AccessoryPhoto receives the browsed accessory only; browsing those
++views preserves the shopper's configuration. Preserve that source
++behavior when reconciling the native file.
++The supplied Store handbook exercise page starts at node 34:694. Its
++Configure frame is 34:695, Review is 43:80, Carry bag details is
++43:383, Dock details is 43:425, and unavailable review is 43:475. A
++duplicate can assign new IDs; record the IDs in your working copy.
++FIGMA / BUILD AND INSPECT THE NATIVE STORE
++Use the identified Velori working file. Preserve the original
++foundation, components, configurator, and source assets. Add editable
++native frames for configure, expression menu, Carry bag details,
++Charging dock details, review, and unavailable review. Reuse existing
++component instances and shared variables. Wire Graphite, Simple,
++Amber, and Carry bag through details, review, and edit. Confirm
++selected states, configured product images, captions, and summaries
++update. Keep the original Chalk reference photos in accessory details,
++matching AccessoryPhoto; browsing Dock must preserve the selected
++CLAUDE DESIGN FIELD GUIDE
++10. IMPLEMENT IN FIGMA AND RECONCILE
++--- PDF page 46 ---
++40
++FIGMA / BUILD AND INSPECT THE NATIVE STORE
++Carry bag. Record component and variable identities and test the actual
++prototype.
++Test the prototype
++Select the non-default fixture. Follow both detail views, return, continue
++to review, show the unavailable image, and return to edit. Check the
++native values after every transition. Inspect representative bindings
++across all 72 combinations, not only the default frame.
++The supplied prototype also includes keyboard shortcuts for its
++demonstration: C opens the expression menu, Escape dismisses it, Enter
++activates Continue or Edit, and I opens the unavailable-image review.
++Edit or Back returns to the configurator. These prototype shortcuts do
++not establish the browser dropdown's full keyboard model.
++Native prototype variables support the configured visit. Browser reload
++persistence belongs to the React and Code apps and is tested there.
++Record that difference when reconciling behavior.
++Reconcile the result
++Compare the reference and extracted screens at 1024 × 768. Record the
++font mapping and intentional normalized controls. Resolve unexpected
++drift in the owning source, then repeat the affected check. Keep
++rendering differences and product behavior differences distinct.
++The Figma write-to-canvas guidance describes native editing. Do not
++treat a Claude image export as evidence that component and variable
++identities survived in Figma.
++CLAUDE DESIGN FIELD GUIDE
++10. IMPLEMENT IN FIGMA AND RECONCILE
++--- PDF page 47 ---
++41
+ Chapter checkpoint
+--
+-Implementation proceeded in bounded slices.
+--
+-Static, behavioral, rendered, and human evidence are reported separately.
+--
+-The actual route and states were rendered at both supported viewports.
+--
+-The native-Figma branch was used only if the team requires it.
+--
+-Design and code drift remain visible and assigned.
+-Sources 6-10, 21-25. Native Figma editing and component mappings.
+---- PDF page 88 ---
+-81
++Native editable frames, instance identities, variable bindings, and
++prototype transitions have returned evidence. The browser and Figma
++behavior differences are explicit.
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
++CLAUDE DESIGN FIELD GUIDE
++10. IMPLEMENT IN FIGMA AND RECONCILE
++--- PDF page 48 ---
++42
+ CHAPTER 11
+ Guided capstone
+-Run the complete import-to-success journey and produce a handoff
+-another team can implement.
+---- PDF page 89 ---
++Complete one bounded store journey across the real tools.
++--- PDF page 49 ---
++43
++Work from an unchanged extracted copy. Keep the completed sample as
++the expected result. The capstone recreates Review configuration from
++the existing Velori configurator and details, then implements and
++verifies it through the native tools.
++Phase 1: Frame and ground
++Start the package, inspect the frozen reference, record the default and
++review fixtures, and confirm the preservation boundary. Identify your
++Claude account, organization, system destination, and Figma working
++copy before uploading.
++Phase 2: Define, import, and validate
++Follow Chapters 2 and 3 in order. Prepare the source definition and
++conflict record, including CSS literals, usage guidance, and Figma font
++correspondence. Resolve required decisions, run local checks, and
++import the prepared draft into the recorded destination. Inspect actual
++component cards and recreate the known configurator, menu, details,
++and unavailable-image screens. Save the ten-element fidelity sample and
++correction-persistence test. Stop for an unresolved source rule or a failed
++native check.
++Phase 3: Generate the extension
++After the system passes, create Review configuration using the
++configurator and details as the baseline. Exclude the completed review
++answer key from generation context. Test the non-default fixture, return
++paths, keyboard use, reload, and unavailable imagery.
+ CLAUDE DESIGN FIELD GUIDE
+ 11. GUIDED CAPSTONE
+-82
+-The capstone asks you to extend the existing Pipeline Detail screen into
+-Data Pipeline Studio without redesigning the surrounding product. Work
+-in a small cross-functional group if possible: one product owner, one
+-designer or design-system owner, and one engineer.
+-The deliverable is not a single screen. It is an evidence-backed design
+-and handoff package for this journey:
++--- PDF page 50 ---
++44
++Phase 4: Capture and implement
++Preserve the actual generated source or handoff, including its
++dependencies. Run it in a new folder. Adapt the review column into the
++React sample without replacing state ownership or existing controls.
++Keep unsuccessful exports in the review record.
++Phase 5: Build the native Figma journey
++Use linked native components and shared variables. Add the editable
++frames beside the reference. Test configure -> details -> review -> edit
++with Graphite, Simple, Amber, and Carry bag. Confirm that
++configure/review captions and configured images update together.
++Details retain the original Chalk accessory-reference photographs.
++Phase 6: Verify the reader package
++npm run check
++npm run build
++npx playwright install chromium
++npm run dev
++Leave Vite running. In another terminal:
++npm run validate:browser
++Validate the newly received packet in a separate folder as described in
++Chapter 9. Run npm run validate only after the new packet has the
++captured inputs and the documented validation script. The public
++sample has no historical handoff validator; its local app checks cannot
++certify a new native export.
++Check all 72 combinations, rapid changes, dropdown keyboard
++behavior, reload, real image failure, reset isolation, reference
++composition, and narrow layout. Preserve the test output and
++CLAUDE DESIGN FIELD GUIDE
++11. GUIDED CAPSTONE
++--- PDF page 51 ---
++45
++screenshots. Keep a fresh extracted copy for the final install and journey
++check.
++Completion record
++Result
++Required evidence
++Local app
++Clean install, build, complete journey, 72 configurations
++Claude Design
++Source definition, resolved conflicts, intended destination,
++accepted import, known screens, fidelity sample, correction
++persistence, new review generation
++Code handoff
++Actual source and dependencies run independently;
++bounded change implemented
++Figma
++Working file, editable frames, identities, bindings, native
++journey
++Handbook candidate
++Reader instructions match the package and tested behavior
++Publication
++Separate release authorization and established redistribution
++terms
++Answer key
++A passing result preserves the store and adds one review step. The
++photograph, controls, caption, and summary agree. Browsing details
++does not select an accessory. Edit, Back, reload, and image recovery
++preserve the four values. The dropdown keeps its documented keyboard
++behavior.
++The native result uses the selected Velori system. Its handoff includes
++executable source and dependencies. The React adaptation composes
++existing exports. The Figma result uses linked components and shared
++variables, with the actual prototype tested. The package runs without
++CLEAR or private owner state.
++Do not award completion for screenshots alone, a successful upload
++without inspection, an export that cannot start, or local tests substituted
++CLAUDE DESIGN FIELD GUIDE
++11. GUIDED CAPSTONE
++--- PDF page 52 ---
++46
++for an inaccessible native step. Leave an inaccessible required step
++unfinished and name the practical next action in the review record.
++CLAUDE DESIGN FIELD GUIDE
++11. GUIDED CAPSTONE
++--- PDF page 53 ---
++47
++Velori exercise and author synthesis. Primary setup references are listed in Further reading.
++Appendix A: Prompt
++sequence
++Use the prompts in order: preserve the configurator; prepare the source
++system; import the prepared draft; recreate known screens; audit ten
++elements for source conformance; correct a named fixture and
++regenerate; add Review configuration; audit the complete journey; check
++recovery; review against evidence; prepare and validate the new Code
++packet; implement the captured change; reconcile native Figma. The
++package's docs/prompts.md supplies copyable versions.
++Appendix B: Handoff
++record
++Record the source definition and conflict decisions, ten-element fidelity
++sample, correction and second-generation evidence, feature, account
++and organization, selected system and project URL, Figma working file,
++source revision, captured files and hashes, host adaptations, component
++map, route and state inventory, accepted copy, expected journey,
++keyboard behavior, validation results, deviations, and open decisions.
++Use docs/handoff-template.md.
++Keep credentials and authorization material out of the reader package.
++Reader configuration should name a destination only after the reader
++chooses one.
++CLAUDE DESIGN FIELD GUIDE
++APPENDIX B: HANDOFF RECORD
++--- PDF page 54 ---
++48
++Appendix C: Package map
++Path
++Contents
++README.md
++First-run, journey, validation, and reset instructions
++src/
++App, reusable library, model, tokens, and review
++adaptation
++public/assets/velori/
++Product photographs, masks, layers, and manifest
++reference/
++Frozen consumer reference and extraction manifest
++.design-sync/
++Reader import configuration, adapter, conventions,
++previews
++docs/
++Brief, baseline import rules, source definition,
++decisions, prompts, walkthrough, expected results,
++notices
++provenance/
++Frozen consumer-source identity; private native
++records are excluded
++provenance.json
++Package file hashes and exclusions
++scripts/
++Asset, browser, and public-package checks; model
++tests live in src/
++Data Pipeline Studio remains the historical exercise in
++Local_Coding_Exercise.md. Its released editions and artifacts are
++preserved. Velori is the current sample for this guide.
++CLAUDE DESIGN FIELD GUIDE
++APPENDIX C: PACKAGE MAP
++--- PDF page 55 ---
++49
++Further reading
+  1
+-Import customers-august.csv.
++Anthropic. Get started with Claude Design. Reviewed October 4, 2026.
+  2
+-Resolve a required column mapping.
++Anthropic. Set up your design system in Claude Design. Reviewed October
++4, 2026.
+  3
+-Create a source node.
++Anthropic. Claude Code commands. Reviewed October 4, 2026.
+  4
+-Connect it to Normalize Email.
++Anthropic. Design admin guide. Use for current organization setup.
+  5
+-Preview transformed rows.
++Figma. Write to canvas. Reviewed October 4, 2026.
+  6
+-Add a quarantine branch after schema validation.
+- 7
+-Save and run.
+- 8
+-Find and repair a failed node.
+- 9
+-Re-run successfully.
+---- PDF page 90 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-83
+-Capstone rules
+--
+-Work from the duplicated Simple Design System file and relevant React
+-package.
+--
+-Keep the public Community source untouched.
+--
+-Preserve the existing shell, route, permissions, Save, Run, persistence, and
+-unrelated copy.
+--
+-Use the exact six-row fixture and expected outputs from Chapter 1 throughout.
+-Record CSV/JSON hashes and each invalid row and column. Keep the
+-companion application separate from the prototype you generate in Claude
+-Design.
+--
+-Label new product components and tokens.
+--
+-Do not treat generated prototype code as production code without a real
+-mapping.
+--
+-Do not pass the capstone with an unresolved High finding.
+-Phase 1 - Frame and ground
+-Produce:
+--
+-A source-of-truth stack.
+--
+-An extension brief.
+--
+-Baseline and preserve annotations.
+--
+-A compact context package.
+--
+-A design-system inventory and gap list.
+-Use the baseline-analysis, system-inspection, and draft-system prompts
+-from Chapters 1 through 3. Run the settings form, dense table, and
+-confirmation-flow tests before starting the DAG.
+---- PDF page 91 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-84
+-Capstone phase 1
+-Authoritative sources
+-Baseline and preservation boundary
+-Fixture and success journey
+-Context-package contents
+-Known-screen tests
+---- PDF page 92 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-85
+-Capstone phase 1
+-System gaps
+-Approval to proceed
+-Phase 2 - Build the bounded DAG
+-extension
+-Produce:
+--
+-The approved shell with a DAG replacing only the linear editor.
+--
+-Canvas navigation.
+--
+-Node selection and movement.
+--
+-Valid and rejected connections.
+--
+-Undo and redo.
+--
+-A proposed component sheet for nodes, ports, edges, toolbar, and run status.
+-Demonstrate that a cycle and incompatible connection leave the graph
+-unchanged.
+-Capstone phase 2
+-Shell preservation evidence
+---- PDF page 93 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-86
+-Capstone phase 2
+-DAG fixture fidelity
+-Canvas navigation
+-Selection and movement
+-Connection success and rejection
+-Undo and redo
+-Component proposals
+---- PDF page 94 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-87
+-Phase 3 - Complete the working
+-surfaces
+-Produce:
+--
+-A schema-driven inspector for Validate Customer Schema.
+--
+-A data sheet showing the output of Normalize Email.
+--
+-A staged importer for customers-august.csv.
+--
+-Cross-surface consistency annotations.
+-The importer must block completion until the required mapping is
+-resolved. Successful import must create the configured source node and
+-open its preview.
+-Capstone phase 3
+-Inspector states
+-Data sheet states and provenance
+---- PDF page 95 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-88
+-Capstone phase 3
+-Importer stages
+-Required mapping behavior
+-Malformed-row recovery
+-Source-node creation
+-Cross-surface consistency
+---- PDF page 96 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-89
+-Phase 4 - Specify states, accessibility,
+-and viewports
+-Produce:
+--
+-A complete state matrix.
+--
+-Transition contracts for Create edge, Import, Save, Run, and Repair.
+--
+-A version-conflict sequence.
+--
+-A stale-preview sequence.
+--
+-1440 × 900 and 1024 × 768 layouts.
+--
+-A keyboard and focus contract.
+--
+-An implementation-only accessibility test list.
+-Capstone phase 4
+-State-matrix coverage
+-Transition contracts
+-Conflict and stale-data recovery
+---- PDF page 97 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-90
+-Capstone phase 4
+-Viewport layouts
+-Keyboard model
+-Focus and announcement behavior
+-Implementation-only tests
+-Phase 5 - Review and hand off
+-Run the design evidence gate. Produce:
+--
+-A component disposition for every visible pattern.
+--
+-A token audit.
+--
+-A challenge-review record.
+---- PDF page 98 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-91
+--
+-A gate decision.
+--
+-A handoff README.
+--
+-A component-to-code map with real import paths.
+--
+-The state matrix, transition contracts, fixtures, copy, responsive references,
+-accessibility contract, acceptance tests, and unresolved items.
+-Export the Claude Design handoff only after the gate passes or receives a
+-bounded conditional pass.
+-Capstone phase 5
+-Scope evidence
+-Component and token disposition
+-Challenge review
+-Gate decision
+---- PDF page 99 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-92
+-Capstone phase 5
+-Handoff README
+-Production import map
+-Fixtures, states, and tests
+-Unresolved items and owners
+-Phase 6 - Plan implementation and
+-proof
+-You do not need to implement a production application to complete the
+-design capstone, but the implementation plan must be executable.
+---- PDF page 100 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-93
+-Produce:
+--
+-The exact Claude Code implementation prompt.
+--
+-A bounded implementation sequence.
+--
+-Static, behavior, visual, and human review commands or procedures.
+--
+-Required rendered states and viewports.
+--
+-A deviation log template.
+--
+-A Figma reconciliation choice: not required, Figma-first, or code-to-canvas.
+-Capstone phase 6
+-Implementation prompt
+-Bounded slices
+-Static and behavior proof
+-Rendered proof
+---- PDF page 101 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-94
+-Capstone phase 6
+-Human review
+-Deviation log
+-Figma reconciliation choice
+---- PDF page 102 ---
+-CLAUDE DESIGN FIELD GUIDE
+-11. GUIDED CAPSTONE
+-95
+-Capstone scoring
+-Category
+-Points
+-Baseline fidelity and scope discipline
+-15
+-Design-system reuse and extension quality
+-20
+-DAG, inspector, data-sheet, and importer behavior
+-20
+-State completeness and recovery
+-15
+-Data correctness and fixture traceability
+-10
+-Accessibility and responsive behavior
+-10
+-Handoff completeness and implementation readiness
+-10
+-Total
+-100
+-Interpretation:
+--
+-90-100: Production-ready candidate for implementation review.
+--
+-80-89: Ready for implementation with bounded follow-up.
+--
+-70-79: Useful prototype; handoff gaps remain.
+--
+-Below 70: Exploration only.
+-Mandatory gates apply regardless of score:
+--
+-No unresolved High finding.
+--
+-All critical acceptance tests have a design and implementation disposition.
+--
+-Production components and tokens are traceable.
+--
+-Design and engineering have reviewed the rendered implementation before
+-release.
+---- PDF page 103 ---
+-CLAUDE DESIGN FIELD GUIDE
+-CAPSTONE ANSWER KEY
+-96
+-Capstone synthesis of Chapters 1-10.
+-Capstone answer key
+-The answer key does not prescribe one visual layout. It defines the
+-evidence a strong submission contains.
+-Phase 1 answer
+-A strong source stack ranks current production behavior and component
+-code above visual inference. The duplicated Figma file and React
+-package are paired, while shipped screens supply composition evidence.
+-The preservation brief names the shell, route, permissions, Save, Run,
+-persistence, and unrelated copy. The context package is focused and
+-excludes private data, dependencies, build output, and unrelated
+-packages.
+-The system test samples component identity and token use. It does not
+-pass because the screen "looks like SDS." The record shows exact reuse,
+-valid composition, proposals, and unverified areas.
+-Phase 2 answer
+-The DAG replaces only the current linear editor. PipelineNode,
+-PipelinePort, and PipelineEdge are product-specific extensions
+-rather than disguised card or button variants. Canvas controls reuse
+-existing buttons, icons, and tooltips. The graph rejects a cycle and
+-incompatible ports without mutation and explains the reason. Node
+-status uses icon, text, and semantic color. Undo and redo cover both
+-layout and structure.
+---- PDF page 104 ---
+-CLAUDE DESIGN FIELD GUIDE
+-CAPSTONE ANSWER KEY
+-97
+-Phase 3 answer
+-The selected node, inspector title, and data sheet provenance agree.
+-Import creates source ID august after confirmation. Normalize Email
+-produces six rows; C001 and C006 become alice@example.com and
+-frank@example.com. Validation retains C001, C002, and C006, while
+-C003, C004, and C005 are invalid at CSV rows 4, 5, and 6. The warehouse
+-repair changes missing-warehouse to customer_health, then saves
+-before re-running. The importer does not commit inferred mappings
+-silently. The required mapping blocks completion, malformed rows
+-point to row and column, and the user can reject them or route them to
+-quarantine. Success creates the same source node shown on the graph.
+-Phase 4 answer
+-The state matrix covers document, canvas, node, inspector, data sheet,
+-importer, run, and permissions. Transition contracts say what remains
+-stable after failure. Version conflict preserves local work and supports
+-review; stale preview remains inspectable and clearly marked. The
+-minimum viewport uses an explicit docking or overlay rule rather than
+-shrinking everything. Keyboard focus can complete the critical journey,
+-and implementation-only evidence remains a test plan rather than an
+-unsupported claim.
+-Phase 5 answer
+-Every visible element has a disposition. The record distinguishes the
+-code Table primitive from the unverified Figma Table component. The
+-challenge reviewer attempts invalid connections, minimum-viewport
+-collisions, keyboard navigation, reload persistence, and data
+-inconsistency. The handoff contains real imports, fixtures, exact copy,
+-states, transitions, acceptance tests, prototype-only warnings, and
+-named unresolved items.
+---- PDF page 105 ---
+-CLAUDE DESIGN FIELD GUIDE
+-CAPSTONE ANSWER KEY
+-98
+-Phase 6 answer
+-The Claude Code prompt requires inspection before editing, updates the
+-current route, follows repository conventions, and asks for rendered
+-proof. The implementation plan proceeds in bounded slices. Test the
+-reviewed Claude Design export in Claude Code, then run the repository
+-and browser checks on the resulting implementation. If editable Figma
+-remains a source of truth, reconcile the changed screens, component
+-instances, and variable bindings in the working file.
+-Common deductions
+-Finding
+-Typical deduction
+-Shell or unrelated regions redesigned
+-10-20
+-Prototype code presented as production mapping
+-10-20
+-Graph cycle or incompatible connection mutates state
+-8-15
+-Importer has only a happy path
+-8-12
+-Preview data is unrelated to selected node output
+-8-12
+-New raw colors or duplicate controls
+-5-10
+-No minimum-viewport evidence
+-5-10
+-Status depends on color
+-5-10
+-No keyboard graph path
+-5-10
+-Unresolved items have no owner
+-3-8
+---- PDF page 106 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX A - PROMPT SEQUENCE
+-99
+-Appendix A - Prompt
+-sequence
+-Use prompts in order. Each prompt should preserve approved work,
+-name the exact surface being changed, and request a small auditable
+-result.
+-Use the setup path in Chapter 3 before these prompts. Record the chosen
+-surface and system. /design-sync converts and uploads a React
+-system; /design drafts artboards. Export a reviewed baseline before
+-alternatives and test required interactions on the actual surface.
+-A1. Baseline analysis
+-CLAUDE DESIGN / COPY-READY PROMPT
+-Review the attached existing screen, route context, relevant code, and
+-design-system sources. Do not generate a new design yet.
+-Return a factual screen inventory, visible component and layout
+-patterns, preservation boundary, source conflicts, change boundary,
+-and unresolved questions. Separate observations from inferences. Do
+-not invent missing behavior.
+-A2. Draft design system
+-CLAUDE DESIGN / COPY-READY PROMPT
+-Build a draft system from the attached component code, tokens, Figma
+-working file, and representative shipped screens. Treat code and tokens
+-as authoritative. Preserve names. Separate directly observed
+-components, inferred compositions, proposed additions, and unverified
+-areas. Generate a settings form, dense table, and confirmation flow.
+-Record source revision and selected system. Keep the system in draft;
+-publication and default selection require owner approval.
+---- PDF page 107 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX A - PROMPT SEQUENCE
+-100
+-A3. Bounded screen extension
+-CLAUDE DESIGN / COPY-READY PROMPT
+-Extend the attached existing screen with the approved feature. Preserve
+-the named shell, navigation, route behavior, actions, permissions,
+-spacing, typography, and interaction language. Change only the
+-approved region. Reuse existing components and variants; label every
+-proposal. Produce an interactive prototype and change log.
+-A4. Full state coverage
+-CLAUDE DESIGN / COPY-READY PROMPT
+-Apply the supplied state matrix to the approved prototype. Cover
+-loading, empty, populated, dirty, saving, success, validation, system
+-error, permission, conflict, stale, truncated, and recovery behavior.
+-Annotate transitions and data assumptions. Preserve approved layout
+-and components.
+-A5. Conformance audit
+-CLAUDE DESIGN / COPY-READY PROMPT
+-Audit every visible element against the linked system and codebase.
+-Classify it as reuse, approved variant, composition, proposed product
+-component, proposed shared component, reference only, or unverified.
+-Correct objective token and component deviations. List changes before
+-applying them. Return unresolved items with owners.
+---- PDF page 108 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX A - PROMPT SEQUENCE
+-101
+-A6. Claude Code implementation
+-CLAUDE CODE / COPY-READY PROMPT
+-Implement the attached approved handoff in the existing repository.
+-Inspect repository instructions, the current route, shell, component
+-library, tokens, tests, data layer, and nearby patterns before editing.
+-Map each design element to production code and report gaps. Modify the
+-existing feature rather than creating a parallel UI. Preserve
+-out-of-scope behavior. Use the supplied fixtures and acceptance tests.
+-Run static, behavioral, accessibility, build, and rendered checks.
+-Report mappings, deviations, proof, and unverified items.
+-A7. Native Figma update
+-FIGMA MCP / COPY-READY PROMPT
+-Inspect the working Figma file and connected libraries. Extend the
+-selected current screen using approved components, variables, styles,
+-names, and Auto Layout. Preserve the source frame and create the
+-proposed version beside it. Apply the supplied component disposition
+-and state matrix. Return changed node IDs and unverified mappings. Do
+-not edit a public Community source.
+---- PDF page 109 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX B - HANDOFF README TEMPLATE
+-102
+-Appendix B - Handoff
+-README template
+-Feature
+-[Feature name and route]
+-Workflow and export evidence
+-[Design surface, organization, plan, Claude Code
+-version/provider, selected system, source revision, sync
+-result]
+-[Export format/date, actual file inventory, chat/README
+-completeness, recipient access, missing inputs and owners]
+-[Reviewed baseline path/hash and open result; repository
+-edit authority]
+-Inspect the bundle before implementation. Use the companion handoff
+-template for the full evidence fields and the separate Figma
+-write/capture eligibility checks.
+-Decision
+-[One paragraph: what is changing, for whom, and why]
+-Scope
+-Change: [Approved surfaces and behavior]
+-Preserve: [Shell, routes, actions, data, permissions, and
+-unaffected behavior]
+-Non-goals: [Explicit exclusions]
+---- PDF page 110 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX B - HANDOFF README TEMPLATE
+-103
+-Source-of-truth stack
+- 1
+-[Production behavior and route]
+- 2
+-[Component package and revision]
+- 3
+-[Working Figma file and design-library revision]
+- 4
+-[Representative shipped screens]
+- 5
+-[Product brief and approval date]
+-Approved journey
+-[Numbered end-to-end user journey]
+-Design references
+--
+-Baseline: [link or path]
+--
+-Approved design: [link]
+--
+-Responsive references: [links]
+--
+-Prototype: [link]
+--
+-Claude Design bundle: [URL]
+-Component-to-code map
+-[Link to map with real imports, props, variants, and
+-proposal owners]
+-Product-specific extensions
+-[Component, state model, accessibility contract, owner,
+-intended code path]
+---- PDF page 111 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX B - HANDOFF README TEMPLATE
+-104
+-Data and fixtures
+-[Fixture paths, schemas, expected transformations, error
+-cases]
+-States and transitions
+-[State matrix and transition-contract links]
+-Copy
+-[Approved labels, helper text, errors, confirmations,
+-empty states]
+-Accessibility and responsiveness
+-[Keyboard model, focus rules, announcements, viewports,
+-mobile boundary, implementation-only tests]
+-Acceptance tests
+-[Critical numbered tests]
+-Prototype-code warning
+-Prototype code demonstrates design intent. Use only the mappings
+-explicitly identified in the component-to-code table. Do not copy scratch
+-components, simulated data, local styles, or generated state
+-management into production without review.
+-Open decisions and deviations
+-[Item, severity, owner, due date, implementation
+-consequence]
+---- PDF page 112 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX B - HANDOFF README TEMPLATE
+-105
+-Verification record
+-[Commands, rendered routes and states, screenshots,
+-reviewers, unverified items]
+---- PDF page 113 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX C - FINAL VALIDATION CHECKLIST
+-106
+-Appendix C - Final
+-validation checklist
+-Setup and observation
+-[ ]
+-Surface, organization, plan, provider, installed version, and selected system
+-are recorded.
+-[ ]
+-Design, Design systems, and standalone controls are checked separately.
+-[ ]
+-Sync upload destination and completed source revision are confirmed.
+-[ ]
+-Read, native-write, capture, and Code Connect eligibility are checked
+-separately when Figma is used.
+-[ ]
+-A reviewed baseline export opens and is preserved.
+-[ ]
+-Documentation claims and observed runtime results are recorded
+-separately.
+-Source and scope
+-[ ]
+-Current route and production behavior are named.
+-[ ]
+-The source-of-truth hierarchy is approved.
+-[ ]
+-The public Community file is untouched.
+-[ ]
+-A working Figma duplicate is used when connected inspection or editing is
+-required.
+-[ ]
+-The preservation boundary is visible.
+-[ ]
+-Non-goals are explicit.
+-[ ]
+-One fixture carries through the complete journey.
+---- PDF page 114 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX C - FINAL VALIDATION CHECKLIST
+-107
+-Design system
+-[ ]
+-The focused code package, tokens, stories, and mappings are linked.
+-[ ]
+-Settings form, dense table, and confirmation-flow tests pass; a correction
+-persists in a neighboring state.
+-[ ]
+-Component and token identity were sampled.
+-[ ]
+-Every visible pattern has a disposition.
+-[ ]
+-Raw values and duplicate primitives are absent.
+-[ ]
+-Proposed components have owners, states, behavior, accessibility notes,
+-and code paths.
+-Behavior and data
+-[ ]
+-The complete success journey is interactive.
+-[ ]
+-Invalid graph actions do not mutate state.
+-[ ]
+-Undo and redo cover layout and structure.
+-[ ]
+-The importer blocks unresolved required mappings.
+-[ ]
+-Malformed rows have row and column references.
+-[ ]
+-Import success creates the configured source node.
+-[ ]
+-Preview data belongs to the selected node and shared fixture.
+-[ ]
+-Save, reload, failure, repair, and re-run are covered.
+-[ ]
+-Conflict, stale, permission, empty, loading, and error states recover safely.
+---- PDF page 115 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX C - FINAL VALIDATION CHECKLIST
+-108
+-Accessibility and responsiveness
+-[ ]
+-The 1440 × 900 and 1024 × 768 layouts are reviewed.
+-[ ]
+-Mobile editing is supported or explicitly out of scope.
+-[ ]
+-Critical actions have a non-pointer path.
+-[ ]
+-Focus is visible and restored after dialogs and state changes.
+-[ ]
+-Status uses icon, label, and color.
+-[ ]
+-Fields, errors, tables, progress, and dialogs have semantic behavior
+-specified.
+-[ ]
+-Reduced-motion and assistive-technology tests are assigned to
+-implementation.
+-Handoff
+-[ ]
+-Baseline, final design, prototype, and change log are present.
+-[ ]
+-Component-to-code map uses real import paths.
+-[ ]
+-State matrix, transition contracts, copy, and fixtures are included.
+-[ ]
+-Prototype-only code is labeled.
+-[ ]
+-Acceptance tests are objective.
+-[ ]
+-Unresolved items have severity, owner, and consequence.
+-[ ]
+-Export inventory and recipient access are checked; missing files or
+-decisions are supplied or assigned.
+-[ ]
+-The Claude Code prompt requires inspection before editing.
+---- PDF page 116 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX C - FINAL VALIDATION CHECKLIST
+-109
+-Implementation proof
+-[ ]
+-Static checks pass.
+-[ ]
+-Behavior and data tests pass.
+-[ ]
+-The actual route renders in required states and viewports.
+-[ ]
+-Keyboard and assistive-technology checks are reported separately.
+-[ ]
+-Design, engineering, and product review are recorded.
+-[ ]
+-Deviations are approved or assigned.
+-[ ]
+-Figma and Code Connect are reconciled if they remain sources of truth.
+---- PDF page 117 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX D - SIMPLE DESIGN SYSTEM REFERENCE
+-110
+-Appendix D - Simple
+-Design System reference
+-This reference uses the SDS metadata snapshot dated August 5, 2026 and
+-React commit 05525f75192a3aa5d5690c5e41277ebd19d2efe1.
+-Component counts and node IDs describe that snapshot. Pin the revision
+-you use and confirm the mappings in your working Figma copy.
+-Component-bearing metadata pages
+-The metadata snapshot contains 396 components across 19
+-component-bearing pages: Accordion, Avatars, Buttons, Cards, Dialog,
+-Examples, Forms, Icons, Inputs, Menu, Navigation, Notification,
+-Pagination, Sections, Tabs, Tags, Text, Tooltip, and Utilities. Confirm the
+-page list in your working file before using it as an inventory.
+---- PDF page 118 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX D - SIMPLE DESIGN SYSTEM REFERENCE
+-111
+-Useful component node IDs
+-Family
+-Examples
+-Buttons
+-Button 9762:426; Icon Button 11:11508; Button Group
+-2072:9432; Button Danger 185:852
+-Inputs
+-Select 2136:2336; Input 2136:2263; Textarea 9762:3088;
+-Search 2236:14989; Checkbox 9762:1441; Radio 9762:1412;
+-Switch 9762:1902
+-Navigation
+-Navigation Button 515:5459; Button List 524:503; Pill
+-7768:19970; Pill List 2194:14984
+-Feedback
+-Notification 124:8256; Tooltip 315:32700; Tag 56:8830; Button
+-Danger 185:852
+-Structure
+-Accordion 7753:4779; Tabs 3729:13362; Dialog 192:31534;
+-Header 2287:22651; Footer 321:11357
+-Pagination
+-Root 9762:899; Page 9762:890; Next 9762:870; Previous
+-9762:880; Gap 9762:868
+-Pipeline icons
+-Database 4049:13478; Git Branch 4049:13513; Grid
+-4049:13518; Table 4049:13630; Play 4049:13586; Upload
+-4049:13656; Settings 4049:13606; Alert Circle 4039:13020;
+-Check Circle 4039:13060
+-Token collections
+-Collection
+-Modes
+-Use
+-@typography_primitives
+-default
+-Inter, Noto Serif, Roboto
+-Mono, scale 01-10, weights
+-@responsive
+-desktop, mobile, tablet
+-Device, device width, root
+-size, scale
+-@typography
+-mode_1
+-Semantic title, subtitle,
+-heading, body, and code
+-roles
+-@size
+-default
+-Space, radius, blur, depth,
+-stroke, icon size
+-@color_primitives
+-value
+-Brand and raw black, white,
+-green, gray, pink, red, slate,
+-yellow palettes
+-@color
+-sds_light, sds_dark,
+-brand_b_light
+-Semantic background, text,
+-border, icon roles
+---- PDF page 119 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX D - SIMPLE DESIGN SYSTEM REFERENCE
+-112
+-Use @color semantic roles in product design. Raw primitive palettes are
+-inputs to the system, not interface decisions.
+-Product gaps for Data Pipeline Studio
+-SDS is a strong source for the shell, forms, controls, typography, themes,
+-layout, and basic feedback. It does not provide the product-defining
+-graph, port, edge, schema-mapping, importer, or operational run-state
+-model. The example snapshot includes a React Table primitive but no
+-Table component in its Figma metadata. Check both the code revision
+-and working Figma file before choosing a data-grid implementation.
+-Build confirmed gaps as explicit product extensions from SDS primitives
+-and tokens.
+---- PDF page 120 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX E - PRODUCT BOUNDARIES AND OPERATING RISKS
+-113
+-Appendix E - Product
+-boundaries and operating
+-risks
+-Tool roles
+-Tool
+-Proper role
+-Boundary
+-Claude Design
+-System-grounded visual exploration
+-and interactive prototyping
+-Works in its own canvas; direct
+-native-Figma round-trip is not
+-documented
+-Claude Code
+-Repository-aware implementation
+-from the handoff
+-Requires engineering review,
+-tests, and rendered verification
+-Figma MCP + Code
+-Connect
+-Native Figma editing and structured
+-design/code mapping
+-Separate integration with its own
+-permissions and mappings
+-Figma Make
+-Figma's prompt-to-app product
+-Uses Claude models but is a
+-different product from Claude
+-Design
+---- PDF page 121 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX E - PRODUCT BOUNDARIES AND OPERATING RISKS
+-114
+-Current Claude Design limitations
+- 1
+-Claude Design remains beta. Large repositories, intermittent comments,
+-incomplete source imports, and simultaneous editing have documented
+-limits. Mobile can request and view designs; canvas editing and sharing
+-changes require web or desktop. Version history is not yet available. See
+-the Design help guide.
+- 2
+-Usage draws from the existing Claude allowance, including Claude Code.
+-Confirm the organization's billing arrangement; usage-based Enterprise
+-differs from seat-based plans. See the Artifacts admin guide.
+- 3
+-Design and Design systems have separate Enterprise template controls.
+-Standalone Design uses its own setting. An enabled organization setting is
+-required before a custom role can grant access.
+- 4
+-Uploaded assets persist under the applicable retention policies, Design
+-data residency is unsupported, and the new Artifacts experience is
+-unavailable for the documented CMEK, ZDR, and HIPAA-ready
+-configurations. Confirm tenant requirements before upload.
+- 5
+-Standalone Design lacks audit logs. Integrated designs in conversations
+-and Artifacts have artifact-level Compliance API recording. Verify the
+-event coverage required by the team; artifact-level records do not establish
+-complete edit or comment history.
+- 6
+-Generated accessibility reviews and conformance checks assist the
+-reviewer. They do not establish human approval, component identity, or
+-production behavior.
+-Figma workflow limits
+-The write-to-canvas documentation lists unsupported image assets and
+-custom fonts, a 20kb output-response limit, and manual component
+-publication before Code Connect completes. Those limits apply to that
+-tool. The code-to-canvas path has different seat rules, and editable
+-captured layers still need component and variable inspection. Confirm
+-read quotas, Code Connect eligibility, and file permissions separately.
+---- PDF page 122 ---
+-CLAUDE DESIGN FIELD GUIDE
+-APPENDIX E - PRODUCT BOUNDARIES AND OPERATING RISKS
+-115
+-Operational controls
+--
+-Pilot with a small design-system group before broad rollout.
+--
+-Use non-sensitive fixtures and sanitize screenshots.
+--
+-Define who can publish or revise the organization system.
+--
+-Sample generated projects for system compliance.
+--
+-Keep a feedback path for source and mapping errors.
+--
+-Record the repository and design revisions used for each handoff.
+--
+-Treat field reports and vendor testimonials as adoption signals, not controlled
+-quality evidence.
+---- PDF page 123 ---
+-CLAUDE DESIGN FIELD GUIDE
+-GLOSSARY
+-116
+-Glossary
+-Approved variant - A variant already supported by the design
+-component and production implementation.
+-Baseline - The current screen, behavior, data, and system state before
+-the proposed change.
+-Code Connect - Figma's mapping layer that can provide component
+-imports, prop mappings, snippets, source paths, and instructions to
+-connected agents.
+-Component disposition - The classification that says whether a visible
+-pattern is reused, composed, proposed, reference-only, or unverified.
+-Design evidence gate - The review that checks scope, system
+-traceability, behavior, data, accessibility, and responsiveness before
+-handoff.
+-Design-system delta - The explicit list of proposed components,
+-variants, tokens, or guidance introduced by a feature.
+-Deviation log - A record of meaningful differences between approved
+-design and implementation, including reason, consequence, owner, and
+-reconciliation path.
+-Fixture - Stable example data used across design, tests, and review so
+-surfaces can be compared consistently.
+-Grounded prototype - A prototype generated with source evidence from
+-the current product, design system, codebase, and requirements.
+-Native Figma content - Editable Figma frames, components, variables,
+-and Auto Layout rather than a flattened image or external prototype
+-link.
+-Preservation boundary - The regions and behaviors that must remain
+-stable while a bounded feature changes.
+---- PDF page 124 ---
+-CLAUDE DESIGN FIELD GUIDE
+-GLOSSARY
+-117
+-Product component - A reusable element with product-domain behavior
+-that is not necessarily appropriate for the shared design system.
+-Prototype code - Code created to demonstrate interaction or appearance;
+-it is not production code unless it maps to repository conventions and
+-passes implementation review.
+-Semantic token - A named design value based on purpose, such as
+-danger text or default border, rather than a raw color or number.
+-Source-of-truth stack - The ordered set of artifacts that govern product
+-behavior, components, design anatomy, composition, and intent.
+-Transition contract - A specification of trigger, precondition, immediate
+-feedback, success, failure, persistence, recovery, and telemetry for an
+-action.
+---- PDF page 125 ---
+-CLAUDE DESIGN FIELD GUIDE
+-FURTHER READING AND SOURCE NOTES
+-118
+-Further reading and
+-source notes
+-Primary product sources
+- 1
+-Anthropic. "Get started with Claude Design." Accessed October 2, 2026. htt
+-ps://support.claude.com/en/articles/14604416-get-started-with-claude-desi
+-gn
+- 2
+-Anthropic. "Set up your design system in Claude Design." Accessed October
+-2, 2026. https://support.claude.com/en/articles/14604397-set-up-your-desig
+-n-system-in-claude-design
+- 3
+-Anthropic. "Using Claude Design for prototypes and UX." Accessed October
+-2, 2026. https://academy.claude.com/tutorials/using-claude-design-for-prot
+-otypes-and-ux
+- 4
+-Anthropic. "Claude Design admin guide for Team and Enterprise plans."
+-Accessed October 2, 2026. https://support.claude.com/en/articles/14604406-
+-claude-design-admin-guide-for-team-and-enterprise-plans
+- 5
+-Anthropic. "Introducing Claude Design, an Anthropic Labs research
+-preview." April 17, 2026.
+-https://www.anthropic.com/news/claude-design-anthropic-labs
+---- PDF page 126 ---
+-CLAUDE DESIGN FIELD GUIDE
+-FURTHER READING AND SOURCE NOTES
+-119
+-Figma and design-system sources
+- 6
+-Figma. "Figma MCP Server: Introduction." Accessed October 2, 2026.
+-https://developers.figma.com/docs/figma-mcp-server/
+- 7
+-Figma. "Code Connect integration." Accessed October 2, 2026. https://devel
+-opers.figma.com/docs/figma-mcp-server/code-connect-integration/
+- 8
+-Figma. "Structure your Figma file for better code." Accessed August 5, 2026.
+-https://developers.figma.com/docs/figma-mcp-server/structure-figma-file/
+- 9
+-Figma. "Workflow lab: Code to canvas." May 2026. https://help.figma.com/
+-hc/en-us/articles/40219873508247-Workflow-lab-Code-to-canvas
+- 10
+-Figma. "Getting started with Code Connect CLI." Accessed October 2, 2026.
+-https://developers.figma.com/docs/code-connect/quickstart-guide/
+- 11
+-Figma. "Simple Design System" open-source repository. README accessed
+-October 2, 2026; detailed inventory retains August 5 cutoff.
+-https://github.com/figma/sds
+- 12
+-Figma. Simple Design System Community file supplied for this guide. http
+-s://www.figma.com/design/AIulMBySUibjRtykdngCUp/Simple-Design-Syst
+-em--Community-?node-id=3-5
+---- PDF page 127 ---
+-CLAUDE DESIGN FIELD GUIDE
+-FURTHER READING AND SOURCE NOTES
+-120
+-Current setup and operating references
+- 18
+-Anthropic. "Commands." Accessed October 2, 2026.
+-https://code.claude.com/docs/en/commands
+- 19
+-Anthropic. "Share session output as artifacts." Accessed October 2, 2026.
+-https://code.claude.com/docs/en/artifacts
+- 20
+-Anthropic. "Artifacts admin guide for Team and Enterprise plans."
+-Accessed October 2, 2026. https://support.claude.com/en/articles/16994751-
+-artifacts-admin-guide-for-team-and-enterprise-plans
+- 21
+-Figma. "Set up the remote server." Accessed October 2, 2026. https://develo
+-pers.figma.com/docs/figma-mcp-server/remote-server-installation/
+- 22
+-Figma. "Write to canvas." Accessed October 2, 2026.
+-https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/
+- 23
+-Figma. "Code to canvas." Accessed October 2, 2026.
+-https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/
+- 24
+-Figma. "Rate limits & access." Accessed October 2, 2026.
+-https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/
+- 25
+-Figma. "Code Connect: Introduction." Accessed October 2, 2026.
+-https://developers.figma.com/docs/code-connect/
+-Field evidence - directional, not
+-governing
+- 13
+-Paul Kuo. "Claude Design sync codebase" field test.
+-https://paulkuo.tw/articles/claude-design-sync-codebase/
+- 14
+-Sebastian Proost. Claude Design case study.
+-https://blog.4dcu.be/ai/programming/2026/04/27/claude-design.html
+- 15
+-byCrawford. Claude Design review.
+-https://bycrawford.squarespace.com/blog/claude-design-review
+- 16
+-Builder.io. Claude Design review.
+-https://www.builder.io/blog/claude-design
+- 17
+-Creative Bloq. Claude Code and Figma MCP review. https://www.creativeb
+-loq.com/ai/designing-using-claude-code-and-figma-mcp-how-good-are-the
+-y
+---- PDF page 128 ---
+-CLAUDE DESIGN FIELD GUIDE
+-FURTHER READING AND SOURCE NOTES
+-121
+-Use the official documentation above for setup, capabilities, and
+-permissions. Field reports provide historical examples; confirm their
+-instructions against the current documentation before following them.
++Velori reader package. MIT source and assets, frozen reference, token and
++asset manifests, exercise materials, validation scripts, and the identified
++Figma working file. The React answer key is comparison material.
++Historical native packets and metadata are excluded from the public
++download. Verify each new native run separately.
++CLAUDE DESIGN FIELD GUIDE
++FURTHER READING
