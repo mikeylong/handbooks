@@ -17,7 +17,7 @@ from reportlab.lib.colors import HexColor
 
 import json
 from pdf_theme import theme_tokens
-from pdf_baseline import load_baseline, preserve_companion_labels
+from pdf_baseline import MODES, load_baseline, preserve_companion_labels
 CONFIG = {}
 BOOK_TITLE = ''
 AUTHOR = ''
@@ -155,9 +155,13 @@ def main() -> None:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--config",type=Path,required=True)
     parser.add_argument("--book",type=Path)
+    parser.add_argument("--baseline-mode",choices=MODES,help="Override the configured mode for this invocation; frozen baseline checks still apply.")
     parser.add_argument("--theme",choices=["light","dark"],required=True)
     args = parser.parse_args()
-    finalize(args.input, args.output,json.loads(args.config.read_text()),args.theme,args.book or args.config.parent)
+    config=json.loads(args.config.read_text())
+    if args.baseline_mode is not None:
+        config['baselineMode']=args.baseline_mode
+    finalize(args.input, args.output,config,args.theme,args.book or args.config.parent)
 
 
 if __name__ == "__main__":

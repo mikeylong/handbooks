@@ -57,9 +57,12 @@ def story():
 ''')
     config={'id':'baseline-fixture','title':'Baseline fixture','version':'1.0.0','date':'2026-10-05','renderer':'reportlab','source':'source/manuscript.py','story':'story','docClass':'FixtureDoc','chapterCount':0,'fixturePages':4,'pageLabelStyle':'frontmatter-roman','releasedPdf':None}
     config_path=book/'pdf-config.json';records=[]
-    def run(name,cfg,error=None,chromium=False,input_name='edition'):
+    def run(name,cfg,error=None,chromium=False,input_name='edition',override=None):
         config_path.write_text(json.dumps(cfg));destination=output/(name+'.pdf')
         command=([sys.executable,str(TOOLKIT/'scripts/finalize_chromium_pdf.py'),'--book',str(book),'--input',str(output/(input_name+'.pdf')),'--output',str(destination),'--config',str(config_path),'--theme','light'] if chromium else ['node',str(TOOLKIT/'scripts/build-pdf-variants.mjs'),'--book',str(book),'--config',str(config_path),'--theme','light','--output',str(destination),'--python',sys.executable])
+        if override is not None:
+            assert chromium
+            command += ['--baseline-mode',override]
         result=subprocess.run(command,capture_output=True,text=True)
         assert (result.returncode!=0 and error in result.stderr) if error else result.returncode==0,(name,result.stdout,result.stderr)
         records.append({'case':name,'status':'passed','expectedError':error,'exitCode':result.returncode})
@@ -96,6 +99,13 @@ def story():
     run('chromium-companion-pagination-rejected',{**chromium,'baselineMode':'appearance-companion'},'Pagination mismatch',chromium=True)
     run('chromium-bad-hash-rejected',{**chromium,'releasedSha256':'0'*64,'baselineMode':'content-edition'},'releasedSha256 mismatch',chromium=True)
     assert not (output/'chromium-bad-hash-rejected.pdf').exists()
+    override_edition=run('chromium-cli-content-override',{**chromium,'baselineMode':'appearance-companion'},chromium=True,override='content-edition')
+    assert len(PdfReader(override_edition).pages)==5 and PdfReader(override_edition).page_labels==['Cover','ii','iii','1','2']
+    override_companion=run('chromium-cli-companion-override',{**chromium,'baselineMode':'content-edition'},chromium=True,input_name='prior',override='appearance-companion')
+    assert PdfReader(override_companion).page_labels==PdfReader(baseline).page_labels
+    run('chromium-cli-companion-pagination-rejected',{**chromium,'baselineMode':'content-edition'},'Pagination mismatch',chromium=True,override='appearance-companion')
+    run('chromium-cli-stale-hash-rejected',{**chromium,'baselineMode':'appearance-companion','releasedSha256':'0'*64},'releasedSha256 mismatch',chromium=True,override='content-edition')
+    assert not (output/'chromium-cli-stale-hash-rejected.pdf').exists()
     assert hashlib.sha256(baseline.read_bytes()).hexdigest()==before
     report={'status':'passed','cases':records,'previousSha256':before,'previousPreserved':True,'previousPages':4,'editionPages':5,'editionLabels':reader.page_labels,'toolkit':TOOLKIT.name}
     (output/'baseline-tests.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

@@ -1104,7 +1104,9 @@ run_phase "pdf_finalize" "$RUN_DIR/pdf-finalize.log" \
   run_python "$BUILD_DIR/handbook/finalize-pdf.py" \
     --input "$RUN_DIR/raw.pdf" \
     --output "$CANDIDATE_PDF" \
-    --config "$PDF_CONFIG"
+    --config "$PDF_CONFIG" \
+    --book "$WORKSPACE" \
+    --baseline-mode content-edition
 run_phase "pdf_validation" "$RUN_DIR/pdf-validation.log" \
   run_python "$BUILD_DIR/handbook/validate-pdf.py" "$CANDIDATE_PDF"
 run_phase "page_map" "$RUN_DIR/page-map.log" \
