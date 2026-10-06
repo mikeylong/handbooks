@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Check code-panel splits and running-head timing without authoring PDFs."""
+"""Check code-panel splits, headers and diagram pagination in isolated memory."""
 from __future__ import annotations
 
 import argparse
 import hashlib
 import importlib.util
+import io
 import json
 import os
 import re
@@ -57,6 +58,29 @@ def doc_and_canvas(template="Body", title="Previous chapter", page=54):
 
 
 class PageLayoutTests(unittest.TestCase):
+    def test_heading_moves_with_diagram_when_page_remainder_is_short(self):
+        for marker, diagram_type in (("workflow-loop", LAYOUT.WorkflowLoop), ("surface-continuity", LAYOUT.SurfaceContinuityDiagram)):
+            with self.subTest(marker=marker), tempfile.TemporaryDirectory(prefix="markdown-diagram-heading-") as directory:
+                source = Path(directory) / "fixture.md"
+                source.write_text(f"## The workflow\n\n<!-- DIAGRAM {marker} -->\n")
+                with patch.object(LAYOUT, "SOURCE_MD", source), patch.object(LAYOUT, "load_figures", return_value={}):
+                    story = LAYOUT.parse_markdown()
+                heading_index = next(index for index, item in enumerate(story) if getattr(item, "_toc_title", None) == "The workflow")
+                rendered = []
+
+                class DiagramDoc(LAYOUT.BaseDocTemplate):
+                    def afterFlowable(self, item):
+                        if getattr(item, "_toc_title", None) == "The workflow":
+                            rendered.append(("heading", self.page))
+                        elif isinstance(item, diagram_type):
+                            rendered.append(("diagram", self.page))
+
+                doc = DiagramDoc(io.BytesIO(), pagesize=(LAYOUT.PAGE_W, 400))
+                doc.addPageTemplates(LAYOUT.PageTemplate(id="Fixture", frames=[LAYOUT.Frame(LAYOUT.LEFT, 50, LAYOUT.CONTENT_W, 300, leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)]))
+                with patch.object(diagram_type, "draw"):
+                    doc.build([LAYOUT.Spacer(1, 240), *story[heading_index:]])
+                self.assertEqual(rendered, [("heading", 2), ("diagram", 2)])
+
     def test_short_shell_moves_intact_without_blank_remainder(self):
         table = LAYOUT.code_block(SHELL, "sh")
         _, height = table.wrap(LAYOUT.CONTENT_W, 1000)
@@ -124,7 +148,7 @@ class PageLayoutTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix="markdown-header-source-") as directory:
             source = Path(directory) / "fixture.md"
             source.write_text("# Previous section\n\nPrevious body.\n\n<pagebreak>\n\n# Following section\n\nFollowing body.\n")
-            with patch.object(LAYOUT, "SOURCE_MD", source):
+            with patch.object(LAYOUT, "SOURCE_MD", source), patch.object(LAYOUT, "load_figures", return_value={}):
                 story = LAYOUT.parse_markdown()
         self.assertFalse(any(isinstance(item, LAYOUT.SetNextRunningHead) for item in story))
         titles = [item.getPlainText() for item in story if getattr(getattr(item, "style", None), "name", None) == "H1"]
@@ -156,7 +180,7 @@ def main():
         result = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(PageLayoutTests))
         if not result.wasSuccessful():
             raise SystemExit(1)
-        report = {"status": "passed", "tests": result.testsRun, "pdfsAuthored": 0, "layoutSha256": hashlib.sha256(layout_path.read_bytes()).hexdigest()}
+        report = {"status": "passed", "tests": result.testsRun, "pdfsAuthored": 0, "inMemoryPaginationProofs": 2, "layoutSha256": hashlib.sha256(layout_path.read_bytes()).hexdigest()}
         if args.book:
             source = book / config["markdown"]
             code = re.findall(r"^```[^\n]*\n(.*?)^```[ \t]*$", source.read_text(), re.MULTILINE | re.DOTALL)

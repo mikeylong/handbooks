@@ -595,6 +595,8 @@ def main() -> None:
         "--profile", choices=("candidate", "specimen"), default="candidate"
     )
     parser.add_argument("--changelog-decision", type=Path)
+    parser.add_argument("--screenshot-manifest", type=Path, help="Bind frozen screenshot pixels to documented print PPI exceptions")
+    parser.add_argument("--book-root", type=Path, help="Asset root for a nested screenshot manifest")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
@@ -724,6 +726,14 @@ def main() -> None:
         for image in rasters["images"]
         if min(image["xPpi"], image["yPpi"]) < minimum_ppi
     ]
+    screenshot_resolution = None
+    if args.screenshot_manifest:
+        from screenshot_figures import screenshot_resolution_report
+        screenshot_resolution, screenshot_failures = screenshot_resolution_report(reader, image_paints, args.screenshot_manifest, minimum_ppi, args.book_root)
+        failures.extend(screenshot_failures)
+        # Bound screenshots use their recorded exception. Every unbound paint
+        # and required chapter opener retains the governing artwork threshold.
+        low_resolution = []
     if pdf_spec.get("forbidImageMasks"):
         if not rasters["available"]:
             failures.append("pdfimages is required to verify image masks")
@@ -768,6 +778,7 @@ def main() -> None:
         "failures": failures,
         "changelogDecision": changelog_validation,
         "requiredRasterIllustrations": illustration_gates,
+        **({"screenshotResolution": screenshot_resolution} if screenshot_resolution else {}),
         "stats": {
             "pages": len(reader.pages),
             "pdfVersion": f"{actual_version[0]}.{actual_version[1]}",

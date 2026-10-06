@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "reviewReady": true,
+  "book": "claude-design",
+  "version": "1.3.0",
+  "editionDate": "2026-10-05",
+  "publicationApprovalDate": "2026-10-06",
+  "generatedAt": "2026-10-06T17:19:38.182991+00:00",
+  "basis": "Exact approved r3 manuscript, PDFs and prepared screenshot assets copied into isolated release package. PDFs were not rebuilt during promotion.",
+  "source": {
+    "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8",
+    "bytes": 59953
+  },
+  "screenshotManifest": {
+    "path": "claude-design/screenshot-figures.json",
+    "sha256": "9407b7a8725309175233ca99779cad7778955eb4c3a455293a26038394304f66",
+    "bytes": 35826
+  },
+  "pdfs": [
+    {
+      "path": "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+      "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
+      "bytes": 10094624
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+      "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e",
+      "bytes": 54114753
+    }
+  ],
+  "publicationPackage": {
+    "path": "claude-design/publication-package.json",
+    "sha256": "c302a7116a98e70c37274bc11cf51e1d4ccbe98d6a7389a1e21dbd5a393b783d",
+    "bytes": 14060
+  },
+  "pdfVariants": {
+    "path": "claude-design/pdf-variants.json",
+    "sha256": "826e389f400dd25869de3c6d0c901f14ae17b8a6028644bc0cbd2dbc1e38767d",
+    "bytes": 3249
+  },
+  "releaseManifest": {
+    "path": "claude-design/release-manifest.json",
+    "sha256": "5bae5c4a622e822ac738cef81fc5a30f33522ddf9422ccd712ed09ddc0ad12fe",
+    "bytes": 1841
+  },
+  "publicationApproval": {
+    "path": "claude-design/qa/v1.3.0/publication-approval.json",
+    "sha256": "a8183e8f7140a3fdd382fa9b4cb6645aa812ae6f5ef578a21d0f49d84b8b406c",
+    "bytes": 1503
+  },
+  "publicOutput": [
+    {
+      "path": "site/output/site/claude-design/index.html",
+      "sha256": "889b7fc0169ff721b21f901a2e5085946496e79f25e039db7e4ca534fda31937",
+      "bytes": 129333
+    },
+    {
+      "path": "site/output/site/claude-design/editions/v1.3.0/index.html",
+      "sha256": "52dc196a1a76a0ad35ceb68aafa05587e9d7903c9b30d16ca21536247a3f48af",
+      "bytes": 7612
+    },
+    {
+      "path": "site/output/site/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+      "sha256": "b9781711293994d02d5511ada88fcf956989618d769fbe7dc778fdf73dab2b5f",
+      "bytes": 77219
+    },
+    {
+      "path": "site/output/site/claude-design/editions/v1.3.0/claude-design-v1.3.0.index.json",
+      "sha256": "bdcf463e855f11e47cec5ae1ba3e3f1e12b05d5ee05e3eb588018e047542fac1",
+      "bytes": 26555
+    }
+  ],
+  "screenshots": {
+    "figures": 12,
+    "panels": 35,
+    "preparedAssets": 37,
+    "hashParity": "Canonical assets and both emitted public route copies match the frozen manifest",
+    "privateSourcePaths": 0,
+    "r1OrR2PdfAttempts": 0
+  },
+  "retention": {
+    "previousRoutesUnchanged": 23,
+    "addedV121Routes": 10,
+    "totalRoutesVerified": 33,
+    "freeze": {
+      "path": "site/retained/claude-design/v1.2.1/freeze-receipt.json",
+      "sha256": "e7af04d54422fc1ac2131b5aa2efc2943cb795944df4de81baef89988ec47999",
+      "bytes": 1822
+    }
+  },
+  "exerciseReuse": {
+    "artifactEdition": "1.2.1",
+    "nativeCompanionAndProofBytes": "Identical to worktree HEAD; original native import version/date preserved",
+    "currentEditionAliases": "Three immutable files retain original hashes; ordinary current edition controls and historical instruction URLs resolve"
+  },
+  "commands": [
+    {
+      "command": "npm run validate",
+      "exitCode": 0,
+      "covers": [
+        "repository layout",
+        "all four approved release validators",
+        "full collection build",
+        "site regression suite including download headers, Markdown, diagrams, artwork, themes and retained routes"
+      ],
+      "log": "/private/tmp/claude-design-release-full-validation-r2.log",
+      "logSha256": "6946c9cd90febdad76dc5da7bacb15f74578b768782855e0b092757e66a2593a"
+    },
+    {
+      "command": "node claude-design/source/test-release-ledger.mjs",
+      "exitCode": 0,
+      "covers": [
+        "explicit approved artifact reuse",
+        "falsy/unsafe/version-mismatched overrides",
+        "unapproved exercise binding",
+        "changed native/sample bytes",
+        "changed or relabeled original native import evidence"
+      ],
+      "log": "/private/tmp/claude-design-release-contract-r2.log",
+      "logSha256": "8792117374716ba3120df88acd2f3cfea83f2e167f6672e00ec7f3bdc4b10fee"
+    },
+    {
+      "command": "python3 publish-evidence-backed-handbook/scripts/test-screenshot-figures.py --output /private/tmp/claude-design-release-screenshot-suite-r2 (bundled PDF Python runtime)",
+      "exitCode": 0,
+      "receipt": {
+        "path": "claude-design/qa/v1.3.0/promotion-checks/source-screenshot-tests.json",
+        "sha256": "e2261bb072aec54a199afe03f101babe8d7eb0c86f12bc0c6f6451ef7fa517fa",
+        "bytes": 826
+      }
+    },
+    {
+      "command": "python3 publish-evidence-backed-handbook/scripts/test-markdown-page-layout.py --book claude-design (bundled PDF Python runtime)",
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-release-layout-r1.log",
+      "logSha256": "8e262e88fa7b8cddc525bef5fc0d74ec01f05702a06d4457c9d57ec361668fac"
+    },
+    {
+      "command": "python3 publish-evidence-backed-handbook/scripts/export-machine-markdown.py with canonical source/diagrams/figures",
+      "exitCode": 0,
+      "receipt": {
+        "path": "claude-design/qa/v1.3.0/promotion-checks/authored-markdown-export.json",
+        "sha256": "220b8f5c66ece5cd4b1ea1043debfdf49471246314abbe73f946b88655e9d390",
+        "bytes": 898
+      }
+    },
+    {
+      "command": "python3 /private/tmp/claude-design-promoted-pdf-checks.py (bundled PDF Python runtime)",
+      "exitCode": 0,
+      "receipt": {
+        "path": "claude-design/qa/v1.3.0/promotion-checks/commands.json",
+        "sha256": "7b1ba119de960f79168f1f6eba4534a6b6ad7c69f580c44b0245a116edb8350c",
+        "bytes": 7376
+      }
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "validationReports": [
+    {
+      "path": "claude-design/qa/v1.3.0/promotion-checks/daytime-structural.json",
+      "sha256": "0d4b2c84eedfc3b14194a2626a3e9338f228f3baf04cef77e4bc3f580b861143",
+      "bytes": 45594
+    },
+    {
+      "path": "claude-design/qa/v1.3.0/promotion-checks/late-night-structural.json",
+      "sha256": "5f4168b054392b7382ef7e8d37c1133b6593537687a711cd21f9bebe25ac77be",
+      "bytes": 45619
+    },
+    {
+      "path": "claude-design/qa/v1.3.0/promotion-checks/parity/parity.json",
+      "sha256": "92ed1b9501dc609f9737b3303ab83cea5a1fc036488ddc60b799fcaa8afdfb42",
+      "bytes": 406
+    },
+    {
+      "path": "claude-design/qa/v1.3.0/promotion-checks/appearance.json",
+      "sha256": "454517c2d342f2db1b73786e4a55587ead0d8e26a0cbc0a202025fa2c91f32f1",
+      "bytes": 77587
+    }
+  ],
+  "scope": {
+    "otherBooksChanged": false,
+    "privateRawCapturesIncluded": false,
+    "privateAttemptsIncluded": false,
+    "gitMutationPerformed": false,
+    "unrelatedPrimaryFilesPreserved": [
+      "claude-design/Velori_Coding_Exercise.md",
+      "claude-design/samples/catalog.json",
+      "automation/weekly-collection-review.md"
+    ]
+  },
+  "limitations": [
+    "No physical A5 print test was performed. Native-resolution screen proofs are accepted.",
+    "Git push, PR, merge, deployment and primary checkout reconciliation belong to the root task."
+  ],
+  "publicBrowserReview": {
+    "path": "claude-design/qa/v1.3.0/promotion-checks/public-browser-review.json",
+    "sha256": "abc46a46b38a5f3d373bb0adefc7cb8e4313c22b2aae72d2efe86d33d18ec2cb",
+    "bytes": 273413
+  },
+  "focusedReleaseReview": {
+    "path": "claude-design/qa/v1.3.0/promotion-checks/focused-release-review.json",
+    "sha256": "4a0226b94cc30eedd0375f0acaf597f96729939a9a88a021c9dc5f49ca06e1ed",
+    "bytes": 9175
+  },
+  "sourceImplementationFreeze": {
+    "path": "claude-design/qa/v1.3.0/promotion-checks/promotion-source-freeze.json",
+    "sha256": "a5e737c2d63e2e03e6f83e64caba485b969a694927c86ec8e5950303641df7f7",
+    "bytes": 5351
+  },
+  "fileAllowlist": {
+    "path": "claude-design/qa/v1.3.0/release-file-allowlist.txt",
+    "sha256": "a625cfac1bc83db0fb57e4bd34e2a6d2af419ec890ac503a80b0e35978d1ed0c",
+    "bytes": 14575
+  },
+  "intendedFiles": 240,
+  "evidenceTextNormalization": {
+    "status": "passed",
+    "normalizedAt": "2026-10-06T17:21:55.621228+00:00",
+    "basis": "Removed trailing spaces from the blank Keywords line of the two repository Poppler pdfinfo text dumps. Original stdout bytes are preserved privately. PDF, manuscript, screenshot and acceptance-report hashes are unchanged; no full validations were rerun.",
+    "files": [
+      {
+        "path": "claude-design/qa/v1.3.0/promotion-checks/parity/candidate-pdfinfo.txt",
+        "originalSha256": "2c175f191ae86b17f6a439d1d4dc021221f746299a04929ecb6f2b4710cc75e7",
+        "sha256": "cb1981206ccad0a1fcf99d562f7d7164616d8b48920146b7fce0297526f32ce9",
+        "changedLines": [
+          3
+        ],
+        "privateOriginal": "/private/tmp/claude-design-release-pdfinfo-originals/candidate-pdfinfo.txt",
+        "originalBytes": 681,
+        "normalizedBytes": 673
+      },
+      {
+        "path": "claude-design/qa/v1.3.0/promotion-checks/parity/retained-pdfinfo.txt",
+        "originalSha256": "ff0add6f32d712a165a019b62015e44e76e0269384db7b1a0bf40337ef6f3d26",
+        "sha256": "43eb7560ed8e2d88c6d632cc5725ba6181278dc44c97b2591c8ef41b07c7e4c5",
+        "changedLines": [
+          3
+        ],
+        "privateOriginal": "/private/tmp/claude-design-release-pdfinfo-originals/retained-pdfinfo.txt",
+        "originalBytes": 678,
+        "normalizedBytes": 670
+      }
+    ]
+  }
+}

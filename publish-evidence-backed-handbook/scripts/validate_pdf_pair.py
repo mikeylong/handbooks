@@ -6,8 +6,8 @@ from pypdf import PdfReader
 from pypdf.generic import ContentStream
 
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
-def describe(path):
-    r=PdfReader(path,strict=True); errors=[]; pages=[]; image_pages=[]; unused_fonts=[]
+def describe(path,screenshot_manifest=None,book_root=None):
+    r=PdfReader(path,strict=True); errors=[]; pages=[]; image_pages=[]; unused_fonts=[];image_paints=[]
     def target(value):
         if isinstance(value,str):
             if value in r.named_destinations:return r.get_destination_page_number(r.named_destinations[value])
@@ -64,12 +64,19 @@ def describe(path):
         if program=='pdfimages':
             for line in result.stdout.splitlines()[2:]:
                 v=line.split()
-                if len(v)>14 and v[2]=='image' and min(float(v[12]),float(v[13]))<240:errors.append('Insufficient image PPI: '+line)
+                if len(v)>14 and v[2]=='image':
+                    image_paints.append({'page':int(v[0]),'object':v[10]+' '+v[11],'xPpi':float(v[12]),'yPpi':float(v[13])})
+                    if not screenshot_manifest and min(float(v[12]),float(v[13]))<240:errors.append('Insufficient image PPI: '+line)
+    screenshot_resolution=None
+    if screenshot_manifest:
+        from screenshot_figures import screenshot_resolution_report
+        screenshot_resolution,resolution_errors=screenshot_resolution_report(r,image_paints,screenshot_manifest,book_root=book_root)
+        errors.extend(resolution_errors)
     root=r.trailer['/Root'];tagged='/StructTreeRoot' in root
-    return {'path':str(Path(path).resolve()),'sha256':sha(path),'bytes':Path(path).stat().st_size,'pages':pages,'labels':r.page_labels,'outlines':outlines(r.outline),'namedDestinations':{k:r.get_destination_page_number(v) for k,v in r.named_destinations.items()},'language':str(root.get('/Lang','')),'tagged':tagged,'header':r.pdf_header,'unusedUnembeddedFontResources':unused_fonts,'imagePages':image_pages,'errors':errors,'accessibilityLimitations':[] if tagged else ['Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available.']}
+    return {'path':str(Path(path).resolve()),'sha256':sha(path),'bytes':Path(path).stat().st_size,'pages':pages,'labels':r.page_labels,'outlines':outlines(r.outline),'namedDestinations':{k:r.get_destination_page_number(v) for k,v in r.named_destinations.items()},'language':str(root.get('/Lang','')),'tagged':tagged,'header':r.pdf_header,'unusedUnembeddedFontResources':unused_fonts,'imagePages':image_pages,'errors':errors,**({'screenshotResolution':screenshot_resolution} if screenshot_resolution else {}),'accessibilityLimitations':[] if tagged else ['Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available.']}
 
-def compare(previous,candidate,output):
-    a,b=describe(previous),describe(candidate); failures=[*a['errors'],*b['errors']];delta=[]
+def compare(previous,candidate,output,screenshot_manifest=None,book_root=None):
+    a,b=describe(previous,screenshot_manifest,book_root),describe(candidate,screenshot_manifest,book_root); failures=[*a['errors'],*b['errors']];delta=[]
     if len(a['pages'])!=len(b['pages']): failures.append('Page count differs')
     for key in ['labels','outlines','namedDestinations','language','header','tagged']:
         if a[key]!=b[key]: failures.append(key+' differs')
@@ -87,4 +94,4 @@ def compare(previous,candidate,output):
     report={'schemaVersion':1,'status':'failed' if failures else 'passed','retainedSha256':a['sha256'],'candidateSha256':b['sha256'],'pages':[len(a['pages']),len(b['pages'])],'failures':failures,'accessibilityLimitations':b['accessibilityLimitations']}
     (output/'parity.json').write_text(json.dumps(report,indent=2)+'\n');return report
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--retained',required=True);p.add_argument('--candidate',required=True);p.add_argument('--output',required=True);a=p.parse_args();r=compare(a.retained,a.candidate,a.output);print(json.dumps(r,indent=2));raise SystemExit(bool(r['failures']))
+    p=argparse.ArgumentParser();p.add_argument('--retained',required=True);p.add_argument('--candidate',required=True);p.add_argument('--screenshot-manifest');p.add_argument('--book-root');p.add_argument('--output',required=True);a=p.parse_args();r=compare(a.retained,a.candidate,a.output,a.screenshot_manifest,a.book_root);print(json.dumps(r,indent=2));raise SystemExit(bool(r['failures']))

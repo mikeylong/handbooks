@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "A reader-owned Figma file for the existing Velori exercise.",
+  "entryCount": 1,
+  "failures": [],
+  "placement": "final-page",
+  "requiredPdfState": {
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
+  },
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "id": "G01",
+      "category": "Correction or clarification",
+      "section": "Orientation, Chapter 10 and exercise materials",
+      "text": "Replaced the owner-file access prerequisite with a downloadable Velori Figma companion imported into the reader's own Drafts. Navigation uses verified page and frame names; each import records native identities and checks local dependencies and the prototype journey.",
+      "rationale": "Readers can complete the existing Figma exercise without access to the author's file.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig"
+      ],
+      "groupedDraftEntries": [
+        "F01"
+      ]
+    }
+  ],
+  "previousVersion": "1.2.0",
+  "items": [
+    {
+      "title": "Import Velori into your own Figma Drafts",
+      "whatChanged": "Replaced the owner-file access prerequisite with a downloadable Velori Figma companion imported into the reader's own Drafts. Navigation uses verified page and frame names; each import records native identities and checks local dependencies and the prototype journey.",
+      "why": "Readers can complete the existing Figma exercise without access to the author's file.",
+      "classification": "Correction or clarification",
+      "classificationLabel": "Correction or clarification",
+      "section": "Orientation, Chapter 10 and exercise materials",
+      "sources": [
+        {
+          "url": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
+          "authority": "Velori",
+          "title": "Native Figma companion"
+        }
+      ]
+    }
+  ]
+}

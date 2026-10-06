@@ -38,6 +38,18 @@ export async function installCandidateBookRoot(collectionRoot,output,book,source
  } finally {await rm(stage,{recursive:true,force:true});}
 }
 
+// Current-edition navigation stays inside an isolated review without changing canonical metadata.
+export function installReviewSelfLinks(html,edition) {
+ if(!/^[a-z0-9-]+$/.test(edition.id)||!/^\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/.test(edition.version))throw Error('Invalid review edition route');
+ const routes=new Set([`/${edition.id}/`,`/${edition.id}/editions/v${edition.version}/`]);
+ return html.replace(/<a\b[^>]*>/gi,anchor=>anchor.replace(/(\s+href\s*=\s*)(["'])([^"']*)\2/i,(attribute,prefix,quote,value)=>{
+  let url;
+  try {url=new URL(value);} catch {return attribute;}
+  if(url.origin!=='https://handbooks.surfaces.systems'||url.username||url.password||!routes.has(url.pathname))return attribute;
+  return prefix+quote+url.pathname+url.search+url.hash+quote;
+ }));
+}
+
 async function main() {
 const {values:v}=parseArgs({options:{registry:{type:'string'},output:{type:'string'}}});
 if(!v.registry||!v.output)throw Error('Use --registry and --output');
@@ -65,7 +77,7 @@ const variants=await resolvePdfVariants(source,edition,registry.variantManifest,
 const retained=JSON.parse(await readFile(resolve(root,'site/retained-releases.json'),'utf8'));
 await installCandidateBookRoot(root,output,edition.id,source,pkg,retained);
 let html=await readFile(resolve(output,edition.id,'index.html'),'utf8');
-html=await installPromptBlocks(source,html,pkg);html=await installTerminalBlocks(source,html,pkg);html=await installArtworkPairs(source,edition,output,html,pkg);html=await installDiagrams(source,html,pkg);edition.markdown=await writeMarkdownEdition(output,edition,html);html=installReaderDownloads(html,edition,variants);
+html=await installPromptBlocks(source,html,pkg);html=await installTerminalBlocks(source,html,pkg);html=await installArtworkPairs(source,edition,output,html,pkg);html=await installDiagrams(source,html,pkg);edition.markdown=await writeMarkdownEdition(output,edition,html);html=installReaderDownloads(html,edition,variants);html=installReviewSelfLinks(html,edition);
 html=html.replace('<p class="cover-date">','<p class="review-candidate" role="note">Review candidate · Publication has not been approved.</p><p class="cover-date">').replace('</head>','<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/gallery.css"><link rel="stylesheet" href="/pdf-downloads.css"></head>');
 html=addSiteTheme(html);validateSiteTheme(html);validateDownloads(html,edition,variants);await writeFile(resolve(output,edition.id,'index.html'),html);
 const headers=[];

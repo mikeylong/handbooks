@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "date": "2026-10-06",
+  "basis": "Exact approved r3 source and PDF comparisons, accepted single screenshot changelog group, unchanged approved exercise bytes, and curated publication package are bound by SHA-256. Release adapter independently rechecks these bindings.",
+  "ledger": {
+    "path": "claude-design/change-ledger.json",
+    "sha256": "e0915c3027ab19682c6d6638f99847681ffac71da26a4808fa0658bf867b834e"
+  },
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8",
+    "previousSourceSha256": "0eee25b6932c3099e28aeebf059ad22eda5c18a16a022af05184b0cfdeb7b93a"
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+    "repositoryPath": "claude-design/reader/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+    "sha256": "5d9878672afd35420a967d0703bed59c067cc8b802045cdef4c7d35868d3c673",
+    "bytes": 35152394,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "c302a7116a98e70c37274bc11cf51e1d4ccbe98d6a7389a1e21dbd5a393b783d"
+    }
+  },
+  "comparisonEvidence": {
+    "exactSourcePatch": {
+      "path": "claude-design/qa/v1.3.0/exact-source.patch",
+      "sha256": "90cb50ae3d71440800402fc41bd3059b075de5397119f32b5c666de8404ed6eb"
+    },
+    "editionDiff": {
+      "path": "claude-design/qa/v1.3.0/edition-diff.json",
+      "sha256": "7df3b3edf7f73a28acfbf0b6fac42a882a8c3c2d40321fa0ce805a9652d864e4"
+    },
+    "exactPdfTextPatch": {
+      "path": "claude-design/qa/v1.3.0/exact-pdf-text.patch",
+      "sha256": "e9ee7726abd7fed5a7e53c5c8384ce236ba43bb34fda118686dca403de465249"
+    },
+    "readerFacingContentPatch": {
+      "path": "claude-design/qa/v1.3.0/reader-facing-content.patch",
+      "sha256": "2c79a43433cfe9e354a298586d596ffd25a23182692d8387ca0842603cc63476"
+    },
+    "acceptedChangelogDecision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "af9f287778a6b1c7ea2a16007a9e82d7ee65c765eb87b695f3942ed94fe91243"
+    }
+  }
+}

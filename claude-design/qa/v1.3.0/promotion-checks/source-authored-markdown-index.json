@@ -1,0 +1,2402 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8",
+  "nativeExecutionStatus": "unverified",
+  "sections": [
+    {
+      "id": "orientation",
+      "title": "Orientation",
+      "level": 2,
+      "anchor": "orientation",
+      "chapter": null,
+      "sourceLine": 10,
+      "markdownLine": 38,
+      "markdownEndLine": 157,
+      "role": "section"
+    },
+    {
+      "id": "start-the-sample",
+      "title": "Start the sample",
+      "level": 3,
+      "anchor": "start-the-sample",
+      "chapter": null,
+      "sourceLine": 18,
+      "markdownLine": 46,
+      "markdownEndLine": 65,
+      "role": "section"
+    },
+    {
+      "id": "what-you-will-produce",
+      "title": "What you will produce",
+      "level": 3,
+      "anchor": "what-you-will-produce",
+      "chapter": null,
+      "sourceLine": 36,
+      "markdownLine": 66,
+      "markdownEndLine": 75,
+      "role": "section"
+    },
+    {
+      "id": "choose-the-destination-first",
+      "title": "Choose the destination first",
+      "level": 3,
+      "anchor": "choose-the-destination-first",
+      "chapter": null,
+      "sourceLine": 46,
+      "markdownLine": 76,
+      "markdownEndLine": 89,
+      "role": "section"
+    },
+    {
+      "id": "the-workflow",
+      "title": "The workflow",
+      "level": 3,
+      "anchor": "the-workflow",
+      "chapter": null,
+      "sourceLine": 58,
+      "markdownLine": 90,
+      "markdownEndLine": 91,
+      "role": "section"
+    },
+    {
+      "id": "diagram-workflow-loop",
+      "title": "Diagram: workflow-loop",
+      "level": 3,
+      "anchor": "diagram-workflow-loop",
+      "chapter": null,
+      "sourceLine": 60,
+      "markdownLine": 92,
+      "markdownEndLine": 133,
+      "role": "section"
+    },
+    {
+      "id": "diagram-surface-continuity",
+      "title": "Diagram: surface-continuity",
+      "level": 3,
+      "anchor": "diagram-surface-continuity",
+      "chapter": null,
+      "sourceLine": 75,
+      "markdownLine": 134,
+      "markdownEndLine": 157,
+      "role": "section"
+    },
+    {
+      "id": "chapter-01",
+      "title": "Chapter 01: Decide what is authoritative",
+      "level": 2,
+      "anchor": "chapter-01-decide-what-is-authoritative",
+      "chapter": "chapter-01",
+      "sourceLine": 81,
+      "markdownLine": 158,
+      "summary": "Preserve a working product before asking an assistant to extend it.",
+      "markdownEndLine": 209,
+      "role": "section"
+    },
+    {
+      "id": "run-your-working-copy",
+      "title": "Run your working copy",
+      "level": 3,
+      "anchor": "run-your-working-copy",
+      "chapter": "chapter-01",
+      "sourceLine": 85,
+      "markdownLine": 164,
+      "markdownEndLine": 167,
+      "role": "section"
+    },
+    {
+      "id": "establish-the-source-order",
+      "title": "Establish the source order",
+      "level": 3,
+      "anchor": "establish-the-source-order",
+      "chapter": "chapter-01",
+      "sourceLine": 89,
+      "markdownLine": 168,
+      "markdownEndLine": 177,
+      "role": "section"
+    },
+    {
+      "id": "define-the-clean-baseline",
+      "title": "Define the clean baseline",
+      "level": 3,
+      "anchor": "define-the-clean-baseline",
+      "chapter": "chapter-01",
+      "sourceLine": 99,
+      "markdownLine": 178,
+      "markdownEndLine": 185,
+      "role": "section"
+    },
+    {
+      "id": "name-the-fixture",
+      "title": "Name the fixture",
+      "level": 3,
+      "anchor": "name-the-fixture",
+      "chapter": "chapter-01",
+      "sourceLine": 107,
+      "markdownLine": 186,
+      "markdownEndLine": 203,
+      "role": "section"
+    },
+    {
+      "id": "prompt-01",
+      "title": "Prompt 01: Claude Design | Preserve the configurator",
+      "level": 4,
+      "anchor": "prompt-01-claude-design--preserve-the-configurator",
+      "chapter": "chapter-01",
+      "sourceLine": 118,
+      "markdownLine": 197,
+      "markdownEndLine": 203,
+      "role": "prompt"
+    },
+    {
+      "id": "chapter-01-checkpoint",
+      "title": "Chapter 01 checkpoint",
+      "level": 3,
+      "anchor": "chapter-01-checkpoint",
+      "chapter": "chapter-01",
+      "sourceLine": 122,
+      "markdownLine": 204,
+      "markdownEndLine": 209,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-02",
+      "title": "Chapter 02: Prepare the Velori system",
+      "level": 2,
+      "anchor": "chapter-02-prepare-the-velori-system",
+      "chapter": "chapter-02",
+      "sourceLine": 130,
+      "markdownLine": 210,
+      "summary": "Define the source rules before importing the React library.",
+      "markdownEndLine": 302,
+      "role": "section"
+    },
+    {
+      "id": "separate-the-starting-screen-from-the-answer-key",
+      "title": "Separate the starting screen from the answer key",
+      "level": 3,
+      "anchor": "separate-the-starting-screen-from-the-answer-key",
+      "chapter": "chapter-02",
+      "sourceLine": 136,
+      "markdownLine": 218,
+      "markdownEndLine": 223,
+      "role": "section"
+    },
+    {
+      "id": "inspect-the-source-package",
+      "title": "Inspect the source package",
+      "level": 3,
+      "anchor": "inspect-the-source-package",
+      "chapter": "chapter-02",
+      "sourceLine": 142,
+      "markdownLine": 224,
+      "markdownEndLine": 238,
+      "role": "section"
+    },
+    {
+      "id": "define-rules-and-component-use",
+      "title": "Define rules and component use",
+      "level": 3,
+      "anchor": "define-rules-and-component-use",
+      "chapter": "chapter-02",
+      "sourceLine": 157,
+      "markdownLine": 239,
+      "markdownEndLine": 269,
+      "role": "section"
+    },
+    {
+      "id": "prompt-02",
+      "title": "Prompt 02: Claude Code | Prepare the source system",
+      "level": 4,
+      "anchor": "prompt-02-claude-code--prepare-the-source-system",
+      "chapter": "chapter-02",
+      "sourceLine": 177,
+      "markdownLine": 259,
+      "markdownEndLine": 269,
+      "role": "prompt"
+    },
+    {
+      "id": "import-the-prepared-draft",
+      "title": "Import the prepared draft",
+      "level": 3,
+      "anchor": "import-the-prepared-draft",
+      "chapter": "chapter-02",
+      "sourceLine": 185,
+      "markdownLine": 270,
+      "markdownEndLine": 296,
+      "role": "section"
+    },
+    {
+      "id": "prompt-03",
+      "title": "Prompt 03: Claude Code | Import the prepared Velori draft",
+      "level": 4,
+      "anchor": "prompt-03-claude-code--import-the-prepared-velori-draft",
+      "chapter": "chapter-02",
+      "sourceLine": 197,
+      "markdownLine": 284,
+      "markdownEndLine": 296,
+      "role": "prompt"
+    },
+    {
+      "id": "chapter-02-checkpoint",
+      "title": "Chapter 02 checkpoint",
+      "level": 3,
+      "anchor": "chapter-02-checkpoint",
+      "chapter": "chapter-02",
+      "sourceLine": 207,
+      "markdownLine": 297,
+      "markdownEndLine": 302,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-03",
+      "title": "Chapter 03: Validate the imported system",
+      "level": 2,
+      "anchor": "chapter-03-validate-the-imported-system",
+      "chapter": "chapter-03",
+      "sourceLine": 215,
+      "markdownLine": 303,
+      "summary": "Prove source reuse and correction before extending the store.",
+      "markdownEndLine": 376,
+      "role": "section"
+    },
+    {
+      "id": "generate-the-known-screens",
+      "title": "Generate the known screens",
+      "level": 3,
+      "anchor": "generate-the-known-screens",
+      "chapter": "chapter-03",
+      "sourceLine": 221,
+      "markdownLine": 313,
+      "markdownEndLine": 327,
+      "role": "section"
+    },
+    {
+      "id": "prompt-04",
+      "title": "Prompt 04: Claude Design | Recreate known Velori screens",
+      "level": 4,
+      "anchor": "prompt-04-claude-design--recreate-known-velori-screens",
+      "chapter": "chapter-03",
+      "sourceLine": 227,
+      "markdownLine": 319,
+      "markdownEndLine": 327,
+      "role": "prompt"
+    },
+    {
+      "id": "sample-ten-elements-for-fidelity",
+      "title": "Sample ten elements for fidelity",
+      "level": 3,
+      "anchor": "sample-ten-elements-for-fidelity",
+      "chapter": "chapter-03",
+      "sourceLine": 233,
+      "markdownLine": 328,
+      "markdownEndLine": 353,
+      "role": "section"
+    },
+    {
+      "id": "prompt-05",
+      "title": "Prompt 05: Claude Design | Audit source conformance",
+      "level": 4,
+      "anchor": "prompt-05-claude-design--audit-source-conformance",
+      "chapter": "chapter-03",
+      "sourceLine": 250,
+      "markdownLine": 345,
+      "markdownEndLine": 353,
+      "role": "prompt"
+    },
+    {
+      "id": "check-that-a-correction-persists",
+      "title": "Check that a correction persists",
+      "level": 3,
+      "anchor": "check-that-a-correction-persists",
+      "chapter": "chapter-03",
+      "sourceLine": 256,
+      "markdownLine": 354,
+      "markdownEndLine": 370,
+      "role": "section"
+    },
+    {
+      "id": "prompt-06",
+      "title": "Prompt 06: Claude Design | Correct and regenerate",
+      "level": 4,
+      "anchor": "prompt-06-claude-design--correct-and-regenerate",
+      "chapter": "chapter-03",
+      "sourceLine": 260,
+      "markdownLine": 358,
+      "markdownEndLine": 370,
+      "role": "prompt"
+    },
+    {
+      "id": "chapter-03-checkpoint",
+      "title": "Chapter 03 checkpoint",
+      "level": 3,
+      "anchor": "chapter-03-checkpoint",
+      "chapter": "chapter-03",
+      "sourceLine": 268,
+      "markdownLine": 371,
+      "markdownEndLine": 376,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-04",
+      "title": "Chapter 04: Extend the existing screen",
+      "level": 2,
+      "anchor": "chapter-04-extend-the-existing-screen",
+      "chapter": "chapter-04",
+      "sourceLine": 276,
+      "markdownLine": 377,
+      "summary": "Make Continue open one useful review step.",
+      "markdownEndLine": 413,
+      "role": "section"
+    },
+    {
+      "id": "generate-the-bounded-change",
+      "title": "Generate the bounded change",
+      "level": 3,
+      "anchor": "generate-the-bounded-change",
+      "chapter": "chapter-04",
+      "sourceLine": 280,
+      "markdownLine": 383,
+      "markdownEndLine": 391,
+      "role": "section"
+    },
+    {
+      "id": "prompt-07",
+      "title": "Prompt 07: Claude Design | Add Review configuration",
+      "level": 4,
+      "anchor": "prompt-07-claude-design--add-review-configuration",
+      "chapter": "chapter-04",
+      "sourceLine": 282,
+      "markdownLine": 385,
+      "markdownEndLine": 391,
+      "role": "prompt"
+    },
+    {
+      "id": "review-the-first-diff",
+      "title": "Review the first diff",
+      "level": 3,
+      "anchor": "review-the-first-diff",
+      "chapter": "chapter-04",
+      "sourceLine": 286,
+      "markdownLine": 392,
+      "markdownEndLine": 401,
+      "role": "section"
+    },
+    {
+      "id": "keep-navigation-explicit",
+      "title": "Keep navigation explicit",
+      "level": 3,
+      "anchor": "keep-navigation-explicit",
+      "chapter": "chapter-04",
+      "sourceLine": 294,
+      "markdownLine": 402,
+      "markdownEndLine": 407,
+      "role": "section"
+    },
+    {
+      "id": "chapter-04-checkpoint",
+      "title": "Chapter 04 checkpoint",
+      "level": 3,
+      "anchor": "chapter-04-checkpoint",
+      "chapter": "chapter-04",
+      "sourceLine": 300,
+      "markdownLine": 408,
+      "markdownEndLine": 413,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-05",
+      "title": "Chapter 05: Connect the adjacent surfaces",
+      "level": 2,
+      "anchor": "chapter-05-connect-the-adjacent-surfaces",
+      "chapter": "chapter-05",
+      "sourceLine": 308,
+      "markdownLine": 414,
+      "summary": "Details, review, and editing keep the same choices.",
+      "markdownEndLine": 453,
+      "role": "section"
+    },
+    {
+      "id": "browse-without-selecting",
+      "title": "Browse without selecting",
+      "level": 3,
+      "anchor": "browse-without-selecting",
+      "chapter": "chapter-05",
+      "sourceLine": 312,
+      "markdownLine": 420,
+      "markdownEndLine": 429,
+      "role": "section"
+    },
+    {
+      "id": "make-all-surfaces-agree",
+      "title": "Make all surfaces agree",
+      "level": 3,
+      "anchor": "make-all-surfaces-agree",
+      "chapter": "chapter-05",
+      "sourceLine": 320,
+      "markdownLine": 430,
+      "markdownEndLine": 447,
+      "role": "section"
+    },
+    {
+      "id": "prompt-08",
+      "title": "Prompt 08: Claude Design | Audit the complete journey",
+      "level": 4,
+      "anchor": "prompt-08-claude-design--audit-the-complete-journey",
+      "chapter": "chapter-05",
+      "sourceLine": 331,
+      "markdownLine": 441,
+      "markdownEndLine": 447,
+      "role": "prompt"
+    },
+    {
+      "id": "chapter-05-checkpoint",
+      "title": "Chapter 05 checkpoint",
+      "level": 3,
+      "anchor": "chapter-05-checkpoint",
+      "chapter": "chapter-05",
+      "sourceLine": 335,
+      "markdownLine": 448,
+      "markdownEndLine": 453,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-06",
+      "title": "Chapter 06: Specify states and transitions",
+      "level": 2,
+      "anchor": "chapter-06-specify-states-and-transitions",
+      "chapter": "chapter-06",
+      "sourceLine": 343,
+      "markdownLine": 454,
+      "summary": "Define loading, failure, persistence, and recovery before handoff.",
+      "markdownEndLine": 498,
+      "role": "section"
+    },
+    {
+      "id": "state-matrix",
+      "title": "State matrix",
+      "level": 3,
+      "anchor": "state-matrix",
+      "chapter": "chapter-06",
+      "sourceLine": 347,
+      "markdownLine": 460,
+      "markdownEndLine": 473,
+      "role": "section"
+    },
+    {
+      "id": "transition-contract",
+      "title": "Transition contract",
+      "level": 3,
+      "anchor": "transition-contract",
+      "chapter": "chapter-06",
+      "sourceLine": 361,
+      "markdownLine": 474,
+      "markdownEndLine": 477,
+      "role": "section"
+    },
+    {
+      "id": "avoid-stale-images",
+      "title": "Avoid stale images",
+      "level": 3,
+      "anchor": "avoid-stale-images",
+      "chapter": "chapter-06",
+      "sourceLine": 365,
+      "markdownLine": 478,
+      "markdownEndLine": 492,
+      "role": "section"
+    },
+    {
+      "id": "prompt-09",
+      "title": "Prompt 09: Claude Code | Verify recovery",
+      "level": 4,
+      "anchor": "prompt-09-claude-code--verify-recovery",
+      "chapter": "chapter-06",
+      "sourceLine": 369,
+      "markdownLine": 482,
+      "markdownEndLine": 492,
+      "role": "prompt"
+    },
+    {
+      "id": "chapter-06-checkpoint",
+      "title": "Chapter 06 checkpoint",
+      "level": 3,
+      "anchor": "chapter-06-checkpoint",
+      "chapter": "chapter-06",
+      "sourceLine": 375,
+      "markdownLine": 493,
+      "markdownEndLine": 498,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-07",
+      "title": "Chapter 07: Prove keyboard and responsive behavior",
+      "level": 2,
+      "anchor": "chapter-07-prove-keyboard-and-responsive-behavior",
+      "chapter": "chapter-07",
+      "sourceLine": 383,
+      "markdownLine": 499,
+      "summary": "Check the actual controls and return paths at the reference and narrow widths.",
+      "markdownEndLine": 542,
+      "role": "section"
+    },
+    {
+      "id": "operate-the-dropdown",
+      "title": "Operate the dropdown",
+      "level": 3,
+      "anchor": "operate-the-dropdown",
+      "chapter": "chapter-07",
+      "sourceLine": 387,
+      "markdownLine": 505,
+      "markdownEndLine": 514,
+      "role": "section"
+    },
+    {
+      "id": "check-focus-through-the-journey",
+      "title": "Check focus through the journey",
+      "level": 3,
+      "anchor": "check-focus-through-the-journey",
+      "chapter": "chapter-07",
+      "sourceLine": 395,
+      "markdownLine": 515,
+      "markdownEndLine": 524,
+      "role": "section"
+    },
+    {
+      "id": "compare-viewports",
+      "title": "Compare viewports",
+      "level": 3,
+      "anchor": "compare-viewports",
+      "chapter": "chapter-07",
+      "sourceLine": 405,
+      "markdownLine": 525,
+      "markdownEndLine": 536,
+      "role": "section"
+    },
+    {
+      "id": "chapter-07-checkpoint",
+      "title": "Chapter 07 checkpoint",
+      "level": 3,
+      "anchor": "chapter-07-checkpoint",
+      "chapter": "chapter-07",
+      "sourceLine": 415,
+      "markdownLine": 537,
+      "markdownEndLine": 542,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-08",
+      "title": "Chapter 08: Run the design evidence gate",
+      "level": 2,
+      "anchor": "chapter-08-run-the-design-evidence-gate",
+      "chapter": "chapter-08",
+      "sourceLine": 423,
+      "markdownLine": 543,
+      "summary": "Review component use, behavior, and handoff evidence together.",
+      "markdownEndLine": 581,
+      "role": "section"
+    },
+    {
+      "id": "challenge-the-result",
+      "title": "Challenge the result",
+      "level": 3,
+      "anchor": "challenge-the-result",
+      "chapter": "chapter-08",
+      "sourceLine": 437,
+      "markdownLine": 559,
+      "markdownEndLine": 569,
+      "role": "section"
+    },
+    {
+      "id": "prompt-10",
+      "title": "Prompt 10: Claude Design | Review against evidence",
+      "level": 4,
+      "anchor": "prompt-10-claude-design--review-against-evidence",
+      "chapter": "chapter-08",
+      "sourceLine": 441,
+      "markdownLine": 563,
+      "markdownEndLine": 569,
+      "role": "prompt"
+    },
+    {
+      "id": "record-the-decision",
+      "title": "Record the decision",
+      "level": 3,
+      "anchor": "record-the-decision",
+      "chapter": "chapter-08",
+      "sourceLine": 445,
+      "markdownLine": 570,
+      "markdownEndLine": 575,
+      "role": "section"
+    },
+    {
+      "id": "chapter-08-checkpoint",
+      "title": "Chapter 08 checkpoint",
+      "level": 3,
+      "anchor": "chapter-08-checkpoint",
+      "chapter": "chapter-08",
+      "sourceLine": 451,
+      "markdownLine": 576,
+      "markdownEndLine": 581,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-09",
+      "title": "Chapter 09: Hand off to Claude Code",
+      "level": 2,
+      "anchor": "chapter-09-hand-off-to-claude-code",
+      "chapter": "chapter-09",
+      "sourceLine": 459,
+      "markdownLine": 582,
+      "summary": "Preserve the actual source and make it run outside the design project.",
+      "markdownEndLine": 645,
+      "role": "section"
+    },
+    {
+      "id": "capture-your-generated-result",
+      "title": "Capture your generated result",
+      "level": 3,
+      "anchor": "capture-your-generated-result",
+      "chapter": "chapter-09",
+      "sourceLine": 463,
+      "markdownLine": 588,
+      "markdownEndLine": 618,
+      "role": "section"
+    },
+    {
+      "id": "prompt-11",
+      "title": "Prompt 11: Claude Code | Prepare the new Code packet",
+      "level": 4,
+      "anchor": "prompt-11-claude-code--prepare-the-new-code-packet",
+      "chapter": "chapter-09",
+      "sourceLine": 475,
+      "markdownLine": 602,
+      "markdownEndLine": 618,
+      "role": "prompt"
+    },
+    {
+      "id": "use-the-sample-as-an-answer-key",
+      "title": "Use the sample as an answer key",
+      "level": 3,
+      "anchor": "use-the-sample-as-an-answer-key",
+      "chapter": "chapter-09",
+      "sourceLine": 489,
+      "markdownLine": 619,
+      "markdownEndLine": 622,
+      "role": "section"
+    },
+    {
+      "id": "keep-the-adaptations-visible",
+      "title": "Keep the adaptations visible",
+      "level": 3,
+      "anchor": "keep-the-adaptations-visible",
+      "chapter": "chapter-09",
+      "sourceLine": 493,
+      "markdownLine": 623,
+      "markdownEndLine": 628,
+      "role": "section"
+    },
+    {
+      "id": "bring-the-bounded-change-into-react",
+      "title": "Bring the bounded change into React",
+      "level": 3,
+      "anchor": "bring-the-bounded-change-into-react",
+      "chapter": "chapter-09",
+      "sourceLine": 499,
+      "markdownLine": 629,
+      "markdownEndLine": 639,
+      "role": "section"
+    },
+    {
+      "id": "prompt-12",
+      "title": "Prompt 12: Claude Code | Implement the exported review",
+      "level": 4,
+      "anchor": "prompt-12-claude-code--implement-the-exported-review",
+      "chapter": "chapter-09",
+      "sourceLine": 503,
+      "markdownLine": 633,
+      "markdownEndLine": 639,
+      "role": "prompt"
+    },
+    {
+      "id": "chapter-09-checkpoint",
+      "title": "Chapter 09 checkpoint",
+      "level": 3,
+      "anchor": "chapter-09-checkpoint",
+      "chapter": "chapter-09",
+      "sourceLine": 507,
+      "markdownLine": 640,
+      "markdownEndLine": 645,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-10",
+      "title": "Chapter 10: Implement in Figma and reconcile",
+      "level": 2,
+      "anchor": "chapter-10-implement-in-figma-and-reconcile",
+      "chapter": "chapter-10",
+      "sourceLine": 515,
+      "markdownLine": 646,
+      "summary": "Verify editable components, variables, and the native prototype.",
+      "markdownEndLine": 690,
+      "role": "section"
+    },
+    {
+      "id": "keep-native-identity",
+      "title": "Keep native identity",
+      "level": 3,
+      "anchor": "keep-native-identity",
+      "chapter": "chapter-10",
+      "sourceLine": 519,
+      "markdownLine": 652,
+      "markdownEndLine": 666,
+      "role": "section"
+    },
+    {
+      "id": "prompt-13",
+      "title": "Prompt 13: Figma | Build and inspect the native store",
+      "level": 4,
+      "anchor": "prompt-13-figma--build-and-inspect-the-native-store",
+      "chapter": "chapter-10",
+      "sourceLine": 527,
+      "markdownLine": 660,
+      "markdownEndLine": 666,
+      "role": "prompt"
+    },
+    {
+      "id": "test-the-prototype",
+      "title": "Test the prototype",
+      "level": 3,
+      "anchor": "test-the-prototype",
+      "chapter": "chapter-10",
+      "sourceLine": 531,
+      "markdownLine": 667,
+      "markdownEndLine": 678,
+      "role": "section"
+    },
+    {
+      "id": "reconcile-the-result",
+      "title": "Reconcile the result",
+      "level": 3,
+      "anchor": "reconcile-the-result",
+      "chapter": "chapter-10",
+      "sourceLine": 541,
+      "markdownLine": 679,
+      "markdownEndLine": 684,
+      "role": "section"
+    },
+    {
+      "id": "chapter-10-checkpoint",
+      "title": "Chapter 10 checkpoint",
+      "level": 3,
+      "anchor": "chapter-10-checkpoint",
+      "chapter": "chapter-10",
+      "sourceLine": 547,
+      "markdownLine": 685,
+      "markdownEndLine": 690,
+      "role": "checkpoint"
+    },
+    {
+      "id": "chapter-11",
+      "title": "Chapter 11: Guided capstone",
+      "level": 2,
+      "anchor": "chapter-11-guided-capstone",
+      "chapter": "chapter-11",
+      "sourceLine": 555,
+      "markdownLine": 691,
+      "summary": "Complete one bounded store journey across the real tools.",
+      "markdownEndLine": 755,
+      "role": "section"
+    },
+    {
+      "id": "phase-1-frame-and-ground",
+      "title": "Phase 1: Frame and ground",
+      "level": 3,
+      "anchor": "phase-1-frame-and-ground",
+      "chapter": "chapter-11",
+      "sourceLine": 559,
+      "markdownLine": 697,
+      "markdownEndLine": 700,
+      "role": "phase"
+    },
+    {
+      "id": "phase-2-define-import-and-validate",
+      "title": "Phase 2: Define, import, and validate",
+      "level": 3,
+      "anchor": "phase-2-define-import-and-validate",
+      "chapter": "chapter-11",
+      "sourceLine": 563,
+      "markdownLine": 701,
+      "markdownEndLine": 704,
+      "role": "phase"
+    },
+    {
+      "id": "phase-3-generate-the-extension",
+      "title": "Phase 3: Generate the extension",
+      "level": 3,
+      "anchor": "phase-3-generate-the-extension",
+      "chapter": "chapter-11",
+      "sourceLine": 567,
+      "markdownLine": 705,
+      "markdownEndLine": 708,
+      "role": "phase"
+    },
+    {
+      "id": "phase-4-capture-and-implement",
+      "title": "Phase 4: Capture and implement",
+      "level": 3,
+      "anchor": "phase-4-capture-and-implement",
+      "chapter": "chapter-11",
+      "sourceLine": 571,
+      "markdownLine": 709,
+      "markdownEndLine": 712,
+      "role": "phase"
+    },
+    {
+      "id": "phase-5-build-the-native-figma-journey",
+      "title": "Phase 5: Build the native Figma journey",
+      "level": 3,
+      "anchor": "phase-5-build-the-native-figma-journey",
+      "chapter": "chapter-11",
+      "sourceLine": 575,
+      "markdownLine": 713,
+      "markdownEndLine": 716,
+      "role": "phase"
+    },
+    {
+      "id": "phase-6-verify-the-reader-package",
+      "title": "Phase 6: Verify the reader package",
+      "level": 3,
+      "anchor": "phase-6-verify-the-reader-package",
+      "chapter": "chapter-11",
+      "sourceLine": 579,
+      "markdownLine": 717,
+      "markdownEndLine": 735,
+      "role": "phase"
+    },
+    {
+      "id": "completion-record",
+      "title": "Completion record",
+      "level": 3,
+      "anchor": "completion-record",
+      "chapter": "chapter-11",
+      "sourceLine": 598,
+      "markdownLine": 736,
+      "markdownEndLine": 746,
+      "role": "section"
+    },
+    {
+      "id": "answer-key",
+      "title": "Answer key",
+      "level": 3,
+      "anchor": "answer-key",
+      "chapter": "chapter-11",
+      "sourceLine": 609,
+      "markdownLine": 747,
+      "markdownEndLine": 755,
+      "role": "section"
+    },
+    {
+      "id": "appendix-a-prompt-sequence",
+      "title": "Appendix A: Prompt sequence",
+      "level": 2,
+      "anchor": "appendix-a-prompt-sequence",
+      "chapter": null,
+      "sourceLine": 619,
+      "markdownLine": 756,
+      "markdownEndLine": 759,
+      "role": "section"
+    },
+    {
+      "id": "appendix-b-handoff-record",
+      "title": "Appendix B: Handoff record",
+      "level": 2,
+      "anchor": "appendix-b-handoff-record",
+      "chapter": null,
+      "sourceLine": 623,
+      "markdownLine": 760,
+      "markdownEndLine": 765,
+      "role": "section"
+    },
+    {
+      "id": "appendix-c-package-map",
+      "title": "Appendix C: Package map",
+      "level": 2,
+      "anchor": "appendix-c-package-map",
+      "chapter": null,
+      "sourceLine": 629,
+      "markdownLine": 766,
+      "markdownEndLine": 783,
+      "role": "section"
+    },
+    {
+      "id": "further-reading",
+      "title": "Further reading",
+      "level": 2,
+      "anchor": "further-reading",
+      "chapter": null,
+      "sourceLine": 647,
+      "markdownLine": 784,
+      "markdownEndLine": 793,
+      "role": "section"
+    },
+    {
+      "id": "changelog",
+      "title": "Changelog",
+      "level": 2,
+      "anchor": "changelog",
+      "chapter": null,
+      "sourceLine": 658,
+      "markdownLine": 794,
+      "markdownEndLine": 800,
+      "role": "section"
+    }
+  ],
+  "prompts": [
+    {
+      "id": "prompt-01",
+      "tool": "Claude Design",
+      "title": "Preserve the configurator",
+      "chapter": "chapter-01",
+      "section": "name-the-fixture",
+      "sourceStartLine": 119,
+      "sourceEndLine": 119,
+      "markdownStartLine": 200,
+      "markdownEndLine": 200,
+      "body": "Inspect the supplied Velori configurator and component library. Record the choices, asset composition, captions, storage behavior, and reusable exports. Preserve the existing identity and 1024 × 768 reference layout. Use the documented expression dropdown and one accessory choice. Describe the bounded change needed for Continue to open Review configuration, with edit and Back retaining the four values. Do not add payment, stock, accounts, shipping, or order submission.",
+      "sha256": "66030392b3d0059309c7380b219835fbf192ba5a068c64a49fb59ecc8f00155e"
+    },
+    {
+      "id": "prompt-02",
+      "tool": "Claude Code",
+      "title": "Prepare the source system",
+      "chapter": "chapter-02",
+      "section": "define-rules-and-component-use",
+      "sourceStartLine": 178,
+      "sourceEndLine": 178,
+      "markdownStartLine": 262,
+      "markdownEndLine": 262,
+      "body": "Work in this extracted Velori package. Inspect reference/index.html, reference/design-system.js, src/library.jsx, src/index.js, src/main.jsx for starting-screen copy and navigation, src/model.mjs for labels and captions, tokens.json, src/tokens.css, src/velori.css, docs/inventory.md, the component previews, the asset manifest, and the identified Figma working file. Prepare docs/system-definition.md and docs/source-conflicts.md before uploading. Inventory colors, typography, spacing, layout, component anatomy, valid props, states, and usage. Include CSS literals. Cite the source path and selector, export, or Figma identity for each rule. Separate directly observed rules, inferred compositions, proposed additions, and unresolved conflicts. Preserve existing names and consumer behavior. Explain which useful values need named tokens or usage guidance; make source changes only after the choices are settled. Preserve the frozen reference, product imagery, dropdown, one-accessory rule, and 72 configurations. Normalize Continue to Ink/white, 12px corners, and 48px height, with 24px accessory gaps. Keep purple Continue and 8px gaps only as named teaching fixtures. Record Arial/Georgia to Arimo/Lora mapping and weight or measurement differences. Project exact configure and accessory-details wording, caption construction, and details routing into docs/native-baseline.md. Map original source references to their imported bundle, CSS, and component guidance paths. Exclude ReviewConfiguration, completed Review implementation, and the historical handoff from the baseline system. Stop before upload if an unresolved decision affects the starting screens. Do not invent a component or silently accept a proposed pattern.",
+      "sha256": "94841aa05d9db996deacc7a5641dd5dfb90a22aabd3157f5e31ed755e42a36fc"
+    },
+    {
+      "id": "prompt-03",
+      "tool": "Claude Code",
+      "title": "Import the prepared Velori draft",
+      "chapter": "chapter-02",
+      "section": "import-the-prepared-draft",
+      "sourceStartLine": 198,
+      "sourceEndLine": 198,
+      "markdownStartLine": 287,
+      "markdownEndLine": 287,
+      "body": "Import the prepared Velori source system into the recorded destination using the native command already opened. Use .design-sync/config.json, src/library.jsx, src/tokens.css, src/velori.css, docs/native-baseline.md derived from the reviewed system definition and resolved source-conflict decisions, conventions, previews, and packaged assets. Exclude the frozen reference, ReviewConfiguration, completed answer-key guidance, historical handoff and mappings, node_modules, validation outputs, and private owner state from upload. Confirm the account, organization, new or existing system, and destination before sending files. Check all 13 baseline exports and their usage guidance. Use the supplied declared source adapter so assets and their hash inventory exist before native validation and capture. Include assets/** in the upload scope, review obsolete asset paths, and verify the product files reached the recorded destination. Recapture asset-dependent previews whenever the asset inventory changes. Preserve the conversion report, file inventory, returned result, and system URL. Stop on a rejected upload or unresolved source conflict. Keep the system private; do not publish it or change the organization default.",
+      "sha256": "7e3f9f0d89809f7f167d5a4c2b63202f07b6ae26f60728823695cc5e7e0ce9c5"
+    },
+    {
+      "id": "prompt-04",
+      "tool": "Claude Design",
+      "title": "Recreate known Velori screens",
+      "chapter": "chapter-03",
+      "section": "generate-the-known-screens",
+      "sourceStartLine": 228,
+      "sourceEndLine": 228,
+      "markdownStartLine": 322,
+      "markdownEndLine": 322,
+      "body": "Use the selected Velori system and accepted source definition. Create one responsive interactive store with one shared configuration and one mounted screen at a time. Use fixture controls or routes to inspect the required states while keeping component IDs unique. Preserve the supplied storage and focus behavior. Recreate the configurator at 1024 × 768 with Chalk, Friendly, White, and Dock, then Graphite, Simple, Amber, and Carry bag. Show the expression menu, Carry bag details, Charging dock details, and unavailable-image configurator. Use the actual named components, controlled props, tokens, and product assets. Keep selection, photograph, mask, caption, and labels consistent. Browsing another accessory must not change selection. Preserve dropdown keyboard behavior. Identify missing or unverifiable source rules before substituting them. Do not add Review configuration yet.",
+      "sha256": "c903f4c7dc7a55c857a295a6514bea8e690d3b2885a7ff14cc030c64fa094935"
+    },
+    {
+      "id": "prompt-05",
+      "tool": "Claude Design",
+      "title": "Audit source conformance",
+      "chapter": "chapter-03",
+      "section": "sample-ten-elements-for-fidelity",
+      "sourceStartLine": 251,
+      "sourceEndLine": 251,
+      "markdownStartLine": 348,
+      "markdownEndLine": 348,
+      "body": "Audit these ten elements: brand/navigation, heading, Continue, finish, face, expression dropdown, single accessory choice, product imagery, caption, and layout. For each, cite the actual component/export and token or accepted CSS rule used, with its size, type, spacing, radius, and color where applicable. Classify it as exact reuse, valid composition, cosmetic resemblance, invented replacement, or unverifiable. Separate observed source evidence from inference. Flag altered props, substituted imagery, literal values that disagree with the definition, and missing states. Do not infer reuse from a screenshot. Stop before the review extension if any element lacks accepted source evidence.",
+      "sha256": "4b805188fe98f0eccbbc8b8aae0dfd3d1abd80991b9147c7e6e57e74c3c9e760"
+    },
+    {
+      "id": "prompt-06",
+      "tool": "Claude Design",
+      "title": "Correct and regenerate",
+      "chapter": "chapter-03",
+      "section": "check-that-a-correction-persists",
+      "sourceStartLine": 261,
+      "sourceEndLine": 261,
+      "markdownStartLine": 361,
+      "markdownEndLine": 361,
+      "body": "In this isolated test screen, correct the named purple-continue or accessory-gap-8 fixture using the accepted Velori source system. Continue must use PrimaryButton with Ink/white, 12px corners, and 48px height. Accessory choices must have 24px gaps. Identify the source rule used for the correction. Then generate a second configurator state with Pebble, Friendly, Mint, and no accessory. Confirm that the corrected rule persists there and that the fixture has not become an accepted variant. Record any unresolved replacement before proceeding.",
+      "sha256": "3259a9c179d4e2cde483239dd35ed7e892acd738c5a2a02af21764ffed360f9d"
+    },
+    {
+      "id": "prompt-07",
+      "tool": "Claude Design",
+      "title": "Add Review configuration",
+      "chapter": "chapter-04",
+      "section": "generate-the-bounded-change",
+      "sourceStartLine": 283,
+      "sourceEndLine": 283,
+      "markdownStartLine": 388,
+      "markdownEndLine": 388,
+      "body": "Use the selected Velori system and supplied configurator as the baseline. Make Continue open Review configuration. Show the chosen product photo and finish, face, expression color, and single accessory. Add Edit configuration and Back. Both return without losing values. Support pointer and keyboard navigation. Focus the Review heading when it opens; when Edit configuration, Back, or browser Back returns to the configurator, restore focus to Continue. Preserve reload persistence and an unavailable-image state that retains the summary. Reuse the system components and tokens. Identify the review screen as new sample behavior. Keep payment, inventory, accounts, shipping, and order submission outside the result.",
+      "sha256": "20cc4e28ef0bc1d31415864b1e94d07a8d7077fd05769813168198105f99b786"
+    },
+    {
+      "id": "prompt-08",
+      "tool": "Claude Design",
+      "title": "Audit the complete journey",
+      "chapter": "chapter-05",
+      "section": "make-all-surfaces-agree",
+      "sourceStartLine": 332,
+      "sourceEndLine": 332,
+      "markdownStartLine": 444,
+      "markdownEndLine": 444,
+      "body": "Select Graphite, Simple, Amber, and Carry bag. Open accessory details, browse Charging dock, and return. Continue to review, then edit. Inspect photographs, captions, selected marks, and summaries after each transition. Keep Carry bag selected while browsing Dock. Show the unavailable-image state on review with the four values still visible. Report any surface that reads stale or independent values.",
+      "sha256": "4b12dfdb5a7b771e524ac956fbf008fb70ae6cf2a6150c363df29d0de7075e42"
+    },
+    {
+      "id": "prompt-09",
+      "tool": "Claude Code",
+      "title": "Verify recovery",
+      "chapter": "chapter-06",
+      "section": "avoid-stale-images",
+      "sourceStartLine": 370,
+      "sourceEndLine": 370,
+      "markdownStartLine": 485,
+      "markdownEndLine": 485,
+      "body": "Test rapid changes and a genuinely failed product-image request. Confirm the final image and caption agree, a failed image retains choices, and Retry reloads the asset after it becomes available. Test reload on review, blocked browser storage, and reset isolation. Keep unrelated storage values intact. Record actual results rather than adding untested behavior claims.",
+      "sha256": "9701821f865c7a149b2fc9db4cf13d3b842c492c4328127448d22d66a153a7d9"
+    },
+    {
+      "id": "prompt-10",
+      "tool": "Claude Design",
+      "title": "Review against evidence",
+      "chapter": "chapter-08",
+      "section": "challenge-the-result",
+      "sourceStartLine": 442,
+      "sourceEndLine": 442,
+      "markdownStartLine": 566,
+      "markdownEndLine": 566,
+      "body": "Audit the Velori journey against the preserved baseline and bounded review brief. Name each reused component, product composition, changed behavior, and unresolved issue. Test the non-default fixture, detail browsing, review, edit, keyboard return, reload, and unavailable images. Keep conclusions tied to the rendered result and actual handoff. Do not infer interactive behavior from an artboard or PNG.",
+      "sha256": "aaa5bb45e3f8722960f08b3a61a632a3da071514aea4cf4fd4b7dc8accb6ea71"
+    },
+    {
+      "id": "prompt-11",
+      "tool": "Claude Code",
+      "title": "Prepare the new Code packet",
+      "chapter": "chapter-09",
+      "section": "capture-your-generated-result",
+      "sourceStartLine": 476,
+      "sourceEndLine": 476,
+      "markdownStartLine": 605,
+      "markdownEndLine": 605,
+      "body": "Use the copied native handoff prompt to read the recorded Velori project through the authenticated claude_design MCP. Confirm the intended account and complete /design-login only if authorization is requested. Read the selected generated HTML, support.js, every referenced system bundle and stylesheet, and all referenced assets. Preserve the copied prompt, returned files and read receipts unchanged in handoff/new-run/captured/, and record their hashes, project URL, selected file, handoff method and dependency origins in handoff/new-run/HANDOFF.json. Treat a truncated binary response or an incomplete decode as a failed read, and preserve its receipt. Obtain full bytes through Share → Project HTML → Project archive → Export. Preserve the original archive and extracted entries unchanged, hash both, and compare complete overlapping files with the MCP reads. Do not fill missing files from the sample or a historical packet. Stop until every required source file and dependency has complete bytes. After capture is complete, create a separate runnable adaptation in handoff/new-run/ with package.json, lockfile, local assets, README, a dev script serving localhost:4206, and a validate script. Do not reuse the historical packet as the new handoff. Inspect the received runtime for globals, CDN URLs and resource mappings; provision required dependencies locally and document every URL or asset-route mapping separately from captured source. Validation must target this new packet and test all 72 configurations, configure → details → review → edit, dropdown keyboard behavior, Back, reload persistence, rapid changes, unavailable-image recovery, and storage independence. Install Playwright as a development dependency for browser checks. Run without external HTTPS requests after installation. Preserve the sample application.",
+      "sha256": "679fb2b45700823dc04c7ac1762ec710c88daa847d65ab23f0e5c4f7e5f9b85e"
+    },
+    {
+      "id": "prompt-12",
+      "tool": "Claude Code",
+      "title": "Implement the exported review",
+      "chapter": "chapter-09",
+      "section": "bring-the-bounded-change-into-react",
+      "sourceStartLine": 504,
+      "sourceEndLine": 504,
+      "markdownStartLine": 636,
+      "markdownEndLine": 636,
+      "body": "Inspect handoff/new-run/captured/ and HANDOFF.json from the passing new packet. Adapt only the bounded Review configuration column into the React sample. Preserve named exports, tokens, photos, all four values, the expression dropdown, and one accessory choice. Keep routing, persistence, focus, and image recovery in their existing owners. Test configure → details → review → edit with Graphite, Simple, Amber, and Carry bag. Record the source-to-implementation mapping and deviations. Do not edit CLEAR or publish.",
+      "sha256": "3bff770bb9cd9edfaceb87c80a0b75217435bad54f0a85a0717a25fa250a5243"
+    },
+    {
+      "id": "prompt-13",
+      "tool": "Figma",
+      "title": "Build and inspect the native store",
+      "chapter": "chapter-10",
+      "section": "keep-native-identity",
+      "sourceStartLine": 528,
+      "sourceEndLine": 528,
+      "markdownStartLine": 663,
+      "markdownEndLine": 663,
+      "body": "Use the identified Velori working file. Preserve the original foundation, components, configurator, and source assets. Add editable native frames for configure, expression menu, Carry bag details, Charging dock details, review, and unavailable review. Reuse existing component instances and shared variables. Wire Graphite, Simple, Amber, and Carry bag through details, review, and edit. Confirm selected states, configured product images, captions, and summaries update. Keep the original Chalk reference photos in accessory details, matching AccessoryPhoto; browsing Dock must preserve the selected Carry bag. Record component and variable identities and test the actual prototype.",
+      "sha256": "4fc5ecb9ed7bfcd088f6b4f5b7504eab396e22c1461a1facc4538b7ef3c9f02e"
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "workflow-loop",
+      "sourceLine": 60,
+      "definition": {
+        "schemaVersion": 1,
+        "title": "WorkflowLoop",
+        "kind": "sequence",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Frame"
+          },
+          {
+            "id": "n2",
+            "label": "Ground"
+          },
+          {
+            "id": "n3",
+            "label": "Extend"
+          },
+          {
+            "id": "n4",
+            "label": "Specify"
+          },
+          {
+            "id": "n5",
+            "label": "Map"
+          },
+          {
+            "id": "n6",
+            "label": "Hand off"
+          },
+          {
+            "id": "n7",
+            "label": "Implement"
+          },
+          {
+            "id": "n8",
+            "label": "Reconcile"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2"
+          },
+          {
+            "from": "n2",
+            "to": "n3"
+          },
+          {
+            "from": "n3",
+            "to": "n4"
+          },
+          {
+            "from": "n4",
+            "to": "n5"
+          },
+          {
+            "from": "n5",
+            "to": "n6"
+          },
+          {
+            "from": "n6",
+            "to": "n7"
+          },
+          {
+            "from": "n7",
+            "to": "n8"
+          },
+          {
+            "from": "n8",
+            "to": "n1",
+            "feedback": true
+          }
+        ],
+        "note": "Rendered evidence and drift restart the loop",
+        "printAlt": "Frame; Ground; Extend; Specify; Map; Hand off; Implement; Reconcile. Rendered evidence and drift restart the loop",
+        "printCaption": "Rendered evidence and drift restart the loop"
+      }
+    },
+    {
+      "id": "surface-continuity",
+      "sourceLine": 75,
+      "definition": {
+        "schemaVersion": 1,
+        "title": "SurfaceContinuityDiagram",
+        "kind": "branch",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "CONFIGURATION",
+            "detail": "finish / face / color / accessory"
+          },
+          {
+            "id": "n2",
+            "label": "Configurator",
+            "detail": "choices + photo"
+          },
+          {
+            "id": "n3",
+            "label": "Details",
+            "detail": "browse + return"
+          },
+          {
+            "id": "n4",
+            "label": "Review",
+            "detail": "summary + edit"
+          },
+          {
+            "id": "n5",
+            "label": "Recovery",
+            "detail": "retain + retry"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2"
+          },
+          {
+            "from": "n1",
+            "to": "n3"
+          },
+          {
+            "from": "n1",
+            "to": "n4"
+          },
+          {
+            "from": "n1",
+            "to": "n5"
+          }
+        ],
+        "note": "",
+        "printAlt": "Configuration feeds the configurator, details, review, and image recovery.",
+        "printCaption": "Every surface keeps the same four configuration values."
+      }
+    }
+  ],
+  "figures": [
+    {
+      "id": "s01-start",
+      "sourceLine": 32,
+      "caption": "Public React sample. Graphite, Simple, Amber and Carry bag appear in the controls, configured photograph, caption and Review summary."
+    },
+    {
+      "id": "s02-figma-import",
+      "sourceLine": 52,
+      "caption": "Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page."
+    },
+    {
+      "id": "s03-private-import",
+      "sourceLine": 193,
+      "caption": "Claude Design, October 5 walkthrough. The example destination is Velori Handbook v1.2.0. Before upload, Share shows Private and Not shared."
+    },
+    {
+      "id": "s04-inspect-system",
+      "sourceLine": 219,
+      "caption": "Claude Design. Inspect the imported component inventory, rendered ProductPreview and opened usage guidance. The preview uses its own component example, separate from the Amber journey fixture."
+    },
+    {
+      "id": "s05-correction",
+      "sourceLine": 266,
+      "caption": "Claude Design teaching fixture. The accessory gap changes from 8px to the accepted 24px. An independent generation retains the 24px rule with Pebble, Friendly, Mint and None; that screen omits storage and details."
+    },
+    {
+      "id": "s06-native-review",
+      "sourceLine": 292,
+      "caption": "Claude Design, October 5 walkthrough. The generated Review retains Graphite, Simple, Amber and Carry bag from Configure, with Edit configuration and Back available."
+    },
+    {
+      "id": "s07-browse",
+      "sourceLine": 318,
+      "caption": "Public React sample. Browsing Charging dock changes the detail view while Carry bag remains selected. After returning to Configure and choosing Continue, Review still lists Carry bag."
+    },
+    {
+      "id": "s08-retry",
+      "sourceLine": 373,
+      "caption": "Public React sample. Blocking the actual required shell-image request produces the real unavailable state and Retry image action. After unblocking and retrying, the photograph returns and Review still lists Graphite, Simple, Amber and Carry bag."
+    },
+    {
+      "id": "s09-dropdown",
+      "sourceLine": 391,
+      "caption": "Public React sample. Amber is committed and checked while Blue is the active option in the keyboard-open menu. The real trigger focus outline remains visible."
+    },
+    {
+      "id": "s10-mobile",
+      "sourceLine": 411,
+      "caption": "Public React sample at 390px. The product and caption stack above the four-value Review summary. Edit configuration and Back remain reachable."
+    },
+    {
+      "id": "s11-handoff",
+      "sourceLine": 471,
+      "caption": "Claude Design. Send opens the Local agent handoff for the generated Velori Store file. Copied records the completed copy action; Project HTML provides the Project archive export path."
+    },
+    {
+      "id": "s12-figma-review",
+      "sourceLine": 539,
+      "caption": "Imported Figma working copy. Inspect linked component identity and a representative variable binding, then compare Present Review with Graphite, Simple, Amber and Carry bag. Prototype variables cover the configured visit."
+    }
+  ],
+  "callouts": [],
+  "worksheets": [],
+  "stopConditionExcerpts": [
+    {
+      "section": "import-the-prepared-draft",
+      "sourceLine": 189,
+      "text": "This walkthrough uses the standalone `claude.ai/design` project surface. If that address redirects to conversation artifacts, use the visible **Visit standalone homepage** link before continuing. Inspect the returned system there before creating a project. Conversation design-system artifacts are a separate route outside this capstone; their inventory does not establish that a standalone system exists. If the installed skill cannot target the chosen surface, stop and resolve the destination before creating anything."
+    },
+    {
+      "section": "import-the-prepared-draft",
+      "sourceLine": 191,
+      "text": "New-system creation may require its own approval. The inspected native tool reports that a new system initially uses organization-wide visibility. Check the intended visibility before creation and inspect the Share menu before uploading files. Stop if the selected destination cannot meet the agreed access boundary."
+    },
+    {
+      "section": "capture-your-generated-result",
+      "sourceLine": 469,
+      "text": "A binary read can return truncated data even when the request succeeds. Preserve that read receipt and obtain the full project archive through **Share → Project HTML → Project archive → Export**. Use the archive as a companion to the copied handoff prompt and MCP reads. Preserve its original bytes and extracted entries unchanged, hash both, and compare complete overlapping files with the MCP reads. Stop until every required dependency has complete bytes; do not substitute assets from the sample or a historical packet. See [Design's export workflow](https://support.claude.com/en/articles/14604416-get-started-with-claude-design)."
+    },
+    {
+      "section": "capture-your-generated-result",
+      "sourceLine": 473,
+      "text": "Ask Code to inspect the returned source before implementation. Include support.js, referenced system bundles and styles, runtime dependencies, and product assets. A copied prompt starts the import; successful file reads establish the capture. Preserve captured bytes and make any host adaptation beside them. Stop for unresolved failed reads or missing source or dependencies. The local packet must resolve its private project references before it can pass independent validation."
+    },
+    {
+      "section": "capture-your-generated-result",
+      "sourceLine": 487,
+      "text": "Open http://127.0.0.1:4206. Leave that server running and run `npm run validate` in another terminal in the same folder. Keep the test output and screenshots. These scripts are outputs of the packet-preparation step; stop if they are missing or target the historical packet. Only a passing new packet establishes your new handoff."
+    },
+    {
+      "section": "keep-native-identity",
+      "sourceLine": 521,
+      "text": "Before editing, verify local main components, internal instance links, variable collections and modes, image resources, and available fonts in your imported copy. Stop if a required external library or resource is inaccessible. Use linked instances for the existing Velori components. Bind finish, face, expression, accessory, captions, and summaries to shared variables. Record the component and variable IDs from your actual file. A flattened screenshot or a collection of look-alike rectangles does not preserve native reuse."
+    },
+    {
+      "section": "phase-2-define-import-and-validate",
+      "sourceLine": 565,
+      "text": "Follow Chapters 2 and 3 in order. Prepare the source definition and conflict record, including CSS literals, usage guidance, and Figma font correspondence. Resolve required decisions, run local checks, and import the prepared draft into the recorded destination. Inspect actual component cards and recreate the known configurator, menu, details, and unavailable-image screens. Save the ten-element fidelity sample and correction-persistence test. Stop for an unresolved source rule or a failed native check."
+    }
+  ],
+  "commands": [
+    {
+      "section": "start-the-sample",
+      "language": "sh",
+      "sourceLine": 22,
+      "body": "cd velori-store\nnpm ci\nnpm run dev"
+    },
+    {
+      "section": "capture-your-generated-result",
+      "language": "sh",
+      "sourceLine": 481,
+      "body": "npm ci\nnpx playwright install chromium\nnpm run dev"
+    },
+    {
+      "section": "phase-6-verify-the-reader-package",
+      "language": "sh",
+      "sourceLine": 581,
+      "body": "npm run check\nnpm run build\nnpx playwright install chromium\nnpm run dev"
+    },
+    {
+      "section": "phase-6-verify-the-reader-package",
+      "language": "sh",
+      "sourceLine": 590,
+      "body": "npm run validate:browser"
+    }
+  ],
+  "markdownSha256": "87f417d4e973a6ae0fd7a64089a70d5c64605a945aeb043f670c62d2b411f79a",
+  "transformations": [
+    {
+      "sourceLine": 10,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 18,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 32,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 36,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 46,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 52,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 58,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 60,
+      "kind": "diagram-text-equivalent"
+    },
+    {
+      "sourceLine": 75,
+      "kind": "diagram-text-equivalent"
+    },
+    {
+      "sourceLine": 77,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 79,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 81,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 85,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 89,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 99,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 107,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 118,
+      "kind": "prompt-fence",
+      "endLine": 120
+    },
+    {
+      "sourceLine": 122,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 126,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 128,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 130,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 136,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 142,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 157,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 177,
+      "kind": "prompt-fence",
+      "endLine": 179
+    },
+    {
+      "sourceLine": 185,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 193,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 197,
+      "kind": "prompt-fence",
+      "endLine": 199
+    },
+    {
+      "sourceLine": 207,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 211,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 213,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 215,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 219,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 221,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 227,
+      "kind": "prompt-fence",
+      "endLine": 229
+    },
+    {
+      "sourceLine": 233,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 250,
+      "kind": "prompt-fence",
+      "endLine": 252
+    },
+    {
+      "sourceLine": 256,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 260,
+      "kind": "prompt-fence",
+      "endLine": 262
+    },
+    {
+      "sourceLine": 266,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 268,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 272,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 274,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 276,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 280,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 282,
+      "kind": "prompt-fence",
+      "endLine": 284
+    },
+    {
+      "sourceLine": 286,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 292,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 294,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 300,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 304,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 306,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 308,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 312,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 318,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 320,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 331,
+      "kind": "prompt-fence",
+      "endLine": 333
+    },
+    {
+      "sourceLine": 335,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 339,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 341,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 343,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 347,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 361,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 365,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 369,
+      "kind": "prompt-fence",
+      "endLine": 371
+    },
+    {
+      "sourceLine": 373,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 375,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 379,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 381,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 383,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 387,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 391,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 395,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 405,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 411,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 415,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 419,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 421,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 423,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 437,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 441,
+      "kind": "prompt-fence",
+      "endLine": 443
+    },
+    {
+      "sourceLine": 445,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 451,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 455,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 457,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 459,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 463,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 471,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 475,
+      "kind": "prompt-fence",
+      "endLine": 477
+    },
+    {
+      "sourceLine": 489,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 493,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 499,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 503,
+      "kind": "prompt-fence",
+      "endLine": 505
+    },
+    {
+      "sourceLine": 507,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 511,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 513,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 515,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 519,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 527,
+      "kind": "prompt-fence",
+      "endLine": 529
+    },
+    {
+      "sourceLine": 531,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 539,
+      "kind": "screenshot-figure"
+    },
+    {
+      "sourceLine": 541,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 547,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 551,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 553,
+      "kind": "chapter-metadata"
+    },
+    {
+      "sourceLine": 555,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 559,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 563,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 567,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 571,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 575,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 579,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 598,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 609,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 617,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 619,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 623,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 629,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 647,
+      "kind": "heading"
+    },
+    {
+      "sourceLine": 656,
+      "kind": "remove-page-break"
+    },
+    {
+      "sourceLine": 658,
+      "kind": "heading"
+    }
+  ],
+  "verbatimSourceLines": [
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    33,
+    34,
+    35,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    47,
+    48,
+    49,
+    50,
+    51,
+    53,
+    54,
+    55,
+    56,
+    57,
+    59,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    76,
+    78,
+    80,
+    82,
+    83,
+    84,
+    86,
+    87,
+    88,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    121,
+    123,
+    124,
+    125,
+    127,
+    129,
+    131,
+    132,
+    133,
+    134,
+    135,
+    137,
+    138,
+    139,
+    140,
+    141,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    180,
+    181,
+    182,
+    183,
+    184,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    194,
+    195,
+    196,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    208,
+    209,
+    210,
+    212,
+    214,
+    216,
+    217,
+    218,
+    220,
+    222,
+    223,
+    224,
+    225,
+    226,
+    230,
+    231,
+    232,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    253,
+    254,
+    255,
+    257,
+    258,
+    259,
+    263,
+    264,
+    265,
+    267,
+    269,
+    270,
+    271,
+    273,
+    275,
+    277,
+    278,
+    279,
+    281,
+    285,
+    287,
+    288,
+    289,
+    290,
+    291,
+    293,
+    295,
+    296,
+    297,
+    298,
+    299,
+    301,
+    302,
+    303,
+    305,
+    307,
+    309,
+    310,
+    311,
+    313,
+    314,
+    315,
+    316,
+    317,
+    319,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    334,
+    336,
+    337,
+    338,
+    340,
+    342,
+    344,
+    345,
+    346,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    362,
+    363,
+    364,
+    366,
+    367,
+    368,
+    372,
+    374,
+    376,
+    377,
+    378,
+    380,
+    382,
+    384,
+    385,
+    386,
+    388,
+    389,
+    390,
+    392,
+    393,
+    394,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    406,
+    407,
+    408,
+    409,
+    410,
+    412,
+    413,
+    414,
+    416,
+    417,
+    418,
+    420,
+    422,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    438,
+    439,
+    440,
+    444,
+    446,
+    447,
+    448,
+    449,
+    450,
+    452,
+    453,
+    454,
+    456,
+    458,
+    460,
+    461,
+    462,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    472,
+    473,
+    474,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    490,
+    491,
+    492,
+    494,
+    495,
+    496,
+    497,
+    498,
+    500,
+    501,
+    502,
+    506,
+    508,
+    509,
+    510,
+    512,
+    514,
+    516,
+    517,
+    518,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    530,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    540,
+    542,
+    543,
+    544,
+    545,
+    546,
+    548,
+    549,
+    550,
+    552,
+    554,
+    556,
+    557,
+    558,
+    560,
+    561,
+    562,
+    564,
+    565,
+    566,
+    568,
+    569,
+    570,
+    572,
+    573,
+    574,
+    576,
+    577,
+    578,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    618,
+    620,
+    621,
+    622,
+    624,
+    625,
+    626,
+    627,
+    628,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    657,
+    659,
+    660,
+    661,
+    662,
+    663,
+    664
+  ]
+}

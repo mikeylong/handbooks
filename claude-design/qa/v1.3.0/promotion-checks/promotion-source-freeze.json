@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "basis": "Current intentional source files after bounded artifact-reuse, retained FIG route and optional Markdown dependency repairs. These hashes describe the validated promotion runtime; the preserved candidate 18-file freeze describes its earlier PDF/reader build.",
+  "files": [
+    {
+      "path": "claude-design/source/test-release-ledger.mjs",
+      "sha256": "723964f2d661fd31d371afe9b49c2aae16ea8416067694e106b43c5de0e660a1",
+      "bytes": 14385
+    },
+    {
+      "path": "claude-design/source/validate-release.mjs",
+      "sha256": "f86e054c688fb66cc1a400f20088023a0e7090e6ef4383d5f12f3f2faea21687",
+      "bytes": 23363
+    },
+    {
+      "path": "publish-evidence-backed-handbook/assets/reader/flowable-reader.css",
+      "sha256": "e927948af73ad510d1b6fa7e48a98e52318128b9cf5b7f70b62626819e54bcbd",
+      "bytes": 1571
+    },
+    {
+      "path": "publish-evidence-backed-handbook/assets/reader/theme.css",
+      "sha256": "2337df6160077f87424a8abdbcc969c9a1d9c7f9df5b1ab4306dafad8bbd8e2f",
+      "bytes": 7344
+    },
+    {
+      "path": "publish-evidence-backed-handbook/references/screenshot-figures.md",
+      "sha256": "5230e033821c042f39881ee74fcd7daa172096e38f36c0b6f4740faf843335bb",
+      "bytes": 7736
+    },
+    {
+      "path": "publish-evidence-backed-handbook/references/shared-reader-workflow.md",
+      "sha256": "fa752e0b5c827cf6ff306928b761e10e7edc33e27673b201775f8e7f952166df",
+      "bytes": 12333
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/audit-pdf-appearance.py",
+      "sha256": "661d92529037c80edcaaca6f41a8f206dea5ffd7a1a5191cad6b8435e57d0556",
+      "bytes": 6826
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/diagrams.mjs",
+      "sha256": "f7a383a0ebe7d6e50a23e520f1cf2037cb79fbcc320f6e867fdb36324fe959c6",
+      "bytes": 5922
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/export-machine-markdown.py",
+      "sha256": "4e1f949c08895e16f3cbc73437718835ace2612d337ef811c24d7b3815fed99c",
+      "bytes": 13993
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/flowable_reader.py",
+      "sha256": "b40a8e1eb200de22b24c8741752b0cd4f2c12d49e5e633ffc75322a775ba190e",
+      "bytes": 14911
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/markdown-downloads.mjs",
+      "sha256": "f1a3a3764935e97e95e6db78dc6dca0ef78ebda04460f3ed43369371625b4ebf",
+      "bytes": 13147
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/markdown_layout.py",
+      "sha256": "cbe83d144a2d30a9ade2976a8c860f72f143b4501cea5e3fbf6d0363cd06182a",
+      "bytes": 45903
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/retained-releases.mjs",
+      "sha256": "de9c1c97e26d6d2ed1addde009883729e5fac5b4e24eccac2e4f16f1a77f00de",
+      "bytes": 1998
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/screenshot-browser-check.mjs",
+      "sha256": "9f278f9fc1e9a2e1f91e210c17110519d9af23dd8baaf8ac68f919d5108b9b31",
+      "bytes": 6515
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/screenshot_figures.py",
+      "sha256": "b4fe6e971a8e14afc3f9e882ebc67e7efb4f8ccc86b0701d14b046c613a5ab0a",
+      "bytes": 22215
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/test-diagrams.mjs",
+      "sha256": "50f7bcda34eb508f0524b859928238fbd784c2265b51c40e8fd758329d08e979",
+      "bytes": 4641
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/test-machine-markdown.py",
+      "sha256": "dcb440fc78175533f43e6c03220356b753623575586003aceda3d3fdb6f09fbd",
+      "bytes": 1551
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/test-markdown-downloads.mjs",
+      "sha256": "e82d69f63846f1549ea0ea69c69c0912bddc95ac8f667523a2aa9e930276b6d4",
+      "bytes": 8892
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/test-markdown-page-layout.py",
+      "sha256": "5334b5e7a528e16bda61a6868f0dc2b59c3e34afee9b20d200ebcdcda03d25da",
+      "bytes": 10312
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/test-retained-releases.mjs",
+      "sha256": "a46bceffc099fc188976488b69794308fa504162b64512fa2e1bb431278f72fc",
+      "bytes": 3001
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/test-screenshot-figures.py",
+      "sha256": "6d0abc8ee540ebec775e98f80a1b48ae315f8f59410af4fae5385ce4b53dcc09",
+      "bytes": 20643
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/validate-pdf.py",
+      "sha256": "6d0d56042ed659f765d2c79123311ee32f02f95dd74c02e0a04e7c13c81e8384",
+      "bytes": 32372
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/validate_pdf_pair.py",
+      "sha256": "aa4b0cd04350c230c10fb41d1af83c94cef0b978fd296c7db2f44c0360b18a35",
+      "bytes": 7441
+    },
+    {
+      "path": "site/scripts/build-review-preview.mjs",
+      "sha256": "696f768d78abb46a9ce388c65a56ce040d8fad384c4c3a6237653616fd998209",
+      "bytes": 11379
+    },
+    {
+      "path": "site/scripts/test-book-sources.mjs",
+      "sha256": "6d9c6c598bdffc9c903bb513040223aa5f94186398758490614f4a31f8f38e44",
+      "bytes": 7340
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "0c3955352074410dd865b4139832666bf920383d8e3399250ee56391fac77b5f",
+      "bytes": 11169
+    }
+  ]
+}

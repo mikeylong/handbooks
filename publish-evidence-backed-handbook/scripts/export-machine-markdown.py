@@ -15,7 +15,11 @@ def slug(text):
     return re.sub(r'[^\w\- ]', '', text.lower()).replace(' ', '-')
 
 
-def export(source, diagrams, status, companion=None):
+def export(source, diagrams, status, companion=None, figures=None, book_id=None, version=None):
+    figures = figures or {}
+    if figures:
+        from screenshot_figures import figure_markdown, validate_placements
+    used_figures = []
     lines = source.splitlines()
     if not lines or lines[0] != '---':
         raise ValueError('Source must start with YAML metadata')
@@ -35,7 +39,7 @@ def export(source, diagrams, status, companion=None):
     out += ['## Contents', '', '@@CONTENTS@@', '']
     index = {'schemaVersion': 1, 'sourceSha256': digest(source.encode()),
              'nativeExecutionStatus': status, 'sections': [], 'prompts': [],
-             'diagrams': [], 'callouts': [], 'worksheets': [], 'stopConditionExcerpts': [], 'commands': []}
+             'diagrams': [], 'figures': [], 'callouts': [], 'worksheets': [], 'stopConditionExcerpts': [], 'commands': []}
     seen = {}
     chapter = None
     pending = None
@@ -70,6 +74,17 @@ def export(source, diagrams, status, companion=None):
         if marker:
             pending = marker.groups()
             transformations.append({'sourceLine': i + 1, 'kind': 'chapter-metadata'})
+            i += 1
+            continue
+        figure = re.fullmatch(r'<!-- FIGURE ([A-Za-z0-9][A-Za-z0-9-]*) -->', line.strip())
+        if figure:
+            key = figure[1]
+            if key not in figures:
+                raise ValueError(f'Unknown screenshot figure ID: {key}')
+            used_figures.append(key)
+            out += ['', figure_markdown(figures[key], book_id, version), '']
+            index['figures'].append({'id': key, 'sourceLine': i + 1, 'caption': figures[key]['caption']})
+            transformations.append({'sourceLine': i + 1, 'kind': 'screenshot-figure'})
             i += 1
             continue
         diagram = re.fullmatch(r'<!-- DIAGRAM ([\w-]+) -->', line)
@@ -213,6 +228,8 @@ def export(source, diagrams, status, companion=None):
         i += 1
     if pending:
         raise ValueError('Chapter marker has no heading')
+    if figures:
+        validate_placements(figures, used_figures)
     at = out.index('@@CONTENTS@@')
     out[at:at + 1] = toc
     shift = len(toc) - 1
@@ -241,6 +258,10 @@ def main():
     parser.add_argument('--diagram', action='append', default=[], metavar='ID=JSON_PATH')
     parser.add_argument('--native-status', default='unverified')
     parser.add_argument('--companion', help='Package path relative to the Markdown output directory')
+    parser.add_argument('--figures', type=Path, help='Book-owned screenshot figure manifest')
+    parser.add_argument('--book-root', type=Path, help='Root for frozen screenshot assets')
+    parser.add_argument('--book-id', help='Public handbook slug for immutable screenshot links')
+    parser.add_argument('--version', help='Content edition for immutable screenshot links')
     args = parser.parse_args()
     if args.source.resolve() == args.output.resolve():
         raise ValueError('Export must not overwrite the manuscript')
@@ -248,7 +269,14 @@ def main():
     for value in args.diagram:
         key, path = value.split('=', 1)
         diagrams[key] = json.loads(Path(path).read_text())
-    content, index = export(args.source.read_text(), diagrams, args.native_status, args.companion)
+    figures = {}
+    if args.figures:
+        from screenshot_figures import load_figures
+        if not args.book_root or not args.book_id or not args.version:
+            raise ValueError('Screenshot export requires --book-root, --book-id and --version')
+        manifest = args.figures.resolve().relative_to(args.book_root.resolve())
+        figures = load_figures(args.book_root, str(manifest), required=True)
+    content, index = export(args.source.read_text(), diagrams, args.native_status, args.companion, figures, args.book_id, args.version)
     if args.companion:
         package = args.output.parent / args.companion
         if not package.is_file():

@@ -14,6 +14,7 @@ def build_reader(book_root, config, output, chrome=None):
  chrome=Path(chrome) if chrome else Path(__file__).resolve().parent.parent/'assets/reader/reader-chrome.html'
  import importlib.util, json, re, html, shutil, hashlib
  from reportlab.platypus import Paragraph,Table,KeepTogether
+ from screenshot_figures import ScreenshotFigure, copy_figure_assets, figure_html
  spec=importlib.util.spec_from_file_location('release',r/'source/build_handbook.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
  out.mkdir(parents=True,exist_ok=True);shutil.copytree(r/'assets/chapter-art/pdf',out/'assets',dirs_exist_ok=True)
  def txt(s):
@@ -106,6 +107,10 @@ def build_reader(book_root, config, output, chrome=None):
    blocks.append('<div class="table-scroll" tabindex="0"><table>'+''.join(rows)+'</table></div>')
   elif isinstance(x,KeepTogether):
    for c in x._content:item(c)
+  elif isinstance(x,ScreenshotFigure):
+   identity=json.loads((r/'pdf-config.json').read_text())
+   copy_figure_assets(x.figure,out,identity['id'],identity['version'])
+   blocks.append(figure_html(x.figure,identity['id'],identity['version']))
   elif isinstance(x,getattr(m,config['illustrationClass'])):blocks.append(f'<figure class="chapter-art"><img src="assets/chapter-{x.number:02d}.png" alt="{html.escape(config["artAlt"].format(number=x.number))}" loading="lazy"></figure>')
   elif isinstance(x,tuple(getattr(m,name) for name in config['diagramClasses'])):
    # Preserve original authored diagrams by rendering their existing ReportLab flowable.

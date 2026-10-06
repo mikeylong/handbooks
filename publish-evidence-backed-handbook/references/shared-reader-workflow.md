@@ -68,6 +68,8 @@ Use Node.js 22 or newer for the hosted modules and tests. Install this package's
 
 ### Book input formats
 
+Inline screenshot figures use the [shared screenshot manifest and source markers](screenshot-figures.md). Keep selected captures and prepared crops in the book. The same manifest supplies PDF panels, hosted figures and immutable Markdown image links; missing or stale figure inputs fail the build.
+
 `source/reader-config.json` records the story function, illustration and diagram flowable class names, title/subtitle and canonical URL, and the governing conversion options. Release checks record chapter and source counts, citation prefix, prohibited review text, and semantic-list requirements. Keep those decisions with the book; implement reusable behavior in the toolkit.
 
 Each `source/diagrams/<name>.json` defines `title`, `kind` (`sequence` or `branch`), nodes (`id`, `label`, optional `detail`), edges (`from`, `to`, optional `feedback`), and an optional `note`. Preserve any legacy `printAlt` and `printCaption` in the same definition. Fixed PDF flowables check node counts and relationships against their geometry and fail when a semantic update requires a new drawing layout. PDF drawing code loads the same definition through `scripts/diagram_data.py`. Extend the shared renderer when a future diagram needs another shape.

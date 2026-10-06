@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "frozenAt": "2026-10-06T17:01:01.166999+00:00",
+  "basis": "Exact live approved Surfaces routes before advancing from v1.2.1; no regenerated historical HTML.",
+  "artifacts": [
+    {
+      "url": "https://handbooks.surfaces.systems/claude-design/",
+      "destination": "site/retained/claude-design/v1.2.1/reader.html",
+      "sha256": "f0be66d10cc885289b17a0d62dba64df59db22d76772e7ddc20540b5d7e458e2",
+      "bytes": 101740,
+      "etag": "\"0b05287f50fab158ea7964eafa7ec70e\"",
+      "deployment": "dpl_ExTknwJ12FkW7DkRHKRoFdUrxzhM"
+    },
+    {
+      "url": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/",
+      "destination": "site/retained/claude-design/v1.2.1/index.html",
+      "sha256": "366b2eec1aed8a59e71601e9396772d5777c1f9f1a24c19281c779d412bdb325",
+      "bytes": 7382,
+      "etag": "\"9da57df4ad0f570db26925ee33b2ad7c\"",
+      "deployment": "dpl_ExTknwJ12FkW7DkRHKRoFdUrxzhM"
+    },
+    {
+      "url": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/claude-design-v1.2.1.md",
+      "destination": "site/retained/claude-design/v1.2.1/claude-design-v1.2.1.md",
+      "sha256": "e6ec054d34a1f243986a2eef254b1064659c41a89f4d808f108edd0c0370458c",
+      "bytes": 61418,
+      "etag": "\"d3536f920af9c36a284e7fcdc8372b3d\"",
+      "deployment": "dpl_ExTknwJ12FkW7DkRHKRoFdUrxzhM"
+    },
+    {
+      "url": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/claude-design-v1.2.1.index.json",
+      "destination": "site/retained/claude-design/v1.2.1/claude-design-v1.2.1.index.json",
+      "sha256": "dbe4e456bcc77ac91d4a1e395f78cd9a746343f6dc4085352f8e46877df58c18",
+      "bytes": 8432,
+      "etag": "\"caf7b7eeb4c5b8315d4005ab478f7220\"",
+      "deployment": "dpl_ExTknwJ12FkW7DkRHKRoFdUrxzhM"
+    }
+  ]
+}

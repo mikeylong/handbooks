@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "command": "export-machine-markdown.py with both diagram definitions, canonical screenshot manifest, book root, book id and v1.3.0 version",
+  "sourceSha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8",
+  "markdownSha256": "87f417d4e973a6ae0fd7a64089a70d5c64605a945aeb043f670c62d2b411f79a",
+  "figures": 12,
+  "chapters": 11,
+  "prompts": 13,
+  "index": {
+    "path": "claude-design/qa/v1.3.0/promotion-checks/source-authored-markdown-index.json",
+    "sha256": "05120209ca9eebd352cbff8b95f6fedd4412ce7505945a08c4d591d07c06a77f"
+  },
+  "legacyTest": {
+    "command": "python3 -S publish-evidence-backed-handbook/scripts/test-machine-markdown.py",
+    "status": "passed",
+    "basis": "Independent review ran the legacy exporter without site packages; the regression asserts that ReportLab and Pillow were not imported."
+  }
+}

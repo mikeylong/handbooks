@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "basis": "The accepted final browser pass and earlier harness attempts are preserved. Original log contents are retained here as UTF-8 text and exact SHA-256; loose .log files and harness runtime scripts remain outside the staging allowlist. No product changes were made while repairing the harness.",
+  "copiedProofsAndAttemptJson": [
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/1440-dark-cover.png",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/1440-dark-cover.png",
+      "sha256": "dcce2de7b8b190351fdcfd5df68093675f702a4d81f3bf105a1b86f33d3648f4",
+      "bytes": 151099
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/1440-dark-figure2.png",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/1440-dark-figure2.png",
+      "sha256": "0bd21da16b9a621cc8722990ddca3b6dc67e3f242f258e35e3a193836e489e5b",
+      "bytes": 153479
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/1440-light-cover.png",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/1440-light-cover.png",
+      "sha256": "9630133137ff06fae615e5e7471f2d6f9c5510b4704b585e8cadeea13af40707",
+      "bytes": 146449
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/1440-light-figure2.png",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/1440-light-figure2.png",
+      "sha256": "6a20f7f3b4d092165d067bdf9cd2fe01d045ebf01fc5d6e0056b94faf8051daf",
+      "bytes": 151388
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/390-dark-cover.png",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/390-dark-cover.png",
+      "sha256": "c7a72297a6bb2f48c8fb36a22b109564d73c24c98d1c3883bb3ecc07e80346f2",
+      "bytes": 69296
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/390-dark-figure2.png",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/390-dark-figure2.png",
+      "sha256": "29bcf916ad4a374e90232ec767c8258a71b2c155586b82018eb735a17ba3e367",
+      "bytes": 89141
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/390-light-cover.png",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/390-light-cover.png",
+      "sha256": "28a4ca35a9ef32c013571412d07e0baf120376dac531c8b68278e4da91552e10",
+      "bytes": 67679
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/390-light-figure2.png",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/390-light-figure2.png",
+      "sha256": "b80ed09e4f55ee0793e4af31dc7329dadb134f774b143dc5bdbb7727fc427fa6",
+      "bytes": 87369
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/attempt-0-sandbox-launch.json",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/attempt-0-sandbox-launch.json",
+      "sha256": "0eb8b641e81da5aebf657e6364e88e7b7ca0084da8fb1bb25db8d8e48c159bbd",
+      "bytes": 313
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/attempt-1-markdown-escaping.json",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/attempt-1-markdown-escaping.json",
+      "sha256": "b783c53606b5b3831a992179fec85a7689f6bdca6ae04d936931d6bc24c694a9",
+      "bytes": 26200
+    },
+    {
+      "source": "/private/tmp/claude-design-release-browser-qa/attempt-2-mobile-navigation-selector.json",
+      "path": "claude-design/qa/v1.3.0/promotion-checks/browser-proofs/attempt-2-mobile-navigation-selector.json",
+      "sha256": "91d6ca3d2314c4df45fe92bcc12349749d3f38dd4857ba6fa5b493468feeddcb",
+      "bytes": 147883
+    }
+  ],
+  "logs": [
+    {
+      "originalPath": "/private/tmp/claude-design-release-browser-qa/attempt-1-markdown-escaping.log",
+      "sha256": "85820ed9ba561878c7ae10fe5a51cced115d982bc672d97e914a57a2b9de673f",
+      "bytes": 243,
+      "text": "{\"status\":\"failed\",\"cases\":0,\"routes\":109,\"errors\":[\"AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\\n\\n  assert(md.includes(p.alt))\\n\\n    at file:///private/tmp/claude-design-release-browser-qa/check.mjs:30:390\"]}\n"
+    },
+    {
+      "originalPath": "/private/tmp/claude-design-release-browser-qa/attempt-2-mobile-navigation-selector.log",
+      "sha256": "b7555937376b042d33816e8a7ef61295084973407b78c3415c52d8b0c96247d0",
+      "bytes": 310,
+      "text": "1440 light\n1440 dark\n390 light\n{\"status\":\"failed\",\"cases\":2,\"routes\":110,\"errors\":[\"locator.click: Timeout 10000ms exceeded.\\nCall log:\\n\\u001b[2m  - waiting for getByRole('link', { name: 'Read the handbook', exact: true })\\u001b[22m\\n\\n    at /private/tmp/claude-design-release-browser-qa/check.mjs:59:487\"]}\n"
+    },
+    {
+      "originalPath": "/private/tmp/claude-design-release-browser-qa/check.log",
+      "sha256": "0058959beafdca8c4367c5fbbd5c251fa9b2f9b3c26606e0735f16eee86842c3",
+      "bytes": 114,
+      "text": "1440 light\n1440 dark\n390 light\n390 dark\n{\"status\":\"pending visual inspection\",\"cases\":4,\"routes\":110,\"errors\":[]}\n"
+    }
+  ]
+}

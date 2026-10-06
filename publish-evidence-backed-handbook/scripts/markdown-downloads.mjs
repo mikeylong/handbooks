@@ -51,12 +51,46 @@ export function readerMarkdown(html,edition){
   const resolved=new URL(value,`https://handbooks.surfaces.systems/${edition.id}/`);
   if(!['https:','http:','mailto:'].includes(resolved.protocol))throw Error('Unsafe Markdown link');return resolved.href;
  };
- let prompts=0;const codeBlocks=[];
+ let prompts=0;const codeBlocks=[],figures=[],figureIds=new Set();
  function codeBlock(text,language='text'){const key=`@@MARKDOWN-CODE-${codeBlocks.length}@@`;codeBlocks.push(fenced(text,language));return '\n\n'+key+'\n\n';}
  function render(n){
   if(n.tag==='#text')return esc(n.text.replace(/\s+/g,' '));
   if(n.attrs?.['aria-hidden']==='true'||['script','style','nav','source','button','input','defs'].includes(n.tag)||has(n,'diagram-print'))return '';
   const inner=()=>n.children.map(render).join('');
+  if(has(n,'reader-screenshot')){
+   const id=n.attrs['data-screenshot-figure'];
+   if(!/^[A-Za-z0-9][A-Za-z0-9-]*$/.test(id??'')||figureIds.has(id))throw Error('Invalid or duplicate screenshot figure');
+   figureIds.add(id);
+   const distribution=n.attrs['data-screenshot-distribution']??'public-eligible';
+   if(distribution==='internal-only'&&edition.publicationStatus==='published')throw Error('Internal screenshot sources cannot enter a published Markdown edition');
+   const caption=descendants(n,'figcaption')[0],panels=descendants(n,'div').filter(x=>has(x,'reader-screenshot-panel'));
+   if(!caption||!plain(caption).trim()||!panels.length)throw Error('Incomplete screenshot figure');
+   const imageUrl=(value,croppedView=false)=>{
+    const resolved=url(value??'');
+    const extension=croppedView?'html':'(?:png|jpg|jpeg)';
+    if(!resolved.startsWith(`https://handbooks.surfaces.systems/${edition.id}/editions/v${edition.version}/assets/screenshots/`)||!new RegExp('^https://handbooks\\.surfaces\\.systems/[^?#]+\\.'+extension+'$').test(resolved))throw Error('Screenshot image must use its immutable edition URL');
+    return resolved;
+   };
+   const images=[];
+   const content=panels.map(panel=>{
+    const image=descendants(panel,'img')[0],label=descendants(panel,'p').find(x=>has(x,'reader-screenshot-label')),larger=descendants(panel,'a').find(x=>has(x,'reader-screenshot-larger'));
+    if(!image?.attrs.alt?.trim()||!image.attrs.src||!larger?.attrs.href)throw Error('Incomplete screenshot image');
+    const viewport=descendants(panel,'span').find(x=>has(x,'reader-screenshot-crop'));
+    let crop;
+    if(viewport){
+     const values=viewport.attrs['data-screenshot-crop'];
+     if(!/^\d+,\d+,[1-9]\d*,[1-9]\d*$/.test(values??''))throw Error('Invalid screenshot crop');
+     crop=values.split(',').map(Number);
+     const width=Number(image.attrs.width),height=Number(image.attrs.height);
+     if(!Number.isInteger(width)||!Number.isInteger(height)||width<1||height<1||crop[0]+crop[2]>width||crop[1]+crop[3]>height)throw Error('Screenshot crop exceeds source bounds');
+    }
+    const src=imageUrl(image.attrs.src),full=imageUrl(larger.attrs.href,Boolean(crop));images.push({alt:image.attrs.alt,publicUrl:src,fullPublicUrl:full,...(crop?{crop}:{})});
+    const description=crop?'Image description: '+esc(image.attrs.alt)+'\n\nSource-pixel crop (x, y, width, height): '+crop.join(', ')+'.\n\n[View larger cropped image]('+full+')':'!['+esc(image.attrs.alt)+']('+src+')\n\n[View larger image]('+full+')';
+    return (label?'**'+esc(plain(label).trim())+'**\n\n':'')+description+(panel.attrs['data-screenshot-distribution']==='internal-only'?'\n\nInternal candidate. Layout cropping does not remove private pixels from the source asset.':'');
+   }).join('\n\n');
+   figures.push({id,caption:plain(caption).trim(),images,...(distribution==='internal-only'?{distribution}:{})});
+   return '\n\n'+render(caption).trim()+'\n\n'+content+'\n\n';
+  }
   if(has(n,'reader-prompt')){
    const titleNode=descendants(n,'span').find(x=>has(x,'reader-prompt-title'));
    const content=descendants(n,'div').find(x=>has(x,'reader-prompt-body'));
@@ -98,7 +132,7 @@ export function readerMarkdown(html,edition){
  content=content.replace(/@@MARKDOWN-CODE-(\d+)@@/g,(_,n)=>codeBlocks[Number(n)].trim());
  const metadata={title:edition.title,version:edition.version,date:edition.date,format:'machine-readable-markdown-v1',publication_status:edition.publicationStatus??'candidate',canonical_url:`https://handbooks.surfaces.systems/${edition.id}/`,source_reader_sha256:digest(html),...(edition.approvedReaderSha256?{approved_reader_sha256:edition.approvedReaderSha256}:{})};
  const markdown='---\n'+Object.entries(metadata).map(([k,v])=>k+': '+JSON.stringify(v)).join('\n')+'\n---\n\n# '+esc(edition.title)+'\n\n'+content+'\n';
- return {markdown,index:{schemaVersion:1,book:edition.id,version:edition.version,sourceReaderSha256:digest(html),sha256:digest(markdown),sections,prompts}};
+ return {markdown,index:{schemaVersion:1,book:edition.id,version:edition.version,sourceReaderSha256:digest(html),sha256:digest(markdown),sections,prompts,figures}};
 }
 export async function writeMarkdownEdition(output,edition,html){
  const {markdown,index}=readerMarkdown(html,edition),downloadFilename=`${edition.id}-v${edition.version}.md`,publicUrl=`/${edition.id}/editions/v${edition.version}/${downloadFilename}`;

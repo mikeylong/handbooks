@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "version": "1.3.0",
+  "appearanceRevision": 3,
+  "metadataDate": "2026-10-05",
+  "metadataDateBasis": "October 5, 2026 is provisional task-start metadata. Native captures resumed and completed on October 6, 2026 after browser stalls. No publication date has been approved.",
+  "technicalStatus": "passed",
+  "visualStatus": "passed",
+  "hostedQaStatus": "passed focused Figure 2 Chromium review at 1440 and 390 pixels in Light and Dark; full r2 coverage preserved",
+  "candidateReadyForReview": true,
+  "publicationApproved": false,
+  "figures": 12,
+  "panels": 35,
+  "preparedPngAssets": 37,
+  "screenshotFidelity": {
+    "colorManagedPanelPasses": "35/35",
+    "rawExactSourcePixelMatches": "10/35"
+  },
+  "artifacts": [
+    {
+      "format": "PDF",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/builds/final-r3/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+      "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
+      "bytes": 10094624,
+      "pages": 76
+    },
+    {
+      "format": "PDF",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/builds/final-r3/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+      "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e",
+      "bytes": 54114753,
+      "pages": 76
+    },
+    {
+      "format": "Markdown",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+      "sha256": "da804e75edb69098cb7db5436517fa1c838a3250e02e8bd5c330eb8d2475f179",
+      "bytes": 77128
+    },
+    {
+      "format": "Reader",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3/claude-design/index.html",
+      "sha256": "3fd3ec8bbb83cc8e4ed4a069bb2f2ffae0a33d8c66cd6f76df62a9bff4f0df07",
+      "bytes": 128663
+    },
+    {
+      "format": "Edition review",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3/claude-design/editions/v1.3.0/index.html",
+      "sha256": "b94071bf46b8fe3b2796aedb43e5ab2d68374a415288a71c30317c2c5b3276d7",
+      "bytes": 8980
+    }
+  ],
+  "proofManifest": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/renders/proof-manifest.json",
+    "sha256": "ebb520093b03361c752e206b56c7dc8c6f7592e8beffe7f318efb14635474dec"
+  },
+  "renderedProofs": {
+    "themes": 2,
+    "renderers": [
+      "Poppler",
+      "Apple PDFKit"
+    ],
+    "pagesEach": 76,
+    "pageImages": 304,
+    "dpi": 144
+  },
+  "rasterComparison": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/raster-comparison.json",
+    "sha256": "305323137327abef7ff9d1bce081041e07a6f0315b22e102c539cf068fcc85c3"
+  },
+  "changedPhysicalPages": [
+    7
+  ],
+  "screenshotPhysicalPageMap": {
+    "S01": [
+      3,
+      4,
+      5
+    ],
+    "S02": [
+      7,
+      8
+    ],
+    "S03": [
+      21,
+      22
+    ],
+    "S04": [
+      25,
+      26
+    ],
+    "S05": [
+      30
+    ],
+    "S06": [
+      34,
+      35
+    ],
+    "S07": [
+      38,
+      39
+    ],
+    "S08": [
+      43,
+      44,
+      45
+    ],
+    "S09": [
+      47
+    ],
+    "S10": [
+      49,
+      50
+    ],
+    "S11": [
+      57
+    ],
+    "S12": [
+      64,
+      65,
+      66
+    ]
+  },
+  "visualReview": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/visual-review.json",
+    "sha256": "2aad7ba06c31cc978fa59b44af013139ad953d4a6464a3c14a2fb5bf628436dd"
+  },
+  "priorFullVisualReview": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r2/visual-review.json",
+    "sha256": "b96a7501a681878e44fe6f25e549d02174f89222bf63e5a81d70ae7c8483c709"
+  },
+  "priorFullHostedQa": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/hosted-qa-r2/hosted-qa.json",
+    "sha256": "ace9350cdc44f706c78d28860391bb9e213e940c92069d4bf7938c784ded92c6"
+  },
+  "priorR2ArtifactPreservation": {
+    "status": "passed",
+    "artifacts": [
+      {
+        "format": "PDF",
+        "appearance": "daytime",
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/builds/final-r2/claude-design-v1.3.0-2026-10-05-daytime-r2.pdf",
+        "sha256": "13512c3fcf3bf3f539f3d588bbb6e690a4b3cc3832785fadb5bcceccabf643bb",
+        "bytes": 10099285,
+        "pages": 76
+      },
+      {
+        "format": "PDF",
+        "appearance": "late-night",
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/builds/final-r2/claude-design-v1.3.0-2026-10-05-late-night-r2.pdf",
+        "sha256": "50b47a5e598d858b9e7ad578f9cbdf5c48b1a3aed62c617cda5b78791c195bc7",
+        "bytes": 54119415,
+        "pages": 76
+      },
+      {
+        "format": "Markdown",
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r2/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+        "sha256": "1a705a72163f4ec6cdadd96b22bfae58ace2f6396aae9729fa9094b82c6f6680",
+        "bytes": 77081
+      },
+      {
+        "format": "Reader",
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r2/claude-design/index.html",
+        "sha256": "ade1bc2002268cc0f7a0bfe2d030dd79cdd61130a47611ffd036cbbecc3a028f",
+        "bytes": 128616
+      },
+      {
+        "format": "Edition review",
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r2/claude-design/editions/v1.3.0/index.html",
+        "sha256": "8911545cbf709de4dcf60621fccf2234f79f2d92ca76c3861999ad5da277c274",
+        "bytes": 8980
+      }
+    ],
+    "baselineBuildResult": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r2-package-baseline/BUILD-RESULT.json",
+      "sha256": "1563847ae501733287375112df7df5567ddf04de3aa5aa372285c720b35edd38"
+    }
+  },
+  "assetFreeze": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/frozen-assets-validation-r3.json",
+    "sha256": "56b213fb2ec744d36cb5df4b700cab5d4e15936d015f6ff57713a166efc79d74"
+  },
+  "assetFidelity": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison-r3.json",
+    "sha256": "f4c0339d0b094a76d8cf2c6ee3de2fbb918d8689138e15c08f65bbd3372635d5"
+  },
+  "priorIndependentPopplerReview": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/poppler-visual-review-r2.json",
+    "sha256": "a83adac273e4d9a2d7ec48593c46808d1369118e475039f9a2bfee181c396ed9"
+  },
+  "rootSpotReview": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/root-visual-review.json",
+    "sha256": "49f0ce6ab2fd48590738bdcdf054d17a11ce5c7a39cf6561153f7fa02dca57b0"
+  },
+  "rootProtectedScopeVerification": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/root-protected-scope-verification.json",
+    "sha256": "81bf8c3cf0faa34b5a78595b00c9cfe8843a7c4bb7ff4a23c9feb628482c586f"
+  },
+  "hostedQa": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/hosted-qa-r3/hosted-qa.json",
+    "sha256": "5913fd57be6282b44d1d406e23458935cc3daaae6cf79e4bcb00bc3a63e40c63"
+  },
+  "previewAssetParity": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/private-preview-assets-parity.json",
+    "sha256": "db53c70fc605a80dc81de7ddfa7f0d46b842dd9ec07832ae68244dc6d52c476d"
+  },
+  "previewRoot": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3",
+  "previewUrl": "http://127.0.0.1:8788/claude-design/",
+  "editionPreviewUrl": "http://127.0.0.1:8788/claude-design/editions/v1.3.0/",
+  "previewAssembler": {
+    "path": "/Users/mike/handbooks/site/scripts/build-review-preview.mjs",
+    "sha256": "696f768d78abb46a9ce388c65a56ce040d8fad384c4c3a6237653616fd998209"
+  },
+  "protectedCurrentReleaseHashes": {
+    "claude-design/Claude_Design_Field_Guide_Source.md": "0eee25b6932c3099e28aeebf059ad22eda5c18a16a022af05184b0cfdeb7b93a",
+    "claude-design/output/pdf/claude-design-v1.2.1-2026-10-05-daytime-r1.pdf": "43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272",
+    "claude-design/output/pdf/claude-design-v1.2.1-2026-10-05-late-night-r1.pdf": "1b1a475d88d1bf180302ca9037f1d10a5a611adf4758faff9e355f7e0ca2be8a",
+    "claude-design/reader/index.html": "d0b76486c35ab25ed2f908e036dd058316e99e3693f46df56e790595710b9145"
+  },
+  "protectedCurrentReleaseStatus": "All four released source, PDF and reader hashes verified unchanged.",
+  "readerPackageFilesVerified": 103,
+  "toolkitFreeze": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/hosted-qa-r2/toolkit-freeze.json",
+    "sha256": "17d8a2eb61a1056506fc764b4a09454366a8b968a2d53eaf3b232d4600420a4d"
+  },
+  "toolkitFreezeStatus": "All 18 intended toolkit files match the final inventory.",
+  "toolkitCodeChangedForFigureCorrection": false,
+  "toolkitHashes": {
+    "assets/reader/flowable-reader.css": "e927948af73ad510d1b6fa7e48a98e52318128b9cf5b7f70b62626819e54bcbd",
+    "references/shared-reader-workflow.md": "fa752e0b5c827cf6ff306928b761e10e7edc33e27673b201775f8e7f952166df",
+    "references/screenshot-figures.md": "5230e033821c042f39881ee74fcd7daa172096e38f36c0b6f4740faf843335bb",
+    "scripts/audit-pdf-appearance.py": "661d92529037c80edcaaca6f41a8f206dea5ffd7a1a5191cad6b8435e57d0556",
+    "scripts/export-machine-markdown.py": "f3571ed67601ee15a5accd3a062c657c0950e0726d80196eca8c74c90dcc4bb0",
+    "scripts/flowable_reader.py": "b40a8e1eb200de22b24c8741752b0cd4f2c12d49e5e633ffc75322a775ba190e",
+    "scripts/markdown-downloads.mjs": "f1a3a3764935e97e95e6db78dc6dca0ef78ebda04460f3ed43369371625b4ebf",
+    "scripts/markdown_layout.py": "cbe83d144a2d30a9ade2976a8c860f72f143b4501cea5e3fbf6d0363cd06182a",
+    "scripts/test-markdown-downloads.mjs": "e82d69f63846f1549ea0ea69c69c0912bddc95ac8f667523a2aa9e930276b6d4",
+    "scripts/validate-pdf.py": "6d0d56042ed659f765d2c79123311ee32f02f95dd74c02e0a04e7c13c81e8384",
+    "scripts/validate_pdf_pair.py": "aa4b0cd04350c230c10fb41d1af83c94cef0b978fd296c7db2f44c0360b18a35",
+    "scripts/screenshot-browser-check.mjs": "9f278f9fc1e9a2e1f91e210c17110519d9af23dd8baaf8ac68f919d5108b9b31",
+    "scripts/screenshot_figures.py": "b4fe6e971a8e14afc3f9e882ebc67e7efb4f8ccc86b0701d14b046c613a5ab0a",
+    "scripts/test-screenshot-figures.py": "6d0abc8ee540ebec775e98f80a1b48ae315f8f59410af4fae5385ce4b53dcc09",
+    "scripts/diagrams.mjs": "f7a383a0ebe7d6e50a23e520f1cf2037cb79fbcc320f6e867fdb36324fe959c6",
+    "scripts/test-diagrams.mjs": "50f7bcda34eb508f0524b859928238fbd784c2265b51c40e8fd758329d08e979",
+    "assets/reader/theme.css": "2337df6160077f87424a8abdbcc969c9a1d9c7f9df5b1ab4306dafad8bbd8e2f",
+    "scripts/test-markdown-page-layout.py": "5334b5e7a528e16bda61a6868f0dc2b59c3e34afee9b20d200ebcdcda03d25da"
+  },
+  "screenshotManifest": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/screenshot-figures.json",
+    "sha256": "9407b7a8725309175233ca99779cad7778955eb4c3a455293a26038394304f66"
+  },
+  "source": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/Claude_Design_Field_Guide_Source.md",
+    "sha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8"
+  },
+  "figureCorrection": {
+    "asset": "assets/screenshots/s02-import-menu.png",
+    "state": "Actual native cursor hovering over highlighted Import; Buzz plain.",
+    "otherPngAssetsUnchanged": 36,
+    "manifestChangedFields": [
+      "sha256",
+      "alt"
+    ]
+  },
+  "manuscriptAndChangelogUnchangedByFigureCorrection": true,
+  "sidecars": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/release-manifest.json",
+      "sha256": "89ffc5acbe7e6cfa9d6d7638f14b3d63444cac8152a56d557bb61494d03a5af7"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/pdf-variants.json",
+      "sha256": "bb530260954c44ac81f567ca9ce17c6295ed05b268bd2e298673546e44f330cb"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/publication-package.json",
+      "sha256": "ab3a236c5b023ba13e59313e7084fc162c7cdd641ce77245feb5ffe73afbbcdc"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/candidate-registry.json",
+      "sha256": "dd251189b904c9d8c27c4f3aabe4381d934212f79b354d864ea45c7f04ec3ec2"
+    }
+  ],
+  "validations": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/daytime-validation.json",
+      "sha256": "43dcae4fe6966958034c6b0aae99c61594a13ca1ce9b38a371e5a307cf4e5163"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/late-night-validation.json",
+      "sha256": "78c172860dc3ef44af5d8adaaf704376ad9e99a29f521590c1f3d6f4b22965dd"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/parity/parity.json",
+      "sha256": "92ed1b9501dc609f9737b3303ab83cea5a1fc036488ddc60b799fcaa8afdfb42"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/appearance.json",
+      "sha256": "454517c2d342f2db1b73786e4a55587ead0d8e26a0cbc0a202025fa2c91f32f1"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/final-comparison/edition-diff.json",
+      "sha256": "7df3b3edf7f73a28acfbf0b6fac42a882a8c3c2d40321fa0ce805a9652d864e4"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/final-changelog-decision.json",
+      "sha256": "cc7381dc0252e93f8c060be00cbe848941412ea96e1fcbfec10e95b6c19836cd"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/r2-comparison/edition-diff.json",
+      "sha256": "819cbe23a364ec66cd0f8b0bfb862a15b8b08a8a95d58498f476d8d04e96742e"
+    }
+  ],
+  "limitations": [
+    "No physical A5 print test was performed. Native-resolution screen proofs were inspected.",
+    "A Low pagination observation remains at pages 71\u201372: the final capstone paragraph continues for two readable lines."
+  ]
+}

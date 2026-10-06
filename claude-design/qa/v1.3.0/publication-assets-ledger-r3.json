@@ -1,0 +1,1981 @@
+{
+  "schemaVersion": 1,
+  "figureCount": 12,
+  "panelCount": 35,
+  "assets": [
+    {
+      "panelId": "s01-configure",
+      "figureId": "s01-start",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S01-configure.png",
+      "sourceSha256": "16edd307e5c1d877b9abc391ceb98b1af9d68310578eb49796ad6ea6e640b6ea",
+      "sourceDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s01-configure.png",
+      "finalSha256": "d6fed6d13679867ce550727d4a5ac09bc629a82d4978934e57934feea0c07f80",
+      "finalDimensions": [
+        1024,
+        768
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 786432,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 786432
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 0,
+        "reason": "Unprofiled native PNG requires exact pixels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s01-configure-controls",
+      "figureId": "s01-start",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S01-configure.png",
+      "sourceSha256": "16edd307e5c1d877b9abc391ceb98b1af9d68310578eb49796ad6ea6e640b6ea",
+      "sourceDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        575,
+        106,
+        417,
+        617
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s01-configure-controls.png",
+      "finalSha256": "93cc01bfb1ccda79a1ce40da29d17dbbfb2e292fdd4df1389e0ed041ea260829",
+      "finalDimensions": [
+        417,
+        617
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 257289,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 257289
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 0,
+        "reason": "Unprofiled native PNG requires exact pixels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s01-review-summary",
+      "figureId": "s01-start",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S01-review.png",
+      "sourceSha256": "1cbb83d71d1be327ed413c4e3dcfe519db4653e9f6d55f34035f64ed359c91f2",
+      "sourceDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        575,
+        106,
+        417,
+        459
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s01-review-summary.png",
+      "finalSha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+      "finalDimensions": [
+        417,
+        459
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 191403,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 191403
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 0,
+        "reason": "Unprofiled native PNG requires exact pixels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s02-import-menu",
+      "figureId": "s02-figma-import",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/import-hover-correction/S02-import-hover.jpg",
+      "sourceSha256": "4fc78095fcdbb9aefe1ce4cd67bcae15a8cd30e6c7e519986acfb58ccec4c1cf",
+      "sourceDimensions": [
+        3456,
+        2168
+      ],
+      "crop": [
+        2972,
+        82,
+        433,
+        386
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s02-import-menu.png",
+      "finalSha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0",
+      "finalDimensions": [
+        433,
+        386
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 6516,
+        "totalPixels": 167138,
+        "maxChannelDelta": 2,
+        "channelMaxDeltas": [
+          2,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          166,
+          282,
+          260,
+          378
+        ],
+        "deltaHistogram": {
+          "0": 160622,
+          "1": 6509,
+          "2": 7
+        },
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 2,
+        "reason": "Ordinary decoder/ICC rounding bound; no panel-specific exception."
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison-r3-import-menu.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction.",
+      "nativeCaptureProvenance": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/import-hover-correction/native-capture-provenance.json"
+    },
+    {
+      "panelId": "s02-import-complete",
+      "figureId": "s02-figma-import",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/S02-import-complete.png",
+      "sourceSha256": "23042847c1701368fa5c79df5a059e2a254d64a98edb95499a166d1eb64201b7",
+      "sourceDimensions": [
+        3456,
+        2168
+      ],
+      "crop": [
+        1244,
+        890,
+        965,
+        465
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s02-import-complete.png",
+      "finalSha256": "db7982d9faeb2cf3e3750657b266f5876ffa962e881ed30fcbb8cc0a25b5937f",
+      "finalDimensions": [
+        965,
+        465
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 11864,
+        "totalPixels": 448725,
+        "maxChannelDelta": 8,
+        "channelMaxDeltas": [
+          8,
+          1,
+          2
+        ],
+        "differenceBounds": [
+          35,
+          85,
+          949,
+          455
+        ],
+        "deltaHistogram": {
+          "0": 436861,
+          "1": 7822,
+          "2": 1973,
+          "3": 953,
+          "4": 758,
+          "5": 196,
+          "6": 140,
+          "7": 20,
+          "8": 2
+        },
+        "pixelsAbove2": 2069,
+        "fractionAbove2": 0.004610841829628391,
+        "pixelsAbove3": 1116,
+        "fractionAbove3": 0.002487046632124352,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 8,
+        "reason": "Root-approved single-source exception: saturated blue colors near red gamut clipping amplify JPEG decoder rounding. Measured maximum8 on2pixels; 2069/448725 pixels exceed2 and1116 exceed3. Exception is tied to this source hash and panel; no broad exactness claim.",
+        "specialClippedColorException": true
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s02-page-tree",
+      "figureId": "s02-figma-import",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/S02-imported-drafts-pages.png",
+      "sourceSha256": "a3f9fd1b4a0ccfc9e177ca146a292ad83bbd8f08f9f384ea93be4e06d7a9445c",
+      "sourceDimensions": [
+        3456,
+        2168
+      ],
+      "crop": [
+        120,
+        162,
+        555,
+        547
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s02-page-tree.png",
+      "finalSha256": "b80715d50021f947789ae43466d5e134048c1b544c9f018705c1a29ff4233d0e",
+      "finalDimensions": [
+        555,
+        547
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 303585,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 303585
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 2,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s03-system-destination",
+      "figureId": "s03-private-import",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S03-system-destination.jpg",
+      "sourceSha256": "883856a53cf537bd60b24f4e72a00728a3f7906921fa88ad3cb08ffd57f7be19",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        328,
+        10,
+        913,
+        126
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s03-system-destination.png",
+      "finalSha256": "2bef4cade8b831f4fde4325d6d7b28e5b6cc9e33f366967b221aeab8aff3b42b",
+      "finalDimensions": [
+        913,
+        126
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 5434,
+        "totalPixels": 115038,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          0,
+          913,
+          126
+        ],
+        "deltaHistogram": {
+          "0": 109604,
+          "1": 5434
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s03-private-share",
+      "figureId": "s03-private-import",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S03-private-before-upload.jpg",
+      "sourceSha256": "4a23c57bda375a85746d32c37121c5912bc4335b7f09ed1cac92f90498539e97",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        795,
+        151,
+        441,
+        61
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s03-private-share.png",
+      "finalSha256": "f3ac913d9a294219a22bfbe44da5c16abe903a5d12a32fc7b55517a98383a1ee",
+      "finalDimensions": [
+        441,
+        61
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 546,
+        "totalPixels": 26901,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          0,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          11,
+          0,
+          438,
+          61
+        ],
+        "deltaHistogram": {
+          "0": 26355,
+          "1": 546
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s04-component-inventory",
+      "figureId": "s04-inspect-system",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/S04-expanded-guidance-full.jpg",
+      "sourceSha256": "6615c6c198b143333b8bb722d210c8787d9b493b2e534d3539cac89f68ec33a5",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        15,
+        54,
+        298,
+        439
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s04-component-inventory.png",
+      "finalSha256": "7f56c42491fa49f2775484cc0935ca3cbb60cb7b605d8524a25542547c6c8c9f",
+      "finalDimensions": [
+        298,
+        439
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 1405,
+        "totalPixels": 130822,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          10,
+          298,
+          427
+        ],
+        "deltaHistogram": {
+          "0": 129417,
+          "1": 1405
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s04-product-preview",
+      "figureId": "s04-inspect-system",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S04-product-preview.jpg",
+      "sourceSha256": "b0d0a02c670e55ee8c5d0fb6e918909f9ccb60a70cdfa7d31c8254dbaaa95cb8",
+      "sourceDimensions": [
+        873,
+        978
+      ],
+      "crop": [
+        334,
+        315,
+        514,
+        382
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s04-product-preview.png",
+      "finalSha256": "98b0c591e08df578d61dba2e3b1a5f512b842877e3904ce1354a3850c1b2010d",
+      "finalDimensions": [
+        514,
+        382
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 9508,
+        "totalPixels": 196348,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          4,
+          514,
+          382
+        ],
+        "deltaHistogram": {
+          "0": 186840,
+          "1": 9508
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s04-expanded-guidance",
+      "figureId": "s04-inspect-system",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/S04-expanded-guidance-full.jpg",
+      "sourceSha256": "6615c6c198b143333b8bb722d210c8787d9b493b2e534d3539cac89f68ec33a5",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        405,
+        275,
+        725,
+        85
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s04-expanded-guidance.png",
+      "finalSha256": "bbaff09fe31b1497a3a178c59a8cadcfdcce69c10d279be3faeafbc3a1b62cfa",
+      "finalDimensions": [
+        725,
+        85
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 3693,
+        "totalPixels": 61625,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          81,
+          28,
+          588,
+          78
+        ],
+        "deltaHistogram": {
+          "0": 57932,
+          "1": 3693
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s05-gap-before",
+      "figureId": "s05-correction",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S05-gap-before.jpg",
+      "sourceSha256": "8eb32399eb3dbcce4ab1ce389a8c51dd47937277bfbdc1f6ceebe9c887794bed",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        895,
+        620,
+        342,
+        90
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s05-gap-before.png",
+      "finalSha256": "6630ac654ade376255b6b47fc53512b585f02a3d1df42b67ae348ac763c934cb",
+      "finalDimensions": [
+        342,
+        90
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 3201,
+        "totalPixels": 30780,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          3,
+          338,
+          90
+        ],
+        "deltaHistogram": {
+          "0": 27579,
+          "1": 3201
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s05-gap-corrected",
+      "figureId": "s05-correction",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S05-gap-corrected.jpg",
+      "sourceSha256": "777ba184d2e7a8a05a73640fca4b7d262cb8a3d646782bf3fee66883b6cff588",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        895,
+        620,
+        342,
+        90
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s05-gap-corrected.png",
+      "finalSha256": "f6ec638c420794e1bc15284b62080d45766fd9ed0c0aadcaded22804acc1b2d6",
+      "finalDimensions": [
+        342,
+        90
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 3385,
+        "totalPixels": 30780,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          3,
+          338,
+          90
+        ],
+        "deltaHistogram": {
+          "0": 27395,
+          "1": 3385
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s05-second-generation",
+      "figureId": "s05-correction",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S05-second-generation.jpg",
+      "sourceSha256": "09b5fb254e396031df02bb7ec1e818f7515a471f8b6998ea9d244f2cd23ecf14",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        895,
+        275,
+        342,
+        430
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s05-second-generation.png",
+      "finalSha256": "d2194247d0684bb99aa6749e3669d96efd7031773d51c4d8e5d8d0aba2c9444e",
+      "finalDimensions": [
+        342,
+        430
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 17018,
+        "totalPixels": 147060,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          2,
+          338,
+          430
+        ],
+        "deltaHistogram": {
+          "0": 130042,
+          "1": 17018
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s06-configure-photo",
+      "figureId": "s06-native-review",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S06-native-configure.jpg",
+      "sourceSha256": "12b88928db72f8f1a07f39fd98943168405a422daa4b2a488f27d6190605243d",
+      "sourceDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        24,
+        134,
+        498,
+        588
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s06-configure-photo.png",
+      "finalSha256": "1b1f09c97895492fe10ba27247904ddfa93a599ea9603aec28e9feee05c61763",
+      "finalDimensions": [
+        498,
+        588
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 17298,
+        "totalPixels": 292824,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          7,
+          9,
+          489,
+          587
+        ],
+        "deltaHistogram": {
+          "0": 275526,
+          "1": 17298
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s06-review-summary",
+      "figureId": "s06-native-review",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S06-native-review.jpg",
+      "sourceSha256": "1e48157fa7ef80531348d8ad3dd5629c77ce2b446a06ffe43f19de921ebf6ad2",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        893,
+        162,
+        349,
+        470
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s06-review-summary.png",
+      "finalSha256": "750b615cb03b542ddedeba4eaca52d211694106dc62f752298f97f1de4d54495",
+      "finalDimensions": [
+        349,
+        470
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 18476,
+        "totalPixels": 164030,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          2,
+          5,
+          340,
+          447
+        ],
+        "deltaHistogram": {
+          "0": 145554,
+          "1": 18476
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s07-dock-details",
+      "figureId": "s07-browse",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S07-dock-details.png",
+      "sourceSha256": "27dd3a90f6bf98a63986f1216a880c688c4d952f0aba072492778c76bb6c4d96",
+      "sourceDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s07-dock-details.png",
+      "finalSha256": "1d884db3dc0a606194ec58b581cff080879693db2f5f5a5dc2e09929be32176d",
+      "finalDimensions": [
+        1024,
+        768
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 786432,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 786432
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 0,
+        "reason": "Unprofiled native PNG requires exact pixels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s07-return-review",
+      "figureId": "s07-browse",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S01-review.png",
+      "sourceSha256": "1cbb83d71d1be327ed413c4e3dcfe519db4653e9f6d55f34035f64ed359c91f2",
+      "sourceDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        575,
+        106,
+        417,
+        459
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s07-return-review.png",
+      "finalSha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+      "finalDimensions": [
+        417,
+        459
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 191403,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 191403
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 0,
+        "reason": "Unprofiled native PNG requires exact pixels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s08-failure",
+      "figureId": "s08-retry",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/sample-captures/S08-graphite-failure-review.png",
+      "sourceSha256": "672b1f4789fdba787f40dbed8879c6b6a9583cb09f76abf296e9bd622135d074",
+      "sourceDimensions": [
+        2560,
+        1440
+      ],
+      "crop": [
+        490,
+        430,
+        780,
+        235
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s08-failure.png",
+      "finalSha256": "1d4a421844b84899b04715432a7d27883e0a0cdd8d4ab7f635becee815f04130",
+      "finalDimensions": [
+        780,
+        235
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 183300,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 183300
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s08-failure-caption",
+      "figureId": "s08-retry",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/sample-captures/S08-graphite-failure-review.png",
+      "sourceSha256": "672b1f4789fdba787f40dbed8879c6b6a9583cb09f76abf296e9bd622135d074",
+      "sourceDimensions": [
+        2560,
+        1440
+      ],
+      "crop": [
+        530,
+        1166,
+        700,
+        65
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s08-failure-caption.png",
+      "finalSha256": "e28e9c326154ba8e5acdeed1afbf71f1bd80f77238b8f82fd5cf254afec777d3",
+      "finalDimensions": [
+        700,
+        65
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 41,
+        "totalPixels": 45500,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          0,
+          0,
+          1
+        ],
+        "differenceBounds": [
+          19,
+          20,
+          526,
+          43
+        ],
+        "deltaHistogram": {
+          "0": 45459,
+          "1": 41
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s08-recovered-photo",
+      "figureId": "s08-retry",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/sample-captures/S08-graphite-retry-review.png",
+      "sourceSha256": "bf47f42ecc5b3ff184364f4bc271683a1fee5c5e5a0b0757b48ce6159f405d77",
+      "sourceDimensions": [
+        2560,
+        1440
+      ],
+      "crop": [
+        305,
+        160,
+        991,
+        996
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s08-recovered-photo.png",
+      "finalSha256": "c5f61968f20f241fd4e87c08ea140ccf26f1b648f4f51d035261520771b1e056",
+      "finalDimensions": [
+        991,
+        996
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 2206,
+        "totalPixels": 987036,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          253,
+          139,
+          948,
+          843
+        ],
+        "deltaHistogram": {
+          "0": 984830,
+          "1": 2206
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s08-retained-summary",
+      "figureId": "s08-retry",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/sample-captures/S08-graphite-retry-review.png",
+      "sourceSha256": "bf47f42ecc5b3ff184364f4bc271683a1fee5c5e5a0b0757b48ce6159f405d77",
+      "sourceDimensions": [
+        2560,
+        1440
+      ],
+      "crop": [
+        1415,
+        170,
+        825,
+        845
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s08-retained-summary.png",
+      "finalSha256": "74fc0c7545f2f5ca521ff36f03479589452a7b4eb19f27f4ca1c29e895fd0a06",
+      "finalDimensions": [
+        825,
+        845
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 61,
+        "totalPixels": 697125,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          0,
+          0,
+          1
+        ],
+        "differenceBounds": [
+          13,
+          93,
+          507,
+          718
+        ],
+        "deltaHistogram": {
+          "0": 697064,
+          "1": 61
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s09-keyboard-menu",
+      "figureId": "s09-dropdown",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/sample-captures/S09-keyboard-menu.jpg",
+      "sourceSha256": "c41150e8d181d448766a9f8dcf952f79e82e374d82bb114aa5eca1b292a26260",
+      "sourceDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        575,
+        374,
+        417,
+        295
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s09-keyboard-menu.png",
+      "finalSha256": "69e10adafa7ec306b543e00725125f5d65b763be84181155f685b33311ed75b0",
+      "finalDimensions": [
+        417,
+        295
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 17388,
+        "totalPixels": 123015,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          1,
+          417,
+          295
+        ],
+        "deltaHistogram": {
+          "0": 105627,
+          "1": 17388
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s10-mobile-product",
+      "figureId": "s10-mobile",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S10-mobile-review.png",
+      "sourceSha256": "7e2b0bee02674f96d13065aa3934d95b4ebf3476572626cb2018d6a26fd72991",
+      "sourceDimensions": [
+        390,
+        1177
+      ],
+      "crop": [
+        0,
+        80,
+        390,
+        510
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s10-mobile-product.png",
+      "finalSha256": "ff5d644f43f6a6cb64519aca7ed8d0975bb618bcdfaf8e66ecf7256c44b3b37c",
+      "finalDimensions": [
+        390,
+        510
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 198900,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 198900
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 0,
+        "reason": "Unprofiled native PNG requires exact pixels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s10-mobile-summary",
+      "figureId": "s10-mobile",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S10-mobile-review.png",
+      "sourceSha256": "7e2b0bee02674f96d13065aa3934d95b4ebf3476572626cb2018d6a26fd72991",
+      "sourceDimensions": [
+        390,
+        1177
+      ],
+      "crop": [
+        0,
+        619,
+        390,
+        343
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s10-mobile-summary.png",
+      "finalSha256": "7daad631a49f7b20a887e8713d570ea13116642010641d7efd12a67baf757d7a",
+      "finalDimensions": [
+        390,
+        343
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 133770,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 133770
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 0,
+        "reason": "Unprofiled native PNG requires exact pixels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s10-mobile-actions",
+      "figureId": "s10-mobile",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S10-mobile-review.png",
+      "sourceSha256": "7e2b0bee02674f96d13065aa3934d95b4ebf3476572626cb2018d6a26fd72991",
+      "sourceDimensions": [
+        390,
+        1177
+      ],
+      "crop": [
+        0,
+        969,
+        390,
+        134
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s10-mobile-actions.png",
+      "finalSha256": "6ab172e9181ebf4fc52a9519be77873d6b62dd640fe83f8632a82a7a15ee560b",
+      "finalDimensions": [
+        390,
+        134
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 52260,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 52260
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 0,
+        "reason": "Unprofiled native PNG requires exact pixels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s11-send-to-code",
+      "figureId": "s11-handoff",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S11-send-to-code.jpg",
+      "sourceSha256": "5c6ffae73cc6438930806df8e3bc49e5f182fb5c08858105cbde06c33cf86245",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        795,
+        133,
+        440,
+        123
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s11-send-to-code.png",
+      "finalSha256": "c3b695a57253740bc0e134ced968dcc2fe0d877b753adee6fb32104a9b25b98c",
+      "finalDimensions": [
+        440,
+        123
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 955,
+        "totalPixels": 54120,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          0,
+          440,
+          123
+        ],
+        "deltaHistogram": {
+          "0": 53165,
+          "1": 955
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s11-local-agent",
+      "figureId": "s11-handoff",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S11-local-agent-copied.jpg",
+      "sourceSha256": "61c43248c79c02c989179f38b1d78c345a4207c510cf74fbd91e27d9941dd0b4",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        351,
+        1,
+        578,
+        152
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s11-local-agent.png",
+      "finalSha256": "6a4dff89269024a3a033c19182792eff0a29d6f2035c106087e71c4e74b67e2e",
+      "finalDimensions": [
+        578,
+        152
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 840,
+        "totalPixels": 87856,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          0,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          0,
+          0,
+          578,
+          152
+        ],
+        "deltaHistogram": {
+          "0": 87016,
+          "1": 840
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s11-copied",
+      "figureId": "s11-handoff",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S11-local-agent-copied.jpg",
+      "sourceSha256": "61c43248c79c02c989179f38b1d78c345a4207c510cf74fbd91e27d9941dd0b4",
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "crop": [
+        767,
+        228,
+        147,
+        50
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s11-copied.png",
+      "finalSha256": "e680c22e172d03714b804ee79be14eb988556c098be792b2a1b4d4ad3f8de8c5",
+      "finalDimensions": [
+        147,
+        50
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 628,
+        "totalPixels": 7350,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          0,
+          1,
+          1
+        ],
+        "differenceBounds": [
+          7,
+          11,
+          139,
+          45
+        ],
+        "deltaHistogram": {
+          "0": 6722,
+          "1": 628
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoder rounding of at most one channel level.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s11-project-archive",
+      "figureId": "s11-handoff",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/S11-export-archive-valid.png",
+      "sourceSha256": "e913c3e26fec9c687b827fb694755ffc5f26cda1caf21147b47232add3683b6b",
+      "sourceDimensions": [
+        2560,
+        1440
+      ],
+      "crop": [
+        780,
+        490,
+        998,
+        460
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s11-project-archive.png",
+      "finalSha256": "86340a44696fb7de8831ce4f6c5eb853f9ac5317e70da4c5bbdee95a9506328a",
+      "finalDimensions": [
+        998,
+        460
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 7778,
+        "totalPixels": 459080,
+        "maxChannelDelta": 1,
+        "channelMaxDeltas": [
+          1,
+          0,
+          1
+        ],
+        "differenceBounds": [
+          87,
+          101,
+          881,
+          321
+        ],
+        "deltaHistogram": {
+          "0": 451302,
+          "1": 7778
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 1,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s12-selected-button",
+      "figureId": "s12-figma-review",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/S12-configure-instance-clean.png",
+      "sourceSha256": "57d0a9c1f9bd02c4cf02088a73e7c8d3e30af48e32a98d2445a71dd73d727fea",
+      "sourceDimensions": [
+        3456,
+        2168
+      ],
+      "crop": [
+        1385,
+        1028,
+        885,
+        181
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s12-selected-button.png",
+      "finalSha256": "8e5582d4da1223a5c6a9362b06281a9f7d3dc744602d62206042607a1d26ef22",
+      "finalDimensions": [
+        885,
+        181
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 108585,
+        "totalPixels": 160185,
+        "maxChannelDelta": 2,
+        "channelMaxDeltas": [
+          2,
+          2,
+          2
+        ],
+        "differenceBounds": [
+          0,
+          11,
+          885,
+          181
+        ],
+        "deltaHistogram": {
+          "0": 51600,
+          "1": 106754,
+          "2": 1831
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 2,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s12-component-identity",
+      "figureId": "s12-figma-review",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/S12-configure-instance-clean.png",
+      "sourceSha256": "57d0a9c1f9bd02c4cf02088a73e7c8d3e30af48e32a98d2445a71dd73d727fea",
+      "sourceDimensions": [
+        3456,
+        2168
+      ],
+      "crop": [
+        2982,
+        336,
+        452,
+        334
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s12-component-identity.png",
+      "finalSha256": "ac2fd89fc793f4b6b3331ca2c0660d698af02f01394f458add41f5d7ab5a0c17",
+      "finalDimensions": [
+        452,
+        334
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": true,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 0,
+        "totalPixels": 150968,
+        "maxChannelDelta": 0,
+        "channelMaxDeltas": [
+          0,
+          0,
+          0
+        ],
+        "differenceBounds": null,
+        "deltaHistogram": {
+          "0": 150968
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": true
+      },
+      "tolerance": {
+        "maximumChannelDelta": 2,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s12-size-binding",
+      "figureId": "s12-figma-review",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/native-captures/S12-size-variable-picker.png",
+      "sourceSha256": "73b442bad9e85f6d46cf13dcd501bfa1cf1b28f3ff188c65c1570bc30401347e",
+      "sourceDimensions": [
+        3456,
+        2168
+      ],
+      "crop": [
+        2906,
+        1306,
+        462,
+        364
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s12-size-binding.png",
+      "finalSha256": "e2e04e08856d84ca20d2eb43fd4423ac6c2f4470bfcbe48feee8ee3522c89aa3",
+      "finalDimensions": [
+        462,
+        364
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 14518,
+        "totalPixels": 168168,
+        "maxChannelDelta": 2,
+        "channelMaxDeltas": [
+          2,
+          1,
+          2
+        ],
+        "differenceBounds": [
+          0,
+          0,
+          439,
+          364
+        ],
+        "deltaHistogram": {
+          "0": 153650,
+          "1": 13655,
+          "2": 863
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 2,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s12-present-photo",
+      "figureId": "s12-figma-review",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S12-imported-figma-present.jpg",
+      "sourceSha256": "4cbf202fad81b8a2d1142a3ae63888a50cd5628c615ec756d31685bef3ee8dfb",
+      "sourceDimensions": [
+        3456,
+        2168
+      ],
+      "crop": [
+        750,
+        622,
+        995,
+        996
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s12-present-photo.png",
+      "finalSha256": "d3e72e2f77d5603f6d576666702628a92aa9096401453af7b465ef93ea1be11c",
+      "finalDimensions": [
+        995,
+        996
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 646489,
+        "totalPixels": 991020,
+        "maxChannelDelta": 2,
+        "channelMaxDeltas": [
+          2,
+          1,
+          2
+        ],
+        "differenceBounds": [
+          0,
+          0,
+          995,
+          996
+        ],
+        "deltaHistogram": {
+          "0": 344531,
+          "1": 646005,
+          "2": 484
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 2,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    },
+    {
+      "panelId": "s12-present-summary",
+      "figureId": "s12-figma-review",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-plan/existing/S12-imported-figma-present.jpg",
+      "sourceSha256": "4cbf202fad81b8a2d1142a3ae63888a50cd5628c615ec756d31685bef3ee8dfb",
+      "sourceDimensions": [
+        3456,
+        2168
+      ],
+      "crop": [
+        1850,
+        570,
+        846,
+        1000
+      ],
+      "finalAsset": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s12-present-summary.png",
+      "finalSha256": "b9102ed36133c061ae85dafa1a6bbc30df32be57b92c7668d62b2c466da7c13b",
+      "finalDimensions": [
+        846,
+        1000
+      ],
+      "privacy": "Reviewed crop excludes unrelated private/account chrome; only the cropped browser PNG enters the candidate.",
+      "exactSourcePixels": false,
+      "colorManagedPass": true,
+      "geometryPass": true,
+      "colorManagedComparison": {
+        "changedPixels": 169041,
+        "totalPixels": 846000,
+        "maxChannelDelta": 2,
+        "channelMaxDeltas": [
+          2,
+          1,
+          2
+        ],
+        "differenceBounds": [
+          21,
+          21,
+          839,
+          983
+        ],
+        "deltaHistogram": {
+          "0": 676959,
+          "1": 166595,
+          "2": 2446
+        },
+        "pixelsAbove2": 0,
+        "fractionAbove2": 0.0,
+        "pixelsAbove3": 0,
+        "fractionAbove3": 0.0,
+        "exactRenderedExpectation": false
+      },
+      "tolerance": {
+        "maximumChannelDelta": 2,
+        "reason": "JPEG decoding and ICC conversion round differently between Chromium/Skia and Pillow/LittleCMS; ordinary panels remain within two channel levels.",
+        "specialClippedColorException": false
+      },
+      "comparisonReport": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison.json",
+      "derivation": "Browser screenshot of source-preserving HTML viewport at natural pixels. The browser decodes original embedded color profiles into sRGB; JPEG/CMS rounding is measured separately. No raster editing, resampling, filter, masking or UI reconstruction."
+    }
+  ],
+  "revision": "r3 replaces only s02-import-menu; all other 34 panel records and image hashes are preserved from r2",
+  "priorLedger": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/import-hover-correction/r2-baseline/publication-assets-ledger.json"
+}
