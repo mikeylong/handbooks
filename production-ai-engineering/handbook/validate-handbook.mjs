@@ -588,8 +588,8 @@ const checks = {
   authorSiteLinked:
     count(/href="https:\/\/surfaces\.systems"/g, html) === 3,
   coverLabelsRemoved:
-    !html.includes("Written by")
-    && !html.includes("Evidence reviewed"),
+    !coverHtml.includes("Written by")
+    && !coverHtml.includes("Evidence reviewed"),
   coverLegacyEditionLineRemoved:
     !coverHtml.includes("First edition")
     && !html.includes('class="cover-edition"'),

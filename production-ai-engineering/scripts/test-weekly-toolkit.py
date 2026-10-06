@@ -48,6 +48,18 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     run(['node', str(validator)], env)
     html_path = build/'handbook/index.html'
     valid_html = html_path.read_text()
+    cover = re.search(r'<section class="cover"[\s\S]*?</section>', valid_html).group()
+    # Changelog headings and prose may use these words outside the cover.
+    outside_labels = '<h3>Evidence reviewed on 5 October 2026</h3><p>Written by the review team.</p>'
+    html_path.write_text(valid_html.replace(cover, cover + outside_labels, 1))
+    run(['node', str(validator)], env)
+    for label in ['Written by', 'Evidence reviewed']:
+        wrong_cover = cover.replace('</section>', f'<p>{label}</p></section>', 1)
+        html_path.write_text(valid_html.replace(cover, wrong_cover, 1))
+        result = run(['node', str(validator)], env, False)
+        assert json.loads(result.stdout)['coverLabelsRemoved'] is False
+        assert 'Removed cover-credit labels remain' in result.stderr
+    html_path.write_text(valid_html)
     sidebar = re.search(r'<p class="sidebar-edition">.*?</p>', valid_html).group()
     for field, historical_url in [
         ('editionUrl', 'https://github.com/mikeylong/production-ai-engineering-book'),
@@ -107,4 +119,4 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     without_toolkit = dict(env)
     without_toolkit.pop('HANDBOOK_PUBLISHING_TOOLKIT')
     run(['node',str(build/'handbook/build-handbook.mjs')],without_toolkit,False)
-print('Copied weekly HTML validates publication URLs and rejects stale sidebar links; explicit book/content-edition finalization passes changed pagination while baseline and dependency guards remain.')
+print('Copied weekly HTML validates publication URLs, rejects stale sidebar links, and scopes removed credit labels to the cover; explicit book/content-edition finalization passes changed pagination while baseline and dependency guards remain.')
