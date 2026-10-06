@@ -1,0 +1,245 @@
+--- previous/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf
++++ candidate/claude-design-v1.2.1-2026-10-05-daytime-r1.pdf
+@@ -9,7 +9,7 @@
+ HANDOFF
+ CODE
+ Michael Long
+-October 5, 2026 | Version 1.2.0
++October 5, 2026 | Version 1.2.1
+ --- PDF page 2 ---
+ ii
+ Orientation
+@@ -77,15 +77,22 @@
+ settings.
+ --- PDF page 4 ---
+ iv
+-Choose a Figma working file you can inspect and edit. The supplied
+-Velori Design System & Configurator contains a Store handbook exercise
+-page. Its link requires file access. Duplicate or identify your working
+-copy before editing; preserve the original reference frames.
+-The Velori sample source, documentation, frozen reference, and
+-imagery use the MIT license. Keep its copyright notice and third-party
+-notices when redistributing it. The public sample contains the React app
+-and exercise materials. All captured native source and runtime remain
+-in the private review archive and outside the MIT download.
++Download the Velori native Figma file and its companion manifest
++separately from the React ZIP. Import the .fig file into your own Figma
++Drafts and record the new file URL and companion SHA-256. Preserve
++the supplied source pages and reference frames; create a separate page
++for your work. The completed Store handbook exercise page is an
++answer key for comparison, not initial generation context.
++For the variable-driven native journey, use a paid Figma Design plan or
++eligible Education plan with edit access. Starter can import the file, but
++variables in prototypes require those plan features. Confirm this access
++before starting the Figma work.
++The Velori sample source, documentation, frozen reference, imagery,
++and authored native Figma companion use the MIT license. Keep the
++copyright and third-party notices when redistributing them. Arimo and
++Lora are font references; no font software is included in the companion.
++Captured Claude Design source and runtime remain in the private
++review archive and outside these downloads.
+ The workflow
+ 1
+ Frame
+@@ -114,6 +121,11 @@
+ Ground
+ Claude Code and Claude Design
+ Imported components and photos load
++--- PDF page 5 ---
++v
++Stage
++Working tool
++Observable result
+ Extend
+ Claude Design
+ Configure, details, review, and edit agree
+@@ -132,11 +144,6 @@
+ Implement
+ Claude Code
+ React change passes the journey checks
+---- PDF page 5 ---
+-v
+-Stage
+-Working tool
+-Observable result
+ Reconcile
+ Figma
+ Editable frames and native prototype
+@@ -351,7 +358,7 @@
+ asset identity
+ .design-sync/conventions.md and previews/
+ Import usage guidance and preview cases
+-Identified Figma working file
++Imported Figma working copy
+ Native anatomy, variants, variables, and font
+ correspondence
+ Read docs/inventory.md and provenance/source-freeze.json
+@@ -1080,10 +1087,10 @@
+ 2026, SHA-256 03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b
+ 976b68f0f46811150a. The existing app retains configuration, routing,
+ persistence, focus, and image recovery. Run the sample from the
+-extracted velori-store folder using the README. All captured native
+-source and runtime remain private and outside the MIT download.
+-Capture and validate your own new packet; the answer key does not
+-verify your generation.
++extracted velori-store folder using the README. Captured Claude
++Design source and runtime remain private and outside the public
++downloads. Capture and validate your own new packet; the answer key
++does not verify your generation.
+ Keep the adaptations visible
+ If the received source needs a localhost adapter, inspect support.js and
+ the selected system runtime for globals, CDN URLs, resource mappings
+@@ -1129,26 +1136,40 @@
+ Verify editable components, variables, and the native prototype.
+ --- PDF page 45 ---
+ 39
+-Figma is part of this exercise. Keep editable frames for configure, the
+-open expression menu, accessory details, review, and unavailable
+-review. Preserve the original reference page and build the extension in
+-an identified working page.
++Figma is part of this exercise. Confirm access to variables in prototypes
++on a paid or eligible Education plan. Use your imported working copy
++and keep editable frames for configure, the open expression menu,
++accessory details, review, and unavailable review. Preserve the supplied
++source pages and reference frames, and build the extension on a
++separate working page.
+ Keep native identity
+-Use linked instances for the existing Velori components. Bind finish,
+-face, expression, accessory, captions, and summaries to shared
+-variables. Inspect component IDs and variable IDs in the actual file. A
+-flattened screenshot or a collection of look-alike rectangles does not
+-preserve native reuse.
++Before editing, verify local main components, internal instance links,
++variable collections and modes, image resources, and available fonts in
++your imported copy. Stop if a required external library or resource is
++inaccessible. Use linked instances for the existing Velori components.
++Bind finish, face, expression, accessory, captions, and summaries to
++shared variables. Record the component and variable IDs from your
++actual file. A flattened screenshot or a collection of look-alike rectangles
++does not preserve native reuse.
+ Configure and Review compose the product photograph, face and
+ expression from the four selected values. Accessory details use the
+ original Chalk Carry bag and Charging dock reference photographs.
+ AccessoryPhoto receives the browsed accessory only; browsing those
+ views preserves the shopper's configuration. Preserve that source
+ behavior when reconciling the native file.
+-The supplied Store handbook exercise page starts at node 34:694. Its
+-Configure frame is 34:695, Review is 43:80, Carry bag details is
+-43:383, Dock details is 43:425, and unavailable review is 43:475. A
+-duplicate can assign new IDs; record the IDs in your working copy.
++Navigate by page and frame names from the companion manifest.
++Preserve 01 Foundations, 02 Components, 03 Configurator, and 04
++Source Assets, including Configure · White on 03 Configurator. The
++completed 05 Store · Handbook exercise page contains Configure,
++Expression color menu, Carry bag details, Charging dock details, Review
++configuration, and Review · Image unavailable. Use those frames for
++comparison after your generation. Imported files have their own
++identities; record the IDs you inspect rather than relying on author-file
++node IDs.
++CLAUDE DESIGN FIELD GUIDE
++10. IMPLEMENT IN FIGMA AND RECONCILE
++--- PDF page 46 ---
++40
+ FIGMA / BUILD AND INSPECT THE NATIVE STORE
+ Use the identified Velori working file. Preserve the original
+ foundation, components, configurator, and source assets. Add editable
+@@ -1159,11 +1180,6 @@
+ selected states, configured product images, captions, and summaries
+ update. Keep the original Chalk reference photos in accessory details,
+ matching AccessoryPhoto; browsing Dock must preserve the selected
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT IN FIGMA AND RECONCILE
+---- PDF page 46 ---
+-40
+-FIGMA / BUILD AND INSPECT THE NATIVE STORE
+ Carry bag. Record component and variable identities and test the actual
+ prototype.
+ Test the prototype
+@@ -1184,13 +1200,13 @@
+ font mapping and intentional normalized controls. Resolve unexpected
+ drift in the owning source, then repeat the affected check. Keep
+ rendering differences and product behavior differences distinct.
++CLAUDE DESIGN FIELD GUIDE
++10. IMPLEMENT IN FIGMA AND RECONCILE
++--- PDF page 47 ---
++41
+ The Figma write-to-canvas guidance describes native editing. Do not
+ treat a Claude image export as evidence that component and variable
+ identities survived in Figma.
+-CLAUDE DESIGN FIELD GUIDE
+-10. IMPLEMENT IN FIGMA AND RECONCILE
+---- PDF page 47 ---
+-41
+ Chapter checkpoint
+ Native editable frames, instance identities, variable bindings, and
+ prototype transitions have returned evidence. The browser and Figma
+@@ -1360,6 +1376,9 @@
+ scripts/
+ Asset, browser, and public-package checks; model
+ tests live in src/
++The native Figma companion and its manifest are separate downloads
++beside the React ZIP. Import the file into your own Drafts; it is not
++bundled in the ZIP.
+ Data Pipeline Studio remains the historical exercise in
+ Local_Coding_Exercise.md. Its released editions and artifacts are
+ preserved. Velori is the current sample for this guide.
+@@ -1380,43 +1399,26 @@
+  5
+ Figma. Write to canvas. Reviewed October 4, 2026.
+  6
+-Velori reader package. MIT source and assets, frozen reference, token and
+-asset manifests, exercise materials, validation scripts, and the identified
+-Figma working file. The React answer key is comparison material.
+-Historical native packets and metadata are excluded from the public
+-download. Verify each new native run separately.
++Velori reader materials. The React ZIP contains MIT source and assets,
++frozen reference, token and asset manifests, exercise materials, and
++validation scripts. The separate native Figma file and companion manifest
++supply a reader-owned working copy. Completed React and Figma screens
++are comparison material. Captured Claude Design packets and metadata
++stay private. Verify each new native run separately.
+ CLAUDE DESIGN FIELD GUIDE
+ FURTHER READING
+ --- PDF page 56 ---
+ 50
+ Changelog
+-Compared with version 1.1.0, published October 3, 2026. Previous
+-Daytime PDF SHA-256: 115003a4a47c92d10d0a59b0e43cbbb2401a19b
+-b6ea606d95c037d0d7697801c.
+-Deprecation or removal - Orientation, capstone and product
+-appendices. Replaced the Data Pipeline Studio assignment and Simple
+-Design System reference with Velori: a preserved configurator, one
+-Review configuration extension, and a portable React sample. One
+-supplied product now carries the source, state, implementation and
+-native Figma checks through the capstone. Source.
+-Addition - Chapters 2-3. Added source definition and conflict records,
+-CSS and prop inventories, controlled import scope, asset hashes
+-recorded before validation, fidelity checks of ten elements, and named
+-correction fixtures followed by a second generation. Readers can resolve
+-source disagreements and verify reuse before introducing the review
+-screen. Source.
+-Correction or clarification - Chapters 4-7 and 10. Specified retention of
+-all four configuration values, keyboard and return focus, image
+-recovery, narrow layouts, and native Figma component/variable
+-correspondence. Detail photographs remain Chalk, and prototype visits
+-are distinguished from browser reload persistence. These contracts
+-expose state loss and unsupported claims of parity between tools.
+-Source.
+-Correction or clarification - Chapter 9. Corrected the local Code handoff
+-to Copy prompt and authenticated source reads. Truncated binaries
+-require a full native archive; captured bytes stay private and unchanged,
+-host adaptations are disclosed, and each new packet is validated
+-independently. Complete source and dependency bytes are required
+-before executable handoff acceptance. Source.
++Compared with version 1.2.0, published October 5, 2026. Previous
++Daytime PDF SHA-256: fa7a27cd0db1f855daba23cb1269e08fc609839
++1032623f9a9252eef1f44f05c.
++Correction or clarification - Orientation, Chapter 10 and exercise
++materials. Replaced the owner-file access prerequisite with a
++downloadable Velori Figma companion imported into the reader's own
++Drafts. Navigation uses verified page and frame names; each import
++records native identities and checks local dependencies and the
++prototype journey. Readers can complete the existing Figma exercise
++without access to the author's file. Source.
+ CLAUDE DESIGN FIELD GUIDE
+ CHANGELOG

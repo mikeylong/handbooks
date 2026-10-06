@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "1.2.1",
+  "date": "2026-10-05",
+  "artifact": {
+    "filename": "velori-design-system-configurator.fig",
+    "sha256": "f5bde616c307c5d28dd4be0ca0f3647b9e2a6edb34e9093650ccaf7137d7a974",
+    "bytes": 13940422
+  },
+  "freshImport": {
+    "status": "passed",
+    "destination": "Drafts",
+    "sameAccount": true,
+    "plan": "Professional",
+    "scope": "Fresh native import, then one nondefault Present journey.",
+    "presentChecks": 9,
+    "configuration": {
+      "shell": "Graphite",
+      "face": "Simple",
+      "color": "Amber",
+      "accessory": "Carry bag"
+    },
+    "checks": [
+      {
+        "action": "Choose nondefault configuration",
+        "frame": "Store · Configure",
+        "result": "All four selection controls, configured Graphite/bag image with Simple Amber face, and caption agree."
+      },
+      {
+        "action": "View accessory details",
+        "frame": "Store · Carry bag details",
+        "result": "Selected bag routes to its authored Chalk detail photograph."
+      },
+      {
+        "action": "Browse Charging dock",
+        "frame": "Store · Charging dock details",
+        "result": "Dock details and fixed Chalk image load."
+      },
+      {
+        "action": "Details Back",
+        "frame": "Store · Configure",
+        "result": "All four choices, configured image and caption retained; browsing Dock did not change selected Carry bag."
+      },
+      {
+        "action": "Continue",
+        "frame": "Store · Review configuration",
+        "result": "YOUR VELORI / Review configuration. / Check your choices.; summary, caption and configured image agree."
+      },
+      {
+        "action": "Review Edit configuration",
+        "frame": "Store · Configure",
+        "result": "All four values, image and caption retained."
+      },
+      {
+        "action": "Review I-key unavailable simulation",
+        "frame": "Store · Review · Image unavailable",
+        "result": "Product image unavailable; values and caption remain, corrected Review copy retained. Host URL remained 43:80 while displayed frame changed."
+      },
+      {
+        "action": "Unavailable Edit configuration",
+        "frame": "Store · Configure",
+        "result": "Ready configured image and all choices restored."
+      },
+      {
+        "action": "Review Back",
+        "frame": "Store · Configure",
+        "result": "All four values, image and caption retained."
+      }
+    ]
+  },
+  "dependencyClosure": {
+    "status": "passed",
+    "unresolvedRequiredDependencies": 0,
+    "pages": [
+      {
+        "name": "01 Foundations",
+        "nodes": 76,
+        "measuredCategoryHashes": 11,
+        "categoryHashesEqual": true
+      },
+      {
+        "name": "02 Components",
+        "nodes": 513,
+        "measuredCategoryHashes": 11,
+        "categoryHashesEqual": true
+      },
+      {
+        "name": "03 Configurator",
+        "nodes": 1130,
+        "measuredCategoryHashes": 11,
+        "categoryHashesEqual": true
+      },
+      {
+        "name": "04 Source Assets",
+        "nodes": 4,
+        "measuredCategoryHashes": 11,
+        "categoryHashesEqual": true
+      },
+      {
+        "name": "05 Store · Handbook exercise",
+        "nodes": 431,
+        "measuredCategoryHashes": 11,
+        "categoryHashesEqual": true
+      }
+    ],
+    "totals": {
+      "nodes": 2154,
+      "components": 95,
+      "componentSets": 8,
+      "instances": 441,
+      "reactionOwners": 60,
+      "imagePaints": 52,
+      "textNodes": 607
+    },
+    "collections": 4,
+    "variables": 75,
+    "styles": {
+      "text": 11,
+      "effect": 1,
+      "paint": 0,
+      "grid": 0
+    },
+    "imageResources": [
+      {
+        "imageHash": "1ce0b49e844636c054769de3376543e80cffde3b",
+        "sha256": "a6c5ca57ed770247b5d53fa7a4254e8f8233e324a7ab177532600c253c737b87",
+        "bytes": 110532,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "368b3560cd20ff240ad8efc44fe11b6ed9f926fa",
+        "sha256": "469c51fcda413faa530a0597abb006cc358d1cab77af213b99219746cc54ff68",
+        "bytes": 1659739,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "37acc540c97587164fe1022a6be08f572babf907",
+        "sha256": "0b387ab55f7128508e1c904eb1c0fa6160a283f00adc0f92521a9b68b4a760f5",
+        "bytes": 1398129,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "3b53d78be074494d2d2a8394a6134d66d1b025a9",
+        "sha256": "bec2e3123c9c2c8379422bea102cef572815b46f028d8996abc661280997de64",
+        "bytes": 1489693,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "3e5a1dc8b22cd60401093182274311ee1a0a914f",
+        "sha256": "6dd86f8ef92d8dd84bbad26b5efca9b7657d51c816dd863a23ab2fa2b66c6839",
+        "bytes": 1517528,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "4b9b243ed8e3992e7dc9dedd08233511b61d985b",
+        "sha256": "e3c23b6a47a846c8e5fec6667abe7b0ba5f26a9cd219d22fea8f716ec9552b93",
+        "bytes": 85648,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "592b59aef0bcf3e53e62aecf9c3eee37ef49b1e8",
+        "sha256": "d945d3ccda8ad17c84a24b8b351a11c0af3445701a7e01d584a0351a5c7367c7",
+        "bytes": 1679995,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "ad883c325ed275a94033059b14a31e90c904e431",
+        "sha256": "69199dfe293b5fac4ca8408edc01b60dee4c8f8f4eab6db1ec2922c66c963133",
+        "bytes": 1372168,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "ca208178c06d641666cf2c76e7640080f989d2d1",
+        "sha256": "5f5db0d9196c0d742793cc3439ec5ab6a56af89ab0d08693e5373fd09d859713",
+        "bytes": 1597844,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "cd635d89af069215e6aa280fa5012f29cdb1ae58",
+        "sha256": "f15487166b5a060131c7d9bfefbea20ab737f9c29d0239de14a51113cab62e19",
+        "bytes": 1474358,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "imageHash": "e01fb066b15f1330294d03fb00025fa0456c9571",
+        "sha256": "6fce5c78206067f33b253c7671ae562cc44a057d16d8be6351a5af725f0be4c2",
+        "bytes": 1363702,
+        "width": 1254,
+        "height": 1254
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Arimo",
+        "style": "Regular",
+        "available": true,
+        "catalogMatches": [
+          {
+            "family": "Arimo",
+            "style": "Regular"
+          }
+        ]
+      },
+      {
+        "family": "Arimo",
+        "style": "Bold",
+        "available": true,
+        "catalogMatches": [
+          {
+            "family": "Arimo",
+            "style": "Bold"
+          }
+        ]
+      },
+      {
+        "family": "Lora",
+        "style": "Regular",
+        "available": true,
+        "catalogMatches": [
+          {
+            "family": "Lora",
+            "style": "Regular"
+          }
+        ]
+      }
+    ],
+    "missingFontNodes": 0,
+    "method": "Read-only live Plugin API calls, one page switch each; SHA-256 over ordered canonical measured records. Node references normalized to page/tree index/type/name; variables to collection/name; styles to type/name; modes to collection/mode; component-property key ID suffixes removed. Raw page result snapshots preserved."
+  },
+  "rightsAndPackaging": {
+    "ownedMaterials": "MIT",
+    "embeddedImageResources": 11,
+    "exactOwnedImageByteMatches": 11,
+    "unknownImageResources": 0,
+    "separateFontBinariesIncluded": false,
+    "capturedClaudeRuntimeIncluded": false,
+    "thirdPartyNotices": "Lucide ISC and Feather MIT notices retained in the companion sidecar; referenced font software has separate terms."
+  },
+  "accessibleDisclosureRead": {
+    "status": "passed",
+    "scope": "Visible names/text, links, descriptions, documentation, annotations, reactions and global values across five imported pages; no configured private/account/credential markers or URL strings found.",
+    "wholeBinaryMetadataSanitizationCertified": false
+  },
+  "evidenceHashes": {
+    "closure": "b3b53efcb89d745eadd984f3f414970f835cfb236a66a3533ca68acd4dbddebc",
+    "present": "66eb30c146dfe7aab7522b5c0532a2a4181971ce5aae56f270146cfe5d3d6372",
+    "rightsAndPackaging": "dec6c12cdb24b422e1f48ab20c475c5854788ef13b5ba8feeaaaac4f6820b81c",
+    "accessibleDisclosure": "95868bb531832f05ee8329f86194e8d64de294d3d6a0617d80c66b3596a8c733"
+  },
+  "limitations": [
+    "Same-account fresh Draft import on Professional plan; no separate-account/free-plan usability assertion.",
+    "One authored native journey; no claim of all 72 native cases, narrow layout, reload persistence, real image-load failure, Retry, screen-reader or keyboard/focus parity.",
+    "Screen-reader support was disabled in native Present.",
+    "Plugin API closure and the accessible disclosure read do not certify private/shared plugin metadata or all opaque binary fields.",
+    "Arimo/Lora in the native file differs from Arial/Georgia in React; font availability is connected-account evidence.",
+    "Readers must verify their own imported copy and record its file URL and actual local identities."
+  ]
+}

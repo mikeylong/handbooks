@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "package": "velori-store",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "audience": "public",
   "distribution": "MIT public-download payload",
   "license": {
@@ -12,6 +12,15 @@
       "docs/REACT-LICENSE"
     ],
     "historicalRuntime": "excluded from public payload; preserved privately"
+  },
+  "figmaCompanion": {
+    "filename": "velori-design-system-configurator.fig",
+    "route": "/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
+    "manifestRoute": "/claude-design/editions/v1.2.1/figma-companion.json",
+    "sha256": "f5bde616c307c5d28dd4be0ca0f3647b9e2a6edb34e9093650ccaf7137d7a974",
+    "bytes": 13940422,
+    "includedInThisZip": false,
+    "verification": "Consult the companion manifest; each reader must verify their own imported copy."
   },
   "sourceFreeze": "provenance/source-freeze.json",
   "adaptations": [
@@ -131,8 +140,8 @@
       "bytes": 1069
     },
     "README.md": {
-      "sha256": "3d7b4757234ac73a4a66be03a5b2cd2773e9191fac91f5bbe9470a03922fba15",
-      "bytes": 5596
+      "sha256": "0644d4a71792acd0586b5cd55170d565b05de97443efe8ffd6605350bc3ed31e",
+      "bytes": 7495
     },
     "docs/LUCIDE-LICENSE": {
       "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
@@ -143,8 +152,8 @@
       "bytes": 1086
     },
     "docs/asset-terms.md": {
-      "sha256": "90fcbf29e7c3b872e971c4e4916244de9bc31ed1ed1f371d61252e0987bd37f9",
-      "bytes": 1451
+      "sha256": "6439077263e8615a3d261fcf409ccce875693620403b469c66423f5b952c0dac",
+      "bytes": 2498
     },
     "docs/expected-results.md": {
       "sha256": "391a34cb029bcc306764848bb482670e612ac3127421f1c31f9e418ae4341006",
@@ -155,16 +164,16 @@
       "bytes": 17143
     },
     "docs/handoff-template.md": {
-      "sha256": "7503c5b2fa9adb35076c32793057a30f8ceb79b44a02998bf140704b7bf3b938",
-      "bytes": 1578
+      "sha256": "a294b4fa24690496af0dec62ce2e83886e5dda55a99b8741613d16cf73c01eac",
+      "bytes": 1742
     },
     "docs/image-provenance.md": {
       "sha256": "341139b865d365db0267eeb2323c342b0ff05a636bcb56e0bdec1d9720dd5028",
       "bytes": 5949
     },
     "docs/inventory.md": {
-      "sha256": "f93a3967b1cb811c2e5e47f3ea158bdd3e05c6e1e2c70d5a073f02accd6e19c6",
-      "bytes": 4474
+      "sha256": "c00ab17a6ea93534d712d79682c850810254da97a31b926528320f8458dcf6a5",
+      "bytes": 5879
     },
     "docs/native-baseline.md": {
       "sha256": "7f1c6d32c06765be8892139b922c9fa981217e6f7bb6018e80d33b43fc944a49",
@@ -179,27 +188,27 @@
       "bytes": 11735
     },
     "docs/source-conflicts.md": {
-      "sha256": "719eeed2031096a65eef2b281b7bfd9bab12f481f87520029ea33b02f01b3f20",
-      "bytes": 9222
+      "sha256": "f5bf0082866c557ba63a0facc7c9f328acf7cff531bec0d62d05bf0b8a62b51a",
+      "bytes": 9634
     },
     "docs/system-definition.md": {
-      "sha256": "52442373a57adac763bfa2cc1e1c8d402bb406abe2b6b0aaab290accba83c99f",
-      "bytes": 48907
+      "sha256": "3b0efcdbd34972eb01bc1dac5167186f0f0407303d1f0a860d7a9a0e7d325347",
+      "bytes": 49515
     },
     "docs/walkthrough.md": {
-      "sha256": "1aa5679c8cd56d5b1c68cbc0e6f0d8be09334f33110f4874f0f7469f5c6a251c",
-      "bytes": 12545
+      "sha256": "a1d848600ca8ce0aaf3186adb51b2ef7f2a6538b4c5e17d393f2bedd32898505",
+      "bytes": 14264
     },
     "index.html": {
       "sha256": "fde4db892480d16d53cd2b5fab494321a845f1a8459f7a0c176b94da214d1846",
       "bytes": 310
     },
     "package-lock.json": {
-      "sha256": "7ebcfa01437b039c4a4c80a75ed202864eb0ab373452dd2a8590de8e95636d0c",
+      "sha256": "2d792c0278079e405facfe8aed027e403883bc5f0c0826a4ba1aa62f8fa54791",
       "bytes": 61449
     },
     "package.json": {
-      "sha256": "7cd3869cb1750f84fe80e69c7038fd43d7495e5d558dbdc886f4b4d773bcf4f9",
+      "sha256": "a8dc00c9d5aa841cf9678e82cd28bad8a9abcf759d014e06d8c7506dd2895c0b",
       "bytes": 765
     },
     "provenance/source-freeze.json": {
@@ -383,8 +392,8 @@
       "bytes": 5346
     },
     "scripts/package-candidate.py": {
-      "sha256": "4e1ec81a54a3358465822cc893e2419d4c15019ba64eae6f57211c0ea1099a43",
-      "bytes": 5315
+      "sha256": "bf8c948858cedd5bd2a5a8e07ac6d626b87150eac49ceea7687b5b129dc25b70",
+      "bytes": 5753
     },
     "scripts/package_policy.py": {
       "sha256": "343d843953a1bd5d2e84db38038c38688d1f1412668185181d407b869918bbd6",

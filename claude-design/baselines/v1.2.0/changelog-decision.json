@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "A source-grounded Velori exercise with explicit state preservation and a complete native handoff.",
+  "entryCount": 4,
+  "failures": [],
+  "placement": "final-page",
+  "requiredPdfState": {
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
+  },
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "id": "G01",
+      "category": "Deprecation or removal",
+      "section": "Orientation, capstone and product appendices",
+      "text": "Replaced the Data Pipeline Studio assignment and Simple Design System reference with Velori: a preserved configurator, one Review configuration extension, and a portable React sample.",
+      "rationale": "One supplied product now carries the source, state, implementation and native Figma checks through the capstone.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/velori-store-0.2.0-mit-release.zip"
+      ],
+      "groupedDraftEntries": [
+        "C01",
+        "C08"
+      ]
+    },
+    {
+      "id": "G02",
+      "category": "Addition",
+      "section": "Chapters 2\u20133",
+      "text": "Added source definition and conflict records, CSS and prop inventories, controlled import scope, asset hashes recorded before validation, fidelity checks of ten elements, and named correction fixtures followed by a second generation.",
+      "rationale": "Readers can resolve source disagreements and verify reuse before introducing the review screen.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design"
+      ],
+      "groupedDraftEntries": [
+        "C02",
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "id": "G03",
+      "category": "Correction or clarification",
+      "section": "Chapters 4\u20137 and 10",
+      "text": "Specified retention of all four configuration values, keyboard and return focus, image recovery, narrow layouts, and native Figma component/variable correspondence. Detail photographs remain Chalk, and prototype visits are distinguished from browser reload persistence.",
+      "rationale": "These contracts expose state loss and unsupported claims of parity between tools.",
+      "sources": [
+        "https://www.figma.com/design/jdGjI8zBJrvpMERKpBSCli?node-id=34-694"
+      ],
+      "groupedDraftEntries": [
+        "C05",
+        "C07"
+      ]
+    },
+    {
+      "id": "G04",
+      "category": "Correction or clarification",
+      "section": "Chapter 9",
+      "text": "Corrected the local Code handoff to Copy prompt and authenticated source reads. Truncated binaries require a full native archive; captured bytes stay private and unchanged, host adaptations are disclosed, and each new packet is validated independently.",
+      "rationale": "Complete source and dependency bytes are required before executable handoff acceptance.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
+      ],
+      "groupedDraftEntries": [
+        "C06"
+      ]
+    }
+  ],
+  "previousVersion": "1.1.0",
+  "items": [
+    {
+      "title": "Velori throughout the guide",
+      "whatChanged": "Replaced the Data Pipeline Studio assignment and Simple Design System reference with Velori: a preserved configurator, one Review configuration extension, and a portable React sample.",
+      "why": "One supplied product now carries the source, state, implementation and native Figma checks through the capstone.",
+      "classification": "Deprecation or removal",
+      "classificationLabel": "Deprecation or removal",
+      "section": "Orientation, capstone and product appendices",
+      "sources": [
+        {
+          "url": "https://handbooks.surfaces.systems/claude-design/velori-store-0.2.0-mit-release.zip",
+          "authority": "Surfaces",
+          "title": "Velori MIT sample"
+        }
+      ]
+    },
+    {
+      "title": "Source and fidelity checks",
+      "whatChanged": "Added source definition and conflict records, CSS and prop inventories, controlled import scope, asset hashes recorded before validation, fidelity checks of ten elements, and named correction fixtures followed by a second generation.",
+      "why": "Readers can resolve source disagreements and verify reuse before introducing the review screen.",
+      "classification": "Addition",
+      "classificationLabel": "Addition",
+      "section": "Chapters 2\u20133",
+      "sources": [
+        {
+          "url": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+          "authority": "Anthropic",
+          "title": "Set up your design system in Claude Design"
+        }
+      ]
+    },
+    {
+      "title": "State and Figma contracts",
+      "whatChanged": "Specified retention of all four configuration values, keyboard and return focus, image recovery, narrow layouts, and native Figma component/variable correspondence. Detail photographs remain Chalk, and prototype visits are distinguished from browser reload persistence.",
+      "why": "These contracts expose state loss and unsupported claims of parity between tools.",
+      "classification": "Correction or clarification",
+      "classificationLabel": "Correction or clarification",
+      "section": "Chapters 4\u20137 and 10",
+      "sources": [
+        {
+          "url": "https://www.figma.com/design/jdGjI8zBJrvpMERKpBSCli?node-id=34-694",
+          "authority": "Figma",
+          "title": "Velori Figma handoff"
+        }
+      ]
+    },
+    {
+      "title": "Complete native Code handoff",
+      "whatChanged": "Corrected the local Code handoff to Copy prompt and authenticated source reads. Truncated binaries require a full native archive; captured bytes stay private and unchanged, host adaptations are disclosed, and each new packet is validated independently.",
+      "why": "Complete source and dependency bytes are required before executable handoff acceptance.",
+      "classification": "Correction or clarification",
+      "classificationLabel": "Correction or clarification",
+      "section": "Chapter 9",
+      "sources": [
+        {
+          "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "authority": "Anthropic",
+          "title": "Get started with Claude Design"
+        }
+      ]
+    }
+  ]
+}

@@ -20,6 +20,16 @@ Open http://127.0.0.1:4197. Use Node.js 22 and npm. The first install needs acce
 
 The reference composition is 1024 × 768. Narrow screens stack the product and controls. The package uses Arial and Georgia from the consumer source. The supplied native Figma system uses Arimo and Lora; record that font mapping when comparing the two.
 
+## Open your Figma working copy
+
+The variable-driven native journey requires a **paid Figma Design plan or eligible Education plan**, with **can edit** access to your working file. [Figma’s variable guide](https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma) explains this requirement. Starter can [import the `.fig` into Drafts](https://help.figma.com/hc/en-us/articles/360041003114-Import-files-to-the-file-browser), but its [prototype features](https://help.figma.com/hc/en-us/articles/360040328273-Compare-Figma-plans-and-features) do not include variables, expressions, or conditional logic.
+
+Download the [native Figma companion](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig) and its [manifest](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/figma-companion.json) separately from this ZIP. Import the `.fig` file into your own Figma Drafts. Record the new file URL and companion SHA-256; the author file is not required for the exercise.
+
+Preserve **01 Foundations**, **02 Components**, **03 Configurator**, and **04 Source Assets**, including **Configure · White** on **03 Configurator**. Create a separate working page. The completed **05 Store · Handbook exercise** page is an answer key for later comparison. Keep it outside initial Claude Design generation context.
+
+Before editing, inspect local main components, internal instance links, variable collections and modes, image resources, and available fonts. Stop if a required external library or resource is inaccessible. Use named pages and frames from the manifest, then record actual IDs in your imported file. Follow the [walkthrough](docs/walkthrough.md) for prototype checks and keep the companion copyright and third-party notices. Arimo and Lora are font references; the companion includes no font software.
+
 ## Use the keyboard
 
 Tab to each control. Enter or Space selects a finish, face, or accessory. In the expression dropdown, Enter or Space opens and commits; arrows move through options; Home and End reach the first and last option. Typing an option's name moves to it. Escape cancels, Tab closes, and Alt+ArrowUp closes. The dropdown returns focus to its trigger after a selection. Review and details place focus on the new heading, then restore focus when you return.
@@ -49,7 +59,7 @@ The browser check covers all 72 configurations, the complete journey, keyboard d
 
 ## Capture a native handoff
 
-Follow [the tool walkthrough](docs/walkthrough.md) to import the prepared system, generate the bounded change, and capture an executable handoff from your own Design project. Preserve and validate that new packet independently. The public sample includes a bounded React Review adaptation. All captured native source and runtime remain in the private review archive and outside the MIT download.
+Follow [the tool walkthrough](docs/walkthrough.md) to import the prepared system, generate the bounded change, and capture an executable handoff from your own Design project. Preserve and validate that new packet independently. The public sample includes a bounded React Review adaptation. Captured Claude Design source and runtime remain in the private review archive and outside the public downloads.
 
 ## Start a new native exercise
 

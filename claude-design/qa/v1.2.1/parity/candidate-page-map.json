@@ -1,0 +1,2434 @@
+{
+  "path": "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/claude-design/review/2026-10-05-figma-companion/pdf/final-r2/claude-design-v1.2.1-2026-10-05-late-night-r1.pdf",
+  "sha256": "1b1a475d88d1bf180302ca9037f1d10a5a611adf4758faff9e355f7e0ca2be8a",
+  "bytes": 48969946,
+  "pages": [
+    {
+      "page": 1,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "CLAUDE DESIGN / FIELD PRACTICE\nClaude Design\nField Guide\nFrom a living design system to a production-ready handoff\nSYSTEM\nSCREEN\nSTATES\nHANDOFF\nCODE\nMichael Long\nOctober 5, 2026 | Version 1.2.1\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 2,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "ii\nOrientation\nUse this guide to extend an existing product through Claude Design,\nClaude Code, and Figma. The recurring example is Velori, a\npersonal-robot store. A shopper chooses a finish, face, expression color,\nand accessory, then checks the configuration before returning to edit.\nThe assignment starts with a working configurator. Preserve its identity,\nproduct photographs, choices, captions, and selection behavior. Add one\nbounded review journey. The public package includes a completed React\nanswer key, frozen reference, reusable components, prompts, and local\nvalidation scripts. Historical native packets and their metadata remain\nprivate and are excluded from the download. Follow Chapters 2 and 3 to\ndefine and validate your source system before creating a new review\nscreen.\nClaude Design supports interactive prototypes and a Claude Code\nhandoff. Claude Code also provides a /design command for artboards.\nChoose the surface that can produce the required result, then test its\ninteractions and handoff. See the Design getting-started guide and\nClaude Code command reference.\nStart the sample\nDownload the Velori sample, extract it, then run these commands from\nits velori-store folder:\ncd velori-store\nnpm ci\nnpm run dev\nOpen http://127.0.0.1:4197. Use Node.js 22 and npm. The first install\nrequires the npm registry. Product assets ship in the folder, and the store\nruns without CLEAR, a Claude account, or a Figma account. If the port is\noccupied, choose another port and use the address Vite prints.\n",
+      "links": [
+        {
+          "rect": [
+            196.2504,
+            267.0003,
+            330.1004,
+            279.0003
+          ],
+          "uri": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            252.0003,
+            194.7404,
+            264.0003
+          ],
+          "uri": "https://code.claude.com/docs/en/commands",
+          "dest": ""
+        },
+        {
+          "rect": [
+            105.5204,
+            197.8403,
+            171.6904,
+            209.8403
+          ],
+          "uri": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+          "dest": ""
+        },
+        {
+          "rect": [
+            64.58039,
+            102.5703,
+            159.2104,
+            114.5703
+          ],
+          "uri": "http://127.0.0.1:4197",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 3,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "iii\nSelect Graphite, Simple, Amber, and Carry bag. Open accessory details,\nbrowse Charging dock, and return. Continue to review, then edit.\nReload. The robot, caption, controls, and summary should still agree.\nThe completed review screen is new sample behavior. For the exercise,\nprovide the configurator and accessory details as the baseline and ask\nClaude Design to recreate the review journey. Keep the worked sample\nbeside your result for comparison. Payment, inventory, accounts,\nshipping, and order submission remain outside the brief.\nWhat you will produce\n 1\nA preservation brief with a named configuration fixture.\n 2\nA React system imported into your chosen Claude Design workspace.\n 3\nA generated review journey that retains the selected values.\n 4\nAn actual handoff that runs from a new local folder.\n 5\nA bounded React implementation with navigation and persistence checks.\n 6\nA native Figma working copy with component and variable identity\nverified.\n 7\nA review record that separates the app, native tools, candidate package,\nand publication.\nChoose the destination first\nConfirm the intended account, organization, selected system, and\nproject before uploading. Claude Code login and Design read/write\nauthorization are separate steps when /design-login requests\nauthorization. Use the same intended account for that browser flow. If\naccess fails, check the active organization and Design eligibility before\nretrying the upload. The Design admin guide describes organization\nsettings.\n",
+      "links": [
+        {
+          "rect": [
+            155.0604,
+            88.92031,
+            249.8904,
+            100.9203
+          ],
+          "uri": "https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 4,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "iv\nDownload the Velori native Figma file and its companion manifest\nseparately from the React ZIP. Import the .fig file into your own Figma\nDrafts and record the new file URL and companion SHA-256. Preserve\nthe supplied source pages and reference frames; create a separate page\nfor your work. The completed Store handbook exercise page is an\nanswer key for comparison, not initial generation context.\nFor the variable-driven native journey, use a paid Figma Design plan or\neligible Education plan with edit access. Starter can import the file, but\nvariables in prototypes require those plan features. Confirm this access\nbefore starting the Figma work.\nThe Velori sample source, documentation, frozen reference, imagery,\nand authored native Figma companion use the MIT license. Keep the\ncopyright and third-party notices when redistributing them. Arimo and\nLora are font references; no font software is included in the companion.\nCaptured Claude Design source and runtime remain in the private\nreview archive and outside these downloads.\nThe workflow\n1\nFrame\n2\nGround\n3\nExtend\n4\nSpecify\n5\nMap\n6\nHand off\n7\nImplement\n8\nReconcile\nRendered evidence and drift restart the loop\nStage\nWorking tool\nObservable result\nFrame\nProduct brief and local app\nPreserved choices and bounded\nextension\nGround\nClaude Code and Claude Design\nImported components and photos load\n",
+      "links": [
+        {
+          "rect": [
+            105.5204,
+            540.4403,
+            217.3604,
+            552.4403
+          ],
+          "uri": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
+          "dest": ""
+        },
+        {
+          "rect": [
+            253.9804,
+            540.4403,
+            352.4004,
+            552.4403
+          ],
+          "uri": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/figma-companion.json",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            414.4403,
+            146.8304,
+            426.4403
+          ],
+          "uri": "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 5,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "v\nStage\nWorking tool\nObservable result\nExtend\nClaude Design\nConfigure, details, review, and edit agree\nSpecify\nDesign and team review\nNavigation, focus, reload, and recovery\ndefined\nMap\nDesign and engineering\nComponents and state ownership\nidentified\nHand off\nClaude Design to Claude Code\nCaptured source and dependencies run\nlocally\nImplement\nClaude Code\nReact change passes the journey checks\nReconcile\nFigma\nEditable frames and native prototype\nagree\nThe configurator, accessory details, review, and image recovery share\nthe same four configuration values. Browsing an accessory must not\nchange the selected accessory. An unavailable photo must not erase the\nshopper's choices.\nCONFIGURATION\nfinish / face / color / accessory\nConfigurator\nchoices + photo\nDetails\nbrowse + return\nReview\nsummary + edit\nRecovery\nretain + retry\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 6,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "vi\nREFERENCE MAP\nContents\nThe chapters move from source authority to rendered proof. Worksheets\nand appendices remain part of the same operating package.\nOrientation\n ii\n9. Hand off to Claude Code\n 33\n1. Decide what is authoritative\n 1\n10. Implement in Figma and reconcile\n 38\n2. Prepare the Velori system\n 5\n11. Guided capstone\n 42\n3. Validate the imported system\n 13\nAppendix A: Prompt sequence\n 47\n4. Extend the existing screen\n 18\nAppendix B: Handoff record\n 47\n5. Connect the adjacent surfaces\n 21\nAppendix C: Package map\n 48\n6. Specify states and transitions\n 24\nFurther reading\n 49\n7. Prove keyboard and responsive\nbehavior\n 27\nChangelog\n 50\n8. Run the design evidence gate\n 30\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            414.2983,
+            77.34154,
+            423.5483
+          ],
+          "uri": "",
+          "dest": [
+            1,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            198.5428,
+            415.0296,
+            202.0,
+            424.2796
+          ],
+          "uri": "",
+          "dest": [
+            1,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            414.2983,
+            310.4483,
+            423.5483
+          ],
+          "uri": "",
+          "dest": [
+            38,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            415.0296,
+            383.1496,
+            424.2796
+          ],
+          "uri": "",
+          "dest": [
+            38,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            387.0483,
+            143.0652,
+            396.2983
+          ],
+          "uri": "",
+          "dest": [
+            6,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            198.1676,
+            387.7796,
+            202.0,
+            397.0296
+          ],
+          "uri": "",
+          "dest": [
+            6,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            387.0483,
+            350.7116,
+            396.2983
+          ],
+          "uri": "",
+          "dest": [
+            43,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            387.7796,
+            383.1496,
+            397.0296
+          ],
+          "uri": "",
+          "dest": [
+            43,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            359.7983,
+            135.1346,
+            369.0483
+          ],
+          "uri": "",
+          "dest": [
+            10,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            198.1676,
+            360.5296,
+            202.0,
+            369.7796
+          ],
+          "uri": "",
+          "dest": [
+            10,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            359.7983,
+            288.0969,
+            369.0483
+          ],
+          "uri": "",
+          "dest": [
+            47,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            360.5296,
+            383.1496,
+            369.7796
+          ],
+          "uri": "",
+          "dest": [
+            47,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            332.5483,
+            147.6663,
+            341.7983
+          ],
+          "uri": "",
+          "dest": [
+            18,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            333.2796,
+            202.0,
+            342.5296
+          ],
+          "uri": "",
+          "dest": [
+            18,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            332.5483,
+            323.9649,
+            341.7983
+          ],
+          "uri": "",
+          "dest": [
+            52,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            333.2796,
+            383.1496,
+            342.5296
+          ],
+          "uri": "",
+          "dest": [
+            52,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            305.2983,
+            136.8251,
+            314.5483
+          ],
+          "uri": "",
+          "dest": [
+            23,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            306.0296,
+            202.0,
+            315.2796
+          ],
+          "uri": "",
+          "dest": [
+            23,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            305.2983,
+            316.4679,
+            314.5483
+          ],
+          "uri": "",
+          "dest": [
+            52,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            306.0296,
+            383.1496,
+            315.2796
+          ],
+          "uri": "",
+          "dest": [
+            52,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            278.0483,
+            149.1731,
+            287.2983
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            278.7796,
+            202.0,
+            288.0296
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            278.0483,
+            308.7284,
+            287.2983
+          ],
+          "uri": "",
+          "dest": [
+            53,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            278.7796,
+            383.1496,
+            288.0296
+          ],
+          "uri": "",
+          "dest": [
+            53,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            250.7983,
+            146.8799,
+            260.0483
+          ],
+          "uri": "",
+          "dest": [
+            29,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            251.5296,
+            202.0,
+            260.7796
+          ],
+          "uri": "",
+          "dest": [
+            29,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            250.7983,
+            273.8232,
+            260.0483
+          ],
+          "uri": "",
+          "dest": [
+            54,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            251.5296,
+            383.1496,
+            260.7796
+          ],
+          "uri": "",
+          "dest": [
+            54,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            223.5483,
+            154.9722,
+            232.7983
+          ],
+          "uri": "",
+          "dest": [
+            32,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            214.2983,
+            68.28634,
+            223.5483
+          ],
+          "uri": "",
+          "dest": [
+            32,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            224.2796,
+            202.0,
+            233.5296
+          ],
+          "uri": "",
+          "dest": [
+            32,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            223.5483,
+            255.0587,
+            232.7983
+          ],
+          "uri": "",
+          "dest": [
+            55,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            224.2796,
+            383.1496,
+            233.5296
+          ],
+          "uri": "",
+          "dest": [
+            55,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            187.0483,
+            146.5491,
+            196.2983
+          ],
+          "uri": "",
+          "dest": [
+            35,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            187.7796,
+            202.0,
+            197.0296
+          ],
+          "uri": "",
+          "dest": [
+            35,
+            "/Fit"
+          ]
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 7,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "1\nCHAPTER 01\nDecide what is\nauthoritative\nPreserve a working product before asking an assistant to extend it.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "2\nA design-system request can refer to component anatomy, React\nbehavior, tokens, screenshots, or product rules. Each source answers a\ndifferent question. Declare which source governs each decision before\ngeneration.\nRun your working copy\nFrom the extracted package, run npm ci and npm run dev. Open\nhttp://127.0.0.1:4197. Use Node.js 22 and a free local port. Choose\nGraphite, Simple, Amber, and Carry bag, follow details -> review -> edit,\nand reload before changing the app. The README provides reset and\nkeyboard instructions. The assignment adds review to the supplied\nconfigurator; the completed sample is the expected result. Commerce\nremains outside the brief.\nEstablish the source order\n 1\nThe consumer application governs identity, imagery, configuration values,\nand captions.\n 2\nThe React components govern props, selection behavior, keyboard\ninteraction, and rendering.\n 3\nTokens govern color, typography, spacing, and control dimensions.\n 4\nThe Figma working copy governs native anatomy, variants, variables, and\nprototype wiring.\n 5\nThe approved brief governs the new review journey.\nThe source snapshot and manifest retain copied file hashes, source\ncommit, exclusions, and the copy date. The reference is frozen. New\nimplementation belongs beside it, so a later correction cannot quietly\nrewrite the starting point.\nCLAUDE DESIGN FIELD GUIDE\n1. DECIDE WHAT IS AUTHORITATIVE\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            426.2803,
+            131.4804,
+            438.2803
+          ],
+          "uri": "http://127.0.0.1:4197",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 9,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "3\nDefine the clean baseline\nPreserve the 1024 \u00d7 768 composition, finish and face choices, expression\ncolors, accessory photographs, captions, and configuration persistence.\nThe baseline uses a dropdown for expression and one accessory choice.\nNormalize the two teaching violations: Continue uses Ink with white\ntext, 12px corners, and 48px height. Accessory cards have 24px gaps.\nKeep the purple Continue button and 8px accessory gaps as separately\nnamed fixtures. Color chips and independent accessory checkboxes\nremain follow-up exercises.\nThe package uses its own storage namespace. The package does not\nimport the source owner's fixes, proposals, review state, or saved\nconfiguration. Reset changes only the sample key.\nName the fixture\nValue\nDefault\nReview fixture\nFinish\nChalk\nGraphite\nFace\nFriendly\nSimple\nExpression\nWhite\nAmber\nAccessory\nDock\nCarry bag\nUse the non-default fixture in every review. A screen that always\ndisplays the defaults can appear correct while ignoring the shopper's\nchoices.\nCLAUDE DESIGN / PRESERVE THE CONFIGURATOR\nInspect the supplied Velori configurator and component library. Record\nthe choices, asset composition, captions, storage behavior, and\nreusable exports. Preserve the existing identity and 1024 \u00d7 768\nreference layout. Use the documented expression dropdown and one\naccessory choice. Describe the bounded change needed for Continue to\nopen Review configuration, with edit and Back retaining the four\nCLAUDE DESIGN FIELD GUIDE\n1. DECIDE WHAT IS AUTHORITATIVE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 10,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "4\nCLAUDE DESIGN / PRESERVE THE CONFIGURATOR\nvalues. Do not add payment, stock, accounts, shipping, or order\nsubmission.\nChapter checkpoint\nRecord the source revision, working package, default and review\nfixtures, allowed changes, and preserved behavior. Keep any unresolved\ndisagreement between code, tokens, and Figma in the review record.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n1. DECIDE WHAT IS AUTHORITATIVE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 11,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "5\nCHAPTER 02\nPrepare the Velori system\nDefine the source rules before importing the React library.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "6\nPrepare a reusable source system before asking Claude Design to\ngenerate a screen. A collection of working components can still leave\ntype, spacing, layout, and usage rules undefined. Claude Code can help\ninspect and document those rules. The source preparation and checks\nbelow are this handbook's recommended procedure.\nVelori uses the React codebase route described in Claude's design-system\nsetup guidance. /design-sync converts and imports that source. The\nasset-based setup route is an alternative for other inputs; the Velori\nexercise does not require both routes or manual entry of every design\nvalue.\nSeparate the starting screen from the\nanswer key\nStart an extracted copy using its README. Keep a second, unchanged\ncopy for comparison. The public package contains a completed React\nreview screen for comparison. It contains no historical native Code\npacket or native project pin. The answer key does not complete your new\nnative exercise.\nSupply the configurator, expression menu, accessory details, and\nunavailable-image configurator as the generation baseline. Use the 13\nexports in src/library.jsx through\n.design-sync/host-entry.mjs. The application barrel\nsrc/index.js also exposes the completed Review screen and is not the\nimport entry. Exclude src/ReviewConfiguration.jsx, completed\nanswer-key guidance, historical native mappings, and reference/ from\nthe import and initial generation context. After the system passes\nChapter 3, ask Design to create a new review screen, then compare it\nwith the answer key.\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "links": [
+        {
+          "rect": [
+            315.8804,
+            459.4403,
+            383.2575,
+            471.4403
+          ],
+          "uri": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            444.4403,
+            108.9404,
+            456.4403
+          ],
+          "uri": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 13,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "7\nInspect the source package\nInput\nWhat it establishes\nreference/index.html and\nreference/design-system.js\nFrozen composition and documented\nconsumer rules\nsrc/library.jsx and src/index.js\nNamed components, props, controlled\nvalues, and interactions\ntokens.json and src/tokens.css\nExisting named colors, shapes, sizes, and\nfont families\nsrc/velori.css\nApplied type, spacing, layout, and state\nrules, including literal values\n/#specimens and reference/\nComponent states and screen comparators\npublic/assets/velori/ and its manifest\nProduct photos, masks, layers, captions, and\nasset identity\n.design-sync/conventions.md and previews/\nImport usage guidance and preview cases\nImported Figma working copy\nNative anatomy, variants, variables, and font\ncorrespondence\nRead docs/inventory.md and provenance/source-freeze.json\nbefore changing the source. Record the source revision and manifest\nhash. Keep the frozen reference unchanged. Use code for executable\nbehavior, documented consumer rules for the normalized baseline, and\nFigma for native correspondence. Record disagreements before\nchoosing a value.\nDefine rules and component use\nInventory every color role, type role, spacing value, radius, control size,\nlayout dimension, and interaction state used by the starting screens.\nInclude CSS literals: the token files alone do not define the complete\nsystem. For each rule, record its value, source path and selector or\nexport, intended use, and whether it is observed, inferred, proposed, or\nunresolved.\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 14,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "8\nDocument each component's anatomy, valid props, states, composition\nconstraints, and usage. A prop type can tell you that accessory accepts\nbag; usage guidance should also tell you that browsing bag details does\nnot change the selected accessory. The app owns configuration and\nnavigation. Controlled components receive values and callbacks.\nExport\nResponsibility\nBrand, StoreHeader\nProduct identity and navigation shell\nPrimaryButton, VeloriIcon\nReusable actions and icon roles\nFinishChoice, FaceChoice\nControlled finish and face choices\nExpressionSelect\nDropdown, selected value, open state, and\nkeyboard behavior\nAccessoryChoice, ChoiceGroup\nOne accessory choice and grouped controls\nSelectionMark\nSelected-state marker inside a positioned\nchoice tile\nProductPreview\nPhoto, finish, face, expression, caption, and\nrecovery\nAccessoryPhoto\nCarry bag or Charging dock detail imagery\nConfigurationSummary\nThe four chosen values\nThree finishes, two faces, four expression colors, and three accessory\nvalues produce 72 configurations. Preserve those values. Color chips and\nindependent accessory checkboxes remain extension exercises.\nCLAUDE CODE / PREPARE THE SOURCE SYSTEM\nWork in this extracted Velori package. Inspect reference/index.html,\nreference/design-system.js, src/library.jsx, src/index.js,\nsrc/main.jsx for starting-screen copy and navigation, src/model.mjs\nfor labels and captions, tokens.json, src/tokens.css, src/velori.css,\ndocs/inventory.md, the component previews, the asset manifest, and the\nidentified Figma working file. Prepare docs/system-definition.md and\ndocs/source-conflicts.md before uploading. Inventory colors,\ntypography, spacing, layout, component anatomy, valid props, states,\nand usage. Include CSS literals. Cite the source path and selector,\nexport, or Figma identity for each rule. Separate directly observed\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 15,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "9\nCLAUDE CODE / PREPARE THE SOURCE SYSTEM\nrules, inferred compositions, proposed additions, and unresolved\nconflicts. Preserve existing names and consumer behavior. Explain\nwhich useful values need named tokens or usage guidance; make source\nchanges only after the choices are settled. Preserve the frozen\nreference, product imagery, dropdown, one-accessory rule, and 72\nconfigurations. Normalize Continue to Ink/white, 12px corners, and\n48px height, with 24px accessory gaps. Keep purple Continue and 8px\ngaps only as named teaching fixtures. Record Arial/Georgia to\nArimo/Lora mapping and weight or measurement differences. Project\nexact configure and accessory-details wording, caption construction,\nand details routing into docs/native-baseline.md. Map original source\nreferences to their imported bundle, CSS, and component guidance paths.\nExclude ReviewConfiguration, completed Review implementation, and the\nhistorical handoff from the baseline system. Stop before upload if an\nunresolved decision affects the starting screens. Do not invent a\ncomponent or silently accept a proposed pattern.\nReview the two documents and any proposed source diff. Resolve\nrequired conflicts before importing. Project their accepted\nstarting-screen rules into docs/native-baseline.md; include that\ndocument and the bounded product brief in the configured guidelines.\nInclude exact configure and accessory-details copy, caption\nconstruction, and details routing, including the no-accessory case.\nRecord both the original source identities and the paths actually present\nin the imported bundle. Page-level copy is not supplied by component\nprop types. Keep completed Review answers, historical mappings, and\nthe frozen comparison source outside the uploaded context. Verify the\nactual converted guidance inventory, not only the local files. The React\npackage uses Arial and Georgia; the native Figma system uses Arimo and\nLora. Record the differing type weights and measurements. A font\nsubstitution does not establish pixel parity.\nOpen /#specimens and compare the prepared source with the frozen\n1024 \u00d7 768 reference. Inspect default, selected, focus, open, loading, and\nunavailable states where applicable. Compare\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 16,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "10\n/?fixture=purple-continue and /?fixture=accessory-gap-8\nwith the accepted baseline. Run npm run check, npm run build, and\nthe README's browser validation after any source change.\nImport the prepared draft\nOpen Claude Code in the extracted folder. Check the installed\n/design-sync and /design-login commands. Complete separate\nDesign authorization when requested. In Claude Design, verify the\nintended account and organization in the switcher. Record whether you\nwill create a new system or update an explicitly chosen system, and\nrecord its destination before uploading. The reader configuration has no\nowner project pinned.\nThis walkthrough uses the standalone claude.ai/design project\nsurface. If that address redirects to conversation artifacts, use the visible\nVisit standalone homepage link before continuing. Inspect the returned\nsystem there before creating a project. Conversation design-system\nartifacts are a separate route outside this capstone; their inventory does\nnot establish that a standalone system exists. If the installed skill cannot\ntarget the chosen surface, stop and resolve the destination before\ncreating anything.\nNew-system creation may require its own approval. The inspected native\ntool reports that a new system initially uses organization-wide visibility.\nCheck the intended visibility before creation and inspect the Share menu\nbefore uploading files. Stop if the selected destination cannot meet the\nagreed access boundary.\nType /design-sync yourself at the Claude Code prompt and submit the\nnative command. Asking Claude to run it in a pasted message does not\ninvoke the command. After it opens, supply the import instruction\nbelow with the library, prepared tokens and CSS, conventions, previews,\nand assets. Preserve the local conversion report and the returned upload\nresult. Inspect the returned system URL in the intended organization.\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 17,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "11\nCLAUDE CODE / IMPORT THE PREPARED VELORI DRAFT\nImport the prepared Velori source system into the recorded destination\nusing the native command already opened. Use .design-sync/config.json,\nsrc/library.jsx, src/tokens.css, src/velori.css,\ndocs/native-baseline.md derived from the reviewed system definition\nand resolved source-conflict decisions, conventions, previews, and\npackaged assets. Exclude the frozen reference, ReviewConfiguration,\ncompleted answer-key guidance, historical handoff and mappings,\nnode_modules, validation outputs, and private owner state from upload.\nConfirm the account, organization, new or existing system, and\ndestination before sending files. Check all 13 baseline exports and\ntheir usage guidance. Use the supplied declared source adapter so\nassets and their hash inventory exist before native validation and\ncapture. Include assets/** in the upload scope, review obsolete asset\npaths, and verify the product files reached the recorded destination.\nRecapture asset-dependent previews whenever the asset inventory\nchanges. Preserve the conversion report, file inventory, returned\nresult, and system URL. Stop on a rejected upload or unresolved source\nconflict. Keep the system private; do not publish it or change the\norganization default.\nThe supplied source adapter copies the product assets during\nconversion, before the native driver validates and captures cards. It\nrecords their hashes in guidelines/velori-runtime-assets.md,\nwhich participates in the native upload fingerprint. node\n.design-sync/package-assets.mjs ds-bundle can repeat that same\ncopy. Include assets/** in the approved upload scope and review\nobsolete asset paths before deletion. Verify the files in the returned\ninventory. The native skill's default path list omits this sample-specific\ndirectory.\nAn asset-only change can trigger upload without invalidating\ncomponent grades. Recapture and visually inspect ProductPreview and\nAccessoryPhoto whenever that asset inventory changes. If a capture\nreports a missing SVG mask, inspect its response type: the mask must be\nserved as image/svg+xml. Preserve and document a local\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 18,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "12\ncapture-helper correction before repeating the native validation; do not\nreplace the product image or accept a failure placeholder as a successful\npreview.\nThe import adapter resolves product assets relative to the compiled\nsystem script. Inspect those paths after conversion. A preview at the\nlocal origin root can work while the same code fails beneath a hosted\nproject path.\nChapter checkpoint\nKeep the source definition, resolved conflict record, component usage,\nsource diff, local checks, and actual import receipt together. Proceed to\nnative inspection only when the destination matches and the accepted\nsource describes the starting screens.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 19,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "13\nCHAPTER 03\nValidate the imported\nsystem\nProve source reuse and correction before extending the store.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "14\nOpen the imported Velori system in Claude Design. Inspect its\ncomponent cards, usage guidance, type and spacing rules, and\nphotographs. Select that exact system in a new project. Recreate known\nscreens before generating Review configuration.\nGenerate the known screens\nUse the frozen reference and accepted source definition as comparators\nat 1024 \u00d7 768. Generate the default configurator with Chalk, Friendly,\nWhite, and Dock, then change to Graphite, Simple, Amber, and Carry\nbag. Open the expression menu and both accessory-detail screens.\nBrowsing Charging dock must leave Carry bag selected. Return to the\nconfigurator and inspect its caption and selected controls.\nRender the unavailable-image configurator with the same four\nnon-default values retained. Check that recovery preserves them. Keep\nReview configuration out of these tests; it is the new composition\nintroduced in Chapter 4.\nCLAUDE DESIGN / RECREATE KNOWN VELORI SCREENS\nUse the selected Velori system and accepted source definition. Create\none responsive interactive store with one shared configuration and one\nmounted screen at a time. Use fixture controls or routes to inspect the\nrequired states while keeping component IDs unique. Preserve the\nsupplied storage and focus behavior. Recreate the configurator at 1024\n\u00d7 768 with Chalk, Friendly, White, and Dock, then Graphite, Simple,\nAmber, and Carry bag. Show the expression menu, Carry bag details,\nCharging dock details, and unavailable-image configurator. Use the\nactual named components, controlled props, tokens, and product assets.\nKeep selection, photograph, mask, caption, and labels consistent.\nBrowsing another accessory must not change selection. Preserve\ndropdown keyboard behavior. Identify missing or unverifiable source\nrules before substituting them. Do not add Review configuration yet.\nInspect the actual interactive result. Check pointer and keyboard\nselection, menu cancellation, details return, asset loading, and image\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 21,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "15\nrecovery. Save screenshots and the generated source or component\nreferences. A matching static photograph does not establish controlled\nstate.\nSample ten elements for fidelity\nElement\nSource to inspect\nBrand and navigation\nBrand, StoreHeader, identity and icon rules\nPage heading\nAccepted type role and applied CSS\nContinue\nPrimaryButton, Ink/white, 12px radius, 48px height\nFinish choice\nFinishChoice anatomy and selected state\nFace choice\nFaceChoice anatomy and selected state\nExpression dropdown\nExpressionSelect anatomy, menu, focus, and keyboard use\nAccessory choice\nAccessoryChoice, one value, 24px gaps\nProduct imagery\nProductPreview, original assets, masks, and composition\nCaption\nConfiguration-derived copy and accepted caption type\nScreen layout\nAccepted columns, spacing, alignment, and narrow behavior\nFor each element, save its source identity or rule reference and classify\nthe result as exact reuse, valid composition, cosmetic resemblance,\ninvented replacement, or unverifiable. Exact reuse points to the actual\nsource component or token. A valid composition assembles accepted\ncomponents and rules without replacing them. Appearance alone cannot\nestablish either classification.\nCLAUDE DESIGN / AUDIT SOURCE CONFORMANCE\nAudit these ten elements: brand/navigation, heading, Continue, finish,\nface, expression dropdown, single accessory choice, product imagery,\ncaption, and layout. For each, cite the actual component/export and\ntoken or accepted CSS rule used, with its size, type, spacing, radius,\nand color where applicable. Classify it as exact reuse, valid\ncomposition, cosmetic resemblance, invented replacement, or\nunverifiable. Separate observed source evidence from inference. Flag\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 22,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "16\nCLAUDE DESIGN / AUDIT SOURCE CONFORMANCE\naltered props, substituted imagery, literal values that disagree with\nthe definition, and missing states. Do not infer reuse from a\nscreenshot. Stop before the review extension if any element lacks\naccepted source evidence.\nInspect the cited evidence yourself. Pass only exact reuse and valid\ncomposition, or a specifically reviewed exception with its reason\nrecorded. Correct an invented replacement or unresolved rule at its\nsource, rerun the import where necessary, and repeat the affected\nknown-screen test.\nCheck that a correction persists\nUse an isolated generated test screen and one named teaching fixture.\nSupply either purple Continue or 8px accessory gaps as the deliberate\ndefect. Ask Design to restore the accepted rule. Keep the source system's\naccepted PrimaryButton and 24px gap rule unchanged; fixture styling\nmust not become a new system variant.\nCLAUDE DESIGN / CORRECT AND REGENERATE\nIn this isolated test screen, correct the named purple-continue or\naccessory-gap-8 fixture using the accepted Velori source system.\nContinue must use PrimaryButton with Ink/white, 12px corners, and 48px\nheight. Accessory choices must have 24px gaps. Identify the source rule\nused for the correction. Then generate a second configurator state with\nPebble, Friendly, Mint, and no accessory. Confirm that the corrected\nrule persists there and that the fixture has not become an accepted\nvariant. Record any unresolved replacement before proceeding.\nSave the before, corrected, and second-generation results with the rule\nreferences. If the second generation repeats the defect, improve the\nsource usage guidance or correct the generation context, resync when\nthe source changes, and rerun the test. Keep the unsuccessful attempt in\nthe review record.\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 23,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "17\nChapter checkpoint\nProceed to Review configuration only after the actual selected system\nrenders the known screens, the ten-element sample passes, and the\ncorrection survives another generation. Record accepted exceptions and\nfont differences. Keep source completeness, conversion, upload, native\nrendering, and system publication as separate results.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 24,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "18\nCHAPTER 04\nExtend the existing\nscreen\nMake Continue open one useful review step.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "19\nThe shopper needs to check the chosen robot and accessories before\nreturning to edit. Continue opens Review configuration. The review\nscreen displays the chosen robot and all four values, with Edit\nconfiguration and Back returning to the configurator.\nGenerate the bounded change\nCLAUDE DESIGN / ADD REVIEW CONFIGURATION\nUse the selected Velori system and supplied configurator as the\nbaseline. Make Continue open Review configuration. Show the chosen\nproduct photo and finish, face, expression color, and single accessory.\nAdd Edit configuration and Back. Both return without losing values.\nSupport pointer and keyboard navigation. Focus the Review heading when\nit opens; when Edit configuration, Back, or browser Back returns to the\nconfigurator, restore focus to Continue. Preserve reload persistence\nand an unavailable-image state that retains the summary. Reuse the\nsystem components and tokens. Identify the review screen as new sample\nbehavior. Keep payment, inventory, accounts, shipping, and order\nsubmission outside the result.\nReview the first diff\nInspect the current and proposed configurator beside each other. The\nextension should not replace the brand, photographs, choice\nvocabulary, dropdown, or one-accessory rule. The review column can\nchange composition, but its values must come from the same\nconfiguration object.\nUse Graphite, Simple, Amber, and Carry bag. A review screen with a\nhard-coded default photo fails even when its summary is correct. A\ncorrect photo with a stale summary also fails.\nCLAUDE DESIGN FIELD GUIDE\n4. EXTEND THE EXISTING SCREEN\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 26,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "20\nKeep navigation explicit\nContinue creates a review route. Edit and Back return to configure.\nHeading focus identifies the newly opened screen; returning restores\nfocus to the control that led there. Browser history should behave\npredictably when the shopper moves through details and review.\nDo not add an order action to fill the space. Review is the last step of this\nexercise, and editing is its useful next action.\nChapter checkpoint\nThe generated result completes configure -> review -> edit with a\nnon-default configuration. The selected system and new product\ncomposition remain identifiable.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n4. EXTEND THE EXISTING SCREEN\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 27,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "21\nCHAPTER 05\nConnect the adjacent\nsurfaces\nDetails, review, and editing keep the same choices.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "22\nAccessory details answer a product question without changing the\nconfiguration. Review answers whether the shopper has chosen the\nintended combination. Both depend on the configurator's existing\nvalues.\nBrowse without selecting\nOpen Carry bag details when Carry bag is selected. Browse Charging\ndock. The detail photograph and title should change, while the selected\naccessory stays Carry bag. Returning to configure restores the original\nselection and caption.\nThe detail view describes the accessory being browsed. The selected\naccessory remains in the parent configuration and appears unchanged\nwhen you return. A details tab must not silently commit a selection.\nMake all surfaces agree\nSurface\nRead from shared configuration\nLocal view state\nConfigurator\nFour values, photo, caption, marks\nOpen expression menu\nAccessory details\nParent configuration retained\nunchanged\nAccessory being browsed\nReview\nPhoto and four summary values\nReview route\nImage recovery\nConfiguration and summary\nLoading, failure, retry\nA missing image changes rendering state. Image failure does not change\nthe configuration. A details tab changes the browsed accessory.\nBrowsing does not change the selected accessory.\nCLAUDE DESIGN / AUDIT THE COMPLETE JOURNEY\nSelect Graphite, Simple, Amber, and Carry bag. Open accessory details,\nbrowse Charging dock, and return. Continue to review, then edit.\nInspect photographs, captions, selected marks, and summaries after\neach transition. Keep Carry bag selected while browsing Dock. Show the\nCLAUDE DESIGN FIELD GUIDE\n5. CONNECT THE ADJACENT SURFACES\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 29,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "23\nCLAUDE DESIGN / AUDIT THE COMPLETE JOURNEY\nunavailable-image state on review with the four values still visible.\nReport any surface that reads stale or independent values.\nChapter checkpoint\nThe full configure -> accessory details -> review -> edit journey retains\nthe fixture. Each screen has a clear return path and owns only its\nview-specific state.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n5. CONNECT THE ADJACENT SURFACES\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 30,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "24\nCHAPTER 06\nSpecify states and\ntransitions\nDefine loading, failure, persistence, and recovery before handoff.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "25\nThe normal journey is only part of the contract. Photographs load\nasynchronously. The shopper can change choices rapidly. Browser\nstorage can be unavailable. Reload can occur on review.\nState matrix\nState\nVisible behavior\nValues retained\nRecovery\nLoading product\nLoading treatment with\ncurrent caption\nAll four\nWait or keep editing\nProduct ready\nCorrect photo, mask, caption\nAll four\nContinue or edit\nImage unavailable\nPlain explanation and\navailable summary\nAll four\nRetry actual failed load\nSimulated unavailable\nTeaching placeholder\nAll four\nClear teaching\nsimulation\nStorage unavailable\nNotice below the store\nCurrent visit\nContinue using the app\nReload with storage\nRoute and saved values\nrestored\nAll four\nResume or edit\nReset\nDefault choices\nDefaults only\nBegin a fresh journey\nTeaching controls belong outside the shopper's review column. They\nhelp demonstrate states without making reset or image simulation part\nof the product flow.\nTransition contract\nFor every transition, name the trigger, values read, values changed,\nvisible result, focus destination, and return path. For Continue, the\ntrigger is the action, the four values stay unchanged, Review\nconfiguration opens, and its heading receives focus. Edit returns to\nconfigure and restores focus to Continue.\nCLAUDE DESIGN FIELD GUIDE\n6. SPECIFY STATES AND TRANSITIONS\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 32,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "26\nAvoid stale images\nRapidly change finish, face, expression, and accessory. The final\nphotograph and caption must describe the last configuration. A previous\nimage load must not replace the newer result. An unavailable image\nmust retain its caption and summary while retrying.\nCLAUDE CODE / VERIFY RECOVERY\nTest rapid changes and a genuinely failed product-image request.\nConfirm the final image and caption agree, a failed image retains\nchoices, and Retry reloads the asset after it becomes available. Test\nreload on review, blocked browser storage, and reset isolation. Keep\nunrelated storage values intact. Record actual results rather than\nadding untested behavior claims.\nChapter checkpoint\nThe handoff includes normal, loading, unavailable, rapid-change,\nreload, blocked-storage, and reset behavior. The configuration has one\nowner throughout.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n6. SPECIFY STATES AND TRANSITIONS\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 33,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "27\nCHAPTER 07\nProve keyboard and\nresponsive behavior\nCheck the actual controls and return paths at the reference and narrow\nwidths.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 34,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "28\nTest the real journey with the keyboard. Labels, focus movement,\nselection marks, and return paths must be observable. A promise of\naccessibility does not establish those behaviors.\nOperate the dropdown\nTab to the expression trigger. Enter or Space opens the menu. Arrows\nmove through options; Home and End reach the first and last. Enter\ncommits. Escape cancels the pending change. Typing an option's name\nmoves to it. Tab closes the menu, and the committed result returns focus\nto the trigger.\nFinish, face, and accessory choices respond to Enter or Space. A visible\nselected mark supplements their pressed state. Preserve the names and\nvalues when introducing a follow-up control pattern.\nCheck focus through the journey\n 1\nOpen details with the keyboard and confirm heading focus.\n 2\nReturn and confirm focus on the accessory-details control.\n 3\nActivate Continue and confirm focus on Review configuration.\n 4\nActivate Edit and confirm focus returns to Continue.\n 5\nUse Browser Back and confirm the route and values remain coherent.\nAutomated focus checks support this contract. A screen-reader audit\nremains a separate check if the team requires a claim of complete\nassistive-technology support.\nCompare viewports\nAt 1024 \u00d7 768, compare the product image bounds, composition, control\ncolumn, and captions against the frozen reference. The normalized\nContinue and accessory gaps are intentional differences.\nCLAUDE DESIGN FIELD GUIDE\n7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 35,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "29\nAt 390px width, product and controls stack without horizontal overflow.\nTest the review and detail screens too. A dropdown or return action\nhidden outside the viewport fails the journey.\nThe consumer uses Arial and Georgia. The native Figma system uses\nArimo and Lora. Record that mapping instead of presenting the\nrenderers as typographically identical.\nChapter checkpoint\nKeyboard choices, dropdown cancellation, heading and return focus,\nreference composition, and narrow layout have recorded results.\nBroader accessibility claims match the checks actually performed.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 36,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "30\nCHAPTER 08\nRun the design evidence\ngate\nReview component use, behavior, and handoff evidence together.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 37,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "31\nReview the extension against the brief, components, tested journey, and\nactual artifacts. Keep a small disposition table so an engineer can\nidentify reuse and new behavior.\nElement\nDisposition\nGoverning source\nBrand and store header\nReuse\nVelori exports\nFinish, face, expression,\naccessory\nReuse\nControlled component props\nProduct preview and recovery\nReuse\nAsset and image-state contract\nReview summary\nReuse\nConfigurationSummary\nReview column\nProduct composition\nGenerated result and bounded brief\nNavigation and persistence\nApplication behavior\nRoute and state contract\nNative Figma review\nNative composition\nLinked components and variables\nChallenge the result\nUse non-default choices and ask whether each surface reads the same\nvalues. Inspect a real image failure. Reload at review. Check the browser\nhistory. Compare native component identity rather than relying on a\nscreenshot.\nCLAUDE DESIGN / REVIEW AGAINST EVIDENCE\nAudit the Velori journey against the preserved baseline and bounded\nreview brief. Name each reused component, product composition, changed\nbehavior, and unresolved issue. Test the non-default fixture, detail\nbrowsing, review, edit, keyboard return, reload, and unavailable\nimages. Keep conclusions tied to the rendered result and actual\nhandoff. Do not infer interactive behavior from an artboard or PNG.\nCLAUDE DESIGN FIELD GUIDE\n8. RUN THE DESIGN EVIDENCE GATE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 38,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "32\nRecord the decision\nUse High, Medium, and Low for findings. A High issue blocks the\nintended journey or loses configuration. A Medium issue affects a\nrequired control, return path, or handoff. A Low issue is a local polish\ndefect with a working journey.\nApprove only the bounded result that was inspected. A successful local\nbuild does not establish native generation. An accepted upload does not\nestablish rendered photos. A generated screen does not establish a\nportable export.\nChapter checkpoint\nNo unresolved issue blocks the handoff. The review record identifies the\nactual project, selected system, inspected journey, accepted findings,\nand remaining limits. Capture the files and record the implemented\nchange in Chapter 09.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n8. RUN THE DESIGN EVIDENCE GATE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 39,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "33\nCHAPTER 09\nHand off to Claude Code\nPreserve the actual source and make it run outside the design project.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 40,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "34\nKeep the generated source, dependencies, assets, accepted decisions,\nand expected journey together. Test the handoff from an extracted folder\nbefore calling it portable.\nCapture your generated result\nOpen the new generated project in the intended organization. Choose\nShare -> More formats and apps. Under Your destinations, choose\nClaude Code, then Send. In Hand off to Claude Code, select Local agent\nand Copy prompt. Paste the copied prompt into Claude Code working in\nyour extracted package.\nThe copied prompt identifies the project URL, selected generated HTML\nand imported files for the authenticated claude_design MCP. Complete\n/design-login in the intended account only if authorization is\nrequested. Confirm the source and dependency reads succeed before\nstarting adaptation. Save the copied prompt, actual returned files and\nread receipts unchanged in handoff/new-run/captured/, with project\nURL, selected file, handoff method, date, hashes and dependency origins\nin handoff/new-run/HANDOFF.json.\nA binary read can return truncated data even when the request succeeds.\nPreserve that read receipt and obtain the full project archive through\nShare -> Project HTML -> Project archive -> Export. Use the archive as a\ncompanion to the copied handoff prompt and MCP reads. Preserve its\noriginal bytes and extracted entries unchanged, hash both, and compare\ncomplete overlapping files with the MCP reads. Stop until every required\ndependency has complete bytes; do not substitute assets from the\nsample or a historical packet. See Design's export workflow.\nAsk Code to inspect the returned source before implementation. Include\nsupport.js, referenced system bundles and styles, runtime\ndependencies, and product assets. A copied prompt starts the import;\nsuccessful file reads establish the capture. Preserve captured bytes and\nmake any host adaptation beside them. Stop for unresolved failed reads\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "links": [
+        {
+          "rect": [
+            197.5704,
+            144.2803,
+            318.4004,
+            156.2803
+          ],
+          "uri": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 41,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "35\nor missing source or dependencies. The local packet must resolve its\nprivate project references before it can pass independent validation.\nCLAUDE CODE / PREPARE THE NEW CODE PACKET\nUse the copied native handoff prompt to read the recorded Velori\nproject through the authenticated claude_design MCP. Confirm the\nintended account and complete /design-login only if authorization is\nrequested. Read the selected generated HTML, support.js, every\nreferenced system bundle and stylesheet, and all referenced assets.\nPreserve the copied prompt, returned files and read receipts unchanged\nin handoff/new-run/captured/, and record their hashes, project URL,\nselected file, handoff method and dependency origins in\nhandoff/new-run/HANDOFF.json. Treat a truncated binary response or an\nincomplete decode as a failed read, and preserve its receipt. Obtain\nfull bytes through Share -> Project HTML -> Project archive -> Export.\nPreserve the original archive and extracted entries unchanged, hash\nboth, and compare complete overlapping files with the MCP reads. Do not\nfill missing files from the sample or a historical packet. Stop until\nevery required source file and dependency has complete bytes. After\ncapture is complete, create a separate runnable adaptation in\nhandoff/new-run/ with package.json, lockfile, local assets, README, a\ndev script serving localhost:4206, and a validate script. Do not reuse\nthe historical packet as the new handoff. Inspect the received runtime\nfor globals, CDN URLs and resource mappings; provision required\ndependencies locally and document every URL or asset-route mapping\nseparately from captured source. Validation must target this new packet\nand test all 72 configurations, configure -> details -> review -> edit,\ndropdown keyboard behavior, Back, reload persistence, rapid changes,\nunavailable-image recovery, and storage independence. Install\nPlaywright as a development dependency for browser checks. Run without\nexternal HTTPS requests after installation. Preserve the sample\napplication.\nReview the packet's README and handoff/new-run/HANDOFF.json,\nthen install and start it from that folder:\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 42,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "36\nnpm ci\nnpx playwright install chromium\nnpm run dev\nOpen http://127.0.0.1:4206. Leave that server running and run npm run\nvalidate in another terminal in the same folder. Keep the test output\nand screenshots. These scripts are outputs of the packet-preparation\nstep; stop if they are missing or target the historical packet. Only a\npassing new packet establishes your new handoff.\nUse the sample as an answer key\nThe public sample includes a bounded React Review configuration\ncolumn adapted from the native Review source accepted on October 5,\n2026, SHA-256 03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b\n976b68f0f46811150a. The existing app retains configuration, routing,\npersistence, focus, and image recovery. Run the sample from the\nextracted velori-store folder using the README. Captured Claude\nDesign source and runtime remain private and outside the public\ndownloads. Capture and validate your own new packet; the answer key\ndoes not verify your generation.\nKeep the adaptations visible\nIf the received source needs a localhost adapter, inspect support.js and\nthe selected system runtime for globals, CDN URLs, resource mappings\nand asset paths. Provision the required runtime dependencies locally\nand map the received system and asset routes beside the captured\nsource. Preserve captured bytes and record hashes, dependency origins\nand every host adaptation in handoff/new-run/HANDOFF.json.\nFor MCP capture or a separately downloaded archive, inspect the full\nruntime and asset closure before treating the result as portable. Keep\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "links": [
+        {
+          "rect": [
+            64.58039,
+            481.1703,
+            159.2104,
+            493.1703
+          ],
+          "uri": "http://127.0.0.1:4206",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 43,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "37\nunsuccessful reads or downloads in the review record and document the\nworking setup path.\nBring the bounded change into React\nsrc/ReviewConfiguration.jsx adapts the generated review column.\nIt reuses ConfigurationSummary and the primary action while the\nparent application retains routing, state, persistence, and focus. The\nshopper's column omits prototype inspection controls.\nCLAUDE CODE / IMPLEMENT THE EXPORTED REVIEW\nInspect handoff/new-run/captured/ and HANDOFF.json from the passing\nnew packet. Adapt only the bounded Review configuration column into the\nReact sample. Preserve named exports, tokens, photos, all four values,\nthe expression dropdown, and one accessory choice. Keep routing,\npersistence, focus, and image recovery in their existing owners. Test\nconfigure -> details -> review -> edit with Graphite, Simple, Amber,\nand Carry bag. Record the source-to-implementation mapping and\ndeviations. Do not edit CLEAR or publish.\nChapter checkpoint\nThe packet runs outside the native project, and the implemented review\ncan be traced to its actual source. Dependencies and host changes are\ndisclosed. A PNG, PDF, or artboard is appearance evidence, not the\ninteractive Code handoff.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 44,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "38\nCHAPTER 10\nImplement in Figma and\nreconcile\nVerify editable components, variables, and the native prototype.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 45,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "39\nFigma is part of this exercise. Confirm access to variables in prototypes\non a paid or eligible Education plan. Use your imported working copy\nand keep editable frames for configure, the open expression menu,\naccessory details, review, and unavailable review. Preserve the supplied\nsource pages and reference frames, and build the extension on a\nseparate working page.\nKeep native identity\nBefore editing, verify local main components, internal instance links,\nvariable collections and modes, image resources, and available fonts in\nyour imported copy. Stop if a required external library or resource is\ninaccessible. Use linked instances for the existing Velori components.\nBind finish, face, expression, accessory, captions, and summaries to\nshared variables. Record the component and variable IDs from your\nactual file. A flattened screenshot or a collection of look-alike rectangles\ndoes not preserve native reuse.\nConfigure and Review compose the product photograph, face and\nexpression from the four selected values. Accessory details use the\noriginal Chalk Carry bag and Charging dock reference photographs.\nAccessoryPhoto receives the browsed accessory only; browsing those\nviews preserves the shopper's configuration. Preserve that source\nbehavior when reconciling the native file.\nNavigate by page and frame names from the companion manifest.\nPreserve 01 Foundations, 02 Components, 03 Configurator, and 04\nSource Assets, including Configure \u00b7 White on 03 Configurator. The\ncompleted 05 Store \u00b7 Handbook exercise page contains Configure,\nExpression color menu, Carry bag details, Charging dock details, Review\nconfiguration, and Review \u00b7 Image unavailable. Use those frames for\ncomparison after your generation. Imported files have their own\nidentities; record the IDs you inspect rather than relying on author-file\nnode IDs.\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 46,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "40\nFIGMA / BUILD AND INSPECT THE NATIVE STORE\nUse the identified Velori working file. Preserve the original\nfoundation, components, configurator, and source assets. Add editable\nnative frames for configure, expression menu, Carry bag details,\nCharging dock details, review, and unavailable review. Reuse existing\ncomponent instances and shared variables. Wire Graphite, Simple,\nAmber, and Carry bag through details, review, and edit. Confirm\nselected states, configured product images, captions, and summaries\nupdate. Keep the original Chalk reference photos in accessory details,\nmatching AccessoryPhoto; browsing Dock must preserve the selected\nCarry bag. Record component and variable identities and test the actual\nprototype.\nTest the prototype\nSelect the non-default fixture. Follow both detail views, return, continue\nto review, show the unavailable image, and return to edit. Check the\nnative values after every transition. Inspect representative bindings\nacross all 72 combinations, not only the default frame.\nThe supplied prototype also includes keyboard shortcuts for its\ndemonstration: C opens the expression menu, Escape dismisses it, Enter\nactivates Continue or Edit, and I opens the unavailable-image review.\nEdit or Back returns to the configurator. These prototype shortcuts do\nnot establish the browser dropdown's full keyboard model.\nNative prototype variables support the configured visit. Browser reload\npersistence belongs to the React and Code apps and is tested there.\nRecord that difference when reconciling behavior.\nReconcile the result\nCompare the reference and extracted screens at 1024 \u00d7 768. Record the\nfont mapping and intentional normalized controls. Resolve unexpected\ndrift in the owning source, then repeat the affected check. Keep\nrendering differences and product behavior differences distinct.\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 47,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "41\nThe Figma write-to-canvas guidance describes native editing. Do not\ntreat a Claude image export as evidence that component and variable\nidentities survived in Figma.\nChapter checkpoint\nNative editable frames, instance identities, variable bindings, and\nprototype transitions have returned evidence. The browser and Figma\nbehavior differences are explicit.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "links": [
+        {
+          "rect": [
+            57.28039,
+            540.4403,
+            209.4104,
+            552.4403
+          ],
+          "uri": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 48,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "42\nCHAPTER 11\nGuided capstone\nComplete one bounded store journey across the real tools.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 49,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "43\nWork from an unchanged extracted copy. Keep the completed sample as\nthe expected result. The capstone recreates Review configuration from\nthe existing Velori configurator and details, then implements and\nverifies it through the native tools.\nPhase 1: Frame and ground\nStart the package, inspect the frozen reference, record the default and\nreview fixtures, and confirm the preservation boundary. Identify your\nClaude account, organization, system destination, and Figma working\ncopy before uploading.\nPhase 2: Define, import, and validate\nFollow Chapters 2 and 3 in order. Prepare the source definition and\nconflict record, including CSS literals, usage guidance, and Figma font\ncorrespondence. Resolve required decisions, run local checks, and\nimport the prepared draft into the recorded destination. Inspect actual\ncomponent cards and recreate the known configurator, menu, details,\nand unavailable-image screens. Save the ten-element fidelity sample and\ncorrection-persistence test. Stop for an unresolved source rule or a failed\nnative check.\nPhase 3: Generate the extension\nAfter the system passes, create Review configuration using the\nconfigurator and details as the baseline. Exclude the completed review\nanswer key from generation context. Test the non-default fixture, return\npaths, keyboard use, reload, and unavailable imagery.\nCLAUDE DESIGN FIELD GUIDE\n11. GUIDED CAPSTONE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 50,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "44\nPhase 4: Capture and implement\nPreserve the actual generated source or handoff, including its\ndependencies. Run it in a new folder. Adapt the review column into the\nReact sample without replacing state ownership or existing controls.\nKeep unsuccessful exports in the review record.\nPhase 5: Build the native Figma journey\nUse linked native components and shared variables. Add the editable\nframes beside the reference. Test configure -> details -> review -> edit\nwith Graphite, Simple, Amber, and Carry bag. Confirm that\nconfigure/review captions and configured images update together.\nDetails retain the original Chalk accessory-reference photographs.\nPhase 6: Verify the reader package\nnpm run check\nnpm run build\nnpx playwright install chromium\nnpm run dev\nLeave Vite running. In another terminal:\nnpm run validate:browser\nValidate the newly received packet in a separate folder as described in\nChapter 9. Run npm run validate only after the new packet has the\ncaptured inputs and the documented validation script. The public\nsample has no historical handoff validator; its local app checks cannot\ncertify a new native export.\nCheck all 72 combinations, rapid changes, dropdown keyboard\nbehavior, reload, real image failure, reset isolation, reference\ncomposition, and narrow layout. Preserve the test output and\nCLAUDE DESIGN FIELD GUIDE\n11. GUIDED CAPSTONE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 51,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "45\nscreenshots. Keep a fresh extracted copy for the final install and journey\ncheck.\nCompletion record\nResult\nRequired evidence\nLocal app\nClean install, build, complete journey, 72 configurations\nClaude Design\nSource definition, resolved conflicts, intended destination,\naccepted import, known screens, fidelity sample, correction\npersistence, new review generation\nCode handoff\nActual source and dependencies run independently;\nbounded change implemented\nFigma\nWorking file, editable frames, identities, bindings, native\njourney\nHandbook candidate\nReader instructions match the package and tested behavior\nPublication\nSeparate release authorization and established redistribution\nterms\nAnswer key\nA passing result preserves the store and adds one review step. The\nphotograph, controls, caption, and summary agree. Browsing details\ndoes not select an accessory. Edit, Back, reload, and image recovery\npreserve the four values. The dropdown keeps its documented keyboard\nbehavior.\nThe native result uses the selected Velori system. Its handoff includes\nexecutable source and dependencies. The React adaptation composes\nexisting exports. The Figma result uses linked components and shared\nvariables, with the actual prototype tested. The package runs without\nCLEAR or private owner state.\nDo not award completion for screenshots alone, a successful upload\nwithout inspection, an export that cannot start, or local tests substituted\nCLAUDE DESIGN FIELD GUIDE\n11. GUIDED CAPSTONE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 52,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "46\nfor an inaccessible native step. Leave an inaccessible required step\nunfinished and name the practical next action in the review record.\nCLAUDE DESIGN FIELD GUIDE\n11. GUIDED CAPSTONE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 53,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "47\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nAppendix A: Prompt\nsequence\nUse the prompts in order: preserve the configurator; prepare the source\nsystem; import the prepared draft; recreate known screens; audit ten\nelements for source conformance; correct a named fixture and\nregenerate; add Review configuration; audit the complete journey; check\nrecovery; review against evidence; prepare and validate the new Code\npacket; implement the captured change; reconcile native Figma. The\npackage's docs/prompts.md supplies copyable versions.\nAppendix B: Handoff\nrecord\nRecord the source definition and conflict decisions, ten-element fidelity\nsample, correction and second-generation evidence, feature, account\nand organization, selected system and project URL, Figma working file,\nsource revision, captured files and hashes, host adaptations, component\nmap, route and state inventory, accepted copy, expected journey,\nkeyboard behavior, validation results, deviations, and open decisions.\nUse docs/handoff-template.md.\nKeep credentials and authorization material out of the reader package.\nReader configuration should name a destination only after the reader\nchooses one.\nCLAUDE DESIGN FIELD GUIDE\nAPPENDIX B: HANDOFF RECORD\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 54,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "48\nAppendix C: Package map\nPath\nContents\nREADME.md\nFirst-run, journey, validation, and reset instructions\nsrc/\nApp, reusable library, model, tokens, and review\nadaptation\npublic/assets/velori/\nProduct photographs, masks, layers, and manifest\nreference/\nFrozen consumer reference and extraction manifest\n.design-sync/\nReader import configuration, adapter, conventions,\npreviews\ndocs/\nBrief, baseline import rules, source definition,\ndecisions, prompts, walkthrough, expected results,\nnotices\nprovenance/\nFrozen consumer-source identity; private native\nrecords are excluded\nprovenance.json\nPackage file hashes and exclusions\nscripts/\nAsset, browser, and public-package checks; model\ntests live in src/\nThe native Figma companion and its manifest are separate downloads\nbeside the React ZIP. Import the file into your own Drafts; it is not\nbundled in the ZIP.\nData Pipeline Studio remains the historical exercise in\nLocal_Coding_Exercise.md. Its released editions and artifacts are\npreserved. Velori is the current sample for this guide.\nCLAUDE DESIGN FIELD GUIDE\nAPPENDIX C: PACKAGE MAP\n",
+      "links": [
+        {
+          "rect": [
+            57.28039,
+            263.8503,
+            175.9104,
+            275.8503
+          ],
+          "uri": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
+          "dest": ""
+        },
+        {
+          "rect": [
+            212.5304,
+            263.8503,
+            254.4704,
+            275.8503
+          ],
+          "uri": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/figma-companion.json",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 55,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "49\nFurther reading\n 1\nAnthropic. Get started with Claude Design. Reviewed October 4, 2026.\n 2\nAnthropic. Set up your design system in Claude Design. Reviewed October\n4, 2026.\n 3\nAnthropic. Claude Code commands. Reviewed October 4, 2026.\n 4\nAnthropic. Design admin guide. Use for current organization setup.\n 5\nFigma. Write to canvas. Reviewed October 4, 2026.\n 6\nVelori reader materials. The React ZIP contains MIT source and assets,\nfrozen reference, token and asset manifests, exercise materials, and\nvalidation scripts. The separate native Figma file and companion manifest\nsupply a reader-owned working copy. Completed React and Figma screens\nare comparison material. Captured Claude Design packets and metadata\nstay private. Verify each new native run separately.\nCLAUDE DESIGN FIELD GUIDE\nFURTHER READING\n",
+      "links": [
+        {
+          "rect": [
+            110.5604,
+            502.3803,
+            240.0182,
+            513.0003
+          ],
+          "uri": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "dest": ""
+        },
+        {
+          "rect": [
+            110.5604,
+            479.8203,
+            293.2509,
+            490.4403
+          ],
+          "uri": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+          "dest": ""
+        },
+        {
+          "rect": [
+            110.5604,
+            449.6203,
+            211.8132,
+            460.2403
+          ],
+          "uri": "https://code.claude.com/docs/en/commands",
+          "dest": ""
+        },
+        {
+          "rect": [
+            110.5604,
+            427.0603,
+            194.4849,
+            437.6803
+          ],
+          "uri": "https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans",
+          "dest": ""
+        },
+        {
+          "rect": [
+            94.03744,
+            404.5003,
+            159.377,
+            415.1203
+          ],
+          "uri": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 56,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "50\nChangelog\nCompared with version 1.2.0, published October 5, 2026. Previous\nDaytime PDF SHA-256: fa7a27cd0db1f855daba23cb1269e08fc609839\n1032623f9a9252eef1f44f05c.\nCorrection or clarification - Orientation, Chapter 10 and exercise\nmaterials. Replaced the owner-file access prerequisite with a\ndownloadable Velori Figma companion imported into the reader's own\nDrafts. Navigation uses verified page and frame names; each import\nrecords native identities and checks local dependencies and the\nprototype journey. Readers can complete the existing Figma exercise\nwithout access to the author's file. Source.\nCLAUDE DESIGN FIELD GUIDE\nCHANGELOG\n",
+      "links": [
+        {
+          "rect": [
+            200.6604,
+            363.0003,
+            233.2604,
+            375.0003
+          ],
+          "uri": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
+          "dest": ""
+        }
+      ],
+      "images": []
+    }
+  ],
+  "labels": [
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "v",
+    "vi",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "outlines": [
+    {
+      "title": "Orientation",
+      "page": 1,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Start the sample",
+        "page": 1,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "What you will produce",
+        "page": 2,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Choose the destination first",
+        "page": 2,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "The workflow",
+        "page": 3,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "1. Decide what is authoritative",
+      "page": 6,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Run your working copy",
+        "page": 7,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Establish the source order",
+        "page": 7,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Define the clean baseline",
+        "page": 8,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Name the fixture",
+        "page": 8,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 9,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "2. Prepare the Velori system",
+      "page": 10,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Separate the starting screen from the answer key",
+        "page": 11,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Inspect the source package",
+        "page": 12,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Define rules and component use",
+        "page": 12,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Import the prepared draft",
+        "page": 15,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 17,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "3. Validate the imported system",
+      "page": 18,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Generate the known screens",
+        "page": 19,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Sample ten elements for fidelity",
+        "page": 20,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Check that a correction persists",
+        "page": 21,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 22,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "4. Extend the existing screen",
+      "page": 23,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Generate the bounded change",
+        "page": 24,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Review the first diff",
+        "page": 24,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Keep navigation explicit",
+        "page": 25,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 25,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "5. Connect the adjacent surfaces",
+      "page": 26,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Browse without selecting",
+        "page": 27,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Make all surfaces agree",
+        "page": 27,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 28,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "6. Specify states and transitions",
+      "page": 29,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "State matrix",
+        "page": 30,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Transition contract",
+        "page": 30,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Avoid stale images",
+        "page": 31,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 31,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "7. Prove keyboard and responsive behavior",
+      "page": 32,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Operate the dropdown",
+        "page": 33,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Check focus through the journey",
+        "page": 33,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Compare viewports",
+        "page": 33,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 34,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "8. Run the design evidence gate",
+      "page": 35,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Challenge the result",
+        "page": 36,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Record the decision",
+        "page": 37,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 37,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "9. Hand off to Claude Code",
+      "page": 38,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Capture your generated result",
+        "page": 39,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Use the sample as an answer key",
+        "page": 41,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Keep the adaptations visible",
+        "page": 41,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Bring the bounded change into React",
+        "page": 42,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 42,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "10. Implement in Figma and reconcile",
+      "page": 43,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Keep native identity",
+        "page": 44,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Test the prototype",
+        "page": 45,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Reconcile the result",
+        "page": 45,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 46,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "11. Guided capstone",
+      "page": 47,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Phase 1: Frame and ground",
+        "page": 48,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Phase 2: Define, import, and validate",
+        "page": 48,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Phase 3: Generate the extension",
+        "page": 48,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Phase 4: Capture and implement",
+        "page": 49,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Phase 5: Build the native Figma journey",
+        "page": 49,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Phase 6: Verify the reader package",
+        "page": 49,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Completion record",
+        "page": 50,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Answer key",
+        "page": 50,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "Appendix A: Prompt sequence",
+      "page": 52,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "Appendix B: Handoff record",
+      "page": 52,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "Appendix C: Package map",
+      "page": 53,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "Further reading",
+      "page": 54,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "Changelog",
+      "page": 55,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    }
+  ],
+  "namedDestinations": {},
+  "language": "en-US",
+  "tagged": false,
+  "header": "%PDF-1.4",
+  "unusedUnembeddedFontResources": [],
+  "imagePages": [
+    7,
+    11,
+    19,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    44,
+    48
+  ],
+  "errors": [],
+  "accessibilityLimitations": [
+    "Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available."
+  ]
+}

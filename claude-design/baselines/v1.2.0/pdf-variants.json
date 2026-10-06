@@ -1,0 +1,77 @@
+{
+  "title": "Claude Design Field Guide",
+  "version": "1.2.0",
+  "date": "2026-10-05",
+  "pdf": "output/pdf/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf",
+  "sha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
+  "pages": 56,
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-05",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v1.2.0/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v1.2.0-2026-10-05-daytime-r1.pdf",
+      "sha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
+      "pages": 56,
+      "bytes": 4953829,
+      "pageMap": {
+        "path": "claude-design/qa/v1.2.0/daytime-map.json",
+        "sha256": "ed057e2b59585b2590c608c747e4a4830a47cecddab7f18619f17e93bf4d235c"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-05",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v1.2.0-2026-10-05-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v1.2.0/claude-design-v1.2.0-2026-10-05-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v1.2.0-2026-10-05-late-night-r1.pdf",
+      "sha256": "3bc0d489dd4b46d21a78073d45b3985cc51f0cf8d8beeb411903feb94febd7f3",
+      "pages": 56,
+      "bytes": 48969802,
+      "pageMap": {
+        "path": "claude-design/qa/v1.2.0/late-night-map.json",
+        "sha256": "1f83893a2a15d2482b5eb1e7cbf5a0d83a1db451c9b045001b4ff4261ac42e35"
+      },
+      "proof": {
+        "parity": {
+          "path": "claude-design/qa/v1.2.0/parity/parity.json",
+          "sha256": "d5b35e21f4b23780d9856399d7adeaec37baf4c930865990ef2eb64553550f73"
+        },
+        "visualApproval": {
+          "schemaVersion": 1,
+          "status": "approved",
+          "sha256": "3bc0d489dd4b46d21a78073d45b3985cc51f0cf8d8beeb411903feb94febd7f3",
+          "date": "2026-10-05",
+          "reviewer": "root",
+          "pages": 56,
+          "renderers": {
+            "Poppler": 56,
+            "Apple PDFKit": 56
+          },
+          "basis": "Every page reviewed on separate renderer contact sheets; full-size checks of workflow diagrams, dense native handoff prompts, corrected code-block page boundary, package-map table, references and final changelog. All eleven complete dark chapter illustrations reviewed.",
+          "fullSizePages": [
+            4,
+            5,
+            17,
+            41,
+            42,
+            54,
+            55,
+            56
+          ],
+          "findings": [],
+          "acceptedLayoutObservation": "Page 52 contains the readable two-line capstone continuation; content remains intact."
+        }
+      }
+    }
+  ]
+}
