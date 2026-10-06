@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "packageCoverage": {
+    "status": "passed",
+    "archive": "/private/tmp/claude-design-toolkit-portable-repair-r2/publish-evidence-backed-handbook.zip",
+    "archiveSha256": "256aa9da2ac073504ccefcc23549d24f5933ff3243e691d630f76f81f12eff87",
+    "archiveBytes": 7948878,
+    "archiveMembers": 139,
+    "manifestInputs": 137,
+    "members": 139,
+    "manifestSha256": "d424c9cc305d067c84d16d770586fb70e09d07d81f1536928f219be3331e4054",
+    "exactSourceBytes": true,
+    "allPinnedInputHashesMatch": true,
+    "manifestArtifactProofToolchainFieldsPreserved": true,
+    "screenshotFiles": [
+      "references/screenshot-figures.md",
+      "scripts/screenshot-browser-check.mjs",
+      "scripts/screenshot_figures.py",
+      "scripts/test-screenshot-figures.py"
+    ],
+    "r1ArchiveSha256": "8c5b1aa49bd2ad06527cf9acd174c5aca0c7d84bd8b091054c613e1abd1bbce7",
+    "r1MemberComparison": {
+      "sameMemberSet": true,
+      "changed": [
+        {
+          "path": "references/specimen/manifest.json",
+          "r1Sha256": "e08c71fd61155656203f669d074de1e0c4ea690011b26e729e4f2e3173ede3db",
+          "r2Sha256": "d424c9cc305d067c84d16d770586fb70e09d07d81f1536928f219be3331e4054"
+        },
+        {
+          "path": "scripts/markdown-downloads.mjs",
+          "r1Sha256": "f1a3a3764935e97e95e6db78dc6dca0ef78ebda04460f3ed43369371625b4ebf",
+          "r2Sha256": "134e32ea0a94ceaf31a3d722801b1c96c7a15f14276d327c21171462aae820b8"
+        },
+        {
+          "path": "scripts/test-markdown-downloads.mjs",
+          "r1Sha256": "e82d69f63846f1549ea0ea69c69c0912bddc95ac8f667523a2aa9e930276b6d4",
+          "r2Sha256": "9640e038bf5b29e04bf4dcb7bbe598597272f217254d869d72a6f6a9d27d0086"
+        }
+      ],
+      "unchangedMembers": 136,
+      "onlyExpectedThreeChanges": true,
+      "allOtherInputsAndArtifactExact": true,
+      "manifestChangedInputPins": [
+        "scripts/markdown-downloads.mjs",
+        "scripts/test-markdown-downloads.mjs"
+      ]
+    },
+    "missing": [],
+    "extra": []
+  },
+  "checks": [
+    {
+      "label": "package",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/publish-evidence-backed-handbook/scripts/package-skill.py",
+        "--output",
+        "/private/tmp/claude-design-toolkit-portable-repair-r2/publish-evidence-backed-handbook.zip"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r2",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r2/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r2/logs/package.log"
+    },
+    {
+      "label": "validate-package",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/private/tmp/claude-design-toolkit-portable-repair-r2/extracted/publish-evidence-backed-handbook/scripts/validate-package.py",
+        "--package",
+        "/private/tmp/claude-design-toolkit-portable-repair-r2/extracted/publish-evidence-backed-handbook",
+        "--output",
+        "/private/tmp/claude-design-toolkit-portable-repair-r2/package-validation.json"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r2",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r2/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r2/logs/validate-package.log"
+    },
+    {
+      "label": "markdown-downloads",
+      "command": [
+        "node",
+        "/private/tmp/claude-design-toolkit-portable-repair-r2/extracted/publish-evidence-backed-handbook/scripts/test-markdown-downloads.mjs"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r2",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r2/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r2/logs/markdown-downloads.log"
+    }
+  ],
+  "extractedPackageUnchangedAfterTests": true,
+  "r1PassingChecksRemainApplicable": {
+    "status": "passed",
+    "unchangedInputsAndArtifactVerified": true,
+    "receipt": "/private/tmp/claude-design-toolkit-portable-repair-r1/portable-checks-report.json",
+    "receiptSha256": "9ee6ef02096036ade3bb29b24032fa090b977640a1b76c8f22ce8ed00ae3c37f",
+    "checks": [
+      "pdf-validation-checks",
+      "pdf-downloads",
+      "font-resources",
+      "markdown-runtime",
+      "code-blocks",
+      "screenshot-figures",
+      "pdf-fixtures",
+      "pdf-runtime"
+    ]
+  },
+  "reports": [
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r2/package-coverage.json",
+      "sha256": "59afda1e5fb6cd611cdefdb2e04699cf4cc19fb7c79aa6e970f58d8dc64cbe06"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r2/package-validation.json",
+      "sha256": "7730e8204ed708d391fda4261905afcaf69a8e7242f7308723c732e2c3183fd2"
+    }
+  ],
+  "sourceEdits": false,
+  "gitOrNetworkOperations": false
+}

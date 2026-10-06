@@ -1,0 +1,23 @@
+test_appendix_header_uses_heading_on_current_page (__main__.PageLayoutTests.test_appendix_header_uses_heading_on_current_page) ... ok
+test_chapter_and_frontmatter_suppress_body_running_head (__main__.PageLayoutTests.test_chapter_and_frontmatter_suppress_body_running_head) ... ok
+test_chapter_continuation_header_preserves_title_and_typography (__main__.PageLayoutTests.test_chapter_continuation_header_preserves_title_and_typography) ... ok
+test_further_reading_header_uses_heading_on_current_page (__main__.PageLayoutTests.test_further_reading_header_uses_heading_on_current_page) ... ok
+test_heading_moves_with_diagram_when_page_remainder_is_short (__main__.PageLayoutTests.test_heading_moves_with_diagram_when_page_remainder_is_short) ... ok
+test_long_wrapped_block_still_splits_between_eight_line_chunks (__main__.PageLayoutTests.test_long_wrapped_block_still_splits_between_eight_line_chunks) ... ok
+test_pagebreak_does_not_set_following_title_on_previous_page (__main__.PageLayoutTests.test_pagebreak_does_not_set_following_title_on_previous_page) ... ok
+test_prior_in_row_split_reproduces_empty_continuation (__main__.PageLayoutTests.test_prior_in_row_split_reproduces_empty_continuation) ... ok
+test_short_shell_moves_intact_without_blank_remainder (__main__.PageLayoutTests.test_short_shell_moves_intact_without_blank_remainder) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.018s
+
+OK
+{
+  "status": "passed",
+  "tests": 9,
+  "pdfsAuthored": 0,
+  "inMemoryPaginationProofs": 2,
+  "layoutSha256": "cbe83d144a2d30a9ade2976a8c860f72f143b4501cea5e3fbf6d0363cd06182a"
+}
+1 sections 6032 HTML bytes
+PASS shell identity, exact whitespace and escaping, non-shell code, prompts and prose callouts

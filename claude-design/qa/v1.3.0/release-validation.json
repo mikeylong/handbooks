@@ -208,8 +208,8 @@
   },
   "sourceImplementationFreeze": {
     "path": "claude-design/qa/v1.3.0/promotion-checks/promotion-source-freeze.json",
-    "sha256": "a5e737c2d63e2e03e6f83e64caba485b969a694927c86ec8e5950303641df7f7",
-    "bytes": 5351
+    "sha256": "1fe3c96532907e0f4a8e460907dd94ea0b10bce694919d86a6913ad5402ce990",
+    "bytes": 5975
   },
   "fileAllowlist": {
     "path": "claude-design/qa/v1.3.0/release-file-allowlist.txt",
@@ -245,5 +245,10 @@
         "normalizedBytes": 670
       }
     ]
+  },
+  "ciToolkitInputRepair": {
+    "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/repair-validation.json",
+    "sha256": "e512f5874fae5c20e88bde8b5b317ae7f7d88f401e8247251a65b7af28ea9d9e",
+    "bytes": 8518
   }
 }

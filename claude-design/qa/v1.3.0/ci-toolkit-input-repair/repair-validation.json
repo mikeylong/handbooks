@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "commitReady": true,
+  "generatedAt": "2026-10-06T17:40:35.619221+00:00",
+  "basis": "Repair the shared toolkit input inventory and two source representations that fail the unchanged portable package scanner.",
+  "sourceFiles": [
+    {
+      "path": "publish-evidence-backed-handbook/references/specimen/manifest.json",
+      "sha256": "d424c9cc305d067c84d16d770586fb70e09d07d81f1536928f219be3331e4054",
+      "bytes": 16408
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/build-manifest.py",
+      "sha256": "c15065e0bf1d8f0314d5568fffb9e718a0204b350bc355806f56630c13b357ce",
+      "bytes": 5731
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/markdown-downloads.mjs",
+      "sha256": "134e32ea0a94ceaf31a3d722801b1c96c7a15f14276d327c21171462aae820b8",
+      "bytes": 13147
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/test-markdown-downloads.mjs",
+      "sha256": "9640e038bf5b29e04bf4dcb7bbe598597272f217254d869d72a6f6a9d27d0086",
+      "bytes": 8895
+    }
+  ],
+  "governingManifest": {
+    "path": "publish-evidence-backed-handbook/references/specimen/manifest.json",
+    "sha256": "d424c9cc305d067c84d16d770586fb70e09d07d81f1536928f219be3331e4054",
+    "originalInputs": 133,
+    "currentInputs": 137,
+    "removed": [],
+    "added": [
+      "references/screenshot-figures.md",
+      "scripts/screenshot-browser-check.mjs",
+      "scripts/screenshot_figures.py",
+      "scripts/test-screenshot-figures.py"
+    ],
+    "changedExistingInputPins": 18,
+    "nonInputMetadataUnchanged": true,
+    "allActualInputHashesMatch": true
+  },
+  "preserved": [
+    {
+      "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+      "sha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8",
+      "bytes": 59953
+    },
+    {
+      "path": "claude-design/screenshot-figures.json",
+      "sha256": "9407b7a8725309175233ca99779cad7778955eb4c3a455293a26038394304f66",
+      "bytes": 35826
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+      "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
+      "bytes": 10094624
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+      "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e",
+      "bytes": 54114753
+    },
+    {
+      "path": "claude-design/publication-package.json",
+      "sha256": "c302a7116a98e70c37274bc11cf51e1d4ccbe98d6a7389a1e21dbd5a393b783d",
+      "bytes": 14060
+    },
+    {
+      "path": "claude-design/pdf-variants.json",
+      "sha256": "826e389f400dd25869de3c6d0c901f14ae17b8a6028644bc0cbd2dbc1e38767d",
+      "bytes": 3249
+    },
+    {
+      "path": "claude-design/qa/v1.3.0/publication-approval.json",
+      "sha256": "a8183e8f7140a3fdd382fa9b4cb6645aa812ae6f5ef578a21d0f49d84b8b406c",
+      "bytes": 1503
+    },
+    {
+      "path": "publish-evidence-backed-handbook/references/specimen/canonical-handbook-specimen.pdf",
+      "sha256": "f2b35119784796cbc6a1da72b11842bb02f90667d90a3dffc1b68622bd1bca85",
+      "bytes": 1905622
+    },
+    {
+      "path": "claude-design/qa/v1.3.0/candidate-toolkit-freeze.json",
+      "sha256": "17d8a2eb61a1056506fc764b4a09454366a8b968a2d53eaf3b232d4600420a4d",
+      "bytes": 2509
+    }
+  ],
+  "guardsUnchanged": [
+    {
+      "path": "production-ai-engineering/automation/verify-publishing-toolkit.mjs",
+      "sha256": "d04fa55330003f04604f1e27e534b527dca8dd3c53ccec1f5e490740a9060419",
+      "bytes": 905
+    },
+    {
+      "path": "production-ai-engineering/scripts/test-weekly-toolkit.py",
+      "sha256": "0b74ab1031ae14576019876263734196938c4192f5c54cd37c6d2f18cd82cfc3",
+      "bytes": 7513
+    },
+    {
+      "path": "production-ai-engineering/scripts/test-weekly-pdf-integration.py",
+      "sha256": "19e7cb090170964036531d12a525166fa472ccb58f6f12fb7dd14171d8cdf306",
+      "bytes": 14581
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/package-skill.py",
+      "sha256": "eb58be38ec99d177b59123f1ca1c4a9c73567c06eeafc9a318635956eb92eaaf",
+      "bytes": 2729
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/validate-package.py",
+      "sha256": "56624285a485cee36a4569e712b7bb099766babe7e91c8e2af8ec37742b1175f",
+      "bytes": 14256
+    }
+  ],
+  "weeklyToolkit": {
+    "status": "passed",
+    "finalLog": {
+      "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/weekly-toolkit-r2.log",
+      "sha256": "81153590c3e62d7c86c44c0e93b5f18ad971706cfaf49b5616baaf31de9636fb",
+      "bytes": 237
+    },
+    "negativeDriftAndBaselineGuardsPreserved": true
+  },
+  "weeklyPdfIntegration": {
+    "status": "passed",
+    "fixtures": [
+      "unchanged",
+      "changed"
+    ],
+    "report": {
+      "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/weekly-pdf-integration.json",
+      "sha256": "135406fc64602569a2b54dc77a83ef6ba250052efb7e6d83183be40a844f0411",
+      "bytes": 42922
+    },
+    "log": {
+      "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/weekly-pdf-integration.log",
+      "sha256": "1da4bf6b3fce217a2a44a5adcb92b4b06e2c2e445057537b9bb2e7898e94e923",
+      "bytes": 1184
+    },
+    "protectedInputsUnchanged": true
+  },
+  "portablePackage": {
+    "status": "passed",
+    "archiveSha256": "256aa9da2ac073504ccefcc23549d24f5933ff3243e691d630f76f81f12eff87",
+    "members": 139,
+    "finalReport": {
+      "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/portable-r2/portable-checks-report.json",
+      "sha256": "233a8d45058c360d7770c178c81c57dc92828b8abe06a4a969480789b935dd5b",
+      "bytes": 5282
+    },
+    "strictValidation": {
+      "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/portable-r2/package-validation.json",
+      "sha256": "7730e8204ed708d391fda4261905afcaf69a8e7242f7308723c732e2c3183fd2",
+      "bytes": 210
+    },
+    "preservedPrivateArchive": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/release/ci-toolkit-input-repair/portable-r2/publish-evidence-backed-handbook.zip"
+  },
+  "retainedRuntimeCoverage": {
+    "basis": "R1 passing PDF and runtime checks remain applicable because all 136 other archive members are exact; the two changed Markdown source expressions are independently equivalent.",
+    "report": {
+      "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/portable-r1/portable-checks-report.json",
+      "sha256": "9ee6ef02096036ade3bb29b24032fa090b977640a1b76c8f22ce8ed00ae3c37f",
+      "bytes": 10044
+    },
+    "packageScanFailurePreserved": {
+      "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/portable-r1/package-validation.json",
+      "sha256": "6a348c49e8e30161f4f0d46456bf699675e4fe37f3d041d7465ea719e1e32e28",
+      "bytes": 355
+    },
+    "preservedPrivateArchive": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/release/ci-toolkit-input-repair/portable-r1/publish-evidence-backed-handbook.zip",
+    "pdfAppearancePairs": 3,
+    "pdfNegativeGates": 6
+  },
+  "publicOutputParity": {
+    "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/public-output-parity.json",
+    "sha256": "5652c458a14549f1e02c4ce4c08b138994dc18cf147917841bcd4011850a3b5d",
+    "bytes": 991
+  },
+  "urlEquivalence": {
+    "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/url-equivalence.json",
+    "sha256": "e5e154d01f67c409d197d0975474aa69af1b6252882d1712ae08047908d06f18",
+    "bytes": 692
+  },
+  "focusedReview": {
+    "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/focused-review.json",
+    "sha256": "6f33087119fa7acd45f88b3bbacc6e10f5164af45c858fd8e46f80f142da098b",
+    "bytes": 4794
+  },
+  "currentSourceImplementationFreeze": {
+    "path": "claude-design/qa/v1.3.0/promotion-checks/promotion-source-freeze.json",
+    "sha256": "1fe3c96532907e0f4a8e460907dd94ea0b10bce694919d86a6913ad5402ce990",
+    "bytes": 5975
+  },
+  "fileAllowlist": {
+    "path": "claude-design/qa/v1.3.0/ci-toolkit-input-repair/extra-file-allowlist.txt",
+    "sha256": "95b946bf0c24af6ab6e9b640b1443129496bb1eaf4ce95cec48e014efe0df36f",
+    "bytes": 3513
+  },
+  "intendedFiles": 44,
+  "scope": {
+    "pdfsRebuilt": false,
+    "manuscriptChanged": false,
+    "screenshotBytesChanged": false,
+    "candidateToolkitProvenanceChanged": false,
+    "browserRerun": false,
+    "gitMutationPerformed": false
+  },
+  "limitations": [
+    "Hosted CI rerun, commit, push and release completion remain owned by the root task."
+  ]
+}

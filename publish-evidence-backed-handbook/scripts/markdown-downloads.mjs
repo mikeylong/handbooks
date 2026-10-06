@@ -68,7 +68,7 @@ export function readerMarkdown(html,edition){
    const imageUrl=(value,croppedView=false)=>{
     const resolved=url(value??'');
     const extension=croppedView?'html':'(?:png|jpg|jpeg)';
-    if(!resolved.startsWith(`https://handbooks.surfaces.systems/${edition.id}/editions/v${edition.version}/assets/screenshots/`)||!new RegExp('^https://handbooks\\.surfaces\\.systems/[^?#]+\\.'+extension+'$').test(resolved))throw Error('Screenshot image must use its immutable edition URL');
+    if(!resolved.startsWith(`https://handbooks.surfaces.systems/${edition.id}/editions/v${edition.version}/assets/screenshots/`)||!new RegExp('^https://handbooks[.]surfaces[.]systems/[^?#]+[.]'+extension+'$').test(resolved))throw Error('Screenshot image must use its immutable edition URL');
     return resolved;
    };
    const images=[];

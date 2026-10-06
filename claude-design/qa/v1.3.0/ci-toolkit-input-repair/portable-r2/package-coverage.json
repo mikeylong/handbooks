@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "archive": "/private/tmp/claude-design-toolkit-portable-repair-r2/publish-evidence-backed-handbook.zip",
+  "archiveSha256": "256aa9da2ac073504ccefcc23549d24f5933ff3243e691d630f76f81f12eff87",
+  "archiveBytes": 7948878,
+  "archiveMembers": 139,
+  "manifestInputs": 137,
+  "members": 139,
+  "manifestSha256": "d424c9cc305d067c84d16d770586fb70e09d07d81f1536928f219be3331e4054",
+  "exactSourceBytes": true,
+  "allPinnedInputHashesMatch": true,
+  "manifestArtifactProofToolchainFieldsPreserved": true,
+  "screenshotFiles": [
+    "references/screenshot-figures.md",
+    "scripts/screenshot-browser-check.mjs",
+    "scripts/screenshot_figures.py",
+    "scripts/test-screenshot-figures.py"
+  ],
+  "r1ArchiveSha256": "8c5b1aa49bd2ad06527cf9acd174c5aca0c7d84bd8b091054c613e1abd1bbce7",
+  "r1MemberComparison": {
+    "sameMemberSet": true,
+    "changed": [
+      {
+        "path": "references/specimen/manifest.json",
+        "r1Sha256": "e08c71fd61155656203f669d074de1e0c4ea690011b26e729e4f2e3173ede3db",
+        "r2Sha256": "d424c9cc305d067c84d16d770586fb70e09d07d81f1536928f219be3331e4054"
+      },
+      {
+        "path": "scripts/markdown-downloads.mjs",
+        "r1Sha256": "f1a3a3764935e97e95e6db78dc6dca0ef78ebda04460f3ed43369371625b4ebf",
+        "r2Sha256": "134e32ea0a94ceaf31a3d722801b1c96c7a15f14276d327c21171462aae820b8"
+      },
+      {
+        "path": "scripts/test-markdown-downloads.mjs",
+        "r1Sha256": "e82d69f63846f1549ea0ea69c69c0912bddc95ac8f667523a2aa9e930276b6d4",
+        "r2Sha256": "9640e038bf5b29e04bf4dcb7bbe598597272f217254d869d72a6f6a9d27d0086"
+      }
+    ],
+    "unchangedMembers": 136,
+    "onlyExpectedThreeChanges": true,
+    "allOtherInputsAndArtifactExact": true,
+    "manifestChangedInputPins": [
+      "scripts/markdown-downloads.mjs",
+      "scripts/test-markdown-downloads.mjs"
+    ]
+  },
+  "missing": [],
+  "extra": []
+}
