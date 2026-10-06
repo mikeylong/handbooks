@@ -3,8 +3,8 @@ import {readFile} from 'node:fs/promises';
 import {runInNewContext} from 'node:vm';
 
 const source = await readFile(new URL('../site/gallery-focus.js', import.meta.url), 'utf8');
-const paths = ['/production-ai-engineering/', '/ai-evaluation/', '/ai-consulting/'];
-function page({reader, referrer = '', type = 'navigate', state = null, storage = new Map(), blocked = false} = {}) {
+const paths = ['/claude-design/', '/ai-evaluation/', '/ai-consulting/', '/production-ai-engineering/'];
+function page({reader, referrer = '', type = 'navigate', state = null, storage = new Map(), blocked = false, cardPaths = paths} = {}) {
   const events = {}, documentEvents = {};
   const makeLink = path => {
     const classes = new Set(), handlers = {};
@@ -15,7 +15,7 @@ function page({reader, referrer = '', type = 'navigate', state = null, storage =
     };
   };
   let focused;
-  const cards = reader ? [] : paths.map(makeLink);
+  const cards = reader ? [] : cardPaths.map(makeLink);
   const home = makeLink('/');
   const history = {state, replaceState:next=>history.state=next};
   runInNewContext(source, {
@@ -46,9 +46,9 @@ for (const path of paths) {
   assert(!gallery.cards[paths.indexOf(path)].classes.has('is-return-focus'),'Ring clears when focus leaves');
 
   reader.home.handlers.click(click);
-  const returned = page({storage:reader.storage});
+  const returned = page({storage:reader.storage,cardPaths:[...paths].reverse()});
   returned.events.pageshow({persisted:false});
-  assert.equal(returned.focused(),path,'All handbooks restores focus without a referrer');
+  assert.equal(returned.focused(),path,'All handbooks restores the same card after gallery reordering, without a referrer');
   assert(!returned.storage.has('handbook-gallery-return'),'Return request is consumed');
   const reloadedBack = page({type:'back_forward',storage:reader.storage});
   reloadedBack.events.pageshow({persisted:false});
@@ -65,4 +65,4 @@ assert.equal(fresh.history.state,null,'Modified clicks keep the current gallery 
 const unknown = page({storage:new Map([['handbook-gallery-return','/missing/']])});
 unknown.events.pageshow({persisted:false});
 assert.equal(unknown.focused(),undefined,'Unknown titles are ignored');
-console.log('Gallery return focus passed for both titles, Back/cache restores, return links, blocked storage, and fresh visits.');
+console.log('Gallery return focus passed for all four titles, reordered cards, Back/cache restores, return links, blocked storage, and fresh visits.');

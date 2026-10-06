@@ -1,5 +1,5 @@
 import {editionLinks} from '../../site/scripts/edition-links.mjs';
-import {validatePublicationFront} from './publication-front.mjs';
+import {removeSidebarPublication, removePublicationReview, validatePublicationFront} from './publication-front.mjs';
 import {cp,mkdir,readFile,rm,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {dirname,resolve} from 'node:path';
@@ -63,7 +63,8 @@ let hostedBook = book.replace(readerBody, reader)
 const manifest=JSON.parse(await readFile(resolve(root,'release-manifest.json'),'utf8'));
 const publication=JSON.parse(await readFile(resolve(root,'publication.json'),'utf8'));
 if(manifest.pdf!==pdfPath || manifest.sha256!==expectedHash || manifest.version!==version || manifest.pages!==pages)throw Error('Reader release manifest does not match approved edition');
-hostedBook=editionLinks(hostedBook,publication);
+hostedBook=removeSidebarPublication(removePublicationReview(hostedBook));
+hostedBook=editionLinks(hostedBook,publication,{linkCoverDate:true});
 validatePublicationFront(hostedBook,{...publication,...manifest,pdfUrl:'/'+pdfPath});
 await writeFile(resolve(output,'production-ai-engineering/index.html'),hostedBook);
 console.log(`Built Production AI Engineering reader ${version}; PDF ${expectedHash}`);

@@ -21,6 +21,7 @@
   .cover-actions > .action-link { width: 100%; max-width: 28rem; justify-content: center; white-space: normal; text-align: center; }
 }
 .pdf-end-downloads { padding: 3rem var(--reading-pad, 1.5rem); border-top: 1px solid var(--line); }
-.pdf-print-guidance { color: var(--muted); font-family: var(--sans, sans-serif); font-size: .75rem; }
+/* Hide legacy notes without changing approved historical HTML bytes. */
+.pdf-print-guidance { display: none !important; }
 .pdf-edition-artifact code { overflow-wrap: anywhere; }
 @media print { .pdf-downloads, .pdf-end-downloads, .pdf-print-guidance {display: none !important;} }

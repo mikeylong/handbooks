@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 import { citationByUrl, citationEntries } from "./book-data.mjs";
 import { INDEX_ENTRIES } from "./index-data.mjs";
 import { pdfDownloadPageCount } from "./pdf-download.mjs";
-import { buildReleaseSchedule, releaseTimeZoneLabel } from "./release-schedule.mjs";
+import { buildReleaseSchedule } from "./release-schedule.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const automationPath = process.env.HANDBOOK_AUTOMATION_PATH
@@ -101,7 +101,6 @@ const syntaxTokens = (className) => [...jsonHtml.matchAll(new RegExp(`<span clas
   .map((match) => decodeHtml(match[1]));
 const coverHtml = html.match(/<section class="cover"[\s\S]*?<\/section>/)?.[0] ?? "";
 const sidebarHtml = html.match(/<aside class="sidebar"[\s\S]*?<\/aside>/)?.[0] ?? "";
-const releaseWindowHtml = html.match(/<section class="release-window site-only"[\s\S]*?<\/section>/)?.[0] ?? "";
 const forewordHtml = html.match(/<section class="foreword"[\s\S]*?<\/section>/)?.[0] ?? "";
 const changelogHtml = html.match(/<section class="back-matter changelog pdf-only"[\s\S]*?<\/section>/)?.[0] ?? "";
 const decodedChangelogHtml = decodeHtml(changelogHtml);
@@ -443,25 +442,9 @@ const checks = {
     && Number.isFinite(Date.parse(releaseSchedule.generatedAt))
     && Number.isFinite(Date.parse(releaseSchedule.nextReviewAt))
     && Date.parse(releaseSchedule.nextReviewAt) > Date.parse(releaseSchedule.generatedAt),
-  releaseCountdownValid:
-    count(/class="release-window site-only"/g, html) === 1
-    && releaseWindowHtml.includes(`data-release-at="${releaseSchedule.nextReviewAt}"`)
-    && releaseWindowHtml.includes(`datetime="${releaseSchedule.nextReviewAt}"`)
-    && releaseWindowHtml.includes("Next version review")
-    && releaseWindowHtml.includes(releaseTimeZoneLabel(releaseSchedule.timeZone))
-    && releaseWindowHtml.includes("Site and PDF updates publish together after manual review.")
-    && count(/data-countdown-(?:days|hours|minutes|seconds)/g, releaseWindowHtml) === 4
-    && app.includes('document.querySelector("[data-release-window]")')
-    && app.includes('releaseStatus.textContent = "Review window open"')
-    && app.includes("window.setInterval(updateReleaseCountdown, 1000)")
-    && app.includes('window.addEventListener("pageshow", startReleaseCountdown)')
-    && app.includes('window.addEventListener("pagehide"'),
-  releaseCountdownAccessible:
-    releaseWindowHtml.includes('aria-describedby="release-window-schedule release-window-policy"')
-    && releaseWindowHtml.includes('data-release-countdown aria-hidden="true"')
-    && !releaseWindowHtml.includes("aria-live")
-    && css.includes(".js .release-countdown")
-    && /@media \(max-width: 22rem\)[\s\S]*?\.release-countdown\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/.test(css),
+  publicReviewPanelAbsent:
+    !/class=["'][^"']*\b(?:release-window|release-countdown)\b/.test(html)
+    && !/\bdata-(?:release-window|release-countdown|countdown-(?:days|hours|minutes|seconds))\b/.test(html),
   searchCompanionValid:
     html.includes('id="search-dialog"')
     && html.includes('id="handbook-search"')
@@ -506,11 +489,9 @@ const checks = {
     && /html\s*\{[^}]*background:\s*var\(--paper\);/.test(css)
     && /body\s*\{[^}]*background:\s*var\(--paper\);/.test(css)
     && /main\s*\{[^}]*background:\s*var\(--paper\);/.test(css),
-  sidebarPublicationMetadataExact:
-    sidebarHtml.includes('<p class="sidebar-author">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>')
-    && sidebarHtml.includes(`<p class="sidebar-edition"><a href="${REPOSITORY_HREF}">${expectedCoverDate}</a> · <a href="${RELEASES_HREF}">${expectedBookVersion}</a></p>`)
-    && /\.sidebar-meta\s*\{[^}]*display:\s*grid;/.test(css)
-    && /\.sidebar-publication\s*\{[^}]*display:\s*grid;/.test(css),
+  sidebarPublicationAbsent:
+    !/sidebar-(?:publication|author|edition)/.test(sidebarHtml)
+    && /\.sidebar-meta\s*\{[^}]*display:\s*grid;/.test(css),
   touchTargetsDefined:
     /\.text-button,\s*\.text-link,\s*\.menu-button,\s*\.dialog-close\s*\{[\s\S]*?min-height:\s*2\.75rem;/.test(css),
   tocDialogFooterLayoutScoped:
@@ -586,7 +567,7 @@ const checks = {
     coverHtml.match(/<p class="cover-credit">.*?<\/p>/s)?.[0]
       === '<p class="cover-credit">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>',
   authorSiteLinked:
-    count(/href="https:\/\/surfaces\.systems"/g, html) === 3,
+    count(/href="https:\/\/surfaces\.systems"/g, html) === 2,
   coverLabelsRemoved:
     !coverHtml.includes("Written by")
     && !coverHtml.includes("Evidence reviewed"),
@@ -728,8 +709,7 @@ const expected = {
   pdfDownloadLinks: 3,
   pdfDownloadPageCountExact: true,
   releaseScheduleValid: true,
-  releaseCountdownValid: true,
-  releaseCountdownAccessible: true,
+  publicReviewPanelAbsent: true,
   searchCompanionValid: true,
   noJavaScriptNavigationFallback: true,
   activeNavigationValid: true,
@@ -740,7 +720,7 @@ const expected = {
   checklistsAreStatic: true,
   accessibleColorTokens: true,
   siteCanvasWhite: true,
-  sidebarPublicationMetadataExact: true,
+  sidebarPublicationAbsent: true,
   touchTargetsDefined: true,
   tocDialogFooterLayoutScoped: true,
   companionChromeHiddenInPrint: true,
@@ -763,7 +743,7 @@ if (!checks.cssBracesBalanced) failures.push("CSS braces are unbalanced");
 if (checks.citationMarkers < 25) failures.push("Too few inline citation markers");
 if (!checks.fullAuthorName) failures.push("Full author name is missing");
 if (!checks.coverCreditExact) failures.push("Cover credit is not the approved linked author line");
-if (!checks.authorSiteLinked) failures.push("Author site is not linked consistently on the cover, sidebar, and footer");
+if (!checks.authorSiteLinked) failures.push("Author site is not linked consistently on the cover and footer");
 if (!checks.coverLabelsRemoved) failures.push("Removed cover-credit labels remain");
 if (!checks.coverLegacyEditionLineRemoved) failures.push("Legacy edition line remains on the cover");
 if (!checks.coverPublicationMetadataExact) failures.push("Cover publication date or version is missing or incorrect");

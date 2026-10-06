@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {validateVariantIdentity,downloadLinks,validateDownloads,installReaderDownloads,editionPdfUrl} from './pdf-downloads.mjs';
+import {validateVariantIdentity,downloadLinks,validateDownloads,installReaderDownloads,editionPdfUrl,removePrintGuidance,validatePrintGuidanceAbsent} from './pdf-downloads.mjs';
 const edition={id:'future-title',title:'Future title',version:'2.0.0',date:'2026-10-02',pdf:'previous.pdf',sha256:'a'.repeat(64),pages:25,markdown:{version:'2.0.0',publicUrl:'/future-title/editions/v2.0.0/future-title-v2.0.0.md',downloadFilename:'future-title-v2.0.0.md',sha256:'c'.repeat(64),bytes:12345}};
 const m={schemaVersion:1,book:edition.id,...edition,variants:['light','dark'].map((theme,i)=>({theme,displayName:i?'Late night version':'Daytime version',appearanceRevision:1,approvalStatus:'candidate',sha256:(i?'b':'a').repeat(64),bytes:1000,pages:25,publicUrl:`/future-title/editions/v2.0.0/future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,downloadFilename:`future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,pageMap:{path:'map.json',sha256:'c'.repeat(64)}}))};
 assert.equal(validateVariantIdentity(m,edition,{candidate:true}).length,2);
@@ -13,6 +13,21 @@ const rendered=installReaderDownloads(reader,{...edition,title:'Future & handboo
 assert.match(rendered,/<a class="mobile-title" href="#book-top">Future &amp; handbook<\/a>/);
 const existing=installReaderDownloads(reader.replace('<div class="mobile-actions">','<a class="mobile-title" href="#book-top">Existing title</a><div class="mobile-actions">'),edition,m.variants);
 assert.equal((existing.match(/class="mobile-title"/g)||[]).length,1);
+// Current and future covers keep printing purpose inside the Daytime download row.
+const coverReader=extra=>'<aside><a href="book.pdf" download>PDF</a></aside><main><section class="cover extra"><h1>Future title</h1><p class="cover-date">October 2, 2026 · Version 2.0.0</p>'+extra+'<nav class="cover-actions site-only"><a class="action-link" href="book.pdf" download>PDF</a></nav></section></main>';
+for(const extra of ['', '<section class="release-window site-only">Legacy panel</section>', '<p class="pdf-print-guidance">Use the Daytime version for printing.</p>', "<p class='extra pdf-print-guidance'>Old printing note</p>", '<p>Use the Daytime <em>version</em> for printing.</p>']){
+ const installed=installReaderDownloads(coverReader(extra),edition,m.variants);
+ assert.doesNotMatch(installed,/pdf-print-guidance|Use the Daytime version for printing[.]/);
+ assert.match(installed,/<strong class="download-name">Daytime version<\/strong><span class="download-purpose">For printing<\/span>/);
+ validateDownloads(installed,edition,m.variants);
+}
+for(const note of ['<p class="pdf-print-guidance">Legacy</p>', '<p>Use the Daytime version for printing.</p>', '<p>Use the Daytime <em>version</em> for printing.</p>']){
+ assert.throws(()=>validatePrintGuidanceAbsent(note),/Standalone PDF printing guidance/);
+ const clean=removePrintGuidance('<p>Keep handbook prose.</p>'+note+'<p>Keep edition metadata.</p>');
+ assert.equal(clean,'<p>Keep handbook prose.</p><p>Keep edition metadata.</p>');
+ assert.equal(removePrintGuidance(clean),clean);
+ assert.throws(()=>validateDownloads(rendered+note,edition,m.variants),/Standalone PDF printing guidance/);
+}
 const {externalLinks}=await import('./edition-links.mjs');
 for(const source of ['<a href="#chapter">Chapter</a>','<a href="/book.pdf" download>PDF</a>','<a href="https://handbooks.surfaces.systems/book/">Book</a>','<a href="mailto:">Email</a>'])assert.equal(externalLinks(source),source);
 const external=externalLinks('<a href="https://example.org/" target="_self" rel="external">Source</a>');

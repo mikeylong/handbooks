@@ -24,8 +24,6 @@ import { renderFallbackFlowDiagram } from "./fallback-flow-diagram.mjs";
 import { renderRagFlowDiagram } from "./rag-flow-diagram.mjs";
 import {
   buildReleaseSchedule,
-  releaseReviewLabel,
-  releaseTimeZoneLabel,
 } from "./release-schedule.mjs";
 import { renderSystemFlowDiagram } from "./system-flow-diagram.mjs";
 import { renderValidationFlowDiagram } from "./validation-flow-diagram.mjs";
@@ -693,8 +691,6 @@ const buildNow = process.env.HANDBOOK_BUILD_NOW
   : new Date();
 const releaseSchedule = buildReleaseSchedule(automationSource, releasePolicySource, buildNow);
 const nextReviewAt = new Date(releaseSchedule.nextReviewAt);
-const nextReviewLabel = releaseReviewLabel(nextReviewAt, releaseSchedule.timeZone);
-const releaseZoneLabel = releaseTimeZoneLabel(releaseSchedule.timeZone);
 const lines = source.replaceAll("\r\n", "\n").split("\n");
 const sourceTitle = lines.find((line) => /^#\s+/.test(line))?.replace(/^#\s+/, "") ?? "Production AI Engineering Field Guide";
 const evidenceDate = source.match(/Last evidence review:\s*\*\*([^*]+)\*\*/)?.[1] ?? "Unspecified";
@@ -1067,10 +1063,6 @@ const html = `<!doctype html>
         <ol>${tocLinks}${backMatterTocLinks}</ol>
       </nav>
       <div class="sidebar-meta">
-        <div class="sidebar-publication">
-          <p class="sidebar-author">${AUTHOR_CREDIT_HTML}</p>
-          <p class="sidebar-edition"><a href="${REPOSITORY_HREF}">${COVER_DATE}</a> · <a href="${RELEASES_HREF}">${BOOK_VERSION}</a></p>
-        </div>
         <div class="sidebar-actions">
           <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
           <a class="text-link" href="${PDF_HREF}" download aria-label="Download ${BOOK_TITLE} as a PDF, ${PDF_PAGE_COUNT} pages">PDF</a>
@@ -1085,19 +1077,6 @@ const html = `<!doctype html>
         <p class="cover-subtitle">${BOOK_SUBTITLE}</p>
         <p class="cover-credit">${AUTHOR_CREDIT_HTML}</p>
         <p class="cover-date">${COVER_DATE} · ${BOOK_VERSION}</p>
-        <section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-schedule release-window-policy" data-release-window data-release-at="${releaseSchedule.nextReviewAt}" data-release-time-zone="${releaseSchedule.timeZone}" data-release-rrule="${releaseSchedule.rrule}">
-          <div class="release-window-heading">
-            <p class="release-window-label" id="release-window-title" data-release-status>Next version review</p>
-          </div>
-          <div class="release-countdown js-only" data-release-countdown aria-hidden="true">
-            <span><strong data-countdown-days>00</strong><small>Days</small></span>
-            <span><strong data-countdown-hours>00</strong><small>Hours</small></span>
-            <span><strong data-countdown-minutes>00</strong><small>Minutes</small></span>
-            <span><strong data-countdown-seconds>00</strong><small>Seconds</small></span>
-          </div>
-          <p class="release-window-schedule" id="release-window-schedule">Scheduled for <time datetime="${releaseSchedule.nextReviewAt}" data-release-time>${nextReviewLabel} ${releaseZoneLabel}</time>.</p>
-          <p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p>
-        </section>
         <nav class="cover-actions site-only" aria-label="Handbook actions">
           <a class="action-link action-link-primary" href="#contents">Explore the handbook</a>
           <a class="action-link" href="${PDF_HREF}" download aria-label="Download ${BOOK_TITLE} as a PDF, ${PDF_PAGE_COUNT} pages">Download PDF <span>${PDF_PAGE_COUNT} pages</span></a>

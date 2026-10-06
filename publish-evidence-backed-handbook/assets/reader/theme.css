@@ -36,7 +36,13 @@ html[data-theme] .theme-control { display: inline-block; }
 .theme-menu [aria-checked="true"] .theme-check { visibility: visible; }
 .gallery-intro > .theme-control { float: right; }
 .gallery-intro .theme-menu { left: auto; right: 0; }
-.sidebar-meta > .theme-control { margin: -0.5rem 0 0.6rem -0.5rem; }
+/* Keep reader appearance and Search together, with downloads on the next row. */
+.sidebar-meta:has(> .sidebar-actions > [data-open-search]) { grid-template-columns: minmax(0, 1fr) auto; }
+.sidebar-meta:has(> .sidebar-actions > [data-open-search]) > .sidebar-actions { display: contents; }
+.sidebar-meta:has(> .sidebar-actions > [data-open-search]) > .theme-control { grid-column: 1; grid-row: 1; align-self: center; margin: 0 0 0 -0.5rem; }
+.sidebar-meta > .sidebar-actions > [data-open-search] { grid-column: 2; grid-row: 1; align-self: center; justify-self: end; }
+.sidebar-meta > .sidebar-actions > .pdf-downloads { grid-column: 1 / -1; }
+
 .theme-control[data-menu-placement="above"] .theme-menu { top: auto; bottom: calc(100% + 0.4rem); }
 .theme-control[data-menu-placement="below"] .theme-menu { top: calc(100% + 0.4rem); bottom: auto; }
 .mobile-actions .theme-menu { left: auto; right: 0; }

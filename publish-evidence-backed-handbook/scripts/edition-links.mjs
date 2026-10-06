@@ -1,4 +1,4 @@
-export function editionLinks(html,publication) {
+export function editionLinks(html,publication,{linkCoverDate=false}={}) {
  const legacy=publication.historicalRepository;
  if(legacy){
   html=html.replaceAll(publication.historicalReleaseUrl,publication.releaseUrl);
@@ -7,6 +7,10 @@ export function editionLinks(html,publication) {
   html=html.replaceAll(legacy,publication.editionUrl);
  }
  html=html.replaceAll('handbooks.mikelong.ai','handbooks.surfaces.systems').replaceAll('handbooks.mikelong.design','handbooks.surfaces.systems');
+ // Keep edition navigation on the cover when legacy readers used the sidebar.
+ const editionUrl=String(publication.editionUrl).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
+ if(linkCoverDate)html=html.replace(/(<p\b[^>]*class="cover-date"[^>]*>)([\s\S]*?)(<\/p>)/g,(_,open,date,close)=>
+  /<a\b/.test(date) ? open+date+close : `${open}<a href="${editionUrl}">${date}</a>${close}`);
  return externalLinks(html);
 }
 

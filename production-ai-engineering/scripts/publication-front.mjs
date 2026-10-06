@@ -1,1 +1,1 @@
-export {validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from '../../site/scripts/publication-front.mjs';
+export {removeSidebarPublication, removePublicationReview, validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from '../../site/scripts/publication-front.mjs';

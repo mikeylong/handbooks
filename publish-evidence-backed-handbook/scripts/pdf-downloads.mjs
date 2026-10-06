@@ -53,7 +53,23 @@ export function downloadLinks(edition,variants,{compact=false}={}) {
  const ordered=variants.map(v=>({...v,publicUrl:editionPdfUrl(edition,v.publicUrl)})).sort((a,b)=>['light','dark'].indexOf(a.theme)-['light','dark'].indexOf(b.theme));
  return `<span class="pdf-downloads${compact?' downloads-compact':''}" data-pdf-downloads role="group" aria-label="Download ${escape(edition.title)}"><span class="pdf-download-title">Download</span>${markdownLink(edition)}${ordered.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages, ${downloadSize(v.bytes)}">${downloadRow(v.displayName,'PDF',v.theme==='light'?'For printing':'For dark reading',`${v.pages} pages, ${downloadSize(v.bytes)}`)}</a>`).join('')}</span>`;
 }
+const printGuidanceText = 'Use the Daytime version for printing.';
+export function removePrintGuidance(html) {
+ return html.replace(/<p\b([^>]*)>([\s\S]*?)<\/p>/gi,(paragraph,attributes,body)=>{
+  const classes=attributes.match(/\bclass\s*=\s*(["'])(.*?)\1/i)?.[2].split(/\s+/)??[];
+  const text=body.replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim();
+  return classes.includes('pdf-print-guidance')||text===printGuidanceText?'':paragraph;
+ });
+}
+export function validatePrintGuidanceAbsent(html) {
+ const text=html.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
+ if(/\bclass\s*=\s*["'][^"']*\bpdf-print-guidance\b/i.test(html)||text.includes(printGuidanceText)) {
+  throw Error('Standalone PDF printing guidance must be omitted');
+ }
+ return {status:'passed'};
+}
 export function installReaderDownloads(html,edition,variants) {
+ html=removePrintGuidance(html);
  html=html.replace(/<header\b[^>]*class="mobile-bar"[^>]*>[\s\S]*?<\/header>/,header=>{
   if(/class="mobile-title"/.test(header)) return header;
   return header.replace(/<div class="mobile-actions"/,`<a class="mobile-title" href="#book-top">${escape(edition.title)}</a><div class="mobile-actions"`);
@@ -63,7 +79,6 @@ export function installReaderDownloads(html,edition,variants) {
   count++;return downloadLinks(edition,variants,{compact:!a.includes('action-link')});
  });
  if(count<2)throw Error('Missing cover/sidebar PDF downloads');
- html=html.replace(/(<section\b[^>]*class="[^"]*\bcover\b[^"]*"[^>]*>[\s\S]*?)(<section\b[^>]*class="release-window)/,`$1<p class="pdf-print-guidance">Use the Daytime version for printing.</p>$2`);
  html=html.replace('</main>',`<section class="pdf-end-downloads" aria-label="Handbook downloads">${downloadLinks(edition,variants)}</section></main>`);
  return html;
 }
@@ -71,6 +86,7 @@ export function editionDownloadDetails(edition,variants){
  return variants.map(v=>`<section class="pdf-edition-artifact"><h2>${v.displayName}</h2><p>${v.pages} pages · ${v.bytes.toLocaleString('en-US')} bytes</p><p>PDF appearance revision ${v.appearanceRevision}${v.appearanceDate?' · '+escape(v.appearanceDate):''}</p>${downloadLinks(edition,[v])}<p>SHA-256: <code>${v.sha256}</code></p></section>`).join('')+(variants.some(v=>v.theme==='dark')?'':'<p>The Late night version is not available for this edition.</p>');
 }
 export function validateDownloads(html,edition,variants){
+ validatePrintGuidanceAbsent(html);
  markdownLink(edition);
  if(!html.includes(`href="${edition.markdown.publicUrl}"`)||!html.includes(`download="${edition.markdown.downloadFilename}"`)||!html.includes('data-markdown-download'))throw Error('Missing Markdown edition download');
  for(const group of html.matchAll(/<span\b[^>]*data-pdf-downloads[^>]*>[\s\S]*?<a\b[^>]*>/g))if(!group[0].includes('data-markdown-download'))throw Error('Markdown must be the first download option');
