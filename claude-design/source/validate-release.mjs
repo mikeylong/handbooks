@@ -168,7 +168,7 @@ if(candidate){
  assert.equal(publication.approvalStatus,'candidate');assert.equal(publication.sourceRepository,catalog.repository);
  for(const field of ['editionUrl','releaseUrl'])assert.equal(new URL(publication[field],catalog.publicHost).pathname,`/claude-design/editions/v${manifest.version}/`);
 }else assert.equal(pin.pages,manifest.pages,'Catalog page count differs from the approved PDF');
-for(const path of Object.keys(pkg.files))assert.ok(path===manifest.pdf||path.startsWith('reader/'),'Unexpected package member: '+path);
+for(const path of Object.keys(pkg.files))assert.ok(path===manifest.pdf||path.startsWith('reader/')||(manifest.releaseContract&&path==='exercise-downloads.json'),'Unexpected package member: '+path);
 const comparison=JSON.parse(await readFile(resolve(book,'qa','v'+manifest.version,'edition-diff.json'),'utf8'));
 for(const path of Object.values(comparison.artifacts)){
  assert.match(path,/^[A-Za-z0-9-]+\.patch$/);
@@ -189,6 +189,8 @@ if(!candidate&&!/^1\.[01]\./.test(manifest.version)){
  validateLedgerContract(ledger,{version:manifest.version,releaseContract:manifest.releaseContract,sourceSha256:digest(await readFile(resolve(book,'Claude_Design_Field_Guide_Source.md'))),previousSourceSha256:digest(await readFile(safePath(book,`baselines/v${manifest.previous_public_edition}/Claude_Design_Field_Guide_Source.md`))),verification,ledgerSha256:digest(ledgerBytes),changes:decision.expectedEntries,evidencePins,sampleSha256:pkg.files[samplePath],sampleBytes:sample.bytes.length,packageSha256:digest(await readFile(resolve(book,'publication-package.json')))});
 }
 if(manifest.releaseContract){
+ const definition=await pinnedFile(book,'exercise-downloads.json');
+ assert.equal(pkg.files['exercise-downloads.json'],digest(definition.bytes),'Unpinned exercise-download definition');
  const samplePath=releaseContract.sample.repositoryPath.slice('claude-design/'.length),sample=await pinnedFile(book,samplePath);
  assert.equal(pkg.files[samplePath],digest(sample.bytes),'Unpinned current edition sample');
  const source=await pinnedFile(book,'figma-companion.json'),companion=JSON.parse(source.bytes);

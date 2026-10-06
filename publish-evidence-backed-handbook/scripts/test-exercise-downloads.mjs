@@ -29,7 +29,10 @@ async function fixture({definition = true} = {}) {
   await mkdir(dirname(file), {recursive: true});
   await writeFile(file, bytes);
   const context = {source, edition, pkg, row, record, file, bytes};
-  if (definition) await saveDefinition(context);
+  if (definition) {
+    await saveDefinition(context);
+    await approveDefinition(context);
+  }
   return context;
 }
 
@@ -37,10 +40,29 @@ async function saveDefinition(f) {
   await writeFile(join(f.source, 'exercise-downloads.json'), JSON.stringify(f.record));
 }
 
+async function approveDefinition(f) {
+  f.pkg.files['exercise-downloads.json'] = digest(await readFile(join(f.source, 'exercise-downloads.json')));
+}
+
+async function addSecondArtifact(f) {
+  const filename = 'exercise-notes.txt';
+  const path = 'reader/editions/v2.4.0/' + filename;
+  const bytes = Buffer.from('Independent exercise notes.\n');
+  await writeFile(join(f.source, path), bytes);
+  f.record.downloads.push({label: 'Notes', filename,
+    url: '/fixture-book/editions/v2.4.0/' + filename,
+    path, sha256: digest(bytes), bytes: bytes.length});
+  f.pkg.files[path] = digest(bytes);
+  await saveDefinition(f);
+  await approveDefinition(f);
+}
+
 async function rejected(name, change, expected) {
   const f = await fixture();
   await change(f);
   await saveDefinition(f);
+  // These original cases approve the altered definition to exercise its specific semantic/artifact guard.
+  await approveDefinition(f);
   await assert.rejects(() => exerciseDownloadLinks(f.source, f.edition, f.pkg), expected, name);
   results.push(name);
 }
@@ -61,17 +83,7 @@ try {
   results.push('exact pinned binary bytes render one escaped edition download');
 
   // A second independent artifact must retain its own pin and manifest order.
-  const secondFilename = 'exercise-notes.txt';
-  const secondPath = 'reader/editions/v2.4.0/' + secondFilename;
-  const secondBytes = Buffer.from('Independent exercise notes.\n');
-  await writeFile(join(valid.source, secondPath), secondBytes);
-  valid.record.downloads.push({
-    label: 'Notes', filename: secondFilename,
-    url: '/fixture-book/editions/v2.4.0/' + secondFilename,
-    path: secondPath, sha256: digest(secondBytes), bytes: secondBytes.length,
-  });
-  valid.pkg.files[secondPath] = digest(secondBytes);
-  await saveDefinition(valid);
+  await addSecondArtifact(valid);
   const ordered = await exerciseDownloadLinks(valid.source, valid.edition, valid.pkg);
   assert.equal((ordered.match(/<a /g) || []).length, 2);
   assert.ok(ordered.indexOf('fixture-book-v2.4.0.fig') < ordered.indexOf('exercise-notes.txt'));
@@ -136,8 +148,47 @@ try {
 
   const malformed = await fixture();
   await writeFile(join(malformed.source, 'exercise-downloads.json'), '{unfinished');
+  await approveDefinition(malformed);
   await assert.rejects(() => exerciseDownloadLinks(malformed.source, malformed.edition, malformed.pkg), SyntaxError);
   results.push('malformed definition fails instead of silently omitting download');
+
+  // Package approval binds every raw definition byte, including label/order/row selection.
+  for (const [name, change] of [
+    ['relabel after approval', f => {f.record.downloads[0].label = 'Unapproved new label';}],
+    ['reorder after approval', f => {f.record.downloads.reverse();}],
+    ['row omission after approval', f => {f.record.downloads.pop();}],
+  ]) {
+    const f = await fixture();
+    await addSecondArtifact(f);
+    const approvedDefinition = f.pkg.files['exercise-downloads.json'];
+    const artifactBytes = await Promise.all(f.record.downloads.map(row => readFile(join(f.source, row.path))));
+    const artifactRows = f.record.downloads.map(row => ({...row}));
+    change(f);
+    await saveDefinition(f); // Keep the original approval; do not repin this mutation.
+    assert.equal(f.pkg.files['exercise-downloads.json'], approvedDefinition);
+    await assert.rejects(() => exerciseDownloadLinks(f.source, f.edition, f.pkg), /Stale exercise definition hash/, name);
+    for (const [i, row] of artifactRows.entries()) {
+      assert.deepEqual(await readFile(join(f.source, row.path)), artifactBytes[i]);
+      assert.equal(f.pkg.files[row.path], row.sha256);
+    }
+    results.push(name + ' rejected with unchanged independently pinned artifacts');
+  }
+
+  for (const [name, change, expected] of [
+    ['missing definition pin', f => {delete f.pkg.files['exercise-downloads.json'];}, /Unpinned exercise definition/],
+    ['stale definition pin', f => {f.pkg.files['exercise-downloads.json'] = 'a'.repeat(64);}, /Stale exercise definition hash/],
+    ['definition pin under another path', f => {f.pkg.files['reader/exercise-downloads.json'] = f.pkg.files['exercise-downloads.json']; delete f.pkg.files['exercise-downloads.json'];}, /Unpinned exercise definition/],
+    ['deleted pinned definition', f => rm(join(f.source, 'exercise-downloads.json')), /Pinned exercise definition is missing/],
+    ['directory instead of definition', async f => {const path = join(f.source, 'exercise-downloads.json'); await rm(path); await mkdir(path);}, /Exercise definition must be a regular local file/],
+    ['definition file symlink with exact target bytes', async f => {const path = join(f.source, 'exercise-downloads.json'); const target = join(f.source, 'exact-definition.json'); await copyFile(path, target); await rm(path); await symlink(target, path);}, /Exercise definition must be a regular local file/],
+    ['symlinked definition parent with exact bytes', async f => {const target = f.source + '-target'; await rename(f.source, target); await symlink(target, f.source, 'dir');}, /Exercise definition must be a regular local file/],
+    ['unapproved malformed bytes rejected before parsing', f => writeFile(join(f.source, 'exercise-downloads.json'), '{unfinished'), /Stale exercise definition hash/],
+  ]) {
+    const f = await fixture();
+    await change(f);
+    await assert.rejects(() => exerciseDownloadLinks(f.source, f.edition, f.pkg), expected, name);
+    results.push(name);
+  }
 
   console.log(JSON.stringify({status: 'passed',cases: results.length,checks: results}, null, 2));
 } finally {

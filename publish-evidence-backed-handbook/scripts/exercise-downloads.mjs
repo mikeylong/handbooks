@@ -3,9 +3,20 @@ import {readFile,lstat,realpath} from 'node:fs/promises';
 import {safePath,digest} from './reader-paths.mjs';
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 export async function exerciseDownloadLinks(source,edition,pkg) {
- let definition;
- try {definition=JSON.parse(await readFile(safePath(source,'exercise-downloads.json'),'utf8'));}
- catch(error){if(error.code==='ENOENT')return '';throw error;}
+ const definitionPath='exercise-downloads.json',file=safePath(source,definitionPath);
+ const hasDefinitionPin=Object.hasOwn(pkg?.files||{},definitionPath);
+ let stat;
+ try {stat=await lstat(file);}
+ catch(error){
+  if(error.code!=='ENOENT')throw error;
+  assert.ok(!hasDefinitionPin,'Pinned exercise definition is missing');
+  return '';
+ }
+ assert.ok(stat.isFile()&&await realpath(file)===file,'Exercise definition must be a regular local file');
+ const definitionBytes=await readFile(file),definitionSha256=pkg?.files?.[definitionPath];
+ assert.match(definitionSha256||'',/^[a-f0-9]{64}$/,'Unpinned exercise definition');
+ assert.equal(digest(definitionBytes),definitionSha256,'Stale exercise definition hash');
+ const definition=JSON.parse(definitionBytes.toString('utf8'));
  assert.equal(definition.schemaVersion,1);
  assert.equal(definition.book,edition.id,'Exercise book mismatch');
  assert.equal(definition.version,edition.version,'Exercise edition mismatch');
