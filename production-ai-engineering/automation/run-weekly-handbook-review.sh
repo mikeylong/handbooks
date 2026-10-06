@@ -1108,7 +1108,7 @@ run_phase "pdf_finalize" "$RUN_DIR/pdf-finalize.log" \
     --book "$WORKSPACE" \
     --baseline-mode content-edition
 run_phase "pdf_validation" "$RUN_DIR/pdf-validation.log" \
-  run_python "$BUILD_DIR/handbook/validate-pdf.py" "$CANDIDATE_PDF"
+  run_python "$BUILD_DIR/handbook/validate-pdf.py" "$CANDIDATE_PDF" --theme light
 run_phase "page_map" "$RUN_DIR/page-map.log" \
   run_python "$BUILD_DIR/handbook/extract-page-map.py" \
     --pdf "$CANDIDATE_PDF" \

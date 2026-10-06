@@ -4,16 +4,31 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
+import os
 import re
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
 import pdfplumber
 from pypdf import PdfReader
+
+TOOLKIT = Path(os.environ.get(
+    "HANDBOOK_PUBLISHING_TOOLKIT",
+    Path(__file__).resolve().parents[2] / "publish-evidence-backed-handbook",
+))
+sys.path.insert(0, str(TOOLKIT / "scripts"))
+from pdf_theme import theme_tokens
+from pdf_validation_checks import (
+    validate_fonts,
+    validate_image_resolution,
+    validate_internal_link_target,
+)
 
 
 BOOK_TITLE = "Production AI Engineering"
@@ -211,6 +226,12 @@ def validate_structure(
             assert destination_pages["changelog-end"] == len(page_texts) - 1, (
                 "Changelog end destination must be on the final PDF page"
             )
+        assert all("CHANGELOG" in text.upper() for text in page_texts[terminal_start:]), (
+            "Changelog content or running head is missing inside its terminal page range"
+        )
+        assert all(not has_index_heading(text) for text in page_texts[terminal_start:]), (
+            "Index content appears inside the changelog range"
+        )
     else:
         assert not {"changelog", "changelog-end"} & destination_pages.keys(), (
             "Unexpected changelog destination for unchanged content"
@@ -225,21 +246,59 @@ def validate_structure(
     return appendix_start, index_start
 
 
-def validate_fonts(path: Path) -> int:
-    executable = shutil.which("pdffonts")
-    if not executable:
-        raise AssertionError("pdffonts is required for the font-embedding check")
-    result = subprocess.run(
-        [executable, str(path)],
-        check=True,
-        capture_output=True,
-        text=True,
+def has_index_heading(text: str) -> bool:
+    """Distinguish Index furniture from changelog prose discussing the Index."""
+    return re.search(r"(?im)^\s*INDEX OF TERMS\s*$", text) is not None
+
+
+def validate_metadata(
+    metadata, cover_text: str, theme: str | None = None, *, pdf_sha256: str | None = None,
+) -> None:
+    """Require appearance identity for new PDFs, preserving saved legacy editions."""
+    expected_title = f"{BOOK_TITLE} · {theme_tokens(theme or 'light')['displayName']}"
+    allowed_titles = {expected_title}
+    saved_version = re.search(
+        r" · Version (\d+\.\d+(?:\.\d+)?)$", " ".join(cover_text.split()),
     )
-    rows = [line.split() for line in result.stdout.splitlines()[2:] if line.strip()]
-    assert rows, "No fonts were found"
-    unembedded = [row[0] for row in rows if len(row) >= 5 and row[-5] != "yes"]
-    assert not unembedded, f"Unembedded fonts: {', '.join(unembedded)}"
-    return len(rows)
+    # Bare-title metadata belongs to exact known historical artifacts only.
+    # Prior editions can be pinned by a later saved ledger (including v1.3.1,
+    # which has no ledger named after itself). Candidates never match this
+    # cover pattern, and explicit --theme disables all legacy acceptance.
+    if theme is None and saved_version and pdf_sha256:
+        handbook = Path(__file__).parent
+        known_legacy = set()
+        release_manifest = handbook.parent / "release-manifest.json"
+        if release_manifest.is_file():
+            release = json.loads(release_manifest.read_text(encoding="utf-8"))
+            known_legacy.add((release.get("version"), release.get("sha256")))
+        for ledger_path in (handbook / "releases").glob("version-*.json"):
+            ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+            previous = ledger.get("previousVersion", "").removeprefix("Version ")
+            known_legacy.add((previous, ledger.get("previousPdfSha256")))
+        if (saved_version[1], pdf_sha256) in known_legacy:
+            allowed_titles.add(BOOK_TITLE)
+    assert metadata.title in allowed_titles, (
+        f"PDF title metadata mismatch: expected {sorted(allowed_titles)!r}, "
+        f"found {metadata.title!r}"
+    )
+    assert metadata.author == AUTHOR, "PDF author metadata mismatch"
+    assert metadata.subject == SUBTITLE, "PDF subject metadata mismatch"
+
+
+def validate_cover_text(cover_text: str) -> None:
+    """Retired credit labels are a cover rule, not a book-wide vocabulary ban."""
+    cover_text = " ".join(cover_text.split())
+    assert "EVIDENCE REVIEWED" not in cover_text.upper(), "Removed cover review label remains"
+    assert "WRITTEN BY" not in cover_text.upper(), "Removed cover author label remains"
+    cover_title_pattern = r"\s*".join(re.escape(token) for token in BOOK_TITLE.split())
+    cover_pattern = re.compile(
+        rf"{cover_title_pattern} {re.escape(SUBTITLE)} {re.escape(AUTHOR_CREDIT)} "
+        r"[A-Z][a-z]+ \d{1,2}, \d{4} · Version \d+\.\d+(?:\.\d+)?"
+        r"(?:-candidate\.\d{8}\.\d{6})?"
+    )
+    assert cover_pattern.fullmatch(cover_text), (
+        "The cover contains missing, unexpected, or malformed reader-facing text"
+    )
 
 
 def validate_chapter_art_compatibility(
@@ -256,6 +315,7 @@ def validate_chapter_art_compatibility(
         capture_output=True,
         text=True,
     )
+    validate_image_resolution(result.stdout)
     rows: list[tuple[int, str]] = []
     for line in result.stdout.splitlines():
         match = re.match(r"^\s*(\d+)\s+\d+\s+(image|smask|mask)\s+", line)
@@ -281,7 +341,7 @@ def validate_chapter_art_compatibility(
     )
 
 
-def validate(path: Path, changelog_path: Path | None = None) -> None:
+def validate(path: Path, changelog_path: Path | None = None, *, theme: str | None = None) -> None:
     if not __debug__:
         raise RuntimeError("PDF validation must not run with Python assertions disabled")
     assert path.is_file(), f"Missing PDF: {path}"
@@ -294,10 +354,12 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
     )
     assert reader.pages, "PDF has no pages"
 
-    metadata = reader.metadata
-    assert metadata.title == BOOK_TITLE
-    assert metadata.author == AUTHOR
-    assert metadata.subject == SUBTITLE
+    page_texts = [page.extract_text() or "" for page in reader.pages]
+    legacy_hash = (
+        hashlib.sha256(path.read_bytes()).hexdigest()
+        if theme is None and reader.metadata.title == BOOK_TITLE else None
+    )
+    validate_metadata(reader.metadata, page_texts[0], theme, pdf_sha256=legacy_hash)
     assert reader.page_mode == "/UseOutlines"
     expected_labels = ["Cover", "ii", "iii"] + [str(page) for page in range(1, len(reader.pages) - 2)]
     assert reader.page_labels == expected_labels, "Missing or nonsequential page labels"
@@ -309,7 +371,6 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
             f"Non-A5 page found: {width:.2f} x {height:.2f} pt"
         )
 
-    page_texts = [page.extract_text() or "" for page in reader.pages]
     section_titles = list(SECTIONS)
     cover_version = re.search(r"Version (\d+)\.(\d+)(?:\.(\d+))?", page_texts[0])
     if cover_version and tuple(int(part or 0) for part in cover_version.groups()) < (1, 4, 0):
@@ -336,18 +397,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
     text = "\n".join(page_texts)
     canonical_text = canonical(text)
     cover_text = " ".join(page_texts[0].split())
-    cover_title_pattern = r"\s*".join(
-        re.escape(token) for token in BOOK_TITLE.split()
-    )
-    cover_pattern = re.compile(
-        rf"{cover_title_pattern} {re.escape(SUBTITLE)} {re.escape(AUTHOR_CREDIT)} "
-        r"[A-Z][a-z]+ \d{1,2}, \d{4} · Version \d+\.\d+(?:\.\d+)?"
-        r"(?:-candidate\.\d{8}\.\d{6})?"
-    )
-    assert cover_pattern.fullmatch(cover_text), (
-        "The cover contains missing, unexpected, or malformed reader-facing text"
-    )
-    assert "EVIDENCE REVIEWED" not in text.upper(), "Removed review label remains"
+    validate_cover_text(cover_text)
     assert not re.search(r"(?im)^\s*premise\s*$", page_texts[1]), (
         "Premise label remains on the foreword"
     )
@@ -597,14 +647,14 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         assert canonical(changelog["previousPdfSha256"]) not in canonical(changelog_text), (
             "The audit-only previous-PDF hash was printed in the reader changelog"
         )
-        assert "INDEX OF TERMS" not in page_texts[changelog_start].upper(), (
+        assert not has_index_heading(page_texts[changelog_start]), (
             "Index content appears on the changelog opening page"
         )
         for page_text in page_texts[changelog_start + 1 : changelog_end + 1]:
             assert "CHANGELOG" in page_text.upper(), (
                 "A changelog continuation page is missing its running head"
             )
-            assert "INDEX OF TERMS" not in page_text.upper(), (
+            assert not has_index_heading(page_text), (
                 "Index content appears inside the changelog range"
             )
     else:
@@ -657,6 +707,9 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
             elif destination is not None or (
                 action and str(action.get("/S")) == "/GoTo"
             ):
+                validate_internal_link_target(
+                    reader, destination if destination is not None else action.get("/D"),
+                )
                 internal_links += 1
             else:
                 broken_links += 1
@@ -760,7 +813,7 @@ def validate(path: Path, changelog_path: Path | None = None) -> None:
         "PASS — "
         f"{len(reader.pages)} A5 pages, {len(outline)} outline entries, "
         f"{internal_links} internal links, {len(external_urls)} external links, "
-        f"12 opaque single-paint illustrations, {font_count} embedded font subsets, "
+        f"12 opaque single-paint illustrations, {font_count} font resources (painted fonts embedded), "
         f"and no blank body pages. Sparse body pages: {sparse_pages}."
     )
 
@@ -769,8 +822,9 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("pdf", type=Path)
     parser.add_argument("--changelog", type=Path, help="Override the ledger (defaults to the saved cover-version ledger, or the working ledger for candidates and unsaved editions)")
+    parser.add_argument("--theme", choices=("light", "dark"), help="Require this PDF appearance's exact metadata; omit only for saved historical editions")
     args = parser.parse_args()
-    validate(args.pdf, args.changelog)
+    validate(args.pdf, args.changelog, theme=args.theme)
 
 
 if __name__ == "__main__":
