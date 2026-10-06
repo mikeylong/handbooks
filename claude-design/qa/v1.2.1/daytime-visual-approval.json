@@ -1,0 +1,1470 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewer": "Codex handbook audit agent",
+  "reviewedAt": "2026-10-06T00:12:51.764592+00:00",
+  "date": "2026-10-05",
+  "appearance": "Daytime",
+  "pdf": "claude-design/review/2026-10-05-figma-companion/pdf/final-r2/claude-design-v1.2.1-2026-10-05-daytime-r1.pdf",
+  "sha256": "43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272",
+  "artifactSha256": "43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272",
+  "bytes": 4954009,
+  "pages": 56,
+  "source": {
+    "path": "claude-design/review/2026-10-05-figma-companion/book/Claude_Design_Field_Guide_Source.md",
+    "sha256": "0eee25b6932c3099e28aeebf059ad22eda5c18a16a022af05184b0cfdeb7b93a",
+    "bytes": 59471
+  },
+  "basis": "Actual visual inspection of all 56 pages in Poppler and Apple PDFKit contact sheets. Changed setup/package/changelog pages were inspected individually in both engines. All chapter openers and selected dense/diagram/code pages were inspected on native-resolution paired sheets without resizing.",
+  "scope": {
+    "allPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "renderers": [
+      "Poppler",
+      "Apple PDFKit"
+    ],
+    "renderedPagesInspected": 112,
+    "contactSheetsInspected": 14,
+    "nativeResolutionSheetsInspected": 12,
+    "fullSizePages": [
+      1,
+      4,
+      5,
+      6,
+      7,
+      11,
+      14,
+      19,
+      21,
+      24,
+      27,
+      30,
+      31,
+      33,
+      36,
+      39,
+      41,
+      42,
+      44,
+      45,
+      48,
+      50,
+      51,
+      54,
+      55,
+      56
+    ],
+    "bothRendererIndividualPages": [
+      4,
+      45,
+      54,
+      56
+    ],
+    "chapterOpenersInspected": 11,
+    "pdfsAuthored": 0,
+    "releaseApproval": false
+  },
+  "checks": [
+    "Cover, contents, all chapter openers, workflow diagrams, dense tables, prompt panels, code blocks, references, and the final changelog are legible and complete.",
+    "The paid/Education plan prerequisite and separate reader-owned Figma import guidance fit within the existing page layout.",
+    "No visible clipping, overlapping text, missing glyphs, broken table rows, or missing artwork were found.",
+    "Pages 41–42 preserve the intact three-line command panel and final padding; pages 54–55 show the correct running headers.",
+    "The complete accepted one-group changelog occupies the final page 56 with the prior edition identity and exact prior PDF hash."
+  ],
+  "issues": [],
+  "severityFindings": {
+    "High": [],
+    "Medium": [],
+    "Low": []
+  },
+  "paginationObservation": "Page 52 contains a short readable capstone continuation; it is accepted as part of the governing pagination.",
+  "pageLabels": [
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "v",
+    "vi",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "renders": [
+    {
+      "page": 1,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-01.png",
+      "sha256": "71359b6cde73a31e46e7c7cfd83321ad6495d07743df6cf334cb5ea6169f36b6"
+    },
+    {
+      "page": 2,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-02.png",
+      "sha256": "0eac99fcc352e031f33dc793e42bc7b13b24cd92f04ab844c6a3b78ff6bfc6ef"
+    },
+    {
+      "page": 3,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-03.png",
+      "sha256": "969b77418c7ebeee00bee0c59cf661492ae76b0d9cfabf1a2cd2273dbe33a51b"
+    },
+    {
+      "page": 4,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-04.png",
+      "sha256": "feb1f655666b8d62c0d14afd3d98f5980c8709d967aae592a83cca0e27eefcfd"
+    },
+    {
+      "page": 5,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-05.png",
+      "sha256": "223ec29b5bf31c79e4600cfcd40b2581860222544877da549789a850ea33129f"
+    },
+    {
+      "page": 6,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-06.png",
+      "sha256": "aa873472e9cfe795fd064195144b945ebad62794a94c455c9dd68c9346e26bae"
+    },
+    {
+      "page": 7,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-07.png",
+      "sha256": "7e787e64994e60725880cbd14a9be1a166c274107a854db5147bb8a459159021"
+    },
+    {
+      "page": 8,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-08.png",
+      "sha256": "2139af676197686ee4e2df8e5ca9da734a0fa49a1d5b8bb7588b59d52bdc5f86"
+    },
+    {
+      "page": 9,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-09.png",
+      "sha256": "073691adbd59adcc8464ab0f9e9a433c3f9b2ee241e78f6252e89990865b3e41"
+    },
+    {
+      "page": 10,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-10.png",
+      "sha256": "90b79f086d2e100568ba9e7b104eb73825ee2edf4103807507f5e2d1080fff50"
+    },
+    {
+      "page": 11,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-11.png",
+      "sha256": "5538097acf6f89171da33b0cef2c4ba1a72bdc010865abd9b79f86fa488135d7"
+    },
+    {
+      "page": 12,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-12.png",
+      "sha256": "9cae10e1ccfae0a5513783b8168b3379ba29b685e9512ecd6d743de768a6fbc0"
+    },
+    {
+      "page": 13,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-13.png",
+      "sha256": "3d43b2c0e8a877b89dab14c8984dae8462d9cac58936bf9f044bae18b3c1d797"
+    },
+    {
+      "page": 14,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-14.png",
+      "sha256": "492b28a839a3f582bd62a41615a673bd3035d6ddad33e78004d95091f2e1c9ac"
+    },
+    {
+      "page": 15,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-15.png",
+      "sha256": "8da2d0f06d43f948c0208f7766498f4033defbbd35317cb3ab18ce6d27885c4b"
+    },
+    {
+      "page": 16,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-16.png",
+      "sha256": "b7077fd549058c31468231ff85f57848174e37fb168351b485583948b11ae004"
+    },
+    {
+      "page": 17,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-17.png",
+      "sha256": "f2604735ca427f2407f43d6c326c49a2d9e26b12949346167caf457333237798"
+    },
+    {
+      "page": 18,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-18.png",
+      "sha256": "af42e549eb59cc0fe10b24a10389a369e8c36c47bb3a833b567c11be56ba9b8f"
+    },
+    {
+      "page": 19,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-19.png",
+      "sha256": "56c410d774d7f8902eb49221b31bc91ccb1c597cf735133f577eb1e429dc6e42"
+    },
+    {
+      "page": 20,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-20.png",
+      "sha256": "6f1f54e9859401d6398c37b1e0dd4203e7d26321b15ec724e5bb3e7501590fb3"
+    },
+    {
+      "page": 21,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-21.png",
+      "sha256": "5f170228941bacfcb8009e76a58bb39c7c20b05fcde2903160a84df6b70e3630"
+    },
+    {
+      "page": 22,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-22.png",
+      "sha256": "10355c47801ebbd3c2f10743734bcf55b2ff722aa92d2f291c6759ae71999298"
+    },
+    {
+      "page": 23,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-23.png",
+      "sha256": "a5fe15537e20f8cd4005ffbf9d8a9cb07241adb5c8a3dc247968c96d3172901b"
+    },
+    {
+      "page": 24,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-24.png",
+      "sha256": "244837ea3ab026514f91edfc406e7cc5f62b97302519e63cc749c14f0c2ab581"
+    },
+    {
+      "page": 25,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-25.png",
+      "sha256": "1357177b11871f30c7799a485e259ac91295a68f066d9d59543e95569a7e2e06"
+    },
+    {
+      "page": 26,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-26.png",
+      "sha256": "290326ef538368533e5ad7995a22cc06aeb89974582981ab861bdf4add54cfd8"
+    },
+    {
+      "page": 27,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-27.png",
+      "sha256": "2bb25d2ffe81087bc77ed32d29baccb8cff108f8e5442c1709b18d28eb722153"
+    },
+    {
+      "page": 28,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-28.png",
+      "sha256": "a4c0229c5f40dcb25e300b65631e8d037726cdb1acdc68b0af86bb4fa71a0eac"
+    },
+    {
+      "page": 29,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-29.png",
+      "sha256": "dcfddaf86b89d7292f12393fc71aff3b530ff98f74100cf79f3fd339ec20d088"
+    },
+    {
+      "page": 30,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-30.png",
+      "sha256": "316b91663ea2cc71e89bd3f5200d2b0fa8ed4f0bc5bb61ad4a588ce3c3c1a199"
+    },
+    {
+      "page": 31,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-31.png",
+      "sha256": "aadb0e7bf40e0454023ab47628c5e54c7361ae1eb8528a5340acf968ebb094d0"
+    },
+    {
+      "page": 32,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-32.png",
+      "sha256": "9290eb33c06ba5f953728f557cd7036d6a8f030db17c02fc3b845e25ee3eb8ed"
+    },
+    {
+      "page": 33,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-33.png",
+      "sha256": "595cb3c07055e9de529f8901af260416f273a4937b7e60e5c39fcce28f3d2f04"
+    },
+    {
+      "page": 34,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-34.png",
+      "sha256": "20974b0f3bd01558f77f880628804b398a0de85c0750af9b8ad477e8155508ee"
+    },
+    {
+      "page": 35,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-35.png",
+      "sha256": "79db9a98f7da412b9736ee1178e8125bd42411521f3c6298a487660a1140d54b"
+    },
+    {
+      "page": 36,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-36.png",
+      "sha256": "5bbeb3650ee9c58f31ba82dff27d9ddcf4503cbc40fbf39fae15b55891875ab4"
+    },
+    {
+      "page": 37,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-37.png",
+      "sha256": "806bcacd8580cb601a7ad905b35bbb84c9d4f715a39012fd00828c90f93872ef"
+    },
+    {
+      "page": 38,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-38.png",
+      "sha256": "9a5c36264099fca5a660766e4ed001a452aa7e854eda5d88bcc17a2044e19c58"
+    },
+    {
+      "page": 39,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-39.png",
+      "sha256": "1a699db6b83835e98d719750ab7437bd73a2fffe110b527c69cb489553d1febd"
+    },
+    {
+      "page": 40,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-40.png",
+      "sha256": "06b05a7d7e8aa6b33307c46586ffe20f53bf3cfc040adc834ca3f27878aa7bce"
+    },
+    {
+      "page": 41,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-41.png",
+      "sha256": "ae99f5f3808fca525d4921949b6bce5dd4bb9fc3873f9fd9d59a3ae3183e4ce1"
+    },
+    {
+      "page": 42,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-42.png",
+      "sha256": "99699ad7e38acc4b9bb286b330eaa7a1097f75021909eaf1837d05733bf02c15"
+    },
+    {
+      "page": 43,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-43.png",
+      "sha256": "68a8ac9613042ef197405b073c85e609ee4f94f10f6ee6b6df3278996232d7fe"
+    },
+    {
+      "page": 44,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-44.png",
+      "sha256": "dfe85d32a829985e9a11881327a6d54262a0c087a7cb62c4c6803b8b12cab793"
+    },
+    {
+      "page": 45,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-45.png",
+      "sha256": "60d7437f1e2fc243b12ae5ecd993b410732f548681d7f93052cc3b037ee39f00"
+    },
+    {
+      "page": 46,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-46.png",
+      "sha256": "72ea69bcbbb95c0c92a5b91554ba58265e30f38cfa215d5af6d94cf7cff71b0f"
+    },
+    {
+      "page": 47,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-47.png",
+      "sha256": "1bf6b7194c3231d6fe5657c9a50f7e86d218e5aadb1db0a497670349beb4c9ac"
+    },
+    {
+      "page": 48,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-48.png",
+      "sha256": "4db01483d8ae696cba5d0fa4a6b50327c576cd7896bb0d4ffb7593e5044d5d35"
+    },
+    {
+      "page": 49,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-49.png",
+      "sha256": "4c23989c7ec4cb2d385bd88b2e8527b02457ead24da1381b166c90326508fbb0"
+    },
+    {
+      "page": 50,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-50.png",
+      "sha256": "b239ae552ff065ccb6305102539e89a5f73059e2d54e2dd76e292397bbb68955"
+    },
+    {
+      "page": 51,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-51.png",
+      "sha256": "0f9c1d650cdc0a821fa8b055d67e68472627feccb845047d5473f29e2423614f"
+    },
+    {
+      "page": 52,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-52.png",
+      "sha256": "aff65fd84b85e9350a79faeb94b7cc4c33911c33e111526225a55e63f0b7206c"
+    },
+    {
+      "page": 53,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-53.png",
+      "sha256": "b1cd39912ad75392ea698bd76317dc47ea4d1a43116163ec9eea8a759e0ed357"
+    },
+    {
+      "page": 54,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-54.png",
+      "sha256": "04313584c49bd2f4d36399d52200d5ed4000d75290608adefa2a6ad83b353cfc"
+    },
+    {
+      "page": 55,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-55.png",
+      "sha256": "33fdbd623c083af83b473a061523f925176a2496f0400784fdcbbd6ff069a994"
+    },
+    {
+      "page": 56,
+      "renderer": "poppler",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-poppler/page-56.png",
+      "sha256": "0fa00a19e14de0ea61867fff7dd214f34d570ae6a824e338455a694d1b0363a5"
+    },
+    {
+      "page": 1,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-001.png",
+      "sha256": "26028e5d3ea2a845a51768c79d553ff4d3926ba1ba07e3c47fcaac510a70ceb0"
+    },
+    {
+      "page": 2,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-002.png",
+      "sha256": "5c146f70bd562ab9976336c7bc53e9bd36e74b09de9eae61d26a3c7c1f3d9ba7"
+    },
+    {
+      "page": 3,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-003.png",
+      "sha256": "001c2f2ad9ae1241cae8c963065c32259cd403fb3e28dba81da19a50f3d76cb3"
+    },
+    {
+      "page": 4,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-004.png",
+      "sha256": "d6de12c012ccdcf18e31e3b90606511329645479311d977868dd7a017ce239f9"
+    },
+    {
+      "page": 5,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-005.png",
+      "sha256": "0a13a6d39b46b5062b122a017b59667cd392d324a37af1202134c55706337c2e"
+    },
+    {
+      "page": 6,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-006.png",
+      "sha256": "58c41a121afee8c3a308035e559f0a37749e76cdb647dd400f2c2506ec5b6981"
+    },
+    {
+      "page": 7,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-007.png",
+      "sha256": "14757dba2519ca1e848304c8a74c6350560bee4bd35c5e1fd1b68c12faaee00a"
+    },
+    {
+      "page": 8,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-008.png",
+      "sha256": "0d1f0aa0a6fe5b99e1d4a033a6c93e263a7579818cfdbc2a0ec106170f36deba"
+    },
+    {
+      "page": 9,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-009.png",
+      "sha256": "106f21572c40310c1cb831bbe5a852ed39966a23261d28f440350b0f3bf94ef5"
+    },
+    {
+      "page": 10,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-010.png",
+      "sha256": "2d4cfcf8f4535c3d44a5792594edc89cbbf8d6eda9622732cfaab49e6b702d75"
+    },
+    {
+      "page": 11,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-011.png",
+      "sha256": "fc1da31a59d131cb3dd122cf17d7058de1c5be08a6e1b369f997f520650e0372"
+    },
+    {
+      "page": 12,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-012.png",
+      "sha256": "bdab2ebb306d0222794ccfcf837a393e36c0e64e1fb834c22f7d3ee4dbc2a6ae"
+    },
+    {
+      "page": 13,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-013.png",
+      "sha256": "24c07c820d71051a5faad8f00ec04fcca43e2419c4ccef9874321aaab3c5a23f"
+    },
+    {
+      "page": 14,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-014.png",
+      "sha256": "b5cadb4fcc7f63b4995a4f165f60a64a5c386fc6c562df0e94e5a4d1468e18a8"
+    },
+    {
+      "page": 15,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-015.png",
+      "sha256": "9e565cd906aeaab0882951756a8ea3e5069947c6578677e34e5fdcb01c5bdd34"
+    },
+    {
+      "page": 16,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-016.png",
+      "sha256": "c4402f6f4e579b0ce929a537fb943f2dea24d9b22860bc2f62df92fb09427a43"
+    },
+    {
+      "page": 17,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-017.png",
+      "sha256": "2875fe6508ff7e3f8e859cc373ff787adf33e16c48806521a2761e383e4e2b20"
+    },
+    {
+      "page": 18,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-018.png",
+      "sha256": "666e63dd46c5016329d194e4823d07bcc94df204efbe2c5118d0d4d9d1ec8f40"
+    },
+    {
+      "page": 19,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-019.png",
+      "sha256": "e04fc3befcfaf43cb78838422da54bc2d8f132833e290952bf3f7229a686012c"
+    },
+    {
+      "page": 20,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-020.png",
+      "sha256": "2731f4c33c1119a947348807cdf7d993d902932cee77f4ea8947ff99334d6b75"
+    },
+    {
+      "page": 21,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-021.png",
+      "sha256": "a1423c8404a4dedbfd2ad018b6f382d0d1ba307f3bc50926ba1d5653f04b455e"
+    },
+    {
+      "page": 22,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-022.png",
+      "sha256": "b4704b159a263cb2285ae80dad8b07abf7907ced333ee4450ac8b91361924ec4"
+    },
+    {
+      "page": 23,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-023.png",
+      "sha256": "214ebbb8ed169c1e52b27e561f3726d4ea30add7476569f17ccb7203604dd16e"
+    },
+    {
+      "page": 24,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-024.png",
+      "sha256": "811ef7e5ad5d452a191cfc0a52d2dc68c2688223425406c4c9bed00b3d9450c5"
+    },
+    {
+      "page": 25,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-025.png",
+      "sha256": "dd54791d7201af2ffde0abef59243f8de1fe2a95fb85af533b3d7d77e5b59a87"
+    },
+    {
+      "page": 26,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-026.png",
+      "sha256": "18e7719f6696ec644d10e713e6374f2d0f4dd3ac0d60a79a8accfbeb71de432e"
+    },
+    {
+      "page": 27,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-027.png",
+      "sha256": "62876628a0ce0f739a22c71ea75c7e35d3d89c9c332ad2b39d198a97da009813"
+    },
+    {
+      "page": 28,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-028.png",
+      "sha256": "dbcf09ea1b9134c5bbe061d859cd4eb73150d56be28c9dd633748215f19d0bd0"
+    },
+    {
+      "page": 29,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-029.png",
+      "sha256": "9be1b83ed5cf2c8d1c4eb44242385476dd156bcdeddfa9da8c74bf620ba137ba"
+    },
+    {
+      "page": 30,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-030.png",
+      "sha256": "b65878f177a1cd811b784a1c440891eabb1a43e8de55fbbb2a16b1a4fab848cc"
+    },
+    {
+      "page": 31,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-031.png",
+      "sha256": "b0c85c93ceeb7eb73a8e3d5c00e57951e7d88ab6c9c172f2c58649cb248ad588"
+    },
+    {
+      "page": 32,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-032.png",
+      "sha256": "80833f4bb2789eda0270a8e060c7bc7b6a29e55266f65cc6370471dd7bfb2500"
+    },
+    {
+      "page": 33,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-033.png",
+      "sha256": "5e04a23d84e777269541a59daae64b434a3755b61809c53339a9fcb140767751"
+    },
+    {
+      "page": 34,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-034.png",
+      "sha256": "ccee32d51b81e39fe782ec51ebff56a70c338e989fcd5b209c284bad1adbed58"
+    },
+    {
+      "page": 35,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-035.png",
+      "sha256": "27f5a52711fdf945100c6e8addc8fdefbb9b7519e88d7648068a3a03821f3e40"
+    },
+    {
+      "page": 36,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-036.png",
+      "sha256": "f68e74fd06e84c936750f26f36da3b8854935836afc06c2e7f53f95b110cfcf1"
+    },
+    {
+      "page": 37,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-037.png",
+      "sha256": "e15f7fa1955e1405048bc2952876c643d8a80b406ef21975ca025becddf278fb"
+    },
+    {
+      "page": 38,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-038.png",
+      "sha256": "0baf5d3fce88d8e5e06d860664232bc3ad8c75af8161d14d80e0644a9a5ba3bd"
+    },
+    {
+      "page": 39,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-039.png",
+      "sha256": "3b64f5c40ac222e3088881bb28748010b11741dfeb25252559aba2499b0b74fc"
+    },
+    {
+      "page": 40,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-040.png",
+      "sha256": "05e7ac4a01f0f15ad5bac096594a5c2257e7a5a153e9fb912b1bbd0d835a2a91"
+    },
+    {
+      "page": 41,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-041.png",
+      "sha256": "bc4c9d7f37aac1f3af941ddd556e3b22d6eeadf94842a0d715fa7c7656b4aec4"
+    },
+    {
+      "page": 42,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-042.png",
+      "sha256": "9156a1fe77c44a2e6cff3ae8657b6f5d8ce4baad27a38a862d0857b5cfa50f25"
+    },
+    {
+      "page": 43,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-043.png",
+      "sha256": "75e9dd538c7fb64522c16a934385d225bc8c935662109a64508dcddcfb3c9d9f"
+    },
+    {
+      "page": 44,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-044.png",
+      "sha256": "65e255cfc96a4f9dae58c41b6e8b7946e247f6ff8438d9758724b93182b2b3d5"
+    },
+    {
+      "page": 45,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-045.png",
+      "sha256": "51964bd20d667576a0953ff77a93437c2a30dfd72f703e65ffc4a72176aead57"
+    },
+    {
+      "page": 46,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-046.png",
+      "sha256": "29a450e402cb568a470e3913fd3f3d2149cea74827e040d447c3fd183cfb9308"
+    },
+    {
+      "page": 47,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-047.png",
+      "sha256": "c30ce85d267317e349a1b8c1dc9371aa5642b2d3501dd8190d422810adbca49d"
+    },
+    {
+      "page": 48,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-048.png",
+      "sha256": "857daf0b6e72898c00d02fc1c01f3f1485fdb2df187ca03673f1d33a81b811a2"
+    },
+    {
+      "page": 49,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-049.png",
+      "sha256": "300db13432324ddc9e5136c8a73f75f3090a4521f575967e786d877cc08d2700"
+    },
+    {
+      "page": 50,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-050.png",
+      "sha256": "72c2e06ea4a55c135aff940d94610e757e401b6b7be6919597615f124f61ad1e"
+    },
+    {
+      "page": 51,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-051.png",
+      "sha256": "f514475ba25e6a1b9ae2eca14d48f3cb3e3b9aae82eeac4bbd759725bc76be90"
+    },
+    {
+      "page": 52,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-052.png",
+      "sha256": "905452b648259cde65f03aa2ffe181bbfd0c1241e5629f957a6845db1b50eef0"
+    },
+    {
+      "page": 53,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-053.png",
+      "sha256": "3ee154357a871f798718121593dbfdd9fb06f3293b8e5c42fde22455241ed8d8"
+    },
+    {
+      "page": 54,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-054.png",
+      "sha256": "4e58828b4a50fdcdec8f8efba21990cbadfdd11c1fec2c96f03d47f548111be1"
+    },
+    {
+      "page": 55,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-055.png",
+      "sha256": "eb1944c0be66a2445abfdeb5efe0125b0d083e0ea08107b821b16018541aa75e"
+    },
+    {
+      "page": 56,
+      "renderer": "pdfkit",
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/daytime-pdfkit/page-056.png",
+      "sha256": "a1fe914216706690014e1c04a07532fdffb580ac19f7b831599f860b372c14f2"
+    }
+  ],
+  "contactSheets": [
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-pdfkit-01-08.png",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sha256": "5cc4af1d068e2db0a0359b61004e69ec83350c15bf4dc4a3687d106be46237c9"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-pdfkit-09-16.png",
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "sha256": "d371164e9c6a41b6076d159df0470d4de53cca2b82062ea62757bf1a3eacbd6f"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-pdfkit-17-24.png",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "sha256": "5d538e4fe49cdc915dd092130bc34e9405d442af7a83cf53e2d8b26c997c4e97"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-pdfkit-25-32.png",
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "sha256": "e4c9183d6dc1714e957b99f2df7da087824d88a630fa2bcfc0b8323e9226de61"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-pdfkit-33-40.png",
+      "pages": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "sha256": "d040bdb83209e2911a5f2746d7b412159a2e8daf6385f67a4561a777cc3cf149"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-pdfkit-41-48.png",
+      "pages": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "sha256": "823b7c531180c045ffbed25b15123c04fed378df27f96e43b4c12be6a02d2427"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-pdfkit-49-56.png",
+      "pages": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "sha256": "2c7cfba6310cfb74c7999f2b5eb3c227ce25dd0a1b6ce7d2d01f67781f09a32a"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-poppler-01-08.png",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sha256": "f42bc957613796caff4ae1072742a4202a2d902dd51ae29f6f3e086b3a1fecbf"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-poppler-09-16.png",
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "sha256": "a4989e4e12f1ecb7dd8b7e4c78c63731cff042cbfb30ebab2030d8e4006b08b6"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-poppler-17-24.png",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "sha256": "876574aeb23fd5e6439425d8067275c996edf8589ecf8ca7f12010c7ad152052"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-poppler-25-32.png",
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "sha256": "9039f01728fa03c96299fe34ec734cf8fc16814355c53978692b678e5aa00491"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-poppler-33-40.png",
+      "pages": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "sha256": "1834993c20435246ce20f92f4e837550808b0a39ac0900cc8dbefdd32d158299"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-poppler-41-48.png",
+      "pages": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "sha256": "4a75bcb7faae489f40597389d850a108c72ad9a67dced01e9c73fa4e24eb3a8f"
+    },
+    {
+      "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/daytime-poppler-49-56.png",
+      "pages": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "sha256": "96b06003c73e3ef8da24ed31b734aad7815b319cbb9a25a844a38a271c2dd437"
+    }
+  ],
+  "nativeResolutionSheets": [
+    {
+      "file": "daytime-openers-1.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        7,
+        11
+      ],
+      "noResizing": true,
+      "sha256": "1f37521ae4b0ea0c9ee6f2e72860b93b51418b7f183cccaeb748fe57c9352a3f"
+    },
+    {
+      "file": "daytime-openers-2.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        19,
+        24
+      ],
+      "noResizing": true,
+      "sha256": "7b5b590afe118a0aaa3b76426f20383530271e1762da4225bd421589b6b440a7"
+    },
+    {
+      "file": "daytime-openers-3.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        27,
+        30
+      ],
+      "noResizing": true,
+      "sha256": "f23fec3530c50f9e4145138545a5b9a0bd6f53d64ae6369c881ded4e8a5d729e"
+    },
+    {
+      "file": "daytime-openers-4.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        33,
+        36
+      ],
+      "noResizing": true,
+      "sha256": "7da12bdbb79e72af100d4891d264c9e028437e9f45cd4a90e5811e936e74e70c"
+    },
+    {
+      "file": "daytime-openers-5.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        39,
+        44
+      ],
+      "noResizing": true,
+      "sha256": "a050302819ee8b924e2fec0791a49deb3d5a7e567ac27fb9c874de5366431a31"
+    },
+    {
+      "file": "daytime-openers-6.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        48
+      ],
+      "noResizing": true,
+      "sha256": "3e1a479ce3dd7b9a779bd3091396f9885002c48f752353dff600de5b0daf900b"
+    },
+    {
+      "file": "daytime-cover-contents.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        1,
+        6
+      ],
+      "noResizing": true,
+      "sha256": "39e14e76e56b4fa402a5e1a43262f445a265f6b45c4d4839ef1ccb5ab1220f26"
+    },
+    {
+      "file": "daytime-ownership-references.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        5,
+        55
+      ],
+      "noResizing": true,
+      "sha256": "b30e3246154bd0431c3656f58b0031125e2a62521147e598a77fb57f7c7e6911"
+    },
+    {
+      "file": "daytime-props-fidelity.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        14,
+        21
+      ],
+      "noResizing": true,
+      "sha256": "5f5dd4aabf10410b4c1dd6c17f74e12d3cefd3b03dc7029eb797f82553c1a021"
+    },
+    {
+      "file": "daytime-state-record.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        31,
+        51
+      ],
+      "noResizing": true,
+      "sha256": "b9fcd3456d3c5dcd3a4a179dde43af81518038d333c0c15dbff39baa1c4ae57b"
+    },
+    {
+      "file": "daytime-code.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        41,
+        42
+      ],
+      "noResizing": true,
+      "sha256": "016fc6efd23348ffe62e63ad39bcb892ed0a861a7a77d932f1ad0b6151bca4bb"
+    },
+    {
+      "file": "daytime-validation.png",
+      "sourceSet": "daytime-poppler",
+      "pages": [
+        50
+      ],
+      "noResizing": true,
+      "sha256": "4873a240e07057a88c01030c6fcf4e0b3e5d556ba387d12ce9c50c5715d3ea1a"
+    }
+  ],
+  "pageVerdicts": [
+    {
+      "page": 1,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 2,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 3,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 4,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 5,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 6,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 7,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 8,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 9,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 10,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 11,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 12,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 13,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 14,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 15,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 16,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 17,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 18,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 19,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 20,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 21,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 22,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 23,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 24,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 25,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 26,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 27,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 28,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 29,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 30,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 31,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 32,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 33,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 34,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 35,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 36,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 37,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 38,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 39,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 40,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 41,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 42,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 43,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 44,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 45,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 46,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 47,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 48,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 49,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 50,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 51,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 52,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 53,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 54,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 55,
+      "poppler": "good",
+      "pdfkit": "good"
+    },
+    {
+      "page": 56,
+      "poppler": "good",
+      "pdfkit": "good"
+    }
+  ],
+  "limitations": "This approval binds only the exact PDF bytes and their visual presentation. Public reader, package, publication and deployment acceptance have separate evidence."
+}

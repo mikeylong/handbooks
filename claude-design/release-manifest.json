@@ -1,12 +1,21 @@
 {
   "title": "Claude Design Field Guide",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "date": "2026-10-05",
-  "pdf": "output/pdf/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf",
-  "sha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
+  "pdf": "output/pdf/claude-design-v1.2.1-2026-10-05-daytime-r1.pdf",
+  "sha256": "43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272",
   "pages": 56,
-  "previous_public_edition": "1.1.0",
-  "comparison_basis": "Approved version 1.1.0 published October 3, 2026; preserved exact PDF, source and measured page map",
+  "previous_public_edition": "1.2.0",
+  "comparison_basis": "Approved v1.2.0 published October 5, 2026; exact preserved source, PDF and measured page map",
   "approvalStatus": "approved",
-  "candidate_validation": "qa/v1.2.0/daytime-validation.json"
+  "candidate_validation": "qa/v1.2.1/daytime-validation.json",
+  "releaseContract": {
+    "classifiedChangeIds": [
+      "F01"
+    ],
+    "sample": {
+      "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+      "repositoryPath": "claude-design/reader/editions/v1.2.1/velori-store-0.2.1-mit-release.zip"
+    }
+  }
 }

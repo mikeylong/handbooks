@@ -10,8 +10,8 @@ The source system preserves a personal-robot configurator, its product imagery, 
 | Executable component anatomy, props, selection, image handling | [library.jsx](../src/library.jsx), [model.mjs](../src/model.mjs), [main.jsx](../src/main.jsx) | Observed implementation |
 | Named design values | [tokens.json](../tokens.json), [tokens.css](../src/tokens.css) | Observed; 27 tokens agree |
 | Applied type, spacing, layout, states, and literal values | [velori.css](../src/velori.css) | Observed; complete declaration inventory below |
-| Native anatomy, variants, variables, prototype wiring, and fonts | [identified Figma file](https://www.figma.com/design/jdGjI8zBJrvpMERKpBSCli?node-id=10-9) | Native reinspection required; recorded identities are historical starting points |
-| Bounded extension | [product brief](product-brief.md), [prompts](prompts.md), [walkthrough](walkthrough.md) | Documented assignment; fresh execution unfinished |
+| Native anatomy, variants, variables, prototype wiring, and fonts | [native Figma companion](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig) imported into the reader’s own Drafts | Inspect imported identities, bindings, resources, and prototype behavior; author-file IDs are historical |
+| Bounded extension | [product brief](product-brief.md), [prompts](prompts.md), [walkthrough](walkthrough.md) | Each reader requires fresh execution evidence |
 
 The source snapshot records commit `62c6dca572bd310be3c9cfc9084d91b014f6409b`, snapshot date October 3, 2026, and source manifest SHA-256 `837514be77b068da286feab91314846435a1cab499a0db4e30f34130879bd270` in [source-freeze.json](../provenance/source-freeze.json). That record includes modified and untracked source inputs, so the commit alone cannot reproduce the frozen package. All 27 copied files in the extraction manifest matched their recorded hashes during this inventory. The original source checkout was not changed or consulted for new owner state.
 
@@ -149,7 +149,7 @@ The [library](../src/library.jsx) owns all 13 baseline exports. The [import conf
 
 ## Native correspondence and unresolved additions
 
-The currently documented component and variable IDs in [inventory.md](inventory.md) are historical. They identify candidate reuse seams, not a completed replacement run. The original reference starts at `10:9`; preserve that frame and its foundation/source components. The historical exercise page `34:694` and its frames remain starting points requiring actual file inspection.
+Use the [companion manifest](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/figma-companion.json) to navigate your imported working copy by named page and frame. Preserve **01 Foundations**, **02 Components**, **03 Configurator**, and **04 Source Assets**, including **Configure · White** on **03 Configurator**. Create a separate working page; the completed **05 Store · Handbook exercise** page is comparison material outside initial generation context. The author-file component and variable IDs in [inventory.md](inventory.md) are historical correspondence only. Record actual imported identities and verify local main components, internal instance links, variable collections and modes, image resources, and available fonts. Stop if a required external library or resource is inaccessible; test the actual prototype before accepting the reader’s native result.
 
 The React source specifies Arial/Georgia. The recorded native system uses Arimo/Lora. That family mapping is a documented comparison convention; current native font weights, glyph dimensions, line breaks, and control measurements require returned evidence. Never describe substitution as pixel parity.
 
@@ -325,7 +325,7 @@ The following hashes bind this definition to the accepted sample inputs. The con
 | [provenance/source-freeze.json](../provenance/source-freeze.json) | `262b1b41ff6e67cf2b0f42a26ffd2bd0fa956fe4c7609c48fd8cb007bfece37b` |
 | [public/assets/velori/manifest.json](../public/assets/velori/manifest.json) | `05890ca379bc627bed2527867822d39c8151c44c95ce3ba412380ab1e0497e40` |
 | [docs/product-brief.md](../docs/product-brief.md) | `77c40d938eaa35844367ec7eb9963df8214e68dd881f519488856af46c971e52` |
-| [docs/inventory.md](../docs/inventory.md) | `f93a3967b1cb811c2e5e47f3ea158bdd3e05c6e1e2c70d5a073f02accd6e19c6` |
+| [docs/inventory.md](../docs/inventory.md) | `c00ab17a6ea93534d712d79682c850810254da97a31b926528320f8458dcf6a5` |
 | [docs/native-baseline.md](../docs/native-baseline.md) | `7f1c6d32c06765be8892139b922c9fa981217e6f7bb6018e80d33b43fc944a49` |
 | [.design-sync/package-assets.mjs](../.design-sync/package-assets.mjs) | `5ad8c250a877c028cfe0a6215b3e3ca14eb45328dcaad5ae2317eb381441d355` |
 | [.design-sync/overrides/source-kit.mjs](../.design-sync/overrides/source-kit.mjs) | `154ee356eccb0193c19596c390eb444eedb8213347e102e8fd261d013d542531` |

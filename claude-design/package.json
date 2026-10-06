@@ -10,5 +10,5 @@
     "build": "npm run validate",
     "validate": "node source/test-release-ledger.mjs && node source/validate-release.mjs"
   },
-  "version": "1.2.0"
+  "version": "1.2.1"
 }

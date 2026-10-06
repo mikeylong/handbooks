@@ -1,127 +1,65 @@
 {
   "schemaVersion": 1,
-  "status": "accepted reader-facing classification; final PDF decision and release QA remain separate",
   "accepted": true,
   "readerFacingContentChanged": true,
-  "summary": "A source-grounded Velori exercise with explicit state preservation and a complete native handoff.",
-  "previousVersion": "1.1.0",
-  "proposedVersion": "1.2.0",
-  "recommendedVersionImpact": "minor",
+  "summary": "A reader-owned Figma file for the existing Velori exercise.",
+  "previousVersion": "1.2.0",
+  "proposedVersion": "1.2.1",
+  "recommendedVersionImpact": "patch",
+  "previousDate": "2026-10-05",
+  "previousPdfSha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
   "changes": [
     {
       "id": "G01",
-      "category": "Deprecation or removal",
-      "section": "Orientation, capstone and product appendices",
-      "text": "Replaced the Data Pipeline Studio assignment and Simple Design System reference with Velori: a preserved configurator, one Review configuration extension, and a portable React sample.",
-      "rationale": "One supplied product now carries the source, state, implementation and native Figma checks through the capstone.",
-      "sources": [
-        "https://handbooks.surfaces.systems/claude-design/velori-store-0.2.0-mit-release.zip"
-      ],
-      "groupedDraftEntries": [
-        "C01",
-        "C08"
-      ]
-    },
-    {
-      "id": "G02",
-      "category": "Addition",
-      "section": "Chapters 2\u20133",
-      "text": "Added source definition and conflict records, CSS and prop inventories, controlled import scope, asset hashes recorded before validation, fidelity checks of ten elements, and named correction fixtures followed by a second generation.",
-      "rationale": "Readers can resolve source disagreements and verify reuse before introducing the review screen.",
-      "sources": [
-        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design"
-      ],
-      "groupedDraftEntries": [
-        "C02",
-        "C03",
-        "C04"
-      ]
-    },
-    {
-      "id": "G03",
       "category": "Correction or clarification",
-      "section": "Chapters 4\u20137 and 10",
-      "text": "Specified retention of all four configuration values, keyboard and return focus, image recovery, narrow layouts, and native Figma component/variable correspondence. Detail photographs remain Chalk, and prototype visits are distinguished from browser reload persistence.",
-      "rationale": "These contracts expose state loss and unsupported claims of parity between tools.",
+      "section": "Orientation, Chapter 10 and exercise materials",
+      "text": "Replaced the owner-file access prerequisite with a downloadable Velori Figma companion imported into the reader's own Drafts. Navigation uses verified page and frame names; each import records native identities and checks local dependencies and the prototype journey.",
+      "rationale": "Readers can complete the existing Figma exercise without access to the author's file.",
       "sources": [
-        "https://www.figma.com/design/jdGjI8zBJrvpMERKpBSCli?node-id=34-694"
+        "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig"
       ],
       "groupedDraftEntries": [
-        "C05",
-        "C07"
-      ]
-    },
-    {
-      "id": "G04",
-      "category": "Correction or clarification",
-      "section": "Chapter 9",
-      "text": "Corrected the local Code handoff to Copy prompt and authenticated source reads. Truncated binaries require a full native archive; captured bytes stay private and unchanged, host adaptations are disclosed, and each new packet is validated independently.",
-      "rationale": "Complete source and dependency bytes are required before executable handoff acceptance.",
-      "sources": [
-        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
-      ],
-      "groupedDraftEntries": [
-        "C06"
+        "F01"
       ]
     }
   ],
-  "textAndRationaleWordCount": 178,
-  "readerImpactAndLimitations": "The four accepted groups cover all eight preserved draft entries. Their wording, rationale and source links match the final canonical changelog and tracked edition comparison. The MIT sample download is pinned to its accepted successor below. Captured native runtime remains private; the sample answer key does not validate a reader's new native run.",
+  "status": "accepted final source classification; artifact and hosted release acceptance remain separate",
   "sourceSnapshot": {
     "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
-    "sha256": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198",
-    "previousSourceSha256": "d3f709cd9af84f0b23c21ecc3bf86932dd431941535b7a9ddcefa0ca18258636"
+    "sha256": "0eee25b6932c3099e28aeebf059ad22eda5c18a16a022af05184b0cfdeb7b93a",
+    "previousSourceSha256": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198"
   },
-  "finality": "Reader-facing classification is accepted and bound to the final canonical source. Artifact, download and live release acceptance remain separate.",
-  "acceptedBy": "Root accepted the four grouped source classifications and bounded integrations; the tracked final changelog decision preserves the exact entries.",
-  "previousPdfSha256": "115003a4a47c92d10d0a59b0e43cbbb2401a19bb6ea606d95c037d0d7697801c",
-  "previousDate": "2026-10-03",
   "comparisonEvidence": {
     "exactSourcePatch": {
-      "path": "claude-design/qa/v1.2.0/exact-source.patch",
-      "sha256": "183472dbfb2dfdc741d8fdd40e455677b0bc3e9cfc9a3721d35e9debca5c32f9"
+      "path": "claude-design/qa/v1.2.1/exact-source.patch",
+      "sha256": "77843b37f927efc067ac951d15d13975bf88074689603ac8f791ae9c197ac866"
     },
     "editionDiff": {
-      "path": "claude-design/qa/v1.2.0/edition-diff.json",
-      "sha256": "91ef19e64b6f8899c18edf7d872231d894d5ead4ef7db613c0bfda979c97063c"
+      "path": "claude-design/qa/v1.2.1/edition-diff.json",
+      "sha256": "b5a9dec487e9ae979d674f6375b8d4246bd9aeaf27c88239985e08e9f34a0578"
     },
     "exactPdfTextPatch": {
-      "path": "claude-design/qa/v1.2.0/exact-pdf-text.patch",
-      "sha256": "c595c0436a127c8cef26aa7e530bac034ade26c66d42bb660a5b84f33732b203"
+      "path": "claude-design/qa/v1.2.1/exact-pdf-text.patch",
+      "sha256": "655adde6c82d75e6a4d5463fb3a6cd625db0c618e2ef3fcc151784deed2026aa"
     },
     "readerFacingContentPatch": {
-      "path": "claude-design/qa/v1.2.0/reader-facing-content.patch",
-      "sha256": "cff5a1d38f5164199d5ebfd889faf9c2a6125c3123aa5f5cb0e05f20fab1c181"
+      "path": "claude-design/qa/v1.2.1/reader-facing-content.patch",
+      "sha256": "d7fc692bc5eabb17be5ef9ec3c809bd1715cd5558196273b9b058f3997c28acb"
     },
     "acceptedChangelogDecision": {
       "path": "claude-design/changelog-decision.json",
-      "sha256": "a9b312752b21bd3158e99eab0f491a1a824c7b7ac02b3c1680bc9ce2eaddf4d5"
+      "sha256": "e34fce9d936469b5efbd9d79686a9bdbbd12449fc35b3eaa53a6e8f17443bacf"
     }
   },
-  "privateHistory": {
-    "eightEntryDraftLedger": {
-      "path": "claude-design/review/2026-10-05-v120-resume/artifact-assembly/change-ledger.draft.json",
-      "sha256": "5d9f1a53a00589af95e9615a5dddd23bb6857e0db0c003b6f2335d58fa55fc7d"
-    },
-    "acceptedLedgerBeforeFinalBinding": {
-      "path": "claude-design/review/2026-10-05-v120-resume/artifact-assembly/book/change-ledger.json",
-      "sha256": "6cc88051f903cb0d82c2a2d109e0a43371660c1a83b182a463537635f28180b8"
-    },
-    "compactProposal": {
-      "path": "claude-design/review/2026-10-05-v120-resume/artifact-assembly/change-ledger.compact.proposal.json",
-      "sha256": "18a0a14562a324f3959b1a8fc2360fb2e535cda1ba1e41bf8144fdb633968e48"
-    },
-    "note": "These historical private records remain unchanged. Current source classification is auditable through the tracked comparison evidence above."
-  },
-  "verificationRecord": "claude-design/qa/v1.2.0/change-ledger-verification.json",
   "sampleRelease": {
-    "publicUrl": "https://handbooks.surfaces.systems/claude-design/velori-store-0.2.0-mit-release.zip",
-    "repositoryPath": "claude-design/reader/velori-store-0.2.0-mit-release.zip",
-    "sha256": "70597da07ac7f257e1b573c6bb3d5b7b280ba359bd7a61106c8c1006cf61d54c",
-    "bytes": 35149230,
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+    "repositoryPath": "claude-design/reader/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+    "sha256": "5d9878672afd35420a967d0703bed59c067cc8b802045cdef4c7d35868d3c673",
+    "bytes": 35152394,
     "publicationPackage": {
       "path": "claude-design/publication-package.json",
-      "sha256": "1dd443b32f01f3129f8bc6dd48b40de1fd6e8eab1a8d3c5c9b4dfe9fcd224f98"
+      "sha256": "6c80614e5b1b04ea7e47c0eff30a8bd6ad353aca9dadc7ec60cf710cc5b9c106"
     }
-  }
+  },
+  "verificationRecord": "claude-design/qa/v1.2.1/change-ledger-verification.json"
 }

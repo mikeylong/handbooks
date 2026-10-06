@@ -29,7 +29,7 @@ export async function validatePackage(source,book) {
  if(pkg.id!==book.id||pkg.version!==book.version||pkg.files?.[book.pdf]!==book.pdfSha256||!pkg.files?.[pkg.html]||pkg.html!==pkg.readerDirectory+'/index.html')throw Error('Approved package identity mismatch');
  const expectedReader=book.id==='production-ai-engineering'?'handbook':'reader';if(pkg.readerDirectory!==expectedReader)throw Error('Invalid approved reader directory');
  for(const [path,sha] of Object.entries(pkg.files)) {
-  if(path!==book.pdf&&!path.startsWith(expectedReader+'/'))throw Error('Unexpected public package file');
+  if(path!==book.pdf&&!path.startsWith(expectedReader+'/')&&path!=='exercise-downloads.json')throw Error('Unexpected public package file');
   const file=safePath(source,path);if(!(await lstat(file)).isFile()||await realpath(file)!==file||digest(await readFile(file))!==sha)throw Error('Approved package changed: '+book.id+'/'+path);
  }
  return pkg;

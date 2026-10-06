@@ -18,8 +18,10 @@
 | Export type, captured files, hashes, dependency origins | |
 | New packet commands, server URL, and independent validation | |
 | Bounded change implemented from export | |
-| Figma working file, page, and starting frame | |
-| Reused component and variable identities | |
+| Figma companion version, SHA-256, and manifest | |
+| Imported Figma file URL, named page/frame, and actual IDs | |
+| Local main components, internal instance links, variables, modes, and bindings | |
+| External dependency check and image/font availability | |
 | Actual prototype journey and screenshots | |
 | Local install, build, model, asset, and browser results | |
 | Reference comparison and font substitutions | |

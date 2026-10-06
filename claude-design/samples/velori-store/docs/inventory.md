@@ -24,9 +24,17 @@ The model has three finishes × two faces × four expression colors × three acc
 
 Model helpers and storage constants are also exported from `src/index.js`. The library imports its CSS and expects a browser with React. `ProductPreview` resolves packaged assets relative to the Vite base URL; other hosts need the same asset paths. It contains no CLEAR host globals, canvas positioning contract, or reviewer coordination.
 
+## Figma companion and your working copy
+
+The [native Figma file](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig) and its [companion manifest](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/figma-companion.json) are separate downloads outside the React ZIP. Import the file into your own Drafts and record the new file URL and companion SHA-256.
+
+Navigate to **01 Foundations**, **02 Components**, **03 Configurator**, and **04 Source Assets** by name. Preserve **Configure · White** on **03 Configurator**. Create a separate working page for the exercise. The completed **05 Store · Handbook exercise** page contains **Store · Configure**, **Store · Expression color menu**, **Store · Carry bag details**, **Store · Charging dock details**, **Store · Review configuration**, and **Store · Review · Image unavailable**. Those frames are comparison material outside initial Claude Design generation context.
+
+Verify local main components, internal instance links, variable collections and modes, image resources, and available fonts in the imported copy. Stop if a required external library or resource is inaccessible. Record actual imported identities and test the prototype; the original IDs below do not identify your new file.
+
 ## Historical Figma correspondence for later verification
 
-The working file is [Velori · Design System & Configurator](https://www.figma.com/design/jdGjI8zBJrvpMERKpBSCli?node-id=34-695). The original reference at `10:9` remains separate. The new page is **05 Store · Handbook exercise** (`34:694`).
+The following IDs were recorded in the [author’s Velori file](https://www.figma.com/design/jdGjI8zBJrvpMERKpBSCli?node-id=34-695). The original reference was `10:9`, and **05 Store · Handbook exercise** was `34:694`. The author link is optional historical context; use your imported file for the exercise.
 
 | React behavior | Native Figma identity |
 | --- | --- |
@@ -42,8 +50,8 @@ The working file is [Velori · Design System & Configurator](https://www.figma.c
 | Review / unavailable review | Frames `43:80` / `43:475` |
 | Carry bag / charging dock details | Frames `43:383` / `43:425` |
 
-These recorded identities are historical starting points. Inspect current bindings and test the actual prototype before claiming that variables persist between these frames within a prototype visit. Browser reload persistence and HTML dropdown keyboard behavior belong to the executable app. Figma keyboard triggers are limited to the explicitly configured prototype actions.
+These recorded identities describe the author file. Inspect the imported copy’s actual component and variable bindings and test its prototype before claiming that variables persist between frames within a visit. Browser reload persistence and HTML dropdown keyboard behavior belong to the executable app. Figma keyboard triggers are limited to the explicitly configured prototype actions.
 
 ## Implemented extension and native provenance
 
-`ReviewConfiguration` is an additional product export in `src/index.js`. Its bounded review column was adapted from the native Review source accepted on October 5, 2026, SHA-256 `03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b976b68f0f46811150a`; the existing app retains configuration, routing, persistence, focus, and image recovery. The import configuration selects only the 13 baseline library exports and the accepted baseline guidance. [Portable provenance](../provenance.json) records package inputs and adaptation scope; private historical mappings are excluded from the public payload. All captured native source and runtime stay in the private review archive and outside the MIT sample. A new exercise must capture and validate a new native packet.
+`ReviewConfiguration` is an additional product export in `src/index.js`. Its bounded review column was adapted from the native Review source accepted on October 5, 2026, SHA-256 `03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b976b68f0f46811150a`; the existing app retains configuration, routing, persistence, focus, and image recovery. The import configuration selects only the 13 baseline library exports and the accepted baseline guidance. [Portable provenance](../provenance.json) records package inputs and adaptation scope; private historical mappings are excluded from the public payload. Captured Claude Design source and runtime stay in the private review archive and outside the public downloads. A new exercise must capture and validate a new native packet.
