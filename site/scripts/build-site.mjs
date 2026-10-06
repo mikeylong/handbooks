@@ -6,12 +6,12 @@ import {createHash} from 'node:crypto';
 import {dirname,resolve,basename} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {APPROVAL_REGISTRY,validateLibrary,sourceFor,validatePackage,safePath} from './book-sources.mjs';
-import {installPublicationReview,validatePublicationFront,validateGalleryPublications} from './publication-front.mjs';
-import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
+import {removeSidebarPublication, removePublicationReview,validatePublicationFront,validateGalleryPublications} from './publication-front.mjs';
+import {renderGalleryCover,validateGalleryCover,sortGalleryCards} from './gallery-covers.mjs';
 import {finalizeSiteThemes} from './site-theme.mjs';
 import {installArtworkPairs} from './artwork-pairs.mjs';
 
-const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads,editionPdfUrl}=await toolkitModule('pdf-downloads.mjs');
+const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads,editionPdfUrl,validatePrintGuidanceAbsent}=await toolkitModule('pdf-downloads.mjs');
 const {writeMarkdownEdition}=await toolkitModule('markdown-downloads.mjs');
 const {exerciseDownloadLinks}=await toolkitModule('exercise-downloads.mjs');
 const {installRetainedReleases}=await toolkitModule('retained-releases.mjs');
@@ -54,7 +54,7 @@ for(const pin of books){
     catch(error){if(error.code!=='ENOENT')throw error;const edition=JSON.parse(await readFile(resolve(source,'site/production-ai-engineering.json'),'utf8'));count=edition.pdfPages;if(edition.pdfPath!==pdf||edition.pdfSha256!==hash||edition.version!==version)throw Error('Production edition mismatch');}
     manifest={title:'Production AI Engineering',version,date:pdf.match(/(\d{4}-\d{2}-\d{2})\.pdf$/)[1],pdf,sha256:hash,pages:count};
     const book=await readFile(resolve(source,'handbook/index.html'),'utf8');
-    publication={author:'Michael Long',authorSite:'https://surfaces.systems',...JSON.parse(await readFile(resolve(source,'publication.json'),'utf8')),review:{at:book.match(/data-release-at="([^"]+)"/)[1],timeZone:book.match(/data-release-time-zone="([^"]+)"/)[1],rrule:book.match(/data-release-rrule="([^"]+)"/)[1]}};
+    publication={author:'Michael Long',authorSite:'https://surfaces.systems',...JSON.parse(await readFile(resolve(source,'publication.json'),'utf8'))};
     for(const path of Object.keys(approvedPackage.files)){if(path!=='handbook/index.html'&&path.startsWith('handbook/')){const destination=resolve(output,pin.id,path.slice(9));await mkdir(dirname(destination),{recursive:true});await cp(safePath(source,path),destination);}}
     await mkdir(resolve(output,'output/pdf'),{recursive:true});await cp(resolve(source,pdf),resolve(output,pdf));
     html=book.replace('<aside class="sidebar" aria-label="Handbook navigation">','<aside class="sidebar" aria-label="Handbook navigation">\n<a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a>')
@@ -72,7 +72,7 @@ for(const pin of books){
   }
   if(manifest.version!==pin.version||manifest.pdf!==pin.pdf||!Number.isSafeInteger(manifest.pages)||manifest.pages<1)throw Error('Approved edition metadata differs from catalog');
   if(publication.sourceRepository!==catalog.repository||publication.editionUrl!==pin.editionUrl||publication.releaseUrl!==pin.editionUrl)throw Error('Public edition links disagree with catalog');
-  html=installPublicationReview(html,publication.review);
+  html=removePublicationReview(html);
   html=await installPromptBlocks(source,html,approvedPackage);
   html=await installTerminalBlocks(source,html,approvedPackage);
   html=editionLinks(html,publication);
@@ -89,6 +89,7 @@ for(const pin of books){
   if(!registryBook||registryBook.packageSha256!==APPROVAL_REGISTRY.books.find(b=>b.id===pin.id).packageSha256)throw Error('Review package identity mismatch');
   const variants=await resolvePdfVariants(source,edition,registryBook.variantManifest,{candidate:!!reviewRegistryPath,collectionRoot:resolve(root,'..'),measurePdfPages:false});
   edition.markdown=await writeMarkdownEdition(output,edition,html);
+  html=removeSidebarPublication(editionLinks(html,publication,{linkCoverDate:true}));
   html=installReaderDownloads(html,edition,variants);
   html=html.replace('</head>','<link rel="stylesheet" href="/pdf-downloads.css"></head>');
   validateDownloads(html,edition,variants);edition.pdfVariants=variants;
@@ -107,14 +108,15 @@ for(const pin of books){
   await writeFile(resolve(output,pin.id,'index.html'),html);
   await writeFile(resolve(output,'../publications',pin.id+'.json'),JSON.stringify(edition,null,2)+'\n');
   gallery=gallery.replace(pin.coverPlaceholder,renderGalleryCover(html));
-  editions.push({pin,html});
+  editions.push({pin,html,edition});
 }
+gallery=sortGalleryCards(gallery,editions.map(({edition})=>edition));
 for(const {pin,html} of editions)validateGalleryCover(gallery,'/'+pin.id+'/',html);
 validateGalleryPublications(gallery,books.map(book=>'/'+book.id+'/'));
 await writeFile(resolve(output,'index.html'),gallery);
 await writeFile(resolve(output,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://handbooks.surfaces.systems/sitemap.xml\n');
 await writeFile(resolve(output,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+['/',...books.flatMap(book=>['/'+book.id+'/',new URL(book.editionUrl).pathname])].map(path=>`<url><loc>https://handbooks.surfaces.systems${path}</loc></url>`).join('')+'</urlset>\n');
-await finalizeSiteThemes(output);
+for(const path of await finalizeSiteThemes(output))validatePrintGuidanceAbsent(await readFile(path,'utf8'));
 // Frozen historical HTML must remain byte-identical after current-reader transforms.
 await installRetainedReleases(resolve(root,'..'),output,retained);
 console.log(`Built gallery from ${books.length} approved local handbook packages`);

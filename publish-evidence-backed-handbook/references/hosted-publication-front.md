@@ -9,15 +9,18 @@ The cover must include:
 - The edition's publication date and version.
 - An “Explore the handbook” action that reaches the contents.
 - A PDF download action with the measured page count of that exact release artifact.
-- A “Next version review” panel with the countdown and scheduled time, plus the policy that site and PDF updates publish together after manual review. Omit the redundant “Site + PDF” badge.
 
-The sidebar must include the same author/site credit and date/version, with the date and version linked to public edition details on the website. Preserve Search and PDF actions, accessible dialog controls, and the return to the gallery. The left-rail return must use the shared `handbooks-return` class and the hosted page must load `/gallery.css`. Do not set font size or spacing locally on this link. A return link that merely points to the gallery does not establish visual parity.
+Show the author/site credit and linked date/version beneath the title on the cover. Omit their duplicate sidebar block in all current and future readers. Retained historical readers hide that block through shared styling while preserving approved HTML bytes. Keep the sidebar theme selector and Search on one row, with download choices below. Preserve sidebar Search and PDF actions, accessible dialog controls, and the return to the gallery. The left-rail return must use the shared `handbooks-return` class and the hosted page must load `/gallery.css`. Do not set font size or spacing locally on this link. A return link that merely points to the gallery does not establish visual parity.
 
-A scheduled review panel uses the handbook's approved review date, timezone, and cadence. Render a working countdown and a readable scheduled time. When no review is approved, state “The next review has not been scheduled.” Omit the countdown. Never copy another handbook's schedule or claim an automation exists because a countdown was added.
+Keep weekly review schedules, countdowns, unscheduled-review notices, and publishing policy out of reader covers, sidebars, gallery cards, and edition pages. The weekly handbook collection review remains an internal, candidate-only workflow. Removing reader chrome does not disable or reschedule that review, approve publication, or change its manual release requirement.
+
+Omit review markup in editable generators. During site assembly, remove legacy review panels from current frozen reader inputs without rewriting those approved packages. Preserve retained historical HTML bytes; the shared reader stylesheet hides any legacy review panel in those archived readers.
+
+Keep printing guidance in the Daytime download row’s “For printing” label. Omit the standalone “Use the Daytime version for printing.” note from covers and all other public pages. Shared download assembly removes legacy notes, and build validation rejects them in new pages. Retained historical HTML keeps its approved bytes; shared download styles hide the old note.
 
 Derive edition labels and PDF links from the release manifest, not a copied cover. Persist the front page in the editable generator so rebuilding retains it. Reuse the governing reader's classes and behavior so the new title matches its typography, publication metadata, actions, and responsive layout.
 
-Before publication, validate every hosted title against this contract. Check the rendered cover and sidebar at desktop and mobile sizes, follow Explore, verify Search and Contents, and verify the downloaded PDF's digest and measured page count. A missing author credit, release link, action, page count, review policy, or truthful review state fails the publication gate.
+Before publication, validate every hosted title against this contract. Check the rendered cover and sidebar at desktop and mobile sizes, follow Explore, verify Search and Contents, and verify the downloaded PDF's digest and measured page count. Reject missing author credit, release links, actions, or page counts, and reject visible internal review panels.
 
 The current gallery builder enforces this contract through `scripts/publication-front.mjs` in the collection repository under `site/`. Other publishing implementations must provide an equivalent check; prose guidance alone does not establish that the delivered page includes these elements.
 

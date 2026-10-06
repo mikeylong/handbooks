@@ -37,6 +37,14 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     assert '<svg' in (build/'handbook/index.html').read_text()
     validator = build/'handbook/validate-handbook.mjs'
     run(['node', str(validator)], env)
+    html_path = build/'handbook/index.html'
+    clean_html = html_path.read_text()
+    leaked_panel = '<section class="release-window site-only" data-release-window><p>Next version review</p></section>'
+    html_path.write_text(clean_html.replace('</main>', leaked_panel + '</main>', 1))
+    leaked_result = run(['node', str(validator)], env, False)
+    assert json.loads(leaked_result.stdout)['publicReviewPanelAbsent'] is False
+    assert 'publicReviewPanelAbsent' in leaked_result.stderr
+    html_path.write_text(clean_html)
     publication_path = build/'publication.json'
     original_publication = publication_path.read_text()
     publication = json.loads(original_publication)
@@ -60,18 +68,11 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
         assert json.loads(result.stdout)['coverLabelsRemoved'] is False
         assert 'Removed cover-credit labels remain' in result.stderr
     html_path.write_text(valid_html)
-    sidebar = re.search(r'<p class="sidebar-edition">.*?</p>', valid_html).group()
-    for field, historical_url in [
-        ('editionUrl', 'https://github.com/mikeylong/production-ai-engineering-book'),
-        ('releaseUrl', 'https://github.com/mikeylong/production-ai-engineering-book/releases'),
-    ]:
-        assert f'href="{publication[field]}"' in sidebar
-        wrong_sidebar = sidebar.replace(f'href="{publication[field]}"', f'href="{historical_url}"')
-        other_field = 'releaseUrl' if field == 'editionUrl' else 'editionUrl'
-        assert f'href="{publication[other_field]}"' in wrong_sidebar
-        html_path.write_text(valid_html.replace(sidebar, wrong_sidebar))
-        result = run(['node', str(validator)], env, False)
-        assert 'sidebarPublicationMetadataExact: expected true, received false' in result.stderr
+    assert 'sidebar-publication' not in valid_html
+    leaked_sidebar = '<div class="sidebar-publication"><p class="sidebar-author">Repeated credit</p></div>'
+    html_path.write_text(valid_html.replace('<div class="sidebar-meta">', '<div class="sidebar-meta">' + leaked_sidebar, 1))
+    result = run(['node', str(validator)], env, False)
+    assert 'sidebarPublicationAbsent: expected true, received false' in result.stderr
     publication_path.write_text(original_publication)
     run(['node', str(build/'handbook/build-handbook.mjs')], env)
     run(['node', str(validator)], env)

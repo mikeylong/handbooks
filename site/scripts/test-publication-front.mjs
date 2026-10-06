@@ -1,44 +1,54 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {resolve} from 'node:path';
+import {resolve,relative} from 'node:path';
 const output=process.env.HANDBOOK_SITE_OUTPUT || new URL('../output/site/',import.meta.url).pathname;
 const publications=resolve(output,'../publications');
-import {installPublicationReview, validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
-import {renderGalleryCover, validateGalleryCover} from './gallery-covers.mjs';
+import {removeSidebarPublication, removePublicationReview, validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
+import {renderGalleryCover, validateGalleryCover, sortGalleryCards} from './gallery-covers.mjs';
 const manifest=JSON.parse(await readFile(resolve(publications,'ai-evaluation.json'),'utf8'));
 const publication=manifest;
 const edition=manifest;
 const html = await readFile(resolve(output,'ai-evaluation/index.html'), 'utf8');
 assert.equal(validatePublicationFront(html, edition).status, 'passed');
-const unscheduled = installPublicationReview(html, null);
-validatePublicationFront(unscheduled, {...edition, review: null});
-const scheduled = installPublicationReview(unscheduled, edition.review);
-validatePublicationFront(scheduled, edition);
-assert.equal(installPublicationReview(scheduled, edition.review), scheduled);
-const futureReview = {...edition.review, at: '2026-10-12T16:00:00.000Z', label: 'Monday, October 12, 2026 at 9:00 AM Pacific time'};
-validatePublicationFront(installPublicationReview(scheduled, futureReview), {...edition, review: futureReview});
-const staleLabel = {...futureReview, label: edition.review.label};
-const refreshed = installPublicationReview(scheduled, staleLabel);
-assert(refreshed.includes('Monday, October 12, 2026 at 9:00 AM Pacific time'));
-validatePublicationFront(refreshed, {...edition, review: staleLabel});
-assert.throws(() => validatePublicationFront(refreshed.replace('Monday, October 12, 2026', 'Monday, October 5, 2026'), {...edition, review: staleLabel}), /reviewState/);
-const dstReview = {...futureReview, at: '2026-11-02T17:00:00.000Z'};
-assert(installPublicationReview(scheduled, dstReview).includes('Monday, November 2, 2026 at 9:00 AM Pacific time'));
-const easternReview = {...futureReview, timeZone: 'America/New_York'};
-assert(installPublicationReview(scheduled, easternReview).includes('Monday, October 12, 2026 at 12:00 PM Eastern time'));
-assert.throws(() => installPublicationReview(html, {...edition.review, at: 'invalid'}), /Incomplete publication review schedule/);
-for (const hook of ['data-release-status', 'data-countdown-seconds', 'data-release-window ']) {
- assert.throws(() => validatePublicationFront(scheduled.replace(hook, 'removed-hook '), edition), /reviewState/);
+// Scheduled and unscheduled legacy covers lose only the review section.
+const legacyPanels = [
+ '<section class="release-window site-only" data-release-window data-release-at="2026-10-12T16:00:00.000Z"><div><p>Next version review</p></div><section><span data-countdown-days>07</span></section><p>Site and PDF updates publish together after manual review.</p></section>',
+ '<section class="release-window site-only" data-review-state="unscheduled"><p>Next version review</p><p>The next review has not been scheduled.</p></section>',
+];
+assert.equal(removePublicationReview(html), html, 'Removal is idempotent for clean readers');
+const internalReview = JSON.stringify(edition.review);
+for (const panel of legacyPanels) {
+ const legacy = html.replace('<nav class="cover-actions', panel+'<nav class="cover-actions');
+ assert.notEqual(legacy, html, 'Legacy panel fixture must change the reader');
+ assert.throws(()=>validatePublicationFront(legacy, edition), /noPublicReviewPanel/);
+ const cleaned = removePublicationReview(legacy);
+ assert.equal(cleaned, html, 'Only legacy review chrome is removed, including nested sections');
+ validatePublicationFront(cleaned, edition);
+ validatePublicationFront(cleaned, {...edition, review:null});
+ assert.equal(removePublicationReview(cleaned), cleaned);
+}
+assert.equal(JSON.stringify(edition.review), internalReview, 'Internal review metadata is preserved');
+const duplicatePublication='<div class="sidebar-publication"><p class="sidebar-author">Repeated credit</p><div><p class="sidebar-edition">Old edition</p></div></div>';
+const duplicateSidebar=html.replace('<div class="sidebar-meta">','<div class="sidebar-meta">'+duplicatePublication);
+assert.notEqual(duplicateSidebar,html);
+assert.throws(()=>validatePublicationFront(duplicateSidebar,edition),/noSidebarPublication/);
+assert.equal(removeSidebarPublication(duplicateSidebar),html,'Remove sidebar metadata only, preserving cover credit and edition links');
+assert.equal(removeSidebarPublication(html),html,'Sidebar cleanup is idempotent');
+
+const repeated = html.replace('<nav class="cover-actions', legacyPanels.join('')+'<nav class="cover-actions');
+assert.equal(removePublicationReview(repeated), html, 'All legacy panels are removed');
+for (const hook of ['data-release-window', 'data-countdown-seconds', 'data-review-state="unscheduled"']) {
+ assert.throws(()=>validatePublicationFront(html.replace('<nav class="cover-actions', `<div ${hook}></div><nav class="cover-actions`), edition), /noPublicReviewPanel/);
 }
 const regressions = [
+ ['standalone printing note', html.replace('</main>','<p class="pdf-print-guidance">Use the Daytime version for printing.</p></main>'), /Standalone PDF printing guidance/],
  ['missing author', html.replace('class="cover-credit"', 'class="removed-credit"'), /authorCredit/],
  ['stale edition', html.replaceAll('Version 1.0.0', 'Version 1.4.0'), /edition/],
  ['wrong PDF page count', html.replaceAll('100 pages', '105 pages'), /pdfAction/],
  ['broken Explore action', html.replace('href="#contents">Explore the handbook', 'href="#missing">Explore the handbook'), /exploreAction/],
- ['wrong release link', html.replaceAll(publication.releaseUrl, 'https://example.invalid/other-release'), /sidebarRelease/],
+ ['wrong release link', html.replaceAll(publication.releaseUrl, 'https://example.invalid/other-release'), /coverEditionLink/],
  ['wrong cover title', html.replace('<h1 id="cover-title">AI Evaluation Field Guide</h1>', '<h1 id="cover-title">Other handbook</h1>'), /title/],
  ['wrong visible page count', html.replace(/(<span(?: class="download-metadata")?>)100 pages/g, (_,open)=>open+'105 pages'), /pdfAction/],
- ['missing review policy', html.replace('Site and PDF updates publish together after manual review.', ''), /reviewPolicy/],
 ];
 for (const [name, broken, expected] of regressions) {
  assert.notEqual(broken, html, `Regression fixture did not change: ${name}`);
@@ -54,14 +64,30 @@ console.log('An unvalidated new gallery title is also rejected.');
 const gallery = await readFile(resolve(output,'index.html'), 'utf8');
 const galleryPaths=[...gallery.matchAll(/class="handbook-card-link" href="([^"]+)"/g)].map(match=>match[1]);
 validateGalleryPublications(gallery,galleryPaths);
+const galleryEditions=await Promise.all(galleryPaths.map(path=>readFile(resolve(publications,path.slice(1,-1)+'.json'),'utf8').then(JSON.parse)));
+const template=await readFile(new URL('../site/index.html',import.meta.url),'utf8');
+const templatePaths=[...template.matchAll(/class="handbook-card-link" href="([^"]+)"/g)].map(match=>match[1]);
+const expectedOrder=[...galleryEditions].sort((a,b)=>b.date.localeCompare(a.date)||templatePaths.indexOf(`/${a.id}/`)-templatePaths.indexOf(`/${b.id}/`)).map(edition=>`/${edition.id}/`);
+assert.deepEqual(galleryPaths,expectedOrder,'Built gallery follows published edition dates, newest first, preserving same-day template order');
+assert.equal(sortGalleryCards(gallery,galleryEditions),gallery,'Sorting an ordered gallery preserves every byte');
+const futureEditions=galleryEditions.map(edition=>({...edition,date:edition.id==='production-ai-engineering'?'2099-01-01':edition.date}));
+const futureGallery=sortGalleryCards(gallery,futureEditions);
+assert.equal([...futureGallery.matchAll(/class="handbook-card-link" href="([^"]+)"/g)][0][1],'/production-ai-engineering/','A future content edition moves its card first');
+for(const path of galleryPaths)assert(futureGallery.includes([...gallery.matchAll(/<article\b[^>]*class="handbook-card"[^>]*>[\s\S]*?<\/article>/g)].find(([card])=>card.includes(`href="${path}"`))[0]),'Sorting preserves exact card markup');
+assert.equal(sortGalleryCards(gallery,galleryEditions.map(edition=>({...edition,date:'2099-01-01'}))),gallery,'Same-day editions retain their existing order');
+for(const date of [undefined,'October 5, 2026','2026-02-30'])assert.throws(()=>sortGalleryCards(gallery,galleryEditions.map((edition,index)=>index?edition:{...edition,date})),/Gallery edition date is invalid/);
+console.log('Gallery follows published edition dates; future editions reorder and same-day cards stay stable.');
+
 for(const leaked of ['<span data-pdf-downloads></span>','<a data-markdown-download href="/book.md">Markdown</a>','<a download href="/book.pdf">PDF</a>']){
  assert.throws(()=>validateGalleryPublications(gallery.replace('</main>',leaked+'</main>'),galleryPaths),/without download controls/);
 }
-console.log('Gallery download controls are rejected; reader downloads remain available.');
+assert.throws(()=>validateGalleryPublications(gallery.replace('</main>','<p>Use the Daytime version for printing.</p></main>'),galleryPaths),/Standalone PDF printing guidance/);
+console.log('Gallery download controls and standalone printing notes are rejected; reader downloads remain available.');
 for (const path of ['ai-evaluation', 'production-ai-engineering', 'ai-consulting', 'claude-design']) {
  const reader = await readFile(resolve(output,path,'index.html'), 'utf8');
- assert.doesNotMatch(reader, /release-window-products|Site \+ PDF/, `${path}: review badge must be omitted`);
+ assert.doesNotMatch(reader, /release-window|data-countdown-|Next version review|The next review has not been scheduled\./, `${path}: public review chrome must be omitted`);
  validateGalleryCover(gallery, `/${path}/`, reader);
+ assert.doesNotMatch(reader,/pdf-print-guidance|Use the Daytime version for printing[.]/,`${path}: standalone printing note must be omitted`);
  const metadata=JSON.parse(await readFile(resolve(publications,path+'.json'),'utf8'));
  for(const link of reader.matchAll(/<a\b[^>]*(?:data-pdf-theme|data-markdown-download)[^>]*>/g)){
   const href=link[0].match(/href="([^"]+)"/)?.[1];
@@ -106,20 +132,24 @@ console.log('All gallery previews follow reader title, subtitle, credit, and edi
 
 // Every published HTML surface and sitemap uses the supported public host.
 const {hostedHtmlPages}=await import('./site-theme.mjs');
-for(const path of await hostedHtmlPages(new URL('../output/site/',import.meta.url).pathname)){
+const {validatePrintGuidanceAbsent}=await import('../../publish-evidence-backed-handbook/scripts/pdf-downloads.mjs');
+const retained=JSON.parse(await readFile(new URL('../retained-releases.json',import.meta.url),'utf8'));
+const retainedHtml=new Set(retained.routes.filter(route=>route.url.endsWith('.html')).map(route=>route.url));
+for(const path of await hostedHtmlPages(output)){
  const page=await readFile(path,'utf8');
+ if(!retainedHtml.has('/'+relative(output,path)))validatePrintGuidanceAbsent(page);
  assert(!/handbooks\.mikelong\.(?:ai|design)/.test(page),'Legacy host remains in '+path);
  const canonical=page.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/);
  assert(canonical?.[1].startsWith('https://handbooks.surfaces.systems/'),'Canonical host mismatch: '+path);
 }
-assert(!/handbooks\.mikelong\.(?:ai|design)/.test(await readFile(new URL('../output/site/sitemap.xml',import.meta.url),'utf8')));
+assert(!/handbooks\.mikelong\.(?:ai|design)/.test(await readFile(resolve(output,'sitemap.xml'),'utf8')));
 console.log('All canonical HTML links and sitemap entries use Surfaces.');
 
 // Edition downloads resolve even when the host normalizes away the trailing slash.
 const catalog=JSON.parse(await readFile(new URL('../../catalog.json',import.meta.url),'utf8'));
 for(const book of catalog.books.filter(book=>book.status==='published')){
  const editionPath=new URL(book.editionUrl).pathname;
- const page=await readFile(new URL('../output/site'+editionPath+'index.html',import.meta.url),'utf8');
+ const page=await readFile(resolve(output,editionPath.slice(1),'index.html'),'utf8');
  const download=page.match(/href="([^"]+)" download/)[1];
  assert(download.startsWith(editionPath),'Edition download must use its explicit path');
  assert.equal(new URL(download,book.editionUrl).pathname,new URL(download,book.editionUrl.replace(/\/$/, '')).pathname);

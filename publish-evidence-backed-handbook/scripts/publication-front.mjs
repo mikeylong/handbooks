@@ -1,3 +1,4 @@
+import {validatePrintGuidanceAbsent} from './pdf-downloads.mjs';
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 function element(html, tag, className) {
   const start = new RegExp(`<${tag}\\b[^>]*class="[^"]*\\b${className}\\b[^"]*"[^>]*>`).exec(html);
@@ -25,42 +26,22 @@ export function validateReaderNavigation(html, title) {
   return {title, status:'passed'};
 }
 
-// Review schedules are publication metadata, independent of frozen reader/PDF packages.
-function reviewTimeLabel(review) {
-  return new Intl.DateTimeFormat('en-US', {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
-    hour: 'numeric', minute: '2-digit', timeZone: review.timeZone, timeZoneName: 'longGeneric'})
-    .format(new Date(review.at)).replace(/[\u00a0\u202f]/g, ' ').replace(/\bTime\b/g, 'time');
+// Remove legacy review chrome while leaving internal publication metadata intact.
+export function removePublicationReview(html) {
+  for (let panel; (panel = element(html, 'section', 'release-window'));) {
+    html = html.replace(panel, '');
+  }
+  return html;
 }
-export function installPublicationReview(html, review) {
-  let current = element(html, 'section', 'release-window');
-  if (!current) throw new Error('Reader lacks a publication review panel');
-  const products = element(current, 'p', 'release-window-products');
-  if (products) {
-    const cleaned = current.replace(products, '');
-    html = html.replace(current, cleaned);
-    current = cleaned;
-  }
-  if (!review) {
-    if (current.includes('data-review-state="unscheduled"')) return html;
-    return html.replace(current, `<section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-policy" data-review-state="unscheduled"><div class="release-window-heading"><p class="release-window-label" id="release-window-title">Next version review</p></div><p class="release-window-schedule">The next review has not been scheduled.</p><p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p></section>`);
-  }
-  if (Number.isNaN(Date.parse(review.at)) || !review.timeZone || !review.rrule) {
-    throw new Error('Incomplete publication review schedule');
-  }
-  const attributes = `data-release-window data-release-at="${escape(review.at)}" data-release-time-zone="${escape(review.timeZone)}" data-release-rrule="${escape(review.rrule)}"`;
-  const time = `<time datetime="${escape(review.at)}" data-release-time>${escape(reviewTimeLabel(review))}</time>`;
-  // Keep already-correct frozen markup byte-identical.
-  if (current.includes(attributes) && current.includes(time) && current.includes('data-release-status')
-    && ['days', 'hours', 'minutes', 'seconds'].every(unit => current.includes(`data-countdown-${unit}`))) return html;
-  const countdown = ['days', 'hours', 'minutes', 'seconds'].map(unit => `<span><strong data-countdown-${unit}>00</strong><small>${unit[0].toUpperCase() + unit.slice(1)}</small></span>`).join('');
-  return html.replace(current, `<section class="release-window site-only" aria-labelledby="release-window-title" aria-describedby="release-window-schedule release-window-policy" ${attributes}>
-<div class="release-window-heading"><p class="release-window-label" id="release-window-title" data-release-status>Next version review</p></div>
-<div class="release-countdown js-only" data-release-countdown aria-hidden="true">${countdown}</div>
-<p class="release-window-schedule" id="release-window-schedule">Scheduled for ${time}.</p>
-<p class="release-window-policy" id="release-window-policy">Site and PDF updates publish together after manual review.</p></section>`);
+
+// Covers own author and edition details; sidebars retain navigation and actions.
+export function removeSidebarPublication(html) {
+  for (let block; (block = element(html, 'div', 'sidebar-publication'));) html = html.replace(block, '');
+  return html;
 }
 
 export function validatePublicationFront(html, edition) {
+  validatePrintGuidanceAbsent(html);
   validateReaderNavigation(html, edition.title);
   validateReaderBodyStart(html, edition.title);
   const cover = element(html, 'section', 'cover');
@@ -71,7 +52,6 @@ export function validatePublicationFront(html, edition) {
   const includes = (text, value) => text.includes(escape(value));
   const hasHref = (text, url) => text.includes(`href="${escape(url)}"`);
   const download = [...cover.matchAll(/<a\b[^>]*\bdownload\b[^>]*>[\s\S]*?<\/a>/g)].map(x=>x[0]);
-  const review = element(cover, 'section', 'release-window');
   const required = {
     title: includes(cover.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? "", edition.title),
     subtitle: /class="cover-subtitle"[^>]*>[^<]+/.test(cover),
@@ -79,16 +59,11 @@ export function validatePublicationFront(html, edition) {
     edition: includes(cover, dateLine),
     exploreAction: /<a\b[^>]*href="#contents"[^>]*>Explore the handbook<\/a>/.test(cover) && /id="contents"/.test(html),
     pdfAction: download.some(x=>hasHref(x, edition.pdfUrl) && includes(x.replace(/<[^>]+>/g, ""), `${edition.pages} pages`)),
-    sidebarAuthor: includes(sidebar, edition.author) && hasHref(sidebar, edition.authorSite),
-    sidebarEdition: hasHref(sidebar, edition.editionUrl) && includes(sidebar, date),
-    sidebarRelease: hasHref(sidebar, edition.releaseUrl) && includes(sidebar, `Version ${edition.version}`),
+    coverEditionLink: hasHref(element(cover, 'p', 'cover-date'), edition.editionUrl),
+    noSidebarPublication: !/sidebar-(?:publication|author|edition)/.test(sidebar),
     sidebarSearch: /data-open-search/.test(sidebar) && /aria-controls="search-dialog"/.test(sidebar),
     sidebarDownload: hasHref(sidebar, edition.pdfUrl) && /\bdownload\b/.test(sidebar),
-    reviewPolicy: review.includes('Site and PDF updates publish together after manual review.'),
-    reviewLabel: !review.includes('release-window-products') && !review.includes('Site + PDF'),
-    reviewState: edition.review
-      ? review.includes(`data-release-at="${escape(edition.review.at)}"`) && review.includes(`data-release-time-zone="${escape(edition.review.timeZone)}"`) && review.includes(`data-release-rrule="${escape(edition.review.rrule)}"`) && review.includes('data-release-window') && review.includes('data-release-status') && review.includes('data-release-countdown') && ['days', 'hours', 'minutes', 'seconds'].every(unit => review.includes(`data-countdown-${unit}`)) && !Number.isNaN(Date.parse(edition.review.at)) && review.includes(`<time datetime="${escape(edition.review.at)}" data-release-time>${escape(reviewTimeLabel(edition.review))}</time>`)
-      : review.includes('data-review-state="unscheduled"') && review.includes('The next review has not been scheduled.') && !review.includes('data-release-countdown') && !review.includes('data-release-at'),
+    noPublicReviewPanel: !/<[^>]*(?:\bclass="[^"]*\brelease-window\b|\bdata-(?:release-window|release-at|release-time-zone|release-rrule|release-status|release-countdown|countdown-(?:days|hours|minutes|seconds)|review-state)\b)/.test(html),
   };
   const failed = Object.entries(required).filter(([,passed])=>!passed).map(([name])=>name);
   if (failed.length) throw new Error(`${edition.title}: incomplete publication front page (${failed.join(', ')})`);
@@ -106,6 +81,7 @@ export function validateReaderBodyStart(html, title) {
 }
 
 export function validateGalleryPublications(html, validatedPaths) {
+  validatePrintGuidanceAbsent(html);
   if (/\bdata-(?:pdf-downloads|pdf-theme|markdown-download)\b|<a\b[^>]*\bdownload(?:\s|=|>)/.test(html)) throw new Error('Gallery must open handbooks without download controls');
   if (!/<script\b[^>]*src="\/gallery-focus\.js"[^>]*\bdefer\b/.test(html)) throw new Error('Gallery lacks return-focus behavior');
   const cards = [...html.matchAll(/<a\b[^>]*class="[^"]*\bhandbook-card-link\b[^"]*"[^>]*>/g)];

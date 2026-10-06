@@ -17,7 +17,7 @@ import {reviewEditionSummary,installReviewGalleryCard} from '../../publish-evide
 import {installRetainedReleases} from '../../publish-evidence-backed-handbook/scripts/retained-releases.mjs';
 import {addSiteTheme,validateSiteTheme} from '../../publish-evidence-backed-handbook/scripts/site-theme.mjs';
 import {renderGalleryCover,validateGalleryCover} from './gallery-covers.mjs';
-import {validateGalleryPublications} from './publication-front.mjs';
+import {removeSidebarPublication, removePublicationReview, validateGalleryPublications} from './publication-front.mjs';
 
 // Replace one book from its pinned inputs; approved destination-only files cannot fill gaps.
 export async function installCandidateBookRoot(collectionRoot,output,book,source,pkg,retained) {
@@ -76,8 +76,8 @@ const edition={id:registry.book,...manifest,...publication,publicationStatus:'ca
 const variants=await resolvePdfVariants(source,edition,registry.variantManifest,{candidate:true,collectionRoot:root});
 const retained=JSON.parse(await readFile(resolve(root,'site/retained-releases.json'),'utf8'));
 await installCandidateBookRoot(root,output,edition.id,source,pkg,retained);
-let html=await readFile(resolve(output,edition.id,'index.html'),'utf8');
-html=await installPromptBlocks(source,html,pkg);html=await installTerminalBlocks(source,html,pkg);html=await installArtworkPairs(source,edition,output,html,pkg);html=await installDiagrams(source,html,pkg);edition.markdown=await writeMarkdownEdition(output,edition,html);html=installReaderDownloads(html,edition,variants);html=installReviewSelfLinks(html,edition);
+let html=removePublicationReview(await readFile(resolve(output,edition.id,'index.html'),'utf8'));
+html=await installPromptBlocks(source,html,pkg);html=await installTerminalBlocks(source,html,pkg);html=await installArtworkPairs(source,edition,output,html,pkg);html=await installDiagrams(source,html,pkg);edition.markdown=await writeMarkdownEdition(output,edition,html);html=removeSidebarPublication(html);html=installReaderDownloads(html,edition,variants);html=installReviewSelfLinks(html,edition);
 html=html.replace('<p class="cover-date">','<p class="review-candidate" role="note">Review candidate · Publication has not been approved.</p><p class="cover-date">').replace('</head>','<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/gallery.css"><link rel="stylesheet" href="/pdf-downloads.css"></head>');
 html=addSiteTheme(html);validateSiteTheme(html);validateDownloads(html,edition,variants);await writeFile(resolve(output,edition.id,'index.html'),html);
 const headers=[];
