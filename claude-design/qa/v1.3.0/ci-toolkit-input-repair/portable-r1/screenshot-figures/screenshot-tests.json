@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checks": [
+    "safe paths and hashes",
+    "opaque frozen bytes",
+    "complete alt/caption",
+    "missing/unknown/duplicate marker rejection",
+    "default minimum 240 PPI",
+    "documented screenshot-only 120PPI exception",
+    "unbound artwork remains 240PPI",
+    "pair and structural exception binding",
+    "split between panels",
+    "caption once",
+    "no PDF image masks",
+    "exact screenshot pixel/count audit",
+    "chapter count remains independent",
+    "semantic reader figures",
+    "shared diagram installer compatibility",
+    "immutable copied assets",
+    "chapter-art preserved",
+    "portable authored Markdown",
+    "crop bounds",
+    "original bytes unchanged",
+    "painted PDF crop region",
+    "internal source distribution flags",
+    "cropped larger-view HTML"
+  ]
+}

@@ -2,53 +2,110 @@
   "schemaVersion": 1,
   "accepted": true,
   "readerFacingContentChanged": true,
-  "summary": "A reader-owned Figma file for the existing Velori exercise.",
-  "previousVersion": "1.2.0",
-  "proposedVersion": "1.2.1",
-  "recommendedVersionImpact": "patch",
+  "summary": "Version 1.3.0 adds screenshots beside the Velori workflow instructions.",
+  "previousVersion": "1.2.1",
+  "proposedVersion": "1.3.0",
+  "recommendedVersionImpact": "minor",
   "previousDate": "2026-10-05",
-  "previousPdfSha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
+  "previousPdfSha256": "43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272",
   "changes": [
     {
-      "id": "G01",
-      "category": "Correction or clarification",
-      "section": "Orientation, Chapter 10 and exercise materials",
-      "text": "Replaced the owner-file access prerequisite with a downloadable Velori Figma companion imported into the reader's own Drafts. Navigation uses verified page and frame names; each import records native identities and checks local dependencies and the prototype journey.",
-      "rationale": "Readers can complete the existing Figma exercise without access to the author's file.",
+      "category": "Addition",
+      "section": "Orientation and Chapters 2–7, 9 and 10",
+      "text": "Added screenshots for setup, system inspection, correction, the store journey, recovery, keyboard use, responsive layout, Code handoff, and Figma review.",
+      "rationale": "Readers can locate the controls and compare their results with the worked example.",
+      "readerImpact": "Twelve figures add observable controls and expected states beside the existing instructions.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig"
+        "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+        "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
       ],
+      "localEvidence": "claude-design/screenshot-figures.json",
+      "manifestSha256": "9407b7a8725309175233ca99779cad7778955eb4c3a455293a26038394304f66",
+      "exactAcceptedCaptions": [
+        {
+          "id": "s01-start",
+          "caption": "Public React sample. Graphite, Simple, Amber and Carry bag appear in the controls, configured photograph, caption and Review summary."
+        },
+        {
+          "id": "s02-figma-import",
+          "caption": "Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page."
+        },
+        {
+          "id": "s03-private-import",
+          "caption": "Claude Design, October 5 walkthrough. The example destination is Velori Handbook v1.2.0. Before upload, Share shows Private and Not shared."
+        },
+        {
+          "id": "s04-inspect-system",
+          "caption": "Claude Design. Inspect the imported component inventory, rendered ProductPreview and opened usage guidance. The preview uses its own component example, separate from the Amber journey fixture."
+        },
+        {
+          "id": "s05-correction",
+          "caption": "Claude Design teaching fixture. The accessory gap changes from 8px to the accepted 24px. An independent generation retains the 24px rule with Pebble, Friendly, Mint and None; that screen omits storage and details."
+        },
+        {
+          "id": "s06-native-review",
+          "caption": "Claude Design, October 5 walkthrough. The generated Review retains Graphite, Simple, Amber and Carry bag from Configure, with Edit configuration and Back available."
+        },
+        {
+          "id": "s07-browse",
+          "caption": "Public React sample. Browsing Charging dock changes the detail view while Carry bag remains selected. After returning to Configure and choosing Continue, Review still lists Carry bag."
+        },
+        {
+          "id": "s08-retry",
+          "caption": "Public React sample. Blocking the actual required shell-image request produces the real unavailable state and Retry image action. After unblocking and retrying, the photograph returns and Review still lists Graphite, Simple, Amber and Carry bag."
+        },
+        {
+          "id": "s09-dropdown",
+          "caption": "Public React sample. Amber is committed and checked while Blue is the active option in the keyboard-open menu. The real trigger focus outline remains visible."
+        },
+        {
+          "id": "s10-mobile",
+          "caption": "Public React sample at 390px. The product and caption stack above the four-value Review summary. Edit configuration and Back remain reachable."
+        },
+        {
+          "id": "s11-handoff",
+          "caption": "Claude Design. Send opens the Local agent handoff for the generated Velori Store file. Copied records the completed copy action; Project HTML provides the Project archive export path."
+        },
+        {
+          "id": "s12-figma-review",
+          "caption": "Imported Figma working copy. Inspect linked component identity and a representative variable binding, then compare Present Review with Graphite, Simple, Amber and Carry bag. Prototype variables cover the configured visit."
+        }
+      ],
+      "recommendedVersionImpact": "Minor",
+      "sourceLimitations": "Screenshots demonstrate the recorded states. Each reader validates their own tool access and generated result.",
+      "id": "G01",
       "groupedDraftEntries": [
-        "F01"
+        "S01"
       ]
     }
   ],
-  "status": "accepted final source classification; artifact and hosted release acceptance remain separate",
+  "status": "Accepted screenshot addition; exact r3 artifacts approved through Mike’s direct Land this command.",
   "sourceSnapshot": {
     "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
-    "sha256": "0eee25b6932c3099e28aeebf059ad22eda5c18a16a022af05184b0cfdeb7b93a",
-    "previousSourceSha256": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198"
+    "sha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8",
+    "previousSourceSha256": "0eee25b6932c3099e28aeebf059ad22eda5c18a16a022af05184b0cfdeb7b93a"
   },
   "comparisonEvidence": {
     "exactSourcePatch": {
-      "path": "claude-design/qa/v1.2.1/exact-source.patch",
-      "sha256": "77843b37f927efc067ac951d15d13975bf88074689603ac8f791ae9c197ac866"
+      "path": "claude-design/qa/v1.3.0/exact-source.patch",
+      "sha256": "90cb50ae3d71440800402fc41bd3059b075de5397119f32b5c666de8404ed6eb"
     },
     "editionDiff": {
-      "path": "claude-design/qa/v1.2.1/edition-diff.json",
-      "sha256": "b5a9dec487e9ae979d674f6375b8d4246bd9aeaf27c88239985e08e9f34a0578"
+      "path": "claude-design/qa/v1.3.0/edition-diff.json",
+      "sha256": "7df3b3edf7f73a28acfbf0b6fac42a882a8c3c2d40321fa0ce805a9652d864e4"
     },
     "exactPdfTextPatch": {
-      "path": "claude-design/qa/v1.2.1/exact-pdf-text.patch",
-      "sha256": "655adde6c82d75e6a4d5463fb3a6cd625db0c618e2ef3fcc151784deed2026aa"
+      "path": "claude-design/qa/v1.3.0/exact-pdf-text.patch",
+      "sha256": "e9ee7726abd7fed5a7e53c5c8384ce236ba43bb34fda118686dca403de465249"
     },
     "readerFacingContentPatch": {
-      "path": "claude-design/qa/v1.2.1/reader-facing-content.patch",
-      "sha256": "d7fc692bc5eabb17be5ef9ec3c809bd1715cd5558196273b9b058f3997c28acb"
+      "path": "claude-design/qa/v1.3.0/reader-facing-content.patch",
+      "sha256": "2c79a43433cfe9e354a298586d596ffd25a23182692d8387ca0842603cc63476"
     },
     "acceptedChangelogDecision": {
       "path": "claude-design/changelog-decision.json",
-      "sha256": "e34fce9d936469b5efbd9d79686a9bdbbd12449fc35b3eaa53a6e8f17443bacf"
+      "sha256": "af9f287778a6b1c7ea2a16007a9e82d7ee65c765eb87b695f3942ed94fe91243"
     }
   },
   "sampleRelease": {
@@ -58,8 +115,8 @@
     "bytes": 35152394,
     "publicationPackage": {
       "path": "claude-design/publication-package.json",
-      "sha256": "6c80614e5b1b04ea7e47c0eff30a8bd6ad353aca9dadc7ec60cf710cc5b9c106"
+      "sha256": "c302a7116a98e70c37274bc11cf51e1d4ccbe98d6a7389a1e21dbd5a393b783d"
     }
   },
-  "verificationRecord": "claude-design/qa/v1.2.1/change-ledger-verification.json"
+  "verificationRecord": "claude-design/qa/v1.3.0/change-ledger-verification.json"
 }

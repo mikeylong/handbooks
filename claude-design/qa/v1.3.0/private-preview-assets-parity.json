@@ -1,0 +1,1225 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "candidate_builder bounded r3 parity check adapted from the preserved asset verifier",
+  "verifiedAt": "2026-10-06T16:39:50.133747+00:00",
+  "pass": true,
+  "preview": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3/claude-design",
+  "manifestSha256": "9407b7a8725309175233ca99779cad7778955eb4c3a455293a26038394304f66",
+  "previewReaderSha256": "3fd3ec8bbb83cc8e4ed4a069bb2f2ffae0a33d8c66cd6f76df62a9bff4f0df07",
+  "markdownSha256": "da804e75edb69098cb7db5436517fa1c838a3250e02e8bd5c330eb8d2475f179",
+  "sourceSha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8",
+  "sharedSchemaValidation": {
+    "passed": true,
+    "figures": 12,
+    "panels": 35,
+    "publicEligible": true
+  },
+  "checks": [
+    {
+      "directory": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots",
+      "assetCount": 37,
+      "hashParity": true,
+      "assets": [
+        {
+          "asset": "assets/screenshots/s01-configure.png",
+          "sha256": "d6fed6d13679867ce550727d4a5ac09bc629a82d4978934e57934feea0c07f80",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-configure-controls.png",
+          "sha256": "93cc01bfb1ccda79a1ce40da29d17dbbfb2e292fdd4df1389e0ed041ea260829",
+          "dimensions": [
+            417,
+            617
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-review-summary.png",
+          "sha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+          "dimensions": [
+            417,
+            459
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-review-full.png",
+          "sha256": "1cbb83d71d1be327ed413c4e3dcfe519db4653e9f6d55f34035f64ed359c91f2",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-import-menu.png",
+          "sha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0",
+          "dimensions": [
+            433,
+            386
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-import-complete.png",
+          "sha256": "db7982d9faeb2cf3e3750657b266f5876ffa962e881ed30fcbb8cc0a25b5937f",
+          "dimensions": [
+            965,
+            465
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-page-tree.png",
+          "sha256": "b80715d50021f947789ae43466d5e134048c1b544c9f018705c1a29ff4233d0e",
+          "dimensions": [
+            555,
+            547
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s03-system-destination.png",
+          "sha256": "2bef4cade8b831f4fde4325d6d7b28e5b6cc9e33f366967b221aeab8aff3b42b",
+          "dimensions": [
+            913,
+            126
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s03-private-share.png",
+          "sha256": "f3ac913d9a294219a22bfbe44da5c16abe903a5d12a32fc7b55517a98383a1ee",
+          "dimensions": [
+            441,
+            61
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-component-inventory.png",
+          "sha256": "7f56c42491fa49f2775484cc0935ca3cbb60cb7b605d8524a25542547c6c8c9f",
+          "dimensions": [
+            298,
+            439
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-product-preview.png",
+          "sha256": "98b0c591e08df578d61dba2e3b1a5f512b842877e3904ce1354a3850c1b2010d",
+          "dimensions": [
+            514,
+            382
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-expanded-guidance.png",
+          "sha256": "bbaff09fe31b1497a3a178c59a8cadcfdcce69c10d279be3faeafbc3a1b62cfa",
+          "dimensions": [
+            725,
+            85
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-gap-before.png",
+          "sha256": "6630ac654ade376255b6b47fc53512b585f02a3d1df42b67ae348ac763c934cb",
+          "dimensions": [
+            342,
+            90
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-gap-corrected.png",
+          "sha256": "f6ec638c420794e1bc15284b62080d45766fd9ed0c0aadcaded22804acc1b2d6",
+          "dimensions": [
+            342,
+            90
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-second-generation.png",
+          "sha256": "d2194247d0684bb99aa6749e3669d96efd7031773d51c4d8e5d8d0aba2c9444e",
+          "dimensions": [
+            342,
+            430
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s06-configure-photo.png",
+          "sha256": "1b1f09c97895492fe10ba27247904ddfa93a599ea9603aec28e9feee05c61763",
+          "dimensions": [
+            498,
+            588
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s06-review-summary.png",
+          "sha256": "750b615cb03b542ddedeba4eaca52d211694106dc62f752298f97f1de4d54495",
+          "dimensions": [
+            349,
+            470
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s07-dock-details.png",
+          "sha256": "1d884db3dc0a606194ec58b581cff080879693db2f5f5a5dc2e09929be32176d",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s07-return-review.png",
+          "sha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+          "dimensions": [
+            417,
+            459
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-failure.png",
+          "sha256": "1d4a421844b84899b04715432a7d27883e0a0cdd8d4ab7f635becee815f04130",
+          "dimensions": [
+            780,
+            235
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-failure-caption.png",
+          "sha256": "e28e9c326154ba8e5acdeed1afbf71f1bd80f77238b8f82fd5cf254afec777d3",
+          "dimensions": [
+            700,
+            65
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-recovered-photo.png",
+          "sha256": "c5f61968f20f241fd4e87c08ea140ccf26f1b648f4f51d035261520771b1e056",
+          "dimensions": [
+            991,
+            996
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-retained-summary.png",
+          "sha256": "74fc0c7545f2f5ca521ff36f03479589452a7b4eb19f27f4ca1c29e895fd0a06",
+          "dimensions": [
+            825,
+            845
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s09-keyboard-menu.png",
+          "sha256": "69e10adafa7ec306b543e00725125f5d65b763be84181155f685b33311ed75b0",
+          "dimensions": [
+            417,
+            295
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-product.png",
+          "sha256": "ff5d644f43f6a6cb64519aca7ed8d0975bb618bcdfaf8e66ecf7256c44b3b37c",
+          "dimensions": [
+            390,
+            510
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-full.png",
+          "sha256": "7e2b0bee02674f96d13065aa3934d95b4ebf3476572626cb2018d6a26fd72991",
+          "dimensions": [
+            390,
+            1177
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-summary.png",
+          "sha256": "7daad631a49f7b20a887e8713d570ea13116642010641d7efd12a67baf757d7a",
+          "dimensions": [
+            390,
+            343
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-actions.png",
+          "sha256": "6ab172e9181ebf4fc52a9519be77873d6b62dd640fe83f8632a82a7a15ee560b",
+          "dimensions": [
+            390,
+            134
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-send-to-code.png",
+          "sha256": "c3b695a57253740bc0e134ced968dcc2fe0d877b753adee6fb32104a9b25b98c",
+          "dimensions": [
+            440,
+            123
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-local-agent.png",
+          "sha256": "6a4dff89269024a3a033c19182792eff0a29d6f2035c106087e71c4e74b67e2e",
+          "dimensions": [
+            578,
+            152
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-copied.png",
+          "sha256": "e680c22e172d03714b804ee79be14eb988556c098be792b2a1b4d4ad3f8de8c5",
+          "dimensions": [
+            147,
+            50
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-project-archive.png",
+          "sha256": "86340a44696fb7de8831ce4f6c5eb853f9ac5317e70da4c5bbdee95a9506328a",
+          "dimensions": [
+            998,
+            460
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-selected-button.png",
+          "sha256": "8e5582d4da1223a5c6a9362b06281a9f7d3dc744602d62206042607a1d26ef22",
+          "dimensions": [
+            885,
+            181
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-component-identity.png",
+          "sha256": "ac2fd89fc793f4b6b3331ca2c0660d698af02f01394f458add41f5d7ab5a0c17",
+          "dimensions": [
+            452,
+            334
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-size-binding.png",
+          "sha256": "e2e04e08856d84ca20d2eb43fd4423ac6c2f4470bfcbe48feee8ee3522c89aa3",
+          "dimensions": [
+            462,
+            364
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-present-photo.png",
+          "sha256": "d3e72e2f77d5603f6d576666702628a92aa9096401453af7b465ef93ea1be11c",
+          "dimensions": [
+            995,
+            996
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-present-summary.png",
+          "sha256": "b9102ed36133c061ae85dafa1a6bbc30df32be57b92c7668d62b2c466da7c13b",
+          "dimensions": [
+            846,
+            1000
+          ],
+          "opaqueRgbPng": true
+        }
+      ]
+    },
+    {
+      "directory": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3/claude-design/assets/screenshots",
+      "assetCount": 37,
+      "hashParity": true,
+      "assets": [
+        {
+          "asset": "assets/screenshots/s01-configure.png",
+          "sha256": "d6fed6d13679867ce550727d4a5ac09bc629a82d4978934e57934feea0c07f80",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-configure-controls.png",
+          "sha256": "93cc01bfb1ccda79a1ce40da29d17dbbfb2e292fdd4df1389e0ed041ea260829",
+          "dimensions": [
+            417,
+            617
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-review-summary.png",
+          "sha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+          "dimensions": [
+            417,
+            459
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-review-full.png",
+          "sha256": "1cbb83d71d1be327ed413c4e3dcfe519db4653e9f6d55f34035f64ed359c91f2",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-import-menu.png",
+          "sha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0",
+          "dimensions": [
+            433,
+            386
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-import-complete.png",
+          "sha256": "db7982d9faeb2cf3e3750657b266f5876ffa962e881ed30fcbb8cc0a25b5937f",
+          "dimensions": [
+            965,
+            465
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-page-tree.png",
+          "sha256": "b80715d50021f947789ae43466d5e134048c1b544c9f018705c1a29ff4233d0e",
+          "dimensions": [
+            555,
+            547
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s03-system-destination.png",
+          "sha256": "2bef4cade8b831f4fde4325d6d7b28e5b6cc9e33f366967b221aeab8aff3b42b",
+          "dimensions": [
+            913,
+            126
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s03-private-share.png",
+          "sha256": "f3ac913d9a294219a22bfbe44da5c16abe903a5d12a32fc7b55517a98383a1ee",
+          "dimensions": [
+            441,
+            61
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-component-inventory.png",
+          "sha256": "7f56c42491fa49f2775484cc0935ca3cbb60cb7b605d8524a25542547c6c8c9f",
+          "dimensions": [
+            298,
+            439
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-product-preview.png",
+          "sha256": "98b0c591e08df578d61dba2e3b1a5f512b842877e3904ce1354a3850c1b2010d",
+          "dimensions": [
+            514,
+            382
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-expanded-guidance.png",
+          "sha256": "bbaff09fe31b1497a3a178c59a8cadcfdcce69c10d279be3faeafbc3a1b62cfa",
+          "dimensions": [
+            725,
+            85
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-gap-before.png",
+          "sha256": "6630ac654ade376255b6b47fc53512b585f02a3d1df42b67ae348ac763c934cb",
+          "dimensions": [
+            342,
+            90
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-gap-corrected.png",
+          "sha256": "f6ec638c420794e1bc15284b62080d45766fd9ed0c0aadcaded22804acc1b2d6",
+          "dimensions": [
+            342,
+            90
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-second-generation.png",
+          "sha256": "d2194247d0684bb99aa6749e3669d96efd7031773d51c4d8e5d8d0aba2c9444e",
+          "dimensions": [
+            342,
+            430
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s06-configure-photo.png",
+          "sha256": "1b1f09c97895492fe10ba27247904ddfa93a599ea9603aec28e9feee05c61763",
+          "dimensions": [
+            498,
+            588
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s06-review-summary.png",
+          "sha256": "750b615cb03b542ddedeba4eaca52d211694106dc62f752298f97f1de4d54495",
+          "dimensions": [
+            349,
+            470
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s07-dock-details.png",
+          "sha256": "1d884db3dc0a606194ec58b581cff080879693db2f5f5a5dc2e09929be32176d",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s07-return-review.png",
+          "sha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+          "dimensions": [
+            417,
+            459
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-failure.png",
+          "sha256": "1d4a421844b84899b04715432a7d27883e0a0cdd8d4ab7f635becee815f04130",
+          "dimensions": [
+            780,
+            235
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-failure-caption.png",
+          "sha256": "e28e9c326154ba8e5acdeed1afbf71f1bd80f77238b8f82fd5cf254afec777d3",
+          "dimensions": [
+            700,
+            65
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-recovered-photo.png",
+          "sha256": "c5f61968f20f241fd4e87c08ea140ccf26f1b648f4f51d035261520771b1e056",
+          "dimensions": [
+            991,
+            996
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-retained-summary.png",
+          "sha256": "74fc0c7545f2f5ca521ff36f03479589452a7b4eb19f27f4ca1c29e895fd0a06",
+          "dimensions": [
+            825,
+            845
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s09-keyboard-menu.png",
+          "sha256": "69e10adafa7ec306b543e00725125f5d65b763be84181155f685b33311ed75b0",
+          "dimensions": [
+            417,
+            295
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-product.png",
+          "sha256": "ff5d644f43f6a6cb64519aca7ed8d0975bb618bcdfaf8e66ecf7256c44b3b37c",
+          "dimensions": [
+            390,
+            510
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-full.png",
+          "sha256": "7e2b0bee02674f96d13065aa3934d95b4ebf3476572626cb2018d6a26fd72991",
+          "dimensions": [
+            390,
+            1177
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-summary.png",
+          "sha256": "7daad631a49f7b20a887e8713d570ea13116642010641d7efd12a67baf757d7a",
+          "dimensions": [
+            390,
+            343
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-actions.png",
+          "sha256": "6ab172e9181ebf4fc52a9519be77873d6b62dd640fe83f8632a82a7a15ee560b",
+          "dimensions": [
+            390,
+            134
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-send-to-code.png",
+          "sha256": "c3b695a57253740bc0e134ced968dcc2fe0d877b753adee6fb32104a9b25b98c",
+          "dimensions": [
+            440,
+            123
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-local-agent.png",
+          "sha256": "6a4dff89269024a3a033c19182792eff0a29d6f2035c106087e71c4e74b67e2e",
+          "dimensions": [
+            578,
+            152
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-copied.png",
+          "sha256": "e680c22e172d03714b804ee79be14eb988556c098be792b2a1b4d4ad3f8de8c5",
+          "dimensions": [
+            147,
+            50
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-project-archive.png",
+          "sha256": "86340a44696fb7de8831ce4f6c5eb853f9ac5317e70da4c5bbdee95a9506328a",
+          "dimensions": [
+            998,
+            460
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-selected-button.png",
+          "sha256": "8e5582d4da1223a5c6a9362b06281a9f7d3dc744602d62206042607a1d26ef22",
+          "dimensions": [
+            885,
+            181
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-component-identity.png",
+          "sha256": "ac2fd89fc793f4b6b3331ca2c0660d698af02f01394f458add41f5d7ab5a0c17",
+          "dimensions": [
+            452,
+            334
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-size-binding.png",
+          "sha256": "e2e04e08856d84ca20d2eb43fd4423ac6c2f4470bfcbe48feee8ee3522c89aa3",
+          "dimensions": [
+            462,
+            364
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-present-photo.png",
+          "sha256": "d3e72e2f77d5603f6d576666702628a92aa9096401453af7b465ef93ea1be11c",
+          "dimensions": [
+            995,
+            996
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-present-summary.png",
+          "sha256": "b9102ed36133c061ae85dafa1a6bbc30df32be57b92c7668d62b2c466da7c13b",
+          "dimensions": [
+            846,
+            1000
+          ],
+          "opaqueRgbPng": true
+        }
+      ]
+    },
+    {
+      "directory": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3/claude-design/editions/v1.3.0/assets/screenshots",
+      "assetCount": 37,
+      "hashParity": true,
+      "assets": [
+        {
+          "asset": "assets/screenshots/s01-configure.png",
+          "sha256": "d6fed6d13679867ce550727d4a5ac09bc629a82d4978934e57934feea0c07f80",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-configure-controls.png",
+          "sha256": "93cc01bfb1ccda79a1ce40da29d17dbbfb2e292fdd4df1389e0ed041ea260829",
+          "dimensions": [
+            417,
+            617
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-review-summary.png",
+          "sha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+          "dimensions": [
+            417,
+            459
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s01-review-full.png",
+          "sha256": "1cbb83d71d1be327ed413c4e3dcfe519db4653e9f6d55f34035f64ed359c91f2",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-import-menu.png",
+          "sha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0",
+          "dimensions": [
+            433,
+            386
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-import-complete.png",
+          "sha256": "db7982d9faeb2cf3e3750657b266f5876ffa962e881ed30fcbb8cc0a25b5937f",
+          "dimensions": [
+            965,
+            465
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s02-page-tree.png",
+          "sha256": "b80715d50021f947789ae43466d5e134048c1b544c9f018705c1a29ff4233d0e",
+          "dimensions": [
+            555,
+            547
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s03-system-destination.png",
+          "sha256": "2bef4cade8b831f4fde4325d6d7b28e5b6cc9e33f366967b221aeab8aff3b42b",
+          "dimensions": [
+            913,
+            126
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s03-private-share.png",
+          "sha256": "f3ac913d9a294219a22bfbe44da5c16abe903a5d12a32fc7b55517a98383a1ee",
+          "dimensions": [
+            441,
+            61
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-component-inventory.png",
+          "sha256": "7f56c42491fa49f2775484cc0935ca3cbb60cb7b605d8524a25542547c6c8c9f",
+          "dimensions": [
+            298,
+            439
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-product-preview.png",
+          "sha256": "98b0c591e08df578d61dba2e3b1a5f512b842877e3904ce1354a3850c1b2010d",
+          "dimensions": [
+            514,
+            382
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s04-expanded-guidance.png",
+          "sha256": "bbaff09fe31b1497a3a178c59a8cadcfdcce69c10d279be3faeafbc3a1b62cfa",
+          "dimensions": [
+            725,
+            85
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-gap-before.png",
+          "sha256": "6630ac654ade376255b6b47fc53512b585f02a3d1df42b67ae348ac763c934cb",
+          "dimensions": [
+            342,
+            90
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-gap-corrected.png",
+          "sha256": "f6ec638c420794e1bc15284b62080d45766fd9ed0c0aadcaded22804acc1b2d6",
+          "dimensions": [
+            342,
+            90
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s05-second-generation.png",
+          "sha256": "d2194247d0684bb99aa6749e3669d96efd7031773d51c4d8e5d8d0aba2c9444e",
+          "dimensions": [
+            342,
+            430
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s06-configure-photo.png",
+          "sha256": "1b1f09c97895492fe10ba27247904ddfa93a599ea9603aec28e9feee05c61763",
+          "dimensions": [
+            498,
+            588
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s06-review-summary.png",
+          "sha256": "750b615cb03b542ddedeba4eaca52d211694106dc62f752298f97f1de4d54495",
+          "dimensions": [
+            349,
+            470
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s07-dock-details.png",
+          "sha256": "1d884db3dc0a606194ec58b581cff080879693db2f5f5a5dc2e09929be32176d",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s07-return-review.png",
+          "sha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+          "dimensions": [
+            417,
+            459
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-failure.png",
+          "sha256": "1d4a421844b84899b04715432a7d27883e0a0cdd8d4ab7f635becee815f04130",
+          "dimensions": [
+            780,
+            235
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-failure-caption.png",
+          "sha256": "e28e9c326154ba8e5acdeed1afbf71f1bd80f77238b8f82fd5cf254afec777d3",
+          "dimensions": [
+            700,
+            65
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-recovered-photo.png",
+          "sha256": "c5f61968f20f241fd4e87c08ea140ccf26f1b648f4f51d035261520771b1e056",
+          "dimensions": [
+            991,
+            996
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s08-retained-summary.png",
+          "sha256": "74fc0c7545f2f5ca521ff36f03479589452a7b4eb19f27f4ca1c29e895fd0a06",
+          "dimensions": [
+            825,
+            845
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s09-keyboard-menu.png",
+          "sha256": "69e10adafa7ec306b543e00725125f5d65b763be84181155f685b33311ed75b0",
+          "dimensions": [
+            417,
+            295
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-product.png",
+          "sha256": "ff5d644f43f6a6cb64519aca7ed8d0975bb618bcdfaf8e66ecf7256c44b3b37c",
+          "dimensions": [
+            390,
+            510
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-full.png",
+          "sha256": "7e2b0bee02674f96d13065aa3934d95b4ebf3476572626cb2018d6a26fd72991",
+          "dimensions": [
+            390,
+            1177
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-summary.png",
+          "sha256": "7daad631a49f7b20a887e8713d570ea13116642010641d7efd12a67baf757d7a",
+          "dimensions": [
+            390,
+            343
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s10-mobile-actions.png",
+          "sha256": "6ab172e9181ebf4fc52a9519be77873d6b62dd640fe83f8632a82a7a15ee560b",
+          "dimensions": [
+            390,
+            134
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-send-to-code.png",
+          "sha256": "c3b695a57253740bc0e134ced968dcc2fe0d877b753adee6fb32104a9b25b98c",
+          "dimensions": [
+            440,
+            123
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-local-agent.png",
+          "sha256": "6a4dff89269024a3a033c19182792eff0a29d6f2035c106087e71c4e74b67e2e",
+          "dimensions": [
+            578,
+            152
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-copied.png",
+          "sha256": "e680c22e172d03714b804ee79be14eb988556c098be792b2a1b4d4ad3f8de8c5",
+          "dimensions": [
+            147,
+            50
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s11-project-archive.png",
+          "sha256": "86340a44696fb7de8831ce4f6c5eb853f9ac5317e70da4c5bbdee95a9506328a",
+          "dimensions": [
+            998,
+            460
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-selected-button.png",
+          "sha256": "8e5582d4da1223a5c6a9362b06281a9f7d3dc744602d62206042607a1d26ef22",
+          "dimensions": [
+            885,
+            181
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-component-identity.png",
+          "sha256": "ac2fd89fc793f4b6b3331ca2c0660d698af02f01394f458add41f5d7ab5a0c17",
+          "dimensions": [
+            452,
+            334
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-size-binding.png",
+          "sha256": "e2e04e08856d84ca20d2eb43fd4423ac6c2f4470bfcbe48feee8ee3522c89aa3",
+          "dimensions": [
+            462,
+            364
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-present-photo.png",
+          "sha256": "d3e72e2f77d5603f6d576666702628a92aa9096401453af7b465ef93ea1be11c",
+          "dimensions": [
+            995,
+            996
+          ],
+          "opaqueRgbPng": true
+        },
+        {
+          "asset": "assets/screenshots/s12-present-summary.png",
+          "sha256": "b9102ed36133c061ae85dafa1a6bbc30df32be57b92c7668d62b2c466da7c13b",
+          "dimensions": [
+            846,
+            1000
+          ],
+          "opaqueRgbPng": true
+        }
+      ]
+    }
+  ],
+  "figurePlacementOrderMatches": true,
+  "htmlChecks": [
+    {
+      "id": "s01-start",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s02-figma-import",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s03-private-import",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s04-inspect-system",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s05-correction",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s06-native-review",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s07-browse",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s08-retry",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s09-dropdown",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s10-mobile",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s11-handoff",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    },
+    {
+      "id": "s12-figma-review",
+      "captionMatches": true,
+      "panelLabelsMatch": true,
+      "panelAltsAndDimensionsMatch": true,
+      "panelAndLargerImageRoutesMatch": true
+    }
+  ],
+  "markdownChecks": [
+    {
+      "id": "s01-start",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s02-figma-import",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s03-private-import",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s04-inspect-system",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s05-correction",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s06-native-review",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s07-browse",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s08-retry",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s09-dropdown",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s10-mobile",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s11-handoff",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    },
+    {
+      "id": "s12-figma-review",
+      "captionMatches": true,
+      "panelAltsAndRoutesMatch": true,
+      "largerImageRoutesMatch": true
+    }
+  ],
+  "htmlCaptionsAndAltsMatch": true,
+  "markdownCaptionsAndAltsMatch": true,
+  "markdownPanelAndLargerImageRoutesMatch": true,
+  "frozenOriginalCount": 25,
+  "originalHashesStillFrozen": true,
+  "frozenCopiesStillMatch": true,
+  "pdfChecks": [
+    {
+      "theme": "daytime",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/builds/final-r3/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+      "preview": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+      "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
+      "exactByteParity": true,
+      "htmlRouteMatches": true
+    },
+    {
+      "theme": "late-night",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/builds/final-r3/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+      "preview": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/output/site-preview-r3/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+      "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e",
+      "exactByteParity": true,
+      "htmlRouteMatches": true
+    }
+  ],
+  "publicationApproved": false
+}

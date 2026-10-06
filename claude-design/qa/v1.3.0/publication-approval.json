@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "command": "Land this",
+  "approver": "Mike",
+  "approvedAt": "2026-10-06T17:03:38.901150+00:00",
+  "approvalDate": "2026-10-06",
+  "editionDate": "2026-10-05",
+  "dateBasis": "October 5 is the approved content edition date and remains visible in the frozen PDF bytes. Capture, validation and publication approval completed on October 6. Promotion copies the exact approved PDFs without rebuilding.",
+  "candidateBuildResult": {
+    "path": "claude-design/qa/v1.3.0/candidate-build-result.json",
+    "sha256": "aa538193fda771442f4950c8abb389d000e8046263914f58e7bc78cbc368d395"
+  },
+  "manuscript": {
+    "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8"
+  },
+  "screenshotManifest": {
+    "path": "claude-design/screenshot-figures.json",
+    "sha256": "9407b7a8725309175233ca99779cad7778955eb4c3a455293a26038394304f66"
+  },
+  "pdfs": [
+    {
+      "path": "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+      "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75"
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+      "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e"
+    }
+  ],
+  "limitations": [
+    "Physical A5 printing was not tested; all pages have native-resolution screen acceptance in Poppler and Apple PDFKit."
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "manifest": "publish-evidence-backed-handbook/references/specimen/manifest.json",
+  "beforeSha256": "b646ccfdad9baf2165e2f9373d433c84b8b2ee6ad8e140e2f2558d334578378f",
+  "sha256": "e08c71fd61155656203f669d074de1e0c4ea690011b26e729e4f2e3173ede3db",
+  "originalInputs": 133,
+  "currentInputs": 137,
+  "removedInputs": [],
+  "addedInputs": [
+    "references/screenshot-figures.md",
+    "scripts/screenshot-browser-check.mjs",
+    "scripts/screenshot_figures.py",
+    "scripts/test-screenshot-figures.py"
+  ],
+  "changedExistingInputs": [
+    {
+      "path": "assets/reader/flowable-reader.css",
+      "previousSha256": "e1fa2ece5e4b72d99ee93bf49be4f094b9c5e13936947a454f1ea507020dd000",
+      "sha256": "e927948af73ad510d1b6fa7e48a98e52318128b9cf5b7f70b62626819e54bcbd"
+    },
+    {
+      "path": "assets/reader/theme.css",
+      "previousSha256": "1906d75cc88db1502043a3e12f9c6ce11341f28f93d7c5f2e0e19f672701584f",
+      "sha256": "2337df6160077f87424a8abdbcc969c9a1d9c7f9df5b1ab4306dafad8bbd8e2f"
+    },
+    {
+      "path": "references/shared-reader-workflow.md",
+      "previousSha256": "6fe36c29d89490a339ffc7a467246d3f0cda1c20ad0d28e2c72c65bcd770d4a0",
+      "sha256": "fa752e0b5c827cf6ff306928b761e10e7edc33e27673b201775f8e7f952166df"
+    },
+    {
+      "path": "scripts/audit-pdf-appearance.py",
+      "previousSha256": "210b943a966b7f52cce43302160b46d88c27ebe4c128b5c54dbbb650fc2204e0",
+      "sha256": "661d92529037c80edcaaca6f41a8f206dea5ffd7a1a5191cad6b8435e57d0556"
+    },
+    {
+      "path": "scripts/build-manifest.py",
+      "previousSha256": "b52941a26b6a7b66ed84f8d75d9259dead214252366fb52781233c85d5ffd128",
+      "sha256": "c15065e0bf1d8f0314d5568fffb9e718a0204b350bc355806f56630c13b357ce"
+    },
+    {
+      "path": "scripts/diagrams.mjs",
+      "previousSha256": "ddf6b5bafd52998b2eab3fc7928dd012a75295a50edeb7509bde60353e8465ea",
+      "sha256": "f7a383a0ebe7d6e50a23e520f1cf2037cb79fbcc320f6e867fdb36324fe959c6"
+    },
+    {
+      "path": "scripts/export-machine-markdown.py",
+      "previousSha256": "b8043a0414bfb640dc04670cc8abb3d92817e73bda88d19ec94e9d896a3c0cc6",
+      "sha256": "4e1f949c08895e16f3cbc73437718835ace2612d337ef811c24d7b3815fed99c"
+    },
+    {
+      "path": "scripts/flowable_reader.py",
+      "previousSha256": "1f0184c80b3cb7d861d7c049c056eabdc3b912a9a6ad810607397aa8894ed8d3",
+      "sha256": "b40a8e1eb200de22b24c8741752b0cd4f2c12d49e5e633ffc75322a775ba190e"
+    },
+    {
+      "path": "scripts/markdown-downloads.mjs",
+      "previousSha256": "3acd632574566ce876303d6f3d4ddaa32039ac9f7d54e042666298638f65fcaf",
+      "sha256": "f1a3a3764935e97e95e6db78dc6dca0ef78ebda04460f3ed43369371625b4ebf"
+    },
+    {
+      "path": "scripts/markdown_layout.py",
+      "previousSha256": "6c8e632893df2900949bd9b5553e42564738a6690e3c2282700ec881d7112d42",
+      "sha256": "cbe83d144a2d30a9ade2976a8c860f72f143b4501cea5e3fbf6d0363cd06182a"
+    },
+    {
+      "path": "scripts/retained-releases.mjs",
+      "previousSha256": "75f24b27b2a4bcc4ff9fb1fcbfe947b4ef27ff22c2e5c97f1a98b7f60c039c27",
+      "sha256": "de9c1c97e26d6d2ed1addde009883729e5fac5b4e24eccac2e4f16f1a77f00de"
+    },
+    {
+      "path": "scripts/test-diagrams.mjs",
+      "previousSha256": "378bca88396a5f2b7fdc2b1a4eab243f51bed91b4a202078d1384ebd728f93a7",
+      "sha256": "50f7bcda34eb508f0524b859928238fbd784c2265b51c40e8fd758329d08e979"
+    },
+    {
+      "path": "scripts/test-machine-markdown.py",
+      "previousSha256": "05e79ec37293695df26eff4ee6ccc6ac488e64b698e65f2d07bffec3d3409d5d",
+      "sha256": "dcb440fc78175533f43e6c03220356b753623575586003aceda3d3fdb6f09fbd"
+    },
+    {
+      "path": "scripts/test-markdown-downloads.mjs",
+      "previousSha256": "643e166d6541cb06aa6cdd8cdf937b57be0ab57eb4e495393c89f417a403b4f7",
+      "sha256": "e82d69f63846f1549ea0ea69c69c0912bddc95ac8f667523a2aa9e930276b6d4"
+    },
+    {
+      "path": "scripts/test-markdown-page-layout.py",
+      "previousSha256": "36cd8db1c25d7776cb8f1792829e7f57f155427159916162f69cc8cdb5021044",
+      "sha256": "5334b5e7a528e16bda61a6868f0dc2b59c3e34afee9b20d200ebcdcda03d25da"
+    },
+    {
+      "path": "scripts/test-retained-releases.mjs",
+      "previousSha256": "b73475fdc251ef13b26522cb3cfaa13f414988efe0a6330d24910c7be9725ded",
+      "sha256": "a46bceffc099fc188976488b69794308fa504162b64512fa2e1bb431278f72fc"
+    },
+    {
+      "path": "scripts/validate-pdf.py",
+      "previousSha256": "6cf7574e2bec4f2c0a53b38e65abca0c6a33adecd24bde0b590610a8494da06a",
+      "sha256": "6d0d56042ed659f765d2c79123311ee32f02f95dd74c02e0a04e7c13c81e8384"
+    },
+    {
+      "path": "scripts/validate_pdf_pair.py",
+      "previousSha256": "5b830819d65bb0c061337c7254d058f054ac70b2a972d2cc3b9e22c160928f46",
+      "sha256": "aa4b0cd04350c230c10fb41d1af83c94cef0b978fd296c7db2f44c0360b18a35"
+    }
+  ],
+  "unchangedArtifact": {
+    "pageDimensionsPoints": [
+      [
+        420.0,
+        594.96
+      ]
+    ],
+    "pages": 12,
+    "path": "references/specimen/canonical-handbook-specimen.pdf",
+    "pdfHeader": "%PDF-1.4",
+    "roles": [
+      "cover",
+      "editorial-premise",
+      "contents",
+      "chapter-opener",
+      "narrative-and-sources",
+      "diagram-and-table",
+      "editorial-examples",
+      "code-and-checklist",
+      "dense-table-stress",
+      "notes-and-sources",
+      "index",
+      "conditional-final-changelog"
+    ],
+    "sha256": "f2b35119784796cbc6a1da72b11842bb02f90667d90a3dffc1b68622bd1bca85"
+  },
+  "preservedManifestFields": [
+    "artifact",
+    "build",
+    "designSystemVersion",
+    "schemaVersion",
+    "toolchain",
+    "visualLineage"
+  ],
+  "generatorRepair": "Retain existing assets/html-entities.json in future generated inventories. Its original hash is unchanged."
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "command": "HANDBOOK_SITE_OUTPUT=<private temporary output>/site node site/scripts/build-site.mjs",
+  "approvedPackagesBuilt": 4,
+  "currentPublicOutputUnchanged": [
+    {
+      "path": "claude-design/index.html",
+      "sha256": "889b7fc0169ff721b21f901a2e5085946496e79f25e039db7e4ca534fda31937",
+      "bytes": 129333
+    },
+    {
+      "path": "claude-design/editions/v1.3.0/index.html",
+      "sha256": "52dc196a1a76a0ad35ceb68aafa05587e9d7903c9b30d16ca21536247a3f48af",
+      "bytes": 7612
+    },
+    {
+      "path": "claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+      "sha256": "b9781711293994d02d5511ada88fcf956989618d769fbe7dc778fdf73dab2b5f",
+      "bytes": 77219
+    },
+    {
+      "path": "claude-design/editions/v1.3.0/claude-design-v1.3.0.index.json",
+      "sha256": "bdcf463e855f11e47cec5ae1ba3e3f1e12b05d5ee05e3eb588018e047542fac1",
+      "bytes": 26555
+    }
+  ],
+  "noPdfRebuild": true,
+  "noBrowserRerun": true
+}

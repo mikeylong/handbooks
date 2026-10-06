@@ -68,7 +68,7 @@ html[data-theme] .theme-control { display: inline-block; }
   .search-result:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
   .action-link-primary:hover { background: color-mix(in srgb, var(--ink) 88%, var(--paper)); }
   p code, li code, td code { background: color-mix(in srgb, var(--ink) 6%, transparent); }
-  :root[data-theme="dark"] #main-content figure:has(img):not([data-artwork-paired]):not([data-diagram-rendered]) {
+  :root[data-theme="dark"] #main-content figure:has(img):not([data-artwork-paired]):not([data-diagram-rendered]):not(.reader-screenshot) {
     background: var(--image-paper);
     color: #171716;
     padding: 1rem;
@@ -110,7 +110,7 @@ html[data-theme] .theme-control { display: inline-block; }
     --highlight: #494126;
     --image-paper: #e4e1d9;
   }
-  :root:not([data-theme]) #main-content figure:has(img):not([data-artwork-paired]):not([data-diagram-rendered]) {
+  :root:not([data-theme]) #main-content figure:has(img):not([data-artwork-paired]):not([data-diagram-rendered]):not(.reader-screenshot) {
     background: var(--image-paper);
     color: #171716;
     padding: 1rem;

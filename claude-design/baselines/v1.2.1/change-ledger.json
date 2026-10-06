@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "accepted": true,
+  "readerFacingContentChanged": true,
+  "summary": "A reader-owned Figma file for the existing Velori exercise.",
+  "previousVersion": "1.2.0",
+  "proposedVersion": "1.2.1",
+  "recommendedVersionImpact": "patch",
+  "previousDate": "2026-10-05",
+  "previousPdfSha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
+  "changes": [
+    {
+      "id": "G01",
+      "category": "Correction or clarification",
+      "section": "Orientation, Chapter 10 and exercise materials",
+      "text": "Replaced the owner-file access prerequisite with a downloadable Velori Figma companion imported into the reader's own Drafts. Navigation uses verified page and frame names; each import records native identities and checks local dependencies and the prototype journey.",
+      "rationale": "Readers can complete the existing Figma exercise without access to the author's file.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig"
+      ],
+      "groupedDraftEntries": [
+        "F01"
+      ]
+    }
+  ],
+  "status": "accepted final source classification; artifact and hosted release acceptance remain separate",
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "0eee25b6932c3099e28aeebf059ad22eda5c18a16a022af05184b0cfdeb7b93a",
+    "previousSourceSha256": "9f3ef74c262f80204d9de42fd5305ac28ffd1d0bae192edaf5238ccea0a46198"
+  },
+  "comparisonEvidence": {
+    "exactSourcePatch": {
+      "path": "claude-design/qa/v1.2.1/exact-source.patch",
+      "sha256": "77843b37f927efc067ac951d15d13975bf88074689603ac8f791ae9c197ac866"
+    },
+    "editionDiff": {
+      "path": "claude-design/qa/v1.2.1/edition-diff.json",
+      "sha256": "b5a9dec487e9ae979d674f6375b8d4246bd9aeaf27c88239985e08e9f34a0578"
+    },
+    "exactPdfTextPatch": {
+      "path": "claude-design/qa/v1.2.1/exact-pdf-text.patch",
+      "sha256": "655adde6c82d75e6a4d5463fb3a6cd625db0c618e2ef3fcc151784deed2026aa"
+    },
+    "readerFacingContentPatch": {
+      "path": "claude-design/qa/v1.2.1/reader-facing-content.patch",
+      "sha256": "d7fc692bc5eabb17be5ef9ec3c809bd1715cd5558196273b9b058f3997c28acb"
+    },
+    "acceptedChangelogDecision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "e34fce9d936469b5efbd9d79686a9bdbbd12449fc35b3eaa53a6e8f17443bacf"
+    }
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+    "repositoryPath": "claude-design/reader/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
+    "sha256": "5d9878672afd35420a967d0703bed59c067cc8b802045cdef4c7d35868d3c673",
+    "bytes": 35152394,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "6c80614e5b1b04ea7e47c0eff30a8bd6ad353aca9dadc7ec60cf710cc5b9c106"
+    }
+  },
+  "verificationRecord": "claude-design/qa/v1.2.1/change-ledger-verification.json"
+}

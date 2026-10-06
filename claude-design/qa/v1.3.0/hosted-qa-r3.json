@@ -1,0 +1,1231 @@
+{
+  "schemaVersion": 1,
+  "url": "http://127.0.0.1:8788/claude-design/",
+  "browser": "151.0.7922.34",
+  "method": "Focused Figure 2 correction QA at 1440 and 390 CSS pixel widths, Light and Dark, structural height 1000, DPR 1. Changed Import screenshot, all three Figure 2 panels, approved asset routes and revised downloads. Full r2 coverage remains preserved and referenced.",
+  "baseline": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/hosted-qa-r2/hosted-qa.json",
+    "sha256": "ace9350cdc44f706c78d28860391bb9e213e940c92069d4bf7938c784ded92c6",
+    "structuralStatus": "passed",
+    "visualStatus": "passed",
+    "figureProofCount": 48
+  },
+  "manifestSha256": "9407b7a8725309175233ca99779cad7778955eb4c3a455293a26038394304f66",
+  "changedAssets": [
+    {
+      "path": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-menu.png",
+      "priorSha256": "27d6fa920ea358d3bd4171701a60f644037c476ffa541ee0750f8063a51b870a",
+      "sha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0"
+    }
+  ],
+  "unchangedAssetBindings": 36,
+  "cases": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "panels": [
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-menu.png",
+          "alt": "Figma file browser More menu has the actual cursor hovering over the highlighted Import row.",
+          "naturalWidth": 433,
+          "naturalHeight": 386,
+          "width": 433,
+          "height": 386,
+          "left": 651.5,
+          "right": 1084.5,
+          "anchorMaxWidth": "433px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        },
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-complete.png",
+          "alt": "Imported to Drafts dialog names velori-handbook-v1.2.1.fig and confirms one file imported.",
+          "naturalWidth": 965,
+          "naturalHeight": 465,
+          "width": 688,
+          "height": 331.515625,
+          "left": 524,
+          "right": 1212,
+          "anchorMaxWidth": "965px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        },
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-page-tree.png",
+          "alt": "Imported Figma file is in Drafts. Its page tree shows 01 Foundations, 02 Components, 03 Configurator, 04 Source Assets and 05 Store Handbook exercise.",
+          "naturalWidth": 555,
+          "naturalHeight": 547,
+          "width": 555,
+          "height": 547,
+          "left": 590.5,
+          "right": 1145.5,
+          "anchorMaxWidth": "555px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        }
+      ],
+      "caption": "Figure 2. Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page.",
+      "appearance": {
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "color": "rgb(23, 23, 22)"
+      },
+      "figureProofViewport": {
+        "width": 1440,
+        "height": 1739
+      },
+      "normalPanel": {
+        "top": 126.9375,
+        "bottom": 512.9375,
+        "mobileBarBottom": 0,
+        "viewportHeight": 1000
+      },
+      "overflow": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "downloads": [
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        }
+      ],
+      "editionSelfLinks": [
+        "/claude-design/editions/v1.3.0/",
+        "/claude-design/editions/v1.3.0/",
+        "/claude-design/editions/v1.3.0/"
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "panels": [
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-menu.png",
+          "alt": "Figma file browser More menu has the actual cursor hovering over the highlighted Import row.",
+          "naturalWidth": 433,
+          "naturalHeight": 386,
+          "width": 433,
+          "height": 386,
+          "left": 651.5,
+          "right": 1084.5,
+          "anchorMaxWidth": "433px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        },
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-complete.png",
+          "alt": "Imported to Drafts dialog names velori-handbook-v1.2.1.fig and confirms one file imported.",
+          "naturalWidth": 965,
+          "naturalHeight": 465,
+          "width": 688,
+          "height": 331.515625,
+          "left": 524,
+          "right": 1212,
+          "anchorMaxWidth": "965px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        },
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-page-tree.png",
+          "alt": "Imported Figma file is in Drafts. Its page tree shows 01 Foundations, 02 Components, 03 Configurator, 04 Source Assets and 05 Store Handbook exercise.",
+          "naturalWidth": 555,
+          "naturalHeight": 547,
+          "width": 555,
+          "height": 547,
+          "left": 590.5,
+          "right": 1145.5,
+          "anchorMaxWidth": "555px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        }
+      ],
+      "caption": "Figure 2. Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page.",
+      "appearance": {
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "color": "rgb(238, 236, 230)"
+      },
+      "figureProofViewport": {
+        "width": 1440,
+        "height": 1739
+      },
+      "normalPanel": {
+        "top": 126.9375,
+        "bottom": 512.9375,
+        "mobileBarBottom": 0,
+        "viewportHeight": 1000
+      },
+      "overflow": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "downloads": [
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        }
+      ],
+      "editionSelfLinks": [
+        "/claude-design/editions/v1.3.0/",
+        "/claude-design/editions/v1.3.0/",
+        "/claude-design/editions/v1.3.0/"
+      ]
+    },
+    {
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "panels": [
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-menu.png",
+          "alt": "Figma file browser More menu has the actual cursor hovering over the highlighted Import row.",
+          "naturalWidth": 433,
+          "naturalHeight": 386,
+          "width": 345.5625,
+          "height": 308.046875,
+          "left": 22.21875,
+          "right": 367.78125,
+          "anchorMaxWidth": "433px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        },
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-complete.png",
+          "alt": "Imported to Drafts dialog names velori-handbook-v1.2.1.fig and confirms one file imported.",
+          "naturalWidth": 965,
+          "naturalHeight": 465,
+          "width": 345.5625,
+          "height": 166.5,
+          "left": 22.21875,
+          "right": 367.78125,
+          "anchorMaxWidth": "965px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        },
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-page-tree.png",
+          "alt": "Imported Figma file is in Drafts. Its page tree shows 01 Foundations, 02 Components, 03 Configurator, 04 Source Assets and 05 Store Handbook exercise.",
+          "naturalWidth": 555,
+          "naturalHeight": 547,
+          "width": 345.5625,
+          "height": 340.578125,
+          "left": 22.21875,
+          "right": 367.78125,
+          "anchorMaxWidth": "555px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        }
+      ],
+      "caption": "Figure 2. Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page.",
+      "appearance": {
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "color": "rgb(23, 23, 22)"
+      },
+      "figureProofViewport": {
+        "width": 390,
+        "height": 1321
+      },
+      "normalPanel": {
+        "top": 126.484375,
+        "bottom": 434.53125,
+        "mobileBarBottom": 56.1875,
+        "viewportHeight": 1000
+      },
+      "overflow": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "downloads": [
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        }
+      ],
+      "editionSelfLinks": [
+        "/claude-design/editions/v1.3.0/",
+        "/claude-design/editions/v1.3.0/",
+        "/claude-design/editions/v1.3.0/"
+      ]
+    },
+    {
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "panels": [
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-menu.png",
+          "alt": "Figma file browser More menu has the actual cursor hovering over the highlighted Import row.",
+          "naturalWidth": 433,
+          "naturalHeight": 386,
+          "width": 345.5625,
+          "height": 308.046875,
+          "left": 22.21875,
+          "right": 367.78125,
+          "anchorMaxWidth": "433px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        },
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-complete.png",
+          "alt": "Imported to Drafts dialog names velori-handbook-v1.2.1.fig and confirms one file imported.",
+          "naturalWidth": 965,
+          "naturalHeight": 465,
+          "width": 345.5625,
+          "height": 166.5,
+          "left": 22.21875,
+          "right": 367.78125,
+          "anchorMaxWidth": "965px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        },
+        {
+          "asset": "/claude-design/editions/v1.3.0/assets/screenshots/s02-page-tree.png",
+          "alt": "Imported Figma file is in Drafts. Its page tree shows 01 Foundations, 02 Components, 03 Configurator, 04 Source Assets and 05 Store Handbook exercise.",
+          "naturalWidth": 555,
+          "naturalHeight": 547,
+          "width": 345.5625,
+          "height": 340.578125,
+          "left": 22.21875,
+          "right": 367.78125,
+          "anchorMaxWidth": "555px",
+          "effects": [
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            },
+            {
+              "filter": "none",
+              "opacity": "1",
+              "blend": "normal"
+            }
+          ]
+        }
+      ],
+      "caption": "Figure 2. Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page.",
+      "appearance": {
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "color": "rgb(238, 236, 230)"
+      },
+      "figureProofViewport": {
+        "width": 390,
+        "height": 1321
+      },
+      "normalPanel": {
+        "top": 126.484375,
+        "bottom": 434.53125,
+        "mobileBarBottom": 56.1875,
+        "viewportHeight": 1000
+      },
+      "overflow": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "downloads": [
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        },
+        {
+          "markdown": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+          "markdownDownload": "claude-design-v1.3.0.md",
+          "pdfs": [
+            {
+              "theme": "light",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf"
+            },
+            {
+              "theme": "dark",
+              "href": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+              "download": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf"
+            }
+          ]
+        }
+      ],
+      "editionSelfLinks": [
+        "/claude-design/editions/v1.3.0/",
+        "/claude-design/editions/v1.3.0/",
+        "/claude-design/editions/v1.3.0/"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "path": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-menu.png",
+      "kind": "Figure 2 screenshot",
+      "status": 200,
+      "sha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0",
+      "width": 433,
+      "height": 386,
+      "bytes": 33269
+    },
+    {
+      "path": "/claude-design/editions/v1.3.0/assets/screenshots/s02-import-complete.png",
+      "kind": "Figure 2 screenshot",
+      "status": 200,
+      "sha256": "db7982d9faeb2cf3e3750657b266f5876ffa962e881ed30fcbb8cc0a25b5937f",
+      "width": 965,
+      "height": 465,
+      "bytes": 58491
+    },
+    {
+      "path": "/claude-design/editions/v1.3.0/assets/screenshots/s02-page-tree.png",
+      "kind": "Figure 2 screenshot",
+      "status": 200,
+      "sha256": "b80715d50021f947789ae43466d5e134048c1b544c9f018705c1a29ff4233d0e",
+      "width": 555,
+      "height": 547,
+      "bytes": 48781
+    },
+    {
+      "path": "/claude-design/assets/screenshots/s02-import-menu.png",
+      "kind": "Changed reader asset copy",
+      "status": 200,
+      "sha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0",
+      "bytes": 33269
+    },
+    {
+      "path": "/claude-design/editions/v1.3.0/claude-design-v1.3.0.md",
+      "kind": "Markdown",
+      "status": 200,
+      "sha256": "da804e75edb69098cb7db5436517fa1c838a3250e02e8bd5c330eb8d2475f179",
+      "bytes": 77128
+    },
+    {
+      "path": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
+      "kind": "PDF",
+      "status": 200,
+      "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
+      "bytes": 10094624
+    },
+    {
+      "path": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+      "kind": "PDF",
+      "status": 200,
+      "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e",
+      "bytes": 54114753
+    }
+  ],
+  "failures": [],
+  "structuralStatus": "passed",
+  "visualStatus": "passed",
+  "publicationApproved": false,
+  "editionReview": {
+    "path": "/claude-design/editions/v1.3.0/",
+    "status": 200,
+    "revisedDownloadsPresent": true,
+    "noindex": true
+  },
+  "status": "passed",
+  "complete": true,
+  "visualReview": {
+    "status": "passed",
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/hosted-qa-r3/hosted-visual-review.json",
+    "sha256": "ecb2bd69cb291ffe3999145bf1b0c1f338b6f6632fe9dc2dacfbd6cca67d24de",
+    "figureProofCount": 4,
+    "normalViewportProofCount": 4,
+    "panelAppearancesInspected": 12,
+    "observations": [
+      "All four refreshed Figure 2 proofs show the genuine pointer on gray Import. Buzz is unhighlighted.",
+      "The corrected panel is centered at its native 433 by 386 pixel limit on desktop and shrinks proportionally to the 390px article; no color filter or unintended generic figure frame is applied in either theme.",
+      "Labels, caption, hover alt text and larger-image links match the frozen manifest. All three Figure 2 panels remain visible without clipping or overlapping text.",
+      "All four normal-height 1000px viewport proofs place the Import panel below the sticky chrome, with no horizontal overflow.",
+      "Import-completion microtext remains small at mobile inline size; the caption and larger-image link provide the reading path. The focused hover menu clearly identifies Import at mobile size."
+    ],
+    "findings": [],
+    "releaseBlockingVisualDefectCount": 0
+  },
+  "toolkitFreeze": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/hosted-qa-r2/toolkit-freeze.json",
+    "sha256": "17d8a2eb61a1056506fc764b4a09454366a8b968a2d53eaf3b232d4600420a4d",
+    "currentFileHashesMatch": true,
+    "intendedFileCount": 18,
+    "codeChangedForCorrection": false
+  },
+  "replacementAssetFreeze": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/frozen-assets-validation-r3.json",
+    "sha256": "56b213fb2ec744d36cb5df4b700cab5d4e15936d015f6ff57713a166efc79d74"
+  },
+  "fidelity": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/figure-preparation/color-managed-comparison-r3-import-menu.json",
+    "sha256": "4dd13bfcf60897f5515cb02787f15b4a9cac26c290a9e37220101b8feaba4b6c",
+    "status": "passed",
+    "exactSourcePixels": false,
+    "exactColorManagedPixels": false,
+    "maxChannelDelta": 2,
+    "changedColorManagedPixels": 6516,
+    "totalPixels": 167138
+  },
+  "retainedCoverage": "The complete r2 structural and visual review is preserved. This focused r3 check verifies the single changed PNG, all three Figure 2 panels at four width/theme combinations, the unchanged 36 asset bindings, and the updated reader asset/edition routes and downloads. It does not claim a fresh review of all 48 full-book figure proofs.",
+  "acceptance": {
+    "digitalScreen": "passed",
+    "physicalPrint": "not tested",
+    "publicationApproved": false,
+    "candidateOnly": true
+  },
+  "completedAt": "2026-10-06T16:35:35.874377+00:00"
+}

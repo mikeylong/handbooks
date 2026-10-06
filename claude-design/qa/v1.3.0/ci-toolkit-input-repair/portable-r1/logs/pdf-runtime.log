@@ -1,0 +1,56 @@
+{
+  "negativeCases": [
+    "protected release directory",
+    "existing artifact",
+    "missing Dark art",
+    "stale art hash",
+    "alpha reaching PDF",
+    "light panel on Dark"
+  ],
+  "fixtures": [
+    {
+      "schemaVersion": 1,
+      "status": "passed",
+      "retainedSha256": "38c4f216a8cccf783d28c8c8574faf265e2427837b3344a14ecf874c28d9548d",
+      "candidateSha256": "ca1630725faa2600223244e98f00c4c713147e338c111ac10fdd4bd253bf42eb",
+      "pages": [
+        4,
+        4
+      ],
+      "failures": [],
+      "accessibilityLimitations": [],
+      "darkPaintFailures": []
+    },
+    {
+      "schemaVersion": 1,
+      "status": "passed",
+      "retainedSha256": "1e4890392db08b128ce37900f2036805fd02f70679a697f9c86e379e04940781",
+      "candidateSha256": "8ffbef4123bbdb14ac30b67108f3ab656491ef434e6d01c50ed88f5216bb3bae",
+      "pages": [
+        26,
+        26
+      ],
+      "failures": [],
+      "accessibilityLimitations": [
+        "Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available."
+      ],
+      "darkPaintFailures": []
+    },
+    {
+      "schemaVersion": 1,
+      "status": "passed",
+      "retainedSha256": "535ad38495ce435bc16748657477b9970aefd1a2d673100a3611365ac0d44a07",
+      "candidateSha256": "8da491d06e3f79cef38e657404b53d4737fa909a78881430589ef4a3101c29c2",
+      "pages": [
+        4,
+        4
+      ],
+      "failures": [],
+      "accessibilityLimitations": [
+        "Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available."
+      ],
+      "darkPaintFailures": []
+    }
+  ],
+  "status": "passed"
+}

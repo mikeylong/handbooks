@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "failure": "Extracted validate-package portability scan reports two forbidden source text patterns",
+  "output": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+  "packageCoverage": {
+    "status": "passed",
+    "archive": "/private/tmp/claude-design-toolkit-portable-repair-r1/publish-evidence-backed-handbook.zip",
+    "archiveSha256": "8c5b1aa49bd2ad06527cf9acd174c5aca0c7d84bd8b091054c613e1abd1bbce7",
+    "archiveBytes": 7948871,
+    "archiveMembers": 139,
+    "manifestInputs": 137,
+    "members": 139,
+    "manifestSha256": "e08c71fd61155656203f669d074de1e0c4ea690011b26e729e4f2e3173ede3db",
+    "exactSourceBytes": true,
+    "allPinnedInputHashesMatch": true,
+    "manifestArtifactProofToolchainFieldsPreserved": true,
+    "screenshotFiles": [
+      "references/screenshot-figures.md",
+      "scripts/screenshot-browser-check.mjs",
+      "scripts/screenshot_figures.py",
+      "scripts/test-screenshot-figures.py"
+    ],
+    "missing": [],
+    "extra": []
+  },
+  "checks": [
+    {
+      "label": "package",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/publish-evidence-backed-handbook/scripts/package-skill.py",
+        "--output",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/publish-evidence-backed-handbook.zip"
+      ],
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/package.log"
+    },
+    {
+      "label": "validate-package",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook/scripts/validate-package.py",
+        "--package",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook",
+        "--output",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/package-validation.json"
+      ],
+      "exitCode": 1,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/validate-package.log"
+    },
+    {
+      "label": "code-blocks",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook/scripts/test-code-blocks.py"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r1/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/code-blocks.log"
+    },
+    {
+      "label": "font-resources",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook/scripts/test-font-resources.py"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r1/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/font-resources.log"
+    },
+    {
+      "label": "markdown-runtime",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook/scripts/test-markdown-runtime.py",
+        "--output",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/markdown-runtime"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r1/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/markdown-runtime.log"
+    },
+    {
+      "label": "pdf-downloads",
+      "command": [
+        "node",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook/scripts/test-pdf-downloads.mjs"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r1/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/pdf-downloads.log"
+    },
+    {
+      "label": "pdf-fixtures",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook/scripts/build-pdf-fixtures.py",
+        "--output",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/pdf-fixtures",
+        "--browser",
+        "/Users/mike/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+        "--playwright-module",
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r1/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/pdf-fixtures.log"
+    },
+    {
+      "label": "pdf-runtime",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/Users/mike/.codex/worktrees/claude-design-v120-release/handbooks/publish-evidence-backed-handbook/scripts/test-pdf-runtime.py",
+        "--fixtures",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/pdf-fixtures",
+        "--output",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/pdf-runtime"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r1/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/pdf-runtime.log"
+    },
+    {
+      "label": "pdf-validation-checks",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook/scripts/test-pdf-validation-checks.py"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r1/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/pdf-validation-checks.log"
+    },
+    {
+      "label": "screenshot-figures",
+      "command": [
+        "/Users/mike/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/extracted/publish-evidence-backed-handbook/scripts/test-screenshot-figures.py",
+        "--output",
+        "/private/tmp/claude-design-toolkit-portable-repair-r1/screenshot-figures"
+      ],
+      "cwd": "/private/tmp/claude-design-toolkit-portable-repair-r1",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/claude-design-toolkit-portable-repair-r1/temp"
+      },
+      "exitCode": 0,
+      "log": "/private/tmp/claude-design-toolkit-portable-repair-r1/logs/screenshot-figures.log"
+    }
+  ],
+  "totals": {
+    "passed": 9,
+    "failed": 1
+  },
+  "extractedPackageUnchangedAfterTests": true,
+  "postTestFileCount": 139,
+  "reports": [
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/package-coverage.json",
+      "sha256": "50720a18ab2b92ffa1881c6542c5ce13f2d5ccf05a1099953b97b05a13c8116f"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/package-validation.json",
+      "sha256": "6a348c49e8e30161f4f0d46456bf699675e4fe37f3d041d7465ea719e1e32e28"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/package-portability-findings.json",
+      "sha256": "302bd197f482fc3a63ff71b9c415307f4c21e95d09ad0394cd36c1aaa34c63a7"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/markdown-runtime/markdown-runtime-tests.json",
+      "sha256": "80009a072e41e8fff5707f2375e00c4ed66c73c23d45dd2d3d0c7213fda0558d"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/pdf-runtime/runtime-tests.json",
+      "sha256": "a83588055e89bc013852ba00053153a069e6f668a61aa60949e8b179cc0bd274"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/screenshot-figures/screenshot-tests.json",
+      "sha256": "e2261bb072aec54a199afe03f101babe8d7eb0c86f12bc0c6f6451ef7fa517fa"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/screenshot-figures/exception-structural.json",
+      "sha256": "a9b421d756503e2ec05a35e08d0f98b0f8bc6e895c6224819f41630ec17cb304"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/screenshot-figures/unit-spec.json",
+      "sha256": "b6b69c814c4cc9cbd964f4b49e982c85837c326a02246dd908b6cc19084a4293"
+    }
+  ],
+  "limitations": [
+    "Portable structural and runtime checks do not establish perceptual PDF quality or approve a release."
+  ],
+  "sourceEdits": false,
+  "gitOrNetworkOperations": false
+}

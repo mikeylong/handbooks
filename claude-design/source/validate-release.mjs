@@ -36,7 +36,17 @@ export function resolveReleaseContract({version,releaseContract}){
  const ids=releaseContract.classifiedChangeIds;
  assert.ok(Array.isArray(ids)&&ids.length&&ids.every(id=>typeof id==='string'&&/^[A-Z][A-Z0-9]*$/.test(id)),'Classified change IDs required');
  assert.equal(new Set(ids).size,ids.length,'Duplicate classified change IDs');
- const prefix=`/claude-design/editions/v${version}/`,sample=releaseContract.sample;
+ const artifactEdition=releaseContract.exerciseArtifactEdition??version;
+ if(Object.hasOwn(releaseContract,'exerciseArtifactEdition')){
+  assert.ok(typeof releaseContract.exerciseArtifactEdition==='string'&&/^\d+\.\d+\.\d+$/.test(releaseContract.exerciseArtifactEdition),'Invalid exercise artifact edition');
+  const older=(a,b)=>{const x=a.split('.').map(Number),y=b.split('.').map(Number);for(let i=0;i<3;i++){if(x[i]!==y[i])return x[i]<y[i];}return false;};
+  assert.ok(older(artifactEdition,version),'Reused exercise edition must precede this edition');
+  const approval=releaseContract.exerciseArtifactApproval;
+  assert.ok(approval,'An approved exercise binding is required');
+  const paths={releaseManifest:`claude-design/baselines/v${artifactEdition}/release-manifest.json`,publicationPackage:`claude-design/baselines/v${artifactEdition}/publication-package.json`,figmaCompanion:`claude-design/baselines/v${artifactEdition}/figma-companion.json`,figmaImportVerification:`claude-design/qa/v${artifactEdition}/figma-import-verification.json`};
+  for(const [key,path] of Object.entries(paths)){assert.equal(approval[key]?.path,path,'Reused exercise proof must bind the approved edition');assert.ok(isSha256(approval[key].sha256),'Approved exercise evidence hash required');}
+ }else assert.equal(releaseContract.exerciseArtifactApproval,undefined,'Exercise approval requires an explicit artifact edition');
+ const prefix=`/claude-design/editions/v${artifactEdition}/`,sample=releaseContract.sample;
  assert.ok(sample&&typeof sample.publicUrl==='string','Sample release URL required');
  const url=new URL(sample.publicUrl);
  assert.equal(url.origin,host,'Sample URL must use the public handbook host');
@@ -83,6 +93,27 @@ export function validateLedgerContract(ledger,{version,releaseContract,sourceSha
  assert.equal(verification.status,'passed');assert.equal(verification.ledger?.sha256,ledgerSha256,'Stale ledger verification');
  assert.deepEqual(verification.sourceSnapshot,ledger.sourceSnapshot);assert.deepEqual(verification.sampleRelease,ledger.sampleRelease);
  assert.deepEqual(verification.comparisonEvidence,ledger.comparisonEvidence,'Ledger verification evidence differs');
+}
+
+// Bind reused exercise bytes to their original approved edition and native import.
+// The original proof retains its version/date; this does not claim a new import.
+export function validateExerciseReuseContract(releaseContract,{version,records,files,companionSha256,qaSha256}){
+ const contract=resolveReleaseContract({version,releaseContract});
+ assert.ok(contract.exerciseArtifactEdition,'Explicit reused exercise edition required');
+ for(const [key,row] of Object.entries(contract.exerciseArtifactApproval))assert.equal(records[key]?.sha256,row.sha256,'Reused exercise evidence hash mismatch: '+key);
+ const edition=contract.exerciseArtifactEdition,manifest=records.releaseManifest.data,pkg=records.publicationPackage.data,companion=records.figmaCompanion.data,qa=records.figmaImportVerification.data;
+ assert.equal(manifest.approvalStatus,'approved','Reused exercise edition must be approved');
+ assert.equal(manifest.version,edition,'Reused approval edition mismatch');
+ assert.equal(pkg.id,'claude-design');assert.equal(pkg.version,edition,'Reused package edition mismatch');
+ assert.equal(companion.version,edition,'Reused companion edition mismatch');assert.equal(qa.version,edition,'Reused native proof edition mismatch');
+ assert.deepEqual(manifest.releaseContract?.sample,contract.sample,'Reused sample must match approved release contract');
+ const sample=contract.sample.repositoryPath.slice('claude-design/'.length),fig=`reader/editions/v${edition}/velori-design-system-configurator.fig`,sidecar=`reader/editions/v${edition}/figma-companion.json`;
+ for(const path of [sample,fig,sidecar]){assert.ok(isSha256(pkg.files[path]),'Approved exercise package pin required');assert.equal(files[path],pkg.files[path],'Reused artifact differs from approved package: '+path);}
+ assert.equal(companionSha256,records.figmaCompanion.sha256,'Reused companion manifest changed');
+ assert.equal(files[sidecar],companionSha256,'Reused public companion changed');
+ assert.equal(files[fig],companion.artifact.sha256,'Reused native bytes changed');
+ assert.equal(qaSha256,records.figmaImportVerification.sha256,'Reused native proof changed');
+ return edition;
 }
 
 export function validateFigmaCompanionContract(companion,{version,artifactSha256,artifactBytes,companionSha256,sidecarSha256,qaSha256,qa}){
@@ -132,7 +163,7 @@ export function validateDownloadContract(html,files,{version,releaseContract}={}
  if(releaseContract){
   const contract=resolveReleaseContract({version,releaseContract});
   assert.ok(downloads.has(new URL(contract.sample.publicUrl).pathname),'Current edition sample link required');
-  assert.ok(downloads.has(`/claude-design/editions/v${version}/velori-design-system-configurator.fig`),'Current edition Figma link required');
+  assert.ok(downloads.has(`/claude-design/editions/v${contract.exerciseArtifactEdition??version}/velori-design-system-configurator.fig`),'Current edition Figma link required');
  }
 }
 
@@ -194,11 +225,16 @@ if(manifest.releaseContract){
  const samplePath=releaseContract.sample.repositoryPath.slice('claude-design/'.length),sample=await pinnedFile(book,samplePath);
  assert.equal(pkg.files[samplePath],digest(sample.bytes),'Unpinned current edition sample');
  const source=await pinnedFile(book,'figma-companion.json'),companion=JSON.parse(source.bytes);
- const editionPath=`reader/editions/v${manifest.version}/`,artifact=await pinnedFile(book,editionPath+companion.artifact.filename),sidecar=await pinnedFile(book,editionPath+'figma-companion.json');
+ const artifactEdition=releaseContract.exerciseArtifactEdition??manifest.version;
+ const editionPath=`reader/editions/v${artifactEdition}/`,artifact=await pinnedFile(book,editionPath+companion.artifact.filename),sidecar=await pinnedFile(book,editionPath+'figma-companion.json');
  assert.equal(pkg.files[editionPath+companion.artifact.filename],digest(artifact.bytes),'Unpinned Figma artifact');
  assert.equal(pkg.files[editionPath+'figma-companion.json'],digest(sidecar.bytes),'Unpinned Figma sidecar');
- const proof=await pinnedFile(book,`qa/v${manifest.version}/figma-import-verification.json`);
- validateFigmaCompanionContract(companion,{version:manifest.version,artifactSha256:digest(artifact.bytes),artifactBytes:artifact.bytes.length,companionSha256:digest(source.bytes),sidecarSha256:digest(sidecar.bytes),qaSha256:digest(proof.bytes),qa:JSON.parse(proof.bytes)});
+ const proof=await pinnedFile(book,`qa/v${artifactEdition}/figma-import-verification.json`);
+ if(Object.hasOwn(releaseContract,'exerciseArtifactEdition')){
+  const records={};for(const [key,row] of Object.entries(releaseContract.exerciseArtifactApproval)){const input=await pinnedFile(book,row.path.slice('claude-design/'.length));records[key]={sha256:digest(input.bytes),data:JSON.parse(input.bytes)};}
+  validateExerciseReuseContract(releaseContract,{version:manifest.version,records,files:pkg.files,companionSha256:digest(source.bytes),qaSha256:digest(proof.bytes)});
+ }
+ validateFigmaCompanionContract(companion,{version:artifactEdition,artifactSha256:digest(artifact.bytes),artifactBytes:artifact.bytes.length,companionSha256:digest(source.bytes),sidecarSha256:digest(sidecar.bytes),qaSha256:digest(proof.bytes),qa:JSON.parse(proof.bytes)});
 }
 const html=await readFile(resolve(book,pkg.html),'utf8');
 for(const v of variants){

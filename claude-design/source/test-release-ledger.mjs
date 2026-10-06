@@ -3,7 +3,7 @@ import {readFile,stat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import {existsSync} from 'node:fs';
-import {resolveReleaseContract,validateLedgerContract,validateFigmaCompanionContract,validateDownloadContract} from './validate-release.mjs';
+import {resolveReleaseContract,validateLedgerContract,validateFigmaCompanionContract,validateDownloadContract,validateExerciseReuseContract} from './validate-release.mjs';
 const root=[import.meta.dirname,...Array.from({length:10},(_,i)=>resolve(import.meta.dirname,...Array(i+1).fill('..')))].find(path=>existsSync(resolve(path,'catalog.json'))&&existsSync(resolve(path,'site/scripts/book-sources.mjs')));
 assert.ok(root,'Run this regression within a handbooks collection');
 const book=resolve(root,'claude-design'),baseline=resolve(book,'baselines/v1.2.0');
@@ -80,3 +80,31 @@ assert.throws(()=>validateDownloadContract(reader,{[zipPath]:newLedger.sampleRel
 assert.throws(()=>validateDownloadContract(reader.replace('v1.2.1/velori-design','v1.2.0/velori-design'),{...downloadPins,'reader/editions/v1.2.0/velori-design-system-configurator.fig':companion.artifact.sha256},{version,releaseContract}),/Current edition Figma link/,'A pinned old Figma link cannot replace current companion');
 assert.throws(()=>validateDownloadContract(reader.replace(/<a href="https[^>]+>Sample<\/a>/,''),downloadPins,{version,releaseContract}),/Current edition sample link/,'The current sample must be linked');
 console.log('Preserved v1.2.0 ledger passed its nine stale/private regressions; explicit successor contract, change coverage, Figma byte pins and import proof passed focused positive/negative fixtures. Synthetic import acceptance is test data, not release evidence.');
+
+// Screenshot editions may reuse immutable approved exercise artifacts; native proof
+// must retain its original edition and hashes rather than being relabeled.
+const reuseVersion='1.3.0',reuseEdition='1.2.1',reuseBaseline=resolve(book,'baselines/v'+reuseEdition);
+const reuseContract={classifiedChangeIds:['S01'],exerciseArtifactEdition:reuseEdition,exerciseArtifactApproval:{},sample:structuredClone(releaseContract.sample)};
+const reuseRecords={};
+for(const [key,path] of Object.entries({releaseManifest:`claude-design/baselines/v${reuseEdition}/release-manifest.json`,publicationPackage:`claude-design/baselines/v${reuseEdition}/publication-package.json`,figmaCompanion:`claude-design/baselines/v${reuseEdition}/figma-companion.json`,figmaImportVerification:`claude-design/qa/v${reuseEdition}/figma-import-verification.json`})){
+ const b=await readFile(resolve(root,path));reuseContract.exerciseArtifactApproval[key]={path,sha256:sha(b)};reuseRecords[key]={sha256:sha(b),data:JSON.parse(b)};
+}
+const reuseContext={version:reuseVersion,records:reuseRecords,files:structuredClone(reuseRecords.publicationPackage.data.files),companionSha256:reuseRecords.figmaCompanion.sha256,qaSha256:reuseRecords.figmaImportVerification.sha256};
+assert.equal(validateExerciseReuseContract(reuseContract,reuseContext),reuseEdition);
+validateDownloadContract(reader,reuseContext.files,{version:reuseVersion,releaseContract:reuseContract});
+assert.throws(()=>resolveReleaseContract({version:reuseVersion,releaseContract:{...reuseContract,exerciseArtifactApproval:undefined}}),/approved exercise binding/);
+assert.throws(()=>resolveReleaseContract({version:reuseVersion,releaseContract:{...reuseContract,exerciseArtifactEdition:'1.3.0'}}),/must precede/);
+for(const [name,mutate,expected] of [
+ ['unapproved exercise',x=>x.records.releaseManifest.data.approvalStatus='candidate',/must be approved/],
+ ['wrong approved edition',x=>x.records.releaseManifest.data.version='1.2.0',/approval edition mismatch/],
+ ['changed exercise bytes',x=>x.files[zipPath]='0'.repeat(64),/differs from approved package/],
+ ['changed native file',x=>x.files[figPath]='0'.repeat(64),/differs from approved package/],
+ ['relabeled native proof',x=>x.records.figmaImportVerification.data.version=reuseVersion,/native proof edition mismatch/],
+ ['changed original evidence',x=>x.records.figmaImportVerification.sha256='0'.repeat(64),/evidence hash mismatch/],
+ ['changed companion metadata',x=>x.companionSha256='0'.repeat(64),/companion manifest changed/]
+]){const x=structuredClone(reuseContext);mutate(x);assert.throws(()=>validateExerciseReuseContract(reuseContract,x),expected,name);}
+const wrongReuse=structuredClone(reuseContract);wrongReuse.exerciseArtifactApproval.releaseManifest.path='claude-design/review/private.json';assert.throws(()=>resolveReleaseContract({version:reuseVersion,releaseContract:wrongReuse}),/bind the approved edition/);
+const changedReuse=structuredClone(reuseContract);changedReuse.sample.publicUrl=changedReuse.sample.publicUrl.replace('0.2.1','0.2.2');changedReuse.sample.repositoryPath=changedReuse.sample.repositoryPath.replace('0.2.1','0.2.2');assert.throws(()=>validateExerciseReuseContract(changedReuse,reuseContext),/match approved release contract/);
+console.log('Immutable exercise reuse keeps the original native proof/version; unapproved editions, changed artifacts, mismatched approvals and relabeled evidence fail.');
+
+for(const exerciseArtifactEdition of [false,'',0,null,undefined]){const x={...reuseContract,exerciseArtifactEdition};assert.throws(()=>resolveReleaseContract({version:reuseVersion,releaseContract:x}),/Invalid exercise artifact edition/,'Reject supplied falsy artifact edition '+String(exerciseArtifactEdition));}

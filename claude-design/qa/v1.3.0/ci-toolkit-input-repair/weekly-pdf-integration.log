@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "fixtures": [
+    {
+      "status": "passed",
+      "fixture": "unchanged",
+      "pdf": "/private/tmp/claude-design-toolkit-weekly-pdf-repair-r1/unchanged/daytime.pdf",
+      "sha256": "692da4989ef0a2457b49ecebef798bd9553e91adf6707673e2279d193886ab1a",
+      "pages": 96,
+      "title": "Production AI Engineering \u00b7 Daytime version",
+      "changelogRequired": false,
+      "changelogPages": 0,
+      "pageMapStable": true,
+      "negativeCases": []
+    },
+    {
+      "status": "passed",
+      "fixture": "changed",
+      "pdf": "/private/tmp/claude-design-toolkit-weekly-pdf-repair-r1/changed/daytime.pdf",
+      "sha256": "7a497bb7c8117da0ede8e41d20f7522ab574684b1a0fbd31c695293ee0cc6ee3",
+      "pages": 103,
+      "title": "Production AI Engineering \u00b7 Daytime version",
+      "changelogRequired": true,
+      "changelogPages": 7,
+      "pageMapStable": true,
+      "negativeCases": [
+        "bare legacy title with explicit theme",
+        "removed cover credit"
+      ]
+    }
+  ],
+  "protectedInputsUnchanged": true,
+  "evidence": "/private/tmp/claude-design-toolkit-weekly-pdf-repair-r1",
+  "publicationApproved": false,
+  "error": null
+}

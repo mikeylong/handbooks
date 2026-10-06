@@ -1,0 +1,1522 @@
+{
+  "title": "Claude Design Field Guide",
+  "version": "1.2.1",
+  "date": "2026-10-05",
+  "pdf": "output/pdf/claude-design-v1.2.1-2026-10-05-daytime-r1.pdf",
+  "sha256": "43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272",
+  "pages": 56,
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-05",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v1.2.1-2026-10-05-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v1.2.1/claude-design-v1.2.1-2026-10-05-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v1.2.1-2026-10-05-daytime-r1.pdf",
+      "sha256": "43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272",
+      "pages": 56,
+      "bytes": 4954009,
+      "pageMap": {
+        "path": "claude-design/qa/v1.2.1/daytime-map.json",
+        "sha256": "924e88843ae51e60d4a7a92de37c5ff018802d1775b6dd222d182f4dc4cf8e18"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-05",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v1.2.1-2026-10-05-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v1.2.1/claude-design-v1.2.1-2026-10-05-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v1.2.1-2026-10-05-late-night-r1.pdf",
+      "sha256": "1b1a475d88d1bf180302ca9037f1d10a5a611adf4758faff9e355f7e0ca2be8a",
+      "pages": 56,
+      "bytes": 48969946,
+      "pageMap": {
+        "path": "claude-design/qa/v1.2.1/late-night-map.json",
+        "sha256": "1d5a684301ac706a6af361edda67ac2d8bc3d1a7ea87d3b0f51b42010a8ddb9b"
+      },
+      "proof": {
+        "parity": {
+          "path": "claude-design/qa/v1.2.1/parity/parity.json",
+          "sha256": "52973236c057997cae56888c7d2f4cb11f46f757b7f76a1ef6e53b3b8fa1e415"
+        },
+        "visualApproval": {
+          "schemaVersion": 1,
+          "status": "approved",
+          "reviewer": "Codex handbook audit agent",
+          "reviewedAt": "2026-10-06T00:12:51.820496+00:00",
+          "date": "2026-10-05",
+          "appearance": "Late night",
+          "pdf": "claude-design/review/2026-10-05-figma-companion/pdf/final-r2/claude-design-v1.2.1-2026-10-05-late-night-r1.pdf",
+          "sha256": "1b1a475d88d1bf180302ca9037f1d10a5a611adf4758faff9e355f7e0ca2be8a",
+          "artifactSha256": "1b1a475d88d1bf180302ca9037f1d10a5a611adf4758faff9e355f7e0ca2be8a",
+          "bytes": 48969946,
+          "pages": 56,
+          "source": {
+            "path": "claude-design/review/2026-10-05-figma-companion/book/Claude_Design_Field_Guide_Source.md",
+            "sha256": "0eee25b6932c3099e28aeebf059ad22eda5c18a16a022af05184b0cfdeb7b93a",
+            "bytes": 59471
+          },
+          "basis": "Actual visual inspection of all 56 pages in Poppler and Apple PDFKit contact sheets. Changed setup/package/changelog pages were inspected individually in both engines. All chapter openers and selected dense/diagram/code pages were inspected on native-resolution paired sheets without resizing.",
+          "scope": {
+            "allPages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56
+            ],
+            "renderers": [
+              "Poppler",
+              "Apple PDFKit"
+            ],
+            "renderedPagesInspected": 112,
+            "contactSheetsInspected": 14,
+            "nativeResolutionSheetsInspected": 12,
+            "fullSizePages": [
+              1,
+              4,
+              5,
+              6,
+              7,
+              11,
+              14,
+              19,
+              21,
+              24,
+              27,
+              30,
+              31,
+              33,
+              36,
+              39,
+              41,
+              42,
+              44,
+              45,
+              48,
+              50,
+              51,
+              54,
+              55,
+              56
+            ],
+            "bothRendererIndividualPages": [
+              4,
+              45,
+              54,
+              56
+            ],
+            "chapterOpenersInspected": 11,
+            "pdfsAuthored": 0,
+            "releaseApproval": false
+          },
+          "checks": [
+            "Cover, contents, all chapter openers, workflow diagrams, dense tables, prompt panels, code blocks, references, and the final changelog are legible and complete.",
+            "The paid/Education plan prerequisite and separate reader-owned Figma import guidance fit within the existing page layout.",
+            "No visible clipping, overlapping text, missing glyphs, broken table rows, or missing artwork were found.",
+            "Pages 41–42 preserve the intact three-line command panel and final padding; pages 54–55 show the correct running headers.",
+            "The complete accepted one-group changelog occupies the final page 56 with the prior edition identity and exact prior PDF hash."
+          ],
+          "issues": [],
+          "severityFindings": {
+            "High": [],
+            "Medium": [],
+            "Low": []
+          },
+          "paginationObservation": "Page 52 contains a short readable capstone continuation; it is accepted as part of the governing pagination.",
+          "pageLabels": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50"
+          ],
+          "renders": [
+            {
+              "page": 1,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-01.png",
+              "sha256": "3cb92da9489ebbb9b92144fc381d7b0c20ca5cc8d2de624124520abaaae4fdf2"
+            },
+            {
+              "page": 2,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-02.png",
+              "sha256": "5f7c26b856628487dc77db5bf732cb11f6bb98446e011a0503d57a89b7d48620"
+            },
+            {
+              "page": 3,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-03.png",
+              "sha256": "9d172ef152909da314ac3f8592df6c8fdf247d286a2006d1385802aa79401c16"
+            },
+            {
+              "page": 4,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-04.png",
+              "sha256": "3edb05ee54acc383e86c720e31377ef1670641be6b3a1906c9033eedaae45bd7"
+            },
+            {
+              "page": 5,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-05.png",
+              "sha256": "32938eaa07bf54afa1db9f399d1c0581d4c4f5f1acf08224fd862200484d85b0"
+            },
+            {
+              "page": 6,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-06.png",
+              "sha256": "5e79f6d391f62903d0b40dff3d80fcf87654179dc067d92e8dd80e3a8c8f388a"
+            },
+            {
+              "page": 7,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-07.png",
+              "sha256": "c1e4a8c1b2e52d31efa58a97bbe46cbeaf59a0593554fbf434368ee2771ccee1"
+            },
+            {
+              "page": 8,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-08.png",
+              "sha256": "3f6b59ab7d2555a41e6f9f9840ac05e39e949c2bb8027aafd240cafe87260086"
+            },
+            {
+              "page": 9,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-09.png",
+              "sha256": "c77f155dbecf22d1265b76884a91cf0a5414179d2b56d5d7378dfc3bd5dc9db2"
+            },
+            {
+              "page": 10,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-10.png",
+              "sha256": "e2c6b077463d4032053ccb4f80fbdb2a16e62caa27be8cceef663dc50aebbaec"
+            },
+            {
+              "page": 11,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-11.png",
+              "sha256": "276229cba48e23451706e5dd02f132e1faf2313e957a24004281264402f0a8e0"
+            },
+            {
+              "page": 12,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-12.png",
+              "sha256": "ce9f1ab8f74be85d1e9c16b7d91fbcc5b7de8454240f4835c6c97b35624964d1"
+            },
+            {
+              "page": 13,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-13.png",
+              "sha256": "731255c7d73952718bad6f99832be18d24901850710195ca774cdfb958996790"
+            },
+            {
+              "page": 14,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-14.png",
+              "sha256": "12449109e068f99579a0a86c0c2517d72ad17573f734e295f75407b5bcb018f5"
+            },
+            {
+              "page": 15,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-15.png",
+              "sha256": "f97b90f0dab2a2e57e17f111e605f09eb572558bcd6c09597a362665abd3c619"
+            },
+            {
+              "page": 16,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-16.png",
+              "sha256": "bdb1126632519181b4ec04ffd41d92c80afe23160c9608d5276646efb85ac79a"
+            },
+            {
+              "page": 17,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-17.png",
+              "sha256": "765dd88021d878b041d28fedbe7874ae71cee4ff36aeb820ce9eb9a3d3478e91"
+            },
+            {
+              "page": 18,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-18.png",
+              "sha256": "6d7b6598f346cffe3bd84b55482c499016701732efe8653e12b7e12b29b3744e"
+            },
+            {
+              "page": 19,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-19.png",
+              "sha256": "40916b26e9146309eebd7720612000eebf4fbdbc7e6e8c84e6bad3eecd7222ab"
+            },
+            {
+              "page": 20,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-20.png",
+              "sha256": "2e314548f8f79142016fbde01fa5e0d577a0ff5a573cbe59ab6b6731f467006b"
+            },
+            {
+              "page": 21,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-21.png",
+              "sha256": "de34bb87a11a1302cc529d4ccde697756b773f73863a6a3433ce70d4ba5d00f9"
+            },
+            {
+              "page": 22,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-22.png",
+              "sha256": "a87376c5c4ab17182a9070c7d2b09630ebc187b97566c39153e0a1ec6d544e0d"
+            },
+            {
+              "page": 23,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-23.png",
+              "sha256": "81f2cecf2ef9c3495416c08b8b1250ef78c1178f9f25baf575bdc8d1f746ce75"
+            },
+            {
+              "page": 24,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-24.png",
+              "sha256": "1f544c8fd2e7907104ef23219cdfdb3331b0977ff5f9e4f689bb648a1d30c280"
+            },
+            {
+              "page": 25,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-25.png",
+              "sha256": "9b861e62a9456c92cbb8b26e1467ab36d4023d76c59f7c8c46330ced73e3ded5"
+            },
+            {
+              "page": 26,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-26.png",
+              "sha256": "6ab6f719f3d122ed71d05d8bdfd17cb576140d8dc159b9d0622fa186d487f7bd"
+            },
+            {
+              "page": 27,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-27.png",
+              "sha256": "da9c94c3705fa5b9a3b537a9547987f4203476e7f97c4bfce02a2e8a38c41a4c"
+            },
+            {
+              "page": 28,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-28.png",
+              "sha256": "6c348be380c6cfa50bbb490e33b487e6ebeddf35bc40cb3e5bec8f95cc67c633"
+            },
+            {
+              "page": 29,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-29.png",
+              "sha256": "8eaa1fe9b1f1ab2000f414a8d95f56ee5a6fd56e5f21d7dcf986655d42dc3232"
+            },
+            {
+              "page": 30,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-30.png",
+              "sha256": "782cc2a20d7fd70a4602152c79d265a49e38f85eb36c5bff2fd2f520ebce6536"
+            },
+            {
+              "page": 31,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-31.png",
+              "sha256": "ad6890ebb74e3ef9b025af01d3ccfe80a5becfcae3e9905ec9b17a5165735e3a"
+            },
+            {
+              "page": 32,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-32.png",
+              "sha256": "67002fa9002453c35b278d5e395deea52a911d0874ee5cd3d3b5f838779f3ea2"
+            },
+            {
+              "page": 33,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-33.png",
+              "sha256": "e2e21331fafa6ea928dc401d5748e9eeaa1a239e6d4ffa8568fe84801be69d9c"
+            },
+            {
+              "page": 34,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-34.png",
+              "sha256": "62d548a5ad4a0942b23343b6829438f6b79a24a9c24fd35c51e05ce64c160e57"
+            },
+            {
+              "page": 35,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-35.png",
+              "sha256": "2144133c0948b391af5de2c80597ec0e3ab238a1d8a49e8285b8265be67a9991"
+            },
+            {
+              "page": 36,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-36.png",
+              "sha256": "2ce71eda0385eb2905f76c142c536f3bb3352e4184dde429fcd58f0e19c97a47"
+            },
+            {
+              "page": 37,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-37.png",
+              "sha256": "eaefa5c3ffd4f83314d527b46e347d768cd3f2ddb477d2f683b0e49720647874"
+            },
+            {
+              "page": 38,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-38.png",
+              "sha256": "86e8202d2288419b8ed048b5bb8da79db21f0828eb08ffb9cdeb57d27da52b00"
+            },
+            {
+              "page": 39,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-39.png",
+              "sha256": "a79a64fa18a5221500e56b4e1455275edac48d4c16b5f4ef768465dd8555402c"
+            },
+            {
+              "page": 40,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-40.png",
+              "sha256": "0903b5dceaf198f3bbfff96d71cb0204b7b19d1a7b95242553a9f17f38b14074"
+            },
+            {
+              "page": 41,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-41.png",
+              "sha256": "9d2904a0981a7b53dd1e9f83a9a39594bf19cd0b663b811e66ab9db17bc0a54d"
+            },
+            {
+              "page": 42,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-42.png",
+              "sha256": "3be7b33261e5cb2ccfc4dd370eaecfc680cfe81f9643cae290ec2123bded3fd3"
+            },
+            {
+              "page": 43,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-43.png",
+              "sha256": "1c8a77462c92033f2839863d9e7305cfb615c61219324af859b558ebb1119a1c"
+            },
+            {
+              "page": 44,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-44.png",
+              "sha256": "62d2fc55eca08845773b7261e1701e0f2722520ce512aa2e0fac953c947ad133"
+            },
+            {
+              "page": 45,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-45.png",
+              "sha256": "9169a8ed33a16ca000c7a53fed028490a07b6079182042423495dbd177f5a493"
+            },
+            {
+              "page": 46,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-46.png",
+              "sha256": "576c58969af7728ba091afe1818d2e54421a2a3e9dae5b6473f65db8a0e85877"
+            },
+            {
+              "page": 47,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-47.png",
+              "sha256": "76406721bc2287941ac72ded0c534ba30a5dd90813b9a6f8c491741279feda1f"
+            },
+            {
+              "page": 48,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-48.png",
+              "sha256": "58b85945e1450c69432e1383e1d64439fa54d95fc7b3a7e03ac54acf79698ac4"
+            },
+            {
+              "page": 49,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-49.png",
+              "sha256": "f3bc128670667992f7f01d32eb9f7f616996fde42dc976d0568df5d84d031c16"
+            },
+            {
+              "page": 50,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-50.png",
+              "sha256": "4954f138751e6e2ded427a4f5d4ed4cbc2f98c96ca47f965778176cbec9d2a51"
+            },
+            {
+              "page": 51,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-51.png",
+              "sha256": "a5cfebb8a410a5045ae0e9d60e30daa2db778fcae7bd65d8375926298f483f78"
+            },
+            {
+              "page": 52,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-52.png",
+              "sha256": "4ed87a96b1d3d384c94858947d562b9e7d1455465a51b3bb66a4cc0da1665257"
+            },
+            {
+              "page": 53,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-53.png",
+              "sha256": "1a9d8c3a559b9b14f5d563932ed450fb4709f5613521286de156ef65c88e6ee8"
+            },
+            {
+              "page": 54,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-54.png",
+              "sha256": "5ff022e7ad450231e35e398c55210d940bb3ecf80408f114135bafeb03794079"
+            },
+            {
+              "page": 55,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-55.png",
+              "sha256": "d4fdf985ab6e7254810223da0f7d0d8b1d56cfa2c5805299c9175937bfbc4112"
+            },
+            {
+              "page": 56,
+              "renderer": "poppler",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-poppler/page-56.png",
+              "sha256": "b8269a776b08cf09f702d224befc8b909e0d58650eca42e041e3d62057c9ba4f"
+            },
+            {
+              "page": 1,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-001.png",
+              "sha256": "773afd9c46d3e1203335b17caa53079f794ca810efa9d34f5a9b09dc306ebf48"
+            },
+            {
+              "page": 2,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-002.png",
+              "sha256": "8f40562831af4fdb547c6dc6b529b8857a554aa794affea35236f8c759514631"
+            },
+            {
+              "page": 3,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-003.png",
+              "sha256": "c6a3e29252b5638b13d287fd8f1bfe7805775ea5b2f496cd470febe9f628403e"
+            },
+            {
+              "page": 4,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-004.png",
+              "sha256": "070ec9eb3cb28f46419629aa6f80bc7457379049a73cb8eca1131b83334a3356"
+            },
+            {
+              "page": 5,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-005.png",
+              "sha256": "7b4348dbe2616b826befab7e9c28d0b4534aea02de14272f3b4785f6aca88f7d"
+            },
+            {
+              "page": 6,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-006.png",
+              "sha256": "7390e00f79b81894f2a4678c33e9a4ede915d0528d2282eb114ce895526691e9"
+            },
+            {
+              "page": 7,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-007.png",
+              "sha256": "31876c8e138eccba95678448248d0cb7b6d1078a47d36f6e68385a58f9a9823c"
+            },
+            {
+              "page": 8,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-008.png",
+              "sha256": "76e313da54139b7f33e50819291812c39b0bc32226b1a340129b027a1e9c8638"
+            },
+            {
+              "page": 9,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-009.png",
+              "sha256": "3cf6c9bb4e5b5936a43ff27ed576ca171b04bd475b4e2b025ebc35d5bb8c2c78"
+            },
+            {
+              "page": 10,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-010.png",
+              "sha256": "89f59b951ba3753807f584de32184397b9ca9c688ac3399625d936f859c8bf25"
+            },
+            {
+              "page": 11,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-011.png",
+              "sha256": "921ecb313b8cc2e206565fae7210cae9d18c56b2e075aa9f8e818fa26e094ea7"
+            },
+            {
+              "page": 12,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-012.png",
+              "sha256": "188564c7db3dc39993cd6eb8625c46f945023d2a895181596beab300bcdfecb0"
+            },
+            {
+              "page": 13,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-013.png",
+              "sha256": "189e4afad09c48ebdc715f78ed0e60779174ccf20c61093afebe4bc738765aa6"
+            },
+            {
+              "page": 14,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-014.png",
+              "sha256": "d46d5780279dcd40ea54cf434b09b86a50bdc6a9a48880664bcac814c9d82148"
+            },
+            {
+              "page": 15,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-015.png",
+              "sha256": "131eaad89ecf7fbc7ff9f5707e980ca27ac39a8b4adfc50bb46f0dcbe4f00742"
+            },
+            {
+              "page": 16,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-016.png",
+              "sha256": "b3408fc71aec1e5017321774c6414fe571c1edb7f758869bfe73a33e4fc69a06"
+            },
+            {
+              "page": 17,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-017.png",
+              "sha256": "41783d6c6e8c140640f051e16e842da0491d9a015b9ffb0dd642fff7663bae80"
+            },
+            {
+              "page": 18,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-018.png",
+              "sha256": "af0b487701bee3ade4adcb51e7ad026a5064f91384856d789b330ed83b58f60a"
+            },
+            {
+              "page": 19,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-019.png",
+              "sha256": "1734d340e1c4ace2505c8ad2ae6f9a5a03776a7014b974bc9f254a940775d7a9"
+            },
+            {
+              "page": 20,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-020.png",
+              "sha256": "c4179b00a96b2543e49b2bc0162eb1e8dab92f06e0f7d2298c804dd31ee1c2ce"
+            },
+            {
+              "page": 21,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-021.png",
+              "sha256": "37c93470d6f95f7058bf70e2c589dc718d272d339c7ec49d7fd22fac5ed9fdb2"
+            },
+            {
+              "page": 22,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-022.png",
+              "sha256": "8c6a16509fbe9cf087b7b247a89f880dfd1b00e5003b7ba8388f60331a681b57"
+            },
+            {
+              "page": 23,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-023.png",
+              "sha256": "8510117c7a8b5beb71763f40192f55bb7afc0633c75710f42eb036a0f9df3afc"
+            },
+            {
+              "page": 24,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-024.png",
+              "sha256": "05785ae1f0bf38e79c155d6dcd04916c4e73e0b0c3e27cebdbfe723647722b38"
+            },
+            {
+              "page": 25,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-025.png",
+              "sha256": "f896347c9993b883e8539136fbfd74c0d46b54bc49a238e2c0bcb07617b4f170"
+            },
+            {
+              "page": 26,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-026.png",
+              "sha256": "ec47e85be5c8f0ed8726a78249c36ddb287859a34300d498dc433b2599a8f129"
+            },
+            {
+              "page": 27,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-027.png",
+              "sha256": "91a75dc667fc6b4a11b5b82c5ecaee87f0977b8864801e484da55135fb1f1ded"
+            },
+            {
+              "page": 28,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-028.png",
+              "sha256": "4143509b218e490f415f7b37167f1fd4c7190bdf326942ce8877467262cf8f51"
+            },
+            {
+              "page": 29,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-029.png",
+              "sha256": "5a2f1bd9ad7928bbda006a4537522a15ba535a0925e79d2e41b9b3c2b0b140ec"
+            },
+            {
+              "page": 30,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-030.png",
+              "sha256": "135724f1b91e1510bbaefd65b05f742df8fbe59a7b25e34354f759afd3af223f"
+            },
+            {
+              "page": 31,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-031.png",
+              "sha256": "d0f0c5d5982f1395177ccc6805f9ac0ebc39b25510083269b623135182f33347"
+            },
+            {
+              "page": 32,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-032.png",
+              "sha256": "1a7764a1e89cd72f29834d5e6a683e38e8f0850aaee252e1a69166185a812a51"
+            },
+            {
+              "page": 33,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-033.png",
+              "sha256": "92233bd36fc8660c122c18a1a0bcee715eefa8557ed780da3e7313fc37eceb5d"
+            },
+            {
+              "page": 34,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-034.png",
+              "sha256": "b09c7eebc056d3df875cf0140afc9e19f550e60d7b5fdaeb46f491a4e68dce93"
+            },
+            {
+              "page": 35,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-035.png",
+              "sha256": "d63af037e242b820e93f223fab6017dfbcc8c348353cbaea434a32b7c9c648ad"
+            },
+            {
+              "page": 36,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-036.png",
+              "sha256": "3ead7d38f32e8c4006a72405a1de8ab00360b6176df96a17d1a167fa1e1dbebf"
+            },
+            {
+              "page": 37,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-037.png",
+              "sha256": "d37be36aa62d65846da3a508bfceaea4c834a302bff8e083e2c51a7c392bb210"
+            },
+            {
+              "page": 38,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-038.png",
+              "sha256": "67d34476ddb5d8c2fb2b6ef96e7754259b7a706cab2115c61925ceba2e8f4a00"
+            },
+            {
+              "page": 39,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-039.png",
+              "sha256": "206d71b03d9df06c9cff373b44799e0e766fa8bcfab9179777b898b493ac4a94"
+            },
+            {
+              "page": 40,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-040.png",
+              "sha256": "f5f752f751ed16dfa1268f7fb5a8ccdf1cba87a9426b2c49a142e8d6e4046140"
+            },
+            {
+              "page": 41,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-041.png",
+              "sha256": "4b8250d0b1a669f8e9423223276ac105025493c4648ede62b2cd8d9f81d420d7"
+            },
+            {
+              "page": 42,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-042.png",
+              "sha256": "732c3fde25d76ead4eab963337d137a63a8f3479eba2511f3db8f2d6f54c4f06"
+            },
+            {
+              "page": 43,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-043.png",
+              "sha256": "930e3d0c432326d95804ee8ce011c7c04256afef4a66a627d524b29761b63ac0"
+            },
+            {
+              "page": 44,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-044.png",
+              "sha256": "dece34b601c28873fa1a9111989757854c6cf266511cb0bf565c7d6eaf4c6773"
+            },
+            {
+              "page": 45,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-045.png",
+              "sha256": "16185400eb8687bbe129f660d0fdec710514cf6fd71d3d73de6700f80084f43a"
+            },
+            {
+              "page": 46,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-046.png",
+              "sha256": "bba449a7e034c0a051daea51562187e630edcd1013348f45b735cf0bdf6176e6"
+            },
+            {
+              "page": 47,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-047.png",
+              "sha256": "dc02f2785011a99fe83ccb434c4ff1e9f4d6135fc5f7db2dd0e5c1596bde053e"
+            },
+            {
+              "page": 48,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-048.png",
+              "sha256": "7265eac44e74c99c4e46608f798e315c265a36d46dedaaf3c901e4726cc243ab"
+            },
+            {
+              "page": 49,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-049.png",
+              "sha256": "a20beab0e5addd8b23bf959a9e1bdb79c0e05b46d8aa418c8d6b9e0c729f50c3"
+            },
+            {
+              "page": 50,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-050.png",
+              "sha256": "a37bb5e0891f63f21b36c7306762e507c0953fe129072e99d00b0fbdb97f5cdd"
+            },
+            {
+              "page": 51,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-051.png",
+              "sha256": "7c449c93d299c20a066220abbf784ed809d52578eac7693b3ee94ad66d02fe63"
+            },
+            {
+              "page": 52,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-052.png",
+              "sha256": "85467f52edf859edb18c0c863f1d3273c4d9f56980f510d03368e26684f6aa1f"
+            },
+            {
+              "page": 53,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-053.png",
+              "sha256": "6bc9fe67df26223a4b2cd11fd2dbc5e046dc71b353c35d638f1503b8e029993f"
+            },
+            {
+              "page": 54,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-054.png",
+              "sha256": "a39723b95d5dff9d2ff2853987657a1d90c1ec4e6b12dab27bf39c75813dbbdf"
+            },
+            {
+              "page": 55,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-055.png",
+              "sha256": "5a675423cd68e82d571d4466ce3b023c7a7a25fab233c13f5d5224da0e7fe1b3"
+            },
+            {
+              "page": 56,
+              "renderer": "pdfkit",
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/renders/late-night-pdfkit/page-056.png",
+              "sha256": "4642a10bb5fe68712eb932f0cbfe4c1289819e62fbb8eb160454f2897c186fe4"
+            }
+          ],
+          "contactSheets": [
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-pdfkit-01-08.png",
+              "pages": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "sha256": "9ba1ecb18ee671422e1490ba6b8624d7e1620c1e0ec58f05d94bc2afbf763173"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-pdfkit-09-16.png",
+              "pages": [
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ],
+              "sha256": "287e4166abaf1e85cc0eb8cbc95cbe65f2787b7db9fa4e69af571cbe24306678"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-pdfkit-17-24.png",
+              "pages": [
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "sha256": "96a2585e7770a17463c15117805112457696c7f450730d9ae81247374986b496"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-pdfkit-25-32.png",
+              "pages": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32
+              ],
+              "sha256": "3fa5eeb33c5c91fb3b051a4a19d18a570da8aae32753e27c1a8f26dbdd4b71e6"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-pdfkit-33-40.png",
+              "pages": [
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40
+              ],
+              "sha256": "219e32db4fe25e9195411b3c3dd7f6b335ee671018f4c6bcd51d3e0a6dfc7625"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-pdfkit-41-48.png",
+              "pages": [
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48
+              ],
+              "sha256": "e1a8c4676f454f03c07239f1db76007fa884014ef0503cd9cae45277c589d8c1"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-pdfkit-49-56.png",
+              "pages": [
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56
+              ],
+              "sha256": "b119fc065198bc560f55dc854ea88d5bdbad749dc17538fcb9ba531d5157399c"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-poppler-01-08.png",
+              "pages": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "sha256": "c304f94a346f106007859c23d8d905041a3688243dc48a9de834c415545ad291"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-poppler-09-16.png",
+              "pages": [
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ],
+              "sha256": "44776908bc915aef02642be987ebf58b4174ce96c2e277f971eb497630628c17"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-poppler-17-24.png",
+              "pages": [
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "sha256": "b173f6d98085da3e94bd0793b4f987b49da963d44bb3dde5e5b1baaf17c1e8ba"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-poppler-25-32.png",
+              "pages": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32
+              ],
+              "sha256": "219ec2eee74c33bd814147fae6d94450df37c9ee5374f27c8f3c96d2d46701aa"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-poppler-33-40.png",
+              "pages": [
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40
+              ],
+              "sha256": "f91f7fbdd36bdd6e58a5d46ace66539fce43d63de0a10bfac1268291bdfbefd7"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-poppler-41-48.png",
+              "pages": [
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48
+              ],
+              "sha256": "ee4292e3390cc2fd0943e7f7636b8d7c99fbb640019206b9432dfa9f2cb36814"
+            },
+            {
+              "path": "claude-design/review/2026-10-05-figma-companion/pdf-acceptance-r2/contact-sheets/late-night-poppler-49-56.png",
+              "pages": [
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56
+              ],
+              "sha256": "d87f2994bb3827da855aab63dbffaad20171c1aceb7ba0e208ec03fc20542ef3"
+            }
+          ],
+          "nativeResolutionSheets": [
+            {
+              "file": "late-night-openers-1.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                7,
+                11
+              ],
+              "noResizing": true,
+              "sha256": "faa27b0277d0245b7ef1fca5e449cbbbf470439c6a12d7577da94d6883fcd358"
+            },
+            {
+              "file": "late-night-openers-2.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                19,
+                24
+              ],
+              "noResizing": true,
+              "sha256": "00874fc1592cb267c28c5782cda9c426f6d1e870d8d42c8932dafebb236fbb0c"
+            },
+            {
+              "file": "late-night-openers-3.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                27,
+                30
+              ],
+              "noResizing": true,
+              "sha256": "235b517267331b1df789e6b0b40e6721bc9f0585b5b6017559a6bd586ad563e4"
+            },
+            {
+              "file": "late-night-openers-4.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                33,
+                36
+              ],
+              "noResizing": true,
+              "sha256": "e925c2a5290fb870618856a963597e5afb52ed4684d8b4ad0813dc66e525e14e"
+            },
+            {
+              "file": "late-night-openers-5.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                39,
+                44
+              ],
+              "noResizing": true,
+              "sha256": "eba5d4c08914eb105dcf885730c1cd93342e6760cb0619a2bd1a2b2de6005a77"
+            },
+            {
+              "file": "late-night-openers-6.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                48
+              ],
+              "noResizing": true,
+              "sha256": "a4fbc9195198054803273ba0d5dc0d2112eab46171e345c4b8ff0cb99ff7ff06"
+            },
+            {
+              "file": "late-night-cover-contents.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                1,
+                6
+              ],
+              "noResizing": true,
+              "sha256": "abace17dcf1ac0c49bed8fdc711299a8fa1d261149308d4c1ab6c0647dbea8e7"
+            },
+            {
+              "file": "late-night-ownership-references.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                5,
+                55
+              ],
+              "noResizing": true,
+              "sha256": "3efcd673c26a12027e8655533dba24f518b0b3e1bf9fa5e31447dd00c6200a2a"
+            },
+            {
+              "file": "late-night-props-fidelity.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                14,
+                21
+              ],
+              "noResizing": true,
+              "sha256": "51ba712cc21954a08fd7aa1eb8d0e544c53ee16e4c87bb2ffae257f6c1f56ea9"
+            },
+            {
+              "file": "late-night-state-record.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                31,
+                51
+              ],
+              "noResizing": true,
+              "sha256": "fae300b45e738173e188f74fa2e6d2bf33fce400d72e3d9fb549f4d2c8485df7"
+            },
+            {
+              "file": "late-night-code.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                41,
+                42
+              ],
+              "noResizing": true,
+              "sha256": "cdb931b78577f51ceb0fb7b18f548cf8993dbf1cf021de688d4c1c66ab9abd4a"
+            },
+            {
+              "file": "late-night-validation.png",
+              "sourceSet": "late-night-pdfkit",
+              "pages": [
+                50
+              ],
+              "noResizing": true,
+              "sha256": "0a81262e51a795bf14e35c339d0586dcfacdea57b2cff9ae858b24403a464517"
+            }
+          ],
+          "pageVerdicts": [
+            {
+              "page": 1,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 2,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 3,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 4,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 5,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 6,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 7,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 8,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 9,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 10,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 11,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 12,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 13,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 14,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 15,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 16,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 17,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 18,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 19,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 20,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 21,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 22,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 23,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 24,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 25,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 26,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 27,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 28,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 29,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 30,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 31,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 32,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 33,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 34,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 35,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 36,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 37,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 38,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 39,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 40,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 41,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 42,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 43,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 44,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 45,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 46,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 47,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 48,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 49,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 50,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 51,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 52,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 53,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 54,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 55,
+              "poppler": "good",
+              "pdfkit": "good"
+            },
+            {
+              "page": 56,
+              "poppler": "good",
+              "pdfkit": "good"
+            }
+          ],
+          "limitations": "This approval binds only the exact PDF bytes and their visual presentation. Public reader, package, publication and deployment acceptance have separate evidence."
+        }
+      }
+    }
+  ]
+}

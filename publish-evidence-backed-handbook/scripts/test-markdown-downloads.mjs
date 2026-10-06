@@ -47,3 +47,25 @@ assert.match(readerMarkdown(html,{...edition,approvalStatus:'approved'}).markdow
 const worksheet='<main id="main-content"><section class="chapter"><h2>Worksheet</h2><table><caption>Extension brief</caption><tr><th>Field</th></tr><tr><td>Chosen robot</td></tr><tr><td>Accessories</td></tr></table></section></main>';
 const single=readerMarkdown(worksheet,edition).markdown;
 assert.ok(single.includes('| Field |\n| --- |\n| Chosen robot |\n| Accessories |'));
+
+const screenshot='<main id="main-content"><section class="chapter"><h2>Screenshot chapter</h2><figure class="reader-screenshot" data-screenshot-figure="s01-start"><div class="reader-screenshot-panels"><div class="reader-screenshot-panel"><p class="reader-screenshot-label">Review</p><a href="/future-book/editions/v3.0.0/assets/screenshots/review-full.png"><img src="/future-book/editions/v3.0.0/assets/screenshots/review.png" alt="Graphite, Simple, Amber and Carry bag."></a><a class="reader-screenshot-larger" href="/future-book/editions/v3.0.0/assets/screenshots/review-full.png">View larger image</a></div></div><figcaption><strong>Figure 1.</strong> The four values agree.</figcaption></figure><figure class="chapter-art"><img src="assets/art.png" alt="Existing engraving"></figure></section></main>';
+const screenshotExport=readerMarkdown(screenshot,edition);
+assert.ok(screenshotExport.markdown.includes('![Graphite, Simple, Amber and Carry bag.](https://handbooks.surfaces.systems/future-book/editions/v3.0.0/assets/screenshots/review.png)'));
+assert.ok(screenshotExport.markdown.includes('**Figure 1.** The four values agree.'));
+assert.ok(screenshotExport.markdown.includes('[View larger image](https://handbooks.surfaces.systems/future-book/editions/v3.0.0/assets/screenshots/review-full.png)'));
+assert.ok(screenshotExport.markdown.includes('Image description: Existing engraving'));
+assert.equal(screenshotExport.index.figures.length,1);
+assert.throws(()=>readerMarkdown(screenshot.replace('alt="Graphite, Simple, Amber and Carry bag."','alt=""'),edition),/Incomplete screenshot/);
+assert.throws(()=>readerMarkdown(screenshot.replace('v3.0.0/assets/screenshots/review.png','v2.0.0/assets/screenshots/review.png'),edition),/immutable edition/);
+assert.throws(()=>readerMarkdown(screenshot.replace('src="/future-book/editions/v3.0.0/assets/screenshots/review.png"','src="fi'+'le:///private/review.png"'),edition),/Unsafe/);
+console.log('Screenshot alt text, captions, image links, immutable edition paths, and chapter-art fallback passed.');
+const croppedScreenshot=screenshot.replace('data-screenshot-figure="s01-start"','data-screenshot-figure="s01-start" data-screenshot-distribution="internal-only"').replace('src="/future-book/editions/v3.0.0/assets/screenshots/review.png" alt="Graphite, Simple, Amber and Carry bag."','src="/future-book/editions/v3.0.0/assets/screenshots/review.png" width="1200" height="800" alt="Graphite, Simple, Amber and Carry bag."').replace('<img src="/future-book/editions/v3.0.0/assets/screenshots/review.png"','<span class="reader-screenshot-crop" data-screenshot-crop="300,100,600,400"><img src="/future-book/editions/v3.0.0/assets/screenshots/review.png"').replace('alt="Graphite, Simple, Amber and Carry bag."></a>','alt="Graphite, Simple, Amber and Carry bag."></span></a>').replaceAll('review-full.png','s01-start-panel-1.html');
+const cropExport=readerMarkdown(croppedScreenshot,edition);
+assert.ok(cropExport.markdown.includes('Source-pixel crop (x, y, width, height): 300, 100, 600, 400.'));
+assert.ok(cropExport.markdown.includes('[View larger cropped image](https://handbooks.surfaces.systems/future-book/editions/v3.0.0/assets/screenshots/s01-start-panel-1.html)'));
+assert.ok(!cropExport.markdown.includes('![Graphite'));
+assert.deepEqual(cropExport.index.figures[0].images[0].crop,[300,100,600,400]);
+assert.throws(()=>readerMarkdown(croppedScreenshot,{...edition,publicationStatus:'published'}),/Internal screenshot/);
+assert.throws(()=>readerMarkdown(croppedScreenshot.replace('300,100,600,400','1000,100,600,400'),edition),/source bounds/);
+assert.throws(()=>readerMarkdown(croppedScreenshot.replace('300,100,600,400','-1,100,600,400'),edition),/Invalid screenshot crop/);
+console.log('Cropped screenshot descriptions, source bounds, matching larger views, and published-source privacy rejection passed.');

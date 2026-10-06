@@ -1,0 +1,60 @@
+{
+  "artifactSha256": "750ca42a38d05fdbbb0fe2fe3701dce70ba44e88b8bdc43d03948e89109353a8",
+  "changelogDecision": null,
+  "failures": [],
+  "limitations": [
+    "This structural validator does not establish visual quality.",
+    "Apple PDFKit compatibility remains unverified unless an Apple-native render was inspected."
+  ],
+  "pdf": "screenshot-figures/exception.pdf",
+  "profile": "specimen",
+  "requiredRasterIllustrations": [],
+  "schemaVersion": 1,
+  "screenshotResolution": {
+    "boundScreenshotPaints": 1,
+    "minimumArtworkPpi": 240,
+    "paints": [
+      {
+        "hasMask": false,
+        "hasSMask": false,
+        "height": 400,
+        "isImageMask": false,
+        "name": "/FormXob.c6f8354e1f28d4c8f8c2a0a5329a5212",
+        "object": "2 0",
+        "opaque": true,
+        "page": 1,
+        "requiredMinPpi": 120,
+        "screenshot": {
+          "figure": "region",
+          "minimumPpi": 120,
+          "panel": 1,
+          "printReadability": {
+            "captureDensity": "Synthetic 1x bitmap with 14px label fixture.",
+            "labelPixelHeight": 14,
+            "reason": "At 120PPI a 14px label is 8.4pt. Screenshot exception only."
+          }
+        },
+        "width": 600,
+        "xPpi": 120.0,
+        "yPpi": 120.0
+      }
+    ]
+  },
+  "stats": {
+    "blankPages": [],
+    "externalLinks": 0,
+    "fonts": 2,
+    "imageMasks": 0,
+    "internalLinks": 0,
+    "outlineEntries": 0,
+    "pageMapEntries": null,
+    "pages": 1,
+    "pdfVersion": "1.4",
+    "rasterImagePaints": 1,
+    "rasterImages": 1,
+    "requiredRasterIllustrationPages": 0
+  },
+  "status": "passed"
+}
+2 sections 7731 HTML bytes
+{"status": "passed", "checks": ["safe paths and hashes", "opaque frozen bytes", "complete alt/caption", "missing/unknown/duplicate marker rejection", "default minimum 240 PPI", "documented screenshot-only 120PPI exception", "unbound artwork remains 240PPI", "pair and structural exception binding", "split between panels", "caption once", "no PDF image masks", "exact screenshot pixel/count audit", "chapter count remains independent", "semantic reader figures", "shared diagram installer compatibility", "immutable copied assets", "chapter-art preserved", "portable authored Markdown", "crop bounds", "original bytes unchanged", "painted PDF crop region", "internal source distribution flags", "cropped larger-view HTML"]}

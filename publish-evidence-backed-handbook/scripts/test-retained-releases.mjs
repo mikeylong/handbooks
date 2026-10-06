@@ -8,7 +8,7 @@ const scratch = await mkdtemp(resolve(tmpdir(), 'handbook-retention-'));
 try {
   const source = resolve(scratch, 'collection'), output = resolve(scratch, 'site');
   await mkdir(source); await mkdir(output);
-  const paths = ['book/editions/v1.0.0/index.html', 'book/editions/v1.0.0/book.md', 'book/editions/v1.0.0/book.index.json', 'book/old.pdf', 'book/exercise.zip'];
+  const paths = ['book/editions/v1.0.0/index.html', 'book/editions/v1.0.0/book.md', 'book/editions/v1.0.0/book.index.json', 'book/old.pdf', 'book/exercise.zip', 'book/native-companion.fig'];
   const inventory = {schemaVersion: 1, routes: []};
   for (const [i, path] of paths.entries()) {
     const bytes = Buffer.from('released content ' + i), name = 'frozen-' + i;
@@ -36,5 +36,5 @@ try {
   await writeFile(resolve(output, paths[1]), 'regenerated historical content');
   await assert.rejects(installRetainedReleases(source, output, inventory), /Retained route conflicts/);
   assert.equal(await readFile(resolve(output, paths[1]), 'utf8'), 'regenerated historical content');
-  console.log('Retained HTML, Markdown, index, PDF and ZIP survive new editions; stale hashes, collisions, duplicates and escapes fail.');
+  console.log('Retained HTML, Markdown, index, PDF, ZIP and native Figma bytes survive new editions; stale hashes, collisions, duplicates and escapes fail.');
 } finally { await rm(scratch, {recursive: true, force: true}); }

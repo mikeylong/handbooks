@@ -74,6 +74,7 @@ def main() -> None:
         PACKAGE_ROOT / "references/specimen/workflow-regression.json",
         *sorted((PACKAGE_ROOT / "scripts").rglob("*")),
         *sorted((PACKAGE_ROOT / "assets/reader").rglob("*")),
+        PACKAGE_ROOT / "assets/html-entities.json",
         PACKAGE_ROOT / "assets/design-system/dark-illustration-reference.png",
         PACKAGE_ROOT / "assets/design-system/dark-illustration-foreground.png",
         PACKAGE_ROOT / "assets/design-system/dark-illustration-foreground.json",

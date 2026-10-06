@@ -2,6 +2,21 @@ import {readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {digest, safePath} from './reader-paths.mjs';
 const escape = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+// Screenshot assets have their own frozen manifest and renderer. Accept only
+// that renderer's complete semantic contract, never a generic image figure.
+function isScreenshotFigure(figure) {
+  const tag=figure.match(/^<figure\b[^>]*>/i)?.[0]??'';
+  const attr=(html,name)=>html.match(new RegExp('(?:^|\\s)'+name+'="([^"]*)"'))?.[1];
+  const screenshot=(attr(tag,'class')??'').split(/\s+/).includes('reader-screenshot');
+  const id=attr(tag,'data-screenshot-figure');
+  if(!screenshot && id===undefined)return false;
+  const images=[...figure.matchAll(/<img\b[^>]*>/gi)].map(([image])=>image);
+  if(!screenshot || !/^[A-Za-z0-9][A-Za-z0-9-]*$/.test(id??'') || attr(tag,'id')!=='figure-'+id || !images.length || !/<figcaption\b[^>]*>[\s\S]*\S[\s\S]*<\/figcaption>/i.test(figure))throw Error('Invalid screenshot figure contract');
+  for(const image of images) {
+    if(!attr(image,'alt')?.trim() || !/^\/[a-z0-9-]+\/editions\/v\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?\/assets\/screenshots\/[^/?#]+\.(?:png|jpe?g)$/.test(attr(image,'src')??''))throw Error('Invalid screenshot figure asset');
+  }
+  return true;
+}
 export function validateDiagram(definition) {
   if (!definition || !['sequence','branch'].includes(definition.kind) || !definition.title || !Array.isArray(definition.nodes) || !definition.nodes.length || !Array.isArray(definition.edges)) throw Error('Invalid semantic diagram');
   const ids = new Set();
@@ -35,7 +50,7 @@ export async function installDiagrams(source, html, approvedPackage) {
   let manifest;
   try { manifest = JSON.parse(await readFile(resolve(source,'diagram-bindings.json'),'utf8')); }
   catch(error) {if(error.code==='ENOENT') {
-    if ([...html.matchAll(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi)].some(([figure]) => /<img\b/.test(figure) && !/data-artwork-role="chapter"|class="[^"]*chapter-(?:art|figure)/.test(figure))) throw Error('Unmapped technical diagram: missing diagram-bindings.json');
+    if ([...html.matchAll(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi)].some(([figure]) => /<img\b/.test(figure) && !isScreenshotFigure(figure) && !/data-artwork-role="chapter"|class="[^"]*chapter-(?:art|figure)/.test(figure))) throw Error('Unmapped technical diagram: missing diagram-bindings.json');
     return html;
   } throw error;}
   if(manifest.schemaVersion!==1 || !Array.isArray(manifest.diagrams)) throw Error('Invalid diagram bindings');
@@ -49,6 +64,7 @@ export async function installDiagrams(source, html, approvedPackage) {
     mappings.set(binding.asset.slice(approvedPackage.readerDirectory.length+1), {binding,definition,count:0});
   }
   const result=html.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi,figure=>{
+    if(isScreenshotFigure(figure))return figure;
     const path=figure.match(/<img\b[^>]*\bsrc="([^"]+)"/)?.[1];
     const mapping=mappings.get(path);
     if(!mapping) {

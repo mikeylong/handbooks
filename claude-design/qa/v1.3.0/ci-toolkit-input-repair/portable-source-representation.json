@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "reason": "Source representation avoids forbidden package text without changing runtime regex or negative local URI behavior.",
+  "previousManifestSha256": "e08c71fd61155656203f669d074de1e0c4ea690011b26e729e4f2e3173ede3db",
+  "manifestSha256": "d424c9cc305d067c84d16d770586fb70e09d07d81f1536928f219be3331e4054",
+  "changedInputs": [
+    {
+      "path": "scripts/markdown-downloads.mjs",
+      "sha256": "134e32ea0a94ceaf31a3d722801b1c96c7a15f14276d327c21171462aae820b8"
+    },
+    {
+      "path": "scripts/test-markdown-downloads.mjs",
+      "sha256": "9640e038bf5b29e04bf4dcb7bbe598597272f217254d869d72a6f6a9d27d0086"
+    }
+  ],
+  "inputCount": 137,
+  "allNonInputMetadataPreserved": true,
+  "validatorOrVerifierChanged": false,
+  "canonicalSpecimenSha256": "f2b35119784796cbc6a1da72b11842bb02f90667d90a3dffc1b68622bd1bca85"
+}

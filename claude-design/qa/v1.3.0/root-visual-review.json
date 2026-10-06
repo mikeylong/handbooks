@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-06T16:34:33.991416+00:00",
+  "reviewer": "root",
+  "revision": "r3 native Import-hover correction",
+  "status": "passed",
+  "scope": "Corrected panel and physical PDF page 7 in both appearances and both renderers. Reader review is covered separately.",
+  "observations": [
+    "Real cursor is inside the highlighted Import row; Buzz is plain.",
+    "Import control title and menu text are readable, with no clipping or misleading competing highlight.",
+    "The unmodified Import-completed panel retains its placement and caption.",
+    "The public crop excludes account, unrelated file and invoice content."
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/assets/screenshots/s02-import-menu.png",
+      "sha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/renders/daytime-poppler/page-07.png",
+      "sha256": "7b0ea40d66cb36d8792cbaabe9cdaae4cfe4d0ef3e338769f997e8180eb8acbc"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/renders/daytime-pdfkit/page-007.png",
+      "sha256": "9f7039e9de0a5ae63bc02e152c402e0e0f2e911e09758d3a8c7db424d33142c6"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/renders/late-night-poppler/page-07.png",
+      "sha256": "572471a99b25ed4ffb3c93fcc86c90290b495131e04025922b6ce16aeb611124"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/evidence/r3/renders/late-night-pdfkit/page-007.png",
+      "sha256": "f2a6a4aa963b764afb25bbb9eac20c84978ba95a026158c1f342c540eea73282"
+    }
+  ]
+}

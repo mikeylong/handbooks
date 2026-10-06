@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "claude-design",
+  "title": "Claude Design Field Guide",
+  "subtitle": "From a living design system to a production-ready handoff",
+  "version": "1.2.1",
+  "date": "2026-10-05",
+  "renderer": "reportlab",
+  "source": "source/build_handbook.py",
+  "markdown": "Claude_Design_Field_Guide_Source.md",
+  "story": "parse_markdown",
+  "docClass": "GuideDocTemplate",
+  "fonts": "toolkit",
+  "pageSizePoints": [
+    420,
+    594.96
+  ],
+  "chapterCount": 11,
+  "releasedPdf": "output/pdf/claude-design-v1.2.0-2026-10-05-daytime-r1.pdf",
+  "releasedSha256": "fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c",
+  "coverKicker": "CLAUDE DESIGN / FIELD PRACTICE",
+  "coverTitleHtml": "Claude Design<br/>Field Guide",
+  "editionLabel": "October 5, 2026 | Version 1.2.1",
+  "contentsDeck": "The chapters move from source authority to rendered proof. Worksheets and appendices remain part of the same operating package.",
+  "chapterSourceNotes": {
+    "1": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "2": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "3": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "4": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "5": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "6": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "7": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "8": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "9": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "10": "Velori exercise and author synthesis. Primary setup references are listed in Further reading.",
+    "11": "Velori exercise and author synthesis. Primary setup references are listed in Further reading."
+  },
+  "pageLabelStyle": "frontmatter-roman",
+  "baselineMode": "content-edition"
+}

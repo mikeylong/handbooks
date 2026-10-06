@@ -6,6 +6,7 @@ from pathlib import Path
 import os, json
 from pdf_theme import theme_tokens, paint_page
 from diagram_data import load_diagram
+from screenshot_figures import ScreenshotFigure, load_figures, validate_placements
 from typing import Iterable, Sequence
 from xml.sax.saxutils import escape
 
@@ -936,6 +937,10 @@ def parse_markdown() -> list[Flowable]:
         end = raw.find("\n---\n", 4)
         raw = raw[end + 5:]
     lines = raw.splitlines()
+    figures = load_figures(ROOT, CONFIG.get("screenshotManifest", "screenshot-figures.json"))
+    used_figures = []
+    figure_caption = ParagraphStyle("ScreenshotCaption", parent=SMALL, fontName=SANS, fontSize=8, leading=11, textColor=MID)
+    figure_label = ParagraphStyle("ScreenshotLabel", parent=SMALL, fontName=SANS_BOLD, fontSize=8, leading=11, textColor=INK)
 
     story: list[Flowable] = [
         Spacer(1, 16 * mm),
@@ -990,9 +995,25 @@ def parse_markdown() -> list[Flowable]:
             name = diagram_marker.group(1)
             if name not in diagrams:
                 raise ValueError(f"Unknown diagram marker: {name}")
-            story.append(KeepTogether([Spacer(1, 5), diagrams[name](), Spacer(1, 7)]))
+            # Keep a preceding heading attached through the diagram's spacing.
+            # Nested KeepTogether blocks can split that outer heading group.
+            before_diagram = Spacer(1, 5)
+            before_diagram.keepWithNext = 1
+            story.extend([before_diagram, diagrams[name](), Spacer(1, 7)])
             index += 1
             continue
+
+        figure_marker = re.fullmatch(r"<!-- FIGURE ([A-Za-z0-9][A-Za-z0-9-]*) -->", stripped)
+        if figure_marker:
+            identity = figure_marker.group(1)
+            if identity not in figures:
+                raise ValueError(f"Unknown screenshot figure ID: {identity}")
+            used_figures.append(identity)
+            story.append(ScreenshotFigure(figures[identity], figure_caption, figure_label))
+            index += 1
+            continue
+        if stripped.startswith("<!-- FIGURE"):
+            raise ValueError(f"Invalid screenshot figure marker: {stripped}")
 
         if stripped == "<pagebreak>":
             next_line = _next_nonblank(lines, index + 1)
@@ -1101,6 +1122,7 @@ def parse_markdown() -> list[Flowable]:
             if (
                 candidate.startswith(("#", "- ", "```", "::: ", "<pagebreak>", "<!-- CHAPTER", "|"))
                 or candidate.startswith("<!-- DIAGRAM")
+                or candidate.startswith("<!-- FIGURE")
                 or re.match(r"^\d+\. ", candidate)
             ):
                 break
@@ -1110,6 +1132,7 @@ def parse_markdown() -> list[Flowable]:
 
     if current_chapter:
         story.append(P(CHAPTER_SOURCE_NOTES.get(current_chapter, ""), SMALL))
+    validate_placements(figures, used_figures)
     return story
 
 

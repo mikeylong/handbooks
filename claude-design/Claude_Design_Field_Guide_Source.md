@@ -1,7 +1,7 @@
 ---
 title: Claude Design Field Guide
 subtitle: From a living design system to a production-ready handoff
-edition: October 5, 2026 | Version 1.2.1
+edition: October 5, 2026 | Version 1.3.0
 audience: Product managers, product designers, design-system leads, and engineers
 chapter_art: Approved chapter illustration pairs retained from version 1.1.0
 diagram_system: Shared publishing toolkit with book-owned semantic definitions
@@ -29,6 +29,8 @@ Open http://127.0.0.1:4197. Use Node.js 22 and npm. The first install requires t
 
 Select **Graphite**, **Simple**, **Amber**, and **Carry bag**. Open accessory details, browse Charging dock, and return. Continue to review, then edit. Reload. The robot, caption, controls, and summary should still agree.
 
+<!-- FIGURE s01-start -->
+
 The completed review screen is new sample behavior. For the exercise, provide the configurator and accessory details as the baseline and ask Claude Design to recreate the review journey. Keep the worked sample beside your result for comparison. Payment, inventory, accounts, shipping, and order submission remain outside the brief.
 
 ## What you will produce
@@ -46,6 +48,8 @@ The completed review screen is new sample behavior. For the exercise, provide th
 Confirm the intended account, organization, selected system, and project before uploading. Claude Code login and Design read/write authorization are separate steps when `/design-login` requests authorization. Use the same intended account for that browser flow. If access fails, check the active organization and Design eligibility before retrying the upload. The [Design admin guide](https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans) describes organization settings.
 
 Download the [Velori native Figma file](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig) and its [companion manifest](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/figma-companion.json) separately from the React ZIP. Import the `.fig` file into your own Figma Drafts and record the new file URL and companion SHA-256. Preserve the supplied source pages and reference frames; create a separate page for your work. The completed Store handbook exercise page is an answer key for comparison, not initial generation context.
+
+<!-- FIGURE s02-figma-import -->
 
 For the variable-driven native journey, use a paid Figma Design plan or eligible Education plan with edit access. Starter can import the file, but [variables in prototypes](https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma) require those plan features. Confirm this access before starting the Figma work.
 
@@ -186,6 +190,8 @@ This walkthrough uses the standalone `claude.ai/design` project surface. If that
 
 New-system creation may require its own approval. The inspected native tool reports that a new system initially uses organization-wide visibility. Check the intended visibility before creation and inspect the Share menu before uploading files. Stop if the selected destination cannot meet the agreed access boundary.
 
+<!-- FIGURE s03-private-import -->
+
 Type `/design-sync` yourself at the Claude Code prompt and submit the native command. Asking Claude to run it in a pasted message does not invoke the command. After it opens, supply the import instruction below with the library, prepared tokens and CSS, conventions, previews, and assets. Preserve the local conversion report and the returned upload result. Inspect the returned system URL in the intended organization.
 
 ::: prompt Claude Code | Import the prepared Velori draft
@@ -209,6 +215,8 @@ Keep the source definition, resolved conflict record, component usage, source di
 # Validate the imported system
 
 Open the imported Velori system in Claude Design. Inspect its component cards, usage guidance, type and spacing rules, and photographs. Select that exact system in a new project. Recreate known screens before generating Review configuration.
+
+<!-- FIGURE s04-inspect-system -->
 
 ## Generate the known screens
 
@@ -255,6 +263,8 @@ In this isolated test screen, correct the named purple-continue or accessory-gap
 
 Save the before, corrected, and second-generation results with the rule references. If the second generation repeats the defect, improve the source usage guidance or correct the generation context, resync when the source changes, and rerun the test. Keep the unsuccessful attempt in the review record.
 
+<!-- FIGURE s05-correction -->
+
 ## Chapter checkpoint
 
 Proceed to Review configuration only after the actual selected system renders the known screens, the ten-element sample passes, and the correction survives another generation. Record accepted exceptions and font differences. Keep source completeness, conversion, upload, native rendering, and system publication as separate results.
@@ -279,6 +289,8 @@ Inspect the current and proposed configurator beside each other. The extension s
 
 Use Graphite, Simple, Amber, and Carry bag. A review screen with a hard-coded default photo fails even when its summary is correct. A correct photo with a stale summary also fails.
 
+<!-- FIGURE s06-native-review -->
+
 ## Keep navigation explicit
 
 Continue creates a review route. Edit and Back return to configure. Heading focus identifies the newly opened screen; returning restores focus to the control that led there. Browser history should behave predictably when the shopper moves through details and review.
@@ -302,6 +314,8 @@ Accessory details answer a product question without changing the configuration. 
 Open Carry bag details when Carry bag is selected. Browse Charging dock. The detail photograph and title should change, while the selected accessory stays Carry bag. Returning to configure restores the original selection and caption.
 
 The detail view describes the accessory being browsed. The selected accessory remains in the parent configuration and appears unchanged when you return. A details tab must not silently commit a selection.
+
+<!-- FIGURE s07-browse -->
 
 ## Make all surfaces agree
 
@@ -356,6 +370,8 @@ Rapidly change finish, face, expression, and accessory. The final photograph and
 Test rapid changes and a genuinely failed product-image request. Confirm the final image and caption agree, a failed image retains choices, and Retry reloads the asset after it becomes available. Test reload on review, blocked browser storage, and reset isolation. Keep unrelated storage values intact. Record actual results rather than adding untested behavior claims.
 :::
 
+<!-- FIGURE s08-retry -->
+
 ## Chapter checkpoint
 
 The handoff includes normal, loading, unavailable, rapid-change, reload, blocked-storage, and reset behavior. The configuration has one owner throughout.
@@ -371,6 +387,8 @@ Test the real journey with the keyboard. Labels, focus movement, selection marks
 ## Operate the dropdown
 
 Tab to the expression trigger. Enter or Space opens the menu. Arrows move through options; Home and End reach the first and last. Enter commits. Escape cancels the pending change. Typing an option’s name moves to it. Tab closes the menu, and the committed result returns focus to the trigger.
+
+<!-- FIGURE s09-dropdown -->
 
 Finish, face, and accessory choices respond to Enter or Space. A visible selected mark supplements their pressed state. Preserve the names and values when introducing a follow-up control pattern.
 
@@ -389,6 +407,8 @@ Automated focus checks support this contract. A screen-reader audit remains a se
 At 1024 × 768, compare the product image bounds, composition, control column, and captions against the frozen reference. The normalized Continue and accessory gaps are intentional differences.
 
 At 390px width, product and controls stack without horizontal overflow. Test the review and detail screens too. A dropdown or return action hidden outside the viewport fails the journey.
+
+<!-- FIGURE s10-mobile -->
 
 The consumer uses Arial and Georgia. The native Figma system uses Arimo and Lora. Record that mapping instead of presenting the renderers as typographically identical.
 
@@ -447,6 +467,8 @@ Open the new generated project in the intended organization. Choose **Share → 
 The copied prompt identifies the project URL, selected generated HTML and imported files for the authenticated `claude_design` MCP. Complete `/design-login` in the intended account only if authorization is requested. Confirm the source and dependency reads succeed before starting adaptation. Save the copied prompt, actual returned files and read receipts unchanged in `handoff/new-run/captured/`, with project URL, selected file, handoff method, date, hashes and dependency origins in `handoff/new-run/HANDOFF.json`.
 
 A binary read can return truncated data even when the request succeeds. Preserve that read receipt and obtain the full project archive through **Share → Project HTML → Project archive → Export**. Use the archive as a companion to the copied handoff prompt and MCP reads. Preserve its original bytes and extracted entries unchanged, hash both, and compare complete overlapping files with the MCP reads. Stop until every required dependency has complete bytes; do not substitute assets from the sample or a historical packet. See [Design's export workflow](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
+
+<!-- FIGURE s11-handoff -->
 
 Ask Code to inspect the returned source before implementation. Include support.js, referenced system bundles and styles, runtime dependencies, and product assets. A copied prompt starts the import; successful file reads establish the capture. Preserve captured bytes and make any host adaptation beside them. Stop for unresolved failed reads or missing source or dependencies. The local packet must resolve its private project references before it can pass independent validation.
 
@@ -513,6 +535,8 @@ Select the non-default fixture. Follow both detail views, return, continue to re
 The supplied prototype also includes keyboard shortcuts for its demonstration: C opens the expression menu, Escape dismisses it, Enter activates Continue or Edit, and I opens the unavailable-image review. Edit or Back returns to the configurator. These prototype shortcuts do not establish the browser dropdown’s full keyboard model.
 
 Native prototype variables support the configured visit. Browser reload persistence belongs to the React and Code apps and is tested there. Record that difference when reconciling behavior.
+
+<!-- FIGURE s12-figma-review -->
 
 ## Reconcile the result
 
@@ -633,6 +657,8 @@ Data Pipeline Studio remains the historical exercise in `Local_Coding_Exercise.m
 
 # Changelog
 
-Compared with version **1.2.0**, published **October 5, 2026**. Previous Daytime PDF SHA-256: `fa7a27cd0db1f855daba23cb1269e08fc6098391032623f9a9252eef1f44f05c`.
+Compared with version **1.2.1**, published **October 5, 2026**. Previous Daytime PDF SHA-256: `43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272`.
 
-**Correction or clarification — Orientation, Chapter 10 and exercise materials.** Replaced the owner-file access prerequisite with a downloadable Velori Figma companion imported into the reader's own Drafts. Navigation uses verified page and frame names; each import records native identities and checks local dependencies and the prototype journey. Readers can complete the existing Figma exercise without access to the author's file. [Source](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig).
+**Addition: Orientation and Chapters 2–7, 9 and 10.** Added screenshots for setup, system inspection, correction, the store journey, recovery, keyboard use, responsive layout, Code handoff, and Figma review. Readers can locate the controls and compare their results with the worked example.
+
+[Velori React sample](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip), [native Figma companion](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig), and [Claude Design workflow](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).

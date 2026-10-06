@@ -1,0 +1,1492 @@
+{
+  "artifactProfile": "candidate",
+  "path": "/Users/mike/handbooks/claude-design/review/2026-10-05-screenshot-assembly/candidate/builds/final-r3/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
+  "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e",
+  "measurement": "Shared validator raster paint matrices plus actual pypdf text, labels and geometry; perceptual approval is separate.",
+  "pages": [
+    {
+      "page": 1,
+      "label": "i",
+      "role": "cover",
+      "text": "CLAUDE DESIGN / FIELD PRACTICE\nClaude Design\nField Guide\nFrom a living design system to a production-ready handoff\nSYSTEM\nSCREEN\nSTATES\nHANDOFF\nCODE\nMichael Long\nOctober 5, 2026 | Version 1.3.0\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 2,
+      "label": "ii",
+      "role": "body",
+      "text": "ii\nOrientation\nUse this guide to extend an existing product through Claude Design,\nClaude Code, and Figma. The recurring example is Velori, a\npersonal-robot store. A shopper chooses a finish, face, expression color,\nand accessory, then checks the configuration before returning to edit.\nThe assignment starts with a working configurator. Preserve its identity,\nproduct photographs, choices, captions, and selection behavior. Add one\nbounded review journey. The public package includes a completed React\nanswer key, frozen reference, reusable components, prompts, and local\nvalidation scripts. Historical native packets and their metadata remain\nprivate and are excluded from the download. Follow Chapters 2 and 3 to\ndefine and validate your source system before creating a new review\nscreen.\nClaude Design supports interactive prototypes and a Claude Code\nhandoff. Claude Code also provides a /design command for artboards.\nChoose the surface that can produce the required result, then test its\ninteractions and handoff. See the Design getting-started guide and\nClaude Code command reference.\nStart the sample\nDownload the Velori sample, extract it, then run these commands from\nits velori-store folder:\ncd velori-store\nnpm ci\nnpm run dev\nOpen http://127.0.0.1:4197. Use Node.js 22 and npm. The first install\nrequires the npm registry. Product assets ship in the folder, and the store\nruns without CLEAR, a Claude account, or a Figma account. If the port is\noccupied, choose another port and use the address Vite prints.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 3,
+      "label": "iii",
+      "role": "body",
+      "text": "iii\nSelect Graphite, Simple, Amber, and Carry bag. Open accessory details,\nbrowse Charging dock, and return. Continue to review, then edit.\nReload. The robot, caption, controls, and summary should still agree.\nFigure 1\nConfigure overview\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 3,
+          "name": "/FormXob.7dcd2cab66882ffaff77c658167c100c",
+          "object": "57 0",
+          "width": 1024,
+          "height": 768,
+          "xPpi": 240.42,
+          "yPpi": 240.42,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "label": "iv",
+      "role": "body",
+      "text": "iv\nFigure 1 (continued)\nConfigure controls detail\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 4,
+          "name": "/FormXob.1a3e91703737e7f95848ccf7335646ae",
+          "object": "60 0",
+          "width": 417,
+          "height": 617,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "label": "v",
+      "role": "body",
+      "text": "v\nFigure 1 (continued)\nReview summary\nPublic React sample. Graphite, Simple, Amber and Carry bag appear in the controls,\nconfigured photograph, caption and Review summary.\nThe completed review screen is new sample behavior. For the exercise,\nprovide the configurator and accessory details as the baseline and ask\nClaude Design to recreate the review journey. Keep the worked sample\nbeside your result for comparison. Payment, inventory, accounts,\nshipping, and order submission remain outside the brief.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 5,
+          "name": "/FormXob.e7b3f59774c0c142c35e81edac40ba97",
+          "object": "63 0",
+          "width": 417,
+          "height": 459,
+          "xPpi": 120.17,
+          "yPpi": 120.17,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "label": "vi",
+      "role": "body",
+      "text": "vi\nWhat you will produce\n 1\nA preservation brief with a named configuration fixture.\n 2\nA React system imported into your chosen Claude Design workspace.\n 3\nA generated review journey that retains the selected values.\n 4\nAn actual handoff that runs from a new local folder.\n 5\nA bounded React implementation with navigation and persistence checks.\n 6\nA native Figma working copy with component and variable identity\nverified.\n 7\nA review record that separates the app, native tools, candidate package,\nand publication.\nChoose the destination first\nConfirm the intended account, organization, selected system, and\nproject before uploading. Claude Code login and Design read/write\nauthorization are separate steps when /design-login requests\nauthorization. Use the same intended account for that browser flow. If\naccess fails, check the active organization and Design eligibility before\nretrying the upload. The Design admin guide describes organization\nsettings.\nDownload the Velori native Figma file and its companion manifest\nseparately from the React ZIP. Import the .fig file into your own Figma\nDrafts and record the new file URL and companion SHA-256. Preserve\nthe supplied source pages and reference frames; create a separate page\nfor your work. The completed Store handbook exercise page is an\nanswer key for comparison, not initial generation context.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 7,
+      "label": "vii",
+      "role": "body",
+      "text": "vii\nFigure 2\nImport control\nImport completed\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 7,
+          "name": "/FormXob.b75280439391450d9103780c12a6cd16",
+          "object": "72 0",
+          "width": 433,
+          "height": 386,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 7,
+          "name": "/FormXob.06c3b10e9fbb61b732e75161567168f4",
+          "object": "71 0",
+          "width": 965,
+          "height": 465,
+          "xPpi": 223.2,
+          "yPpi": 223.2,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "label": "viii",
+      "role": "body",
+      "text": "viii\nFigure 2 (continued)\nImported Drafts pages\nFigma. More opens the Import control. The completion dialog confirms import into Drafts;\nthe imported file retains the supplied source pages and separate exercise page.\nFor the variable-driven native journey, use a paid Figma Design plan or\neligible Education plan with edit access. Starter can import the file, but\nvariables in prototypes require those plan features. Confirm this access\nbefore starting the Figma work.\nThe Velori sample source, documentation, frozen reference, imagery,\nand authored native Figma companion use the MIT license. Keep the\ncopyright and third-party notices when redistributing them. Arimo and\nLora are font references; no font software is included in the companion.\nCaptured Claude Design source and runtime remain in the private\nreview archive and outside these downloads.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 8,
+          "name": "/FormXob.0ec6469208db10844354a637c0cb43fa",
+          "object": "76 0",
+          "width": 555,
+          "height": 547,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "label": "ix",
+      "role": "body",
+      "text": "ix\nThe workflow\n1\nFrame\n2\nGround\n3\nExtend\n4\nSpecify\n5\nMap\n6\nHand off\n7\nImplement\n8\nReconcile\nRendered evidence and drift restart the loop\nStage\nWorking tool\nObservable result\nFrame\nProduct brief and local app\nPreserved choices and bounded\nextension\nGround\nClaude Code and Claude Design\nImported components and photos load\nExtend\nClaude Design\nConfigure, details, review, and edit agree\nSpecify\nDesign and team review\nNavigation, focus, reload, and recovery\ndefined\nMap\nDesign and engineering\nComponents and state ownership\nidentified\nHand off\nClaude Design to Claude Code\nCaptured source and dependencies run\nlocally\nImplement\nClaude Code\nReact change passes the journey checks\nReconcile\nFigma\nEditable frames and native prototype\nagree\nThe configurator, accessory details, review, and image recovery share\nthe same four configuration values. Browsing an accessory must not\nchange the selected accessory. An unavailable photo must not erase the\nshopper's choices.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 10,
+      "label": "x",
+      "role": "body",
+      "text": "x\nCONFIGURATION\nfinish / face / color / accessory\nConfigurator\nchoices + photo\nDetails\nbrowse + return\nReview\nsummary + edit\nRecovery\nretain + retry\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 11,
+      "label": "xi",
+      "role": "contents",
+      "text": "xi\nREFERENCE MAP\nContents\nThe chapters move from source authority to rendered proof. Worksheets\nand appendices remain part of the same operating package.\nOrientation\n ii\n9. Hand off to Claude Code\n 44\n1. Decide what is authoritative\n 1\n10. Implement in Figma and reconcile\n 50\n2. Prepare the Velori system\n 5\n11. Guided capstone\n 57\n3. Validate the imported system\n 13\nAppendix A: Prompt sequence\n 62\n4. Extend the existing screen\n 21\nAppendix B: Handoff record\n 62\n5. Connect the adjacent surfaces\n 26\nAppendix C: Package map\n 63\n6. Specify states and transitions\n 30\nFurther reading\n 64\n7. Prove keyboard and responsive\nbehavior\n 35\nChangelog\n 65\n8. Run the design evidence gate\n 41\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 12,
+      "label": "1",
+      "role": "chapter-opener",
+      "text": "1\nCHAPTER 01\nDecide what is\nauthoritative\nPreserve a working product before asking an assistant to extend it.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 12,
+          "name": "/FormXob.ba6ccf0512b14f67e2e9b73c553ac3cf",
+          "object": "92 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 13,
+      "label": "2",
+      "role": "body",
+      "text": "2\nA design-system request can refer to component anatomy, React\nbehavior, tokens, screenshots, or product rules. Each source answers a\ndifferent question. Declare which source governs each decision before\ngeneration.\nRun your working copy\nFrom the extracted package, run npm ci and npm run dev. Open\nhttp://127.0.0.1:4197. Use Node.js 22 and a free local port. Choose\nGraphite, Simple, Amber, and Carry bag, follow details -> review -> edit,\nand reload before changing the app. The README provides reset and\nkeyboard instructions. The assignment adds review to the supplied\nconfigurator; the completed sample is the expected result. Commerce\nremains outside the brief.\nEstablish the source order\n 1\nThe consumer application governs identity, imagery, configuration values,\nand captions.\n 2\nThe React components govern props, selection behavior, keyboard\ninteraction, and rendering.\n 3\nTokens govern color, typography, spacing, and control dimensions.\n 4\nThe Figma working copy governs native anatomy, variants, variables, and\nprototype wiring.\n 5\nThe approved brief governs the new review journey.\nThe source snapshot and manifest retain copied file hashes, source\ncommit, exclusions, and the copy date. The reference is frozen. New\nimplementation belongs beside it, so a later correction cannot quietly\nrewrite the starting point.\nCLAUDE DESIGN FIELD GUIDE\n1. DECIDE WHAT IS AUTHORITATIVE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 14,
+      "label": "3",
+      "role": "body",
+      "text": "3\nDefine the clean baseline\nPreserve the 1024 \u00d7 768 composition, finish and face choices, expression\ncolors, accessory photographs, captions, and configuration persistence.\nThe baseline uses a dropdown for expression and one accessory choice.\nNormalize the two teaching violations: Continue uses Ink with white\ntext, 12px corners, and 48px height. Accessory cards have 24px gaps.\nKeep the purple Continue button and 8px accessory gaps as separately\nnamed fixtures. Color chips and independent accessory checkboxes\nremain follow-up exercises.\nThe package uses its own storage namespace. The package does not\nimport the source owner's fixes, proposals, review state, or saved\nconfiguration. Reset changes only the sample key.\nName the fixture\nValue\nDefault\nReview fixture\nFinish\nChalk\nGraphite\nFace\nFriendly\nSimple\nExpression\nWhite\nAmber\nAccessory\nDock\nCarry bag\nUse the non-default fixture in every review. A screen that always\ndisplays the defaults can appear correct while ignoring the shopper's\nchoices.\nCLAUDE DESIGN / PRESERVE THE CONFIGURATOR\nInspect the supplied Velori configurator and component library. Record\nthe choices, asset composition, captions, storage behavior, and\nreusable exports. Preserve the existing identity and 1024 \u00d7 768\nreference layout. Use the documented expression dropdown and one\naccessory choice. Describe the bounded change needed for Continue to\nopen Review configuration, with edit and Back retaining the four\nCLAUDE DESIGN FIELD GUIDE\n1. DECIDE WHAT IS AUTHORITATIVE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 15,
+      "label": "4",
+      "role": "body",
+      "text": "4\nCLAUDE DESIGN / PRESERVE THE CONFIGURATOR\nvalues. Do not add payment, stock, accounts, shipping, or order\nsubmission.\nChapter checkpoint\nRecord the source revision, working package, default and review\nfixtures, allowed changes, and preserved behavior. Keep any unresolved\ndisagreement between code, tokens, and Figma in the review record.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n1. DECIDE WHAT IS AUTHORITATIVE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 16,
+      "label": "5",
+      "role": "chapter-opener",
+      "text": "5\nCHAPTER 02\nPrepare the Velori system\nDefine the source rules before importing the React library.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 16,
+          "name": "/FormXob.687b8da8a45ba26100a60e1d4d8fb45d",
+          "object": "102 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 17,
+      "label": "6",
+      "role": "body",
+      "text": "6\nPrepare a reusable source system before asking Claude Design to\ngenerate a screen. A collection of working components can still leave\ntype, spacing, layout, and usage rules undefined. Claude Code can help\ninspect and document those rules. The source preparation and checks\nbelow are this handbook's recommended procedure.\nVelori uses the React codebase route described in Claude's design-system\nsetup guidance. /design-sync converts and imports that source. The\nasset-based setup route is an alternative for other inputs; the Velori\nexercise does not require both routes or manual entry of every design\nvalue.\nSeparate the starting screen from the\nanswer key\nStart an extracted copy using its README. Keep a second, unchanged\ncopy for comparison. The public package contains a completed React\nreview screen for comparison. It contains no historical native Code\npacket or native project pin. The answer key does not complete your new\nnative exercise.\nSupply the configurator, expression menu, accessory details, and\nunavailable-image configurator as the generation baseline. Use the 13\nexports in src/library.jsx through\n.design-sync/host-entry.mjs. The application barrel\nsrc/index.js also exposes the completed Review screen and is not the\nimport entry. Exclude src/ReviewConfiguration.jsx, completed\nanswer-key guidance, historical native mappings, and reference/ from\nthe import and initial generation context. After the system passes\nChapter 3, ask Design to create a new review screen, then compare it\nwith the answer key.\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 18,
+      "label": "7",
+      "role": "body",
+      "text": "7\nInspect the source package\nInput\nWhat it establishes\nreference/index.html and\nreference/design-system.js\nFrozen composition and documented\nconsumer rules\nsrc/library.jsx and src/index.js\nNamed components, props, controlled\nvalues, and interactions\ntokens.json and src/tokens.css\nExisting named colors, shapes, sizes, and\nfont families\nsrc/velori.css\nApplied type, spacing, layout, and state\nrules, including literal values\n/#specimens and reference/\nComponent states and screen comparators\npublic/assets/velori/ and its manifest\nProduct photos, masks, layers, captions, and\nasset identity\n.design-sync/conventions.md and previews/\nImport usage guidance and preview cases\nImported Figma working copy\nNative anatomy, variants, variables, and font\ncorrespondence\nRead docs/inventory.md and provenance/source-freeze.json\nbefore changing the source. Record the source revision and manifest\nhash. Keep the frozen reference unchanged. Use code for executable\nbehavior, documented consumer rules for the normalized baseline, and\nFigma for native correspondence. Record disagreements before\nchoosing a value.\nDefine rules and component use\nInventory every color role, type role, spacing value, radius, control size,\nlayout dimension, and interaction state used by the starting screens.\nInclude CSS literals: the token files alone do not define the complete\nsystem. For each rule, record its value, source path and selector or\nexport, intended use, and whether it is observed, inferred, proposed, or\nunresolved.\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 19,
+      "label": "8",
+      "role": "body",
+      "text": "8\nDocument each component's anatomy, valid props, states, composition\nconstraints, and usage. A prop type can tell you that accessory accepts\nbag; usage guidance should also tell you that browsing bag details does\nnot change the selected accessory. The app owns configuration and\nnavigation. Controlled components receive values and callbacks.\nExport\nResponsibility\nBrand, StoreHeader\nProduct identity and navigation shell\nPrimaryButton, VeloriIcon\nReusable actions and icon roles\nFinishChoice, FaceChoice\nControlled finish and face choices\nExpressionSelect\nDropdown, selected value, open state, and\nkeyboard behavior\nAccessoryChoice, ChoiceGroup\nOne accessory choice and grouped controls\nSelectionMark\nSelected-state marker inside a positioned\nchoice tile\nProductPreview\nPhoto, finish, face, expression, caption, and\nrecovery\nAccessoryPhoto\nCarry bag or Charging dock detail imagery\nConfigurationSummary\nThe four chosen values\nThree finishes, two faces, four expression colors, and three accessory\nvalues produce 72 configurations. Preserve those values. Color chips and\nindependent accessory checkboxes remain extension exercises.\nCLAUDE CODE / PREPARE THE SOURCE SYSTEM\nWork in this extracted Velori package. Inspect reference/index.html,\nreference/design-system.js, src/library.jsx, src/index.js,\nsrc/main.jsx for starting-screen copy and navigation, src/model.mjs\nfor labels and captions, tokens.json, src/tokens.css, src/velori.css,\ndocs/inventory.md, the component previews, the asset manifest, and the\nidentified Figma working file. Prepare docs/system-definition.md and\ndocs/source-conflicts.md before uploading. Inventory colors,\ntypography, spacing, layout, component anatomy, valid props, states,\nand usage. Include CSS literals. Cite the source path and selector,\nexport, or Figma identity for each rule. Separate directly observed\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 20,
+      "label": "9",
+      "role": "body",
+      "text": "9\nCLAUDE CODE / PREPARE THE SOURCE SYSTEM\nrules, inferred compositions, proposed additions, and unresolved\nconflicts. Preserve existing names and consumer behavior. Explain\nwhich useful values need named tokens or usage guidance; make source\nchanges only after the choices are settled. Preserve the frozen\nreference, product imagery, dropdown, one-accessory rule, and 72\nconfigurations. Normalize Continue to Ink/white, 12px corners, and\n48px height, with 24px accessory gaps. Keep purple Continue and 8px\ngaps only as named teaching fixtures. Record Arial/Georgia to\nArimo/Lora mapping and weight or measurement differences. Project\nexact configure and accessory-details wording, caption construction,\nand details routing into docs/native-baseline.md. Map original source\nreferences to their imported bundle, CSS, and component guidance paths.\nExclude ReviewConfiguration, completed Review implementation, and the\nhistorical handoff from the baseline system. Stop before upload if an\nunresolved decision affects the starting screens. Do not invent a\ncomponent or silently accept a proposed pattern.\nReview the two documents and any proposed source diff. Resolve\nrequired conflicts before importing. Project their accepted\nstarting-screen rules into docs/native-baseline.md; include that\ndocument and the bounded product brief in the configured guidelines.\nInclude exact configure and accessory-details copy, caption\nconstruction, and details routing, including the no-accessory case.\nRecord both the original source identities and the paths actually present\nin the imported bundle. Page-level copy is not supplied by component\nprop types. Keep completed Review answers, historical mappings, and\nthe frozen comparison source outside the uploaded context. Verify the\nactual converted guidance inventory, not only the local files. The React\npackage uses Arial and Georgia; the native Figma system uses Arimo and\nLora. Record the differing type weights and measurements. A font\nsubstitution does not establish pixel parity.\nOpen /#specimens and compare the prepared source with the frozen\n1024 \u00d7 768 reference. Inspect default, selected, focus, open, loading, and\nunavailable states where applicable. Compare\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 21,
+      "label": "10",
+      "role": "body",
+      "text": "10\n/?fixture=purple-continue and /?fixture=accessory-gap-8\nwith the accepted baseline. Run npm run check, npm run build, and\nthe README's browser validation after any source change.\nImport the prepared draft\nOpen Claude Code in the extracted folder. Check the installed\n/design-sync and /design-login commands. Complete separate\nDesign authorization when requested. In Claude Design, verify the\nintended account and organization in the switcher. Record whether you\nwill create a new system or update an explicitly chosen system, and\nrecord its destination before uploading. The reader configuration has no\nowner project pinned.\nThis walkthrough uses the standalone claude.ai/design project\nsurface. If that address redirects to conversation artifacts, use the visible\nVisit standalone homepage link before continuing. Inspect the returned\nsystem there before creating a project. Conversation design-system\nartifacts are a separate route outside this capstone; their inventory does\nnot establish that a standalone system exists. If the installed skill cannot\ntarget the chosen surface, stop and resolve the destination before\ncreating anything.\nNew-system creation may require its own approval. The inspected native\ntool reports that a new system initially uses organization-wide visibility.\nCheck the intended visibility before creation and inspect the Share menu\nbefore uploading files. Stop if the selected destination cannot meet the\nagreed access boundary.\nFigure 3\nDesign system destination\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 21,
+          "name": "/FormXob.d4b12ddbc6efd77f57b9b3dd03a3ef96",
+          "object": "189 0",
+          "width": 913,
+          "height": 126,
+          "xPpi": 189.82,
+          "yPpi": 189.82,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "label": "11",
+      "role": "body",
+      "text": "11\nFigure 3 (continued)\nPrivate before upload\nClaude Design, October 5 walkthrough. The example destination is Velori Handbook v1.2.0.\nBefore upload, Share shows Private and Not shared.\nType /design-sync yourself at the Claude Code prompt and submit the\nnative command. Asking Claude to run it in a pasted message does not\ninvoke the command. After it opens, supply the import instruction\nbelow with the library, prepared tokens and CSS, conventions, previews,\nand assets. Preserve the local conversion report and the returned upload\nresult. Inspect the returned system URL in the intended organization.\nCLAUDE CODE / IMPORT THE PREPARED VELORI DRAFT\nImport the prepared Velori source system into the recorded destination\nusing the native command already opened. Use .design-sync/config.json,\nsrc/library.jsx, src/tokens.css, src/velori.css,\ndocs/native-baseline.md derived from the reviewed system definition\nand resolved source-conflict decisions, conventions, previews, and\npackaged assets. Exclude the frozen reference, ReviewConfiguration,\ncompleted answer-key guidance, historical handoff and mappings,\nnode_modules, validation outputs, and private owner state from upload.\nConfirm the account, organization, new or existing system, and\ndestination before sending files. Check all 13 baseline exports and\ntheir usage guidance. Use the supplied declared source adapter so\nassets and their hash inventory exist before native validation and\ncapture. Include assets/** in the upload scope, review obsolete asset\npaths, and verify the product files reached the recorded destination.\nRecapture asset-dependent previews whenever the asset inventory\nchanges. Preserve the conversion report, file inventory, returned\nresult, and system URL. Stop on a rejected upload or unresolved source\nconflict. Keep the system private; do not publish it or change the\norganization default.\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 22,
+          "name": "/FormXob.39103027443099e07f90e364cdb5a48a",
+          "object": "192 0",
+          "width": 441,
+          "height": 61,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "label": "12",
+      "role": "body",
+      "text": "12\nThe supplied source adapter copies the product assets during\nconversion, before the native driver validates and captures cards. It\nrecords their hashes in guidelines/velori-runtime-assets.md,\nwhich participates in the native upload fingerprint. node\n.design-sync/package-assets.mjs ds-bundle can repeat that same\ncopy. Include assets/** in the approved upload scope and review\nobsolete asset paths before deletion. Verify the files in the returned\ninventory. The native skill's default path list omits this sample-specific\ndirectory.\nAn asset-only change can trigger upload without invalidating\ncomponent grades. Recapture and visually inspect ProductPreview and\nAccessoryPhoto whenever that asset inventory changes. If a capture\nreports a missing SVG mask, inspect its response type: the mask must be\nserved as image/svg+xml. Preserve and document a local\ncapture-helper correction before repeating the native validation; do not\nreplace the product image or accept a failure placeholder as a successful\npreview.\nThe import adapter resolves product assets relative to the compiled\nsystem script. Inspect those paths after conversion. A preview at the\nlocal origin root can work while the same code fails beneath a hosted\nproject path.\nChapter checkpoint\nKeep the source definition, resolved conflict record, component usage,\nsource diff, local checks, and actual import receipt together. Proceed to\nnative inspection only when the destination matches and the accepted\nsource describes the starting screens.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n2. PREPARE THE VELORI SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 24,
+      "label": "13",
+      "role": "chapter-opener",
+      "text": "13\nCHAPTER 03\nValidate the imported\nsystem\nProve source reuse and correction before extending the store.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 24,
+          "name": "/FormXob.749f2029cf7418b6248bdd4380f695f6",
+          "object": "112 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 25,
+      "label": "14",
+      "role": "body",
+      "text": "14\nOpen the imported Velori system in Claude Design. Inspect its\ncomponent cards, usage guidance, type and spacing rules, and\nphotographs. Select that exact system in a new project. Recreate known\nscreens before generating Review configuration.\nFigure 4\nImported component inventory\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 25,
+          "name": "/FormXob.d6f8dfb872afd15304eaf19deae42415",
+          "object": "197 0",
+          "width": 298,
+          "height": 439,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 26,
+      "label": "15",
+      "role": "body",
+      "text": "15\nFigure 4 (continued)\nRendered ProductPreview\nOpened usage guidance\nClaude Design. Inspect the imported component inventory, rendered ProductPreview and\nopened usage guidance. The preview uses its own component example, separate from the\nAmber journey fixture.\nGenerate the known screens\nUse the frozen reference and accepted source definition as comparators\nat 1024 \u00d7 768. Generate the default configurator with Chalk, Friendly,\nWhite, and Dock, then change to Graphite, Simple, Amber, and Carry\nbag. Open the expression menu and both accessory-detail screens.\nBrowsing Charging dock must leave Carry bag selected. Return to the\nconfigurator and inspect its caption and selected controls.\nRender the unavailable-image configurator with the same four\nnon-default values retained. Check that recovery preserves them. Keep\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 26,
+          "name": "/FormXob.0b8a030cde051037756e57e3de44b39a",
+          "object": "200 0",
+          "width": 514,
+          "height": 382,
+          "xPpi": 137.52,
+          "yPpi": 137.52,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 26,
+          "name": "/FormXob.ed959378d00b406212f348e54300ca7a",
+          "object": "201 0",
+          "width": 725,
+          "height": 85,
+          "xPpi": 150.74,
+          "yPpi": 150.74,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 27,
+      "label": "16",
+      "role": "body",
+      "text": "16\nReview configuration out of these tests; it is the new composition\nintroduced in Chapter 4.\nCLAUDE DESIGN / RECREATE KNOWN VELORI SCREENS\nUse the selected Velori system and accepted source definition. Create\none responsive interactive store with one shared configuration and one\nmounted screen at a time. Use fixture controls or routes to inspect the\nrequired states while keeping component IDs unique. Preserve the\nsupplied storage and focus behavior. Recreate the configurator at 1024\n\u00d7 768 with Chalk, Friendly, White, and Dock, then Graphite, Simple,\nAmber, and Carry bag. Show the expression menu, Carry bag details,\nCharging dock details, and unavailable-image configurator. Use the\nactual named components, controlled props, tokens, and product assets.\nKeep selection, photograph, mask, caption, and labels consistent.\nBrowsing another accessory must not change selection. Preserve\ndropdown keyboard behavior. Identify missing or unverifiable source\nrules before substituting them. Do not add Review configuration yet.\nInspect the actual interactive result. Check pointer and keyboard\nselection, menu cancellation, details return, asset loading, and image\nrecovery. Save screenshots and the generated source or component\nreferences. A matching static photograph does not establish controlled\nstate.\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 28,
+      "label": "17",
+      "role": "body",
+      "text": "17\nSample ten elements for fidelity\nElement\nSource to inspect\nBrand and navigation\nBrand, StoreHeader, identity and icon rules\nPage heading\nAccepted type role and applied CSS\nContinue\nPrimaryButton, Ink/white, 12px radius, 48px height\nFinish choice\nFinishChoice anatomy and selected state\nFace choice\nFaceChoice anatomy and selected state\nExpression dropdown\nExpressionSelect anatomy, menu, focus, and keyboard use\nAccessory choice\nAccessoryChoice, one value, 24px gaps\nProduct imagery\nProductPreview, original assets, masks, and composition\nCaption\nConfiguration-derived copy and accepted caption type\nScreen layout\nAccepted columns, spacing, alignment, and narrow behavior\nFor each element, save its source identity or rule reference and classify\nthe result as exact reuse, valid composition, cosmetic resemblance,\ninvented replacement, or unverifiable. Exact reuse points to the actual\nsource component or token. A valid composition assembles accepted\ncomponents and rules without replacing them. Appearance alone cannot\nestablish either classification.\nCLAUDE DESIGN / AUDIT SOURCE CONFORMANCE\nAudit these ten elements: brand/navigation, heading, Continue, finish,\nface, expression dropdown, single accessory choice, product imagery,\ncaption, and layout. For each, cite the actual component/export and\ntoken or accepted CSS rule used, with its size, type, spacing, radius,\nand color where applicable. Classify it as exact reuse, valid\ncomposition, cosmetic resemblance, invented replacement, or\nunverifiable. Separate observed source evidence from inference. Flag\naltered props, substituted imagery, literal values that disagree with\nthe definition, and missing states. Do not infer reuse from a\nscreenshot. Stop before the review extension if any element lacks\naccepted source evidence.\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 29,
+      "label": "18",
+      "role": "body",
+      "text": "18\nInspect the cited evidence yourself. Pass only exact reuse and valid\ncomposition, or a specifically reviewed exception with its reason\nrecorded. Correct an invented replacement or unresolved rule at its\nsource, rerun the import where necessary, and repeat the affected\nknown-screen test.\nCheck that a correction persists\nUse an isolated generated test screen and one named teaching fixture.\nSupply either purple Continue or 8px accessory gaps as the deliberate\ndefect. Ask Design to restore the accepted rule. Keep the source system's\naccepted PrimaryButton and 24px gap rule unchanged; fixture styling\nmust not become a new system variant.\nCLAUDE DESIGN / CORRECT AND REGENERATE\nIn this isolated test screen, correct the named purple-continue or\naccessory-gap-8 fixture using the accepted Velori source system.\nContinue must use PrimaryButton with Ink/white, 12px corners, and 48px\nheight. Accessory choices must have 24px gaps. Identify the source rule\nused for the correction. Then generate a second configurator state with\nPebble, Friendly, Mint, and no accessory. Confirm that the corrected\nrule persists there and that the fixture has not become an accepted\nvariant. Record any unresolved replacement before proceeding.\nSave the before, corrected, and second-generation results with the rule\nreferences. If the second generation repeats the defect, improve the\nsource usage guidance or correct the generation context, resync when\nthe source changes, and rerun the test. Keep the unsuccessful attempt in\nthe review record.\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 30,
+      "label": "19",
+      "role": "body",
+      "text": "19\nFigure 5\nDeliberate 8px gap\nCorrected 24px gap\nIndependent generation\nClaude Design teaching fixture. The accessory gap changes from 8px to the accepted 24px.\nAn independent generation retains the 24px rule with Pebble, Friendly, Mint and None; that\nscreen omits storage and details.\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 30,
+          "name": "/FormXob.3c1846380e69581a2b81573a7a441b8f",
+          "object": "210 0",
+          "width": 342,
+          "height": 90,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 30,
+          "name": "/FormXob.eb26fffbfe3373b3bb120c1bc70e32cc",
+          "object": "212 0",
+          "width": 342,
+          "height": 90,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 30,
+          "name": "/FormXob.b6eb16c83bffef7ee403ec7f371feb70",
+          "object": "211 0",
+          "width": 342,
+          "height": 430,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "label": "20",
+      "role": "body",
+      "text": "20\nChapter checkpoint\nProceed to Review configuration only after the actual selected system\nrenders the known screens, the ten-element sample passes, and the\ncorrection survives another generation. Record accepted exceptions and\nfont differences. Keep source completeness, conversion, upload, native\nrendering, and system publication as separate results.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n3. VALIDATE THE IMPORTED SYSTEM\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 32,
+      "label": "21",
+      "role": "chapter-opener",
+      "text": "21\nCHAPTER 04\nExtend the existing\nscreen\nMake Continue open one useful review step.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 32,
+          "name": "/FormXob.5e4b2fafa9e585be662eda9ea817e9dd",
+          "object": "121 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 33,
+      "label": "22",
+      "role": "body",
+      "text": "22\nThe shopper needs to check the chosen robot and accessories before\nreturning to edit. Continue opens Review configuration. The review\nscreen displays the chosen robot and all four values, with Edit\nconfiguration and Back returning to the configurator.\nGenerate the bounded change\nCLAUDE DESIGN / ADD REVIEW CONFIGURATION\nUse the selected Velori system and supplied configurator as the\nbaseline. Make Continue open Review configuration. Show the chosen\nproduct photo and finish, face, expression color, and single accessory.\nAdd Edit configuration and Back. Both return without losing values.\nSupport pointer and keyboard navigation. Focus the Review heading when\nit opens; when Edit configuration, Back, or browser Back returns to the\nconfigurator, restore focus to Continue. Preserve reload persistence\nand an unavailable-image state that retains the summary. Reuse the\nsystem components and tokens. Identify the review screen as new sample\nbehavior. Keep payment, inventory, accounts, shipping, and order\nsubmission outside the result.\nReview the first diff\nInspect the current and proposed configurator beside each other. The\nextension should not replace the brand, photographs, choice\nvocabulary, dropdown, or one-accessory rule. The review column can\nchange composition, but its values must come from the same\nconfiguration object.\nUse Graphite, Simple, Amber, and Carry bag. A review screen with a\nhard-coded default photo fails even when its summary is correct. A\ncorrect photo with a stale summary also fails.\nCLAUDE DESIGN FIELD GUIDE\n4. EXTEND THE EXISTING SCREEN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 34,
+      "label": "23",
+      "role": "body",
+      "text": "23\nFigure 6\nNative Configure photo and caption\nCLAUDE DESIGN FIELD GUIDE\n4. EXTEND THE EXISTING SCREEN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 34,
+          "name": "/FormXob.cb319625e558d26c36b652c7b4dd0ba1",
+          "object": "219 0",
+          "width": 498,
+          "height": 588,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 35,
+      "label": "24",
+      "role": "body",
+      "text": "24\nFigure 6 (continued)\nGenerated native Review\nClaude Design, October 5 walkthrough. The generated Review retains Graphite, Simple,\nAmber and Carry bag from Configure, with Edit configuration and Back available.\nKeep navigation explicit\nContinue creates a review route. Edit and Back return to configure.\nHeading focus identifies the newly opened screen; returning restores\nfocus to the control that led there. Browser history should behave\npredictably when the shopper moves through details and review.\nDo not add an order action to fill the space. Review is the last step of this\nexercise, and editing is its useful next action.\nCLAUDE DESIGN FIELD GUIDE\n4. EXTEND THE EXISTING SCREEN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 35,
+          "name": "/FormXob.1c7445196bc6c3c8582cc1cefcca8e9f",
+          "object": "222 0",
+          "width": 349,
+          "height": 470,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 36,
+      "label": "25",
+      "role": "body",
+      "text": "25\nChapter checkpoint\nThe generated result completes configure -> review -> edit with a\nnon-default configuration. The selected system and new product\ncomposition remain identifiable.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n4. EXTEND THE EXISTING SCREEN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 37,
+      "label": "26",
+      "role": "chapter-opener",
+      "text": "26\nCHAPTER 05\nConnect the adjacent\nsurfaces\nDetails, review, and editing keep the same choices.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 37,
+          "name": "/FormXob.4c904ba450cfc4625fbf6cfe74753a9d",
+          "object": "128 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 38,
+      "label": "27",
+      "role": "body",
+      "text": "27\nAccessory details answer a product question without changing the\nconfiguration. Review answers whether the shopper has chosen the\nintended combination. Both depend on the configurator's existing\nvalues.\nBrowse without selecting\nOpen Carry bag details when Carry bag is selected. Browse Charging\ndock. The detail photograph and title should change, while the selected\naccessory stays Carry bag. Returning to configure restores the original\nselection and caption.\nThe detail view describes the accessory being browsed. The selected\naccessory remains in the parent configuration and appears unchanged\nwhen you return. A details tab must not silently commit a selection.\nFigure 7\nBrowse Charging dock\nCLAUDE DESIGN FIELD GUIDE\n5. CONNECT THE ADJACENT SURFACES\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 38,
+          "name": "/FormXob.d8ff5fad5ff54ae00fb16929e9456136",
+          "object": "227 0",
+          "width": 1024,
+          "height": 768,
+          "xPpi": 240.42,
+          "yPpi": 240.42,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 39,
+      "label": "28",
+      "role": "body",
+      "text": "28\nFigure 7 (continued)\nReview after returning\nPublic React sample. Browsing Charging dock changes the detail view while Carry bag\nremains selected. After returning to Configure and choosing Continue, Review still lists Carry\nbag.\nMake all surfaces agree\nSurface\nRead from shared configuration\nLocal view state\nConfigurator\nFour values, photo, caption, marks\nOpen expression menu\nAccessory details\nParent configuration retained\nunchanged\nAccessory being browsed\nReview\nPhoto and four summary values\nReview route\nImage recovery\nConfiguration and summary\nLoading, failure, retry\nCLAUDE DESIGN FIELD GUIDE\n5. CONNECT THE ADJACENT SURFACES\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 39,
+          "name": "/FormXob.e7b3f59774c0c142c35e81edac40ba97",
+          "object": "63 0",
+          "width": 417,
+          "height": 459,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 40,
+      "label": "29",
+      "role": "body",
+      "text": "29\nA missing image changes rendering state. Image failure does not change\nthe configuration. A details tab changes the browsed accessory.\nBrowsing does not change the selected accessory.\nCLAUDE DESIGN / AUDIT THE COMPLETE JOURNEY\nSelect Graphite, Simple, Amber, and Carry bag. Open accessory details,\nbrowse Charging dock, and return. Continue to review, then edit.\nInspect photographs, captions, selected marks, and summaries after\neach transition. Keep Carry bag selected while browsing Dock. Show the\nunavailable-image state on review with the four values still visible.\nReport any surface that reads stale or independent values.\nChapter checkpoint\nThe full configure -> accessory details -> review -> edit journey retains\nthe fixture. Each screen has a clear return path and owns only its\nview-specific state.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n5. CONNECT THE ADJACENT SURFACES\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 41,
+      "label": "30",
+      "role": "chapter-opener",
+      "text": "30\nCHAPTER 06\nSpecify states and\ntransitions\nDefine loading, failure, persistence, and recovery before handoff.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 41,
+          "name": "/FormXob.b82706ea4deda5488f94afd0a02fdbe6",
+          "object": "139 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 42,
+      "label": "31",
+      "role": "body",
+      "text": "31\nThe normal journey is only part of the contract. Photographs load\nasynchronously. The shopper can change choices rapidly. Browser\nstorage can be unavailable. Reload can occur on review.\nState matrix\nState\nVisible behavior\nValues retained\nRecovery\nLoading product\nLoading treatment with\ncurrent caption\nAll four\nWait or keep editing\nProduct ready\nCorrect photo, mask, caption\nAll four\nContinue or edit\nImage unavailable\nPlain explanation and\navailable summary\nAll four\nRetry actual failed load\nSimulated unavailable\nTeaching placeholder\nAll four\nClear teaching\nsimulation\nStorage unavailable\nNotice below the store\nCurrent visit\nContinue using the app\nReload with storage\nRoute and saved values\nrestored\nAll four\nResume or edit\nReset\nDefault choices\nDefaults only\nBegin a fresh journey\nTeaching controls belong outside the shopper's review column. They\nhelp demonstrate states without making reset or image simulation part\nof the product flow.\nTransition contract\nFor every transition, name the trigger, values read, values changed,\nvisible result, focus destination, and return path. For Continue, the\ntrigger is the action, the four values stay unchanged, Review\nconfiguration opens, and its heading receives focus. Edit returns to\nconfigure and restores focus to Continue.\nCLAUDE DESIGN FIELD GUIDE\n6. SPECIFY STATES AND TRANSITIONS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 43,
+      "label": "32",
+      "role": "body",
+      "text": "32\nAvoid stale images\nRapidly change finish, face, expression, and accessory. The final\nphotograph and caption must describe the last configuration. A previous\nimage load must not replace the newer result. An unavailable image\nmust retain its caption and summary while retrying.\nCLAUDE CODE / VERIFY RECOVERY\nTest rapid changes and a genuinely failed product-image request.\nConfirm the final image and caption agree, a failed image retains\nchoices, and Retry reloads the asset after it becomes available. Test\nreload on review, blocked browser storage, and reset isolation. Keep\nunrelated storage values intact. Record actual results rather than\nadding untested behavior claims.\nFigure 8\nImage unavailable and Retry\nRetained caption during failure\nCLAUDE DESIGN FIELD GUIDE\n6. SPECIFY STATES AND TRANSITIONS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 43,
+          "name": "/FormXob.bd9914c85680ba1b6f7c63f7a920631a",
+          "object": "237 0",
+          "width": 780,
+          "height": 235,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 43,
+          "name": "/FormXob.8b1521bf490dee5b5dd273e94699ca6d",
+          "object": "236 0",
+          "width": 700,
+          "height": 65,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 44,
+      "label": "33",
+      "role": "body",
+      "text": "33\nFigure 8 (continued)\nRecovered photograph\nCLAUDE DESIGN FIELD GUIDE\n6. SPECIFY STATES AND TRANSITIONS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 44,
+          "name": "/FormXob.664b9951a750a15c5957d60b0b4d90f0",
+          "object": "240 0",
+          "width": 991,
+          "height": 996,
+          "xPpi": 298.8,
+          "yPpi": 298.8,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 45,
+      "label": "34",
+      "role": "body",
+      "text": "34\nFigure 8 (continued)\nRetained Review summary\nPublic React sample. Blocking the actual required shell-image request produces the real\nunavailable state and Retry image action. After unblocking and retrying, the photograph\nreturns and Review still lists Graphite, Simple, Amber and Carry bag.\nChapter checkpoint\nThe handoff includes normal, loading, unavailable, rapid-change,\nreload, blocked-storage, and reset behavior. The configuration has one\nowner throughout.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n6. SPECIFY STATES AND TRANSITIONS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 45,
+          "name": "/FormXob.43f9ca22d1c504c6020626784377dd01",
+          "object": "243 0",
+          "width": 825,
+          "height": 845,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 46,
+      "label": "35",
+      "role": "chapter-opener",
+      "text": "35\nCHAPTER 07\nProve keyboard and\nresponsive behavior\nCheck the actual controls and return paths at the reference and narrow\nwidths.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 46,
+          "name": "/FormXob.4f622595e8e0cf8c12a7f5abc5e37509",
+          "object": "153 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 47,
+      "label": "36",
+      "role": "body",
+      "text": "36\nTest the real journey with the keyboard. Labels, focus movement,\nselection marks, and return paths must be observable. A promise of\naccessibility does not establish those behaviors.\nOperate the dropdown\nTab to the expression trigger. Enter or Space opens the menu. Arrows\nmove through options; Home and End reach the first and last. Enter\ncommits. Escape cancels the pending change. Typing an option's name\nmoves to it. Tab closes the menu, and the committed result returns focus\nto the trigger.\nFigure 9\nKeyboard-open expression menu\nPublic React sample. Amber is committed and checked while Blue is the active option in the\nkeyboard-open menu. The real trigger focus outline remains visible.\nFinish, face, and accessory choices respond to Enter or Space. A visible\nselected mark supplements their pressed state. Preserve the names and\nvalues when introducing a follow-up control pattern.\nCLAUDE DESIGN FIELD GUIDE\n7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 47,
+          "name": "/FormXob.93f5d25443c1e287078e268425c2cb0f",
+          "object": "246 0",
+          "width": 417,
+          "height": 295,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 48,
+      "label": "37",
+      "role": "body",
+      "text": "37\nCheck focus through the journey\n 1\nOpen details with the keyboard and confirm heading focus.\n 2\nReturn and confirm focus on the accessory-details control.\n 3\nActivate Continue and confirm focus on Review configuration.\n 4\nActivate Edit and confirm focus returns to Continue.\n 5\nUse Browser Back and confirm the route and values remain coherent.\nAutomated focus checks support this contract. A screen-reader audit\nremains a separate check if the team requires a claim of complete\nassistive-technology support.\nCompare viewports\nAt 1024 \u00d7 768, compare the product image bounds, composition, control\ncolumn, and captions against the frozen reference. The normalized\nContinue and accessory gaps are intentional differences.\nAt 390px width, product and controls stack without horizontal overflow.\nTest the review and detail screens too. A dropdown or return action\nhidden outside the viewport fails the journey.\nCLAUDE DESIGN FIELD GUIDE\n7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 49,
+      "label": "38",
+      "role": "body",
+      "text": "38\nFigure 10\n390px product and caption\nCLAUDE DESIGN FIELD GUIDE\n7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 49,
+          "name": "/FormXob.a35e43c546b135d8988e320f0d17067f",
+          "object": "251 0",
+          "width": 390,
+          "height": 510,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 50,
+      "label": "39",
+      "role": "body",
+      "text": "39\nFigure 10 (continued)\n390px summary\n390px Edit and Back\nPublic React sample at 390px. The product and caption stack above the four-value Review\nsummary. Edit configuration and Back remain reachable.\nThe consumer uses Arial and Georgia. The native Figma system uses\nArimo and Lora. Record that mapping instead of presenting the\nrenderers as typographically identical.\nCLAUDE DESIGN FIELD GUIDE\n7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 50,
+          "name": "/FormXob.59cdc97649409c6d2f62a701f9163c34",
+          "object": "255 0",
+          "width": 390,
+          "height": 343,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 50,
+          "name": "/FormXob.2dfb6673cd97537b5f133ba105630559",
+          "object": "254 0",
+          "width": 390,
+          "height": 134,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 51,
+      "label": "40",
+      "role": "body",
+      "text": "40\nChapter checkpoint\nKeyboard choices, dropdown cancellation, heading and return focus,\nreference composition, and narrow layout have recorded results.\nBroader accessibility claims match the checks actually performed.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n7. PROVE KEYBOARD AND RESPONSIVE BEHAVIOR\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 52,
+      "label": "41",
+      "role": "chapter-opener",
+      "text": "41\nCHAPTER 08\nRun the design evidence\ngate\nReview component use, behavior, and handoff evidence together.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 52,
+          "name": "/FormXob.5085f58f294f7d56b4a18ebdab87a33b",
+          "object": "167 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 53,
+      "label": "42",
+      "role": "body",
+      "text": "42\nReview the extension against the brief, components, tested journey, and\nactual artifacts. Keep a small disposition table so an engineer can\nidentify reuse and new behavior.\nElement\nDisposition\nGoverning source\nBrand and store header\nReuse\nVelori exports\nFinish, face, expression,\naccessory\nReuse\nControlled component props\nProduct preview and recovery\nReuse\nAsset and image-state contract\nReview summary\nReuse\nConfigurationSummary\nReview column\nProduct composition\nGenerated result and bounded brief\nNavigation and persistence\nApplication behavior\nRoute and state contract\nNative Figma review\nNative composition\nLinked components and variables\nChallenge the result\nUse non-default choices and ask whether each surface reads the same\nvalues. Inspect a real image failure. Reload at review. Check the browser\nhistory. Compare native component identity rather than relying on a\nscreenshot.\nCLAUDE DESIGN / REVIEW AGAINST EVIDENCE\nAudit the Velori journey against the preserved baseline and bounded\nreview brief. Name each reused component, product composition, changed\nbehavior, and unresolved issue. Test the non-default fixture, detail\nbrowsing, review, edit, keyboard return, reload, and unavailable\nimages. Keep conclusions tied to the rendered result and actual\nhandoff. Do not infer interactive behavior from an artboard or PNG.\nCLAUDE DESIGN FIELD GUIDE\n8. RUN THE DESIGN EVIDENCE GATE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 54,
+      "label": "43",
+      "role": "body",
+      "text": "43\nRecord the decision\nUse High, Medium, and Low for findings. A High issue blocks the\nintended journey or loses configuration. A Medium issue affects a\nrequired control, return path, or handoff. A Low issue is a local polish\ndefect with a working journey.\nApprove only the bounded result that was inspected. A successful local\nbuild does not establish native generation. An accepted upload does not\nestablish rendered photos. A generated screen does not establish a\nportable export.\nChapter checkpoint\nNo unresolved issue blocks the handoff. The review record identifies the\nactual project, selected system, inspected journey, accepted findings,\nand remaining limits. Capture the files and record the implemented\nchange in Chapter 09.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n8. RUN THE DESIGN EVIDENCE GATE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 55,
+      "label": "44",
+      "role": "chapter-opener",
+      "text": "44\nCHAPTER 09\nHand off to Claude Code\nPreserve the actual source and make it run outside the design project.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 55,
+          "name": "/FormXob.4c312574ce8d12ab9c46385d0541b375",
+          "object": "87 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 56,
+      "label": "45",
+      "role": "body",
+      "text": "45\nKeep the generated source, dependencies, assets, accepted decisions,\nand expected journey together. Test the handoff from an extracted folder\nbefore calling it portable.\nCapture your generated result\nOpen the new generated project in the intended organization. Choose\nShare -> More formats and apps. Under Your destinations, choose\nClaude Code, then Send. In Hand off to Claude Code, select Local agent\nand Copy prompt. Paste the copied prompt into Claude Code working in\nyour extracted package.\nThe copied prompt identifies the project URL, selected generated HTML\nand imported files for the authenticated claude_design MCP. Complete\n/design-login in the intended account only if authorization is\nrequested. Confirm the source and dependency reads succeed before\nstarting adaptation. Save the copied prompt, actual returned files and\nread receipts unchanged in handoff/new-run/captured/, with project\nURL, selected file, handoff method, date, hashes and dependency origins\nin handoff/new-run/HANDOFF.json.\nA binary read can return truncated data even when the request succeeds.\nPreserve that read receipt and obtain the full project archive through\nShare -> Project HTML -> Project archive -> Export. Use the archive as a\ncompanion to the copied handoff prompt and MCP reads. Preserve its\noriginal bytes and extracted entries unchanged, hash both, and compare\ncomplete overlapping files with the MCP reads. Stop until every required\ndependency has complete bytes; do not substitute assets from the\nsample or a historical packet. See Design's export workflow.\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 57,
+      "label": "46",
+      "role": "body",
+      "text": "46\nFigure 11\nSend to Claude Code\nLocal agent and selected file\nCopied after the action\nProject archive export\nClaude Design. Send opens the Local agent handoff for the generated Velori Store file.\nCopied records the completed copy action; Project HTML provides the Project archive export\npath.\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 57,
+          "name": "/FormXob.020f107a42de1af8b25c63b545b9bcff",
+          "object": "267 0",
+          "width": 440,
+          "height": 123,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 57,
+          "name": "/FormXob.fd205dab8bfc4ecccda4586d3ddbebdb",
+          "object": "270 0",
+          "width": 578,
+          "height": 152,
+          "xPpi": 120.17,
+          "yPpi": 120.17,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 57,
+          "name": "/FormXob.75dbcad6b14059f0e3a87f7152051c5d",
+          "object": "269 0",
+          "width": 147,
+          "height": 50,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 57,
+          "name": "/FormXob.502b5f8c2c3389957b42fdb7f120e192",
+          "object": "268 0",
+          "width": 998,
+          "height": 460,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 58,
+      "label": "47",
+      "role": "body",
+      "text": "47\nAsk Code to inspect the returned source before implementation. Include\nsupport.js, referenced system bundles and styles, runtime\ndependencies, and product assets. A copied prompt starts the import;\nsuccessful file reads establish the capture. Preserve captured bytes and\nmake any host adaptation beside them. Stop for unresolved failed reads\nor missing source or dependencies. The local packet must resolve its\nprivate project references before it can pass independent validation.\nCLAUDE CODE / PREPARE THE NEW CODE PACKET\nUse the copied native handoff prompt to read the recorded Velori\nproject through the authenticated claude_design MCP. Confirm the\nintended account and complete /design-login only if authorization is\nrequested. Read the selected generated HTML, support.js, every\nreferenced system bundle and stylesheet, and all referenced assets.\nPreserve the copied prompt, returned files and read receipts unchanged\nin handoff/new-run/captured/, and record their hashes, project URL,\nselected file, handoff method and dependency origins in\nhandoff/new-run/HANDOFF.json. Treat a truncated binary response or an\nincomplete decode as a failed read, and preserve its receipt. Obtain\nfull bytes through Share -> Project HTML -> Project archive -> Export.\nPreserve the original archive and extracted entries unchanged, hash\nboth, and compare complete overlapping files with the MCP reads. Do not\nfill missing files from the sample or a historical packet. Stop until\nevery required source file and dependency has complete bytes. After\ncapture is complete, create a separate runnable adaptation in\nhandoff/new-run/ with package.json, lockfile, local assets, README, a\ndev script serving localhost:4206, and a validate script. Do not reuse\nthe historical packet as the new handoff. Inspect the received runtime\nfor globals, CDN URLs and resource mappings; provision required\ndependencies locally and document every URL or asset-route mapping\nseparately from captured source. Validation must target this new packet\nand test all 72 configurations, configure -> details -> review -> edit,\ndropdown keyboard behavior, Back, reload persistence, rapid changes,\nunavailable-image recovery, and storage independence. Install\nPlaywright as a development dependency for browser checks. Run without\nexternal HTTPS requests after installation. Preserve the sample\napplication.\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 59,
+      "label": "48",
+      "role": "body",
+      "text": "48\nReview the packet's README and handoff/new-run/HANDOFF.json,\nthen install and start it from that folder:\nnpm ci\nnpx playwright install chromium\nnpm run dev\nOpen http://127.0.0.1:4206. Leave that server running and run npm run\nvalidate in another terminal in the same folder. Keep the test output\nand screenshots. These scripts are outputs of the packet-preparation\nstep; stop if they are missing or target the historical packet. Only a\npassing new packet establishes your new handoff.\nUse the sample as an answer key\nThe public sample includes a bounded React Review configuration\ncolumn adapted from the native Review source accepted on October 5,\n2026, SHA-256 03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b\n976b68f0f46811150a. The existing app retains configuration, routing,\npersistence, focus, and image recovery. Run the sample from the\nextracted velori-store folder using the README. Captured Claude\nDesign source and runtime remain private and outside the public\ndownloads. Capture and validate your own new packet; the answer key\ndoes not verify your generation.\nKeep the adaptations visible\nIf the received source needs a localhost adapter, inspect support.js and\nthe selected system runtime for globals, CDN URLs, resource mappings\nand asset paths. Provision the required runtime dependencies locally\nand map the received system and asset routes beside the captured\nsource. Preserve captured bytes and record hashes, dependency origins\nand every host adaptation in handoff/new-run/HANDOFF.json.\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 60,
+      "label": "49",
+      "role": "body",
+      "text": "49\nFor MCP capture or a separately downloaded archive, inspect the full\nruntime and asset closure before treating the result as portable. Keep\nunsuccessful reads or downloads in the review record and document the\nworking setup path.\nBring the bounded change into React\nsrc/ReviewConfiguration.jsx adapts the generated review column.\nIt reuses ConfigurationSummary and the primary action while the\nparent application retains routing, state, persistence, and focus. The\nshopper's column omits prototype inspection controls.\nCLAUDE CODE / IMPLEMENT THE EXPORTED REVIEW\nInspect handoff/new-run/captured/ and HANDOFF.json from the passing\nnew packet. Adapt only the bounded Review configuration column into the\nReact sample. Preserve named exports, tokens, photos, all four values,\nthe expression dropdown, and one accessory choice. Keep routing,\npersistence, focus, and image recovery in their existing owners. Test\nconfigure -> details -> review -> edit with Graphite, Simple, Amber,\nand Carry bag. Record the source-to-implementation mapping and\ndeviations. Do not edit CLEAR or publish.\nChapter checkpoint\nThe packet runs outside the native project, and the implemented review\ncan be traced to its actual source. Dependencies and host changes are\ndisclosed. A PNG, PDF, or artboard is appearance evidence, not the\ninteractive Code handoff.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n9. HAND OFF TO CLAUDE CODE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 61,
+      "label": "50",
+      "role": "chapter-opener",
+      "text": "50\nCHAPTER 10\nImplement in Figma and\nreconcile\nVerify editable components, variables, and the native prototype.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 61,
+          "name": "/FormXob.e153dc3f3ca7ac2b90ff430db71c11a5",
+          "object": "97 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 62,
+      "label": "51",
+      "role": "body",
+      "text": "51\nFigma is part of this exercise. Confirm access to variables in prototypes\non a paid or eligible Education plan. Use your imported working copy\nand keep editable frames for configure, the open expression menu,\naccessory details, review, and unavailable review. Preserve the supplied\nsource pages and reference frames, and build the extension on a\nseparate working page.\nKeep native identity\nBefore editing, verify local main components, internal instance links,\nvariable collections and modes, image resources, and available fonts in\nyour imported copy. Stop if a required external library or resource is\ninaccessible. Use linked instances for the existing Velori components.\nBind finish, face, expression, accessory, captions, and summaries to\nshared variables. Record the component and variable IDs from your\nactual file. A flattened screenshot or a collection of look-alike rectangles\ndoes not preserve native reuse.\nConfigure and Review compose the product photograph, face and\nexpression from the four selected values. Accessory details use the\noriginal Chalk Carry bag and Charging dock reference photographs.\nAccessoryPhoto receives the browsed accessory only; browsing those\nviews preserves the shopper's configuration. Preserve that source\nbehavior when reconciling the native file.\nNavigate by page and frame names from the companion manifest.\nPreserve 01 Foundations, 02 Components, 03 Configurator, and 04\nSource Assets, including Configure \u00b7 White on 03 Configurator. The\ncompleted 05 Store \u00b7 Handbook exercise page contains Configure,\nExpression color menu, Carry bag details, Charging dock details, Review\nconfiguration, and Review \u00b7 Image unavailable. Use those frames for\ncomparison after your generation. Imported files have their own\nidentities; record the IDs you inspect rather than relying on author-file\nnode IDs.\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 63,
+      "label": "52",
+      "role": "body",
+      "text": "52\nFIGMA / BUILD AND INSPECT THE NATIVE STORE\nUse the identified Velori working file. Preserve the original\nfoundation, components, configurator, and source assets. Add editable\nnative frames for configure, expression menu, Carry bag details,\nCharging dock details, review, and unavailable review. Reuse existing\ncomponent instances and shared variables. Wire Graphite, Simple,\nAmber, and Carry bag through details, review, and edit. Confirm\nselected states, configured product images, captions, and summaries\nupdate. Keep the original Chalk reference photos in accessory details,\nmatching AccessoryPhoto; browsing Dock must preserve the selected\nCarry bag. Record component and variable identities and test the actual\nprototype.\nTest the prototype\nSelect the non-default fixture. Follow both detail views, return, continue\nto review, show the unavailable image, and return to edit. Check the\nnative values after every transition. Inspect representative bindings\nacross all 72 combinations, not only the default frame.\nThe supplied prototype also includes keyboard shortcuts for its\ndemonstration: C opens the expression menu, Escape dismisses it, Enter\nactivates Continue or Edit, and I opens the unavailable-image review.\nEdit or Back returns to the configurator. These prototype shortcuts do\nnot establish the browser dropdown's full keyboard model.\nNative prototype variables support the configured visit. Browser reload\npersistence belongs to the React and Code apps and is tested there.\nRecord that difference when reconciling behavior.\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 64,
+      "label": "53",
+      "role": "body",
+      "text": "53\nFigure 12\nSelected Continue instance\nLinked Primary Button\nBound height variable\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 64,
+          "name": "/FormXob.ece16de3642101312c01f8f9309e73bf",
+          "object": "285 0",
+          "width": 885,
+          "height": 181,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 64,
+          "name": "/FormXob.f09c41161bd18c734aeaf47e586fcd38",
+          "object": "286 0",
+          "width": 452,
+          "height": 334,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 64,
+          "name": "/FormXob.a5403647cfaa578e9ee3416266e2d35d",
+          "object": "284 0",
+          "width": 462,
+          "height": 364,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 65,
+      "label": "54",
+      "role": "body",
+      "text": "54\nFigure 12 (continued)\nImported Figma product\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 65,
+          "name": "/FormXob.3442288ee6da79c43b7fee611d11190e",
+          "object": "289 0",
+          "width": 995,
+          "height": 996,
+          "xPpi": 260.77,
+          "yPpi": 260.77,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 66,
+      "label": "55",
+      "role": "body",
+      "text": "55\nFigure 12 (continued)\nImported Figma Present Review\nImported Figma working copy. Inspect linked component identity and a representative\nvariable binding, then compare Present Review with Graphite, Simple, Amber and Carry bag.\nPrototype variables cover the configured visit.\nReconcile the result\nCompare the reference and extracted screens at 1024 \u00d7 768. Record the\nfont mapping and intentional normalized controls. Resolve unexpected\ndrift in the owning source, then repeat the affected check. Keep\nrendering differences and product behavior differences distinct.\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 66,
+          "name": "/FormXob.767b42c68fc956696cc86c28c27fd105",
+          "object": "292 0",
+          "width": 846,
+          "height": 1000,
+          "xPpi": 220.0,
+          "yPpi": 220.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ]
+    },
+    {
+      "page": 67,
+      "label": "56",
+      "role": "body",
+      "text": "56\nThe Figma write-to-canvas guidance describes native editing. Do not\ntreat a Claude image export as evidence that component and variable\nidentities survived in Figma.\nChapter checkpoint\nNative editable frames, instance identities, variable bindings, and\nprototype transitions have returned evidence. The browser and Figma\nbehavior differences are explicit.\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nCLAUDE DESIGN FIELD GUIDE\n10. IMPLEMENT IN FIGMA AND RECONCILE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 68,
+      "label": "57",
+      "role": "chapter-opener",
+      "text": "57\nCHAPTER 11\nGuided capstone\nComplete one bounded store journey across the real tools.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": [
+        {
+          "page": 68,
+          "name": "/FormXob.444b14338581cb66799310696d55246a",
+          "object": "107 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 69,
+      "label": "58",
+      "role": "body",
+      "text": "58\nWork from an unchanged extracted copy. Keep the completed sample as\nthe expected result. The capstone recreates Review configuration from\nthe existing Velori configurator and details, then implements and\nverifies it through the native tools.\nPhase 1: Frame and ground\nStart the package, inspect the frozen reference, record the default and\nreview fixtures, and confirm the preservation boundary. Identify your\nClaude account, organization, system destination, and Figma working\ncopy before uploading.\nPhase 2: Define, import, and validate\nFollow Chapters 2 and 3 in order. Prepare the source definition and\nconflict record, including CSS literals, usage guidance, and Figma font\ncorrespondence. Resolve required decisions, run local checks, and\nimport the prepared draft into the recorded destination. Inspect actual\ncomponent cards and recreate the known configurator, menu, details,\nand unavailable-image screens. Save the ten-element fidelity sample and\ncorrection-persistence test. Stop for an unresolved source rule or a failed\nnative check.\nPhase 3: Generate the extension\nAfter the system passes, create Review configuration using the\nconfigurator and details as the baseline. Exclude the completed review\nanswer key from generation context. Test the non-default fixture, return\npaths, keyboard use, reload, and unavailable imagery.\nCLAUDE DESIGN FIELD GUIDE\n11. GUIDED CAPSTONE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 70,
+      "label": "59",
+      "role": "body",
+      "text": "59\nPhase 4: Capture and implement\nPreserve the actual generated source or handoff, including its\ndependencies. Run it in a new folder. Adapt the review column into the\nReact sample without replacing state ownership or existing controls.\nKeep unsuccessful exports in the review record.\nPhase 5: Build the native Figma journey\nUse linked native components and shared variables. Add the editable\nframes beside the reference. Test configure -> details -> review -> edit\nwith Graphite, Simple, Amber, and Carry bag. Confirm that\nconfigure/review captions and configured images update together.\nDetails retain the original Chalk accessory-reference photographs.\nPhase 6: Verify the reader package\nnpm run check\nnpm run build\nnpx playwright install chromium\nnpm run dev\nLeave Vite running. In another terminal:\nnpm run validate:browser\nValidate the newly received packet in a separate folder as described in\nChapter 9. Run npm run validate only after the new packet has the\ncaptured inputs and the documented validation script. The public\nsample has no historical handoff validator; its local app checks cannot\ncertify a new native export.\nCheck all 72 combinations, rapid changes, dropdown keyboard\nbehavior, reload, real image failure, reset isolation, reference\ncomposition, and narrow layout. Preserve the test output and\nCLAUDE DESIGN FIELD GUIDE\n11. GUIDED CAPSTONE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 71,
+      "label": "60",
+      "role": "body",
+      "text": "60\nscreenshots. Keep a fresh extracted copy for the final install and journey\ncheck.\nCompletion record\nResult\nRequired evidence\nLocal app\nClean install, build, complete journey, 72 configurations\nClaude Design\nSource definition, resolved conflicts, intended destination,\naccepted import, known screens, fidelity sample, correction\npersistence, new review generation\nCode handoff\nActual source and dependencies run independently;\nbounded change implemented\nFigma\nWorking file, editable frames, identities, bindings, native\njourney\nHandbook candidate\nReader instructions match the package and tested behavior\nPublication\nSeparate release authorization and established redistribution\nterms\nAnswer key\nA passing result preserves the store and adds one review step. The\nphotograph, controls, caption, and summary agree. Browsing details\ndoes not select an accessory. Edit, Back, reload, and image recovery\npreserve the four values. The dropdown keeps its documented keyboard\nbehavior.\nThe native result uses the selected Velori system. Its handoff includes\nexecutable source and dependencies. The React adaptation composes\nexisting exports. The Figma result uses linked components and shared\nvariables, with the actual prototype tested. The package runs without\nCLEAR or private owner state.\nDo not award completion for screenshots alone, a successful upload\nwithout inspection, an export that cannot start, or local tests substituted\nCLAUDE DESIGN FIELD GUIDE\n11. GUIDED CAPSTONE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 72,
+      "label": "61",
+      "role": "body",
+      "text": "61\nfor an inaccessible native step. Leave an inaccessible required step\nunfinished and name the practical next action in the review record.\nCLAUDE DESIGN FIELD GUIDE\n11. GUIDED CAPSTONE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 73,
+      "label": "62",
+      "role": "body",
+      "text": "62\nVelori exercise and author synthesis. Primary setup references are listed in Further reading.\nAppendix A: Prompt\nsequence\nUse the prompts in order: preserve the configurator; prepare the source\nsystem; import the prepared draft; recreate known screens; audit ten\nelements for source conformance; correct a named fixture and\nregenerate; add Review configuration; audit the complete journey; check\nrecovery; review against evidence; prepare and validate the new Code\npacket; implement the captured change; reconcile native Figma. The\npackage's docs/prompts.md supplies copyable versions.\nAppendix B: Handoff\nrecord\nRecord the source definition and conflict decisions, ten-element fidelity\nsample, correction and second-generation evidence, feature, account\nand organization, selected system and project URL, Figma working file,\nsource revision, captured files and hashes, host adaptations, component\nmap, route and state inventory, accepted copy, expected journey,\nkeyboard behavior, validation results, deviations, and open decisions.\nUse docs/handoff-template.md.\nKeep credentials and authorization material out of the reader package.\nReader configuration should name a destination only after the reader\nchooses one.\nCLAUDE DESIGN FIELD GUIDE\nAPPENDIX B: HANDOFF RECORD\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 74,
+      "label": "63",
+      "role": "body",
+      "text": "63\nAppendix C: Package map\nPath\nContents\nREADME.md\nFirst-run, journey, validation, and reset instructions\nsrc/\nApp, reusable library, model, tokens, and review\nadaptation\npublic/assets/velori/\nProduct photographs, masks, layers, and manifest\nreference/\nFrozen consumer reference and extraction manifest\n.design-sync/\nReader import configuration, adapter, conventions,\npreviews\ndocs/\nBrief, baseline import rules, source definition,\ndecisions, prompts, walkthrough, expected results,\nnotices\nprovenance/\nFrozen consumer-source identity; private native\nrecords are excluded\nprovenance.json\nPackage file hashes and exclusions\nscripts/\nAsset, browser, and public-package checks; model\ntests live in src/\nThe native Figma companion and its manifest are separate downloads\nbeside the React ZIP. Import the file into your own Drafts; it is not\nbundled in the ZIP.\nData Pipeline Studio remains the historical exercise in\nLocal_Coding_Exercise.md. Its released editions and artifacts are\npreserved. Velori is the current sample for this guide.\nCLAUDE DESIGN FIELD GUIDE\nAPPENDIX C: PACKAGE MAP\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 75,
+      "label": "64",
+      "role": "body",
+      "text": "64\nFurther reading\n 1\nAnthropic. Get started with Claude Design. Reviewed October 4, 2026.\n 2\nAnthropic. Set up your design system in Claude Design. Reviewed October\n4, 2026.\n 3\nAnthropic. Claude Code commands. Reviewed October 4, 2026.\n 4\nAnthropic. Design admin guide. Use for current organization setup.\n 5\nFigma. Write to canvas. Reviewed October 4, 2026.\n 6\nVelori reader materials. The React ZIP contains MIT source and assets,\nfrozen reference, token and asset manifests, exercise materials, and\nvalidation scripts. The separate native Figma file and companion manifest\nsupply a reader-owned working copy. Completed React and Figma screens\nare comparison material. Captured Claude Design packets and metadata\nstay private. Verify each new native run separately.\nCLAUDE DESIGN FIELD GUIDE\nFURTHER READING\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    },
+    {
+      "page": 76,
+      "label": "65",
+      "role": "changelog",
+      "text": "65\nChangelog\nCompared with version 1.2.1, published October 5, 2026. Previous\nDaytime PDF SHA-256: 43302892dd7a961dba1154027a8a42da72e716b\n21cb7534e9f9cf2d7a52b2272.\nAddition: Orientation and Chapters 2-7, 9 and 10. Added screenshots for\nsetup, system inspection, correction, the store journey, recovery,\nkeyboard use, responsive layout, Code handoff, and Figma review.\nReaders can locate the controls and compare their results with the\nworked example.\nVelori React sample, native Figma companion, and Claude Design\nworkflow.\nCLAUDE DESIGN FIELD GUIDE\nCHANGELOG\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "rasterPaints": []
+    }
+  ],
+  "screenshotFigures": [
+    {
+      "id": "s01-start",
+      "panelCount": 3,
+      "captionFound": true,
+      "titlePages": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "s02-figma-import",
+      "panelCount": 3,
+      "captionFound": true,
+      "titlePages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "s03-private-import",
+      "panelCount": 2,
+      "captionFound": true,
+      "titlePages": [
+        21,
+        22
+      ]
+    },
+    {
+      "id": "s04-inspect-system",
+      "panelCount": 3,
+      "captionFound": true,
+      "titlePages": [
+        25,
+        26
+      ]
+    },
+    {
+      "id": "s05-correction",
+      "panelCount": 3,
+      "captionFound": true,
+      "titlePages": [
+        30
+      ]
+    },
+    {
+      "id": "s06-native-review",
+      "panelCount": 2,
+      "captionFound": true,
+      "titlePages": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "s07-browse",
+      "panelCount": 2,
+      "captionFound": true,
+      "titlePages": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "s08-retry",
+      "panelCount": 4,
+      "captionFound": true,
+      "titlePages": [
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "s09-dropdown",
+      "panelCount": 1,
+      "captionFound": true,
+      "titlePages": [
+        47
+      ]
+    },
+    {
+      "id": "s10-mobile",
+      "panelCount": 3,
+      "captionFound": true,
+      "titlePages": [
+        49,
+        50
+      ]
+    },
+    {
+      "id": "s11-handoff",
+      "panelCount": 4,
+      "captionFound": true,
+      "titlePages": [
+        57
+      ]
+    },
+    {
+      "id": "s12-figma-review",
+      "panelCount": 5,
+      "captionFound": true,
+      "titlePages": [
+        64,
+        65,
+        66
+      ]
+    }
+  ],
+  "expectedRasterPaintCount": 46,
+  "actualRasterPaintCount": 46
+}

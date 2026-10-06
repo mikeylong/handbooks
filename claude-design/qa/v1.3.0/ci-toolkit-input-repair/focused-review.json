@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "review": "Continuing focused CI repair review; no wider source, browser or PDF review",
+  "severityFindings": {
+    "High": [],
+    "Medium": [],
+    "Low": []
+  },
+  "head": "818fa4d8749dcc2efa9c7c7a55d50455b0fffc2c",
+  "scope": [
+    "publish-evidence-backed-handbook/references/specimen/manifest.json",
+    "publish-evidence-backed-handbook/scripts/build-manifest.py",
+    "publish-evidence-backed-handbook/scripts/markdown-downloads.mjs",
+    "publish-evidence-backed-handbook/scripts/test-markdown-downloads.mjs"
+  ],
+  "manifest": {
+    "sha256": "d424c9cc305d067c84d16d770586fb70e09d07d81f1536928f219be3331e4054",
+    "inputs": 137,
+    "originalInputs": 133,
+    "removed": [],
+    "added": [
+      "references/screenshot-figures.md",
+      "scripts/screenshot-browser-check.mjs",
+      "scripts/screenshot_figures.py",
+      "scripts/test-screenshot-figures.py"
+    ],
+    "allCurrentHashesMatch": true,
+    "allNonInputMetadataUnchanged": true
+  },
+  "guardsUnchanged": [
+    {
+      "path": "production-ai-engineering/automation/verify-publishing-toolkit.mjs",
+      "sha256": "d04fa55330003f04604f1e27e534b527dca8dd3c53ccec1f5e490740a9060419",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "production-ai-engineering/scripts/test-weekly-toolkit.py",
+      "sha256": "0b74ab1031ae14576019876263734196938c4192f5c54cd37c6d2f18cd82cfc3",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "production-ai-engineering/scripts/test-weekly-pdf-integration.py",
+      "sha256": "19e7cb090170964036531d12a525166fa472ccb58f6f12fb7dd14171d8cdf306",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/package-skill.py",
+      "sha256": "eb58be38ec99d177b59123f1ca1c4a9c73567c06eeafc9a318635956eb92eaaf",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "publish-evidence-backed-handbook/scripts/validate-package.py",
+      "sha256": "56624285a485cee36a4569e712b7bb099766babe7e91c8e2af8ec37742b1175f",
+      "unchangedFromHead": true
+    }
+  ],
+  "portableArchive": {
+    "path": "/private/tmp/claude-design-toolkit-portable-repair-r2/publish-evidence-backed-handbook.zip",
+    "sha256": "256aa9da2ac073504ccefcc23549d24f5933ff3243e691d630f76f81f12eff87",
+    "members": 139,
+    "allMembersExactlyMatchSource": true,
+    "strictPackageValidation": "passed",
+    "r1RenderingEvidencePreserved": "Only two Markdown files and manifest differ in r2; all other 136 members exact"
+  },
+  "immutableSourceAndPdfPins": {
+    "claude-design/Claude_Design_Field_Guide_Source.md": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8",
+    "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
+    "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e"
+  },
+  "urlEquivalence": {
+    "schemaVersion": 1,
+    "status": "passed",
+    "scope": "Representation-only Markdown URL regex and negative fixture repair",
+    "beforeModuleSha256": "f1a3a3764935e97e95e6db78dc6dca0ef78ebda04460f3ed43369371625b4ebf",
+    "afterModuleSha256": "134e32ea0a94ceaf31a3d722801b1c96c7a15f14276d327c21171462aae820b8",
+    "actualPromotedReaderExportByteEquivalent": true,
+    "figures": 12,
+    "urlCasesEquivalent": 396,
+    "rejections": 113,
+    "unsafeFixtureConstructedBytesEquivalent": true,
+    "markdownSha256": "ad153dd23693fc359e656592545a360d4b7a4ddc9dcd41a24168e04ce91ead14",
+    "notes": "The actual public assembly is used as the export input. No product, reader, source, image or PDF is written."
+  },
+  "evidence": [
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r1/portable-checks-report.json",
+      "sha256": "9ee6ef02096036ade3bb29b24032fa090b977640a1b76c8f22ce8ed00ae3c37f"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r2/portable-checks-report.json",
+      "sha256": "233a8d45058c360d7770c178c81c57dc92828b8abe06a4a969480789b935dd5b"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-weekly-pdf-repair-r1/integration-results.json",
+      "sha256": "135406fc64602569a2b54dc77a83ef6ba250052efb7e6d83183be40a844f0411"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-weekly-repair-r2.log",
+      "sha256": "81153590c3e62d7c86c44c0e93b5f18ad971706cfaf49b5616baaf31de9636fb"
+    },
+    {
+      "path": "/private/tmp/claude-design-toolkit-portable-repair-r2/package-validation.json",
+      "sha256": "7730e8204ed708d391fda4261905afcaf69a8e7242f7308723c732e2c3183fd2"
+    }
+  ],
+  "limitations": "Hosted CI rerun and release/deployment completion remain parent-owned. Physical print was not tested."
+}
