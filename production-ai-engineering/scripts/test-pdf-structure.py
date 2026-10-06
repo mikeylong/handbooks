@@ -9,6 +9,7 @@ from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
 import json
 from tempfile import TemporaryDirectory
+from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
@@ -114,6 +115,80 @@ class StructureTests(unittest.TestCase):
         fixture[2]["changelog"] = len(fixture[0]) - 1
         with self.assertRaisesRegex(AssertionError, "Unexpected changelog"):
             self.check(fixture)
+
+    def test_multi_page_changelog_is_terminal(self):
+        fixture = edition()
+        fixture[0].extend(["CHANGELOG\nCorrected cross-references in the Index of Terms"] * 3)
+        fixture[2]["changelog-end"] = len(fixture[0]) - 1
+        self.check(fixture)
+        fixture[0][-1] = "Unrelated trailing content"
+        with self.assertRaisesRegex(AssertionError, "Changelog"):
+            self.check(fixture)
+        fixture[0][-1] = "CHANGELOG\nINDEX OF TERMS\nUnrelated terms"
+        with self.assertRaisesRegex(AssertionError, "Index content"):
+            self.check(fixture)
+
+
+class CoverAndMetadataTests(unittest.TestCase):
+    def cover(self, candidate=True):
+        suffix = "-candidate.20261005.120000" if candidate else ""
+        return (
+            f"{validator.BOOK_TITLE} {validator.SUBTITLE} {validator.AUTHOR_CREDIT} "
+            f"October 5, 2026 · Version 1.4.0{suffix}"
+        )
+
+    def metadata(self, title):
+        return SimpleNamespace(title=title, author=validator.AUTHOR, subject=validator.SUBTITLE)
+
+    def test_exact_appearance_metadata_and_cover_pass(self):
+        for theme, name in [("light", "Daytime version"), ("dark", "Late night version")]:
+            with self.subTest(theme=theme):
+                validator.validate_metadata(self.metadata(f"{validator.BOOK_TITLE} · {name}"), self.cover(), theme)
+        validator.validate_cover_text(self.cover())
+
+    def test_candidate_rejects_bare_wrong_and_mismatched_appearance_titles(self):
+        for title in [validator.BOOK_TITLE, "Wrong book · Daytime version", f"{validator.BOOK_TITLE} · Late night version"]:
+            for theme in [None, "light"]:
+                with self.subTest(title=title, theme=theme), self.assertRaisesRegex(AssertionError, "title metadata mismatch"):
+                    validator.validate_metadata(self.metadata(title), self.cover(), theme)
+
+    def test_saved_legacy_title_is_not_a_candidate_escape_hatch(self):
+        with TemporaryDirectory() as directory:
+            handbook = Path(directory) / "handbook"
+            handbook.mkdir()
+            (handbook / "releases").mkdir()
+            saved_ledger = handbook / "releases/version-1.4.0.json"
+            saved_ledger.write_text(json.dumps({"previousVersion": "Version 1.3.1", "previousPdfSha256": "a" * 64}))
+            manifest = handbook.parent / "release-manifest.json"
+            manifest.write_text(json.dumps({"version": "1.4.0", "sha256": "b" * 64}))
+            with patch.object(validator, "__file__", str(handbook / "validate-pdf.py")):
+                metadata = self.metadata(validator.BOOK_TITLE)
+                validator.validate_metadata(metadata, self.cover(False), pdf_sha256="b" * 64)
+                validator.validate_metadata(metadata, self.cover(False).replace("1.4.0", "1.3.1"), pdf_sha256="a" * 64)
+                for cover, theme in [(self.cover(), None), (self.cover(False), "light")]:
+                    with self.subTest(cover=cover, theme=theme), self.assertRaisesRegex(AssertionError, "title metadata mismatch"):
+                        validator.validate_metadata(metadata, cover, theme, pdf_sha256="b" * 64)
+                for sha in [None, "c" * 64]:
+                    with self.subTest(sha=sha), self.assertRaisesRegex(AssertionError, "title metadata mismatch"):
+                        validator.validate_metadata(metadata, self.cover(False), pdf_sha256=sha)
+                manifest.unlink()
+                with self.assertRaisesRegex(AssertionError, "title metadata mismatch"):
+                    validator.validate_metadata(metadata, self.cover(False), pdf_sha256="b" * 64)
+
+    def test_author_and_subject_remain_exact(self):
+        for field in ["author", "subject"]:
+            metadata = self.metadata(f"{validator.BOOK_TITLE} · Daytime version")
+            setattr(metadata, field, "Wrong value")
+            with self.subTest(field=field), self.assertRaisesRegex(AssertionError, f"{field} metadata mismatch"):
+                validator.validate_metadata(metadata, self.cover(), "light")
+
+    def test_retired_labels_fail_only_when_on_cover(self):
+        for label in ["Evidence reviewed", "Written by"]:
+            with self.subTest(label=label), self.assertRaisesRegex(AssertionError, "Removed cover"):
+                validator.validate_cover_text(self.cover() + " " + label)
+        # Body and changelog text is deliberately absent from the cover API.
+        pages = [self.cover(), "Written by a reviewer", "Evidence reviewed on 5 October 2026"]
+        validator.validate_cover_text(pages[0])
 
 
 class ScaleTests(unittest.TestCase):
