@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify shared toolkit imports and finalization in the weekly copied-book layout."""
 from pathlib import Path
-import hashlib, json, os, shutil, subprocess, sys, tempfile
+import hashlib, json, os, re, shutil, subprocess, sys, tempfile
 from reportlab.pdfgen.canvas import Canvas
 from pypdf import PdfReader
 
@@ -35,6 +35,34 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
            'HANDBOOK_RELEASE_POLICY_PATH': str(BOOK/'automation/release-policy.json')}
     run(['node', str(build/'handbook/build-handbook.mjs')], env)
     assert '<svg' in (build/'handbook/index.html').read_text()
+    validator = build/'handbook/validate-handbook.mjs'
+    run(['node', str(validator)], env)
+    publication_path = build/'publication.json'
+    original_publication = publication_path.read_text()
+    publication = json.loads(original_publication)
+    # Distinct URLs catch hard-coded destinations and swapped metadata fields.
+    publication['editionUrl'] = 'https://handbooks.surfaces.systems/production-ai-engineering/editions/v9.9.9/'
+    publication['releaseUrl'] = 'https://handbooks.surfaces.systems/production-ai-engineering/editions/v9.9.9/notes/'
+    publication_path.write_text(json.dumps(publication))
+    run(['node', str(build/'handbook/build-handbook.mjs')], env)
+    run(['node', str(validator)], env)
+    html_path = build/'handbook/index.html'
+    valid_html = html_path.read_text()
+    sidebar = re.search(r'<p class="sidebar-edition">.*?</p>', valid_html).group()
+    for field, historical_url in [
+        ('editionUrl', 'https://github.com/mikeylong/production-ai-engineering-book'),
+        ('releaseUrl', 'https://github.com/mikeylong/production-ai-engineering-book/releases'),
+    ]:
+        assert f'href="{publication[field]}"' in sidebar
+        wrong_sidebar = sidebar.replace(f'href="{publication[field]}"', f'href="{historical_url}"')
+        other_field = 'releaseUrl' if field == 'editionUrl' else 'editionUrl'
+        assert f'href="{publication[other_field]}"' in wrong_sidebar
+        html_path.write_text(valid_html.replace(sidebar, wrong_sidebar))
+        result = run(['node', str(validator)], env, False)
+        assert 'sidebarPublicationMetadataExact: expected true, received false' in result.stderr
+    publication_path.write_text(original_publication)
+    run(['node', str(build/'handbook/build-handbook.mjs')], env)
+    run(['node', str(validator)], env)
     config = json.loads((BOOK/'pdf-config.json').read_text())
     config['runningFont'] = str(TOOLKIT/'assets/design-system/fonts/NotoSans-Regular.ttf')
     config['baselineMode'] = 'appearance-companion'
@@ -79,4 +107,4 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     without_toolkit = dict(env)
     without_toolkit.pop('HANDBOOK_PUBLISHING_TOOLKIT')
     run(['node',str(build/'handbook/build-handbook.mjs')],without_toolkit,False)
-print('Copied weekly HTML and explicit book/content-edition finalization pass changed pagination; configured companion, missing/stale baseline and missing dependencies retain their guards.')
+print('Copied weekly HTML validates publication URLs and rejects stale sidebar links; explicit book/content-edition finalization passes changed pagination while baseline and dependency guards remain.')

@@ -31,8 +31,9 @@ const expectedReleaseSchedule = buildReleaseSchedule(
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
   ?? `Version 1.4.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
-const REPOSITORY_HREF = "https://github.com/mikeylong/production-ai-engineering-book";
-const RELEASES_HREF = `${REPOSITORY_HREF}/releases`;
+const publication = JSON.parse(await readFile(resolve(here, "../publication.json"), "utf8"));
+const REPOSITORY_HREF = publication.editionUrl;
+const RELEASES_HREF = publication.releaseUrl;
 const PUBLICATION_DATE = "September 30, 2026";
 const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf";
 const expectedPdfPageCount = pdfDownloadPageCount(here, CURRENT_PDF_HREF);

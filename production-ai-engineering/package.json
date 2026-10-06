@@ -4,7 +4,7 @@
   "scripts": {
     "build": "node scripts/build-reader.mjs",
     "dev": "node scripts/dev-server.mjs",
-    "validate:handbook": "node handbook/validate-handbook.mjs",
+    "validate:handbook": "node scripts/validate-handbook-build.mjs",
     "validate:release": "node scripts/validate-production-release.mjs",
     "validate:front-pages": "npm run build"
   },
