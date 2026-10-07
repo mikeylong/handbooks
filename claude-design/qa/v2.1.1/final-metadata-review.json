@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.1",
+  "reviewedAt": "2026-10-07T22:12:08.951902+00:00",
+  "reviewer": "independent Codex subagent parity_final_review",
+  "scope": "Read-only review of the assembled approved 2.1.1 overlay and separately applied portable sample-source updates. This is qualification of local release contents; it does not assert GitHub landing or hosted publication.",
+  "reviewedMetadata": [
+    {
+      "path": "assembly/staged-collection/claude-design/release-manifest.json",
+      "sha256": "b37a0384129b6e15f00b12930c5ffdf216538d74aac97fe06fd5656d16c574dd",
+      "bytes": 2378
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/publication.json",
+      "sha256": "28ea9822044634f649c825786baa41c3fc5909b76dac9051c5a46816fd0c86d4",
+      "bytes": 359
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/pdf-variants.json",
+      "sha256": "eca017b03434df4cfb59d5ddc3bccb24cb52fa59afbca393215a769ea3e16883",
+      "bytes": 4334
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/publication-package.json",
+      "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9",
+      "bytes": 13523
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/change-ledger.json",
+      "sha256": "bd9815901aaf75c5e5b1a517d4cb9226823f75504fef9f6df8d2e2116ed678ce",
+      "bytes": 4441
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/changelog-decision.json",
+      "sha256": "71e7189efc8f14da220ca893d381c84413bb9ca358276eb89b1cf76893ee05a4",
+      "bytes": 2613
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/edition-changelog.json",
+      "sha256": "22f6f2a2bd1965e32950ab79ceff0c2127873015748d7d2acc6243974a8d66fb",
+      "bytes": 2106
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/exercise-downloads.json",
+      "sha256": "6381ec04c0e9a5caf4f854422fe52c7b0137105a674570fdc7b571da7a059082",
+      "bytes": 1219
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/figma-companion.json",
+      "sha256": "7c08eb1d906eeddcaa1a2f500fa82a507947c920093ee700b294ecabed619668",
+      "bytes": 7753
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/qa/v2.1.1/publication-approval.json",
+      "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b",
+      "bytes": 4430
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/qa/v2.1.1/companion-parity.json",
+      "sha256": "5b54798d3c7c68fa70c8d089cd5c4ba56a93953c921e3b46529153c811f25dc6",
+      "bytes": 1969
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/qa/v2.1.1/react-browser-validation.json",
+      "sha256": "5123fbc32709c4b74e059c7a3a9496fa9c7a1a1aeb8da46d3041551b948897e1",
+      "bytes": 3543
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/qa/v2.1.1/react-extracted-validation.json",
+      "sha256": "4434c96446d61e894fdebdc7a05de3f4ee53b5a3428007d777ac1998e55445c7",
+      "bytes": 8084
+    },
+    {
+      "path": "assembly/staged-collection/claude-design/qa/v2.1.1/figma-companion-validation.json",
+      "sha256": "b7d0bf0db891be98cd4fad4e504c2c2030e01ef4a1b23871801d885ad849ce68",
+      "bytes": 11445
+    },
+    {
+      "path": "assembly/staged-collection/catalog.json",
+      "sha256": "16b3f915b0e9060ca14c2d18c182da899ff1ea19f1efaac2195d6a4c606d70fc",
+      "bytes": 7007
+    },
+    {
+      "path": "assembly/staged-collection/site/approval-registry.json",
+      "sha256": "c1cbb237635cffb2de3a645b9c0dbaf706252a9d7b5e0577c16bc0651eb1590b",
+      "bytes": 1440
+    },
+    {
+      "path": "assembly/staged-collection/site/changelogs.json",
+      "sha256": "0fdbe0a492b84fe87f00329527124892372708e1e6fc036694b313b02b4313cd",
+      "bytes": 811
+    },
+    {
+      "path": "assembly/staged-collection/site/retained-releases.json",
+      "sha256": "148648e268d3452c5108178fcb2315f833f122c3390752a59751a002edacf0c3",
+      "bytes": 35858
+    },
+    {
+      "path": "assembly/staged-collection/vercel.json",
+      "sha256": "ac41b724206e075291e44b06257d741a3dfc5092a122ce41347e0592eab0907c",
+      "bytes": 17751
+    }
+  ],
+  "assembledIdentity": {
+    "path": "assembly/approved-identity.json",
+    "sha256": "8ade6e8ca4fc2d3d21ea06a5afd6bc26d3db70095b37b09c65f5142926868b4f",
+    "bytes": 68563
+  },
+  "pinComparisonEvidence": {
+    "path": "qa/final-metadata-pins.json",
+    "sha256": "27d00346cb293693d631cc86b274e81202783fcecf2bea0c135c3b110082098d",
+    "bytes": 12218
+  },
+  "exactArtifacts": {
+    "sourceSha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28",
+    "exercise": {
+      "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+      "bytes": 97181421,
+      "members": 234
+    },
+    "pdfs": [
+      {
+        "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
+        "sha256": "ac5fadaf0ced9deddd694657b6b83862cc31ecd38f75363a9665388ba350143a",
+        "bytes": 7132266,
+        "pages": 56
+      },
+      {
+        "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
+        "sha256": "f89d0e3f9dcbdce22e51a85810141de65bc1e9eb75e55c34649e18ce8583c280",
+        "bytes": 46132950,
+        "pages": 56
+      }
+    ],
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
+    },
+    "variantManifest": {
+      "path": "claude-design/pdf-variants.json",
+      "sha256": "eca017b03434df4cfb59d5ddc3bccb24cb52fa59afbca393215a769ea3e16883"
+    }
+  },
+  "computedChecks": {
+    "pinnedReferences": 47,
+    "pinErrors": [],
+    "publicationPackageFiles": 103,
+    "packageErrors": [],
+    "existingRetainedRoutes": 105,
+    "existingRetentionErrors": [],
+    "newRetainedRoutes": 27,
+    "newRetentionErrors": [],
+    "baselineMetadataFiles": 15,
+    "baselineMetadataErrors": [],
+    "oldHeaderDefinitionChanges": [],
+    "v211Headers": [
+      {
+        "source": "/claude-design/editions/v2.1.1/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/pdf"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"claude-design-v2.1.1-2026-10-07-daytime-r1.pdf\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/pdf"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"claude-design-v2.1.1-2026-10-07-late-night-r1.pdf\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/zip"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"velori-design-exploration-v2.1.1.zip\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/velori-design-exploration-starter.fig",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/octet-stream"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"velori-design-exploration-starter.fig\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/figma-companion.json",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"figma-companion.json\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/claude-design-v2.1.1.md",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/markdown; charset=utf-8"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"claude-design-v2.1.1.md\""
+          }
+        ]
+      }
+    ],
+    "nativeOriginalEvidenceEdition": "2.0.0",
+    "retainedPrototypeEvidenceEdition": "2.1.0",
+    "originalApprovalCommand": "address this and make a new release",
+    "currentFigmaArtifactMatch": true
+  },
+  "authority": {
+    "command": "address this and make a new release",
+    "kind": "explicit-user-release",
+    "scope": "Correct the React sample and editable Figma answer key to match the Add to cart exercise and publish a new release.",
+    "result": "Records Mike's direct request to correct the companions and make a new release. It binds the exact manuscript, both PDFs, final exercise ZIP and current qualification receipts. Limitations distinguish release authorization from human task or usability review."
+  },
+  "companionBinding": {
+    "currentFigmaSha256": "b06042b6f7bed6f7d4c0ce5501886bca42cd7e05d776faa3735f7e400b1f462e",
+    "figmaStatic": true,
+    "figmaValidationPin": {
+      "path": "claude-design/qa/v2.1.1/figma-companion-validation.json",
+      "sha256": "b7d0bf0db891be98cd4fad4e504c2c2030e01ef4a1b23871801d885ad849ce68"
+    },
+    "reactSourceSha256": "47c14af2148a7b72b63ad96058f370a2b2556b53c850ff613158f005c467cc7e",
+    "reactValidationPin": {
+      "path": "claude-design/qa/v2.1.1/react-browser-validation.json",
+      "sha256": "5123fbc32709c4b74e059c7a3a9496fa9c7a1a1aeb8da46d3041551b948897e1"
+    },
+    "extractedValidationPin": {
+      "path": "claude-design/qa/v2.1.1/react-extracted-validation.json",
+      "sha256": "4434c96446d61e894fdebdc7a05de3f4ee53b5a3428007d777ac1998e55445c7"
+    },
+    "freshExtraction": {
+      "archiveSha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+      "exactComparedMembers": 234,
+      "byteIdentical": true,
+      "sourceSha256": "47c14af2148a7b72b63ad96058f370a2b2556b53c850ff613158f005c467cc7e",
+      "status": "passed"
+    },
+    "result": "Current native Review/Cart export and current archived React source are bound to edition-local receipts. Fresh-extracted React proof describes the exact 59863c04 archive and the 47c14af2 source fingerprint. Original native evidence remains edition 2.0.0; retained standalone behavior evidence remains edition 2.1.0."
+  },
+  "retention": {
+    "baselineReceipt": {
+      "path": "qa/retention-baseline-v210.json",
+      "sha256": "b8491c1bf9b286a7d9ab5762f0558e32f5e611854018d889b5298f542c9b7ff7",
+      "bytes": 81893
+    },
+    "sourceCommit": "38f7b6b8b40d2995e1f85c73c79e94cd4d66f92a",
+    "oldRouteDefinitionsAndHashesUnchanged": true,
+    "newV210Routes": 27,
+    "newV210HashesVerified": true,
+    "baselineMetadataFilesVerified": 15,
+    "originalReaderSnapshotSha256": "bc3661351a23d176d3a8defc2e202192ec22b66e3740cf3dc5fef889ecc141d5",
+    "originalSnapshotAndEditionHtmlPreserved": true,
+    "result": "The old edition HTML, reader snapshot, Markdown/index, screenshots, PDFs, exercise ZIP, starter and manifest are retained byte-for-byte; current reader generation does not overwrite old URLs."
+  },
+  "portableSourcePromotion": {
+    "method": "Root separately copied the portable app source/provenance. The assembler explicitly handles the release overlay and does not promote sample source.",
+    "assemblerPromotionFiles": 345,
+    "assemblerSampleFileCount": 0,
+    "separateSourceScopeFilesVerified": 105,
+    "canonicalCandidateCopyErrors": [],
+    "trackedAppChangesOutsidePortableScope": [],
+    "requiredNewSourceFilesPresent": [
+      "src/CartConfirmation.jsx",
+      "docs/add-to-cart.md"
+    ],
+    "privateConfig": {
+      "originalPrivateFieldCount": 1,
+      "privateFieldsUnchanged": true,
+      "candidateAndCanonicalSha256": "b83b4c0933bada810f6c7ef2ca7293b01592656f2af4a7adfcb054ce5c241650"
+    },
+    "result": "Canonical sample source agrees with the approved candidate. Owner config is preserved in source while the public ZIP uses the portable projection. No package or PDF rebuild was performed during this review."
+  },
+  "readerAndSite": {
+    "catalogApprovedEdition": "2.1.1",
+    "registryMatchesPackageAndVariants": true,
+    "siteChangelogMatchesCurrentCorrectionLedger": true,
+    "publicHost": "handbooks.surfaces.systems",
+    "newDownloadHeaderCount": 6,
+    "oldVercelHeaderDefinitionsUnchanged": true,
+    "result": "Catalog, registry, current reader/edition links, two correction entries and Vercel attachment headers select 2.1.1 consistently. Previous download routes remain intact."
+  },
+  "findings": [],
+  "limitations": [
+    "This review does not establish a live deployment or merged commit. Root must report those separately.",
+    "Figma continuation is a static editable answer key without prototype connections or choice-state wiring.",
+    "No new Claude Design generation trial, separate-account recipient trial or independent human task review is claimed.",
+    "The Low nonblocking renderer-weight observation from visual-review.json remains recorded; PDF/UA compliance is not claimed."
+  ]
+}

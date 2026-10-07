@@ -1,0 +1,239 @@
+--- previous/claude-design-v2.1.0-2026-10-07-daytime-r1.pdf
++++ candidate/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf
+@@ -9,7 +9,7 @@
+ Review
+ Handoff
+ Michael Long
+-October 7, 2026 | Version 2.1.0
++October 7, 2026 | Version 2.1.1
+ --- PDF page 2 ---
+ ii
+ Orientation
+@@ -140,24 +140,24 @@
+ 2. Bring your system into Claude Design
+  4
+ 9. Run the guided exercise
+- 43
++ 44
+ 3. Explore design directions
+  10
+ Appendix A: Brief and decision record
+- 47
++ 48
+ 4. Refine the design
+  15
+ Appendix B: Supporting engineering
+ checks
+- 47
++ 48
+ 5. Build the connected experience
+  21
+ Further reading
+- 48
++ 49
+ 6. Review with people
+  30
+ Changelog
+- 49
++ 50
+ --- PDF page 7 ---
+ 1
+ CHAPTER 01
+@@ -573,9 +573,11 @@
+ or None before adding. Payment, shipping, taxes and order submission
+ are outside the task.
+ The October 6 author trial ended at configuration confirmation. The cart
+-requirement is an October 7 exercise revision. The extended offline
+-answer key demonstrates it; the earlier Claude Design screenshots and
+-static Figma continuation document the earlier review design.
++requirement is an October 7 exercise revision. Both the React sample and
++standalone offline answer key demonstrate the cart endpoint. The
++current editable Figma answer key shows static Review and Cart frames;
++the earlier Claude Design screenshots keep the original trial scope. No
++new Claude Design generation trial is claimed.
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+ --- PDF page 32 ---
+@@ -841,24 +843,39 @@
+ separate page or working copy. Record the captured URL, viewport and
+ design revision so the recipient knows which prototype the frames
+ represent.
+-The trial captured the selected Review into editable layers, then restored
+-Velori Brand, Product Preview and Primary Button instances. It rebuilt
+-the repeated summary row and outlined secondary action as local
+-components and reapplied the source text styles. The resulting screen
+-has 22 styled text nodes, 10 instances and 65 nodes with variable
+-bindings. It uses Arimo and Lora, with the source Product style restored
+-to 27px. The Figma screen has no prototype connections or choice-state
+-wiring. Continue design there, or build and test those relationships
+-before calling it an interactive Figma prototype.
++The October 6 trial captured the selected Review into editable layers,
++then restored Velori Brand, Product Preview and Primary Button
++instances. It rebuilt the repeated summary row and outlined secondary
++action as local components and reapplied the source text styles. The
++original screen had 22 styled text nodes, 10 instances and 65 nodes with
++variable bindings. It used Arimo and Lora, with the source Product style
++restored to 27px.
++The October 7 correction directly edited that Figma continuation.
++Review now shows Add to cart, and a Cart frame shows the robot image,
++Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart
++item and Continue configuring. Each frame has 24 styled text nodes, 10
++instances and 70 nodes with variable bindings. Both retain Arimo, Lora
++and the 27px Product style. The Figma frames have no prototype
++connections or choice-state wiring. Continue design there, or build and
++test those relationships before calling the answer key an interactive
+ CLAUDE DESIGN FIELD GUIDE
+ 8. CONTINUE IN FIGMA WHEN NEEDED
+ --- PDF page 47 ---
+ 41
++Figma prototype. The correction does not establish a new Claude Design
++generation trial.
+ Figure 10
+-Editable selected view
+-Editable Figma continuation after restoring source relationships. The screen uses Velori
+-instances, text styles and variable bindings. It remains a static selected review with no
+-prototype wiring.
++Review
++CLAUDE DESIGN FIELD GUIDE
++8. CONTINUE IN FIGMA WHEN NEEDED
++--- PDF page 48 ---
++42
++Figure 10 (continued)
++Cart confirmation
++Editable Figma answer key corrected on October 7. Review offers Add to cart; Cart shows the
++robot image, Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart item and
++Continue configuring. Both frames retain Velori instances, text styles and variable bindings.
++They have no prototype connections or choice-state wiring.
+ Inspect separate kinds of fidelity
+ Check
+ Evidence
+@@ -878,8 +895,8 @@
+ document what was rebuilt. Code Connect can supply implementation
+ CLAUDE DESIGN FIELD GUIDE
+ 8. CONTINUE IN FIGMA WHEN NEEDED
+---- PDF page 48 ---
+-42
++--- PDF page 49 ---
++43
+ context when mappings are maintained; it is not a substitute for
+ inspecting the received file.
+ Use Figma plan features only when the chosen deliverable requires
+@@ -895,13 +912,13 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 8. CONTINUE IN FIGMA WHEN NEEDED
+---- PDF page 49 ---
+-43
++--- PDF page 50 ---
++44
+ CHAPTER 09
+ Run the guided exercise
+ Complete the design loop and the handoff your recipient needs.
+---- PDF page 50 ---
+-44
++--- PDF page 51 ---
++45
+ Use the Velori starting materials to explore a review experience. Keep
+ the completed Store example out of initial generation context. Compare
+ the answer only after selecting and refining your own direction.
+@@ -935,20 +952,20 @@
+ recipient needs that destination. Complete its own checks.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 51 ---
+-45
++--- PDF page 52 ---
++46
+ Keep a useful record
+ Record the chosen route, source files, Design project, selected direction,
+ decision rationale, corrections to hierarchy, content or interaction,
+ tested journey and recipient result. Save images before and after
+-changes to hierarchy, content or interaction. The supplied answer key
+-includes the offline prototype extended through Add to cart and the
+-earlier static editable Figma continuation. The Figma file covers the
+-selected Review screen; it does not include the new cart confirmation.
+-The recorded author trial is prepared for human review; it does not
+-claim that a separate reviewer has completed the task. A complete
+-transcript is less useful than a short record that explains why the design
+-was selected and what remains uncertain.
++changes to hierarchy, content or interaction. The supplied materials
++include a React sample and standalone offline answer key that both
++reach Add to cart and Cart confirmation. The current editable Figma
++answer key includes static Review and Cart frames with the same four
++choices and quantity one. The recorded author trial is prepared for
++human review; it does not claim that a separate reviewer has completed
++the task. A complete transcript is less useful than a short record that
++explains why the design was selected and what remains uncertain.
+ Completion item
+ Required result
+ Starting context
+@@ -977,16 +994,16 @@
+ a flattened screenshot an editable native result.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 52 ---
+-46
++--- PDF page 53 ---
++47
+ Chapter checkpoint
+ You have a reviewed interactive prototype and a recipient-usable
+ handoff. Any chosen implementation or Figma continuation has a
+ separate completion record.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 53 ---
+-47
++--- PDF page 54 ---
++48
+ Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further
+ reading.
+ Appendix A: Brief and
+@@ -1021,8 +1038,8 @@
+ authored source and imagery use the declared MIT license; referenced
+ CLAUDE DESIGN FIELD GUIDE
+ APPENDIX B: SUPPORTING ENGINEERING CHECKS
+---- PDF page 54 ---
+-48
++--- PDF page 55 ---
++49
+ fonts and icons retain their own notices. Font family names in a Figma
+ file are not bundled font software.
+ Further reading
+@@ -1047,21 +1064,22 @@
+ Jérôme Benoit Reveau: A prototype-to-implementation pilot.
+ CLAUDE DESIGN FIELD GUIDE
+ FURTHER READING
+---- PDF page 55 ---
+-49
++--- PDF page 56 ---
++50
+ Changelog
+-Version 2.1.0 · October 7, 2026.
+-Addition. Finish the Velori exercise with Add to cart and a confirmation
+-showing the configured robot, all four choices and quantity one. Keep
+-payment and order submission outside the task. The offline answer key
+-demonstrates the new endpoint; the October 6 native trial and static
+-Figma continuation retain their earlier Review scope.
+-Correction or clarification. Use Continue in both Configure and Edit.
+-Reset fixture restores the starting choices, clears the teaching cart and
+-returns to Configure.
+-Velori exercise materials contain the revised brief and offline answer
+-key.
+-Previous edition: 2.0.0 · October 6, 2026. Daytime PDF SHA-256: 88f3ffb
+-9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8.
++Version 2.1.1 · October 7, 2026.
++Correction or clarification. Bring the React sample through Add to cart
++and Cart confirmation, matching the standalone offline answer key.
++Both runnable examples now follow the existing exercise, including
++Continue, Edit cart item and Reset fixture.
++Correction or clarification. Correct the editable Figma answer key to
++show Review with Add to cart and a Cart frame with the robot, all four
++choices and quantity one. The current frames now represent the existing
++cart endpoint, with Edit cart item and Continue configuring. They
++remain static, with no prototype connections or choice-state wiring.
++Velori exercise materials include the corrected examples. Editable
++Figma Cart frame records the current static design.
++Previous edition: 2.1.0 · October 7, 2026. Daytime PDF SHA-256: 03f12b3
++9c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3.
+ CLAUDE DESIGN FIELD GUIDE
+ CHANGELOG

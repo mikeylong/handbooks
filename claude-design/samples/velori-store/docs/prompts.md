@@ -1,3 +1,7 @@
+# Current exercise · v2.1.1
+
+Use [add-to-cart.md](add-to-cart.md) and [product-brief.md](product-brief.md) for the current Review and Cart assignment. The stages below retain the source-preparation and native-capture sequence. Extend stage 7 through Add to cart and Cart confirmation; keep Continue on both Configure and Edit. Exclude ReviewConfiguration and CartConfirmation from initial generation context.
+
 # Velori handbook prompts
 
 The prompts below match the candidate handbook. Confirm the account, organization, selected system, and working Figma file before a native step. Keep unsuccessful attempts and actual returned evidence.
@@ -7,7 +11,7 @@ The prompts below match the candidate handbook. Confirm the account, organizatio
 Tool: Claude Design
 
 ```text
-Inspect the supplied Velori configurator and component library. Record the choices, asset composition, captions, storage behavior, and reusable exports. Preserve the existing identity and 1024 × 768 reference layout. Use the documented expression dropdown and one accessory choice. Describe the bounded change needed for Continue to open Review configuration, with edit and Back retaining the four values. Do not add payment, stock, accounts, shipping, or order submission.
+Inspect the supplied Velori configurator and component library. Record the choices, asset composition, captions, storage behavior, and reusable exports. Preserve the existing identity and 1024 × 768 reference layout. Use the documented expression dropdown and one accessory choice. Describe the bounded change needed for Continue to open Review, then Add to cart to save one snapshot and open Cart confirmation. Edit and Back retain the four values; editing a cart item restores its saved choices and adding again updates that item. Do not add payment, stock, accounts, shipping, or order submission.
 ```
 
 ## 2. Prepare the source system
@@ -57,7 +61,7 @@ In this isolated test screen, correct the named purple-continue or accessory-gap
 Tool: Claude Design
 
 ```text
-Use the selected Velori system and supplied configurator as the baseline. Make Continue open Review configuration. Show the chosen product photo and finish, face, expression color, and single accessory. Add Edit configuration and Back. Both return without losing values. Support pointer and keyboard navigation. Focus the Review heading when it opens; when Edit configuration, Back, or browser Back returns to the configurator, restore focus to Continue. Preserve reload persistence and an unavailable-image state that retains the summary. Reuse the system components and tokens. Identify the review screen as new sample behavior. Keep payment, inventory, accounts, shipping, and order submission outside the result.
+Use the selected Velori system and supplied configurator as the baseline. Make Continue open Review configuration. Show the chosen product photo and finish, face, expression color, and single accessory. Add Edit configuration and Back. Both return without losing values. Keep Continue as the primary label on Configure and Edit. Add to cart saves a separate one-item snapshot and opens Cart confirmation with a real product image, all four choices, and Quantity: 1. Later configuration changes leave the snapshot intact. Edit cart item restores saved values; add again updates the one item without duplicates. Preserve the same-session cart on reload. Reset clears it, restores defaults, and returns to Configure. Require an explicit replacement or None when an accessory is unavailable. An empty cart offers Configure Velori. Support pointer and keyboard navigation. Focus the Review heading when it opens; when Edit configuration, Back, or browser Back returns to the configurator, restore focus to Continue. Preserve reload persistence and an unavailable-image state that retains the summary. Reuse the system components and tokens. Identify the review screen as new sample behavior. Keep payment, inventory, accounts, shipping, and order submission outside the result.
 ```
 
 ## 8. Audit the complete journey
@@ -97,7 +101,7 @@ Use the copied native handoff prompt to read the recorded Velori project through
 Tool: Claude Code
 
 ```text
-Inspect handoff/new-run/captured/ and HANDOFF.json from the passing new packet. Adapt only the bounded Review configuration column into the React sample. Preserve named exports, tokens, photos, all four values, the expression dropdown, and one accessory choice. Keep routing, persistence, focus, and image recovery in their existing owners. Test configure → details → review → edit with Graphite, Simple, Amber, and Carry bag. Record the source-to-implementation mapping and deviations. Do not edit CLEAR or publish.
+Inspect handoff/new-run/captured/ and HANDOFF.json from the passing new packet. Adapt the bounded Review and Cart columns into the React sample, following the Add to cart brief. Preserve named exports, tokens, photos, all four values, the expression dropdown, and one accessory choice. Keep routing, persistence, focus, and image recovery in their existing owners. Test configure → details → review → edit with Graphite, Simple, Amber, and Carry bag. Record the source-to-implementation mapping and deviations. Do not edit CLEAR or publish.
 ```
 
 ## 13. Build and inspect the native store
@@ -105,5 +109,5 @@ Inspect handoff/new-run/captured/ and HANDOFF.json from the passing new packet. 
 Tool: Figma
 
 ```text
-Use the identified Velori working file. Preserve the original foundation, components, configurator, and source assets. Add editable native frames for configure, expression menu, Carry bag details, Charging dock details, review, and unavailable review. Reuse existing component instances and shared variables. Wire Graphite, Simple, Amber, and Carry bag through details, review, and edit. Confirm selected states, configured product images, captions, and summaries update. Keep the original Chalk reference photos in accessory details, matching AccessoryPhoto; browsing Dock must preserve the selected Carry bag. Record component and variable identities and test the actual prototype.
+Use the identified Velori working file. Preserve the original foundation, components, configurator, and source assets. Add editable native frames for configure, expression menu, Carry bag details, Charging dock details, review, unavailable review, Cart confirmation, and empty-cart recovery. Reuse existing component instances and shared variables. Wire Graphite, Simple, Amber, and Carry bag through details, review, and edit. Confirm selected states, configured product images, captions, and summaries update. Keep the original Chalk reference photos in accessory details, matching AccessoryPhoto; browsing Dock must preserve the selected Carry bag. Record component and variable identities and test the actual prototype.
 ```

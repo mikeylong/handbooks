@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "changes": [
+    {
+      "path": "claude-design/qa/v2.1.1/appearance-parity/candidate-pdfinfo.txt",
+      "originalSha256": "1d3c273e879b8fea12bc5a80b98ad47bf43cca2dd33748345297188adfe13dba",
+      "normalizedSha256": "74ee03b5529e10ec11662c26493c7e0bd055664f7b4c58cddbc645bf5369c21c",
+      "originalRetainedAt": "/Users/mike/handbooks/claude-design/review/2026-10-07-companion-parity-candidate/book/qa/v2.1.1/appearance-parity/candidate-pdfinfo.txt",
+      "transform": "Remove trailing whitespace from copied plain-text pdfinfo output; PDF and JSON qualification receipts unchanged."
+    },
+    {
+      "path": "claude-design/qa/v2.1.1/appearance-parity/retained-pdfinfo.txt",
+      "originalSha256": "940f66a28548c8268d6496dd749996fe3c3f92e7af9f3b4184d7982cf214ab21",
+      "normalizedSha256": "5b7e1d0d0347edc07dd68161d841ee775b62b4a26065db91610b4fb0cacc223b",
+      "originalRetainedAt": "/Users/mike/handbooks/claude-design/review/2026-10-07-companion-parity-candidate/book/qa/v2.1.1/appearance-parity/retained-pdfinfo.txt",
+      "transform": "Remove trailing whitespace from copied plain-text pdfinfo output; PDF and JSON qualification receipts unchanged."
+    }
+  ]
+}

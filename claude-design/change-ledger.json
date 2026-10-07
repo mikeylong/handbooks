@@ -1,82 +1,89 @@
 {
   "schemaVersion": 1,
   "accepted": true,
-  "version": "2.1.0",
-  "previousVersion": "2.0.0",
+  "version": "2.1.1",
+  "previousVersion": "2.1.0",
   "readerFacingContentChanged": true,
-  "summary": "This edition finishes the Velori exercise with Add to cart and makes configuration navigation consistent.",
+  "summary": "This edition brings the React sample and editable Figma answer key into line with the existing cart exercise.",
   "changes": [
     {
-      "id": "A01",
-      "category": "Addition",
-      "section": "Orientation; chapters 1, 5, 6, 7 and 9",
-      "text": "Finish the Velori exercise with Add to cart and a confirmation showing the configured robot, all four choices and quantity one.",
-      "rationale": "Keep payment and order submission outside the task.",
+      "id": "C01",
+      "category": "Correction or clarification",
+      "section": "Chapter 5; chapter 9; React sample",
+      "text": "Bring the React sample through Add to cart and Cart confirmation, matching the standalone offline answer key.",
+      "rationale": "Both runnable examples now follow the existing exercise, including Continue, Edit cart item and Reset fixture.",
+      "readerImpact": "The React sample reaches the cart endpoint already required by the exercise.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip"
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
       ],
+      "sourceLimitations": "Authored exercise package and direct sample behavior checks. The standalone answer key remains unchanged. No new Claude Design generation trial or independent human task review is claimed.",
+      "recommendedVersionImpact": "patch",
       "groupedDraftEntries": [
-        "A01"
+        "C01"
       ]
     },
     {
-      "id": "A02",
+      "id": "C02",
       "category": "Correction or clarification",
-      "section": "Chapter 5; offline answer key",
-      "text": "Use Continue in both Configure and Edit.",
-      "rationale": "Reset fixture restores the starting choices, clears the teaching cart and returns to Configure.",
+      "section": "Chapters 5, 8 and 9; Figure 10; Figma answer key",
+      "text": "Correct the editable Figma answer key to show Review with Add to cart and a Cart frame with the robot, all four choices and quantity one.",
+      "rationale": "The current frames now represent the existing cart endpoint, with Edit cart item and Continue configuring. They remain static, with no prototype connections or choice-state wiring.",
+      "readerImpact": "The editable answer key covers Review and Cart while preserving the original trial record.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip"
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+        "https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46"
       ],
+      "sourceLimitations": "Direct Figma edit and native frame exports on October 7. These are static editable frames, not a new Claude Design generation trial.",
+      "recommendedVersionImpact": "patch",
       "groupedDraftEntries": [
-        "A02"
+        "C02"
       ]
     }
   ],
   "classifiedChangeIds": [
-    "A01",
-    "A02"
+    "C01",
+    "C02"
   ],
   "authorRequirementBasis": {
-    "A01": "Mike requested a final Add to cart step without the payment flow, 2026-10-07.",
-    "A02": "Mike requested Continue for the primary action after reporting Reset fixture left the Edit route active, 2026-10-07."
+    "C01": "Mike requested parity between the current runnable React sample and the existing cart exercise, 2026-10-07.",
+    "C02": "Mike requested the editable Figma answer key to represent the current cart endpoint, 2026-10-07."
   },
   "sourceSnapshot": {
     "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
-    "sha256": "f77693c6f7e93567fe96d14ca73dff6d27cd883f00e6392281ca8e613bb3cccc",
-    "previousSourceSha256": "8f9e24a5f56ccac9079f23b1fbb2a84cc04bc88738998bef6b715031d4ce66e1"
+    "sha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28",
+    "previousSourceSha256": "f77693c6f7e93567fe96d14ca73dff6d27cd883f00e6392281ca8e613bb3cccc"
   },
+  "verificationRecord": "claude-design/qa/v2.1.1/change-ledger-verification.json",
   "comparisonEvidence": {
     "source": {
-      "path": "claude-design/qa/v2.1.0/exact-source.patch",
-      "sha256": "ba23b82b905c598e157c9a7db942c2964938a542b82a829ad560d1a0c5d56787"
+      "path": "claude-design/qa/v2.1.1/exact-source.patch",
+      "sha256": "2489be3057641dda86b3269371387d2c85bc05413d3709e07e43d28764888abd"
     },
     "pdf": {
-      "path": "claude-design/qa/v2.1.0/exact-pdf-text.patch",
-      "sha256": "ea9faa62a661e8492deb9d31f9d01fb4b081b5f88ace89949dd6513b2b40c46f"
+      "path": "claude-design/qa/v2.1.1/exact-pdf-text.patch",
+      "sha256": "6088414cd7f7626d7c230f458055e0598cb4d757ed7558b4cbb89d2a009a9d64"
     },
     "substantive": {
-      "path": "claude-design/qa/v2.1.0/reader-facing-content.patch",
-      "sha256": "4fc0656dab1eed595b04d015bfa0b81e8a6f97ba36697a659f6f8ef4dcf93d9f"
+      "path": "claude-design/qa/v2.1.1/reader-facing-content.patch",
+      "sha256": "d7d93d4bd44c90a34c8043388ac98b20b68fbec7d0c625514ec992107119c6a0"
     },
     "comparison": {
-      "path": "claude-design/qa/v2.1.0/edition-diff.json",
-      "sha256": "54f9b3c9109cc9630f109a2db2cc5376458b159f2f794e25c1400ec581ef0746"
+      "path": "claude-design/qa/v2.1.1/edition-diff.json",
+      "sha256": "8b413033ba4304e6398840a13a9d093b099a1715dcf353630101ff881699fb4f"
     },
     "decision": {
       "path": "claude-design/changelog-decision.json",
-      "sha256": "9114573894081a4140db2617c4057f013d79ee9debedcc0ea2af9c1cc8f3954f"
+      "sha256": "71e7189efc8f14da220ca893d381c84413bb9ca358276eb89b1cf76893ee05a4"
     }
   },
   "sampleRelease": {
-    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip",
-    "repositoryPath": "claude-design/reader/editions/v2.1.0/velori-design-exploration-v2.1.0.zip",
-    "sha256": "a5723a79c0147f485703b1df0b143a151b75305c6f3b303e7fd9c4855b9b8695",
-    "bytes": 97153656,
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+    "bytes": 97181421,
     "publicationPackage": {
       "path": "claude-design/publication-package.json",
-      "sha256": "e39f90de1152ccf240e9686ec386e1fa44d07f06ff8d1ce353c373d2e65c8c6b"
+      "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
     }
-  },
-  "verificationRecord": "claude-design/qa/v2.1.0/change-ledger-verification.json"
+  }
 }

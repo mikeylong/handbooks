@@ -282,20 +282,77 @@
     {
       "id": "s10-figma",
       "title": "Figure 10",
-      "caption": "Editable Figma continuation after restoring source relationships. The screen uses Velori instances, text styles and variable bindings. It remains a static selected review with no prototype wiring.",
+      "caption": "Editable Figma answer key corrected on October 7. Review offers Add to cart; Cart shows the robot image, Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart item and Continue configuring. Both frames retain Velori instances, text styles and variable bindings. They have no prototype connections or choice-state wiring.",
       "panels": [
         {
-          "label": "Editable selected view",
-          "asset": "assets/screenshots/figma-editable-review-final.png",
-          "sha256": "58e7186b4728c4f298c5fa0152a35a1a2787c26de6b81f9d5367c610912eda00",
-          "alt": "Figma selected review retains Graphite, Simple, Amber and Carry bag with restored Velori product and actions.",
+          "label": "Review",
+          "asset": "assets/screenshots/figma-review-cart-current-rgb.png",
+          "sha256": "5b12899e2189d2040aa315a8b0693f0649481c8be1f0a25c11905bef010346b5",
+          "alt": "Editable Figma Review retains Graphite, Simple, Amber and Carry bag and offers Add to cart.",
           "maxHeightPoints": 220,
           "minPpi": 120,
           "printReadability": {
-            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
-            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+            "captureDensity": "Native 1280 \u00d7 720 Figma frame export. Full-frame overview retains every source pixel.",
+            "reason": "These panels establish the two editable frame compositions. Small overview labels are context only; the selectable caption names all four choices and cart actions. Open the larger reader image for detail."
           },
-          "sourcePrivacy": "public"
+          "sourcePrivacy": "public",
+          "provenance": {
+            "label": "Review",
+            "source": "assets/screenshots/figma-review-cart-current.png",
+            "sourceSha256": "464fb0d80888530aba8c466d4fac278673531443ff08bfa94acf64b5132336c6",
+            "prepared": "assets/screenshots/figma-review-cart-current-rgb.png",
+            "preparedSha256": "5b12899e2189d2040aa315a8b0693f0649481c8be1f0a25c11905bef010346b5",
+            "dimensions": [
+              1280,
+              720
+            ],
+            "sourceMode": "RGBA",
+            "sourceAlphaRange": [
+              255,
+              255
+            ],
+            "preparedMode": "RGB",
+            "transform": "Drop fully opaque alpha channel; retain every RGB pixel, native dimensions and composition. No crop or resampling.",
+            "capturedAt": "2026-10-07",
+            "acquisition": "Native Figma API PNG export after direct edit of the current continuation. This is not a new Claude Design generation trial.",
+            "sourceUrl": "https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2063-3",
+            "sourcePrivacy": "public"
+          }
+        },
+        {
+          "label": "Cart confirmation",
+          "asset": "assets/screenshots/figma-cart-confirmation-current-rgb.png",
+          "sha256": "2f6be1a934e79a8d220ad264cff924aab3b3a6114ce528727e55f84e28ac23a0",
+          "alt": "Editable Figma Cart confirmation shows the configured robot, Graphite, Simple, Amber, Carry bag, quantity one, Edit cart item and Continue configuring.",
+          "maxHeightPoints": 220,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native 1280 \u00d7 720 Figma frame export. Full-frame overview retains every source pixel.",
+            "reason": "These panels establish the two editable frame compositions. Small overview labels are context only; the selectable caption names all four choices and cart actions. Open the larger reader image for detail."
+          },
+          "sourcePrivacy": "public",
+          "provenance": {
+            "label": "Cart confirmation",
+            "source": "assets/screenshots/figma-cart-confirmation-current.png",
+            "sourceSha256": "df2389e2f70c38508021ee919ddd6361df407fe4f0557f46ae201dbd2104c9c6",
+            "prepared": "assets/screenshots/figma-cart-confirmation-current-rgb.png",
+            "preparedSha256": "2f6be1a934e79a8d220ad264cff924aab3b3a6114ce528727e55f84e28ac23a0",
+            "dimensions": [
+              1280,
+              720
+            ],
+            "sourceMode": "RGBA",
+            "sourceAlphaRange": [
+              255,
+              255
+            ],
+            "preparedMode": "RGB",
+            "transform": "Drop fully opaque alpha channel; retain every RGB pixel, native dimensions and composition. No crop or resampling.",
+            "capturedAt": "2026-10-07",
+            "acquisition": "Native Figma API PNG export after direct edit of the current continuation. This is not a new Claude Design generation trial.",
+            "sourceUrl": "https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46",
+            "sourcePrivacy": "public"
+          }
         }
       ]
     }

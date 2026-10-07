@@ -1,29 +1,29 @@
 {
   "title": "Claude Design Field Guide",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "date": "2026-10-07",
-  "pdf": "output/pdf/claude-design-v2.1.0-2026-10-07-daytime-r1.pdf",
-  "sha256": "03f12b39c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3",
-  "pages": 55,
-  "previous_public_edition": "2.0.0",
+  "pdf": "output/pdf/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
+  "sha256": "ac5fadaf0ced9deddd694657b6b83862cc31ecd38f75363a9665388ba350143a",
+  "pages": 56,
+  "previous_public_edition": "2.1.0",
   "approvalStatus": "approved",
-  "candidate_validation": "qa/v2.1.0/daytime-validation.json",
+  "candidate_validation": "qa/v2.1.1/daytime-validation.json",
   "releaseContract": {
     "kind": "design-exploration",
     "classifiedChangeIds": [
-      "A01",
-      "A02"
+      "C01",
+      "C02"
     ],
     "sample": {
-      "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip",
-      "repositoryPath": "claude-design/reader/editions/v2.1.0/velori-design-exploration-v2.1.0.zip"
+      "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+      "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
     },
     "nativeStarter": {
       "filename": "velori-design-exploration-starter.fig",
       "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca"
     },
     "chapterCount": 9,
-    "archiveMemberCount": 215,
+    "archiveMemberCount": 234,
     "nativeEvidence": {
       "edition": "2.0.0",
       "releaseManifest": {
@@ -45,11 +45,16 @@
     },
     "prototypeEvidence": {
       "path": "claude-design/qa/v2.1.0/prototype-behavior.json",
-      "sha256": "49fce9e32134474185e40ca733b84901434a438403563e2dc184dd143aecfa30"
+      "sha256": "49fce9e32134474185e40ca733b84901434a438403563e2dc184dd143aecfa30",
+      "edition": "2.1.0"
+    },
+    "companionParityEvidence": {
+      "path": "claude-design/qa/v2.1.1/companion-parity.json",
+      "sha256": "5b54798d3c7c68fa70c8d089cd5c4ba56a93953c921e3b46529153c811f25dc6"
     }
   },
   "publicationApproval": {
-    "path": "claude-design/qa/v2.1.0/publication-approval.json",
-    "sha256": "b2627cc6ba55a8a38b4c559f08d74c4d8ca920bcb29b18a154c49777c840cfe8"
+    "path": "claude-design/qa/v2.1.1/publication-approval.json",
+    "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b"
   }
 }

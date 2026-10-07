@@ -1,4 +1,4 @@
-// Host adapter for the Claude Design bundle (design-sync cfg.entry). src/library.jsx is unchanged.
+// Host adapter for the Claude Design bundle (design-sync cfg.entry). src/library.jsx remains the baseline component entry.
 // The library builds photo URLs as new URL(import.meta.env.BASE_URL + 'assets/velori/<file>', document.baseURI).
 // The converter compiles import.meta.env to a shared object with BASE_URL "/", which points at the host's origin
 // root, not the project. Classic <script src=".../_ds_bundle.js"> loads (preview cards) expose that script's URL as

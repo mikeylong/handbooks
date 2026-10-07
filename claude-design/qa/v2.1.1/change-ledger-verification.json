@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "Computed hash bindings only; visual and human review claims come from separate receipts.",
+  "ledger": {
+    "path": "claude-design/change-ledger.json",
+    "sha256": "bd9815901aaf75c5e5b1a517d4cb9226823f75504fef9f6df8d2e2116ed678ce"
+  },
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28",
+    "previousSourceSha256": "f77693c6f7e93567fe96d14ca73dff6d27cd883f00e6392281ca8e613bb3cccc"
+  },
+  "comparisonEvidence": {
+    "source": {
+      "path": "claude-design/qa/v2.1.1/exact-source.patch",
+      "sha256": "2489be3057641dda86b3269371387d2c85bc05413d3709e07e43d28764888abd"
+    },
+    "pdf": {
+      "path": "claude-design/qa/v2.1.1/exact-pdf-text.patch",
+      "sha256": "6088414cd7f7626d7c230f458055e0598cb4d757ed7558b4cbb89d2a009a9d64"
+    },
+    "substantive": {
+      "path": "claude-design/qa/v2.1.1/reader-facing-content.patch",
+      "sha256": "d7d93d4bd44c90a34c8043388ac98b20b68fbec7d0c625514ec992107119c6a0"
+    },
+    "comparison": {
+      "path": "claude-design/qa/v2.1.1/edition-diff.json",
+      "sha256": "8b413033ba4304e6398840a13a9d093b099a1715dcf353630101ff881699fb4f"
+    },
+    "decision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "71e7189efc8f14da220ca893d381c84413bb9ca358276eb89b1cf76893ee05a4"
+    }
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+    "bytes": 97181421,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 ---
 title: Claude Design Field Guide
 subtitle: Explore, refine, and hand off an interactive product design
-edition: October 7, 2026 | Version 2.1.0
+edition: October 7, 2026 | Version 2.1.1
 status: Review candidate, not approved for publication
 audience: Product designers and product practitioners working with an existing product
 chapter_art: Frozen approved illustration pairs, remapped to the revised chapters
@@ -23,7 +23,7 @@ Finish the main exercise with a reviewed interactive prototype, a decision recor
 | Figma foundations and screens | Select the relevant pages, components, fonts and assets | A visual system and a starting screen |
 | Existing codebase and component library | Select the frontend library, tokens, assets and baseline behavior | Implementation context for the same design task |
 
-You need access to Claude Design in your intended account and organization. For a Figma route, use a Figma account and a copy you can inspect. For a Code route, use Claude Code and a local project you can run. Download the [Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip); no author-private organization or Figma file is required. Import the supplied native file into your own Drafts when you need to work in Figma.
+You need access to Claude Design in your intended account and organization. For a Figma route, use a Figma account and a copy you can inspect. For a Code route, use Claude Code and a local project you can run. Download the [Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip); no author-private organization or Figma file is required. Import the supplied native file into your own Drafts when you need to work in Figma.
 
 The walkthrough targets the standalone Design beta at `claude.ai/design/`. Claude also documents Design in conversations, Artifacts and Claude Code. Controls and system migration differ between those experiences. Follow one surface throughout a run, and record which surface you used. See the [current Design guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
 
@@ -246,7 +246,7 @@ Show the robot image, finish, face, expression color, accessory and quantity one
 
 Retain the item after a reload in the same browser session. Treat an empty cart as a recoverable starting point with a Configure Velori action. If the staged unavailable accessory is selected, require another accessory or None before adding. Payment, shipping, taxes and order submission are outside the task.
 
-The October 6 author trial ended at configuration confirmation. The cart requirement is an October 7 exercise revision. The extended offline answer key demonstrates it; the earlier Claude Design screenshots and static Figma continuation document the earlier review design.
+The October 6 author trial ended at configuration confirmation. The cart requirement is an October 7 exercise revision. Both the React sample and standalone offline answer key demonstrate the cart endpoint. The current editable Figma answer key shows static Review and Cart frames; the earlier Claude Design screenshots keep the original trial scope. No new Claude Design generation trial is claimed.
 
 <!-- FIGURE s06a-cart -->
 
@@ -371,7 +371,9 @@ Inspect the export controls in the Design experience you used. Do not promise a 
 
 Keep the source file and existing libraries. Add selected views in a separate page or working copy. Record the captured URL, viewport and design revision so the recipient knows which prototype the frames represent.
 
-The trial captured the selected Review into editable layers, then restored Velori Brand, Product Preview and Primary Button instances. It rebuilt the repeated summary row and outlined secondary action as local components and reapplied the source text styles. The resulting screen has 22 styled text nodes, 10 instances and 65 nodes with variable bindings. It uses Arimo and Lora, with the source Product style restored to 27px. The Figma screen has no prototype connections or choice-state wiring. Continue design there, or build and test those relationships before calling it an interactive Figma prototype.
+The October 6 trial captured the selected Review into editable layers, then restored Velori Brand, Product Preview and Primary Button instances. It rebuilt the repeated summary row and outlined secondary action as local components and reapplied the source text styles. The original screen had 22 styled text nodes, 10 instances and 65 nodes with variable bindings. It used Arimo and Lora, with the source Product style restored to 27px.
+
+The October 7 correction directly edited that Figma continuation. Review now shows Add to cart, and a Cart frame shows the robot image, Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart item and Continue configuring. Each frame has 24 styled text nodes, 10 instances and 70 nodes with variable bindings. Both retain Arimo, Lora and the 27px Product style. The Figma frames have no prototype connections or choice-state wiring. Continue design there, or build and test those relationships before calling the answer key an interactive Figma prototype. The correction does not establish a new Claude Design generation trial.
 
 <!-- FIGURE s10-figma -->
 
@@ -415,7 +417,7 @@ Use the Velori starting materials to explore a review experience. Keep the compl
 
 ## Keep a useful record
 
-Record the chosen route, source files, Design project, selected direction, decision rationale, corrections to hierarchy, content or interaction, tested journey and recipient result. Save images before and after changes to hierarchy, content or interaction. The supplied answer key includes the offline prototype extended through Add to cart and the earlier static editable Figma continuation. The Figma file covers the selected Review screen; it does not include the new cart confirmation. The recorded author trial is prepared for human review; it does not claim that a separate reviewer has completed the task. A complete transcript is less useful than a short record that explains why the design was selected and what remains uncertain.
+Record the chosen route, source files, Design project, selected direction, decision rationale, corrections to hierarchy, content or interaction, tested journey and recipient result. Save images before and after changes to hierarchy, content or interaction. The supplied materials include a React sample and standalone offline answer key that both reach Add to cart and Cart confirmation. The current editable Figma answer key includes static Review and Cart frames with the same four choices and quantity one. The recorded author trial is prepared for human review; it does not claim that a separate reviewer has completed the task. A complete transcript is less useful than a short record that explains why the design was selected and what remains uncertain.
 
 | Completion item | Required result |
 |---|---|
@@ -469,12 +471,12 @@ Keep original and third-party notices with the supplied material. Velori’s aut
 
 # Changelog
 
-**Version 2.1.0 · October 7, 2026.**
+**Version 2.1.1 · October 7, 2026.**
 
-**Addition.** Finish the Velori exercise with Add to cart and a confirmation showing the configured robot, all four choices and quantity one. Keep payment and order submission outside the task. The offline answer key demonstrates the new endpoint; the October 6 native trial and static Figma continuation retain their earlier Review scope.
+**Correction or clarification.** Bring the React sample through Add to cart and Cart confirmation, matching the standalone offline answer key. Both runnable examples now follow the existing exercise, including Continue, Edit cart item and Reset fixture.
 
-**Correction or clarification.** Use Continue in both Configure and Edit. Reset fixture restores the starting choices, clears the teaching cart and returns to Configure.
+**Correction or clarification.** Correct the editable Figma answer key to show Review with Add to cart and a Cart frame with the robot, all four choices and quantity one. The current frames now represent the existing cart endpoint, with Edit cart item and Continue configuring. They remain static, with no prototype connections or choice-state wiring.
 
-[Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip) contain the revised brief and offline answer key.
+[Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip) include the corrected examples. [Editable Figma Cart frame](https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46) records the current static design.
 
-Previous edition: **2.0.0 · October 6, 2026**. Daytime PDF SHA-256: `88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8`.
+Previous edition: **2.1.0 · October 7, 2026**. Daytime PDF SHA-256: `03f12b39c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3`.

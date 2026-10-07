@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.1",
+  "unchangedStarterSha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca",
+  "unchangedStandalonePrototypeSha256": "7d62bb3d5b178db5ed525985133dec5abc3a96399e6dcb3b36df4b3a27886ebe",
+  "figma": {
+    "status": "passed",
+    "artifactSha256": "b06042b6f7bed6f7d4c0ce5501886bca42cd7e05d776faa3735f7e400b1f462e",
+    "artifactBytes": 13897149,
+    "validation": {
+      "path": "claude-design/qa/v2.1.1/figma-companion-validation.json",
+      "sha256": "b7d0bf0db891be98cd4fad4e504c2c2030e01ef4a1b23871801d885ad849ce68"
+    },
+    "validationSha256": "b7d0bf0db891be98cd4fad4e504c2c2030e01ef4a1b23871801d885ad849ce68",
+    "reviewAction": "Add to cart",
+    "cartFrameId": "2076:46",
+    "static": true
+  },
+  "react": {
+    "status": "passed",
+    "packageVersion": "2.1.1",
+    "sourceSha256": "47c14af2148a7b72b63ad96058f370a2b2556b53c850ff613158f005c467cc7e",
+    "validation": {
+      "path": "claude-design/qa/v2.1.1/react-browser-validation.json",
+      "sha256": "5123fbc32709c4b74e059c7a3a9496fa9c7a1a1aeb8da46d3041551b948897e1"
+    },
+    "validationSha256": "5123fbc32709c4b74e059c7a3a9496fa9c7a1a1aeb8da46d3041551b948897e1",
+    "checks": {
+      "desktopAddToCart": true,
+      "cartChoices": true,
+      "editRestoration": true,
+      "snapshotIsolation": true,
+      "editedItemUpdate": true,
+      "repeatActivation": true,
+      "sameSessionReload": true,
+      "unavailableFixture": true,
+      "emptyCartRecovery": true,
+      "mobile": true,
+      "resetFixture": true,
+      "continueLabel": true
+    }
+  },
+  "limitations": [
+    "No new native Claude Design generation trial is claimed; the original October 6 trial retains its recorded scope.",
+    "Figma answer key contains static editable frames without prototype connections or choice-state wiring.",
+    "Human task review has not been completed. The author walkthrough is not usability evidence."
+  ]
+}

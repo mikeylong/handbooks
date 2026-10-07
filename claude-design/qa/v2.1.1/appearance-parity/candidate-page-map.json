@@ -1,0 +1,2641 @@
+{
+  "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-companion-parity-candidate/output/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
+  "sha256": "f89d0e3f9dcbdce22e51a85810141de65bc1e9eb75e55c34649e18ce8583c280",
+  "bytes": 46132950,
+  "pages": [
+    {
+      "page": 1,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "CLAUDE DESIGN / FIELD PRACTICE\nClaude Design\nField Guide\nExplore, refine, and hand off an interactive product design\nBrief\nExplore\nRefine\nReview\nHandoff\nMichael Long\nOctober 7, 2026 | Version 2.1.1\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 2,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "ii\nOrientation\nUse Claude Design to explore a product change, compare directions,\nrefine a connected experience, and prepare the selected design for its\nnext owner. Begin with the design foundations and screens your team\nuses in Figma, or with the components and product behavior already\nimplemented in code.\nThe recurring exercise is Velori, a personal-robot configurator. A\nshopper chooses a finish, face, expression color, and accessory. Your\ntask is to explore how the shopper should review those choices, return to\nedit, and add the configured robot to the cart. Keep Velori's identity and\nproduct imagery while making the review easier to understand and edit.\nFinish the main exercise with a reviewed interactive prototype, a\ndecision record, and a usable handoff. Continue to Claude Code when\nthe next job is implementation. Continue in Figma when the next job\nrequires editable design work there. Each destination has its own\ncompletion check.\nChoose your starting route\nStarting material\nPreparation\nWhat Design receives\nFigma foundations and\nscreens\nSelect the relevant pages,\ncomponents, fonts and assets\nA visual system and a starting\nscreen\nExisting codebase and\ncomponent library\nSelect the frontend library,\ntokens, assets and baseline\nbehavior\nImplementation context for the\nsame design task\nYou need access to Claude Design in your intended account and\norganization. For a Figma route, use a Figma account and a copy you can\ninspect. For a Code route, use Claude Code and a local project you can\nrun. Download the Velori exercise materials; no author-private\norganization or Figma file is required. Import the supplied native file\ninto your own Drafts when you need to work in Figma.\n",
+      "links": [
+        {
+          "rect": [
+            128.1804,
+            93.29031,
+            246.7304,
+            105.2903
+          ],
+          "uri": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 3,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "iii\nThe walkthrough targets the standalone Design beta at\nclaude.ai/design/. Claude also documents Design in conversations,\nArtifacts and Claude Code. Controls and system migration differ\nbetween those experiences. Follow one surface throughout a run, and\nrecord which surface you used. See the current Design guide.\n",
+      "links": [
+        {
+          "rect": [
+            224.5904,
+            480.4403,
+            324.5504,
+            492.4403
+          ],
+          "uri": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 4,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "iv\nThe workflow\nSTART \u00b7 choose the source your team maintains\nFigma foundations / screens\nStart with the maintained design file\nCodebase / component library\nStart with existing implementation\nCLAUDE DESIGN \u00b7 explore and review\n1. Brief\nName the task\n2. Explore\nCompare alternatives\n3. Choose\nRecord the reason\n4. Refine\nChat, comment, direct edit\n5. Connect\nBuild the journey\n6. Review\nObserve and correct\nReviewed prototype + usable handoff\nMain endpoint: selected design and decisions\nClaude Code implementation\nDestination endpoint: reviewed software\nContinued design in Figma\nDestination endpoint: checked editable file\nReview and destination findings return to Refine. Choose a destination only when the recipient needs it.\nFigma foundations/screens or an existing codebase/component library\nfeed the same Claude Design loop: brief, explore, choose, refine,\nconnect, and review. The main endpoint is a reviewed prototype ready\nfor handoff. A selected destination can lead to an implementation in\nClaude Code or continued design in Figma. Review findings return to the\nDesign loop.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 5,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "v\nPoint\nWorking tool\nObservable result\nStart\nFigma or existing codebase\nNamed source material and a\nbounded user problem\nDesign loop\nClaude Design\nCompared alternatives and a\ncoherent interactive journey\nMain endpoint\nClaude Design and people\nreviewing the design\nA reviewed prototype and recorded\ndecisions\nEngineering destination\nClaude Code and the\nrecipient's project\nAn implementation reviewed against\nthe selected design\nDesign destination\nFigma\nEditable work with required library\nrelationships inspected\nThe chapter sequence is the author's synthesis of official capabilities and\nreported practice. The exercise asks you to demonstrate your own result.\nA screenshot, a successful import, or a generated explanation cannot\nestablish that an interaction works.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 6,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "vi\nREFERENCE MAP\nContents\nBegin with your source material, explore and review in Claude Design,\nthen choose the handoff your recipient needs.\nOrientation\n ii\n7. Hand off to Claude Code\n 35\n1. Choose the task and starting material\n 1\n8. Continue in Figma when needed\n 39\n2. Bring your system into Claude Design\n 4\n9. Run the guided exercise\n 44\n3. Explore design directions\n 10\nAppendix A: Brief and decision record\n 48\n4. Refine the design\n 15\nAppendix B: Supporting engineering\nchecks\n 48\n5. Build the connected experience\n 21\nFurther reading\n 49\n6. Review with people\n 30\nChangelog\n 50\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            414.2983,
+            77.34154,
+            423.5483
+          ],
+          "uri": "",
+          "dest": [
+            1,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            198.5428,
+            415.0296,
+            202.0,
+            424.2796
+          ],
+          "uri": "",
+          "dest": [
+            1,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            414.2983,
+            310.4483,
+            423.5483
+          ],
+          "uri": "",
+          "dest": [
+            40,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            415.0296,
+            383.1496,
+            424.2796
+          ],
+          "uri": "",
+          "dest": [
+            40,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            387.0483,
+            174.6923,
+            396.2983
+          ],
+          "uri": "",
+          "dest": [
+            6,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            198.1676,
+            387.7796,
+            202.0,
+            397.0296
+          ],
+          "uri": "",
+          "dest": [
+            6,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            387.0483,
+            339.1353,
+            396.2983
+          ],
+          "uri": "",
+          "dest": [
+            44,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            387.7796,
+            383.1496,
+            397.0296
+          ],
+          "uri": "",
+          "dest": [
+            44,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            359.7983,
+            176.3975,
+            369.0483
+          ],
+          "uri": "",
+          "dest": [
+            9,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            198.1676,
+            360.5296,
+            202.0,
+            369.7796
+          ],
+          "uri": "",
+          "dest": [
+            9,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            359.7983,
+            309.7721,
+            369.0483
+          ],
+          "uri": "",
+          "dest": [
+            49,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            360.5296,
+            383.1496,
+            369.7796
+          ],
+          "uri": "",
+          "dest": [
+            49,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            332.5483,
+            134.135,
+            341.7983
+          ],
+          "uri": "",
+          "dest": [
+            15,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            333.2796,
+            202.0,
+            342.5296
+          ],
+          "uri": "",
+          "dest": [
+            15,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            332.5483,
+            351.4099,
+            341.7983
+          ],
+          "uri": "",
+          "dest": [
+            53,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            333.2796,
+            383.1496,
+            342.5296
+          ],
+          "uri": "",
+          "dest": [
+            53,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            305.2983,
+            105.3009,
+            314.5483
+          ],
+          "uri": "",
+          "dest": [
+            20,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            306.0296,
+            202.0,
+            315.2796
+          ],
+          "uri": "",
+          "dest": [
+            20,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            305.2983,
+            345.9267,
+            314.5483
+          ],
+          "uri": "",
+          "dest": [
+            53,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            296.0483,
+            242.0565,
+            305.2983
+          ],
+          "uri": "",
+          "dest": [
+            53,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            306.0296,
+            383.1496,
+            315.2796
+          ],
+          "uri": "",
+          "dest": [
+            53,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            268.7983,
+            155.0384,
+            278.0483
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            269.5296,
+            202.0,
+            278.7796
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            268.7983,
+            273.8232,
+            278.0483
+          ],
+          "uri": "",
+          "dest": [
+            54,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            269.5296,
+            383.1496,
+            278.7796
+          ],
+          "uri": "",
+          "dest": [
+            54,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            241.5483,
+            113.4741,
+            250.7983
+          ],
+          "uri": "",
+          "dest": [
+            35,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.3352,
+            242.2796,
+            202.0,
+            251.5296
+          ],
+          "uri": "",
+          "dest": [
+            35,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            241.5483,
+            255.0587,
+            250.7983
+          ],
+          "uri": "",
+          "dest": [
+            55,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.4848,
+            242.2796,
+            383.1496,
+            251.5296
+          ],
+          "uri": "",
+          "dest": [
+            55,
+            "/Fit"
+          ]
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 7,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "1\nCHAPTER 01\nChoose the task and\nstarting material\nStart with a user problem and the source your team actually maintains.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "2\nDefine a small change that a person can review. \"Improve the product\"\nleaves the screen, user task and desired behavior unspecified. \"Help a\nshopper review a configuration, edit without losing choices, and add the\nrobot to the cart\" gives the design a clear job.\nWrite the brief\nName the person, the action, the problem, and the decisions you want to\nexplore. Identify the behavior and visual identity that must remain\nstable. Keep payment, inventory, accounts, shipping, and order\nsubmission outside the Velori exercise.\nA Velori shopper has configured a robot and wants to review the choices\nbefore adding it to the cart. Explore alternatives for reviewing that\nconfiguration and returning to edit. Preserve the product identity,\nreal imagery, finish, face, expression color and one-accessory rule.\nEnd with an explicit Add to cart action and confirmation showing the\nconfigured robot, all four choices and quantity one. Keep payment,\nshipping and order submission outside the exercise.\nUse a non-default fixture throughout review: Graphite finish, Simple\nface, Amber expression, and Carry bag. The fixture makes stale imagery\nor a reset to defaults easier to notice. The chosen design must also work\nwhen no accessory is selected.\nName what each source owns\nDecision\nSource to inspect\nBrand, type, component anatomy and layout\npatterns\nMaintained Figma foundations or design-system\nguidance\nExisting runtime behavior and component\nAPI\nRunning application and implementation library\nNew review hierarchy, content and navigation\nThe brief and the selected Design direction\nRequired handoff format\nThe recipient's next task and working tool\nCLAUDE DESIGN FIELD GUIDE\n1. CHOOSE THE TASK AND STARTING MATERIAL\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 9,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "3\nResolve disagreements before generation when they affect the task. If\nthe Figma button and the running app use different radii, record which\nversion the prototype should follow and why. A model should not settle\nan ownership decision by silently blending the sources.\nKeep the answer out of the prompt\nUse foundations, components, the configurator and source assets as\nstarting context. Keep completed review layouts, solution prompts and\nimplementation answers beside the exercise for later comparison. An\nanswer key supplied at the start prevents you from seeing which review\nhierarchy Claude would propose from the starting screen.\nThe starter retains its original source pages. Work in a duplicate or\nseparate project. Record the input filenames and the destination so\nanother reviewer can tell which result belongs to this run.\nChapter checkpoint\nYou have a brief, named starting material, a non-default fixture, and a\nrecipient or review audience. The completed answer has not entered the\ninitial context.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n1. CHOOSE THE TASK AND STARTING MATERIAL\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 10,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "4\nCHAPTER 02\nBring your system into\nClaude Design\nInspect the imported result before asking it to carry a new design.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "5\nChoose the setup route that matches your source. Anthropic's setup\nguide describes Figma and asset input for visual foundations, and\n/design-sync for existing React systems. Inspect the extraction rather\nthan assuming both routes produce equivalent components.\nBring in Figma foundations\nIn the standalone experience, open Design systems, choose Create\ndesign system, and select Create here. The setup form accepts a .fig file\nalongside fonts, logos and assets. Supply the company or system name\nand explain what the product does. Include the starting screen so Claude\nsees how the system is used.\nThe Velori trial attached four source pages and extracted 16 component\nfamilies. The Figma source has 11 text styles, but Design reported none\non import. It reconstructed the type scale from the Foundations notes\nand estimated the Product size. Compare the imported text against\nFigma before using it as a reference; the source Product style is 27px,\nwhile the import estimated 28px. Arimo and Lora load through Google\nFonts; their binaries are not inside the native file.\nThe setup description mistakenly requested violet. The importer found\nno violet token and kept the Ink primary action specified by the Figma\nrules. Correct the brief when it conflicts with the named source. Do not\nadd a new accent to make the two agree.\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "links": [
+        {
+          "rect": [
+            273.8104,
+            540.4403,
+            357.3304,
+            552.4403
+          ],
+          "uri": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            525.4403,
+            63.46039,
+            537.4403
+          ],
+          "uri": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 12,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "6\nFigure 1\nStarting screen overview\nImported Figma starting screen. Graphite, Simple, Amber and Carry bag agree in the\nphotograph, caption and controls. Importing the visual system still lost its text-style\nmetadata.\nUse the exercise starter rather than the companion's completed Store\npage. Attach licensed fonts separately when the source only references a\nfont family. Record any substitution. Keep the system private during the\ntrial and confirm the selected system before starting a product project.\nThis walkthrough explored files in a separate trial/ directory inside its\nisolated system project. The UI offered team publication for new-project\nuse; private selection from a separate product project was not tested. An\norganization default may belong to a different product.\nInspect the resulting system's colors, typography, control shapes,\nselection marks, product photographs, and one representative\ncomponent. Compare a generated starting screen with the source at the\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "links": [],
+      "images": [
+        {
+          "width": 768,
+          "height": 517,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "7\nsame viewport. An extraction can preserve colors while losing\ncomponent anatomy or asset composition.\nBring in implementation context\nWhen the source is a working React library, open its project in Claude\nCode and use the native /design-sync command. Supply the\ncomponent library, styles, tokens, images and usage guidance needed\nfor the configurator. Exclude the completed Review implementation\nfrom baseline context.\nThe bounded code-first comparison used an isolated copy of the earlier\ncode-derived system. It reused eight exported Velori components and\npreserved the four choices when Amber changed to Mint. Its\nArial/Georgia stacks differed from the Figma route's Arimo/Lora\nfamilies. The comparison did not repeat the full connected journey. Its\nchoices survived navigation, but they reset after a page reload.\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 14,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "8\nFigure 2\nCode-first Review\nBounded code-first comparison. Changing Amber to Mint retained Graphite, Simple and\nCarry bag. The source inspection identified reused Velori components; this view alone\ncannot prove component reuse.\nKeep detailed file selection and runtime adaptations in the package's\nsupporting material. The main reader should know what is being\nimported, why the selected source matters, and which gaps remain.\nInspect the returned system and generated starting screen before\nexploring the new review.\nCorrect the smallest relevant gap\nIf a selected choice uses the wrong mark, identify the source component\nor reference and ask for that correction. If imagery is missing, repair the\nasset input before judging the layout. If the system is from the wrong\norganization, stop the generation and choose the intended destination.\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "links": [],
+      "images": [
+        {
+          "width": 768,
+          "height": 576,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "9\nCompare this starting screen with the supplied Velori configurator.\nCheck the brand, heading, choice groups, expression menu, selected\nmarks, button and configured product image. Name mismatches and missing\nsource material. Correct the source rule for each mismatch before\nproposing the new review screen.\nKeep a before-and-after image when the correction matters to later\nscreens. Regenerate one adjacent surface to check whether the\ncorrection carries forward. Do not turn the exercise into an exhaustive\naudit of every component that the task does not use.\nChapter checkpoint\nThe starting screen uses the intended visual system. Required assets\nload, substitutions are visible, and unresolved import gaps have a named\nowner.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 16,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "10\nCHAPTER 03\nExplore design directions\nCompare different ways to help the shopper review and edit.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "11\nAsk for alternatives that differ in how the person completes the task.\nThree copies with different colors do little to expose a useful decision.\nCompare information hierarchy, image prominence, editing behavior,\nand the relationship between review and confirmation.\nGenerate two or three alternatives\nAsk Claude Design to keep the alternatives separately identifiable.\nRecord which files or views were created. Export a copy of any direction\nyou need to preserve before requesting a large change. Current Design\ndocumentation describes alternatives and warns that version history is\nnot available.\nExplore three directions for reviewing a configured Velori robot. A: a\ncompact summary beside the product. B: a dedicated review screen with\nclear edit links. C: a guided review that groups the choices. Keep the\nsame choices, product imagery and visual language. Make the differences\nabout hierarchy and interaction. Label and retain each direction so we\ncan compare them before refining one.\nCompare the actual views\nQuestion\nEvidence to examine\nCan the shopper identify the configured\nproduct?\nProduct image, caption and selected values agree\nCan the shopper find an incorrect choice?\nLabels and hierarchy make the four choices\nscannable\nCan the shopper edit that choice?\nThe edit action has an understandable destination\nDoes the screen overstate completion?\nConfirmation copy avoids an implied order or\npayment\nDoes the design fit a narrow viewport?\nEssential choices and actions remain usable\nOperate each alternative. A promising composition may hide a confusing\nBack action or erase choices when the shopper edits. Compare the same\nfixture so the layout difference is visible.\nCLAUDE DESIGN FIELD GUIDE\n3. EXPLORE DESIGN DIRECTIONS\n",
+      "links": [
+        {
+          "rect": [
+            339.1004,
+            411.2803,
+            371.7604,
+            423.2803
+          ],
+          "uri": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            396.2803,
+            109.6704,
+            408.2803
+          ],
+          "uri": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 18,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "12\nFigure 3\nA \u00b7 Compact summary\nB \u00b7 Dedicated review\nCLAUDE DESIGN FIELD GUIDE\n3. EXPLORE DESIGN DIRECTIONS\n",
+      "links": [],
+      "images": [
+        {
+          "width": 768,
+          "height": 576,
+          "mask": false
+        },
+        {
+          "width": 1024,
+          "height": 830,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "13\nFigure 3 (continued)\nC \u00b7 Guided checks\nCompare the editing approaches using the same fixture. A edits in place; B returns to\nconfiguration; C checks groups in sequence. B was selected for clear separation of review\nand editing.\nThe trial compared A, a compact summary with editing in place; B, a\ndedicated review with a return to configuration; and C, a guided check of\nthree choice groups. Each approach was operated. B was selected\nbecause review and configuration have clear roles. The accepted\ntradeoff is an extra transition to edit a choice.\nSelect with reasons\nRecord one sentence for the selected direction, the tradeoff you\naccepted, and the refinement to make next. For example: \"Choose the\ndedicated review screen because each choice is easy to scan and edit.\nKeep the image smaller on narrow screens so the summary and action\nappear sooner.\"\nCLAUDE DESIGN FIELD GUIDE\n3. EXPLORE DESIGN DIRECTIONS\n",
+      "links": [],
+      "images": [
+        {
+          "width": 1024,
+          "height": 830,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "14\nPreserve rejected directions as comparison evidence. Ask Claude to\nrefine the chosen direction by name. A selection record prevents later\nfeedback from accidentally combining all three approaches.\nChapter checkpoint\nYou have separately visible alternatives, a selected direction, a reason\nfor the choice, and one concrete refinement priority.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n3. EXPLORE DESIGN DIRECTIONS\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 21,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "15\nCHAPTER 04\nRefine the design\nUse conversation, targeted comments and direct editing for distinct\nchanges.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "16\nA first generation establishes a direction. Refine the selected screen until\nits hierarchy, content and interaction make the task clear. Keep the\nfixture and selection rationale visible while changing the design.\nUse chat for a structural change\nExplain the behavior and the reason when a change affects the\nsummary, image and actions together. Ask for the result, then inspect\nthe screen and the journey that changed.\nRefine direction B. Keep review separate from configuration. Put the\nfour choices in a scannable summary and place an Edit configuration\naction beside them. On narrow screens, show the summary before\nsecondary product details. Preserve selected values when returning to\nthe configurator.\nAvoid accepting \"fixed\" as the result. Follow the affected navigation and\ncompare the selected values yourself. Keep structural changes small\nenough that you can understand their consequences.\nUse a comment for a local correction\nSelect or comment on the exact target in the canvas, then name the\nchange and its purpose. \"Make this better\" gives no deciding fact. \"Keep\nthe accessory label and selected value together so Carry bag is easy to\nconfirm\" gives the correction a job.\nThe trial comment targeted \"Review your Velori.\" and requested \"Check\nyour configuration\" at the same size. The saved file and reloaded view\nshowed the new heading.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 23,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "17\nFigure 4\nTargeted heading correction\nA targeted comment asks for the specific heading \u201cCheck your configuration\u201d. Reloading the\nsaved design verified the correction.\nSave the text of a consequential comment in the decision record.\nAnthropic documents intermittent comment persistence problems. If a\ncomment disappears or is missed, send the same feedback through chat\nand verify the rendered result. A missing comment is a\nfeedback-delivery failure, not proof that the design request was rejected.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "links": [],
+      "images": [
+        {
+          "width": 515,
+          "height": 620,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 24,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "18\nEdit directly for a quick visual\nadjustment\nUse the canvas's direct editing controls for a local alignment, size,\nspacing or copy adjustment that the selected surface supports. Observe\nwhich element is selected before changing a property. Check the full\ncomposition afterwards, including a narrow viewport.\nThe direct editor changed the paragraph in the preview, but Save\nreverted it. The surface warned that automatic edits were unsupported\nfor that file. The same copy request succeeded through chat. Check the\nsaved file or reload before counting a direct edit as complete; use a\ndocumented fallback when the native editor cannot save the change.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 25,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "19\nFigure 5\nUnsupported direct editing\nThe direct editor warns that this file does not support automatic edits. In the trial, Save\nreverted the preview copy change twice. Chat applied the correction, and reloading verified\nit.\nDirect editing does not settle interaction behavior. An action moved\nwithin the layout still needs a useful label, working destination and\nvisible focus. Record the before and after when an edit materially\nchanges the screen.\nRecheck the chosen direction\nAfter a batch of changes, return to the selection rationale. Check\nwhether review is still easy to scan and edit. Remove a refinement that\nimproves one detail while obscuring the primary task. Keep a short\ndecision record rather than a transcript of every prompt.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "links": [],
+      "images": [
+        {
+          "width": 310,
+          "height": 455,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 26,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "20\nChapter checkpoint\nThe selected design has a structural refinement, a verified local\ncorrection, and either a saved visual edit or a recorded editor limitation\nwith a verified fallback. The original selection rationale still describes\nthe result.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 27,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "21\nCHAPTER 05\nBuild the connected\nexperience\nMake the adjacent screens behave as one shopper journey.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "22\nDevelop the surfaces needed to experience the selected direction. For\nVelori, the configurator, accessory details, review and cart share the\nsame four choices. Each surface should make its place in the journey\nclear.\nConnect the screens\nConnect the selected review direction to the supplied configurator and\naccessory details. Configure opens Review configuration. Edit returns\nto Configure with the choices retained. Browsing Charging dock details\nwhile Carry bag is selected must keep Carry bag selected until the\nshopper explicitly changes the choice. Add to cart saves the reviewed\nconfiguration and opens a cart confirmation with the product image, all\nfour choices and quantity one. Keep the product image, caption and\nsummary consistent across the journey. Editing a cart item and adding\nit again updates that item rather than adding a duplicate. Keep payment\nand order submission outside the exercise.\nLabel the primary action Continue in both Configure and Edit; it opens\nReview with the current choices. Reset fixture restores the starting\nchoices, clears the teaching cart and returns to Configure. Define\nwhether Back returns to the previous surface or always to configuration.\nA review action should not silently confirm an order. Give Configure,\nReview, Edit, Add to cart, Back and Retry an observable result.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 29,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "23\nFigure 6\nBrowse Dock\nRetained choice\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "links": [],
+      "images": [
+        {
+          "width": 400,
+          "height": 330,
+          "mask": false
+        },
+        {
+          "width": 944,
+          "height": 440,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 30,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "24\nFigure 6 (continued)\nSelected Review\nDock details shows Dock without changing the selected Carry bag. The selected Review\nretains Graphite, Simple, Amber and Carry bag and offers Edit configuration.\nIn the trial, Dock details previewed Dock while Carry bag remained\nselected. Returning to configuration and review retained the selected\nchoices.\nFinish with Add to cart\nThe shopper journey is Configure -> Review -> Add to cart -> Cart\nconfirmation. Accessory details and editing are side paths that preserve\nthe selection. The final action adds the configured robot to the cart; it\ndoes not place an order.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "links": [],
+      "images": [
+        {
+          "width": 400,
+          "height": 465,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "25\nShow the robot image, finish, face, expression color, accessory and\nquantity one on the confirmation. Keep a snapshot of the reviewed\nchoices so later configuration changes cannot silently alter the cart item.\nProvide Edit cart item to restore its choices to the configurator. In this\nsingle-product teaching prototype, adding an edited configuration\nupdates the one item. Repeated activation does not increase its quantity.\nRetain the item after a reload in the same browser session. Treat an\nempty cart as a recoverable starting point with a Configure Velori action.\nIf the staged unavailable accessory is selected, require another accessory\nor None before adding. Payment, shipping, taxes and order submission\nare outside the task.\nThe October 6 author trial ended at configuration confirmation. The cart\nrequirement is an October 7 exercise revision. Both the React sample and\nstandalone offline answer key demonstrate the cart endpoint. The\ncurrent editable Figma answer key shows static Review and Cart frames;\nthe earlier Claude Design screenshots keep the original trial scope. No\nnew Claude Design generation trial is claimed.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 32,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "26\nFigure 6A\nCart confirmation\nAdded to cart. The extended offline answer key retains Graphite, Simple, Amber and Carry\nbag with quantity one. This cart step was added after the recorded Claude Design trial.\nAdd a recovery state\nWhen an image is unavailable, keep the configuration summary visible.\nExplain what could not load and offer a useful recovery or editing action.\nRetry should attempt to load the asset rather than showing a success\nmessage unrelated to a request.\nState or transition\nDesign requirement\nConfigure to review\nThe four choices are retained\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "links": [],
+      "images": [
+        {
+          "width": 420,
+          "height": 500,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 33,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "27\nState or transition\nDesign requirement\nReview to edit\nSelected controls agree with the summary\nBrowse another accessory\nBrowsing does not select the accessory\nReview to cart\nOne configured robot appears with its four choices and\nquantity one\nEdit cart item\nChoices remain selected; adding again updates the\nsame item\nRepeat Add to cart\nThe teaching prototype keeps one item, without a\nduplicate\nReload the cart\nThe saved item remains during the same browser\nsession\nNo accessory\nThe summary and cart state the choice clearly\nImage unavailable\nChoices and navigation remain usable\nNarrow viewport\nSummary, edit and continuation remain reachable\nFor a prototype, distinguish demonstrated behavior from simulated\nbehavior. State when an unavailable state is deliberately staged. Test a\nreal missing resource before claiming image-request recovery. Keep\nprototype-only shortcuts in the handoff record.\nThe staged unavailable fixture marked Carry bag unavailable and\nreplaced confirmation with Choose Dock or Choose None. Choosing\nNone retained Graphite, Simple and Amber. The image-error fixture\ndeliberately skipped its first request; Retry then made a successful\nbrowser image request. This trial did not demonstrate recovery from a\nreal missing resource.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 34,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "28\nFigure 7\nUnavailable selection\nImage error fixture\nStaged Carry bag unavailability offers Dock or None and retains the other choices. The\nseparate image-error fixture simulates the first failure; Retry makes a real successful\nrequest. Real missing-resource recovery remains untested.\nProtect consistency during generation\nAsk Claude to reuse the chosen direction rather than redesigning every\nnew screen. Review the next surface for typography, spacing, selected\nmarks, content and action hierarchy. A screen can be attractive in\nisolation and still break the journey's vocabulary.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "links": [],
+      "images": [
+        {
+          "width": 272,
+          "height": 125,
+          "mask": false
+        },
+        {
+          "width": 400,
+          "height": 306,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 35,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "29\nChapter checkpoint\nYou can complete configure, details, review, edit and add to cart.\nSelected values remain consistent. The unavailable state and narrow\nlayout have been inspected in the interactive result.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 36,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "30\nCHAPTER 06\nReview with people\nObserve the task, resolve confusion and preserve the selected decisions.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 37,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "31\nReview the prototype as a task. Ask someone to configure a robot,\ninspect the summary, change one choice, browse an accessory, return\nand add the configured robot to the cart. Ask the reviewer to check that\nthe cart item matches the reviewed choices. Give the person the goal,\nthen observe where the design explains itself and where you have to\nintervene.\nPrepare a reviewable prototype\nOpen the presentation or preview mode and verify the starting point.\nRemove answer-key overlays and setup panels that the reviewer does\nnot need. If using a share link, inspect its access settings and have the\nrecipient open the actual link. Exported HTML or an archive can provide\nanother route, but the files still need a recipient test.\nThe author's private system URL is context for the trial record. Readers\ndo not need access to that private URL. A public exercise download\nshould carry the necessary starting material and clear account\nrequirements for each chosen route.\nCheck response and keyboard behavior\nUse a wide and a narrow viewport. Check long labels, summary\nwrapping, product-image proportions, action placement and page\noverflow. On the narrow view, follow the task rather than only\ninspecting the first screen.\nUse Tab and Shift-Tab through actions and choices. Open and close the\nexpression menu with the keyboard. Confirm visible focus and an\nunderstandable return destination after details or editing. A keyboard\nfailure affects the prototype review and becomes an explicit\nimplementation requirement.\nThe connected trial was operated at 390 \u00d7 844 pixels. Review, editing and\nDock details retained the choices without horizontal overflow. Keyboard\nactivation worked for the navigation actions. A fresh recipient opening\nCLAUDE DESIGN FIELD GUIDE\n6. REVIEW WITH PEOPLE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 38,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "32\nalso verified radio-arrow selection and retained that change after reload.\nThese checks support a task review; they do not replace observing\nanother person.\nFigure 8\nNarrow Review\nCLAUDE DESIGN FIELD GUIDE\n6. REVIEW WITH PEOPLE\n",
+      "links": [],
+      "images": [
+        {
+          "width": 390,
+          "height": 844,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 39,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "33\nFigure 8 (continued)\nSummary and actions\nAt 390 \u00d7 844 pixels the selected review keeps the summary and actions reachable. The lower\nview retains Graphite, Simple, Amber and Carry bag.\nCLAUDE DESIGN FIELD GUIDE\n6. REVIEW WITH PEOPLE\n",
+      "links": [],
+      "images": [
+        {
+          "width": 390,
+          "height": 844,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 40,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "34\nRecord observations and decide\nObservation\nDecision record\nReviewer misses an edit action\nChange its placement or wording, then retry the\ntask\nReviewer mistakes review for an order\nClarify the heading and confirmation language\nSummary disagrees with imagery\nRepair the shared choice state or asset mapping\nNarrow view hides the main action\nRework hierarchy and scrolling, then repeat the\njourney\nPrototype limitation prevents a test\nName the limitation and assign the next test\nKeep findings concrete. \"The reviewer opened Dock details and assumed\nDock was selected\" supports a correction. \"The experience needs polish\"\ndoes not tell anyone what to change.\nThe main endpoint is a reviewed prototype with a decision record and\nknown limitations. Record unresolved High, Medium and Low issues. Do\nnot label the prototype ready for handoff when an unresolved issue\nprevents the core task.\nChapter checkpoint\nA reviewer has completed the task. Material confusion is resolved or\nassigned. The prototype, decisions and limitations are ready for the\nselected recipient.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n6. REVIEW WITH PEOPLE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 41,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "35\nCHAPTER 07\nHand off to Claude Code\nGive the implementation owner the selected design and its behavior.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 42,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "36\nChoose this route when the next job is software implementation. Deliver\nthe selected direction, the working prototype, the maintained\ncomponent source and the decisions that affect behavior. The recipient\nshould understand what to preserve and what to build.\nCapture the handoff\nUse the handoff or export control available in the tested Design surface.\nCurrent documentation lists local coding-agent and Claude Code Web\nroutes, plus HTML and ZIP exports. Record the selected method and the\nreceived files. Keep the generated source separate from adaptations\nneeded to run it in the recipient's project.\nInclude the fixture, navigation destinations, image behavior, responsive\npriorities and unresolved prototype limitations. Give the recipient the\nactual selected design rather than all rejected alternatives as equal\nrequirements.\nImplement the selected Velori review direction in this product project.\nInspect the existing components, tokens and state ownership before\nchanging code. Preserve the configurator, product assets and four\nchoices. Map the design to the maintained library. Keep configure,\ndetails, review, edit and cart consistent. Add the reviewed\nconfiguration to the cart with quantity one, retain it after a\nsame-session reload, and prevent duplicate items from repeated\nactivation. Editing and adding again updates the existing item. Do not\nimplement payment or order submission. Explain necessary adaptations\nand test the interactive journey, keyboard behavior and narrow layout.\nThe tested Share menu offered a local-agent Claude Code prompt, a\nproject ZIP and standalone HTML. The prompt copied successfully and\nnamed the selected entry and imported files. The ZIP preserves\ngenerated source; its React and Babel scripts require network access.\nThe standalone export embeds the scripts and product assets. Its Retry\nreloads bundled data and therefore cannot demonstrate a failed network\nrequest.\nCLAUDE DESIGN FIELD GUIDE\n7. HAND OFF TO CLAUDE CODE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 43,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "37\nFigure 9\nLocal-agent handoff\nThe native local-agent handoff identifies the selected entry and imported files. The saved\nprompt copied successfully; separate recipient tests verified the exported prototype.\nVerify recipient usability\nOpen the received packet from a fresh local folder. Follow its README.\nConfirm that required dependencies and assets are present and that the\nselected view opens. Record any network or account requirement. A\nhandoff prompt copied successfully does not prove the prototype can\nrun.\nReview the implementation against the selected design at matching\nviewports. Inspect component use in source when library reuse matters.\nVisual similarity cannot identify a component or establish controlled\nstate. Record intentional deviations and get a design decision on changes\nthat affect the task.\nDetailed package hashes, runtime adapters, full configuration\ncombinations and storage tests belong in supporting engineering\nchecks. Apply them when the recipient's implementation needs those\nCLAUDE DESIGN FIELD GUIDE\n7. HAND OFF TO CLAUDE CODE\n",
+      "links": [],
+      "images": [
+        {
+          "width": 580,
+          "height": 325,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 44,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "38\nguarantees; they are not the entry requirement for exploring the review\ndesign.\nChapter checkpoint\nThe recipient can open the handoff and understand the selected design.\nImplementation review records component mapping, tested behavior,\ndeviations and remaining work.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n7. HAND OFF TO CLAUDE CODE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 45,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "39\nCHAPTER 08\nContinue in Figma when\nneeded\nInspect editable output and restore the design relationships the team needs.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 46,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "40\nChoose this route when the team needs editable Figma work for further\ndesign, library maintenance or review. Figma may also have supplied\nthe starting foundations. Returning to Figma is a destination decision,\nnot a compulsory final stage for every Claude Design prototype.\nChoose a supported bridge\nInspect the export controls in the Design experience you used. Do not\npromise a native Figma export because another tool can capture a web\npage. Figma's code-to-canvas workflow describes capturing rendered UI\ninto editable design layers through its MCP tooling. A capture or manual\nreconstruction is a separate bridge with its own output to inspect.\nKeep the source file and existing libraries. Add selected views in a\nseparate page or working copy. Record the captured URL, viewport and\ndesign revision so the recipient knows which prototype the frames\nrepresent.\nThe October 6 trial captured the selected Review into editable layers,\nthen restored Velori Brand, Product Preview and Primary Button\ninstances. It rebuilt the repeated summary row and outlined secondary\naction as local components and reapplied the source text styles. The\noriginal screen had 22 styled text nodes, 10 instances and 65 nodes with\nvariable bindings. It used Arimo and Lora, with the source Product style\nrestored to 27px.\nThe October 7 correction directly edited that Figma continuation.\nReview now shows Add to cart, and a Cart frame shows the robot image,\nGraphite, Simple, Amber, Carry bag and quantity one, with Edit cart\nitem and Continue configuring. Each frame has 24 styled text nodes, 10\ninstances and 70 nodes with variable bindings. Both retain Arimo, Lora\nand the 27px Product style. The Figma frames have no prototype\nconnections or choice-state wiring. Continue design there, or build and\ntest those relationships before calling the answer key an interactive\nCLAUDE DESIGN FIELD GUIDE\n8. CONTINUE IN FIGMA WHEN NEEDED\n",
+      "links": [
+        {
+          "rect": [
+            103.5504,
+            411.2803,
+            222.8304,
+            423.2803
+          ],
+          "uri": "https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 47,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "41\nFigma prototype. The correction does not establish a new Claude Design\ngeneration trial.\nFigure 10\nReview\nCLAUDE DESIGN FIELD GUIDE\n8. CONTINUE IN FIGMA WHEN NEEDED\n",
+      "links": [],
+      "images": [
+        {
+          "width": 1280,
+          "height": 720,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 48,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "42\nFigure 10 (continued)\nCart confirmation\nEditable Figma answer key corrected on October 7. Review offers Add to cart; Cart shows the\nrobot image, Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart item and\nContinue configuring. Both frames retain Velori instances, text styles and variable bindings.\nThey have no prototype connections or choice-state wiring.\nInspect separate kinds of fidelity\nCheck\nEvidence\nVisual match\nThe selected view agrees at the captured viewport\nEditable content\nText, layout and image layers can be changed\nComponent relationships\nRequired instances point to intended main\ncomponents\nToken relationships\nRequired values use intended styles or variables\nInteraction behavior\nPrototype connections and state behavior are tested\nEditable layers do not automatically preserve the source component\nlibrary or prototype wiring. Reconnect the required relationships and\ndocument what was rebuilt. Code Connect can supply implementation\nCLAUDE DESIGN FIELD GUIDE\n8. CONTINUE IN FIGMA WHEN NEEDED\n",
+      "links": [
+        {
+          "rect": [
+            172.3804,
+            70.57701,
+            238.0204,
+            82.57701
+          ],
+          "uri": "https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/",
+          "dest": ""
+        }
+      ],
+      "images": [
+        {
+          "width": 1280,
+          "height": 720,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 49,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "43\ncontext when mappings are maintained; it is not a substitute for\ninspecting the received file.\nUse Figma plan features only when the chosen deliverable requires\nthem. A variable-driven native prototype may have additional plan\nrequirements. A Design review prototype should not inherit those\nrequirements merely because the team's foundations were created in\nFigma.\nChapter checkpoint\nThe Figma recipient can edit the selected design. Required instances,\nstyles, variables and prototype behavior have separate results. Missing\nrelationships are recorded as remaining work.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n8. CONTINUE IN FIGMA WHEN NEEDED\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 50,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "44\nCHAPTER 09\nRun the guided exercise\nComplete the design loop and the handoff your recipient needs.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 2400,
+          "height": 1372,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 51,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "45\nUse the Velori starting materials to explore a review experience. Keep\nthe completed Store example out of initial generation context. Compare\nthe answer only after selecting and refining your own direction.\nFollow the design loop\n 1\nChoose the Figma-first or code-first route and record the input files.\n 2\nWrite the review brief and the Graphite, Simple, Amber, Carry bag fixture.\n 3\nCreate an isolated Design destination and inspect the imported starting\nscreen.\n 4\nGenerate two or three distinct directions. Operate them and choose with\nreasons.\n 5\nRefine the selected direction through chat, a targeted comment and a\ndirect visual edit. Verify that each change saves; record unsupported\nediting and its fallback.\n 6\nConnect configuration, details, review, edit and Add to cart. Confirm that\nthe cart contains the reviewed robot and its four choices. Add an\nunavailable state and inspect a narrow view.\n 7\nReview the task with someone. Correct material confusion and record\nlimitations.\n 8\nExport the selected prototype and decisions. Verify that the recipient can\nopen them.\n 9\nContinue to Code implementation or editable Figma work when the\nrecipient needs that destination. Complete its own checks.\nCLAUDE DESIGN FIELD GUIDE\n9. RUN THE GUIDED EXERCISE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 52,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "46\nKeep a useful record\nRecord the chosen route, source files, Design project, selected direction,\ndecision rationale, corrections to hierarchy, content or interaction,\ntested journey and recipient result. Save images before and after\nchanges to hierarchy, content or interaction. The supplied materials\ninclude a React sample and standalone offline answer key that both\nreach Add to cart and Cart confirmation. The current editable Figma\nanswer key includes static Review and Cart frames with the same four\nchoices and quantity one. The recorded author trial is prepared for\nhuman review; it does not claim that a separate reviewer has completed\nthe task. A complete transcript is less useful than a short record that\nexplains why the design was selected and what remains uncertain.\nCompletion item\nRequired result\nStarting context\nThe maintained source and answer exclusions are clear\nExploration\nAlternatives are visible and a direction is selected with\nreasons\nRefinement\nSaved changes are verified; unsupported editing and the\nfallback are recorded\nJourney\nConfigure, details, review, edit and cart agree; adding ends\nwith one configured item\nReview\nHuman feedback, narrow layout and keyboard results are\nrecorded\nMain handoff\nThe recipient can open the selected prototype and decision\nrecord\nChosen destination\nCode or Figma checks match the recipient's requested\ndeliverable\nIf a required native step is inaccessible, leave the inaccessible native\naction incomplete and name the practical action that can unblock the\nrun. Do not substitute a local answer key for a fresh Design output or call\na flattened screenshot an editable native result.\nCLAUDE DESIGN FIELD GUIDE\n9. RUN THE GUIDED EXERCISE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 53,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "47\nChapter checkpoint\nYou have a reviewed interactive prototype and a recipient-usable\nhandoff. Any chosen implementation or Figma continuation has a\nseparate completion record.\nCLAUDE DESIGN FIELD GUIDE\n9. RUN THE GUIDED EXERCISE\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 54,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "48\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nAppendix A: Brief and\ndecision record\n 1\nUser and task.\n 2\nStarting route and source ownership.\n 3\nPreserved visual and interaction rules.\n 4\nNon-default fixture and excluded answer material.\n 5\nAlternatives and selected direction.\n 6\nSelection rationale and accepted tradeoff.\n 7\nCorrections to hierarchy, content or interaction, and review observations.\n 8\nTested behavior and known prototype limitations.\n 9\nRecipient, format and opening result.\nAppendix B: Supporting\nengineering checks\nUse the sample library inventory, system definition, source conflicts,\nruntime adapters and package fingerprints when preparing code input\nor validating an implementation. Apply the full configuration matrix,\nstorage, reload and real image-failure checks to the implementation that\nclaims those behaviors. Keep captured Design source immutable and\nadapt it in a separate folder.\nKeep original and third-party notices with the supplied material. Velori's\nauthored source and imagery use the declared MIT license; referenced\nCLAUDE DESIGN FIELD GUIDE\nAPPENDIX B: SUPPORTING ENGINEERING CHECKS\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 55,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "49\nfonts and icons retain their own notices. Font family names in a Figma\nfile are not bundled font software.\nFurther reading\n 1\nAnthropic: Get started with Claude Design.\n 2\nAnthropic: Set up your design system.\n 3\nFigma: Code to canvas.\n 4\nFigma: Code Connect integration.\n 5\nBo\u017eana Radenkovi\u0107 Gerard: Portfolio built with AI.\n 6\nCaviar: Setting up a design system with Figma, Claude Code and Claude\nDesign.\n 7\nMarsBased: A real client system import trial.\n 8\nGoodCode: Design exploration and multi-screen implementation.\n 9\nJ\u00e9r\u00f4me Benoit Reveau: A prototype-to-implementation pilot.\nCLAUDE DESIGN FIELD GUIDE\nFURTHER READING\n",
+      "links": [
+        {
+          "rect": [
+            62.77039,
+            466.3803,
+            240.0182,
+            477.0003
+          ],
+          "uri": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            443.8203,
+            220.1853,
+            454.4403
+          ],
+          "uri": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            421.2603,
+            156.7751,
+            431.8803
+          ],
+          "uri": "https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            398.7003,
+            201.3791,
+            409.3203
+          ],
+          "uri": "https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            376.1403,
+            273.1614,
+            386.7603
+          ],
+          "uri": "https://bozana.design/work/portfolio-built-with-ai",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            353.5803,
+            362.7588,
+            364.2003
+          ],
+          "uri": "https://eatcaviar.co/getting-a-design-system-set-up-in-claude-design/",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            341.4803,
+            91.67449,
+            352.1003
+          ],
+          "uri": "https://eatcaviar.co/getting-a-design-system-set-up-in-claude-design/",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            323.3803,
+            247.6292,
+            334.0003
+          ],
+          "uri": "https://marsbased.com/blog/2026/09/16/we-imported-a-real-client-design-system-into-claude-design-here-s-what-we-learned",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            300.8203,
+            334.9256,
+            311.4403
+          ],
+          "uri": "https://goodcode.us/blog/nobody-asks-how-you-got-to-disney-world-i-built-a-75-screen-product-with-claude-design-claude-code-in-2-days",
+          "dest": ""
+        },
+        {
+          "rect": [
+            62.77039,
+            278.2603,
+            314.429,
+            288.8803
+          ],
+          "uri": "https://jeromebenoit.com/case-study-ai-design-system.html",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 56,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "50\nChangelog\nVersion 2.1.1 \u00b7 October 7, 2026.\nCorrection or clarification. Bring the React sample through Add to cart\nand Cart confirmation, matching the standalone offline answer key.\nBoth runnable examples now follow the existing exercise, including\nContinue, Edit cart item and Reset fixture.\nCorrection or clarification. Correct the editable Figma answer key to\nshow Review with Add to cart and a Cart frame with the robot, all four\nchoices and quantity one. The current frames now represent the existing\ncart endpoint, with Edit cart item and Continue configuring. They\nremain static, with no prototype connections or choice-state wiring.\nVelori exercise materials include the corrected examples. Editable\nFigma Cart frame records the current static design.\nPrevious edition: 2.1.0 \u00b7 October 7, 2026. Daytime PDF SHA-256: 03f12b3\n9c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3.\nCLAUDE DESIGN FIELD GUIDE\nCHANGELOG\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            336.0003,
+            155.4004,
+            348.0003
+          ],
+          "uri": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+          "dest": ""
+        },
+        {
+          "rect": [
+            312.7304,
+            336.0003,
+            352.3504,
+            348.0003
+          ],
+          "uri": "https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            321.0003,
+            120.2504,
+            333.0003
+          ],
+          "uri": "https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46",
+          "dest": ""
+        }
+      ],
+      "images": []
+    }
+  ],
+  "labels": [
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "v",
+    "vi",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "outlines": [
+    {
+      "title": "Orientation",
+      "page": 1,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Choose your starting route",
+        "page": 1,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "The workflow",
+        "page": 3,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "1. Choose the task and starting material",
+      "page": 6,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Write the brief",
+        "page": 7,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Name what each source owns",
+        "page": 7,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Keep the answer out of the prompt",
+        "page": 8,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 8,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "2. Bring your system into Claude Design",
+      "page": 9,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Bring in Figma foundations",
+        "page": 10,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Bring in implementation context",
+        "page": 12,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Correct the smallest relevant gap",
+        "page": 13,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 14,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "3. Explore design directions",
+      "page": 15,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Generate two or three alternatives",
+        "page": 16,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Compare the actual views",
+        "page": 16,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Select with reasons",
+        "page": 18,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 19,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "4. Refine the design",
+      "page": 20,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Use chat for a structural change",
+        "page": 21,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Use a comment for a local correction",
+        "page": 21,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Edit directly for a quick visual adjustment",
+        "page": 23,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Recheck the chosen direction",
+        "page": 24,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 25,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "5. Build the connected experience",
+      "page": 26,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Connect the screens",
+        "page": 27,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Finish with Add to cart",
+        "page": 29,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Add a recovery state",
+        "page": 31,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Protect consistency during generation",
+        "page": 33,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 34,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "6. Review with people",
+      "page": 35,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Prepare a reviewable prototype",
+        "page": 36,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Check response and keyboard behavior",
+        "page": 36,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Record observations and decide",
+        "page": 39,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 39,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "7. Hand off to Claude Code",
+      "page": 40,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Capture the handoff",
+        "page": 41,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Verify recipient usability",
+        "page": 42,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 43,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "8. Continue in Figma when needed",
+      "page": 44,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Choose a supported bridge",
+        "page": 45,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Inspect separate kinds of fidelity",
+        "page": 47,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 48,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "9. Run the guided exercise",
+      "page": 49,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Follow the design loop",
+        "page": 50,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Keep a useful record",
+        "page": 51,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Chapter checkpoint",
+        "page": 52,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "Appendix A: Brief and decision record",
+      "page": 53,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "Appendix B: Supporting engineering checks",
+      "page": 53,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "Further reading",
+      "page": 54,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "Changelog",
+      "page": 55,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    }
+  ],
+  "namedDestinations": {},
+  "language": "en-US",
+  "tagged": false,
+  "header": "%PDF-1.4",
+  "unusedUnembeddedFontResources": [],
+  "imagePages": [
+    7,
+    10,
+    12,
+    14,
+    16,
+    18,
+    19,
+    21,
+    23,
+    25,
+    27,
+    29,
+    30,
+    32,
+    34,
+    36,
+    38,
+    39,
+    41,
+    43,
+    45,
+    47,
+    48,
+    50
+  ],
+  "errors": [],
+  "screenshotResolution": {
+    "paints": [
+      {
+        "page": 7,
+        "object": "68 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      },
+      {
+        "page": 10,
+        "object": "78 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      },
+      {
+        "page": 12,
+        "object": "144 0",
+        "xPpi": 169.0,
+        "yPpi": 169.0,
+        "screenshot": {
+          "figure": "s01-import",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 14,
+        "object": "149 0",
+        "xPpi": 197.0,
+        "yPpi": 197.0,
+        "screenshot": {
+          "figure": "s02-code-input",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 16,
+        "object": "88 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      },
+      {
+        "page": 18,
+        "object": "158 0",
+        "xPpi": 218.0,
+        "yPpi": 218.0,
+        "screenshot": {
+          "figure": "s03-directions",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 18,
+        "object": "159 0",
+        "xPpi": 315.0,
+        "yPpi": 315.0,
+        "screenshot": {
+          "figure": "s03-directions",
+          "panel": 2,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 19,
+        "object": "162 0",
+        "xPpi": 315.0,
+        "yPpi": 315.0,
+        "screenshot": {
+          "figure": "s03-directions",
+          "panel": 3,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 21,
+        "object": "97 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      },
+      {
+        "page": 23,
+        "object": "169 0",
+        "xPpi": 139.0,
+        "yPpi": 140.0,
+        "screenshot": {
+          "figure": "s04-comment",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 25,
+        "object": "174 0",
+        "xPpi": 136.0,
+        "yPpi": 136.0,
+        "screenshot": {
+          "figure": "s05-direct-edit",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 27,
+        "object": "105 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      },
+      {
+        "page": 29,
+        "object": "182 0",
+        "xPpi": 196.0,
+        "yPpi": 196.0,
+        "screenshot": {
+          "figure": "s06-connected",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 29,
+        "object": "181 0",
+        "xPpi": 120.0,
+        "yPpi": 120.0,
+        "screenshot": {
+          "figure": "s06-connected",
+          "panel": 2,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 30,
+        "object": "185 0",
+        "xPpi": 120.0,
+        "yPpi": 120.0,
+        "screenshot": {
+          "figure": "s06-connected",
+          "panel": 3,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 32,
+        "object": "190 0",
+        "xPpi": 120.0,
+        "yPpi": 120.0,
+        "screenshot": {
+          "figure": "s06a-cart",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Actual local prototype screenshot; summary detail retains source pixels.",
+            "reason": "The 120PPI native-capture exception keeps 13px labels near 7.8pt; the caption provides the complete selectable configuration."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 34,
+        "object": "196 0",
+        "xPpi": 120.0,
+        "yPpi": 120.0,
+        "screenshot": {
+          "figure": "s07-recovery",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 34,
+        "object": "195 0",
+        "xPpi": 120.0,
+        "yPpi": 120.0,
+        "screenshot": {
+          "figure": "s07-recovery",
+          "panel": 2,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 36,
+        "object": "124 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      },
+      {
+        "page": 38,
+        "object": "203 0",
+        "xPpi": 156.0,
+        "yPpi": 156.0,
+        "screenshot": {
+          "figure": "s08-mobile",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 39,
+        "object": "206 0",
+        "xPpi": 156.0,
+        "yPpi": 156.0,
+        "screenshot": {
+          "figure": "s08-mobile",
+          "panel": 2,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 41,
+        "object": "63 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      },
+      {
+        "page": 43,
+        "object": "213 0",
+        "xPpi": 121.0,
+        "yPpi": 121.0,
+        "screenshot": {
+          "figure": "s09-handoff",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 45,
+        "object": "73 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      },
+      {
+        "page": 47,
+        "object": "221 0",
+        "xPpi": 266.0,
+        "yPpi": 266.0,
+        "screenshot": {
+          "figure": "s10-figma",
+          "panel": 1,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native 1280 \u00d7 720 Figma frame export. Full-frame overview retains every source pixel.",
+            "reason": "These panels establish the two editable frame compositions. Small overview labels are context only; the selectable caption names all four choices and cart actions. Open the larger reader image for detail."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 48,
+        "object": "225 0",
+        "xPpi": 266.0,
+        "yPpi": 266.0,
+        "screenshot": {
+          "figure": "s10-figma",
+          "panel": 2,
+          "minimumPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native 1280 \u00d7 720 Figma frame export. Full-frame overview retains every source pixel.",
+            "reason": "These panels establish the two editable frame compositions. Small overview labels are context only; the selectable caption names all four choices and cart actions. Open the larger reader image for detail."
+          }
+        },
+        "requiredMinPpi": 120
+      },
+      {
+        "page": 50,
+        "object": "83 0",
+        "xPpi": 561.0,
+        "yPpi": 561.0
+      }
+    ],
+    "boundScreenshotPaints": 18,
+    "minimumArtworkPpi": 240
+  },
+  "accessibilityLimitations": [
+    "Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available."
+  ]
+}

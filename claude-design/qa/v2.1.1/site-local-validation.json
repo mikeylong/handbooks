@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.1",
+  "method": "CUA in-app browser, local built site at http://127.0.0.1:8798/claude-design/",
+  "viewports": [
+    "1440x1000",
+    "390x844"
+  ],
+  "checks": [
+    "Cover identifies version2.1.1 and 56page paired downloads",
+    "No public review panel, standalone printing note or duplicated sidebar publication",
+    "Search and appearance controls share sidebar row",
+    "Dark and Light controls apply; System restored",
+    "Explore and chapter navigation reach expected destinations",
+    "New Review and Cart screenshot download renders",
+    "Mobile Search Cart returns current correction sections",
+    "Mobile Contents includes all chapters and new56page downloads",
+    "Figure10 images, larger views and static-frame caption reachable",
+    "No document horizontal overflow at either viewport"
+  ],
+  "automatedSharedCoverage": "Collection site tests passed navigation/theme/blocked-storage/future-edition/download/retention regressions; blocked storage and JS-disabled behavior were not manually repeated in CUA.",
+  "consoleCheckScope": "Fresh extracted React production app had no console errors/warnings; local reader console was not separately sampled.",
+  "viewportReset": true,
+  "screenshot": {
+    "path": "site-mobile-figma-panels.png",
+    "sha256": "da13e04e33cc406cfcce8a35faeb34919c383463c39415774468cf478357bd3a"
+  }
+}

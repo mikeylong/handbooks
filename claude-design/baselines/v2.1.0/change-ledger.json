@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "accepted": true,
+  "version": "2.1.0",
+  "previousVersion": "2.0.0",
+  "readerFacingContentChanged": true,
+  "summary": "This edition finishes the Velori exercise with Add to cart and makes configuration navigation consistent.",
+  "changes": [
+    {
+      "id": "A01",
+      "category": "Addition",
+      "section": "Orientation; chapters 1, 5, 6, 7 and 9",
+      "text": "Finish the Velori exercise with Add to cart and a confirmation showing the configured robot, all four choices and quantity one.",
+      "rationale": "Keep payment and order submission outside the task.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip"
+      ],
+      "groupedDraftEntries": [
+        "A01"
+      ]
+    },
+    {
+      "id": "A02",
+      "category": "Correction or clarification",
+      "section": "Chapter 5; offline answer key",
+      "text": "Use Continue in both Configure and Edit.",
+      "rationale": "Reset fixture restores the starting choices, clears the teaching cart and returns to Configure.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip"
+      ],
+      "groupedDraftEntries": [
+        "A02"
+      ]
+    }
+  ],
+  "classifiedChangeIds": [
+    "A01",
+    "A02"
+  ],
+  "authorRequirementBasis": {
+    "A01": "Mike requested a final Add to cart step without the payment flow, 2026-10-07.",
+    "A02": "Mike requested Continue for the primary action after reporting Reset fixture left the Edit route active, 2026-10-07."
+  },
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "f77693c6f7e93567fe96d14ca73dff6d27cd883f00e6392281ca8e613bb3cccc",
+    "previousSourceSha256": "8f9e24a5f56ccac9079f23b1fbb2a84cc04bc88738998bef6b715031d4ce66e1"
+  },
+  "comparisonEvidence": {
+    "source": {
+      "path": "claude-design/qa/v2.1.0/exact-source.patch",
+      "sha256": "ba23b82b905c598e157c9a7db942c2964938a542b82a829ad560d1a0c5d56787"
+    },
+    "pdf": {
+      "path": "claude-design/qa/v2.1.0/exact-pdf-text.patch",
+      "sha256": "ea9faa62a661e8492deb9d31f9d01fb4b081b5f88ace89949dd6513b2b40c46f"
+    },
+    "substantive": {
+      "path": "claude-design/qa/v2.1.0/reader-facing-content.patch",
+      "sha256": "4fc0656dab1eed595b04d015bfa0b81e8a6f97ba36697a659f6f8ef4dcf93d9f"
+    },
+    "comparison": {
+      "path": "claude-design/qa/v2.1.0/edition-diff.json",
+      "sha256": "54f9b3c9109cc9630f109a2db2cc5376458b159f2f794e25c1400ec581ef0746"
+    },
+    "decision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "9114573894081a4140db2617c4057f013d79ee9debedcc0ea2af9c1cc8f3954f"
+    }
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.0/velori-design-exploration-v2.1.0.zip",
+    "repositoryPath": "claude-design/reader/editions/v2.1.0/velori-design-exploration-v2.1.0.zip",
+    "sha256": "a5723a79c0147f485703b1df0b143a151b75305c6f3b303e7fd9c4855b9b8695",
+    "bytes": 97153656,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "e39f90de1152ccf240e9686ec386e1fa44d07f06ff8d1ce353c373d2e65c8c6b"
+    }
+  },
+  "verificationRecord": "claude-design/qa/v2.1.0/change-ledger-verification.json"
+}
