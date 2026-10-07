@@ -44,6 +44,8 @@ Keep these tests in the skill so every caller uses the same checks:
 4. Exercise System, Light, and Dark; persistence; blocked storage; JavaScript-disabled fallback; diagram reflow or internal panning; and printing from Dark. Inspect artwork and diagram quality visually as well as mechanically.
 5. Verify approved package and PDF hashes. Route hosted candidates through the collection build, which calls the skill. Fixtures and passing checks do not approve a title, edition, or deployment.
 
+Step markers inside single-cell nested tables must align with the adjacent first line of text. The shared reader stylesheet removes the wrapper's extra padding while preserving genuine nested data-table spacing. `checkReaderBrowser` checks this at 390 px and 1440 px in Light and Dark, including the next-edition and future-title fixtures.
+
 ## Prompt examples
 
 Prompt directives render with a compact “Prompt” indicator, a tool/task heading, and a monospace body. For frozen legacy readers, a book-owned `prompt-bindings.json` records the approved reader hash and each prompt table's hash, title, and placement count. The collection build applies `scripts/prompt-blocks.mjs` without changing the frozen reader or PDFs. Unbound data tables remain unchanged; stale bindings fail the build.

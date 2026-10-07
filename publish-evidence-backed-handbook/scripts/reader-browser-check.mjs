@@ -1,6 +1,7 @@
 // Run through the host's Playwright CLI: async page => checkReaderBrowser(page, options).
 // Fixture inputs are built by build-reader-fixtures.mjs, outside publication output.
 export async function checkReaderBrowser(page, {urls, screenshotDirectory}) {
+  await checkReaderTableAlignment(page, {urls});
   const results=[];
   for(const url of urls) {
     await page.emulateMedia({media:'screen'});
@@ -74,6 +75,34 @@ export async function checkReaderFallbacks(page, urls) {
       if(await p.evaluate(()=>document.documentElement.dataset.theme)!=='dark') throw Error('Blocked storage theme: '+url);
       results.push({url,blockedStorage:true});
     } finally {await context.close();}
+  }
+  return results;
+}
+
+// Shared table layout contract for frozen readers and future-title fixtures.
+export async function checkReaderTableAlignment(page, {urls}) {
+  const results=[];
+  for (const url of urls) {
+    await page.goto(url);
+    await page.evaluate(()=>document.fonts.ready);
+    for (const width of [390,1440]) {
+      await page.setViewportSize({width,height:900});
+      for (const mode of ['light','dark']) {
+        await page.evaluate(mode=>document.documentElement.dataset.theme=mode,mode);
+        const info=await page.evaluate(()=>{
+          const wrappers=[...document.querySelectorAll('td > table:has(> tbody > tr:only-child > td:only-child)')];
+          const offsets=wrappers.flatMap(table=>{
+            const marker=table.querySelector('p');
+            const adjacent=table.parentElement.nextElementSibling?.querySelector('p');
+            return marker && adjacent ? [Math.abs(marker.getBoundingClientRect().top-adjacent.getBoundingClientRect().top)] : [];
+          });
+          const dataCells=[...document.querySelectorAll('[data-nested-data] td')];
+          return {markers:offsets.length,maxOffset:Math.max(0,...offsets),nestedDataPreserved:dataCells.every(cell=>parseFloat(getComputedStyle(cell).paddingTop)>0),overflow:document.documentElement.scrollWidth>innerWidth};
+        });
+        if(info.maxOffset>1 || !info.nestedDataPreserved || info.overflow) throw Error('Table alignment: '+JSON.stringify({url,width,mode,...info}));
+        results.push({url,width,mode,...info});
+      }
+    }
   }
   return results;
 }
