@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "researchCutoff": "2026-10-06",
+  "accessDate": "2026-10-06",
+  "sources": [
+    {
+      "id": "ANT-01",
+      "title": "Get started with Claude Design",
+      "author": "Anthropic",
+      "publicationDate": null,
+      "accessDate": "2026-10-06",
+      "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "authorityType": "official documentation",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Design conversation and canvas; alternatives; chat, comments, direct editing; Code handoff; standalone remains available"
+      ],
+      "limitation": "Controls vary by surface. Documentation does not prove this Velori trial or its recipient usability."
+    },
+    {
+      "id": "ANT-02",
+      "title": "Set up your design system in Claude Design",
+      "author": "Anthropic",
+      "publicationDate": null,
+      "accessDate": "2026-10-06",
+      "url": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+      "authorityType": "official documentation",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Figma/assets can supply foundations; React components can enter through /design-sync"
+      ],
+      "limitation": "Recommended entry differs by source. Migration and extraction may need cleanup."
+    },
+    {
+      "id": "FIG-01",
+      "title": "Code to canvas",
+      "author": "Figma",
+      "publicationDate": null,
+      "accessDate": "2026-10-06",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/",
+      "authorityType": "official documentation",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Rendered UI can be captured into editable Figma layers"
+      ],
+      "limitation": "Editable layers alone do not establish original component identity, bindings, or prototype wiring."
+    },
+    {
+      "id": "FIG-02",
+      "title": "Code Connect integration",
+      "author": "Figma",
+      "publicationDate": null,
+      "accessDate": "2026-10-06",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/",
+      "authorityType": "official documentation",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Component mappings can supply implementation context"
+      ],
+      "limitation": "Requires maintained mappings and accessible libraries; not automatic equivalence."
+    },
+    {
+      "id": "PRA-01",
+      "title": "Portfolio built with AI",
+      "author": "Bo\u017eana Radenkovi\u0107 Gerard",
+      "publicationDate": null,
+      "accessDate": "2026-10-06",
+      "url": "https://bozana.design/work/portfolio-built-with-ai",
+      "authorityType": "first-hand project account",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Figma preparation, Design exploration, Code handoff and iterative preview review"
+      ],
+      "limitation": "One portfolio account; not comparative evidence or a delivery-time guarantee."
+    },
+    {
+      "id": "PRA-02",
+      "title": "Getting a design system set up in Claude Design",
+      "author": "Caviar / Alex Banaga",
+      "publicationDate": "2026-06-15",
+      "accessDate": "2026-10-06",
+      "url": "https://eatcaviar.co/getting-a-design-system-set-up-in-claude-design/",
+      "authorityType": "first-hand project account",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Figma-owned foundations, Code connective work, browsable Design system and manual design decisions"
+      ],
+      "limitation": "One client workflow; historical controls and timings are not current product promises."
+    },
+    {
+      "id": "PRA-03",
+      "title": "We imported a real client design system into Claude Design",
+      "author": "MarsBased / Anna Vidal",
+      "publicationDate": "2026-09-16",
+      "accessDate": "2026-10-06",
+      "url": "https://marsbased.com/blog/2026/09/16/we-imported-a-real-client-design-system-into-claude-design-here-s-what-we-learned",
+      "authorityType": "first-hand trial",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Selected Figma input, product context, responsive instructions and direct refinement"
+      ],
+      "limitation": "The tested handoff was a prompt. No verified Figma return in that run is not proof the route cannot exist."
+    },
+    {
+      "id": "PRA-04",
+      "title": "I built a 75-screen product with Claude Design + Claude Code",
+      "author": "GoodCode / Austin McDaniel",
+      "publicationDate": "2026-06-16",
+      "accessDate": "2026-10-06",
+      "url": "https://goodcode.us/blog/nobody-asks-how-you-got-to-disney-world-i-built-a-75-screen-product-with-claude-design-claude-code-in-2-days",
+      "authorityType": "first-hand project account",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Alternatives, connected flows, handoff and later refinement"
+      ],
+      "limitation": "Reported speed does not prove production readiness. Do not carry the headline timing into the exercise."
+    },
+    {
+      "id": "PRA-05",
+      "title": "AI-assisted design system pilot",
+      "author": "J\u00e9r\u00f4me Benoit Reveau / Doctolib",
+      "publicationDate": null,
+      "accessDate": "2026-10-06",
+      "url": "https://jeromebenoit.com/case-study-ai-design-system.html",
+      "authorityType": "first-hand pilot",
+      "access": "complete",
+      "disposition": "accepted",
+      "supportedClaims": [
+        "Explicit translation from prototype into production components and reviewed implementation"
+      ],
+      "limitation": "One reported pilot. Exclude estimated percentage results and general success-rate claims."
+    }
+  ],
+  "claimMap": [
+    {
+      "claim": "Two starting routes feed the Design exploration loop; source ownership is distinct from the exploration tool.",
+      "type": "author synthesis",
+      "sections": [
+        "Orientation",
+        "1",
+        "2"
+      ],
+      "sources": [
+        "ANT-01",
+        "ANT-02",
+        "PRA-01",
+        "PRA-02",
+        "PRA-03"
+      ]
+    },
+    {
+      "claim": "Explore alternatives and select with reasons before connected-screen refinement.",
+      "type": "author synthesis",
+      "sections": [
+        "3",
+        "4",
+        "5"
+      ],
+      "sources": [
+        "ANT-01",
+        "PRA-04"
+      ]
+    },
+    {
+      "claim": "Review the interactive prototype with people and export a recipient-usable handoff.",
+      "type": "author synthesis",
+      "sections": [
+        "6",
+        "7",
+        "9"
+      ],
+      "sources": [
+        "ANT-01",
+        "PRA-01",
+        "PRA-05"
+      ]
+    },
+    {
+      "claim": "Continue in Figma as a chosen destination; inspect editability, native relationships and wiring separately.",
+      "type": "author synthesis",
+      "sections": [
+        "8"
+      ],
+      "sources": [
+        "FIG-01",
+        "FIG-02"
+      ]
+    },
+    {
+      "claim": "The fresh Figma-first trial demonstrates import with typography metadata loss, operated alternatives, chat and comment refinement, an unsupported direct-save step with chat fallback, a connected prototype, and recipient-opened export.",
+      "type": "trial-dependent",
+      "sections": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "7",
+        "9"
+      ],
+      "sources": [
+        "trial/run-record.json",
+        "trial/figma-source-inspection.json",
+        "trial/figma-continuation-validation.json"
+      ],
+      "status": "observed with recorded limitations"
+    }
+  ]
+}

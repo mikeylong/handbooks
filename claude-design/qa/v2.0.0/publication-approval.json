@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "command": "Land this",
+  "approver": "Mike",
+  "approvalDate": "2026-10-07",
+  "editionDate": "2026-10-06",
+  "manuscript": {
+    "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "8f9e24a5f56ccac9079f23b1fbb2a84cc04bc88738998bef6b715031d4ce66e1"
+  },
+  "pdfs": [
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8"
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa"
+    }
+  ],
+  "exercise": {
+    "path": "claude-design/reader/editions/v2.0.0/velori-design-exploration-v2.0.0.zip",
+    "sha256": "d854ba99597ea1c536201494a47612ba367f6de84bc1d700a0d62e42979db592"
+  },
+  "limitations": [
+    "Human task review has not been completed. The author walkthrough is not usability evidence.",
+    "Figma continuation is static, without prototype reactions or choice-state wiring.",
+    "Code implementation, real missing-resource recovery and separate-project private-system selection remain untested."
+  ],
+  "authorityBasis": "Mike issued a new direct Land this after the exact v2.0.0 candidate and its PDF hashes were presented, the approval hold was explained, and he explicitly removed the separate-account Figma check as a release requirement. This approves publication of the presented files; unperformed human task review remains a disclosed limit, not a passed test.",
+  "figmaRecipientCheckDecision": "Mike: standard native export/import plus successful fresh import is sufficient; a separate-account check is not required."
+}

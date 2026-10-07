@@ -1,0 +1,199 @@
+{
+  "status": "passed",
+  "scope": "Fresh native .fig import into a new Drafts file in the same account. Not a separate-recipient account test.",
+  "fileKey": "0xMkeCibem2XwvOosFym0T",
+  "inventory": {
+    "pages": [
+      {
+        "id": "0:1",
+        "name": "01 Foundations"
+      },
+      {
+        "id": "5:2",
+        "name": "02 Components"
+      },
+      {
+        "id": "5:3",
+        "name": "03 Configurator"
+      },
+      {
+        "id": "9:173",
+        "name": "04 Source Assets"
+      },
+      {
+        "id": "2063:2",
+        "name": "05 Design continuation · Review"
+      }
+    ],
+    "textStyles": [
+      {
+        "id": "S:048cd9dca2818cb1e3e8cad41aaa175a7e78b0d8,",
+        "name": "Velori/Wordmark"
+      },
+      {
+        "id": "S:ca68a61a1f0a707604d6e711bb0a82b4d90a07d4,",
+        "name": "Velori/Heading"
+      },
+      {
+        "id": "S:d0aaab78bc9790388388b8ea9bbf89bfef8eeb9d,",
+        "name": "Velori/Product"
+      },
+      {
+        "id": "S:7e61332df9ec34f6a1f8b1b0d9df469db10395de,",
+        "name": "Velori/Body"
+      },
+      {
+        "id": "S:61a903ae15e48768c8347ff0608f292f1e7fc12b,",
+        "name": "Velori/Button"
+      },
+      {
+        "id": "S:90af365c9dce1a9846d078ca0639f759f4554df8,",
+        "name": "Velori/Label"
+      },
+      {
+        "id": "S:f75d8a90c57373829afe638c019a168d8143da9f,",
+        "name": "Velori/Value"
+      },
+      {
+        "id": "S:264d11ec897e8a5e421edafe4df045ee501d0e55,",
+        "name": "Velori/Option"
+      },
+      {
+        "id": "S:e4b955a94086e54d6823b59dae498aef873a9c2f,",
+        "name": "Velori/Caption"
+      },
+      {
+        "id": "S:8b8089622448e44d53971d233f7da03a73c5926c,",
+        "name": "Velori/Eyebrow"
+      },
+      {
+        "id": "S:45dafb2fbab28f692cb8ac9d326b4017bdbb8696,",
+        "name": "Velori/Step"
+      }
+    ],
+    "variableCollections": [
+      {
+        "id": "VariableCollectionId:5:4",
+        "name": "Velori · Primitives",
+        "variables": 11
+      },
+      {
+        "id": "VariableCollectionId:5:16",
+        "name": "Velori · Semantic",
+        "variables": 17
+      },
+      {
+        "id": "VariableCollectionId:5:34",
+        "name": "Velori · Layout",
+        "variables": 29
+      },
+      {
+        "id": "VariableCollectionId:37:80",
+        "name": "Velori · Store state",
+        "variables": 18
+      }
+    ]
+  },
+  "validation": {
+    "fileKey": "0xMkeCibem2XwvOosFym0T",
+    "page": "05 Design continuation · Review",
+    "frame": {
+      "id": "2063:3",
+      "name": "Selected review · Graphite / Simple / Amber / Carry bag",
+      "width": 1280,
+      "height": 720
+    },
+    "nodes": 75,
+    "texts": 22,
+    "styledTexts": 22,
+    "missingFonts": [],
+    "instances": [
+      {
+        "id": "2063:76",
+        "name": "Velori/Brand",
+        "mainComponent": {
+          "id": "7:522",
+          "name": "Velori/Brand"
+        }
+      },
+      {
+        "id": "2063:82",
+        "name": "Velori/Product Preview",
+        "mainComponent": {
+          "id": "10:2",
+          "name": "Velori/Product Preview"
+        }
+      },
+      {
+        "id": "I2063:82;10:3",
+        "name": "Product photograph",
+        "mainComponent": {
+          "id": "7:542",
+          "name": "Finish=Graphite, Accessory=Carry bag"
+        }
+      },
+      {
+        "id": "I2063:82;10:5",
+        "name": "Face expression",
+        "mainComponent": {
+          "id": "9:139",
+          "name": "Face=Simple, Color=Amber"
+        }
+      },
+      {
+        "id": "2063:108",
+        "name": "Velori/Review summary row",
+        "mainComponent": {
+          "id": "2063:107",
+          "name": "Velori/Review summary row"
+        }
+      },
+      {
+        "id": "2063:114",
+        "name": "Velori/Review summary row",
+        "mainComponent": {
+          "id": "2063:107",
+          "name": "Velori/Review summary row"
+        }
+      },
+      {
+        "id": "2063:120",
+        "name": "Velori/Review summary row",
+        "mainComponent": {
+          "id": "2063:107",
+          "name": "Velori/Review summary row"
+        }
+      },
+      {
+        "id": "2063:126",
+        "name": "Velori/Review summary row",
+        "mainComponent": {
+          "id": "2063:107",
+          "name": "Velori/Review summary row"
+        }
+      },
+      {
+        "id": "2063:135",
+        "name": "Velori/Review secondary action",
+        "mainComponent": {
+          "id": "2063:134",
+          "name": "Velori/Review secondary action"
+        }
+      },
+      {
+        "id": "2063:80",
+        "name": "Velori/Primary Button",
+        "mainComponent": {
+          "id": "7:44",
+          "name": "State=Default"
+        }
+      }
+    ],
+    "variableBoundNodes": 66,
+    "reactions": 0
+  },
+  "limitations": [
+    "Static selected view: zero prototype reactions or choice-state wiring.",
+    "Different recipient account access remains untested."
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "title": "From starting material to a reviewed design and chosen destination",
+  "kind": "workflow",
+  "nodes": [
+    {
+      "id": "figma",
+      "label": "Figma foundations / screens",
+      "detail": "Start with the maintained design file",
+      "group": "inputs",
+      "tool": "figma"
+    },
+    {
+      "id": "code",
+      "label": "Codebase / component library",
+      "detail": "Start with existing implementation",
+      "group": "inputs",
+      "tool": "claudecode"
+    },
+    {
+      "id": "brief",
+      "label": "Brief",
+      "detail": "Name the task",
+      "group": "loop",
+      "tool": "claude"
+    },
+    {
+      "id": "explore",
+      "label": "Explore",
+      "detail": "Compare alternatives",
+      "group": "loop",
+      "tool": "claude"
+    },
+    {
+      "id": "choose",
+      "label": "Choose",
+      "detail": "Record the reason",
+      "group": "loop",
+      "tool": "claude"
+    },
+    {
+      "id": "refine",
+      "label": "Refine",
+      "detail": "Chat, comment, direct edit",
+      "group": "loop",
+      "tool": "claude"
+    },
+    {
+      "id": "connect",
+      "label": "Connect",
+      "detail": "Build the journey",
+      "group": "loop",
+      "tool": "claude"
+    },
+    {
+      "id": "review",
+      "label": "Review",
+      "detail": "Observe and correct",
+      "group": "loop",
+      "tool": "claude"
+    },
+    {
+      "id": "handoff",
+      "label": "Reviewed prototype + usable handoff",
+      "detail": "Main endpoint: selected design and decisions",
+      "group": "endpoint",
+      "tool": "claude"
+    },
+    {
+      "id": "implementation",
+      "label": "Claude Code implementation",
+      "detail": "Destination endpoint: reviewed software",
+      "group": "destinations",
+      "tool": "claudecode"
+    },
+    {
+      "id": "editable",
+      "label": "Continued design in Figma",
+      "detail": "Destination endpoint: checked editable file",
+      "group": "destinations",
+      "tool": "figma"
+    }
+  ],
+  "edges": [
+    {
+      "from": "figma",
+      "to": "brief"
+    },
+    {
+      "from": "code",
+      "to": "brief"
+    },
+    {
+      "from": "brief",
+      "to": "explore"
+    },
+    {
+      "from": "explore",
+      "to": "choose"
+    },
+    {
+      "from": "choose",
+      "to": "refine"
+    },
+    {
+      "from": "refine",
+      "to": "connect"
+    },
+    {
+      "from": "connect",
+      "to": "review"
+    },
+    {
+      "from": "review",
+      "to": "handoff"
+    },
+    {
+      "from": "handoff",
+      "to": "implementation"
+    },
+    {
+      "from": "handoff",
+      "to": "editable"
+    },
+    {
+      "from": "review",
+      "to": "refine",
+      "feedback": true
+    },
+    {
+      "from": "implementation",
+      "to": "refine",
+      "feedback": true
+    },
+    {
+      "from": "editable",
+      "to": "refine",
+      "feedback": true
+    }
+  ],
+  "note": "Review and destination findings return to Refine. Choose a destination only when the recipient needs it.",
+  "printAlt": "Two starting inputs feed Brief, Explore, Choose, Refine, Connect and Review in Claude Design. The main endpoint is a reviewed prototype and usable handoff. Optional destinations are reviewed Code implementation and checked editable Figma work. Findings return to Refine.",
+  "printCaption": "Start in the source your team maintains. Complete the Claude Design loop before choosing a destination."
+}

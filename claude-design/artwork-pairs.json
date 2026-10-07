@@ -33,7 +33,9 @@
         "completeSubject": true
       },
       "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 1,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     },
     {
       "chapter": 2,
@@ -66,7 +68,9 @@
         "completeSubject": true
       },
       "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 2,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     },
     {
       "chapter": 3,
@@ -99,7 +103,9 @@
         "completeSubject": true
       },
       "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 3,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     },
     {
       "chapter": 4,
@@ -132,7 +138,9 @@
         "completeSubject": true
       },
       "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 4,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     },
     {
       "chapter": 5,
@@ -165,7 +173,9 @@
         "completeSubject": true
       },
       "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 5,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     },
     {
       "chapter": 6,
@@ -198,79 +208,15 @@
         "completeSubject": true
       },
       "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 6,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     },
     {
       "chapter": 7,
       "light": "reader/assets/chapter-07.png",
-      "lightSha256": "0a186b5d3674b6c85e2310246794f4f64ee5c8772e3df4472d36b6c1140799c0",
-      "dark": "assets/chapter-art/dark/chapter-07.png",
-      "darkSha256": "a6e93001baa030bea8790dd7890aa3aca373ec216faf90338087684900a1b5ab",
-      "darkDimensions": [
-        1659,
-        948
-      ],
-      "outerBackground": "transparent",
-      "generator": "image_gen built-in; model identifier not exposed",
-      "prompt": "Correct only framing and the two ghost-cube/arrow overlays in image 1, preserving the exact machinery, natural lighting, stippled engraving, objects and connections. The complete five-lever bank on the right and left handwheel handle must fit inside a transparent landscape frame with at least 8% transparent margins on all sides. Scale down the composition; do not crop any part. Draw the travel arrow and two ghost blocks as fine pale ivory dashed lines with completely transparent interiors, so they remain readable on charcoal. Remove their pale gray filled plate artifacts. Image 2 is the original LIGHT composition reference. Preserve perspective and silhouette. No new objects, lettering, inversion, glow, paper backdrop or fringe. Genuine transparent background.",
-      "acquisitionMode": "generated",
-      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
-      "reviewStatus": "accepted",
-      "transparencyReview": {
-        "alphaRange": [
-          0,
-          255
-        ],
-        "bounds": [
-          94,
-          35,
-          1585,
-          948
-        ],
-        "reviewBackground": "#191918",
-        "completeSubject": true
-      },
-      "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
-    },
-    {
-      "chapter": 8,
-      "light": "reader/assets/chapter-08.png",
-      "lightSha256": "4967cbe54ab195b7273539298eaa75787a62dc4d85a56aa41ade58cafc850364",
-      "dark": "assets/chapter-art/dark/chapter-08.png",
-      "darkSha256": "ba72494f3deecc2bfea58b35a402adb73239f4850b1bb5dab6c7b22c34d56d83",
-      "darkDimensions": [
-        1662,
-        946
-      ],
-      "outerBackground": "transparent",
-      "generator": "image_gen built-in; model identifier not exposed",
-      "prompt": "Framing correction only. Keep this exact four-gauge inspection machinery and cube gate, all object relationships, stippled engraving and lighting. Reduce the full subject to 75% of its current size and center it within an otherwise transparent landscape canvas. ALL object edges must be complete. Leave large empty transparent padding, at least 12% of frame width at left and right and 10% height above and below. Do not zoom or crop. Do not add text, glow, paper, background plate, fringe, color, inversion, or new objects. Genuine transparent background.",
-      "acquisitionMode": "generated",
-      "styleReferenceSha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
-      "reviewStatus": "accepted",
-      "transparencyReview": {
-        "alphaRange": [
-          0,
-          255
-        ],
-        "bounds": [
-          0,
-          45,
-          1521,
-          874
-        ],
-        "reviewBackground": "#191918",
-        "completeSubject": true
-      },
-      "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
-    },
-    {
-      "chapter": 9,
-      "light": "reader/assets/chapter-09.png",
       "lightSha256": "aa5c18546d6090f5299d4f044d427f3a35102710f9d31fcecc32b00bcd65c445",
-      "dark": "assets/chapter-art/dark/chapter-09.png",
+      "dark": "assets/chapter-art/dark/chapter-07.png",
       "darkSha256": "4f01b5a3a057fa1e577bdbd8b60896fd5d31686f0f7d0ffaf6cf546eaae80d0d",
       "darkDimensions": [
         1659,
@@ -297,13 +243,15 @@
         "completeSubject": true
       },
       "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 9,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     },
     {
-      "chapter": 10,
-      "light": "reader/assets/chapter-10.png",
+      "chapter": 8,
+      "light": "reader/assets/chapter-08.png",
       "lightSha256": "6c40f541db193d8e256da824208545f549030d0e53582c74dcac82d3063628d7",
-      "dark": "assets/chapter-art/dark/chapter-10.png",
+      "dark": "assets/chapter-art/dark/chapter-08.png",
       "darkSha256": "cbd8da16323d25c0ffb9376d482395da1e48694cc2e2804893f79799ff024d9f",
       "darkDimensions": [
         1659,
@@ -330,13 +278,15 @@
         "completeSubject": true
       },
       "styleReferenceRole": "attached style image",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 10,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     },
     {
-      "chapter": 11,
-      "light": "reader/assets/chapter-11.png",
+      "chapter": 9,
+      "light": "reader/assets/chapter-09.png",
       "lightSha256": "d81af04b927f6a5869aaeb054539d3b5947c93d0ab0a50980c8468d23d270411",
-      "dark": "assets/chapter-art/dark/chapter-11.png",
+      "dark": "assets/chapter-art/dark/chapter-09.png",
       "darkSha256": "4cdcc14cc9c3214c335a6092d2f019c269d9431dceb1458c940a2f065be456b7",
       "darkDimensions": [
         1659,
@@ -363,7 +313,9 @@
         "completeSubject": true
       },
       "styleReferenceRole": "governing style target supplied as textual direction",
-      "provenance": "assets/chapter-art/dark/generation-records.json"
+      "provenance": "assets/chapter-art/dark/generation-records.json",
+      "previousChapter": 11,
+      "compositionReuse": "Frozen approved v1.3.0 illustration pair; remapped for the revised chapter subject."
     }
   ]
 }

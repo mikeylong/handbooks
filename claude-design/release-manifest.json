@@ -1,44 +1,33 @@
 {
   "title": "Claude Design Field Guide",
-  "version": "1.3.0",
-  "date": "2026-10-05",
-  "pdf": "output/pdf/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
-  "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
-  "pages": 76,
-  "previous_public_edition": "1.2.1",
+  "version": "2.0.0",
+  "date": "2026-10-06",
+  "pdf": "output/pdf/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+  "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+  "pages": 53,
+  "previous_public_edition": "1.3.0",
   "approvalStatus": "approved",
-  "candidate_validation": "qa/v1.3.0/daytime-validation.json",
-  "comparison_basis": "Approved v1.2.1; exact preserved source, PDF and measured page map",
+  "candidate_validation": "qa/v2.0.0/daytime-validation.json",
   "releaseContract": {
+    "kind": "design-exploration",
     "classifiedChangeIds": [
-      "S01"
+      "D01",
+      "D02",
+      "D03",
+      "D04"
     ],
-    "exerciseArtifactEdition": "1.2.1",
-    "exerciseArtifactApproval": {
-      "releaseManifest": {
-        "path": "claude-design/baselines/v1.2.1/release-manifest.json",
-        "sha256": "02736102f00f4ee7ed01eeb873466921f7250156cbfed265e00f1acc38a0611a"
-      },
-      "publicationPackage": {
-        "path": "claude-design/baselines/v1.2.1/publication-package.json",
-        "sha256": "6c80614e5b1b04ea7e47c0eff30a8bd6ad353aca9dadc7ec60cf710cc5b9c106"
-      },
-      "figmaCompanion": {
-        "path": "claude-design/baselines/v1.2.1/figma-companion.json",
-        "sha256": "afcaf353aef1ce2de5d8a0f7828a01ae885001f46c15c89f01d370ad746a4b5b"
-      },
-      "figmaImportVerification": {
-        "path": "claude-design/qa/v1.2.1/figma-import-verification.json",
-        "sha256": "90a4b9d46460d7d80c8fca00cfb0fd1f8750815a79847a68c4ac46fc040a9597"
-      }
-    },
     "sample": {
-      "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
-      "repositoryPath": "claude-design/reader/editions/v1.2.1/velori-store-0.2.1-mit-release.zip"
-    }
+      "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.0.0/velori-design-exploration-v2.0.0.zip",
+      "repositoryPath": "claude-design/reader/editions/v2.0.0/velori-design-exploration-v2.0.0.zip"
+    },
+    "nativeStarter": {
+      "filename": "velori-design-exploration-starter.fig",
+      "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca"
+    },
+    "chapterCount": 9
   },
   "publicationApproval": {
-    "path": "claude-design/qa/v1.3.0/publication-approval.json",
-    "sha256": "a8183e8f7140a3fdd382fa9b4cb6645aa812ae6f5ef578a21d0f49d84b8b406c"
+    "path": "claude-design/qa/v2.0.0/publication-approval.json",
+    "sha256": "7a037cbdabf765cd5c07415cabc531943536a9a75efc5d4d388175f61627b5e8"
   }
 }

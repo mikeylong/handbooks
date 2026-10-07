@@ -3,8 +3,8 @@
   "status": "passed",
   "includeChangelog": true,
   "readerFacingContentChanged": true,
-  "summary": "Version 1.3.0 adds screenshots beside the Velori workflow instructions.",
-  "entryCount": 1,
+  "summary": "This edition centers the guide on exploring, refining and reviewing product designs in Claude Design.",
+  "entryCount": 4,
   "failures": [],
   "placement": "final-page",
   "requiredPdfState": {
@@ -19,101 +19,42 @@
   ],
   "expectedEntries": [
     {
-      "category": "Addition",
-      "section": "Orientation and Chapters 2–7, 9 and 10",
-      "text": "Added screenshots for setup, system inspection, correction, the store journey, recovery, keyboard use, responsive layout, Code handoff, and Figma review.",
-      "rationale": "Readers can locate the controls and compare their results with the worked example.",
-      "readerImpact": "Twelve figures add observable controls and expected states beside the existing instructions.",
+      "category": "Correction or clarification",
+      "section": "Orientation; chapters 1 and 2",
+      "text": "Begin with Figma foundations and screens or an existing implementation library.",
+      "rationale": "The two input routes have distinct ownership and preparation.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
-        "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
-        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
-      ],
-      "localEvidence": "claude-design/screenshot-figures.json",
-      "manifestSha256": "9407b7a8725309175233ca99779cad7778955eb4c3a455293a26038394304f66",
-      "exactAcceptedCaptions": [
-        {
-          "id": "s01-start",
-          "caption": "Public React sample. Graphite, Simple, Amber and Carry bag appear in the controls, configured photograph, caption and Review summary."
-        },
-        {
-          "id": "s02-figma-import",
-          "caption": "Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page."
-        },
-        {
-          "id": "s03-private-import",
-          "caption": "Claude Design, October 5 walkthrough. The example destination is Velori Handbook v1.2.0. Before upload, Share shows Private and Not shared."
-        },
-        {
-          "id": "s04-inspect-system",
-          "caption": "Claude Design. Inspect the imported component inventory, rendered ProductPreview and opened usage guidance. The preview uses its own component example, separate from the Amber journey fixture."
-        },
-        {
-          "id": "s05-correction",
-          "caption": "Claude Design teaching fixture. The accessory gap changes from 8px to the accepted 24px. An independent generation retains the 24px rule with Pebble, Friendly, Mint and None; that screen omits storage and details."
-        },
-        {
-          "id": "s06-native-review",
-          "caption": "Claude Design, October 5 walkthrough. The generated Review retains Graphite, Simple, Amber and Carry bag from Configure, with Edit configuration and Back available."
-        },
-        {
-          "id": "s07-browse",
-          "caption": "Public React sample. Browsing Charging dock changes the detail view while Carry bag remains selected. After returning to Configure and choosing Continue, Review still lists Carry bag."
-        },
-        {
-          "id": "s08-retry",
-          "caption": "Public React sample. Blocking the actual required shell-image request produces the real unavailable state and Retry image action. After unblocking and retrying, the photograph returns and Review still lists Graphite, Simple, Amber and Carry bag."
-        },
-        {
-          "id": "s09-dropdown",
-          "caption": "Public React sample. Amber is committed and checked while Blue is the active option in the keyboard-open menu. The real trigger focus outline remains visible."
-        },
-        {
-          "id": "s10-mobile",
-          "caption": "Public React sample at 390px. The product and caption stack above the four-value Review summary. Edit configuration and Back remain reachable."
-        },
-        {
-          "id": "s11-handoff",
-          "caption": "Claude Design. Send opens the Local agent handoff for the generated Velori Store file. Copied records the completed copy action; Project HTML provides the Project archive export path."
-        },
-        {
-          "id": "s12-figma-review",
-          "caption": "Imported Figma working copy. Inspect linked component identity and a representative variable binding, then compare Present Review with Graphite, Simple, Amber and Carry bag. Prototype variables cover the configured visit."
-        }
-      ],
-      "recommendedVersionImpact": "Minor",
-      "sourceLimitations": "Screenshots demonstrate the recorded states. Each reader validates their own tool access and generated result.",
-      "id": "G01",
-      "groupedDraftEntries": [
-        "S01"
+        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+        "https://eatcaviar.co/getting-a-design-system-set-up-in-claude-design/"
       ]
-    }
-  ],
-  "previousVersion": "1.2.1",
-  "items": [
+    },
     {
-      "title": "Screenshots beside the Velori workflow",
-      "whatChanged": "Added screenshots for setup, system inspection, correction, the store journey, recovery, keyboard use, responsive layout, Code handoff, and Figma review.",
-      "why": "Readers can locate the controls and compare their results with the worked example.",
-      "classification": "Addition",
-      "classificationLabel": "Addition",
-      "section": "Orientation and Chapters 2–7, 9 and 10",
+      "category": "Addition",
+      "section": "Chapters 3 to 6",
+      "text": "Compare directions, refine with chat, comments and direct edits, then review a connected prototype.",
+      "rationale": "Design decisions and people reviewing the result form the main exercise.",
       "sources": [
-        {
-          "url": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip",
-          "authority": "Velori",
-          "title": "React sample"
-        },
-        {
-          "url": "https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
-          "authority": "Velori",
-          "title": "Native Figma companion"
-        },
-        {
-          "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
-          "authority": "Anthropic",
-          "title": "Get started with Claude Design"
-        }
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+        "https://bozana.design/work/portfolio-built-with-ai"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Chapters 7 to 9",
+      "text": "Finish with a reviewed prototype and usable handoff; choose Code or Figma when the next owner needs it.",
+      "rationale": "Implementation and editable design have separate completion checks.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+        "https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/"
+      ]
+    },
+    {
+      "category": "Deprecation or removal",
+      "section": "Main narrative; supporting exercise material",
+      "text": "Move package inventories and detailed engineering checks into supporting material.",
+      "rationale": "Readers encounter technical setup when their selected route requires it.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design"
       ]
     }
   ]

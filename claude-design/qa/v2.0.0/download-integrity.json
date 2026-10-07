@@ -1,0 +1,336 @@
+{
+  "status": "passed",
+  "registryPins": 66,
+  "httpRoutes": [
+    {
+      "route": "/claude-design/",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 84640,
+      "sha256": "5f06def0c1914af129cc72e8611167335b781ab06d2133a73c142dc2f59dab72"
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 5404,
+      "sha256": "11b249f110bc8da093a277dcf0e47c87b6f6f15398d47c3f83e9bb8ff325a3e2"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/claude-design-v2.0.0.md",
+      "status": 200,
+      "contentType": "text/markdown",
+      "bytes": 46311,
+      "sha256": "fe14cf8bab29c4e3d0583cfc21275392d26cceb1bd7279e03f6c967b068096b3",
+      "savedFilename": "claude-design-v2.0.0.md"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 6744714,
+      "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+      "savedFilename": "claude-design-v2.0.0-2026-10-06-daytime-r1.pdf"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 45744733,
+      "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+      "savedFilename": "claude-design-v2.0.0-2026-10-06-late-night-r1.pdf"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 10344,
+      "sha256": "7bcb346717897f98dc082819470fc3917584268cd8314dc252539fed8a0a780d"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/velori-design-exploration-v2.0.0.zip",
+      "status": 200,
+      "contentType": "application/zip",
+      "bytes": 97135688,
+      "sha256": "d854ba99597ea1c536201494a47612ba367f6de84bc1d700a0d62e42979db592",
+      "savedFilename": "velori-design-exploration-v2.0.0.zip"
+    },
+    {
+      "route": "/claude-design/assets/tool-logos/figma.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 476,
+      "sha256": "526eea0bdd16f60ca9251fd371a09a3211762a8c41e15ef085d351c2b0078c3b"
+    },
+    {
+      "route": "/claude-design/assets/tool-logos/claudecode.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 424,
+      "sha256": "670b3d8d749d0815ad8f7e62a59d51cb5e2053cb19403f3541a8aed7036a877f"
+    },
+    {
+      "route": "/claude-design/assets/tool-logos/claude.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 1696,
+      "sha256": "a3101f3047a119aa11825ad9369510f0c472428c8c52d420e31bc62db44a8364"
+    },
+    {
+      "route": "/claude-design/assets/DesignWorkflow.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 129556,
+      "sha256": "65290766e57ba40b212b043772dce63cdb7be31b7662cc803bb08dd189908f62"
+    },
+    {
+      "route": "/claude-design/assets/chapter-01.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 320210,
+      "sha256": "45a4950a0ea2f97e2db2b656a374b127d359b59575677d276e982f9cc3f28268"
+    },
+    {
+      "route": "/claude-design/assets/chapter-02.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 363640,
+      "sha256": "85061834917459495362c885405f978b39007b575b217c31c7af4b7bef0f926d"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/figma-import-fixture-verified.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 181509,
+      "sha256": "c501ed7b9f5c479105a1299002b6b6f61c87bf8f051b25d0d94508ca16c0fd49"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/code-first-review-verified.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 162401,
+      "sha256": "91ac48b4cbad3e868ff192bfa955524acdac614d53ae7d7364dce859a1cfe7a6"
+    },
+    {
+      "route": "/claude-design/assets/chapter-03.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 336208,
+      "sha256": "e33beecf78f3c7efebd28e391a1b69609feae960f87a4293ad9c11bee09d749c"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/direction-a-verified.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 164418,
+      "sha256": "d9086e52162e346e73e36a22dab567d5c661e7849f4a37654e625adb962bcb6c"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/direction-b.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 211064,
+      "sha256": "8c0d2a77f879406d230f266d00653a6a60f524f37f5d1ada04ef908a348b695b"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/direction-c.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 292581,
+      "sha256": "29f4653ccc66725675f055875fa8d5719707dc61fdc34ecd0dd7e5fe1915dec5"
+    },
+    {
+      "route": "/claude-design/assets/chapter-04.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 343521,
+      "sha256": "2436be42c35e5398f9d0c3b6517f63cbbd66053a503941669fa3beb19e4d10f6"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/targeted-comment.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 89610,
+      "sha256": "a945fa90fbade8bb510013a31e7efb67fc8a54884e93211762e557a973373967"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/direct-edit-verified.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 55701,
+      "sha256": "0b64dc28723e359971d37fe111fbf391ec282dc19df442a4ab0ef5b68d0400c2"
+    },
+    {
+      "route": "/claude-design/assets/chapter-05.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 332641,
+      "sha256": "718e066ccdbc3531ec428591dc4727801b99113b784d865bc2f2fee9f3a97c3b"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/connected-dock.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 126854,
+      "sha256": "54414fec8f326cc965b83af300c84d3601551bb0e4ab28457453ca401c3dd7b3"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/browse-retains-choice.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 50871,
+      "sha256": "b9bb9897d966ca1beb336da5271be3729752664fe982e0fa075c9cf6993290e8"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/selected-review-summary.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 79879,
+      "sha256": "fa506e646752b962206f80780de0c26a07c177540ac8f839dade0189a6120b97"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/unavailable-choice.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 59967,
+      "sha256": "f6e441edcf565bffcf891cec3e43141e4fe98986e66dedecf2555911f4158a27"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/image-error.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 14067,
+      "sha256": "281420e74a4aa62c42a60e5911835ec9f4f373aa28f97aaa462c93d1776e248e"
+    },
+    {
+      "route": "/claude-design/assets/chapter-06.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 353601,
+      "sha256": "2bc8eab509f777387d6c69693d0299e2b57b755feeb14b99c62d2a0f1b281d07"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/mobile-review.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 155545,
+      "sha256": "c561501aed17cfd01b3e379295927246db477afd151a8418768fb76247bc91cd"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/mobile-summary-actions.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 130873,
+      "sha256": "40038625545814e1c9537834f3173d116166909d5e36568d0c1a599ec918620c"
+    },
+    {
+      "route": "/claude-design/assets/chapter-07.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 348713,
+      "sha256": "aa5c18546d6090f5299d4f044d427f3a35102710f9d31fcecc32b00bcd65c445"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/code-handoff-verified.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 63353,
+      "sha256": "1b681b1df65a78ad0745086869e25f0a38d5abaa55912ee46030d2197be5c4aa"
+    },
+    {
+      "route": "/claude-design/assets/chapter-08.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 315219,
+      "sha256": "6c40f541db193d8e256da824208545f549030d0e53582c74dcac82d3063628d7"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/assets/screenshots/figma-editable-review-final.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 214655,
+      "sha256": "58e7186b4728c4f298c5fa0152a35a1a2787c26de6b81f9d5367c610912eda00"
+    },
+    {
+      "route": "/claude-design/assets/chapter-09.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 255720,
+      "sha256": "d81af04b927f6a5869aaeb054539d3b5947c93d0ab0a50980c8468d23d270411"
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 5404,
+      "sha256": "11b249f110bc8da093a277dcf0e47c87b6f6f15398d47c3f83e9bb8ff325a3e2"
+    },
+    {
+      "route": "/claude-design/",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 84640,
+      "sha256": "5f06def0c1914af129cc72e8611167335b781ab06d2133a73c142dc2f59dab72"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/claude-design-v2.0.0.md",
+      "status": 200,
+      "contentType": "text/markdown",
+      "bytes": 46311,
+      "sha256": "fe14cf8bab29c4e3d0583cfc21275392d26cceb1bd7279e03f6c967b068096b3",
+      "savedFilename": "claude-design-v2.0.0.md"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 6744714,
+      "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+      "savedFilename": "claude-design-v2.0.0-2026-10-06-daytime-r1.pdf"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 45744733,
+      "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+      "savedFilename": "claude-design-v2.0.0-2026-10-06-late-night-r1.pdf"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/velori-design-exploration-v2.0.0.zip",
+      "status": 200,
+      "contentType": "application/zip",
+      "bytes": 97135688,
+      "sha256": "d854ba99597ea1c536201494a47612ba367f6de84bc1d700a0d62e42979db592",
+      "savedFilename": "velori-design-exploration-v2.0.0.zip"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/velori-design-exploration-starter.fig",
+      "status": 200,
+      "contentType": "application/x-xfig",
+      "bytes": 13891619,
+      "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca",
+      "savedFilename": "velori-design-exploration-starter.fig"
+    },
+    {
+      "route": "/claude-design/editions/v2.0.0/figma-companion.json",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 6468,
+      "sha256": "4883dc903507d11f34533734ec6adf80d2f160097659613849e4ad826824acf3"
+    }
+  ],
+  "markdown": {
+    "format": "markdown",
+    "displayName": "Markdown edition",
+    "downloadFilename": "claude-design-v2.0.0.md",
+    "publicUrl": "/claude-design/editions/v2.0.0/claude-design-v2.0.0.md",
+    "sha256": "fe14cf8bab29c4e3d0583cfc21275392d26cceb1bd7279e03f6c967b068096b3",
+    "bytes": 46311,
+    "version": "2.0.0"
+  },
+  "promptBlocksMatched": 6,
+  "captionsMatched": 10,
+  "pdfGlyphExtraction": "Bo\u017eana Radenkovi\u0107 preserved in both exact final PDFs",
+  "headerLimit": "Python preview HTTP does not apply candidate-headers.json. Host Content-Disposition and X-Robots-Tag are configuration checks, not deployed observations."
+}

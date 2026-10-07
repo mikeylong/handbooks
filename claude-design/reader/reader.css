@@ -1,3 +1,15 @@
 .chapter{margin-block:4rem}figure{margin-inline:0}.chapter-art{max-width:100%}.chapter-art img{max-height:360px;object-fit:contain}figure img{width:100%;height:auto}table table{margin:0;min-width:0}table td{vertical-align:top}td p{margin:.3rem 0}.table-scroll{overflow-x:auto}h2,h3,h4{scroll-margin-top:5rem}.contents-page a{display:block}.sidebar-nav ol{padding-left:1rem}.sidebar-nav a{display:block}button{cursor:pointer}.sidebar-meta{padding-top:1rem}
 .reader-screenshot{margin-block:2rem;break-inside:auto}.reader-screenshot-panels{display:grid;gap:1.25rem}.reader-screenshot-panel{min-width:0;break-inside:avoid}.reader-screenshot-label{font-family:var(--font-sans,Arial,sans-serif);font-size:.85rem;font-weight:600;margin:0 0 .5rem}.reader-screenshot-image{display:block;width:100%;margin-inline:auto}.reader-screenshot img{display:block;width:100%;height:auto;object-fit:contain;filter:none;background:#fff}.reader-screenshot-larger{display:inline-block;font-size:.8rem;margin-top:.35rem}.reader-screenshot figcaption{margin-top:.8rem;font-size:.9rem;line-height:1.5}.reader-screenshot-image:focus-visible,.reader-screenshot-larger:focus-visible{outline:2px solid currentColor;outline-offset:4px}@media print{.reader-screenshot-larger{display:none}.reader-screenshot img{max-height:240pt;width:auto;max-width:100%;margin-inline:auto}}
 .reader-screenshot-crop{display:block;position:relative;overflow:hidden;width:100%}.reader-screenshot-crop img{position:absolute;max-width:none!important;max-height:none!important;object-fit:fill;margin:0!important;height:auto}
+.design-workflow .workflow-group {margin:1.25rem 0;border:1px solid var(--line,#ccc);padding:1rem;border-radius:0}
+.design-workflow .workflow-group h4 {margin:0 0 .8rem;font-family:var(--font-sans,Arial,sans-serif);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
+.design-workflow .workflow-group ol {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;list-style:none;padding:0;margin:0}
+.design-workflow .workflow-loop ol {grid-template-columns:repeat(3,minmax(0,1fr))}
+.design-workflow .workflow-endpoint ol {grid-template-columns:1fr}
+.design-workflow .workflow-group li {min-width:0;padding:.75rem;border:1px solid var(--line,#ccc);display:grid;grid-template-columns:22px 1fr;gap:.3rem .55rem;font-family:var(--font-sans,Arial,sans-serif);font-size:.82rem;line-height:1.4}
+.design-workflow .workflow-group strong {font-size:1rem;align-self:center;overflow-wrap:anywhere}
+.design-workflow .workflow-group span {grid-column:2;font-size:.78rem;line-height:1.4}
+.design-workflow .workflow-logo {width:22px;height:22px;margin:0;object-fit:contain}
+.design-workflow .workflow-flow-arrow {text-align:center;font-size:1.25rem}
+.design-workflow .diagram-note {font-family:var(--font-sans,Arial,sans-serif);font-size:.85rem}
+@media(max-width:650px){.design-workflow .workflow-group ol,.design-workflow .workflow-loop ol {grid-template-columns:1fr}.design-workflow .workflow-group{padding:.8rem}}

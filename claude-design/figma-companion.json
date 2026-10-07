@@ -1,15 +1,5 @@
 {
   "schemaVersion": 1,
-  "name": "velori-design-system-configurator",
-  "version": "1.2.1",
-  "title": "Velori · Design System & Configurator",
-  "artifact": {
-    "filename": "velori-design-system-configurator.fig",
-    "route": "/claude-design/editions/v1.2.1/velori-design-system-configurator.fig",
-    "format": "native Figma .fig",
-    "sha256": "f5bde616c307c5d28dd4be0ca0f3647b9e2a6edb34e9093650ccaf7137d7a974",
-    "bytes": 13940422
-  },
   "license": {
     "ownedMaterials": "MIT",
     "copyright": "Copyright (c) 2026 Michael Long",
@@ -29,181 +19,31 @@
       "noticeText": "ISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n---\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
     }
   ],
-  "fonts": {
-    "references": [
-      {
-        "family": "Arimo",
-        "styles": [
-          "Regular",
-          "Bold"
-        ],
-        "weights": [
-          400,
-          700
-        ],
-        "currentLicense": "SIL Open Font License 1.1",
-        "licenseSource": "https://github.com/google/fonts/blob/main/ofl/arimo/OFL.txt"
-      },
-      {
-        "family": "Lora",
-        "styles": [
-          "Regular"
-        ],
-        "weights": [
-          400
-        ],
-        "currentLicense": "SIL Open Font License 1.1",
-        "licenseSource": "https://github.com/google/fonts/blob/main/ofl/lora/OFL.txt"
-      }
-    ],
-    "separateFontBinariesIncluded": false,
-    "fontSoftwareTerms": "Font references do not license font software under MIT. Preserve the actual font release’s copyright and license if distributing font software."
-  },
-  "export": {
-    "kind": "whole-file native Figma export",
-    "fileTitle": "Velori · Design System & Configurator",
-    "exportedAt": "2026-10-05T23:40:58.102Z",
-    "nativeBytesUnchanged": true
-  },
-  "contents": {
-    "pages": [
-      "01 Foundations",
-      "02 Components",
-      "03 Configurator",
-      "04 Source Assets",
-      "05 Store · Handbook exercise"
-    ],
-    "protectedReference": "Configure · White",
-    "exerciseFrames": [
-      "Store · Configure",
-      "Store · Review configuration",
-      "Store · Expression color menu",
-      "Store · Carry bag details",
-      "Store · Charging dock details",
-      "Store · Review · Image unavailable"
-    ],
-    "imageResources": [
-      {
-        "figResource": "images/ad883c325ed275a94033059b14a31e90c904e431",
-        "sourceAsset": "public/assets/velori/chalk-dock.png",
-        "bytes": 1372168,
-        "sha256": "69199dfe293b5fac4ca8408edc01b60dee4c8f8f4eab6db1ec2922c66c963133",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/3e5a1dc8b22cd60401093182274311ee1a0a914f",
-        "sourceAsset": "public/assets/velori/graphite-none.png",
-        "bytes": 1517528,
-        "sha256": "6dd86f8ef92d8dd84bbad26b5efca9b7657d51c816dd863a23ab2fa2b66c6839",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/ca208178c06d641666cf2c76e7640080f989d2d1",
-        "sourceAsset": "public/assets/velori/pebble-bag-shell-v2.png",
-        "bytes": 1597844,
-        "sha256": "5f5db0d9196c0d742793cc3439ec5ab6a56af89ab0d08693e5373fd09d859713",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/e01fb066b15f1330294d03fb00025fa0456c9571",
-        "sourceAsset": "public/assets/velori/chalk-none.png",
-        "bytes": 1363702,
-        "sha256": "6fce5c78206067f33b253c7671ae562cc44a057d16d8be6351a5af725f0be4c2",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/592b59aef0bcf3e53e62aecf9c3eee37ef49b1e8",
-        "sourceAsset": "public/assets/velori/chalk-bag.png",
-        "bytes": 1679995,
-        "sha256": "d945d3ccda8ad17c84a24b8b351a11c0af3445701a7e01d584a0351a5c7367c7",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/3b53d78be074494d2d2a8394a6134d66d1b025a9",
-        "sourceAsset": "public/assets/velori/graphite-dock.png",
-        "bytes": 1489693,
-        "sha256": "bec2e3123c9c2c8379422bea102cef572815b46f028d8996abc661280997de64",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/368b3560cd20ff240ad8efc44fe11b6ed9f926fa",
-        "sourceAsset": "public/assets/velori/graphite-bag-shell-v2.png",
-        "bytes": 1659739,
-        "sha256": "469c51fcda413faa530a0597abb006cc358d1cab77af213b99219746cc54ff68",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/37acc540c97587164fe1022a6be08f572babf907",
-        "sourceAsset": "public/assets/velori/pebble-dock.png",
-        "bytes": 1398129,
-        "sha256": "0b387ab55f7128508e1c904eb1c0fa6160a283f00adc0f92521a9b68b4a760f5",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/cd635d89af069215e6aa280fa5012f29cdb1ae58",
-        "sourceAsset": "public/assets/velori/pebble-none.png",
-        "bytes": 1474358,
-        "sha256": "f15487166b5a060131c7d9bfefbea20ab737f9c29d0239de14a51113cab62e19",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/1ce0b49e844636c054769de3376543e80cffde3b",
-        "sourceAsset": "public/assets/velori/face-friendly.png",
-        "bytes": 110532,
-        "sha256": "a6c5ca57ed770247b5d53fa7a4254e8f8233e324a7ab177532600c253c737b87",
-        "width": 1254,
-        "height": 1254
-      },
-      {
-        "figResource": "images/4b9b243ed8e3992e7dc9dedd08233511b61d985b",
-        "sourceAsset": "public/assets/velori/face-simple.png",
-        "bytes": 85648,
-        "sha256": "e3c23b6a47a846c8e5fec6667abe7b0ba5f26a9cd219d22fea8f716ec9552b93",
-        "width": 1254,
-        "height": 1254
-      }
-    ]
-  },
-  "verification": {
-    "status": "passed",
-    "freshImport": {
-      "status": "passed",
-      "date": "2026-10-05",
-      "destination": "Drafts",
-      "scope": "Same-account native import on a Professional plan; one nondefault Present journey.",
-      "presentChecks": 9,
-      "presentReceiptSha256": "66eb30c146dfe7aab7522b5c0532a2a4181971ce5aae56f270146cfe5d3d6372"
+  "title": "Velori design exploration starter and static Review continuation",
+  "handbookEdition": "2.0.0",
+  "approvalStatus": "candidate",
+  "origin": "Derived from the approved v1.2.1 native companion; original files preserved.",
+  "changes": [
+    "Starter omits completed Store exercise page and retains four source pages.",
+    "Continuation adds selected Review page with restored instances, styled text and variable bindings; no prototype or state wiring."
+  ],
+  "fontDelivery": "No font binaries bundled. The trial loaded Arimo and Lora through Google Fonts.",
+  "artifacts": [
+    {
+      "filename": "velori-design-exploration-starter.fig",
+      "role": "starting material",
+      "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca",
+      "bytes": 13891619,
+      "format": "native Figma .fig",
+      "recipientImport": "Starter imported into Claude Design; continuation exported from inspected editable native Figma document, fresh recipient Figma import not independently tested."
     },
-    "dependencyClosure": {
-      "status": "passed",
-      "trackedReceipt": "qa/v1.2.1/figma-import-verification.json",
-      "receiptSha256": "90a4b9d46460d7d80c8fca00cfb0fd1f8750815a79847a68c4ac46fc040a9597"
+    {
+      "filename": "answer-key/velori-review-continuation.fig",
+      "role": "static editable answer key",
+      "sha256": "749de1c6a878c5d86f163d78db68f47e898cc39e2be1f9f04bb0097f90790961",
+      "bytes": 13902566,
+      "format": "native Figma .fig",
+      "recipientImport": "Starter imported into Claude Design; continuation exported from inspected editable native Figma document, fresh recipient Figma import not independently tested."
     }
-  },
-  "usage": {
-    "setup": "Import the .fig into your own Figma Drafts, record your new file URL and actual local identities, then verify local components, variables, images, destinations and the prototype journey.",
-    "baselineContext": "Completed Store/Review frames are comparison material. Exclude them and their answer-key content from the initial Claude Design generation context.",
-    "separateDownloads": "This native companion is separate from the Velori React source ZIP and the publishing-toolkit ZIP.",
-    "planRequirement": "The variable-driven native journey requires a paid Figma Design or eligible Education plan and can edit access to the working file. Starter can import the .fig but does not provide variables, expressions or conditional logic in prototypes.",
-    "planRequirementSource": "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma",
-    "importSource": "https://help.figma.com/hc/en-us/articles/360041003114-Import-files-to-the-file-browser",
-    "planComparisonSource": "https://help.figma.com/hc/en-us/articles/360040328273-Compare-Figma-plans-and-features"
-  },
-  "limitations": [
-    "Arimo/Lora in Figma differs from Arial/Georgia in React.",
-    "Authored native frames are 1024×768; one imported journey does not prove all 72 native configurations, narrow layout, reload/storage, real image failure, Retry or browser keyboard/focus parity.",
-    "Native Present had screen-reader support disabled.",
-    "The native Figma companion contains no separately packaged Anthropic support.js runtime; captured Claude Design runtime and private owner/account/upload receipts remain excluded.",
-    "Each reader must record and verify their own imported copy; this manifest does not certify a future import.",
-    "The imported-content disclosure read covers accessible fields. Private/shared plugin metadata and opaque binary fields are not certified sanitized."
   ]
 }

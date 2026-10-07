@@ -1,664 +1,465 @@
 ---
 title: Claude Design Field Guide
-subtitle: From a living design system to a production-ready handoff
-edition: October 5, 2026 | Version 1.3.0
-audience: Product managers, product designers, design-system leads, and engineers
-chapter_art: Approved chapter illustration pairs retained from version 1.1.0
+subtitle: Explore, refine, and hand off an interactive product design
+edition: October 6, 2026 | Version 2.0.0
+status: Review candidate, not approved for publication
+audience: Product designers and product practitioners working with an existing product
+chapter_art: Frozen approved illustration pairs, remapped to the revised chapters
 diagram_system: Shared publishing toolkit with book-owned semantic definitions
 ---
 
 # Orientation
 
-Use this guide to extend an existing product through Claude Design, Claude Code, and Figma. The recurring example is **Velori**, a personal-robot store. A shopper chooses a finish, face, expression color, and accessory, then checks the configuration before returning to edit.
+Use Claude Design to explore a product change, compare directions, refine a connected experience, and prepare the selected design for its next owner. Begin with the design foundations and screens your team uses in Figma, or with the components and product behavior already implemented in code.
 
-The assignment starts with a working configurator. Preserve its identity, product photographs, choices, captions, and selection behavior. Add one bounded review journey. The public package includes a completed React answer key, frozen reference, reusable components, prompts, and local validation scripts. Historical native packets and their metadata remain private and are excluded from the download. Follow Chapters 2 and 3 to define and validate your source system before creating a new review screen.
+The recurring exercise is **Velori**, a personal-robot configurator. A shopper chooses a finish, face, expression color, and accessory. Your task is to explore how the shopper should review those choices before confirming the configuration. Keep Velori’s identity and product imagery while making the review easier to understand and edit.
 
-Claude Design supports interactive prototypes and a Claude Code handoff. Claude Code also provides a `/design` command for artboards. Choose the surface that can produce the required result, then test its interactions and handoff. See the [Design getting-started guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) and [Claude Code command reference](https://code.claude.com/docs/en/commands).
+Finish the main exercise with a reviewed interactive prototype, a decision record, and a usable handoff. Continue to Claude Code when the next job is implementation. Continue in Figma when the next job requires editable design work there. Each destination has its own completion check.
 
-## Start the sample
+## Choose your starting route
 
-Download the [Velori sample](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip), extract it, then run these commands from its `velori-store` folder:
+| Starting material | Preparation | What Design receives |
+|---|---|---|
+| Figma foundations and screens | Select the relevant pages, components, fonts and assets | A visual system and a starting screen |
+| Existing codebase and component library | Select the frontend library, tokens, assets and baseline behavior | Implementation context for the same design task |
 
-```sh
-cd velori-store
-npm ci
-npm run dev
-```
+You need access to Claude Design in your intended account and organization. For a Figma route, use a Figma account and a copy you can inspect. For a Code route, use Claude Code and a local project you can run. Download the [Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.0.0/velori-design-exploration-v2.0.0.zip); no author-private organization or Figma file is required. Import the supplied native file into your own Drafts when you need to work in Figma.
 
-Open http://127.0.0.1:4197. Use Node.js 22 and npm. The first install requires the npm registry. Product assets ship in the folder, and the store runs without CLEAR, a Claude account, or a Figma account. If the port is occupied, choose another port and use the address Vite prints.
+The walkthrough targets the standalone Design beta at `claude.ai/design/`. Claude also documents Design in conversations, Artifacts and Claude Code. Controls and system migration differ between those experiences. Follow one surface throughout a run, and record which surface you used. See the [current Design guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
 
-Select **Graphite**, **Simple**, **Amber**, and **Carry bag**. Open accessory details, browse Charging dock, and return. Continue to review, then edit. Reload. The robot, caption, controls, and summary should still agree.
-
-<!-- FIGURE s01-start -->
-
-The completed review screen is new sample behavior. For the exercise, provide the configurator and accessory details as the baseline and ask Claude Design to recreate the review journey. Keep the worked sample beside your result for comparison. Payment, inventory, accounts, shipping, and order submission remain outside the brief.
-
-## What you will produce
-
-1. A preservation brief with a named configuration fixture.
-2. A React system imported into your chosen Claude Design workspace.
-3. A generated review journey that retains the selected values.
-4. An actual handoff that runs from a new local folder.
-5. A bounded React implementation with navigation and persistence checks.
-6. A native Figma working copy with component and variable identity verified.
-7. A review record that separates the app, native tools, candidate package, and publication.
-
-## Choose the destination first
-
-Confirm the intended account, organization, selected system, and project before uploading. Claude Code login and Design read/write authorization are separate steps when `/design-login` requests authorization. Use the same intended account for that browser flow. If access fails, check the active organization and Design eligibility before retrying the upload. The [Design admin guide](https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans) describes organization settings.
-
-Download the [Velori native Figma file](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig) and its [companion manifest](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/figma-companion.json) separately from the React ZIP. Import the `.fig` file into your own Figma Drafts and record the new file URL and companion SHA-256. Preserve the supplied source pages and reference frames; create a separate page for your work. The completed Store handbook exercise page is an answer key for comparison, not initial generation context.
-
-<!-- FIGURE s02-figma-import -->
-
-For the variable-driven native journey, use a paid Figma Design plan or eligible Education plan with edit access. Starter can import the file, but [variables in prototypes](https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma) require those plan features. Confirm this access before starting the Figma work.
-
-The Velori sample source, documentation, frozen reference, imagery, and authored native Figma companion use the MIT license. Keep the copyright and third-party notices when redistributing them. Arimo and Lora are font references; no font software is included in the companion. Captured Claude Design source and runtime remain in the private review archive and outside these downloads.
+<pagebreak>
 
 ## The workflow
 
-<!-- DIAGRAM workflow-loop -->
+<!-- DIAGRAM design-workflow -->
 
-| Stage | Working tool | Observable result |
+Figma foundations/screens or an existing codebase/component library feed the same Claude Design loop: brief, explore, choose, refine, connect, and review. The main endpoint is a reviewed prototype ready for handoff. A selected destination can lead to an implementation in Claude Code or continued design in Figma. Review findings return to the Design loop.
+
+| Point | Working tool | Observable result |
 |---|---|---|
-| Frame | Product brief and local app | Preserved choices and bounded extension |
-| Ground | Claude Code and Claude Design | Imported components and photos load |
-| Extend | Claude Design | Configure, details, review, and edit agree |
-| Specify | Design and team review | Navigation, focus, reload, and recovery defined |
-| Map | Design and engineering | Components and state ownership identified |
-| Hand off | Claude Design to Claude Code | Captured source and dependencies run locally |
-| Implement | Claude Code | React change passes the journey checks |
-| Reconcile | Figma | Editable frames and native prototype agree |
+| Start | Figma or existing codebase | Named source material and a bounded user problem |
+| Design loop | Claude Design | Compared alternatives and a coherent interactive journey |
+| Main endpoint | Claude Design and people reviewing the design | A reviewed prototype and recorded decisions |
+| Engineering destination | Claude Code and the recipient’s project | An implementation reviewed against the selected design |
+| Design destination | Figma | Editable work with required library relationships inspected |
 
-The configurator, accessory details, review, and image recovery share the same four configuration values. Browsing an accessory must not change the selected accessory. An unavailable photo must not erase the shopper’s choices.
-
-<!-- DIAGRAM surface-continuity -->
+The chapter sequence is the author’s synthesis of official capabilities and reported practice. The exercise asks you to demonstrate your own result. A screenshot, a successful import, or a generated explanation cannot establish that an interaction works.
 
 <pagebreak>
 
-<!-- CHAPTER 01 | Decide what is authoritative | Preserve a working product before asking an assistant to extend it. -->
+<!-- CHAPTER 01 | Choose the task and starting material | Start with a user problem and the source your team actually maintains. -->
 
-# Decide what is authoritative
+# Choose the task and starting material
 
-A design-system request can refer to component anatomy, React behavior, tokens, screenshots, or product rules. Each source answers a different question. Declare which source governs each decision before generation.
+Define a small change that a person can review. “Improve the product” leaves the screen, user task and desired behavior unspecified. “Help a shopper review a configuration and return to edit without losing choices” gives the design a clear job.
 
-## Run your working copy
+## Write the brief
 
-From the extracted package, run `npm ci` and `npm run dev`. Open http://127.0.0.1:4197. Use Node.js 22 and a free local port. Choose Graphite, Simple, Amber, and Carry bag, follow details → review → edit, and reload before changing the app. The README provides reset and keyboard instructions. The assignment adds review to the supplied configurator; the completed sample is the expected result. Commerce remains outside the brief.
+Name the person, the action, the problem, and the decisions you want to explore. Identify the behavior and visual identity that must remain stable. Keep payment, inventory, accounts, shipping, and order submission outside the Velori exercise.
 
-## Establish the source order
+```text
+A Velori shopper has configured a robot and wants to check the choices before confirming. Explore alternatives for reviewing that configuration and returning to edit. Preserve the product identity, real imagery, finish, face, expression color and one-accessory rule. Compare hierarchy and editing approaches. Do not add checkout or imply that an order has been placed.
+```
 
-1. The consumer application governs identity, imagery, configuration values, and captions.
-2. The React components govern props, selection behavior, keyboard interaction, and rendering.
-3. Tokens govern color, typography, spacing, and control dimensions.
-4. The Figma working copy governs native anatomy, variants, variables, and prototype wiring.
-5. The approved brief governs the new review journey.
+Use a non-default fixture throughout review: Graphite finish, Simple face, Amber expression, and Carry bag. The fixture makes stale imagery or a reset to defaults easier to notice. The chosen design must also work when no accessory is selected.
 
-The source snapshot and manifest retain copied file hashes, source commit, exclusions, and the copy date. The reference is frozen. New implementation belongs beside it, so a later correction cannot quietly rewrite the starting point.
+## Name what each source owns
 
-## Define the clean baseline
-
-Preserve the 1024 × 768 composition, finish and face choices, expression colors, accessory photographs, captions, and configuration persistence. The baseline uses a dropdown for expression and one accessory choice.
-
-Normalize the two teaching violations: Continue uses Ink with white text, 12px corners, and 48px height. Accessory cards have 24px gaps. Keep the purple Continue button and 8px accessory gaps as separately named fixtures. Color chips and independent accessory checkboxes remain follow-up exercises.
-
-The package uses its own storage namespace. The package does not import the source owner’s fixes, proposals, review state, or saved configuration. Reset changes only the sample key.
-
-## Name the fixture
-
-| Value | Default | Review fixture |
-|---|---|---|
-| Finish | Chalk | Graphite |
-| Face | Friendly | Simple |
-| Expression | White | Amber |
-| Accessory | Dock | Carry bag |
-
-Use the non-default fixture in every review. A screen that always displays the defaults can appear correct while ignoring the shopper’s choices.
-
-::: prompt Claude Design | Preserve the configurator
-Inspect the supplied Velori configurator and component library. Record the choices, asset composition, captions, storage behavior, and reusable exports. Preserve the existing identity and 1024 × 768 reference layout. Use the documented expression dropdown and one accessory choice. Describe the bounded change needed for Continue to open Review configuration, with edit and Back retaining the four values. Do not add payment, stock, accounts, shipping, or order submission.
-:::
-
-## Chapter checkpoint
-
-Record the source revision, working package, default and review fixtures, allowed changes, and preserved behavior. Keep any unresolved disagreement between code, tokens, and Figma in the review record.
-
-<pagebreak>
-
-<!-- CHAPTER 02 | Prepare the Velori system | Define the source rules before importing the React library. -->
-
-# Prepare the Velori system
-
-Prepare a reusable source system before asking Claude Design to generate a screen. A collection of working components can still leave type, spacing, layout, and usage rules undefined. Claude Code can help inspect and document those rules. The source preparation and checks below are this handbook's recommended procedure.
-
-Velori uses the React codebase route described in Claude's [design-system setup guidance](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design). `/design-sync` converts and imports that source. The asset-based setup route is an alternative for other inputs; the Velori exercise does not require both routes or manual entry of every design value.
-
-## Separate the starting screen from the answer key
-
-Start an extracted copy using its README. Keep a second, unchanged copy for comparison. The public package contains a completed React review screen for comparison. It contains no historical native Code packet or native project pin. The answer key does not complete your new native exercise.
-
-Supply the configurator, expression menu, accessory details, and unavailable-image configurator as the generation baseline. Use the 13 exports in `src/library.jsx` through `.design-sync/host-entry.mjs`. The application barrel `src/index.js` also exposes the completed Review screen and is not the import entry. Exclude `src/ReviewConfiguration.jsx`, completed answer-key guidance, historical native mappings, and `reference/` from the import and initial generation context. After the system passes Chapter 3, ask Design to create a new review screen, then compare it with the answer key.
-
-## Inspect the source package
-
-| Input | What it establishes |
+| Decision | Source to inspect |
 |---|---|
-| reference/index.html and reference/design-system.js | Frozen composition and documented consumer rules |
-| src/library.jsx and src/index.js | Named components, props, controlled values, and interactions |
-| tokens.json and src/tokens.css | Existing named colors, shapes, sizes, and font families |
-| src/velori.css | Applied type, spacing, layout, and state rules, including literal values |
-| /#specimens and reference/ | Component states and screen comparators |
-| public/assets/velori/ and its manifest | Product photos, masks, layers, captions, and asset identity |
-| .design-sync/conventions.md and previews/ | Import usage guidance and preview cases |
-| Imported Figma working copy | Native anatomy, variants, variables, and font correspondence |
+| Brand, type, component anatomy and layout patterns | Maintained Figma foundations or design-system guidance |
+| Existing runtime behavior and component API | Running application and implementation library |
+| New review hierarchy, content and navigation | The brief and the selected Design direction |
+| Required handoff format | The recipient’s next task and working tool |
 
-Read `docs/inventory.md` and `provenance/source-freeze.json` before changing the source. Record the source revision and manifest hash. Keep the frozen reference unchanged. Use code for executable behavior, documented consumer rules for the normalized baseline, and Figma for native correspondence. Record disagreements before choosing a value.
+Resolve disagreements before generation when they affect the task. If the Figma button and the running app use different radii, record which version the prototype should follow and why. A model should not settle an ownership decision by silently blending the sources.
 
-## Define rules and component use
+## Keep the answer out of the prompt
 
-Inventory every color role, type role, spacing value, radius, control size, layout dimension, and interaction state used by the starting screens. Include CSS literals: the token files alone do not define the complete system. For each rule, record its value, source path and selector or export, intended use, and whether it is observed, inferred, proposed, or unresolved.
+Use foundations, components, the configurator and source assets as starting context. Keep completed review layouts, solution prompts and implementation answers beside the exercise for later comparison. An answer key supplied at the start prevents you from seeing which review hierarchy Claude would propose from the starting screen.
 
-Document each component's anatomy, valid props, states, composition constraints, and usage. A prop type can tell you that `accessory` accepts `bag`; usage guidance should also tell you that browsing bag details does not change the selected accessory. The app owns configuration and navigation. Controlled components receive values and callbacks.
+The starter retains its original source pages. Work in a duplicate or separate project. Record the input filenames and the destination so another reviewer can tell which result belongs to this run.
 
-| Export | Responsibility |
+## Chapter checkpoint
+
+You have a brief, named starting material, a non-default fixture, and a recipient or review audience. The completed answer has not entered the initial context.
+
+<pagebreak>
+
+<!-- CHAPTER 02 | Bring your system into Claude Design | Inspect the imported result before asking it to carry a new design. -->
+
+# Bring your system into Claude Design
+
+Choose the setup route that matches your source. [Anthropic’s setup guide](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design) describes Figma and asset input for visual foundations, and `/design-sync` for existing React systems. Inspect the extraction rather than assuming both routes produce equivalent components.
+
+## Bring in Figma foundations
+
+In the standalone experience, open Design systems, choose Create design system, and select Create here. The setup form accepts a `.fig` file alongside fonts, logos and assets. Supply the company or system name and explain what the product does. Include the starting screen so Claude sees how the system is used.
+
+The Velori trial attached four source pages and extracted 16 component families. The Figma source has 11 text styles, but Design reported none on import. It reconstructed the type scale from the Foundations notes and estimated the Product size. Compare the imported text against Figma before using it as a reference; the source Product style is 27px, while the import estimated 28px. Arimo and Lora load through Google Fonts; their binaries are not inside the native file.
+
+The setup description mistakenly requested violet. The importer found no violet token and kept the Ink primary action specified by the Figma rules. Correct the brief when it conflicts with the named source. Do not add a new accent to make the two agree.
+
+<!-- FIGURE s01-import -->
+
+Use the exercise starter rather than the companion’s completed Store page. Attach licensed fonts separately when the source only references a font family. Record any substitution. Keep the system private during the trial and confirm the selected system before starting a product project. This walkthrough explored files in a separate `trial/` directory inside its isolated system project. The UI offered team publication for new-project use; private selection from a separate product project was not tested. An organization default may belong to a different product.
+
+Inspect the resulting system’s colors, typography, control shapes, selection marks, product photographs, and one representative component. Compare a generated starting screen with the source at the same viewport. An extraction can preserve colors while losing component anatomy or asset composition.
+
+## Bring in implementation context
+
+When the source is a working React library, open its project in Claude Code and use the native `/design-sync` command. Supply the component library, styles, tokens, images and usage guidance needed for the configurator. Exclude the completed Review implementation from baseline context.
+
+The bounded code-first comparison used an isolated copy of the earlier code-derived system. It reused eight exported Velori components and preserved the four choices when Amber changed to Mint. Its Arial/Georgia stacks differed from the Figma route’s Arimo/Lora families. The comparison did not repeat the full connected journey. Its choices survived navigation, but they reset after a page reload.
+
+<!-- FIGURE s02-code-input -->
+
+Keep detailed file selection and runtime adaptations in the package’s supporting material. The main reader should know what is being imported, why the selected source matters, and which gaps remain. Inspect the returned system and generated starting screen before exploring the new review.
+
+## Correct the smallest relevant gap
+
+If a selected choice uses the wrong mark, identify the source component or reference and ask for that correction. If imagery is missing, repair the asset input before judging the layout. If the system is from the wrong organization, stop the generation and choose the intended destination.
+
+```text
+Compare this starting screen with the supplied Velori configurator. Check the brand, heading, choice groups, expression menu, selected marks, button and configured product image. Name mismatches and missing source material. Correct the source rule for each mismatch before proposing the new review screen.
+```
+
+Keep a before-and-after image when the correction matters to later screens. Regenerate one adjacent surface to check whether the correction carries forward. Do not turn the exercise into an exhaustive audit of every component that the task does not use.
+
+## Chapter checkpoint
+
+The starting screen uses the intended visual system. Required assets load, substitutions are visible, and unresolved import gaps have a named owner.
+
+<pagebreak>
+
+<!-- CHAPTER 03 | Explore design directions | Compare different ways to help the shopper review and edit. -->
+
+# Explore design directions
+
+Ask for alternatives that differ in how the person completes the task. Three copies with different colors do little to expose a useful decision. Compare information hierarchy, image prominence, editing behavior, and the relationship between review and confirmation.
+
+## Generate two or three alternatives
+
+Ask Claude Design to keep the alternatives separately identifiable. Record which files or views were created. Export a copy of any direction you need to preserve before requesting a large change. Current [Design documentation](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) describes alternatives and warns that version history is not available.
+
+```text
+Explore three directions for reviewing a configured Velori robot. A: a compact summary beside the product. B: a dedicated review screen with clear edit links. C: a guided review that groups the choices. Keep the same choices, product imagery and visual language. Make the differences about hierarchy and interaction. Label and retain each direction so we can compare them before refining one.
+```
+
+## Compare the actual views
+
+| Question | Evidence to examine |
 |---|---|
-| Brand, StoreHeader | Product identity and navigation shell |
-| PrimaryButton, VeloriIcon | Reusable actions and icon roles |
-| FinishChoice, FaceChoice | Controlled finish and face choices |
-| ExpressionSelect | Dropdown, selected value, open state, and keyboard behavior |
-| AccessoryChoice, ChoiceGroup | One accessory choice and grouped controls |
-| SelectionMark | Selected-state marker inside a positioned choice tile |
-| ProductPreview | Photo, finish, face, expression, caption, and recovery |
-| AccessoryPhoto | Carry bag or Charging dock detail imagery |
-| ConfigurationSummary | The four chosen values |
+| Can the shopper identify the configured product? | Product image, caption and selected values agree |
+| Can the shopper find an incorrect choice? | Labels and hierarchy make the four choices scannable |
+| Can the shopper edit that choice? | The edit action has an understandable destination |
+| Does the screen overstate completion? | Confirmation copy avoids an implied order or payment |
+| Does the design fit a narrow viewport? | Essential choices and actions remain usable |
 
-Three finishes, two faces, four expression colors, and three accessory values produce 72 configurations. Preserve those values. Color chips and independent accessory checkboxes remain extension exercises.
+Operate each alternative. A promising composition may hide a confusing Back action or erase choices when the shopper edits. Compare the same fixture so the layout difference is visible.
 
-::: prompt Claude Code | Prepare the source system
-Work in this extracted Velori package. Inspect reference/index.html, reference/design-system.js, src/library.jsx, src/index.js, src/main.jsx for starting-screen copy and navigation, src/model.mjs for labels and captions, tokens.json, src/tokens.css, src/velori.css, docs/inventory.md, the component previews, the asset manifest, and the identified Figma working file. Prepare docs/system-definition.md and docs/source-conflicts.md before uploading. Inventory colors, typography, spacing, layout, component anatomy, valid props, states, and usage. Include CSS literals. Cite the source path and selector, export, or Figma identity for each rule. Separate directly observed rules, inferred compositions, proposed additions, and unresolved conflicts. Preserve existing names and consumer behavior. Explain which useful values need named tokens or usage guidance; make source changes only after the choices are settled. Preserve the frozen reference, product imagery, dropdown, one-accessory rule, and 72 configurations. Normalize Continue to Ink/white, 12px corners, and 48px height, with 24px accessory gaps. Keep purple Continue and 8px gaps only as named teaching fixtures. Record Arial/Georgia to Arimo/Lora mapping and weight or measurement differences. Project exact configure and accessory-details wording, caption construction, and details routing into docs/native-baseline.md. Map original source references to their imported bundle, CSS, and component guidance paths. Exclude ReviewConfiguration, completed Review implementation, and the historical handoff from the baseline system. Stop before upload if an unresolved decision affects the starting screens. Do not invent a component or silently accept a proposed pattern.
-:::
+<!-- FIGURE s03-directions -->
 
-Review the two documents and any proposed source diff. Resolve required conflicts before importing. Project their accepted starting-screen rules into `docs/native-baseline.md`; include that document and the bounded product brief in the configured guidelines. Include exact configure and accessory-details copy, caption construction, and details routing, including the no-accessory case. Record both the original source identities and the paths actually present in the imported bundle. Page-level copy is not supplied by component prop types. Keep completed Review answers, historical mappings, and the frozen comparison source outside the uploaded context. Verify the actual converted guidance inventory, not only the local files. The React package uses Arial and Georgia; the native Figma system uses Arimo and Lora. Record the differing type weights and measurements. A font substitution does not establish pixel parity.
+The trial compared A, a compact summary with editing in place; B, a dedicated review with a return to configuration; and C, a guided check of three choice groups. Each approach was operated. B was selected because review and configuration have clear roles. The accepted tradeoff is an extra transition to edit a choice.
 
-Open `/#specimens` and compare the prepared source with the frozen 1024 × 768 reference. Inspect default, selected, focus, open, loading, and unavailable states where applicable. Compare `/?fixture=purple-continue` and `/?fixture=accessory-gap-8` with the accepted baseline. Run `npm run check`, `npm run build`, and the README's browser validation after any source change.
+## Select with reasons
 
-## Import the prepared draft
+Record one sentence for the selected direction, the tradeoff you accepted, and the refinement to make next. For example: “Choose the dedicated review screen because each choice is easy to scan and edit. Keep the image smaller on narrow screens so the summary and action appear sooner.”
 
-Open Claude Code in the extracted folder. Check the installed `/design-sync` and `/design-login` commands. Complete separate Design authorization when requested. In Claude Design, verify the intended account and organization in the switcher. Record whether you will create a new system or update an explicitly chosen system, and record its destination before uploading. The reader configuration has no owner project pinned.
-
-This walkthrough uses the standalone `claude.ai/design` project surface. If that address redirects to conversation artifacts, use the visible **Visit standalone homepage** link before continuing. Inspect the returned system there before creating a project. Conversation design-system artifacts are a separate route outside this capstone; their inventory does not establish that a standalone system exists. If the installed skill cannot target the chosen surface, stop and resolve the destination before creating anything.
-
-New-system creation may require its own approval. The inspected native tool reports that a new system initially uses organization-wide visibility. Check the intended visibility before creation and inspect the Share menu before uploading files. Stop if the selected destination cannot meet the agreed access boundary.
-
-<!-- FIGURE s03-private-import -->
-
-Type `/design-sync` yourself at the Claude Code prompt and submit the native command. Asking Claude to run it in a pasted message does not invoke the command. After it opens, supply the import instruction below with the library, prepared tokens and CSS, conventions, previews, and assets. Preserve the local conversion report and the returned upload result. Inspect the returned system URL in the intended organization.
-
-::: prompt Claude Code | Import the prepared Velori draft
-Import the prepared Velori source system into the recorded destination using the native command already opened. Use .design-sync/config.json, src/library.jsx, src/tokens.css, src/velori.css, docs/native-baseline.md derived from the reviewed system definition and resolved source-conflict decisions, conventions, previews, and packaged assets. Exclude the frozen reference, ReviewConfiguration, completed answer-key guidance, historical handoff and mappings, node_modules, validation outputs, and private owner state from upload. Confirm the account, organization, new or existing system, and destination before sending files. Check all 13 baseline exports and their usage guidance. Use the supplied declared source adapter so assets and their hash inventory exist before native validation and capture. Include assets/** in the upload scope, review obsolete asset paths, and verify the product files reached the recorded destination. Recapture asset-dependent previews whenever the asset inventory changes. Preserve the conversion report, file inventory, returned result, and system URL. Stop on a rejected upload or unresolved source conflict. Keep the system private; do not publish it or change the organization default.
-:::
-
-The supplied source adapter copies the product assets during conversion, before the native driver validates and captures cards. It records their hashes in `guidelines/velori-runtime-assets.md`, which participates in the native upload fingerprint. `node .design-sync/package-assets.mjs ds-bundle` can repeat that same copy. Include `assets/**` in the approved upload scope and review obsolete asset paths before deletion. Verify the files in the returned inventory. The native skill's default path list omits this sample-specific directory.
-
-An asset-only change can trigger upload without invalidating component grades. Recapture and visually inspect ProductPreview and AccessoryPhoto whenever that asset inventory changes. If a capture reports a missing SVG mask, inspect its response type: the mask must be served as `image/svg+xml`. Preserve and document a local capture-helper correction before repeating the native validation; do not replace the product image or accept a failure placeholder as a successful preview.
-
-The import adapter resolves product assets relative to the compiled system script. Inspect those paths after conversion. A preview at the local origin root can work while the same code fails beneath a hosted project path.
+Preserve rejected directions as comparison evidence. Ask Claude to refine the chosen direction by name. A selection record prevents later feedback from accidentally combining all three approaches.
 
 ## Chapter checkpoint
 
-Keep the source definition, resolved conflict record, component usage, source diff, local checks, and actual import receipt together. Proceed to native inspection only when the destination matches and the accepted source describes the starting screens.
+You have separately visible alternatives, a selected direction, a reason for the choice, and one concrete refinement priority.
 
 <pagebreak>
 
-<!-- CHAPTER 03 | Validate the imported system | Prove source reuse and correction before extending the store. -->
+<!-- CHAPTER 04 | Refine the design | Use conversation, targeted comments and direct editing for distinct changes. -->
 
-# Validate the imported system
+# Refine the design
 
-Open the imported Velori system in Claude Design. Inspect its component cards, usage guidance, type and spacing rules, and photographs. Select that exact system in a new project. Recreate known screens before generating Review configuration.
+A first generation establishes a direction. Refine the selected screen until its hierarchy, content and interaction make the task clear. Keep the fixture and selection rationale visible while changing the design.
 
-<!-- FIGURE s04-inspect-system -->
+## Use chat for a structural change
 
-## Generate the known screens
+Explain the behavior and the reason when a change affects the summary, image and actions together. Ask for the result, then inspect the screen and the journey that changed.
 
-Use the frozen reference and accepted source definition as comparators at 1024 × 768. Generate the default configurator with Chalk, Friendly, White, and Dock, then change to Graphite, Simple, Amber, and Carry bag. Open the expression menu and both accessory-detail screens. Browsing Charging dock must leave Carry bag selected. Return to the configurator and inspect its caption and selected controls.
+```text
+Refine direction B. Keep review separate from configuration. Put the four choices in a scannable summary and place an Edit configuration action beside them. On narrow screens, show the summary before secondary product details. Preserve selected values when returning to the configurator.
+```
 
-Render the unavailable-image configurator with the same four non-default values retained. Check that recovery preserves them. Keep Review configuration out of these tests; it is the new composition introduced in Chapter 4.
+Avoid accepting “fixed” as the result. Follow the affected navigation and compare the selected values yourself. Keep structural changes small enough that you can understand their consequences.
 
-::: prompt Claude Design | Recreate known Velori screens
-Use the selected Velori system and accepted source definition. Create one responsive interactive store with one shared configuration and one mounted screen at a time. Use fixture controls or routes to inspect the required states while keeping component IDs unique. Preserve the supplied storage and focus behavior. Recreate the configurator at 1024 × 768 with Chalk, Friendly, White, and Dock, then Graphite, Simple, Amber, and Carry bag. Show the expression menu, Carry bag details, Charging dock details, and unavailable-image configurator. Use the actual named components, controlled props, tokens, and product assets. Keep selection, photograph, mask, caption, and labels consistent. Browsing another accessory must not change selection. Preserve dropdown keyboard behavior. Identify missing or unverifiable source rules before substituting them. Do not add Review configuration yet.
-:::
+## Use a comment for a local correction
 
-Inspect the actual interactive result. Check pointer and keyboard selection, menu cancellation, details return, asset loading, and image recovery. Save screenshots and the generated source or component references. A matching static photograph does not establish controlled state.
+Select or comment on the exact target in the canvas, then name the change and its purpose. “Make this better” gives no deciding fact. “Keep the accessory label and selected value together so Carry bag is easy to confirm” gives the correction a job.
 
-## Sample ten elements for fidelity
+The trial comment targeted “Review your Velori.” and requested “Check your configuration” at the same size. The saved file and reloaded view showed the new heading.
 
-| Element | Source to inspect |
+<!-- FIGURE s04-comment -->
+
+Save the text of a consequential comment in the decision record. Anthropic documents intermittent comment persistence problems. If a comment disappears or is missed, send the same feedback through chat and verify the rendered result. A missing comment is a feedback-delivery failure, not proof that the design request was rejected.
+
+## Edit directly for a quick visual adjustment
+
+Use the canvas’s direct editing controls for a local alignment, size, spacing or copy adjustment that the selected surface supports. Observe which element is selected before changing a property. Check the full composition afterwards, including a narrow viewport.
+
+The direct editor changed the paragraph in the preview, but Save reverted it. The surface warned that automatic edits were unsupported for that file. The same copy request succeeded through chat. Check the saved file or reload before counting a direct edit as complete; use a documented fallback when the native editor cannot save the change.
+
+<!-- FIGURE s05-direct-edit -->
+
+Direct editing does not settle interaction behavior. An action moved within the layout still needs a useful label, working destination and visible focus. Record the before and after when an edit materially changes the screen.
+
+## Recheck the chosen direction
+
+After a batch of changes, return to the selection rationale. Check whether review is still easy to scan and edit. Remove a refinement that improves one detail while obscuring the primary task. Keep a short decision record rather than a transcript of every prompt.
+
+## Chapter checkpoint
+
+The selected design has a structural refinement, a verified local correction, and either a saved visual edit or a recorded editor limitation with a verified fallback. The original selection rationale still describes the result.
+
+<pagebreak>
+
+<!-- CHAPTER 05 | Build the connected experience | Make the adjacent screens behave as one shopper journey. -->
+
+# Build the connected experience
+
+Develop the surfaces needed to experience the selected direction. For Velori, the configurator, accessory details and review share the same four choices. Each surface should make its place in the journey clear.
+
+## Connect the screens
+
+```text
+Connect the selected review direction to the supplied configurator and accessory details. Configure opens Review configuration. Edit returns to Configure with the choices retained. Browsing Charging dock details while Carry bag is selected must keep Carry bag selected until the shopper explicitly changes the choice. Keep the product image, caption and summary consistent across the journey.
+```
+
+Use explicit names for navigation actions. Define whether Back returns to the previous surface or always to configuration. A review action should not silently confirm an order. Give Configure, Review, Edit, Back and Retry an observable result.
+
+<!-- FIGURE s06-connected -->
+
+In the trial, Dock details previewed Dock while Carry bag remained selected. Returning to configuration and review retained the selected choices.
+
+## Add a recovery state
+
+When an image is unavailable, keep the configuration summary visible. Explain what could not load and offer a useful recovery or editing action. Retry should attempt to load the asset rather than showing a success message unrelated to a request.
+
+| State or transition | Design requirement |
 |---|---|
-| Brand and navigation | Brand, StoreHeader, identity and icon rules |
-| Page heading | Accepted type role and applied CSS |
-| Continue | PrimaryButton, Ink/white, 12px radius, 48px height |
-| Finish choice | FinishChoice anatomy and selected state |
-| Face choice | FaceChoice anatomy and selected state |
-| Expression dropdown | ExpressionSelect anatomy, menu, focus, and keyboard use |
-| Accessory choice | AccessoryChoice, one value, 24px gaps |
-| Product imagery | ProductPreview, original assets, masks, and composition |
-| Caption | Configuration-derived copy and accepted caption type |
-| Screen layout | Accepted columns, spacing, alignment, and narrow behavior |
+| Configure to review | The four choices are retained |
+| Review to edit | Selected controls agree with the summary |
+| Browse another accessory | Browsing does not select the accessory |
+| No accessory | The summary states the choice clearly |
+| Image unavailable | Choices and navigation remain usable |
+| Narrow viewport | Summary, edit and continuation remain reachable |
 
-For each element, save its source identity or rule reference and classify the result as **exact reuse**, **valid composition**, **cosmetic resemblance**, **invented replacement**, or **unverifiable**. Exact reuse points to the actual source component or token. A valid composition assembles accepted components and rules without replacing them. Appearance alone cannot establish either classification.
+For a prototype, distinguish demonstrated behavior from simulated behavior. State when an unavailable state is deliberately staged. Test a real missing resource before claiming image-request recovery. Keep prototype-only shortcuts in the handoff record.
 
-::: prompt Claude Design | Audit source conformance
-Audit these ten elements: brand/navigation, heading, Continue, finish, face, expression dropdown, single accessory choice, product imagery, caption, and layout. For each, cite the actual component/export and token or accepted CSS rule used, with its size, type, spacing, radius, and color where applicable. Classify it as exact reuse, valid composition, cosmetic resemblance, invented replacement, or unverifiable. Separate observed source evidence from inference. Flag altered props, substituted imagery, literal values that disagree with the definition, and missing states. Do not infer reuse from a screenshot. Stop before the review extension if any element lacks accepted source evidence.
-:::
+The staged unavailable fixture marked Carry bag unavailable and replaced confirmation with Choose Dock or Choose None. Choosing None retained Graphite, Simple and Amber. The image-error fixture deliberately skipped its first request; Retry then made a successful browser image request. This trial did not demonstrate recovery from a real missing resource.
 
-Inspect the cited evidence yourself. Pass only exact reuse and valid composition, or a specifically reviewed exception with its reason recorded. Correct an invented replacement or unresolved rule at its source, rerun the import where necessary, and repeat the affected known-screen test.
+<!-- FIGURE s07-recovery -->
 
-## Check that a correction persists
+## Protect consistency during generation
 
-Use an isolated generated test screen and one named teaching fixture. Supply either purple Continue or 8px accessory gaps as the deliberate defect. Ask Design to restore the accepted rule. Keep the source system's accepted PrimaryButton and 24px gap rule unchanged; fixture styling must not become a new system variant.
-
-::: prompt Claude Design | Correct and regenerate
-In this isolated test screen, correct the named purple-continue or accessory-gap-8 fixture using the accepted Velori source system. Continue must use PrimaryButton with Ink/white, 12px corners, and 48px height. Accessory choices must have 24px gaps. Identify the source rule used for the correction. Then generate a second configurator state with Pebble, Friendly, Mint, and no accessory. Confirm that the corrected rule persists there and that the fixture has not become an accepted variant. Record any unresolved replacement before proceeding.
-:::
-
-Save the before, corrected, and second-generation results with the rule references. If the second generation repeats the defect, improve the source usage guidance or correct the generation context, resync when the source changes, and rerun the test. Keep the unsuccessful attempt in the review record.
-
-<!-- FIGURE s05-correction -->
+Ask Claude to reuse the chosen direction rather than redesigning every new screen. Review the next surface for typography, spacing, selected marks, content and action hierarchy. A screen can be attractive in isolation and still break the journey’s vocabulary.
 
 ## Chapter checkpoint
 
-Proceed to Review configuration only after the actual selected system renders the known screens, the ten-element sample passes, and the correction survives another generation. Record accepted exceptions and font differences. Keep source completeness, conversion, upload, native rendering, and system publication as separate results.
+You can complete configure, details, review and edit. Selected values remain consistent. The unavailable state and narrow layout have been inspected in the interactive result.
 
 <pagebreak>
 
-<!-- CHAPTER 04 | Extend the existing screen | Make Continue open one useful review step. -->
+<!-- CHAPTER 06 | Review with people | Observe the task, resolve confusion and preserve the selected decisions. -->
 
-# Extend the existing screen
+# Review with people
 
-The shopper needs to check the chosen robot and accessories before returning to edit. Continue opens **Review configuration**. The review screen displays the chosen robot and all four values, with **Edit configuration** and **Back** returning to the configurator.
+Review the prototype as a task. Ask someone to configure a robot, inspect the summary, change one choice, browse an accessory and return. Give the person the goal, then observe where the design explains itself and where you have to intervene.
 
-## Generate the bounded change
+## Prepare a reviewable prototype
 
-::: prompt Claude Design | Add Review configuration
-Use the selected Velori system and supplied configurator as the baseline. Make Continue open Review configuration. Show the chosen product photo and finish, face, expression color, and single accessory. Add Edit configuration and Back. Both return without losing values. Support pointer and keyboard navigation. Focus the Review heading when it opens; when Edit configuration, Back, or browser Back returns to the configurator, restore focus to Continue. Preserve reload persistence and an unavailable-image state that retains the summary. Reuse the system components and tokens. Identify the review screen as new sample behavior. Keep payment, inventory, accounts, shipping, and order submission outside the result.
-:::
+Open the presentation or preview mode and verify the starting point. Remove answer-key overlays and setup panels that the reviewer does not need. If using a share link, inspect its access settings and have the recipient open the actual link. Exported HTML or an archive can provide another route, but the files still need a recipient test.
 
-## Review the first diff
+The author’s private system URL is context for the trial record. Readers do not need access to that private URL. A public exercise download should carry the necessary starting material and clear account requirements for each chosen route.
 
-Inspect the current and proposed configurator beside each other. The extension should not replace the brand, photographs, choice vocabulary, dropdown, or one-accessory rule. The review column can change composition, but its values must come from the same configuration object.
+## Check response and keyboard behavior
 
-Use Graphite, Simple, Amber, and Carry bag. A review screen with a hard-coded default photo fails even when its summary is correct. A correct photo with a stale summary also fails.
+Use a wide and a narrow viewport. Check long labels, summary wrapping, product-image proportions, action placement and page overflow. On the narrow view, follow the task rather than only inspecting the first screen.
 
-<!-- FIGURE s06-native-review -->
+Use Tab and Shift-Tab through actions and choices. Open and close the expression menu with the keyboard. Confirm visible focus and an understandable return destination after details or editing. A keyboard failure affects the prototype review and becomes an explicit implementation requirement.
 
-## Keep navigation explicit
+The connected trial was operated at 390 × 844 pixels. Review, editing and Dock details retained the choices without horizontal overflow. Keyboard activation worked for the navigation actions. A fresh recipient opening also verified radio-arrow selection and retained that change after reload. These checks support a task review; they do not replace observing another person.
 
-Continue creates a review route. Edit and Back return to configure. Heading focus identifies the newly opened screen; returning restores focus to the control that led there. Browser history should behave predictably when the shopper moves through details and review.
+<!-- FIGURE s08-mobile -->
 
-Do not add an order action to fill the space. Review is the last step of this exercise, and editing is its useful next action.
+## Record observations and decide
+
+| Observation | Decision record |
+|---|---|
+| Reviewer misses an edit action | Change its placement or wording, then retry the task |
+| Reviewer mistakes review for an order | Clarify the heading and confirmation language |
+| Summary disagrees with imagery | Repair the shared choice state or asset mapping |
+| Narrow view hides the main action | Rework hierarchy and scrolling, then repeat the journey |
+| Prototype limitation prevents a test | Name the limitation and assign the next test |
+
+Keep findings concrete. “The reviewer opened Dock details and assumed Dock was selected” supports a correction. “The experience needs polish” does not tell anyone what to change.
+
+The main endpoint is a reviewed prototype with a decision record and known limitations. Record unresolved High, Medium and Low issues. Do not label the prototype ready for handoff when an unresolved issue prevents the core task.
 
 ## Chapter checkpoint
 
-The generated result completes configure → review → edit with a non-default configuration. The selected system and new product composition remain identifiable.
+A reviewer has completed the task. Material confusion is resolved or assigned. The prototype, decisions and limitations are ready for the selected recipient.
 
 <pagebreak>
 
-<!-- CHAPTER 05 | Connect the adjacent surfaces | Details, review, and editing keep the same choices. -->
-
-# Connect the adjacent surfaces
-
-Accessory details answer a product question without changing the configuration. Review answers whether the shopper has chosen the intended combination. Both depend on the configurator’s existing values.
-
-## Browse without selecting
-
-Open Carry bag details when Carry bag is selected. Browse Charging dock. The detail photograph and title should change, while the selected accessory stays Carry bag. Returning to configure restores the original selection and caption.
-
-The detail view describes the accessory being browsed. The selected accessory remains in the parent configuration and appears unchanged when you return. A details tab must not silently commit a selection.
-
-<!-- FIGURE s07-browse -->
-
-## Make all surfaces agree
-
-| Surface | Read from shared configuration | Local view state |
-|---|---|---|
-| Configurator | Four values, photo, caption, marks | Open expression menu |
-| Accessory details | Parent configuration retained unchanged | Accessory being browsed |
-| Review | Photo and four summary values | Review route |
-| Image recovery | Configuration and summary | Loading, failure, retry |
-
-A missing image changes rendering state. Image failure does not change the configuration. A details tab changes the browsed accessory. Browsing does not change the selected accessory.
-
-::: prompt Claude Design | Audit the complete journey
-Select Graphite, Simple, Amber, and Carry bag. Open accessory details, browse Charging dock, and return. Continue to review, then edit. Inspect photographs, captions, selected marks, and summaries after each transition. Keep Carry bag selected while browsing Dock. Show the unavailable-image state on review with the four values still visible. Report any surface that reads stale or independent values.
-:::
-
-## Chapter checkpoint
-
-The full configure → accessory details → review → edit journey retains the fixture. Each screen has a clear return path and owns only its view-specific state.
-
-<pagebreak>
-
-<!-- CHAPTER 06 | Specify states and transitions | Define loading, failure, persistence, and recovery before handoff. -->
-
-# Specify states and transitions
-
-The normal journey is only part of the contract. Photographs load asynchronously. The shopper can change choices rapidly. Browser storage can be unavailable. Reload can occur on review.
-
-## State matrix
-
-| State | Visible behavior | Values retained | Recovery |
-|---|---|---|---|
-| Loading product | Loading treatment with current caption | All four | Wait or keep editing |
-| Product ready | Correct photo, mask, caption | All four | Continue or edit |
-| Image unavailable | Plain explanation and available summary | All four | Retry actual failed load |
-| Simulated unavailable | Teaching placeholder | All four | Clear teaching simulation |
-| Storage unavailable | Notice below the store | Current visit | Continue using the app |
-| Reload with storage | Route and saved values restored | All four | Resume or edit |
-| Reset | Default choices | Defaults only | Begin a fresh journey |
-
-Teaching controls belong outside the shopper’s review column. They help demonstrate states without making reset or image simulation part of the product flow.
-
-## Transition contract
-
-For every transition, name the trigger, values read, values changed, visible result, focus destination, and return path. For Continue, the trigger is the action, the four values stay unchanged, Review configuration opens, and its heading receives focus. Edit returns to configure and restores focus to Continue.
-
-## Avoid stale images
-
-Rapidly change finish, face, expression, and accessory. The final photograph and caption must describe the last configuration. A previous image load must not replace the newer result. An unavailable image must retain its caption and summary while retrying.
-
-::: prompt Claude Code | Verify recovery
-Test rapid changes and a genuinely failed product-image request. Confirm the final image and caption agree, a failed image retains choices, and Retry reloads the asset after it becomes available. Test reload on review, blocked browser storage, and reset isolation. Keep unrelated storage values intact. Record actual results rather than adding untested behavior claims.
-:::
-
-<!-- FIGURE s08-retry -->
-
-## Chapter checkpoint
-
-The handoff includes normal, loading, unavailable, rapid-change, reload, blocked-storage, and reset behavior. The configuration has one owner throughout.
-
-<pagebreak>
-
-<!-- CHAPTER 07 | Prove keyboard and responsive behavior | Check the actual controls and return paths at the reference and narrow widths. -->
-
-# Prove keyboard and responsive behavior
-
-Test the real journey with the keyboard. Labels, focus movement, selection marks, and return paths must be observable. A promise of accessibility does not establish those behaviors.
-
-## Operate the dropdown
-
-Tab to the expression trigger. Enter or Space opens the menu. Arrows move through options; Home and End reach the first and last. Enter commits. Escape cancels the pending change. Typing an option’s name moves to it. Tab closes the menu, and the committed result returns focus to the trigger.
-
-<!-- FIGURE s09-dropdown -->
-
-Finish, face, and accessory choices respond to Enter or Space. A visible selected mark supplements their pressed state. Preserve the names and values when introducing a follow-up control pattern.
-
-## Check focus through the journey
-
-1. Open details with the keyboard and confirm heading focus.
-2. Return and confirm focus on the accessory-details control.
-3. Activate Continue and confirm focus on Review configuration.
-4. Activate Edit and confirm focus returns to Continue.
-5. Use Browser Back and confirm the route and values remain coherent.
-
-Automated focus checks support this contract. A screen-reader audit remains a separate check if the team requires a claim of complete assistive-technology support.
-
-## Compare viewports
-
-At 1024 × 768, compare the product image bounds, composition, control column, and captions against the frozen reference. The normalized Continue and accessory gaps are intentional differences.
-
-At 390px width, product and controls stack without horizontal overflow. Test the review and detail screens too. A dropdown or return action hidden outside the viewport fails the journey.
-
-<!-- FIGURE s10-mobile -->
-
-The consumer uses Arial and Georgia. The native Figma system uses Arimo and Lora. Record that mapping instead of presenting the renderers as typographically identical.
-
-## Chapter checkpoint
-
-Keyboard choices, dropdown cancellation, heading and return focus, reference composition, and narrow layout have recorded results. Broader accessibility claims match the checks actually performed.
-
-<pagebreak>
-
-<!-- CHAPTER 08 | Run the design evidence gate | Review component use, behavior, and handoff evidence together. -->
-
-# Run the design evidence gate
-
-Review the extension against the brief, components, tested journey, and actual artifacts. Keep a small disposition table so an engineer can identify reuse and new behavior.
-
-| Element | Disposition | Governing source |
-|---|---|---|
-| Brand and store header | Reuse | Velori exports |
-| Finish, face, expression, accessory | Reuse | Controlled component props |
-| Product preview and recovery | Reuse | Asset and image-state contract |
-| Review summary | Reuse | ConfigurationSummary |
-| Review column | Product composition | Generated result and bounded brief |
-| Navigation and persistence | Application behavior | Route and state contract |
-| Native Figma review | Native composition | Linked components and variables |
-
-## Challenge the result
-
-Use non-default choices and ask whether each surface reads the same values. Inspect a real image failure. Reload at review. Check the browser history. Compare native component identity rather than relying on a screenshot.
-
-::: prompt Claude Design | Review against evidence
-Audit the Velori journey against the preserved baseline and bounded review brief. Name each reused component, product composition, changed behavior, and unresolved issue. Test the non-default fixture, detail browsing, review, edit, keyboard return, reload, and unavailable images. Keep conclusions tied to the rendered result and actual handoff. Do not infer interactive behavior from an artboard or PNG.
-:::
-
-## Record the decision
-
-Use High, Medium, and Low for findings. A High issue blocks the intended journey or loses configuration. A Medium issue affects a required control, return path, or handoff. A Low issue is a local polish defect with a working journey.
-
-Approve only the bounded result that was inspected. A successful local build does not establish native generation. An accepted upload does not establish rendered photos. A generated screen does not establish a portable export.
-
-## Chapter checkpoint
-
-No unresolved issue blocks the handoff. The review record identifies the actual project, selected system, inspected journey, accepted findings, and remaining limits. Capture the files and record the implemented change in Chapter 09.
-
-<pagebreak>
-
-<!-- CHAPTER 09 | Hand off to Claude Code | Preserve the actual source and make it run outside the design project. -->
+<!-- CHAPTER 07 | Hand off to Claude Code | Give the implementation owner the selected design and its behavior. -->
 
 # Hand off to Claude Code
 
-Keep the generated source, dependencies, assets, accepted decisions, and expected journey together. Test the handoff from an extracted folder before calling it portable.
+Choose this route when the next job is software implementation. Deliver the selected direction, the working prototype, the maintained component source and the decisions that affect behavior. The recipient should understand what to preserve and what to build.
 
-## Capture your generated result
+## Capture the handoff
 
-Open the new generated project in the intended organization. Choose **Share → More formats and apps**. Under **Your destinations**, choose **Claude Code**, then **Send**. In **Hand off to Claude Code**, select **Local agent** and **Copy prompt**. Paste the copied prompt into Claude Code working in your extracted package.
+Use the handoff or export control available in the tested Design surface. Current documentation lists local coding-agent and Claude Code Web routes, plus HTML and ZIP exports. Record the selected method and the received files. Keep the generated source separate from adaptations needed to run it in the recipient’s project.
 
-The copied prompt identifies the project URL, selected generated HTML and imported files for the authenticated `claude_design` MCP. Complete `/design-login` in the intended account only if authorization is requested. Confirm the source and dependency reads succeed before starting adaptation. Save the copied prompt, actual returned files and read receipts unchanged in `handoff/new-run/captured/`, with project URL, selected file, handoff method, date, hashes and dependency origins in `handoff/new-run/HANDOFF.json`.
+Include the fixture, navigation destinations, image behavior, responsive priorities and unresolved prototype limitations. Give the recipient the actual selected design rather than all rejected alternatives as equal requirements.
 
-A binary read can return truncated data even when the request succeeds. Preserve that read receipt and obtain the full project archive through **Share → Project HTML → Project archive → Export**. Use the archive as a companion to the copied handoff prompt and MCP reads. Preserve its original bytes and extracted entries unchanged, hash both, and compare complete overlapping files with the MCP reads. Stop until every required dependency has complete bytes; do not substitute assets from the sample or a historical packet. See [Design's export workflow](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
-
-<!-- FIGURE s11-handoff -->
-
-Ask Code to inspect the returned source before implementation. Include support.js, referenced system bundles and styles, runtime dependencies, and product assets. A copied prompt starts the import; successful file reads establish the capture. Preserve captured bytes and make any host adaptation beside them. Stop for unresolved failed reads or missing source or dependencies. The local packet must resolve its private project references before it can pass independent validation.
-
-::: prompt Claude Code | Prepare the new Code packet
-Use the copied native handoff prompt to read the recorded Velori project through the authenticated claude_design MCP. Confirm the intended account and complete /design-login only if authorization is requested. Read the selected generated HTML, support.js, every referenced system bundle and stylesheet, and all referenced assets. Preserve the copied prompt, returned files and read receipts unchanged in handoff/new-run/captured/, and record their hashes, project URL, selected file, handoff method and dependency origins in handoff/new-run/HANDOFF.json. Treat a truncated binary response or an incomplete decode as a failed read, and preserve its receipt. Obtain full bytes through Share → Project HTML → Project archive → Export. Preserve the original archive and extracted entries unchanged, hash both, and compare complete overlapping files with the MCP reads. Do not fill missing files from the sample or a historical packet. Stop until every required source file and dependency has complete bytes. After capture is complete, create a separate runnable adaptation in handoff/new-run/ with package.json, lockfile, local assets, README, a dev script serving localhost:4206, and a validate script. Do not reuse the historical packet as the new handoff. Inspect the received runtime for globals, CDN URLs and resource mappings; provision required dependencies locally and document every URL or asset-route mapping separately from captured source. Validation must target this new packet and test all 72 configurations, configure → details → review → edit, dropdown keyboard behavior, Back, reload persistence, rapid changes, unavailable-image recovery, and storage independence. Install Playwright as a development dependency for browser checks. Run without external HTTPS requests after installation. Preserve the sample application.
-:::
-
-Review the packet's README and `handoff/new-run/HANDOFF.json`, then install and start it from that folder:
-
-```sh
-npm ci
-npx playwright install chromium
-npm run dev
+```text
+Implement the selected Velori review direction in this product project. Inspect the existing components, tokens and state ownership before changing code. Preserve the configurator, product assets and four choices. Map the design to the maintained library. Keep configure, details, review and edit consistent. Explain necessary adaptations and test the interactive journey, keyboard behavior and narrow layout.
 ```
 
-Open http://127.0.0.1:4206. Leave that server running and run `npm run validate` in another terminal in the same folder. Keep the test output and screenshots. These scripts are outputs of the packet-preparation step; stop if they are missing or target the historical packet. Only a passing new packet establishes your new handoff.
+The tested Share menu offered a local-agent Claude Code prompt, a project ZIP and standalone HTML. The prompt copied successfully and named the selected entry and imported files. The ZIP preserves generated source; its React and Babel scripts require network access. The standalone export embeds the scripts and product assets. Its Retry reloads bundled data and therefore cannot demonstrate a failed network request.
 
-## Use the sample as an answer key
+<!-- FIGURE s09-handoff -->
 
-The public sample includes a bounded React Review configuration column adapted from the native Review source accepted on October 5, 2026, SHA-256 `03b16ac0f4fea25202384a1f355baddd71dcf70db20b0b976b68f0f46811150a`. The existing app retains configuration, routing, persistence, focus, and image recovery. Run the sample from the extracted `velori-store` folder using the README. Captured Claude Design source and runtime remain private and outside the public downloads. Capture and validate your own new packet; the answer key does not verify your generation.
+## Verify recipient usability
 
-## Keep the adaptations visible
+Open the received packet from a fresh local folder. Follow its README. Confirm that required dependencies and assets are present and that the selected view opens. Record any network or account requirement. A handoff prompt copied successfully does not prove the prototype can run.
 
-If the received source needs a localhost adapter, inspect support.js and the selected system runtime for globals, CDN URLs, resource mappings and asset paths. Provision the required runtime dependencies locally and map the received system and asset routes beside the captured source. Preserve captured bytes and record hashes, dependency origins and every host adaptation in `handoff/new-run/HANDOFF.json`.
+Review the implementation against the selected design at matching viewports. Inspect component use in source when library reuse matters. Visual similarity cannot identify a component or establish controlled state. Record intentional deviations and get a design decision on changes that affect the task.
 
-For MCP capture or a separately downloaded archive, inspect the full runtime and asset closure before treating the result as portable. Keep unsuccessful reads or downloads in the review record and document the working setup path.
-
-## Bring the bounded change into React
-
-`src/ReviewConfiguration.jsx` adapts the generated review column. It reuses ConfigurationSummary and the primary action while the parent application retains routing, state, persistence, and focus. The shopper’s column omits prototype inspection controls.
-
-::: prompt Claude Code | Implement the exported review
-Inspect handoff/new-run/captured/ and HANDOFF.json from the passing new packet. Adapt only the bounded Review configuration column into the React sample. Preserve named exports, tokens, photos, all four values, the expression dropdown, and one accessory choice. Keep routing, persistence, focus, and image recovery in their existing owners. Test configure → details → review → edit with Graphite, Simple, Amber, and Carry bag. Record the source-to-implementation mapping and deviations. Do not edit CLEAR or publish.
-:::
+Detailed package hashes, runtime adapters, full configuration combinations and storage tests belong in supporting engineering checks. Apply them when the recipient’s implementation needs those guarantees; they are not the entry requirement for exploring the review design.
 
 ## Chapter checkpoint
 
-The packet runs outside the native project, and the implemented review can be traced to its actual source. Dependencies and host changes are disclosed. A PNG, PDF, or artboard is appearance evidence, not the interactive Code handoff.
+The recipient can open the handoff and understand the selected design. Implementation review records component mapping, tested behavior, deviations and remaining work.
 
 <pagebreak>
 
-<!-- CHAPTER 10 | Implement in Figma and reconcile | Verify editable components, variables, and the native prototype. -->
+<!-- CHAPTER 08 | Continue in Figma when needed | Inspect editable output and restore the design relationships the team needs. -->
 
-# Implement in Figma and reconcile
+# Continue in Figma when needed
 
-Figma is part of this exercise. Confirm access to variables in prototypes on a paid or eligible Education plan. Use your imported working copy and keep editable frames for configure, the open expression menu, accessory details, review, and unavailable review. Preserve the supplied source pages and reference frames, and build the extension on a separate working page.
+Choose this route when the team needs editable Figma work for further design, library maintenance or review. Figma may also have supplied the starting foundations. Returning to Figma is a destination decision, not a compulsory final stage for every Claude Design prototype.
 
-## Keep native identity
+## Choose a supported bridge
 
-Before editing, verify local main components, internal instance links, variable collections and modes, image resources, and available fonts in your imported copy. Stop if a required external library or resource is inaccessible. Use linked instances for the existing Velori components. Bind finish, face, expression, accessory, captions, and summaries to shared variables. Record the component and variable IDs from your actual file. A flattened screenshot or a collection of look-alike rectangles does not preserve native reuse.
+Inspect the export controls in the Design experience you used. Do not promise a native Figma export because another tool can capture a web page. Figma’s [code-to-canvas workflow](https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/) describes capturing rendered UI into editable design layers through its MCP tooling. A capture or manual reconstruction is a separate bridge with its own output to inspect.
 
-Configure and Review compose the product photograph, face and expression from the four selected values. Accessory details use the original Chalk Carry bag and Charging dock reference photographs. `AccessoryPhoto` receives the browsed accessory only; browsing those views preserves the shopper's configuration. Preserve that source behavior when reconciling the native file.
+Keep the source file and existing libraries. Add selected views in a separate page or working copy. Record the captured URL, viewport and design revision so the recipient knows which prototype the frames represent.
 
-Navigate by page and frame names from the companion manifest. Preserve **01 Foundations**, **02 Components**, **03 Configurator**, and **04 Source Assets**, including **Configure · White** on **03 Configurator**. The completed **05 Store · Handbook exercise** page contains Configure, Expression color menu, Carry bag details, Charging dock details, Review configuration, and Review · Image unavailable. Use those frames for comparison after your generation. Imported files have their own identities; record the IDs you inspect rather than relying on author-file node IDs.
+The trial captured the selected Review into editable layers, then restored Velori Brand, Product Preview and Primary Button instances. It rebuilt the repeated summary row and outlined secondary action as local components and reapplied the source text styles. The resulting screen has 22 styled text nodes, 10 instances and 65 nodes with variable bindings. It uses Arimo and Lora, with the source Product style restored to 27px. The Figma screen has no prototype connections or choice-state wiring. Continue design there, or build and test those relationships before calling it an interactive Figma prototype.
 
-::: prompt Figma | Build and inspect the native store
-Use the identified Velori working file. Preserve the original foundation, components, configurator, and source assets. Add editable native frames for configure, expression menu, Carry bag details, Charging dock details, review, and unavailable review. Reuse existing component instances and shared variables. Wire Graphite, Simple, Amber, and Carry bag through details, review, and edit. Confirm selected states, configured product images, captions, and summaries update. Keep the original Chalk reference photos in accessory details, matching AccessoryPhoto; browsing Dock must preserve the selected Carry bag. Record component and variable identities and test the actual prototype.
-:::
+<!-- FIGURE s10-figma -->
 
-## Test the prototype
+## Inspect separate kinds of fidelity
 
-Select the non-default fixture. Follow both detail views, return, continue to review, show the unavailable image, and return to edit. Check the native values after every transition. Inspect representative bindings across all 72 combinations, not only the default frame.
+| Check | Evidence |
+|---|---|
+| Visual match | The selected view agrees at the captured viewport |
+| Editable content | Text, layout and image layers can be changed |
+| Component relationships | Required instances point to intended main components |
+| Token relationships | Required values use intended styles or variables |
+| Interaction behavior | Prototype connections and state behavior are tested |
 
-The supplied prototype also includes keyboard shortcuts for its demonstration: C opens the expression menu, Escape dismisses it, Enter activates Continue or Edit, and I opens the unavailable-image review. Edit or Back returns to the configurator. These prototype shortcuts do not establish the browser dropdown’s full keyboard model.
+Editable layers do not automatically preserve the source component library or prototype wiring. Reconnect the required relationships and document what was rebuilt. [Code Connect](https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/) can supply implementation context when mappings are maintained; it is not a substitute for inspecting the received file.
 
-Native prototype variables support the configured visit. Browser reload persistence belongs to the React and Code apps and is tested there. Record that difference when reconciling behavior.
-
-<!-- FIGURE s12-figma-review -->
-
-## Reconcile the result
-
-Compare the reference and extracted screens at 1024 × 768. Record the font mapping and intentional normalized controls. Resolve unexpected drift in the owning source, then repeat the affected check. Keep rendering differences and product behavior differences distinct.
-
-The [Figma write-to-canvas guidance](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/) describes native editing. Do not treat a Claude image export as evidence that component and variable identities survived in Figma.
+Use Figma plan features only when the chosen deliverable requires them. A variable-driven native prototype may have additional plan requirements. A Design review prototype should not inherit those requirements merely because the team’s foundations were created in Figma.
 
 ## Chapter checkpoint
 
-Native editable frames, instance identities, variable bindings, and prototype transitions have returned evidence. The browser and Figma behavior differences are explicit.
+The Figma recipient can edit the selected design. Required instances, styles, variables and prototype behavior have separate results. Missing relationships are recorded as remaining work.
 
 <pagebreak>
 
-<!-- CHAPTER 11 | Guided capstone | Complete one bounded store journey across the real tools. -->
+<!-- CHAPTER 09 | Run the guided exercise | Complete the design loop and the handoff your recipient needs. -->
 
-# Guided capstone
+# Run the guided exercise
 
-Work from an unchanged extracted copy. Keep the completed sample as the expected result. The capstone recreates Review configuration from the existing Velori configurator and details, then implements and verifies it through the native tools.
+Use the Velori starting materials to explore a review experience. Keep the completed Store example out of initial generation context. Compare the answer only after selecting and refining your own direction.
 
-## Phase 1: Frame and ground
+## Follow the design loop
 
-Start the package, inspect the frozen reference, record the default and review fixtures, and confirm the preservation boundary. Identify your Claude account, organization, system destination, and Figma working copy before uploading.
+1. Choose the Figma-first or code-first route and record the input files.
+2. Write the review brief and the Graphite, Simple, Amber, Carry bag fixture.
+3. Create an isolated Design destination and inspect the imported starting screen.
+4. Generate two or three distinct directions. Operate them and choose with reasons.
+5. Refine the selected direction through chat, a targeted comment and a direct visual edit. Verify that each change saves; record unsupported editing and its fallback.
+6. Connect configuration, details, review and edit. Add an unavailable state and inspect a narrow view.
+7. Review the task with someone. Correct material confusion and record limitations.
+8. Export the selected prototype and decisions. Verify that the recipient can open them.
+9. Continue to Code implementation or editable Figma work when the recipient needs that destination. Complete its own checks.
 
-## Phase 2: Define, import, and validate
+## Keep a useful record
 
-Follow Chapters 2 and 3 in order. Prepare the source definition and conflict record, including CSS literals, usage guidance, and Figma font correspondence. Resolve required decisions, run local checks, and import the prepared draft into the recorded destination. Inspect actual component cards and recreate the known configurator, menu, details, and unavailable-image screens. Save the ten-element fidelity sample and correction-persistence test. Stop for an unresolved source rule or a failed native check.
+Record the chosen route, source files, Design project, selected direction, decision rationale, corrections to hierarchy, content or interaction, tested journey and recipient result. Save images before and after changes to hierarchy, content or interaction. The supplied answer key includes the selected offline prototype and a static editable Figma continuation. The recorded author trial is prepared for human review; it does not claim that a separate reviewer has completed the task. A complete transcript is less useful than a short record that explains why the design was selected and what remains uncertain.
 
-## Phase 3: Generate the extension
-
-After the system passes, create Review configuration using the configurator and details as the baseline. Exclude the completed review answer key from generation context. Test the non-default fixture, return paths, keyboard use, reload, and unavailable imagery.
-
-## Phase 4: Capture and implement
-
-Preserve the actual generated source or handoff, including its dependencies. Run it in a new folder. Adapt the review column into the React sample without replacing state ownership or existing controls. Keep unsuccessful exports in the review record.
-
-## Phase 5: Build the native Figma journey
-
-Use linked native components and shared variables. Add the editable frames beside the reference. Test configure → details → review → edit with Graphite, Simple, Amber, and Carry bag. Confirm that configure/review captions and configured images update together. Details retain the original Chalk accessory-reference photographs.
-
-## Phase 6: Verify the reader package
-
-```sh
-npm run check
-npm run build
-npx playwright install chromium
-npm run dev
-```
-
-Leave Vite running. In another terminal:
-
-```sh
-npm run validate:browser
-```
-
-Validate the newly received packet in a separate folder as described in Chapter 9. Run `npm run validate` only after the new packet has the captured inputs and the documented validation script. The public sample has no historical handoff validator; its local app checks cannot certify a new native export.
-
-Check all 72 combinations, rapid changes, dropdown keyboard behavior, reload, real image failure, reset isolation, reference composition, and narrow layout. Preserve the test output and screenshots. Keep a fresh extracted copy for the final install and journey check.
-
-## Completion record
-
-| Result | Required evidence |
+| Completion item | Required result |
 |---|---|
-| Local app | Clean install, build, complete journey, 72 configurations |
-| Claude Design | Source definition, resolved conflicts, intended destination, accepted import, known screens, fidelity sample, correction persistence, new review generation |
-| Code handoff | Actual source and dependencies run independently; bounded change implemented |
-| Figma | Working file, editable frames, identities, bindings, native journey |
-| Handbook candidate | Reader instructions match the package and tested behavior |
-| Publication | Separate release authorization and established redistribution terms |
+| Starting context | The maintained source and answer exclusions are clear |
+| Exploration | Alternatives are visible and a direction is selected with reasons |
+| Refinement | Saved changes are verified; unsupported editing and the fallback are recorded |
+| Journey | Configure, details, review and edit agree |
+| Review | Human feedback, narrow layout and keyboard results are recorded |
+| Main handoff | The recipient can open the selected prototype and decision record |
+| Chosen destination | Code or Figma checks match the recipient’s requested deliverable |
 
-## Answer key
+If a required native step is inaccessible, leave the inaccessible native action incomplete and name the practical action that can unblock the run. Do not substitute a local answer key for a fresh Design output or call a flattened screenshot an editable native result.
 
-A passing result preserves the store and adds one review step. The photograph, controls, caption, and summary agree. Browsing details does not select an accessory. Edit, Back, reload, and image recovery preserve the four values. The dropdown keeps its documented keyboard behavior.
+## Chapter checkpoint
 
-The native result uses the selected Velori system. Its handoff includes executable source and dependencies. The React adaptation composes existing exports. The Figma result uses linked components and shared variables, with the actual prototype tested. The package runs without CLEAR or private owner state.
-
-Do not award completion for screenshots alone, a successful upload without inspection, an export that cannot start, or local tests substituted for an inaccessible native step. Leave an inaccessible required step unfinished and name the practical next action in the review record.
+You have a reviewed interactive prototype and a recipient-usable handoff. Any chosen implementation or Figma continuation has a separate completion record.
 
 <pagebreak>
 
-# Appendix A: Prompt sequence
+# Appendix A: Brief and decision record
 
-Use the prompts in order: preserve the configurator; prepare the source system; import the prepared draft; recreate known screens; audit ten elements for source conformance; correct a named fixture and regenerate; add Review configuration; audit the complete journey; check recovery; review against evidence; prepare and validate the new Code packet; implement the captured change; reconcile native Figma. The package’s `docs/prompts.md` supplies copyable versions.
+1. User and task.
+2. Starting route and source ownership.
+3. Preserved visual and interaction rules.
+4. Non-default fixture and excluded answer material.
+5. Alternatives and selected direction.
+6. Selection rationale and accepted tradeoff.
+7. Corrections to hierarchy, content or interaction, and review observations.
+8. Tested behavior and known prototype limitations.
+9. Recipient, format and opening result.
 
-# Appendix B: Handoff record
+# Appendix B: Supporting engineering checks
 
-Record the source definition and conflict decisions, ten-element fidelity sample, correction and second-generation evidence, feature, account and organization, selected system and project URL, Figma working file, source revision, captured files and hashes, host adaptations, component map, route and state inventory, accepted copy, expected journey, keyboard behavior, validation results, deviations, and open decisions. Use `docs/handoff-template.md`.
+Use the sample library inventory, system definition, source conflicts, runtime adapters and package fingerprints when preparing code input or validating an implementation. Apply the full configuration matrix, storage, reload and real image-failure checks to the implementation that claims those behaviors. Keep captured Design source immutable and adapt it in a separate folder.
 
-Keep credentials and authorization material out of the reader package. Reader configuration should name a destination only after the reader chooses one.
-
-# Appendix C: Package map
-
-| Path | Contents |
-|---|---|
-| README.md | First-run, journey, validation, and reset instructions |
-| src/ | App, reusable library, model, tokens, and review adaptation |
-| public/assets/velori/ | Product photographs, masks, layers, and manifest |
-| reference/ | Frozen consumer reference and extraction manifest |
-| .design-sync/ | Reader import configuration, adapter, conventions, previews |
-| docs/ | Brief, baseline import rules, source definition, decisions, prompts, walkthrough, expected results, notices |
-| provenance/ | Frozen consumer-source identity; private native records are excluded |
-| provenance.json | Package file hashes and exclusions |
-| scripts/ | Asset, browser, and public-package checks; model tests live in src/ |
-
-The [native Figma companion](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig) and its [manifest](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/figma-companion.json) are separate downloads beside the React ZIP. Import the file into your own Drafts; it is not bundled in the ZIP.
-
-Data Pipeline Studio remains the historical exercise in `Local_Coding_Exercise.md`. Its released editions and artifacts are preserved. Velori is the current sample for this guide.
+Keep original and third-party notices with the supplied material. Velori’s authored source and imagery use the declared MIT license; referenced fonts and icons retain their own notices. Font family names in a Figma file are not bundled font software.
 
 # Further reading
 
-1. Anthropic. [Get started with Claude Design](https://support.claude.com/en/articles/14604416-get-started-with-claude-design). Reviewed October 4, 2026.
-2. Anthropic. [Set up your design system in Claude Design](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design). Reviewed October 4, 2026.
-3. Anthropic. [Claude Code commands](https://code.claude.com/docs/en/commands). Reviewed October 4, 2026.
-4. Anthropic. [Design admin guide](https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans). Use for current organization setup.
-5. Figma. [Write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/). Reviewed October 4, 2026.
-6. Velori reader materials. The React ZIP contains MIT source and assets, frozen reference, token and asset manifests, exercise materials, and validation scripts. The separate native Figma file and companion manifest supply a reader-owned working copy. Completed React and Figma screens are comparison material. Captured Claude Design packets and metadata stay private. Verify each new native run separately.
+1. [Anthropic: Get started with Claude Design](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
+2. [Anthropic: Set up your design system](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design).
+3. [Figma: Code to canvas](https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/).
+4. [Figma: Code Connect integration](https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/).
+5. [Božana Radenković Gerard: Portfolio built with AI](https://bozana.design/work/portfolio-built-with-ai).
+6. [Caviar: Setting up a design system with Figma, Claude Code and Claude Design](https://eatcaviar.co/getting-a-design-system-set-up-in-claude-design/).
+7. [MarsBased: A real client system import trial](https://marsbased.com/blog/2026/09/16/we-imported-a-real-client-design-system-into-claude-design-here-s-what-we-learned).
+8. [GoodCode: Design exploration and multi-screen implementation](https://goodcode.us/blog/nobody-asks-how-you-got-to-disney-world-i-built-a-75-screen-product-with-claude-design-claude-code-in-2-days).
+9. [Jérôme Benoit Reveau: A prototype-to-implementation pilot](https://jeromebenoit.com/case-study-ai-design-system.html).
 
 <pagebreak>
 
 # Changelog
 
-Compared with version **1.2.1**, published **October 5, 2026**. Previous Daytime PDF SHA-256: `43302892dd7a961dba1154027a8a42da72e716b21cb7534e9f9cf2d7a52b2272`.
+This edition centers the guide on exploring, refining and reviewing product designs in Claude Design.
 
-**Addition: Orientation and Chapters 2–7, 9 and 10.** Added screenshots for setup, system inspection, correction, the store journey, recovery, keyboard use, responsive layout, Code handoff, and Figma review. Readers can locate the controls and compare their results with the worked example.
+**Correction or clarification.** Begin with Figma foundations and screens or an existing implementation library. The two input routes have distinct ownership and preparation. [Design setup](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design), [Caviar account](https://eatcaviar.co/getting-a-design-system-set-up-in-claude-design/).
 
-[Velori React sample](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-store-0.2.1-mit-release.zip), [native Figma companion](https://handbooks.surfaces.systems/claude-design/editions/v1.2.1/velori-design-system-configurator.fig), and [Claude Design workflow](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
+**Addition.** Compare directions, refine with chat, comments and direct edits, then review a connected prototype. Design decisions and people reviewing the result form the main exercise. [Design guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design), [Practitioner account](https://bozana.design/work/portfolio-built-with-ai).
+
+**Correction or clarification.** Finish with a reviewed prototype and usable handoff; choose Code or Figma when the next owner needs it. Implementation and editable design have separate completion checks. [Design guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design), [Code to canvas](https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/).
+
+**Deprecation or removal.** Move package inventories and detailed engineering checks into supporting material. Readers encounter technical setup when their selected route requires it. [Design setup](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design).
+

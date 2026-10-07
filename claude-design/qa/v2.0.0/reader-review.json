@@ -1,0 +1,73 @@
+{
+  "status": "passed bounded local review",
+  "url": "http://127.0.0.1:8794/claude-design/",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "themes": [
+    "Light",
+    "Dark"
+  ],
+  "observations": [
+    "All 11 workflow logos rendered; two sources, six ordered Design actions, main endpoint and two destinations remain readable. Mobile cards stack without page horizontal overflow.",
+    "Native dark chapter artwork inspected at 390 pixels; outer margins match the shared page background.",
+    "Desktop search for direct editor and mobile search for variable bindings returned the revised chapter and navigated to it.",
+    "Mobile Contents opened and Orientation navigation closed it. Explore reached contents with heading below the 56px header.",
+    "Edition review shows exact proposed 2.0.0 metadata and PDF page counts, bytes and hashes.",
+    "No release-window, standalone printing guidance, or duplicate sidebar publication block in candidate reader. Search and theme selector share a desktop row."
+  ],
+  "limitations": [
+    "Local preview only. Production deployment and headers have not been tested.",
+    "Wide tables use their scroll container on the narrow viewport."
+  ],
+  "screenshots": [
+    {
+      "path": "trial/screenshots/reader-workflow-light-desktop.jpg",
+      "sha256": "d8d9f853181b2a837eb85b7f5469e3c4b801346b2429060b5c7f00f0ed537fb3"
+    },
+    {
+      "path": "trial/screenshots/reader-editing-dark-desktop.jpg",
+      "sha256": "a1827ae26fc9c934c8d027ad63bc02b3534715fbe3e9b3bff946bd106621e0af"
+    },
+    {
+      "path": "trial/screenshots/reader-workflow-dark-desktop.jpg",
+      "sha256": "ed52312c996fff5576261307249758b76678f9b9064eb3e7f32ebc8d2be365ca"
+    },
+    {
+      "path": "trial/screenshots/reader-workflow-light-mobile.jpg",
+      "sha256": "3c990ba04ea87a1e2a29fdd4a0b909a2aaa2978da592a6341ba56fde0452955a"
+    },
+    {
+      "path": "trial/screenshots/reader-cover-light-mobile.jpg",
+      "sha256": "36fe6c95c860e4898a23c5bfbe71b515d46869d4a70a549e47f4b393df12ac27"
+    },
+    {
+      "path": "trial/screenshots/reader-workflow-dark-mobile.jpg",
+      "sha256": "22b47bd6032fbbd9f446afbd11d30d86e529a2344b0e46c9866b6c07ea7ae868"
+    },
+    {
+      "path": "trial/screenshots/reader-edition-light-mobile.jpg",
+      "sha256": "181b32de25aac07113b2786534afd247b6c2a372e0337c59429915e8852606c5"
+    },
+    {
+      "path": "trial/screenshots/reader-opener-dark-mobile.jpg",
+      "sha256": "3d09faaadf0b115440ef2fa2eb9f72f5f82cddfea55371ed3fc562a48ae1a287"
+    },
+    {
+      "path": "trial/screenshots/reader-workflow-review-proof.jpg",
+      "sha256": "93379aae89c4f9e2428fed266f14e005055ec76b2071695bcdd00101e342b519",
+      "viewport": [
+        1440,
+        1300
+      ],
+      "purpose": "Complete workflow and both destination endpoints"
+    }
+  ]
+}

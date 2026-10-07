@@ -1,0 +1,513 @@
+{
+  "schemaVersion": 1,
+  "figures": [
+    {
+      "id": "s01-start",
+      "title": "Figure 1",
+      "caption": "Public React sample. Graphite, Simple, Amber and Carry bag appear in the controls, configured photograph, caption and Review summary.",
+      "panels": [
+        {
+          "label": "Configure overview",
+          "asset": "assets/screenshots/s01-configure.png",
+          "sha256": "d6fed6d13679867ce550727d4a5ac09bc629a82d4978934e57934feea0c07f80",
+          "alt": "Public React sample configured with Graphite shell, Simple face, Amber expression and Carry bag. The loaded product photograph and four-value caption match the controls.",
+          "maxHeightPoints": 230,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1024 by 768 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Configure controls detail",
+          "asset": "assets/screenshots/s01-configure-controls.png",
+          "sha256": "93cc01bfb1ccda79a1ce40da29d17dbbfb2e292fdd4df1389e0ed041ea260829",
+          "alt": "Selected Graphite shell, Simple face, Amber expression and Carry bag are visible above Continue.",
+          "maxHeightPoints": 375,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1024 by 768 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Review summary",
+          "asset": "assets/screenshots/s01-review-summary.png",
+          "sha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+          "alt": "Review configuration heading has its real focus outline. The summary retains Graphite, Simple, Amber and Carry bag above Edit configuration and Back.",
+          "maxHeightPoints": 275,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1024 by 768 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          },
+          "fullAsset": "assets/screenshots/s01-review-full.png",
+          "fullSha256": "1cbb83d71d1be327ed413c4e3dcfe519db4653e9f6d55f34035f64ed359c91f2"
+        }
+      ]
+    },
+    {
+      "id": "s02-figma-import",
+      "title": "Figure 2",
+      "caption": "Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page.",
+      "panels": [
+        {
+          "label": "Import control",
+          "asset": "assets/screenshots/s02-import-menu.png",
+          "sha256": "234736639584fa456e928520a094fedac6e388d725a99476dd210079419476c0",
+          "alt": "Figma file browser More menu has the actual cursor hovering over the highlighted Import row.",
+          "maxHeightPoints": 150,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 3456 by 2168 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Import completed",
+          "asset": "assets/screenshots/s02-import-complete.png",
+          "sha256": "db7982d9faeb2cf3e3750657b266f5876ffa962e881ed30fcbb8cc0a25b5937f",
+          "alt": "Imported to Drafts dialog names velori-handbook-v1.2.1.fig and confirms one file imported.",
+          "maxHeightPoints": 150,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 3456 by 2168 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Imported Drafts pages",
+          "asset": "assets/screenshots/s02-page-tree.png",
+          "sha256": "b80715d50021f947789ae43466d5e134048c1b544c9f018705c1a29ff4233d0e",
+          "alt": "Imported Figma file is in Drafts. Its page tree shows 01 Foundations, 02 Components, 03 Configurator, 04 Source Assets and 05 Store Handbook exercise.",
+          "maxHeightPoints": 180,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 3456 by 2168 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s03-private-import",
+      "title": "Figure 3",
+      "caption": "Claude Design, October 5 walkthrough. The example destination is Velori Handbook v1.2.0. Before upload, Share shows Private and Not shared.",
+      "panels": [
+        {
+          "label": "Design system destination",
+          "asset": "assets/screenshots/s03-system-destination.png",
+          "sha256": "2bef4cade8b831f4fde4325d6d7b28e5b6cc9e33f366967b221aeab8aff3b42b",
+          "alt": "Standalone Claude Design system header names Velori Handbook v1.2.0 dated 2026-10-05.",
+          "maxHeightPoints": 120,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Private before upload",
+          "asset": "assets/screenshots/s03-private-share.png",
+          "sha256": "f3ac913d9a294219a22bfbe44da5c16abe903a5d12a32fc7b55517a98383a1ee",
+          "alt": "Share access row says Private, Only people added can access, and Not shared.",
+          "maxHeightPoints": 90,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s04-inspect-system",
+      "title": "Figure 4",
+      "caption": "Claude Design. Inspect the imported component inventory, rendered ProductPreview and opened usage guidance. The preview uses its own component example, separate from the Amber journey fixture.",
+      "panels": [
+        {
+          "label": "Imported component inventory",
+          "asset": "assets/screenshots/s04-component-inventory.png",
+          "sha256": "7f56c42491fa49f2775484cc0935ca3cbb60cb7b605d8524a25542547c6c8c9f",
+          "alt": "Claude Design component navigation lists the imported Velori components, including ConfigurationSummary, ExpressionSelect and ProductPreview.",
+          "maxHeightPoints": 265,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Rendered ProductPreview",
+          "asset": "assets/screenshots/s04-product-preview.png",
+          "sha256": "98b0c591e08df578d61dba2e3b1a5f512b842877e3904ce1354a3850c1b2010d",
+          "alt": "ProductPreview card shows the default Chalk robot photograph on the charging dock.",
+          "maxHeightPoints": 200,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 873 by 978 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Opened usage guidance",
+          "asset": "assets/screenshots/s04-expanded-guidance.png",
+          "sha256": "bbaff09fe31b1497a3a178c59a8cadcfdcce69c10d279be3faeafbc3a1b62cfa",
+          "alt": "Expanded Usage notes for Claude identifies ProductPreview, window.Velori.ProductPreview and the root _ds_bundle.js.",
+          "maxHeightPoints": 95,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s05-correction",
+      "title": "Figure 5",
+      "caption": "Claude Design teaching fixture. The accessory gap changes from 8px to the accepted 24px. An independent generation retains the 24px rule with Pebble, Friendly, Mint and None; that screen omits storage and details.",
+      "panels": [
+        {
+          "label": "Deliberate 8px gap",
+          "asset": "assets/screenshots/s05-gap-before.png",
+          "sha256": "6630ac654ade376255b6b47fc53512b585f02a3d1df42b67ae348ac763c934cb",
+          "alt": "Accessory tiles in the named teaching fixture have the deliberate narrow 8px horizontal gap. Carry bag is selected.",
+          "maxHeightPoints": 100,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Corrected 24px gap",
+          "asset": "assets/screenshots/s05-gap-corrected.png",
+          "sha256": "f6ec638c420794e1bc15284b62080d45766fd9ed0c0aadcaded22804acc1b2d6",
+          "alt": "The same accessory row retains Carry bag and now uses the accepted 24px horizontal gaps.",
+          "maxHeightPoints": 100,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Independent generation",
+          "asset": "assets/screenshots/s05-second-generation.png",
+          "sha256": "d2194247d0684bb99aa6749e3669d96efd7031773d51c4d8e5d8d0aba2c9444e",
+          "alt": "Second generated configurator has Pebble selected, Friendly face, Mint expression, None accessory and the accepted 24px accessory gaps.",
+          "maxHeightPoints": 265,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s06-native-review",
+      "title": "Figure 6",
+      "caption": "Claude Design, October 5 walkthrough. The generated Review retains Graphite, Simple, Amber and Carry bag from Configure, with Edit configuration and Back available.",
+      "panels": [
+        {
+          "label": "Native Configure photo and caption",
+          "asset": "assets/screenshots/s06-configure-photo.png",
+          "sha256": "1b1f09c97895492fe10ba27247904ddfa93a599ea9603aec28e9feee05c61763",
+          "alt": "Native Claude Design configurator shows the Graphite robot with Simple Amber face and Carry bag. Its caption names all four selected values.",
+          "maxHeightPoints": 355,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1024 by 768 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Generated native Review",
+          "asset": "assets/screenshots/s06-review-summary.png",
+          "sha256": "750b615cb03b542ddedeba4eaca52d211694106dc62f752298f97f1de4d54495",
+          "alt": "Native Review configuration summary retains Graphite, Simple, Amber and Carry bag, with Edit configuration and Back beneath.",
+          "maxHeightPoints": 285,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s07-browse",
+      "title": "Figure 7",
+      "caption": "Public React sample. Browsing Charging dock changes the detail view while Carry bag remains selected. After returning to Configure and choosing Continue, Review still lists Carry bag.",
+      "panels": [
+        {
+          "label": "Browse Charging dock",
+          "asset": "assets/screenshots/s07-dock-details.png",
+          "sha256": "1d884db3dc0a606194ec58b581cff080879693db2f5f5a5dc2e09929be32176d",
+          "alt": "Public React sample Charging dock details uses the original Chalk dock photograph, offers accessory browsing and has Back to configurator.",
+          "maxHeightPoints": 230,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1024 by 768 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Review after returning",
+          "asset": "assets/screenshots/s07-return-review.png",
+          "sha256": "77a54e1dcd8f4f71f2b5cd17c43c740696999597f814c56066b5073d0290ebcc",
+          "alt": "After Dock browsing, return and Continue, the Review summary still has Graphite, Simple, Amber and Carry bag.",
+          "maxHeightPoints": 280,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1024 by 768 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s08-retry",
+      "title": "Figure 8",
+      "caption": "Public React sample. Blocking the actual required shell-image request produces the real unavailable state and Retry image action. After unblocking and retrying, the photograph returns and Review still lists Graphite, Simple, Amber and Carry bag.",
+      "panels": [
+        {
+          "label": "Image unavailable and Retry",
+          "asset": "assets/screenshots/s08-failure.png",
+          "sha256": "1d4a421844b84899b04715432a7d27883e0a0cdd8d4ab7f635becee815f04130",
+          "alt": "Product image unavailable state offers Retry image. The helper text confirms that the choices remain available.",
+          "maxHeightPoints": 90,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 2560 by 1440 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Retained caption during failure",
+          "asset": "assets/screenshots/s08-failure-caption.png",
+          "sha256": "e28e9c326154ba8e5acdeed1afbf71f1bd80f77238b8f82fd5cf254afec777d3",
+          "alt": "During the same image failure, the caption retains Graphite shell, Simple face, Amber and Carry bag.",
+          "maxHeightPoints": 72,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 2560 by 1440 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Recovered photograph",
+          "asset": "assets/screenshots/s08-recovered-photo.png",
+          "sha256": "c5f61968f20f241fd4e87c08ea140ccf26f1b648f4f51d035261520771b1e056",
+          "alt": "After the actual request block is cleared and Retry image is chosen, the loaded configured photograph again shows Graphite shell, Simple Amber face and Carry bag.",
+          "maxHeightPoints": 240,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 2560 by 1440 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Retained Review summary",
+          "asset": "assets/screenshots/s08-retained-summary.png",
+          "sha256": "74fc0c7545f2f5ca521ff36f03479589452a7b4eb19f27f4ca1c29e895fd0a06",
+          "alt": "Recovered Review summary retains Graphite, Simple, Amber and Carry bag with Edit configuration and Back.",
+          "maxHeightPoints": 280,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 2560 by 1440 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s09-dropdown",
+      "title": "Figure 9",
+      "caption": "Public React sample. Amber is committed and checked while Blue is the active option in the keyboard-open menu. The real trigger focus outline remains visible.",
+      "panels": [
+        {
+          "label": "Keyboard-open expression menu",
+          "asset": "assets/screenshots/s09-keyboard-menu.png",
+          "sha256": "69e10adafa7ec306b543e00725125f5d65b763be84181155f685b33311ed75b0",
+          "alt": "Open browser expression menu retains Amber on the focused trigger and checked row. Blue is the active option; White and Mint remain visible.",
+          "maxHeightPoints": 190,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1024 by 768 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s10-mobile",
+      "title": "Figure 10",
+      "caption": "Public React sample at 390px. The product and caption stack above the four-value Review summary. Edit configuration and Back remain reachable.",
+      "panels": [
+        {
+          "label": "390px product and caption",
+          "asset": "assets/screenshots/s10-mobile-product.png",
+          "sha256": "ff5d644f43f6a6cb64519aca7ed8d0975bb618bcdfaf8e66ecf7256c44b3b37c",
+          "alt": "Narrow Review stacks the loaded Graphite bag photograph and caption naming Simple, Amber and Carry bag.",
+          "maxHeightPoints": 310,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 390 by 1177 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          },
+          "fullAsset": "assets/screenshots/s10-mobile-full.png",
+          "fullSha256": "7e2b0bee02674f96d13065aa3934d95b4ebf3476572626cb2018d6a26fd72991"
+        },
+        {
+          "label": "390px summary",
+          "asset": "assets/screenshots/s10-mobile-summary.png",
+          "sha256": "7daad631a49f7b20a887e8713d570ea13116642010641d7efd12a67baf757d7a",
+          "alt": "Narrow Review configuration summary retains Graphite, Simple, Amber and Carry bag.",
+          "maxHeightPoints": 210,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 390 by 1177 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "390px Edit and Back",
+          "asset": "assets/screenshots/s10-mobile-actions.png",
+          "sha256": "6ab172e9181ebf4fc52a9519be77873d6b62dd640fe83f8632a82a7a15ee560b",
+          "alt": "Narrow Review has a complete Edit configuration button and Back action.",
+          "maxHeightPoints": 95,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 390 by 1177 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s11-handoff",
+      "title": "Figure 11",
+      "caption": "Claude Design. Send opens the Local agent handoff for the generated Velori Store file. Copied records the completed copy action; Project HTML provides the Project archive export path.",
+      "panels": [
+        {
+          "label": "Send to Claude Code",
+          "asset": "assets/screenshots/s11-send-to-code.png",
+          "sha256": "c3b695a57253740bc0e134ced968dcc2fe0d877b753adee6fb32104a9b25b98c",
+          "alt": "Claude Design destinations menu includes Claude Code and Send.",
+          "maxHeightPoints": 120,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Local agent and selected file",
+          "asset": "assets/screenshots/s11-local-agent.png",
+          "sha256": "6a4dff89269024a3a033c19182792eff0a29d6f2035c106087e71c4e74b67e2e",
+          "alt": "Hand off to Claude Code dialog has Local agent selected and Velori Store.dc.html checked as the focused file.",
+          "maxHeightPoints": 120,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Copied after the action",
+          "asset": "assets/screenshots/s11-copied.png",
+          "sha256": "e680c22e172d03714b804ee79be14eb988556c098be792b2a1b4d4ad3f8de8c5",
+          "alt": "Native handoff button reads Copied after the copy action.",
+          "maxHeightPoints": 80,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Original 1x UI capture, source 1280 by 720 pixels. React Review and dropdown fonts are 14px; captions and choice labels are 12px. Native UI labels are retained at source density.",
+            "reason": "120ppi prints 14px type at 8.4pt without adding source pixels. Tight panels preserve readable primary labels; selectable figure captions retain the fixture values. Overview panels provide context, with separate detail panels for the instruction."
+          }
+        },
+        {
+          "label": "Project archive export",
+          "asset": "assets/screenshots/s11-project-archive.png",
+          "sha256": "86340a44696fb7de8831ce4f6c5eb853f9ac5317e70da4c5bbdee95a9506328a",
+          "alt": "Native Export HTML dialog has Project archive selected, describes every project file zipped, and shows Export. Standalone HTML remains unselected.",
+          "maxHeightPoints": 180,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 2560 by 1440 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s12-figma-review",
+      "title": "Figure 12",
+      "caption": "Imported Figma working copy. Inspect linked component identity and a representative variable binding, then compare Present Review with Graphite, Simple, Amber and Carry bag. Prototype variables cover the configured visit.",
+      "panels": [
+        {
+          "label": "Selected Continue instance",
+          "asset": "assets/screenshots/s12-selected-button.png",
+          "sha256": "8e5582d4da1223a5c6a9362b06281a9f7d3dc744602d62206042607a1d26ef22",
+          "alt": "Configure page Continue button is selected as a native component instance. The selection measurement reads 400 Fill by 48.",
+          "maxHeightPoints": 100,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 3456 by 2168 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Linked Primary Button",
+          "asset": "assets/screenshots/s12-component-identity.png",
+          "sha256": "ac2fd89fc793f4b6b3331ca2c0660d698af02f01394f458add41f5d7ab5a0c17",
+          "alt": "Figma inspector names Primary Button from this file, with State Default and Label Continue. Its guidance names Ink, white, 48px height and 12px corners.",
+          "maxHeightPoints": 130,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 3456 by 2168 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Bound height variable",
+          "asset": "assets/screenshots/s12-size-binding.png",
+          "sha256": "e2e04e08856d84ca20d2eb43fd4423ac6c2f4470bfcbe48feee8ee3522c89aa3",
+          "alt": "Figma size variable picker has primary-action selected with value 48, beside the instance height control.",
+          "maxHeightPoints": 128,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 3456 by 2168 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Imported Figma product",
+          "asset": "assets/screenshots/s12-present-photo.png",
+          "sha256": "d3e72e2f77d5603f6d576666702628a92aa9096401453af7b465ef93ea1be11c",
+          "alt": "Imported Figma Present shows the configured Graphite robot with Simple Amber face and Carry bag.",
+          "maxHeightPoints": 275,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 3456 by 2168 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        },
+        {
+          "label": "Imported Figma Present Review",
+          "asset": "assets/screenshots/s12-present-summary.png",
+          "sha256": "b9102ed36133c061ae85dafa1a6bbc30df32be57b92c7668d62b2c466da7c13b",
+          "alt": "Imported Figma prototype Review retains Graphite, Simple, Amber and Carry bag with Edit configuration and Back.",
+          "maxHeightPoints": 335,
+          "minPpi": 220,
+          "printReadability": {
+            "captureDensity": "Original retina UI capture, source 3456 by 2168 pixels. Figma desktop captures are 2x; new sample failure and retry captures are 2x.",
+            "reason": "220ppi preserves the native retina labels without raster resampling. The configured state and component or variable identity remain available in selectable captions and alt text. Final A5 inspection checks the actual panel size."
+          }
+        }
+      ]
+    }
+  ]
+}

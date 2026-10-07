@@ -54,7 +54,7 @@ for(const [name,mutate,expected] of [
 ]){const copy=structuredClone(newLedger);mutate(copy);assert.throws(()=>validateLedgerContract(copy,newContext),expected,name);}
 for(const ids of [[],['F01','F01'],['F02']]){const copy=structuredClone(newLedger),ctx=structuredClone(newContext);copy.changes[0].groupedDraftEntries=ids;ctx.changes=structuredClone(copy.changes);assert.throws(()=>validateLedgerContract(copy,ctx),/Every classified change/,JSON.stringify(ids));}
 
-const companion=JSON.parse(await readFile(resolve(book,'figma-companion.json')));
+const companion=JSON.parse(await readFile(resolve(book,'baselines/v1.2.1/figma-companion.json')));
 const imported=structuredClone(companion);imported.verification.status='passed';imported.verification.dependencyClosure={status:'passed',trackedReceipt:'qa/v1.2.1/figma-import-verification.json',receiptSha256:'3'.repeat(64)};
 const figContext={version,artifactSha256:companion.artifact.sha256,artifactBytes:companion.artifact.bytes,companionSha256:'4'.repeat(64),sidecarSha256:'4'.repeat(64),qaSha256:'3'.repeat(64),qa:{schemaVersion:1,status:'passed',version,artifact:{sha256:companion.artifact.sha256,bytes:companion.artifact.bytes},freshImport:{status:'passed',destination:'Drafts',presentChecks:companion.verification.freshImport.presentChecks},dependencyClosure:{status:'passed',unresolvedRequiredDependencies:0}}};
 validateFigmaCompanionContract(imported,figContext);
