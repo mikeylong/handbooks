@@ -170,8 +170,6 @@ export function validateDownloadContract(html,files,{version,releaseContract}={}
 async function pinnedFile(base,path){const file=safePath(base,path);assert.ok((await lstat(file)).isFile(),'Pinned input must be a regular file');assert.equal(await realpath(file),file,'Pinned input cannot be a symlink');return {bytes:await readFile(file),file};}
 
 export async function main(){
-const selectedManifest=JSON.parse(await readFile(resolve(root,'claude-design/release-manifest.json'),'utf8'));
-if(selectedManifest.releaseContract?.kind==='design-exploration'){const {validateExplorationRelease}=await import('./validate-design-exploration.mjs');return validateExplorationRelease(root);}
 const {values:args}=parseArgs({options:{registry:{type:'string'}}});
 const catalog=JSON.parse(await readFile(resolve(root,'catalog.json'),'utf8'));
 const pin=validateLibrary(catalog).find(b=>b.id==='claude-design');assert.ok(pin);
@@ -194,6 +192,10 @@ if(candidate){
 }
 const manifest=JSON.parse(await readFile(resolve(book,'release-manifest.json'),'utf8'));
 assert.equal(pkg.version,manifest.version);assert.equal(pkg.files[manifest.pdf],manifest.sha256);assert.ok(pkg.files[pkg.html]);
+if(manifest.releaseContract?.kind==='design-exploration'){
+ const {validateExplorationRelease,validateExplorationCandidate}=await import('./validate-design-exploration.mjs');
+ return candidate?validateExplorationCandidate(book,{root,pkg,manifest,variantPin,catalog}):validateExplorationRelease(root);
+}
 const releaseContract=!/^1\.[01]\./.test(manifest.version)?resolveReleaseContract(manifest):null;
 if(candidate){
  assert.equal(manifest.approvalStatus,'candidate');
