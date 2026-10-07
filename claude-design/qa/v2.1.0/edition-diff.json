@@ -1,0 +1,71 @@
+{
+  "artifacts": {
+    "pdfTextPatch": "exact-pdf-text.patch",
+    "readerFacingContentPatch": "reader-facing-content.patch",
+    "sourcePatch": "exact-source.patch"
+  },
+  "candidate": {
+    "ignoredChangelogPages": [
+      55
+    ],
+    "ignoredNavigationPages": [
+      6
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 2.1.0 \u00b7 2026-10-07 \u00b7 PDF appearance revision 1",
+      "title": "Claude Design Field Guide \u00b7 Daytime version"
+    },
+    "pages": 55,
+    "pdf": "candidate/claude-design-v2.1.0-2026-10-07-daytime-r5.pdf",
+    "pdfSha256": "03f12b39c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3"
+  },
+  "comparisons": {
+    "contentMetadataChanged": true,
+    "metadataChanged": true,
+    "navigationTextChanged": true,
+    "normalizedSubstantiveTextChanged": true,
+    "outlineIncludingChangelogChanged": true,
+    "rawPdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": true,
+    "substantiveOutlineChanged": true
+  },
+  "decisionProjection": {
+    "excludedSurfaces": [
+      "changelog pages",
+      "contents and index pages",
+      "changelog outline entries",
+      "exact PDF appearance title suffixes"
+    ],
+    "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed."
+  },
+  "limitations": [
+    "Rendering-only differences require visual comparison.",
+    "Semantic change categories and rationales must be authored from accepted exact diffs.",
+    "Pass page maps to avoid relying on heading heuristics for surface roles."
+  ],
+  "previous": {
+    "ignoredChangelogPages": [
+      53
+    ],
+    "ignoredNavigationPages": [
+      6
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 2.0.0 \u00b7 2026-10-06 \u00b7 PDF appearance revision 1",
+      "title": "Claude Design Field Guide \u00b7 Daytime version"
+    },
+    "pages": 53,
+    "pdf": "previous/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+    "pdfSha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8"
+  },
+  "readerFacingContentChanged": true,
+  "schemaVersion": 2,
+  "sourceSha256": {
+    "candidate": "f77693c6f7e93567fe96d14ca73dff6d27cd883f00e6392281ca8e613bb3cccc",
+    "previous": "8f9e24a5f56ccac9079f23b1fbb2a84cc04bc88738998bef6b715031d4ce66e1"
+  },
+  "summary": "The candidate contains reader-facing changes that require semantic classification."
+}

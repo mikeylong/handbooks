@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "reviewer": "Codex independent focused release review",
+  "reviewedAt": "2026-10-07T20:50:18.373826+00:00",
+  "scope": "Claude Design Field Guide 2.1.0 Add to cart exercise and Continue/Reset corrections; isolated diff against origin/main",
+  "baseCommit": "b5883a03440ff15e222c3564b4f75946afb6dae9",
+  "branch": "codex/claude-design-v210-cart",
+  "findings": [],
+  "unresolved": {
+    "High": 0,
+    "Medium": 0,
+    "Low": 0
+  },
+  "artifactIdentity": {
+    "claude-design/Claude_Design_Field_Guide_Source.md": "f77693c6f7e93567fe96d14ca73dff6d27cd883f00e6392281ca8e613bb3cccc",
+    "claude-design/publication-package.json": "e39f90de1152ccf240e9686ec386e1fa44d07f06ff8d1ce353c373d2e65c8c6b",
+    "claude-design/pdf-variants.json": "292d82b4d6d9b4e0d38d514578e3166c63ef851ead5590e31226882e50d26bcf",
+    "daytimePdf": "03f12b39c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3",
+    "lateNightPdf": "0147322b8d6f5850664ca6a44b6c87c19fafebb811e4db620fc854cf57d42417",
+    "exerciseZip": "a5723a79c0147f485703b1df0b143a151b75305c6f3b303e7fd9c4855b9b8695",
+    "assembledMarkdown": "741f7fb809615e446b85103fed70dfd8f3bb8c5ebcad3b09b8ea565b86df0ced"
+  },
+  "checks": [
+    "Reviewed cart snapshot, update, single-item repeat activation, reload persistence, unavailable accessory and Reset fixture implementation in the actual archived runtime resources.",
+    "Archived Configure, Review, shared JSX and HTML template exactly match the supplied source records. ZIP contains 215 unique members and passes CRC integrity.",
+    "Reviewed manuscript, screenshot caption, exercise instructions and native provenance. Current cart behavior is explicitly local; the native trial and static Figma Review retain 2.0.0 scope.",
+    "Existing 79 collection retained-route definitions are unchanged. All 105 retained route source hashes pass; all 15 v2.0.0 baseline files match origin/main bytes.",
+    "All assembled retained routes, current exercise files and both current PDFs match pinned hashes. Current machine-readable Markdown has the matching edition, cart endpoint and Continue/Reset instructions.",
+    "Approved release, variants, package, catalog and registry pins agree. Publication approval qualification proofs match their pinned hashes.",
+    "Reviewed candidate dispatch and approved-release validation changes and negative fixtures. Candidate validation continues to report publicationApproved false; current prototype proof binds archived HTML and original walkthrough bytes.",
+    "Vercel headers add exact six current edition download routes with matching filenames and formats while preserving previous rules."
+  ],
+  "limitations": [
+    "This review inspected code and artifacts; it did not repeat the browser walkthrough, PDF rendering or full test suite already being run by the parent release work.",
+    "GitHub required checks, protected merge and exact-commit production deployment remain subsequent release steps."
+  ]
+}

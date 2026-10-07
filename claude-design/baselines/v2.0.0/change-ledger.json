@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "accepted": true,
+  "version": "2.0.0",
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "8f9e24a5f56ccac9079f23b1fbb2a84cc04bc88738998bef6b715031d4ce66e1",
+    "previousSourceSha256": "fe02f3bd558183ca25bd6295495180e139108dd5c70e918949b489cf0a72d1f8"
+  },
+  "changes": [
+    {
+      "category": "Correction or clarification",
+      "section": "Orientation; chapters 1 and 2",
+      "text": "Begin with Figma foundations and screens or an existing implementation library.",
+      "rationale": "The two input routes have distinct ownership and preparation.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+        "https://eatcaviar.co/getting-a-design-system-set-up-in-claude-design/"
+      ]
+    },
+    {
+      "category": "Addition",
+      "section": "Chapters 3 to 6",
+      "text": "Compare directions, refine with chat, comments and direct edits, then review a connected prototype.",
+      "rationale": "Design decisions and people reviewing the result form the main exercise.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+        "https://bozana.design/work/portfolio-built-with-ai"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Chapters 7 to 9",
+      "text": "Finish with a reviewed prototype and usable handoff; choose Code or Figma when the next owner needs it.",
+      "rationale": "Implementation and editable design have separate completion checks.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+        "https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/"
+      ]
+    },
+    {
+      "category": "Deprecation or removal",
+      "section": "Main narrative; supporting exercise material",
+      "text": "Move package inventories and detailed engineering checks into supporting material.",
+      "rationale": "Readers encounter technical setup when their selected route requires it.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design"
+      ]
+    }
+  ],
+  "classifiedChangeIds": [
+    "D01",
+    "D02",
+    "D03",
+    "D04"
+  ],
+  "comparisonEvidence": {
+    "source": {
+      "path": "claude-design/qa/v2.0.0/exact-source.patch",
+      "sha256": "8cc75072e505a079d557493cbf6d2c2416ae2b966321f46a353dad1f1f6f8556"
+    },
+    "pdf": {
+      "path": "claude-design/qa/v2.0.0/exact-pdf-text.patch",
+      "sha256": "41d570a1957a7c4e4293168bd7034571635af12e1d2b63e5f8b3e3dcef5586c5"
+    },
+    "substantive": {
+      "path": "claude-design/qa/v2.0.0/reader-facing-content.patch",
+      "sha256": "4a10f4a3727108d1ac884747c299be75e5d005a660bcb3390b1139238ec66241"
+    },
+    "comparison": {
+      "path": "claude-design/qa/v2.0.0/edition-diff.json",
+      "sha256": "9ab53d00388d0290027366e2a8a1cd3caac9d82e8538b47dee66b361035ef854"
+    },
+    "decision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "ec391751f4ed859cca1f08599b25c7460f86df99ecca6833422768e27d86cb90"
+    }
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.0.0/velori-design-exploration-v2.0.0.zip",
+    "repositoryPath": "claude-design/reader/editions/v2.0.0/velori-design-exploration-v2.0.0.zip",
+    "sha256": "d854ba99597ea1c536201494a47612ba367f6de84bc1d700a0d62e42979db592",
+    "bytes": 97135688,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "f86e9832277516b423c602fda69acbdd2f1d09f61914d65b446150400ca44891"
+    }
+  },
+  "verificationRecord": "claude-design/qa/v2.0.0/change-ledger-verification.json"
+}

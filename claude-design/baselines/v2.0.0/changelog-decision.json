@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "This edition centers the guide on exploring, refining and reviewing product designs in Claude Design.",
+  "entryCount": 4,
+  "failures": [],
+  "placement": "final-page",
+  "requiredPdfState": {
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
+  },
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "category": "Correction or clarification",
+      "section": "Orientation; chapters 1 and 2",
+      "text": "Begin with Figma foundations and screens or an existing implementation library.",
+      "rationale": "The two input routes have distinct ownership and preparation.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+        "https://eatcaviar.co/getting-a-design-system-set-up-in-claude-design/"
+      ]
+    },
+    {
+      "category": "Addition",
+      "section": "Chapters 3 to 6",
+      "text": "Compare directions, refine with chat, comments and direct edits, then review a connected prototype.",
+      "rationale": "Design decisions and people reviewing the result form the main exercise.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+        "https://bozana.design/work/portfolio-built-with-ai"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Chapters 7 to 9",
+      "text": "Finish with a reviewed prototype and usable handoff; choose Code or Figma when the next owner needs it.",
+      "rationale": "Implementation and editable design have separate completion checks.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+        "https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/"
+      ]
+    },
+    {
+      "category": "Deprecation or removal",
+      "section": "Main narrative; supporting exercise material",
+      "text": "Move package inventories and detailed engineering checks into supporting material.",
+      "rationale": "Readers encounter technical setup when their selected route requires it.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design"
+      ]
+    }
+  ]
+}

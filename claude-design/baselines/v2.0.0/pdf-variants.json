@@ -1,0 +1,60 @@
+{
+  "title": "Claude Design Field Guide",
+  "version": "2.0.0",
+  "date": "2026-10-06",
+  "pdf": "output/pdf/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+  "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+  "pages": 53,
+  "previous_public_edition": "1.3.0",
+  "approvalStatus": "approved",
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-07",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+      "pages": 53,
+      "bytes": 6744714,
+      "pageMap": {
+        "path": "claude-design/qa/v2.0.0/daytime-map.json",
+        "sha256": "620c546829dc54641a809e29f6f78b3739217118ed7a8289de35743bd004f45a"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-07",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+      "pages": 53,
+      "bytes": 45744733,
+      "pageMap": {
+        "path": "claude-design/qa/v2.0.0/late-night-map.json",
+        "sha256": "4b8a3ffdb8b4480b2ecc248872dacefa7ab28e3be4e252dc1ce253c1f64c9773"
+      },
+      "proof": {
+        "parity": {
+          "path": "claude-design/qa/v2.0.0/appearance-parity.json",
+          "sha256": "ad68a4579d89a8b7ebb3a681c15bd7f5bef0d36ff116810a1bba1a541d3a87de"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+          "authority": "Mike: latest direct Land this after reviewing the approval hold, 2026-10-07",
+          "review": "claude-design/qa/v2.0.0/visual-review.json"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "command": "npm run validate",
+  "exitCode": 0,
+  "branch": "codex/claude-design-v210-cart",
+  "log": {
+    "path": "claude-design/qa/v2.1.0/release-validation.txt",
+    "sha256": "358bebce53778f857e48a7e359c8b8215d98ee79b8e999bc0c405b5a4ef45389"
+  },
+  "inputs": [
+    {
+      "path": "catalog.json",
+      "sha256": "e41da699a874c8231d31c25785f57a5e94edc9eba51fdb9751ebc4b9b0c1d845"
+    },
+    {
+      "path": "site/approval-registry.json",
+      "sha256": "2690f3baa5302fc42db65bd0010403e5e9887bf33fb1b6088050fd94f5a3f1dd"
+    },
+    {
+      "path": "site/retained-releases.json",
+      "sha256": "4a672baee21bc146a646da8adb6fe79926d26e598d3337b01291f205840b73cb"
+    },
+    {
+      "path": "site/changelogs.json",
+      "sha256": "47447f1ef6b27b49f902d11975eec7fc43ee45370f7de5915af8e2589bb27cbc"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "b44045d9bb157a93cf244d6263aff44f0f176fafeea0f5da07b2620fba629195"
+    },
+    {
+      "path": "claude-design/publication-package.json",
+      "sha256": "e39f90de1152ccf240e9686ec386e1fa44d07f06ff8d1ce353c373d2e65c8c6b"
+    },
+    {
+      "path": "claude-design/pdf-variants.json",
+      "sha256": "292d82b4d6d9b4e0d38d514578e3166c63ef851ead5590e31226882e50d26bcf"
+    },
+    {
+      "path": "claude-design/release-manifest.json",
+      "sha256": "95534e6f6576a61dc0abf0e153530f0c164e668408ba5752c06d9dbe217e31bd"
+    },
+    {
+      "path": "claude-design/change-ledger.json",
+      "sha256": "7ee69139b9756488738f3e256c56b1a44aa897c24d189b2ab250d37f6fb9f23c"
+    },
+    {
+      "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+      "sha256": "f77693c6f7e93567fe96d14ca73dff6d27cd883f00e6392281ca8e613bb3cccc"
+    }
+  ],
+  "proseReview": {
+    "scannerOutput": "claude-design/qa/v2.1.0/prose-scan-final.txt",
+    "disposition": "Repeated product/tool names and retained baseline wording reviewed in context. Changelog and Continue/Reset additions name the exact behavior."
+  }
+}

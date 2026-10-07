@@ -1,0 +1,377 @@
+
+> validate
+> python3 scripts/validate-repositories.py && npm run validate:releases && npm run build && npm --prefix site test
+
+{
+  "status": "PASS",
+  "repository": "https://github.com/mikeylong/handbooks",
+  "sourceRoots": [
+    "production-ai-engineering",
+    "claude-design",
+    "ai-evaluation",
+    "ai-consulting",
+    "candidates/poisonous-mushrooms",
+    "drafts/ai-product-design",
+    "site",
+    "publish-evidence-backed-handbook"
+  ],
+  "failures": []
+}
+
+> validate:releases
+> npm --prefix production-ai-engineering run validate:release && npm --prefix production-ai-engineering run validate:handbook && npm --prefix ai-evaluation run validate && npm --prefix ai-consulting run validate && npm --prefix claude-design run validate
+
+
+> validate:release
+> node scripts/validate-production-release.mjs
+
+{
+  "status": "passed",
+  "releaseChanged": false,
+  "version": "Version 1.4.0",
+  "publicationDate": "September 30, 2026",
+  "productionPdfSha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0",
+  "productionPdfPath": "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf",
+  "changedReleasePaths": []
+}
+
+> validate:handbook
+> node scripts/validate-handbook-build.mjs
+
+Built /private/var/folders/gt/lzhcg8wj3f19j78b3g444s1c0000gn/T/production-ai-html-validation-NrPLWQ/handbook/index.html
+Source SHA-256: 89585b5adaf129adca345f514e94f331b905ef62ca778ef872150418dba01bae
+Chapters: 12
+Verified chapter images: 12
+Changelog: omitted; reader-facing content unchanged
+Next version review: 2026-10-12T16:00:00.000Z
+{
+  "chapters": 12,
+  "decks": 12,
+  "sourceSections": 25,
+  "sectionHierarchyValid": true,
+  "sectionNumberStylingValid": true,
+  "sectionNumberSeparatorValid": true,
+  "legacyGlobalSectionHeadingsRemoved": true,
+  "sourceMapHierarchyValid": true,
+  "sourceMapPrintWrapValid": true,
+  "bibliographySectionHierarchyValid": true,
+  "bibliographyAccessDateExact": true,
+  "sectionSourceLines": 25,
+  "citationMarkers": 53,
+  "bibliographyEntries": 93,
+  "indexEntries": 145,
+  "indexAlphabetical": true,
+  "chapterImages": 12,
+  "chapterImageIntrinsicResolutionValid": true,
+  "responsiveChapterImages": 12,
+  "chapterArtPrintScaleValid": true,
+  "chapterArtPrintPdfKitCompatibilityValid": true,
+  "pairedRowVerticalAlignmentValid": true,
+  "systemFlowDiagrams": 1,
+  "systemFlowNodes": 8,
+  "systemFlowTopologyValid": true,
+  "systemFlowNodeLabelsValid": true,
+  "systemFlowAccessibilityValid": true,
+  "systemFlowVectorOnly": true,
+  "systemFlowPanelDecorationRemoved": true,
+  "systemFlowWidthStandardized": true,
+  "validationFlowDiagrams": 1,
+  "validationSteps": 8,
+  "validationLinks": 8,
+  "validationArrowheadsRemoved": true,
+  "validationTopologyValid": true,
+  "validationNodeLabelsValid": true,
+  "validationAccessibilityValid": true,
+  "validationVectorOnly": true,
+  "validationUiChromeRemoved": true,
+  "validationPanelDecorationRemoved": true,
+  "validationVerticalRhythmValid": true,
+  "validationUsabilityGateExplicit": true,
+  "codeFrames": 1,
+  "jsonCodeFrames": 1,
+  "jsonSyntaxHighlighted": true,
+  "jsonSourceFidelity": true,
+  "jsonSyntaxClassificationValid": true,
+  "keyValueExamples": 1,
+  "cacheKeyCompositions": 1,
+  "latencyBudgets": 1,
+  "kvFootprints": 1,
+  "fallbackFlowDiagrams": 1,
+  "fallbackPathNodes": 3,
+  "fallbackTerminalNodes": 3,
+  "fallbackArrows": 5,
+  "fallbackBranchArrows": 3,
+  "fallbackTopologyValid": true,
+  "fallbackNodeLabelsValid": true,
+  "fallbackAccessibilityValid": true,
+  "fallbackVectorOnly": true,
+  "fallbackUiChromeRemoved": true,
+  "fallbackEditorialEdgeNotes": true,
+  "legacyFallbackLadders": 0,
+  "rawFallbackSourceRemoved": true,
+  "fallbackPanelDecorationRemoved": true,
+  "ragFlowDiagrams": 1,
+  "ragIngestionStages": 3,
+  "ragDatastores": 1,
+  "ragQueryStages": 5,
+  "ragOutcomes": 2,
+  "ragArrows": 10,
+  "ragBranches": 1,
+  "ragTopologyValid": true,
+  "ragNodeLabelsValid": true,
+  "ragAccessibilityValid": true,
+  "ragVectorOnly": true,
+  "ragUiChromeRemoved": true,
+  "ragDataflowGrammarValid": true,
+  "ragCollisionClearancesValid": true,
+  "ragPrintScaleValid": true,
+  "ragWidthStandardized": true,
+  "legacyRagFlows": 0,
+  "rawRagSourceRemoved": true,
+  "ragPanelDecorationRemoved": true,
+  "goldenRecords": 1,
+  "traceTrees": 1,
+  "costModels": 1,
+  "ownershipOutlines": 1,
+  "ownershipOutlineHierarchyValid": true,
+  "ownershipOutlineNumberingValid": true,
+  "toolContractListOrdered": true,
+  "textSchematics": 0,
+  "lazyImages": 12,
+  "eagerImages": 0,
+  "pdfDownloadLinks": 3,
+  "pdfDownloadPageCountExact": true,
+  "releaseScheduleValid": true,
+  "publicReviewPanelAbsent": true,
+  "searchCompanionValid": true,
+  "noJavaScriptNavigationFallback": true,
+  "activeNavigationValid": true,
+  "scrollProgressAnnouncementsRemoved": true,
+  "keyboardScrollableDiagrams": true,
+  "tableScrollHintsMatch": true,
+  "tableRegionsUniquelyNamed": true,
+  "checklistsAreStatic": true,
+  "accessibleColorTokens": true,
+  "siteCanvasWhite": true,
+  "sidebarPublicationAbsent": true,
+  "touchTargetsDefined": true,
+  "tocDialogFooterLayoutScoped": true,
+  "companionChromeHiddenInPrint": true,
+  "changelogPage": 0,
+  "changelogContentValid": true,
+  "changelogIsFinalSection": true,
+  "changelogTocLink": true,
+  "changelogPdfOnly": true,
+  "changelogStartsOnNewPrintPage": true,
+  "sourceUrls": 93,
+  "htmlUrls": 94,
+  "allSourceUrlsPreserved": true,
+  "allSourceUrlsCited": true,
+  "uniqueIds": true,
+  "missingInternalTargets": [],
+  "cssBracesBalanced": true,
+  "fullAuthorName": true,
+  "coverCreditExact": true,
+  "authorSiteLinked": true,
+  "coverLabelsRemoved": true,
+  "coverLegacyEditionLineRemoved": true,
+  "coverPublicationMetadataExact": true,
+  "coverDedicationRemoved": true,
+  "forewordPremiseLabelRemoved": true,
+  "forewordSloDefined": true,
+  "handbookSelfReference": true,
+  "centralPremiseApproved": true,
+  "correctBookTitle": true,
+  "stockBookTitleRemoved": true,
+  "inaccurateCoverNoteRemoved": true,
+  "tocMetadataRemoved": true,
+  "plateCaptionsRemoved": true,
+  "plateDecorationsRemoved": true,
+  "rawMermaidRemoved": true,
+  "plainTextCodeExamplesRemoved": true,
+  "codeFrameDecorationRemoved": true
+}
+
+> validate
+> npm run validate:release && npm run build
+
+
+> validate:release
+> node scripts/validate-release.mjs
+
+{
+  "status": "passed",
+  "version": "1.0.0",
+  "pages": 100,
+  "sha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+  "chapters": 12,
+  "worksheets": 12,
+  "sources": 25,
+  "courseRemoval": "passed",
+  "readerDownload": "passed",
+  "frozenArt": "passed"
+}
+
+> build
+> node scripts/build-reader.mjs
+
+Built ai-evaluation reader; approved PDF 91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad
+
+> validate
+> npm run validate:release && npm run build
+
+
+> validate:release
+> node scripts/validate-release.mjs
+
+{
+  "status": "passed",
+  "version": "1.0.0",
+  "pages": 138,
+  "sha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+  "chapters": 12,
+  "worksheets": 12,
+  "sources": 28,
+  "courseRemoval": "passed",
+  "readerDownload": "passed",
+  "frozenArt": "passed",
+  "proseLists": {
+    "bullets": 13,
+    "steps": 7,
+    "checklists": 8
+  },
+  "decorativeArt": "passed"
+}
+
+> build
+> node scripts/build-reader.mjs
+
+Built ai-consulting reader; approved PDF 4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2
+
+> claude-design-field-guide@2.1.0 validate
+> node source/test-release-ledger.mjs && node source/test-design-exploration.mjs && node source/validate-release.mjs
+
+Preserved v1.2.0 ledger passed its nine stale/private regressions; explicit successor contract, change coverage, Figma byte pins and import proof passed focused positive/negative fixtures. Synthetic import acceptance is test data, not release evidence.
+Immutable exercise reuse keeps the original native proof/version; unapproved editions, changed artifacts, mismatched approvals and relabeled evidence fail.
+V2 contract and content fixtures passed; wrong hosts/editions, private downloads, missing pins, incomplete classifications and missing reader evidence fail. Publication approval is not tested by these fixtures.
+Candidate CLI isolation passed: the selected candidate validates without publication authority; invalid registry, missing source, approved-as-candidate and stale candidate bytes fail.
+Cart successor fixtures passed: exact archive/page contract, classification coverage, immutable native evidence, archived prototype bytes, original walkthrough checks and Continue/Reset gates. Synthetic cart proof is test data, not publication evidence.
+{
+  "status": "passed",
+  "edition": "2.1.0",
+  "pages": 55,
+  "chapters": 9,
+  "archive": {
+    "members": 215,
+    "sha256": {
+      "velori-store/velori-design-exploration-starter.fig": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca",
+      "velori-store/answer-key/velori-review-continuation.fig": "749de1c6a878c5d86f163d78db68f47e898cc39e2be1f9f04bb0097f90790961",
+      "velori-store/answer-key/velori-review-prototype.html": "7d62bb3d5b178db5ed525985133dec5abc3a96399e6dcb3b36df4b3a27886ebe"
+    }
+  },
+  "trialLimits": [
+    "Human task review has not been completed. The author walkthrough is not usability evidence.",
+    "The October 7 cart behavior was added to the offline answer key; no new native Claude Design generation trial is claimed.",
+    "The supplied Figma continuation is the earlier static Review screen, without a new cart frame or prototype reactions.",
+    "Code implementation, real missing-resource recovery and separate-project private-system selection remain untested."
+  ],
+  "pdfs": [
+    {
+      "theme": "light",
+      "sha256": "03f12b39c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3"
+    },
+    {
+      "theme": "dark",
+      "sha256": "0147322b8d6f5850664ca6a44b6c87c19fafebb811e4db620fc854cf57d42417"
+    }
+  ]
+}
+
+> build
+> npm --prefix site run build
+
+
+> build
+> node scripts/build-site.mjs
+
+Built gallery from 4 approved local handbook packages
+
+> test
+> node scripts/test-book-sources.mjs && node scripts/test-artwork-pairs.mjs && node ../publish-evidence-backed-handbook/scripts/test-diagrams.mjs && node scripts/test-publication-front.mjs && node scripts/test-gallery-focus.mjs && node scripts/test-site-theme.mjs && node scripts/test-pdf-headers.mjs && node scripts/test-edition-changelog.mjs && node ../publish-evidence-backed-handbook/scripts/test-prompt-blocks.mjs && node ../publish-evidence-backed-handbook/scripts/test-markdown-downloads.mjs && node ../publish-evidence-backed-handbook/scripts/test-exercise-downloads.mjs && node ../publish-evidence-backed-handbook/scripts/test-terminal-blocks.mjs && python3 ../publish-evidence-backed-handbook/scripts/test-machine-markdown.py && node ../publish-evidence-backed-handbook/scripts/test-retained-releases.mjs
+
+Review navigation stays local for the current book and edition; canonical metadata, downloads, earlier editions and source links retain their destinations.
+Draft publication, unsafe paths, changed PDF, unapproved reader and changed artwork are rejected.
+Candidate roots use only pinned files and retained book routes; obsolete CSS, images, downloads and unpinned files are excluded, other books and failed-stage output are preserved.
+Authored dark pairs passed: future-reader coverage, original light preservation, responsive sources, provenance, hashes, and failure cases.
+Diagram semantics, repeated placements, print fallback, stale definitions/assets, screenshot contracts and unmapped diagrams passed.
+Publication front page passed; 8 omissions or stale-copy regressions rejected.
+An unvalidated new gallery title is also rejected.
+Gallery follows published edition dates; future editions reorder and same-day cards stay stable.
+Gallery download controls and standalone printing notes are rejected; reader downloads remain available.
+All hosted readers pass navigation parity; missing styles, local overrides, and broken return links are rejected.
+All hosted readers reject stray cover content between Contents and the first chapter.
+All gallery previews follow reader title, subtitle, credit, and edition; stale raster covers are rejected.
+All canonical HTML links and sitemap entries use Surfaces.
+Gallery return focus passed for all four titles, reordered cards, Back/cache restores, return links, blocked storage, and fresh visits.
+Future reader discovery passed; missing controls, image containers, and local inversion are rejected.
+Shared appearance passed: system/manual choices, navigation, cache return, cross-tab changes, blocked storage, and all published pages.
+Hosted PDF headers match all 18 emitted download routes; missing and stale filenames are rejected.
+Future Markdown routes have UTF-8 content type and attachment headers.
+Future-edition changelogs, first-edition notes, escaping, source links, missing records, version mismatch and stale hashes passed.
+Prompt rendering preserves content and ordinary tables; stale bindings fail closed
+Markdown content, code whitespace, prompts, lists, tables, links, diagrams, edition safety, required placement, and 25-chapter future edition passed.
+Screenshot alt text, captions, image links, immutable edition paths, and chapter-art fallback passed.
+Cropped screenshot descriptions, source bounds, matching larger views, and published-source privacy rejection passed.
+{
+  "status": "passed",
+  "cases": 44,
+  "checks": [
+    "missing definition preserves existing-edition behavior",
+    "exact pinned binary bytes render one escaped edition download",
+    "multiple independently pinned downloads preserve definition order",
+    "wrong schema",
+    "wrong book identity",
+    "wrong edition version",
+    "missing downloads",
+    "empty downloads",
+    "blank label",
+    "another book route",
+    "another edition route",
+    "nested route",
+    "traversal route",
+    "unsafe filename",
+    "filename-route disagreement",
+    "duplicate download route",
+    "artifact path disagreement",
+    "missing hash",
+    "invalid hash",
+    "zero size",
+    "fractional size",
+    "unsafe integer size",
+    "unlisted artifact pin",
+    "different package pin",
+    "stale measured size",
+    "same-size changed file bytes",
+    "jointly repinned false hash",
+    "unsafe reader directory",
+    "missing artifact",
+    "directory instead of artifact",
+    "file symlink even with exact target bytes",
+    "symlinked parent even with regular artifact bytes",
+    "malformed definition fails instead of silently omitting download",
+    "relabel after approval rejected with unchanged independently pinned artifacts",
+    "reorder after approval rejected with unchanged independently pinned artifacts",
+    "row omission after approval rejected with unchanged independently pinned artifacts",
+    "missing definition pin",
+    "stale definition pin",
+    "definition pin under another path",
+    "deleted pinned definition",
+    "directory instead of definition",
+    "definition file symlink with exact target bytes",
+    "symlinked definition parent with exact bytes",
+    "unapproved malformed bytes rejected before parsing"
+  ]
+}
+PASS frozen terminal overlay, exact commands, ordinary callouts and stale binding rejection
+PASS manuscript callouts, worksheets, prompts, body preservation and invalid directive rejection
+Retained HTML, Markdown, index, PDF, ZIP and native Figma bytes survive new editions; stale hashes, collisions, duplicates and escapes fail.

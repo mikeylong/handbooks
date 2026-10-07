@@ -1,0 +1,93 @@
+{
+  "status": "candidate",
+  "publicationApproved": false,
+  "version": "2.1.0",
+  "endpoint": [
+    "Configure",
+    "Review",
+    "Add to cart",
+    "Cart confirmation"
+  ],
+  "excluded": [
+    "Payment",
+    "Shipping",
+    "Tax calculation",
+    "Order submission"
+  ],
+  "checks": {
+    "desktopAddToCart": "passed; keyboard Return opens Cart and focuses its heading",
+    "cartChoices": "passed; Graphite, Simple, Amber, Carry bag, quantity one",
+    "editRestoration": "passed",
+    "snapshotIsolation": "passed; changing draft accessory to None leaves cart Carry bag until explicit re-add",
+    "editedItemUpdate": "passed; None replaces Carry bag with quantity one",
+    "repeatActivation": "passed; double-click keeps quantity one",
+    "sameSessionReload": "passed; revised None item retained",
+    "unavailableFixture": "passed; Add to cart absent until Choose None/Dock",
+    "emptyCartRecovery": "passed",
+    "mobile": "passed; 390x844, document width 390; complete edit-review-add route",
+    "pdfParity": "see pdf-final-parity",
+    "pdfAppearance": "passed",
+    "pdfVisual": "Changed pages 30\u201334 rendered with Poppler; reviewed cart prose and screenshot in Daytime and Late night.",
+    "resetFixture": "passed; resets from Edit, Review and Cart to #/configure with starting values; repeated activation remains Configure",
+    "continueLabel": "passed; Configure and Edit both say Continue and navigate to Review"
+  },
+  "artifacts": {
+    "velori-design-exploration-v2.1.0-candidate.zip": {
+      "sha256": "e438962781dfb413dd1877a2f27e2d0bfdc2d3b9364a817afccb475a2b33d7a5",
+      "bytes": 97153525
+    },
+    "claude-design-v2.1.0-2026-10-07-daytime-r3.pdf": {
+      "sha256": "25b9bb917c0b3afd93928ca9fdb04dcf3de5514252dc581a56fb52cebe3676cf",
+      "bytes": 6839751
+    },
+    "claude-design-v2.1.0-2026-10-07-late-night-r3.pdf": {
+      "sha256": "af04bde4750e9b93b30406a833031405ff3e01824418b0edb0af65bde5f16569",
+      "bytes": 45840491
+    },
+    "claude-design-v2.1.0.md": {
+      "sha256": "fb6ffc3fb46052da752e81c20fff1684d139b263a59e66c09e9854d32bad38bd",
+      "bytes": 50410
+    },
+    "Claude_Design_Field_Guide_Source.md": {
+      "sha256": "1626581fe9883a124492c68bfc1e1a2feb28eb705bd1cfaa4a97446cda624ac7",
+      "bytes": 40085
+    },
+    "velori-review-prototype.html": {
+      "sha256": "7d62bb3d5b178db5ed525985133dec5abc3a96399e6dcb3b36df4b3a27886ebe",
+      "bytes": 20053993
+    },
+    "velori-design-exploration-v2.1.0-candidate-r2.zip": {
+      "sha256": "23871fd79e99e75d2cccf9eb72b5e586c1eeefae3e64f6c61c938cd55ff7e6af",
+      "bytes": 97153592
+    }
+  },
+  "zipMembers": 215,
+  "retained": {
+    "manuscript": {
+      "path": "/Users/mike/handbooks/claude-design/Claude_Design_Field_Guide_Source.md",
+      "sha256": "8f9e24a5f56ccac9079f23b1fbb2a84cc04bc88738998bef6b715031d4ce66e1",
+      "unchanged": true
+    },
+    "daytime": {
+      "path": "/Users/mike/handbooks/claude-design/output/pdf/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+      "unchanged": true
+    },
+    "lateNight": {
+      "path": "/Users/mike/handbooks/claude-design/output/pdf/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+      "unchanged": true
+    },
+    "exercise": {
+      "path": "/Users/mike/handbooks/claude-design/reader/editions/v2.0.0/velori-design-exploration-v2.0.0.zip",
+      "sha256": "d854ba99597ea1c536201494a47612ba367f6de84bc1d700a0d62e42979db592",
+      "unchanged": true
+    }
+  },
+  "limits": [
+    "No new native Claude Design generation trial or new Figma cart frame is claimed.",
+    "Candidate is not approved or published. Collection release assembly and exact-artifact full release review remain separate.",
+    "PDFs retain the untagged baseline; PDF/UA is not claimed."
+  ],
+  "currentExercisePackage": "velori-design-exploration-v2.1.0-candidate-r2.zip"
+}
