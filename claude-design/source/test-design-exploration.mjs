@@ -46,6 +46,7 @@ try{
   const qa=`qa/v${manifest.version}/`;
   const extras=['Claude_Design_Field_Guide_Source.md','figma-companion.json',qa+'edition-diff.json',qa+'daytime-validation.json',qa+'late-night-validation.json',...Object.values(comparison.artifacts).map(p=>qa+p)];
   if(manifest.releaseContract.prototypeEvidence){const proofPath=manifest.releaseContract.prototypeEvidence.path.slice('claude-design/'.length),proof=JSON.parse(await readFile(new URL(proofPath,book),'utf8'));extras.push(proofPath,proof.sourceEvidence.path.slice('claude-design/'.length));}
+  if(manifest.releaseContract.companionParityEvidence){const proofPath=manifest.releaseContract.companionParityEvidence.path.slice('claude-design/'.length),proof=JSON.parse(await readFile(new URL(proofPath,book),'utf8'));extras.push(proofPath,...['figma','react'].map(key=>proof[key].validation.path.slice('claude-design/'.length)));}
   for(const path of new Set([...Object.keys(pkg.files),...extras])){
    const target=join(fixture,path);await mkdir(dirname(target),{recursive:true});await link(new URL(path,book).pathname,target);
   }
@@ -116,3 +117,4 @@ for(const [name,mutate,expected] of [
  ['native scope omitted',x=>x.limitations=[],/native trial scope/]
 ]){const x=structuredClone(cartProof);mutate(x);assert.throws(()=>validateExplorationPrototypeEvidence(x,cartContext),expected,name);}
 console.log('Cart successor fixtures passed: exact archive/page contract, classification coverage, immutable native evidence, archived prototype bytes, original walkthrough checks and Continue/Reset gates. Synthetic cart proof is test data, not publication evidence.');
+await import('./test-companion-parity.mjs');

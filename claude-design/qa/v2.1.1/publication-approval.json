@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "version": "2.1.1",
+  "command": "address this and make a new release",
+  "authority": {
+    "kind": "explicit-user-release",
+    "request": "address this and make a new release",
+    "scope": "Correct the React sample and editable Figma answer key to match the Add to cart exercise and publish a new release."
+  },
+  "approver": "Mike",
+  "approvalDate": "2026-10-07",
+  "editionDate": "2026-10-07",
+  "manuscript": {
+    "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28"
+  },
+  "pdfs": [
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
+      "sha256": "ac5fadaf0ced9deddd694657b6b83862cc31ecd38f75363a9665388ba350143a"
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
+      "sha256": "f89d0e3f9dcbdce22e51a85810141de65bc1e9eb75e55c34649e18ce8583c280"
+    }
+  ],
+  "exercise": {
+    "path": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768"
+  },
+  "authorityBasis": "Mike directly requested correction and a new release after identifying that React and editable Figma companions had not been updated for the cart endpoint. Exact qualified candidate files are promoted without rebuilding PDFs.",
+  "qualificationEvidence": {
+    "daytime-validation.json": {
+      "path": "claude-design/qa/v2.1.1/daytime-validation.json",
+      "sha256": "62cd0d9d30a78f84e998d562ecbe5262ac3aa7e94ef0b5efc63ff9f66fdebf6a"
+    },
+    "late-night-validation.json": {
+      "path": "claude-design/qa/v2.1.1/late-night-validation.json",
+      "sha256": "36954539e7cf32ed8cf4c383dc65c62e318e5a5d07a7b8cd2498218c7732b5d2"
+    },
+    "appearance-parity/parity.json": {
+      "path": "claude-design/qa/v2.1.1/appearance-parity/parity.json",
+      "sha256": "be373b9ac9fbcf1569699bda2ff6b578c767baacb2da2b6b637f5aa994a7ab96"
+    },
+    "appearance.json": {
+      "path": "claude-design/qa/v2.1.1/appearance.json",
+      "sha256": "36e5948064792c7d8a60ad215f6dd5387c2b32f7e2fcc0f85fca1dda181bee07"
+    },
+    "visual-review.json": {
+      "path": "claude-design/qa/v2.1.1/visual-review.json",
+      "sha256": "a29e3ac1cc7df8681c317af65612e090c30976120e6b0a9803d25a8caeb86757"
+    },
+    "focused-review.json": {
+      "path": "claude-design/qa/v2.1.1/focused-review.json",
+      "sha256": "2c679e4bae7db348589a90572067a05adb54f311b026cc37644abcaae0b5863e"
+    },
+    "figma-companion-validation.json": {
+      "path": "claude-design/qa/v2.1.1/figma-companion-validation.json",
+      "sha256": "b7d0bf0db891be98cd4fad4e504c2c2030e01ef4a1b23871801d885ad849ce68"
+    },
+    "react-browser-validation.json": {
+      "path": "claude-design/qa/v2.1.1/react-browser-validation.json",
+      "sha256": "5123fbc32709c4b74e059c7a3a9496fa9c7a1a1aeb8da46d3041551b948897e1"
+    },
+    "react-extracted-validation.json": {
+      "path": "claude-design/qa/v2.1.1/react-extracted-validation.json",
+      "sha256": "4434c96446d61e894fdebdc7a05de3f4ee53b5a3428007d777ac1998e55445c7"
+    },
+    "companion-parity.json": {
+      "path": "claude-design/qa/v2.1.1/companion-parity.json",
+      "sha256": "5b54798d3c7c68fa70c8d089cd5c4ba56a93953c921e3b46529153c811f25dc6"
+    },
+    "exercise-package.json": {
+      "path": "claude-design/qa/v2.1.1/exercise-package.json",
+      "sha256": "a9060cc0626f2ca44377730d763052fedc787776711da8319141779b7fbfdce6"
+    }
+  },
+  "limitations": [
+    "Human task review has not been completed. The author walkthrough is not usability evidence.",
+    "No new native Claude Design generation trial is claimed; the original October 6 trial retains its recorded scope.",
+    "Figma answer key has static editable Review and Cart frames, with no prototype connections or choice-state wiring. Fresh recipient import and separate-account access testing were not repeated for the standard native export.",
+    "PDFs remain untagged; PDF/UA compliance is not claimed."
+  ],
+  "publicationPackage": {
+    "path": "claude-design/publication-package.json",
+    "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
+  },
+  "variantManifest": {
+    "path": "claude-design/pdf-variants.json",
+    "sha256": "eca017b03434df4cfb59d5ddc3bccb24cb52fa59afbca393215a769ea3e16883"
+  }
+}

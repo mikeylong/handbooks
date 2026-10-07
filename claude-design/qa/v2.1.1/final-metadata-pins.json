@@ -1,0 +1,337 @@
+{
+  "scope": "Computed read-only metadata comparison",
+  "pins": [
+    {
+      "metadata": "claude-design/release-manifest.json/releaseContract/nativeEvidence/releaseManifest",
+      "path": "claude-design/baselines/v2.0.0/release-manifest.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/release-manifest.json/releaseContract/nativeEvidence/figmaCompanion",
+      "path": "claude-design/baselines/v2.0.0/figma-companion.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/release-manifest.json/releaseContract/nativeEvidence/roundtrip",
+      "path": "claude-design/qa/v2.0.0/figma-roundtrip-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/release-manifest.json/releaseContract/nativeEvidence/publicationApproval",
+      "path": "claude-design/qa/v2.0.0/publication-approval.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/release-manifest.json/releaseContract/prototypeEvidence",
+      "path": "claude-design/qa/v2.1.0/prototype-behavior.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/release-manifest.json/releaseContract/companionParityEvidence",
+      "path": "claude-design/qa/v2.1.1/companion-parity.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/release-manifest.json/publicationApproval",
+      "path": "claude-design/qa/v2.1.1/publication-approval.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/releaseContract/nativeEvidence/releaseManifest",
+      "path": "claude-design/baselines/v2.0.0/release-manifest.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/releaseContract/nativeEvidence/figmaCompanion",
+      "path": "claude-design/baselines/v2.0.0/figma-companion.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/releaseContract/nativeEvidence/roundtrip",
+      "path": "claude-design/qa/v2.0.0/figma-roundtrip-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/releaseContract/nativeEvidence/publicationApproval",
+      "path": "claude-design/qa/v2.0.0/publication-approval.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/releaseContract/prototypeEvidence",
+      "path": "claude-design/qa/v2.1.0/prototype-behavior.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/releaseContract/companionParityEvidence",
+      "path": "claude-design/qa/v2.1.1/companion-parity.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/variants/0",
+      "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/variants/0/pageMap",
+      "path": "claude-design/qa/v2.1.1/daytime-map.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/variants/1",
+      "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/variants/1/pageMap",
+      "path": "claude-design/qa/v2.1.1/late-night-map.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/pdf-variants.json/variants/1/proof/parity",
+      "path": "claude-design/qa/v2.1.1/appearance-parity/parity.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/manuscript",
+      "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/pdfs/0",
+      "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/pdfs/1",
+      "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/exercise",
+      "path": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/daytime-validation.json",
+      "path": "claude-design/qa/v2.1.1/daytime-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/late-night-validation.json",
+      "path": "claude-design/qa/v2.1.1/late-night-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/appearance-parity/parity.json",
+      "path": "claude-design/qa/v2.1.1/appearance-parity/parity.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/appearance.json",
+      "path": "claude-design/qa/v2.1.1/appearance.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/visual-review.json",
+      "path": "claude-design/qa/v2.1.1/visual-review.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/focused-review.json",
+      "path": "claude-design/qa/v2.1.1/focused-review.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/figma-companion-validation.json",
+      "path": "claude-design/qa/v2.1.1/figma-companion-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/react-browser-validation.json",
+      "path": "claude-design/qa/v2.1.1/react-browser-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/react-extracted-validation.json",
+      "path": "claude-design/qa/v2.1.1/react-extracted-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/companion-parity.json",
+      "path": "claude-design/qa/v2.1.1/companion-parity.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/qualificationEvidence/exercise-package.json",
+      "path": "claude-design/qa/v2.1.1/exercise-package.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/publicationPackage",
+      "path": "claude-design/publication-package.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/publication-approval.json/variantManifest",
+      "path": "claude-design/pdf-variants.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/change-ledger.json/comparisonEvidence/source",
+      "path": "claude-design/qa/v2.1.1/exact-source.patch",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/change-ledger.json/comparisonEvidence/pdf",
+      "path": "claude-design/qa/v2.1.1/exact-pdf-text.patch",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/change-ledger.json/comparisonEvidence/substantive",
+      "path": "claude-design/qa/v2.1.1/reader-facing-content.patch",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/change-ledger.json/comparisonEvidence/comparison",
+      "path": "claude-design/qa/v2.1.1/edition-diff.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/change-ledger.json/comparisonEvidence/decision",
+      "path": "claude-design/changelog-decision.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/change-ledger.json/sampleRelease/publicationPackage",
+      "path": "claude-design/publication-package.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/companion-parity.json/figma/validation",
+      "path": "claude-design/qa/v2.1.1/figma-companion-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/companion-parity.json/react/validation",
+      "path": "claude-design/qa/v2.1.1/react-browser-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/react-browser-validation.json/observations",
+      "path": "claude-design/qa/v2.1.1/react-browser-observations.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/react-browser-validation.json/extractedArchiveValidation",
+      "path": "claude-design/qa/v2.1.1/react-extracted-validation.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/figma-companion-validation.json/nativeInspection",
+      "path": "claude-design/qa/v2.1.1/figma-final-native-inspection.json",
+      "match": true
+    },
+    {
+      "metadata": "claude-design/qa/v2.1.1/figma-companion-validation.json/componentLinks",
+      "path": "claude-design/qa/v2.1.1/figma-main-components.json",
+      "match": true
+    }
+  ],
+  "results": {
+    "pinnedReferences": 47,
+    "pinErrors": [],
+    "publicationPackageFiles": 103,
+    "packageErrors": [],
+    "existingRetainedRoutes": 105,
+    "existingRetentionErrors": [],
+    "newRetainedRoutes": 27,
+    "newRetentionErrors": [],
+    "baselineMetadataFiles": 15,
+    "baselineMetadataErrors": [],
+    "oldHeaderDefinitionChanges": [],
+    "v211Headers": [
+      {
+        "source": "/claude-design/editions/v2.1.1/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/pdf"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"claude-design-v2.1.1-2026-10-07-daytime-r1.pdf\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/pdf"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"claude-design-v2.1.1-2026-10-07-late-night-r1.pdf\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/zip"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"velori-design-exploration-v2.1.1.zip\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/velori-design-exploration-starter.fig",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/octet-stream"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"velori-design-exploration-starter.fig\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/figma-companion.json",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"figma-companion.json\""
+          }
+        ]
+      },
+      {
+        "source": "/claude-design/editions/v2.1.1/claude-design-v2.1.1.md",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/markdown; charset=utf-8"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"claude-design-v2.1.1.md\""
+          }
+        ]
+      }
+    ],
+    "nativeOriginalEvidenceEdition": "2.0.0",
+    "retainedPrototypeEvidenceEdition": "2.1.0",
+    "originalApprovalCommand": "address this and make a new release",
+    "currentFigmaArtifactMatch": true
+  }
+}

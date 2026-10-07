@@ -15,6 +15,24 @@ const nativePaths=edition=>({
 });
 const prototypeChecks=['desktopAddToCart','cartChoices','editRestoration','snapshotIsolation','editedItemUpdate','repeatActivation','sameSessionReload','unavailableFixture','emptyCartRecovery','mobile','resetFixture','continueLabel'];
 const isOlder=(a,b)=>{const x=a.split('.').map(Number),y=b.split('.').map(Number);for(let i=0;i<3;i++){if(x[i]!==y[i])return x[i]<y[i];}return false;};
+const needsCompanionParity=version=>isOlder('2.1.0',version);
+function currentEvidencePin(row,version,label){
+ const prefix=`claude-design/qa/v${version}/`;
+ assert.ok(typeof row?.path==='string'&&row.path.startsWith(prefix)&&/^[A-Za-z0-9_/.-]+\.json$/.test(row.path)&&!row.path.split('/').some(part=>part==='..'||part==='.'||part===''),'Current '+label+' evidence must be edition-local');
+ assert.ok(isSha(row.sha256),'Current '+label+' evidence hash required');
+}
+export function validateExplorationPublicationAuthority(approval){
+ assert.equal(approval.status,'approved');
+ if(approval.command==='Land this')return;
+ assert.equal(approval.authority?.kind,'explicit-user-release','Explicit user release authority required');
+ assert.equal(approval.command,'address this and make a new release','Unrecognized explicit release request');
+}
+export function explorationSourceFingerprint(files){
+ const names=Object.keys(files).filter(name=>name.startsWith('velori-store/src/')||['velori-store/package.json','velori-store/package-lock.json'].includes(name)).sort();
+ assert.ok(names.includes('velori-store/package.json')&&names.includes('velori-store/package-lock.json')&&names.some(name=>name.startsWith('velori-store/src/')),'Archived React source and package metadata required');
+ const entries=names.map(name=>{assert.ok(isSha(files[name]),'Archived React source hash required');return [name,files[name]];});
+ return digest(Buffer.from(JSON.stringify(entries)));
+}
 export function validateExplorationContract(manifest){
  const c=manifest.releaseContract;
  assert.equal(c?.kind,'design-exploration');
@@ -32,7 +50,12 @@ export function validateExplorationContract(manifest){
   const e=c.nativeEvidence;
   assert.ok(e&&typeof e.edition==='string'&&/^\d+\.\d+\.\d+$/.test(e.edition)&&isOlder(e.edition,manifest.version),'Retained native evidence must precede this edition');
   for(const [key,path] of Object.entries(nativePaths(e.edition))){assert.equal(e[key]?.path,path,'Native evidence must bind its original edition');assert.ok(isSha(e[key].sha256),'Native evidence hash required');}
-  assert.equal(c.prototypeEvidence?.path,`claude-design/qa/v${manifest.version}/prototype-behavior.json`,'Tracked current prototype evidence required');
+  const prototypeEdition=needsCompanionParity(manifest.version)?c.prototypeEvidence?.edition:manifest.version;
+  if(needsCompanionParity(manifest.version)){
+   assert.equal(prototypeEdition,'2.1.0','Retained standalone prototype must keep its original edition');
+   currentEvidencePin(c.companionParityEvidence,manifest.version,'companion parity');
+  }
+  assert.equal(c.prototypeEvidence?.path,`claude-design/qa/v${prototypeEdition}/prototype-behavior.json`,'Tracked current prototype evidence required');
   assert.ok(isSha(c.prototypeEvidence.sha256),'Prototype evidence hash required');
  }
  const file=`velori-design-exploration-v${manifest.version}.zip`;
@@ -58,7 +81,10 @@ export function validateExplorationNativeEvidence(contract,{version,records,comp
  assert.deepEqual(original.publicationApproval,e.publicationApproval,'Retained native publication approval changed');
  const approval=records.publicationApproval.data;assert.equal(approval.status,'approved');assert.equal(approval.command,'Land this');
  const originalCompanion=records.figmaCompanion.data;assert.equal(originalCompanion.handbookEdition,e.edition);
- assert.deepEqual(companion.artifacts.map(({filename,role,sha256,bytes,format})=>({filename,role,sha256,bytes,format})),originalCompanion.artifacts.map(({filename,role,sha256,bytes,format})=>({filename,role,sha256,bytes,format})),'Retained native artifact identity changed');
+ const identity=artifacts=>artifacts.map(({filename,role,sha256,bytes,format})=>({filename,role,sha256,bytes,format}));
+ if(contract.companionParityEvidence){
+  assert.deepEqual(identity(companion.artifacts.filter(a=>a.role==='starting material')),identity(originalCompanion.artifacts.filter(a=>a.role==='starting material')),'Retained native starter identity changed');
+ }else assert.deepEqual(identity(companion.artifacts),identity(originalCompanion.artifacts),'Retained native artifact identity changed');
  const roundtrip=records.roundtrip.data;
  assert.equal(roundtrip.status,'passed');assert.match(roundtrip.scope,/same account/);
  assert.equal(roundtrip.validation.missingFonts.length,0);assert.equal(roundtrip.validation.reactions,0);assert.equal(roundtrip.validation.styledTexts,22);assert.equal(roundtrip.validation.instances.length,10);assert.ok(roundtrip.validation.instances.every(i=>i.mainComponent?.id));assert.equal(roundtrip.validation.variableBoundNodes,66);
@@ -72,7 +98,50 @@ export function validateExplorationPrototypeEvidence(proof,{version,prototypeSha
  assert.ok(isSha(sourceSha256));assert.equal(proof.sourceEvidence.sha256,sourceSha256,'Stale original prototype source evidence');
  assert.equal(sourceData.version,version);assert.equal(sourceData.artifacts['velori-review-prototype.html'].sha256,prototypeSha256,'Original walkthrough tested different prototype bytes');
  for(const key of prototypeChecks){assert.match(proof.checks?.[key]??'',/^passed(?:;|$)/,'Prototype check required: '+key);assert.equal(proof.checks[key],sourceData.checks[key],'Prototype check differs from original walkthrough: '+key);}
- assert.ok(proof.limitations?.some(value=>/No new native Claude Design.*Figma cart frame/i.test(value)),'Retained native trial scope must remain explicit');
+ assert.ok(proof.limitations?.some(value=>/No new native Claude Design.*generation trial/i.test(value)),'Retained native trial scope must remain explicit');
+}
+export function validateExplorationCompanionParity(proof,{version,contract,nativeRecords,companion,archive,prototypeProof,validationRecords}){
+ assert.equal(proof.schemaVersion,1);assert.equal(proof.status,'passed');assert.equal(proof.version,version,'Companion parity evidence edition mismatch');
+ assert.ok(needsCompanionParity(version),'Current companion correction requires a successor edition');
+ assert.ok(proof.limitations?.some(value=>/No new native Claude Design.*generation trial/i.test(value)),'Current companion proof must preserve native generation trial scope');
+ const starter=companion.artifacts.find(a=>a.role==='starting material');
+ const continuation=companion.artifacts.find(a=>a.role==='static editable answer key');
+ const previousContinuation=nativeRecords.figmaCompanion.data.artifacts.find(a=>a.role==='static editable answer key');
+ assert.equal(companion.artifacts.length,2,'Exactly the starter and corrected continuation are required');
+ assert.ok(starter&&continuation&&previousContinuation,'Current and retained native artifacts required');
+ assert.equal(starter.sha256,contract.nativeStarter.sha256,'Current starter changed');
+ assert.equal(proof.unchangedStarterSha256,starter.sha256,'Unchanged starter proof mismatch');
+ assert.equal(archive.sha256['velori-store/'+starter.filename],starter.sha256,'Archived starter changed');
+ assert.equal(continuation.filename,'answer-key/velori-review-continuation.fig');
+ assert.equal(continuation.format,'native Figma .fig');assert.ok(isSha(continuation.sha256));
+ assert.notEqual(continuation.sha256,previousContinuation.sha256,'Current continuation must include the new cart correction');
+ assert.equal(proof.unchangedStandalonePrototypeSha256,archive.sha256['velori-store/answer-key/velori-review-prototype.html'],'Standalone prototype changed');
+ assert.equal(prototypeProof.version,contract.prototypeEvidence.edition,'Retained prototype edition changed');
+ assert.equal(prototypeProof.prototype.sha256,proof.unchangedStandalonePrototypeSha256,'Retained standalone prototype bytes changed');
+ const f=proof.figma;assert.equal(f?.status,'passed');assert.equal(f.reviewAction,'Add to cart');assert.equal(f.static,true,'Static Figma scope must remain explicit');
+ assert.match(f.cartFrameId,/^\d+:\d+$/,'Actual Figma cart frame ID required');
+ assert.equal(f.artifactSha256,continuation.sha256,'Figma proof differs from current continuation');
+ assert.equal(f.artifactSha256,archive.sha256['velori-store/'+continuation.filename],'Figma proof differs from archived continuation');
+ assert.ok(Number.isSafeInteger(f.artifactBytes)&&f.artifactBytes>0);assert.equal(f.artifactBytes,continuation.bytes);assert.equal(f.artifactBytes,archive.bytes['velori-store/'+continuation.filename],'Archived continuation size differs');
+ currentEvidencePin(f.validation,version,'Figma validation');assert.equal(f.validationSha256,f.validation.sha256,'Figma validation hash fields differ');
+ assert.equal(validationRecords.figma.sha256,f.validation.sha256,'Stale current Figma validation');
+ const fv=validationRecords.figma.data;assert.equal(fv.schemaVersion,1);assert.equal(fv.status,'passed');assert.equal(fv.version,version);
+ assert.equal(fv.artifact?.sha256,f.artifactSha256);assert.equal(fv.artifact.bytes,f.artifactBytes);assert.equal(fv.static,true);assert.equal(fv.reviewAction,'Add to cart');assert.equal(fv.cartFrameId,f.cartFrameId);
+ assert.ok(Array.isArray(fv.frames),'Inspected Figma Review and Cart frames required');
+ const review=fv.frames.find(frame=>frame.role==='review'),cart=fv.frames.find(frame=>frame.role==='cart');
+ assert.ok(review&&cart,'Inspected Figma Review and Cart frames required');assert.notEqual(review.id,cart.id);assert.equal(cart.id,f.cartFrameId);assert.equal(review.primaryAction,'Add to cart','Figma Review action must reach the cart endpoint');
+ for(const frame of [review,cart]){
+  assert.match(frame.id,/^\d+:\d+$/);assert.equal(frame.editable,true,'Editable native Figma frames required');assert.deepEqual(frame.missingFonts,[],'Missing current Figma fonts');
+  const instanceCount=Array.isArray(frame.instances)?frame.instances.length:frame.instances;
+  for(const [name,value] of [['instances',instanceCount],['styledTexts',frame.styledTexts],['variableBoundNodes',frame.variableBoundNodes]])assert.ok(Number.isSafeInteger(value)&&value>0,'Measured Figma '+name+' required');
+ }
+ assert.deepEqual(cart.choices,{finish:'Graphite',face:'Simple',expression:'Amber',accessory:'Carry bag'},'Figma cart must show all four fixture choices');assert.equal(cart.quantity,1,'Figma cart quantity must be one');assert.equal(cart.productImage,true,'Figma cart requires the configured product image');
+ const r=proof.react;assert.equal(r?.status,'passed');assert.equal(r.packageVersion,version,'React package edition mismatch');
+ assert.equal(archive.packageVersion,version,'Archived React package edition mismatch');assert.equal(archive.lockVersion,version,'Archived React lockfile edition mismatch');assert.equal(archive.lockPackageVersion,version,'Archived React lockfile root edition mismatch');
+ assert.ok(isSha(r.sourceSha256),'Current React source hash required');assert.equal(r.sourceSha256,archive.sourceSha256,'Current React source differs from archived sample');
+ currentEvidencePin(r.validation,version,'React validation');assert.equal(r.validationSha256,r.validation.sha256,'React validation hash fields differ');assert.equal(validationRecords.react.sha256,r.validation.sha256,'Stale current React validation');
+ const rv=validationRecords.react.data;assert.equal(rv.schemaVersion,1);assert.equal(rv.status,'passed');assert.equal(rv.version,version);assert.equal(rv.packageVersion,version);assert.equal(rv.sourceSha256,r.sourceSha256,'React validation tested different source');
+ for(const key of prototypeChecks){assert.equal(r.checks?.[key],true,'Current React check required: '+key);assert.equal(rv.checks?.[key],true,'Current React validation check required: '+key);}
 }
 function readExplorationArchive(path,contract){
  const code=`import zipfile,sys,json,hashlib
@@ -80,8 +149,12 @@ z=zipfile.ZipFile(sys.argv[1]); names=z.namelist(); assert len(names)==int(sys.a
 assert all(not n.startswith('/') and '..' not in n.split('/') for n in names)
 required=['velori-store/velori-design-exploration-starter.fig','velori-store/answer-key/velori-review-continuation.fig','velori-store/answer-key/velori-review-prototype.html']
 assert all(n in names for n in required)
-print(json.dumps({'members':len(names),'sha256':{n:hashlib.sha256(z.read(n)).hexdigest() for n in required}}))`;
- return JSON.parse(execFileSync('python3',['-c',code,path,String(contract.archiveMemberCount??209)],{encoding:'utf8'}));
+source=[n for n in names if n.startswith('velori-store/src/') and not n.endswith('/')]+['velori-store/package.json','velori-store/package-lock.json']
+required=list(dict.fromkeys(required+source))
+package=json.loads(z.read('velori-store/package.json')); lock=json.loads(z.read('velori-store/package-lock.json'))
+print(json.dumps({'members':len(names),'sha256':{n:hashlib.sha256(z.read(n)).hexdigest() for n in required},'bytes':{n:len(z.read(n)) for n in required},'packageVersion':package['version'],'lockVersion':lock['version'],'lockPackageVersion':lock['packages']['']['version']}))`;
+ const archive=JSON.parse(execFileSync('python3',['-c',code,path,String(contract.archiveMemberCount??209)],{encoding:'utf8'}));
+ archive.sourceSha256=explorationSourceFingerprint(archive.sha256);return archive;
 }
 export function validateExplorationContent(text,html,version,{candidate=false}={}){
  text=text.replace(/\s+/g,' ');
@@ -103,7 +176,7 @@ export async function validateExplorationRelease(root){
  const catalog=await json('catalog.json'),pin=validateLibrary(catalog).find(x=>x.id==='claude-design');
  const pkg=await validatePackage(book,pin),manifest=await json('claude-design/release-manifest.json'),contract=validateExplorationContract(manifest);
  assert.equal(manifest.approvalStatus,'approved');assert.equal(manifest.version,pin.version);assert.equal(manifest.pages,pin.pages);assert.equal(manifest.sha256,pin.pdfSha256);
- const approval=await pinned(manifest.publicationApproval);assert.equal(approval.status,'approved');assert.equal(approval.command,'Land this');
+ const approval=await pinned(manifest.publicationApproval);validateExplorationPublicationAuthority(approval);
  assert.equal(approval.manuscript.path,'claude-design/Claude_Design_Field_Guide_Source.md','Approval must bind the canonical manuscript');assert.equal(approval.manuscript.sha256,digest(await bytes(approval.manuscript.path)));assert.equal(approval.exercise.path,contract.sample.repositoryPath,'Approval must bind the current exercise');assert.equal(approval.exercise.sha256,digest(await bytes(contract.sample.repositoryPath)),'Approved exercise bytes changed');assert.ok(approval.limitations.includes('Human task review has not been completed. The author walkthrough is not usability evidence.'));
  const publication=await json('claude-design/publication.json');assert.equal(publication.approvalStatus,'approved');assert.equal(publication.editionUrl,pin.editionUrl);
  const ledger=await json('claude-design/change-ledger.json'),decision=await json('claude-design/changelog-decision.json');
@@ -129,8 +202,14 @@ export async function validateExplorationRelease(root){
  if(contract.nativeEvidence){
   const records={};for(const key of Object.keys(nativePaths(contract.nativeEvidence.edition))){const row=contract.nativeEvidence[key];records[key]={sha256:digest(await bytes(row.path)),data:await pinned(row)};}
   validateExplorationNativeEvidence(contract,{version:manifest.version,records,companion});
-  const proof=await pinned(contract.prototypeEvidence),source=proof.sourceEvidence;assert.ok(source?.path.startsWith(`claude-design/qa/v${manifest.version}/`));
-  const sourceData=await pinned(source);validateExplorationPrototypeEvidence(proof,{version:manifest.version,prototypeSha256:archive.sha256['velori-store/answer-key/velori-review-prototype.html'],sourceSha256:digest(await bytes(source.path)),sourceData});
+  const prototypeEdition=contract.prototypeEvidence.edition??manifest.version;
+  const proof=await pinned(contract.prototypeEvidence),source=proof.sourceEvidence;assert.ok(source?.path.startsWith(`claude-design/qa/v${prototypeEdition}/`));
+  const sourceData=await pinned(source);validateExplorationPrototypeEvidence(proof,{version:prototypeEdition,prototypeSha256:archive.sha256['velori-store/answer-key/velori-review-prototype.html'],sourceSha256:digest(await bytes(source.path)),sourceData});
+  if(contract.companionParityEvidence){
+   const parity=await pinned(contract.companionParityEvidence),validationRecords={};
+   for(const key of ['figma','react']){const row=parity[key]?.validation;currentEvidencePin(row,manifest.version,key+' validation');validationRecords[key]={sha256:digest(await bytes(row.path)),data:await pinned(row)};}
+   validateExplorationCompanionParity(parity,{version:manifest.version,contract,nativeRecords:records,companion,archive,prototypeProof:proof,validationRecords});
+  }
  }else{
   const roundtrip=await json(`claude-design/qa/v${manifest.version}/figma-roundtrip-validation.json`);assert.equal(roundtrip.status,'passed');assert.match(roundtrip.scope,/same account/);assert.equal(roundtrip.validation.missingFonts.length,0);assert.equal(roundtrip.validation.reactions,0);assert.equal(roundtrip.validation.styledTexts,22);assert.equal(roundtrip.validation.instances.length,10);assert.ok(roundtrip.validation.instances.every(i=>i.mainComponent?.id));assert.equal(roundtrip.validation.variableBoundNodes,66);
  }
@@ -172,8 +251,15 @@ export async function validateExplorationCandidate(book,{root,pkg,manifest,varia
   const records={};for(const key of Object.keys(nativePaths(contract.nativeEvidence.edition))){const row=contract.nativeEvidence[key],bytes=await readFile(safePath(root,row.path));assert.equal(digest(bytes),row.sha256,'Stale retained native evidence: '+key);records[key]={sha256:digest(bytes),data:JSON.parse(bytes)};}
   validateExplorationNativeEvidence(contract,{version:manifest.version,records,companion});
   const candidateProof=async row=>{assert.ok(row?.path.startsWith(`claude-design/qa/v${manifest.version}/`),'Current candidate proof must be edition-local');const file=safePath(book,row.path.slice('claude-design/'.length));assert.ok((await lstat(file)).isFile());assert.equal(await realpath(file),file);const bytes=await readFile(file);assert.equal(digest(bytes),row.sha256,'Stale candidate proof');return {sha256:digest(bytes),data:JSON.parse(bytes)};};
-  const {data:proof}=await candidateProof(contract.prototypeEvidence),source=await candidateProof(proof.sourceEvidence);
-  validateExplorationPrototypeEvidence(proof,{version:manifest.version,prototypeSha256:archive.sha256['velori-store/answer-key/velori-review-prototype.html'],sourceSha256:source.sha256,sourceData:source.data});
+  const retainedProof=async row=>{const file=safePath(root,row.path);assert.ok((await lstat(file)).isFile());assert.equal(await realpath(file),file);const bytes=await readFile(file);assert.equal(digest(bytes),row.sha256,'Stale retained prototype proof');return {sha256:digest(bytes),data:JSON.parse(bytes)};};
+  const loadPrototype=contract.prototypeEvidence.edition?retainedProof:candidateProof;
+  const {data:proof}=await loadPrototype(contract.prototypeEvidence),source=await loadPrototype(proof.sourceEvidence);
+  validateExplorationPrototypeEvidence(proof,{version:contract.prototypeEvidence.edition??manifest.version,prototypeSha256:archive.sha256['velori-store/answer-key/velori-review-prototype.html'],sourceSha256:source.sha256,sourceData:source.data});
+  if(contract.companionParityEvidence){
+   const {data:parity}=await candidateProof(contract.companionParityEvidence),validationRecords={};
+   for(const key of ['figma','react']){const row=parity[key]?.validation;currentEvidencePin(row,manifest.version,key+' validation');validationRecords[key]=await candidateProof(row);}
+   validateExplorationCompanionParity(parity,{version:manifest.version,contract,nativeRecords:records,companion,archive,prototypeProof:proof,validationRecords});
+  }
  }
  const html=await readFile(safePath(book,pkg.html),'utf8');
  const variants=await resolvePdfVariants(book,{id:'claude-design',...manifest},variantPin,{collectionRoot:root,candidate:true});

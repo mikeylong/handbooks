@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "scope": "isolated React/Vite companion candidate",
+  "version": "2.1.1",
+  "method": "CUA in-app browser; desktop 1024x768 and mobile 390x844, viewport reset afterward",
+  "developmentUrl": "http://127.0.0.1:4297/",
+  "productionPreviewUrl": "http://127.0.0.1:4307/",
+  "checks": [
+    "Graphite/Simple/Amber/Carry bag photo, caption and choices agree",
+    "keyboard dropdown End+Enter selection and Home+Escape cancellation",
+    "accessory detail browsing preserves Carry bag and restores details-trigger focus",
+    "Continue opens Review and focuses heading",
+    "Add to cart via keyboard opens configured image + all four choices + Quantity: 1",
+    "same-session reload retains Cart",
+    "later configurator changes do not change saved Cart snapshot",
+    "Edit cart item restores saved choices and Continue remains the primary label",
+    "add again updates one item",
+    "double-click stays on Cart without duplicates",
+    "390px Cart/Edit/Review layout; scrollWidth equals viewport width",
+    "unavailable Carry bag requires Choose Dock or Choose None; no Add action while blocked",
+    "Choose None preserves Graphite/Simple/Amber and focuses Add to cart",
+    "Reset restores Chalk/Friendly/White/Dock and returns Configure",
+    "empty Cart offers Configure Velori and recovers by keyboard",
+    "production default Cart double-click and reload",
+    "production malformed inherited-name route recovers to Configure",
+    "production simulated missing image retains all four Review values"
+  ],
+  "productionConsoleErrors": [],
+  "productionConsoleWarnings": [],
+  "matrixCoverage": "9 model tests and 12 packaged assets cover all 72 configurations; browser did not iterate all 72",
+  "existingBrowserValidator": "augmented and syntax checked, not run outside CUA",
+  "independentReview": {
+    "findingsFixed": [
+      "reset persistence effect recreated cleared configuration key",
+      "inherited route-alias keys returned non-string screens"
+    ],
+    "followup": "no remaining actionable findings"
+  },
+  "developmentHotUpdate": "unconditional createRoot produced errors during live source edits; source now reuses import.meta.hot.data.root. Fresh production runtime has no errors.",
+  "screenshots": {
+    "desktop-cart-updated.jpg": {
+      "sha256": "388692c4f6086cce14829ac61d93c60e469b3f3745dca9d256752ac4194305ee",
+      "bytes": 59416
+    },
+    "desktop-cart.jpg": {
+      "sha256": "254d00101fe9cdb7f00f023251d554166ad5233a997bf5c80d2f04180b1e883d",
+      "bytes": 67160
+    },
+    "desktop-configure.jpg": {
+      "sha256": "2b40e29fbafc88379323cc59f80b837976784c544e36df3aadeacfb9ae9959c2",
+      "bytes": 72626
+    },
+    "desktop-review.jpg": {
+      "sha256": "805fbf2d121410ede58976d2789656adc1f3911237ad27f14ff32731dcb1194b",
+      "bytes": 68491
+    },
+    "mobile-cart.jpg": {
+      "sha256": "706a068647194b79571021413939c1e5258e870e82827b5267aa4c1dc4131b46",
+      "bytes": 49216
+    },
+    "mobile-edit.jpg": {
+      "sha256": "23d66184565fdc229228bbcccc555bd42f3601c84963220b5d89f27045cd366b",
+      "bytes": 54820
+    },
+    "mobile-empty-cart.jpg": {
+      "sha256": "8157a75db29a1ff830d381bfcdd68da39fdcd0d48a1a4beda34b7af4d905cd34",
+      "bytes": 19605
+    },
+    "mobile-recovered-cart.jpg": {
+      "sha256": "3838da222480c28c72c9d097d9a0bf013bed9b90338168275f89aa80aa02b8b7",
+      "bytes": 50719
+    },
+    "mobile-reset-configure.jpg": {
+      "sha256": "150e3abf57cb26b526acc01a68838fdb9eccbf04fec1c612663bc2c6f59c9e9d",
+      "bytes": 55009
+    },
+    "mobile-review.jpg": {
+      "sha256": "c0216a3b5bc449f87d8317c23be32a0a578a7cb90f2134a92913f84923de8b8a",
+      "bytes": 54731
+    },
+    "mobile-unavailable-accessory.jpg": {
+      "sha256": "18b13b6399059cc8c8d53b7ba6e3051e07a205ee3e92a11db1ab759997d87298",
+      "bytes": 62944
+    },
+    "production-cart.jpg": {
+      "sha256": "4596ffcf808f9853a03d1228935f781c577b16fb0dac699e06e545bf746119d4",
+      "bytes": 60783
+    },
+    "production-unavailable-image-review.jpg": {
+      "sha256": "db7bc37c049570edf8094052411f9af6d5d7db3687dedf1621aa77493fce9de8",
+      "bytes": 53993
+    },
+    "unknown-route-recovery.jpg": {
+      "sha256": "177c1ef2e9abef62047bb32c7bdceb4688d90dee8aec54658a6030236416b10f",
+      "bytes": 68173
+    }
+  },
+  "changedFiles": [
+    "README.md",
+    "package-lock.json",
+    "package.json",
+    "docs/system-definition.md",
+    "docs/native-baseline.md",
+    "docs/source-conflicts.md",
+    "docs/add-to-cart.md",
+    "docs/inventory.md",
+    "docs/asset-terms.md",
+    "docs/expected-results.md",
+    "docs/product-brief.md",
+    "docs/walkthrough.md",
+    "docs/prompts.md",
+    ".design-sync/host-entry.mjs",
+    ".design-sync/config.json",
+    "scripts/validate-browser.mjs",
+    "scripts/package_policy.py",
+    "src/model.test.mjs",
+    "src/ReviewConfiguration.jsx",
+    "src/index.js",
+    "src/main.jsx",
+    "src/library.jsx",
+    "src/velori.css",
+    "src/CartConfirmation.jsx",
+    "src/model.mjs"
+  ],
+  "remainingIntegration": [
+    "root refreshes final Figma companion metadata and provenance hashes before ZIP/release; app packaging script still contains old companion constants"
+  ]
+}

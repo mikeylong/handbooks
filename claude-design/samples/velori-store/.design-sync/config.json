@@ -22,7 +22,8 @@
     "SelectionMark": "src/library.jsx",
     "StoreHeader": "src/library.jsx",
     "VeloriIcon": "src/library.jsx",
-    "ReviewConfiguration": null
+    "ReviewConfiguration": null,
+    "CartConfirmation": null
   },
   "dtsPropsFor": {
     "VeloriIcon": "name: 'check' | 'chevron' | 'friendly' | 'simple'; className?: string; [svgAttr: string]: unknown;",
@@ -35,8 +36,8 @@
     "ExpressionSelect": "value: 'white' | 'mint' | 'blue' | 'amber'; onChange: (value: 'white' | 'mint' | 'blue' | 'amber') => void;",
     "ProductPreview": "configuration: { shell: 'chalk' | 'pebble' | 'graphite'; face: 'friendly' | 'simple'; color: 'white' | 'mint' | 'blue' | 'amber'; accessory: 'dock' | 'bag' | 'none' }; unavailable?: boolean; onDetails?: () => void;",
     "Brand": "",
-    "StoreHeader": "review?: boolean; onBack?: () => void;",
-    "ConfigurationSummary": "configuration: { shell: 'chalk' | 'pebble' | 'graphite'; face: 'friendly' | 'simple'; color: 'white' | 'mint' | 'blue' | 'amber'; accessory: 'dock' | 'bag' | 'none' };",
+    "StoreHeader": "review?: boolean; step?: 1 | 2 | 3; onBack?: () => void; backLabel?: string;",
+    "ConfigurationSummary": "configuration: { shell: 'chalk' | 'pebble' | 'graphite'; face: 'friendly' | 'simple'; color: 'white' | 'mint' | 'blue' | 'amber'; accessory: 'dock' | 'bag' | 'none' }; unavailable?: boolean;",
     "AccessoryPhoto": "accessory: 'dock' | 'bag';"
   },
   "overrides": {

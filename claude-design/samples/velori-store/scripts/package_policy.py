@@ -7,8 +7,8 @@ READER_CONFIG_KEYS = frozenset(('pkg','globalName','shape','entry','guidelinesGl
 PRIVATE_KEYS = frozenset(('projectid','project','owner','ownerid','account','accountid','email','organization','organizationid','orgid','auth','authentication','credentials','token','accesstoken','refreshtoken','session','sessionid'))
 NATIVE_GUIDELINES = ('docs/native-baseline.md','docs/product-brief.md')
 ROOT_FILES = ('LICENSE','README.md','package.json','package-lock.json','index.html','vite.config.js','tokens.json','.gitignore','.gitattributes')
-SOURCE_FILES = ('model.test.mjs','ReviewConfiguration.jsx','tokens.css','index.js','main.jsx','library.jsx','velori.css','model.mjs')
-DOC_FILES = ('LUCIDE-LICENSE','REACT-LICENSE','asset-terms.md','product-brief.md','inventory.md','generated-image-prompts.json','handoff-template.md','source-conflicts.md','system-definition.md','native-baseline.md','expected-results.md','image-provenance.md','walkthrough.md','prompts.md')
+SOURCE_FILES = ('model.test.mjs','ReviewConfiguration.jsx','CartConfirmation.jsx','tokens.css','index.js','main.jsx','library.jsx','velori.css','model.mjs')
+DOC_FILES = ('LUCIDE-LICENSE','REACT-LICENSE','asset-terms.md','product-brief.md','inventory.md','generated-image-prompts.json','handoff-template.md','source-conflicts.md','system-definition.md','native-baseline.md','expected-results.md','image-provenance.md','walkthrough.md','prompts.md','add-to-cart.md')
 SCRIPT_FILES = ('validate-browser.mjs','package-candidate.py','validate-package.py','validate-assets.mjs','package_policy.py','test-package.py','test-native-assets.mjs')
 REFERENCE_FILES = ('index.html','velori-select.css','velori-config.js','design-system.js','velori-site.css','velori-config.css','velori-select.js','velori-product-assets.js','velori-icons.js','storyboard.css','extraction-manifest.json','velori-icons.css')
 ASSET_FILES = ('pebble-bag-shell-v2.png','dock-layer.png','face-simple.png','chalk-none.png','graphite-none.png','pebble-none.png','pebble-bag.png','graphite-bag.png','manifest.json','chalk-bag.png','bag-robot-mask.svg','graphite-bag-shell-v2.png','face-friendly.png','pebble-dock.png','graphite-dock.png','chalk-dock.png')
@@ -40,6 +40,7 @@ def validate_reader_config(config):
  assert config['entry']=='./.design-sync/host-entry.mjs','Native baseline entry changed'
  assert tuple(config['guidelinesGlob'])==NATIVE_GUIDELINES,'Native guidance exceeds the accepted baseline'
  assert config['componentSrcMap'].get('ReviewConfiguration','missing') is None,'Review answer key is not explicitly excluded'
+ assert config['componentSrcMap'].get('CartConfirmation','missing') is None,'Cart answer key is not explicitly excluded'
  assert {name for name,p in config['componentSrcMap'].items() if p is not None}==set(BASELINE_COMPONENTS),'Native baseline component inventory changed'
 
 def json_bytes(value):

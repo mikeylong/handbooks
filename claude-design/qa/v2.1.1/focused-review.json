@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.1",
+  "reviewedAt": "2026-10-07T22:04:35.936734+00:00",
+  "reviewer": "independent Codex subagent parity_final_review",
+  "scope": "Focused review of React cart behavior, exercise-package correspondence, current native Figma representations, manuscript scope, and exact final PDF visual proof. Final deployment and publication metadata remain a separate root integration check.",
+  "artifacts": {
+    "manuscript": {
+      "path": "book/source/Claude_Design_Field_Guide_Source.md",
+      "sha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28",
+      "bytes": 40004
+    },
+    "fullExerciseZip": {
+      "path": "output/velori-design-exploration-v2.1.1.zip",
+      "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+      "bytes": 97181421
+    },
+    "pdfVisualReview": {
+      "path": "qa/pdf-visual-review.json",
+      "sha256": "a29e3ac1cc7df8681c317af65612e090c30976120e6b0a9803d25a8caeb86757",
+      "bytes": 46008
+    },
+    "currentNativeFigma": {
+      "member": "velori-store/answer-key/velori-review-continuation.fig",
+      "sha256": "b06042b6f7bed6f7d4c0ce5501886bca42cd7e05d776faa3735f7e400b1f462e",
+      "bytes": 13897149
+    }
+  },
+  "implementationReview": {
+    "files": [
+      "src/main.jsx",
+      "src/model.mjs",
+      "src/model.test.mjs",
+      "src/ReviewConfiguration.jsx",
+      "src/CartConfirmation.jsx",
+      "src/library.jsx",
+      "src/velori.css",
+      "package.json",
+      "README.md",
+      "docs/add-to-cart.md",
+      "scripts/package_policy.py"
+    ],
+    "result": "Cart snapshots a normalized copy of all four choices at quantity one; later edits cannot mutate the saved item. Adding again replaces one item. Unavailable accessories block adding and require replacement. Cart editing restores its snapshot. Continue is constant in Configure/Edit. Reset clears both sample storage keys, restores defaults and returns Configure while preserving unrelated namespaces. Empty Cart and malformed routes recover. Product-preview image failure keeps choices available. No payment or order submission is implemented.",
+    "archivedSourceFingerprint": "47c14af2148a7b72b63ad96058f370a2b2556b53c850ff613158f005c467cc7e"
+  },
+  "independentlyExecutedChecks": [
+    {
+      "command": "node --test src/model.test.mjs",
+      "cwd": "book/samples/velori-store",
+      "result": "passed",
+      "tests": 9,
+      "failed": 0,
+      "coverage": "72 configurations, immutable single-item cart, repeated replacement, unavailable accessories, local/session storage reload/reset isolation, malformed/blocked storage, legacy/current/malformed route recovery."
+    },
+    {
+      "command": "node scripts/validate-assets.mjs",
+      "cwd": "package/velori-store",
+      "result": "passed",
+      "coverage": "12 assets present for all 72 configurations."
+    }
+  ],
+  "browserEvidence": {
+    "receipt": {
+      "path": "qa/react/browser-qa.json",
+      "sha256": "6dfd5199dc64db3450cddf506de3dcf51a3730a4f3c7fda55d320efec105e3a2",
+      "bytes": 5172
+    },
+    "reportedChecks": 18,
+    "reportedStatus": "passed",
+    "inspectedScreenshots": [
+      {
+        "path": "qa/react/desktop-cart.jpg",
+        "sha256": "254d00101fe9cdb7f00f023251d554166ad5233a997bf5c80d2f04180b1e883d",
+        "bytes": 67160
+      },
+      {
+        "path": "qa/react/mobile-cart.jpg",
+        "sha256": "706a068647194b79571021413939c1e5258e870e82827b5267aa4c1dc4131b46",
+        "bytes": 49216
+      }
+    ],
+    "result": "Desktop and 390px Cart captures show one robot, the selected four choices, quantity one and Edit cart item without horizontal overlap. Existing browser receipt records keyboard/focus, snapshot isolation, edit/add, repeated activation, same-tab reload, reset, unavailable/empty recovery and production preview. This subagent did not operate that browser run."
+  },
+  "packageCorrespondence": {
+    "files": 234,
+    "sourceIdenticalFiles": 221,
+    "approvedProjectionDifferences": [
+      ".design-sync/config.json",
+      "README.md",
+      "provenance.json"
+    ],
+    "extractedPackageMismatch": [],
+    "provenanceEntries": 233,
+    "provenanceErrors": [],
+    "packageVersion": "2.1.1",
+    "lockVersion": "2.1.1",
+    "excludedOutputLeaks": [],
+    "immutableRetainedInputs": {
+      "velori-store/velori-design-exploration-starter.fig": {
+        "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca",
+        "unchangedFromV210": true
+      },
+      "velori-store/answer-key/velori-review-prototype.html": {
+        "sha256": "7d62bb3d5b178db5ed525985133dec5abc3a96399e6dcb3b36df4b3a27886ebe",
+        "unchangedFromV210": true
+      }
+    }
+  },
+  "figmaReview": {
+    "evidence": {
+      "path": "book/qa/v2.1.1/figma-companion-validation.json",
+      "sha256": "b7d0bf0db891be98cd4fad4e504c2c2030e01ef4a1b23871801d885ad849ce68",
+      "bytes": 11445
+    },
+    "visuallyInspectedScreenshots": [
+      {
+        "path": "book/assets/screenshots/figma-review-cart-current-rgb.png",
+        "sha256": "5b12899e2189d2040aa315a8b0693f0649481c8be1f0a25c11905bef010346b5",
+        "bytes": 214639
+      },
+      {
+        "path": "book/assets/screenshots/figma-cart-confirmation-current-rgb.png",
+        "sha256": "2f6be1a934e79a8d220ad264cff924aab3b3a6114ce528727e55f84e28ac23a0",
+        "bytes": 210522
+      }
+    ],
+    "result": "Review clearly offers Add to cart. Cart shows the actual robot and Graphite, Simple, Amber, Carry bag, quantity one, Edit cart item and Continue configuring. This matches the current correction text and native evidence. The screenshots establish appearance; native evidence separately records editable layers, local instances, styles and variable bindings.",
+    "static": true,
+    "prototypeInteractionClaim": false
+  },
+  "manuscriptReview": {
+    "result": "Version 2.1.1 describes companion parity corrections and preserves the original trial boundaries: the October 6 Claude Design author trial ended at configuration confirmation; the cart exercise revision and current native Figma edits are October 7 work. It does not relabel the retained trial or claim human reviewer completion.",
+    "reviewedCorrectionLines": [
+      235,
+      243,
+      249,
+      376,
+      420,
+      474,
+      476,
+      478,
+      480
+    ]
+  },
+  "findings": [],
+  "observations": [
+    {
+      "priority": "Low",
+      "kind": "nonblocking",
+      "description": "PDFKit body-weight variation is documented in pdf-visual-review.json; text is readable and layout matches Poppler."
+    }
+  ],
+  "limitations": [
+    "Final release metadata, approval pins, hosted delivery and Git/deployment status are outside this review and require root integration verification.",
+    "Native Figma frames are static; no prototype connections or choice-state behavior is established.",
+    "The retained starter and standalone prototype remain byte-identical; no new Claude Design generation trial or separate human exercise trial is claimed.",
+    "Browser QA was executed by the React agent; this independent pass reviewed its receipt and selected screenshots plus actual source/model tests."
+  ]
+}

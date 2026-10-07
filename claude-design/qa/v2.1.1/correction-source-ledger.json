@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "researchCutoff": "2026-10-07",
+  "scope": "Artifact parity correction; no new external product claim or exercise change.",
+  "sources": [
+    {
+      "id": "A01",
+      "title": "Velori 2.1.1 authored exercise package",
+      "publisher": "Michael Long",
+      "publicationDate": "2026-10-07",
+      "url": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+      "accessDate": "2026-10-07",
+      "authority": "Author artifact",
+      "access": "local candidate complete; intended release URL",
+      "supports": [
+        "Chapter 5 current React and standalone cart examples",
+        "Chapter 9 current answer key inventory",
+        "C01"
+      ],
+      "limitation": "Candidate URL is a release destination, not evidence of publication. Fresh React behavior proof must pass before release. Standalone HTML bytes retain the approved 2.1.0 identity.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "A02",
+      "title": "Velori editable Review and Cart continuation",
+      "publisher": "Michael Long",
+      "publicationDate": "2026-10-07",
+      "url": "https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46",
+      "accessDate": "2026-10-07",
+      "authority": "Author artifact",
+      "access": "complete native inspection and PNG export",
+      "supports": [
+        "Chapters 5, 8 and 9 current static editable Review and Cart",
+        "Figure 10",
+        "C02"
+      ],
+      "localEvidence": [
+        "qa/figma-mutation.json",
+        "qa/figma-screenshot-preparation.json"
+      ],
+      "limitation": "Direct Figma edits establish static editable frames. No prototype connections, choice-state wiring or new Claude Design generation trial.",
+      "disposition": "accepted"
+    }
+  ]
+}

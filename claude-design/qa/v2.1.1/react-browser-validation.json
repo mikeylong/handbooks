@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.1",
+  "packageVersion": "2.1.1",
+  "sourceSha256": "47c14af2148a7b72b63ad96058f370a2b2556b53c850ff613158f005c467cc7e",
+  "checks": {
+    "desktopAddToCart": true,
+    "cartChoices": true,
+    "editRestoration": true,
+    "snapshotIsolation": true,
+    "editedItemUpdate": true,
+    "repeatActivation": true,
+    "sameSessionReload": true,
+    "unavailableFixture": true,
+    "emptyCartRecovery": true,
+    "mobile": true,
+    "resetFixture": true,
+    "continueLabel": true
+  },
+  "method": "CUA in-app browser; desktop 1024x768 and mobile 390x844, viewport reset afterward",
+  "observations": {
+    "path": "claude-design/qa/v2.1.1/react-browser-observations.json",
+    "sha256": "6dfd5199dc64db3450cddf506de3dcf51a3730a4f3c7fda55d320efec105e3a2"
+  },
+  "screenshots": {
+    "react/desktop-cart-updated.jpg": {
+      "sha256": "388692c4f6086cce14829ac61d93c60e469b3f3745dca9d256752ac4194305ee",
+      "bytes": 59416
+    },
+    "react/desktop-cart.jpg": {
+      "sha256": "254d00101fe9cdb7f00f023251d554166ad5233a997bf5c80d2f04180b1e883d",
+      "bytes": 67160
+    },
+    "react/desktop-configure.jpg": {
+      "sha256": "2b40e29fbafc88379323cc59f80b837976784c544e36df3aadeacfb9ae9959c2",
+      "bytes": 72626
+    },
+    "react/desktop-review.jpg": {
+      "sha256": "805fbf2d121410ede58976d2789656adc1f3911237ad27f14ff32731dcb1194b",
+      "bytes": 68491
+    },
+    "react/mobile-cart.jpg": {
+      "sha256": "706a068647194b79571021413939c1e5258e870e82827b5267aa4c1dc4131b46",
+      "bytes": 49216
+    },
+    "react/mobile-edit.jpg": {
+      "sha256": "23d66184565fdc229228bbcccc555bd42f3601c84963220b5d89f27045cd366b",
+      "bytes": 54820
+    },
+    "react/mobile-empty-cart.jpg": {
+      "sha256": "8157a75db29a1ff830d381bfcdd68da39fdcd0d48a1a4beda34b7af4d905cd34",
+      "bytes": 19605
+    },
+    "react/mobile-recovered-cart.jpg": {
+      "sha256": "3838da222480c28c72c9d097d9a0bf013bed9b90338168275f89aa80aa02b8b7",
+      "bytes": 50719
+    },
+    "react/mobile-reset-configure.jpg": {
+      "sha256": "150e3abf57cb26b526acc01a68838fdb9eccbf04fec1c612663bc2c6f59c9e9d",
+      "bytes": 55009
+    },
+    "react/mobile-review.jpg": {
+      "sha256": "c0216a3b5bc449f87d8317c23be32a0a578a7cb90f2134a92913f84923de8b8a",
+      "bytes": 54731
+    },
+    "react/mobile-unavailable-accessory.jpg": {
+      "sha256": "18b13b6399059cc8c8d53b7ba6e3051e07a205ee3e92a11db1ab759997d87298",
+      "bytes": 62944
+    },
+    "react/production-cart.jpg": {
+      "sha256": "4596ffcf808f9853a03d1228935f781c577b16fb0dac699e06e545bf746119d4",
+      "bytes": 60783
+    },
+    "react/production-unavailable-image-review.jpg": {
+      "sha256": "db7bc37c049570edf8094052411f9af6d5d7db3687dedf1621aa77493fce9de8",
+      "bytes": 53993
+    },
+    "react/unknown-route-recovery.jpg": {
+      "sha256": "177c1ef2e9abef62047bb32c7bdceb4688d90dee8aec54658a6030236416b10f",
+      "bytes": 68173
+    }
+  },
+  "productionConsoleErrors": [],
+  "productionConsoleWarnings": [],
+  "matrixCoverage": "9 model tests and 12 packaged assets cover all 72 configurations; browser did not iterate all 72",
+  "limitations": [
+    "Browser did not iterate all 72 configurations; model and asset checks cover the matrix.",
+    "Human task review has not been completed. The author walkthrough is not usability evidence."
+  ],
+  "extractedArchiveValidation": {
+    "path": "claude-design/qa/v2.1.1/react-extracted-validation.json",
+    "sha256": "4434c96446d61e894fdebdc7a05de3f4ee53b5a3428007d777ac1998e55445c7"
+  }
+}
