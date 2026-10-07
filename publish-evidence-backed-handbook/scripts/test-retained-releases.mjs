@@ -8,7 +8,7 @@ const scratch = await mkdtemp(resolve(tmpdir(), 'handbook-retention-'));
 try {
   const source = resolve(scratch, 'collection'), output = resolve(scratch, 'site');
   await mkdir(source); await mkdir(output);
-  const paths = ['book/editions/v1.0.0/index.html', 'book/editions/v1.0.0/book.md', 'book/editions/v1.0.0/book.index.json', 'book/old.pdf', 'book/exercise.zip', 'book/native-companion.fig'];
+  const paths = ['book/editions/v1.0.0/index.html', 'book/editions/v1.0.0/book.md', 'book/editions/v1.0.0/book.index.json', 'book/old.pdf', 'book/exercise.zip', 'book/native-companion.fig', 'book/editions/v1.0.0/assets/screenshots/state.png'];
   const inventory = {schemaVersion: 1, routes: []};
   for (const [i, path] of paths.entries()) {
     const bytes = Buffer.from('released content ' + i), name = 'frozen-' + i;

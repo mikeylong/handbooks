@@ -1,0 +1,477 @@
+{
+  "artifactProfile": "candidate",
+  "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+  "path": "/Users/mike/handbooks/claude-design/review/2026-10-06-design-centered-candidate/build/final-06/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+  "changelogMode": "include",
+  "pages": [
+    {
+      "page": 1,
+      "label": "i",
+      "role": "cover",
+      "text": "CLAUDE DESIGN / FIELD PRACTICE\nClaude Design\nField Guide\nExplore, refine, and hand off an interactive product design\nBrief\nExplore\nRefine\nReview\nHandoff\nMichael Long\nOctober 6, 2026 | Version 2.0.0\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 2,
+      "label": "ii",
+      "role": "body",
+      "text": "ii\nOrientation\nUse Claude Design to explore a product change, compare directions,\nrefine a connected experience, and prepare the selected design for its\nnext owner. Begin with the design foundations and screens your team\nuses in Figma, or with the components and product behavior already\nimplemented in code.\nThe recurring exercise is Velori, a personal-robot configurator. A\nshopper chooses a finish, face, expression color, and accessory. Your\ntask is to explore how the shopper should review those choices before\nconfirming the configuration. Keep Velori's identity and product\nimagery while making the review easier to understand and edit.\nFinish the main exercise with a reviewed interactive prototype, a\ndecision record, and a usable handoff. Continue to Claude Code when\nthe next job is implementation. Continue in Figma when the next job\nrequires editable design work there. Each destination has its own\ncompletion check.\nChoose your starting route\nStarting material\nPreparation\nWhat Design receives\nFigma foundations and\nscreens\nSelect the relevant pages,\ncomponents, fonts and assets\nA visual system and a starting\nscreen\nExisting codebase and\ncomponent library\nSelect the frontend library,\ntokens, assets and baseline\nbehavior\nImplementation context for the\nsame design task\nYou need access to Claude Design in your intended account and\norganization. For a Figma route, use a Figma account and a copy you can\ninspect. For a Code route, use Claude Code and a local project you can\nrun. Download the Velori exercise materials; no author-private\norganization or Figma file is required. Import the supplied native file\ninto your own Drafts when you need to work in Figma.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 3,
+      "label": "iii",
+      "role": "body",
+      "text": "iii\nThe walkthrough targets the standalone Design beta at\nclaude.ai/design/. Claude also documents Design in conversations,\nArtifacts and Claude Code. Controls and system migration differ\nbetween those experiences. Follow one surface throughout a run, and\nrecord which surface you used. See the current Design guide.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 4,
+      "label": "iv",
+      "role": "workflow-diagram",
+      "text": "iv\nThe workflow\nSTART \u00b7 choose the source your team maintains\nFigma foundations / screens\nStart with the maintained design file\nCodebase / component library\nStart with existing implementation\nCLAUDE DESIGN \u00b7 explore and review\n1. Brief\nName the task\n2. Explore\nCompare alternatives\n3. Choose\nRecord the reason\n4. Refine\nChat, comment, direct edit\n5. Connect\nBuild the journey\n6. Review\nObserve and correct\nReviewed prototype + usable handoff\nMain endpoint: selected design and decisions\nClaude Code implementation\nDestination endpoint: reviewed software\nContinued design in Figma\nDestination endpoint: checked editable file\nReview and destination findings return to Refine. Choose a destination only when the recipient needs it.\nFigma foundations/screens or an existing codebase/component library\nfeed the same Claude Design loop: brief, explore, choose, refine,\nconnect, and review. The main endpoint is a reviewed prototype ready\nfor handoff. A selected destination can lead to an implementation in\nClaude Code or continued design in Figma. Review findings return to the\nDesign loop.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 5,
+      "label": "v",
+      "role": "body",
+      "text": "v\nPoint\nWorking tool\nObservable result\nStart\nFigma or existing codebase\nNamed source material and a\nbounded user problem\nDesign loop\nClaude Design\nCompared alternatives and a\ncoherent interactive journey\nMain endpoint\nClaude Design and people\nreviewing the design\nA reviewed prototype and recorded\ndecisions\nEngineering destination\nClaude Code and the\nrecipient's project\nAn implementation reviewed against\nthe selected design\nDesign destination\nFigma\nEditable work with required library\nrelationships inspected\nThe chapter sequence is the author's synthesis of official capabilities and\nreported practice. The exercise asks you to demonstrate your own result.\nA screenshot, a successful import, or a generated explanation cannot\nestablish that an interaction works.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 6,
+      "label": "vi",
+      "role": "contents",
+      "text": "vi\nREFERENCE MAP\nContents\nBegin with your source material, explore and review in Claude Design,\nthen choose the handoff your recipient needs.\nOrientation\n ii\n7. Hand off to Claude Code\n 33\n1. Choose the task and starting material\n 1\n8. Continue in Figma when needed\n 37\n2. Bring your system into Claude Design\n 4\n9. Run the guided exercise\n 41\n3. Explore design directions\n 10\nAppendix A: Brief and decision record\n 45\n4. Refine the design\n 15\nAppendix B: Supporting engineering\nchecks\n 45\n5. Build the connected experience\n 21\nFurther reading\n 46\n6. Review with people\n 28\nChangelog\n 47\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 7,
+      "label": "1",
+      "role": "chapter-opener",
+      "text": "1\nCHAPTER 01\nChoose the task and\nstarting material\nStart with a user problem and the source your team actually maintains.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 8,
+      "label": "2",
+      "role": "body",
+      "text": "2\nDefine a small change that a person can review. \"Improve the product\"\nleaves the screen, user task and desired behavior unspecified. \"Help a\nshopper review a configuration and return to edit without losing\nchoices\" gives the design a clear job.\nWrite the brief\nName the person, the action, the problem, and the decisions you want to\nexplore. Identify the behavior and visual identity that must remain\nstable. Keep payment, inventory, accounts, shipping, and order\nsubmission outside the Velori exercise.\nA Velori shopper has configured a robot and wants to check the choices\nbefore confirming. Explore alternatives for reviewing that\nconfiguration and returning to edit. Preserve the product identity,\nreal imagery, finish, face, expression color and one-accessory rule.\nCompare hierarchy and editing approaches. Do not add checkout or imply\nthat an order has been placed.\nUse a non-default fixture throughout review: Graphite finish, Simple\nface, Amber expression, and Carry bag. The fixture makes stale imagery\nor a reset to defaults easier to notice. The chosen design must also work\nwhen no accessory is selected.\nName what each source owns\nDecision\nSource to inspect\nBrand, type, component anatomy and layout\npatterns\nMaintained Figma foundations or design-system\nguidance\nExisting runtime behavior and component\nAPI\nRunning application and implementation library\nNew review hierarchy, content and navigation\nThe brief and the selected Design direction\nRequired handoff format\nThe recipient's next task and working tool\nCLAUDE DESIGN FIELD GUIDE\n1. CHOOSE THE TASK AND STARTING MATERIAL\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 9,
+      "label": "3",
+      "role": "body",
+      "text": "3\nResolve disagreements before generation when they affect the task. If\nthe Figma button and the running app use different radii, record which\nversion the prototype should follow and why. A model should not settle\nan ownership decision by silently blending the sources.\nKeep the answer out of the prompt\nUse foundations, components, the configurator and source assets as\nstarting context. Keep completed review layouts, solution prompts and\nimplementation answers beside the exercise for later comparison. An\nanswer key supplied at the start prevents you from seeing which review\nhierarchy Claude would propose from the starting screen.\nThe starter retains its original source pages. Work in a duplicate or\nseparate project. Record the input filenames and the destination so\nanother reviewer can tell which result belongs to this run.\nChapter checkpoint\nYou have a brief, named starting material, a non-default fixture, and a\nrecipient or review audience. The completed answer has not entered the\ninitial context.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n1. CHOOSE THE TASK AND STARTING MATERIAL\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 10,
+      "label": "4",
+      "role": "chapter-opener",
+      "text": "4\nCHAPTER 02\nBring your system into\nClaude Design\nInspect the imported result before asking it to carry a new design.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 11,
+      "label": "5",
+      "role": "body",
+      "text": "5\nChoose the setup route that matches your source. Anthropic's setup\nguide describes Figma and asset input for visual foundations, and\n/design-sync for existing React systems. Inspect the extraction rather\nthan assuming both routes produce equivalent components.\nBring in Figma foundations\nIn the standalone experience, open Design systems, choose Create\ndesign system, and select Create here. The setup form accepts a .fig file\nalongside fonts, logos and assets. Supply the company or system name\nand explain what the product does. Include the starting screen so Claude\nsees how the system is used.\nThe Velori trial attached four source pages and extracted 16 component\nfamilies. The Figma source has 11 text styles, but Design reported none\non import. It reconstructed the type scale from the Foundations notes\nand estimated the Product size. Compare the imported text against\nFigma before using it as a reference; the source Product style is 27px,\nwhile the import estimated 28px. Arimo and Lora load through Google\nFonts; their binaries are not inside the native file.\nThe setup description mistakenly requested violet. The importer found\nno violet token and kept the Ink primary action specified by the Figma\nrules. Correct the brief when it conflicts with the named source. Do not\nadd a new accent to make the two agree.\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 12,
+      "label": "6",
+      "role": "body",
+      "text": "6\nFigure 1\nStarting screen overview\nImported Figma starting screen. Graphite, Simple, Amber and Carry bag agree in the\nphotograph, caption and controls. Importing the visual system still lost its text-style\nmetadata.\nUse the exercise starter rather than the companion's completed Store\npage. Attach licensed fonts separately when the source only references a\nfont family. Record any substitution. Keep the system private during the\ntrial and confirm the selected system before starting a product project.\nThis walkthrough explored files in a separate trial/ directory inside its\nisolated system project. The UI offered team publication for new-project\nuse; private selection from a separate product project was not tested. An\norganization default may belong to a different product.\nInspect the resulting system's colors, typography, control shapes,\nselection marks, product photographs, and one representative\ncomponent. Compare a generated starting screen with the source at the\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 13,
+      "label": "7",
+      "role": "body",
+      "text": "7\nsame viewport. An extraction can preserve colors while losing\ncomponent anatomy or asset composition.\nBring in implementation context\nWhen the source is a working React library, open its project in Claude\nCode and use the native /design-sync command. Supply the\ncomponent library, styles, tokens, images and usage guidance needed\nfor the configurator. Exclude the completed Review implementation\nfrom baseline context.\nThe bounded code-first comparison used an isolated copy of the earlier\ncode-derived system. It reused eight exported Velori components and\npreserved the four choices when Amber changed to Mint. Its\nArial/Georgia stacks differed from the Figma route's Arimo/Lora\nfamilies. The comparison did not repeat the full connected journey. Its\nchoices survived navigation, but they reset after a page reload.\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 14,
+      "label": "8",
+      "role": "body",
+      "text": "8\nFigure 2\nCode-first Review\nBounded code-first comparison. Changing Amber to Mint retained Graphite, Simple and\nCarry bag. The source inspection identified reused Velori components; this view alone\ncannot prove component reuse.\nKeep detailed file selection and runtime adaptations in the package's\nsupporting material. The main reader should know what is being\nimported, why the selected source matters, and which gaps remain.\nInspect the returned system and generated starting screen before\nexploring the new review.\nCorrect the smallest relevant gap\nIf a selected choice uses the wrong mark, identify the source component\nor reference and ask for that correction. If imagery is missing, repair the\nasset input before judging the layout. If the system is from the wrong\norganization, stop the generation and choose the intended destination.\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 15,
+      "label": "9",
+      "role": "body",
+      "text": "9\nCompare this starting screen with the supplied Velori configurator.\nCheck the brand, heading, choice groups, expression menu, selected\nmarks, button and configured product image. Name mismatches and missing\nsource material. Correct the source rule for each mismatch before\nproposing the new review screen.\nKeep a before-and-after image when the correction matters to later\nscreens. Regenerate one adjacent surface to check whether the\ncorrection carries forward. Do not turn the exercise into an exhaustive\naudit of every component that the task does not use.\nChapter checkpoint\nThe starting screen uses the intended visual system. Required assets\nload, substitutions are visible, and unresolved import gaps have a named\nowner.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n2. BRING YOUR SYSTEM INTO CLAUDE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 16,
+      "label": "10",
+      "role": "chapter-opener",
+      "text": "10\nCHAPTER 03\nExplore design directions\nCompare different ways to help the shopper review and edit.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 17,
+      "label": "11",
+      "role": "body",
+      "text": "11\nAsk for alternatives that differ in how the person completes the task.\nThree copies with different colors do little to expose a useful decision.\nCompare information hierarchy, image prominence, editing behavior,\nand the relationship between review and confirmation.\nGenerate two or three alternatives\nAsk Claude Design to keep the alternatives separately identifiable.\nRecord which files or views were created. Export a copy of any direction\nyou need to preserve before requesting a large change. Current Design\ndocumentation describes alternatives and warns that version history is\nnot available.\nExplore three directions for reviewing a configured Velori robot. A: a\ncompact summary beside the product. B: a dedicated review screen with\nclear edit links. C: a guided review that groups the choices. Keep the\nsame choices, product imagery and visual language. Make the differences\nabout hierarchy and interaction. Label and retain each direction so we\ncan compare them before refining one.\nCompare the actual views\nQuestion\nEvidence to examine\nCan the shopper identify the configured\nproduct?\nProduct image, caption and selected values agree\nCan the shopper find an incorrect choice?\nLabels and hierarchy make the four choices\nscannable\nCan the shopper edit that choice?\nThe edit action has an understandable destination\nDoes the screen overstate completion?\nConfirmation copy avoids an implied order or\npayment\nDoes the design fit a narrow viewport?\nEssential choices and actions remain usable\nOperate each alternative. A promising composition may hide a confusing\nBack action or erase choices when the shopper edits. Compare the same\nfixture so the layout difference is visible.\nCLAUDE DESIGN FIELD GUIDE\n3. EXPLORE DESIGN DIRECTIONS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 18,
+      "label": "12",
+      "role": "body",
+      "text": "12\nFigure 3\nA \u00b7 Compact summary\nB \u00b7 Dedicated review\nCLAUDE DESIGN FIELD GUIDE\n3. EXPLORE DESIGN DIRECTIONS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 19,
+      "label": "13",
+      "role": "body",
+      "text": "13\nFigure 3 (continued)\nC \u00b7 Guided checks\nCompare the editing approaches using the same fixture. A edits in place; B returns to\nconfiguration; C checks groups in sequence. B was selected for clear separation of review\nand editing.\nThe trial compared A, a compact summary with editing in place; B, a\ndedicated review with a return to configuration; and C, a guided check of\nthree choice groups. Each approach was operated. B was selected\nbecause review and configuration have clear roles. The accepted\ntradeoff is an extra transition to edit a choice.\nSelect with reasons\nRecord one sentence for the selected direction, the tradeoff you\naccepted, and the refinement to make next. For example: \"Choose the\ndedicated review screen because each choice is easy to scan and edit.\nKeep the image smaller on narrow screens so the summary and action\nappear sooner.\"\nCLAUDE DESIGN FIELD GUIDE\n3. EXPLORE DESIGN DIRECTIONS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 20,
+      "label": "14",
+      "role": "body",
+      "text": "14\nPreserve rejected directions as comparison evidence. Ask Claude to\nrefine the chosen direction by name. A selection record prevents later\nfeedback from accidentally combining all three approaches.\nChapter checkpoint\nYou have separately visible alternatives, a selected direction, a reason\nfor the choice, and one concrete refinement priority.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n3. EXPLORE DESIGN DIRECTIONS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 21,
+      "label": "15",
+      "role": "chapter-opener",
+      "text": "15\nCHAPTER 04\nRefine the design\nUse conversation, targeted comments and direct editing for distinct\nchanges.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 22,
+      "label": "16",
+      "role": "body",
+      "text": "16\nA first generation establishes a direction. Refine the selected screen until\nits hierarchy, content and interaction make the task clear. Keep the\nfixture and selection rationale visible while changing the design.\nUse chat for a structural change\nExplain the behavior and the reason when a change affects the\nsummary, image and actions together. Ask for the result, then inspect\nthe screen and the journey that changed.\nRefine direction B. Keep review separate from configuration. Put the\nfour choices in a scannable summary and place an Edit configuration\naction beside them. On narrow screens, show the summary before\nsecondary product details. Preserve selected values when returning to\nthe configurator.\nAvoid accepting \"fixed\" as the result. Follow the affected navigation and\ncompare the selected values yourself. Keep structural changes small\nenough that you can understand their consequences.\nUse a comment for a local correction\nSelect or comment on the exact target in the canvas, then name the\nchange and its purpose. \"Make this better\" gives no deciding fact. \"Keep\nthe accessory label and selected value together so Carry bag is easy to\nconfirm\" gives the correction a job.\nThe trial comment targeted \"Review your Velori.\" and requested \"Check\nyour configuration\" at the same size. The saved file and reloaded view\nshowed the new heading.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 23,
+      "label": "17",
+      "role": "body",
+      "text": "17\nFigure 4\nTargeted heading correction\nA targeted comment asks for the specific heading \u201cCheck your configuration\u201d. Reloading the\nsaved design verified the correction.\nSave the text of a consequential comment in the decision record.\nAnthropic documents intermittent comment persistence problems. If a\ncomment disappears or is missed, send the same feedback through chat\nand verify the rendered result. A missing comment is a\nfeedback-delivery failure, not proof that the design request was rejected.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 24,
+      "label": "18",
+      "role": "body",
+      "text": "18\nEdit directly for a quick visual\nadjustment\nUse the canvas's direct editing controls for a local alignment, size,\nspacing or copy adjustment that the selected surface supports. Observe\nwhich element is selected before changing a property. Check the full\ncomposition afterwards, including a narrow viewport.\nThe direct editor changed the paragraph in the preview, but Save\nreverted it. The surface warned that automatic edits were unsupported\nfor that file. The same copy request succeeded through chat. Check the\nsaved file or reload before counting a direct edit as complete; use a\ndocumented fallback when the native editor cannot save the change.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 25,
+      "label": "19",
+      "role": "body",
+      "text": "19\nFigure 5\nUnsupported direct editing\nThe direct editor warns that this file does not support automatic edits. In the trial, Save\nreverted the preview copy change twice. Chat applied the correction, and reloading verified\nit.\nDirect editing does not settle interaction behavior. An action moved\nwithin the layout still needs a useful label, working destination and\nvisible focus. Record the before and after when an edit materially\nchanges the screen.\nRecheck the chosen direction\nAfter a batch of changes, return to the selection rationale. Check\nwhether review is still easy to scan and edit. Remove a refinement that\nimproves one detail while obscuring the primary task. Keep a short\ndecision record rather than a transcript of every prompt.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 26,
+      "label": "20",
+      "role": "body",
+      "text": "20\nChapter checkpoint\nThe selected design has a structural refinement, a verified local\ncorrection, and either a saved visual edit or a recorded editor limitation\nwith a verified fallback. The original selection rationale still describes\nthe result.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n4. REFINE THE DESIGN\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 27,
+      "label": "21",
+      "role": "chapter-opener",
+      "text": "21\nCHAPTER 05\nBuild the connected\nexperience\nMake the adjacent screens behave as one shopper journey.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 28,
+      "label": "22",
+      "role": "body",
+      "text": "22\nDevelop the surfaces needed to experience the selected direction. For\nVelori, the configurator, accessory details and review share the same\nfour choices. Each surface should make its place in the journey clear.\nConnect the screens\nConnect the selected review direction to the supplied configurator and\naccessory details. Configure opens Review configuration. Edit returns\nto Configure with the choices retained. Browsing Charging dock details\nwhile Carry bag is selected must keep Carry bag selected until the\nshopper explicitly changes the choice. Keep the product image, caption\nand summary consistent across the journey.\nUse explicit names for navigation actions. Define whether Back returns\nto the previous surface or always to configuration. A review action\nshould not silently confirm an order. Give Configure, Review, Edit, Back\nand Retry an observable result.\nFigure 6\nBrowse Dock\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 29,
+      "label": "23",
+      "role": "body",
+      "text": "23\nFigure 6 (continued)\nRetained choice\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 30,
+      "label": "24",
+      "role": "body",
+      "text": "24\nFigure 6 (continued)\nSelected Review\nDock details shows Dock without changing the selected Carry bag. The selected Review\nretains Graphite, Simple, Amber and Carry bag and offers Edit configuration.\nIn the trial, Dock details previewed Dock while Carry bag remained\nselected. Returning to configuration and review retained the selected\nchoices.\nAdd a recovery state\nWhen an image is unavailable, keep the configuration summary visible.\nExplain what could not load and offer a useful recovery or editing action.\nRetry should attempt to load the asset rather than showing a success\nmessage unrelated to a request.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 31,
+      "label": "25",
+      "role": "body",
+      "text": "25\nState or transition\nDesign requirement\nConfigure to review\nThe four choices are retained\nReview to edit\nSelected controls agree with the summary\nBrowse another accessory\nBrowsing does not select the accessory\nNo accessory\nThe summary states the choice clearly\nImage unavailable\nChoices and navigation remain usable\nNarrow viewport\nSummary, edit and continuation remain reachable\nFor a prototype, distinguish demonstrated behavior from simulated\nbehavior. State when an unavailable state is deliberately staged. Test a\nreal missing resource before claiming image-request recovery. Keep\nprototype-only shortcuts in the handoff record.\nThe staged unavailable fixture marked Carry bag unavailable and\nreplaced confirmation with Choose Dock or Choose None. Choosing\nNone retained Graphite, Simple and Amber. The image-error fixture\ndeliberately skipped its first request; Retry then made a successful\nbrowser image request. This trial did not demonstrate recovery from a\nreal missing resource.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 32,
+      "label": "26",
+      "role": "body",
+      "text": "26\nFigure 7\nUnavailable selection\nImage error fixture\nStaged Carry bag unavailability offers Dock or None and retains the other choices. The\nseparate image-error fixture simulates the first failure; Retry makes a real successful\nrequest. Real missing-resource recovery remains untested.\nProtect consistency during generation\nAsk Claude to reuse the chosen direction rather than redesigning every\nnew screen. Review the next surface for typography, spacing, selected\nmarks, content and action hierarchy. A screen can be attractive in\nisolation and still break the journey's vocabulary.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 33,
+      "label": "27",
+      "role": "body",
+      "text": "27\nChapter checkpoint\nYou can complete configure, details, review and edit. Selected values\nremain consistent. The unavailable state and narrow layout have been\ninspected in the interactive result.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n5. BUILD THE CONNECTED EXPERIENCE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 34,
+      "label": "28",
+      "role": "chapter-opener",
+      "text": "28\nCHAPTER 06\nReview with people\nObserve the task, resolve confusion and preserve the selected decisions.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 35,
+      "label": "29",
+      "role": "body",
+      "text": "29\nReview the prototype as a task. Ask someone to configure a robot,\ninspect the summary, change one choice, browse an accessory and\nreturn. Give the person the goal, then observe where the design explains\nitself and where you have to intervene.\nPrepare a reviewable prototype\nOpen the presentation or preview mode and verify the starting point.\nRemove answer-key overlays and setup panels that the reviewer does\nnot need. If using a share link, inspect its access settings and have the\nrecipient open the actual link. Exported HTML or an archive can provide\nanother route, but the files still need a recipient test.\nThe author's private system URL is context for the trial record. Readers\ndo not need access to that private URL. A public exercise download\nshould carry the necessary starting material and clear account\nrequirements for each chosen route.\nCheck response and keyboard behavior\nUse a wide and a narrow viewport. Check long labels, summary\nwrapping, product-image proportions, action placement and page\noverflow. On the narrow view, follow the task rather than only\ninspecting the first screen.\nUse Tab and Shift-Tab through actions and choices. Open and close the\nexpression menu with the keyboard. Confirm visible focus and an\nunderstandable return destination after details or editing. A keyboard\nfailure affects the prototype review and becomes an explicit\nimplementation requirement.\nThe connected trial was operated at 390 \u00d7 844 pixels. Review, editing and\nDock details retained the choices without horizontal overflow. Keyboard\nactivation worked for the navigation actions. A fresh recipient opening\nalso verified radio-arrow selection and retained that change after reload.\nCLAUDE DESIGN FIELD GUIDE\n6. REVIEW WITH PEOPLE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 36,
+      "label": "30",
+      "role": "body",
+      "text": "30\nThese checks support a task review; they do not replace observing\nanother person.\nFigure 8\nNarrow Review\nCLAUDE DESIGN FIELD GUIDE\n6. REVIEW WITH PEOPLE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 37,
+      "label": "31",
+      "role": "body",
+      "text": "31\nFigure 8 (continued)\nSummary and actions\nAt 390 \u00d7 844 pixels the selected review keeps the summary and actions reachable. The lower\nview retains Graphite, Simple, Amber and Carry bag.\nCLAUDE DESIGN FIELD GUIDE\n6. REVIEW WITH PEOPLE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 38,
+      "label": "32",
+      "role": "body",
+      "text": "32\nRecord observations and decide\nObservation\nDecision record\nReviewer misses an edit action\nChange its placement or wording, then retry the\ntask\nReviewer mistakes review for an order\nClarify the heading and confirmation language\nSummary disagrees with imagery\nRepair the shared choice state or asset mapping\nNarrow view hides the main action\nRework hierarchy and scrolling, then repeat the\njourney\nPrototype limitation prevents a test\nName the limitation and assign the next test\nKeep findings concrete. \"The reviewer opened Dock details and assumed\nDock was selected\" supports a correction. \"The experience needs polish\"\ndoes not tell anyone what to change.\nThe main endpoint is a reviewed prototype with a decision record and\nknown limitations. Record unresolved High, Medium and Low issues. Do\nnot label the prototype ready for handoff when an unresolved issue\nprevents the core task.\nChapter checkpoint\nA reviewer has completed the task. Material confusion is resolved or\nassigned. The prototype, decisions and limitations are ready for the\nselected recipient.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n6. REVIEW WITH PEOPLE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 39,
+      "label": "33",
+      "role": "chapter-opener",
+      "text": "33\nCHAPTER 07\nHand off to Claude Code\nGive the implementation owner the selected design and its behavior.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 40,
+      "label": "34",
+      "role": "body",
+      "text": "34\nChoose this route when the next job is software implementation. Deliver\nthe selected direction, the working prototype, the maintained\ncomponent source and the decisions that affect behavior. The recipient\nshould understand what to preserve and what to build.\nCapture the handoff\nUse the handoff or export control available in the tested Design surface.\nCurrent documentation lists local coding-agent and Claude Code Web\nroutes, plus HTML and ZIP exports. Record the selected method and the\nreceived files. Keep the generated source separate from adaptations\nneeded to run it in the recipient's project.\nInclude the fixture, navigation destinations, image behavior, responsive\npriorities and unresolved prototype limitations. Give the recipient the\nactual selected design rather than all rejected alternatives as equal\nrequirements.\nImplement the selected Velori review direction in this product project.\nInspect the existing components, tokens and state ownership before\nchanging code. Preserve the configurator, product assets and four\nchoices. Map the design to the maintained library. Keep configure,\ndetails, review and edit consistent. Explain necessary adaptations and\ntest the interactive journey, keyboard behavior and narrow layout.\nThe tested Share menu offered a local-agent Claude Code prompt, a\nproject ZIP and standalone HTML. The prompt copied successfully and\nnamed the selected entry and imported files. The ZIP preserves\ngenerated source; its React and Babel scripts require network access.\nThe standalone export embeds the scripts and product assets. Its Retry\nreloads bundled data and therefore cannot demonstrate a failed network\nrequest.\nCLAUDE DESIGN FIELD GUIDE\n7. HAND OFF TO CLAUDE CODE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 41,
+      "label": "35",
+      "role": "body",
+      "text": "35\nFigure 9\nLocal-agent handoff\nThe native local-agent handoff identifies the selected entry and imported files. The saved\nprompt copied successfully; separate recipient tests verified the exported prototype.\nVerify recipient usability\nOpen the received packet from a fresh local folder. Follow its README.\nConfirm that required dependencies and assets are present and that the\nselected view opens. Record any network or account requirement. A\nhandoff prompt copied successfully does not prove the prototype can\nrun.\nReview the implementation against the selected design at matching\nviewports. Inspect component use in source when library reuse matters.\nVisual similarity cannot identify a component or establish controlled\nstate. Record intentional deviations and get a design decision on changes\nthat affect the task.\nDetailed package hashes, runtime adapters, full configuration\ncombinations and storage tests belong in supporting engineering\nchecks. Apply them when the recipient's implementation needs those\nCLAUDE DESIGN FIELD GUIDE\n7. HAND OFF TO CLAUDE CODE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 42,
+      "label": "36",
+      "role": "body",
+      "text": "36\nguarantees; they are not the entry requirement for exploring the review\ndesign.\nChapter checkpoint\nThe recipient can open the handoff and understand the selected design.\nImplementation review records component mapping, tested behavior,\ndeviations and remaining work.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n7. HAND OFF TO CLAUDE CODE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 43,
+      "label": "37",
+      "role": "chapter-opener",
+      "text": "37\nCHAPTER 08\nContinue in Figma when\nneeded\nInspect editable output and restore the design relationships the team needs.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 44,
+      "label": "38",
+      "role": "body",
+      "text": "38\nChoose this route when the team needs editable Figma work for further\ndesign, library maintenance or review. Figma may also have supplied\nthe starting foundations. Returning to Figma is a destination decision,\nnot a compulsory final stage for every Claude Design prototype.\nChoose a supported bridge\nInspect the export controls in the Design experience you used. Do not\npromise a native Figma export because another tool can capture a web\npage. Figma's code-to-canvas workflow describes capturing rendered UI\ninto editable design layers through its MCP tooling. A capture or manual\nreconstruction is a separate bridge with its own output to inspect.\nKeep the source file and existing libraries. Add selected views in a\nseparate page or working copy. Record the captured URL, viewport and\ndesign revision so the recipient knows which prototype the frames\nrepresent.\nThe trial captured the selected Review into editable layers, then restored\nVelori Brand, Product Preview and Primary Button instances. It rebuilt\nthe repeated summary row and outlined secondary action as local\ncomponents and reapplied the source text styles. The resulting screen\nhas 22 styled text nodes, 10 instances and 65 nodes with variable\nbindings. It uses Arimo and Lora, with the source Product style restored\nto 27px. The Figma screen has no prototype connections or choice-state\nwiring. Continue design there, or build and test those relationships\nbefore calling it an interactive Figma prototype.\nCLAUDE DESIGN FIELD GUIDE\n8. CONTINUE IN FIGMA WHEN NEEDED\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 45,
+      "label": "39",
+      "role": "body",
+      "text": "39\nFigure 10\nEditable selected view\nEditable Figma continuation after restoring source relationships. The screen uses Velori\ninstances, text styles and variable bindings. It remains a static selected review with no\nprototype wiring.\nInspect separate kinds of fidelity\nCheck\nEvidence\nVisual match\nThe selected view agrees at the captured viewport\nEditable content\nText, layout and image layers can be changed\nComponent relationships\nRequired instances point to intended main\ncomponents\nToken relationships\nRequired values use intended styles or variables\nInteraction behavior\nPrototype connections and state behavior are tested\nEditable layers do not automatically preserve the source component\nlibrary or prototype wiring. Reconnect the required relationships and\ndocument what was rebuilt. Code Connect can supply implementation\nCLAUDE DESIGN FIELD GUIDE\n8. CONTINUE IN FIGMA WHEN NEEDED\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 46,
+      "label": "40",
+      "role": "body",
+      "text": "40\ncontext when mappings are maintained; it is not a substitute for\ninspecting the received file.\nUse Figma plan features only when the chosen deliverable requires\nthem. A variable-driven native prototype may have additional plan\nrequirements. A Design review prototype should not inherit those\nrequirements merely because the team's foundations were created in\nFigma.\nChapter checkpoint\nThe Figma recipient can edit the selected design. Required instances,\nstyles, variables and prototype behavior have separate results. Missing\nrelationships are recorded as remaining work.\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nCLAUDE DESIGN FIELD GUIDE\n8. CONTINUE IN FIGMA WHEN NEEDED\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 47,
+      "label": "41",
+      "role": "chapter-opener",
+      "text": "41\nCHAPTER 09\nRun the guided exercise\nComplete the design loop and the handoff your recipient needs.\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96,
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "page": 48,
+      "label": "42",
+      "role": "body",
+      "text": "42\nUse the Velori starting materials to explore a review experience. Keep\nthe completed Store example out of initial generation context. Compare\nthe answer only after selecting and refining your own direction.\nFollow the design loop\n 1\nChoose the Figma-first or code-first route and record the input files.\n 2\nWrite the review brief and the Graphite, Simple, Amber, Carry bag fixture.\n 3\nCreate an isolated Design destination and inspect the imported starting\nscreen.\n 4\nGenerate two or three distinct directions. Operate them and choose with\nreasons.\n 5\nRefine the selected direction through chat, a targeted comment and a\ndirect visual edit. Verify that each change saves; record unsupported\nediting and its fallback.\n 6\nConnect configuration, details, review and edit. Add an unavailable state\nand inspect a narrow view.\n 7\nReview the task with someone. Correct material confusion and record\nlimitations.\n 8\nExport the selected prototype and decisions. Verify that the recipient can\nopen them.\n 9\nContinue to Code implementation or editable Figma work when the\nrecipient needs that destination. Complete its own checks.\nCLAUDE DESIGN FIELD GUIDE\n9. RUN THE GUIDED EXERCISE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 49,
+      "label": "43",
+      "role": "body",
+      "text": "43\nKeep a useful record\nRecord the chosen route, source files, Design project, selected direction,\ndecision rationale, corrections to hierarchy, content or interaction,\ntested journey and recipient result. Save images before and after\nchanges to hierarchy, content or interaction. The supplied answer key\nincludes the selected offline prototype and a static editable Figma\ncontinuation. The recorded author trial is prepared for human review; it\ndoes not claim that a separate reviewer has completed the task. A\ncomplete transcript is less useful than a short record that explains why\nthe design was selected and what remains uncertain.\nCompletion item\nRequired result\nStarting context\nThe maintained source and answer exclusions are clear\nExploration\nAlternatives are visible and a direction is selected with\nreasons\nRefinement\nSaved changes are verified; unsupported editing and the\nfallback are recorded\nJourney\nConfigure, details, review and edit agree\nReview\nHuman feedback, narrow layout and keyboard results are\nrecorded\nMain handoff\nThe recipient can open the selected prototype and decision\nrecord\nChosen destination\nCode or Figma checks match the recipient's requested\ndeliverable\nIf a required native step is inaccessible, leave the inaccessible native\naction incomplete and name the practical action that can unblock the\nrun. Do not substitute a local answer key for a fresh Design output or call\na flattened screenshot an editable native result.\nCLAUDE DESIGN FIELD GUIDE\n9. RUN THE GUIDED EXERCISE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 50,
+      "label": "44",
+      "role": "body",
+      "text": "44\nChapter checkpoint\nYou have a reviewed interactive prototype and a recipient-usable\nhandoff. Any chosen implementation or Figma continuation has a\nseparate completion record.\nCLAUDE DESIGN FIELD GUIDE\n9. RUN THE GUIDED EXERCISE\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 51,
+      "label": "45",
+      "role": "body",
+      "text": "45\nOfficial Design documentation, reported practice and the Velori exercise. Sources are listed in Further\nreading.\nAppendix A: Brief and\ndecision record\n 1\nUser and task.\n 2\nStarting route and source ownership.\n 3\nPreserved visual and interaction rules.\n 4\nNon-default fixture and excluded answer material.\n 5\nAlternatives and selected direction.\n 6\nSelection rationale and accepted tradeoff.\n 7\nCorrections to hierarchy, content or interaction, and review observations.\n 8\nTested behavior and known prototype limitations.\n 9\nRecipient, format and opening result.\nAppendix B: Supporting\nengineering checks\nUse the sample library inventory, system definition, source conflicts,\nruntime adapters and package fingerprints when preparing code input\nor validating an implementation. Apply the full configuration matrix,\nstorage, reload and real image-failure checks to the implementation that\nclaims those behaviors. Keep captured Design source immutable and\nadapt it in a separate folder.\nKeep original and third-party notices with the supplied material. Velori's\nauthored source and imagery use the declared MIT license; referenced\nCLAUDE DESIGN FIELD GUIDE\nAPPENDIX B: SUPPORTING ENGINEERING CHECKS\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 52,
+      "label": "46",
+      "role": "body",
+      "text": "46\nfonts and icons retain their own notices. Font family names in a Figma\nfile are not bundled font software.\nFurther reading\n 1\nAnthropic: Get started with Claude Design.\n 2\nAnthropic: Set up your design system.\n 3\nFigma: Code to canvas.\n 4\nFigma: Code Connect integration.\n 5\nBo\u017eana Radenkovi\u0107 Gerard: Portfolio built with AI.\n 6\nCaviar: Setting up a design system with Figma, Claude Code and Claude\nDesign.\n 7\nMarsBased: A real client system import trial.\n 8\nGoodCode: Design exploration and multi-screen implementation.\n 9\nJ\u00e9r\u00f4me Benoit Reveau: A prototype-to-implementation pilot.\nCLAUDE DESIGN FIELD GUIDE\nFURTHER READING\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    },
+    {
+      "page": 53,
+      "label": "47",
+      "role": "changelog",
+      "text": "47\nChangelog\nThis edition centers the guide on exploring, refining and reviewing\nproduct designs in Claude Design.\nCorrection or clarification. Begin with Figma foundations and screens\nor an existing implementation library. The two input routes have\ndistinct ownership and preparation. Design setup, Caviar account.\nAddition. Compare directions, refine with chat, comments and direct\nedits, then review a connected prototype. Design decisions and people\nreviewing the result form the main exercise. Design guide, Practitioner\naccount.\nCorrection or clarification. Finish with a reviewed prototype and usable\nhandoff; choose Code or Figma when the next owner needs it.\nImplementation and editable design have separate completion checks.\nDesign guide, Code to canvas.\nDeprecation or removal. Move package inventories and detailed\nengineering checks into supporting material. Readers encounter\ntechnical setup when their selected route requires it. Design setup.\nCLAUDE DESIGN FIELD GUIDE\nCHANGELOG\n",
+      "widthPoints": 420.0,
+      "heightPoints": 594.96
+    }
+  ]
+}

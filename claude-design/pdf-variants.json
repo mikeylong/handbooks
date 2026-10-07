@@ -1,70 +1,58 @@
 {
   "title": "Claude Design Field Guide",
-  "version": "1.3.0",
-  "date": "2026-10-05",
-  "pdf": "output/pdf/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
-  "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
-  "pages": 76,
+  "version": "2.0.0",
+  "date": "2026-10-06",
+  "pdf": "output/pdf/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+  "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+  "pages": 53,
+  "previous_public_edition": "1.3.0",
+  "approvalStatus": "approved",
   "schemaVersion": 1,
   "book": "claude-design",
   "variants": [
     {
       "theme": "light",
       "displayName": "Daytime version",
-      "appearanceRevision": 3,
-      "appearanceDate": "2026-10-05",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-07",
       "approvalStatus": "approved",
-      "path": "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
-      "publicUrl": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
-      "downloadFilename": "claude-design-v1.3.0-2026-10-05-daytime-r3.pdf",
-      "sha256": "b9f8bd7b0536c8a8ed055bb13f0bf69d26ab6de035b1c6cecf5bb8cab634ec75",
-      "pages": 76,
-      "bytes": 10094624,
+      "path": "claude-design/output/pdf/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+      "pages": 53,
+      "bytes": 6744714,
       "pageMap": {
-        "path": "claude-design/qa/v1.3.0/daytime-map.json",
-        "sha256": "f93db4c16177970ffad41bd122706ca516a0c0a6ddf9c23f1e4b8e52ad62f41c"
+        "path": "claude-design/qa/v2.0.0/daytime-map.json",
+        "sha256": "620c546829dc54641a809e29f6f78b3739217118ed7a8289de35743bd004f45a"
       }
     },
     {
       "theme": "dark",
       "displayName": "Late night version",
-      "appearanceRevision": 3,
-      "appearanceDate": "2026-10-05",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-07",
       "approvalStatus": "approved",
-      "path": "claude-design/output/pdf/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
-      "publicUrl": "/claude-design/editions/v1.3.0/claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
-      "downloadFilename": "claude-design-v1.3.0-2026-10-05-late-night-r3.pdf",
-      "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e",
-      "pages": 76,
-      "bytes": 54114753,
+      "path": "claude-design/output/pdf/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+      "pages": 53,
+      "bytes": 45744733,
       "pageMap": {
-        "path": "claude-design/qa/v1.3.0/late-night-map.json",
-        "sha256": "e050137f42e43e2ae026282b40dca810372802dfd98b6c497139fc07b0e8c0ca"
+        "path": "claude-design/qa/v2.0.0/late-night-map.json",
+        "sha256": "4b8a3ffdb8b4480b2ecc248872dacefa7ab28e3be4e252dc1ce253c1f64c9773"
       },
       "proof": {
         "parity": {
-          "path": "claude-design/qa/v1.3.0/parity/parity.json",
-          "sha256": "92ed1b9501dc609f9737b3303ab83cea5a1fc036488ddc60b799fcaa8afdfb42"
+          "path": "claude-design/qa/v2.0.0/appearance-parity.json",
+          "sha256": "ad68a4579d89a8b7ebb3a681c15bd7f5bef0d36ff116810a1bba1a541d3a87de"
         },
         "visualApproval": {
-          "schemaVersion": 1,
           "status": "approved",
-          "sha256": "2dcf9e1d2609d08f9b95f580b892aa0df9b37f67a518748dc242c3195c00042e",
-          "reviewer": "Codex candidate builder and root visual reviewers",
-          "date": "2026-10-06",
-          "basis": "All 152 r1 PDFKit pages were inspected. R2 changed only pages 8–9 per theme; those pages were inspected in both renderers. R3 changed only page 7 per theme; all four corresponding Poppler/PDFKit proofs were inspected. Remaining 300/304 r3 rasters are pixel-identical to the accepted r2 pair.",
-          "receipt": {
-            "path": "claude-design/qa/v1.3.0/visual-review.json",
-            "sha256": "2aad7ba06c31cc978fa59b44af013139ad953d4a6464a3c14a2fb5bf628436dd"
-          },
-          "rootReview": {
-            "path": "claude-design/qa/v1.3.0/root-visual-review.json",
-            "sha256": "49f0ce6ab2fd48590738bdcdf054d17a11ce5c7a39cf6561153f7fa02dca57b0"
-          },
-          "publicationApproval": {
-            "path": "claude-design/qa/v1.3.0/publication-approval.json",
-            "sha256": "a8183e8f7140a3fdd382fa9b4cb6645aa812ae6f5ef578a21d0f49d84b8b406c"
-          }
+          "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+          "authority": "Mike: latest direct Land this after reviewing the approval hold, 2026-10-07",
+          "review": "claude-design/qa/v2.0.0/visual-review.json"
         }
       }
     }

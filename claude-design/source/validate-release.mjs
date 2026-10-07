@@ -170,6 +170,8 @@ export function validateDownloadContract(html,files,{version,releaseContract}={}
 async function pinnedFile(base,path){const file=safePath(base,path);assert.ok((await lstat(file)).isFile(),'Pinned input must be a regular file');assert.equal(await realpath(file),file,'Pinned input cannot be a symlink');return {bytes:await readFile(file),file};}
 
 export async function main(){
+const selectedManifest=JSON.parse(await readFile(resolve(root,'claude-design/release-manifest.json'),'utf8'));
+if(selectedManifest.releaseContract?.kind==='design-exploration'){const {validateExplorationRelease}=await import('./validate-design-exploration.mjs');return validateExplorationRelease(root);}
 const {values:args}=parseArgs({options:{registry:{type:'string'}}});
 const catalog=JSON.parse(await readFile(resolve(root,'catalog.json'),'utf8'));
 const pin=validateLibrary(catalog).find(b=>b.id==='claude-design');assert.ok(pin);

@@ -1,0 +1,167 @@
+{
+  "status": "passed with Low observations",
+  "date": "2026-10-07",
+  "artifacts": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-07",
+      "approvalStatus": "candidate",
+      "path": "claude-design/review/2026-10-06-design-centered-candidate/book/output/pdf/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v2.0.0-2026-10-06-daytime-r1.pdf",
+      "sha256": "88f3ffb9659d147944e14a7d775740410d31b07e76c99a4d72fb4068e6874ca8",
+      "pages": 53,
+      "bytes": 6744714,
+      "pageMap": {
+        "path": "claude-design/review/2026-10-06-design-centered-candidate/qa/final-06/daytime-map.json",
+        "sha256": "620c546829dc54641a809e29f6f78b3739217118ed7a8289de35743bd004f45a"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-07",
+      "approvalStatus": "candidate",
+      "path": "claude-design/review/2026-10-06-design-centered-candidate/book/output/pdf/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.0.0/claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v2.0.0-2026-10-06-late-night-r1.pdf",
+      "sha256": "c6aed6e977ae73338dd203f3d9716eb03caf9858b2a3f029a974786f4e4d00fa",
+      "pages": 53,
+      "bytes": 45744733,
+      "pageMap": {
+        "path": "claude-design/review/2026-10-06-design-centered-candidate/qa/final-06/late-night-map.json",
+        "sha256": "4b8a3ffdb8b4480b2ecc248872dacefa7ab28e3be4e252dc1ce253c1f64c9773"
+      },
+      "proof": {
+        "parity": {
+          "path": "claude-design/review/2026-10-06-design-centered-candidate/qa/final-06/appearance-parity.json",
+          "sha256": "ad68a4579d89a8b7ebb3a681c15bd7f5bef0d36ff116810a1bba1a541d3a87de"
+        }
+      }
+    }
+  ],
+  "renderers": [
+    {
+      "name": "Poppler pdftoppm",
+      "version": "26.08.0"
+    },
+    {
+      "name": "Apple PDFKit/CoreGraphics",
+      "os": "macOS 27.0.1 (26A434)"
+    }
+  ],
+  "allPageContactSheetsInspected": {
+    "light-poppler": [
+      "light-poppler/sheet-1.jpg",
+      "light-poppler/sheet-2.jpg",
+      "light-poppler/sheet-3.jpg",
+      "light-poppler/sheet-4.jpg",
+      "light-poppler/sheet-5.jpg"
+    ],
+    "dark-poppler": [
+      "dark-poppler/sheet-1.jpg",
+      "dark-poppler/sheet-2.jpg",
+      "dark-poppler/sheet-3.jpg",
+      "dark-poppler/sheet-4.jpg",
+      "dark-poppler/sheet-5.jpg"
+    ],
+    "light-pdfkit": [
+      "light-pdfkit/sheet-1.jpg",
+      "light-pdfkit/sheet-2.jpg",
+      "light-pdfkit/sheet-3.jpg",
+      "light-pdfkit/sheet-4.jpg",
+      "light-pdfkit/sheet-5.jpg"
+    ],
+    "dark-pdfkit": [
+      "dark-pdfkit/sheet-1.jpg",
+      "dark-pdfkit/sheet-2.jpg",
+      "dark-pdfkit/sheet-3.jpg",
+      "dark-pdfkit/sheet-4.jpg",
+      "dark-pdfkit/sheet-5.jpg"
+    ]
+  },
+  "pagesPerAppearance": 53,
+  "fullSizePageRoles": {
+    "cover": [
+      1
+    ],
+    "workflow": [
+      4
+    ],
+    "contents": [
+      6
+    ],
+    "chapterOpeners": [
+      7,
+      10,
+      16,
+      21,
+      27,
+      34,
+      39,
+      43,
+      47
+    ],
+    "screenshots": [
+      12,
+      14,
+      18,
+      19,
+      23,
+      25,
+      28,
+      29,
+      30,
+      32,
+      36,
+      37,
+      41,
+      45
+    ],
+    "denseTables": [
+      31,
+      49
+    ],
+    "prompt": [
+      8,
+      17
+    ],
+    "worksheet": [
+      51
+    ],
+    "references": [
+      52
+    ],
+    "final": [
+      53
+    ]
+  },
+  "fullSizeInspection": "Required roles inspected in Light Poppler and Dark Apple PDFKit; corresponding complete contact sheets inspected in both renderers. Final references glyph repair checked in both engines. Additional Dark Poppler retained-choice crop checked at full size.",
+  "specimenComparison": "Canonical specimen cover, contents, opener, diagram/table, code and dense table compared. Governing type, rules, margins and engraving treatment preserved.",
+  "findings": [
+    {
+      "priority": "Low",
+      "location": "PDF physical pages 20,26,33,42,50",
+      "finding": "Chapter checkpoints leave substantial whitespace before the next chapter opener. Page 42 begins with two continuation lines.",
+      "disposition": "Accepted candidate pagination; no clipped or missing content."
+    },
+    {
+      "priority": "Low",
+      "location": "PDF physical page 51",
+      "finding": "Appendix A and B share a page; running head names Appendix B, which begins lower on that page.",
+      "disposition": "Visible headings and contents destinations remain accurate; consider separate appendix opening in a later layout revision."
+    },
+    {
+      "priority": "Low",
+      "location": "Figure 6 detail panels",
+      "finding": "Detail crops use tight edges and partially omit the small eyebrow above the full heading.",
+      "disposition": "The retained choice and actions remain readable. Full overview and larger reader images provide context."
+    }
+  ],
+  "unresolvedHighVisualDefects": 0,
+  "glyphCorrection": "Bundled GuideSans fallback supplies \u017e and \u0107 absent in bundled Latin serif subset. Same source spelling retained. Final references text extracts correctly.",
+  "final05ToFinal06": "Only page 52 changed; other 52 pages pixel-identical in each renderer. See rendered-change-check.json."
+}

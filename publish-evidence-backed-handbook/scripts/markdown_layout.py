@@ -230,7 +230,21 @@ def _tokenized_inline(text: str) -> str:
 
 
 def P(text: str, style: ParagraphStyle = BODY) -> Paragraph:
-    return Paragraph(_tokenized_inline(text), style)
+    markup = _tokenized_inline(text)
+    # The bundled serif is a Latin subset. Preserve source spelling by using
+    # the bundled sans glyph when the serif cannot paint that character.
+    if style.fontName.startswith(SERIF):
+        serif_glyphs = pdfmetrics.getFont(style.fontName).face.charToGlyph
+        sans_glyphs = pdfmetrics.getFont(SANS).face.charToGlyph
+        runs = re.split(r'(<[^>]+>)', markup)
+        for index in range(0, len(runs), 2):
+            runs[index] = ''.join(
+                f'<font name="{SANS}">{character}</font>'
+                if not serif_glyphs.get(ord(character), 0) and sans_glyphs.get(ord(character), 0)
+                else character for character in runs[index]
+            )
+        markup = ''.join(runs)
+    return Paragraph(markup, style)
 
 
 def heading(text: str, level: int) -> Paragraph:
@@ -566,6 +580,69 @@ def _arrowhead(canvas, x: float, y: float, direction: str, color=MID, size: floa
     canvas.setFillColor(color)
     canvas.drawPath(path, fill=1, stroke=0)
 
+
+
+class DesignWorkflow(Flowable):
+    """Grouped workflow geometry, driven by book-owned nodes and edges."""
+    def __init__(self, width=CONTENT_W, height=366):
+        super().__init__(); self.width=width; self.height=height
+    def draw(self):
+        c=self.canv; c.saveState()
+        d=load_diagram(ROOT, 'DesignWorkflow')
+        groups={g:[n for n in d['nodes'] if n['group']==g] for g in ['inputs','loop','endpoint','destinations']}
+        if d['kind']!='workflow' or [len(groups[g]) for g in groups]!=[2,6,1,2]:
+            raise ValueError('DesignWorkflow: unsupported geometry; update the shared renderer')
+        ids={n['id'] for n in d['nodes']}
+        if len(ids)!=len(d['nodes']) or any(e['from'] not in ids or e['to'] not in ids for e in d['edges']):
+            raise ValueError('DesignWorkflow: invalid graph')
+        expected={(n['id'],groups['loop'][0]['id']) for n in groups['inputs']}
+        expected.update(zip([n['id'] for n in groups['loop']],[n['id'] for n in groups['loop'][1:]]+[groups['endpoint'][0]['id']]))
+        expected.update((groups['endpoint'][0]['id'],n['id']) for n in groups['destinations'])
+        if {(e['from'],e['to']) for e in d['edges'] if not e.get('feedback')}!=expected:
+            raise ValueError('DesignWorkflow: connectors no longer fit geometry')
+        w=self.width; gap=15; two=(w-gap)/2; three=(w-2*gap)/3
+        label=ParagraphStyle('WorkflowLabel',fontName=SANS_BOLD,fontSize=8,leading=10,textColor=INK)
+        detail=ParagraphStyle('WorkflowDetail',fontName=SANS,fontSize=7,leading=9,textColor=MID)
+        def para(text,x,y,width,style):
+            p=Paragraph(escape(text),style); _,h=p.wrap(width,100);p.drawOn(c,x,y-h);return h
+        def card(n,x,y,width,height,number=None):
+            c.setFillColor(WHITE);c.setStrokeColor(LINE);c.setLineWidth(.7);c.roundRect(x,y,width,height,4,stroke=1,fill=1)
+            from xml.etree import ElementTree
+            from reportlab.graphics.shapes import Drawing
+            from reportlab.graphics.svgpath import SvgPath
+            from reportlab.graphics import renderPDF
+            svg=ElementTree.parse(ROOT/'assets/tool-logos'/f"{n['tool']}.svg").getroot()
+            icon=Drawing(24,24)
+            for path in svg.iter('{http://www.w3.org/2000/svg}path'):
+                icon.add(SvgPath(path.attrib['d'],fillColor=HexColor(path.attrib.get('fill','#D97757')),strokeColor=None,fillMode=0 if path.attrib.get('fill-rule')=='evenodd' else 1))
+            c.saveState();c.translate(x+8,y+height-10);c.scale(.5,-.5);renderPDF.draw(icon,c,0,0);c.restoreState()
+            title=(str(number)+'. ' if number else '')+n['label']
+            h=para(title,x+26,y+height-9,width-34,label)
+            para(n.get('detail',''),x+8,y+height-15-h,width-16,detail)
+        def arrow(x1,y1,x2,y2,direction='down'):
+            c.setStrokeColor(MID);c.setLineWidth(.7);c.line(x1,y1,x2,y2);_arrowhead(c,x2,y2,direction,size=3)
+        c.translate(0,28)
+        para('START · choose the source your team maintains',0,334,w,label)
+        for i,n in enumerate(groups['inputs']):card(n,i*(two+gap),267,two,49)
+        # Both inputs merge into the ordered Design loop.
+        c.setStrokeColor(MID);c.line(two/2,267,two/2,255);c.line(w-two/2,267,w-two/2,255);c.line(two/2,255,w-two/2,255)
+        arrow(w/2,255,w/2,246)
+        para('CLAUDE DESIGN · explore and review',0,243,w,label)
+        positions=[(0,180),(three+gap,180),(2*(three+gap),180),(2*(three+gap),111),(three+gap,111),(0,111)]
+        for i,(n,(x,y)) in enumerate(zip(groups['loop'],positions),1):card(n,x,y,three,47,i)
+        for i in [0,1]:arrow(positions[i][0]+three,203.5,positions[i+1][0],203.5,'right')
+        arrow(positions[2][0]+three/2,180,positions[3][0]+three/2,158)
+        for i in [3,4]:arrow(positions[i][0],134.5,positions[i+1][0]+three,134.5,'left')
+        arrow(three/2,111,three/2,101)
+        card(groups['endpoint'][0],0,61,w,40)
+        # Selected destination follows the main endpoint.
+        arrow(w/2,61,w/2,49)
+        c.setStrokeColor(MID);c.line(two/2,49,w-two/2,49)
+        arrow(two/2,49,two/2,42);arrow(w-two/2,49,w-two/2,42)
+        for i,n in enumerate(groups['destinations']):card(n,i*(two+gap),0,two,42)
+        c.translate(0,-28)
+        para(d['note'],0,20,w,detail)
+        c.restoreState()
 
 class WorkflowLoop(Flowable):
     """Eight equal stages in a clockwise operating loop."""
@@ -990,6 +1067,7 @@ def parse_markdown() -> list[Flowable]:
         if diagram_marker:
             diagrams = {
                 "workflow-loop": WorkflowLoop,
+                "design-workflow": DesignWorkflow,
                 "surface-continuity": SurfaceContinuityDiagram,
             }
             name = diagram_marker.group(1)

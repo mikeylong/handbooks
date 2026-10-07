@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "version": "1.3.0",
+  "sourceReaderSha256": "5d78f71be7cf6353266472143f615cca7d43d56bff3c53cfa42a6d191c95b9dc",
+  "sha256": "144110102292b5fe58cac98659794ccb21f6ac25235bcc1ffde0052e4b86a7dd",
+  "sections": [
+    {
+      "title": "Orientation",
+      "anchor": "orientation",
+      "level": 2
+    },
+    {
+      "title": "Start the sample",
+      "anchor": "start-the-sample",
+      "level": 3
+    },
+    {
+      "title": "What you will produce",
+      "anchor": "what-you-will-produce",
+      "level": 3
+    },
+    {
+      "title": "Choose the destination first",
+      "anchor": "choose-the-destination-first",
+      "level": 3
+    },
+    {
+      "title": "The workflow",
+      "anchor": "the-workflow",
+      "level": 3
+    },
+    {
+      "title": "Decide what is authoritative",
+      "anchor": "decide-what-is-authoritative",
+      "level": 2
+    },
+    {
+      "title": "Run your working copy",
+      "anchor": "run-your-working-copy",
+      "level": 3
+    },
+    {
+      "title": "Establish the source order",
+      "anchor": "establish-the-source-order",
+      "level": 3
+    },
+    {
+      "title": "Define the clean baseline",
+      "anchor": "define-the-clean-baseline",
+      "level": 3
+    },
+    {
+      "title": "Name the fixture",
+      "anchor": "name-the-fixture",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint",
+      "level": 3
+    },
+    {
+      "title": "Prepare the Velori system",
+      "anchor": "prepare-the-velori-system",
+      "level": 2
+    },
+    {
+      "title": "Separate the starting screen from the answer key",
+      "anchor": "separate-the-starting-screen-from-the-answer-key",
+      "level": 3
+    },
+    {
+      "title": "Inspect the source package",
+      "anchor": "inspect-the-source-package",
+      "level": 3
+    },
+    {
+      "title": "Define rules and component use",
+      "anchor": "define-rules-and-component-use",
+      "level": 3
+    },
+    {
+      "title": "Import the prepared draft",
+      "anchor": "import-the-prepared-draft",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-1",
+      "level": 3
+    },
+    {
+      "title": "Validate the imported system",
+      "anchor": "validate-the-imported-system",
+      "level": 2
+    },
+    {
+      "title": "Generate the known screens",
+      "anchor": "generate-the-known-screens",
+      "level": 3
+    },
+    {
+      "title": "Sample ten elements for fidelity",
+      "anchor": "sample-ten-elements-for-fidelity",
+      "level": 3
+    },
+    {
+      "title": "Check that a correction persists",
+      "anchor": "check-that-a-correction-persists",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-2",
+      "level": 3
+    },
+    {
+      "title": "Extend the existing screen",
+      "anchor": "extend-the-existing-screen",
+      "level": 2
+    },
+    {
+      "title": "Generate the bounded change",
+      "anchor": "generate-the-bounded-change",
+      "level": 3
+    },
+    {
+      "title": "Review the first diff",
+      "anchor": "review-the-first-diff",
+      "level": 3
+    },
+    {
+      "title": "Keep navigation explicit",
+      "anchor": "keep-navigation-explicit",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-3",
+      "level": 3
+    },
+    {
+      "title": "Connect the adjacent surfaces",
+      "anchor": "connect-the-adjacent-surfaces",
+      "level": 2
+    },
+    {
+      "title": "Browse without selecting",
+      "anchor": "browse-without-selecting",
+      "level": 3
+    },
+    {
+      "title": "Make all surfaces agree",
+      "anchor": "make-all-surfaces-agree",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-4",
+      "level": 3
+    },
+    {
+      "title": "Specify states and transitions",
+      "anchor": "specify-states-and-transitions",
+      "level": 2
+    },
+    {
+      "title": "State matrix",
+      "anchor": "state-matrix",
+      "level": 3
+    },
+    {
+      "title": "Transition contract",
+      "anchor": "transition-contract",
+      "level": 3
+    },
+    {
+      "title": "Avoid stale images",
+      "anchor": "avoid-stale-images",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-5",
+      "level": 3
+    },
+    {
+      "title": "Prove keyboard and responsive behavior",
+      "anchor": "prove-keyboard-and-responsive-behavior",
+      "level": 2
+    },
+    {
+      "title": "Operate the dropdown",
+      "anchor": "operate-the-dropdown",
+      "level": 3
+    },
+    {
+      "title": "Check focus through the journey",
+      "anchor": "check-focus-through-the-journey",
+      "level": 3
+    },
+    {
+      "title": "Compare viewports",
+      "anchor": "compare-viewports",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-6",
+      "level": 3
+    },
+    {
+      "title": "Run the design evidence gate",
+      "anchor": "run-the-design-evidence-gate",
+      "level": 2
+    },
+    {
+      "title": "Challenge the result",
+      "anchor": "challenge-the-result",
+      "level": 3
+    },
+    {
+      "title": "Record the decision",
+      "anchor": "record-the-decision",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-7",
+      "level": 3
+    },
+    {
+      "title": "Hand off to Claude Code",
+      "anchor": "hand-off-to-claude-code",
+      "level": 2
+    },
+    {
+      "title": "Capture your generated result",
+      "anchor": "capture-your-generated-result",
+      "level": 3
+    },
+    {
+      "title": "Use the sample as an answer key",
+      "anchor": "use-the-sample-as-an-answer-key",
+      "level": 3
+    },
+    {
+      "title": "Keep the adaptations visible",
+      "anchor": "keep-the-adaptations-visible",
+      "level": 3
+    },
+    {
+      "title": "Bring the bounded change into React",
+      "anchor": "bring-the-bounded-change-into-react",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-8",
+      "level": 3
+    },
+    {
+      "title": "Implement in Figma and reconcile",
+      "anchor": "implement-in-figma-and-reconcile",
+      "level": 2
+    },
+    {
+      "title": "Keep native identity",
+      "anchor": "keep-native-identity",
+      "level": 3
+    },
+    {
+      "title": "Test the prototype",
+      "anchor": "test-the-prototype",
+      "level": 3
+    },
+    {
+      "title": "Reconcile the result",
+      "anchor": "reconcile-the-result",
+      "level": 3
+    },
+    {
+      "title": "Chapter checkpoint",
+      "anchor": "chapter-checkpoint-9",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone",
+      "anchor": "guided-capstone",
+      "level": 2
+    },
+    {
+      "title": "Phase 1: Frame and ground",
+      "anchor": "phase-1-frame-and-ground",
+      "level": 3
+    },
+    {
+      "title": "Phase 2: Define, import, and validate",
+      "anchor": "phase-2-define-import-and-validate",
+      "level": 3
+    },
+    {
+      "title": "Phase 3: Generate the extension",
+      "anchor": "phase-3-generate-the-extension",
+      "level": 3
+    },
+    {
+      "title": "Phase 4: Capture and implement",
+      "anchor": "phase-4-capture-and-implement",
+      "level": 3
+    },
+    {
+      "title": "Phase 5: Build the native Figma journey",
+      "anchor": "phase-5-build-the-native-figma-journey",
+      "level": 3
+    },
+    {
+      "title": "Phase 6: Verify the reader package",
+      "anchor": "phase-6-verify-the-reader-package",
+      "level": 3
+    },
+    {
+      "title": "Completion record",
+      "anchor": "completion-record",
+      "level": 3
+    },
+    {
+      "title": "Answer key",
+      "anchor": "answer-key",
+      "level": 3
+    },
+    {
+      "title": "Appendix A: Prompt sequence",
+      "anchor": "appendix-a-prompt-sequence",
+      "level": 2
+    },
+    {
+      "title": "Appendix B: Handoff record",
+      "anchor": "appendix-b-handoff-record",
+      "level": 2
+    },
+    {
+      "title": "Appendix C: Package map",
+      "anchor": "appendix-c-package-map",
+      "level": 2
+    },
+    {
+      "title": "Further reading",
+      "anchor": "further-reading",
+      "level": 2
+    },
+    {
+      "title": "Changelog",
+      "anchor": "changelog",
+      "level": 2
+    }
+  ],
+  "prompts": 13,
+  "figures": [
+    {
+      "id": "s01-start",
+      "caption": "Figure 1. Public React sample. Graphite, Simple, Amber and Carry bag appear in the controls, configured photograph, caption and Review summary.",
+      "images": [
+        {
+          "alt": "Public React sample configured with Graphite shell, Simple face, Amber expression and Carry bag. The loaded product photograph and four-value caption match the controls.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s01-configure.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s01-configure.png"
+        },
+        {
+          "alt": "Selected Graphite shell, Simple face, Amber expression and Carry bag are visible above Continue.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s01-configure-controls.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s01-configure-controls.png"
+        },
+        {
+          "alt": "Review configuration heading has its real focus outline. The summary retains Graphite, Simple, Amber and Carry bag above Edit configuration and Back.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s01-review-summary.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s01-review-full.png"
+        }
+      ]
+    },
+    {
+      "id": "s02-figma-import",
+      "caption": "Figure 2. Figma. More opens the Import control. The completion dialog confirms import into Drafts; the imported file retains the supplied source pages and separate exercise page.",
+      "images": [
+        {
+          "alt": "Figma file browser More menu has the actual cursor hovering over the highlighted Import row.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s02-import-menu.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s02-import-menu.png"
+        },
+        {
+          "alt": "Imported to Drafts dialog names velori-handbook-v1.2.1.fig and confirms one file imported.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s02-import-complete.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s02-import-complete.png"
+        },
+        {
+          "alt": "Imported Figma file is in Drafts. Its page tree shows 01 Foundations, 02 Components, 03 Configurator, 04 Source Assets and 05 Store Handbook exercise.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s02-page-tree.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s02-page-tree.png"
+        }
+      ]
+    },
+    {
+      "id": "s03-private-import",
+      "caption": "Figure 3. Claude Design, October 5 walkthrough. The example destination is Velori Handbook v1.2.0. Before upload, Share shows Private and Not shared.",
+      "images": [
+        {
+          "alt": "Standalone Claude Design system header names Velori Handbook v1.2.0 dated 2026-10-05.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s03-system-destination.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s03-system-destination.png"
+        },
+        {
+          "alt": "Share access row says Private, Only people added can access, and Not shared.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s03-private-share.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s03-private-share.png"
+        }
+      ]
+    },
+    {
+      "id": "s04-inspect-system",
+      "caption": "Figure 4. Claude Design. Inspect the imported component inventory, rendered ProductPreview and opened usage guidance. The preview uses its own component example, separate from the Amber journey fixture.",
+      "images": [
+        {
+          "alt": "Claude Design component navigation lists the imported Velori components, including ConfigurationSummary, ExpressionSelect and ProductPreview.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s04-component-inventory.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s04-component-inventory.png"
+        },
+        {
+          "alt": "ProductPreview card shows the default Chalk robot photograph on the charging dock.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s04-product-preview.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s04-product-preview.png"
+        },
+        {
+          "alt": "Expanded Usage notes for Claude identifies ProductPreview, window.Velori.ProductPreview and the root _ds_bundle.js.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s04-expanded-guidance.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s04-expanded-guidance.png"
+        }
+      ]
+    },
+    {
+      "id": "s05-correction",
+      "caption": "Figure 5. Claude Design teaching fixture. The accessory gap changes from 8px to the accepted 24px. An independent generation retains the 24px rule with Pebble, Friendly, Mint and None; that screen omits storage and details.",
+      "images": [
+        {
+          "alt": "Accessory tiles in the named teaching fixture have the deliberate narrow 8px horizontal gap. Carry bag is selected.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s05-gap-before.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s05-gap-before.png"
+        },
+        {
+          "alt": "The same accessory row retains Carry bag and now uses the accepted 24px horizontal gaps.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s05-gap-corrected.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s05-gap-corrected.png"
+        },
+        {
+          "alt": "Second generated configurator has Pebble selected, Friendly face, Mint expression, None accessory and the accepted 24px accessory gaps.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s05-second-generation.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s05-second-generation.png"
+        }
+      ]
+    },
+    {
+      "id": "s06-native-review",
+      "caption": "Figure 6. Claude Design, October 5 walkthrough. The generated Review retains Graphite, Simple, Amber and Carry bag from Configure, with Edit configuration and Back available.",
+      "images": [
+        {
+          "alt": "Native Claude Design configurator shows the Graphite robot with Simple Amber face and Carry bag. Its caption names all four selected values.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s06-configure-photo.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s06-configure-photo.png"
+        },
+        {
+          "alt": "Native Review configuration summary retains Graphite, Simple, Amber and Carry bag, with Edit configuration and Back beneath.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s06-review-summary.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s06-review-summary.png"
+        }
+      ]
+    },
+    {
+      "id": "s07-browse",
+      "caption": "Figure 7. Public React sample. Browsing Charging dock changes the detail view while Carry bag remains selected. After returning to Configure and choosing Continue, Review still lists Carry bag.",
+      "images": [
+        {
+          "alt": "Public React sample Charging dock details uses the original Chalk dock photograph, offers accessory browsing and has Back to configurator.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s07-dock-details.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s07-dock-details.png"
+        },
+        {
+          "alt": "After Dock browsing, return and Continue, the Review summary still has Graphite, Simple, Amber and Carry bag.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s07-return-review.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s07-return-review.png"
+        }
+      ]
+    },
+    {
+      "id": "s08-retry",
+      "caption": "Figure 8. Public React sample. Blocking the actual required shell-image request produces the real unavailable state and Retry image action. After unblocking and retrying, the photograph returns and Review still lists Graphite, Simple, Amber and Carry bag.",
+      "images": [
+        {
+          "alt": "Product image unavailable state offers Retry image. The helper text confirms that the choices remain available.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s08-failure.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s08-failure.png"
+        },
+        {
+          "alt": "During the same image failure, the caption retains Graphite shell, Simple face, Amber and Carry bag.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s08-failure-caption.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s08-failure-caption.png"
+        },
+        {
+          "alt": "After the actual request block is cleared and Retry image is chosen, the loaded configured photograph again shows Graphite shell, Simple Amber face and Carry bag.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s08-recovered-photo.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s08-recovered-photo.png"
+        },
+        {
+          "alt": "Recovered Review summary retains Graphite, Simple, Amber and Carry bag with Edit configuration and Back.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s08-retained-summary.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s08-retained-summary.png"
+        }
+      ]
+    },
+    {
+      "id": "s09-dropdown",
+      "caption": "Figure 9. Public React sample. Amber is committed and checked while Blue is the active option in the keyboard-open menu. The real trigger focus outline remains visible.",
+      "images": [
+        {
+          "alt": "Open browser expression menu retains Amber on the focused trigger and checked row. Blue is the active option; White and Mint remain visible.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s09-keyboard-menu.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s09-keyboard-menu.png"
+        }
+      ]
+    },
+    {
+      "id": "s10-mobile",
+      "caption": "Figure 10. Public React sample at 390px. The product and caption stack above the four-value Review summary. Edit configuration and Back remain reachable.",
+      "images": [
+        {
+          "alt": "Narrow Review stacks the loaded Graphite bag photograph and caption naming Simple, Amber and Carry bag.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s10-mobile-product.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s10-mobile-full.png"
+        },
+        {
+          "alt": "Narrow Review configuration summary retains Graphite, Simple, Amber and Carry bag.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s10-mobile-summary.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s10-mobile-summary.png"
+        },
+        {
+          "alt": "Narrow Review has a complete Edit configuration button and Back action.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s10-mobile-actions.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s10-mobile-actions.png"
+        }
+      ]
+    },
+    {
+      "id": "s11-handoff",
+      "caption": "Figure 11. Claude Design. Send opens the Local agent handoff for the generated Velori Store file. Copied records the completed copy action; Project HTML provides the Project archive export path.",
+      "images": [
+        {
+          "alt": "Claude Design destinations menu includes Claude Code and Send.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s11-send-to-code.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s11-send-to-code.png"
+        },
+        {
+          "alt": "Hand off to Claude Code dialog has Local agent selected and Velori Store.dc.html checked as the focused file.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s11-local-agent.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s11-local-agent.png"
+        },
+        {
+          "alt": "Native handoff button reads Copied after the copy action.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s11-copied.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s11-copied.png"
+        },
+        {
+          "alt": "Native Export HTML dialog has Project archive selected, describes every project file zipped, and shows Export. Standalone HTML remains unselected.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s11-project-archive.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s11-project-archive.png"
+        }
+      ]
+    },
+    {
+      "id": "s12-figma-review",
+      "caption": "Figure 12. Imported Figma working copy. Inspect linked component identity and a representative variable binding, then compare Present Review with Graphite, Simple, Amber and Carry bag. Prototype variables cover the configured visit.",
+      "images": [
+        {
+          "alt": "Configure page Continue button is selected as a native component instance. The selection measurement reads 400 Fill by 48.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-selected-button.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-selected-button.png"
+        },
+        {
+          "alt": "Figma inspector names Primary Button from this file, with State Default and Label Continue. Its guidance names Ink, white, 48px height and 12px corners.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-component-identity.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-component-identity.png"
+        },
+        {
+          "alt": "Figma size variable picker has primary-action selected with value 48, beside the instance height control.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-size-binding.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-size-binding.png"
+        },
+        {
+          "alt": "Imported Figma Present shows the configured Graphite robot with Simple Amber face and Carry bag.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-present-photo.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-present-photo.png"
+        },
+        {
+          "alt": "Imported Figma prototype Review retains Graphite, Simple, Amber and Carry bag with Edit configuration and Back.",
+          "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-present-summary.png",
+          "fullPublicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v1.3.0/assets/screenshots/s12-present-summary.png"
+        }
+      ]
+    }
+  ]
+}

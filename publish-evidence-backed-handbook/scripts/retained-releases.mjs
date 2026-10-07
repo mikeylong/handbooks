@@ -7,7 +7,7 @@ export async function installRetainedReleases(collectionRoot, output, inventory)
   if (inventory?.schemaVersion !== 1 || !Array.isArray(inventory.routes)) throw Error('Invalid retained inventory');
   const root = await realpath(collectionRoot), seen = new Set(), plans = [];
   for (const route of inventory.routes) {
-    if (typeof route.url !== 'string' || !/^\/[A-Za-z0-9/_.-]+\.(?:pdf|md|html|json|zip|fig)$/.test(route.url) || route.url.includes('..')) throw Error('Unsafe retained route');
+    if (typeof route.url !== 'string' || !/^\/[A-Za-z0-9/_.-]+\.(?:pdf|md|html|json|zip|fig|png|jpe?g|webp)$/.test(route.url) || route.url.includes('..')) throw Error('Unsafe retained route');
     if (seen.has(route.url)) throw Error('Duplicate retained route: ' + route.url);
     seen.add(route.url);
     if (!/^[a-f0-9]{64}$/.test(route.sha256 ?? '')) throw Error('Invalid retained hash');

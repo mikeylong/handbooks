@@ -18,7 +18,7 @@ function isScreenshotFigure(figure) {
   return true;
 }
 export function validateDiagram(definition) {
-  if (!definition || !['sequence','branch'].includes(definition.kind) || !definition.title || !Array.isArray(definition.nodes) || !definition.nodes.length || !Array.isArray(definition.edges)) throw Error('Invalid semantic diagram');
+  if (!definition || !['sequence','branch','workflow'].includes(definition.kind) || !definition.title || !Array.isArray(definition.nodes) || !definition.nodes.length || !Array.isArray(definition.edges)) throw Error('Invalid semantic diagram');
   const ids = new Set();
   for (const node of definition.nodes) {
     if (!node.id || ids.has(node.id) || !node.label) throw Error('Invalid or duplicate diagram node');
@@ -32,12 +32,33 @@ export function validateDiagram(definition) {
   }
   if (definition.kind === 'sequence') {
     for (let i=1;i<definition.nodes.length;i++) if (!edges.has(definition.nodes[i-1].id+':'+definition.nodes[i].id)) throw Error('Sequence lacks ordered edge');
-  } else {
+  } else if (definition.kind === 'branch') {
     for (const node of definition.nodes.slice(1)) if (!edges.has(definition.nodes[0].id+':'+node.id)) throw Error('Branch lacks source edge');
+  } else if (definition.kind === 'workflow') {
+    const groups = ['inputs','loop','endpoint','destinations'];
+    const parts = groups.map(group => definition.nodes.filter(n=>n.group===group));
+    if(parts.some(p=>!p.length)||parts.flat().length!==definition.nodes.length||parts[2].length!==1)throw Error('Workflow requires starts, loop, one endpoint and destinations');
+    if(definition.nodes.some(n=>!['figma','claudecode','claude'].includes(n.tool)))throw Error('Unsupported workflow tool');
+    for(const n of parts[0])if(!edges.has(n.id+':'+parts[1][0].id))throw Error('Workflow start must feed the loop');
+    for(let i=1;i<parts[1].length;i++)if(!edges.has(parts[1][i-1].id+':'+parts[1][i].id))throw Error('Workflow lacks ordered loop edge');
+    if(!edges.has(parts[1].at(-1).id+':'+parts[2][0].id))throw Error('Workflow lacks main endpoint');
+    for(const n of parts[3])if(!edges.has(parts[2][0].id+':'+n.id))throw Error('Workflow lacks destination edge');
+    for(const e of definition.edges.filter(e=>e.feedback))if(!parts[1].some(n=>n.id===e.to))throw Error('Feedback must return to the design loop');
   }
 }
 export function renderDiagram(definition) {
   validateDiagram(definition);
+  if(definition.kind === 'workflow') {
+    const groups=['inputs','loop','endpoint','destinations'];
+    const titles={inputs:'Start · choose your source',loop:'Claude Design · explore and review',endpoint:'Main endpoint',destinations:'Choose the destination your recipient needs'};
+    const cards=groups.map(group=>{
+      const nodes=definition.nodes.filter(n=>n.group===group);
+      return `<section class="workflow-group workflow-${group}" aria-label="${escape(titles[group])}"><h4>${escape(titles[group])}</h4><ol>${nodes.map((n,i)=>`<li data-diagram-node="${escape(n.id)}"><img class="workflow-logo" src="assets/tool-logos/${escape(n.tool)}.svg" alt=""><strong>${group==='loop'?(i+1)+'. ':''}${escape(n.label)}</strong><span>${escape(n.detail??'')}</span></li>`).join('')}</ol></section>`;
+    }).join('<div class="workflow-flow-arrow" aria-hidden="true">↓</div>');
+    const labels=new Map(definition.nodes.map(n=>[n.id,n.label]));
+    const edges=definition.edges.map(e=>`<li data-diagram-from="${escape(e.from)}" data-diagram-to="${escape(e.to)}">${escape(labels.get(e.from))} → ${escape(labels.get(e.to))}${e.feedback?' (feedback)':''}</li>`).join('');
+    return `<div class="semantic-diagram design-workflow" role="group" aria-label="${escape(definition.title)}">${cards}<p class="diagram-note">${escape(definition.note)}</p><details class="diagram-relationships"><summary>Diagram relationships</summary><ul>${edges}</ul></details></div>`;
+  }
   const card = node => `<li data-diagram-node="${escape(node.id)}"><strong>${escape(node.label)}</strong>${node.detail ? `<span>${escape(node.detail)}</span>` : ''}</li>`;
   const nodeList = definition.kind === 'sequence'
     ? `<ol class="diagram-sequence">${definition.nodes.map(card).join('')}</ol>`

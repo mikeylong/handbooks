@@ -1,48 +1,44 @@
 {
-  "schemaVersion": 1,
-  "title": "CoverDiagram",
+  "title": "The Claude Design loop",
   "kind": "sequence",
   "nodes": [
     {
-      "id": "n1",
-      "label": "SYSTEM"
+      "id": "brief",
+      "label": "Brief"
     },
     {
-      "id": "n2",
-      "label": "SCREEN"
+      "id": "explore",
+      "label": "Explore"
     },
     {
-      "id": "n3",
-      "label": "STATES"
+      "id": "refine",
+      "label": "Refine"
     },
     {
-      "id": "n4",
-      "label": "HANDOFF"
+      "id": "review",
+      "label": "Review"
     },
     {
-      "id": "n5",
-      "label": "CODE"
+      "id": "handoff",
+      "label": "Handoff"
     }
   ],
   "edges": [
     {
-      "from": "n1",
-      "to": "n2"
+      "from": "brief",
+      "to": "explore"
     },
     {
-      "from": "n2",
-      "to": "n3"
+      "from": "explore",
+      "to": "refine"
     },
     {
-      "from": "n3",
-      "to": "n4"
+      "from": "refine",
+      "to": "review"
     },
     {
-      "from": "n4",
-      "to": "n5"
+      "from": "review",
+      "to": "handoff"
     }
-  ],
-  "note": "",
-  "printAlt": "SYSTEM; SCREEN; STATES; HANDOFF; CODE",
-  "printCaption": "Coordinated surfaces use the same state."
+  ]
 }
