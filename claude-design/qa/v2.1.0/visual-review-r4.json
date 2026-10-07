@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "edition": "Claude Design Field Guide 2.1.0",
+  "date": "2026-10-07",
+  "status": "passed",
+  "qualification": "Passed with Low pagination observations; no unresolved High or Medium visual defect.",
+  "reviewer": "Codex visual artifact review",
+  "authorization": {
+    "source": "Mike direct Land this command in the active task",
+    "scope": "Release work authorized subject to required qualification and repository protections",
+    "separateHumanExactHashReviewClaimed": false
+  },
+  "artifacts": [
+    {
+      "appearance": "light",
+      "label": "Daytime version",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-add-to-cart-candidate/output/claude-design-v2.1.0-2026-10-07-daytime-r4.pdf",
+      "sha256": "c143f34f92c1da5d8440e8670464e60a1eaf44c3c01f7436f0571240ffe05de2",
+      "bytes": 6835273,
+      "physicalPages": 55
+    },
+    {
+      "appearance": "dark",
+      "label": "Late night version",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-add-to-cart-candidate/output/claude-design-v2.1.0-2026-10-07-late-night-r4.pdf",
+      "sha256": "f03ac1e6d88424c8e2bdf74e6b5571b1050d3dc5158288f3eede45dedebd67f5",
+      "bytes": 45835633,
+      "physicalPages": 55
+    }
+  ],
+  "rendering": {
+    "dpi": 144,
+    "pagesPerAppearance": 55,
+    "appearances": 2,
+    "engines": 2,
+    "renderedPageImages": 220,
+    "renderers": [
+      {
+        "name": "Poppler",
+        "version": "26.08.0"
+      },
+      {
+        "name": "Apple PDFKit and CoreGraphics",
+        "system": "macOS 27.0.1 (26A434)"
+      }
+    ],
+    "renderProofIndex": "render-proof-index.json"
+  },
+  "inspection": {
+    "completeContactSheets": {
+      "light-poppler": [
+        "light-poppler/sheet-1.jpg",
+        "light-poppler/sheet-2.jpg",
+        "light-poppler/sheet-3.jpg",
+        "light-poppler/sheet-4.jpg",
+        "light-poppler/sheet-5.jpg"
+      ],
+      "dark-poppler": [
+        "dark-poppler/sheet-1.jpg",
+        "dark-poppler/sheet-2.jpg",
+        "dark-poppler/sheet-3.jpg",
+        "dark-poppler/sheet-4.jpg",
+        "dark-poppler/sheet-5.jpg"
+      ],
+      "light-pdfkit": [
+        "light-pdfkit/sheet-1.jpg",
+        "light-pdfkit/sheet-2.jpg",
+        "light-pdfkit/sheet-3.jpg",
+        "light-pdfkit/sheet-4.jpg",
+        "light-pdfkit/sheet-5.jpg"
+      ],
+      "dark-pdfkit": [
+        "dark-pdfkit/sheet-1.jpg",
+        "dark-pdfkit/sheet-2.jpg",
+        "dark-pdfkit/sheet-3.jpg",
+        "dark-pdfkit/sheet-4.jpg",
+        "dark-pdfkit/sheet-5.jpg"
+      ]
+    },
+    "allPageContactSheetCount": 20,
+    "contactSheetCoverage": "All 55 physical pages in each appearance inspected through complete contact sheets from both engines.",
+    "fullSizePageRoles": {
+      "cover": [
+        1
+      ],
+      "workflow": [
+        4
+      ],
+      "contents": [
+        6
+      ],
+      "chapterOpeners": [
+        7,
+        10,
+        16,
+        21,
+        27,
+        36,
+        41,
+        45,
+        49
+      ],
+      "screenshots": [
+        12,
+        14,
+        18,
+        19,
+        23,
+        25,
+        29,
+        30,
+        32,
+        34,
+        38,
+        39,
+        43,
+        47
+      ],
+      "prompts": [
+        8,
+        17,
+        28,
+        42
+      ],
+      "denseTables": [
+        33,
+        47,
+        51
+      ],
+      "appendicesAndWorksheet": [
+        53
+      ],
+      "references": [
+        54
+      ],
+      "finalPage": [
+        55
+      ]
+    },
+    "fullSizePageCountPerSelectedAppearance": 35,
+    "fullSizeCoverage": "Every listed page was visually inspected at full size in Light Poppler and Dark Apple PDFKit. All other engine and appearance combinations were inspected through complete all-page contact sheets.",
+    "checked": [
+      "Cover identity and hierarchy",
+      "Contents and chapter opener placement",
+      "Separately authored dark chapter artwork and page-background continuity",
+      "Workflow tools, labels, branches and arrows",
+      "All screenshot pages and provenance captions",
+      "Monospaced prompts and dense table wrapping",
+      "Running heads, folios, references and final changelog"
+    ]
+  },
+  "specimenComparison": {
+    "contactSheet": "specimen/contact-sheet.png",
+    "physicalPages": 12,
+    "result": "Canonical specimen contact sheet inspected. A5 page geometry, governing type hierarchy, rules, margins, opener composition and generous pagination remain consistent with the governing specimen."
+  },
+  "findings": [
+    {
+      "severity": "Low",
+      "physicalPages": [
+        20,
+        26,
+        35,
+        44,
+        52
+      ],
+      "observation": "Checkpoint pages leave generous whitespace before the following chapter opener.",
+      "disposition": "Accepted existing house pagination; no missing content or clipping."
+    },
+    {
+      "severity": "Low",
+      "physicalPages": [
+        32,
+        33
+      ],
+      "observation": "The transition table begins on page 32 with its header and first row, then continues on page 33 with a repeated header.",
+      "disposition": "Accepted pagination observation. Rows are intact and readable; no correction needed for this release."
+    },
+    {
+      "severity": "Low",
+      "physicalPages": [
+        53
+      ],
+      "observation": "Appendices A and B share a page whose running head names Appendix B.",
+      "disposition": "Preserved prior 2.0 layout. Both visible headings and contents entries identify the sections correctly."
+    }
+  ],
+  "unresolvedHighVisualDefects": 0,
+  "unresolvedMediumVisualDefects": 0,
+  "evidenceScope": "The handbook distinguishes the October 6 native Claude Design trial from the October 7 local add-to-cart extension. Historical native screenshots and the static Figma continuation do not imply that the new cart extension was generated or validated in those tools. Screenshot UI is preserved as captured in both appearances.",
+  "visualQualification": {
+    "status": "approved",
+    "scope": "Exact-artifact visual qualification performed by Codex under the active user release authorization; no additional human approval is asserted.",
+    "sha256": [
+      "c143f34f92c1da5d8440e8670464e60a1eaf44c3c01f7436f0571240ffe05de2",
+      "f03ac1e6d88424c8e2bdf74e6b5571b1050d3dc5158288f3eede45dedebd67f5"
+    ],
+    "date": "2026-10-07"
+  }
+}

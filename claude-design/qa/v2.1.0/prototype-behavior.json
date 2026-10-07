@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.0",
+  "prototype": {
+    "archiveMember": "velori-store/answer-key/velori-review-prototype.html",
+    "sha256": "7d62bb3d5b178db5ed525985133dec5abc3a96399e6dcb3b36df4b3a27886ebe"
+  },
+  "checks": {
+    "desktopAddToCart": "passed; keyboard Return opens Cart and focuses its heading",
+    "cartChoices": "passed; Graphite, Simple, Amber, Carry bag, quantity one",
+    "editRestoration": "passed",
+    "snapshotIsolation": "passed; changing draft accessory to None leaves cart Carry bag until explicit re-add",
+    "editedItemUpdate": "passed; None replaces Carry bag with quantity one",
+    "repeatActivation": "passed; double-click keeps quantity one",
+    "sameSessionReload": "passed; revised None item retained",
+    "unavailableFixture": "passed; Add to cart absent until Choose None/Dock",
+    "emptyCartRecovery": "passed",
+    "mobile": "passed; 390x844, document width 390; complete edit-review-add route",
+    "resetFixture": "passed; resets from Edit, Review and Cart to #/configure with starting values; repeated activation remains Configure",
+    "continueLabel": "passed; Configure and Edit both say Continue and navigate to Review"
+  },
+  "sourceEvidence": {
+    "path": "claude-design/qa/v2.1.0/original-candidate-verification.json",
+    "sha256": "0140cd0caf062ecffb564fbb27e6a8deb175159613a0b6762044a06dcc7885ae"
+  },
+  "limitations": [
+    "No new native Claude Design generation trial or new Figma cart frame is claimed."
+  ]
+}

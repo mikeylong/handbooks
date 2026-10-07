@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "figures": [
+    {
+      "id": "s01-import",
+      "title": "Figure 1",
+      "caption": "Imported Figma starting screen. Graphite, Simple, Amber and Carry bag agree in the photograph, caption and controls. Importing the visual system still lost its text-style metadata.",
+      "panels": [
+        {
+          "label": "Starting screen overview",
+          "asset": "assets/screenshots/figma-import-fixture-verified.png",
+          "sha256": "c501ed7b9f5c479105a1299002b6b6f61c87bf8f051b25d0d94508ca16c0fd49",
+          "alt": "Imported configurator with Graphite, Simple, Amber and Carry bag; real photograph and selection marks.",
+          "maxHeightPoints": 220,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s02-code-input",
+      "title": "Figure 2",
+      "caption": "Bounded code-first comparison. Changing Amber to Mint retained Graphite, Simple and Carry bag. The source inspection identified reused Velori components; this view alone cannot prove component reuse.",
+      "panels": [
+        {
+          "label": "Code-first Review",
+          "asset": "assets/screenshots/code-first-review-verified.png",
+          "sha256": "91ac48b4cbad3e868ff192bfa955524acdac614d53ae7d7364dce859a1cfe7a6",
+          "alt": "Code-derived review shows a Mint face and retained configuration.",
+          "maxHeightPoints": 210,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s03-directions",
+      "title": "Figure 3",
+      "caption": "Compare the editing approaches using the same fixture. A edits in place; B returns to configuration; C checks groups in sequence. B was selected for clear separation of review and editing.",
+      "panels": [
+        {
+          "label": "A \u00b7 Compact summary",
+          "asset": "assets/screenshots/direction-a-verified.png",
+          "sha256": "d9086e52162e346e73e36a22dab567d5c661e7849f4a37654e625adb962bcb6c",
+          "alt": "Compact review and in-place edit actions.",
+          "maxHeightPoints": 190,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        },
+        {
+          "label": "B \u00b7 Dedicated review",
+          "asset": "assets/screenshots/direction-b.png",
+          "sha256": "8c0d2a77f879406d230f266d00653a6a60f524f37f5d1ada04ef908a348b695b",
+          "alt": "Dedicated review with edit destinations.",
+          "maxHeightPoints": 190,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        },
+        {
+          "label": "C \u00b7 Guided checks",
+          "asset": "assets/screenshots/direction-c.png",
+          "sha256": "29f4653ccc66725675f055875fa8d5719707dc61fdc34ecd0dd7e5fe1915dec5",
+          "alt": "Guided review checks the choices in three groups.",
+          "maxHeightPoints": 190,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s04-comment",
+      "title": "Figure 4",
+      "caption": "A targeted comment asks for the specific heading \u201cCheck your configuration\u201d. Reloading the saved design verified the correction.",
+      "panels": [
+        {
+          "label": "Targeted heading correction",
+          "asset": "assets/screenshots/targeted-comment.png",
+          "sha256": "a945fa90fbade8bb510013a31e7efb67fc8a54884e93211762e557a973373967",
+          "alt": "Native comment anchored to the Review heading with the exact requested wording.",
+          "maxHeightPoints": 320,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s05-direct-edit",
+      "title": "Figure 5",
+      "caption": "The direct editor warns that this file does not support automatic edits. In the trial, Save reverted the preview copy change twice. Chat applied the correction, and reloading verified it.",
+      "panels": [
+        {
+          "label": "Unsupported direct editing",
+          "asset": "assets/screenshots/direct-edit-verified.png",
+          "sha256": "0b64dc28723e359971d37fe111fbf391ec282dc19df442a4ab0ef5b68d0400c2",
+          "alt": "Native Edit pane shows Save, Discard and the warning that this file does not support automatic edits.",
+          "maxHeightPoints": 240,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s06-connected",
+      "title": "Figure 6",
+      "caption": "Dock details shows Dock without changing the selected Carry bag. The selected Review retains Graphite, Simple, Amber and Carry bag and offers Edit configuration.",
+      "panels": [
+        {
+          "label": "Browse Dock",
+          "asset": "assets/screenshots/connected-dock.png",
+          "sha256": "54414fec8f326cc965b83af300c84d3601551bb0e4ab28457453ca401c3dd7b3",
+          "alt": "Charging dock detail view previews Dock while the saved choice remains Carry bag.",
+          "maxHeightPoints": 190,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        },
+        {
+          "label": "Retained choice",
+          "asset": "assets/screenshots/browse-retains-choice.png",
+          "sha256": "b9bb9897d966ca1beb336da5271be3729752664fe982e0fa075c9cf6993290e8",
+          "alt": "Selected Carry bag remains visible after browsing Dock.",
+          "maxHeightPoints": 225,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        },
+        {
+          "label": "Selected Review",
+          "asset": "assets/screenshots/selected-review-summary.png",
+          "sha256": "fa506e646752b962206f80780de0c26a07c177540ac8f839dade0189a6120b97",
+          "alt": "Check your configuration, four retained choices, Edit configuration and Confirm choices.",
+          "maxHeightPoints": 310,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s07-recovery",
+      "title": "Figure 7",
+      "caption": "Staged Carry bag unavailability offers Dock or None and retains the other choices. The separate image-error fixture simulates the first failure; Retry makes a real successful request. Real missing-resource recovery remains untested.",
+      "panels": [
+        {
+          "label": "Unavailable selection",
+          "asset": "assets/screenshots/unavailable-choice.png",
+          "sha256": "f6e441edcf565bffcf891cec3e43141e4fe98986e66dedecf2555911f4158a27",
+          "alt": "Carry bag unavailable notice and Choose Dock or Choose None actions.",
+          "maxHeightPoints": 230,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        },
+        {
+          "label": "Image error fixture",
+          "asset": "assets/screenshots/image-error.png",
+          "sha256": "281420e74a4aa62c42a60e5911835ec9f4f373aa28f97aaa462c93d1776e248e",
+          "alt": "The image could not load message includes Retry.",
+          "maxHeightPoints": 110,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s08-mobile",
+      "title": "Figure 8",
+      "caption": "At 390 \u00d7 844 pixels the selected review keeps the summary and actions reachable. The lower view retains Graphite, Simple, Amber and Carry bag.",
+      "panels": [
+        {
+          "label": "Narrow Review",
+          "asset": "assets/screenshots/mobile-review.png",
+          "sha256": "c561501aed17cfd01b3e379295927246db477afd151a8418768fb76247bc91cd",
+          "alt": "Mobile review with real product image and the beginning of the choice summary.",
+          "maxHeightPoints": 390,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        },
+        {
+          "label": "Summary and actions",
+          "asset": "assets/screenshots/mobile-summary-actions.png",
+          "sha256": "40038625545814e1c9537834f3173d116166909d5e36568d0c1a599ec918620c",
+          "alt": "Mobile summary, Edit configuration and Confirm choices with Carry bag selected.",
+          "maxHeightPoints": 390,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s09-handoff",
+      "title": "Figure 9",
+      "caption": "The native local-agent handoff identifies the selected entry and imported files. The saved prompt copied successfully; separate recipient tests verified the exported prototype.",
+      "panels": [
+        {
+          "label": "Local-agent handoff",
+          "asset": "assets/screenshots/code-handoff-verified.png",
+          "sha256": "1b681b1df65a78ad0745086869e25f0a38d5abaa55912ee46030d2197be5c4aa",
+          "alt": "Claude Code handoff modal for selected Review entry and its imported files.",
+          "maxHeightPoints": 230,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    },
+    {
+      "id": "s10-figma",
+      "title": "Figure 10",
+      "caption": "Editable Figma continuation after restoring source relationships. The screen uses Velori instances, text styles and variable bindings. It remains a static selected review with no prototype wiring.",
+      "panels": [
+        {
+          "label": "Editable selected view",
+          "asset": "assets/screenshots/figma-editable-review-final.png",
+          "sha256": "58e7186b4728c4f298c5fa0152a35a1a2787c26de6b81f9d5367c610912eda00",
+          "alt": "Figma selected review retains Graphite, Simple, Amber and Carry bag with restored Velori product and actions.",
+          "maxHeightPoints": 220,
+          "minPpi": 120,
+          "printReadability": {
+            "captureDensity": "Native UI screenshot. Detail panels retain source pixels; overview panels establish composition.",
+            "reason": "The 120PPI native-capture exception allows 14px detail labels to print at 8.4pt without resampling. Selectable captions identify the choices and action. Overview labels are context only; open the larger reader image to inspect them."
+          },
+          "sourcePrivacy": "public"
+        }
+      ]
+    }
+  ]
+}

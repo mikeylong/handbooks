@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.0",
+  "url": "http://127.0.0.1:8796/claude-design/",
+  "checks": {
+    "edition": "Cover and downloads identify 2.1.0, 55 pages, exact public r1 filenames.",
+    "cartFigure": "New Figure 6A loads at its v2.1.0 route and preserves four choices and quantity one.",
+    "desktop": "1280px Light and Dark reader inspected; document width 1280.",
+    "mobile": "390x844 Light and Dark reader inspected; document width 390, figure and caption readable.",
+    "readerChrome": "No release-window, cover printing guidance or duplicate sidebar publication block.",
+    "downloads": "Cover links use versioned Markdown, Daytime and Late night routes."
+  },
+  "screenshots": [
+    {
+      "path": "site-desktop-cart.jpg",
+      "sha256": "0cd84af4aebadb7d3ea93a00a9fb5f51f352eb995d9a662b7e362c4b9a27b067"
+    },
+    {
+      "path": "site-desktop-dark-cart.jpg",
+      "sha256": "c977ba0f2de02963a198e65409926039fdce2a4e341e514b6d06e645cc6643e4"
+    },
+    {
+      "path": "site-mobile-dark-cart.jpg",
+      "sha256": "bffb7722805f271f9f44da788e4be576a6c4f7a3c4eb7ad5ebce36f911823abd"
+    },
+    {
+      "path": "site-mobile-light-cart.jpg",
+      "sha256": "5022ecdd0da229117f2cff15765e7e2271c8a44daa050f3390a4c389479c36be"
+    }
+  ]
+}

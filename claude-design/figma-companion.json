@@ -20,12 +20,13 @@
     }
   ],
   "title": "Velori design exploration starter and static Review continuation",
-  "handbookEdition": "2.0.0",
+  "handbookEdition": "2.1.0",
   "approvalStatus": "candidate",
-  "origin": "Derived from the approved v1.2.1 native companion; original files preserved.",
+  "origin": "Unchanged native starter and static Review continuation from approved handbook 2.0.0. No new Figma cart frame or native trial is claimed.",
   "changes": [
     "Starter omits completed Store exercise page and retains four source pages.",
-    "Continuation adds selected Review page with restored instances, styled text and variable bindings; no prototype or state wiring."
+    "Continuation adds selected Review page with restored instances, styled text and variable bindings; no prototype or state wiring.",
+    "Handbook 2.1.0 adds a locally authored offline cart step; the native files retain their original Review scope."
   ],
   "fontDelivery": "No font binaries bundled. The trial loaded Arimo and Lora through Google Fonts.",
   "artifacts": [
@@ -45,5 +46,6 @@
       "format": "native Figma .fig",
       "recipientImport": "Starter imported into Claude Design; continuation exported from inspected editable native Figma document, fresh recipient Figma import not independently tested."
     }
-  ]
+  ],
+  "nativeArtifactEdition": "2.0.0"
 }

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "command": "Land this",
+  "approver": "Mike",
+  "approvalDate": "2026-10-07",
+  "editionDate": "2026-10-07",
+  "manuscript": {
+    "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "f77693c6f7e93567fe96d14ca73dff6d27cd883f00e6392281ca8e613bb3cccc"
+  },
+  "pdfs": [
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.0-2026-10-07-daytime-r1.pdf",
+      "sha256": "03f12b39c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3"
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.0-2026-10-07-late-night-r1.pdf",
+      "sha256": "0147322b8d6f5850664ca6a44b6c87c19fafebb811e4db620fc854cf57d42417"
+    }
+  ],
+  "exercise": {
+    "path": "claude-design/reader/editions/v2.1.0/velori-design-exploration-v2.1.0.zip",
+    "sha256": "a5723a79c0147f485703b1df0b143a151b75305c6f3b303e7fd9c4855b9b8695"
+  },
+  "limitations": [
+    "Human task review has not been completed. The author walkthrough is not usability evidence.",
+    "The October 7 cart behavior was added to the offline answer key; no new native Claude Design generation trial is claimed.",
+    "The supplied Figma continuation is the earlier static Review screen, without a new cart frame or prototype reactions.",
+    "Code implementation, real missing-resource recovery and separate-project private-system selection remain untested."
+  ],
+  "authorityBasis": "Mike issued a direct Land this for the Add to cart exercise revision and subsequent Continue and Reset fixture corrections. This records approval to publish the exact qualified manuscript, exercise and PDF bytes. The final changelog source-link correction does not change the exercise behavior.",
+  "qualificationEvidence": {
+    "daytime-validation.json": {
+      "path": "claude-design/qa/v2.1.0/daytime-validation.json",
+      "sha256": "7d5eb7b3d6f2bc3ee5634fb5f95b09ab7967ee0319d1a7d0b240bb318650e730"
+    },
+    "late-night-validation.json": {
+      "path": "claude-design/qa/v2.1.0/late-night-validation.json",
+      "sha256": "518e3856c8afe05ebe9b676ff01f11d5f81ca3408d555ab169ca0697a2aec467"
+    },
+    "appearance.json": {
+      "path": "claude-design/qa/v2.1.0/appearance.json",
+      "sha256": "cf47ad898200952100bf9fc2add022e1f3b6e39a54273aee95a0de3fb1c34c8a"
+    },
+    "visual-review.json": {
+      "path": "claude-design/qa/v2.1.0/visual-review.json",
+      "sha256": "42b2b7c1a0f086787db42698f773552c7c19dba8601fda79a4884ae74701b546"
+    }
+  }
+}
