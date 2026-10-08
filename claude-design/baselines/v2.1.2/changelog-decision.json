@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "This candidate corrects prompt labels and clarifies the starting context and handoff.",
+  "entryCount": 2,
+  "failures": [],
+  "placement": "final-page",
+  "requiredPdfState": {
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
+  },
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "id": "C01",
+      "category": "Correction or clarification",
+      "section": "Prompt examples in chapters 1–5 and 7",
+      "text": "Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt.",
+      "rationale": "Each label names the task and destination; the prompt text is unchanged.",
+      "readerImpact": "Readers can distinguish instructions to Claude Design from implementation instructions to Claude Code.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/"
+      ],
+      "sourceLimitations": "Editorial correction of the approved manuscript; no new product behavior or native trial is claimed.",
+      "recommendedVersionImpact": "patch",
+      "groupedDraftEntries": [
+        "C01"
+      ]
+    },
+    {
+      "id": "C02",
+      "category": "Correction or clarification",
+      "section": "Starting context; guided exercise; workflow diagram alt text",
+      "text": "Clarify the code-first route and name Claude Code at handoff.",
+      "rationale": "Exclude both completed Review and Cart implementations from baseline context, matching the sample.",
+      "readerImpact": "The baseline context and handoff destinations match the existing exercise.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
+      ],
+      "sourceLimitations": "Checked against the unchanged current sample README and .design-sync exclusions. Diagram geometry is unchanged.",
+      "recommendedVersionImpact": "patch",
+      "groupedDraftEntries": [
+        "C02"
+      ]
+    }
+  ]
+}

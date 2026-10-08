@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
   "readerFacingContentChanged": true,
-  "summary": "This candidate corrects prompt labels and clarifies the starting context and handoff.",
-  "recommendedVersion": "2.1.2",
+  "summary": "Remove dated construction history, clarify the supplied Figma frames and explain the Velori exercise starting material.",
+  "recommendedVersion": "2.1.3",
   "publicationApproved": true,
   "changes": [
     {
       "id": "C01",
       "category": "Correction or clarification",
-      "section": "Prompt examples in chapters 1–5 and 7",
-      "text": "Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt.",
-      "rationale": "Each label names the task and destination; the prompt text is unchanged.",
-      "readerImpact": "Readers can distinguish instructions to Claude Design from implementation instructions to Claude Code.",
+      "section": "Instructional chapters and screenshot captions",
+      "text": "Move dated notes about building and revising the examples out of the instructional chapters and captions.",
+      "rationale": "Keep that history in the edition and supporting evidence records.",
+      "readerImpact": "Readers see the current task and material scope without dated construction history.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/"
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/"
       ],
-      "sourceLimitations": "Editorial correction of the approved manuscript; no new product behavior or native trial is claimed.",
+      "sourceLimitations": "Editorial cleanup only; removed wording is preserved verbatim in private archive. No evidence was rerun.",
       "recommendedVersionImpact": "patch",
       "groupedDraftEntries": [
         "C01"
@@ -24,52 +24,70 @@
     {
       "id": "C02",
       "category": "Correction or clarification",
-      "section": "Starting context; guided exercise; workflow diagram alt text",
-      "text": "Clarify the code-first route and name Claude Code at handoff.",
-      "rationale": "Exclude both completed Review and Cart implementations from baseline context, matching the sample.",
-      "readerImpact": "The baseline context and handoff destinations match the existing exercise.",
+      "section": "Figma handoff; current materials; review with people",
+      "text": "Explain the supplied Figma answer key as editable Review and Cart frames whose interactions need wiring.",
+      "rationale": "Keep the current material scope and the human-review requirement clear.",
+      "readerImpact": "Readers distinguish static editable frames, offline cart behavior and interactions they must build and test.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/",
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/"
       ],
-      "sourceLimitations": "Checked against the unchanged current sample README and .design-sync exclusions. Diagram geometry is unchanged.",
+      "sourceLimitations": "Original native generation scope and incomplete human review remain recorded in supporting evidence; artifacts and prompt bodies are unchanged.",
       "recommendedVersionImpact": "patch",
       "groupedDraftEntries": [
         "C02"
       ]
+    },
+    {
+      "id": "C03",
+      "category": "Correction or clarification",
+      "section": "Chapter 1: Start with the Velori configurator",
+      "text": "Clarify the Velori exercise starting material and when to compare the completed example.",
+      "rationale": "Start with the design system, configurator and product assets, then explore and refine Review and Cart in Claude Design.",
+      "readerImpact": "Readers know what to use as starting material and when the supplied completed example is useful.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/"
+      ],
+      "sourceLimitations": "Reader-focused editorial clarification only. Six prompt bodies and all native/sample/image assets are unchanged; no new evidence was run.",
+      "recommendedVersionImpact": "patch",
+      "groupedDraftEntries": [
+        "C03"
+      ]
     }
   ],
   "accepted": true,
-  "version": "2.1.2",
-  "previousVersion": "2.1.1",
+  "version": "2.1.3",
+  "previousVersion": "2.1.2",
   "classifiedChangeIds": [
     "C01",
-    "C02"
+    "C02",
+    "C03"
   ],
   "sourceSnapshot": {
     "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
-    "sha256": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
-    "previousSourceSha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28"
+    "sha256": "52b226cd6a5320a906f5a9785a64ce9fe579b0a20febd6ad803d104a31b6c197",
+    "previousSourceSha256": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e"
   },
   "comparisonEvidence": {
     "source": {
-      "path": "claude-design/qa/v2.1.2/exact-source.patch",
-      "sha256": "1207dd94da09b5f32d13f7789123df1b329d9b597f73a7ac84e67b20059eae9b"
+      "path": "claude-design/qa/v2.1.3/exact-source.patch",
+      "sha256": "0ab3b1759165a721f7f287d574ce7f0b72ff7f6838511f3bcd0cd16769e84383"
     },
     "pdf": {
-      "path": "claude-design/qa/v2.1.2/exact-pdf-text.patch",
-      "sha256": "6aa4df81c9280cc763989ac86523f43979ce425b85f5237bcc8a7fa8dec99ddb"
+      "path": "claude-design/qa/v2.1.3/exact-pdf-text.patch",
+      "sha256": "2c7f5aab30fc770bb0a3b79f1eb252345adcd5592364f5b1e17187f76f437b78"
     },
     "substantive": {
-      "path": "claude-design/qa/v2.1.2/reader-facing-content.patch",
-      "sha256": "a4b9f1a26d20fce90cd446cd332c0a56b8bd99df972134a7ede7f818ec3933a5"
+      "path": "claude-design/qa/v2.1.3/reader-facing-content.patch",
+      "sha256": "dcb110d789c95995db3caa6d476aec4198d3d397b492460377308af0eea3de99"
     },
     "comparison": {
-      "path": "claude-design/qa/v2.1.2/edition-diff.json",
-      "sha256": "25f9150b261e1b38c1c740ddf3d1020250316630d2e1b6b99cf207cfa72a5c15"
+      "path": "claude-design/qa/v2.1.3/edition-diff.json",
+      "sha256": "90a820ace7adbce53c66b7a5f9c46b849fdf3d11ab6bfd73c651b4795b17a055"
     },
     "decision": {
       "path": "claude-design/changelog-decision.json",
-      "sha256": "3fa10ba8a37733fd59457cdbe00276500ecec19424fee401c92c82e6b1fbcc27"
+      "sha256": "17fa598fccd4ba04ef857a21b1451630616ecabe573fc5507c6431ff747329d4"
     }
   },
   "sampleRelease": {
@@ -79,8 +97,8 @@
     "bytes": 97181421,
     "publicationPackage": {
       "path": "claude-design/publication-package.json",
-      "sha256": "db15723ca77e9c0cf0f83a94dd9f17aefaaacf9c83b93ad98216b16120bf7680"
+      "sha256": "f4b9171b848741a9eb16587a434544788aa5e8ca54fe74743cb36ecbf1e1f181"
     }
   },
-  "verificationRecord": "claude-design/qa/v2.1.2/change-ledger-verification.json"
+  "verificationRecord": "claude-design/qa/v2.1.3/change-ledger-verification.json"
 }

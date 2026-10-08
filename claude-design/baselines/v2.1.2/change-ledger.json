@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "readerFacingContentChanged": true,
+  "summary": "This candidate corrects prompt labels and clarifies the starting context and handoff.",
+  "recommendedVersion": "2.1.2",
+  "publicationApproved": true,
+  "changes": [
+    {
+      "id": "C01",
+      "category": "Correction or clarification",
+      "section": "Prompt examples in chapters 1–5 and 7",
+      "text": "Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt.",
+      "rationale": "Each label names the task and destination; the prompt text is unchanged.",
+      "readerImpact": "Readers can distinguish instructions to Claude Design from implementation instructions to Claude Code.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/"
+      ],
+      "sourceLimitations": "Editorial correction of the approved manuscript; no new product behavior or native trial is claimed.",
+      "recommendedVersionImpact": "patch",
+      "groupedDraftEntries": [
+        "C01"
+      ]
+    },
+    {
+      "id": "C02",
+      "category": "Correction or clarification",
+      "section": "Starting context; guided exercise; workflow diagram alt text",
+      "text": "Clarify the code-first route and name Claude Code at handoff.",
+      "rationale": "Exclude both completed Review and Cart implementations from baseline context, matching the sample.",
+      "readerImpact": "The baseline context and handoff destinations match the existing exercise.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
+      ],
+      "sourceLimitations": "Checked against the unchanged current sample README and .design-sync exclusions. Diagram geometry is unchanged.",
+      "recommendedVersionImpact": "patch",
+      "groupedDraftEntries": [
+        "C02"
+      ]
+    }
+  ],
+  "accepted": true,
+  "version": "2.1.2",
+  "previousVersion": "2.1.1",
+  "classifiedChangeIds": [
+    "C01",
+    "C02"
+  ],
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+    "previousSourceSha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28"
+  },
+  "comparisonEvidence": {
+    "source": {
+      "path": "claude-design/qa/v2.1.2/exact-source.patch",
+      "sha256": "1207dd94da09b5f32d13f7789123df1b329d9b597f73a7ac84e67b20059eae9b"
+    },
+    "pdf": {
+      "path": "claude-design/qa/v2.1.2/exact-pdf-text.patch",
+      "sha256": "6aa4df81c9280cc763989ac86523f43979ce425b85f5237bcc8a7fa8dec99ddb"
+    },
+    "substantive": {
+      "path": "claude-design/qa/v2.1.2/reader-facing-content.patch",
+      "sha256": "a4b9f1a26d20fce90cd446cd332c0a56b8bd99df972134a7ede7f818ec3933a5"
+    },
+    "comparison": {
+      "path": "claude-design/qa/v2.1.2/edition-diff.json",
+      "sha256": "25f9150b261e1b38c1c740ddf3d1020250316630d2e1b6b99cf207cfa72a5c15"
+    },
+    "decision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "3fa10ba8a37733fd59457cdbe00276500ecec19424fee401c92c82e6b1fbcc27"
+    }
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+    "bytes": 97181421,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "db15723ca77e9c0cf0f83a94dd9f17aefaaacf9c83b93ad98216b16120bf7680"
+    }
+  },
+  "verificationRecord": "claude-design/qa/v2.1.2/change-ledger-verification.json"
+}

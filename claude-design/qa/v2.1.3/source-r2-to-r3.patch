@@ -1,0 +1,26 @@
+--- qualified-private-final-r2
++++ private-final-r3
+@@ -74,11 +74,9 @@
+ 
+ Resolve disagreements before generation when they affect the task. If the Figma button and the running app use different radii, record which version the prototype should follow and why. A model should not settle an ownership decision by silently blending the sources.
+ 
+-## Keep the answer out of the prompt
+-
+-Use foundations, components, the configurator and source assets as starting context. Keep completed review layouts, solution prompts and implementation answers beside the exercise for later comparison. An answer key supplied at the start prevents you from seeing which review hierarchy Claude would propose from the starting screen.
+-
+-The starter retains its original source pages. Work in a duplicate or separate project. Record the input filenames and the destination so another reviewer can tell which result belongs to this run.
++## Start with the Velori configurator
++
++Start with Velori’s design system, configurator and product assets. Explore and refine your Review and Cart screens in Claude Design, then compare your result with the supplied completed example.
+ 
+ ## Chapter checkpoint
+ 
+@@ -477,6 +475,8 @@
+ 
+ **Correction or clarification.** Explain the supplied Figma answer key as editable Review and Cart frames whose interactions need wiring. Keep the current material scope and the human-review requirement clear.
+ 
++**Correction or clarification.** Clarify the Velori exercise starting material and when to compare the completed example. Start with the design system, configurator and product assets, then explore and refine Review and Cart in Claude Design.
++
+ [Previous handbook](https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/) and [supporting evidence edition](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/) preserve the earlier records.
+ 
+ Previous edition: **2.1.2 · October 7, 2026**. Daytime PDF SHA-256: `b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03`.

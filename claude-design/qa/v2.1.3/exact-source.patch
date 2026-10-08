@@ -1,0 +1,99 @@
+--- previous/Claude_Design_Field_Guide_Source.md
++++ candidate/Claude_Design_Field_Guide_Source.md
+@@ -1,7 +1,7 @@
+ ---
+ title: Claude Design Field Guide
+ subtitle: Explore, refine, and hand off an interactive product design
+-edition: October 7, 2026 | Version 2.1.2
++edition: October 7, 2026 | Version 2.1.3
+ status: Review candidate, not approved for publication
+ audience: Product designers and product practitioners working with an existing product
+ chapter_art: Frozen approved illustration pairs, remapped to the revised chapters
+@@ -74,11 +74,9 @@
+ 
+ Resolve disagreements before generation when they affect the task. If the Figma button and the running app use different radii, record which version the prototype should follow and why. A model should not settle an ownership decision by silently blending the sources.
+ 
+-## Keep the answer out of the prompt
+-
+-Use foundations, components, the configurator and source assets as starting context. Keep completed review layouts, solution prompts and implementation answers beside the exercise for later comparison. An answer key supplied at the start prevents you from seeing which review hierarchy Claude would propose from the starting screen.
+-
+-The starter retains its original source pages. Work in a duplicate or separate project. Record the input filenames and the destination so another reviewer can tell which result belongs to this run.
++## Start with the Velori configurator
++
++Start with Velori’s design system, configurator and product assets. Explore and refine your Review and Cart screens in Claude Design, then compare your result with the supplied completed example.
+ 
+ ## Chapter checkpoint
+ 
+@@ -102,7 +100,7 @@
+ 
+ <!-- FIGURE s01-import -->
+ 
+-Use the exercise starter rather than the companion’s completed Store page. Attach licensed fonts separately when the source only references a font family. Record any substitution. Keep the system private during the trial and confirm the selected system before starting a product project. This walkthrough explored files in a separate `trial/` directory inside its isolated system project. The UI offered team publication for new-project use; private selection from a separate product project was not tested. An organization default may belong to a different product.
++Use the exercise starter rather than the companion’s completed Store page. Attach licensed fonts separately when the source only references a font family. Record any substitution. Keep the system private during the trial and confirm the selected system before starting a product project. Confirm that the intended private system can be selected from your product project before generation. An organization default may belong to a different product.
+ 
+ Inspect the resulting system’s colors, typography, control shapes, selection marks, product photographs, and one representative component. Compare a generated starting screen with the source at the same viewport. An extraction can preserve colors while losing component anatomy or asset composition.
+ 
+@@ -114,7 +112,7 @@
+ 
+ <!-- FIGURE s02-code-input -->
+ 
+-Keep detailed file selection and runtime adaptations in the package’s supporting material. The main reader should know what is being imported, why the selected source matters, and which gaps remain. Inspect the returned system and generated starting screen before exploring the new review.
++Inspect the returned system and generated starting screen before exploring the new review. Record the imported files, source decisions and remaining gaps in the package’s supporting material.
+ 
+ ## Correct the smallest relevant gap
+ 
+@@ -246,7 +244,7 @@
+ 
+ Retain the item after a reload in the same browser session. Treat an empty cart as a recoverable starting point with a Configure Velori action. If the staged unavailable accessory is selected, require another accessory or None before adding. Payment, shipping, taxes and order submission are outside the task.
+ 
+-The October 6 author trial ended at configuration confirmation. The cart requirement is an October 7 exercise revision. Both the React sample and standalone offline answer key demonstrate the cart endpoint. The current editable Figma answer key shows static Review and Cart frames; the earlier Claude Design screenshots keep the original trial scope. No new Claude Design generation trial is claimed.
++The React sample and standalone offline answer key include Add to cart and Cart confirmation. The editable Figma answer key supplies static Review and Cart frames. The Claude Design screenshots demonstrate configuration and review interactions; the offline answer key shows the cart endpoint.
+ 
+ <!-- FIGURE s06a-cart -->
+ 
+@@ -371,9 +369,9 @@
+ 
+ Keep the source file and existing libraries. Add selected views in a separate page or working copy. Record the captured URL, viewport and design revision so the recipient knows which prototype the frames represent.
+ 
+-The October 6 trial captured the selected Review into editable layers, then restored Velori Brand, Product Preview and Primary Button instances. It rebuilt the repeated summary row and outlined secondary action as local components and reapplied the source text styles. The original screen had 22 styled text nodes, 10 instances and 65 nodes with variable bindings. It used Arimo and Lora, with the source Product style restored to 27px.
+-
+-The October 7 correction directly edited that Figma continuation. Review now shows Add to cart, and a Cart frame shows the robot image, Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart item and Continue configuring. Each frame has 24 styled text nodes, 10 instances and 70 nodes with variable bindings. Both retain Arimo, Lora and the 27px Product style. The Figma frames have no prototype connections or choice-state wiring. Continue design there, or build and test those relationships before calling the answer key an interactive Figma prototype. The correction does not establish a new Claude Design generation trial.
++After capture, reconnect the source components and restore their text styles and variables. For Velori, check the Brand, Product Preview and Primary Button instances, Arimo and Lora, and the 27px Product style. Make repeated summary rows and secondary actions into components.
++
++The supplied Figma answer key contains editable Review and Cart frames. The frames have no prototype connections or choice-state wiring. Build and test those relationships when the recipient needs an interactive Figma prototype.
+ 
+ <!-- FIGURE s10-figma -->
+ 
+@@ -417,7 +415,7 @@
+ 
+ ## Keep a useful record
+ 
+-Record the chosen route, source files, Design project, selected direction, decision rationale, corrections to hierarchy, content or interaction, tested journey and recipient result. Save images before and after changes to hierarchy, content or interaction. The supplied materials include a React sample and standalone offline answer key that both reach Add to cart and Cart confirmation. The current editable Figma answer key includes static Review and Cart frames with the same four choices and quantity one. The recorded author trial is prepared for human review; it does not claim that a separate reviewer has completed the task. A complete transcript is less useful than a short record that explains why the design was selected and what remains uncertain.
++Record the chosen route, source files, Design project, selected direction, decision rationale, corrections to hierarchy, content or interaction, tested journey and recipient result. Save images before and after changes to hierarchy, content or interaction. The supplied materials include a React sample and standalone offline answer key that both reach Add to cart and Cart confirmation. The current editable Figma answer key includes static Review and Cart frames with the same four choices and quantity one. A complete transcript is less useful than a short record that explains why the design was selected and what remains uncertain.
+ 
+ | Completion item | Required result |
+ |---|---|
+@@ -471,12 +469,14 @@
+ 
+ # Changelog
+ 
+-**Version 2.1.2 · October 7, 2026.**
+-
+-**Correction or clarification.** Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt. Each label names the task and destination; the prompt text is unchanged.
+-
+-**Correction or clarification.** Clarify the code-first route and name Claude Code at handoff. Exclude both completed Review and Cart implementations from baseline context, matching the sample.
+-
+-[Previous handbook](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/) and [exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip) provide the unchanged prompt text and baseline context.
+-
+-Previous edition: **2.1.1 · October 7, 2026**. Daytime PDF SHA-256: `ac5fadaf0ced9deddd694657b6b83862cc31ecd38f75363a9665388ba350143a`.
++**Version 2.1.3 · October 7, 2026.**
++
++**Correction or clarification.** Move dated notes about building and revising the examples out of the instructional chapters and captions. Keep that history in the edition and supporting evidence records.
++
++**Correction or clarification.** Explain the supplied Figma answer key as editable Review and Cart frames whose interactions need wiring. Keep the current material scope and the human-review requirement clear.
++
++**Correction or clarification.** Clarify the Velori exercise starting material and when to compare the completed example. Start with the design system, configurator and product assets, then explore and refine Review and Cart in Claude Design.
++
++[Previous handbook](https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/) and [supporting evidence edition](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/) preserve the earlier records.
++
++Previous edition: **2.1.2 · October 7, 2026**. Daytime PDF SHA-256: `b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03`.

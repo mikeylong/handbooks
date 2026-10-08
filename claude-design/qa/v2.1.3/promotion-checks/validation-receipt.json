@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.3",
+  "worktree": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks",
+  "rootConfirmedBranch": "codex/claude-design-v213-reader-clarifications",
+  "rootConfirmedBase": "e20ecfa704c3cf292e6889688e7179d345d2bea5",
+  "commands": [
+    {
+      "name": "scopedBookRelease",
+      "command": "npm --prefix claude-design run validate",
+      "cwd": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks",
+      "exitCode": 0,
+      "status": "passed",
+      "log": {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/claude-design-validation.log",
+        "sha256": "53af20ca04585b84e18e147eccf2486dcf1574698a3310282c3eb075806f8b44",
+        "bytes": 5266
+      }
+    },
+    {
+      "name": "initialApprovedCollectionBuild",
+      "command": "HANDBOOK_SITE_OUTPUT=R/release/public-site-r1 npm --prefix site run build",
+      "cwd": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks",
+      "exitCode": 0,
+      "status": "passed",
+      "log": {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/collection-build-r1.log",
+        "sha256": "3909f9b4508015694e866f187b6d6df92659dd60d06dee43ab3810f617085f66",
+        "bytes": 94
+      }
+    },
+    {
+      "name": "finalApprovedCollectionBuild",
+      "command": "HANDBOOK_SITE_OUTPUT=R/release/public-site-final npm --prefix site run build",
+      "cwd": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks",
+      "exitCode": 0,
+      "status": "passed",
+      "log": {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/collection-build-final.log",
+        "sha256": "3909f9b4508015694e866f187b6d6df92659dd60d06dee43ab3810f617085f66",
+        "bytes": 94
+      }
+    },
+    {
+      "name": "standardCollectionBuild",
+      "command": "npm run build",
+      "cwd": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks",
+      "exitCode": 0,
+      "status": "passed",
+      "log": {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/collection-build-standard.log",
+        "sha256": "ffc0475a1c673ff9db8e8352b0221f43e851ae5f0dcb223af10e5d2856a87dd8",
+        "bytes": 134
+      }
+    },
+    {
+      "name": "collectionTests",
+      "command": "npm --prefix site test",
+      "cwd": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks",
+      "exitCode": 0,
+      "status": "passed",
+      "log": {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/collection-tests.log",
+        "sha256": "7b426b94fb36f1885ed52a63b56fe86086c6561ef49d8bd39a8ae98052a9ba8e",
+        "bytes": 7047
+      }
+    },
+    {
+      "name": "fullCollectionValidation",
+      "command": "npm run validate",
+      "cwd": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks",
+      "exitCode": 0,
+      "status": "passed",
+      "log": {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/collection-validate.log",
+        "sha256": "2d89447e807180aef59ce121d0a5bd312a75b9a37207e7bf8b7f90bed06c344f",
+        "bytes": 19794
+      }
+    }
+  ],
+  "integrity": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/promotion-checks/integrity.json",
+    "sha256": "ad2021acdab43e57cdbe8666496d89fd2b0a1d549dec6c90009df668cba872b4",
+    "bytes": 4504
+  },
+  "integrityCommand": {
+    "command": "python3 release/check-promoted-integrity.py",
+    "exitCode": 0,
+    "status": "passed",
+    "log": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/promotion-integrity.log",
+      "sha256": "4025b6d664fa11d455ca70540e070f0d6f6ddcd8bce55948f9aaadca1b4851e4",
+      "bytes": 3131
+    }
+  },
+  "frozenCandidateBuildResult": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/BUILD-RESULT.json",
+    "sha256": "58861f466cfd31e379da3ba4f5c8a2a3ea2653b9d31daad1e4d6861184ca195e",
+    "bytes": 17123
+  },
+  "metadataFinalization": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/metadata-finalization.json",
+    "sha256": "3fa2474ef827b482952e34a6a40d964e75d1e39565217c4067cd6d5728c26301",
+    "bytes": 1095
+  },
+  "retention": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/retention-baseline-v212.json",
+    "sha256": "320125dd2b04e529c9dd20a266e83ab10d0e1bc603d8ae133372e32774229ea2",
+    "bytes": 9129
+  },
+  "sourceAndPdfBytesUnchangedFromQualifiedR3": true,
+  "sampleNativeArtworkAndPromptBodiesUnchanged": true,
+  "noPdfGeneration": true,
+  "scope": "Approved copy-only editorial release package. Book/repository/release/build/site checks completed in the isolated worktree; protected primary checkout and all private candidate artifacts remain untouched. Git/network/review/merge/deployment remain root-owned."
+}

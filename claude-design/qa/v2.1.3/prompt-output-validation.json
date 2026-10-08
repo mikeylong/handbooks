@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "promptCount": 6,
+  "formats": [
+    "hosted HTML",
+    "hosted Markdown",
+    "authored Markdown",
+    "Daytime PDF",
+    "Late night PDF"
+  ],
+  "outputs": {
+    "daytime": {
+      "status": "passed",
+      "prompts": [
+        {
+          "chapter": "01",
+          "tool": "Claude Design",
+          "title": "Write the design brief",
+          "line": 60,
+          "bodySha256": "812a0bf2030a7f2b8d657fae841846def309c340d83bb89ac44d0687e162e1c6"
+        },
+        {
+          "chapter": "02",
+          "tool": "Claude Design",
+          "title": "Check and correct the starting screen",
+          "line": 121,
+          "bodySha256": "a82d379eaefaf5388120701efc14c75a28baa505a2cac7dbbbc9b1b6ff4e6e97"
+        },
+        {
+          "chapter": "03",
+          "tool": "Claude Design",
+          "title": "Explore three review directions",
+          "line": 143,
+          "bodySha256": "46cf958712e39bd8344cb70c33f0c3a41921d09503ee6f202042a5ee23e0d59b"
+        },
+        {
+          "chapter": "04",
+          "tool": "Claude Design",
+          "title": "Refine the selected review direction",
+          "line": 185,
+          "bodySha256": "d92eca4a97373e17c10c121626472a6ffbf4b24aefe8707b608fc97748fb5d89"
+        },
+        {
+          "chapter": "05",
+          "tool": "Claude Design",
+          "title": "Connect the shopper journey",
+          "line": 229,
+          "bodySha256": "26a86ad70093a567debe1392877f04d5d2c30b9d995998b46c84c9da14db8e0e"
+        },
+        {
+          "chapter": "07",
+          "tool": "Claude Code",
+          "title": "Implement the selected Velori design",
+          "line": 338,
+          "bodySha256": "29d0f0a973a07d5681e2e80d5f11833e2c749b144c08b54f0e6d0cdd364c344a"
+        }
+      ]
+    },
+    "late-night": {
+      "status": "passed",
+      "prompts": [
+        {
+          "chapter": "01",
+          "tool": "Claude Design",
+          "title": "Write the design brief",
+          "line": 60,
+          "bodySha256": "812a0bf2030a7f2b8d657fae841846def309c340d83bb89ac44d0687e162e1c6"
+        },
+        {
+          "chapter": "02",
+          "tool": "Claude Design",
+          "title": "Check and correct the starting screen",
+          "line": 121,
+          "bodySha256": "a82d379eaefaf5388120701efc14c75a28baa505a2cac7dbbbc9b1b6ff4e6e97"
+        },
+        {
+          "chapter": "03",
+          "tool": "Claude Design",
+          "title": "Explore three review directions",
+          "line": 143,
+          "bodySha256": "46cf958712e39bd8344cb70c33f0c3a41921d09503ee6f202042a5ee23e0d59b"
+        },
+        {
+          "chapter": "04",
+          "tool": "Claude Design",
+          "title": "Refine the selected review direction",
+          "line": 185,
+          "bodySha256": "d92eca4a97373e17c10c121626472a6ffbf4b24aefe8707b608fc97748fb5d89"
+        },
+        {
+          "chapter": "05",
+          "tool": "Claude Design",
+          "title": "Connect the shopper journey",
+          "line": 229,
+          "bodySha256": "26a86ad70093a567debe1392877f04d5d2c30b9d995998b46c84c9da14db8e0e"
+        },
+        {
+          "chapter": "07",
+          "tool": "Claude Code",
+          "title": "Implement the selected Velori design",
+          "line": 338,
+          "bodySha256": "29d0f0a973a07d5681e2e80d5f11833e2c749b144c08b54f0e6d0cdd364c344a"
+        }
+      ]
+    }
+  },
+  "paragraphAndCaptionReplacements": 8,
+  "approvedExerciseSectionApplied": true,
+  "readerHeadingUpdatedAtStableSectionAnchor": true,
+  "allReaderInternalReferencesResolve": true,
+  "removedHistoricalWordingAbsent": true,
+  "humanReviewRequirementPreserved": true,
+  "privateArchiveExcluded": true,
+  "publicationApproved": false,
+  "sourceSha256": "52b226cd6a5320a906f5a9785a64ce9fe579b0a20febd6ad803d104a31b6c197",
+  "htmlSha256": "a71419c0d7e29b879247cc5d704eb04b5b94d93258bf2eb706fcaeb57fc991b7",
+  "markdownSha256": "c9a33db8478a32c9edfa8a79eddb2c7d81419b51c7b9989d61e2d837464d8394",
+  "authoredMarkdownSha256": "9205a232d8523a9329e7122901aa3f5636c8db53a0ad3a26e103fe9d8c306fc3"
+}

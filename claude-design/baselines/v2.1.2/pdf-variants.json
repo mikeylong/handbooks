@@ -1,0 +1,125 @@
+{
+  "title": "Claude Design Field Guide",
+  "version": "2.1.2",
+  "date": "2026-10-07",
+  "pdf": "output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+  "sha256": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03",
+  "pages": 56,
+  "previous_public_edition": "2.1.1",
+  "approvalStatus": "approved",
+  "candidate_validation": "qa/v2.1.2/daytime-validation.json",
+  "releaseContract": {
+    "kind": "design-exploration",
+    "classifiedChangeIds": [
+      "C01",
+      "C02"
+    ],
+    "sample": {
+      "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+      "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
+    },
+    "nativeStarter": {
+      "filename": "velori-design-exploration-starter.fig",
+      "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca"
+    },
+    "chapterCount": 9,
+    "archiveMemberCount": 234,
+    "nativeEvidence": {
+      "edition": "2.0.0",
+      "releaseManifest": {
+        "path": "claude-design/baselines/v2.0.0/release-manifest.json",
+        "sha256": "e5510d84a07c3689386a6a710fa863e5fff801809ec78f3861902e36a38725b7"
+      },
+      "figmaCompanion": {
+        "path": "claude-design/baselines/v2.0.0/figma-companion.json",
+        "sha256": "4883dc903507d11f34533734ec6adf80d2f160097659613849e4ad826824acf3"
+      },
+      "roundtrip": {
+        "path": "claude-design/qa/v2.0.0/figma-roundtrip-validation.json",
+        "sha256": "b749835bb57e33ae444a748143695192545734376c8b3796b827ca2106d171a2"
+      },
+      "publicationApproval": {
+        "path": "claude-design/qa/v2.0.0/publication-approval.json",
+        "sha256": "7a037cbdabf765cd5c07415cabc531943536a9a75efc5d4d388175f61627b5e8"
+      }
+    },
+    "prototypeEvidence": {
+      "path": "claude-design/qa/v2.1.0/prototype-behavior.json",
+      "sha256": "49fce9e32134474185e40ca733b84901434a438403563e2dc184dd143aecfa30",
+      "edition": "2.1.0"
+    },
+    "companionParityEvidence": {
+      "path": "claude-design/qa/v2.1.1/companion-parity.json",
+      "sha256": "5b54798d3c7c68fa70c8d089cd5c4ba56a93953c921e3b46529153c811f25dc6"
+    },
+    "retainedExercise": {
+      "edition": "2.1.1",
+      "releaseManifest": {
+        "path": "claude-design/baselines/v2.1.1/release-manifest.json",
+        "sha256": "b37a0384129b6e15f00b12930c5ffdf216538d74aac97fe06fd5656d16c574dd"
+      },
+      "publicationPackage": {
+        "path": "claude-design/baselines/v2.1.1/publication-package.json",
+        "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
+      },
+      "publicationApproval": {
+        "path": "claude-design/qa/v2.1.1/publication-approval.json",
+        "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b"
+      },
+      "exerciseDownloads": {
+        "path": "claude-design/baselines/v2.1.1/exercise-downloads.json",
+        "sha256": "6381ec04c0e9a5caf4f854422fe52c7b0137105a674570fdc7b571da7a059082"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-07",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.1.2/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+      "sha256": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03",
+      "pages": 56,
+      "bytes": 7133324,
+      "pageMap": {
+        "path": "claude-design/qa/v2.1.2/daytime-map.json",
+        "sha256": "955cbb79de1725c81e8869e6b3df54eb25454d9f6154fe565b97680851f6f42a"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-07",
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.1.2/claude-design-v2.1.2-2026-10-07-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v2.1.2-2026-10-07-late-night-r1.pdf",
+      "sha256": "05f06bf733f60cfe0a6c2d8a9e63589f3d5eac22bfa0dec8edb1b6eee102e78a",
+      "pages": 56,
+      "bytes": 46134047,
+      "pageMap": {
+        "path": "claude-design/qa/v2.1.2/late-night-map.json",
+        "sha256": "a1fce813308b92782cdc42389bf54cf7e8accf4e7b4181c582bd2ee28b610cae"
+      },
+      "proof": {
+        "parity": {
+          "path": "claude-design/qa/v2.1.2/appearance-parity/parity.json",
+          "sha256": "d384bfe6d818d74d87f6d4e7a509095f5101466b7d6230dcc3f3ca7123775b74"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "05f06bf733f60cfe0a6c2d8a9e63589f3d5eac22bfa0dec8edb1b6eee102e78a",
+          "authority": "Exact-artifact visual qualification under Mike's direct Land this request, October 7, 2026",
+          "review": "claude-design/qa/v2.1.2/visual-review.json"
+        }
+      }
+    }
+  ]
+}

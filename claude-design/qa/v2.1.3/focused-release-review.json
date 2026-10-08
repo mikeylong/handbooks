@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "reviewer": "reader_history_audit",
+  "reviewedAt": "2026-10-08T05:59:36.392030+00:00",
+  "scope": "One focused independent review of the frozen v2.1.3 release diff, approved C01/C02/C03 manuscript and caption changes, exact reviewed artifacts, required edition retention, release metadata and publication boundaries.",
+  "baseCommit": "e20ecfa704c3cf292e6889688e7179d345d2bea5",
+  "branch": "codex/claude-design-v213-reader-clarifications",
+  "worktree": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks",
+  "rootSuppliedGitSnapshot": true,
+  "reviewedArtifacts": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/release-review-diff.patch",
+      "sha256": "320b650180decb7b6a2fd68a66f5926ec570c22288890972e8e929de83edecb8",
+      "bytes": 2007467
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/assembly-file-inventory.json",
+      "sha256": "91e84bbe34878532c8a98c5a1a0b54b9602d3348a7d6ac0047eb5fe126ebc6fa",
+      "bytes": 26358
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/metadata-finalization.json",
+      "sha256": "3fa2474ef827b482952e34a6a40d964e75d1e39565217c4067cd6d5728c26301",
+      "bytes": 1095
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/Claude_Design_Field_Guide_Source.md",
+      "sha256": "52b226cd6a5320a906f5a9785a64ce9fe579b0a20febd6ad803d104a31b6c197",
+      "bytes": 38942
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/source/Claude_Design_Field_Guide_Source.md",
+      "sha256": "52b226cd6a5320a906f5a9785a64ce9fe579b0a20febd6ad803d104a31b6c197",
+      "bytes": 38942
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/screenshot-figures.json",
+      "sha256": "12c32ec81c424143752c9927d66d4a9d549cd37171a1d23343a6bdebc581cd60",
+      "bytes": 20638
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/output/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf",
+      "sha256": "ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7",
+      "bytes": 7127812
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/output/pdf/claude-design-v2.1.3-2026-10-07-late-night-r1.pdf",
+      "sha256": "2604f6368693186b0c5e91efae7392604ea25e60767504a2cf1bd39203a88531",
+      "bytes": 46128133
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/publication-package.json",
+      "sha256": "f4b9171b848741a9eb16587a434544788aa5e8ca54fe74743cb36ecbf1e1f181",
+      "bytes": 19967
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/qa/v2.1.3/publication-approval.json",
+      "sha256": "2d4bf20349ff2251132c701094b791d28b58d58c43d0baa75e2be2736003a3ac",
+      "bytes": 5072
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/pdf-variants.json",
+      "sha256": "16d543409b4e996f37298e04c56877a8aef30ffb7b307cc34892f1d86bf85254",
+      "bytes": 5182
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/release-manifest.json",
+      "sha256": "fc40dd16888fbfc6dc7d8e9ae91edbed179a264e95e45ff29d492e851ccb8078",
+      "bytes": 3232
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/change-ledger.json",
+      "sha256": "5e945abeda8fd2ef76c575eca5e06618dd6632d3a20651ff81371838cc0b5636",
+      "bytes": 4821
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/changelog-decision.json",
+      "sha256": "17fa598fccd4ba04ef857a21b1451630616ecabe573fc5507c6431ff747329d4",
+      "bytes": 3185
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/edition-changelog.json",
+      "sha256": "7644ce91dcde7526927530a5eb4dc68dd3ccc978df0353a76cdd727b03f3d6cf",
+      "bytes": 2658
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/reader/index.html",
+      "sha256": "00848a172cba2417ec942dada1928b01945947f5f8c77679fded736b9c6fb946",
+      "bytes": 71929
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/reader/editions/v2.1.3/claude-design-v2.1.3.md",
+      "sha256": "1245a75dfe1773d381ded66a25e651c23509309b41c35ebebb5ecdb64b6b72da",
+      "bytes": 49480
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/site/retained-releases.json",
+      "sha256": "5c6ec9330709bc46223d786b2349bc17f5751c4cd6e307f33c2ec7820be56a64",
+      "bytes": 50523
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/site/retained/claude-design/v2.1.2/retention-receipt.json",
+      "sha256": "c07b5cf5305ded0064f194361de09b6d6e784874cc2b5722220f5bc15e49e522",
+      "bytes": 9224
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/public-site-final/claude-design/index.html",
+      "sha256": "288f08d28aeb185ea1aa3a1827a111c5481ad7dbbedc3e9fc6e12f603c953434",
+      "bytes": 89235
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/claude-design-validation.log",
+      "sha256": "53af20ca04585b84e18e147eccf2486dcf1574698a3310282c3eb075806f8b44",
+      "bytes": 5266
+    }
+  ],
+  "checks": {
+    "trackedDiffFiles": 20,
+    "newInventoryFiles": 114,
+    "frozenIntendedFiles": 134,
+    "allInventoryPinsVerified": true,
+    "approvedPackageFilePinsVerified": 149,
+    "qualificationEvidencePinsVerified": 10,
+    "sourceCopiesEqualQualifiedR3": true,
+    "bothPdfBytesEqualQualifiedR3": true,
+    "pdfPages": 54,
+    "approvedChangeIds": [
+      "C01",
+      "C02",
+      "C03"
+    ],
+    "ledgerDecisionManifestAndEditionChangelogConsistent": true,
+    "promptHeadersAndBodiesUnchanged": 6,
+    "onlyTwoCaptionSemanticChanges": [
+      "s06a-cart",
+      "s10-figma"
+    ],
+    "staticFigmaInteractionLimitPreserved": true,
+    "humanReviewRequirementPreserved": true,
+    "originalNativeGenerationScopePreserved": true,
+    "sampleSourceAndNativeArtifactsAbsentFromDiff": true,
+    "retainedExerciseAndEvidenceContractUnchanged": true,
+    "commonSampleFilesByteUnchanged": 106,
+    "originalEvidenceFilesByteUnchanged": {
+      "v2.0.0": 29,
+      "v2.1.0": 55,
+      "v2.1.1": 62
+    },
+    "exerciseV2_1_1ReaderFilesByteUnchanged": 21,
+    "validatorTestAndSharedToolkitCodeAbsentFromDiff": true,
+    "existingBookValidatorAndSharedToolkitFilesByteUnchanged": true,
+    "olderRetainedRouteEntriesUnchanged": 160,
+    "newV2_1_2Routes": 25,
+    "allRetainedSourceAndOutputRoutePinsVerified": 185,
+    "retainedV2_1_2MetadataPinsVerified": 18,
+    "historicalPdfMarkdownIndexEditionAndSnapshotBytesPreserved": true,
+    "publishedMarkdownBodyByteIdenticalToQualifiedCandidate": true,
+    "publishedChapterHtmlMatchesQualifiedCandidateAfterExistingExternalLinkPolicy": true,
+    "publicOutputHasNoPrivateHistoryArchiveOrQaReviewFiles": true,
+    "approvedPackageHasNoPrivateHistoryArchiveOrQaReviewMembers": true,
+    "priorDownloadHeadersPreserved": true,
+    "newV2_1_3DownloadHeaderRowsOnly": 3,
+    "otherVercelConfigurationUnchanged": true
+  },
+  "documentedPublicationTransforms": [
+    "Reader input differs from the reviewed candidate only by converting the current edition self-navigation link to its absolute Surfaces URL.",
+    "Shared approved-site rendering omits the private candidate banner and applies approved download metadata. The 14 chapter source sections match exactly after the existing external-link policy adds target=_blank and rel=noopener noreferrer to 14 links.",
+    "Published Markdown changes frontmatter publication status and approved/source reader hashes only; its complete body is byte-identical to the qualified r3 candidate.",
+    "Exact reviewed manuscript and paired PDFs are copied without regeneration. Old trial dates and limits retain their original scope in the existing evidence; the private history archive is not a release or hosted file."
+  ],
+  "findings": [],
+  "findingCounts": {
+    "High": 0,
+    "Medium": 0,
+    "Low": 0
+  },
+  "remainingReleaseChecks": [
+    "Root-owned hosted CI, protected PR merge, exact-SHA production deployment and live QA."
+  ],
+  "reviewLimitations": [
+    "Read-only in the worktree. This reviewer wrote only this new private receipt.",
+    "No Git, network, build, browser, PDF visual review, native Design, Figma or sample behavior tests were repeated.",
+    "Root may append validation and review receipts; changes to reviewed source, package metadata or retained bytes require the affected review checks again."
+  ]
+}

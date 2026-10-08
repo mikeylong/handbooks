@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "reviewer": "candidate_builder",
+  "scope": "Eight original-resolution changed-page views: physical pages 9 and 54 in Poppler and PDFKit, Daytime and Late night. Four whole-book contact sheets reviewed for overall geometry. This builder scope does not claim a fresh full-size review of all 216 pages.",
+  "findings": [],
+  "High": 0,
+  "Medium": 0,
+  "Low": 0,
+  "physicalPrintingTested": false,
+  "fullSizeProofs": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/poppler/daytime/page-09.png",
+      "sha256": "acc9efdc41429bcf6f17518e6a0ec51b065083b2aa6e6c976daad613a6c11c22",
+      "bytes": 111545
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/poppler/daytime/page-54.png",
+      "sha256": "8930fe9278165076d68640789045bb9f8a674433440be653b3892793b494b358",
+      "bytes": 127827
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/poppler/late-night/page-09.png",
+      "sha256": "dc3647baece735b06391b3e4ccc2aa693982076c27a11646e548ffb0bfc1c7f5",
+      "bytes": 127565
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/poppler/late-night/page-54.png",
+      "sha256": "0aa70683324203d7903e769f63970d99b039cc2de093e12ddabe82ffa8adcd8e",
+      "bytes": 148816
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/pdfkit/daytime/page-009.png",
+      "sha256": "a6675a4e3bb0dfdf8a44c9e7cdd3d838df725fb13b5f5676aa45f8e050ec23e7",
+      "bytes": 119367
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/pdfkit/daytime/page-054.png",
+      "sha256": "9ec7303cda3c0e2866fbf11bd5d1f2930715cedf2c59e6f6b4dee12b40dbc910",
+      "bytes": 137204
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/pdfkit/late-night/page-009.png",
+      "sha256": "1a11e84992c2e8666ebd1c9f567187a791a4b27a00822a9464019a60b09fdf86",
+      "bytes": 145276
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/pdfkit/late-night/page-054.png",
+      "sha256": "c5864691cd6131e10f3477c594edaebe75d601b340d2b77a98ed2a0422827713",
+      "bytes": 170074
+    }
+  ],
+  "wholeBookContactSheets": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/poppler/daytime/contact-sheet.png",
+      "sha256": "19b5b03f734217a16d6967f0bb015fb33b785196d9699568c63d8f9eb50652f3",
+      "bytes": 2646500
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/poppler/late-night/contact-sheet.png",
+      "sha256": "93288e3fc26b144bba04cd4690b338a83460f76b262d7310c90ee297b99a55ec",
+      "bytes": 3151924
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/pdfkit/daytime/contact-sheet.png",
+      "sha256": "ef088009681883d2cefed1b9dbe428208033506a708c872284256eb2dcc11ccb",
+      "bytes": 2720821
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r3/pdfkit/late-night/contact-sheet.png",
+      "sha256": "068e33244e91bb68b0839fdfe8050e4815a0894c9363ee5b662e749c5b31d8b2",
+      "bytes": 3326297
+    }
+  ],
+  "observations": [
+    "The approved Chapter 1 heading and paragraph are legible with the chapter checkpoint intact and no clipping.",
+    "The terminal changelog has three legible entries, readable prior-edition links and the unchanged approved 2.1.2 Daytime hash.",
+    "No whole-document geometry issue appeared in the overview sheets.",
+    "The shared print renderer deliberately maps U+2019 to ASCII apostrophe through markdown_layout.py clean(); source, HTML and Markdown retain the approved U+2019. This existing renderer behavior was not changed."
+  ],
+  "independentReview": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r3/independent-pdf-review.json",
+  "exactPixelCarryover": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r3/r2-r3-render-equivalence.json",
+    "sha256": "2f448ddb21bea87f34ad91617367372658aac01402e9f7d048361277fc12cad8",
+    "bytes": 255411
+  }
+}

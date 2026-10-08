@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "version": "2.1.3",
+  "command": "Land this",
+  "authority": {
+    "kind": "explicit-user-release",
+    "request": "Land this",
+    "scope": "Publish the reviewed final-r3 reader-history and Velori exercise editorial clarifications. Retain approved 2.1.1 exercise bytes and original evidence."
+  },
+  "approver": "Mike",
+  "approvalDate": "2026-10-07",
+  "editionDate": "2026-10-07",
+  "manuscript": {
+    "path": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "52b226cd6a5320a906f5a9785a64ce9fe579b0a20febd6ad803d104a31b6c197"
+  },
+  "pdfs": [
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf",
+      "sha256": "ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7"
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.3-2026-10-07-late-night-r1.pdf",
+      "sha256": "2604f6368693186b0c5e91efae7392604ea25e60767504a2cf1bd39203a88531"
+    }
+  ],
+  "exercise": {
+    "path": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768"
+  },
+  "retainedExercise": {
+    "edition": "2.1.1",
+    "releaseManifest": {
+      "path": "claude-design/baselines/v2.1.1/release-manifest.json",
+      "sha256": "b37a0384129b6e15f00b12930c5ffdf216538d74aac97fe06fd5656d16c574dd"
+    },
+    "publicationPackage": {
+      "path": "claude-design/baselines/v2.1.1/publication-package.json",
+      "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
+    },
+    "publicationApproval": {
+      "path": "claude-design/qa/v2.1.1/publication-approval.json",
+      "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b"
+    },
+    "exerciseDownloads": {
+      "path": "claude-design/baselines/v2.1.1/exercise-downloads.json",
+      "sha256": "6381ec04c0e9a5caf4f854422fe52c7b0137105a674570fdc7b571da7a059082"
+    }
+  },
+  "authorityBasis": "Mike directly selected Land this for the qualified final-r3 candidate. Exact reviewed source and PDFs are copied without regeneration. Original native, prototype, sample and companion evidence keep their original editions and limits.",
+  "qualificationEvidence": {
+    "daytime-validation.json": {
+      "path": "claude-design/qa/v2.1.3/daytime-validation.json",
+      "sha256": "ead9fef98494b926dc9ce090fd23f443d54ba8568941e0689dc2ab5c31140118"
+    },
+    "late-night-validation.json": {
+      "path": "claude-design/qa/v2.1.3/late-night-validation.json",
+      "sha256": "7736be9adbe32ccc3f8d87b51c9ed1318089ee167fbb238f2dbf1f576546961b"
+    },
+    "appearance-parity/parity.json": {
+      "path": "claude-design/qa/v2.1.3/appearance-parity/parity.json",
+      "sha256": "17ec05591f16935313b98d14d2282e7e6c683dc057bb518dbee0d26951499e30"
+    },
+    "appearance.json": {
+      "path": "claude-design/qa/v2.1.3/appearance.json",
+      "sha256": "d811d149a18f68aa46c139f5b3a2994f8ed0cf3dee20c4b73dab2bcbed574872"
+    },
+    "visual-review.json": {
+      "path": "claude-design/qa/v2.1.3/visual-review.json",
+      "sha256": "c3ed01c1fa02e34278893cbec9d7d6b6e4b34f4313cf0d4c3067e00114d9a895"
+    },
+    "prompt-output-validation.json": {
+      "path": "claude-design/qa/v2.1.3/prompt-output-validation.json",
+      "sha256": "1a2d35d123779301c3d098272c5bae66cb25d901cd33ef7d5aef0e92ce7372b9"
+    },
+    "independent-pdf-review.json": {
+      "path": "claude-design/qa/v2.1.3/independent-pdf-review.json",
+      "sha256": "c1c46a12e35988e3c25725c863c46be6c90c71fea8eeb2a71dfa5add669316c8"
+    },
+    "hosted-browser-review.json": {
+      "path": "claude-design/qa/v2.1.3/hosted-browser-review.json",
+      "sha256": "3755f57cda1aa6a364e6dfa2169250a9ec9416433657419a803e829ddb772618"
+    },
+    "focused-editorial-review.json": {
+      "path": "claude-design/qa/v2.1.3/focused-editorial-review.json",
+      "sha256": "d7042f0e96e14116109cc5d57efaba5ee644e03d8a0f657c796e5f382b3df778"
+    },
+    "published-markdown-preservation.json": {
+      "path": "claude-design/qa/v2.1.3/published-markdown-preservation.json",
+      "sha256": "9f19cd496ac657f3619d4296668c9d389bd09b6cdcd2577afbd6849fc55517fb"
+    }
+  },
+  "limitations": [
+    "Human task review has not been completed. The author walkthrough is not usability evidence.",
+    "No new native Claude Design generation trial is claimed; the original October 6 trial retains its recorded scope.",
+    "Figma answer key has static editable Review and Cart frames, with no prototype connections or choice-state wiring. Fresh recipient import and separate-account access testing were not repeated for the standard native export.",
+    "PDFs remain untagged; PDF/UA compliance is not claimed."
+  ],
+  "publicationPackage": {
+    "path": "claude-design/publication-package.json",
+    "sha256": "f4b9171b848741a9eb16587a434544788aa5e8ca54fe74743cb36ecbf1e1f181"
+  },
+  "variantManifest": {
+    "path": "claude-design/pdf-variants.json",
+    "sha256": "16d543409b4e996f37298e04c56877a8aef30ffb7b307cc34892f1d86bf85254"
+  }
+}

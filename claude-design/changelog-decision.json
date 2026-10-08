@@ -3,8 +3,8 @@
   "status": "passed",
   "includeChangelog": true,
   "readerFacingContentChanged": true,
-  "summary": "This candidate corrects prompt labels and clarifies the starting context and handoff.",
-  "entryCount": 2,
+  "summary": "Remove dated construction history, clarify the supplied Figma frames and explain the Velori exercise starting material.",
+  "entryCount": 3,
   "failures": [],
   "placement": "final-page",
   "requiredPdfState": {
@@ -21,14 +21,14 @@
     {
       "id": "C01",
       "category": "Correction or clarification",
-      "section": "Prompt examples in chapters 1–5 and 7",
-      "text": "Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt.",
-      "rationale": "Each label names the task and destination; the prompt text is unchanged.",
-      "readerImpact": "Readers can distinguish instructions to Claude Design from implementation instructions to Claude Code.",
+      "section": "Instructional chapters and screenshot captions",
+      "text": "Move dated notes about building and revising the examples out of the instructional chapters and captions.",
+      "rationale": "Keep that history in the edition and supporting evidence records.",
+      "readerImpact": "Readers see the current task and material scope without dated construction history.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/"
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/"
       ],
-      "sourceLimitations": "Editorial correction of the approved manuscript; no new product behavior or native trial is claimed.",
+      "sourceLimitations": "Editorial cleanup only; removed wording is preserved verbatim in private archive. No evidence was rerun.",
       "recommendedVersionImpact": "patch",
       "groupedDraftEntries": [
         "C01"
@@ -37,17 +37,34 @@
     {
       "id": "C02",
       "category": "Correction or clarification",
-      "section": "Starting context; guided exercise; workflow diagram alt text",
-      "text": "Clarify the code-first route and name Claude Code at handoff.",
-      "rationale": "Exclude both completed Review and Cart implementations from baseline context, matching the sample.",
-      "readerImpact": "The baseline context and handoff destinations match the existing exercise.",
+      "section": "Figma handoff; current materials; review with people",
+      "text": "Explain the supplied Figma answer key as editable Review and Cart frames whose interactions need wiring.",
+      "rationale": "Keep the current material scope and the human-review requirement clear.",
+      "readerImpact": "Readers distinguish static editable frames, offline cart behavior and interactions they must build and test.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/",
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/"
       ],
-      "sourceLimitations": "Checked against the unchanged current sample README and .design-sync exclusions. Diagram geometry is unchanged.",
+      "sourceLimitations": "Original native generation scope and incomplete human review remain recorded in supporting evidence; artifacts and prompt bodies are unchanged.",
       "recommendedVersionImpact": "patch",
       "groupedDraftEntries": [
         "C02"
+      ]
+    },
+    {
+      "id": "C03",
+      "category": "Correction or clarification",
+      "section": "Chapter 1: Start with the Velori configurator",
+      "text": "Clarify the Velori exercise starting material and when to compare the completed example.",
+      "rationale": "Start with the design system, configurator and product assets, then explore and refine Review and Cart in Claude Design.",
+      "readerImpact": "Readers know what to use as starting material and when the supplied completed example is useful.",
+      "sources": [
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/"
+      ],
+      "sourceLimitations": "Reader-focused editorial clarification only. Six prompt bodies and all native/sample/image assets are unchanged; no new evidence was run.",
+      "recommendedVersionImpact": "patch",
+      "groupedDraftEntries": [
+        "C03"
       ]
     }
   ]

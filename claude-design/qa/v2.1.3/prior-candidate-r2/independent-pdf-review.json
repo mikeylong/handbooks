@@ -1,0 +1,3352 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex independent agent /root/history_pdf_review",
+  "reviewedAtUtc": "2026-10-08T05:13:51.951949+00:00",
+  "status": "passed",
+  "candidate": "Claude Design Field Guide v2.1.3; private reader-history-cleanup final-r2",
+  "reviewScope": "Independent PDF visual and editorial-layout review of frozen final-r2 outputs. No edits to builder or candidate, no Git, network, browser, Figma, publication, or new interaction testing.",
+  "artifacts": [
+    {
+      "appearance": "daytime",
+      "pdf": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/final-r2/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf",
+      "sha256": "27381fc6e83e4141cb0877252b1c931e4ab4aac656bc7cc1b2476a900f7a35e1",
+      "physicalPages": 54,
+      "map": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r2/daytime-map.json",
+      "mapSha256": "bfde6dc8255e57b451d20909c9f89e1cc35c15c4453db408e6c8a77b276343e0"
+    },
+    {
+      "appearance": "late-night",
+      "pdf": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/final-r2/pdf/claude-design-v2.1.3-2026-10-07-late-night-r1.pdf",
+      "sha256": "dc0a5322e8bf2b8ae432f5a42fe2c4965889ff57eb6a0114c786265fc15121cd",
+      "physicalPages": 54,
+      "map": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r2/late-night-map.json",
+      "mapSha256": "2466a7000bbf7fae113c42d133a3743cfba3ac7496394e5793960df4f1412f6d"
+    }
+  ],
+  "inventory": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r2/render-inventory.json",
+    "sha256": "e153fc1cbeb44b3173cd99eb46e42d577bc97463cb5d5f40b3a5d74b8e14c501",
+    "hashesIndependentlyVerified": true,
+    "pageProofCount": 216,
+    "nativeSheetCount": 56,
+    "wholeBookContactSheetCount": 4
+  },
+  "roleInventory": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r2/full-size-page-roles.json",
+    "sha256": "e1d3c493dbe47fbebc8f49918bb3ab5b61a26940527b91a23d14e0bdc24d8f32",
+    "note": "Automatic dense-table labels on pages 51 and 52 do not describe the actual rendered roles. This review used every page and records the actual dense tables separately."
+  },
+  "coverage": [
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "dpi": 144,
+      "wholeBookContactSheetPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "nativeSizeReviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "dpi": 144,
+      "wholeBookContactSheetPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "nativeSizeReviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "dpi": 144,
+      "wholeBookContactSheetPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "nativeSizeReviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "dpi": 144,
+      "wholeBookContactSheetPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "nativeSizeReviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    }
+  ],
+  "inspectionMethod": "All four whole-book contact sheets were inspected first. Every physical page was then inspected in native 144 dpi 2-by-2 proof sheets for both rendering engines and both appearances. Pixel comparison verified all 216 original page images appear unchanged in these inspected sheets, without resampling or cropping.",
+  "actualRolePages": {
+    "cover": [
+      1
+    ],
+    "contents": [
+      6
+    ],
+    "workflowDiagram": [
+      4
+    ],
+    "chapterOpeners": [
+      7,
+      10,
+      15,
+      20,
+      26,
+      35,
+      40,
+      44,
+      48
+    ],
+    "rasterArtworkAndScreenshotPages": [
+      7,
+      10,
+      12,
+      13,
+      15,
+      17,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      29,
+      31,
+      33,
+      35,
+      37,
+      38,
+      40,
+      42,
+      44,
+      46,
+      48
+    ],
+    "toolNamedPrompts": [
+      8,
+      14,
+      16,
+      21,
+      27,
+      41
+    ],
+    "affectedBodyAndCaptions": [
+      12,
+      14,
+      30,
+      31,
+      45,
+      46,
+      50
+    ],
+    "affectedFigmaContinuation": [
+      47
+    ],
+    "denseTables": [
+      32,
+      47,
+      50
+    ],
+    "otherTablePages": [
+      2,
+      5,
+      8,
+      16,
+      31,
+      39
+    ],
+    "guidedExerciseAndWorksheet": [
+      49,
+      50,
+      52
+    ],
+    "references": [
+      53
+    ],
+    "singleFinalChangelog": [
+      54
+    ],
+    "index": {
+      "applicable": false,
+      "reason": "This handbook has no index."
+    }
+  },
+  "observations": [
+    "No clipping, overlapping elements, footer collisions, missing images, or caption overflow was observed in either appearance or renderer.",
+    "All nine original chapter drawings remain readable. Separately authored dark drawings retain legible detail against the Late night background; screenshots retain their authentic light UI.",
+    "Chapter 8 now gives current source-component, text-style and variable restoration guidance without the dated construction paragraphs or technical node-count history.",
+    "The Figma answer-key caption and body explicitly identify editable Review and Cart frames with no prototype connections or choice-state wiring. They require wiring and testing before being treated as interactive.",
+    "The current-material scope distinguishes React and offline cart behavior from static Figma frames and the recorded native Design screenshots. The cart caption describes the current configured item without dated correction chronology.",
+    "The guided exercise still explicitly requires human review and a completion record. Removing the author-specific review-status sentence does not assert that a human review occurred.",
+    "Dense tables wrap within their columns. The page 31 to 32 transition table repeats its header and retains a body row before the break.",
+    "Changelog is one terminal page, physical page 54 and printed label 48, and its contents entry uses label 48. Its concise entries preserve correction scope and avoid construction counts.",
+    "Sparse checkpoint pages and screenshot viewport crops are consistent with the retained layout/assets; this review found no new missing-content or PDF clipping defect."
+  ],
+  "actionableFindings": [],
+  "findingSeverityVocabulary": [
+    "High",
+    "Medium",
+    "Low"
+  ],
+  "renderingEngineProvenance": [
+    {
+      "renderer": "Poppler",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r2/poppler-daytime-render.log",
+      "dpi": 144,
+      "version": "Not recorded in the supplied final-r2 renderer inventory."
+    },
+    {
+      "renderer": "Apple PDFKit",
+      "source": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r2/pdfkit-daytime-render.log",
+      "dpi": 144,
+      "version": "Not recorded in the supplied final-r2 renderer inventory."
+    }
+  ],
+  "supportingBuilderResults": {
+    "daytimeStructuralValidation": "passed; read final-r2/daytime-validation.json",
+    "lateNightStructuralValidation": "passed; read final-r2/late-night-validation.json",
+    "appearanceValidation": "passed; read final-r2/appearance.json",
+    "changelogDecision": "passed; read final-r2/changelog-decision-final.json",
+    "note": "These are existing builder validation results, distinct from this independent visual inspection."
+  },
+  "limitations": [
+    "Screen raster review at 144 dpi; no physical print proof was inspected.",
+    "This layout review does not establish new Claude Design or Figma interaction evidence or complete the exercise human-review requirement.",
+    "PDF accessibility certification and renderer-version provenance were outside this bounded review; exact supplied proof bytes are recorded."
+  ],
+  "inspectedProofs": [
+    {
+      "kind": "whole-book-contact-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/contact-sheet.png",
+      "sha256": "1bd076ecba42c65cb9566a8a1c5257e26769e1ba3b74c29d3345d8e002e78d8e",
+      "physicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-01-04.png",
+      "sha256": "379b472d9e7bd86cdc7c9c41a0b21d242441918cb3c56a9e2035a989568b51c5",
+      "physicalPages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-05-08.png",
+      "sha256": "36f94568b713670bb9ee08d6a8a21edf86c5314d418c56cb79e58e7a3c591d75",
+      "physicalPages": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-09-12.png",
+      "sha256": "8c5a017d7ede6de6eedf6507ebabc8d22ab0928d0628cd722e5274cd7b7e62d6",
+      "physicalPages": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-13-16.png",
+      "sha256": "d1f6c775f25b875394c0b719dbb04f1cc914757671ab4033b80c194021d4b389",
+      "physicalPages": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-17-20.png",
+      "sha256": "53778576a53bde3f9394e8eeae58d9ee5ad202d21ebb6b9ac208e1c14117f6a8",
+      "physicalPages": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-21-24.png",
+      "sha256": "8aaeac363b125ff8af6922e75a21fa222cf3ac94fba9fa8603a2dbab1689fcfb",
+      "physicalPages": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-25-28.png",
+      "sha256": "b5a281320a906f970bf580219ee27ae3a9be704158b21cc7a39ec5e8a53180cd",
+      "physicalPages": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-29-32.png",
+      "sha256": "e0d5e606cf19f24923863320e900cc1d6e6b60146b7ed316ead323375e20babf",
+      "physicalPages": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-33-36.png",
+      "sha256": "3179bf35e37992c4441d7bc2cd2d66b4a601fcc433dbe4a7d49c8297c6f49dde",
+      "physicalPages": [
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-37-40.png",
+      "sha256": "b89b5ce49ff10e16567f49d04d765f8c888962947d329baf8f544ee0266d476f",
+      "physicalPages": [
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-41-44.png",
+      "sha256": "d04497b5e66517d0c36ea037957d4dc6160c459fd43a48aebdcf7a683e668ca7",
+      "physicalPages": [
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-45-48.png",
+      "sha256": "971a306b74c5a0b6b2ece53b1ee6f0cb805b7f244f6b42b35cd6b2269dde60af",
+      "physicalPages": [
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-49-52.png",
+      "sha256": "c07cfa1da105cd7ae5776c05829fe3c53acb73c607f302c344669db54e108e8b",
+      "physicalPages": [
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/native-sheets/pages-53-54.png",
+      "sha256": "36e342fb3a482fafc586c2955b0bd80f0049b9c93427ad114cecd870bb452f57",
+      "physicalPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "kind": "whole-book-contact-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/contact-sheet.png",
+      "sha256": "0ded746bc307c6d2800d2411810b680d21465ba8c1d10c923bcca169bd0daf59",
+      "physicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-01-04.png",
+      "sha256": "e6ae6f0d5750e0f77a444bf5c7bd27a0bc1ac5903eddc463ef0f1959419b8f72",
+      "physicalPages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-05-08.png",
+      "sha256": "5534c885b8109a5504e8022603eab21c4ce5d705016aed91a9dcf0919b103e82",
+      "physicalPages": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-09-12.png",
+      "sha256": "8985934aec5da95783e7d4c51905c93b71d17f5a0920b19155de65229ea9ff47",
+      "physicalPages": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-13-16.png",
+      "sha256": "883825689bac6c1eebf09d82046f0249c8d87c5defe3a55066e12483cb95dbbf",
+      "physicalPages": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-17-20.png",
+      "sha256": "a875fe1a6cefa15a6639adecd68e2d6221179f10c4b60be5957513a7dcc81074",
+      "physicalPages": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-21-24.png",
+      "sha256": "f7ad5b0000322ab8538ca6c73efef773d187b328cfca65878546fabbe0dce480",
+      "physicalPages": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-25-28.png",
+      "sha256": "64f74420df4d8a91fbd270521f9a478fc4d3434660fd6aa928b054d2bbd89d83",
+      "physicalPages": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-29-32.png",
+      "sha256": "0b99cb739208375a3d88b77ad1a2982451dc6b6b40801a9c2278149cb52ff53c",
+      "physicalPages": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-33-36.png",
+      "sha256": "50c189a6abf5759a6ddf1a6e84e0d1fe26afd924fa7907adfbd6a9fadba7786b",
+      "physicalPages": [
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-37-40.png",
+      "sha256": "e3429bc5b6ceb29b1108ef83a19a90bc2897281e2266247b9629f7e84a75bd2b",
+      "physicalPages": [
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-41-44.png",
+      "sha256": "0e62f6aff30a95442ecc603508a186ac756429047a1c98067ef001b2e6ba770c",
+      "physicalPages": [
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-45-48.png",
+      "sha256": "e9698fa840d0825bbaba6619b9e843b3076c4bd2c47ecc57f88cc7e8d4dfee96",
+      "physicalPages": [
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-49-52.png",
+      "sha256": "78587968550676c102e5dc36b2acb1a6766973b395aa1147955b88fffd9161c3",
+      "physicalPages": [
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/native-sheets/pages-53-54.png",
+      "sha256": "0bf18e8ae86e00412d70a6b0d7d56b8117b4817e8eee085eeb68c8cc7a17b0a7",
+      "physicalPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "kind": "whole-book-contact-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/contact-sheet.png",
+      "sha256": "dc733772c8c1842e877e718492ba7151890262eda4c617e1e5c7dc5650d3ca00",
+      "physicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-01-04.png",
+      "sha256": "967a4eeccf0e7acdd5f7df75cfab697ffb3368a12f6f2e8d34f6c684621880b8",
+      "physicalPages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-05-08.png",
+      "sha256": "ad92457e795fbfea7d23225d9d8bd45eff28766d9c3803fcb57ca3639660eab3",
+      "physicalPages": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-09-12.png",
+      "sha256": "79adb91813cdb5a18717829f1398ad7923ecebeeaca8ffed15df15a1aa4ea5ae",
+      "physicalPages": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-13-16.png",
+      "sha256": "e4e83e83a6df19703c79867db405314f34949ace009975fa9f4bbf71a365f005",
+      "physicalPages": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-17-20.png",
+      "sha256": "420c33bb2b72747b7168ce5bbf5c198ae271c01f55777a7831d162eb475c9cd5",
+      "physicalPages": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-21-24.png",
+      "sha256": "02a6a09bf62aa3f78671440aa9219ff2b8dff5d40a64904b92a7bbc7fde12165",
+      "physicalPages": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-25-28.png",
+      "sha256": "6a9df1f0366c8ff3adca5a0262aec85556d477c439aedad88fe14ff2c86b5d22",
+      "physicalPages": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-29-32.png",
+      "sha256": "12405be08c0d28281ab946dcf2683c128c0c4bdb0d3ce07e7d7032449370d34e",
+      "physicalPages": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-33-36.png",
+      "sha256": "bc3c1314e9aa9ccd9670c81bd2fd6c817b74a532a9a00f3edbfdb48ce40ef58d",
+      "physicalPages": [
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-37-40.png",
+      "sha256": "23254c49c977d578521673dd8b96c7ec723a30bdf127dadd6452daa5628054e8",
+      "physicalPages": [
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-41-44.png",
+      "sha256": "58e2cb91837f74c52c43f45b9c7b5d02cc71d8b6fa4b5d259490635a071e1417",
+      "physicalPages": [
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-45-48.png",
+      "sha256": "3291c0957ab3b55774cec8db147a236d49262777ecb9ecdc51530dd4d5aa4bd5",
+      "physicalPages": [
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-49-52.png",
+      "sha256": "c26c1cb2b3d2185571437d4fd50210ef6332962642a731175d352bce30fa8cf7",
+      "physicalPages": [
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/native-sheets/pages-53-54.png",
+      "sha256": "e8992572dd1c169587399bde984597c067ff186147875a5bc620eea82fa6fa80",
+      "physicalPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "kind": "whole-book-contact-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/contact-sheet.png",
+      "sha256": "965d656478555fe7824d723e55785f03762955fdcefe7f2b2ec29d1abefb1bcc",
+      "physicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-01-04.png",
+      "sha256": "4fc79344838eafe5ef0c5b3d0452eac0dd1bf18976b56a3be9498447179d6c88",
+      "physicalPages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-05-08.png",
+      "sha256": "c4fe942f7260e5cd77fca42805d9870c187d7ad7d5e63be1a6906b3beaf12f3b",
+      "physicalPages": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-09-12.png",
+      "sha256": "65bfbd6c4bbc169b2f570dda15c7765df5b3d4c698c39d5f63cb44fe5c405064",
+      "physicalPages": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-13-16.png",
+      "sha256": "11f698964b29ba1732dca89bd2b606164255534308d0488982de432b46b7b44b",
+      "physicalPages": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-17-20.png",
+      "sha256": "b5d8dfa1fc2caeb7a9cfe4af6d80992c39c378bfc3054412a18ba0c997bed8ac",
+      "physicalPages": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-21-24.png",
+      "sha256": "00eae50bbfeb0b9fadad85a23d1f022d7c504e944846ed3ae8cd083814ce1728",
+      "physicalPages": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-25-28.png",
+      "sha256": "3e7eaf452e7b84224ccc1a1f8f230f0c56c932e545109b553edd5ccac55dbfa4",
+      "physicalPages": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-29-32.png",
+      "sha256": "a00f9a9c3ff9530c31c8e054db0e93e49e400f8d8c4f77e402f98fb97215180a",
+      "physicalPages": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-33-36.png",
+      "sha256": "91d8ac29bf0bf6d6dbf2ac2c2589956981d5e484c72b4687499632f9865a25b6",
+      "physicalPages": [
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-37-40.png",
+      "sha256": "b0e0d3f16eb3e96f1f82a20d8b3a2614162f56cfd215892921a467ab65835cf9",
+      "physicalPages": [
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-41-44.png",
+      "sha256": "0d5e06634183211160a0631deea88ebe56605f27a26429135477bd56304df1a9",
+      "physicalPages": [
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-45-48.png",
+      "sha256": "775b5d8f25d19e6ec336c64eb35b2f395950603f165701d5bf4aa44787fdcc81",
+      "physicalPages": [
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-49-52.png",
+      "sha256": "066e8db87e999c717f259d68916eeb0b0767da2d7fb5ea1f490e57224e073a6d",
+      "physicalPages": [
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "kind": "native-size-2-by-2-sheet",
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/native-sheets/pages-53-54.png",
+      "sha256": "4a2067419038a82c9d993ea06e23dd585b5c8e7fb2d1d06d3f6487d02e0f1c68",
+      "physicalPages": [
+        53,
+        54
+      ]
+    }
+  ],
+  "originalPageProofsDisplayedInNativeSheets": [
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 1,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-01.png",
+      "sha256": "d97eb13229ad3f65531c0416432541ffaa2e60df2e430d420638caf3b78f8236",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 2,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-02.png",
+      "sha256": "8179e8b93d0b3aaa808c00d9357d926d309d7b570b2f198f6b3eda729b23796c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 3,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-03.png",
+      "sha256": "5dbe9ee132342796905f6f7edafcfbc2e4d9300886bf74de25ec523ffbc53b57",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 4,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-04.png",
+      "sha256": "763a3ae80e768d51ef61c5ba37aaebd83a3ce7f3cb30b35cc1a3337dbbe923d8",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 5,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-05.png",
+      "sha256": "b02269d3ea5d5a2b3accb79adeae0801474fd7ca5507c5378959e5e2125df55d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 6,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-06.png",
+      "sha256": "b0ad7efc4d6ab7e5403cdfabf88728ebc456f77facc2b883ee56defb1fdc2793",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 7,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-07.png",
+      "sha256": "08f0791dfcfbcb4ec1d81fb10e633a3dab1cbaba21794863ab9d23d267216bd9",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 8,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-08.png",
+      "sha256": "8c7cbae8b86d5a25c119380ecc1006551a898c483fd13c43a775f7108014a9ba",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 9,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-09.png",
+      "sha256": "4c00cd7512c28d115846d97552de562eda85d7a450450f33b39992f79cf95183",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 10,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-10.png",
+      "sha256": "245c92216e0cd647bdda48591ed128a0e236df0fb363f7adf1fec3f558aa764e",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 11,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-11.png",
+      "sha256": "e27bb425d962f5dac8bb68173fa9f20cc7cc72793596efbc7681ad92d565323b",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 12,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-12.png",
+      "sha256": "422c01a4da2246711109d8b417c679d934a51d6d52fadb8d8aead79cbc3ad244",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 13,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-13.png",
+      "sha256": "019eb81c16c15d5b750f49bc2a416cbbc80299783c4f051ae4bb789fe6d997d5",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 14,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-14.png",
+      "sha256": "8c59c811121b7da7725705a55d9b1da11da0eeffd681fcdb09be642143c83ca8",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 15,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-15.png",
+      "sha256": "f51c626d0efb22dcfb7ef24b226e5ce26d56d9fec4b3db931d49dae1fe2ca7fc",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 16,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-16.png",
+      "sha256": "70bb1812f699626baa7b9e98ce1abc338bcde1c672ebca99916aaee8a03e98f7",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 17,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-17.png",
+      "sha256": "e28c0ed82feeaaaa9ce8a7921ffb7bdd458e7db8897becfed5366fe8e8899b06",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 18,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-18.png",
+      "sha256": "82e8d8f4bbdaefdeda6f6e8dfe345febdbf19afa1a7a6c2754e3118684989c8a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 19,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-19.png",
+      "sha256": "2532770de66f7e76c258ab88dd7fb414e21d870b8bbc6b4fdea0cb4a9cccdf7a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 20,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-20.png",
+      "sha256": "c4b8a865748deb54a242a688ab215fabd59e774fb65d30bbc94c90785b807dab",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 21,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-21.png",
+      "sha256": "cac163ef4474b824bc54ad328d6f7f32d8711d87f0e20734a0f907a9e0b283f4",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 22,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-22.png",
+      "sha256": "dd90945e69194c6f8345912203def7e6b79d2907f07835a7b83521ef62b7c807",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 23,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-23.png",
+      "sha256": "89f9377bd091dabb2c8b6be4d3c5187931f6599b60f72b46bdf54079c70b3922",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 24,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-24.png",
+      "sha256": "28a27fd0fa7bdb94a96faeaa24967535e25849effd73855f224c033ba2ede089",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 25,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-25.png",
+      "sha256": "8ff657ee4842edf5a50e781f73f32247db2f0ea8707557c2beb26a30b00c7740",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 26,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-26.png",
+      "sha256": "aa18962079d922ce5ec696715aa1983f1596e27fe47ed258529455dc9ddc8e3f",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 27,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-27.png",
+      "sha256": "11e0944b11247c29d0a4738c5b25d8e3832b9dcac6a2918abdbf16682c975f4f",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 28,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-28.png",
+      "sha256": "98750dfa964d484aa2b20826277cf7a06bdd7365afa4a7c8c918ccb9777f95bb",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 29,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-29.png",
+      "sha256": "ed59c5da840d30a9ef128376048eb7c24ce036e3565ed41b7d592bfdb72edda9",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 30,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-30.png",
+      "sha256": "35e9914326338cc7ed7a7a59d95ca0187439d9b017e00f59ff075f6adc40518f",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 31,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-31.png",
+      "sha256": "a2919e485f229fb0cba5e047585c02a5fe32f472d44862e9933ea33762f9c8a9",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 32,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-32.png",
+      "sha256": "9b4f51df80bb7a7921533e6028283d2888d11d0cf72b442b51f4c7cf4e8bfaed",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 33,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-33.png",
+      "sha256": "174bc0314d520138af22f03072deac18e813303d85eab119d4901a48ed5d0ebb",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 34,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-34.png",
+      "sha256": "1704d18876b25bb42d899d130ad4a343a67cb85fb8f10bbd8d7d78374403dd93",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 35,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-35.png",
+      "sha256": "345a259886ac95036f4c23347e399c6f9b1e47092b6ade1122e894c5ef914f3d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 36,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-36.png",
+      "sha256": "28a3164b4c21233091f24f3815a44de0fcc3502e8eeea6b3d82bdd68d6cd13ae",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 37,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-37.png",
+      "sha256": "f1a2fed190747a8b42ec79bbad57756a4dffb3e8122114ceedd5063aa6ba32c5",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 38,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-38.png",
+      "sha256": "d9bb9a63ede75d1665916338647de3bc6d0012baf95fc3f2205675f9650b07e5",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 39,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-39.png",
+      "sha256": "b3e0b165e6ca20de61ac4ce9e02250a346172662d4fce8ce494dc412027ae68a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 40,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-40.png",
+      "sha256": "39e13d5edd46adb27b6a81eeb4e3e509dc39ce3a7a4389900416a652de73dff7",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 41,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-41.png",
+      "sha256": "55112730a38820f439e82adc6f96587ef6d421e71850f0f979be0b9e5b75d986",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 42,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-42.png",
+      "sha256": "1036a1c1fab4e0ed78e82ea339ddd6974475acb0fb9e15e8c4e1b6e6eda27acd",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 43,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-43.png",
+      "sha256": "9077307fc8930a424f566440d14b130ba9ace224c398ded3e49e1acb6e3ca5a4",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 44,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-44.png",
+      "sha256": "59cf5883f91b26636f0aa53ac4367a28c967064fb4976df3e82393d794b78634",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 45,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-45.png",
+      "sha256": "379845c4fcf03158e71b58758abb485c7dd73a8b1f424a5c6f7c0e3c728ea0b1",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 46,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-46.png",
+      "sha256": "daf1f41bc60a4fc2ffa32f8db3800829584f7550c0a588e7177659ff844fe0b9",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 47,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-47.png",
+      "sha256": "b32f8ecb0a4f213d35211dc0415dd3e339da231f6c1f3f9c1b2d3a1218c54532",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 48,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-48.png",
+      "sha256": "d214790420f807be8156d92f89b68bce9d11073f97babca7f148eb031f3ee5ba",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 49,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-49.png",
+      "sha256": "5a9ad206962b96da934ace21ede9df3e7e2b6dbf88bc8f7e6025945ea8bb082c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 50,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-50.png",
+      "sha256": "d4932e2548e27ed2dce488198f141fc22938ee34195c652fcdad9678b49f1da0",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 51,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-51.png",
+      "sha256": "eb24806b28fe434eac734ff1015ac48a18db6d39a926f43f43429d0285087709",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 52,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-52.png",
+      "sha256": "78fde8374bfeba5f149fc1f2201a38ba5b0cf530f1cc58f6f719707ab4f18047",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 53,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-53.png",
+      "sha256": "d6faf2ecf43fc2c80129158af13057d5ee54bc3b24b70cf70b47d5523ab49a48",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "daytime",
+      "physicalPage": 54,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/daytime/page-54.png",
+      "sha256": "68458cae6ea66319220591b710fdbace7e67108b1788a10c4e230f1df4998ad2",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 1,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-01.png",
+      "sha256": "aac68c472d1c20902a8d51e5cfd3ba0ed513a740c348b75d4ff24e8190f3f80a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 2,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-02.png",
+      "sha256": "58b384e6f3eac44102dd547baa5bf2b9f49bf505594ce05d157d1d1ed6fccdef",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 3,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-03.png",
+      "sha256": "c18a605d090a4004c7cd61e3f15e39d896235a2eb703fbb2e92153be16225282",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 4,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-04.png",
+      "sha256": "c0c72803e733a7f7b53c62bd57ae5babdc482a94f84b780fec225c5d2bc99110",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 5,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-05.png",
+      "sha256": "8dec1cc4f82ad9f989b30d32db056f1582dc040a88e33026e97c1114d6d47fe2",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 6,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-06.png",
+      "sha256": "ca0cf28d21ed4dc7eb292b3cfd2d54a1bd17eda0b3200ecac249d22a75b90024",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 7,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-07.png",
+      "sha256": "47bbfb5df1c4d287bacd3ddf3b964cc7c17363ef37650666dfb2a55b930c1273",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 8,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-08.png",
+      "sha256": "26bafd72f6eca981453083f71916376d1f08f5b5b255348da790970652bdcfe8",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 9,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-09.png",
+      "sha256": "8c57a7a0f8d7bc1c7e8a40dacdf6d5ac3bce12f984e39727fe728146e36f9d28",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 10,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-10.png",
+      "sha256": "94a8fb2989b5369caebc46857509a5ef102bec2645562e99045df4368da62b53",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 11,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-11.png",
+      "sha256": "3ad0a96c9af56e1d40b09613adb1d9a3894a5f869179698032e20ba6ff67fb49",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 12,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-12.png",
+      "sha256": "cdb59f0a17464987e905a1341896641323378ad90f6899a4ebf0c30457ff5339",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 13,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-13.png",
+      "sha256": "b4b44bc08fd301faecb33fce565818e4bae37fb40c4782a5fef6abdde2e4524e",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 14,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-14.png",
+      "sha256": "391083aeec58b0ebd413624682219fceab40906ec8e1ac2bef406f3f01af6bdd",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 15,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-15.png",
+      "sha256": "52ddd18fc33b539fac1f1c1dda5540886e01673e42c2d7593d32c84a4fd9334c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 16,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-16.png",
+      "sha256": "03cf1da9942b52a950ac2b853c7fca39bd5769a4fca57c8afda7f3f4bf58835b",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 17,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-17.png",
+      "sha256": "ad63013bd6542223a4e22e3b545a646dfa8315902655244e0b507ca458fa2338",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 18,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-18.png",
+      "sha256": "a5a1398bfb695dd282d6142342db5fcd4680c00cb8007893b9bc27d05975f8ef",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 19,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-19.png",
+      "sha256": "e5d287bc8e1d14fd5e2b2eedaa2cc62baa70fef92466975af1b11e41b8274754",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 20,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-20.png",
+      "sha256": "142bfb2259cf494e7bf3cdc065860b7d63a616e1141fdc438b2efb46d3f2e303",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 21,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-21.png",
+      "sha256": "3acec62e4a82521ffee82e1da5c8c645db60a210606eac5449dac5f96d3c7df0",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 22,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-22.png",
+      "sha256": "fe7ebb6fe2c860dcdab5f2101d782b12e372b3bb11144b17ad299a49390af23e",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 23,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-23.png",
+      "sha256": "5958dd22a2354457df259a696eca62942c50330cc8308021205231b868e79631",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 24,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-24.png",
+      "sha256": "f749c8e038d29c5220de5fced302be8b3f1172eb2e9093108882a250f6b9764d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 25,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-25.png",
+      "sha256": "bdfe750e0dbf9418f13a59d4c4e9f1913fd702c06b0b720d95bf173cbdb38375",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 26,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-26.png",
+      "sha256": "601f20c93464f68d5b9ea76db496d5430ec8b7b6a4d79e193d721f3cc8a7961d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 27,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-27.png",
+      "sha256": "f7d8f75a9d7fae5f48389728c80520627451ee859989919d89c495cd83487aff",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 28,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-28.png",
+      "sha256": "672ca2949139ed0d41f8faa40d373ebae8ffb66bc3895065593a2b0f175c0129",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 29,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-29.png",
+      "sha256": "55741194c4df78401f21897eabf2160f7e96f4e36e7b265ac30bda48dcf0d9e2",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 30,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-30.png",
+      "sha256": "47038e548b28c5a6bb48b06d51164436aef474595d59738a1bace3ba7210ebc8",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 31,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-31.png",
+      "sha256": "1e13d5c278e329a8b8832704c3df8c575fb5c88d9fde287b8970f3e79e09050c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 32,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-32.png",
+      "sha256": "9194f3d002070dbc660f044ce1a360f5ad3f7013013c94f0cee1a43fb871e550",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 33,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-33.png",
+      "sha256": "baac2415d1517ce66eed88e6bed4067bb880f0353bb1336288831f7e832e4f64",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 34,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-34.png",
+      "sha256": "43be75e8e27b4ca7f549c72a318bed3240290991f0d0ba5e26e9877cbbb8076c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 35,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-35.png",
+      "sha256": "85e7ab5b1928f9990497ef6071e00dc02490c140c69e81f893ab3961041b4386",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 36,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-36.png",
+      "sha256": "92215e38b30d6e16a84e4ef6c9e240fa6af0e6c0e46a22a02066ebaa878afd28",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 37,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-37.png",
+      "sha256": "e9ffa05900106f3b6161fc5c805a88b6b0ec14f1cd31a60a58d5859e3267f963",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 38,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-38.png",
+      "sha256": "07852391521a11721d0d39f5803a4047bed835f3f9e4cf84b4204a32e817c23d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 39,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-39.png",
+      "sha256": "9680704b666f63a52614be7fdee50e0c23eabb92a67b595a7569ef6518737672",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 40,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-40.png",
+      "sha256": "3de88f71714b8586ea5950f0b83d0eb2cadbb4801ad75b3790c0fa358d2bc63d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 41,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-41.png",
+      "sha256": "ef685ee4ff66c2fa5623b46fdeeba39b5ea589a65753880f3a6e9a2d8a47b37a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 42,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-42.png",
+      "sha256": "a7cde8c9f8e7356c95c34a9c9edafcfac15d71af4cda691089ee4772c5a7f124",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 43,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-43.png",
+      "sha256": "86d8b414fa3c1e1e391f3268d4afbc1cfd7f6005d982dd65f826cbc480e81ba5",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 44,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-44.png",
+      "sha256": "e682fca078896dec423331d3923eebded7de8929bd86ce76e634539a1b370587",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 45,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-45.png",
+      "sha256": "86d609aa1345e7c3018289ca040d7c6ee2de3ad6c537e144266eebcc1f7579eb",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 46,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-46.png",
+      "sha256": "153ee3a93e12f11be9fa3156c69eec133a6b0fbe79accb72a6b5e1d85213022f",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 47,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-47.png",
+      "sha256": "999bafe86967c154caaf0fd4bdde63c381d19f900e9d579fc2aa11a98cc0ca8c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 48,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-48.png",
+      "sha256": "bf88a4ef93d2ae63a4eab9024a62f9ad7dfc76ca8217f60cd4ea0c6171c384b4",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 49,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-49.png",
+      "sha256": "7d041f6c9fa92552768289f56b0996e339c1a0825560789079258bf21917f899",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 50,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-50.png",
+      "sha256": "cadb00bf76a19ed70db0c1a8c5bf80d6d1cd48f5e45c6e098f4ce34b9f7cfd76",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 51,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-51.png",
+      "sha256": "2085994cefc4e43535bddcac16758a5fc97c189ec28f7fc7a841c917e6433faa",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 52,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-52.png",
+      "sha256": "8b75da72748d4dbf043302f553c46b9538e1e0cd048f5edb4c7da6e7926928a3",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 53,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-53.png",
+      "sha256": "f9bbcc7e6657ac54174a2cbbbc84eb5544ff7b710131c321a9cc49cb2032981b",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "poppler",
+      "appearance": "late-night",
+      "physicalPage": 54,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/poppler/late-night/page-54.png",
+      "sha256": "6c6efb037ee41c1c44d4068e8ae6ba3065864f4247ffc03f2e175b7cd2ecbf2a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 1,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-001.png",
+      "sha256": "f28a5ce2def34c7629b6c9d32186c0bb9e8af403ceaf307c3ea1f25102b59ac3",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 2,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-002.png",
+      "sha256": "d5df3ad110e2c45a6c714e18e40e9b95e3abdd81843890933bab3f3c91b242c7",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 3,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-003.png",
+      "sha256": "375493ec64dab64ae5cd312fc858d3812e90ace689dcb6e484d746bb3771fe35",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 4,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-004.png",
+      "sha256": "989fec64bae93a4ccc9c58d426f1681fe265f0f174c34f66fd5bfa9dc2989f71",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 5,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-005.png",
+      "sha256": "36bac535c56f92a20b58aa31ed3cf5bd90117a3ebf6809dc69d6ca41f31c9d24",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 6,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-006.png",
+      "sha256": "6e3d3defecc5cbc1d54a5f86a013956f1a2936b2849bc455f3f1cd490bb18ed6",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 7,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-007.png",
+      "sha256": "6d2f33867f2d0de283e2bd4db7898bc87bc32965302c8529ebe8c726daf8ac33",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 8,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-008.png",
+      "sha256": "e5b08c1199556c2c60279da1e735567078d914d767690073e443105f009a7ef7",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 9,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-009.png",
+      "sha256": "ff06d1e6b3586b927249deb6361c6746ab8dd5dc9ae90c57807f0d6602c71009",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 10,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-010.png",
+      "sha256": "057083566721f4597fd33954e6dc04753492620e2b806855214731cf28761c7f",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 11,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-011.png",
+      "sha256": "812de5bf00a9fa7c315ec6460d8249a0ec42ae1c3a3007a5cf2ef7155e9a0700",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 12,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-012.png",
+      "sha256": "de9392bd621f1e23e6611336e64d28892714d837db415b5b8608d05f5181f4da",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 13,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-013.png",
+      "sha256": "67c60bdefae1ee3537d48a00d093f1ecf4544c7b864472c7a632cda17094a11d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 14,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-014.png",
+      "sha256": "fdaf83c868209ad922a8cf152f6ad54523a5c9e67ca5ded6da5d71dd79d7395c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 15,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-015.png",
+      "sha256": "a978f143b39aeb788c092a1b30158d4050174f33a7223fef8e4754bd8c251dae",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 16,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-016.png",
+      "sha256": "6bae828153cf10dd344c27a19776b74139978797af0a4145dda2cf324f74f47a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 17,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-017.png",
+      "sha256": "0947015d1441924e532f01b8ce8ba7254b29813cdc73f4fede58ead118cccf9c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 18,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-018.png",
+      "sha256": "8e7293b5ed708be3f7b5fb8f8b9d7780d047677df36959db37bce9f9a9f183bb",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 19,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-019.png",
+      "sha256": "61f61235d1071a899427d4e5e71fec619669f494935fa7c8da2c4cbcf5993471",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 20,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-020.png",
+      "sha256": "081661dde26eb9a1292f1b0e804e6d3939caf33e842079562d4cf96a9eb3410e",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 21,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-021.png",
+      "sha256": "13e6beda405e4e20eaaf80c93681ccd6ea1bc856446c7d1dbd1b7df3bd8803fd",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 22,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-022.png",
+      "sha256": "4be43075fb5027d9be09039ec708aaffc1fbe10cc8d2fc4a3ef8858e9c64a55d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 23,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-023.png",
+      "sha256": "0041e93676124cf780a15c779c5106cbfdfb690e8ce788a931b6afd106b0830e",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 24,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-024.png",
+      "sha256": "c228b4101f3db4e616a14e0034dbf356f6fdccc2663df613e9612ebfec6d6b4d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 25,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-025.png",
+      "sha256": "544f498b7a3717d67b97bcaabb8d41a19c077335ac42e76516a593bb3436b89c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 26,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-026.png",
+      "sha256": "4451b42b2ef0dfaeef9602a29b0df432a5498794504d16a8807e42832df67226",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 27,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-027.png",
+      "sha256": "5efd302966a09c885b6cd1df564f000b5f28a275c53f1617035607b00750a7ba",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 28,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-028.png",
+      "sha256": "08ef82ba82aadfc404fa344827dff4155b5e24fd57b22a0a44e5ecd77096530c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 29,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-029.png",
+      "sha256": "ab7eed35714f388f71ad674405fbfa5fcd4c5cbf5442b6530377ca37752b1c54",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 30,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-030.png",
+      "sha256": "76b6c7063d13929498df830410b4928d2b3d7fc07225d8903068da5d512635e5",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 31,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-031.png",
+      "sha256": "25e1e1d3ae8eba0067ae2405c8e8fd4c260d6511762f4a9a1f8e00fc814e1d40",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 32,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-032.png",
+      "sha256": "c4351be70af746e160f3024d3d1969ad2fe1f63e3fb1a926cd655cec29071ced",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 33,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-033.png",
+      "sha256": "174c31ac99648185a15031544d692eaf5897961e2471bc5f63239a0e5f67753c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 34,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-034.png",
+      "sha256": "42dce22df6b4947561902dc8bc8e94bb527a08707144fa1acf83eee8a441cc80",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 35,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-035.png",
+      "sha256": "06d03179cb67c68485d5edc752c378894611bb70a16a794d742bdffa40083225",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 36,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-036.png",
+      "sha256": "0711f6ab395f9b0af230255743b918062faa9f7e9f7391187945fee2b9cf5705",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 37,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-037.png",
+      "sha256": "a49278ca43f54e684a9222561959ccb1a75074f18ebac40b39d51d16498d8ed0",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 38,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-038.png",
+      "sha256": "bbf8ddc0b2886068297f0958b0c2661269b7e3c4b5a24f09ffa60ec0670fbd9f",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 39,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-039.png",
+      "sha256": "64a28b6232c20dbd4cbf8ed8c28b76162ce759f48c258a53825927ba3cde6c70",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 40,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-040.png",
+      "sha256": "fc133045c60b63752c527e686f6e043067688fe8abaeae55f91d2f2eb464adb6",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 41,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-041.png",
+      "sha256": "5a3a989b7c099c7e07562e44b8c48fc1119173e0ca5791f936be227ace3c6f29",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 42,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-042.png",
+      "sha256": "8a1581cc2282e6c267f8211d31f88dbd16bb4ae1762b0682190be03d71930eff",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 43,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-043.png",
+      "sha256": "59dc0a05091c094b0e4a9f75616166d4891dfe0c2cb1fdfcf29e2c8d1921cafe",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 44,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-044.png",
+      "sha256": "ea06b9bc5d3bc933dc1266bc82bce0b8ab9d245aeed55547d007c208994f814b",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 45,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-045.png",
+      "sha256": "96c1228b2d151a1e7232f3fab2a681fb9a9b96776ae6eff7bcf26f6ad89eebd1",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 46,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-046.png",
+      "sha256": "9488ed82b121ad7b94d4ecbbc4c1e4eef5cb197a72c48a847be7aaa713734289",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 47,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-047.png",
+      "sha256": "5462181807112f60b469a237a8db4422ebd5bdb948ab0b42b9d638f080a440ac",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 48,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-048.png",
+      "sha256": "a8f69a40dc63ded7be38439cf7b95d6c16ad7a3c392037ff20647b86a2bae1e1",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 49,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-049.png",
+      "sha256": "6bc364b92d46287373d0f372969cafc6a2c660688758d7b98d117bfc8dcf8f23",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 50,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-050.png",
+      "sha256": "0ff1cd3f11b13803fa1886be00aa5ae43dab383004b67beb468819794691bdf0",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 51,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-051.png",
+      "sha256": "c41e022ca7bfe0972cf2b48213e9c2efb25ebb556b7c03a663d332817b55ecb3",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 52,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-052.png",
+      "sha256": "353f9bc6d700c81c47840d80ab7f1f4584a778d2260449f3ea9ba633aab6ad44",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 53,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-053.png",
+      "sha256": "d63376fbca84156686784214a5023f930d436a0ee0a3314dcdc6c29e02316a0c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "daytime",
+      "physicalPage": 54,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/daytime/page-054.png",
+      "sha256": "bbb92bcf479d2df67fe30e5718fa4e1149ea7fcd683c75790766df1b5b50cee0",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 1,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-001.png",
+      "sha256": "b76c9cc14cf870b6e71ceb18db48b48a9693c3da90fcc56551b3f2b33f8d3ba9",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 2,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-002.png",
+      "sha256": "0595e7fd4875d8d2b6ee7ad7c7cbe8e5c7ed91e4ffbf1aecc43028f5cab889d2",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 3,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-003.png",
+      "sha256": "6961f94410fb3171f895b60fb771b0673e97682338eb4766824dbba1752b54ae",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 4,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-004.png",
+      "sha256": "112592929b683193f63b11f560fbc6764584e77c3c2f97a22ec0960669d46368",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 5,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-005.png",
+      "sha256": "b646756b5668d3e1a50123e56519c54504519a6dbd444d7149cb8849cc9a2f1c",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 6,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-006.png",
+      "sha256": "0b32cb9358c52c7bbaf8201d7d9eb07f08b3082f0e764c187a1e258526803ad3",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 7,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-007.png",
+      "sha256": "6a2f2a0b1b954d217f14a50fda78482218e5d61ce3138b05b5b3f397b4b26d74",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 8,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-008.png",
+      "sha256": "80268d64b0853b186de1db447846684eece77bc0a53c162ac55e3fc41526a56f",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 9,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-009.png",
+      "sha256": "56a8ed0dfe336d05158b3ee058af3857ba4a8cff83e32d37a05f20209da30dea",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 10,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-010.png",
+      "sha256": "6d49276d005185cddc943ded90a7e727c70fdd1f3a855b38256419cbdee138a3",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 11,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-011.png",
+      "sha256": "e274199eafc6fe1d013433eb0d413d90a4323ccc8a3e934346048ef49d8d909a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 12,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-012.png",
+      "sha256": "484251845831a0cf1cf6d0a40231af3568930308ce977b58a76bfad3ec265dff",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 13,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-013.png",
+      "sha256": "c107ad424375f9991718537283ac4e3c9e944eecf30b12e817f769d9950732a3",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 14,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-014.png",
+      "sha256": "01287cf645835d673306aa045d5976bf0bfaa98861426c7b2fadce478b7670f2",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 15,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-015.png",
+      "sha256": "861fd26defc77bd57c0bda40d590fbaada0ebed6742c9f9709dfc3092f47cd80",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 16,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-016.png",
+      "sha256": "fa9c95bdc449d6ddf52ca62af3c908dca0d5de0cdc5dbd6b120ccff4179e305a",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 17,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-017.png",
+      "sha256": "41dbe0c2cea5c24d3c99e17142e3263bd5ec89d5245084d1f8da852b3caaccb2",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 18,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-018.png",
+      "sha256": "eb1038ef274cfc16741dd204dfadb55394f7fb7be7c8a858e5182d519c4e0b15",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 19,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-019.png",
+      "sha256": "fe8aa3f7494776372cf6d2d906d80870778a16946f6ffd5607ef59f7b70c99ec",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 20,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-020.png",
+      "sha256": "3991d852a224d4b44aa80f24aec5214cd8229269bffeea6f88f0d5632c72e0b5",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 21,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-021.png",
+      "sha256": "e477029c71d185ace5b1d957e93c6b7db71dfd2b80c0ab4cd231ef30f5d9e264",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 22,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-022.png",
+      "sha256": "e835918fba419b38cbe9a786486a6654f3090ca053aeb39b43069bc9606386ae",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 23,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-023.png",
+      "sha256": "2930ce486652d0de559debcc40e5a78a322ff8ab1affa8be32d2afdf56814251",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 24,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-024.png",
+      "sha256": "54823257b145ec7dcc228bbfd4d76797908e52d27d380334bc829e7463def4f4",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 25,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-025.png",
+      "sha256": "366257b9fbd12051becd4c32dc6ed95e0fd3b4279a014052332236030b0b01ff",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 26,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-026.png",
+      "sha256": "45c41a70345a75dbd49e617b29f3ecd8ba30f30edce774ffd105c798fa6dc89d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 27,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-027.png",
+      "sha256": "cc506c269d4151f627a28f9939f6ce4c46f406e9f9da0f3c16a958dc76d4f324",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 28,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-028.png",
+      "sha256": "2b2386931af82a3bb246713138d734b97ed4316b23d9df8e49c35912bc0d705e",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 29,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-029.png",
+      "sha256": "611cf7d6c840530a982f6914efdec9afac1a7e6344947acc89b7f40742d87c26",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 30,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-030.png",
+      "sha256": "67faeb0ef7a125f5a0d8edef22e508c5180a80dd77b7349f50078ea7d50226b4",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 31,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-031.png",
+      "sha256": "bc10a6962c43bb78090ba63336b4d74dcfa6fe82253b05edfcd74e376f93b498",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 32,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-032.png",
+      "sha256": "dd541f817e14aaf928458fdad6948628377cb0690f1826dbb1e5bffeb7d7258e",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 33,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-033.png",
+      "sha256": "e54e85e0071060a0ff0d7b770887bde8f2b5f52cfe0c230c36e06626e129adb2",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 34,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-034.png",
+      "sha256": "3287d1d13bf919fc0e1dd58034e28af1ea93683e7663774fa60702d4aa6b9e49",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 35,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-035.png",
+      "sha256": "49c4028606971afee2bf39405e06ee2d91a52bc1ec4d2dc968d2914cfbb3200d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 36,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-036.png",
+      "sha256": "6c73ec54498271656d68ffefbeb258d52b3ee1f20785fd11f83178d433df10f2",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 37,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-037.png",
+      "sha256": "614f0a9571ddb940385e88f5da5442658817dbf1fe692e6c260a9731371cf18b",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 38,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-038.png",
+      "sha256": "615467a8b610e4eb6eca626edb8e9ffe2241e8b158bea577be650106a999c325",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 39,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-039.png",
+      "sha256": "9d73ba032e9ef49babfa6dce948fa6eb301bc1561f3c1ba5cdc30df79c349ce8",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 40,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-040.png",
+      "sha256": "3c0362e483898d74a6ebb0c2d78368b4ebf21875f06b7e5ef5991dfed3bf98d7",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 41,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-041.png",
+      "sha256": "7ff4fd692e3f859a2868de93f807604a5ff15105a8eff1265c26e8e017d5582e",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 42,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-042.png",
+      "sha256": "67aac8adc91cce00911b1e04960a524fe925ab1e9782789d338fd7dfbcb2de40",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 43,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-043.png",
+      "sha256": "83a0f1ef4103f7ee98177b48d79a73a16bf003185abf4a8a257e7783e89c9f01",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 44,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-044.png",
+      "sha256": "e6b10832755406604c73b04100ab5c508ce2956df32a01888bdf5d824d4f986d",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 45,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-045.png",
+      "sha256": "5239ada8830923b74f30a1edef310d951189395745d58f93c220e984a7b7a1de",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 46,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-046.png",
+      "sha256": "72768612729cb7b55684cb53138242febcf99bfc4f44c1eb522b87415be023df",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 47,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-047.png",
+      "sha256": "13655ac8ac2bd21f83b3bc2c347405bbcc7a52d4a2e69acfd2f34d7995a52432",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 48,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-048.png",
+      "sha256": "0265819589ed46f6e1c5d27be8d1b03c3de4194b4fff930c0e7d8a62d9e76929",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 49,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-049.png",
+      "sha256": "e66a806aea94e33e6c92e9dac957572afaa612b76b80d4544c1d96b463469c3b",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 50,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-050.png",
+      "sha256": "956fb41f19f3ce7b3f957326cc486ebc94db8c9f62abceb2e4159b40ae6595c5",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 51,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-051.png",
+      "sha256": "2f16a3e562a1692c3077baa57bd77adbe09f9ec992bc8433ebca6030ad4dad40",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 52,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-052.png",
+      "sha256": "8e73cb2bfdc9ada81af39661490164f1cd3c6ff4c6f05ec913e4bfa813ac1e00",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 53,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-053.png",
+      "sha256": "a7b19c77fb1c4070cdd4a42f612b95de1ed62263b0b558efab87929d5e1f3822",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    },
+    {
+      "renderer": "pdfkit",
+      "appearance": "late-night",
+      "physicalPage": 54,
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/proofs/final-r2/pdfkit/late-night/page-054.png",
+      "sha256": "c38207751a886098c9ac45a6a583339265c5ce97c2efd616f17e22ece27d91b0",
+      "inspectionMethod": "native-size page pixels displayed unchanged within the inspected 2-by-2 sheet"
+    }
+  ]
+}

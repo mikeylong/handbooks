@@ -1,0 +1,573 @@
+--- previous/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf
++++ candidate/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf
+@@ -9,7 +9,7 @@
+ Review
+ Handoff
+ Michael Long
+-October 7, 2026 | Version 2.1.2
++October 7, 2026 | Version 2.1.3
+ --- PDF page 2 ---
+ ii
+ Orientation
+@@ -174,15 +174,10 @@
+ the Figma button and the running app use different radii, record which
+ version the prototype should follow and why. A model should not settle
+ an ownership decision by silently blending the sources.
+-Keep the answer out of the prompt
+-Use foundations, components, the configurator and source assets as
+-starting context. Keep completed review layouts, solution prompts and
+-implementation answers beside the exercise for later comparison. An
+-answer key supplied at the start prevents you from seeing which review
+-hierarchy Claude would propose from the starting screen.
+-The starter retains its original source pages. Work in a duplicate or
+-separate project. Record the input filenames and the destination so
+-another reviewer can tell which result belongs to this run.
++Start with the Velori configurator
++Start with Velori's design system, configurator and product assets.
++Explore and refine your Review and Cart screens in Claude Design, then
++compare your result with the supplied completed example.
+ Chapter checkpoint
+ You have a brief, named starting material, a non-default fixture, and a
+ recipient or review audience. The completed answer has not entered the
+@@ -233,19 +228,18 @@
+ page. Attach licensed fonts separately when the source only references a
+ font family. Record any substitution. Keep the system private during the
+ trial and confirm the selected system before starting a product project.
+-This walkthrough explored files in a separate trial/ directory inside its
+-isolated system project. The UI offered team publication for new-project
+-use; private selection from a separate product project was not tested. An
+-organization default may belong to a different product.
++Confirm that the intended private system can be selected from your
++product project before generation. An organization default may belong
++to a different product.
+ Inspect the resulting system's colors, typography, control shapes,
+ selection marks, product photographs, and one representative
+ component. Compare a generated starting screen with the source at the
++same viewport. An extraction can preserve colors while losing
++component anatomy or asset composition.
+ CLAUDE DESIGN FIELD GUIDE
+ 2. BRING YOUR SYSTEM INTO CLAUDE DESIGN
+ --- PDF page 13 ---
+ 7
+-same viewport. An extraction can preserve colors while losing
+-component anatomy or asset composition.
+ Bring in implementation context
+ When the source is a working React library, open its project in Claude
+ Code and use the native /design-sync command. Supply the
+@@ -258,29 +252,23 @@
+ Arial/Georgia stacks differed from the Figma route's Arimo/Lora
+ families. The comparison did not repeat the full connected journey. Its
+ choices survived navigation, but they reset after a page reload.
+-CLAUDE DESIGN FIELD GUIDE
+-2. BRING YOUR SYSTEM INTO CLAUDE DESIGN
+---- PDF page 14 ---
+-8
+ Figure 2
+ Code-first Review
+ Bounded code-first comparison. Changing Amber to Mint retained Graphite, Simple and
+ Carry bag. The source inspection identified reused Velori components; this view alone
+ cannot prove component reuse.
+-Keep detailed file selection and runtime adaptations in the package's
+-supporting material. The main reader should know what is being
+-imported, why the selected source matters, and which gaps remain.
++CLAUDE DESIGN FIELD GUIDE
++2. BRING YOUR SYSTEM INTO CLAUDE DESIGN
++--- PDF page 14 ---
++8
+ Inspect the returned system and generated starting screen before
+-exploring the new review.
++exploring the new review. Record the imported files, source decisions
++and remaining gaps in the package's supporting material.
+ Correct the smallest relevant gap
+ If a selected choice uses the wrong mark, identify the source component
+ or reference and ask for that correction. If imagery is missing, repair the
+ asset input before judging the layout. If the system is from the wrong
+ organization, stop the generation and choose the intended destination.
+-CLAUDE DESIGN FIELD GUIDE
+-2. BRING YOUR SYSTEM INTO CLAUDE DESIGN
+---- PDF page 15 ---
+-9
+ CLAUDE DESIGN / CHECK AND CORRECT THE STARTING SCREEN
+ Compare this starting screen with the supplied Velori configurator.
+ Check the brand, heading, choice groups, expression menu, selected
+@@ -299,13 +287,13 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 2. BRING YOUR SYSTEM INTO CLAUDE DESIGN
+---- PDF page 16 ---
+-10
++--- PDF page 15 ---
++9
+ CHAPTER 03
+ Explore design directions
+ Compare different ways to help the shopper review and edit.
+---- PDF page 17 ---
+-11
++--- PDF page 16 ---
++10
+ Ask for alternatives that differ in how the person completes the task.
+ Three copies with different colors do little to expose a useful decision.
+ Compare information hierarchy, image prominence, editing behavior,
+@@ -341,8 +329,8 @@
+ Essential choices and actions remain usable
+ CLAUDE DESIGN FIELD GUIDE
+ 3. EXPLORE DESIGN DIRECTIONS
+---- PDF page 18 ---
+-12
++--- PDF page 17 ---
++11
+ Operate each alternative. A promising composition may hide a confusing
+ Back action or erase choices when the shopper edits. Compare the same
+ fixture so the layout difference is visible.
+@@ -351,8 +339,8 @@
+ B · Dedicated review
+ CLAUDE DESIGN FIELD GUIDE
+ 3. EXPLORE DESIGN DIRECTIONS
+---- PDF page 19 ---
+-13
++--- PDF page 18 ---
++12
+ Figure 3 (continued)
+ C · Guided checks
+ Compare the editing approaches using the same fixture. A edits in place; B returns to
+@@ -371,8 +359,8 @@
+ appear sooner."
+ CLAUDE DESIGN FIELD GUIDE
+ 3. EXPLORE DESIGN DIRECTIONS
+---- PDF page 20 ---
+-14
++--- PDF page 19 ---
++13
+ Preserve rejected directions as comparison evidence. Ask Claude to
+ refine the chosen direction by name. A selection record prevents later
+ feedback from accidentally combining all three approaches.
+@@ -383,14 +371,14 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 3. EXPLORE DESIGN DIRECTIONS
+---- PDF page 21 ---
+-15
++--- PDF page 20 ---
++14
+ CHAPTER 04
+ Refine the design
+ Use conversation, targeted comments and direct editing for distinct
+ changes.
+---- PDF page 22 ---
+-16
++--- PDF page 21 ---
++15
+ A first generation establishes a direction. Refine the selected screen until
+ its hierarchy, content and interaction make the task clear. Keep the
+ fixture and selection rationale visible while changing the design.
+@@ -417,8 +405,8 @@
+ showed the new heading.
+ CLAUDE DESIGN FIELD GUIDE
+ 4. REFINE THE DESIGN
+---- PDF page 23 ---
+-17
++--- PDF page 22 ---
++16
+ Figure 4
+ Targeted heading correction
+ A targeted comment asks for the specific heading “Check your configuration”. Reloading the
+@@ -430,8 +418,8 @@
+ feedback-delivery failure, not proof that the design request was rejected.
+ CLAUDE DESIGN FIELD GUIDE
+ 4. REFINE THE DESIGN
+---- PDF page 24 ---
+-18
++--- PDF page 23 ---
++17
+ Edit directly for a quick visual
+ adjustment
+ Use the canvas's direct editing controls for a local alignment, size,
+@@ -445,8 +433,8 @@
+ documented fallback when the native editor cannot save the change.
+ CLAUDE DESIGN FIELD GUIDE
+ 4. REFINE THE DESIGN
+---- PDF page 25 ---
+-19
++--- PDF page 24 ---
++18
+ Figure 5
+ Unsupported direct editing
+ The direct editor warns that this file does not support automatic edits. In the trial, Save
+@@ -463,8 +451,8 @@
+ decision record rather than a transcript of every prompt.
+ CLAUDE DESIGN FIELD GUIDE
+ 4. REFINE THE DESIGN
+---- PDF page 26 ---
+-20
++--- PDF page 25 ---
++19
+ Chapter checkpoint
+ The selected design has a structural refinement, a verified local
+ correction, and either a saved visual edit or a recorded editor limitation
+@@ -474,14 +462,14 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 4. REFINE THE DESIGN
+---- PDF page 27 ---
+-21
++--- PDF page 26 ---
++20
+ CHAPTER 05
+ Build the connected
+ experience
+ Make the adjacent screens behave as one shopper journey.
+---- PDF page 28 ---
+-22
++--- PDF page 27 ---
++21
+ Develop the surfaces needed to experience the selected direction. For
+ Velori, the configurator, accessory details, review and cart share the
+ same four choices. Each surface should make its place in the journey
+@@ -506,15 +494,15 @@
+ Review, Edit, Add to cart, Back and Retry an observable result.
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+---- PDF page 29 ---
+-23
++--- PDF page 28 ---
++22
+ Figure 6
+ Browse Dock
+ Retained choice
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+---- PDF page 30 ---
+-24
++--- PDF page 29 ---
++23
+ Figure 6 (continued)
+ Selected Review
+ Dock details shows Dock without changing the selected Carry bag. The selected Review
+@@ -529,8 +517,8 @@
+ does not place an order.
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+---- PDF page 31 ---
+-25
++--- PDF page 30 ---
++24
+ Show the robot image, finish, face, expression color, accessory and
+ quantity one on the confirmation. Keep a snapshot of the reviewed
+ choices so later configuration changes cannot silently alter the cart item.
+@@ -542,20 +530,19 @@
+ If the staged unavailable accessory is selected, require another accessory
+ or None before adding. Payment, shipping, taxes and order submission
+ are outside the task.
+-The October 6 author trial ended at configuration confirmation. The cart
+-requirement is an October 7 exercise revision. Both the React sample and
+-standalone offline answer key demonstrate the cart endpoint. The
+-current editable Figma answer key shows static Review and Cart frames;
+-the earlier Claude Design screenshots keep the original trial scope. No
+-new Claude Design generation trial is claimed.
++The React sample and standalone offline answer key include Add to cart
++and Cart confirmation. The editable Figma answer key supplies static
++Review and Cart frames. The Claude Design screenshots demonstrate
++configuration and review interactions; the offline answer key shows the
++cart endpoint.
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+---- PDF page 32 ---
+-26
++--- PDF page 31 ---
++25
+ Figure 6A
+ Cart confirmation
+-Added to cart. The extended offline answer key retains Graphite, Simple, Amber and Carry
+-bag with quantity one. This cart step was added after the recorded Claude Design trial.
++Cart confirmation in the offline answer key retains Graphite, Simple, Amber and Carry bag
++with quantity one.
+ Add a recovery state
+ When an image is unavailable, keep the configuration summary visible.
+ Explain what could not load and offer a useful recovery or editing action.
+@@ -567,8 +554,8 @@
+ The four choices are retained
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+---- PDF page 33 ---
+-27
++--- PDF page 32 ---
++26
+ State or transition
+ Design requirement
+ Review to edit
+@@ -605,8 +592,8 @@
+ real missing resource.
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+---- PDF page 34 ---
+-28
++--- PDF page 33 ---
++27
+ Figure 7
+ Unavailable selection
+ Image error fixture
+@@ -620,8 +607,8 @@
+ isolation and still break the journey's vocabulary.
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+---- PDF page 35 ---
+-29
++--- PDF page 34 ---
++28
+ Chapter checkpoint
+ You can complete configure, details, review, edit and add to cart.
+ Selected values remain consistent. The unavailable state and narrow
+@@ -630,13 +617,13 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 5. BUILD THE CONNECTED EXPERIENCE
+---- PDF page 36 ---
+-30
++--- PDF page 35 ---
++29
+ CHAPTER 06
+ Review with people
+ Observe the task, resolve confusion and preserve the selected decisions.
+---- PDF page 37 ---
+-31
++--- PDF page 36 ---
++30
+ Review the prototype as a task. Ask someone to configure a robot,
+ inspect the summary, change one choice, browse an accessory, return
+ and add the configured robot to the cart. Ask the reviewer to check that
+@@ -668,8 +655,8 @@
+ activation worked for the navigation actions. A fresh recipient opening
+ CLAUDE DESIGN FIELD GUIDE
+ 6. REVIEW WITH PEOPLE
+---- PDF page 38 ---
+-32
++--- PDF page 37 ---
++31
+ also verified radio-arrow selection and retained that change after reload.
+ These checks support a task review; they do not replace observing
+ another person.
+@@ -677,16 +664,16 @@
+ Narrow Review
+ CLAUDE DESIGN FIELD GUIDE
+ 6. REVIEW WITH PEOPLE
+---- PDF page 39 ---
+-33
++--- PDF page 38 ---
++32
+ Figure 8 (continued)
+ Summary and actions
+ At 390 × 844 pixels the selected review keeps the summary and actions reachable. The lower
+ view retains Graphite, Simple, Amber and Carry bag.
+ CLAUDE DESIGN FIELD GUIDE
+ 6. REVIEW WITH PEOPLE
+---- PDF page 40 ---
+-34
++--- PDF page 39 ---
++33
+ Record observations and decide
+ Observation
+ Decision record
+@@ -717,13 +704,13 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 6. REVIEW WITH PEOPLE
+---- PDF page 41 ---
+-35
++--- PDF page 40 ---
++34
+ CHAPTER 07
+ Hand off to Claude Code
+ Give the implementation owner the selected design and its behavior.
+---- PDF page 42 ---
+-36
++--- PDF page 41 ---
++35
+ Choose this route when the next job is software implementation. Deliver
+ the selected direction, the working prototype, the maintained
+ component source and the decisions that affect behavior. The recipient
+@@ -756,8 +743,8 @@
+ The standalone export embeds the scripts and product assets. Its Retry
+ CLAUDE DESIGN FIELD GUIDE
+ 7. HAND OFF TO CLAUDE CODE
+---- PDF page 43 ---
+-37
++--- PDF page 42 ---
++36
+ reloads bundled data and therefore cannot demonstrate a failed network
+ request.
+ Figure 9
+@@ -777,8 +764,8 @@
+ that affect the task.
+ CLAUDE DESIGN FIELD GUIDE
+ 7. HAND OFF TO CLAUDE CODE
+---- PDF page 44 ---
+-38
++--- PDF page 43 ---
++37
+ Detailed package hashes, runtime adapters, full configuration
+ combinations and storage tests belong in supporting engineering
+ checks. Apply them when the recipient's implementation needs those
+@@ -792,14 +779,14 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 7. HAND OFF TO CLAUDE CODE
+---- PDF page 45 ---
+-39
++--- PDF page 44 ---
++38
+ CHAPTER 08
+ Continue in Figma when
+ needed
+ Inspect editable output and restore the design relationships the team needs.
+---- PDF page 46 ---
+-40
++--- PDF page 45 ---
++39
+ Choose this route when the team needs editable Figma work for further
+ design, library maintenance or review. Figma may also have supplied
+ the starting foundations. Returning to Figma is a destination decision,
+@@ -814,39 +801,29 @@
+ separate page or working copy. Record the captured URL, viewport and
+ design revision so the recipient knows which prototype the frames
+ represent.
+-The October 6 trial captured the selected Review into editable layers,
+-then restored Velori Brand, Product Preview and Primary Button
+-instances. It rebuilt the repeated summary row and outlined secondary
+-action as local components and reapplied the source text styles. The
+-original screen had 22 styled text nodes, 10 instances and 65 nodes with
+-variable bindings. It used Arimo and Lora, with the source Product style
+-restored to 27px.
+-The October 7 correction directly edited that Figma continuation.
+-Review now shows Add to cart, and a Cart frame shows the robot image,
+-Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart
+-item and Continue configuring. Each frame has 24 styled text nodes, 10
+-instances and 70 nodes with variable bindings. Both retain Arimo, Lora
+-and the 27px Product style. The Figma frames have no prototype
+-connections or choice-state wiring. Continue design there, or build and
+-test those relationships before calling the answer key an interactive
++After capture, reconnect the source components and restore their text
++styles and variables. For Velori, check the Brand, Product Preview and
++Primary Button instances, Arimo and Lora, and the 27px Product style.
++Make repeated summary rows and secondary actions into components.
++The supplied Figma answer key contains editable Review and Cart
++frames. The frames have no prototype connections or choice-state
++wiring. Build and test those relationships when the recipient needs an
++interactive Figma prototype.
++CLAUDE DESIGN FIELD GUIDE
++8. CONTINUE IN FIGMA WHEN NEEDED
++--- PDF page 46 ---
++40
++Figure 10
++Review
++Cart confirmation
++Editable Figma Review and Cart frames. Review offers Add to cart; Cart shows the robot
++image, Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart item and
++Continue configuring. Both frames retain Velori instances, text styles and variable bindings.
++They have no prototype connections or choice-state wiring.
+ CLAUDE DESIGN FIELD GUIDE
+ 8. CONTINUE IN FIGMA WHEN NEEDED
+ --- PDF page 47 ---
+ 41
+-Figma prototype. The correction does not establish a new Claude Design
+-generation trial.
+-Figure 10
+-Review
+-CLAUDE DESIGN FIELD GUIDE
+-8. CONTINUE IN FIGMA WHEN NEEDED
+---- PDF page 48 ---
+-42
+-Figure 10 (continued)
+-Cart confirmation
+-Editable Figma answer key corrected on October 7. Review offers Add to cart; Cart shows the
+-robot image, Graphite, Simple, Amber, Carry bag and quantity one, with Edit cart item and
+-Continue configuring. Both frames retain Velori instances, text styles and variable bindings.
+-They have no prototype connections or choice-state wiring.
+ Inspect separate kinds of fidelity
+ Check
+ Evidence
+@@ -864,10 +841,6 @@
+ Editable layers do not automatically preserve the source component
+ library or prototype wiring. Reconnect the required relationships and
+ document what was rebuilt. Code Connect can supply implementation
+-CLAUDE DESIGN FIELD GUIDE
+-8. CONTINUE IN FIGMA WHEN NEEDED
+---- PDF page 49 ---
+-43
+ context when mappings are maintained; it is not a substitute for
+ inspecting the received file.
+ Use Figma plan features only when the chosen deliverable requires
+@@ -883,13 +856,13 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 8. CONTINUE IN FIGMA WHEN NEEDED
+---- PDF page 50 ---
+-44
++--- PDF page 48 ---
++42
+ CHAPTER 09
+ Run the guided exercise
+ Complete the design loop and the handoff your recipient needs.
+---- PDF page 51 ---
+-45
++--- PDF page 49 ---
++43
+ Use the Velori starting materials to explore a review experience. Keep
+ the completed Store example out of initial generation context. Compare
+ the answer only after selecting and refining your own direction.
+@@ -923,8 +896,8 @@
+ the recipient needs that destination. Complete its own checks.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 52 ---
+-46
++--- PDF page 50 ---
++44
+ Keep a useful record
+ Record the chosen route, source files, Design project, selected direction,
+ decision rationale, corrections to hierarchy, content or interaction,
+@@ -933,10 +906,9 @@
+ include a React sample and standalone offline answer key that both
+ reach Add to cart and Cart confirmation. The current editable Figma
+ answer key includes static Review and Cart frames with the same four
+-choices and quantity one. The recorded author trial is prepared for
+-human review; it does not claim that a separate reviewer has completed
+-the task. A complete transcript is less useful than a short record that
+-explains why the design was selected and what remains uncertain.
++choices and quantity one. A complete transcript is less useful than a
++short record that explains why the design was selected and what remains
++uncertain.
+ Completion item
+ Required result
+ Starting context
+@@ -965,16 +937,16 @@
+ a flattened screenshot an editable native result.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 53 ---
+-47
++--- PDF page 51 ---
++45
+ Chapter checkpoint
+ You have a reviewed interactive prototype and a recipient-usable
+ handoff. Any chosen implementation or Figma continuation has a
+ separate completion record.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 54 ---
+-48
++--- PDF page 52 ---
++46
+ Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further
+ reading.
+ Appendix A: Brief and
+@@ -1009,8 +981,8 @@
+ authored source and imagery use the declared MIT license; referenced
+ CLAUDE DESIGN FIELD GUIDE
+ APPENDIX B: SUPPORTING ENGINEERING CHECKS
+---- PDF page 55 ---
+-49
++--- PDF page 53 ---
++47
+ fonts and icons retain their own notices. Font family names in a Figma
+ file are not bundled font software.
+ Further reading

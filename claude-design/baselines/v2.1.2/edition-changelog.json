@@ -1,0 +1,35 @@
+{
+  "version": "2.1.2",
+  "previousVersion": "2.1.1",
+  "summary": "Prompt labels and the starting context and handoff are clarified.",
+  "items": [
+    {
+      "classification": "Correction or clarification",
+      "section": "Prompt examples in chapters 1–5 and 7",
+      "title": "Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt.",
+      "whatChanged": "Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt.",
+      "why": "Each label names the task and destination; the prompt text is unchanged.",
+      "sources": [
+        {
+          "url": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/",
+          "authority": "Approved prior edition and exercise",
+          "title": "Claude Design v2.1.1"
+        }
+      ]
+    },
+    {
+      "classification": "Correction or clarification",
+      "section": "Starting context; guided exercise; workflow diagram alt text",
+      "title": "Clarify the code-first route and name Claude Code at handoff.",
+      "whatChanged": "Clarify the code-first route and name Claude Code at handoff.",
+      "why": "Exclude both completed Review and Cart implementations from baseline context, matching the sample.",
+      "sources": [
+        {
+          "url": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+          "authority": "Approved prior edition and exercise",
+          "title": "Claude Design v2.1.1"
+        }
+      ]
+    }
+  ]
+}
