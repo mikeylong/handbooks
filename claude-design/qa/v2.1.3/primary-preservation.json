@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "comparison": "Exact 14 protected-file hashes, branch/HEAD/remote-main and six unrelated dirty paths match the original private-candidate baseline.",
+  "before": {
+    "head": "e20ecfa704c3cf292e6889688e7179d345d2bea5",
+    "remoteMain": "e20ecfa704c3cf292e6889688e7179d345d2bea5",
+    "branch": "main",
+    "status": " M .gitignore\n M production-ai-engineering/automation/README.md\n M production-ai-engineering/automation/automation.toml\n?? automation/\n?? claude-design/Velori_Coding_Exercise.md\n?? claude-design/samples/catalog.json\n",
+    "files": {
+      ".gitignore": "2c18a9efca6eb30114ea88cd22e8f1dd320b87bbf192c7b4f58d9ae7b55dc1ff",
+      "production-ai-engineering/automation/README.md": "1b3edf166f90e90114c9ec6485e4257a8e9fb22c22140024e46ce71186056c10",
+      "production-ai-engineering/automation/automation.toml": "ce7a1ad75de0d62cd19aea6ec87657b52c9393dc62d0bfda1118866f6a521c19",
+      "automation/weekly-collection-review.md": "579a329b518f2cbf444bacfcf830ceca8f400ac348b89153041bb3e86de7e1d2",
+      "claude-design/Velori_Coding_Exercise.md": "00db343861204238bcf8d1b7b93f52940f90e57881ca738355c75c9ada6bbc7d",
+      "claude-design/samples/catalog.json": "7cc4c4a17ec38db2762c08d7f7074a9cde1b0ca9376097e54af57b025af2007e",
+      "claude-design/Claude_Design_Field_Guide_Source.md": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+      "claude-design/source/Claude_Design_Field_Guide_Source.md": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+      "claude-design/release-manifest.json": "3ce56c550bce34ef1f30fda47c60df306c80b334b7a3f8ff342301bb3cde619d",
+      "claude-design/pdf-config.json": "0be1ea5649d81c7e7866a9d9166e19e6d3019da619b8b4359b94f96b58d59863",
+      "claude-design/publication.json": "3298021c8cb6f5bfc003da4c1f2daefdfe153a1fd5cd33cf86a669d33b54f7aa",
+      "claude-design/screenshot-figures.json": "5c9a427e40fec3b55b9b91bf56405f7934a4aefe79ad59fc5d2cf0de80c7269b",
+      "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03",
+      "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-late-night-r1.pdf": "05f06bf733f60cfe0a6c2d8a9e63589f3d5eac22bfa0dec8edb1b6eee102e78a"
+    }
+  },
+  "after": {
+    "head": "e20ecfa704c3cf292e6889688e7179d345d2bea5",
+    "remoteMain": "e20ecfa704c3cf292e6889688e7179d345d2bea5",
+    "branch": "main",
+    "status": " M .gitignore\n M production-ai-engineering/automation/README.md\n M production-ai-engineering/automation/automation.toml\n?? automation/\n?? claude-design/Velori_Coding_Exercise.md\n?? claude-design/samples/catalog.json\n",
+    "files": {
+      ".gitignore": "2c18a9efca6eb30114ea88cd22e8f1dd320b87bbf192c7b4f58d9ae7b55dc1ff",
+      "production-ai-engineering/automation/README.md": "1b3edf166f90e90114c9ec6485e4257a8e9fb22c22140024e46ce71186056c10",
+      "production-ai-engineering/automation/automation.toml": "ce7a1ad75de0d62cd19aea6ec87657b52c9393dc62d0bfda1118866f6a521c19",
+      "automation/weekly-collection-review.md": "579a329b518f2cbf444bacfcf830ceca8f400ac348b89153041bb3e86de7e1d2",
+      "claude-design/Velori_Coding_Exercise.md": "00db343861204238bcf8d1b7b93f52940f90e57881ca738355c75c9ada6bbc7d",
+      "claude-design/samples/catalog.json": "7cc4c4a17ec38db2762c08d7f7074a9cde1b0ca9376097e54af57b025af2007e",
+      "claude-design/Claude_Design_Field_Guide_Source.md": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+      "claude-design/source/Claude_Design_Field_Guide_Source.md": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+      "claude-design/release-manifest.json": "3ce56c550bce34ef1f30fda47c60df306c80b334b7a3f8ff342301bb3cde619d",
+      "claude-design/pdf-config.json": "0be1ea5649d81c7e7866a9d9166e19e6d3019da619b8b4359b94f96b58d59863",
+      "claude-design/publication.json": "3298021c8cb6f5bfc003da4c1f2daefdfe153a1fd5cd33cf86a669d33b54f7aa",
+      "claude-design/screenshot-figures.json": "5c9a427e40fec3b55b9b91bf56405f7934a4aefe79ad59fc5d2cf0de80c7269b",
+      "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03",
+      "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-late-night-r1.pdf": "05f06bf733f60cfe0a6c2d8a9e63589f3d5eac22bfa0dec8edb1b6eee102e78a"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.3",
+  "scope": "Exact source/PDF and public package bytes, retained approval bindings, two intended captions, complete hosted reader/Markdown body and public routes. Digital visual qualification remains in preserved independent candidate receipts and focused release review.",
+  "source": {
+    "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "52b226cd6a5320a906f5a9785a64ce9fe579b0a20febd6ad803d104a31b6c197",
+    "bytes": 38942
+  },
+  "pdfs": [
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/output/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf",
+      "sha256": "ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7",
+      "bytes": 7127812
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/output/pdf/claude-design-v2.1.3-2026-10-07-late-night-r1.pdf",
+      "sha256": "2604f6368693186b0c5e91efae7392604ea25e60767504a2cf1bd39203a88531",
+      "bytes": 46128133
+    }
+  ],
+  "unchangedPreviousPackageMembers": 124,
+  "retainedPreviousRoutes": 160,
+  "retainedNewRoutes": 25,
+  "retainedTotalRoutes": 185,
+  "retainedExercise": {
+    "edition": "2.1.1",
+    "releaseManifest": {
+      "path": "claude-design/baselines/v2.1.1/release-manifest.json",
+      "sha256": "b37a0384129b6e15f00b12930c5ffdf216538d74aac97fe06fd5656d16c574dd"
+    },
+    "publicationPackage": {
+      "path": "claude-design/baselines/v2.1.1/publication-package.json",
+      "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
+    },
+    "publicationApproval": {
+      "path": "claude-design/qa/v2.1.1/publication-approval.json",
+      "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b"
+    },
+    "exerciseDownloads": {
+      "path": "claude-design/baselines/v2.1.1/exercise-downloads.json",
+      "sha256": "6381ec04c0e9a5caf4f854422fe52c7b0137105a674570fdc7b571da7a059082"
+    }
+  },
+  "figures": 11,
+  "panels": 18,
+  "currentScreenshotRouteChecks": 36,
+  "sampleNativeAndArtworkBytesUnchanged": true,
+  "captionChangesOnly": [
+    "s06a-cart",
+    "s10-figma"
+  ],
+  "currentMarkdownBodyByteIdentical": true,
+  "publishedMainBodyEquivalent": true,
+  "readerTransformations": [
+    "One private review-candidate banner removed.",
+    "Current-edition self-navigation uses canonical links under ordinary approved assembly.",
+    "Existing standard edition-links transform adds target=_blank and rel=noopener noreferrer to 15 unchanged external anchors. Link labels and URLs are unchanged.",
+    "Markdown publication state and source/approved-reader hashes change in frontmatter only."
+  ],
+  "sourceOrPdfRegenerated": false,
+  "standardCollectionOutputFileParity": 383,
+  "publishedMarkdown": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/public-site-final/claude-design/editions/v2.1.3/claude-design-v2.1.3.md",
+    "sha256": "1245a75dfe1773d381ded66a25e651c23509309b41c35ebebb5ecdb64b6b72da",
+    "bytes": 49480
+  },
+  "publicReader": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/release/public-site-final/claude-design/index.html",
+    "sha256": "288f08d28aeb185ea1aa3a1827a111c5481ad7dbbedc3e9fc6e12f603c953434",
+    "bytes": 89235
+  },
+  "publicationPackage": {
+    "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/publication-package.json",
+    "sha256": "f4b9171b848741a9eb16587a434544788aa5e8ca54fe74743cb36ecbf1e1f181",
+    "bytes": 19967
+  },
+  "variantManifest": {
+    "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/pdf-variants.json",
+    "sha256": "16d543409b4e996f37298e04c56877a8aef30ffb7b307cc34892f1d86bf85254",
+    "bytes": 5182
+  },
+  "publicationApproval": {
+    "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/qa/v2.1.3/publication-approval.json",
+    "sha256": "2d4bf20349ff2251132c701094b791d28b58d58c43d0baa75e2be2736003a3ac",
+    "bytes": 5072
+  },
+  "frozenHistoricalReader": {
+    "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/site/retained/claude-design/v2.1.2/reader-snapshot.html",
+    "sha256": "34d4f5b2821732d0c96368000d224af7568d87000bd795db072fe3e64fd83600",
+    "bytes": 90487
+  },
+  "findings": []
+}

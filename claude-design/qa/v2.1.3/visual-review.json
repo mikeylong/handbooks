@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.3",
+  "scope": "Accepted final-r3 digital qualification: all four whole-book contact sheets and eight changed originals inspected fresh; 208 unchanged proofs carry forward only after exact encoded-byte and decoded-pixel equivalence to the prior full-native r2 review. No page shift. Physical printing was not tested.",
+  "pdfs": [
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf",
+      "sha256": "ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7"
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.3-2026-10-07-late-night-r1.pdf",
+      "sha256": "2604f6368693186b0c5e91efae7392604ea25e60767504a2cf1bd39203a88531"
+    }
+  ],
+  "evidence": {
+    "builder-visual-review.json": {
+      "path": "claude-design/qa/v2.1.3/builder-visual-review.json",
+      "sha256": "6038d251f97d2f74fc56b190fa3697b198e49a2ad37794114d187b55b456cb61"
+    },
+    "independent-pdf-review.json": {
+      "path": "claude-design/qa/v2.1.3/independent-pdf-review.json",
+      "sha256": "c1c46a12e35988e3c25725c863c46be6c90c71fea8eeb2a71dfa5add669316c8"
+    },
+    "r2-r3-render-equivalence.json": {
+      "path": "claude-design/qa/v2.1.3/r2-r3-render-equivalence.json",
+      "sha256": "2f448ddb21bea87f34ad91617367372658aac01402e9f7d048361277fc12cad8"
+    },
+    "hosted-browser-review.json": {
+      "path": "claude-design/qa/v2.1.3/hosted-browser-review.json",
+      "sha256": "3755f57cda1aa6a364e6dfa2169250a9ec9416433657419a803e829ddb772618"
+    },
+    "focused-editorial-review.json": {
+      "path": "claude-design/qa/v2.1.3/focused-editorial-review.json",
+      "sha256": "d7042f0e96e14116109cc5d57efaba5ee644e03d8a0f657c796e5f382b3df778"
+    }
+  }
+}

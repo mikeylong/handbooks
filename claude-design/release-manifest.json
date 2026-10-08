@@ -1,18 +1,19 @@
 {
   "title": "Claude Design Field Guide",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "date": "2026-10-07",
-  "pdf": "output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
-  "sha256": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03",
-  "pages": 56,
-  "previous_public_edition": "2.1.1",
+  "pdf": "output/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf",
+  "sha256": "ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7",
+  "pages": 54,
+  "previous_public_edition": "2.1.2",
   "approvalStatus": "approved",
-  "candidate_validation": "qa/v2.1.2/daytime-validation.json",
+  "candidate_validation": "qa/v2.1.3/daytime-validation.json",
   "releaseContract": {
     "kind": "design-exploration",
     "classifiedChangeIds": [
       "C01",
-      "C02"
+      "C02",
+      "C03"
     ],
     "sample": {
       "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
@@ -73,7 +74,7 @@
     }
   },
   "publicationApproval": {
-    "path": "claude-design/qa/v2.1.2/publication-approval.json",
-    "sha256": "3ba0c6f4bf29eee6548cc9ab8a12010368faffca1955790ec042df9e123b597f"
+    "path": "claude-design/qa/v2.1.3/publication-approval.json",
+    "sha256": "2d4bf20349ff2251132c701094b791d28b58d58c43d0baa75e2be2736003a3ac"
   }
 }

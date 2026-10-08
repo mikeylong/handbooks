@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "reviewer": "reader_history_audit",
+  "reviewedAt": "2026-10-08T05:27:21.263911+00:00",
+  "scope": "Independent editorial review of the approved Chapter 1 Velori starting-material instruction, adjacent reader instructions and supplied starter guidance. PDF and browser presentation require separate checks.",
+  "publicationApproved": false,
+  "artifacts": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/candidate/Claude_Design_Field_Guide_Source.md",
+      "sha256": "52b226cd6a5320a906f5a9785a64ce9fe579b0a20febd6ad803d104a31b6c197"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/final-r3/source-r2-to-r3.patch",
+      "sha256": "e1692e9ff4c05cbd17e6c20a841a10a4fa49714f44ec909e3f116ce72cf8680c"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/evidence/reader-history-archive.json",
+      "sha256": "e0a123e609e674653e19492eb69209a4e5eff9e2b62ab46f2a5dd4e3a0b80b35"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-reader-history-cleanup/candidate/screenshot-figures.json",
+      "sha256": "12c32ec81c424143752c9927d66d4a9d549cd37171a1d23343a6bdebc581cd60"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/samples/velori-store/README.md",
+      "sha256": "dc609a574456c7d779674feeefc5893b2a610d86c2033cad183159a774d32835"
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/samples/velori-store/docs/native-baseline.md",
+      "sha256": "7a549cc93578e08e117c40eb08ce3790eb7f4a6137f855e9c71cc552f5314e85"
+    }
+  ],
+  "approvedWording": {
+    "heading": "Start with the Velori configurator",
+    "soleParagraph": "Start with Velori’s design system, configurator and product assets. Explore and refine your Review and Cart screens in Claude Design, then compare your result with the supplied completed example."
+  },
+  "checks": {
+    "approvedHeadingAndSoleParagraphExact": true,
+    "formerHeadingAndBothParagraphsRemoved": true,
+    "chapterOneContextConsistent": true,
+    "starterReadmeConsistent": true,
+    "codeBaselineConsistent": true,
+    "newRequirementBeyondApprovedWording": false,
+    "promptHeadersAndBodiesUnchanged": 6,
+    "illustrativeExamplesUnchanged": 8,
+    "priorDatedHistoryCleanupPreserved": true,
+    "staticFigmaAndMissingPrototypeWiringLimitPreserved": true,
+    "humanReviewRequirementPreserved": true,
+    "nativeScreenshotVersusOfflineCartScopePreserved": true,
+    "realMissingResourceRecoveryLimitPreserved": true,
+    "currentChangelogIncludesStartingMaterialClarification": true
+  },
+  "editorialDecision": "The section now tells the Velori exercise reader what to start with, what to create in Claude Design and when to compare the completed example. The surrounding source-ownership and checkpoint instructions remain consistent. The paragraph adds no general restriction on using existing screens in normal product work.",
+  "findings": [],
+  "limitations": [
+    "Read-only source and supporting-guidance review. No source, captions or sample files changed during this review.",
+    "No new native Design, Figma, sample-app, browser or PDF behavior was tested.",
+    "This receipt qualifies the reviewed private candidate wording; it does not approve publication."
+  ]
+}

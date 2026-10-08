@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "operationKind": "edit",
+  "expectedOutputCount": 2,
+  "outputFormat": "pdf",
+  "invocationCountForCurrentApprovedEdit": 1,
+  "command": [
+    "node",
+    "/Users/mike/.codex/plugins/cache/openai-primary-runtime/pdf/26.904.11930/skills/pdf/container_tools/mark_artifact_operation_started.mjs",
+    "--operation-kind",
+    "edit",
+    "--expected-output-count",
+    "2",
+    "--output-format",
+    "pdf"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "immediatelyPrecedes": "First final-r3 PDF authoring build"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "claude-design-field-guide",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/handbooks",
+    "directory": "claude-design"
+  },
+  "scripts": {
+    "build": "npm run validate",
+    "validate": "node source/test-release-ledger.mjs && node source/test-design-exploration.mjs && node source/test-retained-exercise.mjs && node source/test-prompt-tools.mjs && node source/validate-release.mjs"
+  },
+  "version": "2.1.2"
+}

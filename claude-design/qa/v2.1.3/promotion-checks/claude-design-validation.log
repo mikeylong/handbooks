@@ -1,0 +1,73 @@
+
+> claude-design-field-guide@2.1.3 validate
+> node source/test-release-ledger.mjs && node source/test-design-exploration.mjs && node source/test-retained-exercise.mjs && node source/test-prompt-tools.mjs && node source/validate-release.mjs
+
+Preserved v1.2.0 ledger passed its nine stale/private regressions; explicit successor contract, change coverage, Figma byte pins and import proof passed focused positive/negative fixtures. Synthetic import acceptance is test data, not release evidence.
+Immutable exercise reuse keeps the original native proof/version; unapproved editions, changed artifacts, mismatched approvals and relabeled evidence fail.
+V2 contract and content fixtures passed; wrong hosts/editions, private downloads, missing pins, incomplete classifications and missing reader evidence fail. Publication approval is not tested by these fixtures.
+Candidate CLI isolation passed: the selected candidate validates without publication authority; invalid registry, missing source, approved-as-candidate and stale candidate bytes fail.
+Cart successor fixtures passed: exact archive/page contract, classification coverage, immutable native evidence, archived prototype bytes, original walkthrough checks and Continue/Reset gates. Synthetic cart proof is test data, not publication evidence.
+Companion correction fixtures passed: unchanged starter/standalone answer, new native Review/Cart artifact, current archived React source, pinned validations, truthful retained trial scope and explicit release authority. Synthetic fixture evidence is not publication evidence.
+PASS retained approved exercise identity and authority; wrong editions, relabeled evidence, changed bytes and stale approval/package/download pins fail.
+PASS prompt destinations, source semantics, answer exclusions, and output tool/body preservation; invalid mutations fail.
+{
+  "status": "passed",
+  "edition": "2.1.3",
+  "pages": 54,
+  "chapters": 9,
+  "archive": {
+    "members": 234,
+    "sha256": {
+      "velori-store/velori-design-exploration-starter.fig": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca",
+      "velori-store/answer-key/velori-review-continuation.fig": "b06042b6f7bed6f7d4c0ce5501886bca42cd7e05d776faa3735f7e400b1f462e",
+      "velori-store/answer-key/velori-review-prototype.html": "7d62bb3d5b178db5ed525985133dec5abc3a96399e6dcb3b36df4b3a27886ebe",
+      "velori-store/src/CartConfirmation.jsx": "656e078c7d6e98027d405ce8500e6e275408a606b2dcaf56e0abdf9377b7e283",
+      "velori-store/src/ReviewConfiguration.jsx": "c32747bbb97aaeb6fa9e1a3e1616cd5b6be401c8ac2e6d18419a3e58dc6f0ebf",
+      "velori-store/src/index.js": "a2714a82fa3a4811d38c3f5c823b2dc81b11f9127f247617c305949b9f69d6f5",
+      "velori-store/src/library.jsx": "3a9130f3682d80b69fa8334f7e148a751865dd32b795cb79028c6036e32f03d2",
+      "velori-store/src/main.jsx": "ab9956171f87e77375c12acd498527891f98ec2ed424a779b7777525c15d32a0",
+      "velori-store/src/model.mjs": "8ca43a3bbe5047e321f0ef1ab8a1b1cc6b66499de7caf1c76ac067a0fec05cfc",
+      "velori-store/src/model.test.mjs": "d221f583c281fdf19ccd0204afd8d9f96af186b74b254003e8b1afc79716fe55",
+      "velori-store/src/tokens.css": "f3c1ac263d33aaa92941a617049ef5ce906b55d6fa6ac208b84267165f0abcab",
+      "velori-store/src/velori.css": "665bcb04a96527f349a57838ea5e58957d951cd5d5fade3879ab95fdc715d27f",
+      "velori-store/package.json": "1d90875e5672f12f95ace8b668892c963b092892400019ffcfc5fd2809c12fec",
+      "velori-store/package-lock.json": "e15fff47704cf099e818629649c50934e790cc0607f3060ffb681c918f082ef1"
+    },
+    "bytes": {
+      "velori-store/velori-design-exploration-starter.fig": 13891619,
+      "velori-store/answer-key/velori-review-continuation.fig": 13897149,
+      "velori-store/answer-key/velori-review-prototype.html": 20053993,
+      "velori-store/src/CartConfirmation.jsx": 925,
+      "velori-store/src/ReviewConfiguration.jsx": 2157,
+      "velori-store/src/index.js": 622,
+      "velori-store/src/library.jsx": 7599,
+      "velori-store/src/main.jsx": 8842,
+      "velori-store/src/model.mjs": 3795,
+      "velori-store/src/model.test.mjs": 6423,
+      "velori-store/src/tokens.css": 848,
+      "velori-store/src/velori.css": 14392,
+      "velori-store/package.json": 765,
+      "velori-store/package-lock.json": 61449
+    },
+    "packageVersion": "2.1.1",
+    "lockVersion": "2.1.1",
+    "lockPackageVersion": "2.1.1",
+    "sourceSha256": "47c14af2148a7b72b63ad96058f370a2b2556b53c850ff613158f005c467cc7e"
+  },
+  "trialLimits": [
+    "Human task review has not been completed. The author walkthrough is not usability evidence.",
+    "No new native Claude Design generation trial is claimed; the original October 6 trial retains its recorded scope.",
+    "Figma answer key has static editable Review and Cart frames, with no prototype connections or choice-state wiring. Fresh recipient import and separate-account access testing were not repeated for the standard native export.",
+    "PDFs remain untagged; PDF/UA compliance is not claimed."
+  ],
+  "pdfs": [
+    {
+      "theme": "light",
+      "sha256": "ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7"
+    },
+    {
+      "theme": "dark",
+      "sha256": "2604f6368693186b0c5e91efae7392604ea25e60767504a2cf1bd39203a88531"
+    }
+  ]
+}

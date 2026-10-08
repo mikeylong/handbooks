@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "Computed release hash bindings; exact-artifact qualification is preserved in independent candidate receipts.",
+  "ledger": {
+    "path": "claude-design/change-ledger.json",
+    "sha256": "5e945abeda8fd2ef76c575eca5e06618dd6632d3a20651ff81371838cc0b5636"
+  },
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "52b226cd6a5320a906f5a9785a64ce9fe579b0a20febd6ad803d104a31b6c197",
+    "previousSourceSha256": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e"
+  },
+  "comparisonEvidence": {
+    "source": {
+      "path": "claude-design/qa/v2.1.3/exact-source.patch",
+      "sha256": "0ab3b1759165a721f7f287d574ce7f0b72ff7f6838511f3bcd0cd16769e84383"
+    },
+    "pdf": {
+      "path": "claude-design/qa/v2.1.3/exact-pdf-text.patch",
+      "sha256": "2c7f5aab30fc770bb0a3b79f1eb252345adcd5592364f5b1e17187f76f437b78"
+    },
+    "substantive": {
+      "path": "claude-design/qa/v2.1.3/reader-facing-content.patch",
+      "sha256": "dcb110d789c95995db3caa6d476aec4198d3d397b492460377308af0eea3de99"
+    },
+    "comparison": {
+      "path": "claude-design/qa/v2.1.3/edition-diff.json",
+      "sha256": "90a820ace7adbce53c66b7a5f9c46b849fdf3d11ab6bfd73c651b4795b17a055"
+    },
+    "decision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "17fa598fccd4ba04ef857a21b1451630616ecabe573fc5507c6431ff747329d4"
+    }
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+    "bytes": 97181421,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "f4b9171b848741a9eb16587a434544788aa5e8ca54fe74743cb36ecbf1e1f181"
+    }
+  }
+}
