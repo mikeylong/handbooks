@@ -1,0 +1,898 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-07T23:34:06.276483+00:00",
+  "reviewer": "Independent Codex reviewer /root/parity_final_review with delegated Apple PDFKit visual review",
+  "status": "passed",
+  "candidate": "final-r2",
+  "edition": "2.1.2",
+  "publicationAuthority": false,
+  "baselineCommit": "b728a56a9f8e3613b92e18ab31bd85a4e3915f4d",
+  "scope": "Complete manuscript/tool-destination audit; focused candidate source diff and prompt-guard review; actual generated reader and Markdown body/label checks; complete visual review of both 56-page PDFs with Poppler and Apple PDFKit.",
+  "source": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/Claude_Design_Field_Guide_Source.md",
+    "sha256": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+    "bytes": 40088
+  },
+  "sourceLinesReviewed": [
+    1,
+    482
+  ],
+  "baseline": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/baseline/Claude_Design_Field_Guide_Source.md",
+    "sha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28",
+    "bytes": 40004
+  },
+  "reader": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/site-preview/claude-design/index.html",
+    "sha256": "181cdb8651c1a526f9531a3b48bd48cc485f280635fb73497d1f74f776246c0c",
+    "bytes": 90011
+  },
+  "markdown": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/site-preview/claude-design/editions/v2.1.2/claude-design-v2.1.2.md",
+    "sha256": "2f7a36734ea9cd6d14aadb1d6e0408978535e8321af54be1eb64335d22848013",
+    "bytes": 50614
+  },
+  "index": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/site-preview/claude-design/editions/v2.1.2/claude-design-v2.1.2.index.json",
+    "sha256": "2f6db9dfa0b842495d688e8f5bf351c99e334e722d7e2eb533ac997e1ef3e874",
+    "bytes": 17130
+  },
+  "workflowDefinition": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/source/diagrams/DesignWorkflow.json",
+    "sha256": "aec62b1a66f4c6e31c23640292b12d96d9909a120726747ef6325679213349b4",
+    "bytes": 3371
+  },
+  "promptTools": {
+    "Claude Design": 5,
+    "Claude Code": 1
+  },
+  "promptBodiesByteIdentical": true,
+  "resolvedOriginalFindings": [
+    {
+      "id": "prompt-classification",
+      "severity": "Medium",
+      "sourceLines": [
+        60,
+        123,
+        145,
+        187,
+        231,
+        340
+      ],
+      "status": "resolved",
+      "correction": "Six prose code fences are semantic prompt directives, with five Claude Design destinations and one Claude Code destination. Every original body is byte-identical."
+    },
+    {
+      "id": "cart-answer-exclusion",
+      "severity": "Medium",
+      "sourceLines": [
+        111
+      ],
+      "status": "resolved",
+      "correction": "Both completed Review and Cart implementations are excluded from initial baseline context, matching the sample guidance."
+    },
+    {
+      "id": "tool-shorthand",
+      "severity": "Low",
+      "sourceLines": [
+        26,
+        416,
+        430
+      ],
+      "additionalFile": "source/diagrams/DesignWorkflow.json:141",
+      "status": "resolved",
+      "correction": "Input is named code-first; implementation destinations and workflow alternative text explicitly name Claude Code."
+    }
+  ],
+  "candidateReviewFixes": [
+    {
+      "severity": "Low",
+      "finding": "Initial candidate source frontmatter retained the previous edition number.",
+      "status": "resolved",
+      "evidence": "Final-r2 source and generated outputs consistently identify candidate version 2.1.2."
+    },
+    {
+      "severity": "Low",
+      "finding": "Initial HTML guard accepted correct headings with replaced prompt bodies.",
+      "status": "resolved",
+      "evidence": "The guard now parses each HTML prompt through a semantic chapter and the shared Markdown renderer; a synthetic incorrect-body test rejects it."
+    }
+  ],
+  "guardReview": {
+    "validator": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/audit/validate-prompt-tools.mjs",
+      "sha256": "5f3a63e007aa49232f070e31a2a88ad8d7265ef31fb4961b4d6037a0533de5fb",
+      "bytes": 4154
+    },
+    "tests": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/audit/test-prompt-tools.mjs",
+      "sha256": "a863b9a3936e495cb752d1851ff1a05e6b89a13ab7265de084dca78a0b282d9f",
+      "bytes": 2357
+    },
+    "independentlyReviewed": true,
+    "mutationTestsExitCode": 0,
+    "htmlWrongBodyMutationNowRejected": true,
+    "observedCoverage": "Source semantics, all six expected chapter/tool assignments, task names and bodies, both Review and Cart exclusions, explicit implementation destination; actual generated reader bodies are parsed through the shared Markdown renderer. MD and PDF labels/bodies are checked after whitespace normalization."
+  },
+  "visualCoverage": {
+    "appearances": 2,
+    "pageCountPerAppearance": 56,
+    "renderers": [
+      "Poppler",
+      "Apple PDFKit"
+    ],
+    "allPageContactSheetsReviewed": 4,
+    "nativeSheetsReviewed": 56,
+    "physicalPageRenderReviews": 224,
+    "allPhysicalPagesReviewedAtNativeResolution": true,
+    "roleMap": {
+      "cover": [
+        1
+      ],
+      "contents": [
+        6
+      ],
+      "chapterOpeners": [
+        7,
+        10,
+        16,
+        21,
+        27,
+        36,
+        41,
+        45,
+        50
+      ],
+      "promptPages": [
+        8,
+        15,
+        17,
+        22,
+        28,
+        42
+      ],
+      "imageAndDiagramPages": [
+        4,
+        12,
+        14,
+        18,
+        19,
+        23,
+        25,
+        29,
+        30,
+        32,
+        34,
+        38,
+        39,
+        43,
+        47,
+        48
+      ],
+      "denseTables": [
+        32,
+        33,
+        52
+      ],
+      "appendices": [
+        54
+      ],
+      "references": [
+        55
+      ],
+      "finalPage": [
+        56
+      ],
+      "index": {
+        "applicable": false,
+        "reason": "This handbook has no alphabetical index; the contents/reference map on physical page 6 was reviewed."
+      }
+    }
+  },
+  "frozenImageComparison": {
+    "count": 36,
+    "allByteIdentical": true,
+    "files": [
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/browse-retains-choice.png",
+          "sha256": "b9bb9897d966ca1beb336da5271be3729752664fe982e0fa075c9cf6993290e8",
+          "bytes": 50871,
+          "widthPixels": 400,
+          "heightPixels": 330
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/browse-retains-choice.png",
+          "sha256": "b9bb9897d966ca1beb336da5271be3729752664fe982e0fa075c9cf6993290e8",
+          "bytes": 50871,
+          "widthPixels": 400,
+          "heightPixels": 330
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/cart-summary.png",
+          "sha256": "a9a79115f662fba2ae1b21c4f996faf9eacffc43ac0b49db1aa1ac04fe6c64ce",
+          "bytes": 78813,
+          "widthPixels": 420,
+          "heightPixels": 500
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/cart-summary.png",
+          "sha256": "a9a79115f662fba2ae1b21c4f996faf9eacffc43ac0b49db1aa1ac04fe6c64ce",
+          "bytes": 78813,
+          "widthPixels": 420,
+          "heightPixels": 500
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/code-first-review-verified.png",
+          "sha256": "91ac48b4cbad3e868ff192bfa955524acdac614d53ae7d7364dce859a1cfe7a6",
+          "bytes": 162401,
+          "widthPixels": 768,
+          "heightPixels": 576
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/code-first-review-verified.png",
+          "sha256": "91ac48b4cbad3e868ff192bfa955524acdac614d53ae7d7364dce859a1cfe7a6",
+          "bytes": 162401,
+          "widthPixels": 768,
+          "heightPixels": 576
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/code-handoff-verified.png",
+          "sha256": "1b681b1df65a78ad0745086869e25f0a38d5abaa55912ee46030d2197be5c4aa",
+          "bytes": 63353,
+          "widthPixels": 580,
+          "heightPixels": 325
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/code-handoff-verified.png",
+          "sha256": "1b681b1df65a78ad0745086869e25f0a38d5abaa55912ee46030d2197be5c4aa",
+          "bytes": 63353,
+          "widthPixels": 580,
+          "heightPixels": 325
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/connected-dock.png",
+          "sha256": "54414fec8f326cc965b83af300c84d3601551bb0e4ab28457453ca401c3dd7b3",
+          "bytes": 126854,
+          "widthPixels": 944,
+          "heightPixels": 440
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/connected-dock.png",
+          "sha256": "54414fec8f326cc965b83af300c84d3601551bb0e4ab28457453ca401c3dd7b3",
+          "bytes": 126854,
+          "widthPixels": 944,
+          "heightPixels": 440
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/direct-edit-verified.png",
+          "sha256": "0b64dc28723e359971d37fe111fbf391ec282dc19df442a4ab0ef5b68d0400c2",
+          "bytes": 55701,
+          "widthPixels": 310,
+          "heightPixels": 455
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/direct-edit-verified.png",
+          "sha256": "0b64dc28723e359971d37fe111fbf391ec282dc19df442a4ab0ef5b68d0400c2",
+          "bytes": 55701,
+          "widthPixels": 310,
+          "heightPixels": 455
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/direction-a-verified.png",
+          "sha256": "d9086e52162e346e73e36a22dab567d5c661e7849f4a37654e625adb962bcb6c",
+          "bytes": 164418,
+          "widthPixels": 768,
+          "heightPixels": 576
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/direction-a-verified.png",
+          "sha256": "d9086e52162e346e73e36a22dab567d5c661e7849f4a37654e625adb962bcb6c",
+          "bytes": 164418,
+          "widthPixels": 768,
+          "heightPixels": 576
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/direction-b.png",
+          "sha256": "8c0d2a77f879406d230f266d00653a6a60f524f37f5d1ada04ef908a348b695b",
+          "bytes": 211064,
+          "widthPixels": 1024,
+          "heightPixels": 830
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/direction-b.png",
+          "sha256": "8c0d2a77f879406d230f266d00653a6a60f524f37f5d1ada04ef908a348b695b",
+          "bytes": 211064,
+          "widthPixels": 1024,
+          "heightPixels": 830
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/direction-c.png",
+          "sha256": "29f4653ccc66725675f055875fa8d5719707dc61fdc34ecd0dd7e5fe1915dec5",
+          "bytes": 292581,
+          "widthPixels": 1024,
+          "heightPixels": 830
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/direction-c.png",
+          "sha256": "29f4653ccc66725675f055875fa8d5719707dc61fdc34ecd0dd7e5fe1915dec5",
+          "bytes": 292581,
+          "widthPixels": 1024,
+          "heightPixels": 830
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/figma-cart-confirmation-current-rgb.png",
+          "sha256": "2f6be1a934e79a8d220ad264cff924aab3b3a6114ce528727e55f84e28ac23a0",
+          "bytes": 210522,
+          "widthPixels": 1280,
+          "heightPixels": 720
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/figma-cart-confirmation-current-rgb.png",
+          "sha256": "2f6be1a934e79a8d220ad264cff924aab3b3a6114ce528727e55f84e28ac23a0",
+          "bytes": 210522,
+          "widthPixels": 1280,
+          "heightPixels": 720
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/figma-import-fixture-verified.png",
+          "sha256": "c501ed7b9f5c479105a1299002b6b6f61c87bf8f051b25d0d94508ca16c0fd49",
+          "bytes": 181509,
+          "widthPixels": 768,
+          "heightPixels": 517
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/figma-import-fixture-verified.png",
+          "sha256": "c501ed7b9f5c479105a1299002b6b6f61c87bf8f051b25d0d94508ca16c0fd49",
+          "bytes": 181509,
+          "widthPixels": 768,
+          "heightPixels": 517
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/figma-review-cart-current-rgb.png",
+          "sha256": "5b12899e2189d2040aa315a8b0693f0649481c8be1f0a25c11905bef010346b5",
+          "bytes": 214639,
+          "widthPixels": 1280,
+          "heightPixels": 720
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/figma-review-cart-current-rgb.png",
+          "sha256": "5b12899e2189d2040aa315a8b0693f0649481c8be1f0a25c11905bef010346b5",
+          "bytes": 214639,
+          "widthPixels": 1280,
+          "heightPixels": 720
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/image-error.png",
+          "sha256": "281420e74a4aa62c42a60e5911835ec9f4f373aa28f97aaa462c93d1776e248e",
+          "bytes": 14067,
+          "widthPixels": 272,
+          "heightPixels": 125
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/image-error.png",
+          "sha256": "281420e74a4aa62c42a60e5911835ec9f4f373aa28f97aaa462c93d1776e248e",
+          "bytes": 14067,
+          "widthPixels": 272,
+          "heightPixels": 125
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/mobile-review.png",
+          "sha256": "c561501aed17cfd01b3e379295927246db477afd151a8418768fb76247bc91cd",
+          "bytes": 155545,
+          "widthPixels": 390,
+          "heightPixels": 844
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/mobile-review.png",
+          "sha256": "c561501aed17cfd01b3e379295927246db477afd151a8418768fb76247bc91cd",
+          "bytes": 155545,
+          "widthPixels": 390,
+          "heightPixels": 844
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/mobile-summary-actions.png",
+          "sha256": "40038625545814e1c9537834f3173d116166909d5e36568d0c1a599ec918620c",
+          "bytes": 130873,
+          "widthPixels": 390,
+          "heightPixels": 844
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/mobile-summary-actions.png",
+          "sha256": "40038625545814e1c9537834f3173d116166909d5e36568d0c1a599ec918620c",
+          "bytes": 130873,
+          "widthPixels": 390,
+          "heightPixels": 844
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/selected-review-summary.png",
+          "sha256": "fa506e646752b962206f80780de0c26a07c177540ac8f839dade0189a6120b97",
+          "bytes": 79879,
+          "widthPixels": 400,
+          "heightPixels": 465
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/selected-review-summary.png",
+          "sha256": "fa506e646752b962206f80780de0c26a07c177540ac8f839dade0189a6120b97",
+          "bytes": 79879,
+          "widthPixels": 400,
+          "heightPixels": 465
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/targeted-comment.png",
+          "sha256": "a945fa90fbade8bb510013a31e7efb67fc8a54884e93211762e557a973373967",
+          "bytes": 89610,
+          "widthPixels": 515,
+          "heightPixels": 620
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/targeted-comment.png",
+          "sha256": "a945fa90fbade8bb510013a31e7efb67fc8a54884e93211762e557a973373967",
+          "bytes": 89610,
+          "widthPixels": 515,
+          "heightPixels": 620
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/screenshots/unavailable-choice.png",
+          "sha256": "f6e441edcf565bffcf891cec3e43141e4fe98986e66dedecf2555911f4158a27",
+          "bytes": 59967,
+          "widthPixels": 400,
+          "heightPixels": 306
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/screenshots/unavailable-choice.png",
+          "sha256": "f6e441edcf565bffcf891cec3e43141e4fe98986e66dedecf2555911f4158a27",
+          "bytes": 59967,
+          "widthPixels": 400,
+          "heightPixels": 306
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-01.png",
+          "sha256": "45a4950a0ea2f97e2db2b656a374b127d359b59575677d276e982f9cc3f28268",
+          "bytes": 320210,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-01.png",
+          "sha256": "45a4950a0ea2f97e2db2b656a374b127d359b59575677d276e982f9cc3f28268",
+          "bytes": 320210,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-02.png",
+          "sha256": "85061834917459495362c885405f978b39007b575b217c31c7af4b7bef0f926d",
+          "bytes": 363640,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-02.png",
+          "sha256": "85061834917459495362c885405f978b39007b575b217c31c7af4b7bef0f926d",
+          "bytes": 363640,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-03.png",
+          "sha256": "e33beecf78f3c7efebd28e391a1b69609feae960f87a4293ad9c11bee09d749c",
+          "bytes": 336208,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-03.png",
+          "sha256": "e33beecf78f3c7efebd28e391a1b69609feae960f87a4293ad9c11bee09d749c",
+          "bytes": 336208,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-04.png",
+          "sha256": "2436be42c35e5398f9d0c3b6517f63cbbd66053a503941669fa3beb19e4d10f6",
+          "bytes": 343521,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-04.png",
+          "sha256": "2436be42c35e5398f9d0c3b6517f63cbbd66053a503941669fa3beb19e4d10f6",
+          "bytes": 343521,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-05.png",
+          "sha256": "718e066ccdbc3531ec428591dc4727801b99113b784d865bc2f2fee9f3a97c3b",
+          "bytes": 332641,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-05.png",
+          "sha256": "718e066ccdbc3531ec428591dc4727801b99113b784d865bc2f2fee9f3a97c3b",
+          "bytes": 332641,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-06.png",
+          "sha256": "2bc8eab509f777387d6c69693d0299e2b57b755feeb14b99c62d2a0f1b281d07",
+          "bytes": 353601,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-06.png",
+          "sha256": "2bc8eab509f777387d6c69693d0299e2b57b755feeb14b99c62d2a0f1b281d07",
+          "bytes": 353601,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-07.png",
+          "sha256": "aa5c18546d6090f5299d4f044d427f3a35102710f9d31fcecc32b00bcd65c445",
+          "bytes": 348713,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-07.png",
+          "sha256": "aa5c18546d6090f5299d4f044d427f3a35102710f9d31fcecc32b00bcd65c445",
+          "bytes": 348713,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-08.png",
+          "sha256": "6c40f541db193d8e256da824208545f549030d0e53582c74dcac82d3063628d7",
+          "bytes": 315219,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-08.png",
+          "sha256": "6c40f541db193d8e256da824208545f549030d0e53582c74dcac82d3063628d7",
+          "bytes": 315219,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/pdf/chapter-09.png",
+          "sha256": "d81af04b927f6a5869aaeb054539d3b5947c93d0ab0a50980c8468d23d270411",
+          "bytes": 255720,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/pdf/chapter-09.png",
+          "sha256": "d81af04b927f6a5869aaeb054539d3b5947c93d0ab0a50980c8468d23d270411",
+          "bytes": 255720,
+          "widthPixels": 1200,
+          "heightPixels": 686
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-01.png",
+          "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+          "bytes": 2033631,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-01.png",
+          "sha256": "1797d6b4e1872e69e1ed2d208749e0ff65fe4c30aa6b793593c6e63cbc898a0b",
+          "bytes": 2033631,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-02.png",
+          "sha256": "87ad6f7c1b1c5b105b9a4d829be953b3bc6081030c1186f9c512ff66d1934df5",
+          "bytes": 2032425,
+          "widthPixels": 1660,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-02.png",
+          "sha256": "87ad6f7c1b1c5b105b9a4d829be953b3bc6081030c1186f9c512ff66d1934df5",
+          "bytes": 2032425,
+          "widthPixels": 1660,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-03.png",
+          "sha256": "9954fdf87a553be572e97d604e8cf984ad084015813d601fd57749235bde9023",
+          "bytes": 2090525,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-03.png",
+          "sha256": "9954fdf87a553be572e97d604e8cf984ad084015813d601fd57749235bde9023",
+          "bytes": 2090525,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-04.png",
+          "sha256": "37e24f9373171f59f8a934c47814c3bc2c3234f9b52ba65cc42ed5e60311a1d4",
+          "bytes": 2020828,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-04.png",
+          "sha256": "37e24f9373171f59f8a934c47814c3bc2c3234f9b52ba65cc42ed5e60311a1d4",
+          "bytes": 2020828,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-05.png",
+          "sha256": "0edde223057cba70468756ed2b0f6deb9978bf305c9b68063a636fb9e84d4c65",
+          "bytes": 2066329,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-05.png",
+          "sha256": "0edde223057cba70468756ed2b0f6deb9978bf305c9b68063a636fb9e84d4c65",
+          "bytes": 2066329,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-06.png",
+          "sha256": "bd414cc93774d0b7bcd12c2c344b0c68101cda2f47d46b3cdac2c9fdac8365d8",
+          "bytes": 2245312,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-06.png",
+          "sha256": "bd414cc93774d0b7bcd12c2c344b0c68101cda2f47d46b3cdac2c9fdac8365d8",
+          "bytes": 2245312,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-07.png",
+          "sha256": "4f01b5a3a057fa1e577bdbd8b60896fd5d31686f0f7d0ffaf6cf546eaae80d0d",
+          "bytes": 1944737,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-07.png",
+          "sha256": "4f01b5a3a057fa1e577bdbd8b60896fd5d31686f0f7d0ffaf6cf546eaae80d0d",
+          "bytes": 1944737,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-08.png",
+          "sha256": "cbd8da16323d25c0ffb9376d482395da1e48694cc2e2804893f79799ff024d9f",
+          "bytes": 2102451,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-08.png",
+          "sha256": "cbd8da16323d25c0ffb9376d482395da1e48694cc2e2804893f79799ff024d9f",
+          "bytes": 2102451,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      },
+      {
+        "candidate": {
+          "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/candidate/assets/chapter-art/dark/chapter-09.png",
+          "sha256": "4cdcc14cc9c3214c335a6092d2f019c269d9431dceb1458c940a2f065be456b7",
+          "bytes": 1597771,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "canonical": {
+          "path": "/Users/mike/handbooks/claude-design/assets/chapter-art/dark/chapter-09.png",
+          "sha256": "4cdcc14cc9c3214c335a6092d2f019c269d9431dceb1458c940a2f065be456b7",
+          "bytes": 1597771,
+          "widthPixels": 1659,
+          "heightPixels": 948
+        },
+        "byteIdentical": true
+      }
+    ]
+  },
+  "browserProofReview": {
+    "scope": "Read-only inspection of root-captured private preview screenshots; prompt heading/body wrapping and contrast are clear. Browser operation evidence belongs to root.",
+    "screenshots": [
+      {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/prompt-label-desktop-light.png",
+        "sha256": "0b897ab6e35db80601f58587c12ae6bce682605f10968793386cc2dd140a4aab",
+        "bytes": 117117,
+        "widthPixels": 1280,
+        "heightPixels": 720,
+        "mediaFormat": "JPEG"
+      },
+      {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/prompt-label-desktop-dark.png",
+        "sha256": "a4f61432459cb7eaf2618650c719d02fa4e654fba4540791fc00800ec1fa8e0c",
+        "bytes": 112116,
+        "widthPixels": 1280,
+        "heightPixels": 720,
+        "mediaFormat": "JPEG"
+      },
+      {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/prompt-label-mobile-light.png",
+        "sha256": "1aa58d7bda935b6ed4d1487d67a981b04e36c074f6d3d562694e188b09e0f17a",
+        "bytes": 66931,
+        "widthPixels": 390,
+        "heightPixels": 844,
+        "mediaFormat": "JPEG"
+      },
+      {
+        "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/prompt-label-mobile-dark.png",
+        "sha256": "8b4eb8d5e56cd651057f11c77adfd1892721f81f6596202b131811dee0077908",
+        "bytes": 65266,
+        "widthPixels": 390,
+        "heightPixels": 844,
+        "mediaFormat": "JPEG"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/full-handbook-audit.json",
+      "sha256": "0b6934e1127618d27191314004e335e03c3fd1a82fb441541b256f69eed7b186",
+      "bytes": 3773
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/independent-prompt-output-review.json",
+      "sha256": "d70e26b63ee9175c88f1b230eb05f7c6eb603e80948f8c8d0a5dea11e1e02ebe",
+      "bytes": 7135
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/poppler-visual-review.json",
+      "sha256": "0a3c1960b84c1cf2c23df2a4a8bf2539640ad7a48de6a7b7a49a76eeda2337c4",
+      "bytes": 90457
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/pdfkit-visual-review.json",
+      "sha256": "036c52a59424f057e3e298f73532ad240f405ec462411459ee09a2625dbcb4e9",
+      "bytes": 94402
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/evidence/final-r2/render-inventory.json",
+      "sha256": "e1dc22dfc47dd3b42ca451a58ed7155ce07c87046b739fe6f5a3548982a5857b",
+      "bytes": 33005
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/evidence/final-r2/protected-inputs.json",
+      "sha256": "b474ed873040dc95a78918ee2bc6714afc722b20b1e401478a15b18eba61336c",
+      "bytes": 606
+    }
+  ],
+  "findings": [],
+  "findingCounts": {
+    "High": 0,
+    "Medium": 0,
+    "Low": 0
+  },
+  "limitations": [
+    "Candidate review does not authorize publishing or changing the live 2.1.1 edition.",
+    "No fresh Figma, sample app or Claude Design trial was required or performed; their bytes and carefully bounded historical evidence remain unchanged.",
+    "PDF and generated Markdown body preservation is checked after formatting whitespace normalization; original source prompt bodies are checked byte-for-byte.",
+    "Superseded r1 artifacts are retained but excluded from this final-r2 acceptance.",
+    "This focused review does not requalify unrelated collection books or production hosting."
+  ],
+  "mutationBoundary": "Reviewer wrote QA receipts only under this review directory. No canonical source, worktree, released assets, GitHub, network, browser or publication writes.",
+  "receiptCorrection": {
+    "original": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/focused-review.json",
+    "originalSha256": "6a8f94a9782e4d7bbe037a58f6fd1ddafb7ff2aa20788ed6f453e74198842e72",
+    "scope": "Screenshot metadata only: inspect actual JPEG media format and measured dimensions; files and visual review results unchanged."
+  }
+}

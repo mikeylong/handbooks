@@ -1,0 +1,141 @@
+--- previous/Claude_Design_Field_Guide_Source.md
++++ candidate/Claude_Design_Field_Guide_Source.md
+@@ -1,7 +1,7 @@
+ ---
+ title: Claude Design Field Guide
+ subtitle: Explore, refine, and hand off an interactive product design
+-edition: October 7, 2026 | Version 2.1.1
++edition: October 7, 2026 | Version 2.1.2
+ status: Review candidate, not approved for publication
+ audience: Product designers and product practitioners working with an existing product
+ chapter_art: Frozen approved illustration pairs, remapped to the revised chapters
+@@ -23,7 +23,7 @@
+ | Figma foundations and screens | Select the relevant pages, components, fonts and assets | A visual system and a starting screen |
+ | Existing codebase and component library | Select the frontend library, tokens, assets and baseline behavior | Implementation context for the same design task |
+ 
+-You need access to Claude Design in your intended account and organization. For a Figma route, use a Figma account and a copy you can inspect. For a Code route, use Claude Code and a local project you can run. Download the [Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip); no author-private organization or Figma file is required. Import the supplied native file into your own Drafts when you need to work in Figma.
++You need access to Claude Design in your intended account and organization. For a Figma route, use a Figma account and a copy you can inspect. For a code-first route, use Claude Code and a local project you can run. Download the [Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip); no author-private organization or Figma file is required. Import the supplied native file into your own Drafts when you need to work in Figma.
+ 
+ The walkthrough targets the standalone Design beta at `claude.ai/design/`. Claude also documents Design in conversations, Artifacts and Claude Code. Controls and system migration differ between those experiences. Follow one surface throughout a run, and record which surface you used. See the [current Design guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
+ 
+@@ -57,9 +57,9 @@
+ 
+ Name the person, the action, the problem, and the decisions you want to explore. Identify the behavior and visual identity that must remain stable. Keep payment, inventory, accounts, shipping, and order submission outside the Velori exercise.
+ 
+-```text
++::: prompt Claude Design | Write the design brief
+ A Velori shopper has configured a robot and wants to review the choices before adding it to the cart. Explore alternatives for reviewing that configuration and returning to edit. Preserve the product identity, real imagery, finish, face, expression color and one-accessory rule. End with an explicit Add to cart action and confirmation showing the configured robot, all four choices and quantity one. Keep payment, shipping and order submission outside the exercise.
+-```
++:::
+ 
+ Use a non-default fixture throughout review: Graphite finish, Simple face, Amber expression, and Carry bag. The fixture makes stale imagery or a reset to defaults easier to notice. The chosen design must also work when no accessory is selected.
+ 
+@@ -108,7 +108,7 @@
+ 
+ ## Bring in implementation context
+ 
+-When the source is a working React library, open its project in Claude Code and use the native `/design-sync` command. Supply the component library, styles, tokens, images and usage guidance needed for the configurator. Exclude the completed Review implementation from baseline context.
++When the source is a working React library, open its project in Claude Code and use the native `/design-sync` command. Supply the component library, styles, tokens, images and usage guidance needed for the configurator. Exclude the completed Review and Cart implementations from baseline context.
+ 
+ The bounded code-first comparison used an isolated copy of the earlier code-derived system. It reused eight exported Velori components and preserved the four choices when Amber changed to Mint. Its Arial/Georgia stacks differed from the Figma route’s Arimo/Lora families. The comparison did not repeat the full connected journey. Its choices survived navigation, but they reset after a page reload.
+ 
+@@ -120,9 +120,9 @@
+ 
+ If a selected choice uses the wrong mark, identify the source component or reference and ask for that correction. If imagery is missing, repair the asset input before judging the layout. If the system is from the wrong organization, stop the generation and choose the intended destination.
+ 
+-```text
++::: prompt Claude Design | Check and correct the starting screen
+ Compare this starting screen with the supplied Velori configurator. Check the brand, heading, choice groups, expression menu, selected marks, button and configured product image. Name mismatches and missing source material. Correct the source rule for each mismatch before proposing the new review screen.
+-```
++:::
+ 
+ Keep a before-and-after image when the correction matters to later screens. Regenerate one adjacent surface to check whether the correction carries forward. Do not turn the exercise into an exhaustive audit of every component that the task does not use.
+ 
+@@ -142,9 +142,9 @@
+ 
+ Ask Claude Design to keep the alternatives separately identifiable. Record which files or views were created. Export a copy of any direction you need to preserve before requesting a large change. Current [Design documentation](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) describes alternatives and warns that version history is not available.
+ 
+-```text
++::: prompt Claude Design | Explore three review directions
+ Explore three directions for reviewing a configured Velori robot. A: a compact summary beside the product. B: a dedicated review screen with clear edit links. C: a guided review that groups the choices. Keep the same choices, product imagery and visual language. Make the differences about hierarchy and interaction. Label and retain each direction so we can compare them before refining one.
+-```
++:::
+ 
+ ## Compare the actual views
+ 
+@@ -184,9 +184,9 @@
+ 
+ Explain the behavior and the reason when a change affects the summary, image and actions together. Ask for the result, then inspect the screen and the journey that changed.
+ 
+-```text
++::: prompt Claude Design | Refine the selected review direction
+ Refine direction B. Keep review separate from configuration. Put the four choices in a scannable summary and place an Edit configuration action beside them. On narrow screens, show the summary before secondary product details. Preserve selected values when returning to the configurator.
+-```
++:::
+ 
+ Avoid accepting “fixed” as the result. Follow the affected navigation and compare the selected values yourself. Keep structural changes small enough that you can understand their consequences.
+ 
+@@ -228,9 +228,9 @@
+ 
+ ## Connect the screens
+ 
+-```text
++::: prompt Claude Design | Connect the shopper journey
+ Connect the selected review direction to the supplied configurator and accessory details. Configure opens Review configuration. Edit returns to Configure with the choices retained. Browsing Charging dock details while Carry bag is selected must keep Carry bag selected until the shopper explicitly changes the choice. Add to cart saves the reviewed configuration and opens a cart confirmation with the product image, all four choices and quantity one. Keep the product image, caption and summary consistent across the journey. Editing a cart item and adding it again updates that item rather than adding a duplicate. Keep payment and order submission outside the exercise.
+-```
++:::
+ 
+ Label the primary action Continue in both Configure and Edit; it opens Review with the current choices. Reset fixture restores the starting choices, clears the teaching cart and returns to Configure. Define whether Back returns to the previous surface or always to configuration. A review action should not silently confirm an order. Give Configure, Review, Edit, Add to cart, Back and Retry an observable result.
+ 
+@@ -337,9 +337,9 @@
+ 
+ Include the fixture, navigation destinations, image behavior, responsive priorities and unresolved prototype limitations. Give the recipient the actual selected design rather than all rejected alternatives as equal requirements.
+ 
+-```text
++::: prompt Claude Code | Implement the selected Velori design
+ Implement the selected Velori review direction in this product project. Inspect the existing components, tokens and state ownership before changing code. Preserve the configurator, product assets and four choices. Map the design to the maintained library. Keep configure, details, review, edit and cart consistent. Add the reviewed configuration to the cart with quantity one, retain it after a same-session reload, and prevent duplicate items from repeated activation. Editing and adding again updates the existing item. Do not implement payment or order submission. Explain necessary adaptations and test the interactive journey, keyboard behavior and narrow layout.
+-```
++:::
+ 
+ The tested Share menu offered a local-agent Claude Code prompt, a project ZIP and standalone HTML. The prompt copied successfully and named the selected entry and imported files. The ZIP preserves generated source; its React and Babel scripts require network access. The standalone export embeds the scripts and product assets. Its Retry reloads bundled data and therefore cannot demonstrate a failed network request.
+ 
+@@ -413,7 +413,7 @@
+ 6. Connect configuration, details, review, edit and Add to cart. Confirm that the cart contains the reviewed robot and its four choices. Add an unavailable state and inspect a narrow view.
+ 7. Review the task with someone. Correct material confusion and record limitations.
+ 8. Export the selected prototype and decisions. Verify that the recipient can open them.
+-9. Continue to Code implementation or editable Figma work when the recipient needs that destination. Complete its own checks.
++9. Continue to implementation in Claude Code or editable Figma work when the recipient needs that destination. Complete its own checks.
+ 
+ ## Keep a useful record
+ 
+@@ -427,7 +427,7 @@
+ | Journey | Configure, details, review, edit and cart agree; adding ends with one configured item |
+ | Review | Human feedback, narrow layout and keyboard results are recorded |
+ | Main handoff | The recipient can open the selected prototype and decision record |
+-| Chosen destination | Code or Figma checks match the recipient’s requested deliverable |
++| Chosen destination | Claude Code or Figma checks match the recipient’s requested deliverable |
+ 
+ If a required native step is inaccessible, leave the inaccessible native action incomplete and name the practical action that can unblock the run. Do not substitute a local answer key for a fresh Design output or call a flattened screenshot an editable native result.
+ 
+@@ -471,12 +471,12 @@
+ 
+ # Changelog
+ 
+-**Version 2.1.1 · October 7, 2026.**
+-
+-**Correction or clarification.** Bring the React sample through Add to cart and Cart confirmation, matching the standalone offline answer key. Both runnable examples now follow the existing exercise, including Continue, Edit cart item and Reset fixture.
+-
+-**Correction or clarification.** Correct the editable Figma answer key to show Review with Add to cart and a Cart frame with the robot, all four choices and quantity one. The current frames now represent the existing cart endpoint, with Edit cart item and Continue configuring. They remain static, with no prototype connections or choice-state wiring.
+-
+-[Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip) include the corrected examples. [Editable Figma Cart frame](https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46) records the current static design.
+-
+-Previous edition: **2.1.0 · October 7, 2026**. Daytime PDF SHA-256: `03f12b39c3f94a50578e530c0193abfaf6992d4137ef24a87f2a0bd4b7fb0fa3`.
++**Version 2.1.2 · October 7, 2026.**
++
++**Correction or clarification.** Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt. Each label names the task and destination; the prompt text is unchanged.
++
++**Correction or clarification.** Clarify the code-first route and name Claude Code at handoff. Exclude both completed Review and Cart implementations from baseline context, matching the sample.
++
++[Previous handbook](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/) and [exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip) provide the unchanged prompt text and baseline context.
++
++Previous edition: **2.1.1 · October 7, 2026**. Daytime PDF SHA-256: `ac5fadaf0ced9deddd694657b6b83862cc31ecd38f75363a9665388ba350143a`.

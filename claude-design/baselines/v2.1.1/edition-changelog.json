@@ -1,0 +1,40 @@
+{
+  "version": "2.1.1",
+  "previousVersion": "2.1.0",
+  "summary": "This edition brings the React sample and editable Figma answer key into line with the existing cart exercise.",
+  "items": [
+    {
+      "classification": "Correction or clarification",
+      "section": "Chapter 5; chapter 9; React sample",
+      "title": "Bring the React sample through Add to cart and Cart confirmation, matching the standalone offline answer key.",
+      "whatChanged": "Bring the React sample through Add to cart and Cart confirmation, matching the standalone offline answer key.",
+      "why": "Both runnable examples now follow the existing exercise, including Continue, Edit cart item and Reset fixture.",
+      "sources": [
+        {
+          "url": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+          "authority": "Authored exercise",
+          "title": "Velori 2.1.1 materials"
+        }
+      ]
+    },
+    {
+      "classification": "Correction or clarification",
+      "section": "Chapters 5, 8 and 9; Figure 10; Figma answer key",
+      "title": "Correct the editable Figma answer key to show Review with Add to cart and a Cart frame with the robot, all four choices and quantity one.",
+      "whatChanged": "Correct the editable Figma answer key to show Review with Add to cart and a Cart frame with the robot, all four choices and quantity one.",
+      "why": "The current frames now represent the existing cart endpoint, with Edit cart item and Continue configuring. They remain static, with no prototype connections or choice-state wiring.",
+      "sources": [
+        {
+          "url": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+          "authority": "Authored exercise",
+          "title": "Velori 2.1.1 materials"
+        },
+        {
+          "url": "https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46",
+          "authority": "Native Figma inspection",
+          "title": "Velori 2.1.1 materials"
+        }
+      ]
+    }
+  ]
+}

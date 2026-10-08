@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "edition": "2.1.2",
+  "previewUrl": "http://127.0.0.1:8801/claude-design/#section-5",
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "light": "passed",
+    "dark": "passed",
+    "promptToolAndTitle": "Claude Design / Write the design brief",
+    "fullPromptVisible": true
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "documentScrollWidth": 390,
+    "allSixPromptBoundsFitViewport": true,
+    "light": "passed",
+    "dark": "passed",
+    "headingAndFullBodyReadable": true
+  },
+  "proofs": [
+    {
+      "path": "claude-design/review/2026-10-07-prompt-label-audit/qa/prompt-label-desktop-light.png",
+      "sha256": "0b897ab6e35db80601f58587c12ae6bce682605f10968793386cc2dd140a4aab"
+    },
+    {
+      "path": "claude-design/review/2026-10-07-prompt-label-audit/qa/prompt-label-desktop-dark.png",
+      "sha256": "a4f61432459cb7eaf2618650c719d02fa4e654fba4540791fc00800ec1fa8e0c"
+    },
+    {
+      "path": "claude-design/review/2026-10-07-prompt-label-audit/qa/prompt-label-mobile-light.png",
+      "sha256": "1aa58d7bda935b6ed4d1487d67a981b04e36c074f6d3d562694e188b09e0f17a"
+    },
+    {
+      "path": "claude-design/review/2026-10-07-prompt-label-audit/qa/prompt-label-mobile-dark.png",
+      "sha256": "8b4eb8d5e56cd651057f11c77adfd1892721f81f6596202b131811dee0077908"
+    }
+  ],
+  "userTabPreserved": true,
+  "viewportOverrideReset": true,
+  "published": false
+}

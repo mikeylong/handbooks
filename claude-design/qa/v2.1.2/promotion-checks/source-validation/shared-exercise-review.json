@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "completedAt": "2026-10-08T01:59:49.715918+00:00",
+  "scope": "Only the assigned shared exercise download helper and regression test; no book/site/source/PDF/package edits, Git/network/browser/publishing actions.",
+  "contract": {
+    "definitionVersion": "Current content edition, still exact-match validated",
+    "exerciseEdition": "Optional explicit strict numeric semver equal to or older than current content edition; absent field retains original current-edition routes",
+    "example": {
+      "schemaVersion": 1,
+      "book": "claude-design",
+      "version": "2.1.2",
+      "exerciseEdition": "2.1.1",
+      "downloads": "Unchanged approved v2.1.1 ZIP/FIG/sidecar rows"
+    },
+    "callerApproval": "Caller provides already-approved definition/artifact pins; book release validator certifies historical approval and matches the retainedExercise contract. Shared helper does not invent that approval."
+  },
+  "tests": {
+    "status": "passed",
+    "cases": 74,
+    "command": "node publish-evidence-backed-handbook/scripts/test-exercise-downloads.mjs",
+    "report": "/private/tmp/claude-design-v212-exercise-helper/test-exercise-downloads.json",
+    "log": "/private/tmp/claude-design-v212-exercise-helper/test-exercise-downloads.log",
+    "coverage": [
+      "Default and explicit-current output parity",
+      "Retained numeric older editions preserve exact paths, hashes, bytes and row order",
+      "Invalid or future editions, including precision-sensitive components, fail",
+      "Older routes without explicit selection fail",
+      "Another book/edition, traversal, wrong artifact path fail",
+      "Missing/mismatched package pins, changed measured size/bytes fail",
+      "Selection changes are bound by the approved definition hash",
+      "All original definition/size/hash/symlink/unsafe-path failure guards retained"
+    ]
+  },
+  "boundedDiffReview": {
+    "status": "passed",
+    "patch": "/private/tmp/claude-design-v212-exercise-helper/diff.patch",
+    "findings": {
+      "High": [],
+      "Medium": [],
+      "Low": []
+    },
+    "notes": "Existing download validation below selected-prefix computation is byte-identical. Existing no-definition and own-edition behavior remains intact."
+  },
+  "files": [
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/publish-evidence-backed-handbook/scripts/exercise-downloads.mjs",
+      "sha256": "deea13b511d5dc8abc21b20dee033c4431f4e7ce96dae2baf7064d2b470dca68"
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/publish-evidence-backed-handbook/scripts/test-exercise-downloads.mjs",
+      "sha256": "23fea3b64dca40f288e2e17f9efcaeffe0a42580cee4fd60a1196dc7af8e40b2"
+    }
+  ],
+  "integrationNote": "Refresh the governing toolkit input pins for these two intentional source changes before hosted PDF-runtime CI."
+}

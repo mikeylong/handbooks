@@ -5,6 +5,8 @@ import {execFileSync} from 'node:child_process';
 import {digest,safePath} from '../../publish-evidence-backed-handbook/scripts/reader-paths.mjs';
 import {resolvePdfVariants} from '../../publish-evidence-backed-handbook/scripts/pdf-downloads.mjs';
 import {validateLibrary,validatePackage,APPROVAL_REGISTRY} from '../../site/scripts/book-sources.mjs';
+import {explorationExerciseEdition,validateRetainedExplorationExercise} from './validate-retained-exercise.mjs';
+import {validatePromptOutputs} from './validate-prompt-tools.mjs';
 const host='https://handbooks.surfaces.systems';
 const isSha=value=>typeof value==='string'&&/^[a-f0-9]{64}$/.test(value);
 const nativePaths=edition=>({
@@ -36,6 +38,7 @@ export function explorationSourceFingerprint(files){
 export function validateExplorationContract(manifest){
  const c=manifest.releaseContract;
  assert.equal(c?.kind,'design-exploration');
+ const exerciseEdition=explorationExerciseEdition(manifest);
  assert.match(manifest.version,/^[2-9]\d*\.\d+\.\d+$/);
  assert.equal(c.chapterCount,9);
  assert.ok(Number.isSafeInteger(manifest.pages)&&manifest.pages>0,'Exact PDF page count required');
@@ -53,14 +56,14 @@ export function validateExplorationContract(manifest){
   const prototypeEdition=needsCompanionParity(manifest.version)?c.prototypeEvidence?.edition:manifest.version;
   if(needsCompanionParity(manifest.version)){
    assert.equal(prototypeEdition,'2.1.0','Retained standalone prototype must keep its original edition');
-   currentEvidencePin(c.companionParityEvidence,manifest.version,'companion parity');
+   currentEvidencePin(c.companionParityEvidence,exerciseEdition,'companion parity');
   }
   assert.equal(c.prototypeEvidence?.path,`claude-design/qa/v${prototypeEdition}/prototype-behavior.json`,'Tracked current prototype evidence required');
   assert.ok(isSha(c.prototypeEvidence.sha256),'Prototype evidence hash required');
  }
- const file=`velori-design-exploration-v${manifest.version}.zip`;
- assert.equal(c.sample.publicUrl,`${host}/claude-design/editions/v${manifest.version}/${file}`);
- assert.equal(c.sample.repositoryPath,`claude-design/reader/editions/v${manifest.version}/${file}`);
+ const file=`velori-design-exploration-v${exerciseEdition}.zip`;
+ assert.equal(c.sample.publicUrl,`${host}/claude-design/editions/v${exerciseEdition}/${file}`);
+ assert.equal(c.sample.repositoryPath,`claude-design/reader/editions/v${exerciseEdition}/${file}`);
  assert.equal(c.nativeStarter.filename,'velori-design-exploration-starter.fig');
  assert.ok(isSha(c.nativeStarter.sha256),'Native starter hash required');
  return c;
@@ -156,14 +159,15 @@ print(json.dumps({'members':len(names),'sha256':{n:hashlib.sha256(z.read(n)).hex
  const archive=JSON.parse(execFileSync('python3',['-c',code,path,String(contract.archiveMemberCount??209)],{encoding:'utf8'}));
  archive.sourceSha256=explorationSourceFingerprint(archive.sha256);return archive;
 }
-export function validateExplorationContent(text,html,version,{candidate=false}={}){
+export function validateExplorationContent(text,html,version,{candidate=false,exerciseEdition=version,source,markdown}={}){
+ if(isOlder('2.1.1',version)){assert.equal(typeof source,'string','Canonical prompt source required');assert.equal(typeof markdown,'string','Markdown prompt output required');validatePromptOutputs(source,{html,markdown,pdfText:text});}
  text=text.replace(/\s+/g,' ');
  for(const value of ['Explore design directions','Refine the design','Build the connected experience','Review with people','Hand off to Claude Code','Continue in Figma when needed','Run the guided exercise'])assert.ok(text.includes(value)&&html.includes(value),value);
  assert.ok(text.includes('direct edit')&&text.includes('unsupported'),'Observed direct-editor limit must remain visible');
  assert.ok(text.includes('no prototype connections or choice-state wiring'),'Static Figma continuation limit must remain visible');
  if(version!=='2.0.0')for(const value of ['Add to cart','quantity one','Continue','Reset fixture'])assert.ok(text.includes(value)&&html.includes(value),'Cart exercise text required: '+value);
  assert.equal((html.match(/class="chapter-art"/g)||[]).length,9);
- assert.ok(html.includes(`velori-design-exploration-v${version}.zip`));
+ assert.ok(html.includes(`velori-design-exploration-v${exerciseEdition}.zip`));
  if(!candidate)assert.doesNotMatch(html,/Publication has not been approved/);
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length);
  for(const m of html.matchAll(/href="#([^"]+)"/g))assert.ok(ids.includes(m[1]),'Missing target '+m[1]);
@@ -175,6 +179,7 @@ export async function validateExplorationRelease(root){
  const pinned=async row=>{assert.ok(isSha(row?.sha256),'Proof hash required');assert.equal(digest(await bytes(row.path)),row.sha256,'Stale proof '+row.path);return json(row.path);};
  const catalog=await json('catalog.json'),pin=validateLibrary(catalog).find(x=>x.id==='claude-design');
  const pkg=await validatePackage(book,pin),manifest=await json('claude-design/release-manifest.json'),contract=validateExplorationContract(manifest);
+ const exerciseEdition=explorationExerciseEdition(manifest);
  assert.equal(manifest.approvalStatus,'approved');assert.equal(manifest.version,pin.version);assert.equal(manifest.pages,pin.pages);assert.equal(manifest.sha256,pin.pdfSha256);
  const approval=await pinned(manifest.publicationApproval);validateExplorationPublicationAuthority(approval);
  assert.equal(approval.manuscript.path,'claude-design/Claude_Design_Field_Guide_Source.md','Approval must bind the canonical manuscript');assert.equal(approval.manuscript.sha256,digest(await bytes(approval.manuscript.path)));assert.equal(approval.exercise.path,contract.sample.repositoryPath,'Approval must bind the current exercise');assert.equal(approval.exercise.sha256,digest(await bytes(contract.sample.repositoryPath)),'Approved exercise bytes changed');assert.ok(approval.limitations.includes('Human task review has not been completed. The author walkthrough is not usability evidence.'));
@@ -192,11 +197,12 @@ export async function validateExplorationRelease(root){
  const verification=await json(`claude-design/qa/v${manifest.version}/change-ledger-verification.json`);assert.equal(verification.status,'passed');assert.equal(verification.ledger.sha256,digest(await bytes('claude-design/change-ledger.json')));assert.deepEqual(verification.sourceSnapshot,ledger.sourceSnapshot);assert.deepEqual(verification.comparisonEvidence,ledger.comparisonEvidence);assert.deepEqual(verification.sampleRelease,ledger.sampleRelease);
  const html=await readFile(resolve(book,pkg.html),'utf8');
  const downloads=await json('claude-design/exercise-downloads.json');assert.equal(pkg.files['exercise-downloads.json'],digest(await bytes('claude-design/exercise-downloads.json')));assert.equal(downloads.version,manifest.version);
- for(const d of downloads.downloads){assert.equal(pkg.files[d.path],d.sha256);const data=await readFile(safePath(book,d.path));assert.equal(digest(data),d.sha256);assert.equal(data.length,d.bytes);assert.equal(d.url,`/claude-design/editions/v${manifest.version}/${d.filename}`);}
- const prefix=`reader/editions/v${manifest.version}/`;assert.equal(pkg.files[prefix+contract.nativeStarter.filename],contract.nativeStarter.sha256);
- const companion=await json('claude-design/figma-companion.json');assert.equal(companion.handbookEdition,manifest.version);assert.equal(digest(await bytes('claude-design/figma-companion.json')),pkg.files[prefix+'figma-companion.json']);assert.match(companion.fontDelivery,/No font binaries bundled/);
+ for(const d of downloads.downloads){assert.equal(pkg.files[d.path],d.sha256);const data=await readFile(safePath(book,d.path));assert.equal(digest(data),d.sha256);assert.equal(data.length,d.bytes);assert.equal(d.url,`/claude-design/editions/v${exerciseEdition}/${d.filename}`);}
+ const prefix=`reader/editions/v${exerciseEdition}/`;assert.equal(pkg.files[prefix+contract.nativeStarter.filename],contract.nativeStarter.sha256);
+ const companion=await json('claude-design/figma-companion.json');assert.equal(companion.handbookEdition,exerciseEdition);assert.equal(digest(await bytes('claude-design/figma-companion.json')),pkg.files[prefix+'figma-companion.json']);assert.match(companion.fontDelivery,/No font binaries bundled/);
  const starter=companion.artifacts.find(a=>a.role==='starting material');assert.equal(starter.filename,contract.nativeStarter.filename);assert.equal(starter.sha256,contract.nativeStarter.sha256);
  const archive=readExplorationArchive(safePath(root,contract.sample.repositoryPath),contract);
+ if(contract.retainedExercise){const records={};for(const [key,row] of Object.entries(contract.retainedExercise)){if(key==='edition')continue;records[key]={sha256:digest(await bytes(row.path)),data:await pinned(row)};}validateRetainedExplorationExercise(manifest,{records,companion,companionSha256:digest(await bytes('claude-design/figma-companion.json')),archiveSha256:digest(await bytes(contract.sample.repositoryPath)),archiveBytes:(await bytes(contract.sample.repositoryPath)).length,downloads});}
  assert.equal(archive.sha256['velori-store/'+contract.nativeStarter.filename],contract.nativeStarter.sha256,'Archived native starter differs');
  const continuation=companion.artifacts.find(a=>a.role==='static editable answer key');assert.ok(continuation);assert.equal(archive.sha256['velori-store/'+continuation.filename],continuation.sha256,'Archived native continuation differs');
  if(contract.nativeEvidence){
@@ -207,21 +213,21 @@ export async function validateExplorationRelease(root){
   const sourceData=await pinned(source);validateExplorationPrototypeEvidence(proof,{version:prototypeEdition,prototypeSha256:archive.sha256['velori-store/answer-key/velori-review-prototype.html'],sourceSha256:digest(await bytes(source.path)),sourceData});
   if(contract.companionParityEvidence){
    const parity=await pinned(contract.companionParityEvidence),validationRecords={};
-   for(const key of ['figma','react']){const row=parity[key]?.validation;currentEvidencePin(row,manifest.version,key+' validation');validationRecords[key]={sha256:digest(await bytes(row.path)),data:await pinned(row)};}
-   validateExplorationCompanionParity(parity,{version:manifest.version,contract,nativeRecords:records,companion,archive,prototypeProof:proof,validationRecords});
+   for(const key of ['figma','react']){const row=parity[key]?.validation;currentEvidencePin(row,exerciseEdition,key+' validation');validationRecords[key]={sha256:digest(await bytes(row.path)),data:await pinned(row)};}
+   validateExplorationCompanionParity(parity,{version:exerciseEdition,contract,nativeRecords:records,companion,archive,prototypeProof:proof,validationRecords});
   }
  }else{
   const roundtrip=await json(`claude-design/qa/v${manifest.version}/figma-roundtrip-validation.json`);assert.equal(roundtrip.status,'passed');assert.match(roundtrip.scope,/same account/);assert.equal(roundtrip.validation.missingFonts.length,0);assert.equal(roundtrip.validation.reactions,0);assert.equal(roundtrip.validation.styledTexts,22);assert.equal(roundtrip.validation.instances.length,10);assert.ok(roundtrip.validation.instances.every(i=>i.mainComponent?.id));assert.equal(roundtrip.validation.variableBoundNodes,66);
  }
  const variants=await resolvePdfVariants(book,{id:'claude-design',...manifest},APPROVAL_REGISTRY.books.find(x=>x.id==='claude-design').variantManifest,{collectionRoot:root});
  assert.deepEqual(variants.map(v=>v.theme).sort(),['dark','light']);
- for(const v of variants){assert.ok(approval.pdfs.some(p=>p.path===v.path&&p.sha256===v.sha256));assert.equal(digest(await bytes(v.path)),v.sha256);const validation=await json(`claude-design/qa/v${manifest.version}/${v.theme==='light'?'daytime':'late-night'}-validation.json`);assert.equal(validation.status,'passed');assert.equal(validation.artifactSha256,v.sha256);assert.equal(v.pages,manifest.pages);assert.equal(validation.stats.pages,manifest.pages);validateExplorationContent(execFileSync('pdftotext',[safePath(root,v.path),'-'],{encoding:'utf8'}),html,manifest.version);}
+ for(const v of variants){assert.ok(approval.pdfs.some(p=>p.path===v.path&&p.sha256===v.sha256));assert.equal(digest(await bytes(v.path)),v.sha256);const validation=await json(`claude-design/qa/v${manifest.version}/${v.theme==='light'?'daytime':'late-night'}-validation.json`);assert.equal(validation.status,'passed');assert.equal(validation.artifactSha256,v.sha256);assert.equal(v.pages,manifest.pages);assert.equal(validation.stats.pages,manifest.pages);validateExplorationContent(execFileSync('pdftotext',[safePath(root,v.path),'-'],{encoding:'utf8'}),html,manifest.version,{exerciseEdition,source:await readFile(resolve(book,'Claude_Design_Field_Guide_Source.md'),'utf8'),markdown:isOlder('2.1.1',manifest.version)?await readFile(resolve(book,`reader/editions/v${manifest.version}/claude-design-v${manifest.version}.md`),'utf8'):undefined});}
  console.log(JSON.stringify({status:'passed',edition:manifest.version,pages:manifest.pages,chapters:contract.chapterCount,archive,trialLimits:approval.limitations,pdfs:variants.map(v=>({theme:v.theme,sha256:v.sha256}))},null,2));
 }
 
 // Candidate registries pin their own book and artifacts; they never authorize release.
 export async function validateExplorationCandidate(book,{root,pkg,manifest,variantPin,catalog}){
- const contract=validateExplorationContract(manifest);
+ const contract=validateExplorationContract(manifest),exerciseEdition=explorationExerciseEdition(manifest);
  const json=async path=>JSON.parse(await readFile(safePath(book,path),'utf8'));
  assert.equal(manifest.approvalStatus,'candidate','Selected candidate manifest must remain candidate');
  const publication=await json('publication.json');
@@ -236,15 +242,16 @@ export async function validateExplorationCandidate(book,{root,pkg,manifest,varia
   assert.match(path,/^[A-Za-z0-9-]+\.patch$/);
   assert.ok((await readFile(safePath(book,`qa/v${manifest.version}/${path}`))).length,'Missing candidate comparison patch');
  }
- const prefix=`reader/editions/v${manifest.version}/`;
+ const prefix=`reader/editions/v${exerciseEdition}/`;
  assert.equal(pkg.files[prefix+contract.nativeStarter.filename],contract.nativeStarter.sha256);
  const downloads=await json('exercise-downloads.json');assert.equal(downloads.version,manifest.version);
  assert.equal(pkg.files['exercise-downloads.json'],digest(await readFile(safePath(book,'exercise-downloads.json'))));
- for(const d of downloads.downloads){const data=await readFile(safePath(book,d.path));assert.equal(pkg.files[d.path],d.sha256);assert.equal(digest(data),d.sha256);assert.equal(data.length,d.bytes);assert.equal(d.url,`/claude-design/editions/v${manifest.version}/${d.filename}`);}
+ for(const d of downloads.downloads){const data=await readFile(safePath(book,d.path));assert.equal(pkg.files[d.path],d.sha256);assert.equal(digest(data),d.sha256);assert.equal(data.length,d.bytes);assert.equal(d.url,`/claude-design/editions/v${exerciseEdition}/${d.filename}`);}
  const sample=contract.sample.repositoryPath.slice('claude-design/'.length);assert.ok(pkg.files[sample],'Candidate exercise must be pinned');
- const companion=await json('figma-companion.json');assert.equal(companion.handbookEdition,manifest.version);assert.equal(pkg.files[prefix+'figma-companion.json'],digest(await readFile(safePath(book,'figma-companion.json'))));
+ const companion=await json('figma-companion.json');assert.equal(companion.handbookEdition,exerciseEdition);assert.equal(pkg.files[prefix+'figma-companion.json'],digest(await readFile(safePath(book,'figma-companion.json'))));
  assert.equal(companion.artifacts.find(a=>a.role==='starting material')?.sha256,contract.nativeStarter.sha256);
  const archive=readExplorationArchive(safePath(book,sample),contract);
+ if(contract.retainedExercise){const records={};for(const [key,row] of Object.entries(contract.retainedExercise)){if(key==='edition')continue;const file=safePath(root,row.path);assert.ok((await lstat(file)).isFile());assert.equal(await realpath(file),file);const bytes=await readFile(file);records[key]={sha256:digest(bytes),data:JSON.parse(bytes)};}validateRetainedExplorationExercise(manifest,{records,companion,companionSha256:digest(await readFile(safePath(book,'figma-companion.json'))),archiveSha256:digest(await readFile(safePath(book,sample))),archiveBytes:(await readFile(safePath(book,sample))).length,downloads});}
  assert.equal(archive.sha256['velori-store/'+contract.nativeStarter.filename],contract.nativeStarter.sha256,'Archived native starter differs');
  const continuation=companion.artifacts.find(a=>a.role==='static editable answer key');assert.ok(continuation);assert.equal(archive.sha256['velori-store/'+continuation.filename],continuation.sha256,'Archived native continuation differs');
  if(contract.nativeEvidence){
@@ -256,9 +263,10 @@ export async function validateExplorationCandidate(book,{root,pkg,manifest,varia
   const {data:proof}=await loadPrototype(contract.prototypeEvidence),source=await loadPrototype(proof.sourceEvidence);
   validateExplorationPrototypeEvidence(proof,{version:contract.prototypeEvidence.edition??manifest.version,prototypeSha256:archive.sha256['velori-store/answer-key/velori-review-prototype.html'],sourceSha256:source.sha256,sourceData:source.data});
   if(contract.companionParityEvidence){
-   const {data:parity}=await candidateProof(contract.companionParityEvidence),validationRecords={};
-   for(const key of ['figma','react']){const row=parity[key]?.validation;currentEvidencePin(row,manifest.version,key+' validation');validationRecords[key]=await candidateProof(row);}
-   validateExplorationCompanionParity(parity,{version:manifest.version,contract,nativeRecords:records,companion,archive,prototypeProof:proof,validationRecords});
+   const parityLoader=contract.retainedExercise?retainedProof:candidateProof;
+   const {data:parity}=await parityLoader(contract.companionParityEvidence),validationRecords={};
+   for(const key of ['figma','react']){const row=parity[key]?.validation;currentEvidencePin(row,exerciseEdition,key+' validation');validationRecords[key]=await parityLoader(row);}
+   validateExplorationCompanionParity(parity,{version:exerciseEdition,contract,nativeRecords:records,companion,archive,prototypeProof:proof,validationRecords});
   }
  }
  const html=await readFile(safePath(book,pkg.html),'utf8');
@@ -267,7 +275,7 @@ export async function validateExplorationCandidate(book,{root,pkg,manifest,varia
  for(const v of variants){
   const validation=await json(`qa/v${manifest.version}/${v.theme==='light'?'daytime':'late-night'}-validation.json`);
   assert.equal(validation.status,'passed');assert.equal(validation.artifactSha256,v.sha256);assert.equal(v.pages,manifest.pages);assert.equal(validation.stats.pages,manifest.pages);
-  validateExplorationContent(execFileSync('pdftotext',[safePath(root,v.path),'-'],{encoding:'utf8'}),html,manifest.version,{candidate:true});
+  validateExplorationContent(execFileSync('pdftotext',[safePath(root,v.path),'-'],{encoding:'utf8'}),html,manifest.version,{candidate:true,exerciseEdition,source:await readFile(safePath(book,'Claude_Design_Field_Guide_Source.md'),'utf8'),markdown:isOlder('2.1.1',manifest.version)?await readFile(safePath(book,`reader/editions/v${manifest.version}/claude-design-v${manifest.version}.md`),'utf8'):undefined});
  }
  console.log(JSON.stringify({status:'passed',mode:'candidate',book,edition:manifest.version,publicationApproved:false},null,2));
 }

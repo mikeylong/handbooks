@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.2",
+  "scope": "Accepted final-r2 digital visual qualification; all 56 pages of both appearances inspected in Poppler and Apple PDFKit. Original candidate receipts are retained unchanged. Physical printing was not tested.",
+  "pdfs": [
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+      "sha256": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03"
+    },
+    {
+      "path": "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-late-night-r1.pdf",
+      "sha256": "05f06bf733f60cfe0a6c2d8a9e63589f3d5eac22bfa0dec8edb1b6eee102e78a"
+    }
+  ],
+  "evidence": {
+    "builder-visual-review.json": {
+      "path": "claude-design/qa/v2.1.2/builder-visual-review.json",
+      "sha256": "33802e9439a5606bd34e0ed41ae6d26be29cedcd1f39e3aa39e55a526f8a0cf9"
+    },
+    "poppler-visual-review.json": {
+      "path": "claude-design/qa/v2.1.2/poppler-visual-review.json",
+      "sha256": "0a3c1960b84c1cf2c23df2a4a8bf2539640ad7a48de6a7b7a49a76eeda2337c4"
+    },
+    "pdfkit-visual-review.json": {
+      "path": "claude-design/qa/v2.1.2/pdfkit-visual-review.json",
+      "sha256": "036c52a59424f057e3e298f73532ad240f405ec462411459ee09a2625dbcb4e9"
+    },
+    "focused-review-dimensions-corrected.json": {
+      "path": "claude-design/qa/v2.1.2/focused-review-dimensions-corrected.json",
+      "sha256": "c555cc5cbfc845dc0c212565b29832e71d2bde28b4cbfd7a253df7973ccd4be3"
+    },
+    "browser-review.json": {
+      "path": "claude-design/qa/v2.1.2/browser-review.json",
+      "sha256": "318110aa189368d18ea6938504092b53cf6e6041876f45316a0b7ba814f0904f"
+    }
+  }
+}

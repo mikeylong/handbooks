@@ -1,13 +1,13 @@
 {
   "title": "Claude Design Field Guide",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "date": "2026-10-07",
-  "pdf": "output/pdf/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
-  "sha256": "ac5fadaf0ced9deddd694657b6b83862cc31ecd38f75363a9665388ba350143a",
+  "pdf": "output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+  "sha256": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03",
   "pages": 56,
-  "previous_public_edition": "2.1.0",
+  "previous_public_edition": "2.1.1",
   "approvalStatus": "approved",
-  "candidate_validation": "qa/v2.1.1/daytime-validation.json",
+  "candidate_validation": "qa/v2.1.2/daytime-validation.json",
   "releaseContract": {
     "kind": "design-exploration",
     "classifiedChangeIds": [
@@ -51,6 +51,25 @@
     "companionParityEvidence": {
       "path": "claude-design/qa/v2.1.1/companion-parity.json",
       "sha256": "5b54798d3c7c68fa70c8d089cd5c4ba56a93953c921e3b46529153c811f25dc6"
+    },
+    "retainedExercise": {
+      "edition": "2.1.1",
+      "releaseManifest": {
+        "path": "claude-design/baselines/v2.1.1/release-manifest.json",
+        "sha256": "b37a0384129b6e15f00b12930c5ffdf216538d74aac97fe06fd5656d16c574dd"
+      },
+      "publicationPackage": {
+        "path": "claude-design/baselines/v2.1.1/publication-package.json",
+        "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
+      },
+      "publicationApproval": {
+        "path": "claude-design/qa/v2.1.1/publication-approval.json",
+        "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b"
+      },
+      "exerciseDownloads": {
+        "path": "claude-design/baselines/v2.1.1/exercise-downloads.json",
+        "sha256": "6381ec04c0e9a5caf4f854422fe52c7b0137105a674570fdc7b571da7a059082"
+      }
     }
   },
   "schemaVersion": 1,
@@ -62,15 +81,15 @@
       "appearanceRevision": 1,
       "appearanceDate": "2026-10-07",
       "approvalStatus": "approved",
-      "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
-      "publicUrl": "/claude-design/editions/v2.1.1/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
-      "downloadFilename": "claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
-      "sha256": "ac5fadaf0ced9deddd694657b6b83862cc31ecd38f75363a9665388ba350143a",
+      "path": "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.1.2/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+      "sha256": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03",
       "pages": 56,
-      "bytes": 7132266,
+      "bytes": 7133324,
       "pageMap": {
-        "path": "claude-design/qa/v2.1.1/daytime-map.json",
-        "sha256": "b74ebd5be20d448596415ab246ef63db272462837495eeb146f51d087bacf97a"
+        "path": "claude-design/qa/v2.1.2/daytime-map.json",
+        "sha256": "955cbb79de1725c81e8869e6b3df54eb25454d9f6154fe565b97680851f6f42a"
       }
     },
     {
@@ -79,26 +98,26 @@
       "appearanceRevision": 1,
       "appearanceDate": "2026-10-07",
       "approvalStatus": "approved",
-      "path": "claude-design/output/pdf/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
-      "publicUrl": "/claude-design/editions/v2.1.1/claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
-      "downloadFilename": "claude-design-v2.1.1-2026-10-07-late-night-r1.pdf",
-      "sha256": "f89d0e3f9dcbdce22e51a85810141de65bc1e9eb75e55c34649e18ce8583c280",
+      "path": "claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.1.2/claude-design-v2.1.2-2026-10-07-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v2.1.2-2026-10-07-late-night-r1.pdf",
+      "sha256": "05f06bf733f60cfe0a6c2d8a9e63589f3d5eac22bfa0dec8edb1b6eee102e78a",
       "pages": 56,
-      "bytes": 46132950,
+      "bytes": 46134047,
       "pageMap": {
-        "path": "claude-design/qa/v2.1.1/late-night-map.json",
-        "sha256": "414b3974f26af0fd290900dfa55c115095f8fddbf325f54fc79b8135acfce86c"
+        "path": "claude-design/qa/v2.1.2/late-night-map.json",
+        "sha256": "a1fce813308b92782cdc42389bf54cf7e8accf4e7b4181c582bd2ee28b610cae"
       },
       "proof": {
         "parity": {
-          "path": "claude-design/qa/v2.1.1/appearance-parity/parity.json",
-          "sha256": "be373b9ac9fbcf1569699bda2ff6b578c767baacb2da2b6b637f5aa994a7ab96"
+          "path": "claude-design/qa/v2.1.2/appearance-parity/parity.json",
+          "sha256": "d384bfe6d818d74d87f6d4e7a509095f5101466b7d6230dcc3f3ca7123775b74"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "f89d0e3f9dcbdce22e51a85810141de65bc1e9eb75e55c34649e18ce8583c280",
-          "authority": "Codex exact-artifact visual qualification under Mike's direct release request, 2026-10-07",
-          "review": "claude-design/qa/v2.1.1/visual-review.json"
+          "sha256": "05f06bf733f60cfe0a6c2d8a9e63589f3d5eac22bfa0dec8edb1b6eee102e78a",
+          "authority": "Exact-artifact visual qualification under Mike's direct Land this request, October 7, 2026",
+          "review": "claude-design/qa/v2.1.2/visual-review.json"
         }
       }
     }

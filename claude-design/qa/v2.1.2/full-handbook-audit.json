@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "status": "audit-complete",
+  "authority": "read-only audit; no release/publication authority",
+  "reviewer": "parity_final_review",
+  "baselineCommit": "b728a56a9f8e3613b92e18ab31bd85a4e3915f4d",
+  "source": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/baseline/Claude_Design_Field_Guide_Source.md",
+    "sha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28",
+    "reviewedLines": [
+      1,
+      482
+    ]
+  },
+  "reader": {
+    "path": "/Users/mike/handbooks/claude-design/reader/index.html",
+    "sha256": "21f2ed16a33d8b488105b5264533f140206d070f323e3d855e10efc62f0cd25d",
+    "fullGeneratedContentInspected": true,
+    "codeFigures": 6,
+    "preBlocks": 6,
+    "promptFigures": 0
+  },
+  "findings": [
+    {
+      "id": "prompt-classification",
+      "severity": "Medium",
+      "sourceLines": [
+        60,
+        123,
+        145,
+        187,
+        231,
+        340
+      ],
+      "finding": "All six natural-language prompts use text fences and render as Code. Five are Claude Design prompts; chapter 07 is a Claude Code implementation prompt.",
+      "minimalCorrection": "Use explicit tool-named prompt directives; preserve all six bodies.",
+      "rendererLocation": "publish-evidence-backed-handbook/scripts/flowable_reader.py:66-71"
+    },
+    {
+      "id": "cart-answer-exclusion",
+      "severity": "Medium",
+      "sourceLines": [
+        111
+      ],
+      "finding": "The code-first guidance explicitly excludes only completed Review, while the current sample contains completed Review and Cart implementations.",
+      "corroboration": "claude-design/samples/velori-store/README.md:71 explicitly excludes src/ReviewConfiguration.jsx and src/CartConfirmation.jsx.",
+      "minimalCorrection": "Exclude the completed Review and Cart implementations from baseline context."
+    },
+    {
+      "id": "tool-shorthand",
+      "severity": "Low",
+      "sourceLines": [
+        26,
+        416,
+        430
+      ],
+      "additionalFile": "claude-design/source/diagrams/DesignWorkflow.json:141",
+      "finding": "Code is used as shorthand for the code-first input or Claude Code destination, including workflow alternative text.",
+      "minimalCorrection": "Use code-first route for input; Claude Code for the implementation destination and diagram alt text. The visible diagram node already names Claude Code."
+    }
+  ],
+  "coverage": {
+    "fullManuscript": true,
+    "allSixPromptBodies": true,
+    "renderedReaderCodeLabels": true,
+    "toolDestinationOwnership": {
+      "systemImport": "Claude Design; code-first /design-sync explicitly runs in Claude Code",
+      "explorationRefinementJourney": "Claude Design",
+      "implementation": "Claude Code and recipient project",
+      "editableContinuation": "Figma, optional destination"
+    },
+    "sourceRoutesVsDestination": true,
+    "answerKeyExclusions": true,
+    "evidenceLimitsReviewedAtLines": [
+      249,
+      376,
+      420,
+      432
+    ],
+    "staticFigmaScope": "Correct: no prototype connections or choice-state wiring claimed.",
+    "independentSecondAudit": "tool_destination_audit reviewed destination ownership across entire manuscript and found no other wrong-tool errors."
+  },
+  "noAdditionalFindings": {
+    "High": true,
+    "otherWrongToolErrors": true
+  },
+  "limitations": [
+    "Audit uses current source, generated reader and existing documented evidence. No factual capability changes researched.",
+    "No fresh Figma/sample/native Claude Design tests: not required for wording classification; companion bytes remain outside correction scope."
+  ],
+  "operations": {
+    "sourceEdited": false,
+    "networkUsed": false,
+    "GitHubUsed": false,
+    "published": false
+  }
+}

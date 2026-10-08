@@ -1,0 +1,142 @@
+--- a/exercise-downloads.mjs
++++ b/exercise-downloads.mjs
+@@ -21,7 +21,20 @@
+  assert.equal(definition.book,edition.id,'Exercise book mismatch');
+  assert.equal(definition.version,edition.version,'Exercise edition mismatch');
+  assert.ok(Array.isArray(definition.downloads)&&definition.downloads.length>0,'Exercise downloads required');
+- const urls=new Set(),prefix='/'+edition.id+'/editions/v'+edition.version+'/';
++ // The caller supplies already-approved definition and artifact pins. Its book
++ // release validator additionally certifies approval of any retained edition.
++ let exerciseEdition=edition.version;
++ if(Object.hasOwn(definition,'exerciseEdition')) {
++  const versionPattern=/^(0|[1-9][0-9]*)[.](0|[1-9][0-9]*)[.](0|[1-9][0-9]*)$/;
++  assert.ok(typeof definition.exerciseEdition==='string'&&versionPattern.test(definition.exerciseEdition),'Invalid exercise edition');
++  assert.ok(typeof edition.version==='string'&&versionPattern.test(edition.version),'Invalid current exercise edition');
++  const selected=definition.exerciseEdition.split('.').map(BigInt),current=edition.version.split('.').map(BigInt);
++  let comparison=0;
++  for(let i=0;i<3;i++)if(selected[i]!==current[i]){comparison=selected[i]<current[i]?-1:1;break;}
++  assert.ok(comparison<=0,'Exercise edition cannot follow the current edition');
++  exerciseEdition=definition.exerciseEdition;
++ }
++ const urls=new Set(),prefix='/'+edition.id+'/editions/v'+exerciseEdition+'/';
+  const links=[];
+  for(const row of definition.downloads) {
+   assert.ok(typeof row.label==='string'&&row.label.trim(),'Exercise label required');
+--- a/test-exercise-downloads.mjs
++++ b/test-exercise-downloads.mjs
+@@ -9,21 +9,23 @@
+ const results = [];
+ let fixtureNumber = 0;
+ 
+-async function fixture({definition = true} = {}) {
++async function fixture({definition = true, exerciseEdition} = {}) {
+   const source = join(root, 'case-' + ++fixtureNumber);
+   const edition = {id: 'fixture-book', version: '2.4.0'};
+-  const filename = 'fixture-book-v2.4.0.fig';
+-  const path = 'reader/editions/v2.4.0/' + filename;
++  const artifactVersion = exerciseEdition ?? edition.version;
++  const filename = 'fixture-book-v' + artifactVersion + '.fig';
++  const path = 'reader/editions/v' + artifactVersion + '/' + filename;
+   const bytes = Buffer.from([0, 1, 2, 127, 128, 254, 255, 10]);
+   const row = {
+     label: 'Practice "one" & <two>',
+     filename,
+-    url: '/fixture-book/editions/v2.4.0/' + filename,
++    url: '/fixture-book/editions/v' + artifactVersion + '/' + filename,
+     path,
+     sha256: digest(bytes),
+     bytes: bytes.length,
+   };
+   const record = {schemaVersion: 1, book: edition.id, version: edition.version, downloads: [row]};
++  if (exerciseEdition !== undefined) record.exerciseEdition = exerciseEdition;
+   const pkg = {readerDirectory: 'reader', files: {[path]: row.sha256}};
+   const file = join(source, path);
+   await mkdir(dirname(file), {recursive: true});
+@@ -46,19 +48,20 @@
+ 
+ async function addSecondArtifact(f) {
+   const filename = 'exercise-notes.txt';
+-  const path = 'reader/editions/v2.4.0/' + filename;
++  const artifactVersion = f.record.exerciseEdition ?? f.record.version;
++  const path = 'reader/editions/v' + artifactVersion + '/' + filename;
+   const bytes = Buffer.from('Independent exercise notes.\n');
+   await writeFile(join(f.source, path), bytes);
+   f.record.downloads.push({label: 'Notes', filename,
+-    url: '/fixture-book/editions/v2.4.0/' + filename,
++    url: '/fixture-book/editions/v' + artifactVersion + '/' + filename,
+     path, sha256: digest(bytes), bytes: bytes.length});
+   f.pkg.files[path] = digest(bytes);
+   await saveDefinition(f);
+   await approveDefinition(f);
+ }
+ 
+-async function rejected(name, change, expected) {
+-  const f = await fixture();
++async function rejected(name, change, expected, options) {
++  const f = await fixture(options);
+   await change(f);
+   await saveDefinition(f);
+   // These original cases approve the altered definition to exercise its specific semantic/artifact guard.
+@@ -89,6 +92,62 @@
+   assert.ok(ordered.indexOf('fixture-book-v2.4.0.fig') < ordered.indexOf('exercise-notes.txt'));
+   assert.match(ordered, /download="exercise-notes\.txt">Notes<\/a>/);
+   results.push('multiple independently pinned downloads preserve definition order');
++
++  const explicitCurrent = await fixture({exerciseEdition: '2.4.0'});
++  assert.equal(await exerciseDownloadLinks(explicitCurrent.source, explicitCurrent.edition, explicitCurrent.pkg), expected);
++  results.push('explicit current exercise edition preserves legacy output exactly');
++
++  const retainedOptions = {exerciseEdition: '2.3.9'};
++  const retained = await fixture(retainedOptions);
++  await addSecondArtifact(retained);
++  const retainedRows = retained.record.downloads.map(row => ({...row}));
++  const retainedFiles = await Promise.all(retainedRows.map(row => readFile(join(retained.source, row.path))));
++  const retainedLinks = await exerciseDownloadLinks(retained.source, retained.edition, retained.pkg);
++  assert.ok(retainedLinks.includes('href="/fixture-book/editions/v2.3.9/fixture-book-v2.3.9.fig"'));
++  assert.ok(retainedLinks.includes('href="/fixture-book/editions/v2.3.9/exercise-notes.txt"'));
++  assert.ok(!retainedLinks.includes('/editions/v2.4.0/'));
++  assert.ok(retainedLinks.indexOf('fixture-book-v2.3.9.fig') < retainedLinks.indexOf('exercise-notes.txt'));
++  for (const [i, row] of retainedRows.entries()) {
++    assert.deepEqual(await readFile(join(retained.source, row.path)), retainedFiles[i]);
++    assert.equal(retained.pkg.files[row.path], row.sha256);
++  }
++  results.push('approved older exercise routes render without relabeling or changing artifact bytes');
++
++  // Numeric comparison must handle component boundaries rather than lexical order or Number rounding.
++  const numericOlder = await fixture({exerciseEdition: '2.3.10'});
++  assert.match(await exerciseDownloadLinks(numericOlder.source, numericOlder.edition, numericOlder.pkg), /editions\/v2[.]3[.]10\//);
++  results.push('numeric older exercise edition is accepted');
++  for (const value of [false, '', 0, null, '2.3', '02.3.9', '2.3.9-beta', '2.3.9/../private']) {
++    await rejected('invalid explicit exercise edition ' + String(value), f => {f.record.exerciseEdition = value;}, /Invalid exercise edition/);
++  }
++  for (const value of ['2.4.1', '2.5.0', '3.0.0', '2.10.0', '9007199254740993.0.0']) {
++    await rejected('future exercise edition ' + value, f => {f.record.exerciseEdition = value;}, /Exercise edition cannot follow/);
++  }
++  await rejected('explicit exercise edition requires valid current version', f => {
++    f.edition.version = f.record.version = '2.4'; f.record.exerciseEdition = '2.3.9';
++  }, /Invalid current exercise edition/);
++  await rejected('future edition comparison preserves integer precision', f => {
++    f.edition.version = f.record.version = '9007199254740992.0.0';
++    f.record.exerciseEdition = '9007199254740993.0.0';
++  }, /Exercise edition cannot follow/);
++  await rejected('older exercise cannot change current definition identity', f => {f.record.version = '2.3.9';}, /Exercise edition mismatch/, retainedOptions);
++  await rejected('retained routes require explicit exercise edition', f => {delete f.record.exerciseEdition;}, /Exercise route/, retainedOptions);
++  await rejected('retained route must match selected exercise edition', f => {f.record.exerciseEdition = '2.2.0';}, /Exercise route/, retainedOptions);
++  await rejected('retained exercise cannot use current-edition route', f => {f.row.url = f.row.url.replace('v2.3.9', 'v2.4.0');}, /Exercise route/, retainedOptions);
++  await rejected('retained route cannot belong to another book', f => {f.row.url = f.row.url.replace('/fixture-book/', '/another-book/');}, /Exercise route/, retainedOptions);
++  await rejected('retained exercise cannot use traversal route', f => {f.row.url = '/fixture-book/editions/v2.3.9/../private.fig';}, /Exercise route/, retainedOptions);
++  await rejected('retained exercise cannot change artifact path', f => {f.row.path = 'reader/editions/v2.4.0/' + f.row.filename;}, /Exercise path mismatch/, retainedOptions);
++  await rejected('retained exercise requires approved package pin', f => {delete f.pkg.files[f.row.path];}, /Unpinned exercise download/, retainedOptions);
++  await rejected('retained exercise cannot change package pin', f => {f.pkg.files[f.row.path] = 'b'.repeat(64);}, /Unpinned exercise download/, retainedOptions);
++  await rejected('retained exercise cannot change measured size', f => {f.row.bytes++;}, /Stale exercise size/, retainedOptions);
++  await rejected('retained exercise cannot change exact bytes', async f => {
++    const changed = Buffer.from(f.bytes); changed[0] ^= 1; await writeFile(f.file, changed);
++  }, /Stale exercise hash/, retainedOptions);
++  const changedSelection = await fixture(retainedOptions);
++  changedSelection.record.exerciseEdition = '2.3.8';
++  await saveDefinition(changedSelection); // Preserve the approved definition hash.
++  await assert.rejects(() => exerciseDownloadLinks(changedSelection.source, changedSelection.edition, changedSelection.pkg), /Stale exercise definition hash/);
++  results.push('exercise edition selection is bound by exact approved definition bytes');
+ 
+   await rejected('wrong schema', f => {f.record.schemaVersion = 2;}, assert.AssertionError);
+   await rejected('wrong book identity', f => {f.record.book = 'another-book';}, /Exercise book mismatch/);

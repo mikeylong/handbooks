@@ -1,0 +1,60 @@
+{
+  "title": "Claude Design Field Guide",
+  "version": "2.1.1",
+  "date": "2026-10-07",
+  "pdf": "output/pdf/claude-design-v2.1.1-2026-10-07-daytime-r1.pdf",
+  "sha256": "ac5fadaf0ced9deddd694657b6b83862cc31ecd38f75363a9665388ba350143a",
+  "pages": 56,
+  "previous_public_edition": "2.1.0",
+  "approvalStatus": "approved",
+  "candidate_validation": "qa/v2.1.1/daytime-validation.json",
+  "releaseContract": {
+    "kind": "design-exploration",
+    "classifiedChangeIds": [
+      "C01",
+      "C02"
+    ],
+    "sample": {
+      "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+      "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
+    },
+    "nativeStarter": {
+      "filename": "velori-design-exploration-starter.fig",
+      "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca"
+    },
+    "chapterCount": 9,
+    "archiveMemberCount": 234,
+    "nativeEvidence": {
+      "edition": "2.0.0",
+      "releaseManifest": {
+        "path": "claude-design/baselines/v2.0.0/release-manifest.json",
+        "sha256": "e5510d84a07c3689386a6a710fa863e5fff801809ec78f3861902e36a38725b7"
+      },
+      "figmaCompanion": {
+        "path": "claude-design/baselines/v2.0.0/figma-companion.json",
+        "sha256": "4883dc903507d11f34533734ec6adf80d2f160097659613849e4ad826824acf3"
+      },
+      "roundtrip": {
+        "path": "claude-design/qa/v2.0.0/figma-roundtrip-validation.json",
+        "sha256": "b749835bb57e33ae444a748143695192545734376c8b3796b827ca2106d171a2"
+      },
+      "publicationApproval": {
+        "path": "claude-design/qa/v2.0.0/publication-approval.json",
+        "sha256": "7a037cbdabf765cd5c07415cabc531943536a9a75efc5d4d388175f61627b5e8"
+      }
+    },
+    "prototypeEvidence": {
+      "path": "claude-design/qa/v2.1.0/prototype-behavior.json",
+      "sha256": "49fce9e32134474185e40ca733b84901434a438403563e2dc184dd143aecfa30",
+      "edition": "2.1.0"
+    },
+    "companionParityEvidence": {
+      "path": "claude-design/qa/v2.1.1/companion-parity.json",
+      "sha256": "5b54798d3c7c68fa70c8d089cd5c4ba56a93953c921e3b46529153c811f25dc6"
+    }
+  },
+  "publicationApproval": {
+    "path": "claude-design/qa/v2.1.1/publication-approval.json",
+    "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b"
+  }
+}
