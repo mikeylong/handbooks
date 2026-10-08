@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "Computed hash bindings only; exact-artifact visual acceptance comes from the preserved independent candidate receipts.",
+  "ledger": {
+    "path": "claude-design/change-ledger.json",
+    "sha256": "13c489e5313cc1c10767617e12137ffc1833066f1b596bc84541c31fc4729a14"
+  },
+  "sourceSnapshot": {
+    "canonicalPath": "claude-design/Claude_Design_Field_Guide_Source.md",
+    "sha256": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+    "previousSourceSha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28"
+  },
+  "comparisonEvidence": {
+    "source": {
+      "path": "claude-design/qa/v2.1.2/exact-source.patch",
+      "sha256": "1207dd94da09b5f32d13f7789123df1b329d9b597f73a7ac84e67b20059eae9b"
+    },
+    "pdf": {
+      "path": "claude-design/qa/v2.1.2/exact-pdf-text.patch",
+      "sha256": "6aa4df81c9280cc763989ac86523f43979ce425b85f5237bcc8a7fa8dec99ddb"
+    },
+    "substantive": {
+      "path": "claude-design/qa/v2.1.2/reader-facing-content.patch",
+      "sha256": "a4b9f1a26d20fce90cd446cd332c0a56b8bd99df972134a7ede7f818ec3933a5"
+    },
+    "comparison": {
+      "path": "claude-design/qa/v2.1.2/edition-diff.json",
+      "sha256": "25f9150b261e1b38c1c740ddf3d1020250316630d2e1b6b99cf207cfa72a5c15"
+    },
+    "decision": {
+      "path": "claude-design/changelog-decision.json",
+      "sha256": "3fa10ba8a37733fd59457cdbe00276500ecec19424fee401c92c82e6b1fbcc27"
+    }
+  },
+  "sampleRelease": {
+    "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+    "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+    "bytes": 97181421,
+    "publicationPackage": {
+      "path": "claude-design/publication-package.json",
+      "sha256": "db15723ca77e9c0cf0f83a94dd9f17aefaaacf9c83b93ad98216b16120bf7680"
+    }
+  }
+}

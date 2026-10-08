@@ -1,0 +1,10 @@
+--- approved-DesignWorkflow.json
++++ candidate-DesignWorkflow.json
+@@ -138,6 +138,6 @@
+     }
+   ],
+   "note": "Review and destination findings return to Refine. Choose a destination only when the recipient needs it.",
+-  "printAlt": "Two starting inputs feed Brief, Explore, Choose, Refine, Connect and Review in Claude Design. The main endpoint is a reviewed prototype and usable handoff. Optional destinations are reviewed Code implementation and checked editable Figma work. Findings return to Refine.",
++  "printAlt": "Two starting inputs feed Brief, Explore, Choose, Refine, Connect and Review in Claude Design. The main endpoint is a reviewed prototype and usable handoff. Optional destinations are reviewed Claude Code implementation and checked editable Figma work. Findings return to Refine.",
+   "printCaption": "Start in the source your team maintains. Complete the Claude Design loop before choosing a destination."
+ }

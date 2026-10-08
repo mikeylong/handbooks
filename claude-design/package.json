@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "npm run validate",
-    "validate": "node source/test-release-ledger.mjs && node source/test-design-exploration.mjs && node source/validate-release.mjs"
+    "validate": "node source/test-release-ledger.mjs && node source/test-design-exploration.mjs && node source/test-retained-exercise.mjs && node source/test-prompt-tools.mjs && node source/validate-release.mjs"
   },
-  "version": "2.1.1"
+  "version": "2.1.2"
 }

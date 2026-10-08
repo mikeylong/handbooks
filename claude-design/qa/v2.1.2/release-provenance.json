@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "2.1.2",
+  "publicationCommand": "Land this",
+  "date": "2026-10-07",
+  "promotion": "Reviewed final-r2 source and PDF pair copied without rebuild; ordinary shared reader/Markdown assembly; approved exercise edition 2.1.1 retained explicitly.",
+  "frozenCandidateBuildResult": {
+    "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/BUILD-RESULT.json",
+    "sha256": "e1e51d00760e85e497ca255f9ff0d119d52da027410d5bfab9a44ad153fd65a6"
+  },
+  "currentCanonicalInputs": {
+    "claude-design/Claude_Design_Field_Guide_Source.md": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+    "claude-design/source/Claude_Design_Field_Guide_Source.md": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+    "claude-design/source/diagrams/DesignWorkflow.json": "aec62b1a66f4c6e31c23640292b12d96d9909a120726747ef6325679213349b4",
+    "claude-design/diagram-bindings.json": "3919dad57b62c9b1b32fae7ce96f74c25c8daa28f30a4267fb28fc4cedd9fdd6",
+    "claude-design/artwork-pairs.json": "f7a267a64600cf399da3e053a79e3d582201adb830d45a5aa65bf6f1ec086799",
+    "claude-design/screenshot-figures.json": "5c9a427e40fec3b55b9b91bf56405f7934a4aefe79ad59fc5d2cf0de80c7269b",
+    "claude-design/figma-companion.json": "7c08eb1d906eeddcaa1a2f500fa82a507947c920093ee700b294ecabed619668",
+    "claude-design/publication-package.json": "db15723ca77e9c0cf0f83a94dd9f17aefaaacf9c83b93ad98216b16120bf7680",
+    "claude-design/release-manifest.json": "3ce56c550bce34ef1f30fda47c60df306c80b334b7a3f8ff342301bb3cde619d",
+    "claude-design/publication.json": "3298021c8cb6f5bfc003da4c1f2daefdfe153a1fd5cd33cf86a669d33b54f7aa",
+    "claude-design/pdf-config.json": "0be1ea5649d81c7e7866a9d9166e19e6d3019da619b8b4359b94f96b58d59863",
+    "claude-design/pdf-variants.json": "01126725c53d2eb405619aab1ffb97ee302575bf6a29a6ea00828ce00caea366",
+    "claude-design/exercise-downloads.json": "24f7c4bca575464f5bad7b7ddbb3bd9cbf4e478ea67a5a6e0e44ffe89b80bc08",
+    "claude-design/change-ledger.json": "13c489e5313cc1c10767617e12137ffc1833066f1b596bc84541c31fc4729a14",
+    "claude-design/changelog-decision.json": "3fa10ba8a37733fd59457cdbe00276500ecec19424fee401c92c82e6b1fbcc27",
+    "claude-design/reader/index.html": "e8fd98a7811b877f90bdf5bc864396d72a09b35fa5fef31aa5f0e8814b0b93f4",
+    "claude-design/reader/editions/v2.1.2/claude-design-v2.1.2.md": "054b3b09c0c9dd9a75ca4e96ae0045711b105d4ee8009fc1cc7d5382570f94d1",
+    "claude-design/reader/editions/v2.1.2/claude-design-v2.1.2.index.json": "a15542576a2085f1b0f2809b909860dbaac8a6fd854e78a30f79adb910078780",
+    "catalog.json": "4955a668f703e2a99107cb129328ef73588f91ab9e99db4f4e6940bdb777524a",
+    "site/approval-registry.json": "c26bf33e6b5979294318ad95fb8123bd1f65568e905c8921fe4ef3be87720606",
+    "site/changelogs.json": "cfd2e6d640af0598e5fca099812fdf25473529da62fa03ee4a3f2458a3e42615",
+    "site/retained-releases.json": "32d79db8b824682911d4c8947cc5cf2335030f57cb0d90a93ad4db670347bf74",
+    "vercel.json": "7b0b5d50647dd516747e5864e1538a45a57c6f938e29c0ade9db90cb22e48f97",
+    "publish-evidence-backed-handbook/references/specimen/manifest.json": "ed3bf80aec855bf75894cd80fc36b3dfa5d91cc3b60322bc8f030d5e6b63fef5",
+    "publish-evidence-backed-handbook/scripts/exercise-downloads.mjs": "deea13b511d5dc8abc21b20dee033c4431f4e7ce96dae2baf7064d2b470dca68",
+    "publish-evidence-backed-handbook/scripts/test-exercise-downloads.mjs": "23fea3b64dca40f288e2e17f9efcaeffe0a42580cee4fd60a1196dc7af8e40b2"
+  },
+  "checks": {
+    "claude-design/qa/v2.1.2/promotion-checks/retention-baseline-v211.json": {
+      "sha256": "ddf9cfe95138aad57529eb0a3fa971307a766104c21bd91482b51c64fab410f6",
+      "bytes": 9911
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/integrity-attempt2.log": {
+      "sha256": "d10380ff8186670720b5dd9fe542c03f92670234b26f4f73dadf45e7eaccf1bb",
+      "bytes": 2399
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/appearance.log": {
+      "sha256": "e5db38a9ad5ce6a7f11b41a3abaf89d73ae6f1a345fc5949c659a9c4c150d686",
+      "bytes": 10
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/retained-exercise-contract.json": {
+      "sha256": "2d3f546cc44fc3f6e3e168572c1830f849a0e2fd09e08271e9706372edf42f15",
+      "bytes": 744
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/late-night-structure.log": {
+      "sha256": "cde8b670402d628d7dff8d61ebd24ac3bb9ae3ea3cdacc8f8c5efd667ac5ab38",
+      "bytes": 25564
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/reader-build.log": {
+      "sha256": "927da8b8c99a254b3ac373666de6a17fa7ac42026d724b8bd5da85d404dfb077",
+      "bytes": 29
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/late-night-structure.json": {
+      "sha256": "cde8b670402d628d7dff8d61ebd24ac3bb9ae3ea3cdacc8f8c5efd667ac5ab38",
+      "bytes": 25564
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/collection-validate-attempt1.log": {
+      "sha256": "53ed524520c8020c3f8846318716f14a10c2c923ed483fe08e80a21f1dc974bb",
+      "bytes": 19794
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/daytime-structure.log": {
+      "sha256": "98925baf39b76da10e9834932576e233df61f3c11a5d33ee2c7629a9343dcf3e",
+      "bytes": 25543
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/daytime-structure.json": {
+      "sha256": "98925baf39b76da10e9834932576e233df61f3c11a5d33ee2c7629a9343dcf3e",
+      "bytes": 25543
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/pair.log": {
+      "sha256": "d384bfe6d818d74d87f6d4e7a509095f5101466b7d6230dcc3f3ca7123775b74",
+      "bytes": 406
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/appearance.json": {
+      "sha256": "dceeb0c3ea12bcc1567883702664c349c84ade2b54e18e6ce4c4e449f49ba398",
+      "bytes": 45987
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/metadata-finalization.json": {
+      "sha256": "8cf1fafe6f31524e5f621f817962610ea077fa345d6b8db0271fd8feeb76a85c",
+      "bytes": 1068
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/public-site-final-build.log": {
+      "sha256": "44f82278895505e2379f98b157a465d618fd7eb6583790b17a4d0e9cb96754ab",
+      "bytes": 54
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/integrity.json": {
+      "sha256": "f1705f5b7a1cd5982f85a24bd3c18c79ad51fc5d1018ecf172a00d4f8ed1d526",
+      "bytes": 3772
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/appearance-parity/parity.json": {
+      "sha256": "d384bfe6d818d74d87f6d4e7a509095f5101466b7d6230dcc3f3ca7123775b74",
+      "bytes": 406
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/claude-design-validation.log": {
+      "sha256": "29528d54dd532021c5e8b82cc6f17a916b5ab583e0e58c1f4963af27c33413ce",
+      "bytes": 5266
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/shared-exercise-test-exercise-downloads.json": {
+      "sha256": "c61f7ff58837388296dbda2f60b5099e6df71987403889acb81380c75fbec5bb",
+      "bytes": 3360
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/toolkit-distribution-validation.json": {
+      "sha256": "01d111b826da9f519c7f1813a7f4ac00746a744b0152f562f24625270f6cb96a",
+      "bytes": 210
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/shared-exercise-review.json": {
+      "sha256": "d246525d8e9944b0b3f69be7cd0ffe9ce5b1198f59427feaa862c7a20ffb1ab6",
+      "bytes": 2916
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/shared-exercise-test-exercise-downloads.log": {
+      "sha256": "c61f7ff58837388296dbda2f60b5099e6df71987403889acb81380c75fbec5bb",
+      "bytes": 3360
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/shared-exercise-diff.patch": {
+      "sha256": "b0255eceb1ce93b0dbdcf9de496937ab6a0445c2167f91ec7b794e47205302da",
+      "bytes": 9497
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/shared-exercise-root-rerun.log": {
+      "sha256": "c61f7ff58837388296dbda2f60b5099e6df71987403889acb81380c75fbec5bb",
+      "bytes": 3360
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/toolkit-package-validation.json": {
+      "sha256": "c564cf1e6faa4a1acf0742457dfecd1045aded4db19ec6e9b522304dcba0719f",
+      "bytes": 15869
+    },
+    "claude-design/qa/v2.1.2/promotion-checks/source-validation/toolkit-package-validation.log": {
+      "sha256": "c564cf1e6faa4a1acf0742457dfecd1045aded4db19ec6e9b522304dcba0719f",
+      "bytes": 15869
+    }
+  },
+  "limitations": [
+    "Existing native, prototype and companion evidence retain their original editions and bounded scope.",
+    "Candidate exact-artifact visual review is retained unchanged; no fresh app/Figma trial or PDF rerender was needed for byte-identical promotion.",
+    "Hosted CI, merge, deployment and live qualification remain root-owned steps."
+  ]
+}

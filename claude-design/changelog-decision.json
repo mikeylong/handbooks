@@ -3,7 +3,7 @@
   "status": "passed",
   "includeChangelog": true,
   "readerFacingContentChanged": true,
-  "summary": "This edition brings the React sample and editable Figma answer key into line with the existing cart exercise.",
+  "summary": "This candidate corrects prompt labels and clarifies the starting context and handoff.",
   "entryCount": 2,
   "failures": [],
   "placement": "final-page",
@@ -21,14 +21,14 @@
     {
       "id": "C01",
       "category": "Correction or clarification",
-      "section": "Chapter 5; chapter 9; React sample",
-      "text": "Bring the React sample through Add to cart and Cart confirmation, matching the standalone offline answer key.",
-      "rationale": "Both runnable examples now follow the existing exercise, including Continue, Edit cart item and Reset fixture.",
-      "readerImpact": "The React sample reaches the cart endpoint already required by the exercise.",
+      "section": "Prompt examples in chapters 1–5 and 7",
+      "text": "Label five examples as Claude Design prompts and the implementation example as a Claude Code prompt.",
+      "rationale": "Each label names the task and destination; the prompt text is unchanged.",
+      "readerImpact": "Readers can distinguish instructions to Claude Design from implementation instructions to Claude Code.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/"
       ],
-      "sourceLimitations": "Authored exercise package and direct sample behavior checks. The standalone answer key remains unchanged. No new Claude Design generation trial or independent human task review is claimed.",
+      "sourceLimitations": "Editorial correction of the approved manuscript; no new product behavior or native trial is claimed.",
       "recommendedVersionImpact": "patch",
       "groupedDraftEntries": [
         "C01"
@@ -37,15 +37,14 @@
     {
       "id": "C02",
       "category": "Correction or clarification",
-      "section": "Chapters 5, 8 and 9; Figure 10; Figma answer key",
-      "text": "Correct the editable Figma answer key to show Review with Add to cart and a Cart frame with the robot, all four choices and quantity one.",
-      "rationale": "The current frames now represent the existing cart endpoint, with Edit cart item and Continue configuring. They remain static, with no prototype connections or choice-state wiring.",
-      "readerImpact": "The editable answer key covers Review and Cart while preserving the original trial record.",
+      "section": "Starting context; guided exercise; workflow diagram alt text",
+      "text": "Clarify the code-first route and name Claude Code at handoff.",
+      "rationale": "Exclude both completed Review and Cart implementations from baseline context, matching the sample.",
+      "readerImpact": "The baseline context and handoff destinations match the existing exercise.",
       "sources": [
-        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
-        "https://www.figma.com/design/0xMkeCibem2XwvOosFym0T/velori-review-continuation?node-id=2076-46"
+        "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
       ],
-      "sourceLimitations": "Direct Figma edit and native frame exports on October 7. These are static editable frames, not a new Claude Design generation trial.",
+      "sourceLimitations": "Checked against the unchanged current sample README and .design-sync exclusions. Diagram geometry is unchanged.",
       "recommendedVersionImpact": "patch",
       "groupedDraftEntries": [
         "C02"

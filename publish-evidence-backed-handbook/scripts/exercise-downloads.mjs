@@ -21,7 +21,20 @@ export async function exerciseDownloadLinks(source,edition,pkg) {
  assert.equal(definition.book,edition.id,'Exercise book mismatch');
  assert.equal(definition.version,edition.version,'Exercise edition mismatch');
  assert.ok(Array.isArray(definition.downloads)&&definition.downloads.length>0,'Exercise downloads required');
- const urls=new Set(),prefix='/'+edition.id+'/editions/v'+edition.version+'/';
+ // The caller supplies already-approved definition and artifact pins. Its book
+ // release validator additionally certifies approval of any retained edition.
+ let exerciseEdition=edition.version;
+ if(Object.hasOwn(definition,'exerciseEdition')) {
+  const versionPattern=/^(0|[1-9][0-9]*)[.](0|[1-9][0-9]*)[.](0|[1-9][0-9]*)$/;
+  assert.ok(typeof definition.exerciseEdition==='string'&&versionPattern.test(definition.exerciseEdition),'Invalid exercise edition');
+  assert.ok(typeof edition.version==='string'&&versionPattern.test(edition.version),'Invalid current exercise edition');
+  const selected=definition.exerciseEdition.split('.').map(BigInt),current=edition.version.split('.').map(BigInt);
+  let comparison=0;
+  for(let i=0;i<3;i++)if(selected[i]!==current[i]){comparison=selected[i]<current[i]?-1:1;break;}
+  assert.ok(comparison<=0,'Exercise edition cannot follow the current edition');
+  exerciseEdition=definition.exerciseEdition;
+ }
+ const urls=new Set(),prefix='/'+edition.id+'/editions/v'+exerciseEdition+'/';
  const links=[];
  for(const row of definition.downloads) {
   assert.ok(typeof row.label==='string'&&row.label.trim(),'Exercise label required');

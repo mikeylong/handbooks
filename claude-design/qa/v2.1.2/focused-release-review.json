@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-08T02:15:22.966642+00:00",
+  "status": "passed",
+  "edition": "2.1.2",
+  "reviewer": "Independent Codex reviewer /root/parity_final_review",
+  "baselineCommit": "b728a56a9f8e3613b92e18ab31bd85a4e3915f4d",
+  "scope": "One focused release review of source guards, actual public prompt labels/bodies, final release metadata and original exercise retention. Reuses exact-hash complete final-r2 visual qualification.",
+  "authority": {
+    "command": "Land this",
+    "scope": "Direct user release command supplied by parent; this is a review receipt, not a new publication authority."
+  },
+  "frozenQualifiedArtifacts": [
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/Claude_Design_Field_Guide_Source.md",
+      "sha256": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+      "bytes": 40088
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/source/Claude_Design_Field_Guide_Source.md",
+      "sha256": "a2cb08e7a0dd00cad4b796e116c6b751d0a55649cfdd82c31dce643e0943544e",
+      "bytes": 40088
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-daytime-r1.pdf",
+      "sha256": "b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03",
+      "bytes": 7133324
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/output/pdf/claude-design-v2.1.2-2026-10-07-late-night-r1.pdf",
+      "sha256": "05f06bf733f60cfe0a6c2d8a9e63589f3d5eac22bfa0dec8edb1b6eee102e78a",
+      "bytes": 46134047
+    }
+  ],
+  "metadataPins": [
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/catalog.json",
+      "sha256": "4955a668f703e2a99107cb129328ef73588f91ab9e99db4f4e6940bdb777524a",
+      "bytes": 7007
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/release-manifest.json",
+      "sha256": "3ce56c550bce34ef1f30fda47c60df306c80b334b7a3f8ff342301bb3cde619d",
+      "bytes": 3219
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/publication-package.json",
+      "sha256": "db15723ca77e9c0cf0f83a94dd9f17aefaaacf9c83b93ad98216b16120bf7680",
+      "bytes": 16745
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/pdf-variants.json",
+      "sha256": "01126725c53d2eb405619aab1ffb97ee302575bf6a29a6ea00828ce00caea366",
+      "bytes": 5176
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/exercise-downloads.json",
+      "sha256": "24f7c4bca575464f5bad7b7ddbb3bd9cbf4e478ea67a5a6e0e44ffe89b80bc08",
+      "bytes": 1249
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/qa/v2.1.2/publication-approval.json",
+      "sha256": "3ba0c6f4bf29eee6548cc9ab8a12010368faffca1955790ec042df9e123b597f",
+      "bytes": 4906
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/publication.json",
+      "sha256": "3298021c8cb6f5bfc003da4c1f2daefdfe153a1fd5cd33cf86a669d33b54f7aa",
+      "bytes": 359
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/change-ledger.json",
+      "sha256": "13c489e5313cc1c10767617e12137ffc1833066f1b596bc84541c31fc4729a14",
+      "bytes": 3785
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/changelog-decision.json",
+      "sha256": "3fa10ba8a37733fd59457cdbe00276500ecec19424fee401c92c82e6b1fbcc27",
+      "bytes": 2160
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/edition-changelog.json",
+      "sha256": "8cb2ac236c8225d50d2e84dc7b328307c1349a599ee44b6dfb9fffa2b7c01cf4",
+      "bytes": 1555
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/site/approval-registry.json",
+      "sha256": "c26bf33e6b5979294318ad95fb8123bd1f65568e905c8921fe4ef3be87720606",
+      "bytes": 1440
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/site/changelogs.json",
+      "sha256": "cfd2e6d640af0598e5fca099812fdf25473529da62fa03ee4a3f2458a3e42615",
+      "bytes": 811
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/site/retained-releases.json",
+      "sha256": "32d79db8b824682911d4c8947cc5cf2335030f57cb0d90a93ad4db670347bf74",
+      "bytes": 43582
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/vercel.json",
+      "sha256": "7b0b5d50647dd516747e5864e1538a45a57c6f938e29c0ade9db90cb22e48f97",
+      "bytes": 18867
+    }
+  ],
+  "guardPins": [
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/source/validate-retained-exercise.mjs",
+      "sha256": "56cf563b59499795e04ddf21de15827d1e6d711803a5b0f89f336dc1bd45beb0",
+      "bytes": 5500
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/source/test-retained-exercise.mjs",
+      "sha256": "adfdf4c7569731b3ba7e9d7e02d818fd4cc00ddfb5f91496214c4f32c33651d7",
+      "bytes": 4696
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/source/validate-design-exploration.mjs",
+      "sha256": "ab9077421f0f06fb3f03d0f590eabaa7c4ac3f88071f2a48d1e58a43af96c7a0",
+      "bytes": 34940
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/source/test-design-exploration.mjs",
+      "sha256": "47e7805e82d8e63910719ea25c158fce7727bb46897b7f155c6af7b255430677",
+      "bytes": 13356
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/source/validate-prompt-tools.mjs",
+      "sha256": "5f3a63e007aa49232f070e31a2a88ad8d7265ef31fb4961b4d6037a0533de5fb",
+      "bytes": 4154
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/source/test-prompt-tools.mjs",
+      "sha256": "453a46cb91d4dca48defded315af920560fac64a794de74641d163327286b040",
+      "bytes": 2424
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/publish-evidence-backed-handbook/scripts/exercise-downloads.mjs",
+      "sha256": "deea13b511d5dc8abc21b20dee033c4431f4e7ce96dae2baf7064d2b470dca68",
+      "bytes": 3881
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/publish-evidence-backed-handbook/scripts/test-exercise-downloads.mjs",
+      "sha256": "23fea3b64dca40f288e2e17f9efcaeffe0a42580cee4fd60a1196dc7af8e40b2",
+      "bytes": 16684
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/publish-evidence-backed-handbook/references/specimen/manifest.json",
+      "sha256": "ed3bf80aec855bf75894cd80fc36b3dfa5d91cc3b60322bc8f030d5e6b63fef5",
+      "bytes": 16517
+    }
+  ],
+  "publishedOutputs": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/release/public-site-final/claude-design/index.html",
+      "sha256": "34d4f5b2821732d0c96368000d224af7568d87000bd795db072fe3e64fd83600",
+      "bytes": 90487
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/reader/editions/v2.1.2/claude-design-v2.1.2.md",
+      "sha256": "054b3b09c0c9dd9a75ca4e96ae0045711b105d4ee8009fc1cc7d5382570f94d1",
+      "bytes": 50705
+    },
+    {
+      "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/reader/editions/v2.1.2/claude-design-v2.1.2.index.json",
+      "sha256": "a15542576a2085f1b0f2809b909860dbaac8a6fd854e78a30f79adb910078780",
+      "bytes": 17130
+    }
+  ],
+  "sourceGuardReview": {
+    "status": "passed",
+    "retainedExercise": "Strictly older original artifact edition, fixed approved manifest/package/approval/download definition paths and hashes, exact old contract fields, artifact bytes and download rows required. Old parity remains v2.1.1, including React package/lock/source identity.",
+    "promptGuard": "Six expected chapters name five Claude Design destinations and one Claude Code destination. Generic code classification, wrong tools, lost answer exclusions and changed output label/body mutations reject. Reviewer checked actual public reader, distributed Markdown and both PDF texts against frozen source.",
+    "sharedRuntime": "Default behavior is preserved. Explicit older exercise selection retains exact route/path, symlink, size/hash and definition/package pin checks; responsible agent reports 74 focused tests passed.",
+    "validationScope": "Root/builder ran integrated Claude and collection validators; reviewer inspected logic, pins and actual output/preservation. No repeated broad validation."
+  },
+  "retention": {
+    "artifactEdition": "2.1.1",
+    "originalNativeEvidenceEdition": "2.0.0",
+    "originalStandalonePrototypeEvidenceEdition": "2.1.0",
+    "originalCompanionParityEdition": "2.1.1",
+    "exerciseFiles": [
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+        "sha256": "59863c04bcc678a073e531da7e29ce8bdb0a9acb0600b5959824536f094ae768",
+        "bytes": 97181421
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/reader/editions/v2.1.1/velori-design-exploration-starter.fig",
+        "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca",
+        "bytes": 13891619
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/reader/editions/v2.1.1/figma-companion.json",
+        "sha256": "7c08eb1d906eeddcaa1a2f500fa82a507947c920093ee700b294ecabed619668",
+        "bytes": 7753
+      }
+    ],
+    "baselineExactCount": 17,
+    "baselinePins": [
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/Claude_Design_Field_Guide_Source.md",
+        "sha256": "1edec86ea15f98a0086e643d29cbfba08ae9f0c7b45189288e0e290341baaa28",
+        "bytes": 40004
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/README.md",
+        "sha256": "a5a5af001d38c2436eda802bc53e14beb23620fdcc11c4f9fe370081d3acb0d0",
+        "bytes": 2969
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/artwork-pairs.json",
+        "sha256": "f7a267a64600cf399da3e053a79e3d582201adb830d45a5aa65bf6f1ec086799",
+        "bytes": 17931
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/change-ledger.json",
+        "sha256": "bd9815901aaf75c5e5b1a517d4cb9226823f75504fef9f6df8d2e2116ed678ce",
+        "bytes": 4441
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/changelog-decision.json",
+        "sha256": "71e7189efc8f14da220ca893d381c84413bb9ca358276eb89b1cf76893ee05a4",
+        "bytes": 2613
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/diagram-bindings.json",
+        "sha256": "047d4e713cafa2af9b9415222b93329b66b2db62875a33fa983323ee1bc70373",
+        "bytes": 373
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/edition-changelog.json",
+        "sha256": "22f6f2a2bd1965e32950ab79ceff0c2127873015748d7d2acc6243974a8d66fb",
+        "bytes": 2106
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/exercise-downloads.json",
+        "sha256": "6381ec04c0e9a5caf4f854422fe52c7b0137105a674570fdc7b571da7a059082",
+        "bytes": 1219
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/figma-companion.json",
+        "sha256": "7c08eb1d906eeddcaa1a2f500fa82a507947c920093ee700b294ecabed619668",
+        "bytes": 7753
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/package.json",
+        "sha256": "228cfdc21390c5ef238c30465a75d4d978afe00a88f47961353559dc3f8eaffe",
+        "bytes": 397
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/pdf-config.json",
+        "sha256": "f0873064ea25c63fbce483dc158e688ec8b3b60cdeda7645b9bdccc755020c90",
+        "bytes": 2230
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/pdf-variants.json",
+        "sha256": "eca017b03434df4cfb59d5ddc3bccb24cb52fa59afbca393215a769ea3e16883",
+        "bytes": 4334
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/publication-approval.json",
+        "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b",
+        "bytes": 4430
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/publication-package.json",
+        "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9",
+        "bytes": 13523
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/publication.json",
+        "sha256": "28ea9822044634f649c825786baa41c3fc5909b76dac9051c5a46816fd0c86d4",
+        "bytes": 359
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/release-manifest.json",
+        "sha256": "b37a0384129b6e15f00b12930c5ffdf216538d74aac97fe06fd5656d16c574dd",
+        "bytes": 2378
+      },
+      {
+        "path": "/Users/mike/.codex/worktrees/claude-design-v200-release/handbooks/claude-design/baselines/v2.1.1/screenshot-figures.json",
+        "sha256": "5c9a427e40fec3b55b9b91bf56405f7934a4aefe79ad59fc5d2cf0de80c7269b",
+        "bytes": 20717
+      }
+    ],
+    "unchangedPreviousPackageMembers": 100,
+    "earlierRetainedRoutesUnchanged": 132,
+    "newV211RetainedRoutesHashVerified": 28,
+    "sidecarByteIdentical": true,
+    "oldReaderSnapshotExactAgainstApprovedBaselineR2": true,
+    "publishedMarkdownBodyByteIdenticalToCandidate": true
+  },
+  "screenshotReceiptCorrection": {
+    "receipt": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/focused-review-dimensions-corrected.json",
+      "sha256": "c555cc5cbfc845dc0c212565b29832e71d2bde28b4cbfd7a253df7973ccd4be3",
+      "bytes": 36233
+    },
+    "original": {
+      "original": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/focused-review.json",
+      "originalSha256": "6a8f94a9782e4d7bbe037a58f6fd1ddafb7ff2aa20788ed6f453e74198842e72",
+      "scope": "Screenshot metadata only: inspect actual JPEG media format and measured dimensions; files and visual review results unchanged."
+    },
+    "actualFormat": "JPEG",
+    "desktopPixels": [
+      1280,
+      720
+    ],
+    "mobilePixels": [
+      390,
+      844
+    ],
+    "proofHashesAndVisualDecisionUnchanged": true
+  },
+  "priorVisualQualification": {
+    "receipt": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/focused-review-dimensions-corrected.json",
+      "sha256": "c555cc5cbfc845dc0c212565b29832e71d2bde28b4cbfd7a253df7973ccd4be3",
+      "bytes": 36233
+    },
+    "rendererInventory": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/evidence/final-r2/render-inventory.json",
+      "sha256": "e1dc22dfc47dd3b42ca451a58ed7155ce07c87046b739fe6f5a3548982a5857b",
+      "bytes": 33005
+    },
+    "popplerReceipt": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/poppler-visual-review.json",
+      "sha256": "0a3c1960b84c1cf2c23df2a4a8bf2539640ad7a48de6a7b7a49a76eeda2337c4",
+      "bytes": 90457
+    },
+    "pdfkitReceipt": {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/qa/pdfkit-visual-review.json",
+      "sha256": "036c52a59424f057e3e298f73532ad240f405ec462411459ee09a2625dbcb4e9",
+      "bytes": 94402
+    },
+    "appearances": 2,
+    "pagesPerAppearance": 56,
+    "allPageContactSheets": 4,
+    "nativeSheets": 56,
+    "actualPageRenderReviews": 224,
+    "decision": "passed; unchanged reviewed PDF/source bytes permit reuse without rerender"
+  },
+  "validationEvidence": [
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/release/metadata-finalization.json",
+      "sha256": "8cf1fafe6f31524e5f621f817962610ea077fa345d6b8db0271fd8feeb76a85c",
+      "bytes": 1068
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/release/promotion-checks/integrity.json",
+      "sha256": "f1705f5b7a1cd5982f85a24bd3c18c79ad51fc5d1018ecf172a00d4f8ed1d526",
+      "bytes": 3772
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/release/qa/shared-exercise-test-exercise-downloads.json",
+      "sha256": "c61f7ff58837388296dbda2f60b5099e6df71987403889acb81380c75fbec5bb",
+      "bytes": 3360
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/release/qa/claude-design-validation.log",
+      "sha256": "29528d54dd532021c5e8b82cc6f17a916b5ab583e0e58c1f4963af27c33413ce",
+      "bytes": 5266
+    },
+    {
+      "path": "/Users/mike/handbooks/claude-design/review/2026-10-07-prompt-label-audit/release/qa/toolkit-distribution-validation.json",
+      "sha256": "01d111b826da9f519c7f1813a7f4ac00746a744b0152f562f24625270f6cb96a",
+      "bytes": 210
+    }
+  ],
+  "portableToolkit": {
+    "status": "passed",
+    "files": 140,
+    "scope": "Manifest-built/extracted distributable. Pre-existing unrelated mushroom working-tree candidate outputs are excluded by the package builder and are not a scoped defect."
+  },
+  "scopedFiles": {
+    "trackedModifiedCount": 26,
+    "untrackedCount": 147,
+    "listSha256": "9d8e8258e9e1ea4e2a8d9e7d21f6c1d1b5e3371021c01c9fa702090b2a8c5ff1",
+    "unrelatedPrimaryChangesIncluded": false,
+    "noSampleOrOldQAOrSidecarChanges": true
+  },
+  "findings": [],
+  "findingCounts": {
+    "High": 0,
+    "Medium": 0,
+    "Low": 0
+  },
+  "limitations": [
+    "Production deployment and live downloads have not been checked by this review.",
+    "No fresh native Claude Design, Figma or sample app test is claimed; original artifact evidence keeps its editions, dates and limits.",
+    "Physical printing and PDF/UA compliance are not claimed.",
+    "Visual qualification is reused only for exactly unchanged PDF/source bytes."
+  ],
+  "mutationBoundary": "Reviewer wrote this private QA receipt only; no source/worktree/Git/network/browser/publication mutation."
+}

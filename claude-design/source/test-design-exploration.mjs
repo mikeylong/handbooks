@@ -10,7 +10,7 @@ const manifest=JSON.parse(await readFile(new URL('release-manifest.json',book),'
 validateExplorationContract(manifest);
 for(const [name,mutate] of [
  ['wrong host',x=>x.releaseContract.sample.publicUrl=x.releaseContract.sample.publicUrl.replace('handbooks.surfaces.systems','example.com')],
- ['wrong edition',x=>x.releaseContract.sample.publicUrl=x.releaseContract.sample.publicUrl.replace('v'+x.version,'v1.3.0')],
+ ['wrong edition',x=>x.releaseContract.sample.publicUrl=x.releaseContract.sample.publicUrl.replace('v'+(x.releaseContract.retainedExercise?.edition??x.version),'v1.3.0')],
  ['private sample',x=>x.releaseContract.sample.repositoryPath='claude-design/review/private.zip'],
  ['missing native hash',x=>delete x.releaseContract.nativeStarter.sha256],
  ['missing classification',x=>x.releaseContract.classifiedChangeIds=[]],
@@ -18,10 +18,10 @@ for(const [name,mutate] of [
 ]){const x=structuredClone(manifest);mutate(x);assert.throws(()=>validateExplorationContract(x),undefined,name);}
 const html=await readFile(new URL('reader/index.html',book),'utf8');
 const text=execFileSync('pdftotext',[new URL(manifest.pdf,book).pathname,'-'],{encoding:'utf8'});
-const contentOptions={candidate:manifest.approvalStatus==='candidate'};
+const contentOptions={candidate:manifest.approvalStatus==='candidate',exerciseEdition:manifest.releaseContract.retainedExercise?.edition??manifest.version,source:await readFile(new URL('Claude_Design_Field_Guide_Source.md',book),'utf8'),markdown:await readFile(new URL(`reader/editions/v${manifest.version}/claude-design-v${manifest.version}.md`,book),'utf8')};
 validateExplorationContent(text,html,manifest.version,contentOptions);
 assert.throws(()=>validateExplorationContent(text.replaceAll('unsupported','unverified'),html,manifest.version,contentOptions),undefined,'Do not drop the observed direct-edit failure');
-assert.throws(()=>validateExplorationContent(text,html.replaceAll(`velori-design-exploration-v${manifest.version}.zip`,'missing.zip'),manifest.version,contentOptions),undefined,'Require the exercise download link');
+assert.throws(()=>validateExplorationContent(text,html.replaceAll(`velori-design-exploration-v${contentOptions.exerciseEdition}.zip`,'missing.zip'),manifest.version,contentOptions),undefined,'Require the exercise download link');
 assert.throws(()=>validateExplorationContent(text,html.replace('class="chapter-art"','class="missing-opener"'),manifest.version,contentOptions),undefined,'Require all nine chapter openers');
 console.log('V2 contract and content fixtures passed; wrong hosts/editions, private downloads, missing pins, incomplete classifications and missing reader evidence fail. Publication approval is not tested by these fixtures.');
 
