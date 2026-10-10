@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "id": "ai-consulting",
   "title": "AI Consulting Playbook",
-  "version": "1.0.0",
-  "date": "2026-10-01",
+  "version": "1.0.1",
+  "date": "2026-10-09",
   "renderer": "reportlab",
   "releasedPdf": "output/pdf/ai-consulting-v1.0.0-2026-10-01.pdf",
   "releasedSha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
-  "pages": 138,
+  "pages": 142,
   "story": "build_story",
   "source": "source/build_handbook.py",
   "fonts": "source/fonts",
@@ -16,5 +16,6 @@
     594.96
   ],
   "runningDeck": "FROM OPPORTUNITY TO GOVERNED DECISION",
-  "docClass": "ConsultingGuideTemplate"
+  "docClass": "ConsultingGuideTemplate",
+  "baselineMode": "content-edition"
 }

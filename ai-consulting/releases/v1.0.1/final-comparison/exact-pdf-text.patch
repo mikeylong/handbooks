@@ -1,0 +1,1305 @@
+--- previous/ai-consulting-v1.0.0-2026-10-01.pdf
++++ candidate/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf
+@@ -4,7 +4,7 @@
+ From an AI opportunity to a governed decision and clean
+ handoff
+ Michael Long, surfaces.systems
+-October 1, 2026 | Version 1.0.0
++October 9, 2026 | Version 1.0.1
+ --- PDF page 2 ---
+ ii
+ ORIENTATION
+@@ -129,7 +129,7 @@
+  Guided capstone answer key
+  110
+ The consulting packet you will build
+- viii
++ xi
+  Guided capstone self-assessment
+  116
+ 1. Frame the engagement around a
+@@ -176,7 +176,8 @@
+ 9. Prepare the people who will use and
+ support it
+  63
+-
++ Changelog
++ 131
+ --- PDF page 6 ---
+ vi
+ The consulting loop at a
+@@ -215,14 +216,95 @@
+ vii
+ Priority changes, technician assignment, customer commitments, and
+ autonomous writes remain outside the first pilot.
++Worked example: a bounded support
++pilot
++The following customer support example shows a completed decision
++summary. The scenario and all numbers are fictional. The targets
++describe what the pilot will test, not results already achieved.
++For four experienced agents answering software setup questions, the
++evidence supports testing AI-generated reply drafts. A review of 100
++recent tickets found agents repeatedly searching the same help articles.
++Finding instructions, writing, checking, and sending a reply took a
++median of eight minutes; 96% of sent replies were factually correct. The
++target is six minutes while maintaining at least that accuracy.
++The pilot runs for two weeks and covers routine setup questions only. It
++permits approved help articles and ticket text with customer identifiers
++removed. AI may draft replies and cite supporting articles. An agent
++must check and send every response. The system cannot send messages
++or change customer accounts.
++The controls include restricted access, logs, and an off switch. The
++support lead owns the pilot and checks completed replies for factual
++errors. The engineering lead owns access permissions, identifier
++removal, and shutdown.
++--- PDF page 8 ---
++viii
++We stop immediately if customer identifiers reach the AI or an
++unreviewed reply is sent. At the end of two weeks, we extend once, by
++one week, if fewer than 150 eligible tickets are completed and neither
++incident has occurred. If volume remains too low, we close the pilot as
++inconclusive. With at least 150 tickets, we revise if median time exceeds
++six minutes or accuracy falls below 96%. We expand to eight agents only
++if both targets are met and no stop event has occurred. Timing includes
++checking and sending; accuracy measures completed replies.
++The current evidence does not establish that AI drafting will save two
++minutes, that replies can be sent without review, or that results will
++transfer to billing disputes or inexperienced agents.
++--- PDF page 9 ---
++ix
++Build your decision summary
++Answer the questions one at a time, using the worked example as a
++guide. Record what you know and mark missing evidence as unknown.
++Return to those gaps as you complete the modules; do not invent facts to
++fill the summary.
++ 1
++Which workflow and users are in scope? Name the task and the people
++who will take part.
++ 2
++What problem have you observed? Describe the difficulty in the current
++work.
++ 3
++What evidence supports that problem? Record observations, the
++sample, and baseline measures.
++ 4
++What bounded change will you test? Choose one change small enough to
++evaluate and reverse.
++ 5
++What outcome do you expect? Name the target and how you will
++measure it, including review effort.
++ 6
++What data may the system use? Identify permitted sources, required
++removal of identifiers, and excluded data.
++ 7
++What actions may the system take? State what AI may draft,
++recommend, send, or change, and what requires human approval.
++ 8
++Who may be exposed to the output? Define participants, recipients,
++duration, and activities outside the pilot.
++ 9
++What controls will enforce those limits? Specify access restrictions,
++review, logs, and how the pilot can be stopped.
++ 10
++Who owns the pilot and its controls? Assign each responsibility and the
++final decision to a named person or role.
++ 11
++When will you stop, revise, extend, or scale? Set measures, thresholds,
++minimum evidence, review timing, and any extension limit before
++starting.
++--- PDF page 10 ---
++x
++ 12
++What does the current evidence not establish? Name untested
++capabilities, populations, and outcomes.
++Use your answers to complete the summary below. Keep unknowns
++visible and revise the summary as new evidence arrives.
+ DECISION: The sentence you will keep completing
+ For workflow and users ___, the evidence supports testing bounded
+ change ___ because observed problem and expected outcome ___. The
+ pilot permits data, actions, and exposure ___, with controls and owners
+ ___. We will decide stop, revise, extend, or scale using measures and gates
+ ___. The current evidence does not establish ___.
+---- PDF page 8 ---
+-viii
++--- PDF page 11 ---
++xi
+ The consulting packet
+ you will build
+ MODULES
+@@ -256,14 +338,14 @@
+ CLAIM: The operating principle
+ A useful engagement leaves behind clearer decisions, credible evidence,
+ and an organization able to continue without the consultant.
+---- PDF page 9 ---
++--- PDF page 12 ---
+ 1
+ CHAPTER 01
+ Frame the engagement
+ around a decision
+ Turn a broad AI request into a bounded question with an owner,
+ evidence standard, and decision date.
+---- PDF page 10 ---
++--- PDF page 13 ---
+ AI CONSULTING PLAYBOOK
+ 1. FRAME THE ENGAGEMENT AROUND A DECISION
+ 2
+@@ -309,7 +391,7 @@
+ organization fund next?
+ Portfolio evidence, maturity gaps, operating
+ constraints, owners.
+---- PDF page 11 ---
++--- PDF page 14 ---
+ AI CONSULTING PLAYBOOK
+ 1. FRAME THE ENGAGEMENT AROUND A DECISION
+ 3
+@@ -336,7 +418,7 @@
+ name the decision you need to make and the evidence you would trust. We
+ may still arrive at that answer, but the engagement should be able to show
+ when another path is stronger.'
+---- PDF page 12 ---
++--- PDF page 15 ---
+ AI CONSULTING PLAYBOOK
+ 1. FRAME THE ENGAGEMENT AROUND A DECISION
+ 4
+@@ -388,7 +470,7 @@
+ -
+ Make acceptance criteria visible before the final presentation, not while the
+ recommendation is being negotiated.
+---- PDF page 13 ---
++--- PDF page 16 ---
+ AI CONSULTING PLAYBOOK
+ 1. FRAME THE ENGAGEMENT AROUND A DECISION
+ 5
+@@ -405,7 +487,7 @@
+ assistance, no autonomous assignments or customer commitments.
+ Non-claim: the engagement will not establish that dispatch can be
+ automated safely across all regions or service types.
+---- PDF page 14 ---
++--- PDF page 17 ---
+ AI CONSULTING PLAYBOOK
+ 1. FRAME THE ENGAGEMENT AROUND A DECISION
+ 6
+@@ -416,7 +498,7 @@
+ Decision owner, contributors, reviewers, and affected groups
+ Workflow, users, population, systems, locations, and jurisdictions in scope
+ Choices the evidence may support
+---- PDF page 15 ---
++--- PDF page 18 ---
+ AI CONSULTING PLAYBOOK
+ 1. FRAME THE ENGAGEMENT AROUND A DECISION
+ 7
+@@ -430,14 +512,14 @@
+ safe, lawful, or ready for a pilot.
+ Sources: C1, C3-C5, C16, C18. The consulting sequence, worksheets, and Harborline case are author
+ synthesis. Full citations appear in Further reading.
+---- PDF page 16 ---
++--- PDF page 19 ---
+ 8
+ CHAPTER 02
+ See the work as it actually
+ happens
+ Observe the actors, evidence, queues, handoffs, and exceptions that
+ determine the real opportunity.
+---- PDF page 17 ---
++--- PDF page 20 ---
+ AI CONSULTING PLAYBOOK
+ 2. SEE THE WORK AS IT ACTUALLY HAPPENS
+ 9
+@@ -491,7 +573,7 @@
+ request, claim, support conversation, inspection, planning cycle, or
+ invoice exception. For each unit, record the actor, input, decision,
+ evidence, tool, handoff, wait, exception, output, and consequence.
+---- PDF page 18 ---
++--- PDF page 21 ---
+ AI CONSULTING PLAYBOOK
+ 2. SEE THE WORK AS IT ACTUALLY HAPPENS
+ 10
+@@ -537,7 +619,7 @@
+ Handle time may fall while review time, error correction, employee
+ burden, or downstream delay rises. Measure the whole workflow outcome
+ and keep the unit of analysis visible.
+---- PDF page 19 ---
++--- PDF page 22 ---
+ AI CONSULTING PLAYBOOK
+ 2. SEE THE WORK AS IT ACTUALLY HAPPENS
+ 11
+@@ -579,7 +661,7 @@
+ work order. Record search, interpretation, corrections, waiting, and
+ exception paths separately. The two-minute transaction is one
+ component, not the unit of work.
+---- PDF page 20 ---
++--- PDF page 23 ---
+ AI CONSULTING PLAYBOOK
+ 2. SEE THE WORK AS IT ACTUALLY HAPPENS
+ 12
+@@ -589,7 +671,7 @@
+ Actors, decisions, evidence, tools, and handoffs
+ Normal flow, exceptions, workarounds, and recovery
+ Baseline volume, time, quality, service, economics, and risk
+---- PDF page 21 ---
++--- PDF page 24 ---
+ AI CONSULTING PLAYBOOK
+ 2. SEE THE WORK AS IT ACTUALLY HAPPENS
+ 13
+@@ -604,14 +686,14 @@
+ population prevalence, or that AI is the right intervention.
+ Sources: C16-C19. The consulting sequence, worksheets, and Harborline case are author synthesis.
+ Full citations appear in Further reading.
+---- PDF page 22 ---
++--- PDF page 25 ---
+ 14
+ CHAPTER 03
+ Choose one opportunity
+ worth testing
+ Compare AI with process repair, conventional automation, and no
+ change before selecting a pilot.
+---- PDF page 23 ---
++--- PDF page 26 ---
+ AI CONSULTING PLAYBOOK
+ 3. CHOOSE ONE OPPORTUNITY WORTH TESTING
+ 15
+@@ -669,7 +751,7 @@
+ fixing data ownership.
+ Dependencies prevent useful learning or the
+ risk is disproportionate.
+---- PDF page 24 ---
++--- PDF page 27 ---
+ AI CONSULTING PLAYBOOK
+ 3. CHOOSE ONE OPPORTUNITY WORTH TESTING
+ 16
+@@ -716,7 +798,7 @@
+ Name what the person can see, how much time they have, what authority
+ they retain, how overrides work, and whether incentives or automation
+ bias make the review meaningful.
+---- PDF page 25 ---
++--- PDF page 28 ---
+ AI CONSULTING PLAYBOOK
+ 3. CHOOSE ONE OPPORTUNITY WORTH TESTING
+ 17
+@@ -772,7 +854,7 @@
+ Record the facts behind value and readiness separately; do not add the
+ labels into a single score. These labels organize a discussion, not an
+ investment calculation.
+---- PDF page 26 ---
++--- PDF page 29 ---
+ AI CONSULTING PLAYBOOK
+ 3. CHOOSE ONE OPPORTUNITY WORTH TESTING
+ 18
+@@ -821,7 +903,7 @@
+ leaders expect the largest savings. Data ownership, safety exceptions,
+ scheduling permissions, and recovery are unknown. What should the
+ recommendation say?
+---- PDF page 27 ---
++--- PDF page 30 ---
+ AI CONSULTING PLAYBOOK
+ 3. CHOOSE ONE OPPORTUNITY WORTH TESTING
+ 19
+@@ -831,7 +913,7 @@
+ can test workflow value while keeping assignments and commitments
+ under human control. List the evidence autonomous assignment would
+ require before reconsideration.
+---- PDF page 28 ---
++--- PDF page 31 ---
+ AI CONSULTING PLAYBOOK
+ 3. CHOOSE ONE OPPORTUNITY WORTH TESTING
+ 20
+@@ -842,7 +924,7 @@
+ Alternatives: process, rules, information, AI, defer, or no change
+ Proposed AI role: assist, recommend, decide, or act
+ Outcome value and workflow fit evidence
+---- PDF page 29 ---
++--- PDF page 32 ---
+ AI CONSULTING PLAYBOOK
+ 3. CHOOSE ONE OPPORTUNITY WORTH TESTING
+ 21
+@@ -857,7 +939,7 @@
+ return on investment, compliance, or organizational readiness to scale.
+ Sources: C1-C5, C16-C19, C25. The consulting sequence, worksheets, and Harborline case are author
+ synthesis. Full citations appear in Further reading.
+---- PDF page 30 ---
++--- PDF page 33 ---
+ 22
+ CHAPTER 04
+ Define the future
+@@ -865,7 +947,7 @@
+ boundary
+ Specify what changes, what stays human, what data and actions are
+ permitted, and how the work fails safely.
+---- PDF page 31 ---
++--- PDF page 34 ---
+ AI CONSULTING PLAYBOOK
+ 4. DEFINE THE FUTURE WORKFLOW AND AI BOUNDARY
+ 23
+@@ -916,7 +998,7 @@
+ evidence or service is unavailable.
+ No partial hidden state; issue is visible
+ and traceable.
+---- PDF page 32 ---
++--- PDF page 35 ---
+ AI CONSULTING PLAYBOOK
+ 4. DEFINE THE FUTURE WORKFLOW AND AI BOUNDARY
+ 24
+@@ -967,7 +1049,7 @@
+ versions and change log.
+ Indefinite beta or silent model/provider
+ changes.
+---- PDF page 33 ---
++--- PDF page 36 ---
+ AI CONSULTING PLAYBOOK
+ 4. DEFINE THE FUTURE WORKFLOW AND AI BOUNDARY
+ 25
+@@ -998,7 +1080,7 @@
+ -
+ Record: acceptance, edit, override, reason, and resulting state can be
+ audited without punishing appropriate disagreement.
+---- PDF page 34 ---
++--- PDF page 37 ---
+ AI CONSULTING PLAYBOOK
+ 4. DEFINE THE FUTURE WORKFLOW AND AI BOUNDARY
+ 26
+@@ -1046,7 +1128,7 @@
+ write the assignment. Record the request as evidence for a future
+ opportunity review. Do not expand permissions through conversational
+ convenience.
+---- PDF page 35 ---
++--- PDF page 38 ---
+ AI CONSULTING PLAYBOOK
+ 4. DEFINE THE FUTURE WORKFLOW AND AI BOUNDARY
+ 27
+@@ -1057,7 +1139,7 @@
+ Future workflow: admit, structure, retrieve, generate, review, commit, recover
+ Behavior and outcome contract
+ Permitted users, data, outputs, actions, exposure, and time
+---- PDF page 36 ---
++--- PDF page 39 ---
+ AI CONSULTING PLAYBOOK
+ 4. DEFINE THE FUTURE WORKFLOW AND AI BOUNDARY
+ 28
+@@ -1073,14 +1155,14 @@
+ will occur.
+ Sources: C1-C5, C13-C18. The consulting sequence, worksheets, and Harborline case are author
+ synthesis. Full citations appear in Further reading.
+---- PDF page 37 ---
++--- PDF page 40 ---
+ 29
+ CHAPTER 05
+ Make ownership, risk,
+ and permissions explicit
+ Translate affected people, obligations, and failure paths into
+ controls, gates, and accountable decisions.
+---- PDF page 38 ---
++--- PDF page 41 ---
+ AI CONSULTING PLAYBOOK
+ 5. MAKE OWNERSHIP, RISK, AND PERMISSIONS EXPLICIT
+ 30
+@@ -1127,7 +1209,7 @@
+ management-system bridge for policy, objectives, risk, performance
+ review, audit, and continual improvement. Neither framework
+ determines the law that applies to a specific engagement.
+---- PDF page 39 ---
++--- PDF page 42 ---
+ AI CONSULTING PLAYBOOK
+ 5. MAKE OWNERSHIP, RISK, AND PERMISSIONS EXPLICIT
+ 31
+@@ -1167,7 +1249,7 @@
+ narrower boundary even when the aggregate score is strong. Record
+ frequency, severity, detectability, reversibility, affected groups, and
+ uncertainty separately.
+---- PDF page 40 ---
++--- PDF page 43 ---
+ AI CONSULTING PLAYBOOK
+ 5. MAKE OWNERSHIP, RISK, AND PERMISSIONS EXPLICIT
+ 32
+@@ -1230,7 +1312,7 @@
+ consequence, human authority, appeal.
+ Legal, compliance, domain and
+ affected-person representation.
+---- PDF page 41 ---
++--- PDF page 44 ---
+ AI CONSULTING PLAYBOOK
+ 5. MAKE OWNERSHIP, RISK, AND PERMISSIONS EXPLICIT
+ 33
+@@ -1283,7 +1365,7 @@
+ -
+ Rights to test, audit, suspend, restrict versions, reconcile state, and
+ terminate when evidence or obligations change.
+---- PDF page 42 ---
++--- PDF page 45 ---
+ AI CONSULTING PLAYBOOK
+ 5. MAKE OWNERSHIP, RISK, AND PERMISSIONS EXPLICIT
+ 34
+@@ -1303,7 +1385,7 @@
+ evidence; the executive risk owner accepts residual exposure. Any named
+ stop owner may halt the pilot. Restart requires the owners affected by the
+ incident and fresh evidence, not only the vendor's reassurance.
+---- PDF page 43 ---
++--- PDF page 46 ---
+ AI CONSULTING PLAYBOOK
+ 5. MAKE OWNERSHIP, RISK, AND PERMISSIONS EXPLICIT
+ 35
+@@ -1313,7 +1395,7 @@
+ Affected people, assets, rights, service outcomes, and jurisdictions
+ High, Medium, and Low risk chains: failure, exposure, consequence, uncertainty
+ Preventive, detective, corrective, and recovery controls
+---- PDF page 44 ---
++--- PDF page 47 ---
+ AI CONSULTING PLAYBOOK
+ 5. MAKE OWNERSHIP, RISK, AND PERMISSIONS EXPLICIT
+ 36
+@@ -1322,7 +1404,7 @@
+ Decision rights: propose, approve, operate, change, stop, restart, retire
+ Vendor evidence, contract gaps, and exit requirements
+ Legal, privacy, security, safety, labor, and sector reviews needed
+---- PDF page 45 ---
++--- PDF page 48 ---
+ AI CONSULTING PLAYBOOK
+ 5. MAKE OWNERSHIP, RISK, AND PERMISSIONS EXPLICIT
+ 37
+@@ -1335,14 +1417,14 @@
+ organization deploying the system.
+ Sources: C1-C15, C18, C20-C22, C25. The consulting sequence, worksheets, and Harborline case are
+ author synthesis. Full citations appear in Further reading.
+---- PDF page 46 ---
++--- PDF page 49 ---
+ 38
+ CHAPTER 06
+ Design a pilot that can
+ answer a decision
+ Choose a representative boundary, comparison, measures, exposure
+ limit, and predeclared next-action rule.
+---- PDF page 47 ---
++--- PDF page 50 ---
+ AI CONSULTING PLAYBOOK
+ 6. DESIGN A PILOT THAT CAN ANSWER A DECISION
+ 39
+@@ -1390,7 +1472,7 @@
+ increasing safety, contract, privacy, or service errors. The pilot begins in
+ sandbox and shadow mode, then permits human-approved drafts only if
+ system and governance entry gates pass.
+---- PDF page 48 ---
++--- PDF page 51 ---
+ AI CONSULTING PLAYBOOK
+ 6. DESIGN A PILOT THAT CAN ANSWER A DECISION
+ 40
+@@ -1431,7 +1513,7 @@
+ not prove output quality. A strong offline score does not establish business
+ value. Report each track and hard blocker separately before making a
+ combined decision.
+---- PDF page 49 ---
++--- PDF page 52 ---
+ AI CONSULTING PLAYBOOK
+ 6. DESIGN A PILOT THAT CAN ANSWER A DECISION
+ 41
+@@ -1476,7 +1558,7 @@
+ Observed value remains plausible under full recurring cost and sensitivity ranges.
+ Next action
+ Stop, revise, extend, or expand one exposure level; no automatic leap to autonomy.
+---- PDF page 50 ---
++--- PDF page 53 ---
+ AI CONSULTING PLAYBOOK
+ 6. DESIGN A PILOT THAT CAN ANSWER A DECISION
+ 42
+@@ -1507,7 +1589,7 @@
+ and risk gates, usage and workflow measures, full cost, exposure, version
+ control, and a predeclared purchase or stop rule. If those cannot fit,
+ narrow the decision to whether a larger pilot is justified.
+---- PDF page 51 ---
++--- PDF page 54 ---
+ AI CONSULTING PLAYBOOK
+ 6. DESIGN A PILOT THAT CAN ANSWER A DECISION
+ 43
+@@ -1517,7 +1599,7 @@
+ Population, eligibility, slices, duration, volume, users, and locations
+ Intervention, comparison, baseline, and assignment method
+ Business and service measures
+---- PDF page 52 ---
++--- PDF page 55 ---
+ AI CONSULTING PLAYBOOK
+ 6. DESIGN A PILOT THAT CAN ANSWER A DECISION
+ 44
+@@ -1526,7 +1608,7 @@
+ Risk, governance, human, adoption, and economic measures
+ Entry gates, floors, hard blockers, exit and stop rules
+ Exposure, kill switch, fallback, reconciliation, and communication
+---- PDF page 53 ---
++--- PDF page 56 ---
+ AI CONSULTING PLAYBOOK
+ 6. DESIGN A PILOT THAT CAN ANSWER A DECISION
+ 45
+@@ -1539,14 +1621,14 @@
+ and evidence quality.
+ Sources: C1-C3, C16-C18, C23, C25. The consulting sequence, worksheets, and Harborline case are
+ author synthesis. Full citations appear in Further reading.
+---- PDF page 54 ---
++--- PDF page 57 ---
+ 46
+ CHAPTER 07
+ Plan delivery around
+ uncertainty
+ Coordinate product, data, engineering, evaluation, governance, and
+ adoption through visible decisions and dependencies.
+---- PDF page 55 ---
++--- PDF page 58 ---
+ AI CONSULTING PLAYBOOK
+ 7. PLAN DELIVERY AROUND UNCERTAINTY
+ 47
+@@ -1603,7 +1685,7 @@
+ and exit support the use?
+ Diligence, contract, cost model, portability
+ test.
+---- PDF page 56 ---
++--- PDF page 59 ---
+ AI CONSULTING PLAYBOOK
+ 7. PLAN DELIVERY AROUND UNCERTAINTY
+ 48
+@@ -1647,7 +1729,7 @@
+ Use representative workflow tasks, failure cases, data and security
+ requirements, operating cost, change terms, and exit tests. A feature list
+ rarely exposes the decision-relevant differences.
+---- PDF page 57 ---
++--- PDF page 60 ---
+ AI CONSULTING PLAYBOOK
+ 7. PLAN DELIVERY AROUND UNCERTAINTY
+ 49
+@@ -1711,7 +1793,7 @@
+ stale sources block dependent fields. Verify with stale-source challenges and an
+ update drill. Safety accepts only the tested two-queue exposure; restart requires
+ fresh evidence.
+---- PDF page 58 ---
++--- PDF page 61 ---
+ AI CONSULTING PLAYBOOK
+ 7. PLAN DELIVERY AROUND UNCERTAINTY
+ 50
+@@ -1746,7 +1828,7 @@
+ [ ]
+ The next decision and the evidence it will use are scheduled before
+ exposure begins.
+---- PDF page 59 ---
++--- PDF page 62 ---
+ AI CONSULTING PLAYBOOK
+ 7. PLAN DELIVERY AROUND UNCERTAINTY
+ 51
+@@ -1760,7 +1842,7 @@
+ change the decision and label the smaller study, or move the date. Do not
+ keep the pilot label while removing the dependency that determines its
+ value and risk.
+---- PDF page 60 ---
++--- PDF page 63 ---
+ AI CONSULTING PLAYBOOK
+ 7. PLAN DELIVERY AROUND UNCERTAINTY
+ 52
+@@ -1770,7 +1852,7 @@
+ Product and workflow workstream
+ Data and knowledge workstream
+ Engineering and operations workstream
+---- PDF page 61 ---
++--- PDF page 64 ---
+ AI CONSULTING PLAYBOOK
+ 7. PLAN DELIVERY AROUND UNCERTAINTY
+ 53
+@@ -1779,7 +1861,7 @@
+ Adoption, training, support, and commercial workstreams
+ Build, buy, partner, hybrid, or defer decision
+ Assumptions, dependencies, decisions, risks, and change control
+---- PDF page 62 ---
++--- PDF page 65 ---
+ AI CONSULTING PLAYBOOK
+ 7. PLAN DELIVERY AROUND UNCERTAINTY
+ 54
+@@ -1791,14 +1873,14 @@
+ the named evidence and owners still have to accept the boundary.
+ Sources: C3-C5, C13-C16, C20-C22, C27. The consulting sequence, worksheets, and Harborline case
+ are author synthesis. Full citations appear in Further reading.
+---- PDF page 63 ---
++--- PDF page 66 ---
+ 55
+ CHAPTER 08
+ Build and verify the
+ whole pilot system
+ Version the complete workflow and require evidence for behavior,
+ controls, recovery, and operations before exposure.
+---- PDF page 64 ---
++--- PDF page 67 ---
+ AI CONSULTING PLAYBOOK
+ 8. BUILD AND VERIFY THE WHOLE PILOT SYSTEM
+ 56
+@@ -1835,7 +1917,7 @@
+ People and
+ process
+ Reviewers, training version, escalation, support, decision owners, and run date.
+---- PDF page 65 ---
++--- PDF page 68 ---
+ AI CONSULTING PLAYBOOK
+ 8. BUILD AND VERIFY THE WHOLE PILOT SYSTEM
+ 57
+@@ -1917,7 +1999,7 @@
+ burden, and error recovery.
+ -
+ Load, resilience, observability, and cost tests for real operating conditions.
+---- PDF page 66 ---
++--- PDF page 69 ---
+ AI CONSULTING PLAYBOOK
+ 8. BUILD AND VERIFY THE WHOLE PILOT SYSTEM
+ 58
+@@ -1978,7 +2060,7 @@
+ assess affected units; require fresh gate.
+ Finding, versions, population,
+ containment and restart decision.
+---- PDF page 67 ---
++--- PDF page 70 ---
+ AI CONSULTING PLAYBOOK
+ 8. BUILD AND VERIFY THE WHOLE PILOT SYSTEM
+ 59
+@@ -2010,7 +2092,7 @@
+ the exact runtime tool and authorization state, rerun affected tests, and
+ update the manifest. Zero observed writes does not establish that an
+ available consequential action is controlled.
+---- PDF page 68 ---
++--- PDF page 71 ---
+ AI CONSULTING PLAYBOOK
+ 8. BUILD AND VERIFY THE WHOLE PILOT SYSTEM
+ 60
+@@ -2019,7 +2101,7 @@
+ Complete system manifest and candidate identity
+ Requirement-to-method-to-evidence matrix
+ Representative, challenge, slice, usability, and human-review results
+---- PDF page 69 ---
++--- PDF page 72 ---
+ AI CONSULTING PLAYBOOK
+ 8. BUILD AND VERIFY THE WHOLE PILOT SYSTEM
+ 61
+@@ -2028,7 +2110,7 @@
+ Reliability, latency, cost, fallback, recovery, and reconciliation results
+ Open findings, severity, owner, mitigation, and affected boundary
+ Training, support, monitoring, incident, kill-switch, and rollback rehearsal
+---- PDF page 70 ---
++--- PDF page 73 ---
+ AI CONSULTING PLAYBOOK
+ 8. BUILD AND VERIFY THE WHOLE PILOT SYSTEM
+ 62
+@@ -2041,14 +2123,14 @@
+ versions.
+ Sources: C1-C3, C12-C18, C21, C23. The consulting sequence, worksheets, and Harborline case are
+ author synthesis. Full citations appear in Further reading.
+---- PDF page 71 ---
++--- PDF page 74 ---
+ 63
+ CHAPTER 09
+ Prepare the people who
+ will use and support it
+ Design the role, review, training, support, and feedback work with
+ the people who will carry it.
+---- PDF page 72 ---
++--- PDF page 75 ---
+ AI CONSULTING PLAYBOOK
+ 9. PREPARE THE PEOPLE WHO WILL USE AND SUPPORT IT
+ 64
+@@ -2102,7 +2184,7 @@
+ evidence?
+ Named supervisor path, issue capture, status
+ visibility, manual fallback.
+---- PDF page 73 ---
++--- PDF page 76 ---
+ AI CONSULTING PLAYBOOK
+ 9. PREPARE THE PEOPLE WHO WILL USE AND SUPPORT IT
+ 65
+@@ -2137,7 +2219,7 @@
+ verify evidence, which data and actions are permitted, when to
+ challenge or stop, and how issues are reported. Completion of a generic
+ course is not proof that a person can operate this workflow safely.
+---- PDF page 74 ---
++--- PDF page 77 ---
+ AI CONSULTING PLAYBOOK
+ 9. PREPARE THE PEOPLE WHO WILL USE AND SUPPORT IT
+ 66
+@@ -2171,7 +2253,7 @@
+ does not establish that a particular AI workflow is usable or that an
+ employment duty has been met. Include accessibility findings in pilot
+ entry and handoff evidence. [C28]
+---- PDF page 75 ---
++--- PDF page 78 ---
+ AI CONSULTING PLAYBOOK
+ 9. PREPARE THE PEOPLE WHO WILL USE AND SUPPORT IT
+ 67
+@@ -2229,7 +2311,7 @@
+ not fit.
+ Whether the workaround protects work or
+ creates new risk.
+---- PDF page 76 ---
++--- PDF page 79 ---
+ AI CONSULTING PLAYBOOK
+ 9. PREPARE THE PEOPLE WHO WILL USE AND SUPPORT IT
+ 68
+@@ -2244,7 +2326,7 @@
+ workflow before increasing training or pressure. Report which non-use is
+ rational. Do not use adoption targets to force people into an inferior or
+ risky path.
+---- PDF page 77 ---
++--- PDF page 80 ---
+ AI CONSULTING PLAYBOOK
+ 9. PREPARE THE PEOPLE WHO WILL USE AND SUPPORT IT
+ 69
+@@ -2254,7 +2336,7 @@
+ Task, decision, knowledge, workload, accountability, and incentive changes
+ Meaningful human review and fallback in real conditions
+ Role-specific literacy objectives and practice cases
+---- PDF page 78 ---
++--- PDF page 81 ---
+ AI CONSULTING PLAYBOOK
+ 9. PREPARE THE PEOPLE WHO WILL USE AND SUPPORT IT
+ 70
+@@ -2263,7 +2345,7 @@
+ Adoption measures: eligible use, completion, edits, overrides, time, help, workarounds
+ Reasonable causes of non-use and how they will be investigated
+ Feedback-to-decision path, owner, response time, and communication
+---- PDF page 79 ---
++--- PDF page 82 ---
+ AI CONSULTING PLAYBOOK
+ 9. PREPARE THE PEOPLE WHO WILL USE AND SUPPORT IT
+ 71
+@@ -2274,14 +2356,14 @@
+ labor, or legal review.
+ Sources: C5, C9, C16, C19, C24, C26, C28. The consulting sequence, worksheets, and Harborline case
+ are author synthesis. Full citations appear in Further reading.
+---- PDF page 80 ---
++--- PDF page 83 ---
+ 72
+ CHAPTER 10
+ Run the pilot as a
+ controlled evidence loop
+ Use a stable cadence to see what changed, separate causes, control
+ versions, and respond without damaging the evidence.
+---- PDF page 81 ---
++--- PDF page 84 ---
+ AI CONSULTING PLAYBOOK
+ 10. RUN THE PILOT AS A CONTROLLED EVIDENCE LOOP
+ 73
+@@ -2320,7 +2402,7 @@
+ validation needed.
+ Decision
+ Continue, narrow, pause, stop, revise, or propose the next exposure.
+---- PDF page 82 ---
++--- PDF page 85 ---
+ AI CONSULTING PLAYBOOK
+ 10. RUN THE PILOT AS A CONTROLLED EVIDENCE LOOP
+ 74
+@@ -2372,7 +2454,7 @@
+ consequence, prompt tuning hides the decision. Resolve the rule,
+ document the owner and exceptions, then update the system and
+ evidence.
+---- PDF page 83 ---
++--- PDF page 86 ---
+ AI CONSULTING PLAYBOOK
+ 10. RUN THE PILOT AS A CONTROLLED EVIDENCE LOOP
+ 75
+@@ -2414,7 +2496,7 @@
+ and process.
+ Fresh gate
+ Require fresh evidence and named approval for the exact restart boundary.
+---- PDF page 84 ---
++--- PDF page 87 ---
+ AI CONSULTING PLAYBOOK
+ 10. RUN THE PILOT AS A CONTROLLED EVIDENCE LOOP
+ 76
+@@ -2446,7 +2528,7 @@
+ -
+ Whether model, source, policy, vendor, workflow, and organizational
+ changes trigger appropriate revalidation.
+---- PDF page 85 ---
++--- PDF page 88 ---
+ AI CONSULTING PLAYBOOK
+ 10. RUN THE PILOT AS A CONTROLLED EVIDENCE LOOP
+ 77
+@@ -2459,7 +2541,7 @@
+ development or regression evidence, freeze the decision candidate, and
+ evaluate it on protected representative and challenge evidence under the
+ predeclared rules.
+---- PDF page 86 ---
++--- PDF page 89 ---
+ AI CONSULTING PLAYBOOK
+ 10. RUN THE PILOT AS A CONTROLLED EVIDENCE LOOP
+ 78
+@@ -2469,7 +2551,7 @@
+ Business and service results versus baseline and comparison
+ System behavior, reliability, latency, cost, and important slices
+ Risk, controls, human review, adoption, burden, help, and workarounds
+---- PDF page 87 ---
++--- PDF page 90 ---
+ AI CONSULTING PLAYBOOK
+ 10. RUN THE PILOT AS A CONTROLLED EVIDENCE LOOP
+ 79
+@@ -2478,7 +2560,7 @@
+ Changes: cause, authorization, versions, evidence invalidated, validation
+ Decision: continue, narrow, pause, stop, revise, or propose next exposure
+ Open questions and evidence needed next week
+---- PDF page 88 ---
++--- PDF page 91 ---
+ AI CONSULTING PLAYBOOK
+ 10. RUN THE PILOT AS A CONTROLLED EVIDENCE LOOP
+ 80
+@@ -2489,14 +2571,14 @@
+ population, period, and operating conditions.
+ Sources: C1-C3, C12-C18, C23. The consulting sequence, worksheets, and Harborline case are author
+ synthesis. Full citations appear in Further reading.
+---- PDF page 89 ---
++--- PDF page 92 ---
+ 81
+ CHAPTER 11
+ Turn the evidence into
+ the next decision
+ Interpret quality, risk, adoption, workflow impact, and economics
+ without rounding mixed evidence up to scale.
+---- PDF page 90 ---
++--- PDF page 93 ---
+ AI CONSULTING PLAYBOOK
+ 11. TURN THE EVIDENCE INTO THE NEXT DECISION
+ 82
+@@ -2542,7 +2624,7 @@
+ change the system responsibly?
+ Owners, staffing, monitoring, vendor,
+ recovery, backlog, literacy.
+---- PDF page 91 ---
++--- PDF page 94 ---
+ AI CONSULTING PLAYBOOK
+ 11. TURN THE EVIDENCE INTO THE NEXT DECISION
+ 83
+@@ -2599,7 +2681,7 @@
+ rate. Use a mean, not a median gap.
+ Observational differences do not
+ prove causal savings.
+---- PDF page 92 ---
++--- PDF page 95 ---
+ AI CONSULTING PLAYBOOK
+ 11. TURN THE EVIDENCE INTO THE NEXT DECISION
+ 84
+@@ -2682,7 +2764,7 @@
+ accepts autonomous dispatch.
+ Keep the existing assistive boundary;
+ expansion remains conditional.
+---- PDF page 93 ---
++--- PDF page 96 ---
+ AI CONSULTING PLAYBOOK
+ 11. TURN THE EVIDENCE INTO THE NEXT DECISION
+ 85
+@@ -2709,7 +2791,7 @@
+ into productivity or scale readiness. Recommend containment and fresh
+ evidence for the failure, then choose stop, revise, or extend under a
+ bounded claim.
+---- PDF page 94 ---
++--- PDF page 97 ---
+ AI CONSULTING PLAYBOOK
+ 11. TURN THE EVIDENCE INTO THE NEXT DECISION
+ 86
+@@ -2719,7 +2801,7 @@
+ Decision, candidate, population, period, comparison, and exposure
+ Service and workflow evidence with slices and limitations
+ System quality, reliability, security, privacy, and control evidence
+---- PDF page 95 ---
++--- PDF page 98 ---
+ AI CONSULTING PLAYBOOK
+ 11. TURN THE EVIDENCE INTO THE NEXT DECISION
+ 87
+@@ -2728,7 +2810,7 @@
+ Full economics: benefit, recurring cost, human cost, change, exit, sensitivity
+ Hard blockers, residual risk, uncertainty, and disconfirming evidence
+ Stop, revise, extend, or scale recommendation and exact next boundary
+---- PDF page 96 ---
++--- PDF page 99 ---
+ AI CONSULTING PLAYBOOK
+ 11. TURN THE EVIDENCE INTO THE NEXT DECISION
+ 88
+@@ -2741,14 +2823,14 @@
+ autonomy without new evidence and approval.
+ Sources: C1-C5, C16-C19, C23. The consulting sequence, worksheets, and Harborline case are author
+ synthesis. Full citations appear in Further reading.
+---- PDF page 97 ---
++--- PDF page 100 ---
+ 89
+ CHAPTER 12
+ Leave the client able to
+ continue
+ Transfer accepted artifacts, decision rights, routines, and capability
+ so the system no longer depends on the consulting team.
+---- PDF page 98 ---
++--- PDF page 101 ---
+ AI CONSULTING PLAYBOOK
+ 12. LEAVE THE CLIENT ABLE TO CONTINUE
+ 90
+@@ -2789,7 +2871,7 @@
+ exit.
+ Executive
+ Exposure, funding, residual risk, scale or stop, and organizational accountability.
+---- PDF page 99 ---
++--- PDF page 102 ---
+ AI CONSULTING PLAYBOOK
+ 12. LEAVE THE CLIENT ABLE TO CONTINUE
+ 91
+@@ -2822,7 +2904,7 @@
+ external prompts, untransferred source files, consultant-owned vendor
+ relationships, unexplained judgments, and review routines that only work
+ when the project team is present.
+---- PDF page 100 ---
++--- PDF page 103 ---
+ AI CONSULTING PLAYBOOK
+ 12. LEAVE THE CLIENT ABLE TO CONTINUE
+ 92
+@@ -2866,7 +2948,7 @@
+ Event-triggered
+ Model/provider change, source change, incident, policy or law change, new
+ population, data, action or location.
+---- PDF page 101 ---
++--- PDF page 104 ---
+ AI CONSULTING PLAYBOOK
+ 12. LEAVE THE CLIENT ABLE TO CONTINUE
+ 93
+@@ -2902,7 +2984,7 @@
+ The final packet is complete, but the product owner has never run the
+ evidence review, the data owner cannot update the source index, and the
+ incident drill still depends on the consultant. Can the engagement close?
+---- PDF page 102 ---
++--- PDF page 105 ---
+ AI CONSULTING PLAYBOOK
+ 12. LEAVE THE CLIENT ABLE TO CONTINUE
+ 94
+@@ -2911,7 +2993,7 @@
+ acceptance demonstrations, and either extend a defined transition or
+ assign an accountable internal or vendor operator. Do not label
+ dependency as knowledge transfer.
+---- PDF page 103 ---
++--- PDF page 106 ---
+ AI CONSULTING PLAYBOOK
+ 12. LEAVE THE CLIENT ABLE TO CONTINUE
+ 95
+@@ -2922,7 +3004,7 @@
+ backlog packets
+ Operating runbook: monitor, support, change, evaluate, incident, rollback, reconcile,
+ retire
+---- PDF page 104 ---
++--- PDF page 107 ---
+ AI CONSULTING PLAYBOOK
+ 12. LEAVE THE CLIENT ABLE TO CONTINUE
+ 96
+@@ -2931,7 +3013,7 @@
+ Continuous, weekly, monthly, periodic, and event-triggered cadence
+ 30/60/90-day transition plan
+ Consultant access, accounts, data, tools, vendors, IP, support, and deletion closeout
+---- PDF page 105 ---
++--- PDF page 108 ---
+ AI CONSULTING PLAYBOOK
+ 12. LEAVE THE CLIENT ABLE TO CONTINUE
+ 97
+@@ -2944,7 +3026,7 @@
+ remain necessary.
+ Sources: C1-C5, C12-C14, C16, C18-C22, C24. The consulting sequence, worksheets, and Harborline
+ case are author synthesis. Full citations appear in Further reading.
+---- PDF page 106 ---
++--- PDF page 109 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 98
+@@ -2970,7 +3052,7 @@
+ or communicates a commitment without accountable review.
+ Coordinators remember a prior trial that produced fluent but
+ unsupported answers.
+---- PDF page 107 ---
++--- PDF page 110 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 99
+@@ -3058,7 +3140,7 @@
+ Five commonly used
+ Two lack single sign-on; source switching is a major
+ burden.
+---- PDF page 108 ---
++--- PDF page 111 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 100
+@@ -3105,7 +3187,7 @@
+ May reduce callbacks.
+ Commitments, tone, consent, contract
+ and state reconciliation.
+---- PDF page 109 ---
++--- PDF page 112 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 101
+@@ -3142,7 +3224,7 @@
+ even though the proposed pilot is assistive. The runtime permission
+ boundary, not a prompt instruction, must exclude those actions before
+ pilot entry.
+---- PDF page 110 ---
++--- PDF page 113 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 102
+@@ -3187,7 +3269,7 @@
+ are included in the 294 current-workflow requests alongside 170 requests
+ without assistant access. This comparison therefore includes
+ self-selection as well as nonrandom shifts.
+---- PDF page 111 ---
++--- PDF page 114 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 103
+@@ -3249,7 +3331,7 @@
+ Add internal ownership, source cleanup,
+ and any enterprise tier using the worked
+ model below.
+---- PDF page 112 ---
++--- PDF page 115 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 104
+@@ -3300,7 +3382,7 @@
+ A passing point estimate is not a guarantee. The 74 safety challenges are
+ selected stress cases, not a production prevalence sample. Keep the zero
+ count and its selection limits together.
+---- PDF page 113 ---
++--- PDF page 116 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 105
+@@ -3328,7 +3410,7 @@
+ Residual risk
+ Other manual classes were sampled, not exhaustively verified; source governance
+ remains an operating dependency.
+---- PDF page 114 ---
++--- PDF page 117 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 106
+@@ -3370,7 +3452,7 @@
+ over the first twelve months adds $500/month. Expected platform cost
+ uses $10.85 per 100 available requests. No staffing reduction, added
+ billable work, or cash saving has been demonstrated.
+---- PDF page 115 ---
++--- PDF page 118 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 107
+@@ -3419,7 +3501,7 @@
+ Safety/Risk, Vendor, and executive ownership.
+  7
+ State the supported claim and at least five non-claims.
+---- PDF page 116 ---
++--- PDF page 119 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 108
+@@ -3429,7 +3511,7 @@
+ Decisive evidence across service, system, risk, people, economics, and ownership
+ Hard blockers, measurement limitations, uncertainty, and residual risk
+ Stop, revise, extend, or scale recommendation and rationale
+---- PDF page 117 ---
++--- PDF page 120 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE: HARBORLINE DECISION REVIEW
+ 109
+@@ -3437,7 +3519,7 @@
+ Prerequisites, owners, fresh evidence, stop rules, and next review date
+ Handoff and operating cadence
+ What this decision does not establish
+---- PDF page 118 ---
++--- PDF page 121 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE ANSWER KEY
+ 110
+@@ -3453,7 +3535,7 @@
+ period in the current two queues before considering any expansion of
+ HSP-0.8. Priority, assignment, customer commitments, outbound
+ messages, and autonomous writes stay disabled.
+---- PDF page 119 ---
++--- PDF page 122 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE ANSWER KEY
+ 111
+@@ -3492,7 +3574,7 @@
+ cannot be contained, stop the affected exposure. Extend is defensible only
+ after naming the uncertainty and confirming that additional observation
+ will answer it; scale is not supported by this packet.
+---- PDF page 120 ---
++--- PDF page 123 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE ANSWER KEY
+ 112
+@@ -3527,7 +3609,7 @@
+ governance were not represented.
+ This gate repairs the existing boundary. It does not admit an additional
+ queue.
+---- PDF page 121 ---
++--- PDF page 124 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE ANSWER KEY
+ 113
+@@ -3550,7 +3632,7 @@
+ Require Service Operations, Product, IT, Data, Safety/Risk, Vendor
+ owner, and executive owner to accept only the current two-queue repair
+ boundary. Review a separate expansion proposal after the repair gate.
+---- PDF page 122 ---
++--- PDF page 125 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE ANSWER KEY
+ 114
+@@ -3597,7 +3679,7 @@
+ consultant access and support obligations explicit until each owner
+ demonstrates the transferred task. Missing demonstrations keep handoff
+ open even when the files are delivered.
+---- PDF page 123 ---
++--- PDF page 126 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE ANSWER KEY
+ 115
+@@ -3626,7 +3708,7 @@
+ intake, evidence-retrieval, and drafting service in its existing two queues,
+ if owners fund and authorize that repair. It does not support expansion,
+ autonomous dispatch, booked savings, or a completed handoff.
+---- PDF page 124 ---
++--- PDF page 127 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE SELF-ASSESSMENT
+ 116
+@@ -3677,7 +3759,7 @@
+ Handoff
+ Transfers accepted artifacts, owners, runbooks, cadence, capability, vendor and
+ retirement paths.
+---- PDF page 125 ---
++--- PDF page 128 ---
+ AI CONSULTING PLAYBOOK
+ GUIDED CAPSTONE SELF-ASSESSMENT
+ 117
+@@ -3699,7 +3781,7 @@
+ [ ]
+ Calling handoff complete without named owners, acceptance
+ demonstrations, monitoring, rollback, vendor, and retirement paths.
+---- PDF page 126 ---
++--- PDF page 129 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX A: CONSULTING LIFECYCLE
+ 118
+@@ -3750,7 +3832,7 @@
+ Recommend the smallest workflow, population, data, action, and
+ operating boundary actually supported, then name the evidence required
+ for expansion.
+---- PDF page 127 ---
++--- PDF page 130 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX B: DISCOVERY INTERVIEW AND OBSERVATION GUIDE
+ 119
+@@ -3790,7 +3872,7 @@
+ downstream cost?
+ -
+ What would make you avoid the system even if leaders wanted it used?
+---- PDF page 128 ---
++--- PDF page 131 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX B: DISCOVERY INTERVIEW AND OBSERVATION GUIDE
+ 120
+@@ -3812,7 +3894,7 @@
+ [ ]
+ Fact, participant report, interpretation, proposal, and unresolved
+ question recorded separately.
+---- PDF page 129 ---
++--- PDF page 132 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX C: ASSIST, RECOMMEND, DECIDE, AND ACT
+ 121
+@@ -3884,7 +3966,7 @@
+ does not determine the real role. Inspect what data the system reads, what
+ it changes, what the person can see and control, and which outcome
+ follows in practice.
+---- PDF page 130 ---
++--- PDF page 133 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX D: MEASUREMENT AND ECONOMICS CHEAT SHEET
+ 122
+@@ -3954,7 +4036,7 @@
+ Attach the unit, population, period, comparison, version, sample, missing
+ data, uncertainty, important slices, measurement method, protected
+ outcome, and decision boundary.
+---- PDF page 131 ---
++--- PDF page 134 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX E: GOVERNANCE AND VENDOR QUESTION BANK
+ 123
+@@ -3995,7 +4077,7 @@
+ complete security, privacy, procurement, employment, accessibility,
+ sector, or legal review. Tailor it to the actual use and accountable
+ reviewers.
+---- PDF page 132 ---
++--- PDF page 135 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX F: PLAIN-LANGUAGE GLOSSARY
+ 124
+@@ -4049,7 +4131,7 @@
+ Human oversight
+ A designed ability to understand, challenge, decide, stop, and recover; not
+ merely the presence of a person.
+---- PDF page 133 ---
++--- PDF page 136 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX F: PLAIN-LANGUAGE GLOSSARY
+ 125
+@@ -4089,7 +4171,7 @@
+ vendor management, cadence, and accountability.
+ Claim boundary
+ A statement of what the evidence supports and what it does not establish.
+---- PDF page 134 ---
++--- PDF page 137 ---
+ AI CONSULTING PLAYBOOK
+ APPENDIX G: WORKSHEET INDEX
+ 126
+@@ -4159,7 +4241,7 @@
+ e
+ Make and defend the complete Harborline
+ recommendation and proof boundary.
+---- PDF page 135 ---
++--- PDF page 138 ---
+ AI CONSULTING PLAYBOOK
+ FURTHER READING AND SOURCE NOTES
+ 127
+@@ -4222,7 +4304,7 @@
+ accessible web workflows.
+ Voluntary diligence and testable web
+ criteria; neither establishes every legal duty.
+---- PDF page 136 ---
++--- PDF page 139 ---
+ AI CONSULTING PLAYBOOK
+ FURTHER READING AND SOURCE NOTES
+ 128
+@@ -4259,7 +4341,7 @@
+ https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20
+ [C13] NIST SP 800-218A. Secure Software Development Practices for Generative
+ AI, 2024. https://csrc.nist.gov/pubs/sp/800/218/a/final
+---- PDF page 137 ---
++--- PDF page 140 ---
+ AI CONSULTING PLAYBOOK
+ FURTHER READING AND SOURCE NOTES
+ 129
+@@ -4294,7 +4376,7 @@
+ [C24] U.S. Department of Labor. Artificial Intelligence Literacy Framework,
+ 2026. Further reading; source body unavailable at this edition check.
+ https://www.dol.gov/agencies/eta/advisories/ten-07-25
+---- PDF page 138 ---
++--- PDF page 141 ---
+ AI CONSULTING PLAYBOOK
+ FURTHER READING AND SOURCE NOTES
+ 130
+@@ -4317,3 +4399,17 @@
+ supported boundary, credible evidence, unresolved risk, accountable
+ owners, an operating cadence, and a client able to continue without the
+ consultant.
++--- PDF page 142 ---
++AI CONSULTING PLAYBOOK
++CHANGELOG
++131
++Changelog
++Version 1.0.1. Compared with edition 1.0.0, published October 1, 2026.
++Previous PDF SHA-256: 4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2
++Correction or clarification
++Add a fictional support-pilot example before the blank decision
++summary and twelve numbered questions for completing it.
++Show what a completed summary contains and let readers work through
++each decision before filling the template.
++Author synthesis; all example figures are fictional. Context: AI
++Consulting Playbook.

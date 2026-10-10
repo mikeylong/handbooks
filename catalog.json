@@ -103,9 +103,9 @@
       "title": "AI Consulting Playbook",
       "directory": "ai-consulting",
       "status": "published",
-      "pages": 138,
+      "pages": 142,
       "source": "source/build_handbook.py",
-      "pdf": "output/pdf/ai-consulting-v1.0.0-2026-10-01.pdf",
+      "pdf": "output/pdf/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf",
       "build": [
         "{python}",
         "source/build_handbook.py"
@@ -118,7 +118,7 @@
         ]
       ],
       "dependencies": [],
-      "pdfSha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+      "pdfSha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
       "historicalDraft": {
         "directory": "ai-consulting",
         "source": "work/build_ai_consulting_playbook.py",
@@ -126,11 +126,11 @@
         "pages": 128,
         "pdfSha256": "7c27cd42a6b082d6d6aae278af7728b5b1af58d38a8c3709e46f1211265a64d9"
       },
-      "version": "1.0.0",
+      "version": "1.0.1",
       "publicUrl": "https://handbooks.surfaces.systems/ai-consulting/",
       "historicalRepository": "https://github.com/mikeylong/ai-consulting-playbook",
       "repository": "https://github.com/mikeylong/handbooks",
-      "editionUrl": "https://handbooks.surfaces.systems/ai-consulting/editions/v1.0.0/",
+      "editionUrl": "https://handbooks.surfaces.systems/ai-consulting/editions/v1.0.1/",
       "coverPlaceholder": "{{CONSULTING_COVER}}"
     },
     {
@@ -195,7 +195,7 @@
   "approvedPublicEditions": {
     "production-ai-engineering": "1.4.0",
     "ai-evaluation": "1.0.0",
-    "ai-consulting": "1.0.0",
+    "ai-consulting": "1.0.1",
     "claude-design": "2.1.3"
   }
 }

@@ -1,18 +1,32 @@
 {
-  "status": "not-applicable",
-  "comparisonBasis": {
-    "previousApprovedEdition": null,
-    "peerBaseline": {
-      "path": "baseline/AI_Consulting_Playbook.pdf",
-      "sha256": "7c27cd42a6b082d6d6aae278af7728b5b1af58d38a8c3709e46f1211265a64d9",
-      "state": "unpublished draft"
-    }
-  },
-  "includeChangelog": false,
-  "entryCount": 0,
-  "expectedEntries": [],
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "Clarify the opening decision-summary exercise with a fictional worked example and separate questions.",
+  "entryCount": 1,
+  "failures": [],
+  "placement": "final-page",
   "requiredPdfState": {
-    "changelogPages": 0
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
   },
-  "summary": "No previous approved edition exists; an edition changelog is not applicable."
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "category": "Correction or clarification",
+      "section": "The consulting loop at a glance",
+      "text": "Add a fictional support-pilot example before the blank decision summary and twelve numbered questions for completing it.",
+      "rationale": "Show what a completed summary contains and let readers work through each decision before filling the template.",
+      "sources": [
+        "https://handbooks.surfaces.systems/ai-consulting/"
+      ],
+      "sourceLimitations": "Author synthesis requested by the handbook owner; all example figures are fictional, not empirical evidence."
+    }
+  ]
 }
