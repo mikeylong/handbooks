@@ -1,0 +1,69 @@
+{
+  "artifacts": {
+    "pdfTextPatch": "exact-pdf-text.patch",
+    "readerFacingContentPatch": "reader-facing-content.patch",
+    "sourcePatch": "exact-source.patch"
+  },
+  "candidate": {
+    "ignoredChangelogPages": [
+      142
+    ],
+    "ignoredNavigationPages": [
+      5
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 1.0.1 \u00b7 2026-10-09 \u00b7 PDF appearance revision 1",
+      "title": "AI Consulting Playbook \u00b7 Daytime version"
+    },
+    "pages": 142,
+    "pdf": "candidate/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf",
+    "pdfSha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812"
+  },
+  "comparisons": {
+    "contentMetadataChanged": true,
+    "metadataChanged": true,
+    "navigationTextChanged": true,
+    "normalizedSubstantiveTextChanged": true,
+    "outlineIncludingChangelogChanged": true,
+    "rawPdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": false,
+    "substantiveOutlineChanged": true
+  },
+  "decisionProjection": {
+    "excludedSurfaces": [
+      "changelog pages",
+      "contents and index pages",
+      "changelog outline entries",
+      "exact PDF appearance title suffixes"
+    ],
+    "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed."
+  },
+  "limitations": [
+    "Rendering-only differences require visual comparison.",
+    "Semantic change categories and rationales must be authored from accepted exact diffs.",
+    "Pass page maps to avoid relying on heading heuristics for surface roles."
+  ],
+  "previous": {
+    "ignoredChangelogPages": [],
+    "ignoredNavigationPages": [
+      5
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "From an AI opportunity to a governed decision and clean handoff",
+      "title": "AI Consulting Playbook"
+    },
+    "pages": 138,
+    "pdf": "previous/ai-consulting-v1.0.0-2026-10-01.pdf",
+    "pdfSha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2"
+  },
+  "readerFacingContentChanged": true,
+  "schemaVersion": 2,
+  "sourceSha256": {
+    "candidate": "d12f1334168c3596d6241bed3d6ae8d689bfb3de4e79c202d1ef7fff55827dd6",
+    "previous": "3eb82ab9ec6457609749020d2df227078fe51433c5ef9ba4501a62b38f386f67"
+  },
+  "summary": "The candidate contains reader-facing changes that require semantic classification."
+}

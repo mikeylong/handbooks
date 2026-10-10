@@ -1,0 +1,716 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-consulting",
+  "version": "1.0.0",
+  "sourceReaderSha256": "e3f052de62e472da3c78fa91e2574f609b50870518c1fc60cbde861405a39912",
+  "sha256": "ff33ea368f5a35ff7e2370523fe49d1f9f78033d07b8ba230184a2858d0fd254",
+  "sections": [
+    {
+      "title": "How to use this playbook",
+      "anchor": "how-to-use-this-playbook",
+      "level": 2
+    },
+    {
+      "title": "Choose a path",
+      "anchor": "choose-a-path",
+      "level": 2
+    },
+    {
+      "title": "The repeated learning loop",
+      "anchor": "the-repeated-learning-loop",
+      "level": 3
+    },
+    {
+      "title": "What you need",
+      "anchor": "what-you-need",
+      "level": 2
+    },
+    {
+      "title": "The consulting loop at a glance",
+      "anchor": "the-consulting-loop-at-a-glance",
+      "level": 2
+    },
+    {
+      "title": "The recurring case: Harborline",
+      "anchor": "the-recurring-case-harborline",
+      "level": 3
+    },
+    {
+      "title": "The consulting packet you will build",
+      "anchor": "the-consulting-packet-you-will-build",
+      "level": 2
+    },
+    {
+      "title": "Five rules for the full guide",
+      "anchor": "five-rules-for-the-full-guide",
+      "level": 3
+    },
+    {
+      "title": "Frame the engagement around a decision",
+      "anchor": "frame-the-engagement-around-a-decision",
+      "level": 2
+    },
+    {
+      "title": "The request is usually not the decision",
+      "anchor": "the-request-is-usually-not-the-decision",
+      "level": 3
+    },
+    {
+      "title": "Write the decision before the workplan",
+      "anchor": "write-the-decision-before-the-workplan",
+      "level": 3
+    },
+    {
+      "title": "A decision brief has six parts",
+      "anchor": "a-decision-brief-has-six-parts",
+      "level": 3
+    },
+    {
+      "title": "Protect engagement integrity",
+      "anchor": "protect-engagement-integrity",
+      "level": 3
+    },
+    {
+      "title": "Exercise: rewrite the Harborline request",
+      "anchor": "exercise-rewrite-the-harborline-request",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 1: engagement decision brief",
+      "anchor": "worksheet-1-engagement-decision-brief",
+      "level": 3
+    },
+    {
+      "title": "See the work as it actually happens",
+      "anchor": "see-the-work-as-it-actually-happens",
+      "level": 2
+    },
+    {
+      "title": "The documented process is one source",
+      "anchor": "the-documented-process-is-one-source",
+      "level": 3
+    },
+    {
+      "title": "Map the unit of work",
+      "anchor": "map-the-unit-of-work",
+      "level": 3
+    },
+    {
+      "title": "Build a baseline that matches the decision",
+      "anchor": "build-a-baseline-that-matches-the-decision",
+      "level": 3
+    },
+    {
+      "title": "Keep facts, interpretations, and proposals separate",
+      "anchor": "keep-facts-interpretations-and-proposals-separate",
+      "level": 3
+    },
+    {
+      "title": "Exercise: find the hidden work",
+      "anchor": "exercise-find-the-hidden-work",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 2: current-state evidence",
+      "anchor": "worksheet-2-current-state-evidence",
+      "level": 3
+    },
+    {
+      "title": "Choose one opportunity worth testing",
+      "anchor": "choose-one-opportunity-worth-testing",
+      "level": 2
+    },
+    {
+      "title": "Start with alternatives, not use cases",
+      "anchor": "start-with-alternatives-not-use-cases",
+      "level": 3
+    },
+    {
+      "title": "Classify the role before scoring the idea",
+      "anchor": "classify-the-role-before-scoring-the-idea",
+      "level": 3
+    },
+    {
+      "title": "Screen each option against evidence",
+      "anchor": "screen-each-option-against-evidence",
+      "level": 3
+    },
+    {
+      "title": "Show the reasoning behind one rating",
+      "anchor": "show-the-reasoning-behind-one-rating",
+      "level": 3
+    },
+    {
+      "title": "Rank Harborline's first opportunities",
+      "anchor": "rank-harborlines-first-opportunities",
+      "level": 3
+    },
+    {
+      "title": "Exercise: challenge the workshop winner",
+      "anchor": "exercise-challenge-the-workshop-winner",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 3: opportunity recommendation",
+      "anchor": "worksheet-3-opportunity-recommendation",
+      "level": 3
+    },
+    {
+      "title": "Define the future workflow and AI boundary",
+      "anchor": "define-the-future-workflow-and-ai-boundary",
+      "level": 2
+    },
+    {
+      "title": "Design the service, not the model call",
+      "anchor": "design-the-service-not-the-model-call",
+      "level": 3
+    },
+    {
+      "title": "Write a behavior and outcome contract",
+      "anchor": "write-a-behavior-and-outcome-contract",
+      "level": 3
+    },
+    {
+      "title": "Make the boundary explicit",
+      "anchor": "make-the-boundary-explicit",
+      "level": 3
+    },
+    {
+      "title": "Define meaningful human control",
+      "anchor": "define-meaningful-human-control",
+      "level": 3
+    },
+    {
+      "title": "Connect behavior to value",
+      "anchor": "connect-behavior-to-value",
+      "level": 3
+    },
+    {
+      "title": "Exercise: draw the hard line",
+      "anchor": "exercise-draw-the-hard-line",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 4: target workflow and boundary",
+      "anchor": "worksheet-4-target-workflow-and-boundary",
+      "level": 3
+    },
+    {
+      "title": "Make ownership, risk, and permissions explicit",
+      "anchor": "make-ownership-risk-and-permissions-explicit",
+      "level": 2
+    },
+    {
+      "title": "Governance is part of delivery",
+      "anchor": "governance-is-part-of-delivery",
+      "level": 3
+    },
+    {
+      "title": "Write risk as a testable chain",
+      "anchor": "write-risk-as-a-testable-chain",
+      "level": 3
+    },
+    {
+      "title": "Map permissions from source to effect",
+      "anchor": "map-permissions-from-source-to-effect",
+      "level": 3
+    },
+    {
+      "title": "Use law as a jurisdictional overlay",
+      "anchor": "use-law-as-a-jurisdictional-overlay",
+      "level": 3
+    },
+    {
+      "title": "Ask vendors for evidence, not assurance",
+      "anchor": "ask-vendors-for-evidence-not-assurance",
+      "level": 3
+    },
+    {
+      "title": "Exercise: assign the decision rights",
+      "anchor": "exercise-assign-the-decision-rights",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 5: risk, permissions, and governance",
+      "anchor": "worksheet-5-risk-permissions-and-governance",
+      "level": 3
+    },
+    {
+      "title": "Design a pilot that can answer a decision",
+      "anchor": "design-a-pilot-that-can-answer-a-decision",
+      "level": 2
+    },
+    {
+      "title": "A pilot exists to reduce named uncertainty",
+      "anchor": "a-pilot-exists-to-reduce-named-uncertainty",
+      "level": 3
+    },
+    {
+      "title": "Write a hypothesis with an exposure boundary",
+      "anchor": "write-a-hypothesis-with-an-exposure-boundary",
+      "level": 3
+    },
+    {
+      "title": "Keep four evidence tracks separate",
+      "anchor": "keep-four-evidence-tracks-separate",
+      "level": 3
+    },
+    {
+      "title": "Choose a comparison that fits the claim",
+      "anchor": "choose-a-comparison-that-fits-the-claim",
+      "level": 3
+    },
+    {
+      "title": "Predeclare the decision rules",
+      "anchor": "predeclare-the-decision-rules",
+      "level": 3
+    },
+    {
+      "title": "Limit exposure deliberately",
+      "anchor": "limit-exposure-deliberately",
+      "level": 3
+    },
+    {
+      "title": "Exercise: reject a weak pilot",
+      "anchor": "exercise-reject-a-weak-pilot",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 6: pilot charter",
+      "anchor": "worksheet-6-pilot-charter",
+      "level": 3
+    },
+    {
+      "title": "Plan delivery around uncertainty",
+      "anchor": "plan-delivery-around-uncertainty",
+      "level": 2
+    },
+    {
+      "title": "The plan should expose what is not yet known",
+      "anchor": "the-plan-should-expose-what-is-not-yet-known",
+      "level": 3
+    },
+    {
+      "title": "Choose build, buy, or partner from the constraint",
+      "anchor": "choose-build-buy-or-partner-from-the-constraint",
+      "level": 3
+    },
+    {
+      "title": "Plan by gates, not phases alone",
+      "anchor": "plan-by-gates-not-phases-alone",
+      "level": 3
+    },
+    {
+      "title": "Keep evidence and risk records connected",
+      "anchor": "keep-evidence-and-risk-records-connected",
+      "level": 3
+    },
+    {
+      "title": "Maintain three ledgers",
+      "anchor": "maintain-three-ledgers",
+      "level": 3
+    },
+    {
+      "title": "Define done at the system boundary",
+      "anchor": "define-done-at-the-system-boundary",
+      "level": 3
+    },
+    {
+      "title": "Exercise: respond to a delivery shortcut",
+      "anchor": "exercise-respond-to-a-delivery-shortcut",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 7: integrated delivery plan",
+      "anchor": "worksheet-7-integrated-delivery-plan",
+      "level": 3
+    },
+    {
+      "title": "Build and verify the whole pilot system",
+      "anchor": "build-and-verify-the-whole-pilot-system",
+      "level": 2
+    },
+    {
+      "title": "The model is one component",
+      "anchor": "the-model-is-one-component",
+      "level": 3
+    },
+    {
+      "title": "Build a verification matrix",
+      "anchor": "build-a-verification-matrix",
+      "level": 3
+    },
+    {
+      "title": "Use different methods for different claims",
+      "anchor": "use-different-methods-for-different-claims",
+      "level": 3
+    },
+    {
+      "title": "Rehearse failure before the pilot",
+      "anchor": "rehearse-failure-before-the-pilot",
+      "level": 3
+    },
+    {
+      "title": "Run an evidence-based readiness review",
+      "anchor": "run-an-evidence-based-readiness-review",
+      "level": 3
+    },
+    {
+      "title": "Exercise: hold the right boundary",
+      "anchor": "exercise-hold-the-right-boundary",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 8: readiness evidence packet",
+      "anchor": "worksheet-8-readiness-evidence-packet",
+      "level": 3
+    },
+    {
+      "title": "Prepare the people who will use and support it",
+      "anchor": "prepare-the-people-who-will-use-and-support-it",
+      "level": 2
+    },
+    {
+      "title": "Adoption starts in the target workflow",
+      "anchor": "adoption-starts-in-the-target-workflow",
+      "level": 3
+    },
+    {
+      "title": "Involve affected people at decision points",
+      "anchor": "involve-affected-people-at-decision-points",
+      "level": 3
+    },
+    {
+      "title": "Build role-specific AI literacy",
+      "anchor": "build-role-specific-ai-literacy",
+      "level": 3
+    },
+    {
+      "title": "Check access to the workflow",
+      "anchor": "check-access-to-the-workflow",
+      "level": 3
+    },
+    {
+      "title": "Design training around work",
+      "anchor": "design-training-around-work",
+      "level": 3
+    },
+    {
+      "title": "Measure adoption without blaming people",
+      "anchor": "measure-adoption-without-blaming-people",
+      "level": 3
+    },
+    {
+      "title": "Exercise: diagnose low use",
+      "anchor": "exercise-diagnose-low-use",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 9: people and adoption plan",
+      "anchor": "worksheet-9-people-and-adoption-plan",
+      "level": 3
+    },
+    {
+      "title": "Run the pilot as a controlled evidence loop",
+      "anchor": "run-the-pilot-as-a-controlled-evidence-loop",
+      "level": 2
+    },
+    {
+      "title": "Make the evidence visible while the pilot runs",
+      "anchor": "make-the-evidence-visible-while-the-pilot-runs",
+      "level": 3
+    },
+    {
+      "title": "Classify the cause before choosing the fix",
+      "anchor": "classify-the-cause-before-choosing-the-fix",
+      "level": 3
+    },
+    {
+      "title": "Control pilot changes",
+      "anchor": "control-pilot-changes",
+      "level": 3
+    },
+    {
+      "title": "Respond to an incident in six moves",
+      "anchor": "respond-to-an-incident-in-six-moves",
+      "level": 3
+    },
+    {
+      "title": "Harborline mid-pilot incident",
+      "anchor": "harborline-mid-pilot-incident",
+      "level": 3
+    },
+    {
+      "title": "Measure the learning system too",
+      "anchor": "measure-the-learning-system-too",
+      "level": 3
+    },
+    {
+      "title": "Exercise: preserve the decision",
+      "anchor": "exercise-preserve-the-decision",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 10: pilot evidence board",
+      "anchor": "worksheet-10-pilot-evidence-board",
+      "level": 3
+    },
+    {
+      "title": "Turn the evidence into the next decision",
+      "anchor": "turn-the-evidence-into-the-next-decision",
+      "level": 2
+    },
+    {
+      "title": "Start with the decision, then read every track",
+      "anchor": "start-with-the-decision-then-read-every-track",
+      "level": 3
+    },
+    {
+      "title": "Use four next-action choices",
+      "anchor": "use-four-next-action-choices",
+      "level": 3
+    },
+    {
+      "title": "Build the economics from observed units",
+      "anchor": "build-the-economics-from-observed-units",
+      "level": 3
+    },
+    {
+      "title": "Harborline decision snapshot",
+      "anchor": "harborline-decision-snapshot",
+      "level": 3
+    },
+    {
+      "title": "Write the claim boundary",
+      "anchor": "write-the-claim-boundary",
+      "level": 3
+    },
+    {
+      "title": "Exercise: refuse the rounded-up claim",
+      "anchor": "exercise-refuse-the-rounded-up-claim",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 11: outcome and decision record",
+      "anchor": "worksheet-11-outcome-and-decision-record",
+      "level": 3
+    },
+    {
+      "title": "Leave the client able to continue",
+      "anchor": "leave-the-client-able-to-continue",
+      "level": 2
+    },
+    {
+      "title": "Handoff is an operating change",
+      "anchor": "handoff-is-an-operating-change",
+      "level": 3
+    },
+    {
+      "title": "Transfer the complete record",
+      "anchor": "transfer-the-complete-record",
+      "level": 3
+    },
+    {
+      "title": "Use acceptance demonstrations",
+      "anchor": "use-acceptance-demonstrations",
+      "level": 3
+    },
+    {
+      "title": "Build the operating cadence",
+      "anchor": "build-the-operating-cadence",
+      "level": 3
+    },
+    {
+      "title": "Plan the first 90 days",
+      "anchor": "plan-the-first-90-days",
+      "level": 3
+    },
+    {
+      "title": "Retirement is part of ownership",
+      "anchor": "retirement-is-part-of-ownership",
+      "level": 3
+    },
+    {
+      "title": "Exercise: refuse a paper handoff",
+      "anchor": "exercise-refuse-a-paper-handoff",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 12: handoff and closeout",
+      "anchor": "worksheet-12-handoff-and-closeout",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone: Harborline decision review",
+      "anchor": "guided-capstone-harborline-decision-review",
+      "level": 2
+    },
+    {
+      "title": "1. Sponsor memo",
+      "anchor": "1-sponsor-memo",
+      "level": 3
+    },
+    {
+      "title": "2. Current-state evidence",
+      "anchor": "2-current-state-evidence",
+      "level": 3
+    },
+    {
+      "title": "3. Opportunity choices",
+      "anchor": "3-opportunity-choices",
+      "level": 3
+    },
+    {
+      "title": "4. Data, architecture, and vendor packet",
+      "anchor": "4-data-architecture-and-vendor-packet",
+      "level": 3
+    },
+    {
+      "title": "5. Proposed six-week pilot",
+      "anchor": "5-proposed-six-week-pilot",
+      "level": 3
+    },
+    {
+      "title": "6. Frozen candidate results",
+      "anchor": "6-frozen-candidate-results",
+      "level": 3
+    },
+    {
+      "title": "Declared gates and missing outcomes",
+      "anchor": "declared-gates-and-missing-outcomes",
+      "level": 3
+    },
+    {
+      "title": "7. Mid-pilot incident and response",
+      "anchor": "7-mid-pilot-incident-and-response",
+      "level": 3
+    },
+    {
+      "title": "8. Ownership and capability",
+      "anchor": "8-ownership-and-capability",
+      "level": 3
+    },
+    {
+      "title": "9. Reproduce the monthly economics",
+      "anchor": "9-reproduce-the-monthly-economics",
+      "level": 3
+    },
+    {
+      "title": "Capstone tasks",
+      "anchor": "capstone-tasks",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone decision worksheet",
+      "anchor": "guided-capstone-decision-worksheet",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone answer key",
+      "anchor": "guided-capstone-answer-key",
+      "level": 2
+    },
+    {
+      "title": "1. Reframe the decision",
+      "anchor": "1-reframe-the-decision",
+      "level": 3
+    },
+    {
+      "title": "2. Read the evidence by track",
+      "anchor": "2-read-the-evidence-by-track",
+      "level": 3
+    },
+    {
+      "title": "3. Make the bounded recommendation",
+      "anchor": "3-make-the-bounded-recommendation",
+      "level": 3
+    },
+    {
+      "title": "4. Keep excluded actions blocked",
+      "anchor": "4-keep-excluded-actions-blocked",
+      "level": 3
+    },
+    {
+      "title": "5. Define the next gate",
+      "anchor": "5-define-the-next-gate",
+      "level": 3
+    },
+    {
+      "title": "Handoff plan for the current boundary",
+      "anchor": "handoff-plan-for-the-current-boundary",
+      "level": 3
+    },
+    {
+      "title": "6. State the non-claims",
+      "anchor": "6-state-the-non-claims",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone self-assessment",
+      "anchor": "guided-capstone-self-assessment",
+      "level": 2
+    },
+    {
+      "title": "Automatic non-passing misconceptions",
+      "anchor": "automatic-non-passing-misconceptions",
+      "level": 3
+    },
+    {
+      "title": "Appendix A: consulting lifecycle",
+      "anchor": "appendix-a-consulting-lifecycle",
+      "level": 2
+    },
+    {
+      "title": "Appendix B: discovery interview and observation guide",
+      "anchor": "appendix-b-discovery-interview-and-observation-guide",
+      "level": 2
+    },
+    {
+      "title": "Sponsor and decision owner",
+      "anchor": "sponsor-and-decision-owner",
+      "level": 3
+    },
+    {
+      "title": "People who perform and receive the work",
+      "anchor": "people-who-perform-and-receive-the-work",
+      "level": 3
+    },
+    {
+      "title": "Observation prompts",
+      "anchor": "observation-prompts",
+      "level": 3
+    },
+    {
+      "title": "Appendix C: assist, recommend, decide, and act",
+      "anchor": "appendix-c-assist-recommend-decide-and-act",
+      "level": 2
+    },
+    {
+      "title": "Appendix D: measurement and economics cheat sheet",
+      "anchor": "appendix-d-measurement-and-economics-cheat-sheet",
+      "level": 2
+    },
+    {
+      "title": "Appendix E: governance and vendor question bank",
+      "anchor": "appendix-e-governance-and-vendor-question-bank",
+      "level": 2
+    },
+    {
+      "title": "Appendix F: plain-language glossary",
+      "anchor": "appendix-f-plain-language-glossary",
+      "level": 2
+    },
+    {
+      "title": "Appendix G: worksheet index",
+      "anchor": "appendix-g-worksheet-index",
+      "level": 2
+    },
+    {
+      "title": "Further reading and source notes",
+      "anchor": "further-reading-and-source-notes",
+      "level": 2
+    }
+  ],
+  "prompts": 0,
+  "figures": []
+}

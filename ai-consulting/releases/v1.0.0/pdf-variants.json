@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-consulting",
+  "title": "AI Consulting Playbook",
+  "version": "1.0.0",
+  "date": "2026-10-01",
+  "pdf": "output/pdf/ai-consulting-v1.0.0-2026-10-01.pdf",
+  "sha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+  "pages": 138,
+  "contentComparison": {
+    "decision": "unchanged",
+    "baselineSha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+    "changelog": "Preserve the released edition changelog; add no appearance changelog."
+  },
+  "sourceRevision": "394442daf2529d8008abc20db67b130d37f1f120",
+  "sourceInputs": {
+    "REPOSITORY_MIGRATION.md": "2f2061e8eb57feda0229eb77d178ff698c4608dd9fbe43db0b287bd50e07319d",
+    "README.md": "8689912019c5cba76d56488813265c91e978833d7abfb13ec0dd09668e57408a",
+    "AUDIT.md": "d662c027ba508a91b6aa3ac16c098b65023d853ea04a4184eec3e90076bbad4e",
+    "CHANGE_REPORT.md": "fa97db3ee743a2fa94280f1ad1864693e426b4e2d288a5eb6f504505ed67b9b7",
+    "RELEASE_REVIEW.md": "a20715acaad1f86809d317e6b33d6f64e29f35ded7cfaf82211ff8013a84e687",
+    "source/build_reader.py": "215f65240d116a724a8f8f8519dc75815207c5fde187cddd2a52dd0aaafcb74f",
+    "source/build_handbook.py": "3eb82ab9ec6457609749020d2df227078fe51433c5ef9ba4501a62b38f386f67",
+    "source/refresh_manifest.py": "b10e2858a6c53c5d99d66c6350ad5e1db057509eabad2b2ea2f35b0a5cded135",
+    "source/layout_reference.py": "57ce73093ddf614ac07be21d1859bb8e5c4526c63ea4e21293b10350a8cacc12",
+    "source/reader-config.json": "2fce7178505b29805c6adc4763e3dc808b2c2c0e83cf2afe7a81b2eb98dc5c62",
+    "source/diagrams/ConsultingLifecycle.json": "f9bd18b6fbd92913ed67891f7f70e0aabcf7464ac22594931a1cf95df40a59b6",
+    "source/diagrams/ExposureLadder.json": "892f825312122b0bac74389e24d5b49adfcbdcceb2f8c7a68e09e31d9667fa7f",
+    "source/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
+    "source/fonts/SourceSerif4-Bold.ttf": "faf5ef02799bec5752da30cd51c936708cd464b257e2770219dbfab170085a9c",
+    "source/fonts/SourceCodePro-Semibold.ttf": "1b61c980d75de8216228a2603bcabe51394013452df26a04c99326bbc035c5a5",
+    "source/fonts/SourceSerif4-MediumItalic.ttf": "020e5e32d990bb12c9c4f10c8cfd8c1e359979c35fb6bca8147d2bfd1bfd1236",
+    "source/fonts/SourceSerif4-Medium.ttf": "0ef212ab36b5f3f2fb810c1a896f9f86f07d4fdb38cae0c7b62a25a55a2b2bf6",
+    "source/fonts/SourceSerif4-BoldItalic.ttf": "8a153c27b5a15c0ba5f6588416d207ea5e119f3b4fb028348f50e3c4de0a1289",
+    "source/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
+    "source/fonts/SourceSerif4-RegularItalic.ttf": "53c465029115d3811c828425890b38cbe4b874af67d15ba5ac795e14dc5baee9",
+    "source/fonts/SourceCodePro-Regular.ttf": "f144137f557805c7327fc4b14d1d730f6e1822e0124170251ff1bcd723a693f1",
+    "source/fonts/manifest.json": "3cf9ba5d64581e74ee36f8b6b71ff1b82ab27bcfd66247abf3c3b7b31696f74e",
+    "source/fonts/SourceSerif4-Regular.ttf": "903db2772e75699975ed8483ec98128f054815c43d1fdc7a8506410c11c25866"
+  },
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "appearanceDate": null,
+      "candidateDate": "2026-10-02",
+      "path": "ai-consulting/output/pdf/ai-consulting-v1.0.0-2026-10-01.pdf",
+      "publicUrl": "/ai-consulting/ai-consulting-v1.0.0-2026-10-01.pdf",
+      "downloadFilename": "ai-consulting-v1.0.0-2026-10-01-daytime-r1.pdf",
+      "sha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+      "bytes": 24097061,
+      "pages": 138,
+      "pageMap": {
+        "path": "releases/pdf-appearances/2026-10-02/ai-consulting/retained-page-map.json",
+        "sha256": "b282608a605b18c94925dbd4243a8a5eddcd0f9f424070a0363c4c044500098a"
+      },
+      "approvalStatus": "approved"
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-02",
+      "candidateDate": "2026-10-02",
+      "path": "ai-consulting/output/pdf/ai-consulting-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "publicUrl": "/ai-consulting/editions/v1.0.0/ai-consulting-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "downloadFilename": "ai-consulting-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "sha256": "181576ce86aac2ba73ab6d5c7aabad43ea5e1a04d10956286c2846653ed86fd7",
+      "bytes": 90695236,
+      "pages": 138,
+      "pageMap": {
+        "path": "releases/pdf-appearances/2026-10-02/ai-consulting/candidate-page-map.json",
+        "sha256": "626c241055572bfdfb47bd3372114d584179aec9b0edad5c79f51c6016ad5f15"
+      },
+      "approvalStatus": "approved",
+      "proof": {
+        "parity": {
+          "path": "releases/pdf-appearances/2026-10-02/ai-consulting/parity.json",
+          "sha256": "05963814bb05d627c807961b2d090f86f96a6fb4a147e724c87809d98c3dc196"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "181576ce86aac2ba73ab6d5c7aabad43ea5e1a04d10956286c2846653ed86fd7",
+          "date": "2026-10-02",
+          "authority": "Mike: direct Land this authorization in the active task, following exact-artifact review and the sidebar correction.",
+          "agentReview": "releases/pdf-appearances/2026-10-02/visual-review.json"
+        },
+        "accessibilityLimitations": [
+          "Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available."
+        ],
+        "appearanceAudit": {
+          "path": "releases/pdf-appearances/2026-10-02/ai-consulting/appearance-audit.json",
+          "sha256": "ea8a654693ecad1689d7682a3c0a640ba0e12769d5c099af4655df281f3144d5"
+        },
+        "renderInventory": {
+          "path": "releases/pdf-appearances/2026-10-02/ai-consulting/render-proof-inventory.json",
+          "sha256": "79e31b48bdfbf0fb0c545cbee344e26bb7b8c6e2b040fb88afb616081fd50740"
+        },
+        "localPageProofs": {
+          "poppler": "deployments/light-dark-pdfs/proof/ai-consulting/late-night-v2/poppler",
+          "pdfkit": "deployments/light-dark-pdfs/proof/ai-consulting/late-night-v2/pdfkit"
+        }
+      }
+    }
+  ],
+  "build": {
+    "configPath": "ai-consulting/pdf-config.json",
+    "configSha256": "a9295647566902edf8d79ca0f083ff8d3b5e4b1ef63cce6d05164649a091cbbf",
+    "tokenPath": "publish-evidence-backed-handbook/assets/design-system/pdf-appearance.json",
+    "tokenSha256": "bffef43a064c4fc6544f118bdf7bd53725f7537bdb50f5e556ace6a95e59eec3",
+    "renderer": "reportlab",
+    "toolchainReport": "releases/pdf-appearances/2026-10-02/preflight.json",
+    "toolkitRevision": "uncommitted implementation based on 394442daf2529d8008abc20db67b130d37f1f120",
+    "finalizerVersion": 1,
+    "artworkDerivatives": "releases/pdf-appearances/2026-10-02/ai-consulting/artwork-derivatives.json",
+    "toolkitInputs": {
+      "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs": "85cb4af6951eb69829aacb4ad158a70ad81f580b84b783dcbd959945c81045fa",
+      "publish-evidence-backed-handbook/scripts/finalize_chromium_pdf.py": "0a3d1f751e4494872650585934d7485027acfe93d8feaf21ee3061f9bc4425b3",
+      "publish-evidence-backed-handbook/scripts/pdf_artwork.py": "5e0e8ecc39a12ee3f33efd14e684089416ededdd7ec0da067f9c93f4f0898200",
+      "publish-evidence-backed-handbook/scripts/build_reportlab_pdf.py": "ba8494b7a741a31bcc0282f31d6aa31b953e43ef87b1df14a47d34a3ec7666b0",
+      "publish-evidence-backed-handbook/scripts/diagram_data.py": "91b6294d248115e191d04c46f26102fdd506841689e32db9d16bfce57f83088e",
+      "publish-evidence-backed-handbook/scripts/reportlab_layout.py": "301b4096b12de130268bf0be108f1a9e10697e75e11db25875a636088a71d2a3",
+      "publish-evidence-backed-handbook/scripts/pdf_theme.py": "46f37c800f07f51209810c837c69cc7ec5b3d280a3a06bb513a987df5107ce78",
+      "publish-evidence-backed-handbook/scripts/fixed-flow-diagrams.mjs": "0675d9f9c935490faaf27b6ec6bf7a9f9b0841cf012481753c2271138ac24fa4",
+      "publish-evidence-backed-handbook/scripts/render-chromium-pdf.mjs": "61352cbea1d1cc9736a5128e3001fd299995f81b2c58c6d93b53e601500a6628",
+      "publish-evidence-backed-handbook/scripts/pdf-css.mjs": "0ff51de388f807322e1ed63b68adca47d27c350bd7e4b0593abc93c8e4465961"
+    },
+    "fontHashes": {
+      "publish-evidence-backed-handbook/assets/design-system/fonts/source-serif-4-latin-variable-italic.woff2": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-Bold.ttf": "faf5ef02799bec5752da30cd51c936708cd464b257e2770219dbfab170085a9c",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceCodePro-Semibold.ttf": "1b61c980d75de8216228a2603bcabe51394013452df26a04c99326bbc035c5a5",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-MediumItalic.ttf": "020e5e32d990bb12c9c4f10c8cfd8c1e359979c35fb6bca8147d2bfd1bfd1236",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-Medium.ttf": "0ef212ab36b5f3f2fb810c1a896f9f86f07d4fdb38cae0c7b62a25a55a2b2bf6",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-BoldItalic.ttf": "8a153c27b5a15c0ba5f6588416d207ea5e119f3b4fb028348f50e3c4de0a1289",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-RegularItalic.ttf": "53c465029115d3811c828425890b38cbe4b874af67d15ba5ac795e14dc5baee9",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceCodePro-Regular.ttf": "f144137f557805c7327fc4b14d1d730f6e1822e0124170251ff1bcd723a693f1",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/source-serif-4-latin-variable.woff2": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-Regular.ttf": "903db2772e75699975ed8483ec98128f054815c43d1fdc7a8506410c11c25866"
+    },
+    "artworkManifestSha256": "fec90e96cb229986a7a91986d97264d2e6d0a3b0f41f87c1999340bb6b891d0f",
+    "command": [
+      "node",
+      "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs",
+      "--book",
+      "ai-consulting",
+      "--config",
+      "ai-consulting/pdf-config.json",
+      "--theme",
+      "dark",
+      "--output",
+      "candidates/light-dark-pdfs/ai-consulting/v2/ai-consulting-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "--python",
+      "<pinned Python from toolchain report>"
+    ],
+    "toolchainReportSha256": "1f53aeaf3a5875b297584af7369219648d80a2280cf894598041d549a3b6f1a0",
+    "generationToolkitArchive": {
+      "path": "releases/pdf-appearances/2026-10-02/generation-toolkit.zip",
+      "sha256": "ea5082082437c7738b4e013879eff066450ac134bcae6f0d2958b47e867b47fb",
+      "purpose": "Frozen distribution whose generation scripts exactly match the recorded toolkit input hashes."
+    }
+  },
+  "releaseAuthorization": {
+    "date": "2026-10-02",
+    "instruction": "Land this",
+    "scope": "All three reviewed PDF pairs, shared runtime and download controls."
+  }
+}

@@ -1,0 +1,104 @@
+--- previous/previous-source.py
++++ candidate/build_handbook.py
+@@ -36,7 +36,7 @@
+ 
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+-OUTPUT_PDF = ROOT / "output" / "pdf" / "ai-consulting-v1.0.0-2026-10-01.pdf"
++OUTPUT_PDF = ROOT / "output" / "pdf" / "ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf"
+ REFERENCE_BUILDER = Path(__file__).resolve().parent / "layout_reference.py"
+ 
+ 
+@@ -327,7 +327,7 @@
+             COVER_CREDIT,
+         ),
+         Spacer(1, 6 * mm),
+-        P("October 1, 2026 | Version 1.0.0", SMALL),
++        P("October 9, 2026 | Version 1.0.1", SMALL),
+         PageBreak(),
+         Spacer(1, 5 * mm),
+         P("ORIENTATION", CHAPTER_KICKER),
+@@ -417,6 +417,53 @@
+             P(
+                 "The COO asks the consulting team to 'automate dispatch with AI.' Field evidence points to a narrower first move: structure intake, retrieve approved evidence, and draft a work order for coordinator review. Priority changes, technician assignment, customer commitments, and autonomous writes remain outside the first pilot."
+             ),
++            heading("Worked example: a bounded support pilot", 2),
++            P(
++                "The following customer support example shows a completed decision summary. The scenario and all numbers are fictional. The targets describe what the pilot will test, not results already achieved."
++            ),
++            P(
++                "For <b>four experienced agents answering software setup questions</b>, the evidence supports testing <b>AI-generated reply drafts</b>. A review of 100 recent tickets found agents repeatedly searching the same help articles. Finding instructions, writing, checking, and sending a reply took a median of eight minutes; 96% of sent replies were factually correct. The target is six minutes while maintaining at least that accuracy."
++            ),
++            P(
++                "The pilot runs for <b>two weeks and covers routine setup questions only</b>. It permits approved help articles and ticket text with customer identifiers removed. AI may draft replies and cite supporting articles. An agent must check and send every response. The system cannot send messages or change customer accounts."
++            ),
++            P(
++                "The controls include <b>restricted access, logs, and an off switch</b>. The support lead owns the pilot and checks completed replies for factual errors. The engineering lead owns access permissions, identifier removal, and shutdown."
++            ),
++            KeepTogether(
++                [
++                    P(
++                        "We <b>stop immediately</b> if customer identifiers reach the AI or an unreviewed reply is sent. At the end of two weeks, we <b>extend once, by one week</b>, if fewer than 150 eligible tickets are completed and neither incident has occurred. If volume remains too low, we close the pilot as inconclusive. With at least 150 tickets, we <b>revise</b> if median time exceeds six minutes or accuracy falls below 96%. We <b>expand to eight agents</b> only if both targets are met and no stop event has occurred. Timing includes checking and sending; accuracy measures completed replies."
++                    ),
++                    P(
++                        "The current evidence does not establish <b>that AI drafting will save two minutes, that replies can be sent without review, or that results will transfer to billing disputes or inexperienced agents</b>."
++                    ),
++                ]
++            ),
++            PageBreak(),
++            heading("Build your decision summary", 2),
++            P(
++                "Answer the questions one at a time, using the worked example as a guide. Record what you know and mark missing evidence as unknown. Return to those gaps as you complete the modules; do not invent facts to fill the summary."
++            ),
++            numbered_steps(
++                [
++                    "<b>Which workflow and users are in scope?</b> Name the task and the people who will take part.",
++                    "<b>What problem have you observed?</b> Describe the difficulty in the current work.",
++                    "<b>What evidence supports that problem?</b> Record observations, the sample, and baseline measures.",
++                    "<b>What bounded change will you test?</b> Choose one change small enough to evaluate and reverse.",
++                    "<b>What outcome do you expect?</b> Name the target and how you will measure it, including review effort.",
++                    "<b>What data may the system use?</b> Identify permitted sources, required removal of identifiers, and excluded data.",
++                    "<b>What actions may the system take?</b> State what AI may draft, recommend, send, or change, and what requires human approval.",
++                    "<b>Who may be exposed to the output?</b> Define participants, recipients, duration, and activities outside the pilot.",
++                    "<b>What controls will enforce those limits?</b> Specify access restrictions, review, logs, and how the pilot can be stopped.",
++                    "<b>Who owns the pilot and its controls?</b> Assign each responsibility and the final decision to a named person or role.",
++                    "<b>When will you stop, revise, extend, or scale?</b> Set measures, thresholds, minimum evidence, review timing, and any extension limit before starting.",
++                    "<b>What does the current evidence not establish?</b> Name untested capabilities, populations, and outcomes.",
++                ]
++            ),
++            P(
++                "Use your answers to complete the summary below. Keep unknowns visible and revise the summary as new evidence arrives."
++            ),
+             callout(
+                 "Decision",
+                 "The sentence you will keep completing",
+@@ -2516,6 +2563,21 @@
+     return story
+ 
+ 
++
++def build_changelog() -> list[Flowable]:
++    return [
++        SetNextRunningHead("Changelog"),
++        PageBreak(),
++        heading("Changelog", 1),
++        P("Version 1.0.1. Compared with edition 1.0.0, published October 1, 2026."),
++        P("Previous PDF SHA-256: 4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2", SMALL),
++        P("Correction or clarification"),
++        P("Add a fictional support-pilot example before the blank decision summary and twelve numbered questions for completing it."),
++        P("Show what a completed summary contains and let readers work through each decision before filling the template."),
++        P("Author synthesis; all example figures are fictional. Context: <link href='https://handbooks.surfaces.systems/ai-consulting/'><u>AI Consulting Playbook</u></link>."),
++    ]
++
++
+ def build_story() -> list[Flowable]:
+     return (
+         build_front_matter()
+@@ -2523,6 +2585,7 @@
+         + build_modules_5_8()
+         + build_modules_9_12()
+         + build_capstone_and_appendices()
++        + build_changelog()
+     )
+ 
+ 

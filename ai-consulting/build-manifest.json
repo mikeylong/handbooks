@@ -1,13 +1,13 @@
 {
   "artifact": {
     "title": "AI Consulting Playbook",
-    "version": "1.0.0",
-    "date": "2026-10-01",
-    "pdf": "output/pdf/ai-consulting-v1.0.0-2026-10-01.pdf",
-    "sha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
-    "pages": 138,
-    "previous_public_edition": null,
-    "comparison_basis": "unpublished draft",
+    "version": "1.0.1",
+    "date": "2026-10-09",
+    "pdf": "output/pdf/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf",
+    "sha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
+    "pages": 142,
+    "previous_public_edition": "1.0.0",
+    "comparison_basis": "approved public edition 1.0.0",
     "candidate_validation": "qa/validation.json",
     "art": [
       {
@@ -199,10 +199,10 @@
     "assets/chapter-art/print/chapter-11.png": "5cc3ef0332d1801445b9d7d2f4fdf7ccb41af1793a409afc5403a70af776884e",
     "assets/chapter-art/print/chapter-12.png": "3a4e10b37791b209f1ecf7542411f7460e2ed8860c20cc82b7f831f66bb2b67c",
     "assets/chapter-art/print/contact-sheet.png": "d592067ad27af400909e7396e73dfd4b2e449a7a7fe5c158a4ca97fd14539088",
-    "changelog-decision.json": "edc45833a0079c13f56fb8aebfde525f6e9ded18ced57b7358ffd05f19ff2182",
-    "publication.json": "b8bd654db361a90fde32f0aa7a3da7eb041b96f2b473b92a1e1f4b9040e070e7",
-    "source/build_handbook.py": "1bf4b020db3f00cbc5bbd605b260aabf85ed2d90fcea20d8116b685db2bf1993",
-    "source/build_reader.py": "ba27906c6a5d32d1453f1a84ade01246cf85795366ea461fb585982e7d3a7eb6",
+    "changelog-decision.json": "883a20282572166848213a8d877d12eda039929eda7f60b0d44d5214246eefd6",
+    "publication.json": "611b4c096840c7dbc9ed91ac111ec593d6e1fffb824dcf25560d4a1d490dc05e",
+    "source/build_handbook.py": "d12f1334168c3596d6241bed3d6ae8d689bfb3de4e79c202d1ef7fff55827dd6",
+    "source/build_reader.py": "215f65240d116a724a8f8f8519dc75815207c5fde187cddd2a52dd0aaafcb74f",
     "source/fonts/NOTO-SANS-LICENSE.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb",
     "source/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
     "source/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
@@ -217,12 +217,11 @@
     "source/fonts/SourceSerif4-Regular.ttf": "903db2772e75699975ed8483ec98128f054815c43d1fdc7a8506410c11c25866",
     "source/fonts/SourceSerif4-RegularItalic.ttf": "53c465029115d3811c828425890b38cbe4b874af67d15ba5ac795e14dc5baee9",
     "source/fonts/manifest.json": "3cf9ba5d64581e74ee36f8b6b71ff1b82ab27bcfd66247abf3c3b7b31696f74e",
-    "source/layout_reference.py": "31d60e7ab6cb32872967778eaa472d3a158f9c93e8b7e2f40dcce46e9063c5db",
+    "source/layout_reference.py": "57ce73093ddf614ac07be21d1859bb8e5c4526c63ea4e21293b10350a8cacc12",
     "source/refresh_manifest.py": "b10e2858a6c53c5d99d66c6350ad5e1db057509eabad2b2ea2f35b0a5cded135",
     "source/requirements.txt": "fb02f69a7015efe60654e75b7dd4de3ba061ba2bf23eaa3b761d653e6d3cdf43",
     "assets/chapter-art/illustration-manifest.json": "63285abe3588feca74ec80e7837ca91dd518114e05d87baf6cf033cf329510ad",
-    "release-manifest.json": "1e35dcad946bbe5533ca352c7e6500e4d08c5f56522afbd0175dda7f7491fbf0",
-    "source/reader-chrome.html": "a9134940b413496edeeec70392807f207c2f75a4d7f3281571e65100c51ff5ad"
+    "release-manifest.json": "069beedc995d87aaa8d7022de333f88354baad9079a86c6caf6607c2b1ab4748"
   },
   "toolchain": {
     "python": "3.12.14",
@@ -232,56 +231,78 @@
     "node": "22.16.0",
     "Poppler": "26.08.0",
     "ApplePDFKit": "macOS 27.0 system PDF stack; Swift 6.4 renderer",
-    "Chromium": "152 (Playwright CLI)"
+    "browser": "Google Chrome 154.0.8037.98"
   },
-  "rebuild": {
-    "command": "python source/build_handbook.py",
-    "repeatedBuildSha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
-    "identical": true
+  "build": {
+    "configPath": "ai-consulting/pdf-config.json",
+    "configSha256": "aa828d021eca2aca0a7f1c1420b5a3de106f07bb45d801915821614f2af44e90",
+    "renderer": "reportlab",
+    "toolchainReport": "ai-consulting/releases/v1.0.1/preflight.json",
+    "artworkManifestSha256": "737cd0cceccd8c73806aaf898dce3b9314001592ce7b4307d6a5d9a085da6efb",
+    "toolkitInputs": {
+      "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs": "085645a380cf88b2591cfb4e83a7677bb73eacce3ebad26cf3b48b067a93380b",
+      "publish-evidence-backed-handbook/scripts/build_reportlab_pdf.py": "7b444fca4baa4cafa132ec6a665d2f680675af89bb93ea252d983292623460f9",
+      "publish-evidence-backed-handbook/scripts/pdf_artwork.py": "5e0e8ecc39a12ee3f33efd14e684089416ededdd7ec0da067f9c93f4f0898200",
+      "publish-evidence-backed-handbook/scripts/reportlab_layout.py": "49e6aca5f0bd8d205aedb66ed5eaded771a7f4d5d69a5231055a7310b959026e",
+      "publish-evidence-backed-handbook/scripts/pdf_theme.py": "46f37c800f07f51209810c837c69cc7ec5b3d280a3a06bb513a987df5107ce78"
+    },
+    "commands": [
+      [
+        "node",
+        "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs",
+        "--book",
+        "ai-consulting",
+        "--config",
+        "ai-consulting/pdf-config.json",
+        "--theme",
+        "light",
+        "--output",
+        "<isolated candidate>/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf",
+        "--python",
+        "<pinned Python from preflight report>"
+      ],
+      [
+        "node",
+        "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs",
+        "--book",
+        "ai-consulting",
+        "--config",
+        "ai-consulting/pdf-config.json",
+        "--theme",
+        "dark",
+        "--output",
+        "<isolated candidate>/ai-consulting-v1.0.1-2026-10-09-late-night-r1.pdf",
+        "--python",
+        "<pinned Python from preflight report>"
+      ]
+    ]
+  },
+  "reproducibility": {
+    "finalArtifactsFrozen": true,
+    "repeatBuildClaimed": false,
+    "note": "These exact artifacts were validated and visually reviewed. Promotion copies them without rebuilding."
   },
   "baseline": {
-    "state": "unpublished draft",
-    "pages": 128,
-    "sha256": "7c27cd42a6b082d6d6aae278af7728b5b1af58d38a8c3709e46f1211265a64d9"
+    "state": "approved public edition",
+    "version": "1.0.0",
+    "pages": 138,
+    "pdf": "output/pdf/ai-consulting-v1.0.0-2026-10-01.pdf",
+    "sha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2"
   },
   "visualLineage": "Toolkit A5 specimen with the Consulting draft engraving subjects; local frozen Evaluation layout components.",
   "governingSpecification": {
-    "path": "/Users/mike/handbooks/publish-evidence-backed-handbook/handbook-spec.json",
+    "path": "publish-evidence-backed-handbook/handbook-spec.json",
     "sha256": "87f4a9491eca40d340e1c4387f75189bad6db129a429a273957975f06be980f8"
   },
-  "hostedAppearance": {
-    "sourceBase": "repository root (../..)",
-    "sources": {
-      "site/theme.js": "6d2dd09b254ff5c9d4e8ae0bc1ac5f9a04e0f0a9294464bcff3aa3871387a660",
-      "site/theme.css": "717c9e85649cf8f1da0278497b0d8507d7e7cf9b96a97f87e8b8d6e0ed53f2f5",
-      "scripts/site-theme.mjs": "6a4dc7e0c9b50037819da7ed16168b8b933e6b24efd7644f1e61eb57154b62ff",
-      "scripts/test-site-theme.mjs": "8c41b72dd0f8bd03956e39cbdd21d337f4d898d6e080c057cb534b747b4e1001"
-    },
-    "outputBase": "repository output/site",
-    "outputs": {
-      "theme.js": "6d2dd09b254ff5c9d4e8ae0bc1ac5f9a04e0f0a9294464bcff3aa3871387a660",
-      "theme.css": "717c9e85649cf8f1da0278497b0d8507d7e7cf9b96a97f87e8b8d6e0ed53f2f5",
-      "index.html": "467e6cbb6ead740ca60820083919245230b892b4b994797ecbedf6775d58f933",
-      "production-ai-engineering/index.html": "5575a57754a32e325297bffc63977933092cbe8931d9db637fb2a99ef4773f95",
-      "ai-evaluation/index.html": "d2a8826f3013970da3f6f9a67c9590896abebdf624f29f011f352b048d263170",
-      "ai-consulting/index.html": "54bdd4afc889cfcbc648b11935c14648a5171c6df5e0ee8adb34e0f4b1b58214"
-    },
-    "report": "qa/appearance/review.json",
-    "reportSha256": "c68cc7aed1bbdb17fc901fbb8fe21298cfb195e76eee4e95bc5b063cb85ae9e9"
+  "releaseEvidence": "releases/v1.0.1",
+  "evidence": {
+    "releases/v1.0.1/final-comparison/edition-diff.json": "c3671e1be9f2714e8a52bf842a07ac2cd4d591433598598c7db605308e3a63b5",
+    "releases/v1.0.1/final-changelog-decision.json": "883a20282572166848213a8d877d12eda039929eda7f60b0d44d5214246eefd6",
+    "releases/v1.0.1/daytime-validation.json": "571e065f7b6af4d22d61bb996d9fcaf33e9430b1c680bd5574815b1ed01f9396",
+    "releases/v1.0.1/late-night-validation.json": "6da31c7d1a963167643a0bd080acd568211a9b6de0eb6b0546d83c765865e513",
+    "releases/v1.0.1/parity/parity.json": "84f3e3932fe311e36740b9bdd35745c849bc3661f10efe015b70ccea17a85f89",
+    "releases/v1.0.1/appearance.json": "904360ce358af6a577e4262c28e2054a76b63a5532f709cd770698633d97b47d",
+    "releases/v1.0.1/visual-review.json": "7be0116a6f4afc26ffa66756b2a7957e02b28fc8438a0776450dde55d2515c46"
   },
-  "readerReviewFixes": {
-    "report": "qa/reader-semantics/review.json",
-    "reportSha256": "28c1cfb87a2901f552843029efceea822986b726fc5941a9005d64fccde9233c",
-    "sourceSha256": "14982aeafee5ba4c153b8300451855d7e56ac7ad5145ad2ca75b57fb2ea540ce",
-    "readerSha256": "a7a0c4c70a9082c5d4db79db12373b1bdbf6c2a16eec41880eef191317d61910",
-    "pdfRebuilt": false
-  },
-  "repositoryMigration": {
-    "date": "2026-10-02",
-    "repository": "https://github.com/mikeylong/ai-consulting-playbook",
-    "readerSha256": "074a6f66432ce32d4ade1b5cb95000b4a8afff2631a3d4a882a41d73660db5e9",
-    "pdfRebuilt": false,
-    "readerChrome": "source/reader-chrome.html; frozen dialog and review chrome, no sibling source dependency",
-    "sharedWebAssets": "mikeylong/handbooks-site: /reader.css, /reader.js, /assets/favicon.png"
-  }
+  "historicalBuildManifest": "releases/v1.0.0/build-manifest.json"
 }

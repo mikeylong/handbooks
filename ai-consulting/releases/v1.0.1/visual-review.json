@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "artifacts": {
+    "daytime": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
+    "late-night": "a96f8905d44c7f8f01d2aff149f389712f7b3fa8009c40f28a8bdaa3d77a646e"
+  },
+  "engines": [
+    "Poppler 26.08.0",
+    "Apple PDFKit via Swift 6.4"
+  ],
+  "renderedPages": {
+    "daytime": 142,
+    "lateNight": 142
+  },
+  "wholeContactSheets": "Inspected both final Poppler sheets; no broad anomaly",
+  "fullPageRoles": [
+    "cover",
+    "contents",
+    "worked example",
+    "question list",
+    "blank template",
+    "chapter opener",
+    "body/table",
+    "changelog"
+  ],
+  "correction": "Changelog now sets its own running header; rechecked in both renderers",
+  "darkReviewer": "consulting_build_plan",
+  "daytimeReviewer": "root",
+  "findings": [],
+  "localProofRoot": "/Users/mike/handbooks/ai-consulting/candidate-2026-10-09-decision-summary/release/r2"
+}

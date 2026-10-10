@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "servedFrom": "site/output/site",
+  "httpChecks": [
+    {
+      "route": "/ai-consulting/editions/v1.0.0/ai-consulting-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "status": 200,
+      "sha256": "181576ce86aac2ba73ab6d5c7aabad43ea5e1a04d10956286c2846653ed86fd7",
+      "matched": true
+    },
+    {
+      "route": "/ai-consulting/editions/v1.0.0/ai-consulting-v1.0.0-2026-10-01.pdf",
+      "status": 200,
+      "sha256": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
+      "matched": true
+    },
+    {
+      "route": "/ai-consulting/editions/v1.0.0/ai-consulting-v1.0.0.index.json",
+      "status": 200,
+      "sha256": "07cc30179d6f92823318b72dbf766b0f22d5b7a99cb238b4ddb8b49dc9eaa0b3",
+      "matched": true
+    },
+    {
+      "route": "/ai-consulting/editions/v1.0.0/ai-consulting-v1.0.0.md",
+      "status": 200,
+      "sha256": "ff33ea368f5a35ff7e2370523fe49d1f9f78033d07b8ba230184a2858d0fd254",
+      "matched": true
+    },
+    {
+      "route": "/ai-consulting/editions/v1.0.0/index.html",
+      "status": 200,
+      "sha256": "d68f9f419654ba4e937b8c724d3c62e425a551d39cf120405941f530d6f0949b",
+      "matched": true
+    },
+    {
+      "route": "/ai-consulting/editions/v1.0.1/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf",
+      "status": 200,
+      "sha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
+      "matched": true
+    },
+    {
+      "route": "/ai-consulting/editions/v1.0.1/ai-consulting-v1.0.1-2026-10-09-late-night-r1.pdf",
+      "status": 200,
+      "sha256": "a96f8905d44c7f8f01d2aff149f389712f7b3fa8009c40f28a8bdaa3d77a646e",
+      "matched": true
+    },
+    {
+      "route": "/ai-consulting/editions/v1.0.1/ai-consulting-v1.0.1.md",
+      "status": 200,
+      "sha256": "1896f6e885bdc6d94647866cddb7a303f4228017c21b62c65ba6af180939b3cd",
+      "matched": true
+    }
+  ],
+  "editionPageWithAndWithoutTrailingSlash": "passed",
+  "browser": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "appearance": "Light",
+      "workedExample": "passed"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "appearance": "Dark",
+      "questionCount": 12,
+      "documentScrollWidth": 390,
+      "contentsOpenAndClose": "passed",
+      "searchFindsExample": "passed"
+    },
+    "preferencesRestored": true,
+    "screenshots": "/Users/mike/handbooks/ai-consulting/candidate-2026-10-09-decision-summary/release/r2/reader-*.jpg"
+  },
+  "collectionValidation": {
+    "command": "npm run validate",
+    "exitCode": 0
+  },
+  "focusedReleaseReview": {
+    "reviewer": "consulting_build_plan",
+    "findings": []
+  }
+}
