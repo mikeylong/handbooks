@@ -75,10 +75,10 @@ def paragraph_class(style):
 SECTION_PREFIX = re.compile(r'^(\d+(?:\.\d+)+)\s+(.+)$', re.S)
 
 
-def prepare_pdf_story(story):
-    """Separate visible PDF titles from source IDs and link numeric references.
+def prepare_title_story(story):
+    """Use visible titles and linked references while retaining source section IDs.
 
-    Reader conversion uses the original story and never calls this PDF hook.
+    Used by PDF preparation and readers that explicitly opt into title labels.
     No author wording, list numbers, chapter markers or numerical data change.
     """
     from reportlab.platypus import Table, KeepTogether
@@ -144,3 +144,8 @@ def prepare_pdf_story(story):
         if replacement != source:
             paragraph._pdf_source_text=source
             paragraph.__init__(replacement,paragraph.style)
+
+
+def prepare_pdf_story(story):
+    """Keep the established PDF entry point for title-only subsection labels."""
+    return prepare_title_story(story)

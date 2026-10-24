@@ -5,7 +5,7 @@
   "version": "1.1.0",
   "date": "2026-10-23",
   "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-  "sha256": "c964422f0135854b2e19aaa6101ff046ecde9ee6b38ef0c3318c90fe82b23736",
+  "sha256": "1ae0def352235eed03d05514edfcbda2cfae5fe5e5869064f28bd70ee5b3483c",
   "pages": 49,
   "variants": [
     {
@@ -16,12 +16,12 @@
       "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
       "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
       "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-      "sha256": "c964422f0135854b2e19aaa6101ff046ecde9ee6b38ef0c3318c90fe82b23736",
-      "bytes": 8270857,
+      "sha256": "1ae0def352235eed03d05514edfcbda2cfae5fe5e5869064f28bd70ee5b3483c",
+      "bytes": 8271932,
       "pages": 49,
       "pageMap": {
-        "path": "ai-native-organization/qa/v1.1.0/page-map-reviewed-light.json",
-        "sha256": "f3903b562dacf7a732f10b95ee3778ecce66299bebb3c6d6f0712998254c843a"
+        "path": "ai-native-organization/qa/v1.1.0/heading-correction/page-map-light.json",
+        "sha256": "3eba27e88faf59c67fb7e0929b54900af93cc3fa03673516ed0f39b00fcc39c3"
       },
       "appearanceDate": "2026-10-23"
     },
@@ -33,29 +33,35 @@
       "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
       "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
       "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
-      "sha256": "79748c57c4b224ba40e98beac6b9cd50d2f3395e9ab635caaf84e6425effb25b",
-      "bytes": 6722023,
+      "sha256": "cdccc5ff9a45a6d353e422bac063cc429ce56fd5a5cc50f5c77a2efc964503ea",
+      "bytes": 6723157,
       "pages": 49,
       "pageMap": {
-        "path": "ai-native-organization/qa/v1.1.0/page-map-reviewed-dark.json",
-        "sha256": "453ada290859179fddb88ac276bf9f3940f6f3a26918332c30db7228dd830eac"
+        "path": "ai-native-organization/qa/v1.1.0/heading-correction/page-map-dark.json",
+        "sha256": "5316b42ab9c0e039ec175a35f779c0119490485868a4e754f85887e07e2a0e22"
       },
       "proof": {
         "parity": {
-          "path": "ai-native-organization/qa/v1.1.0/parity.json",
-          "sha256": "ef28821ece245607a7582cda5fb2d826755fa89925f1bedfa8e46fc6317ac093"
+          "path": "ai-native-organization/qa/v1.1.0/heading-correction/parity/parity.json",
+          "sha256": "da1df653efd250fbea5a1fa8f2b0c4880b6af42ba777364246b8bb9ccfeddd53"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "79748c57c4b224ba40e98beac6b9cd50d2f3395e9ab635caaf84e6425effb25b",
+          "sha256": "cdccc5ff9a45a6d353e422bac063cc429ce56fd5a5cc50f5c77a2efc964503ea",
           "date": "2026-10-23",
-          "authority": "Mike explicitly authorized publication of the four-scale organization section after required editorial and runtime validation.",
+          "authority": "Mike explicitly authorized correcting version 1.1.0 itself, its website and both PDF download URLs, and rereleasing after validation.",
           "version": "1.1.0",
           "baseline": "1.0.0",
-          "review": "ai-native-organization/releases/v1.1.0/visual-review.json"
+          "review": "ai-native-organization/releases/v1.1.0/heading-correction-review.json"
         }
       },
       "appearanceDate": "2026-10-23"
     }
-  ]
+  ],
+  "releaseCorrection": {
+    "revision": 1,
+    "reason": "Remove visible decimal subsection prefixes consistently; preserve anchors and link references to visible titles.",
+    "priorArtifacts": "releases/v1.1.0/pre-heading-correction/preservation.json",
+    "authority": "Mike explicitly authorized correcting version 1.1.0 itself, its website and both PDF download URLs, and rereleasing after validation."
+  }
 }

@@ -288,5 +288,8 @@ def build_story():
         P('<link href="https://teamtopologies.com/key-concepts">Team Topologies: Key Concepts</link>', SMALL),
         P('<link href="https://tag-app-delivery.cncf.io/whitepapers/platforms/">CNCF Platforms White Paper</link>', SMALL),
         P('<link href="https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology">Google Cloud: Deployment methodology</link>', SMALL),
+        P('<b>Correction or clarification</b>'),
+        P('Removed decimal prefixes from website and Markdown subsection headings. Section references now link to the visible titles, matching the PDFs. Both PDF appearances were reissued with this correction recorded.'),
+        P('<link href="https://handbooks.surfaces.systems/ai-native-organization/">Corrected online edition</link>', SMALL),
         P('Previous Daytime PDF SHA-256: ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf', SMALL)]
     return story

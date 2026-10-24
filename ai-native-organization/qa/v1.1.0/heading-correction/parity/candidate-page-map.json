@@ -1,0 +1,2977 @@
+{
+  "path": "/Users/mike/handbooks/candidates/ai-native-organization/2026-10-23-heading-labels-v1.1.0-correction/artifacts/final/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+  "sha256": "cdccc5ff9a45a6d353e422bac063cc429ce56fd5a5cc50f5c77a2efc964503ea",
+  "bytes": 6723157,
+  "pages": [
+    {
+      "page": 1,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-Native\nOrganization\nHandbook\nChoose useful work, give people clear ownership, and test\nwhether agent workflows improve delivery.\nMichael Long\nOctober 23, 2026 \u00b7 Version 1.1.0\nExpanded edition\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 2,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "ii\nMake a better\ndelivery decision\nYour team can generate a change quickly and still struggle to deliver it.\nSomeone has to decide whether the change matters, resolve conflicting\nrequirements, review the result, release it and support the customer\nafterward. Giving agents more execution work leaves those\nresponsibilities with people.\nThis handbook helps engineering and product leaders decide where\nagent workflows can improve delivery. Here, AI-native describes an\norganization that keeps the information, tools and safeguards people\nand agents need in working order. The test is whether customers receive\nbetter outcomes at an acceptable total cost.\nBegin with one existing team and one recurring customer need. Chapter\n1 helps you select the work and assign ownership. Chapter 2 turns\ndelegation into a workflow the team can operate. Chapter 3 shows how to\nfund a comparison, read the results and choose a limited next\ninvestment. Two worksheets help you apply the decisions.\nChapter 3 walks through a team's decision about whether a new\nworkflow is worth funding. The numbers are illustrative; the questions\nare the ones you'll need to answer before committing money or changing\nhow your team works.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 3,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "iii\nContents\nMake a better delivery decision\n ii\nWorking tools\n 36\n1. Choose useful work and clear owners\n 1\nNotes and sources\n 38\n2. Build a workflow the team can\noperate\n 13\nIndex of terms\n 44\n3. Fund a comparison and decide what\nto expand\n 21\nChangelog\n 46\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            497.0028,
+            148.7654,
+            506.4028
+          ],
+          "uri": "",
+          "dest": [
+            1,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            198.4912,
+            497.7903,
+            202.0,
+            507.1903
+          ],
+          "uri": "",
+          "dest": [
+            1,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            497.0028,
+            268.3325,
+            506.4028
+          ],
+          "uri": "",
+          "dest": [
+            38,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.3704,
+            497.7903,
+            383.1496,
+            507.1903
+          ],
+          "uri": "",
+          "dest": [
+            38,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            467.6028,
+            177.9854,
+            477.0028
+          ],
+          "uri": "",
+          "dest": [
+            3,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            198.1104,
+            468.3903,
+            202.0,
+            477.7903
+          ],
+          "uri": "",
+          "dest": [
+            3,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            467.6028,
+            282.665,
+            477.0028
+          ],
+          "uri": "",
+          "dest": [
+            40,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.3704,
+            468.3903,
+            383.1496,
+            477.7903
+          ],
+          "uri": "",
+          "dest": [
+            40,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            438.2028,
+            153.4754,
+            447.6028
+          ],
+          "uri": "",
+          "dest": [
+            15,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            428.8028,
+            64.02289,
+            438.2028
+          ],
+          "uri": "",
+          "dest": [
+            15,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.2208,
+            438.9903,
+            202.0,
+            448.3903
+          ],
+          "uri": "",
+          "dest": [
+            15,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            438.2028,
+            269.9375,
+            447.6028
+          ],
+          "uri": "",
+          "dest": [
+            46,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.3704,
+            438.9903,
+            383.1496,
+            448.3903
+          ],
+          "uri": "",
+          "dest": [
+            46,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            399.4028,
+            174.0854,
+            408.8028
+          ],
+          "uri": "",
+          "dest": [
+            23,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            390.0028,
+            72.07789,
+            399.4028
+          ],
+          "uri": "",
+          "dest": [
+            23,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            194.2208,
+            400.1903,
+            202.0,
+            409.5903
+          ],
+          "uri": "",
+          "dest": [
+            23,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            218.0,
+            399.4028,
+            255.815,
+            408.8028
+          ],
+          "uri": "",
+          "dest": [
+            48,
+            "/Fit"
+          ]
+        },
+        {
+          "rect": [
+            375.3704,
+            400.1903,
+            383.1496,
+            409.5903
+          ],
+          "uri": "",
+          "dest": [
+            48,
+            "/Fit"
+          ]
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 4,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "1\nCHAPTER 01\nChoose useful work and\nclear owners\nStart with a customer problem and the dependency that holds it\nback. Keep responsibility clear as execution changes.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 1254,
+          "height": 1254,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n2\nFind the constraint worth changing\nChoose recurring customer work that the team already needs to deliver\nand understands well enough to judge. Divide it into independently\ntestable changes so the team can obtain feedback before committing to a\nlarger intervention. [S9]\nFor saved searches, customers need to save a query, find it later and\nkeep it private across web and mobile. If changes spend days waiting for\nan interface decision, faster code generation leaves the main delay\nintact. Match the intervention to where recent changes actually waited.\n Where does the change wait?\n Repeated interface\n clarification\n Agree an interface\n contract\n Routine mobile\nimplementation or\n review\n Evaluate a reusable\n workflow\n Unresolved product\n choice\n Name an owner and\n resolve it\nLook at a few recent changes from the initial request through production\nuse. Where did people spend time working, waiting or redoing work?\nWho resolved difficult decisions? Include review, customer observation\nand recovery so the intervention addresses the delay the team actually\nexperiences.\nMake the expected benefit specific enough to test: \"For routine\nsaved-search changes, clearer interface agreements and reusable\nautomation that has been tested will reduce recurring delivery cost\nwhile preserving customer success and quality.\" The proposal names the\nwork, the improvement and the conditions the team cannot sacrifice to\nget it.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 6,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n3\nGive one team the whole outcome\nGive one product team responsibility for the customer journey from\nproblem selection through maintenance. For saved searches, the team\nowns the experience across clients, persistence, privacy, release and\nincident response. Delegating work leaves that responsibility with the\nteam.\n The product team owns the whole outcome\n PRODUCT TEAM\n Define the work\n Customer problem, scope\n and privacy\n DELEGATED WORKFLOW\n Execute within limits\n Implementation within\ncontracts; tests, checks\nand maintained context\n PRODUCT TEAM\n Accept and support\n Acceptance, release,\nproduction support and\n recovery\n Review the evidence; decide what happens next.\nThe team still needs access to named specialists for unfamiliar\narchitecture, unresolved accessibility failures and work outside its\nauthority. Sharing specialists can reduce duplication, but teams may\nhave to wait for them. Embedding specialists makes help easier to\nobtain, at a staffing and coordination cost. Before changing team\ncomposition, find out whether people can get the help they need during\nordinary work, urgent reviews and incidents.\nFor the first trial, keep staffing, reporting lines and release responsibility\nstable. Change how the team obtains context and executes a defined\nclass of work, then use the result to inform the next decision.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 7,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n4\nMake the responsibility clear enough that people know whom to call:\n\"The Search team owns customers' ability to save and reuse searches,\nincluding production support; the mobile specialist owns decisions\nabout unfamiliar native interaction patterns.\" Use real team and owner\nnames before launch.\nAssign the decisions people retain\nName people for these responsibilities before granting a workflow\naccess. One person may hold several roles in a small team. Keep release\nauthority and the ability to challenge a result explicit.\nReserve time for reviewing unfamiliar work, handling escalations and\nrecovering from incidents. Name a backup for each decision owner, with\naccess to the same context and records. If neither owner is available,\npause work that needs their approval until an authorized person can\nreview it.\nWhen a shared workflow introduces a defect, its maintainer corrects the\nworkflow. The product team restores the affected feature, for example\nby rolling back a faulty saved-search release and checking that\ncustomers can save and reopen queries. The platform owner handles\nany infrastructure or access failure.\nDECISION OWNER\nWHAT THE OWNER DECIDES AND MAINTAINS\nProduct team\nWhich customer problem to solve; acceptance, release, production\nsupport and maintenance of its product area.\nProduct / design lead\nWhat customer success means; representative observations and\nwhether the delivered experience is useful.\nWorkflow maintainer\nInstructions, context assembly, model/tool versions, workflow\nevaluations and controlled capability changes.\nSpecialist\nDomain rules, unfamiliar technical tradeoffs and exceptions\nrequiring expertise beyond routine checks.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 8,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n5\nDECISION OWNER\nWHAT THE OWNER DECIDES AND MAINTAINS\nPlatform / security owner\nTask identities, access enforcement, environments, audit records,\nrevocation and infrastructure recovery.\nMeasurement owner\nTask allocation, complete cost and outcome records, missing\nevidence and preserved analysis snapshots.\nSponsor\nFunding, permitted risk within their authority, and the recorded\ndecision to continue, stop or fund replication.\nMake shared expertise usable\nA shared agent workflow needs the same care as a service that teams\ndepend on. Explain which tasks it supports, what information it needs,\nwhat it checks and when users should ask for help. Teams need both a\nreliable way to do routine work and a way to reach a specialist when the\nworkflow cannot handle it.\nA mobile capability might supply current interface patterns, an\nimplementation workflow and accessibility checks. Its maintainer owns\nthose reusable elements. The product team supplies the customer goal\nand judges the resulting experience. A novel navigation pattern goes to a\nspecialist before routine automation proceeds.\nStart with work that several teams repeatedly need. Count the cost of\nbuilding and maintaining the shared capability, along with support\nhours, time waiting for review and accepted outcomes. Reuse pays off\nwhen it helps teams finish useful work with less total effort and expense.\nThe number of times a workflow runs cannot tell you that on its own.\nIf routine changes still wait for the enabling team, inspect the reason. A\nmissing test needs a test; an obsolete rule needs a context correction; a\nmandatory specialist decision needs capacity or a narrower scope. Each\ncorrection is more concrete than adding another review agent.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 9,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n6\nWhen many teams depend on one workflow, one defect can affect them\nall. Keep its version fixed during a comparison. Test a replacement with\na limited group of users, identify the work it affects and keep a rollback\navailable. Teams should know how to continue delivery if the shared\nworkflow is unavailable.\nFund broader reuse after teams can operate the capability and its\nsupport burden is understood. A workflow that succeeds only when its\nauthor sits beside the user is still being developed.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 10,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n7\nMatch the structure to your\ncoordination needs\nStart with the dependencies between customer outcomes, the specialists\npeople need, and the decisions each team can make alone. Add shared\ncoordination where it helps teams finish work.\nThese four arrangements are proposals. The sizes are illustrative\ntotal-company headcounts, including non-engineering roles. They are\nnot engineering headcounts, staffing ratios or thresholds for\nreorganizing.\nPeople retain responsibility for outcomes and release; this does not\nrequire manual approval of every routine deployment.\nBoxes group work, not reporting lines. Solid arrows show work, priorities or evidence; dashed arrows\nshow support or controls.\nA small company may coordinate one multidisciplinary team through\ndirect conversation and one backlog. The same people can maintain its\ntools and workflows.\nAround 10 people: one team\nFOUNDERS + CORE TEAM\nDefine\nHuman owner\nExecute\nAgents\nAccept / release\nHuman owner\nTools + context\nEvidence\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 11,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n8\nWhen several product teams need the same help, give them shared\nworkflow support and access to specialists. Keep those services usable\nwithout making every delivery wait in one central queue.\nAround 100 people: product teams\nProduct leadership\nPRODUCT TEAM A\nHuman owner / release\nAgents\nPRODUCT TEAM B\nHuman owner / release\nAgents\nPlatform / workflow owner\nSpecialists\nPriorities\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 12,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n9\nWhen dependencies cluster around a product domain, a domain lead can\ncoordinate priorities and interfaces across teams. Each team still owns\nits customer outcome and release; the platform and specialist\ncommunities support that work.\nAround 1,000 people: product domains\nPortfolio priorities\nDOMAIN A\nDomain lead\nTEAM 1\nOwner /\nrelease\nAgents\nTEAM 2\nOwner /\nrelease\nAgents\nDOMAIN B\nDomain lead\nTEAM 1\nOwner /\nrelease\nAgents\nTEAM 2\nOwner /\nrelease\nAgents\nPlatform + workflows\nInternal product\nSpecialist communities\nDomain judgment\nContracts\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 13,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n10\nBusiness units with different markets or operating needs may need more\nlocal authority. Local capability hubs maintain context, evaluations and\ndomain tools, while an enterprise foundation supplies common controls.\nName the cross-unit agreements and escalation routes. Domain\ncoordination within each unit is omitted here for clarity.\nAround 10,000 people: federated units\nEnterprise foundation\nIdentity / security / audit / standards\nBUSINESS UNIT A\nPRODUCT TEAMS\nOwner /\nrelease\nAgents\nLocal capability hub\nBUSINESS UNIT B\nPRODUCT TEAMS\nOwner /\nrelease\nAgents\nLocal capability hub\nContracts / escalation\nBefore changing reporting lines, trace a few delayed changes across\nteam boundaries. Decide whether the problem needs a clearer interface,\nmore available specialist time, a shared service or a different decision\nowner. Test that change before applying a larger reorganization.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 14,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n11\nProtect judgment and attention\nA team needs enough expertise to challenge the work it accepts. Before\ndelegating a task, name who can explain the affected architecture,\nrecognize a consequential error and restore service. Availability on an\norganization chart is insufficient if the specialist has no capacity during\nreview or an incident.\nReserve human time for product decisions, review, exceptions and\nlearning. More parallel agent runs create more proposed work to\ninspect. Limit work in progress when the review queue grows, and\nmeasure the waiting time and rework that follow each additional run.\nUse review to expose assumptions. For saved searches, a reviewer\nshould be able to explain why one customer cannot read another's saved\nquery, how a failed save appears and what happens after an interface\nversion changes. Agreement between agents cannot supply that\nexplanation by itself.\nMaintain opportunities for engineers to investigate failures and work\nthrough complete changes. Specialists should improve reusable rules\nand help others develop judgment, while remaining available for\ndifficult cases. Measure useful independent delivery and support quality\ntogether.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 15,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n1. CHOOSE USEFUL WORK AND CLEAR OWNERS\n12\nDecide what the team would do with time saved. Completing more\npriority work, reducing overtime and leaving room for unexpected work\neach have value, but they are different benefits. Faster execution does\nnot reduce cash spending while staffing and spending remain\nunchanged. Chapter 3 counts saved labor time only to the extent that the\nteam demonstrates its use on other planned work.\nBefore designing the workflow, agree on the customer need, the delay to\nreduce, the accountable team and the people responsible for shared\ncapabilities and exceptions. Those choices give the work a purpose and\nmake clear who can act when it fails.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 16,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "13\nCHAPTER 02\nBuild a workflow the\nteam can operate\nGive agents current context, enforce the actions they may take, and\nverify the result independently.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 1254,
+          "height": 1254,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n2. BUILD A WORKFLOW THE TEAM CAN OPERATE\n14\nMaintain the context work depends on\nAn agent working on saved searches needs the current interface, privacy\nrules, relevant product decisions and acceptance criteria. A large\ncollection of documents leaves the workflow maintainer with the same\nquestion: which information should govern this task?\nContext engineering is the work of managing the information available\nto a model as it runs: instructions, tools, retrieved material and prior\ninteractions. That information needs ongoing maintenance. [S4] Every\nsource that can materially affect a decision needs an owner who can\ncorrect it and decide when it is due for review.\nFor each task, bring together the customer goal, acceptance conditions,\nrelevant domain rules, current interfaces, known constraints and\nreasons to escalate. Keep this packet small enough to use. Links to the\nauthoritative records, with the versions or retrieval times used, let a\nreviewer check what the workflow relied on.\nHow often information needs checking depends on how quickly it\nchanges and the consequences of using an old version. An access policy\nmay need verification for every task; a stable interface example may\nneed review when the interface changes. The workflow maintainer\nassembles the information, while the domain owner remains\nresponsible for its correctness.\nDecide who resolves conflicting information before work starts. If an old\nexample permits an export that current policy forbids, stop the export\nand ask the responsible owner. Correct the obsolete reference after the\ndecision so the next task does not encounter the same disagreement.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 18,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n2. BUILD A WORKFLOW THE TEAM CAN OPERATE\n15\nA failure should point to a specific correction. A missing interface\nagreement needs an authoritative source; an unsupported assumption\nneeds clarification or a new test case. Adding every available document\ncan increase the amount of information the workflow has to handle\nwithout resolving either problem.\nDefine a repeatable capability\nTo rely on a workflow, a team needs to know which tasks it can handle,\nwhat inputs and tools it needs, how its work is checked and how to\nrecover from a failure. Give the complete workflow a version so\nreviewers can tell what ran and reproduce the relevant conditions.\nFor saved searches, the capability could accept one approved interface\ncontract and a customer task description, propose coordinated changes\nacross clients and backend, and return test evidence. It should identify\nunsupported work, such as a new authorization model, before execution.\nA short service agreement should answer the questions a product team\nwill have: who maintains the workflow, who can use it, what support to\nexpect, how to report a defect and how to continue if it is unavailable.\nInclude a route for manual work and for exceptions that need a human\ndecision.\nChoose how much freedom the task needs. A routine interface update\nmay follow a fixed sequence. An unfamiliar failure may require\ninvestigation and a human decision before implementation. Use broader\nagent discretion only when the surrounding controls and verification\ncan support the additional choices.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 19,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n2. BUILD A WORKFLOW THE TEAM CAN OPERATE\n16\nFixing a product defect and changing the workflow are different\nchanges. The product fix belongs in the product's release record. A new\nmodel, different tool access or a change in how agents coordinate\nbelongs in the workflow's version record, because it may alter what the\ntrial is testing.\nBefore a comparison begins, agree which corrections to context are\nallowed and which changes require a new group of tasks to be evaluated\nseparately. Log every revision. If the workflow improves substantially\nhalfway through, combining its earlier and later results would hide the\ndifference.\nEnforce authority through the system\nPermissions need to exist in the system, not just in instructions. Decide\nwhich actions an agent may take and enforce those limits through its\nidentity, tools and execution environment. Retrieved text can describe\npermission, but it cannot grant access. A task asking for a production\nexport does not authorize one.\nContainment limits what an agent can do through controls such as\nsandboxes, virtual machines and network restrictions. [S6] Choose those\ncontrols according to the consequences of the task, then check from\noutside the agent that they work.\nThe table sets the starting permissions for this pilot. Before live work\nbegins, the platform owner must show that the system denies prohibited\nactions, expires access and revokes it during an active run. A written\npolicy or an agent's refusal is not enough to establish that the system\nenforces the limit.\nACTION\nPERMITTED SCOPE IN THE EXAMPLE\nRead\nApproved repositories, documents and test data under a task\nidentity with limited resources and expiry.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 20,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n2. BUILD A WORKFLOW THE TEAM CAN OPERATE\n17\nACTION\nPERMITTED SCOPE IN THE EXAMPLE\nEdit and test\nAn isolated branch or workspace, without production credentials.\nRecord changed state and test results.\nCreate a preview\nA review environment with an owner, expiry, spending limit and\ncleanup record.\nMerge and release\nA separately authorized person follows protected checks and the\nexisting release path.\nDelete, export or bill\nUnavailable in this pilot. A later proposal requires a separate\nauthority and consequence decision.\nStop and recover\nThe platform owner can revoke access, stop active execution, find\naffected state and verify recovery.\nTest the workflow and the outcome\nKeep two questions separate. Can this workflow version handle\nrepresentative work? Does this delivered change solve the customer\nproblem? A capability evaluation addresses the first question;\nindependent product acceptance and customer observation address the\nsecond.\nThe test set should include routine tasks, awkward but valid inputs, stale\nor conflicting information, tool failures and prohibited requests. For\neach case, define the expected result and inspect what actually changed\nin the environment. Agent evaluation guidance distinguishes the case,\nrepeated trials, grading and the final outcome. [S5]\nRepeat cases when variable behavior matters, and retain the result of\nevery case. In a synthetic suite of fifteen cases with three trials each, 41\nsuccesses out of 45 could hide one case failing all three trials. A high\naggregate can coexist with a repeatable failure.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 21,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n2. BUILD A WORKFLOW THE TEAM CAN OPERATE\n18\nBefore the trial, decide which cases are critical and what passing each\none means. Keep the final assessment cases separate from the examples\nused to tune the workflow. If an assessment case leaks into tuning, use a\nreplacement assessment that was defined in advance and has not been\nexposed, or call the final result inconclusive. Keep the inputs, versions,\naction traces, grading results and explanations of failures so someone\nelse can examine the result.\nFor each product change, test the behavior customers need and\nunintended effects the task could introduce. Saved searches need\npersistence and privacy checks, followed by observation of whether\ncustomers can find and reuse the saved query. The product lead defines\nrepresentative use before delivery.\nRepeating a control test tells you more about the selected scenario, not\nabout every situation the workflow might face. Fifteen cases run three\ntimes still cover fifteen distinct challenges. A passing suite therefore\nleaves a continuing job for production monitoring, incident response\nand customer feedback.\nMake the task record reviewable\nA reviewer should be able to judge the work without reconstructing a\nlong conversation. A useful task record connects the customer goal to\nthe authoritative information, permitted actions and evidence needed to\naccept the result.\nFor the saved-search example, record: \"A customer can save a query,\nreopen it in a later session and see a usable failure state. Saved queries\nremain private to their owner.\" Add the test environment and\nrepresentative customer tasks that will establish those conditions.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 22,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n2. BUILD A WORKFLOW THE TEAM CAN OPERATE\n19\nThe record needs a task ID, responsible product team, source versions,\nworkflow/model version, permitted resources and actions, budget,\nexpiry and escalation owner. Link to protected configuration rather than\ncopying secrets into the record. The platform owner checks that the\nactual permissions match this scope.\nIf a backend contract contradicts a mobile example, pause the affected\nwork and ask the contract owner to resolve the conflict. Keep the\ndecision and update both references. Otherwise the team may end up\nwith two implementations that look compatible but follow different\nrequirements.\nAt completion, the reviewer needs links to the proposed change, actions\ntaken, test results and independently observed state, along with\nlimitations and actual effort and cost. Make clear whether the work was\nproposed, executed, verified or released. Each is a different status and\nneeds its own evidence.\nA reviewer should now be able to accept the result, request a specific\ncorrection or escalate a decision. After release, keep the task connected\nto customer observation and follow-up. If customers cannot find their\nsaved searches, the product team still has work to do even when the\npersistence test passes.\nRehearse failure before live work\nRun a stale-context conflict, an incorrect output, a tool timeout, a\nprohibited request and revocation during active execution. Verify what\nactually stopped, which credentials expired and what state remains. An\nagent saying it stopped leaves an unanswered question if a background\njob continues.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 23,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n2. BUILD A WORKFLOW THE TEAM CAN OPERATE\n20\nPeople should know who can suspend the workflow and who will restore\neach affected product. Save action traces, versions and changed state\nbefore recovery removes useful evidence. The responsible owner can\nauthorize a restart only after the team verifies both restoration and the\ncorrection.\nFeedback needs to reach someone who can act on it. Product defects go\nto the product owner, shared workflow defects to the maintainer, and\naccess failures to platform/security. When a failure crosses those\nresponsibilities, the owners need to coordinate the response.\nBudget recurring time for context corrections, evaluation updates,\nprovider changes and support, and include it in operating cost. Even a\nuseful workflow may cost too much to maintain if the work it serves\nrarely occurs.\nThe team is ready for a comparison when it can show a real task record,\nmaintained context, a versioned workflow, assessment cases kept out of\ntuning, enforced access and a rehearsed recovery procedure.\nUnresolved gaps need owners. This preparation makes the trial possible\nwithin its approved scope; the trial still has to show whether delivery\nimproves.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 24,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "21\nCHAPTER 03\nFund a comparison and\ndecide what to expand\nPay for the trial to finish, count unsuccessful work, and connect the\ninvestment decision to confirmed customer outcomes.\n",
+      "links": [],
+      "images": [
+        {
+          "width": 1254,
+          "height": 1254,
+          "mask": false
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n22\nFund a trial that can disappoint you\nAll numbers and results in this chapter are synthetic. The example\nfollows six engineers who already use AI assistants, CI and production\ncontrols. They are trying a workflow that combines maintained context,\ntested automation and enforced permissions. The comparison tests the\ncombination; it cannot tell them how much benefit came from each part.\nThe trial covers forty-eight preference, notification and administration\nchanges requested to meet customer needs. It excludes authorization,\nbilling, destructive migrations and sensitive exports. Staffing, product\nownership and release rules stay the same. Before funding it, the\nsponsor needs to know that there is enough eligible work and enough\nreviewer time to finish the comparison.\nThe sponsor wants recurring cost per confirmed outcome at least 15%\nbelow the current workflow, within an absolute cost ceiling, with\nacceptable completion and quality. The detailed requirements in \"Agree\non the investment requirements\" are example investment choices. Set\nlocally justified requirements before enrollment.\nThe schedule allows weeks 1-2 to prepare and agree the trial plan, weeks\n3-6 to enroll tasks, weeks 7-8 to finish delivery, and weeks 9-10 to observe\nuse and make the decision. Each release needs at least fourteen calendar\ndays of follow-up and representative customer use. Check the actual\ndeadlines against the business calendar before committing to this\nschedule.\nThe sponsor approves an $86,000 cap: $16,000 for setup, $61,800 for\ndelivery and comparison at unchanged labor productivity, and $8,200\ncontingency. That contingency includes one extension to complete\nmissing evidence, limited to two weeks and $4,000. The budget must\ncover follow-up, recovery and shutdown as well as delivery.\n",
+      "links": [
+        {
+          "rect": [
+            347.4004,
+            295.9417,
+            379.1204,
+            307.9417
+          ],
+          "uri": "",
+          "dest": [
+            29,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            280.9417,
+            194.2104,
+            292.9417
+          ],
+          "uri": "",
+          "dest": [
+            29,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 26,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n23\nBefore enrollment, the measurement owner needs statistical help to\nassess how much tasks vary, the minimum gain worth pursuing and how\nprecisely the trial could estimate it. Document the recommended sample\nsize and what the trial can distinguish. Forty-eight tasks are a planning\nassumption. That assessment, the funding and the recovery requirement\nall need to be resolved before work enters the trial.\nKeep the comparison interpretable\nCompare the pilot with the team's actual current workflow, including the\nAI assistants it already uses. Match twenty-four pairs of tasks by\ncomplexity, dependencies and engineer familiarity, then randomly\nassign one task in each pair to the pilot group and the other to the\ncomparison group. Each engineer receives four pairs. Schedule both\ngroups across the same weeks so a busy period or a quiet one does not\nfall on only one group.\nAgree task eligibility, size limits, acceptance criteria, labor rates,\nseverity definitions and the allocation of common costs before\nenrollment, and keep them fixed. Every task stays under its original\nassignment, including failures, rescues, crossover and abandonment.\nLog help and reused work between groups, and give both groups the\nsame review priority.\nThe reason is practical: a pilot receiving easier tasks or priority review\ncould appear cheaper because the comparison was disadvantaged. Task\nselection and concurrent AI work also complicate measurement in\ndeveloper research. [S7] Keep deviations visible so the readout can\nexplain what was tested.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 27,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n24\nEach change has ten business days from the time it is ready and\nassigned. Waiting, blockers and rescue work all count toward that\ndeadline. Use the agreed business calendar and record actual\ncompletion times, the age of unresolved tasks and late completions. Late\nwork still belongs in the results, even though it no longer qualifies as\ntimely.\nAn unfinished task at the deadline has no observed completion time yet.\nReporting it as completed at day ten would hide delay. Keep unfinished,\nlate and abandoned outcomes separate. The statistical distinction\nbetween an observation limit and an event time is useful here; the\nsource note explains the analogy. [S8]\nThe main measure is cost per confirmed timely outcome. Waiting time,\npaired results and total team output help explain that measure. With\ntwenty-four tasks in each group, estimates of unusually slow delivery\nand differences between subgroups need caution. People in the same\nteam also learn from and help one another, which limits what the\ncomparison can establish.\nCount confirmed customer outcomes\nDecide what counts as success before delivery begins. In this example, a\nconfirmed outcome has independent production acceptance within ten\nbusiness days, remains valid through at least fourteen calendar days of\nfollow-up, and has the required evidence of success on representative\ncustomer tasks. A is the count of these outcomes for each group.\nA timely acceptance awaiting follow-up is pending. A late release can\nstill be useful, but it never enters this timely-outcome count. Remove an\naccepted outcome if a predefined invalidation condition occurs, such as\na defect or customer failure making the accepted behavior unusable.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 28,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n25\nEvery release needs observation, including late work. Before the final\ndecision, confirm the result for every timely acceptance and complete\nquality and safety follow-up for late releases. Fourteen days without a\nreported problem do not show that the change is useful; someone must\nalso observe the specified customer task.\nOne assignment register should connect each task to its original group,\npair, engineer, assignment time, deadline, production acceptance,\nfollow-up, customer evidence, invalidation and costs. At the end, each\ntask belongs in one category: confirmed timely, invalidated timely, late,\nabandoned or unresolved. While the trial is running, show timely work\nawaiting confirmation separately.\nAccount for all twenty-four assignments in each group. Fewer confirmed\noutcomes mean a higher unit cost because the unsuccessful work still\ncost time and money. Removing difficult tasks would make the\ninvestment look better by hiding part of its actual burden.\nWhen A is zero, unit cost is undefined and completion fails at final\nreadout. Display N/A, with the reason. Missing costs or observations\nmake the affected requirements Pending until resolved or the trial ends\nas inconclusive. A missing result cannot be credited as a success.\nCharge the complete delivery cost\nFor each group a, let C_a be its full recurring cost: labor at the agreed\nrole rates, tools, review, failures, rescues, support, maintenance, shared\nmeasurement and outstanding recovery commitments. Keep one-time\nsetup S separate. Unit cost U_a = C_a / A_a; the relative cost ratio is U_P /\nU_C, where P is pilot and C is comparison.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 29,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n26\nCharge support used by only one group to that group. Divide common\nmeasurement costs across all assigned tasks, including unsuccessful\nwork. With twenty-four assignments in each group, each receives half.\nKeep this allocation fixed so a lower success count cannot make\nmeasurement costs disappear.\nTo see whether the trial can finish within budget, add incurred cost,\nunspent commitments and work still needed but not yet committed.\nInclude setup, both groups, follow-up and shutdown, and reconcile\nestimated usage charges with invoices. Count a commitment only once,\neven if it already appears in a group's cost record.\nAssume ten combined recurring labor hours per assignment, including\ndelivery, review, support, maintenance and common measurement. At\n$125/hour, a comparison task costs 10 \u00d7 $125 + $25 in tools = $1,275. The\npilot costs 10 \u00d7 $125 + $50 = $1,300. The forty-eight assignments cost 24 \u00d7\n($1,275 + $1,300) = $61,800. Setup brings the no-benefit plan to $77,800.\nFunding the hoped-for result would budget only $16,000 + 24 \u00d7 $1,275 + 24\n\u00d7 $1,050 = $71,800. A $72,000 cap leaves $200 and depends on already\nachieving the target. The $86,000 cap instead leaves $8,200 over the\nno-benefit plan.\nReview the expected cost to finish every week, including what happens\nif work goes badly. Stop enrolling tasks when the remaining comparison,\nfollow-up and safe shutdown cannot fit within approved funding. The\ntrial has to remain affordable even when the hoped-for improvement\ndoes not arrive.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 30,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n27\nAgree on the investment requirements\nThe sponsor approves the requirements and their rationale before\nenrollment. The thresholds below are investment choices for this\nexample; they have not been statistically calibrated and do not establish\ngeneral safety. Every requirement must pass. Lower cost cannot\ncompensate for an unacceptable quality or control result.\nAgree the severity definitions, evaluation cases and thresholds together,\nand keep them fixed. If the team cannot justify a requirement or collect\nthe evidence for it, resolve that problem before launch. Changing a\nthreshold after seeing the result changes the question the trial was\nmeant to answer.\nREQUIREMENT\nEXAMPLE FINAL RULE\nRecurring cost\nPilot unit cost at most $1,050 and pilot/comparison ratio at most\n0.85.\nConfirmed completion\nAt least 22/24 pilot outcomes; pilot count at least comparison count.\nEngineer sensitivity\nRatio < 1 after omitting each engineer's paired work and associated\ncosts in turn.\nCustomer and quality\nComplete observations; zero High/Medium incidents in either group;\npilot Low issues at most comparison Low issues + 1. Count a defect\nand its rollback once.\nRoutine capability\n15 cases \u00d7 3 trials: at least 41/45, each case at least 2/3, designated\ncritical cases 3/3.\nEnforced controls\n15 failure/control cases pass all 3 trials, including actual denial and\nmid-run revocation.\nInvestment recovery\nComplete costs, demonstrated productive reuse, modeled setup\nrecovery at most 12 weeks.\nComparison integrity\nEvery assignment retained; no preferential queue treatment,\nunlogged crossover or unapproved material workflow change.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 31,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n28\nRead the weekly scorecard in order\nThe sponsor needs one consistent picture of progress. The measurement\nowner prepares a cumulative snapshot at an agreed cutoff and timezone,\nwith delivery, product/design and platform/security owners checking\ntheir records. Keep earlier snapshots and link corrections to them. The\nsponsor records the resulting decision and actions.\nFor every measure, show the current and previous values, the change,\nthe counts used in the calculation, supporting evidence, owner and\nPass/Fail/Pending status. Calculate unit costs from cumulative totals.\nAveraging weekly unit costs would give a small week the same weight as\na large one.\nStart the review with controls and incidents, then ask whether the trial\ncan still afford to finish. Next review missing evidence, completion and\ncustomer outcomes, quality and evaluations, and finally cost and\nrecovery. A promising cost ratio cannot settle a requirement while\ncustomer follow-up is still pending.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 32,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n29\n Review the scorecard in this order\n1\nControls / incidents\nAction and recovery traces; incident severity; routine and control results by case.\nSuspend affected capability for prohibited execution, exposure or High/Medium\nincidents.\n2\nAffordability\nIncurred cost, remaining commitments and cost to finish. Preserve funds for\nfollow-up and shutdown.\n3\nEvidence / completion\nAll assignments, outcome states and required observations. Explain every missing\nrecord.\n4\nUnit cost / sensitivity\nC_a / A_a and pilot/comparison ratio; recalculate after each engineer omission.\nPreserve failed-task costs.\n5\nRecovery / integrity\nSetup, conservative net benefit, eligible demand, demonstrated capacity and\nreuse; protocol deviations and version history.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 33,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n30\nCalculate a complete example readout\nSynthetic week-ten result: all forty-eight assignments, follow-up records\nand costs are resolved. Each group has twenty-three confirmed\noutcomes and one abandoned change. The abandoned work remains in\ncost. No outstanding commitments or further work estimates remain.\nThe cost and completion requirements below pass, along with quality,\nevaluations and integrity. The sponsor still needs the\nengineer-sensitivity and investment-recovery calculations in \"Check\ndependence on one engineer\" and \"Value capacity that was actually\nreused\" before deciding whether to fund another team.\nMEASURE\nSYNTHETIC RESULT\nRecurring unit cost\nPilot $20,700 / 23 = $900. Comparison $29,900 / 23 = $1,300. Ratio\n0.692; pilot cost is 30.8% lower.\nCompletion\n23/24 in both groups, with required customer observations and\nfollow-up complete.\nQuality\nZero High/Medium incidents. One Low pilot issue and zero\ncomparison Low issues; no accepted outcome invalidated.\nEvaluations\nRoutine 44/45; every case at least 2/3, critical cases 3/3. Controls\n45/45 across all 15 cases.\nTotal funding used\n$16,000 setup + $20,700 pilot + $29,900 comparison = $66,600.\nRemaining headroom: $19,400.\nIntegrity\nNo prohibited execution, preferential review, unlogged crossover or\nunapproved material workflow change.\nCheck dependence on one engineer\nAn aggregate improvement may depend heavily on one person's work.\nRecalculate the result after removing each engineer's paired\nassignments and associated costs from both groups. This sensitivity\ncheck asks whether the direction survives that omission.\n",
+      "links": [
+        {
+          "rect": [
+            329.0604,
+            409.9417,
+            362.3704,
+            421.9417
+          ],
+          "uri": "",
+          "dest": [
+            32,
+            "/XYZ",
+            "36.85039",
+            "167.8199",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            394.9417,
+            177.6904,
+            406.9417
+          ],
+          "uri": "",
+          "dest": [
+            32,
+            "/XYZ",
+            "36.85039",
+            "167.8199",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            200.4104,
+            394.9417,
+            357.0304,
+            406.9417
+          ],
+          "uri": "",
+          "dest": [
+            34,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            379.9417,
+            72.95039,
+            391.9417
+          ],
+          "uri": "",
+          "dest": [
+            34,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 34,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n31\nIn the synthetic readout, the six engineers contribute [4, 4, 4, 4, 4, 3]\nconfirmed outcomes in each group. Pilot costs are [$3,600, $3,600, $3,600,\n$3,600, $3,600, $2,700]. Comparison costs are [$5,200, $5,200, $5,200,\n$5,200, $5,200, $3,900]. All include unsuccessful work and allocated\nsupport.\nOmitting any engineer with four outcomes leaves nineteen per group,\n$17,100 pilot cost and $24,700 comparison cost. Unit costs remain $900\nand $1,300. Omitting the engineer with three outcomes leaves twenty per\ngroup, $18,000 and $26,000. The same unit costs remain.\nAll six omission ratios are 0.692, below the example requirement of 1.\nThe cost advantage remains when any one engineer's work is left out.\nKeep the task and cost records linked to each engineer so another\nreviewer can reproduce the calculation.\nThe check does not produce a confidence interval, isolate the workflow's\ncomponents or remove shared learning between engineers. Similar\ntasks, common review and within-team assistance still constrain\ninterpretation. A second team is a new test of operation, support and\neconomics.\nIf omitting one engineer reverses the result, investigate that dependence\nbefore expansion. The result may point to expertise the workflow has\nnot yet made reusable. Treat that explanation as a hypothesis for the\nnext design, while retaining the original failed requirement.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 35,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n32\nValue capacity that was actually reused\nIn this example, saved time counts toward paying back setup only when\nthe team uses it for other planned work. That value and any nonlabor\nsavings must cover setup to meet the investment rule. Let L be\ncomparison minus pilot labor cost per confirmed outcome, and N the\ncorresponding nonlabor difference. When L is positive, q is the share of\nthat saving backed by completed work, capped between zero and one.\nCount priority work that was named in advance and completed without\nextra staffing or overtime, supported by effort records for the people\ninvolved. Check those records against the main cost records to avoid\ncounting the same work twice. This estimates the value of capacity used;\nit does not show that cash spending fell.\nThe conservative net benefit is B = min(L, 0) + q \u00d7 max(L, 0) + N. Any\nincrease in labor cost counts in full; a labor saving counts only in\nproportion to demonstrated reuse. Let V be the lower of eligible weekly\ndemand over the trailing eight weeks and confirmed pilot outcomes\ndivided by six delivery weeks. Modeled recovery time is S / (B \u00d7 V).\nIn the synthetic case, comparison labor is 230 hours and pilot labor is\n150, all at $125/hour. Estimated released time is 23 \u00d7 (230/23) - 150 = 80\nhours. All eighty have demonstrated productive reuse, so q = 1. Labor\ncosts are $28,750 and $18,750; nonlabor costs are $1,150 and $1,950.\nB = ($10,000 - $800) / 23 = $400. Demand is six per week, but demonstrated\npilot capacity is 23/6 = 3.83. Recovery is $16,000 / ($400 \u00d7 23/6) = 10.4\nweeks, within the twelve-week rule. Keep capacity at the demonstrated\nrate rather than doubling it for assumed full-team adoption.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 36,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n33\nThis forecast begins after adoption and counts no benefit from the pilot\nperiod. It estimates payback; the team has not observed it yet. If only\nsixty of eighty hours have demonstrated reuse, q = 0.75: B = ($7,500 -\n$800)/23 = $291.30 and recovery takes 14.3 weeks. If B or V is nonpositive,\nno finite recovery exists.\nDistinguish missing evidence\nfrom failure\nAt the planned week-ten review, a complete result that passes every\nrequirement can support one separately funded trial with a second team.\nA complete result that fails a requirement stops expansion. A sponsor\nmay believe a revised workflow would do better, but that is a reason for\na new proposal, not for changing this result.\nIf a customer observation is missing, mark the affected outcome and\ncalculations Pending. The single extension to complete evidence is\navailable only if no completed requirement has failed, every\nrequirement unaffected by that observation passes, the observation is\nscheduled and finishing fits within the cap. Calculations that depend on\nthe observation remain Pending. Keep the workflow and thresholds\nfixed, along with the original readout, so the extension completes the\nsame comparison.\nA completed cost failure needs a different decision. Suppose pilot cost is\n$25,300 for twenty-three confirmed outcomes: $1,100 each. Relative cost\nis $1,100/$1,300 = 0.846, which passes the relative threshold but fails the\n$1,050 ceiling. Even with full reuse, $200 benefit per outcome gives\nrecovery of 20.9 weeks. Stop expansion.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 37,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n34\nIf required evidence is still missing at week twelve, close the trial as\ninconclusive. Explain what could not be observed and keep its costs in\nthe result. A fresh intervention needs a new charter. Extending the same\ntrial repeatedly until a favorable result appears would undermine the\ndecision the sponsor agreed to make.\nA prohibited action, data exposure or High/Medium incident requires\nimmediate suspension of the affected capability. Revoke access, contain\nthe incident, preserve evidence and verify recovery. An uncorrectable\ncontrol failure or unaffordable completion ends the pilot.\nCalibrate economics before launch. At the planning ceiling of $1,050\nagainst $1,275, the difference is $225. Even with full reuse and four\noutcomes weekly, $16,000 setup takes 17.8 weeks to recover. A cost target\nalone cannot guarantee the separate recovery requirement.\nExpand one commitment at a time\nIn the synthetic example, every requirement passed. The sponsor can\nconsider funding one second team with the same task scope and\npermissions, named owners and a recorded reason for the decision.\nThe second team needs to establish its own onboarding cost, specialist\naccess, support needs, customer outcomes and sustainable delivery\ncapacity, including maintenance and absences. It may not be able to get\nthe champions' help at the original team's cost.\nConsider four expansion decisions separately: more work for the same\nteam, another team, broader permissions and changed staffing. More\nvolume tests review and support capacity; another team tests whether\nthe workflow travels well; broader access changes the consequences of\nfailure; and staffing changes affect expertise and recovery.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 38,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n35\nSay what is changing and what evidence would justify it before\ncommitting. A successful low-risk implementation trial does not\nauthorize sensitive exports. A recurring capacity benefit alone cannot\njustify reducing specialist coverage.\nKeep the prior workflow and a recovery route while learning. Stop or\nnarrow the investment if cost, customer outcomes or support burden no\nlonger meet the approved criteria. Disappointing findings belong in the\nnext decision too.\nUse the worksheets to agree on the customer need, intervention, owners,\npermissions, full budget and decision requirements before enrollment.\nThe purpose is to make a better investment decision. Expand when the\nevidence supports the next commitment and the customer outcome\nremains worth pursuing.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 39,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\n3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND\n36\nWorking tools\nA. Write the launch record\nComplete this record in the team's source of truth before enrollment. Use\nnames, dates, actual values and links to enforceable configuration.\nResolve gaps before the sponsor funds live work.\nDECISION TO RECORD\nLOCAL ANSWER REQUIRED\nUseful work\nCustomer need; observed dependency; eligible task class and\nexclusions; current workflow; proposed intervention.\nResponsibility\nNamed product, design, specialist, workflow, platform/security,\nmeasurement and sponsor owners; reserved time and absence\ncoverage.\nTask evidence\nAcceptance and invalidation rules; representative customer tasks;\ndeadlines, calendar and follow-up; independent verification.\nAuthority\nResources, permitted actions, expiry and spending; actual\ndenial/revocation tests; incident and recovery owners.\nComparison\nPairing and assignment; queue treatment; assistance/crossover\nrecords; frozen versions and permitted corrections; sample\nadequacy rationale.\nFull funding\nSetup, no-benefit delivery cost, maintenance, measurement, adverse\ncases, contingency and safe shutdown; cost allocation and rates.\nFinal decision\nJustified thresholds, evidence owners, readout date, one permitted\nextension, suspension/stop rules and exact replication scope.\nB. Record the weekly decision\n1. Freeze the cutoff, timezone, workflow version and assignment\nregister. Keep earlier snapshots and link corrections to the record they\nchange.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 40,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nWORKING TOOLS\n37\n2. Reconcile incidents, action traces and control tests first. Record\nsuspension and recovery decisions with their owners. Check that access\nand execution actually stopped when required.\n3. Update incurred cost, accruals, unspent commitments and cost to\nfinish. Keep setup separate and count commitments once. Reserve funds\nthrough final follow-up and safe shutdown.\n4. Reconcile every assignment to its outcome state. Link independent\nacceptance, representative customer observation and follow-up. Explain\nmissing evidence and name its owner and resolution date.\n5. Calculate cumulative unit costs, comparison ratio, confirmed\ncompletion, engineer sensitivity and modeled recovery. Show\ncurrent/prior values, deltas and Pass/Fail/Pending. Explain every\nundefined value.\n6. Review evaluation cases, review waiting, help between groups,\nversion changes and protocol exceptions. Preserve failures and\nunsuccessful-task costs in the same snapshot as the apparent gains.\n7. Record the calculated recommendation, sponsor decision, reasons and\nactions with owners and dates. At final readout, preserve a complete\ninventory of work, costs, observations, failures and decisions. State the\nconclusions the comparison can support and the new evidence required\nfor expansion.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 41,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nWORKING TOOLS\n38\nNotes and sources\nEvidence behind the recommendations\nThe recommendations in this handbook bring together ideas about team\nresponsibility, shared expertise and controlled experiments. The task\nagreements, ownership rules, worksheets and expansion sequence are\nmy synthesis. They have not been tested together as an organizational\nmodel.\nTwo historical accounts inform the approach. Spotify's 2012 account\ndescribes squads with delivery responsibility, specialist chapters and\nwider guilds [S1]. Stine connects autonomous delivery with self-service\ninfrastructure, automation and recovery [S2]. Both describe their\noriginal settings; neither establishes an AI productivity result.\nSaha proposes product builders supported by reusable specialist agent\ncapabilities and a shared platform [S3], and explicitly calls for\nexperimentation. His proposal informs the ownership and operating\ndecisions in Chapters 1-2. It is a starting point to test, rather than\nevidence that this way of organizing has succeeded.\nProvider guidance informs the discussion of execution context [S4],\nevaluation structure [S5] and containment [S6]. The arrangements for\nsource ownership, service agreements and numerical requirements are\nrecommendations made here. The technical guidance does not establish\ntheir effect on an organization.\n",
+      "links": [],
+      "images": []
+    },
+    {
+      "page": 42,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nNOTES AND SOURCES\n39\nMETR's methods update explains problems with task selection and\nconcurrent AI measurement [S7]. NIST distinguishes the limit of an\nobservation from an observed event time in reliability data [S8]; \"Keep\nthe comparison interpretable\" borrows that distinction to explain\nunfinished work. DORA supports small batches and short feedback\ncycles [S9]. These sources inform the trial design, but none provides an\nestimate of its benefit.\nThe four company-scale arrangements in \"Match the structure to your\ncoordination needs\" are also proposals. Team Topologies distinguishes\noutcome-aligned teams, enabling support, specialist work and platforms\n[S10]. CNCF describes platforms shaped around internal users [S11].\nGoogle Cloud supplies a cloud-specific example of shared foundations\nwith separate business-unit and application responsibilities [S12]. These\nsources inform the distinctions; none establishes the four headcounts as\ntransition rules.\nEvery Chapter 3 plan and result is synthetic. Research cutoff: October 23,\n2026. The bibliography records direct sources and their limits.\nOrganizational foundations\n[S1] Scaling Agile @ Spotify\nHenrik Kniberg and Anders Ivarsson. 2012.\nhttps://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf\nAn evolving 2012 snapshot, not a current operating model or causal trial.\n[S2] Migrating to Cloud-Native Application Architectures\nMatt Stine. 2015-02.\nhttps://www.f5.com/content/dam/f5/corp/global/pdf/ebooks/Migrating_to_Cloud-Native_Application\n_Architecutres_NGINX.pdf\nHistorical architectural argument; does not establish an AI productivity effect.\n",
+      "links": [
+        {
+          "rect": [
+            342.9204,
+            510.4403,
+            370.7104,
+            522.4403
+          ],
+          "uri": "",
+          "dest": [
+            25,
+            "/XYZ",
+            "36.85039",
+            "439.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            495.4403,
+            180.7404,
+            507.4403
+          ],
+          "uri": "",
+          "dest": [
+            25,
+            "/XYZ",
+            "36.85039",
+            "439.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            235.1604,
+            426.4403,
+            369.6504,
+            438.4403
+          ],
+          "uri": "",
+          "dest": [
+            9,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            411.4403,
+            132.6204,
+            423.4403
+          ],
+          "uri": "",
+          "dest": [
+            9,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            174.5174,
+            271.6111,
+            184.2174
+          ],
+          "uri": "https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            89.07884,
+            380.8337,
+            98.77884
+          ],
+          "uri": "https://www.f5.com/content/dam/f5/corp/global/pdf/ebooks/Migrating_to_Cloud-Native_Application_Architecutres_NGINX.pdf",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            79.37884,
+            125.5527,
+            89.07884
+          ],
+          "uri": "https://www.f5.com/content/dam/f5/corp/global/pdf/ebooks/Migrating_to_Cloud-Native_Application_Architecutres_NGINX.pdf",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 43,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nNOTES AND SOURCES\n40\n[S3] Designing AI-Native Engineering Organizations: Beyond Team\nTopologies\nDilip Saha. 2026-10.\nhttps://www.sahadilip.com/blog/designing-ai-native-engineering-organizations\nAn organizational hypothesis; the article does not report validated outcomes.\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            472.1892,
+            308.1476,
+            481.8892
+          ],
+          "uri": "https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 44,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nNOTES AND SOURCES\n41\nContext, evaluation and containment\n[S4] Effective context engineering for AI agents\nAnthropic. 2025-09-29.\nhttps://www.anthropic.com/research/effective-context-engineering-for-ai-agents\nProvider guidance; handbook ownership and freshness contracts are author synthesis.\n[S5] Demystifying evals for AI agents\nAnthropic. 2026-01-09.\nhttps://www.anthropic.com/research/demystifying-evals-for-ai-agents\nDoes not prescribe this handbook's numerical pilot gates. Repeated trials are not distinct scenarios.\n[S6] How we contain Claude across products\nAnthropic. 2026-05-25.\nhttps://www.anthropic.com/research/how-we-contain-claude\nProvider-specific experience. No control or sandbox is claimed infallible.\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            473.0292,
+            313.6956,
+            482.7292
+          ],
+          "uri": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            387.5906,
+            276.5021,
+            397.2906
+          ],
+          "uri": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            302.1521,
+            245.9735,
+            311.8521
+          ],
+          "uri": "https://www.anthropic.com/research/how-we-contain-claude",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 45,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nNOTES AND SOURCES\n42\nComparison and measurement\n[S7] We are Changing our Developer Productivity Experiment Design\nJoel Becker, Nate Rush, Tom Cunningham, David Rein and Khalid Mahamud. 2026-02-24.\nhttps://metr.org/blog/2026-02-24-uplift-update/\nOpen-source developer experiment; no effect estimate transfers to the handbook's synthetic\norganizational pilot.\n[S8] 8.1.3.1. Censoring\nNIST/SEMATECH e-Handbook of Statistical Methods. Undated living page.\nhttps://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm\nReliability setting. Applying the distinction between unfinished observations and observed\ncompletion times is a methodological analogy, not a prescribed software metric.\n[S9] Working in small batches\nDORA. Undated living page.\nhttps://dora.dev/capabilities/working-in-small-batches/\nSupports short feedback cycles; does not establish the example's task count, deadlines or success\nhurdles.\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            473.0292,
+            200.9617,
+            482.7292
+          ],
+          "uri": "https://metr.org/blog/2026-02-24-uplift-update/",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            377.8906,
+            268.0414,
+            387.5906
+          ],
+          "uri": "https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            282.7521,
+            225.3291,
+            292.4521
+          ],
+          "uri": "https://dora.dev/capabilities/working-in-small-batches/",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 46,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nNOTES AND SOURCES\n43\nStructures and shared capabilities\n[S10] Key Concepts\nTeam Topologies. Undated living page.\nhttps://teamtopologies.com/key-concepts\nDefines team types and interaction modes. It does not prescribe these company headcounts or\nestablish the effectiveness of this AI-native synthesis.\n[S11] CNCF Platforms White Paper\nCNCF TAG App Delivery. Undated living page.\nhttps://tag-app-delivery.cncf.io/whitepapers/platforms/\nSupports platforms designed for internal users and a thin shared layer. It does not prescribe the four\nheadcount scenarios or validate their results.\n[S12] Enterprise foundations: deployment methodology\nGoogle Cloud. 2025-05-15.\nhttps://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodolo\ngy\nA cloud-specific foundation, business-unit infrastructure and application example. It is not evidence\nthat a particular company size needs a federated organization.\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            473.0292,
+            180.1056,
+            482.7292
+          ],
+          "uri": "https://teamtopologies.com/key-concepts",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            377.8906,
+            226.2854,
+            387.5906
+          ],
+          "uri": "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            282.7521,
+            380.5709,
+            292.4521
+          ],
+          "uri": "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            273.0521,
+            45.06289,
+            282.7521
+          ],
+          "uri": "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology",
+          "dest": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 47,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nNOTES AND SOURCES\n44\nIndex of terms\nUse the contents or PDF outlines to find the sections listed below.\nAcceptance: \"Test the workflow and the outcome\" and \"Make the task\nrecord reviewable\", \"Count confirmed customer outcomes\". Agent\nevaluation: \"Test the workflow and the outcome\", \"Agree on the\ninvestment requirements\". Authority: \"Enforce authority through the\nsystem\", \"Expand one commitment at a time\". Budget: \"Fund a trial that\ncan disappoint you\", \"Charge the complete delivery cost\".\nCapacity value: \"Protect judgment and attention\", \"Value capacity that\nwas actually reused\". Comparison: \"Keep the comparison interpretable\".\nConfirmed outcomes: \"Count confirmed customer outcomes\". Context:\n\"Maintain the context work depends on\". Cost allocation: \"Charge the\ncomplete delivery cost\". Customer observation: \"Test the workflow and\nthe outcome\" and \"Make the task record reviewable\", \"Count confirmed\ncustomer outcomes\".\nEngineer sensitivity: \"Check dependence on one engineer\". Evidence\nextension: \"Distinguish missing evidence from failure\". Follow-up:\n\"Fund a trial that can disappoint you\", \"Count confirmed customer\noutcomes\". Human attention: \"Protect judgment and attention\".\nIncomplete work: \"Keep the comparison interpretable\" and \"Count\nconfirmed customer outcomes\".\nLaunch record: tool A. Maintenance: \"Make shared expertise usable\",\n\"Define a repeatable capability\", \"Rehearse failure before live work\".\nOutcome ownership: \"Give one team the whole outcome\" and \"Assign the\ndecisions people retain\". Permissions: \"Enforce authority through the\nsystem\". Productive reuse: \"Value capacity that was actually reused\".\n",
+      "links": [
+        {
+          "rect": [
+            97.27039,
+            481.0003,
+            272.5804,
+            493.0003
+          ],
+          "uri": "",
+          "dest": [
+            19,
+            "/XYZ",
+            "36.85039",
+            "379.0385",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            295.3004,
+            481.0003,
+            364.8004,
+            493.0003
+          ],
+          "uri": "",
+          "dest": [
+            20,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            466.0003,
+            127.4904,
+            478.0003
+          ],
+          "uri": "",
+          "dest": [
+            20,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            132.8804,
+            466.0003,
+            317.4304,
+            478.0003
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            92.85039,
+            451.0003,
+            268.1604,
+            463.0003
+          ],
+          "uri": "",
+          "dest": [
+            19,
+            "/XYZ",
+            "36.85039",
+            "379.0385",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            273.5504,
+            451.0003,
+            337.5604,
+            463.0003
+          ],
+          "uri": "",
+          "dest": [
+            29,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            436.0003,
+            161.9204,
+            448.0003
+          ],
+          "uri": "",
+          "dest": [
+            29,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            219.1904,
+            436.0003,
+            366.2104,
+            448.0003
+          ],
+          "uri": "",
+          "dest": [
+            18,
+            "/XYZ",
+            "36.85039",
+            "370.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            421.0003,
+            74.29039,
+            433.0003
+          ],
+          "uri": "",
+          "dest": [
+            18,
+            "/XYZ",
+            "36.85039",
+            "370.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            79.68039,
+            421.0003,
+            251.0104,
+            433.0003
+          ],
+          "uri": "",
+          "dest": [
+            36,
+            "/XYZ",
+            "36.85039",
+            "316.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            295.2304,
+            421.0003,
+            375.6704,
+            433.0003
+          ],
+          "uri": "",
+          "dest": [
+            24,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            406.0003,
+            131.4004,
+            418.0003
+          ],
+          "uri": "",
+          "dest": [
+            24,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            136.7904,
+            406.0003,
+            306.2404,
+            418.0003
+          ],
+          "uri": "",
+          "dest": [
+            27,
+            "/XYZ",
+            "36.85039",
+            "217.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            112.3104,
+            382.0003,
+            268.6604,
+            394.0003
+          ],
+          "uri": "",
+          "dest": [
+            13,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            274.0504,
+            382.0003,
+            369.1804,
+            394.0003
+          ],
+          "uri": "",
+          "dest": [
+            34,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            367.0003,
+            134.4404,
+            379.0003
+          ],
+          "uri": "",
+          "dest": [
+            34,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            203.5304,
+            367.0003,
+            377.5804,
+            379.0003
+          ],
+          "uri": "",
+          "dest": [
+            25,
+            "/XYZ",
+            "36.85039",
+            "439.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            142.1904,
+            352.0003,
+            326.7404,
+            364.0003
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            337.0003,
+            227.5804,
+            349.0003
+          ],
+          "uri": "",
+          "dest": [
+            16,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            308.8704,
+            337.0003,
+            364.2804,
+            349.0003
+          ],
+          "uri": "",
+          "dest": [
+            27,
+            "/XYZ",
+            "36.85039",
+            "217.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            322.0003,
+            148.5204,
+            334.0003
+          ],
+          "uri": "",
+          "dest": [
+            27,
+            "/XYZ",
+            "36.85039",
+            "217.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            264.8604,
+            322.0003,
+            374.7604,
+            334.0003
+          ],
+          "uri": "",
+          "dest": [
+            19,
+            "/XYZ",
+            "36.85039",
+            "379.0385",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            307.0003,
+            99.89039,
+            319.0003
+          ],
+          "uri": "",
+          "dest": [
+            19,
+            "/XYZ",
+            "36.85039",
+            "379.0385",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            122.6104,
+            307.0003,
+            285.1204,
+            319.0003
+          ],
+          "uri": "",
+          "dest": [
+            20,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            290.5104,
+            307.0003,
+            375.3804,
+            319.0003
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            292.0003,
+            134.1604,
+            304.0003
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            137.6904,
+            268.0003,
+            314.2104,
+            280.0003
+          ],
+          "uri": "",
+          "dest": [
+            32,
+            "/XYZ",
+            "36.85039",
+            "167.8199",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            88.77039,
+            253.0003,
+            296.4204,
+            265.0003
+          ],
+          "uri": "",
+          "dest": [
+            35,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            238.0003,
+            214.2104,
+            250.0003
+          ],
+          "uri": "",
+          "dest": [
+            24,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            219.6004,
+            238.0003,
+            351.7904,
+            250.0003
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            223.0003,
+            86.84039,
+            235.0003
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            179.2504,
+            223.0003,
+            335.6004,
+            235.0003
+          ],
+          "uri": "",
+          "dest": [
+            13,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            123.7504,
+            208.0003,
+            297.8004,
+            220.0003
+          ],
+          "uri": "",
+          "dest": [
+            25,
+            "/XYZ",
+            "36.85039",
+            "439.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            320.5204,
+            208.0003,
+            353.0404,
+            220.0003
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            193.0003,
+            186.5104,
+            205.0003
+          ],
+          "uri": "",
+          "dest": [
+            26,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            213.0304,
+            169.0003,
+            361.4304,
+            181.0003
+          ],
+          "uri": "",
+          "dest": [
+            7,
+            "/XYZ",
+            "36.85039",
+            "432.4785",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            154.0003,
+            186.8604,
+            166.0003
+          ],
+          "uri": "",
+          "dest": [
+            17,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            192.2504,
+            154.0003,
+            358.3604,
+            166.0003
+          ],
+          "uri": "",
+          "dest": [
+            21,
+            "/XYZ",
+            "36.85039",
+            "202.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            138.7704,
+            139.0003,
+            307.2518,
+            151.0003
+          ],
+          "uri": "",
+          "dest": [
+            5,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            330.0704,
+            139.0003,
+            383.1637,
+            151.0003
+          ],
+          "uri": "",
+          "dest": [
+            6,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            124.0003,
+            150.9604,
+            136.0003
+          ],
+          "uri": "",
+          "dest": [
+            6,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            220.1404,
+            124.0003,
+            367.1604,
+            136.0003
+          ],
+          "uri": "",
+          "dest": [
+            18,
+            "/XYZ",
+            "36.85039",
+            "370.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            109.0003,
+            74.29039,
+            121.0003
+          ],
+          "uri": "",
+          "dest": [
+            18,
+            "/XYZ",
+            "36.85039",
+            "370.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            165.7704,
+            109.0003,
+            360.8604,
+            121.0003
+          ],
+          "uri": "",
+          "dest": [
+            34,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 48,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nINDEX OF TERMS\n45\nOrganization structure: \"Match the structure to your coordination\nneeds\". Recovery from failure: \"Rehearse failure before live work\".\nReplication: \"Expand one commitment at a time\". Revocation: \"Enforce\nauthority through the system\", \"Rehearse failure before live work\". Setup\nrecovery: \"Value capacity that was actually reused\" and \"Distinguish\nmissing evidence from failure\". Shared expertise: \"Make shared\nexpertise usable\".\nSpecialist judgment: \"Give one team the whole outcome\", \"Protect\njudgment and attention\". Staffing: \"Give one team the whole outcome\",\n\"Expand one commitment at a time\". Stop and suspend: \"Read the weekly\nscorecard in order\", \"Distinguish missing evidence from failure\". Task\nrecord: \"Make the task record reviewable\". Version changes: \"Define a\nrepeatable capability\". Weekly scorecard: \"Read the weekly scorecard in\norder\", tool B.\nVersion 1.1.0 \u00b7 October 23, 2026.\n",
+      "links": [
+        {
+          "rect": [
+            150.7004,
+            540.4403,
+            349.2704,
+            552.4403
+          ],
+          "uri": "",
+          "dest": [
+            9,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            525.4403,
+            68.54039,
+            537.4403
+          ],
+          "uri": "",
+          "dest": [
+            9,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            184.2604,
+            525.4403,
+            350.3704,
+            537.4403
+          ],
+          "uri": "",
+          "dest": [
+            21,
+            "/XYZ",
+            "36.85039",
+            "202.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            96.98039,
+            510.4403,
+            268.3104,
+            522.4403
+          ],
+          "uri": "",
+          "dest": [
+            36,
+            "/XYZ",
+            "36.85039",
+            "316.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            332.6104,
+            510.4403,
+            373.8004,
+            522.4403
+          ],
+          "uri": "",
+          "dest": [
+            18,
+            "/XYZ",
+            "36.85039",
+            "370.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            495.4403,
+            179.8801,
+            507.4403
+          ],
+          "uri": "",
+          "dest": [
+            18,
+            "/XYZ",
+            "36.85039",
+            "370.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            185.5104,
+            495.4403,
+            350.9797,
+            507.4403
+          ],
+          "uri": "",
+          "dest": [
+            21,
+            "/XYZ",
+            "36.85039",
+            "202.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            84.66039,
+            480.4403,
+            279.7504,
+            492.4403
+          ],
+          "uri": "",
+          "dest": [
+            34,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            302.4704,
+            480.4403,
+            361.1204,
+            492.4403
+          ],
+          "uri": "",
+          "dest": [
+            35,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            465.4403,
+            183.4804,
+            477.4403
+          ],
+          "uri": "",
+          "dest": [
+            35,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            273.9104,
+            465.4403,
+            338.6204,
+            477.4403
+          ],
+          "uri": "",
+          "dest": [
+            7,
+            "/XYZ",
+            "36.85039",
+            "432.4785",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            450.4403,
+            118.1704,
+            462.4403
+          ],
+          "uri": "",
+          "dest": [
+            7,
+            "/XYZ",
+            "36.85039",
+            "432.4785",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            136.2404,
+            426.4403,
+            304.8204,
+            438.4403
+          ],
+          "uri": "",
+          "dest": [
+            5,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            310.2104,
+            426.4403,
+            348.2904,
+            438.4403
+          ],
+          "uri": "",
+          "dest": [
+            13,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            411.4403,
+            152.7504,
+            423.4403
+          ],
+          "uri": "",
+          "dest": [
+            13,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            200.6404,
+            411.4403,
+            369.2204,
+            423.4403
+          ],
+          "uri": "",
+          "dest": [
+            5,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            396.4403,
+            207.7073,
+            408.4403
+          ],
+          "uri": "",
+          "dest": [
+            36,
+            "/XYZ",
+            "36.85039",
+            "316.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            302.4204,
+            396.4403,
+            383.2442,
+            408.4403
+          ],
+          "uri": "",
+          "dest": [
+            30,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            381.4403,
+            128.3404,
+            393.4403
+          ],
+          "uri": "",
+          "dest": [
+            30,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            133.7304,
+            381.4403,
+            341.3804,
+            393.4403
+          ],
+          "uri": "",
+          "dest": [
+            35,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            73.82039,
+            366.4403,
+            236.3304,
+            378.4403
+          ],
+          "uri": "",
+          "dest": [
+            20,
+            "/XYZ",
+            "36.85039",
+            "256.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            325.6204,
+            366.4403,
+            368.6704,
+            378.4403
+          ],
+          "uri": "",
+          "dest": [
+            17,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            351.4403,
+            141.4404,
+            363.4403
+          ],
+          "uri": "",
+          "dest": [
+            17,
+            "/XYZ",
+            "36.85039",
+            "454.0885",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            237.2304,
+            351.4403,
+            380.3004,
+            363.4403
+          ],
+          "uri": "",
+          "dest": [
+            30,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        },
+        {
+          "rect": [
+            36.85039,
+            336.4403,
+            67.04039,
+            348.4403
+          ],
+          "uri": "",
+          "dest": [
+            30,
+            "/XYZ",
+            "36.85039",
+            "554.6003",
+            "0"
+          ]
+        }
+      ],
+      "images": []
+    },
+    {
+      "page": 49,
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "text": "AI-NATIVE ORGANIZATION HANDBOOK\nINDEX OF TERMS\n46\nChangelog\nCompared with version 1.0.0, published October 23, 2026.\nAddition\nAdded four illustrative organization arrangements, from one team to\nfederated business units, after the discussion of shared expertise.\nHelps leaders choose coordination and support arrangements while\npreserving team ownership. Company sizes are examples, not\nprescribed transition points.\nSources: [S10], [S11], [S12].\nTeam Topologies: Key Concepts\nCNCF Platforms White Paper\nGoogle Cloud: Deployment methodology\nCorrection or clarification\nRemoved decimal prefixes from website and Markdown subsection\nheadings. Section references now link to the visible titles, matching the\nPDFs. Both PDF appearances were reissued with this correction\nrecorded.\nCorrected online edition\nPrevious Daytime PDF SHA-256:\nce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf\n",
+      "links": [
+        {
+          "rect": [
+            36.85039,
+            343.7878,
+            145.4087,
+            353.4878
+          ],
+          "uri": "https://teamtopologies.com/key-concepts",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            328.0878,
+            134.4733,
+            337.7878
+          ],
+          "uri": "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            312.3878,
+            177.025,
+            322.0878
+          ],
+          "uri": "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology",
+          "dest": ""
+        },
+        {
+          "rect": [
+            36.85039,
+            203.6878,
+            119.8295,
+            213.3878
+          ],
+          "uri": "https://handbooks.surfaces.systems/ai-native-organization/",
+          "dest": ""
+        }
+      ],
+      "images": []
+    }
+  ],
+  "labels": [
+    "i",
+    "ii",
+    "iii",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46"
+  ],
+  "outlines": [
+    {
+      "title": "Make a better delivery decision",
+      "page": 1,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "1. Choose useful work and clear owners",
+      "page": 3,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Find the constraint worth changing",
+        "page": 4,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Give one team the whole outcome",
+        "page": 5,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Assign the decisions people retain",
+        "page": 6,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Make shared expertise usable",
+        "page": 7,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Match the structure to your coordination needs",
+        "page": 9,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Protect judgment and attention",
+        "page": 13,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "2. Build a workflow the team can operate",
+      "page": 15,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Maintain the context work depends on",
+        "page": 16,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Define a repeatable capability",
+        "page": 17,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Enforce authority through the system",
+        "page": 18,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Test the workflow and the outcome",
+        "page": 19,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Make the task record reviewable",
+        "page": 20,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Rehearse failure before live work",
+        "page": 21,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "3. Fund a comparison and decide what to expand",
+      "page": 23,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Fund a trial that can disappoint you",
+        "page": 24,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Keep the comparison interpretable",
+        "page": 25,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Count confirmed customer outcomes",
+        "page": 26,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Charge the complete delivery cost",
+        "page": 27,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Agree on the investment requirements",
+        "page": 29,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Read the weekly scorecard in order",
+        "page": 30,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Calculate a complete example readout",
+        "page": 32,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Check dependence on one engineer",
+        "page": 32,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Value capacity that was actually reused",
+        "page": 34,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Distinguish missing evidence from failure",
+        "page": 35,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Expand one commitment at a time",
+        "page": 36,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "Working tools",
+      "page": 38,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "A. Write the launch record",
+        "page": 38,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "B. Record the weekly decision",
+        "page": 38,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "Notes and sources",
+      "page": 40,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    [
+      {
+        "title": "Evidence behind the recommendations",
+        "page": 40,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Organizational foundations",
+        "page": 41,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Context, evaluation and containment",
+        "page": 43,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Comparison and measurement",
+        "page": 44,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      },
+      {
+        "title": "Structures and shared capabilities",
+        "page": 45,
+        "type": "/Fit",
+        "left": "None",
+        "top": "None",
+        "zoom": "None"
+      }
+    ],
+    {
+      "title": "Index of terms",
+      "page": 46,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    },
+    {
+      "title": "Changelog",
+      "page": 48,
+      "type": "/Fit",
+      "left": "None",
+      "top": "None",
+      "zoom": "None"
+    }
+  ],
+  "namedDestinations": {},
+  "language": "en-US",
+  "tagged": false,
+  "header": "%PDF-1.4",
+  "unusedUnembeddedFontResources": [],
+  "imagePages": [
+    4,
+    16,
+    24
+  ],
+  "errors": [],
+  "accessibilityLimitations": [
+    "Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "Version 1.1.0 adds four illustrative organization arrangements to the October 23, 2026 edition 1.0.0.",
+  "entryCount": 2,
+  "failures": [],
+  "placement": "final-page",
+  "requiredPdfState": {
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
+  },
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "id": "organization-scale",
+      "category": "Addition",
+      "section": "1.5 Match the structure to your coordination needs",
+      "text": "Added four illustrative organization arrangements, from one team to federated business units, after the discussion of shared expertise.",
+      "rationale": "Helps leaders choose coordination and support arrangements while preserving team ownership. Company sizes are examples, not prescribed transition points.",
+      "sources": [
+        "https://teamtopologies.com/key-concepts",
+        "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
+        "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology"
+      ]
+    },
+    {
+      "id": "heading-correction",
+      "category": "Correction or clarification",
+      "section": "Subsection headings and references",
+      "text": "Removed decimal prefixes from website and Markdown subsection headings. Section references now link to the visible titles, matching the PDFs.",
+      "rationale": "Both PDF appearances were reissued with this correction recorded.",
+      "sources": [
+        "https://handbooks.surfaces.systems/ai-native-organization/"
+      ]
+    }
+  ]
+}

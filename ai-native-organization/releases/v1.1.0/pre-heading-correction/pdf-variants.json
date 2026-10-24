@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-native-organization",
+  "title": "AI-Native Organization Handbook",
+  "version": "1.1.0",
+  "date": "2026-10-23",
+  "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+  "sha256": "c964422f0135854b2e19aaa6101ff046ecde9ee6b38ef0c3318c90fe82b23736",
+  "pages": 49,
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "sha256": "c964422f0135854b2e19aaa6101ff046ecde9ee6b38ef0c3318c90fe82b23736",
+      "bytes": 8270857,
+      "pages": 49,
+      "pageMap": {
+        "path": "ai-native-organization/qa/v1.1.0/page-map-reviewed-light.json",
+        "sha256": "f3903b562dacf7a732f10b95ee3778ecce66299bebb3c6d6f0712998254c843a"
+      },
+      "appearanceDate": "2026-10-23"
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "sha256": "79748c57c4b224ba40e98beac6b9cd50d2f3395e9ab635caaf84e6425effb25b",
+      "bytes": 6722023,
+      "pages": 49,
+      "pageMap": {
+        "path": "ai-native-organization/qa/v1.1.0/page-map-reviewed-dark.json",
+        "sha256": "453ada290859179fddb88ac276bf9f3940f6f3a26918332c30db7228dd830eac"
+      },
+      "proof": {
+        "parity": {
+          "path": "ai-native-organization/qa/v1.1.0/parity.json",
+          "sha256": "ef28821ece245607a7582cda5fb2d826755fa89925f1bedfa8e46fc6317ac093"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "79748c57c4b224ba40e98beac6b9cd50d2f3395e9ab635caaf84e6425effb25b",
+          "date": "2026-10-23",
+          "authority": "Mike explicitly authorized publication of the four-scale organization section after required editorial and runtime validation.",
+          "version": "1.1.0",
+          "baseline": "1.0.0",
+          "review": "ai-native-organization/releases/v1.1.0/visual-review.json"
+        }
+      },
+      "appearanceDate": "2026-10-23"
+    }
+  ]
+}

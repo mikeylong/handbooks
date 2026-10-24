@@ -1,0 +1,73 @@
+{
+  "artifacts": {
+    "pdfTextPatch": "exact-pdf-text.patch",
+    "readerFacingContentPatch": "reader-facing-content.patch",
+    "sourcePatch": "exact-source.patch"
+  },
+  "candidate": {
+    "ignoredChangelogPages": [
+      49
+    ],
+    "ignoredNavigationPages": [
+      3,
+      47,
+      48
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 1.1.0 \u00b7 2026-10-23 \u00b7 PDF appearance revision 1",
+      "title": "AI-Native Organization Handbook \u00b7 Daytime version"
+    },
+    "pages": 49,
+    "pdf": "candidate/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+    "pdfSha256": "1ae0def352235eed03d05514edfcbda2cfae5fe5e5869064f28bd70ee5b3483c"
+  },
+  "comparisons": {
+    "contentMetadataChanged": true,
+    "metadataChanged": true,
+    "navigationTextChanged": true,
+    "normalizedSubstantiveTextChanged": true,
+    "outlineIncludingChangelogChanged": true,
+    "rawPdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": true,
+    "substantiveOutlineChanged": true
+  },
+  "decisionProjection": {
+    "excludedSurfaces": [
+      "changelog pages",
+      "contents and index pages",
+      "changelog outline entries",
+      "exact PDF appearance title suffixes"
+    ],
+    "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed."
+  },
+  "limitations": [
+    "Rendering-only differences require visual comparison.",
+    "Semantic change categories and rationales must be authored from accepted exact diffs.",
+    "Pass page maps to avoid relying on heading heuristics for surface roles."
+  ],
+  "previous": {
+    "ignoredChangelogPages": [],
+    "ignoredNavigationPages": [
+      3,
+      40,
+      41
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 1.0.0 \u00b7 2026-10-23 \u00b7 PDF appearance revision 1",
+      "title": "AI-Native Organization Handbook \u00b7 Daytime version"
+    },
+    "pages": 41,
+    "pdf": "previous/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf",
+    "pdfSha256": "ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf"
+  },
+  "readerFacingContentChanged": true,
+  "schemaVersion": 2,
+  "sourceSha256": {
+    "candidate": "ff9d65c1e7c6b0ee83a354713633356b182578d26764c1e12d28a8e771b8196a",
+    "previous": "d2b350da9d2b01e477e508e83d8017bbc62e007bdf7630c09878a3d08b7574b1"
+  },
+  "summary": "The candidate contains reader-facing changes that require semantic classification."
+}
