@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {validateVariantIdentity,downloadLinks,validateDownloads,installReaderDownloads,editionPdfUrl,removePrintGuidance,validatePrintGuidanceAbsent} from './pdf-downloads.mjs';
+import {validateVariantIdentity,downloadLinks,validateDownloads,installReaderDownloads,editionPdfUrl,removePrintGuidance,validatePrintGuidanceAbsent,validateReaderDownloadPlacements} from './pdf-downloads.mjs';
 const edition={id:'future-title',title:'Future title',version:'2.0.0',date:'2026-10-02',pdf:'previous.pdf',sha256:'a'.repeat(64),pages:25,markdown:{version:'2.0.0',publicUrl:'/future-title/editions/v2.0.0/future-title-v2.0.0.md',downloadFilename:'future-title-v2.0.0.md',sha256:'c'.repeat(64),bytes:12345}};
 const m={schemaVersion:1,book:edition.id,...edition,variants:['light','dark'].map((theme,i)=>({theme,displayName:i?'Late night version':'Daytime version',appearanceRevision:1,approvalStatus:'candidate',sha256:(i?'b':'a').repeat(64),bytes:1000,pages:25,publicUrl:`/future-title/editions/v2.0.0/future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,downloadFilename:`future-title-v2.0.0-2026-10-02-${i?'late-night':'daytime'}-r1.pdf`,pageMap:{path:'map.json',sha256:'c'.repeat(64)}}))};
 assert.equal(validateVariantIdentity(m,edition,{candidate:true}).length,2);
@@ -8,13 +8,13 @@ for(const [change,error] of [[x=>x.variants.push(x.variants[0]),/Duplicate/],[x=
  const broken=structuredClone(m);change(broken);assert.throws(()=>validateVariantIdentity(broken,edition,{candidate:true}),error);
 }
 // Future handbook chrome must derive the title from metadata, without per-book patches.
-const reader='<header class="mobile-bar"><a href="/">Back</a><div class="mobile-actions"></div></header><a href="book.pdf" download>PDF</a><main><a href="book.pdf" download>PDF</a></main>';
+const reader='<header class="mobile-bar"><a href="/">Back</a><div class="mobile-actions"></div></header><aside class="sidebar"><a href="book.pdf" download>PDF</a></aside><main id="main-content"><section class="cover"><a href="book.pdf" download>PDF</a></section></main><dialog id="toc-dialog"><div class="dialog-footer"><a href="book.pdf" download>PDF</a></div></dialog>';
 const rendered=installReaderDownloads(reader,{...edition,title:'Future & handbook'},m.variants);
 assert.match(rendered,/<a class="mobile-title" href="#book-top">Future &amp; handbook<\/a>/);
 const existing=installReaderDownloads(reader.replace('<div class="mobile-actions">','<a class="mobile-title" href="#book-top">Existing title</a><div class="mobile-actions">'),edition,m.variants);
 assert.equal((existing.match(/class="mobile-title"/g)||[]).length,1);
 // Current and future covers keep printing purpose inside the Daytime download row.
-const coverReader=extra=>'<aside><a href="book.pdf" download>PDF</a></aside><main><section class="cover extra"><h1>Future title</h1><p class="cover-date">October 2, 2026 · Version 2.0.0</p>'+extra+'<nav class="cover-actions site-only"><a class="action-link" href="book.pdf" download>PDF</a></nav></section></main>';
+const coverReader=extra=>reader.replace('<section class="cover">','<section class="cover extra"><h1>Future title</h1><p class="cover-date">October 2, 2026 · Version 2.0.0</p>'+extra+'<nav class="cover-actions site-only">').replace('</section></main>','</nav></section></main>');
 for(const extra of ['', '<section class="release-window site-only">Legacy panel</section>', '<p class="pdf-print-guidance">Use the Daytime version for printing.</p>', "<p class='extra pdf-print-guidance'>Old printing note</p>", '<p>Use the Daytime <em>version</em> for printing.</p>']){
  const installed=installReaderDownloads(coverReader(extra),edition,m.variants);
  assert.doesNotMatch(installed,/pdf-print-guidance|Use the Daytime version for printing[.]/);
@@ -28,6 +28,22 @@ for(const note of ['<p class="pdf-print-guidance">Legacy</p>', '<p>Use the Dayti
  assert.equal(removePrintGuidance(clean),clean);
  assert.throws(()=>validateDownloads(rendered+note,edition,m.variants),/Standalone PDF printing guidance/);
 }
+// Reject misplaced groups rather than accepting any matching download link.
+assert.deepEqual(validateReaderDownloadPlacements(rendered).locations,['rail','cover','contents']);
+for(const bad of [
+ rendered.replace('class="sidebar"','class="wrong-rail"'),
+ rendered.replace('class="cover"','class="wrong-cover"'),
+ rendered.replace('class="dialog-footer"','class="wrong-footer"'),
+ rendered.replace('</main>',downloadLinks(edition,m.variants)+'</main>'),
+ rendered.replace('</main>','<section class="pdf-end-downloads"></section></main>'),
+ rendered.replace('</main>','<a href="orphan.pdf" download>Unwrapped PDF</a></main>'),
+ rendered.replace('data-pdf-theme="light"','data-pdf-theme="wrong"')
+])assert.throws(()=>validateReaderDownloadPlacements(bad));
+assert.throws(()=>validateDownloads(rendered.replace('</main>','<section class="pdf-end-downloads"></section></main>'),edition,m.variants),/Bottom-of-main/);
+const legacyBottom=reader.replace('</main>','<section class="pdf-end-downloads"><a href="book.pdf" download>PDF</a></section></main>');
+assert.equal(installReaderDownloads(legacyBottom,edition,m.variants).includes('pdf-end-downloads'),false);
+const similarClass=reader.replace('</main>','<section class="pdf-end-downloads-note"><p>Keep this prose.</p></section></main>');
+assert.match(installReaderDownloads(similarClass,edition,m.variants),/Keep this prose[.]/);
 const {externalLinks}=await import('./edition-links.mjs');
 for(const source of ['<a href="#chapter">Chapter</a>','<a href="/book.pdf" download>PDF</a>','<a href="https://handbooks.surfaces.systems/book/">Book</a>','<a href="mailto:">Email</a>'])assert.equal(externalLinks(source),source);
 const external=externalLinks('<a href="https://example.org/" target="_self" rel="external">Source</a>');

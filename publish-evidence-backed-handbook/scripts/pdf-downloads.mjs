@@ -2,7 +2,7 @@
 import {readFile,lstat,realpath} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {safePath,digest} from './reader-paths.mjs';
-import {markdownLink} from './markdown-downloads.mjs';
+import {markdownLink,parseReaderHtml} from './markdown-downloads.mjs';
 import {downloadRow,downloadSize} from './download-row.mjs';
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 export const PDF_NAMES=Object.freeze({light:'Daytime version',dark:'Late night version'});
@@ -68,8 +68,39 @@ export function validatePrintGuidanceAbsent(html) {
  }
  return {status:'passed'};
 }
+/** Reader-only contract; edition pages retain their own download controls. */
+export function validateReaderDownloadPlacements(html) {
+ const groups=[],nodes=[];
+ const has=(node,name)=>(node.attrs?.class??'').split(/\s+/).includes(name);
+ function walk(node,ancestors=[]) {
+  nodes.push(node);
+  if(node.attrs?.['data-pdf-downloads']!==undefined)groups.push({node,ancestors});
+  for(const child of node.children??[])walk(child,[...ancestors,node]);
+ }
+ walk(parseReaderHtml(html));
+ if(nodes.some(n=>has(n,'pdf-end-downloads')))throw Error('Bottom-of-main download block is forbidden');
+ if(groups.length!==3)throw Error('Reader requires exactly three download groups');
+ const slots={
+  rail:({ancestors})=>ancestors.some(n=>n.tag==='aside'&&has(n,'sidebar'))&&!ancestors.some(n=>n.tag==='main'),
+  cover:({ancestors})=>ancestors.some(n=>has(n,'cover'))&&ancestors.some(n=>n.tag==='main'&&n.attrs?.id==='main-content'),
+  contents:({ancestors})=>ancestors.some(n=>has(n,'dialog-footer'))&&ancestors.some(n=>n.tag==='dialog'&&n.attrs?.id==='toc-dialog')
+ };
+ for(const [name,matches]of Object.entries(slots))if(groups.filter(matches).length!==1)throw Error('Reader requires one download group in '+name);
+ for(const group of groups)if(Object.values(slots).filter(matches=>matches(group)).length!==1)throw Error('Download group outside approved reader locations');
+ const controls=node=>{
+  const found=[];function visit(n){if(n.tag==='a'&&n.attrs?.download!==undefined)found.push(n);for(const c of n.children??[])visit(c);}visit(node);return found;
+ };
+ const signatures=groups.map(({node})=>controls(node).map(n=>[n.attrs.href,n.attrs.download,n.attrs['data-markdown-download']!==undefined?'markdown':n.attrs['data-pdf-theme']]));
+ if(signatures.some(s=>s.length<2||s[0][2]!=='markdown'||JSON.stringify(s)!==JSON.stringify(signatures[0])))throw Error('Reader locations must offer the same Markdown-first downloads');
+ for(const node of nodes.filter(n=>n.attrs?.['data-markdown-download']!==undefined||n.attrs?.['data-pdf-theme']!==undefined||(n.tag==='a'&&n.attrs?.download!==undefined&&/\.(?:pdf|md)(?:[?#]|$)/i.test(n.attrs.href??''))))if(!groups.some(g=>controls(g.node).includes(node)))throw Error('Download control outside approved reader group');
+ return {status:'passed',locations:Object.keys(slots),groups:3};
+}
 export function installReaderDownloads(html,edition,variants) {
  html=removePrintGuidance(html);
+ html=html.replace(/<section\b([^>]*)>[\s\S]*?<\/section>/gi,(section,attributes)=>{
+  const classes=attributes.match(/\bclass\s*=\s*(["'])(.*?)\1/i)?.[2].split(/\s+/)??[];
+  return classes.includes('pdf-end-downloads')?'':section;
+ });
  html=html.replace(/<header\b[^>]*class="mobile-bar"[^>]*>[\s\S]*?<\/header>/,header=>{
   if(/class="mobile-title"/.test(header)) return header;
   return header.replace(/<div class="mobile-actions"/,`<a class="mobile-title" href="#book-top">${escape(edition.title)}</a><div class="mobile-actions"`);
@@ -79,7 +110,7 @@ export function installReaderDownloads(html,edition,variants) {
   count++;return downloadLinks(edition,variants,{compact:!a.includes('action-link')});
  });
  if(count<2)throw Error('Missing cover/sidebar PDF downloads');
- html=html.replace('</main>',`<section class="pdf-end-downloads" aria-label="Handbook downloads">${downloadLinks(edition,variants)}</section></main>`);
+ validateReaderDownloadPlacements(html);
  return html;
 }
 export function editionDownloadDetails(edition,variants){
@@ -87,6 +118,8 @@ export function editionDownloadDetails(edition,variants){
 }
 export function validateDownloads(html,edition,variants){
  validatePrintGuidanceAbsent(html);
+ const hasCover=node=>(node.attrs?.class??'').split(/\s+/).includes('cover')||(node.children??[]).some(hasCover);
+ if(hasCover(parseReaderHtml(html)))validateReaderDownloadPlacements(html);
  markdownLink(edition);
  if(!html.includes(`href="${edition.markdown.publicUrl}"`)||!html.includes(`download="${edition.markdown.downloadFilename}"`)||!html.includes('data-markdown-download'))throw Error('Missing Markdown edition download');
  for(const group of html.matchAll(/<span\b[^>]*data-pdf-downloads[^>]*>[\s\S]*?<a\b[^>]*>/g))if(!group[0].includes('data-markdown-download'))throw Error('Markdown must be the first download option');

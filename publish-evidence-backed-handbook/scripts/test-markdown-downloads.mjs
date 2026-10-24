@@ -34,7 +34,7 @@ try{
  assert.ok(links.indexOf('Markdown edition')<links.indexOf('Daytime version'));
  assert.match(links,/Plain text for tools and reuse/);
  assert.match(links,/25 pages, 1 KB/);
- const reader='<a href="book.pdf" download>PDF</a><main><a href="book.pdf" download>PDF</a></main>';
+ const reader='<aside class="sidebar"><a href="book.pdf" download>PDF</a></aside><main id="main-content"><section class="cover"><a href="book.pdf" download>PDF</a></section></main><dialog id="toc-dialog"><div class="dialog-footer"><a href="book.pdf" download>PDF</a></div></dialog>';
  assert.equal((installReaderDownloads(reader,edition,variants).match(/data-markdown-download/g)||[]).length,3);
  assert.throws(()=>validateDownloads(links.replace('data-markdown-download','removed'),edition,variants),/Missing Markdown/);
  assert.throws(()=>markdownLink({...edition,markdown:{...edition.markdown,version:'4.0.0'}}),/wrong/);
