@@ -1,0 +1,258 @@
+{
+  "id": "OrganizationTenThousand",
+  "layout": "grouped-map",
+  "title": "Around 10,000 people: federated units",
+  "width": 346,
+  "height": 337,
+  "textEquivalent": "In this illustrative company of about ten thousand people, business units retain product teams with human outcome and release owners and agent execution. Local capability hubs maintain context, workflow evaluation and domain tools. An enterprise foundation supplies identity, security, audit and interoperability requirements. Named cross-unit contracts and escalation routes connect the units; domain coordination inside units is omitted for clarity.",
+  "nodes": [
+    {
+      "id": "enterprise",
+      "x": 0,
+      "y": 28,
+      "width": 346,
+      "height": 39,
+      "label": "Enterprise foundation\nIdentity / security / audit / standards",
+      "kind": "node",
+      "fontSize": 8
+    },
+    {
+      "id": "a",
+      "x": 0,
+      "y": 101,
+      "width": 156,
+      "height": 177,
+      "label": "BUSINESS UNIT A",
+      "kind": "group",
+      "fontSize": 8
+    },
+    {
+      "id": "ateams",
+      "x": 9,
+      "y": 132,
+      "width": 138,
+      "height": 87,
+      "label": "PRODUCT TEAMS",
+      "kind": "group",
+      "parent": "a",
+      "fontSize": 8
+    },
+    {
+      "id": "aowner",
+      "x": 17,
+      "y": 162,
+      "width": 61,
+      "height": 46,
+      "label": "Owner /\nrelease",
+      "kind": "node",
+      "parent": "ateams",
+      "fontSize": 7.6
+    },
+    {
+      "id": "aagents",
+      "x": 92,
+      "y": 172,
+      "width": 47,
+      "height": 26,
+      "label": "Agents",
+      "kind": "agent",
+      "parent": "ateams",
+      "fontSize": 7.6
+    },
+    {
+      "id": "ahub",
+      "x": 13,
+      "y": 242,
+      "width": 130,
+      "height": 25,
+      "label": "Local capability hub",
+      "kind": "node",
+      "parent": "a",
+      "fontSize": 7.8
+    },
+    {
+      "id": "b",
+      "x": 190,
+      "y": 101,
+      "width": 156,
+      "height": 177,
+      "label": "BUSINESS UNIT B",
+      "kind": "group",
+      "fontSize": 8
+    },
+    {
+      "id": "bteams",
+      "x": 199,
+      "y": 132,
+      "width": 138,
+      "height": 87,
+      "label": "PRODUCT TEAMS",
+      "kind": "group",
+      "parent": "b",
+      "fontSize": 8
+    },
+    {
+      "id": "bowner",
+      "x": 207,
+      "y": 162,
+      "width": 61,
+      "height": 46,
+      "label": "Owner /\nrelease",
+      "kind": "node",
+      "parent": "bteams",
+      "fontSize": 7.6
+    },
+    {
+      "id": "bagents",
+      "x": 282,
+      "y": 172,
+      "width": 47,
+      "height": 26,
+      "label": "Agents",
+      "kind": "agent",
+      "parent": "bteams",
+      "fontSize": 7.6
+    },
+    {
+      "id": "bhub",
+      "x": 203,
+      "y": 242,
+      "width": 130,
+      "height": 25,
+      "label": "Local capability hub",
+      "kind": "node",
+      "parent": "b",
+      "fontSize": 7.8
+    }
+  ],
+  "edges": [
+    {
+      "from": "enterprise",
+      "to": "a",
+      "points": [
+        [
+          78,
+          69
+        ],
+        [
+          78,
+          99
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "aowner",
+      "to": "aagents",
+      "points": [
+        [
+          80,
+          185
+        ],
+        [
+          90,
+          185
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "ahub",
+      "to": "ateams",
+      "points": [
+        [
+          78,
+          240
+        ],
+        [
+          78,
+          221
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "enterprise",
+      "to": "b",
+      "points": [
+        [
+          268,
+          69
+        ],
+        [
+          268,
+          99
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "bowner",
+      "to": "bagents",
+      "points": [
+        [
+          270,
+          185
+        ],
+        [
+          280,
+          185
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "bhub",
+      "to": "bteams",
+      "points": [
+        [
+          268,
+          240
+        ],
+        [
+          268,
+          221
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "a",
+      "to": "b",
+      "points": [
+        [
+          78,
+          280
+        ],
+        [
+          78,
+          308
+        ],
+        [
+          268,
+          308
+        ],
+        [
+          268,
+          280
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    }
+  ],
+  "labels": [
+    {
+      "x": 97,
+      "y": 311,
+      "width": 152,
+      "text": "Contracts / escalation"
+    }
+  ]
+}

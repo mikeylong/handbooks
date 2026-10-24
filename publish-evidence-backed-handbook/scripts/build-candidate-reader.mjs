@@ -158,7 +158,7 @@ export async function measureCandidatePdf(pdf) {
 
 export async function candidateReaderBookInputNames(source, approved) {
  const config=await json(resolve(source,'pdf-config.json')).catch(error=>{if(error.code==='ENOENT')return {};throw error;});
- const names=['source','assets','pdf-config.json','release-manifest.json','publication.json','publication-package.json','exercise-downloads.json','artwork-pairs.json','diagram-bindings.json','prompt-bindings.json','terminal-bindings.json','reader-edition.json','package.json','Claude_Design_Field_Guide_Source.md',approved.readerDirectory,...[config.markdown,config.screenshotManifest].filter(Boolean)];
+ const names=['source','assets','pdf-config.json','release-manifest.json','publication.json','publication-package.json','exercise-downloads.json','artwork-pairs.json','diagram-bindings.json','prompt-bindings.json','terminal-bindings.json','reader-edition.json','package.json','Claude_Design_Field_Guide_Source.md',approved.readerDirectory,...(config.readerInputs??[]),...[config.markdown,config.screenshotManifest].filter(Boolean)];
  return [...new Set(names)];
 }
 export const selectedCandidateBookInput = path => !path.split(/[\\/]/).some(part=>['__pycache__','editions','node_modules','.git'].includes(part))&&!path.endsWith('.pyc')&&!path.endsWith('.pdf');

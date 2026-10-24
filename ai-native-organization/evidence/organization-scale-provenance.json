@@ -1,0 +1,41 @@
+{
+  "accessDate": "2026-10-23",
+  "classification": "author synthesis; illustrative total-company sizes, not tested prescriptions",
+  "sourceDesign": {
+    "notes": "/Users/mike/handbooks/candidates/ai-native-organization/2026-10-23-organization-scale-v1.1.0/reference/organization-by-scale-handbook-notes.md",
+    "sha256": "005451ce4275781e00ac082fc0923cde215910be5622c7c940eb999ce76e9fed"
+  },
+  "sources": [
+    {
+      "id": "S10",
+      "url": "https://teamtopologies.com/key-concepts",
+      "supports": "Distinct team roles and service, facilitation and collaboration interactions; no prescribed headcount scenarios."
+    },
+    {
+      "id": "S11",
+      "url": "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
+      "supports": "Internal-user-led platforms, thin capability integration and measurable support; no prescribed headcount scenarios."
+    },
+    {
+      "id": "S12",
+      "url": "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology",
+      "supports": "Cloud-specific separation of enterprise foundation, business-unit infrastructure and application pipelines; no general company-size proof."
+    }
+  ],
+  "integration": {
+    "section": "1.5 Match the structure to your coordination needs",
+    "physicalPages": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "nextSection": "1.6 Protect judgment and attention",
+    "vectorPDF": true,
+    "themeAwareSVG": true,
+    "minimumLabelPoints": 7.5,
+    "shapeOwner": "book source/diagrams",
+    "renderOwner": "shared grouped_diagrams.py"
+  },
+  "priorFindings": "Existing demand-rate wording and fixed metadata dates are deliberately unchanged."
+}

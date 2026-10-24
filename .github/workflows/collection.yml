@@ -58,6 +58,7 @@ jobs:
           python publish-evidence-backed-handbook/scripts/test-heading-wrap.py
           python publish-evidence-backed-handbook/scripts/test-eyebrow-roles.py
           python publish-evidence-backed-handbook/scripts/test-concept-diagrams.py
+          python publish-evidence-backed-handbook/scripts/test-grouped-diagrams.py
           python publish-evidence-backed-handbook/scripts/test-measured-page-map.py
           node publish-evidence-backed-handbook/scripts/test-first-edition-reader.mjs
       - run: python production-ai-engineering/scripts/test-weekly-toolkit.py

@@ -1,0 +1,123 @@
+{
+  "artifactSha256": "79748c57c4b224ba40e98beac6b9cd50d2f3395e9ab635caaf84e6425effb25b",
+  "changelogDecision": {
+    "changelogPages": [
+      49
+    ],
+    "decisionStatus": "passed",
+    "directSourceLinks": [
+      "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology",
+      "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
+      "https://teamtopologies.com/key-concepts"
+    ],
+    "expectedEntryCount": 1,
+    "firstEdition": false,
+    "includeChangelog": true,
+    "navigationEntries": [
+      {
+        "lines": [
+          "changelog"
+        ],
+        "page": 3,
+        "role": "contents"
+      }
+    ],
+    "outlineEntries": [
+      "Changelog"
+    ]
+  },
+  "failures": [],
+  "limitations": [
+    "This structural validator does not establish visual quality.",
+    "Apple PDFKit compatibility remains unverified unless an Apple-native render was inspected."
+  ],
+  "pdf": "candidates/ai-native-organization/2026-10-23-organization-scale-v1.1.0/artifacts/final/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+  "profile": "candidate",
+  "requiredRasterIllustrations": [
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 4,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.05548c9adb3b0c5806aab73a9cf19d4b",
+          "object": "52 0",
+          "opaque": true,
+          "page": 4,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 16,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.4ca3d1336fd62fbb82c44a534529af31",
+          "object": "61 0",
+          "opaque": true,
+          "page": 16,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 24,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.6c89988215c1189b0d8a155c13e7ac5d",
+          "object": "159 0",
+          "opaque": true,
+          "page": 24,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    }
+  ],
+  "schemaVersion": 1,
+  "stats": {
+    "blankPages": [],
+    "externalLinks": 17,
+    "fonts": 6,
+    "imageMasks": 0,
+    "internalLinks": 97,
+    "outlineEntries": 38,
+    "pageMapEntries": 49,
+    "pages": 49,
+    "pdfVersion": "1.4",
+    "rasterImagePaints": 3,
+    "rasterImages": 3,
+    "requiredRasterIllustrationPages": 3
+  },
+  "status": "passed"
+}

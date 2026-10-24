@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-native-organization",
+  "title": "AI-Native Organization Handbook",
+  "version": "1.0.0",
+  "date": "2026-10-23",
+  "pdf": "output/pdf/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf",
+  "sha256": "ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf",
+  "pages": 41,
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.0.0/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf",
+      "sha256": "ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf",
+      "bytes": 8229973,
+      "pages": 41,
+      "pageMap": {
+        "path": "ai-native-organization/qa/page-map-light.json",
+        "sha256": "708eb69c787a32f233d1e7c4c49463ab14b4714b67506d2b7093e99ca127e7ae"
+      },
+      "appearanceDate": "2026-10-23"
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.0.0-2026-10-23-late-night-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.0.0/ai-native-organization-v1.0.0-2026-10-23-late-night-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.0.0-2026-10-23-late-night-r1.pdf",
+      "sha256": "1f40e388c9465cfedc8d36e5bc507bc0c11061407c84efca5b35403431c2ba12",
+      "bytes": 6674934,
+      "pages": 41,
+      "pageMap": {
+        "path": "ai-native-organization/qa/page-map-dark.json",
+        "sha256": "2c1ede138c1c97b5bc297f49d43037f6608ecb86ac553dcca715a45024f2efcc"
+      },
+      "proof": {
+        "parity": {
+          "path": "ai-native-organization/qa/parity.json",
+          "sha256": "d5b5a9c5e9c20719c012e49694cff35c85cac31977824f0ee239ddc1d6a030bc"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "1f40e388c9465cfedc8d36e5bc507bc0c11061407c84efca5b35403431c2ba12",
+          "date": "2026-10-23",
+          "authority": "Mike: explicit official publication request after review of heading-final-r8 PDFs.",
+          "baseline": null,
+          "version": "1.0.0",
+          "review": "ai-native-organization/releases/v1.0.0/visual-review.json"
+        }
+      },
+      "appearanceDate": "2026-10-23"
+    }
+  ]
+}
