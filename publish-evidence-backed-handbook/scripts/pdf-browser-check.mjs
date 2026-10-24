@@ -20,6 +20,20 @@ export async function checkCoverActionLayout(page) {
  return result;
 }
 
+/** Check the same three reader containers in the actual browser DOM. */
+export async function checkReaderDownloadPlacements(page) {
+ const selectors=['.sidebar [data-pdf-downloads]','main#main-content .cover [data-pdf-downloads]','#toc-dialog .dialog-footer [data-pdf-downloads]'];
+ if(await page.locator('[data-pdf-downloads]').count()!==3||await page.locator('.pdf-end-downloads').count())throw Error('Reader must have exactly three download groups and no bottom block');
+ const choices=[];
+ for(const selector of selectors){
+  if(await page.locator(selector).count()!==1)throw Error('Missing or duplicate reader download location: '+selector);
+  choices.push(await page.locator(selector+' a[download]').evaluateAll(links=>links.map(a=>[a.getAttribute('href'),a.getAttribute('download')])));
+ }
+ if((await page.locator('[data-pdf-downloads] .download-arrow').allTextContents()).some(text=>text!=='↓'))throw Error('Download arrow text is misdecoded');
+ if(choices.some(c=>c.length<2||JSON.stringify(c)!==JSON.stringify(choices[0])))throw Error('Reader download choices differ between locations');
+ return {status:'passed',groups:3,locations:selectors};
+}
+
 async function checkTocLayout(page) {
  if(await page.locator('.mobile-bar [data-pdf-downloads]').count()) throw Error('PDF downloads remain in mobile header');
  if(!(await page.locator('#toc-dialog .dialog-footer [data-pdf-downloads]').count())) throw Error('Missing Contents PDF downloads');
@@ -65,6 +79,7 @@ export async function checkPdfBrowser(page,{baseUrl,books,screenshotDirectory,do
    }
    if(path==='/'||path===`/${books[0].id}/`){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:`${screenshotDirectory}/${width}-${mode}-${path==='/'?'gallery':'reader'}.png`});}
    if(/^\/[a-z-]+\/$/.test(path)){
+    await checkReaderDownloadPlacements(page);
     await checkCoverActionLayout(page);
     await page.locator('.cover a[href="#contents"]').click();if(!page.url().endsWith('#contents'))throw Error('Explore failed');
     await page.locator('[data-open-search]:visible').first().click();if(!(await page.locator('#search-dialog').isVisible()))throw Error('Search failed');await page.keyboard.press('Escape');

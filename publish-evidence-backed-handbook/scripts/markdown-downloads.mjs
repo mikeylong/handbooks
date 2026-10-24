@@ -10,7 +10,7 @@ const decode=s=>s.replace(/&(#x[\da-f]+|#\d+|[a-z][\da-z]+);/gi,(_,key)=>{
 });
 const has=(n,c)=>(n.attrs?.class??'').split(/\s+/).includes(c);
 const voids=new Set('area base br col embed hr img input link meta param source track wbr'.split(' '));
-function parse(html){
+export function parseReaderHtml(html){
  const root={tag:'root',attrs:{},children:[]},stack=[root];
  const tokens=html.match(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>|<!--[\s\S]*?-->|<\/?[a-z][a-z\d]*\b(?:"[^"]*"|'[^']*'|[^'">])*>|[^<]+|</gi)??[];
  for(const token of tokens){
@@ -34,7 +34,7 @@ function headingText(n){function value(x){if(x.tag==='#text')return x.text;if(x.
 const slug=s=>s.toLowerCase().replace(/[^\w\- ]/g,'').replace(/ /g,'-');
 export function readerMarkdown(html,edition){
  if(!/^[a-z0-9-]+$/.test(edition.id)||!/^\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/.test(edition.version)||!edition.title||!/^\d{4}-\d{2}-\d{2}$/.test(edition.date))throw Error('Invalid Markdown edition identity');
- const tree=parse(html),main=descendants(tree,'main').find(n=>n.attrs.id==='main-content');
+ const tree=parseReaderHtml(html),main=descendants(tree,'main').find(n=>n.attrs.id==='main-content');
  if(!main)throw Error('Markdown edition requires the actual reader body');
  const body=(main.children??[]).filter(n=>n.tag!=='#text'&&!has(n,'cover')&&!has(n,'contents-page')&&!has(n,'pdf-end-downloads')&&n.tag!=='nav');
  if(!body.some(n=>has(n,'chapter')))throw Error('Markdown edition has no chapters');
