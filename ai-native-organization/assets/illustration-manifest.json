@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "artwork": [
+    {
+      "chapter": 1,
+      "mode": "generated",
+      "originalSha256": "9dc06d70d4ce952c2e1b45746d1b8fb16096900f742b544055071208b0f2cc57",
+      "darkOriginalSha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b",
+      "normalizedSha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "normalization": "Pillow RGBA alpha composite on opaque pure white, then RGB PNG; no crop or resampling",
+      "placement": "shared ChapterIllustration: fit within 104mm width by 62.23mm height",
+      "minimumPpi": 240,
+      "generator": "built-in image_gen; model identifier not exposed",
+      "prompts": {
+        "art1": "Use case: illustration-story. Asset type: chapter opener for a restrained A5 technical handbook about organizations. Primary request: original monochrome engraved/stippled editorial illustration of a small precision mechanical workshop: three distinct workbenches arranged around a single shared belt-driven overhead shaft; the benches have different hand tools, each visibly usable independently, while sharing the drive mechanism. This embodies local outcome ownership with shared capability. Viewpoint: three-quarter isometric, centered, quiet, generous white margins, square canvas, pure white opaque background. Style reference is the inspected canonical handbook specimen: fine black pen engraving, controlled pointillist shading, plausible physical objects with depth, natural material shading, no color. No people, robots, brains, cloud symbols, labels, text, logos, watermark, arrows, diagram boxes or vector icon appearance. One coherent object group. Keep linework readable at 100mm print width, high resolution. Original illustration, no copied existing art.",
+        "art1dark": "Create a separately authored dark-screen counterpart of the supplied workshop illustration, keeping exactly three benches, their different machinery, the shared overhead shaft, camera angle, silhouette, spatial relationships, and framing. Redraw lighting and material values for a charcoal page: naturally pale lit wood and metal surfaces, deep dark opaque recesses, delicate pale engraving/stippling; no value inversion and no glowing outlines. Use a genuine transparent outer background including spaces between the objects; dark material within each object remains opaque. No paper rectangle, white fringe, text, logos, labels, or new objects. Fine technical engraving, high resolution. The supplied image is the composition reference and edit target."
+      }
+    },
+    {
+      "chapter": 2,
+      "mode": "generated",
+      "originalSha256": "bc87fbb9a289c29236bf5cc7f224c4ed2cccb5219c932f3e8c3d184e9d87b550",
+      "darkOriginalSha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8",
+      "normalizedSha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "normalization": "Pillow RGBA alpha composite on opaque pure white, then RGB PNG; no crop or resampling",
+      "placement": "shared ChapterIllustration: fit within 104mm width by 62.23mm height",
+      "minimumPpi": 240,
+      "generator": "built-in image_gen; model identifier not exposed",
+      "prompts": {
+        "art2": "Use case: illustration-story. Chapter opener: maintained context, evaluation and bounded execution. Original technical pen engraving of a precision lathe with a fitted mechanical feed stop, micrometer, and a small open notebook without markings on the adjacent bench. One coherent workshop still life, three-quarter viewpoint. The physical stop and measuring tool imply externally bounded execution and independent measurement. Same restrained monochrome engraved/stippled material shading as the supplied image, which is STYLE REFERENCE ONLY, not an edit target. Opaque pure white background, square canvas with generous margins, no lettering, labels, digits, logos, arrows, flowchart, people, robots or decorative icons. High resolution readable at 100mm.",
+        "art2dark": "Create a separately authored dark-screen counterpart of the supplied engraved technical still life. Preserve exact object count, arrangement, camera angle, silhouette, scale and optical framing. Redraw natural lighting and materials for a charcoal page: pale lit surfaces and fine pale engraving/stippling, deep opaque recesses, accurate internal shadows. Genuine transparent outer background and transparent spaces between separate objects, keeping dark material within objects opaque. No inversion, glowing outlines, paper rectangle, white fringe, lettering, logos, new objects or cropping. Keep it quietly readable at 100mm print width. Supplied image is the composition reference and edit target."
+      }
+    },
+    {
+      "chapter": 3,
+      "mode": "generated",
+      "originalSha256": "39e4c7cb78df9e2bec149b6f75f34f54e849dae3c32be3dae1bd623388910eef",
+      "darkOriginalSha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a",
+      "normalizedSha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "normalization": "Pillow RGBA alpha composite on opaque pure white, then RGB PNG; no crop or resampling",
+      "placement": "shared ChapterIllustration: fit within 104mm width by 62.23mm height",
+      "minimumPpi": 240,
+      "generator": "built-in image_gen; model identifier not exposed",
+      "prompts": {
+        "art3": "Use case: illustration-story. Chapter opener: testing an organizational proposal before expansion. Original fine black pen engraving with stippling of an old scientific equal-arm balance on a sturdy base, holding two small identical machined components, beside a neat group of calibrated unmarked metal weights. One coherent physical still life, three-quarter view, quiet technical handbook style. The supplied workshop illustration is STYLE REFERENCE ONLY, not an edit target. Pure opaque white background with generous margins. Square canvas, monochrome, natural shading and depth. No text, digits, labels, logos, arrows, icons, screens, people or flowchart. High resolution, clear silhouette at 100mm.",
+        "art3dark": "Create a separately authored dark-screen counterpart of the supplied engraved technical still life. Preserve exact object count, arrangement, camera angle, silhouette, scale and optical framing. Redraw natural lighting and materials for a charcoal page: pale lit surfaces and fine pale engraving/stippling, deep opaque recesses, accurate internal shadows. Genuine transparent outer background and transparent spaces between separate objects, keeping dark material within objects opaque. No inversion, glowing outlines, paper rectangle, white fringe, lettering, logos, new objects or cropping. Keep it quietly readable at 100mm print width. Supplied image is the composition reference and edit target."
+      }
+    }
+  ]
+}

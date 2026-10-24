@@ -1,0 +1,42 @@
+{
+  "id": "outcome-ownership",
+  "layout": "ownership-loop",
+  "title": "The product team owns the whole outcome",
+  "nodes": [
+    {
+      "id": "define",
+      "role": "Product team",
+      "label": "Define the work",
+      "detail": "Customer problem, scope and privacy"
+    },
+    {
+      "id": "execute",
+      "role": "Delegated workflow",
+      "label": "Execute within limits",
+      "detail": "Implementation within contracts; tests, checks and maintained context"
+    },
+    {
+      "id": "accept",
+      "role": "Product team",
+      "label": "Accept and support",
+      "detail": "Acceptance, release, production support and recovery"
+    }
+  ],
+  "feedback": "Review the evidence; decide what happens next.",
+  "textEquivalent": "The product team owns the complete outcome. It defines the customer problem, scope and privacy decisions, then delegates implementation within agreed contracts, routine tests and checks, and maintained context. The team retains acceptance, release, production support and recovery. Evidence returns to the team to inform its next decision.",
+  "edges": [
+    {
+      "from": "define",
+      "to": "execute"
+    },
+    {
+      "from": "execute",
+      "to": "accept"
+    },
+    {
+      "from": "accept",
+      "to": "define",
+      "feedback": true
+    }
+  ]
+}

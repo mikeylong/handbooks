@@ -41,6 +41,14 @@ try{
 }finally{await rm(root,{recursive:true,force:true});}
 console.log('Markdown content, code whitespace, prompts, lists, tables, links, diagrams, edition safety, required placement, and 25-chapter future edition passed.');
 
+// Citation links stay within the Markdown edition and land at the full source.
+const cited='<main id="main-content"><section class="chapter" id="intro"><h2>Introduction</h2><p>A claim <sup class="citation-marker"><a href="#ref-s9" aria-label="Citation S9">[S9]</a></sup>.</p><p class="reference-entry" id="ref-s9" tabindex="-1"><b>[S9] Source nine</b></p></section></main>';
+const citations=readerMarkdown(cited,edition);
+assert.ok(citations.markdown.includes('[[S9]](#s9-source-nine)') || citations.markdown.includes('[\\[S9\\]](#s9-source-nine)'));
+assert.ok(citations.markdown.includes('#### **\\[S9\\] Source nine**'));
+assert.ok(citations.index.sections.some(s=>s.anchor==='s9-source-nine'));
+assert.ok(!citations.markdown.includes('https://handbooks.surfaces.systems/future-book/#ref-s9'));
+
 // Publication is determined by the catalog, separately from artifact approval.
 assert.match(readerMarkdown(html,{...edition,approvalStatus:'approved',publicationStatus:'published'}).markdown,/publication_status: "published"/);
 assert.match(readerMarkdown(html,{...edition,approvalStatus:'approved'}).markdown,/publication_status: "candidate"/);
@@ -69,3 +77,8 @@ assert.throws(()=>readerMarkdown(croppedScreenshot,{...edition,publicationStatus
 assert.throws(()=>readerMarkdown(croppedScreenshot.replace('300,100,600,400','1000,100,600,400'),edition),/source bounds/);
 assert.throws(()=>readerMarkdown(croppedScreenshot.replace('300,100,600,400','-1,100,600,400'),edition),/Invalid screenshot crop/);
 console.log('Cropped screenshot descriptions, source bounds, matching larger views, and published-source privacy rejection passed.');
+const concept=html.replace('<p>Second chapter.</p>','<figure class="reader-concept-diagram" data-diagram-title="Outcome loop" data-text-equivalent="The team delegates bounded work and reviews the evidence."><div aria-hidden="true">Drawing labels</div></figure>');
+assert.ok(readerMarkdown(concept,edition).markdown.includes('**Outcome loop**\n\nThe team delegates bounded work and reviews the evidence.'));
+assert.ok(!readerMarkdown(concept,edition).markdown.includes('Drawing labels'));
+assert.throws(()=>readerMarkdown(concept.replace('data-text-equivalent="The team delegates bounded work and reviews the evidence."',''),edition),/text equivalent/);
+console.log('Concept diagrams preserve their accessible text equivalent in Markdown.');

@@ -1,0 +1,256 @@
+--- /dev/null	2026-10-23 13:58:56
++++ candidates/ai-native-organization/2026-10-23-first-edition-01a16a75/source/build_handbook.py	2026-10-23 13:49:39
+@@ -0,0 +1,253 @@
++"""Canonical first-edition manuscript. Layout and rendering belong to the toolkit."""
++import json
++import os
++from pathlib import Path
++BOOK = Path(__file__).resolve().parents[1]
++os.environ.setdefault('HANDBOOK_BOOK_ROOT', str(BOOK))
++os.environ.setdefault('HANDBOOK_PDF_CONFIG', (BOOK/'pdf-config.json').read_text())
++from reportlab_layout import *
++from reportlab.platypus import Preformatted
++
++# Local authoring helpers supply content to the shared layout; no runtime copy.
++def page(title, *paragraphs, rows=None, widths=None):
++    result = [heading(title)] + [P(text) for text in paragraphs]
++    if rows:
++        result.append(data_table(rows, widths or [104, CONTENT_W-106]))
++    return result + [PageBreak()]
++
++def chapter(story, number, title, deck):
++    # A page section already ended with a break; module_start owns its own.
++    if story and isinstance(story[-1], PageBreak): story.pop()
++    opening = module_start(number, title, deck)
++    for item in opening:
++        if isinstance(item, ChapterIllustration): item.height = 250
++    return opening
++
++def build_story():
++    story = [Spacer(1, 17*mm), P('ORGANIZATION & DELIVERY', COVER_KICKER),
++        P('AI-Native<br/>Organization<br/>Handbook', COVER_TITLE),
++        P('Build useful workflows, keep clear ownership, and test what deserves to expand.', COVER_DECK),
++        Spacer(1, 35*mm), P('Michael Long', COVER_CREDIT),
++        P('October 23, 2026 · Version 1.0.0', COVER_CREDIT),
++        P('First-edition candidate', COVER_CREDIT), PageBreak(),
++        P('READ THIS FIRST', CHAPTER_KICKER), P('Start with one customer outcome', H1),
++        P('An organization becomes more capable when people and agents can complete useful work with clear responsibility for the result. A new team label cannot establish that capability.'),
++        P('This handbook helps engineering and product leaders assign responsibilities, maintain execution context, verify results, enforce permissions, and test a workflow before expanding it. It starts with an existing team. Changes to staffing and reporting lines come later, if sustained evidence supports them.'),
++        P('Read Chapter 1 before changing ownership. Use Chapter 2 to prepare a real workflow. Use Chapter 3 to fund and measure a bounded pilot. The final worksheets help the team record what it will do and what evidence will inform the next decision.'),
++        P('The operating model is a proposal. The pilot is a synthetic worked example, and its numerical hurdles are proposed investment criteria. Replace them with criteria grounded in your actual demand, costs and consequences before enrollment. No pilot observations are reported.'),
++        P('Sources were checked on October 23, 2026. Historical accounts, provider engineering guidance, author synthesis and example calculations are identified separately. Source notes explain their limits.'),
++        PageBreak(), P('CONTENTS', TOC_KICKER), P('Contents', TOC_TITLE), TwoColumnTOC()]
++
++    story += chapter(story, '1', 'Choose the work and its owners',
++        'Keep responsibility for customer outcomes clear while changing how expertise and execution reach the team.')
++    story += page('1.1 What carries forward',
++        'Spotify’s 2012 account describes squads with delivery responsibility, chapters for specialist development, and guilds for wider knowledge sharing. Its authors present an evolving snapshot. Treat that account as a description of one organization at a particular time. [S1]',
++        'Matt Stine’s 2015 report connects autonomous delivery with self-service infrastructure, automation and recovery. Those foundations still help teams reduce handoffs. The report does not establish how an AI workflow will perform. [S2]',
++        'Dilip Saha proposes product builders supported by reusable specialist agent capabilities and a shared platform. Builders retain product ownership; enabling teams maintain shared workflows; the platform supplies common infrastructure. He explicitly frames the model as a hypothesis requiring experimentation. [S3]',
++        '<b>Handbook synthesis:</b> end-to-end ownership, shared expertise and measured improvement continue earlier ideas. Three responsibilities become more explicit when agents execute work: maintaining the context they use, evaluating variable behavior, and enforcing their authority through tools and infrastructure.',
++        'Start by identifying the handoff that prevents a customer outcome. A team waiting for an API decision needs a current contract and a decision owner. Adding an agent to that queue may only produce more work awaiting the same decision. Choose an intervention that addresses the actual dependency.')
++    story += page('1.2 Principles for useful delegation',
++        '<b>The eight principles below are author synthesis.</b> Use them to decide what to build and measure. They are not a maturity score or a claim that an organization will become faster.',
++        '1. <b>Give a team an outcome it can own.</b> Name the customer problem, production responsibility and maintenance obligation. Keep that responsibility stable when execution moves between people and agents.',
++        '2. <b>Measure the complete path.</b> Include discovery, waiting, implementation, review, release, customer use and recovery. A faster coding step may leave total delivery unchanged.',
++        '3. <b>Maintain execution context.</b> Assign owners to goals, domain rules, interfaces and operating knowledge. Record the versions used for consequential work.',
++        '4. <b>Budget human attention.</b> Reserve time for review, decisions, exceptions and learning. Limit parallel agent work when the verification queue grows.',
++        '5. <b>Define verification when delegating.</b> State the acceptance evidence before work starts. Use checks and observation that can challenge the proposed result.',
++        '6. <b>Bound authority.</b> Match access and spending to the authorized task and potential consequences. Exercise denial, revocation and recovery.',
++        '7. <b>Make expertise reusable.</b> Give shared workflows maintainers, evaluations and release controls. Measure whether reuse reduces support and waiting.',
++        '8. <b>Expand through evidence.</b> Separate more work, more teams, broader permissions and staffing changes. Each changes what must be demonstrated.')
++    story += page('1.3 Allocate responsibility',
++        'Assign these responsibilities before adding a new agent workflow. Several roles may be held by one person in a small team, but record who can challenge a result and who can authorize release.',
++        rows=[['OWNER', 'RESPONSIBILITY'],
++        ['Product team', 'Customer problem, acceptance, release, production behavior, maintenance and recovery of its product area.'],
++        ['Product lead / designer', 'Customer task criteria, representative use observations and interpretation of usefulness.'],
++        ['Workflow maintainer', 'Context assembly, instructions, model/tool versions, agent evaluations and controlled workflow changes.'],
++        ['Specialists', 'Domain rules, technical judgment, reusable capabilities and consequential exceptions.'],
++        ['Platform / security', 'Identities, access policy, execution environments, audit records, revocation and shared infrastructure recovery.'],
++        ['Measurement owner', 'Allocation protocol, complete effort/cost records, analysis, missing data and preserved snapshots.'],
++        ['Sponsor', 'Funding, risk acceptance within their authority, and the documented decision to continue, replicate or stop.']])
++    story += page('1.4 Keep the shared service usable',
++        'A shared capability needs a service contract: supported work, required inputs, expected response, escalation route, maintenance owner and recovery path. An engineer should be able to tell whether a routine change can proceed without specialist involvement.',
++        'For a mobile workflow, the maintainer might supply current interface patterns, accessibility checks and an evaluated release candidate. The product team still decides whether the change solves the customer problem. A novel navigation pattern or an unresolved accessibility failure goes to a named specialist.',
++        'Measure routine requests completed independently, support hours per accepted outcome, review waiting and repeat exceptions. If every change waits for an enabling team, inspect why. Missing tests, unclear rules, obsolete context and mandatory review require different corrections.',
++        'Shared workflows create a common dependency. Pin versions for a pilot. Release a change through a limited trial, record affected teams, and retain a working rollback. A workflow maintainer owns the shared defect; product teams own restoring their customer journeys.',
++        'Keep a path for work outside the shared capability. An exception should identify the uncertainty, its consequence, the responsible person and the decision needed. Repeated exceptions may justify improving the capability. One unusual request may be cheaper to handle directly.',
++        '<b>Decision:</b> fund a shared capability when its expected reduction in repeated effort and waiting exceeds its build, maintenance and support burden. Test that expectation with actual use.')
++    story += page('1.5 Preserve judgment and learning',
++        'An agent may produce plausible code that a team lacks the expertise to challenge. Before reducing specialist coverage, identify who can explain the architecture, assess a failure and restore service. Escalation access needs actual capacity, including absences and incidents.',
++        'Reserve time for engineers to inspect complete changes, investigate failures and maintain domain knowledge. Review should expose assumptions and tradeoffs. A record saying that an agent and a second agent agreed does not explain why the customer outcome is acceptable.',
++        'Evaluate specialists on whether their maintained capabilities help teams complete useful work independently. Track support quality and failure prevention alongside reuse. Rewarding only generated output can encourage a larger review queue and unmaintained shared workflows.',
++        'Ask the team where saved effort went. It may support more accepted customer work, reduce overtime, create operating headroom or remain unused. Those are different outcomes. A forecast about future capacity does not show a realized staffing saving.',
++        'Before a wider organizational change, observe sustained delivery, specialist availability, onboarding, incident handling and maintenance under ordinary conditions. A pilot run by its original champions cannot establish that another team can operate it.',
++        '<b>Chapter output:</b> one customer stream, one accountable product team, named shared-service owners, a funded exception path and a hypothesis about the dependency the workflow will reduce.')
++
++    story += chapter(story, '2', 'Make delegation operable',
++        'Provide current context, independent outcome checks and enforceable permissions for a specific task.')
++    story += page('2.1 Give context an owner',
++        'Context engineering concerns the information available during model execution, including instructions, tools, retrieved material and prior interaction. Anthropic describes its curation as an ongoing activity. [S4]',
++        '<b>Handbook proposal:</b> maintain a small execution packet for each workflow. Include the customer goal, acceptance criteria, relevant domain rules, current interfaces, known constraints, allowed actions, escalation conditions and evidence required at completion.',
++        'Each consequential source needs an owner, authority level, version or retrieval time, and a review rule appropriate to its rate of change. A pricing rule may require a different freshness check from a stable interface example. Record which sources actually entered the task.',
++        'Keep access decisions outside retrieved prose. A document describing a permission cannot grant the runtime that permission. Restrict retrieval and tools to the task identity and approved data scope.',
++        'Define conflict handling. If an old example permits a data export but current policy forbids it, the agent should stop that action and identify the conflicting sources. A responsible owner resolves the decision and corrects the obsolete reference.',
++        'Use failures to improve the packet. A missing contract needs an owner and a source update. An unverified assumption needs an evaluation case or a task clarification. Adding every document to the prompt makes neither correction explicit.')
++    story += page('2.2 Evaluate capability and outcomes',
++        'Agent evaluations distinguish a case, repeated trials, grading logic and the final state of the environment. Anthropic’s guidance also treats evaluations and production feedback as complementary. A completion message is weaker evidence than checking the resulting state. [S5]',
++        '<b>Handbook proposal:</b> maintain separate checks for the agent workflow and for each delivered product change. Workflow evaluations ask whether a version can handle representative tasks. Product acceptance asks whether this particular change works for customers.',
++        'Include routine cases, awkward but valid inputs, stale or conflicting context, tool failures and prohibited requests. Keep final assessment cases separate from tuning examples. A leaked case cannot support the current final requirement. Use a predefined uncontaminated replacement assessment or stop the readout as inconclusive.',
++        'Score each case as well as the aggregate. In a synthetic suite of fifteen cases with three trials each, 41 successes out of 45 can include one case failing every trial, another failing once, and thirteen passing all trials. The aggregate conceals a repeatable failure.',
++        'Designate must-pass cases before execution. Preserve input, environment state, workflow/model version, outputs, tool actions, grader result and failure explanation. Independent verification should inspect what changed, including unintended effects.',
++        'A clean suite supports the cases and conditions exercised. Repeating fifteen control scenarios three times creates forty-five trials, not forty-five distinct challenges. Production monitoring and customer observation remain necessary.')
++    story += page('2.3 Enforce the permitted actions',
++        'Containment constrains what an agent can do through its environment and access boundaries. Anthropic describes approaches including sandboxes, virtual machines and network controls, alongside their limitations. [S6]',
++        '<b>Handbook proposal:</b> grant only the actions needed for the task. Use a distinct identity, restricted resources, bounded spending and time, durable action records, and a revocation path. Keep prohibited actions unavailable even when a prompt requests them.',
++        rows=[['ACTION', 'INITIAL PILOT POLICY'],
++        ['Read', 'Only approved repositories, documents and test data for the assigned work.'],
++        ['Edit and test', 'An isolated branch or workspace; tests run without production credentials.'],
++        ['Preview', 'A bounded review environment with an owner, expiry and cost limit.'],
++        ['Merge and release', 'A separately authorized person uses protected checks and the existing release path.'],
++        ['Delete, export, bill', 'Outside this example pilot. Add only through a separate scope and consequence review.'],
++        ['Revoke and recover', 'The platform owner can stop execution, expire access, locate changed state and verify recovery.']])
++    story += page('2.4 Record the task contract',
++        'The following contract is illustrative. A production implementation must translate it into actual tool and identity policy. The workflow maintainer records the context; the platform owner verifies enforcement; the product team supplies acceptance.',
++        'Task: add saved searches across web, mobile and backend. A saved search must persist between sessions, remain private to its owner, and expose a usable failure state. Tests should verify those behaviors independently of the agent’s description.',
++        'The task record includes an ID, customer goal, acceptance conditions, source versions, workflow version, allowed resources/actions, budget, expiry, escalation owner and completion evidence. Avoid storing secrets in the record.',
++        'When a current backend contract contradicts a mobile example, resolve the contract before implementation proceeds across both clients. Record the decision once and update the references that would otherwise recreate the disagreement.',
++        'At completion, link the proposed change, test results, observed environment state, known limitations, actual effort and cost. A reviewer can then decide whether the result is ready for a protected release. The record must distinguish proposed, executed, verified and released actions.',
++        'Follow the result through production and representative customer use. If persistence works but customers cannot find the saved search, the team has an interaction problem requiring further work. A passing persistence test cannot answer that question.')
++    story += page('2.5 Prepare for failure and change',
++        'Before live work, exercise a stale-context conflict, incorrect output, tool timeout, prohibited action and revocation during execution. Verify results from the surrounding system. An agent saying it stopped is insufficient when a job or credential remains active.',
++        'Define who can suspend a capability, how affected work is found, what state is preserved, and how safe service is restored. Retain the action trace, configuration and recovery evidence. Resume only after the responsible owner verifies the correction and grants the needed authority.',
++        'Classify changes to the workflow. A factual context correction may be a small revision; a new model, broader tool access or materially different orchestration can change the intervention being measured. Record versions and decide in advance which changes require a new cohort.',
++        'Reserve maintenance capacity. Track time spent correcting context, updating evaluations, responding to provider changes and supporting users. Include recurring maintenance in the workflow’s operating economics.',
++        'Keep the feedback destination explicit. A product defect goes to its product owner; a shared workflow defect goes to its maintainer; an access-control failure goes to the platform/security owner. Those owners coordinate recovery without transferring the product team’s customer responsibility.',
++        '<b>Chapter output:</b> a task contract, maintained context packet, held-out evaluation set, enforced action policy and exercised recovery procedure. Completing those artifacts establishes preparation; the pilot still has to show useful delivery.')
++
++    story += chapter(story, '3', 'Test before you expand',
++        'Fund a complete comparison, preserve inconvenient outcomes, and decide what the observed evidence actually supports.')
++    story += page('3.1 Charter a bounded experiment',
++        '<b>All figures in this chapter are synthetic.</b> The example uses six engineers with existing AI assistants, CI and production controls. It tests maintained context, evaluated workflows and enforced permissions as a bundle. It does not isolate each component’s contribution.',
++        'Scope: forty-eight customer-backed preference, notification and administration changes. Exclude authorization, billing, destructive migrations and sensitive exports. Keep staffing, product ownership and release rules stable. Small testable changes support short feedback cycles. [S9]',
++        'Hypothesis: the bundle reduces recurring cost per confirmed outcome by at least 15%, within the example’s absolute cost limit, without worse completion or quality. The sponsor must calibrate these hurdles against actual business economics before launch.',
++        'Weeks 1–2: verify backlog, owner capacity, controls and accounting; freeze the protocol. Weeks 3–6: enroll. Weeks 7–8: finish delivery. Weeks 9–10: complete observations and decide. Every release receives at least fourteen calendar days of follow-up and representative customer use.',
++        'The example cap is $86,000: $16,000 setup, $61,800 comparison/delivery at unchanged labor productivity, and $8,200 contingency. One extension of at most two weeks and $4,000 sits inside that contingency. Reserve funds for follow-up, recovery and safe shutdown.',
++        'Assign the owners from 1.3. Use baseline variability and the minimum worthwhile gain to assess sample adequacy. Forty-eight tasks are a planning assumption, not proof of sufficient precision. Verify the recovery hurdle before funding the trial.')
++    story += page('3.2 Preserve the comparison',
++        'Match twenty-four pairs by complexity, dependencies and engineer familiarity before randomization. Assign one task in each pair to the current workflow and one to the pilot. Each engineer receives four pairs. Balance calendar exposure and retain existing AI assistants in both arms.',
++        'Freeze eligibility and size rules, acceptance criteria, rates, severity definitions and common-cost allocation. Retain every task under its original assignment, including failure, crossover, rescue and abandonment. Keep review priority equal. Record assistance and reused work across arms.',
++        'METR’s methods update describes selection and concurrent-agent measurement problems in its developer experiment. It does not provide an effect estimate for this pilot. The handbook’s equal-queue and shared-learning rules address additional risks inferred for a mixed team. [S7]',
++        'Start the ten-business-day clock when a change is ready and assigned. Waiting, blockers and rescues do not pause it. Record the business calendar and deadline rule. Show actual completion times, unresolved ages and late completions separately.',
++        'Do not treat an unfinished task as a completed task at day ten. NIST’s discussion of censoring distinguishes an observation limit from an observed event time. Applying that distinction here is a methodological analogy. Abandonment also needs its own outcome. [S8]',
++        'The example’s primary outcome is cost per confirmed timely result. Lead-time distributions, queue waiting, paired results and total team output are descriptive diagnostics. With twenty-four tasks per arm, tail percentiles and subgroup estimates need cautious interpretation.')
++    story += page('3.3 Define what counts as accepted',
++        'For this example, A is the number of independently accepted production outcomes delivered within ten business days, retained through at least fourteen calendar days of follow-up, and supported by representative customer task-success evidence.',
++        'A timely production acceptance awaiting follow-up is pending. A late completion never enters A, even if useful. An outcome whose acceptance is later invalidated is removed from A. Predefine invalidation conditions, including defects or customer failures that make the accepted behavior unusable.',
++        'Observe every release, including late releases. At final readout, resolve the follow-up status of every timely acceptance and complete safety/quality follow-up for late releases. Incomplete exposure remains missing evidence. Fourteen quiet days alone do not establish customer usefulness.',
++        'Publish an assignment register with one row per task: original arm, pair, engineer, ready/assignment time, deadline, production acceptance, follow-up completion, customer evidence, invalidation, late or unresolved status, and linked costs.',
++        'Report 24 assignments per arm alongside timely acceptances, pending confirmations, confirmed outcomes, invalidations and deadline failures. Those counts explain why the denominator changes. Failed work retains its costs even when it contributes no confirmed outcome.',
++        'Zero confirmed outcomes fails completion at the final readout. Division by zero is N/A, never a pass. Missing costs, observations or decisions remain pending until reconciled or the trial ends as inconclusive.')
++    story += page('3.4 Count complete costs',
++        'For arm a, C_a includes all recurring assigned-arm effort at locked role rates, tools, review, failures, rescues, support, maintenance, allocated common measurement and outstanding recovery commitments. Setup S is separate. Unit cost U_a = C_a / A_a. Relative cost r = U_P / U_C.',
++        'Charge workflow-specific support to its arm. Allocate common measurement across all assigned tasks, including unsuccessful ones. At the final 24/24 allocation, each arm receives half of common measurement. Preserve the method when outcomes differ.',
++        'The budget forecast F equals incurred allocated cost, plus unspent commitments, plus uncommitted cost to finish. Incurred cost includes setup and both arms. Reconcile usage accruals with invoices. Commitments already included in an arm’s cost must not be counted again in F.',
++        'At unchanged labor productivity, each comparison task costs 10 × $125 + $25 = $1,275; each pilot task costs 10 × $125 + $50 = $1,300. Delivery/comparison therefore costs 24 × ($1,275 + $1,300) = $61,800. With setup, the no-benefit planning case totals $77,800.',
++        'For comparison, a success-dependent plan would assume all forty-eight tasks succeeded and pilot tasks already reached $1,050: $16,000 + 24 × $1,275 + 24 × $1,050 = $71,800. A $72,000 cap would leave $200. Fund the full no-benefit case so the comparison can finish without achieving the target.',
++        'The $86,000 cap is a planning choice with $8,200 reserve, not a guarantee that adverse cases are affordable. Review forecasts weekly. Suspend new enrollment if completion, follow-up and shutdown would exceed the cap.')
++    story += page('3.5 Freeze the decision requirements',
++        'The following hurdles illustrate one sponsor’s replication decision. They are not industry benchmarks or statistically calibrated safety limits. Approve locally justified rules before enrollment. Every requirement must pass; strong cost results cannot cancel a quality failure.',
++        rows=[['MEASURE', 'EXAMPLE FINAL REQUIREMENT'],
++        ['Cost', 'U_P ≤ $1,050 and U_P/U_C ≤ 0.85.'],
++        ['Completion', 'A_P ≥ 22 of 24, and A_P ≥ A_C.'],
++        ['Robustness', 'Pilot/comparison unit-cost ratio < 1 after omitting each engineer’s paired work in turn.'],
++        ['Customer / quality', 'Complete observations; zero High/Medium incidents in either arm; pilot Low issues ≤ comparison Low issues + 1. Count a defect and its rollback once.'],
++        ['Routine evaluation', '15 cases × 3 trials: ≥41/45 successes, each case ≥2/3; predesignated critical cases 3/3.'],
++        ['Controls', '15 failure/control cases pass all 3 trials, including actual denial and mid-run revocation.'],
++        ['Economics', 'Complete costs, demonstrated productive reuse and modeled setup recovery ≤12 weeks.'],
++        ['Integrity', 'All assignments accounted for; no preferential queue treatment, unlogged crossover or unapproved material workflow changes.']])
++    story += page('3.6 Review the pilot every week',
++        'The measurement owner prepares a cumulative snapshot at a fixed cutoff and timezone. In this example, Engineering Operations holds that role. Delivery, product/design and platform/security owners verify their records. The sponsor records the decision and actions. Preserve prior snapshots and explain later corrections.',
++        'Show prior and current values, changes, numerators/denominators, evidence links and Pass/Fail/Pending explanations. Calculate unit costs from cumulative totals, rather than averaging weekly ratios. Display actual spending separately from forecast completion cost.',
++        'Review in this order: control incidents and harm; affordability of completion; missing evidence; completion and customer outcomes; quality and evaluations; cost and recovery. An interim cost ratio cannot authorize expansion while follow-up is pending.',
++        'A prohibited execution, data exposure or High/Medium incident triggers immediate suspension of the affected pilot capability. Preserve evidence and assess recovery. An uncorrectable control failure or unaffordable completion ends the pilot.',
++        'At week ten, passing every requirement supports one separately funded second-team replication with the same scope and permissions. Only missing records or scheduled customer exposure qualify for the single evidence-completion extension, if affordable. Preserve the original readout.',
++        'A complete result failing any final requirement stops expansion. A revised intervention requires a new charter. Evidence still unresolved at week twelve ends as inconclusive. Restore the prior workflow and retain the records. Sponsor approval is a recorded decision, separate from the calculated recommendation.')
++    story += page('3.7 Keep one weekly scorecard',
++        'For every row, show cumulative current/prior values, delta, evidence links, owner and Pass/Fail/Pending. The final requirements are in 3.5. Weekly measurements remain provisional while work or follow-up is incomplete.',
++        rows=[['METRIC / FORMULA', 'SOURCE OF RECORD / OWNER'],
++        ['Unit cost: U_a = C_a / A_a; ratio U_P / U_C', 'Task-linked effort, tool billing and acceptance register. Engineering Operations.'],
++        ['Confirmed completion: A_a / 24; customer evidence resolved / timely acceptances', 'Assignment, production acceptance and customer/follow-up register. Delivery lead and product/design lead.'],
++        ['Engineer sensitivity: recompute both U values after omitting one engineer’s paired work', 'Engineer-linked assignment, cost and outcome records. Engineering Operations.'],
++        ['Quality: events by frozen severity; routine/control successes by case and aggregate', 'Defect/incident records, held-out evaluation traces and permission logs. Delivery and workflow leads; platform/security.'],
++        ['Forecast: incurred + unspent commitments + uncommitted cost to finish', 'Reconciled accruals, commitments and remaining-work estimates. Engineering Operations.'],
++        ['Recovery: S / (B × V); B discounts unproven labor reuse', 'Role-weighted labor and nonlabor costs, demand, demonstrated capacity and completed priority work. Measurement owner and delivery lead.'],
++        ['Integrity: assignments accounted for / 48; protocol exceptions', 'Assignment, review-queue, assistance and workflow-version logs. Measurement owner.']])
++    story += page('3.8 Work through a passing example',
++        '<b>Synthetic week-ten readout:</b> all forty-eight assignments are accounted for. Each arm has twenty-three confirmed outcomes and one unsuccessful change. All follow-up and costs are resolved; there are no remaining commitments or work estimates.',
++        rows=[['MEASURE', 'OBSERVED IN THE EXAMPLE'],
++        ['Unit cost', 'Pilot: $20,700 / 23 = $900. Comparison: $29,900 / 23 = $1,300. Ratio 0.692, or 30.8% lower.'],
++        ['Completion', '23/24 in both arms; all required customer observations completed.'],
++        ['Quality', 'High/Medium: 0. Low: pilot 1, comparison 0.'],
++        ['Evaluations', 'Routine 44/45, every case ≥2/3 and critical cases 3/3; controls 45/45 with all 15 cases passing.'],
++        ['Budget', '$16,000 + $20,700 + $29,900 = $66,600. Headroom $19,400.'],
++        ['Integrity', 'No prohibited execution, preferential review, unlogged crossover or material intervention change.'],
++        ['Recommendation', 'Replicate only after the robustness, recovery and reuse checks on the next page also pass.']])
++    story += page('3.9 Check robustness and recovery',
++        'For the passing example, confirmed outcomes by engineer are [4, 4, 4, 4, 4, 3] in each arm. Pilot costs are [$3,600, $3,600, $3,600, $3,600, $3,600, $2,700]; comparison costs are [$5,200, $5,200, $5,200, $5,200, $5,200, $3,900]. Costs include unsuccessful work and allocated support.',
++        'Omit each engineer’s assigned paired work and associated costs, then recompute both unit costs. All six omission ratios are 0.692. This is a sensitivity check. It does not establish a confidence interval or remove shared-team interference.',
++        'For recovery, use S / (B × V), where B is conservative net benefit per confirmed outcome after discounting unproven labor reuse. V is the lower of trailing-eight-week eligible demand per week and confirmed pilot outcomes divided by six delivery weeks. Do not double observed pilot capacity to assume full-team adoption.',
++        'The example’s demand is six per week, but demonstrated capacity is 23/6 = 3.83. A new team still needs to establish its own capacity, onboarding and support cost.',
++        'Human hours are 150 pilot and 230 comparison: estimated released hours are max(0, 23 × 230/23 − 150) = 80. The next section explains how productive reuse changes the amount credited in the recovery forecast.')
++    story += page('3.10 Discount unproven capacity value',
++        'Let L be comparison minus pilot labor cost per confirmed outcome, using frozen role rates. Let N be comparison minus pilot nonlabor cost per outcome. Define q as the demonstrated productive-reuse fraction of estimated positive released labor value, capped between zero and one. Keep labor increases fully chargeable.',
++        '<b>Conservative benefit:</b> B = min(L, 0) + q × max(L, 0) + N. Evidence for reuse requires completed, predeclared priority work with linked role-specific effort records and no extra staffing or overtime. Those records support a capacity-value proxy; they do not establish cash savings.',
++        'In the passing synthetic case, all eighty estimated released hours have documented productive reuse. q = 1. At $125/hour, pilot labor is $18,750 and comparison labor is $28,750. Nonlabor is $1,950 pilot and $1,150 comparison. B = ($10,000 − $800) / 23 = $400.',
++        'Recovery is $16,000 / ($400 × 23/6) = 10.4 weeks. Every example requirement passes, supporting one bounded replication. The forecast begins after adoption and credits no pilot benefit. Its payback has not been observed.',
++        'If only sixty of eighty hours have demonstrated reuse, q = 0.75. B = ($7,500 − $800) / 23 = $291.30. Recovery becomes 14.3 weeks, failing the twelve-week hurdle. If B or V is nonpositive, there is no finite recovery. Preserve the difference between a useful workload improvement and a passing investment decision.')
++    story += page('3.11 Distinguish revise, stop and suspend',
++        '<b>Revise the evidence collection:</b> one customer observation is missing at week ten. Mark its outcome pending and recompute provisional costs and recovery. If the remaining requirements pass, the observation is scheduled, and the extension fits inside the cap, authorize the single follow-up. Keep the workflow and thresholds fixed.',
++        '<b>Stop after a completed failure:</b> pilot cost instead equals $25,300 with twenty-three confirmed outcomes. Unit cost is $1,100. Its ratio to $1,300 is 0.846, passing the relative hurdle but failing the absolute ceiling. Even with full productive reuse, recovery is $16,000 / ($200 × 23/6) = 20.9 weeks, which also fails.',
++        '<b>Stop as inconclusive:</b> required customer evidence remains unavailable at week twelve. Preserve the missing-data explanation. Do not convert an unobserved outcome into a success or rerun until a favorable result appears.',
++        '<b>Suspend immediately:</b> a prohibited export succeeds during a control test or live task. Stop the affected capability, revoke its access, contain the incident and verify recovery. A low unit cost cannot offset that failure.',
++        'At the planning unit-cost target, savings would be $1,275 − $1,050 = $225 per change. Even with full productive reuse and four outcomes weekly, recovery takes 17.8 weeks. Calibrate the investment hurdle before enrollment.',
++        'Expansion requires separate evidence for more volume, another team, broader permissions and changed staffing. Replication does not approve all four.')
++
++    story += [NextPageTemplate('Body'), P('Working tools', H1)]
++    story += page('A. Prepare the launch record',
++        'Use this worksheet to turn the proposal into a reviewable local decision. Record names and actual values in the team’s source of record before enrollment.',
++        rows=[['RECORD', 'WHAT TO WRITE'],
++        ['Outcome and scope', 'Customer stream, eligible task class, exclusions, current workflow and proposed intervention.'],
++        ['Owners and capacity', 'Named product, delivery, specialist, workflow, platform/security, measurement and sponsor owners; reserved time and absence cover.'],
++        ['Protocol', 'Assignment/randomization method, clock/calendar rules, acceptance/invalidation, customer observation, follow-up, rates and cost allocation.'],
++        ['Controls', 'Granted actions, resources, expiry, budget, audit trail, denial/revocation tests and recovery evidence.'],
++        ['Economics', 'Setup, full no-benefit cost, adverse scenarios, contingency, commitments, safe shutdown and funding decision.'],
++        ['Decision', 'Locally justified hurdles, missing-data rules, readout, permitted extension, suspension/stop conditions and replication scope.']])
++    story += page('B. Close a weekly review',
++        '1. Freeze the cutoff, timezone, assignment register and workflow version. Preserve corrections as new records linked to the original snapshot.',
++        '2. Reconcile actual effort, billing accruals, commitments and remaining work. Keep setup separate and prevent duplicate costs. Update the forecast through final follow-up and shutdown.',
++        '3. Reconcile every assignment to timely, pending, confirmed, invalidated, late or unresolved status. Link the independent acceptance and customer observation records.',
++        '4. Check incidents, control tests, routine evaluations, queue treatment, assistance and configuration changes. Name missing evidence and its owner.',
++        '5. Calculate cumulative unit costs, comparison ratio, completion, engineer sensitivity and modeled recovery. Show N/A for undefined calculations and explain each Pending status.',
++        '6. Record the recommendation, sponsor decision, reasoning and actions with owners and dates. Preserve the evidence used. A later correction creates a new snapshot rather than overwriting history.',
++        'At final readout, archive a complete inventory of assigned work, accepted outcomes, all costs, observations, failures, changes and decisions. State which conclusions the trial cannot support. That record is useful even when the workflow is stopped.')
++    story += [P('Notes and sources', H1)]
++    story += page('How to interpret the sources',
++        'The handbook’s organization, eight principles, task contracts, worksheets and decision sequence are author synthesis. The linked source discussion supplied additional questions and a synthetic pilot. It is preserved in the private candidate evidence and is not used as empirical support.',
++        'The historical reports explain organizational ideas in their original settings. The provider articles explain technical practices and experience. METR supplies a measurement warning in a different population. NIST supplies an event-observation distinction. None validates this handbook’s complete organizational model.',
++        'All numerical planning choices and worked results in Chapter 3 are synthetic. They were recomputed independently. The rules illustrate a decision process; a real sponsor must establish appropriate thresholds, exposure and uncertainty treatment for the actual intervention.',
++        'Sources were accessed October 23, 2026. Saha’s article was read through Safari after the web fetch failed. Date text differed between extractions, so this handbook records October 2026 without assigning a publication day. No inaccessible article body is treated as verified support.',
++        'This first edition has no approved predecessor. Edition comparison is not applicable and there is no reader-facing changelog. The proposed version is 1.0.0. The candidate’s evidence package records source mappings, artwork provenance, artifact hashes and validation results.')
++    source_rows = json.loads((BOOK/'evidence/sources.json').read_text())['sources']
++    for subset, title in [(source_rows[:3], 'Historical and organizational sources'), (source_rows[3:6], 'Context, evaluations and controls'), (source_rows[6:9], 'Experiment and measurement sources')]:
++        story += [heading(title)]
++        for s in subset:
++            story += [P(f"<b>[{s['id']}] {s['title']}</b>"), P(s.get('authors',s.get('publisher','')) + '. ' + (s.get('published') or 'Undated living page') + '.', SMALL),
++                P(f'<link href="{s["url"]}">{s["url"]}</link>', SMALL), P(s['limitation'], SMALL), Spacer(1,4*mm)]
++        story += [PageBreak()]
++    story += [P('Index of terms', H1), P('References below are section numbers. Use the contents and PDF outlines for chapter navigation.'),
++        P('Acceptance: 3.3; see also customer observation. Agent evaluation: 2.2, 3.5. Authority: 2.3; see also revocation.'),
++        P('Capacity value: 1.5, 3.9–3.10. Comparison: 3.2. Context packet: 2.1. Cost allocation: 3.4. Customer observation: 2.4, 3.3.'),
++        P('Enabling capability: 1.3–1.4. Evidence extension: 3.6, 3.11. Follow-up: 3.3. Human attention: 1.2, 1.5.'),
++        P('Incomplete outcomes: 3.2–3.3. Maintenance: 1.4, 2.5. Outcome ownership: 1.2–1.3. Permissions: 2.3.'),
++        P('Recovery: 2.5. Replication: 3.6, 3.9–3.11. Revocation: 2.3, 2.5. Sensitivity: 3.9. Setup recovery: 3.9–3.10.'),
++        P('Shared services: 1.4. Specialist judgment: 1.5. Stop and suspend: 3.6, 3.11. Task contract: 2.4. Weekly scorecard: 3.7. Weekly snapshot: 3.6, tool B.'),
++        Spacer(1,6*mm), P('Use section numbers to locate a term. First-edition candidate · October 23, 2026.', SMALL)]
++    return story

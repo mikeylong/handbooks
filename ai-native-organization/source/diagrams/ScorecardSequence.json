@@ -1,0 +1,51 @@
+{
+  "id": "scorecard-sequence",
+  "layout": "ordered-sequence",
+  "title": "Review the scorecard in this order",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "Controls / incidents",
+      "detail": "Action and recovery traces; incident severity; routine and control results by case. Suspend affected capability for prohibited execution, exposure or High/Medium incidents."
+    },
+    {
+      "id": "2",
+      "label": "Affordability",
+      "detail": "Incurred cost, remaining commitments and cost to finish. Preserve funds for follow-up and shutdown."
+    },
+    {
+      "id": "3",
+      "label": "Evidence / completion",
+      "detail": "All assignments, outcome states and required observations. Explain every missing record."
+    },
+    {
+      "id": "4",
+      "label": "Unit cost / sensitivity",
+      "detail": "C_a / A_a and pilot/comparison ratio; recalculate after each engineer omission. Preserve failed-task costs."
+    },
+    {
+      "id": "5",
+      "label": "Recovery / integrity",
+      "detail": "Setup, conservative net benefit, eligible demand, demonstrated capacity and reuse; protocol deviations and version history."
+    }
+  ],
+  "edges": [
+    {
+      "from": "1",
+      "to": "2"
+    },
+    {
+      "from": "2",
+      "to": "3"
+    },
+    {
+      "from": "3",
+      "to": "4"
+    },
+    {
+      "from": "4",
+      "to": "5"
+    }
+  ],
+  "textEquivalent": "Review the scorecard in this order. 1. Controls / incidents: Action and recovery traces; incident severity; routine and control results by case. Suspend affected capability for prohibited execution, exposure or High/Medium incidents. 2. Affordability: Incurred cost, remaining commitments and cost to finish. Preserve funds for follow-up and shutdown. 3. Evidence / completion: All assignments, outcome states and required observations. Explain every missing record. 4. Unit cost / sensitivity: C_a / A_a and pilot/comparison ratio; recalculate after each engineer omission. Preserve failed-task costs. 5. Recovery / integrity: Setup, conservative net benefit, eligible demand, demonstrated capacity and reuse; protocol deviations and version history."
+}

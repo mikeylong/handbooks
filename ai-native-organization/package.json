@@ -1,0 +1,14 @@
+{
+  "name": "ai-native-organization-handbook",
+  "private": true,
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/handbooks",
+    "directory": "ai-native-organization"
+  },
+  "scripts": {
+    "build": "node ../scripts/validate-book-release.mjs ai-native-organization",
+    "validate": "node ../scripts/validate-book-release.mjs ai-native-organization"
+  }
+}

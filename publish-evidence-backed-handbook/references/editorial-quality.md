@@ -28,6 +28,8 @@ Organize sections around decisions, not around an inventory of technologies. A s
 
 ## Examples and practical tools
 
+Choose the form that explains the content. A diagram should show a process, sequence, decision, relationship, ownership arrangement or feedback loop. A table should support comparison across consistent fields, numerical results, or lookup/reference information. Breaking up a page of prose is not by itself a reason to add a table. Avoid replacing every table with boxes: review the reader's task and preserve the information and accessible equivalent.
+
 Examples should expose a real contract, state transition, budget, checklist, matrix, or failure path. Avoid examples that merely repeat surrounding prose in a box.
 
 Code and schemas must be internally coherent and safe enough to teach from. State what is illustrative, pseudocode, provider-specific, or incomplete. Consequential actions require authorization, validation, idempotency, and result verification outside model prose.
@@ -53,3 +55,4 @@ Before approving a section, confirm:
 5. Does the example demonstrate the rule rather than decorate it?
 6. Is synthesis clearly separated from documented fact?
 7. Can any paragraph be removed without loss?
+8. Does each table support genuine comparison, numbers or lookup, and would a diagram better explain any process or relationship? Record a retained/replaced rationale for each visual.

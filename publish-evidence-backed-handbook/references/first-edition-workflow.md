@@ -1,0 +1,9 @@
+# Prepare a first hosted edition
+
+Use `scripts/build-first-edition-reader.mjs /absolute/config.json` when a handbook has no approved predecessor. Keep `baseline: null` explicit. Supply the book root, a new isolated output directory, Python executable, collection assets and font directories, exact light/dark PDFs, measured page maps, candidate validation reports, parity proof, frozen source ledger and its SHA-256, and a first-edition `not-applicable` changelog decision. Each appearance input has `pdf`, `pageMap`, and `validation` absolute paths. The book calls `flowable_reader.main` through a thin `source/build_reader.py` adapter.
+
+The assembler measures both PDFs, checks the supplied structural evidence, freezes a raw reader package and public file allowlist, creates both download variants and the Markdown edition, and binds the final reader in a full payload inventory. All approval fields remain candidate/false. It never invents an approved baseline. The raw reader remains the input for later collection assembly; the themed review website is a separate output.
+
+Run `node scripts/test-first-edition-reader.mjs /absolute/package` and `validateFirstEditionPackage(package)` before review. Those checks establish package integrity, not editorial quality, visual acceptance, browser behavior, or permission to publish. Complete the governing PDF, appearance, responsive reader, printing, and portable fixture gates separately. Keep the first-edition changelog decision distinct from a peer-candidate change report.
+
+Collection repositories can overlay this isolated site onto an isolated build of their approved gallery. Keep that adapter with the collection; reusable reader behavior stays in this toolkit. Never add the title to a public catalog or approval registry until publication is explicitly authorized.

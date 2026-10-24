@@ -40,9 +40,9 @@ export function readerMarkdown(html,edition){
  if(!body.some(n=>has(n,'chapter')))throw Error('Markdown edition has no chapters');
  const sections=[],anchors=new Map(),seen=new Map();
  for(const top of body)walk(top,n=>{
-  if(/^h[2-6]$/.test(n.tag)){
+  if(/^h[2-6]$/.test(n.tag)||has(n,'reference-entry')){
    const title=headingText(n),base=slug(title),number=seen.get(base)??0;seen.set(base,number+1);
-   n.markdownAnchor=base+(number?'-'+number:'');sections.push({title,anchor:n.markdownAnchor,level:Number(n.tag[1])});
+   n.markdownAnchor=base+(number?'-'+number:'');sections.push({title,anchor:n.markdownAnchor,level:has(n,'reference-entry')?4:Number(n.tag[1])});
   }
  });
  for(const top of body)walk(top,n=>{if(n.attrs?.id){let target;n.markdownAnchor?target=n:walk(n,c=>{if(!target&&c.markdownAnchor)target=c;});if(target)anchors.set(n.attrs.id,target.markdownAnchor);}});
@@ -57,6 +57,10 @@ export function readerMarkdown(html,edition){
   if(n.tag==='#text')return esc(n.text.replace(/\s+/g,' '));
   if(n.attrs?.['aria-hidden']==='true'||['script','style','nav','source','button','input','defs'].includes(n.tag)||has(n,'diagram-print'))return '';
   const inner=()=>n.children.map(render).join('');
+  if(has(n,'reader-concept-diagram')){
+   if(!n.attrs['data-diagram-title']||!n.attrs['data-text-equivalent'])throw Error('Concept diagram lacks text equivalent');
+   return '\n\n**'+esc(n.attrs['data-diagram-title'])+'**\n\n'+esc(n.attrs['data-text-equivalent'])+'\n\n';
+  }
   if(has(n,'reader-screenshot')){
    const id=n.attrs['data-screenshot-figure'];
    if(!/^[A-Za-z0-9][A-Za-z0-9-]*$/.test(id??'')||figureIds.has(id))throw Error('Invalid or duplicate screenshot figure');
@@ -98,6 +102,7 @@ export function readerMarkdown(html,edition){
    const paragraphs=descendants(content,'p');prompts++;
    return '\n\n#### Prompt: '+esc(plain(titleNode).trim())+codeBlock((paragraphs.length?paragraphs.map(p=>plain(p).trim()).join('\n'):plain(content).trim()));
   }
+  if(has(n,'reference-entry'))return '\n\n#### '+inner().trim()+'\n\n';
   if(/^h[1-6]$/.test(n.tag))return '\n\n'+'#'.repeat(Math.max(2,Number(n.tag[1])))+' '+esc(headingText(n))+'\n\n';
   if(n.tag==='pre'){const code=descendants(n,'code')[0];return codeBlock(plain(n),(code?.attrs.class??'').match(/language-([\w-]+)/)?.[1]??'text');}
   if(n.tag==='code'){const t=plain(n).trim(),f='`'.repeat(Math.max(1,...[...t.matchAll(/`+/g)].map(m=>m[0].length+1)));return f+(t.startsWith('`')?' ':'')+t+(t.endsWith('`')?' ':'')+f;}

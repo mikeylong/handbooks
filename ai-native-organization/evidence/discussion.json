@@ -1,0 +1,344 @@
+{
+  "threadId": "01a16a04-2823-79a2-87b8-fb54d1be7198",
+  "title": "AI Native Organization Handbook",
+  "retrieved": "2026-10-23",
+  "role": "User-selected discussion; proposals and synthetic examples, not empirical findings",
+  "turns": [
+    {
+      "id": "01a16a04-2c17-7721-9704-94ddef741740",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a04-2fdb-7352-b724-e1681966984f",
+          "content": [
+            {
+              "type": "text",
+              "text": "One of the earliest and most influential foundational texts in the cloud-native movement is **Matt Stine's work at Pivotal pdf**\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adba70c400881959d0d57aa3d2fc82a",
+          "text": "You’re likely referring to **_Migrating to Cloud-Native Application Architectures_ by Matt Stine**, published by O’Reilly in **2015**, while he was at Pivotal.\n\n**[Read or download the PDF (58 pages)](https://www.f5.com/content/dam/f5/corp/global/pdf/ebooks/Migrating_to_Cloud-Native_Application_Architecutres_NGINX.pdf)** — hosted by F5/NGINX.\n\nIt covers twelve-factor applications, microservices, self-service infrastructure, API-based collaboration, and the organizational changes needed to adopt cloud-native architecture.",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a05-8d18-7532-940f-648388323d8a",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a05-8d4d-79e1-8641-53c4f07c8658",
+          "content": [
+            {
+              "type": "text",
+              "text": "Summarize the key ideas in Matt Stine’s report.\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adba7950e5481958f4d7cb33f80617b",
+          "text": "Stine’s central argument is that **cloud-native architecture combines software design, automated infrastructure, and team autonomy to make change faster and safer**. The key ideas are:\n\n1. Aim for **speed, safety, scale, and mobility**: frequent delivery, reliable operation, elastic capacity, and access across devices.\n2. Use **twelve-factor applications**: externalize configuration and state, automate deployment, and make processes easy to start, replace, and scale.\n3. Organize **microservices around business capabilities**. Each service owns its data and exposes versioned APIs so teams can deploy independently.\n4. Provide a **self-service platform** for provisioning, deployment, scaling, health checks, logs, and metrics.\n5. **Design for failure** through visibility, fault isolation, circuit breakers, and automated recovery. Deliberately inject failures and fix weaknesses to build antifragility.\n6. Give **long-lived, cross-functional teams** responsibility for building and operating their services, supported by lightweight shared conventions.\n7. Practice **continuous delivery**: automated pipelines keep changes deployable; the business decides when to release.\n8. **Migrate incrementally**: build new features as services, shield them from legacy internals, and gradually extract existing capabilities. Keep stable legacy components when further extraction offers insufficient benefit. [Read the report](https://www.f5.com/content/dam/f5/corp/global/pdf/ebooks/Migrating_to_Cloud-Native_Application_Architecutres_NGINX.pdf).",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a06-af40-7861-9187-367f4fc15b9e",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a06-af78-73e3-abf7-005e8c26c7f7",
+          "content": [
+            {
+              "type": "text",
+              "text": "next summarize [https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf](https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf)\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adba80209ac8195af4d85ff34c11fc7",
+          "text": "[**Scaling Agile @ Spotify**](https://blog.beule.fr/contenus/2013/02/SpotifyScaling.pdf), by **Henrik Kniberg and Anders Ivarsson (2012)**, describes how Spotify combined small-team autonomy with coordination across a growing organization.\n\n1. **Squads own delivery end to end.** Stable, cross-functional teams have long-term missions, choose their methods, and design, build, test, and release.\n2. **Tribes group related squads.** They support collaboration while staying small enough to limit bureaucracy.\n3. **Chapters develop specialist skills.** People with similar expertise connect within a tribe; chapter leads also handle people management.\n4. **Guilds share knowledge across the company.** Anyone interested can join, connecting people across tribes to share tools and avoid duplicated effort.\n5. **Autonomy requires alignment.** Product owners coordinate priorities and roadmaps; squads choose how to deliver. Teams track and address dependencies that block progress.\n6. **Operations helps squads release independently.** Infrastructure and tooling reduce handoffs, while system owners help maintain architectural integrity.\n7. **Squads learn through early releases, experiments, retrospectives, hack days, and team surveys.** Feedback guides changes to products and working methods.\n\nThe authors describe **an evolving snapshot of Spotify in 2012**. Full autonomy remained an aspiration, and the organization was still adjusting to the structure.",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a08-5f82-7243-9990-4d25a2a8bb43",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a08-5fb9-71d0-90e1-3de8d05a7de8",
+          "content": [
+            {
+              "type": "text",
+              "text": "next summarize [https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations](https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations)\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adba8646f0481958c9f078aea303834",
+          "text": "Dilip Saha’s [article](https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations) proposes **small product teams supported by reusable specialist AI capabilities and a shared platform**, aiming to reduce coordination while preserving quality and accountability.\n\n1. **Builder teams own customer outcomes.** They frame problems, orchestrate agents, verify results, release changes, and remain responsible for maintenance and production.\n2. **Enabling teams make specialist expertise reusable.** Web, mobile, and backend specialists develop agent workflows, evaluations, and technical controls, supporting difficult decisions.\n3. **Platform teams provide infrastructure and context.** Delivery pipelines, environments, security, observability, and governed knowledge access support humans and agents.\n4. **Human judgment remains essential.** Builders need enough engineering depth to challenge generated code, recognize uncertainty, and seek specialist help.\n5. **Shared agent workflows need production controls.** Versioning, evaluations, controlled rollouts, and rollback limit the impact of defects across teams.\n6. **Self-service must reduce waiting.** Enabling teams should help builders deliver independently; approving every change would recreate bottlenecks.\n7. **Test the model on one bounded customer stream.** Measure delivery, customer outcomes, quality, blocked time, operational workload, and total costs, including shared infrastructure and expertise.\n\nSaha presents this as **an unproven organizational hypothesis** that builds on Team Topologies.",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a09-d7d8-7de0-ac24-02d9044b3f1b",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a09-d80f-7f43-bc54-fea474dcd5a9",
+          "content": [
+            {
+              "type": "text",
+              "text": "Given these trends over time, what are 1st principles for ai-native organizations?\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adba90c83708195bf7065f74b3a362c",
+          "text": "My synthesis: **AI-native organizations should give teams the context, authority, and tools to complete useful work, with clear responsibility for the results.** Human attention, coordination, incomplete knowledge, and the cost of mistakes remain constraints.\n\nThe three texts approach those constraints from different directions:\n\n| Source | Organizational idea |\n| --- | --- |\n| [Spotify, 2012](https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf) | Stable teams own delivery; chapters and guilds preserve shared expertise. |\n| [Stine, 2015](https://www.oreilly.com/content/migrating-to-cloud-native-application-architectures/) | Independent services and self-service platforms let teams deliver and operate with fewer handoffs. |\n| [Saha, 2026](https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations) | Specialist expertise could become reusable agent capabilities supporting product teams. This remains a proposed model. |\n\nI would derive eight principles:\n\n1. **Organize around outcomes people can own.** Give each team a coherent customer problem and responsibility through delivery, operation, and improvement. Keep that accountability stable as work moves between people and agents.\n\n2. **Optimize the entire path from need to result.** Faster implementation helps only when the completed outcome improves. Measure elapsed time, customer value, quality, rework, and total cost across the whole workflow.\n\n3. **Treat context as maintained infrastructure.** People and agents need current goals, domain knowledge, interfaces, policies, and operating history. Give that knowledge owners, make it accessible to authorized people and agents, and update it as the organization learns.\n\n4. **Budget human attention explicitly.** Additional automated work creates demands for review, decisions, and exception handling. Bound work in progress and preserve the expertise people need to challenge results and recover when automation fails.\n\n5. **Define verification alongside delegation.** Establish acceptance conditions before execution, then check results against tests, operational evidence, or customer feedback. Agreement between agents alone cannot establish correctness or usefulness.\n\n6. **Match autonomy to demonstrated capability and consequences.** Define decision rights, permitted actions, spending limits, escalation conditions, and recovery paths. A named person or team remains accountable for the outcome as execution becomes more automated.\n\n7. **Share capabilities while keeping outcome ownership clear.** Reuse should reduce total effort and waiting. Shared workflows need owners, evaluations, versioning, controlled rollout, and rollback because failures can spread through shared dependencies.\n\n8. **Change the organization through measured experiments.** Test a bounded workflow against a baseline, including review, coordination, incidents, and shared maintenance costs. Use the results to improve context, workflows, and controls before expanding the organizational design.",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a0d-3d25-7ca1-ba1f-6c0a844e1e29",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a0d-3d50-7f70-8674-f49d8ac07fe6",
+          "content": [
+            {
+              "type": "text",
+              "text": "Which of these principles are uniquely AI-native, and which are continuations of the cloud-native and Spotify models?\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adba9af14ec8195bcf6d46aafec62fb",
+          "text": "**None of the eight is uniquely AI-native as a first principle.** Most are continuations. The distinctive changes concern how organizations provide context, verify variable outputs, and control authority when agents perform the work.\n\n[Spotify](https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf) already emphasized autonomous teams, outcome ownership, and shared expertise. [Stine](https://www.oreilly.com/content/migrating-to-cloud-native-application-architectures/) emphasized self-service platforms, explicit interfaces, automation, and recovery. [Saha](https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations) proposes extending those ideas through reusable agent capabilities.\n\n| Principle | Classification | What AI changes |\n| --- | --- | --- |\n| **1. Own outcomes end to end** | Direct continuation | A team remains accountable when agents perform substantial parts of the work. |\n| **2. Optimize the whole workflow** | Direct continuation | Include agent costs, review, rework, and integration when assessing delivery performance. |\n| **3. Maintain context as infrastructure** | Distinctive AI extension | Goals, policies, contracts, and current state become inputs to agent execution. Their accuracy, freshness, and authority need explicit management. |\n| **4. Budget human attention** | Existing constraint under greater pressure | Automated work can create more proposals and exceptions than people can evaluate. Bound work in progress by verification and operating capacity. |\n| **5. Verify alongside delegation** | Distinctive AI extension | Evaluate representative tasks as models, instructions, tools, and context change. Check outputs against acceptance criteria and external evidence. |\n| **6. Bound autonomy** | Distinctive AI extension | Enforce permissions, budgets, and escalation through the systems agents use. An agent’s interpretation of its instructions cannot be the sole control. |\n| **7. Share capabilities; retain outcome ownership** | Direct continuation | Shared capabilities now include agent workflows and evaluations, alongside infrastructure, tools, and specialist support. |\n| **8. Learn through measured experiments** | Direct continuation | Test AI workflows and team designs against baselines that include quality, customer outcomes, and total operating cost. |",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a11-26a5-7963-9103-3ec20a985a73",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a11-26db-70c3-8ee7-62147f7201df",
+          "content": [
+            {
+              "type": "text",
+              "text": "What would an organization built around those three AI-specific extensions look like in practice?\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbaae17ad4819584d6dd8c7ec05d09",
+          "text": "I’d build it as **product teams with end-to-end ownership, supported by a shared platform for context, evaluation, and controlled execution.** The three extensions would become explicit responsibilities across those teams.\n\nProduct teams own customer problems, product decisions, releases, and production outcomes. A platform team provides reusable infrastructure. Specialists in engineering, design, security, and operations maintain domain knowledge, evaluation cases, and reusable agent workflows, while helping teams resolve difficult decisions.\n\n| Capability | Product teams and specialists own | The shared platform provides |\n| --- | --- | --- |\n| **Context** | Current goals, domain rules, architecture decisions, interface contracts, and named knowledge owners. | Permission-aware retrieval, source references, version and freshness information, and records of the context used for each task. |\n| **Evaluation** | Acceptance criteria, representative tasks, known failure cases, and judgments about customer usefulness. | Evaluation runners, regression checks, model/workflow version tracking, and production monitoring. |\n| **Controlled autonomy** | Delegation scope, required evidence, escalation conditions, and release authority within policies set by security and operations. | Agent identities, restricted tool access, spending limits, action logs, revocation, and recovery mechanisms. |\n\nThe technical foundations have practical precedents in work on [context engineering](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents), [agent evaluation](https://www.anthropic.com/research/demystifying-evals-for-ai-agents), and [enforced containment](https://www.anthropic.com/research/how-we-contain-claude). The ownership arrangement above is my proposed organizational design.\n\nFor example, consider **adding saved searches across web, mobile, and backend**:\n\n1. **The product team defines success.** Searches must persist across sessions, remain private to their owner, and show a clear failure state when saving is unavailable. A named team member owns the change through production.\n\n2. **The agent receives context for the change.** It can retrieve current contracts, design patterns, authorization rules, and system information. Conflicting requirements or obsolete interface contracts trigger clarification with the responsible owner.\n\n3. **The runtime grants bounded access.** For an initial pilot, the agent can edit a branch, run tests, and create a preview. Production access and deployment require separate authorization enforced by the tools.\n\n4. **The work is checked against the intended outcome.** Checks exercise persistence, access control, failure handling, and the complete user journey. The team reviews the customer experience. Separately, representative evaluations test whether changes to the agent workflow have degraded its capability.\n\n5. **An authorized release produces feedback.** The team observes production behavior and customer use. Failures become corrections to context, evaluation cases, workflows, or permissions, with owners assigned to those corrections.\n\nPlanning reserves capacity for maintaining knowledge and evaluations. Specialists are assessed partly on whether their reusable capabilities help teams deliver independently. Leadership reviews completed customer outcomes, elapsed time, human review effort, defects, recovery, and total operating cost.\n\nI would pilot this on one customer stream before changing team sizes or expanding agent authority. Expansion would depend on demonstrated improvements with acceptable quality and operating cost.",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a15-3ae8-7911-9358-8cfe7a8391bc",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a15-3b1b-7991-b059-04b3123e8b35",
+          "content": [
+            {
+              "type": "text",
+              "text": "How would you pilot this in an existing engineering organization, and what evidence would justify scaling it?\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbac7480d081959c2e8775a059b038",
+          "text": "I’d run **a bounded delivery experiment with one existing team**, keeping staffing and product ownership stable. The hypothesis is that maintained context, reliable evaluation, and enforced delegation improve completed customer outcomes at an acceptable total cost.\n\n1. **Choose a recurring, representative workflow.** Use small changes within one customer stream, such as search improvements. Include ordinary maintenance and edge cases. Assign a product owner, an agent-workflow maintainer, and owners for shared infrastructure and access policies. Small, independently testable changes support faster feedback. [DORA](https://dora.dev/capabilities/working-in-small-batches/)\n\n2. **Establish a comparable baseline.** Match changes by complexity, dependencies, and team familiarity. Randomize eligible items between the current and pilot workflows where practical; otherwise use a contemporaneous matched group. Keep existing AI tools available in both workflows. Record exclusions, abandoned tasks, and human assistance. This tests the three capabilities together. Task selection and concurrent agent work can distort productivity estimates. [METR’s methodological update](https://metr.org/blog/2026-02-24-uplift-update/)\n\n3. **Implement the three capabilities narrowly.** Maintain the context needed for that workflow; create representative agent evaluations and independently maintained acceptance checks; enforce tool permissions, budgets, revocation, and recovery. Initially, agents can edit branches, run checks, and prepare previews. Existing release authority remains in place.\n\n4. **Run real changes through production and follow-up.** Record the model, context, tools, permissions, and support used for each change. Treat major configuration changes as a new trial phase. Exercise stale context, incorrect outputs, denied actions, and recovery in controlled tests. Combine evaluations with production observation and user feedback. [Agent-evaluation guidance](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)\n\n5. **Agree on decision rules before assessing results.** Set the minimum worthwhile improvement, quality limits, cost ceiling, and stop conditions using the baseline. Review weekly. A six-to-eight-week initial window is a planning suggestion; the decision requires enough comparable work and production follow-up to address uncertainty.\n\nI would use this evidence to decide whether to expand:\n\n| Evidence | What would justify expansion |\n| --- | --- |\n| **Delivery time** | A repeatable reduction in elapsed time from an agreed customer need to an accepted production result, measured from issue and release records. Include waiting and review; examine the median and slower changes. |\n| **Customer value and quality** | Changes meet acceptance criteria and work for customers; defects, rework, rollbacks, and operational burden stay within pre-agreed limits over a consistent follow-up window. |\n| **Human effort and complete cost** | Benefits survive counting clarification, review, specialist support, exception handling, context/evaluation maintenance, agent use, and infrastructure. Report setup and recurring costs separately. |\n| **Control and recovery** | Prohibited actions are blocked in tested scenarios, known incorrect outputs are detected, and revocation and recovery work. A quiet pilot alone cannot establish a low rate of rare failures. |\n| **Transferability** | Another team achieves comparable results without depending on the original champions or substantial undocumented support. |\n\nExpand in separate steps:\n\n1. **More volume:** confirm review queues, support demand, and operating costs remain manageable.\n2. **More teams:** demonstrate transferability and include onboarding costs.\n3. **Broader permissions:** evaluate each new action and demonstrate its enforcement and recovery independently.\n4. **Different team structures:** require sustained evidence of a workload shift, such as specialist effort moving from repeated implementation to maintaining shared capabilities.\n\nSuspend the affected capability if a control is bypassed or a serious failure occurs. If benefits disappear after full cost accounting, revise or retire the workflow while preserving the evidence.\n\nvisualize{\"path\":\"/Users/mike/.codex/visualizations/2026/10/23/01a16a04-2823-79a2-87b8-fb54d1be7198/ai-native-pilot-sources.html\"}",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a20-c36c-7ef0-b837-13d5d519aad2",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a20-c3b2-7e33-83d6-16a2db8edec4",
+          "content": [
+            {
+              "type": "text",
+              "text": "Turn this into a one-page pilot charter with the hypothesis, scope, owners, timeline, metrics, and explicit criteria to scale, revise, or stop. \n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbaf115468819592eee8b6ef87ac48",
+          "text": "# AI-native engineering pilot charter\n\n**Hypothesis:** Maintained context, continuous evaluation, and enforced agent permissions reduce delivery time for comparable changes while preserving customer value, quality, and acceptable total cost.\n\n**Scope:** One existing team, one customer stream, and one recurring change class: **[identify]**. Include maintenance and edge cases. Keep staffing, product ownership, and release rules stable. Agents may edit branches, run checks, and prepare previews within enforced access and spending limits.\n\n**Owners:** Assign named people before launch.\n\n| Role | Accountability |\n| --- | --- |\n| **Sponsor** | Budget and scale/revise/stop decision. |\n| **Product lead** | Customer acceptance, release, and production outcomes. |\n| **Workflow maintainer** | Context, agent evaluations, and configuration records. |\n| **Platform/security owner** | Permission enforcement, suspension, revocation, and recovery. |\n| **Measurement owner** | Comparable task allocation, complete cost accounting, and results. |\n\n**Timeline:** Proposed eight-week review point, subject to completed production follow-up.\n\n1. **Weeks 1–2:** Establish baseline, comparison method, and decision thresholds. Prepare context, independent acceptance checks, evaluations, and controls.\n2. **Weeks 3–6:** Deliver real changes; review weekly. Randomize eligible tasks where practical; otherwise match contemporaneous work. Existing AI tools remain available in both workflows.\n3. **Weeks 7–8:** Complete follow-up and decide. Any extension requires an evidence goal, owner, deadline, and budget. Major workflow changes start a new trial phase.\n\n**Metrics:** Approve every bracketed limit before launch.\n\n| Measure | Definition and threshold |\n| --- | --- |\n| **Delivery time** | Elapsed time from agreed need to accepted production delivery, including waiting/review. Median improvement ≥ **[X%]**; 90th-percentile regression ≤ **[Y%]**. |\n| **Value and quality** | Customer acceptance/usefulness measure **[V]**; permitted regression in defects, rework, rollbacks, and operating burden **[Q]**, over **[follow-up period]**. |\n| **Complete cost** | Cost per accepted change, including failed attempts, human rescues, shared support, maintenance, agents, and infrastructure. Separate setup cost. Recurring ceiling **[C]**; payback horizon **[H]**. |\n\nRecord all attempted, abandoned, and reverted changes, human assistance, and configuration versions. Agree the minimum evidence requirement **[M]** from baseline variability and the improvement worth detecting.\n\n**Decision criteria**\n\n1. **Scale:** All metric/evidence requirements pass and controls pass defined failure, denial, revocation, and recovery tests. Validate a second team before wider rollout. Broader permissions and staffing changes require separate decisions.\n2. **Revise:** Evidence is inconclusive or fixable context, evaluation, review, or support bottlenecks absorb gains. Assign a correction owner, budget, and retest deadline; retain current permission limits.\n3. **Suspend/stop:** Immediately suspend the affected capability after a control bypass or breach of agreed harm limits. Stop when quality/cost breaches lack a credible correction or repeated revisions fail to establish benefit. Revoke access, restore the prior workflow, and retain evidence.",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a27-b20f-7391-b5b0-c18a88589c2c",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a27-b242-77e0-904c-652b6670462a",
+          "content": [
+            {
+              "type": "text",
+              "text": "Fill in the charter for a realistic example pilot, with concrete metric targets, cost limits, and evidence thresholds. Make the assumptions explicit.\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbb27df8348195b470ba6b78145067",
+          "text": "# Example pilot charter: SaaS workspace administration\n\n**Assumptions:** Illustrative planning figures, not measured results or benchmarks. Assume six engineers, a PM, and a designer; existing CI/tests/access controls; current AI assistants; and 48 genuine customer-backed changes. Blended loaded labor: **$125/hour**.\n\n**Hypothesis:** Reduce median delivery time ≥25% and recurring cost ≥15%, while meeting all quality and control gates.\n\n**Scope/authority:** Workspace preferences, notifications, and administration UI fixes. Exclude authentication, authorization, billing, destructive migrations, and sensitive exports. Agents can edit branches, test, and preview; protected acceptance checks and production releases remain outside their authority. Staffing and product ownership stay fixed.\n\n**Owners:** VP Engineering: sponsor and decision; team manager: delivery/production; staff engineer: context/evaluations; platform/security lead: controls/recovery; Engineering Operations: comparison/cost accounting.\n\n**Timeline:** Weeks 1–2: setup; 3–6: enroll/deliver; 7–8: finish delivery; 9–10: observation and decision. Every release needs **14 days’ follow-up**, even if review moves later.\n\n**Evidence design:** Pre-match 48 tasks into **24 pairs** by size, dependencies, and engineer familiarity; randomly assign one task per pair to each workflow. Keep current AI tools in both. Record all failures, rescues, and versions. Unaccepted tasks after ten business days count as failures and ten days in the capped lead-time measure; report longer actual durations separately. Major workflow changes restart the evidence phase.\n\n| Measure | Assumed baseline | Required result |\n| --- | --- | --- |\n| **Delivery** | Median 4 business days; 90th percentile 8. | Median ≤75% of concurrent comparison; 90th percentile ≤comparison +1 day. At least **18/24 paired comparisons** favor the pilot. |\n| **Value/quality** | Existing customer-backed acceptance criteria and release checks. | **≥22/24 accepted per arm; pilot acceptance no lower.** The product lead verifies each accepted customer journey in production; independent checks pass for every release. Zero High/Medium incidents; at most one additional Low escaped defect or rollback versus comparison. |\n| **Recurring cost** | 10 human hours × $125 + $25 tools = **$1,275/accepted change**. | **≤$1,050 AND ≤85% of comparison per accepted change.** Allowance: eight human hours + $50 tools, including failed work, review, rescues, and shared maintenance. |\n| **Agent/controls** | Established in setup. | **30 predefined scenarios × three trials:** 15 routine cases achieve ≥41/45 successes; 15 failure/control cases pass 45/45. Include stale context, incorrect outputs, prohibited actions, revocation, and recovery. |\n\n**Budget:** Setup ≤**$16,000**: 120 hours × $125 + $1,000 other expenses. Full allocated pilot cap **$72,000**, including comparison work; planned **$71,800** if all 48 changes are accepted at the stated unit costs. Excludes unrelated team work. Pause new enrollment if projected spending reaches $72,000.\n\nAt $225 capacity value per accepted change and eight weekly after adoption, modeled setup payback is **8.9 weeks**; require ≤12 weeks using observed costs and credible volume. Released labor capacity is not cash savings.\n\n**Decision criteria**\n\n1. **Scale:** All gates pass, including ≤12-week payback. Fund one second-team replication with unchanged permissions. Wider rollout, broader authority, and staffing changes require further evidence and separate decisions.\n2. **Revise:** Evidence is inconclusive or a fixable bottleneck causes a missed gate. Allow one approved follow-up/retest extension: **two weeks, $4,000 maximum**. A new task cohort requires a new charter.\n3. **Suspend/stop:** Immediately suspend for a successful prohibited action, data exposure, or High/Medium incident. Stop for an uncorrectable failure, an unapproved budget breach, or failed retest. Restore the prior workflow and preserve evidence.\n\nThese thresholds fund a bounded replication; 48 tasks cannot establish rare-event safety.\n\nMethod basis: [DORA](https://dora.dev/capabilities/working-in-small-batches/), [METR](https://metr.org/blog/2026-02-24-uplift-update/), and [agent-evaluation guidance](https://www.anthropic.com/research/demystifying-evals-for-ai-agents). The numerical targets are proposed decision rules.\n\nvisualize{\"path\":\"/Users/mike/.codex/visualizations/2026/10/23/01a16a04-2823-79a2-87b8-fb54d1be7198/ai-native-example-sources.html\"}",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a34-9cb0-7113-9b02-39838f1979e3",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a34-9ce6-7903-b884-29972d3cbf68",
+          "content": [
+            {
+              "type": "text",
+              "text": "Stress-test this pilot charter. Which assumptions and thresholds are weakest, where could the results be misleading, and what would you change before running it?\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbb617eaec8195bada44831d3f8f47",
+          "text": "I would revise it before launch. **The biggest flaw is funding the experiment as though it already achieves its savings target.** The 25% speed, 15% cost, and 12-week payback hurdles also need calibration against actual team data and business requirements.\n\n1. **High: The budget can prevent a useful negative result.**\n\n   The $71,800 forecast assumes pilot changes already achieve the $1,050 target. The $72,000 cap leaves **$200 contingency**. With unchanged labor and $50 tooling per pilot change, the experiment costs **$77,800**. The trial could stop before completing its comparison, leaving expensive or difficult work unresolved.\n\n   **Change:** Fund the complete no-benefit scenario plus an explicit reserve. For example, an **$86,000 total allocated cap** covers $77,800 plus about 10% contingency, including the existing $4,000 follow-up allowance within that reserve. Keep the $1,050 performance target separate from the experiment’s funding limit.\n\n2. **High: The delivery gates can hide failure and create false precision.**\n\n   An unaccepted change and a day-ten completion both receive ten days. This scoring rule suppresses the tail and does not measure actual delivery time. With 24 tasks per arm, p90 is determined by the third- or fourth-slowest task, depending on the percentile definition. Eighteen paired wins provides directional evidence; it does not establish a 25% benefit or its precision.\n\n   **Change:** Separate “accepted within ten days” from actual time to acceptance. Retain unresolved, abandoned, and rescued work explicitly; predeclare how incomplete observations enter the analysis. Choose one primary effect, anchor the minimum worthwhile gain in business economics, then use observed variability to assess sample adequacy and report uncertainty. Treat p90 as exploratory. Freeze the analysis before enrollment. [NIST’s censoring guidance](https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm) explains the distinction between unfinished observations and observed completions.\n\n3. **High: The evaluation score can pass a systematically broken case.**\n\n   **41/45 successes can include one scenario failing all three runs**, another failing once, and the remaining thirteen passing. Likewise, 45/45 negative trials cover fifteen scenarios repeated three times, rather than 45 distinct challenges.\n\n   **Change:** Set case-level requirements and designate must-pass scenarios. Keep held-out cases separate from workflow tuning. Independently test the actual permission boundary by attempting prohibited actions, including revocation during execution. Report failures by scenario alongside aggregate scores. Representative evaluations and production feedback remain complementary. [Agent-evaluation guidance](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)\n\n4. **High: Shared people and queues can manufacture or conceal an apparent gain.**\n\n   Engineers carry learning between workflows. Shared documentation improvements may help the comparison group. Giving pilot tasks priority in a shared review queue could make them faster by delaying comparison tasks, while total team delivery remains unchanged.\n\n   **Change:** Balance engineer and calendar exposure, keep review priority consistent, define allowed assistance, and log cross-workflow reuse. Track total team output and waiting alongside task comparisons. Describe the result as the bundle’s incremental effect under mixed-team conditions. Task selection and concurrent agent work are documented measurement problems. [METR’s methods update](https://metr.org/blog/2026-02-24-uplift-update/)\n\n5. **Medium: The payback depends on unverified demand and usable capacity.**\n\n   Recovering the **$16,000 setup allocation** at $225 net capacity value per change takes **17.8 weeks** at four accepted changes weekly. At eight weekly but only one hour saved at $125/hour, less $25 extra tooling, it takes **20 weeks**. These post-adoption forecasts value released capacity; neither sustainable demand nor productive use of those hours has been established.\n\n   **Change:** Show observed unit costs separately from forecast payback. Validate eligible demand and track where released capacity goes. Count role-specific effort, failed work, and shared maintenance. Publish attempts, accepted outcomes, and total cost together so the denominator cannot conceal failures.\n\n6. **Medium: Product acceptance and fourteen quiet days do not establish customer value.**\n\n   A product lead can verify that a preference saves correctly. Correct persistence does not establish whether customers can find the feature, use it successfully, or benefit. Infrequently used administration features may receive little exposure within fourteen days.\n\n   **Change:** Add direct task-success observation or usage evidence from representative customers. Tie follow-up to exposure and customers’ actual use cycle; retain fourteen days as a minimum operational window.\n\n7. **Medium: The setup capacity and eligible backlog need verification first.**\n\n   The charter assumes 48 useful changes and that 120 hours will cover context preparation, evaluations, controls, and measurement. Those assumptions need checking before the agent’s contribution can be assessed.\n\n   **Change:** Verify the backlog and setup estimates, reserve owners’ capacity, and freeze task eligibility and sizing rules. Limit the $4,000 extension to predefined follow-up or retesting. Preserve the original result and analyze any revised workflow separately. Passing should authorize a second-team replication within the same scope and permissions.\n\nvisualize{\"path\":\"/Users/mike/.codex/visualizations/2026/10/23/01a16a04-2823-79a2-87b8-fb54d1be7198/ai-native-stress-test-sources.html\"}",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a40-4974-7f43-9b0d-e64f44053c2b",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a40-49a0-7932-85f6-dbf2c785b335",
+          "content": [
+            {
+              "type": "text",
+              "text": "Revise the one-page pilot charter to address these weaknesses, with the $86,000 budget cap, explicit measurement rules, and defensible criteria to scale, revise, or stop.\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbb7a9d36c8195afa656b5f83c166f",
+          "text": "**Pilot charter: AI-native delivery for SaaS workspace administration**\n\n*Illustrative assumptions: six engineers with existing AI assistants, CI, and production controls; $125/hour blended labor value. Confirm actual capacity, role-specific rates, and demand before launch. Numerical hurdles are proposed investment criteria, not industry benchmarks.*\n\n1. **Hypothesis and scope.** Maintained execution context, reusable evaluated agent workflows, and externally enforced permissions reduce recurring cost per accepted change by at least 15%, without worse completion or quality. Test 48 customer-backed preferences, notifications, and administration UI changes. Exclude authorization, billing, destructive migrations, and sensitive exports. Agents edit branches, run tests, and create previews; independent checks, merges, and production releases remain human-controlled.\n\n2. **Owners and schedule.** VP Engineering sponsors and decides; the team EM leads delivery and incident response; a staff engineer maintains context/evaluations; platform/security manages permissions and recovery; Engineering Operations controls assignment, accounting, and analysis; the PM/designer verifies customer outcomes. Weeks 1–2 verify feasibility and freeze the protocol; 3–6 enroll; 7–8 finish; 9–10 observe and decide. Every release receives at least 14 days of follow-up plus representative customer use; insufficient exposure delays the decision.\n\n3. **Budget.** The **$86,000 total allocated cap** includes $16,000 setup, $61,800 delivery/comparison at unchanged labor productivity, and $8,200 contingency, including one follow-up of at most two weeks/$4,000. Count all labor, tooling, shared support, evaluation, and recovery. Verify affordability before enrollment; review committed and forecast completion costs weekly. Fund outstanding follow-up and safe shutdown before optional retesting; suspend enrollment if forecast total cost exceeds $86,000.\n\n4. **Measurement rules.** Before assignment, confirm 48 useful changes, reserve owner capacity, and freeze eligibility, task size, acceptance tests, severity definitions, rates, and cost allocation. Match 24 pairs by complexity, dependencies, and familiarity; each engineer receives four pairs. Randomize one change per pair to each workflow, balance calendar exposure, and retain existing AI tools in both. Keep review priority equal; log versions, assistance, crossover, and shared learning. Material workflow changes require a separately authorized cohort.\n\n   Analyze every change under its original assignment. Primary unit cost equals **all assigned-arm delivery costs through final readout divided by outcomes accepted within ten business days and retained through follow-up**. Include failures, rescues, rework, maintenance, and outstanding recovery commitments; show setup separately. Acceptance requires independent production checks. Charge workflow-specific support to its arm; split common measurement costs equally per assigned change. Start clocks when changes are ready and assigned. Late completions never enter the denominator; follow-up failures remove outcomes. Finalize costs at week 10, or week 12 after the single extension. Publish unresolved/late outcomes, all paired and engineer results, total team output, queue waiting, and actual lead-time distributions descriptively.\n\n5. **Evidence required for replication.** Every condition must pass:\n\n   | Measure | Required evidence |\n   |---|---|\n   | Primary cost outcome | ≤$1,050 per accepted change and ≤85% of comparison; pilot/comparison cost ratio remains <1 after omitting any single engineer’s paired work. |\n   | Completion | ≥22/24 accepted within ten business days and retained through follow-up, no fewer than comparison. |\n   | Customer benefit and quality | Independent production checks and observed customer task success against frozen criteria for every accepted change; zero High/Medium incidents; Low escaped defects or rollbacks ≤comparison+1. |\n   | [Agent evaluations](https://www.anthropic.com/research/demystifying-evals-for-ai-agents) | Fifteen routine scenarios × three runs: ≥41/45 successes and ≥2/3 for every case; predesignated critical cases pass every run. Fifteen failure/control scenarios pass all three trials, including real prohibited-action and mid-run revocation tests. Keep evaluation cases held out from tuning. |\n   | Economics and integrity | Complete cost/follow-up records; no preferential queues or unlogged crossover; modeled setup recovery ≤12 weeks using observed unit savings and volume capped by trailing-eight-week eligible demand and demonstrated capacity. Document productive reuse of released hours; capacity value is separate from cash savings. |\n\n6. **Scale, revise, or stop.** Passing every gate permits one separately funded second-team replication with unchanged scope and permissions. The shared-team cohort provides local evidence; wider effectiveness and rare-event safety remain unproven. Missing records or inadequate exposure are **inconclusive**: use the single follow-up to reconcile accounting or collect scheduled observations, without changing the workflow or thresholds. Preserve the original readout. A completed result missing any gate ends this pilot without expansion; a revised intervention requires a new charter. Suspend immediately for prohibited execution, data exposure, or a High/Medium incident. Stop for an uncorrectable control failure, unaffordable completion, or an unresolved result at week 12; restore the prior workflow and retain the records.\n\nvisualize{\"path\":\"/Users/mike/.codex/visualizations/2026/10/23/01a16a04-2823-79a2-87b8-fb54d1be7198/ai-native-revised-charter-sources.html\"}",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a51-2fc5-76b0-8d17-684b8cd83f01",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a51-2ffc-7b00-9d5e-519f2f115724",
+          "content": [
+            {
+              "type": "text",
+              "text": "Turn this into a weekly pilot scorecard, with metric formulas, data sources, owners, and a worked example showing how the scale, revise, or stop decision is made.\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbbc8ee7b48195a09aba18374abde6",
+          "text": "**Weekly pilot scorecard: AI-native engineering**\n\nUse one cumulative scorecard for the six-engineer, 48-change cohort. Engineering Operations prepares it weekly; the EM, PM/designer, and platform/security owner verify their evidence; VP Engineering records the decision. The source systems below are proposed records. All worked-example numbers are illustrative.\n\n1. **Freeze each weekly snapshot and show what is still pending.** Record the week, cutoff/timezone, workflow version, assigned changes per arm, deadline outcomes, pending follow-up, accrued cost, forecast completion cost, decision, and actions with owners/dates. Preserve prior snapshots and explain corrections. Show cumulative values, prior-period values, and changes; calculate unit costs from cumulative totals rather than averaging weekly ratios.\n\n   Start the ten-business-day clock when a change is ready and assigned; queues, blocked work, and rescues do not pause it. Count an outcome in `A` only after independent production acceptance within ten business days, at least 14 days of follow-up, successful representative customer use, and retained acceptance. Display timely acceptances awaiting confirmation separately. Every release, including a late release, receives full follow-up. Late completions never enter `A`; subsequent acceptance failures remove outcomes. Freeze acceptance-invalidating criteria before enrollment.\n\n2. **Use the same formulas, records, and owners every week.** Let `P` mean pilot and `C` comparison. For each arm, `C_a` includes logged hours × locked role rates, tooling, review, failures, rescues, recurring maintenance, allocated common measurement, and outstanding recovery commitments. Charge workflow-specific support to its arm; allocate shared costs across assigned changes, including unsuccessful ones. Keep setup `S` separate. Display undefined ratios as **N/A**, never a pass. At final readout, zero confirmed outcomes fails the completion gate.\n\n   | Measure and formula | Final gate or weekly interpretation | Source of record | Accountable owner |\n   |---|---|---|---|\n   | Unit cost: `U_a = C_a / A_a`; cost ratio: `r = U_P / U_C` | `U_P ≤ $1,050` **and** `r ≤ 0.85`. Weekly values remain provisional while work or follow-up is incomplete. | Task-linked effort ledger, tool billing, support allocations, acceptance register | Engineering Operations |\n   | Confirmed completion: `A_a / 24` | `A_P ≥ 22` and `A_P ≥ A_C`. Separately show not-yet-due, deadline failures, late completions, and pending confirmations. | Assignment register, release timestamps, acceptance/follow-up records | EM + PM |\n   | Engineer sensitivity: `r_-e = [(C_P − C_P,e)/(A_P − A_P,e)] / [(C_C − C_C,e)/(A_C − A_C,e)]` | All six leave-one-engineer-out ratios `< 1`. Allocate shared costs before subtraction. This is a robustness check, not a confidence interval. | Engineer-linked assignment, cost, and acceptance records | Engineering Operations |\n   | Customer/follow-up coverage: `(confirmed + invalidated) / all timely production acceptances` | Coverage `100%`: every timely acceptance resolved, with no missing customer observations or follow-up windows at readout. Only confirmed outcomes enter `A`. | Independent production checks, customer task observations, usage evidence | PM/designer |\n   | Escaped quality events: counts by frozen severity and arm | Zero High/Medium incidents; pilot Low issues `≤ comparison Low + 1`. Count one defect and its associated rollback once. | Incident, defect, and rollback registers | EM |\n   | Evaluation: routine successes / 45; successes per case; control successes / 45 | Routine `≥41/45`, every case `≥2/3`, critical cases `3/3`; all 15 control cases `3/3`, including enforced denial and mid-run revocation. | Held-out evaluation results, environment checks, permission audit logs | Staff engineer + platform/security |\n   | Budget forecast: `F = incurred allocated cost + unspent commitments + uncommitted cost to finish` | `F ≤ $86,000`, including follow-up and shutdown. The ≤$4,000 extension is inside contingency. Suspend enrollment if the forecast exceeds the cap. | Cost ledger, invoices/usage accruals, commitments, remaining-work estimates | Engineering Operations; VP Engineering decides |\n   | Capacity recovery: `S / [(U_C − U_P) × V]` weeks | `≤12 weeks`; `V = min(trailing-eight-week eligible demand/week, confirmed pilot outcomes / six delivery weeks)`. Reuse evidence requires a completed, predeclared priority outcome with linked effort records and no added staffing/overtime. Nonpositive savings or zero volume gives no finite recovery. | Cost ledger, frozen demand history, delivery records, completed priority work | Engineering Operations + EM |\n   | Evidence/integrity: linked records / 48 assignments; exception counts | All assignments accounted for; zero preferential review treatment, unlogged crossover, or unapproved material workflow changes. | Assignment/version logs, review queues, assistance/crossover register | Engineering Operations |\n\n   For budgeting, incurred cost includes setup and both arms but excludes unspent commitments. Recovery commitments already included in `C_a` must not be added twice to `F`. Reconcile usage accruals against invoices rather than counting both. Report estimated released human hours separately: `max(0, A_P × H_C/A_C − H_P)`, where `H` includes all recurring human effort. Show documented hours on completed priority work alongside that estimate; unit-cost savings also contain nonlabor costs. Record actual lead times, unresolved ages, review waiting, and total team output as diagnostics; completed-only lead times cannot establish overall delivery improvement.\n\n3. **Make decisions in this order.** A prohibited execution, data exposure, or High/Medium incident triggers immediate suspension. Uncorrectable controls or unaffordable completion trigger stop. Otherwise continue the authorized collection while evidence matures; do not scale from interim ratios. At the week-10 readout, every gate passing permits one separately funded second-team replication with unchanged scope and permissions. Only missing records or scheduled customer exposure permit the single ≤two-week/$4,000 extension. A completed gate failure ends the pilot without expansion; revising the intervention requires a new charter. An unresolved result at week 12 stops as inconclusive. Restore the prior workflow and preserve records when stopping.\n\n4. **The worked example passes only after the full cohort is observed.** Assume week 10, all 48 changes accounted for, 23 confirmed outcomes per arm, one unsuccessful change per arm, and no outstanding commitments or work estimates. Costs include unsuccessful work, review, support, and maintenance.\n\n   | Measure | Illustrative result | Decision contribution |\n   |---|---|---|\n   | Unit cost | Pilot `$20,700 / 23 = $900`; comparison `$29,900 / 23 = $1,300`; ratio `0.692`, or 30.8% lower | Both cost gates pass |\n   | Completion | `23/24` per arm | Pass |\n   | Engineer sensitivity | All six omission ratios `0.692` | Pass |\n   | Customer evidence | All 23 timely acceptances per arm confirmed through ≥14 days and observed task success | Pass |\n   | Quality/evaluations | High/Medium `0`; Low pilot `1`, comparison `0`; routine `44/45`, minimum `2/3`, critical cases all pass; controls `45/45` | Pass |\n   | Budget | `$16,000 + $20,700 + $29,900 = $66,600`; headroom `$19,400` | Pass |\n   | Capacity recovery | Eligible demand `6/week`; demonstrated pilot capacity `23/6 = 3.83/week`; recovery `$16,000 / ($400 × 3.83) = 10.4 weeks`; productive reuse documented | Pass |\n   | Integrity | All records complete; no prohibited execution, preferential treatment, or unlogged crossover | Pass |\n\n   **Decision: scale to one bounded replication.** The engineer calculation assumes confirmed outcomes `[4,4,4,4,4,3]` in each arm, pilot costs `[3,600,3,600,3,600,3,600,3,600,2,700]`, and comparison costs `[5,200,5,200,5,200,5,200,5,200,3,900]`.\n\n   The ledger records 150 pilot and 230 comparison human hours, giving an estimated **80 released hours**. Engineers completed predeclared priority work with 60 documented hours and no extra staffing/overtime. The reuse evidence passes; it does not establish that every estimated hour produced value or that the 10.4-week forecast has been realized.\n\n   **Revise/follow up:** If one customer observation is missing at week 10, mark that outcome pending and recompute provisional unit cost. Authorize the single extension only if its forecast fits the remaining cap; collect the observation without changing the intervention. If it remains missing at week 12, stop as inconclusive.\n\n   **Stop:** If complete pilot cost instead equals `$25,300`, unit cost is `$1,100`. Its ratio to `$1,300` is `0.846`, which passes the relative hurdle but fails the $1,050 ceiling. Recovery also lengthens to **20.9 weeks**. The complete result does not permit expansion. Strong results on other rows cannot offset failed gates.\n\n   The 12-week recovery gate needs particular care: at the original $225 saving per change and even four pilot outcomes weekly, recovery takes **17.8 weeks**. Doubling observed capacity to assume full-team adoption would create a misleading pass.\n\nvisualize{\"path\":\"/Users/mike/.codex/visualizations/2026/10/23/01a16a04-2823-79a2-87b8-fb54d1be7198/ai-native-weekly-scorecard-sources.html\"}",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a62-1ec7-7f11-a7ff-4772d4383944",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a62-1f29-74f1-8917-2d166724dd71",
+          "content": [
+            {
+              "type": "text",
+              "text": "Turn this into a succinct prompt to generate a reusable spreadsheet template with formulas, weekly snapshots, the worked example, and automatic flags for scale, revise, or stop.\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbbf30fbc08195aa1453e35169326d",
+          "text": "Create a reusable Excel `.xlsx` pilot scorecard template using the charter and scorecard below as the requirements. Use native formulas and validation, with no macros or external connections.\n\nInclude sheets for Instructions, Assumptions, Assignments/Outcomes, Costs/Commitments, Customer/Quality/Evaluation Evidence, Weekly Scorecard, Snapshot History, and Worked Example. Distinguish editable inputs from protected formulas. Include evidence links, owners, and actions with due dates.\n\nImplement all specified formulas and gates:\n\n1. $86,000 total cap, including one ≤two-week/$4,000 extension.\n2. Twenty-four changes per arm; ≥22 confirmed pilot outcomes and no fewer than comparison.\n3. Pilot unit cost ≤$1,050 and ≤85% of comparison; all six engineer-omission cost ratios <1.\n4. Complete customer/follow-up evidence, required quality and evaluation results, and modeled setup recovery ≤12 weeks using conservative demonstrated volume.\n\nInclude failed and unfinished work costs, preserve original assignment, and avoid double-counting commitments. Handle late completions, invalidated outcomes, zero denominators, and missing evidence explicitly.\n\nShow cumulative and prior-week values, changes, numerators/denominators, and explanations for each gate’s Pass/Fail/Pending status. Preserve immutable weekly snapshots with cutoff/timezone and correction history. Document a manual “freeze values” step if needed.\n\nAutomatically recommend:\n\n1. **CONTINUE/PENDING:** Evidence is still maturing.\n2. **SCALE:** Every final gate passes; authorize only a separately funded replication.\n3. **REVISE:** Only the permitted evidence-completion extension is needed and affordable.\n4. **STOP:** Completed evidence fails a gate, controls are uncorrectable, completion is unaffordable, or results remain unresolved at week 12.\n\nImmediate control incidents override recommendations with **SUSPEND**. Forecasts above $86,000 suspend enrollment. Record sponsor approval separately.\n\nPopulate the supplied worked example and revise/stop variants. Label examples synthetic and provide a clean reusable copy. Validate formulas, totals, deadlines, missing-data behavior, and every decision branch. Include brief instructions for entering data, closing a week, and reviewing flags.\n\n[Paste the pilot charter and weekly scorecard here.]",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a64-08ab-7b91-85e8-f5da9ed91138",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a64-08e5-7f61-b507-dce70307cd19",
+          "content": [
+            {
+              "type": "text",
+              "text": "i meant like a 50 - 80 word prompt\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbbf9832508195a0873ffeab8bf17a",
+          "text": "Create a reusable Excel pilot scorecard from the charter and scorecard above. Include editable inputs, protected formulas, evidence links, owners, weekly snapshots, and the worked example. Calculate costs, completion, quality, evaluations, budget, and payback. Automatically flag scale, revise, stop, or pending using the agreed thresholds, with safety overrides. Treat missing evidence explicitly, preserve snapshot history, and include brief instructions plus a clean template.",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16a64-e2dd-78b0-89a3-01cd070b8a31",
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16a64-e308-71a3-a05c-1f24dc457d54",
+          "content": [
+            {
+              "type": "text",
+              "text": "Make it self-contained so I can paste it into a new chat, still within 50–80 words.\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_043530949ef0607d016adbc005eb8481959e10d08233f075cd",
+          "text": "Create an Excel template for a six-engineer AI-assisted software delivery pilot: 24 changes per arm, $86,000 cap. Include editable inputs, formulas, owners, evidence links, weekly snapshots, instructions, and a worked example. Scale means replication only: require ≤$1,050 per accepted change, ≤85% of control cost, ≥22 acceptances within ten business days, ≥14-day follow-up, and ≤12-week payback. Require zero High/Medium incidents. Define quality/evaluation gates, require no fewer acceptances than control, count failed work, handle missing evidence, and automatically flag scale/revise/stop/suspend.",
+          "phase": "final_answer"
+        }
+      ]
+    }
+  ]
+}

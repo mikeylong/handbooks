@@ -14,12 +14,44 @@ def build_reader(book_root, config, output, chrome=None):
  chrome=Path(chrome) if chrome else Path(__file__).resolve().parent.parent/'assets/reader/reader-chrome.html'
  import importlib.util, json, re, html, shutil, hashlib
  from reportlab.platypus import Paragraph,Table,KeepTogether
+ from eyebrow_roles import visible_paragraph, CHAPTER_MARKER
  from screenshot_figures import ScreenshotFigure, copy_figure_assets, figure_html
  spec=importlib.util.spec_from_file_location('release',r/'source/build_handbook.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
  out.mkdir(parents=True,exist_ok=True);shutil.copytree(r/'assets/chapter-art/pdf',out/'assets',dirs_exist_ok=True)
- def txt(s):
-  s=re.sub(r"<link href=['\"]([^'\"]+)['\"]>",r'<a href="\1">',s).replace('</link>','</a>').replace('<br/>','<br>');return s
- headings=[];blocks=[];section_open=False;subsection_open=False;index=0
+ from html.parser import HTMLParser
+ reference_ids=set();rendered_references=set()
+ reference_pattern=re.compile(r'^\s*<(?:b|strong)>\[([A-Z][A-Z0-9-]*\d[A-Z0-9-]*)\](?:</(?:b|strong)>|\s)')
+ marker_pattern=re.compile(r'\[([A-Z][A-Z0-9-]*\d[A-Z0-9-]*)\]')
+ def reference_key(paragraph):
+  if paragraph.style.name in ['PromptHead','PromptBody']:return None
+  match=reference_pattern.match(paragraph.text)
+  return match[1] if match else None
+ class CitationText(HTMLParser):
+  def __init__(self):super().__init__(convert_charrefs=False);self.parts=[];self.protected=0
+  def handle_starttag(self,tag,attrs):
+   self.parts.append(self.get_starttag_text())
+   if tag in ['a','code','pre']:self.protected+=1
+  def handle_endtag(self,tag):
+   self.parts.append(f'</{tag}>')
+   if tag in ['a','code','pre']:self.protected-=1
+  def handle_startendtag(self,tag,attrs):self.parts.append(self.get_starttag_text())
+  def handle_entityref(self,name):self.parts.append('&'+name+';')
+  def handle_charref(self,name):self.parts.append('&#'+name+';')
+  def handle_data(self,data):
+   def citation(match):
+    key=match[1]
+    return f'<sup class="citation-marker"><a href="#ref-{key.lower()}" aria-label="Citation {key}">[{key}]</a></sup>' if key in reference_ids else match[0]
+   self.parts.append(data if self.protected else marker_pattern.sub(citation,data))
+ def txt(s,link_sources=True):
+  s=re.sub(r"<link href=['\"]([^'\"]+)['\"]>",r'<a href="\1">',s).replace('</link>','</a>').replace('<br/>','<br>')
+  if not link_sources:return s
+  parser=CitationText();parser.feed(s);parser.close();return ''.join(parser.parts)
+ def paragraph_html(p):
+  key=reference_key(p);attrs=''
+  if key and key not in rendered_references:
+   rendered_references.add(key);attrs=f' class="reference-entry" id="ref-{key.lower()}" tabindex="-1"'
+  return '<p'+attrs+'>'+txt(p.text,not key and p.style.name not in ['PromptHead','PromptBody'])+'</p>'
+ headings=[];blocks=[];section_open=False;subsection_open=False;index=0;chapter_marker=None
 
  def prose_list_kind(table):
   if not table._cellvalues or any(len(row)!=2 for row in table._cellvalues):return None
@@ -41,10 +73,14 @@ def build_reader(book_root, config, output, chrome=None):
   return None
 
  def item(x):
-  nonlocal section_open,subsection_open,index
+  nonlocal section_open,subsection_open,index,chapter_marker
   if isinstance(x,Paragraph):
-   s=x.style.name;t=txt(x.text)
-   if s=='CoverTitle' or (config['skipContentsText'] and x.getPlainText()=='Contents') or any(x.style is getattr(m,name,None) for name in config['skipStyles']):return
+   if not visible_paragraph(x):return
+   if getattr(x,'_handbook_role',None)==CHAPTER_MARKER:
+    chapter_marker=x.getPlainText();return
+   s=x.style.name;t=txt(x.text,not reference_key(x))
+   pdf_contents = config['skipContentsText'] and (x.getPlainText()=='Contents' or s in ['TOCKicker','TOCTitle'])
+   if s=='CoverTitle' or pdf_contents or any(x.style is getattr(m,name,None) for name in config['skipStyles']):return
    if s in ['H1','H2','H3']:
     index+=1;key='section-'+str(index)
     if s=='H1':
@@ -57,10 +93,13 @@ def build_reader(book_root, config, output, chrome=None):
     if s=='H2':
      if subsection_open:blocks.append('</section>')
      blocks.append(f'<section class="source-section" id="{key}">');subsection_open=True
-    if s=='H1':blocks.append('<header class="chapter-header">')
+    if s=='H1':
+     blocks.append('<header class="chapter-header">')
+     if chapter_marker:
+      blocks.append('<p class="chapter-marker" data-role="chapter-marker">'+html.escape(chapter_marker)+'</p>');chapter_marker=None
     blocks.append(f'<h{2 if s=="H1" else 3 if s=="H2" else 4}>{t}</h{2 if s=="H1" else 3 if s=="H2" else 4}>')
     if s=='H1':blocks.append('</header>')
-   elif s not in ['CoverDeck','ChapterKicker']:blocks.append(f'<p>{t}</p>')
+   elif s not in ['CoverDeck','ChapterKicker']:blocks.append(paragraph_html(x))
   elif isinstance(x,Table):
    if hasattr(x, '_code_body'):
     language=getattr(x, '_code_language', '').lower()
@@ -75,7 +114,7 @@ def build_reader(book_root, config, output, chrome=None):
    if (len(x._cellvalues)>1 and all(len(row)==1 and isinstance(row[0],Paragraph) for row in x._cellvalues)
        and x._cellvalues[0][0].style.name=='PromptHead'
        and all(row[0].style.name=='PromptBody' for row in x._cellvalues[1:])):
-    heading=txt(x._cellvalues[0][0].text)
+    heading=txt(x._cellvalues[0][0].text,False)
     body=''.join(cell(row[0]) for row in x._cellvalues[1:])
     blocks.append('<figure class="reader-prompt"><figcaption class="reader-prompt-heading"><span class="reader-prompt-label">Prompt</span><span class="reader-prompt-title">'+heading+'</span></figcaption><div class="reader-prompt-body">'+body+'</div></figure>')
     return
@@ -104,9 +143,15 @@ def build_reader(book_root, config, output, chrome=None):
     is_header=config['tableHeaders'] and not rows and (all(re.sub('<[^>]+>','',v).isupper() for v in cells) or all(isinstance(c,Paragraph) and c.style.name=='TableHead' for c in row))
     tag='th' if is_header else 'td'
     rows.append('<tr>'+''.join(f'<{tag}'+(' scope="col"' if is_header else '')+'>'+v+f'</{tag}>' for v in cells)+'</tr>')
-   blocks.append('<div class="table-scroll" tabindex="0"><table>'+''.join(rows)+'</table></div>')
+   # Short prose comparisons can opt into wrapping; dense data tables keep scrolling.
+   compact = getattr(x, "reader_compact", False) is True and all(len(row) == 2 for row in x._cellvalues)
+   css = "table-scroll reader-compact-table" if compact else "table-scroll"
+   blocks.append('<div class="'+css+'" tabindex="0"><table>'+''.join(rows)+'</table></div>')
   elif isinstance(x,KeepTogether):
    for c in x._content:item(c)
+  elif hasattr(x, 'semantic_definition'):
+   from concept_diagrams import render_concept_html
+   blocks.append(render_concept_html(x.semantic_definition))
   elif isinstance(x,ScreenshotFigure):
    identity=json.loads((r/'pdf-config.json').read_text())
    copy_figure_assets(x.figure,out,identity['id'],identity['version'])
@@ -127,14 +172,28 @@ def build_reader(book_root, config, output, chrome=None):
     blocks.append(f'<figure><img src="assets/{name}.png" alt="{html.escape(name)}" loading="lazy"></figure>')
 
  def cell(c):
-  if isinstance(c,Paragraph):return '<p>'+txt(c.text)+'</p>'
+  if isinstance(c,Paragraph):return paragraph_html(c) if visible_paragraph(c) else ''
   if isinstance(c,Table):return '<table>'+''.join('<tr>'+''.join('<td>'+cell(v)+'</td>' for v in row)+'</tr>' for row in c._cellvalues)+'</table>'
   if isinstance(c,(list,tuple)):return ''.join(cell(v) for v in c)
   return html.escape(str(c)) if c else '<br>'
  # The web cover is rendered from the publication manifest below. Convert only
  # the PDF body, starting at its first chapter, so cover metadata cannot leak.
  story=getattr(m,config['storyFunction'])()
+ def find_references(x):
+  if isinstance(x,Paragraph):
+   key=reference_key(x)
+   if key and x.style.name not in ['PromptHead','PromptBody']:reference_ids.add(key)
+  elif isinstance(x,Table):
+   if hasattr(x,'_code_body'):return
+   for row in x._cellvalues:
+    for value in row:find_references(value)
+  elif isinstance(x,KeepTogether):find_references(x._content)
+  elif isinstance(x,(list,tuple)):
+   for value in x:find_references(value)
+ find_references(story)
  body_start=next(i for i,x in enumerate(story) if isinstance(x,Paragraph) and x.style.name=='H1')
+ if body_start and getattr(story[body_start-1],'_handbook_role',None)==CHAPTER_MARKER:
+  body_start-=1
  for x in story[body_start:]:item(x)
  if subsection_open:blocks.append('</section>')
  if section_open:blocks.append('</section>')
@@ -158,7 +217,7 @@ def build_reader(book_root, config, output, chrome=None):
  cover=f'<section class="cover" aria-labelledby="cover-title"><div class="cover-rule" aria-hidden="true"></div><h1 id="cover-title">{html.escape(title)}</h1><p class="cover-subtitle">{html.escape(config["subtitle"])}</p><p class="cover-credit">{credit}</p><p class="cover-date"><a href="{html.escape(publication["editionUrl"],quote=True)}">{date_label} · Version {version}</a></p><nav class="cover-actions site-only" aria-label="Handbook actions"><a class="action-link action-link-primary" href="#contents">Explore the handbook</a><a class="action-link" href="{pdf}" download aria-label="Download {html.escape(config["downloadTitle"])} as a PDF, {pages} pages">Download PDF <span>{pages} pages</span></a></nav></section>'
  body=''.join(blocks)
  body=re.sub(r'(<section class="chapter"[^>]*>)(.*?)(?=<section class="chapter"|$)',lambda a:a[1].replace('class="chapter"','class="chapter source-section"')+a[2] if 'class="source-section"' not in a[2] else a[0],body,flags=re.S)
- markup=f'''<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Michael Long"><meta name="color-scheme" content="light"><link rel="icon" type="image/png" href="/assets/favicon.png"><title>{html.escape(title)} · Michael Long</title><link rel="canonical" href="{html.escape(config["canonicalUrl"])}"><link rel="stylesheet" href="/reader.css"><link rel="stylesheet" href="reader.css"><link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script><script src="/reader.js" defer></script></head><body id="book-top"><a class="skip-link" href="#main-content">Skip to handbook</a><div class="reading-progress" aria-hidden="true"><span></span></div><header class="mobile-bar"><a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a><div class="mobile-actions"><button class="text-button search-trigger js-only" data-open-search type="button" aria-haspopup="dialog" aria-controls="search-dialog">Search</button><button class="text-button js-only" data-open-toc type="button" aria-haspopup="dialog" aria-controls="toc-dialog">Contents</button></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a><a class="sidebar-brand" href="#book-top"><span>A handbook</span><strong>{html.escape(title)}</strong></a><nav class="sidebar-nav" aria-label="Table of contents">{nav}</nav>{sidebar}</aside><main id="main-content" tabindex="-1">{cover}<section class="contents-page" id="contents"><h2>Contents</h2>{nav}</section>{body}</main></div>{dialogs}</body></html>'''
+ markup=f'''<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Michael Long"><meta name="color-scheme" content="light"><link rel="icon" type="image/png" href="/assets/favicon.png"><title>{html.escape(title)} · Michael Long</title><link rel="canonical" href="{html.escape(config["canonicalUrl"])}"><link rel="stylesheet" href="/reader.css"><link rel="stylesheet" href="reader.css"><link rel="stylesheet" href="/gallery.css"><script src="/gallery-focus.js" defer></script><script src="/reader.js" defer></script></head><body id="book-top"><a class="skip-link" href="#main-content">Skip to handbook</a><div class="reading-progress" aria-hidden="true"><span></span></div><header class="mobile-bar"><a class="handbooks-return-mobile" href="/" aria-label="All handbooks">←</a><div class="mobile-actions"><button class="text-button search-trigger js-only" data-open-search type="button" aria-haspopup="dialog" aria-controls="search-dialog">Search</button><button class="text-button js-only" data-open-toc type="button" aria-haspopup="dialog" aria-controls="toc-dialog">Contents</button></div></header><div class="book-shell"><aside class="sidebar"><a class="handbooks-return" href="/" aria-label="All handbooks">← All handbooks</a><a class="sidebar-brand" href="#book-top"><strong>{html.escape(title)}</strong></a><nav class="sidebar-nav" aria-label="Table of contents">{nav}</nav>{sidebar}</aside><main id="main-content" tabindex="-1">{cover}<section class="contents-page" id="contents"><h2>Contents</h2>{nav}</section>{body}</main></div>{dialogs}</body></html>'''
  markup=markup.replace('https://handbooks.mikelong.ai','https://handbooks.surfaces.systems')
  if manifest.get('approvalStatus') == 'candidate':
   # Keep future-edition downloads inside an isolated review origin.
