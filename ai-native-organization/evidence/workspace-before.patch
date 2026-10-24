@@ -1,0 +1,577 @@
+diff --git a/.github/workflows/collection.yml b/.github/workflows/collection.yml
+index 6072bf3..7eadcea 100644
+--- a/.github/workflows/collection.yml
++++ b/.github/workflows/collection.yml
+@@ -53,6 +53,16 @@ jobs:
+       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+       - run: pip install -r publish-evidence-backed-handbook/requirements.txt
+       - run: pip install pdfplumber==0.11.9
++      - name: Test collection staging, identity and exact-once evidence contracts
++        run: node automation/test-collection-pipeline.mjs --python "$(command -v python)" --output "$GITHUB_WORKSPACE/automation/validation/ci-core-fixtures"
++      - uses: actions/upload-artifact@v6
++        if: always()
++        with:
++          name: collection-core-fixture-evidence
++          path: |
++            automation/validation/ci-core-fixtures/pipeline-results.json
++            automation/validation/ci-core-fixtures/*.log
++            automation/validation/ci-core-fixtures/measured-maps/results.json
+       - run: python production-ai-engineering/scripts/test-weekly-toolkit.py
+       - run: python production-ai-engineering/scripts/test-pdf-structure.py
+       - run: npm install --prefix "$RUNNER_TEMP/pdf-browser" playwright@1.62.1
+@@ -61,6 +71,20 @@ jobs:
+         run: |
+           browser=$(find "$HOME/.cache/ms-playwright" -path '*/chrome-linux64/chrome' -print -quit)
+           python production-ai-engineering/scripts/test-weekly-pdf-integration.py --browser "$browser" --playwright-module "$RUNNER_TEMP/pdf-browser/node_modules/playwright" --output "$RUNNER_TEMP/production-ai-pdf-integration"
++      - name: Test all four same-artifact handbook PDF and reader pipelines
++        run: |
++          browser=$(find "$HOME/.cache/ms-playwright" -path '*/chrome-linux64/chrome' -print -quit)
++          node automation/test-book-build-pipeline.mjs --root "$GITHUB_WORKSPACE" --python "$(command -v python)" --output "$GITHUB_WORKSPACE/automation/validation/ci-book-build-fixtures" --production-fixture "$RUNNER_TEMP/production-ai-pdf-integration" --browser "$browser" --playwright-module "$RUNNER_TEMP/pdf-browser/node_modules/playwright"
++      - uses: actions/upload-artifact@v6
++        if: always()
++        with:
++          name: collection-book-build-evidence
++          path: |
++            automation/validation/ci-book-build-fixtures/book-build-pipeline.json
++            automation/validation/ci-book-build-fixtures/*/book-build-result.json
++            automation/validation/ci-book-build-fixtures/*/logs/*.log
++            automation/validation/ci-book-build-fixtures/*/*-validation.json
++            automation/validation/ci-book-build-fixtures/*/*-page-map.json
+       - uses: actions/upload-artifact@v6
+         if: always()
+         with:
+diff --git a/.gitignore b/.gitignore
+index 436c820..c336225 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -32,3 +32,6 @@ migration/2026-10-02-independent-repositories/*
+ 
+ # Large Claude review snapshots and renderer scratch remain local. Selected reports are tracked explicitly.
+ /claude-design/review/
++
++# Coordinated weekly review evidence and candidate copies stay local.
++/weekly-reviews/
+diff --git a/package.json b/package.json
+index 944745b..3879c70 100644
+--- a/package.json
++++ b/package.json
+@@ -8,6 +8,8 @@
+   "scripts": {
+     "build": "npm --prefix site run build",
+     "preview": "npm --prefix site run preview",
++    "preflight:collection": "node automation/preflight-collection.mjs",
++    "test:collection": "node automation/test-collection-pipeline.mjs",
+     "validate": "python3 scripts/validate-repositories.py && npm run validate:releases && npm run build && npm --prefix site test",
+     "validate:releases": "npm --prefix production-ai-engineering run validate:release && npm --prefix production-ai-engineering run validate:handbook && npm --prefix ai-evaluation run validate && npm --prefix ai-consulting run validate && npm --prefix claude-design run validate",
+     "validate:migration-2026-10-01": "python3 scripts/validate-collection.py"
+diff --git a/production-ai-engineering/automation/README.md b/production-ai-engineering/automation/README.md
+index 5128e5a..da3407b 100644
+--- a/production-ai-engineering/automation/README.md
++++ b/production-ai-engineering/automation/README.md
+@@ -1,8 +1,8 @@
+-# Weekly handbook review
++# Production AI review helpers
+ 
+-The automation runs every Monday at 9:00 a.m. Mac local time, currently Pacific time.
++The collection automation reviews Production AI Engineering, AI Evaluation, AI Consulting, and Claude Design together every Monday at 9:00 AM Pacific. Follow [the collection workflow](../../automation/weekly-collection-review.md) for the common research cutoff, shared evidence ledger, four-book impact matrix, and synchronization audit.
+ 
+-Its primary job is to research live external sources for material production-AI industry updates, then produce a fully audited candidate handbook. It never edits or publishes the canonical handbook or production PDF.
++These helpers prepare and finalize the Production AI Engineering candidate within that collection cycle. They never edit or publish the canonical handbook or production PDF.
+ 
+ The scheduled Codex task uses its native web tools for research. Two deterministic helpers surround that work:
+ 
+@@ -38,7 +38,7 @@ Each run is stored under `output/candidates/<timestamp>.<random-suffix>/`. The u
+ 
+ If a phase fails, `status.txt` and `run-summary.md` name the exact failed phase and log. Partial artifacts are preserved, the candidate is not marked ready, and neither helper reruns itself. A per-run finalization sentinel rejects a second finalizer invocation.
+ 
+-The automation ID remains `weekly-production-ai-handbook-review` for continuity. Publication remains a separate manual decision after review.
++The automation ID remains `weekly-production-ai-handbook-review` for continuity; its displayed name is Weekly Handbook Collection Review. There is one scheduled collection job, not a second standalone Production AI job. Publication remains a separate manual decision after review.
+ 
+ ## Production release contract
+ 
+diff --git a/production-ai-engineering/automation/automation.toml b/production-ai-engineering/automation/automation.toml
+index 80e23ca..586cda2 100644
+--- a/production-ai-engineering/automation/automation.toml
++++ b/production-ai-engineering/automation/automation.toml
+@@ -1,13 +1,13 @@
+ version = 1
+ id = "weekly-production-ai-handbook-review"
+ kind = "cron"
+-name = "Weekly Production AI Handbook Review"
+-prompt = "From the configured repository checkout, run `/bin/zsh automation/prepare-weekly-handbook-review.sh` exactly once. Use the exact `weekly_handbook_run_dir`, candidate-edit path, and research-output path it prints; never infer or reuse a prior run. If preparation fails, report its exact phase and log and stop without rerunning. Read that run's `run-context.md`, the required writing-skill path it records, and `toolchain/weekly-handbook-review.md`. Then use this scheduled task's native live-web tools to research external primary sources for material production-AI industry updates across every required coverage area. Handle already-authorized gated access without bypassing any control, record all limitations, edit only the three files under `candidate-edits`, and write all required research artifacts under `research-output`. Never edit or publish the canonical handbook source or `output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf`. When research is complete, run `/bin/zsh automation/run-weekly-handbook-review.sh <exact-weekly_handbook_run_dir>` exactly once in the normal managed sandbox. Do not use a nested Codex process, an unsandboxed launch, or any automatic rerun. After the finalizer exits, use its exact `weekly_handbook_run_dir` and `weekly_handbook_pdf`, read `toolchain/weekly-handbook-review-final.md`, and perform the required read-only final audit of `run-summary.md`, `status.txt`, `change-report.md`, `changes.json`, `coverage.json`, `release-recommendation.json`, `sources.md`, `sources.json`, `blocked-sources.md`, `exact-changes.patch`, `review-status.json`, `candidate-sha256.txt`, `page-map.json`, `previous-version.diff`, `pdf-validation.log`, and `proof/manifest.txt`. On success, present direct links to the candidate PDF and every report; list the exact additions, deprecations or removals, and corrections or clarifications, explain why each is warranted with direct primary-source links, state the recommended release-version bump, every gated-source limitation, validation and visual-proof results, and whether production remained unchanged. If `reader_facing_content_changed=false` and the comparison is exactly `The handbook's reader-facing content is unchanged.`, state that no update was warranted and the changelog was omitted. Otherwise require and summarize a self-contained changelog that starts on its own physical page after the Index, occupies every remaining final PDF page, and includes every validated change with what changed, why, and clickable primary evidence. If research, finalization, or audit fails, report the exact failed step, phase, and log path, state that the candidate is not ready, and do not rerun or claim success."
++name = "Weekly Handbook Collection Review"
++prompt = "Review Production AI Engineering, AI Evaluation, AI Consulting, and Claude Design together as one weekly collection cycle. Read /Users/mike/handbooks/AGENTS.md and /Users/mike/handbooks/automation/weekly-collection-review.md in full and follow that workflow. Use /Users/mike/handbooks/catalog.json and each current release manifest to resolve the four approved editions and production PDFs; never rely on an older hard-coded release path. Run from /Users/mike/handbooks and keep outputs in a fresh unique directory under /Users/mike/handbooks/weekly-reviews/<scheduled-Monday>/, with the Production AI helper's exact printed candidate directory linked in the collection manifest. Preserve existing dirty work and all canonical sources, assets, readers, site output, public metadata, and released PDFs.\n\nUse Monday at 9:00 AM America/Los_Angeles as the common scheduled research cutoff, even if this run starts late. Use one cycle ID, research window, primary-source ledger, and frozen ledger hash for all four books. Research live external primary sources across every book's required coverage areas using this task's native web tools. Record every material update once, then explicitly decide change, already covered, not applicable, or blocked for each of the four handbooks. Apply relevant facts consistently while preserving each book's audience and voice; do not force identical text, version numbers, or changes where none are warranted. Record gated access and conflicts without bypassing controls.\n\nProduce separate isolated candidates for all four books, using the existing Production AI preparation and finalization helpers exactly once each and the shared publishing toolkit with explicit candidate output paths for the other three. Preserve all book-specific research schemas and candidate gates. Require exact source/PDF comparisons, evidence-backed changelogs when warranted, candidate-specific page maps, PDF and reader validation, required appearance/cross-renderer visual proof, and a release recommendation. Never mark an incomplete or failed candidate ready and never rerun a failed worker automatically. If one book fails, preserve its phase/log and complete independent work on the others without claiming the collection is synchronized.\n\nAudit that all four books used the same cutoff and frozen evidence, every shared update has four justified dispositions, shared claims agree, and protected file hashes remain unchanged. Advance the shared research checkpoint only after the complete four-book audit passes. Return one collection report with each book's status, exact changes and why they are warranted with direct primary-source links, candidate and evidence links, version recommendations, limitations, synchronization result, and protected-file result. An unchanged book still needs a completed evidence review. Do not commit, push, merge, publish, deploy, replace production files, send messages to others, launch a nested Codex process, or start another scheduled run. Report the completion, failure, or required review decision to Mike."
+ status = "ACTIVE"
+ rrule = "FREQ=WEEKLY;BYDAY=MO;BYHOUR=9;BYMINUTE=0"
+ model = "gpt-5.6-sol"
+ reasoning_effort = "high"
+ execution_environment = "local"
+-# Install this prompt with the repository checkout as cwd; project binding stays local.
++# Install with the collection repository as cwd; keep the project binding local.
+ created_at = 1784492430000
+ updated_at = 1785901611000
+diff --git a/production-ai-engineering/automation/run-weekly-handbook-review.sh b/production-ai-engineering/automation/run-weekly-handbook-review.sh
+index 21b9528..060a87c 100755
+--- a/production-ai-engineering/automation/run-weekly-handbook-review.sh
++++ b/production-ai-engineering/automation/run-weekly-handbook-review.sh
+@@ -559,25 +559,60 @@ validate_prepared_run() {
+ }
+ 
+ import_research_artifacts() {
+-  local artifact_name
+-  local source_path
+-  for artifact_name in \
+-    sources.md \
+-    sources.json \
+-    blocked-sources.md \
+-    change-report.md \
+-    changes.json \
+-    coverage.json \
+-    release-recommendation.json \
+-    research-agent-summary.md; do
+-    source_path="$RESEARCH_OUTPUT_DIR/$artifact_name"
+-    if [[ ! -f "$source_path" || -L "$source_path" || ! -s "$source_path" ]]; then
+-      /usr/bin/printf 'Missing or unsafe research artifact: %s\n' "$source_path"
+-      return 1
+-    fi
+-    /bin/cp "$source_path" "$RUN_DIR/$artifact_name" || return 1
+-  done
+-  /usr/bin/printf 'Imported all required top-level research artifacts.\n'
++  "$NODE_BIN" - "$RUN_DIR" "$RESEARCH_OUTPUT_DIR" <<'NODE'
++  'use strict';
++  const fs = require('node:fs');
++  const path = require('node:path');
++  const [runDirectory, researchDirectory] = process.argv.slice(2);
++  const names = ['sources.md', 'sources.json', 'blocked-sources.md', 'change-report.md', 'changes.json', 'coverage.json', 'release-recommendation.json', 'research-agent-summary.md'];
++  const ensure = (condition, message) => { if (!condition) throw new Error(message); };
++  function regularUnredirected(file, directory = false) {
++    for (let cursor = path.resolve(file); ; cursor = path.dirname(cursor)) {
++      const entry = fs.lstatSync(cursor);
++      ensure(!entry.isSymbolicLink(), 'Unsafe redirected research import: ' + cursor);
++      if (cursor === path.dirname(cursor)) break;
++    }
++    const entry = fs.statSync(file);
++    ensure(directory ? entry.isDirectory() : entry.isFile() && entry.size > 0, 'Missing, empty or unsafe research artifact: ' + file);
++  }
++  ensure(path.isAbsolute(runDirectory) && researchDirectory === path.join(runDirectory, 'research-output'), 'Research import requires the exact prepared research-output directory');
++  regularUnredirected(runDirectory, true);
++  regularUnredirected(researchDirectory, true);
++  // Read and validate every source before reserving any destination. O_NOFOLLOW
++  // also refuses a source-file link introduced after its path check.
++  const artifacts = names.map(name => {
++    const source = path.join(researchDirectory, name), destination = path.join(runDirectory, name);
++    regularUnredirected(source);
++    const descriptor = fs.openSync(source, fs.constants.O_RDONLY | fs.constants.O_NOFOLLOW);
++    let content;
++    try {
++      const entry = fs.fstatSync(descriptor);
++      ensure(entry.isFile() && entry.size > 0, 'Unsafe opened research artifact: ' + source);
++      content = fs.readFileSync(descriptor);
++      ensure(content.length > 0, 'Empty opened research artifact: ' + source);
++      if (name.endsWith('.json')) JSON.parse(content.toString('utf8'));
++    } finally { fs.closeSync(descriptor); }
++    return { destination, content };
++  });
++  for (const { destination } of artifacts) {
++    let entry;
++    try { entry = fs.lstatSync(destination); }
++    catch (error) { if (error.code !== 'ENOENT') throw error; }
++    ensure(!entry, 'Research import destination already exists; preserve it: ' + destination);
++  }
++  const reserved = [];
++  try {
++    // O_EXCL refuses files, directories and even dangling symlinks created after
++    // the prechecks. Reserve all outputs before writing any report content.
++    for (const artifact of artifacts) reserved.push({ ...artifact, descriptor: fs.openSync(artifact.destination, 'wx', 0o600) });
++    for (const artifact of reserved) fs.writeFileSync(artifact.descriptor, artifact.content);
++  } finally {
++    // A failed reservation leaves only its own empty files as failed-run
++    // evidence; never unlink or overwrite a colliding or redirected path.
++    for (const artifact of reserved) fs.closeSync(artifact.descriptor);
++  }
++  process.stdout.write('Imported all required top-level research artifacts.\n');
++NODE
+ }
+ 
+ validate_edit_scope() {
+diff --git a/publish-evidence-backed-handbook/references/specimen/manifest.json b/publish-evidence-backed-handbook/references/specimen/manifest.json
+index dd7ba22..17b04c9 100644
+--- a/publish-evidence-backed-handbook/references/specimen/manifest.json
++++ b/publish-evidence-backed-handbook/references/specimen/manifest.json
+@@ -2,7 +2,7 @@
+   "artifact": {
+     "pageDimensionsPoints": [
+       [
+-        420.0,
++        420,
+         594.96
+       ]
+     ],
+@@ -36,8 +36,6 @@
+   "inputs": {
+     ".gitattributes": "c946264169ba03cb2e392755cfe903acbcf25dcbe7d73a915381db6eb8dcfb2c",
+     ".gitignore": "58617550b41fee1bd4788141e64b2a29987761d5039cc0e3dea3cbc3fa4d9c47",
+-    "README.md": "381ebc12c8d72adc7706ca793d6672ca8b03b025e6d7158aed587a996f0b3478",
+-    "SKILL.md": "b00b1768a8590db711233a94b729a3177efaa420a0531a8c8d5c46f059e0d334",
+     "assets/design-system/dark-illustration-foreground.json": "738b1ccd5425d7dc56a7ccc1078a5ba8e21414f1fa29f731c9f57a19d8d0e16d",
+     "assets/design-system/dark-illustration-foreground.png": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca",
+     "assets/design-system/dark-illustration-reference.png": "960dedf14a56d562ba2bc2c2fe4646ca2dec6517be91210b43762812b615ede0",
+@@ -49,6 +47,8 @@
+     "assets/design-system/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
+     "assets/design-system/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
+     "assets/design-system/fonts/SOURCE-CODE-PRO-LICENSE.md": "0b2c3168605cb4f3ba54cf3cf2003f67ff894c66484c75702007f23eda92c353",
++    "assets/design-system/fonts/source-serif-4-latin-variable-italic.woff2": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5",
++    "assets/design-system/fonts/source-serif-4-latin-variable.woff2": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb",
+     "assets/design-system/fonts/SOURCE-SERIF-4-LICENSE.txt": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+     "assets/design-system/fonts/SourceCodePro-Regular.ttf": "f144137f557805c7327fc4b14d1d730f6e1822e0124170251ff1bcd723a693f1",
+     "assets/design-system/fonts/SourceCodePro-Semibold.ttf": "1b61c980d75de8216228a2603bcabe51394013452df26a04c99326bbc035c5a5",
+@@ -58,8 +58,6 @@
+     "assets/design-system/fonts/SourceSerif4-MediumItalic.ttf": "020e5e32d990bb12c9c4f10c8cfd8c1e359979c35fb6bca8147d2bfd1bfd1236",
+     "assets/design-system/fonts/SourceSerif4-Regular.ttf": "903db2772e75699975ed8483ec98128f054815c43d1fdc7a8506410c11c25866",
+     "assets/design-system/fonts/SourceSerif4-RegularItalic.ttf": "53c465029115d3811c828425890b38cbe4b874af67d15ba5ac795e14dc5baee9",
+-    "assets/design-system/fonts/source-serif-4-latin-variable-italic.woff2": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5",
+-    "assets/design-system/fonts/source-serif-4-latin-variable.woff2": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb",
+     "assets/design-system/illustration-reference.webp": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2",
+     "assets/design-system/pdf-appearance.json": "bffef43a064c4fc6544f118bdf7bd53725f7537bdb50f5e556ace6a95e59eec3",
+     "assets/design-system/print.css": "d8c765b5488aa7a8ad98c842e42c3c8f408f1dc70c9959ec0b6bc5d42c3fce06",
+@@ -69,6 +67,7 @@
+     "assets/design-system/tokens.json": "191a9d3ebeb37edda97817bda64bce3150795d7ace07dc0590b004c32b96d9b0",
+     "assets/html-entities.json": "075f2a2be3360afa7f228e9ea22341d6a953eb2488691dc589f19ba54b7474a8",
+     "assets/reader/consulting-reader.css": "3d3cccac6dc9ddf9ce56a24b9dd57c93c8671b2fa85e563810c504dc1028c101",
++    "assets/reader/design-workflow.css": "f9eca75eded2ea4d16951316c1176b41edf2c7407634500793d370ba5880403d",
+     "assets/reader/flowable-reader.css": "e927948af73ad510d1b6fa7e48a98e52318128b9cf5b7f70b62626819e54bcbd",
+     "assets/reader/pdf-downloads.css": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190",
+     "assets/reader/reader-chrome.html": "def25311779f07a9e71dd04387804ba5ebd9a0449fb694e52fbe4a7316f0c4d3",
+@@ -77,6 +76,7 @@
+     "assets/reader/theme.css": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26",
+     "assets/reader/theme.js": "3bc31ab2d134f99244a7909bc6ae0b169390976c55a601e5270a2d3562694786",
+     "handbook-spec.json": "87f4a9491eca40d340e1c4387f75189bad6db129a429a273957975f06be980f8",
++    "README.md": "381ebc12c8d72adc7706ca793d6672ca8b03b025e6d7158aed587a996f0b3478",
+     "references/design-system.md": "40795ca959bf0b7b309cd1c660d8fa7717b107354c670f6bce7b0993ed791841",
+     "references/edition-and-release.md": "d81deb5dd141e622182490aa61282baabdb96a6878dff9f82d50c040bfd48f59",
+     "references/editorial-quality.md": "370bf467b94eb1c1109c141275871c4e45b4c0db05b014837722f2dd21bbea0e",
+@@ -99,13 +99,14 @@
+     "requirements.txt": "ef23072f02526df470fc5d65ab206656460224576f36ae8d24542d68369285d9",
+     "scripts/artwork-pairs.mjs": "7d4a825eebb531e54d6fa09585580e6e648ea46b5f59e6db6a8786b205d8edf1",
+     "scripts/audit-pdf-appearance.py": "661d92529037c80edcaaca6f41a8f206dea5ffd7a1a5191cad6b8435e57d0556",
++    "scripts/build_reportlab_pdf.py": "7b444fca4baa4cafa132ec6a665d2f680675af89bb93ea252d983292623460f9",
+     "scripts/build-approved-reader.mjs": "cf6e07450337f87d542fc1e0d39d33a8eac5328da16bbf370ed42fe6acff4dca",
++    "scripts/build-candidate-reader.mjs": "c17d98acf29540134097f7fe898f81d76504259230d09e629b586f0a897e081b",
+     "scripts/build-manifest.py": "c15065e0bf1d8f0314d5568fffb9e718a0204b350bc355806f56630c13b357ce",
+     "scripts/build-pdf-fixtures.py": "4168a4fe7d9198bde8d33e08b0fe51f5d8ed26a8ef7000c608d7177b3e5cdd07",
+     "scripts/build-pdf-variants.mjs": "085645a380cf88b2591cfb4e83a7677bb73eacce3ebad26cf3b48b067a93380b",
+     "scripts/build-reader-fixtures.mjs": "59cdca9fd8ea36884c63f1f080f61fb781890ec2a9c8341fb94c6f266a1084dc",
+     "scripts/build-specimen.py": "d106e051cc65d718c70af8d60c27fbc4ada9969c3fdfa6217eca65b27dda639e",
+-    "scripts/build_reportlab_pdf.py": "7b444fca4baa4cafa132ec6a665d2f680675af89bb93ea252d983292623460f9",
+     "scripts/compare-editions.py": "3d618efe2fd55f03a477d1e306432491ab560de8d7253a396dd71968ef0dc015",
+     "scripts/decide-changelog.py": "8d410bdb7e4d129c84bb0bd9367799387eeed8742f9c5ee3049f186b6860426d",
+     "scripts/diagram_data.py": "91b6294d248115e191d04c46f26102fdd506841689e32db9d16bfce57f83088e",
+@@ -117,35 +118,37 @@
+     "scripts/finalize_chromium_pdf.py": "ff553df8440ce31ba13b43f30d79318a64dc24927dc3b97719fb52d7fc53cb1b",
+     "scripts/fixed-flow-diagrams.mjs": "0675d9f9c935490faaf27b6ec6bf7a9f9b0841cf012481753c2271138ac24fa4",
+     "scripts/flowable_reader.py": "a06b0a9c8f11f1046c2b91eac4a3fc63b20cb1a32dcebfc640ad183e92aca803",
+-    "scripts/markdown-downloads.mjs": "134e32ea0a94ceaf31a3d722801b1c96c7a15f14276d327c21171462aae820b8",
+     "scripts/markdown_layout.py": "b379a34610762eeaaae896b25ea692d4185c95399b63cb8203ff5bef3f5f796f",
++    "scripts/markdown-downloads.mjs": "134e32ea0a94ceaf31a3d722801b1c96c7a15f14276d327c21171462aae820b8",
++    "scripts/measure-page-map.py": "d59795e3141b90cd679dcc78526ba94e20fe3f8a26b0320ff7636011ca58745f",
+     "scripts/package-skill.py": "eb58be38ec99d177b59123f1ca1c4a9c73567c06eeafc9a318635956eb92eaaf",
+-    "scripts/pdf-browser-check.mjs": "d9374e4ca7a0bd2e4f6c632cd930679ba64bc2a0fe758b844662b27d20d47218",
+-    "scripts/pdf-css.mjs": "0ff51de388f807322e1ed63b68adca47d27c350bd7e4b0593abc93c8e4465961",
+-    "scripts/pdf-downloads.mjs": "d152d4c4fc37140899bc61a0125f1baba339674e9bee99f1f8076201c7a09bed",
+     "scripts/pdf_artwork.py": "5e0e8ecc39a12ee3f33efd14e684089416ededdd7ec0da067f9c93f4f0898200",
+     "scripts/pdf_baseline.py": "b27378cb3b209312b0eccd1ee2ca3a3326d8a348205642361def89fb26fd0884",
+     "scripts/pdf_font_resources.py": "941e3ec1a6ffeaa53b82c634f5bf0ac35eafa5a723fa4c4cb067186de3c428d0",
+     "scripts/pdf_theme.py": "46f37c800f07f51209810c837c69cc7ec5b3d280a3a06bb513a987df5107ce78",
+     "scripts/pdf_validation_checks.py": "b53ba5fca16746bad7467b1a6976414f61f3cf58aa416d65d23932a637d6e76f",
++    "scripts/pdf-browser-check.mjs": "d9374e4ca7a0bd2e4f6c632cd930679ba64bc2a0fe758b844662b27d20d47218",
++    "scripts/pdf-css.mjs": "0ff51de388f807322e1ed63b68adca47d27c350bd7e4b0593abc93c8e4465961",
++    "scripts/pdf-downloads.mjs": "d152d4c4fc37140899bc61a0125f1baba339674e9bee99f1f8076201c7a09bed",
+     "scripts/preflight.py": "af086feae8d0b6c4e50048e5e2c78097d339f9f4d5b8b6f140824e7d048990bd",
+     "scripts/preview-server.py": "c52e43a3025cdfec0fb260607122b043b3e6557d55854ece5fc35fa0e3b4c81f",
+     "scripts/prompt-blocks.mjs": "d0edfd8f6d7a179d6c40da3a8cba8fca735340304ad9ff2c95649b933ccc8952",
+     "scripts/publication-front.mjs": "2af3d845cdbd2976ae33a9d15b9e452b4e4573079f615ed941ae77911f02cffe",
+-    "scripts/reader-browser-check.mjs": "c518ecbc859ec497c7cdcaece33f3343343a5ab1452efa3373c27c6a754cb0ae",
++    "scripts/reader-browser-check.mjs": "d419e3f5818fea4f6152a902484b2b3cedfa90f79245b987d63829f9809ee6c0",
+     "scripts/reader-paths.mjs": "f0c192edaf2a666271cda66c75bb96c828b382fa18491de4c0bb548c469ef7d4",
+     "scripts/render-chromium-pdf.mjs": "61352cbea1d1cc9736a5128e3001fd299995f81b2c58c6d93b53e601500a6628",
+-    "scripts/render-pdfkit.swift": "67864d7b1eb1d08c9552c162ef77515c6e06880f083a3f799951024f28df65ef",
++    "scripts/render-pdfkit.swift": "77ea29696400735d0a9bd6ef06644274400fe719b10607c07dce8a95d17bbb2e",
+     "scripts/render-proof.py": "c46436972f9b25793b35754659c93fc3c133d6e75c964d8dfbb42b2bf287dee8",
+     "scripts/reportlab_layout.py": "49e6aca5f0bd8d205aedb66ed5eaded771a7f4d5d69a5231055a7310b959026e",
+     "scripts/retained-releases.mjs": "830f33924852a56e25c87b64d2b5cb1137d74f19fc01ee800c0dbc77c3553a05",
+     "scripts/review-edition.mjs": "3a1f9a3ec1622f77df32286a651f7ccd26f32f101200729d7bbf9e5081834f91",
+     "scripts/runtime_support.py": "8c38cf7b432696455f4b51e95fb0bef78a50fb1984cd889e5ea160fb6652b0f6",
+-    "scripts/screenshot-browser-check.mjs": "9f278f9fc1e9a2e1f91e210c17110519d9af23dd8baaf8ac68f919d5108b9b31",
+     "scripts/screenshot_figures.py": "b4fe6e971a8e14afc3f9e882ebc67e7efb4f8ccc86b0701d14b046c613a5ab0a",
++    "scripts/screenshot-browser-check.mjs": "9f278f9fc1e9a2e1f91e210c17110519d9af23dd8baaf8ac68f919d5108b9b31",
+     "scripts/site-theme.mjs": "f94d52746beaae63342eab2e275ff93edf4a1cfa130c441091f934318c790c45",
+     "scripts/terminal-blocks.mjs": "31f313571aaedfd5d742d407ef75abf3fc9e9c4c571d0a3f47d9daa5bf1c0c70",
+     "scripts/test-artwork-pairs.mjs": "8260c51efb5ef1cc605ab472b6bad91a04fb509a84772c8c15a71b6068413890",
++    "scripts/test-candidate-reader.mjs": "f71572af5b130fabb2c5f95849a04e7579c0a81126d8aa0b11dfec2d9b473080",
+     "scripts/test-code-blocks.py": "2ba82c9b4a2e652a0b51790dc4773c522ad9768a0e9a44e928c3b86d91b845a1",
+     "scripts/test-diagrams.mjs": "50f7bcda34eb508f0524b859928238fbd784c2265b51c40e8fd758329d08e979",
+     "scripts/test-edition-page-roles.py": "5f61e0d5c3309160244875133b87c796d5d3ed1f74e545886e352a8ac92c4c75",
+@@ -157,21 +160,23 @@
+     "scripts/test-markdown-downloads.mjs": "9640e038bf5b29e04bf4dcb7bbe598597272f217254d869d72a6f6a9d27d0086",
+     "scripts/test-markdown-page-layout.py": "5334b5e7a528e16bda61a6868f0dc2b59c3e34afee9b20d200ebcdcda03d25da",
+     "scripts/test-markdown-runtime.py": "baf1b7823eb0532af17bf4f8cd25ec0909e1054848263eb3a734461c4565e363",
++    "scripts/test-measured-page-map.py": "0b3afa1b3b4b556b03c88bfc455784d3f709d4e44a895e46bd6e37c6e0a934b0",
+     "scripts/test-pdf-baseline.py": "c237d6d58c91ef89f32929f65b99f28e57ed5fdb3268807db3a4b627c2e687f8",
+     "scripts/test-pdf-downloads.mjs": "97207d7c211dfd26065ba3dcb3fad3e84400a22aba38c71e7329895ba7cca329",
+     "scripts/test-pdf-runtime.py": "3eb823b526a04fb67a24440f8db9fb7271776ceab65f0a06e3aacbcd9d674c42",
+     "scripts/test-pdf-validation-checks.py": "c749e346496b9e3810b46f4e481f97cc33c092ce3fbece9e96ea43b702c00e6f",
+     "scripts/test-prompt-blocks.mjs": "dfea5d2dc7aef689ce9001a1624bdded7ca312c1149a8632d5992b520e6e66e5",
++    "scripts/test-render-pdfkit.py": "a477569a481e7c5d580af7307df89e17e50b71cc896ab6dce9c90c757fb261ff",
+     "scripts/test-retained-releases.mjs": "1c24d211994f5a0adff1ccc6950659bbd98a707078c1bb827bc4069ef18214af",
+     "scripts/test-review-edition.mjs": "bfebd43c7f26c628960f49abefe83965b943f7f07e93d3bdd8d6c5c81657bc7d",
+     "scripts/test-screenshot-figures.py": "6d0abc8ee540ebec775e98f80a1b48ae315f8f59410af4fae5385ce4b53dcc09",
+     "scripts/test-site-theme.mjs": "39e5554a796d5d66c052c5c5e7a87df0568cfa6a314d2673f44a07d4a1085d44",
+     "scripts/test-terminal-blocks.mjs": "6ed129c6883829170925a4e033cdfc05ba4a65de31f0cc53f8ec7bf87d37c761",
++    "scripts/validate_pdf_pair.py": "aa4b0cd04350c230c10fb41d1af83c94cef0b978fd296c7db2f44c0360b18a35",
+     "scripts/validate-package.py": "56624285a485cee36a4569e712b7bb099766babe7e91c8e2af8ec37742b1175f",
+     "scripts/validate-pdf.py": "6d0d56042ed659f765d2c79123311ee32f02f95dd74c02e0a04e7c13c81e8384",
+     "scripts/validate-reader-release.mjs": "a06b7fcd9017b9ab0e969df0464bcd09ddfbdbc555ba815631ae9f850578c7f0",
+-    "scripts/validate_pdf_pair.py": "aa4b0cd04350c230c10fb41d1af83c94cef0b978fd296c7db2f44c0360b18a35",
+-    "assets/reader/design-workflow.css": "f9eca75eded2ea4d16951316c1176b41edf2c7407634500793d370ba5880403d"
++    "SKILL.md": "b00b1768a8590db711233a94b729a3177efaa420a0531a8c8d5c46f059e0d334"
+   },
+   "schemaVersion": 1,
+   "toolchain": {
+diff --git a/publish-evidence-backed-handbook/scripts/reader-browser-check.mjs b/publish-evidence-backed-handbook/scripts/reader-browser-check.mjs
+index d5df8c7..bc40389 100644
+--- a/publish-evidence-backed-handbook/scripts/reader-browser-check.mjs
++++ b/publish-evidence-backed-handbook/scripts/reader-browser-check.mjs
+@@ -51,12 +51,20 @@ export async function checkReaderBrowser(page, {urls, screenshotDirectory}) {
+   return results;
+ }
+ 
+-export async function checkReaderFallbacks(page, urls) {
++// Optional leases keep single-process browser runtimes isolated per context.
++// createContext(options, {purpose}) returns {context, close}; the caller owns it.
++export async function checkReaderFallbacks(page, urls, {initializeContext,createContext}={}) {
+   const browser=page.context().browser(), results=[];
++  const acquire=async(options,purpose)=>{
++    if(createContext)return createContext(options,{purpose});
++    const context=await browser.newContext(options);
++    return {context,close:()=>context.close()};
++  };
+   for(const url of urls) {
+     for(const scheme of ['light','dark']) {
+-      const context=await browser.newContext({javaScriptEnabled:false,colorScheme:scheme,viewport:{width:390,height:900}});
++      const lease=await acquire({javaScriptEnabled:false,colorScheme:scheme,viewport:{width:390,height:900},serviceWorkers:'block'},'no-js-'+scheme),{context}=lease;
+       try {
++        if(initializeContext)await initializeContext(context);
+         const p=await context.newPage();await p.goto(url);
+         const images=p.locator('figure[data-artwork-paired] img');
+         for(let i=0;i<await images.count();i++) {const image=images.nth(i);await image.scrollIntoViewIfNeeded();await image.evaluate(img=>img.decode());if((await image.evaluate(img=>img.currentSrc.includes('/assets/dark/')))!==(scheme==='dark')) throw Error('No-JavaScript artwork source: '+url);}
+@@ -65,16 +73,17 @@ export async function checkReaderFallbacks(page, urls) {
+         await p.emulateMedia({media:'print'});await p.waitForTimeout(300);
+         if(await p.evaluate(()=>[...document.querySelectorAll('figure[data-artwork-paired] img')].some(img=>img.currentSrc.includes('/assets/dark/')))) throw Error('No-JavaScript print artwork: '+url);
+         results.push({url,scheme,...screen,printFallback:true});
+-      } finally {await context.close();}
++      } finally {await lease.close();}
+     }
+-    const context=await browser.newContext({viewport:{width:390,height:900}});
++    const lease=await acquire({viewport:{width:390,height:900},serviceWorkers:'block'},'blocked-storage'),{context}=lease;
+     try {
++      if(initializeContext)await initializeContext(context);
+       await context.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw Error('Blocked storage');}}));
+       const p=await context.newPage();await p.goto(url);
+       await p.locator('[data-theme-trigger]:visible').first().click();await p.locator('[data-theme-choice=dark]:visible').click();
+       if(await p.evaluate(()=>document.documentElement.dataset.theme)!=='dark') throw Error('Blocked storage theme: '+url);
+       results.push({url,blockedStorage:true});
+-    } finally {await context.close();}
++    } finally {await lease.close();}
+   }
+   return results;
+ }
+diff --git a/publish-evidence-backed-handbook/scripts/render-pdfkit.swift b/publish-evidence-backed-handbook/scripts/render-pdfkit.swift
+index d9b481b..09f8232 100755
+--- a/publish-evidence-backed-handbook/scripts/render-pdfkit.swift
++++ b/publish-evidence-backed-handbook/scripts/render-pdfkit.swift
+@@ -1,73 +1,149 @@
+ #!/usr/bin/env swift
+ import AppKit
++import CryptoKit
++import Darwin
+ import Foundation
+ import PDFKit
+ 
+-func argument(_ name: String) -> String? {
+-    guard let index = CommandLine.arguments.firstIndex(of: name), index + 1 < CommandLine.arguments.count else {
+-        return nil
+-    }
+-    return CommandLine.arguments[index + 1]
+-}
+-
+ func fail(_ message: String) -> Never {
+     FileHandle.standardError.write(Data((message + "\n").utf8))
+     exit(1)
+ }
+ 
+-func isSymbolicLink(_ url: URL) -> Bool {
+-    return (try? url.resourceValues(forKeys: [.isSymbolicLinkKey]).isSymbolicLink) == true
++func checkedPath(_ argument: String, label: String) -> URL {
++    let expanded = NSString(string: argument).expandingTildeInPath
++    guard !expanded.split(separator: "/").contains("..") else {
++        fail("\(label) cannot contain parent traversal")
++    }
++    let url = URL(fileURLWithPath: expanded).standardizedFileURL
++    var component = url
++    while component.path != "/" {
++        do {
++            let values = try component.resourceValues(forKeys: [.isSymbolicLinkKey])
++            guard values.isSymbolicLink != true else { fail("\(label) cannot traverse a symlink: \(component.path)") }
++        } catch {
++            // A new output and some of its parents may not exist yet. Other
++            // errors (permissions, unreadable parents) must not be ignored.
++            let nsError = error as NSError
++            guard nsError.domain == NSCocoaErrorDomain && nsError.code == NSFileReadNoSuchFileError else {
++                fail("Unable to inspect \(label): \(error)")
++            }
++        }
++        component.deleteLastPathComponent()
++    }
++    return url
+ }
+ 
+-guard let pdfArgument = argument("--pdf"), let outputArgument = argument("--output-dir") else {
++func sha256(_ data: Data) -> String {
++    SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
++}
++
++var arguments: [String: String] = [:]
++var argumentIndex = 1
++while argumentIndex < CommandLine.arguments.count {
++    let name = CommandLine.arguments[argumentIndex]
++    guard ["--pdf", "--output-dir", "--dpi"].contains(name),
++          arguments[name] == nil, argumentIndex + 1 < CommandLine.arguments.count,
++          !CommandLine.arguments[argumentIndex + 1].hasPrefix("--") else {
++        fail("Unknown, duplicate, or incomplete argument: \(name)")
++    }
++    arguments[name] = CommandLine.arguments[argumentIndex + 1]
++    argumentIndex += 2
++}
++guard let pdfArgument = arguments["--pdf"], let outputArgument = arguments["--output-dir"] else {
+     fail("Usage: render-pdfkit.swift --pdf <file.pdf> --output-dir <directory> [--dpi <72-600>]")
+ }
+ 
+-let dpi = Double(argument("--dpi") ?? "144") ?? 144
+-guard dpi >= 72 && dpi <= 600 else {
++guard let dpi = Double(arguments["--dpi"] ?? "144"), dpi.isFinite, dpi >= 72, dpi <= 600 else {
+     fail("--dpi must be between 72 and 600")
+ }
+ 
+ let fileManager = FileManager.default
+-let lexicalPDF = URL(fileURLWithPath: NSString(string: pdfArgument).expandingTildeInPath)
+-let lexicalOutput = URL(fileURLWithPath: NSString(string: outputArgument).expandingTildeInPath, isDirectory: true)
+-guard !isSymbolicLink(lexicalPDF) else { fail("PDF cannot be a symlink") }
+-guard !isSymbolicLink(lexicalOutput) else { fail("Output directory cannot be a symlink") }
+-
+-let pdfURL = lexicalPDF.standardizedFileURL
+-let outputURL = lexicalOutput.standardizedFileURL
+-guard let document = PDFDocument(url: pdfURL) else { fail("Unable to open PDF") }
+-try? fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true)
+-
+-if let existing = try? fileManager.contentsOfDirectory(at: outputURL, includingPropertiesForKeys: [.isSymbolicLinkKey]) {
+-    for url in existing where url.lastPathComponent.hasPrefix("page-") && url.pathExtension.lowercased() == "png" {
+-        guard !isSymbolicLink(url) else { fail("Refusing to replace a symlinked proof image") }
+-        try? fileManager.removeItem(at: url)
+-    }
++let pdfURL = checkedPath(pdfArgument, label: "PDF")
++let outputURL = checkedPath(outputArgument, label: "Output directory")
++guard (try? pdfURL.resourceValues(forKeys: [.isRegularFileKey]).isRegularFile) == true else {
++    fail("PDF must be an existing regular file")
++}
++guard !fileManager.fileExists(atPath: outputURL.path) else {
++    fail("Output directory must be fresh and must not already exist")
+ }
++guard let sourceData = try? Data(contentsOf: pdfURL) else { fail("Unable to read PDF") }
++let sourceSha256 = sha256(sourceData)
++guard let document = PDFDocument(data: sourceData) else { fail("Unable to open PDF") }
++guard !document.isLocked && document.pageCount > 0 else { fail("PDF is locked or has no pages") }
++do { try fileManager.createDirectory(at: outputURL.deletingLastPathComponent(), withIntermediateDirectories: true) }
++catch { fail("Unable to create fresh output directory: \(error)") }
++// mkdir is exclusive: another process cannot turn the freshness check above
++// into permission to reuse its existing directory, even if it is still empty.
++_ = checkedPath(outputURL.path, label: "Output directory")
++guard Darwin.mkdir(outputURL.path, mode_t(0o755)) == 0 else {
++    fail("Unable to exclusively create fresh output directory (errno \(errno))")
++}
++var renderedPages: [[String: Any]] = []
+ 
+ for index in 0..<document.pageCount {
+     guard let page = document.page(at: index) else { fail("Missing PDF page \(index + 1)") }
+     let bounds = page.bounds(for: .mediaBox)
+-    let size = NSSize(width: bounds.width * dpi / 72.0, height: bounds.height * dpi / 72.0)
+-    let image = page.thumbnail(of: size, for: .mediaBox)
+-    guard let data = image.tiffRepresentation,
+-          let bitmap = NSBitmapImageRep(data: data),
+-          let png = bitmap.representation(using: .png, properties: [:]) else {
++    let rotation = ((page.rotation % 360) + 360) % 360
++    guard [0, 90, 180, 270].contains(rotation), bounds.width.isFinite, bounds.height.isFinite,
++          bounds.width > 0, bounds.height > 0 else { fail("Invalid media box or rotation on page \(index + 1)") }
++    let scale = dpi / 72.0
++    let turned = rotation == 90 || rotation == 270
++    let width = ceil((turned ? bounds.height : bounds.width) * scale)
++    let height = ceil((turned ? bounds.width : bounds.height) * scale)
++    guard width <= 32768, height <= 32768, width * height <= 100_000_000 else {
++        fail("Page \(index + 1) exceeds the raster safety limit")
++    }
++    guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
++          let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8,
++                                  bytesPerRow: 0, space: colorSpace,
++                                  bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else {
++        fail("Unable to allocate page \(index + 1)")
++    }
++    // PDFKit's thumbnail/NSImage/TIFF path applies display-oriented font
++    // smoothing, visibly emboldening the same embedded font. Render straight
++    // into an sRGB bitmap, retaining grayscale edge antialiasing, not LCD/font
++    // smoothing. PDFPage.draw handles page rotation, media-box origins and
++    // annotations itself. Do not concatenate a second page transform.
++    context.setFillColor(CGColor(gray: 1, alpha: 1))
++    context.fill(CGRect(x: 0, y: 0, width: width, height: height))
++    context.setAllowsAntialiasing(true)
++    context.setShouldAntialias(true)
++    context.setAllowsFontSmoothing(false)
++    context.setShouldSmoothFonts(false)
++    context.interpolationQuality = .high
++    context.scaleBy(x: scale, y: scale)
++    page.draw(with: .mediaBox, to: context)
++    guard let image = context.makeImage(),
++          let png = NSBitmapImageRep(cgImage: image).representation(using: .png, properties: [:]) else {
+         fail("Unable to encode PDF page \(index + 1)")
+     }
+     let name = String(format: "page-%03d.png", index + 1)
+-    try png.write(to: outputURL.appendingPathComponent(name), options: .atomic)
++    // Exclusive writes preserve evidence if another process creates a target.
++    do { try png.write(to: outputURL.appendingPathComponent(name), options: .withoutOverwriting) }
++    catch { fail("Unable to write fresh page \(index + 1): \(error)") }
++    renderedPages.append(["page": index + 1, "file": name, "width": Int(width), "height": Int(height),
++                          "rotation": rotation, "sha256": sha256(png)])
++}
++guard let finalSource = try? Data(contentsOf: pdfURL), sha256(finalSource) == sourceSha256 else {
++    fail("PDF changed during rendering")
+ }
+ 
+ let report: [String: Any] = [
+-    "schemaVersion": 1,
++    "schemaVersion": 2,
+     "status": "passed",
+     "renderer": "Apple PDFKit",
+     "pdf": pdfURL.lastPathComponent,
+     "pages": document.pageCount,
+-    "dpi": Int(dpi),
+-    "outputDirectory": outputURL.lastPathComponent
++    "dpi": dpi,
++    "outputDirectory": outputURL.lastPathComponent,
++    "sourceSha256": sourceSha256,
++    "renderMethod": "PDFPage.draw(with:to:)",
++    "colorSpace": "sRGB",
++    "fontSmoothing": false,
++    "antialiasing": true,
++    "displayBox": "mediaBox",
++    "pageImages": renderedPages
+ ]
+ let reportData = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
+ FileHandle.standardOutput.write(reportData)

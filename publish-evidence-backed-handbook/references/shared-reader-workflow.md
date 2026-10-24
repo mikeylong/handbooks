@@ -84,6 +84,16 @@ Evaluation and Consulting use the shared flowable converter, package assembler, 
 
 Rendered regression proof and visual review remain required before a candidate is called ready. Passing fixture tests does not approve a title, edition, or deployment.
 
+### Chapter-only eyebrows
+
+Follow the [eyebrow role contract](design-system.md#eyebrow-roles). Both PDF runtimes and the flowable reader use `scripts/eyebrow_roles.py`. Chapter helpers explicitly assign `role='chapter-marker'`; nonchapter eyebrows are omitted without spacing. The reader places allowed markers inside the corresponding chapter header. Keep ordinary titles, metadata and running furniture. Run `scripts/test-eyebrow-roles.py` after changes to these semantics.
+
 ## Paired PDF appearances
 
 Apply [PDF appearances](pdf-appearances.md) to explicit Daytime version and Late night version downloads, shared generation, retained releases, additive appearance revisions, exact-hash approval, cross-renderer proof and future editions. An appearance companion preserves its content edition and existing Daytime bytes. Browser printing stays Light. A failed companion blocks the initial three-title launch.
+
+### Compact concept diagrams
+
+For a small cause/action branch or a three-stage ownership loop, use `ConceptDiagram(book_root, definition_name)` from `scripts/concept_diagrams.py`. The book owns `source/diagrams/<definition_name>.json`: an ID, title, three labelled nodes with details, exact edges, and a complete `textEquivalent`. `layout` is `branch-actions` or `ownership-loop`; ownership nodes also have roles and a feedback label. The shared class rejects edges that do not fit its geometry. It draws vector PDF content and the flowable reader emits a responsive HTML diagram with the same labels and an accessible description. Markdown uses the text equivalent, not a screenshot or table. The shared stylesheet stacks branches and loop stages on phones without reducing primary labels below 16 px. Validate the actual PDF and hosted rendering after changes.
+
+Use `ordered-sequence` for a process of two to eight steps. Its edges must connect each step to the next in order; the PDF and reader show numbered steps and connecting arrows. Keep labels and explanatory detail with each step, and include the complete sequence in the text equivalent. Choose this when order matters, rather than converting a process into a two-column table merely for visual variety.

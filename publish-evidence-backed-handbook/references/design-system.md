@@ -39,6 +39,14 @@ Avoid decorative color, card-heavy interface patterns, glossy gradients, generic
 - Code: at least 7.8 pt with approximately 1.55 line height.
 - Use at least three widows and three orphans. Keep headings with following content.
 
+### Heading wrapping
+
+Multiline headings must not strand one trailing word or a tiny final fragment. Keep meaningful phrases together while preserving the heading's wording, font size, type hierarchy and available page width. The shared PDF formatters measure the actual heading and, when needed, choose the widest slightly narrower wrapping width that leaves at least two words and one quarter of the original width on the final line, without increasing the line count. This is a general rule, not a set of book-specific line breaks. Explicit author line breaks remain explicit. If an unbreakable word or other constraint prevents a valid wrap, flag the heading for visual review instead of shrinking the type. Short, single-line headings keep their original geometry.
+
+PDF subsection headings display the title without decimal prefixes such as `2.1`. Preserve that source identifier for navigation and tracking. The PDF preparation hook gives each subsection a stable `section-2-1` anchor and changes matching in-text/index section references to linked titles. Chapter markers, procedural steps, diagram order, numerical data and source citation labels retain their numbering. Reader source headings keep their IDs and numbers; this rule governs the PDF presentation. Audit references whenever prefixes are removed so readers are not sent to invisible labels.
+
+Use `INDEX_REFERENCE` for index-entry paragraphs containing section IDs. In narrative prose, references introduced by `section`, `in` or `see` are resolved against known subsection IDs. Unmarked decimal values and versions are preserved. Links and code are excluded from rewriting.
+
 The serif voice should carry narrative and synthesis. The sans voice should carry labels, metadata, table structures, citations, and compact operational information.
 
 ## Palette and rules
@@ -51,11 +59,11 @@ Use one-pixel or sub-point rules to establish hierarchy. Heavy boxes should be r
 
 ### Cover
 
-Use a small label, large multi-line serif title, concise subtitle, author credit, and a restrained date/version line. Preserve generous negative space.
+Use a large multi-line serif title, concise subtitle, author credit, and a restrained date/version line. Preserve generous negative space. Do not add an eyebrow above the title.
 
 ### Foreword
 
-Open with a small uppercase label and a large editorial heading. State the premise and reading model quickly. Use a short pull quote or compact operating principles only when they add orientation.
+Open with a large editorial heading, without an eyebrow. State the premise and reading model quickly. Use a short pull quote or compact operating principles only when they add orientation.
 
 ### Contents
 
@@ -64,6 +72,14 @@ Use a compact ruled list with chapter numbers, titles, and page numbers. The con
 ### Chapter opener
 
 Use a small uppercase chapter kicker, a balanced serif title, one italic deck, and one centered monochrome technical illustration. The opener is a full page and should feel quieter than a poster.
+
+### Eyebrow roles
+
+Eyebrows appear only as chapter markers immediately above chapter titles, for example `CHAPTER 01`. Cover, preface, contents, and back-matter headings do not receive eyebrows. Keep actual titles, author/date/version metadata, running headers, and page numbers; those are separate roles.
+
+This chapter-only rule was approved on 2026-10-23 and supersedes the nonchapter labels visible in the retained specimen. Preserve the historical specimen PDF; new builds follow this rule.
+
+The shared ReportLab and Markdown formatters require the explicit `chapter-marker` role on an eyebrow paragraph. Chapter-opening helpers set that role. Existing `CoverKicker`, `ChapterKicker`, and `TOCKicker` styles are recognized as eyebrow styles, but a style name alone does not authorize a visible marker. New eyebrow styles declare `handbookEyebrow=True`. Without the chapter-marker role, the formatter omits the label and its spacing. This rule depends on semantic role, never on the label's text. The hosted reader applies the same rule and retains chapter markers inside chapter headers. HTML eyebrows use `data-role="chapter-marker"`.
 
 ### Narrative section
 

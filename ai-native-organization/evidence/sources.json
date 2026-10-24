@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "accessDate": "2026-10-23",
+  "researchCutoff": "2026-10-23",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Scaling Agile @ Spotify",
+      "authors": "Henrik Kniberg and Anders Ivarsson",
+      "published": "2012-11",
+      "url": "https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf",
+      "authority": "original organizational account",
+      "access": "complete PDF via web",
+      "locator": "Squads; dependencies; chapters and guilds; final disclaimer",
+      "supports": [
+        "C1"
+      ],
+      "limitation": "An evolving 2012 snapshot, not a current operating model or causal trial.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S2",
+      "title": "Migrating to Cloud-Native Application Architectures",
+      "authors": "Matt Stine",
+      "publisher": "O'Reilly Media",
+      "published": "2015-02",
+      "url": "https://www.f5.com/content/dam/f5/corp/global/pdf/ebooks/Migrating_to_Cloud-Native_Application_Architecutres_NGINX.pdf",
+      "authority": "original practitioner report, publisher text hosted by F5/NGINX",
+      "access": "complete PDF via web",
+      "locator": "Changes Needed: cultural and organizational change; self-service infrastructure; automated recovery",
+      "supports": [
+        "C2"
+      ],
+      "limitation": "Historical architectural argument; does not establish an AI productivity effect.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S3",
+      "title": "Designing AI-Native Engineering Organizations: Beyond Team Topologies",
+      "authors": "Dilip Saha",
+      "published": "2026-10",
+      "url": "https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations",
+      "authority": "author's organizational proposal",
+      "access": "complete article through Safari MCP; web fetch unavailable",
+      "locator": "A proposed operating model; risks and governance; how to experiment",
+      "supports": [
+        "C3"
+      ],
+      "snapshot": "saha-safari.txt",
+      "limitation": "Hypothesis, not validated outcome evidence. Visible date differed between viewport extraction (October 21) and full extraction (October 20); manuscript uses month precision.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S4",
+      "title": "Effective context engineering for AI agents",
+      "publisher": "Anthropic",
+      "published": "2025-09-29",
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "authority": "provider engineering report",
+      "access": "complete article via web",
+      "locator": "Context engineering vs. prompt engineering; anatomy of effective context; retrieval",
+      "supports": [
+        "C4"
+      ],
+      "limitation": "Provider guidance; handbook ownership and freshness contracts are author synthesis.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S5",
+      "title": "Demystifying evals for AI agents",
+      "publisher": "Anthropic",
+      "published": "2026-01-09",
+      "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+      "authority": "provider engineering report",
+      "access": "complete article via web",
+      "locator": "Structure of an evaluation; roadmap; holistic understanding of agents",
+      "supports": [
+        "C5"
+      ],
+      "limitation": "Does not prescribe this handbook's numerical pilot gates. Repeated trials are not distinct scenarios.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S6",
+      "title": "How we contain Claude across products",
+      "publisher": "Anthropic",
+      "published": "2026-05-25",
+      "url": "https://www.anthropic.com/research/how-we-contain-claude",
+      "authority": "provider engineering report",
+      "access": "complete article via web",
+      "locator": "Introduction; three types of risk; containment patterns",
+      "supports": [
+        "C6"
+      ],
+      "limitation": "Provider-specific experience. No control or sandbox is claimed infallible.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S7",
+      "title": "We are Changing our Developer Productivity Experiment Design",
+      "authors": "Joel Becker, Nate Rush, Tom Cunningham, David Rein and Khalid Mahamud",
+      "publisher": "METR",
+      "published": "2026-02-24",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "authority": "original research methods update",
+      "access": "complete article via web",
+      "locator": "Wider adoption; selection; concurrent agents",
+      "supports": [
+        "C7"
+      ],
+      "limitation": "Open-source developer experiment; no effect estimate transfers to the handbook's synthetic organizational pilot.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S8",
+      "title": "8.1.3.1. Censoring",
+      "publisher": "NIST/SEMATECH e-Handbook of Statistical Methods",
+      "published": null,
+      "url": "https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm",
+      "authority": "statistical handbook",
+      "access": "complete page via web",
+      "locator": "Censored Type I data; right censoring",
+      "supports": [
+        "C8"
+      ],
+      "limitation": "Reliability setting. Applying the distinction between unfinished observations and observed completion times is a methodological analogy, not a prescribed software metric.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S9",
+      "title": "Working in small batches",
+      "publisher": "DORA",
+      "published": null,
+      "url": "https://dora.dev/capabilities/working-in-small-batches/",
+      "authority": "research program guidance",
+      "access": "complete page via web",
+      "locator": "Opening; how to work in small batches",
+      "supports": [
+        "C9"
+      ],
+      "limitation": "Supports short feedback cycles; does not establish the example's task count, deadlines or success hurdles.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "R1",
+      "title": "AI Native Organization Handbook",
+      "url": "codex://threads/01a16a04-2823-79a2-87b8-fb54d1be7198",
+      "authority": "user-selected discussion",
+      "access": "all 16 turns retrieved through read_thread",
+      "snapshot": "discussion.json",
+      "supports": [
+        "A1",
+        "X1"
+      ],
+      "limitation": "Generated synthesis, proposed decisions and synthetic examples; never empirical evidence. This handbook independently checks external sources and arithmetic.",
+      "disposition": "contextual"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "section": "1.1",
+      "claim": "Spotify's report combines squad ownership with chapters/guilds and describes an evolving 2012 snapshot.",
+      "sources": [
+        "S1"
+      ],
+      "kind": "direct evidence"
+    },
+    {
+      "id": "C2",
+      "section": "1.1",
+      "claim": "Stine links autonomous delivery with platforms, automation and recovery.",
+      "sources": [
+        "S2"
+      ],
+      "kind": "direct evidence"
+    },
+    {
+      "id": "C3",
+      "section": "1.1",
+      "claim": "Saha proposes builders, specialist enabling capabilities and a shared platform; effectiveness remains a hypothesis.",
+      "sources": [
+        "S3"
+      ],
+      "kind": "direct evidence"
+    },
+    {
+      "id": "C4",
+      "section": "2.1",
+      "claim": "Context engineering curates the information available during model execution.",
+      "sources": [
+        "S4"
+      ],
+      "kind": "direct evidence"
+    },
+    {
+      "id": "C5",
+      "section": "2.2",
+      "claim": "Agent evaluations distinguish cases, repeated trials, grading and final environment outcomes.",
+      "sources": [
+        "S5"
+      ],
+      "kind": "direct evidence"
+    },
+    {
+      "id": "C6",
+      "section": "2.3",
+      "claim": "Containment constrains what an agent can do through environmental access controls.",
+      "sources": [
+        "S6"
+      ],
+      "kind": "direct evidence"
+    },
+    {
+      "id": "C7",
+      "section": "3.2",
+      "claim": "Task selection and concurrent AI work can complicate productivity measurement.",
+      "sources": [
+        "S7"
+      ],
+      "kind": "direct evidence"
+    },
+    {
+      "id": "C8",
+      "section": "3.2",
+      "claim": "Incomplete observations differ from measured completion times.",
+      "sources": [
+        "S8"
+      ],
+      "kind": "methodological analogy, explicitly labeled"
+    },
+    {
+      "id": "C9",
+      "section": "3.1",
+      "claim": "Small independently testable changes shorten feedback cycles.",
+      "sources": [
+        "S9"
+      ],
+      "kind": "direct evidence"
+    },
+    {
+      "id": "A1",
+      "section": "all operational guidance",
+      "claim": "Eight principles, ownership contracts, task contracts, maintenance and expansion sequence are handbook proposals.",
+      "sources": [
+        "R1"
+      ],
+      "kind": "author synthesis, not a documented guarantee"
+    },
+    {
+      "id": "X1",
+      "section": "3.1\u20133.11",
+      "claim": "Six engineers, 48 assignments, $86,000 cap and all numerical gates/results are synthetic planning choices.",
+      "sources": [
+        "R1"
+      ],
+      "kind": "illustrative example; independently recomputed"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "constraint-decision",
+  "layout": "branch-actions",
+  "title": "Where does the change wait?",
+  "nodes": [
+    {
+      "id": "interface",
+      "label": "Repeated interface clarification",
+      "detail": "Agree an interface contract"
+    },
+    {
+      "id": "mobile",
+      "label": "Routine mobile implementation or review",
+      "detail": "Evaluate a reusable workflow"
+    },
+    {
+      "id": "decision",
+      "label": "Unresolved product choice",
+      "detail": "Name an owner and resolve it"
+    }
+  ],
+  "textEquivalent": "Trace a recent change to locate the delay. Repeated interface clarification calls for an agreed interface contract. Routine mobile implementation or review calls for an evaluated, reusable workflow. An unresolved product choice needs a named owner to resolve it.",
+  "edges": [
+    {
+      "from": "wait",
+      "to": "interface"
+    },
+    {
+      "from": "wait",
+      "to": "mobile"
+    },
+    {
+      "from": "wait",
+      "to": "decision"
+    }
+  ]
+}

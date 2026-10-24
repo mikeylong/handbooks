@@ -1,0 +1,13 @@
+import {readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {validateLibrary,validatePackage,APPROVAL_REGISTRY} from '../site/scripts/book-sources.mjs';
+import {resolvePdfVariants} from '../publish-evidence-backed-handbook/scripts/pdf-downloads.mjs';
+const root=resolve(import.meta.dirname,'..'),id=process.argv[2];
+const catalog=JSON.parse(await readFile(resolve(root,'catalog.json'),'utf8'));
+const book=validateLibrary(catalog).find(b=>b.id===id);
+if(!book)throw Error('Unknown approved book');
+const source=resolve(root,book.directory);await validatePackage(source,book);
+const edition=JSON.parse(await readFile(resolve(source,'release-manifest.json'),'utf8'));
+if(edition.approvalStatus!=='approved'||edition.publicationApproved!==true)throw Error('Publication approval required');
+await resolvePdfVariants(source,{id,...edition},APPROVAL_REGISTRY.books.find(b=>b.id===id).variantManifest,{collectionRoot:root});
+console.log('Validated approved release '+id+' v'+edition.version+' with both exact PDF hashes and measured page counts.');

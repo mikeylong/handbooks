@@ -1,0 +1,107 @@
+{
+  "artifactSha256": "ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf",
+  "changelogDecision": {
+    "changelogPages": [],
+    "decisionStatus": "not-applicable",
+    "directSourceLinks": [],
+    "expectedEntryCount": 0,
+    "firstEdition": true,
+    "includeChangelog": false,
+    "navigationEntries": [],
+    "outlineEntries": []
+  },
+  "failures": [],
+  "limitations": [
+    "This structural validator does not establish visual quality.",
+    "Apple PDFKit compatibility remains unverified unless an Apple-native render was inspected."
+  ],
+  "pdf": "candidates/ai-native-organization/2026-10-23-editorial-rewrite-01a16ae4/heading-wrap/artifacts/ai-native-organization-v1.0.0-2026-10-23-daytime-heading-final-r8.pdf",
+  "profile": "candidate",
+  "requiredRasterIllustrations": [
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 4,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.2da7e707a565a551102149f5ae6c4296",
+          "object": "51 0",
+          "opaque": true,
+          "page": 4,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 11,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.1a6293dff66342c06677061c8482e6fb",
+          "object": "60 0",
+          "opaque": true,
+          "page": 11,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 19,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.d10442de4d1180c836999fb6313e1f07",
+          "object": "158 0",
+          "opaque": true,
+          "page": 19,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    }
+  ],
+  "schemaVersion": 1,
+  "stats": {
+    "blankPages": [],
+    "externalLinks": 10,
+    "fonts": 6,
+    "imageMasks": 0,
+    "internalLinks": 91,
+    "outlineEntries": 35,
+    "pageMapEntries": 41,
+    "pages": 41,
+    "pdfVersion": "1.4",
+    "rasterImagePaints": 3,
+    "rasterImages": 3,
+    "requiredRasterIllustrationPages": 3
+  },
+  "status": "passed"
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-native-organization",
+  "artwork": [
+    {
+      "chapter": 1,
+      "light": "reader/assets/chapter-01.png",
+      "dark": "assets/chapter-art/dark/chapter-01.png",
+      "lightSha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7",
+      "darkSha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b",
+      "darkDimensions": [
+        1254,
+        1254
+      ],
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "acquisitionMode": "generated",
+      "generationProvenance": "evidence/art-acquisition.json",
+      "lightOriginal": "assets/originals/chapter-01-light.png",
+      "darkOriginal": "assets/originals/chapter-01-dark.png",
+      "compositionReview": "separately authored dark counterpart; same scene, framing and object relationships",
+      "outerBackground": "transparent",
+      "prompt": "Create a separately authored dark-screen counterpart of the supplied workshop illustration, keeping exactly three benches, their different machinery, the shared overhead shaft, camera angle, silhouette, spatial relationships, and framing. Redraw lighting and material values for a charcoal page: naturally pale lit wood and metal surfaces, deep dark opaque recesses, delicate pale engraving/stippling; no value inversion and no glowing outlines. Use a genuine transparent outer background including spaces between the objects; dark material within each object remains opaque. No paper rectangle, white fringe, text, logos, labels, or new objects. Fine technical engraving, high resolution. The supplied image is the composition reference and edit target.",
+      "generator": "built-in image_gen; model identifier not exposed",
+      "styleReferenceSha256": "9dc06d70d4ce952c2e1b45746d1b8fb16096900f742b544055071208b0f2cc57",
+      "reviewStatus": "accepted",
+      "reviewBasis": "Unchanged artwork from the visually reviewed first-edition candidate; SHA-256 preserved."
+    },
+    {
+      "chapter": 2,
+      "light": "reader/assets/chapter-02.png",
+      "dark": "assets/chapter-art/dark/chapter-02.png",
+      "lightSha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632",
+      "darkSha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8",
+      "darkDimensions": [
+        1254,
+        1254
+      ],
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "acquisitionMode": "generated",
+      "generationProvenance": "evidence/art-acquisition.json",
+      "lightOriginal": "assets/originals/chapter-02-light.png",
+      "darkOriginal": "assets/originals/chapter-02-dark.png",
+      "compositionReview": "separately authored dark counterpart; same scene, framing and object relationships",
+      "outerBackground": "transparent",
+      "prompt": "Create a separately authored dark-screen counterpart of the supplied engraved technical still life. Preserve exact object count, arrangement, camera angle, silhouette, scale and optical framing. Redraw natural lighting and materials for a charcoal page: pale lit surfaces and fine pale engraving/stippling, deep opaque recesses, accurate internal shadows. Genuine transparent outer background and transparent spaces between separate objects, keeping dark material within objects opaque. No inversion, glowing outlines, paper rectangle, white fringe, lettering, logos, new objects or cropping. Keep it quietly readable at 100mm print width. Supplied image is the composition reference and edit target.",
+      "generator": "built-in image_gen; model identifier not exposed",
+      "styleReferenceSha256": "bc87fbb9a289c29236bf5cc7f224c4ed2cccb5219c932f3e8c3d184e9d87b550",
+      "reviewStatus": "accepted",
+      "reviewBasis": "Unchanged artwork from the visually reviewed first-edition candidate; SHA-256 preserved."
+    },
+    {
+      "chapter": 3,
+      "light": "reader/assets/chapter-03.png",
+      "dark": "assets/chapter-art/dark/chapter-03.png",
+      "lightSha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e",
+      "darkSha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a",
+      "darkDimensions": [
+        1254,
+        1254
+      ],
+      "transparencyReview": {
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "acquisitionMode": "generated",
+      "generationProvenance": "evidence/art-acquisition.json",
+      "lightOriginal": "assets/originals/chapter-03-light.png",
+      "darkOriginal": "assets/originals/chapter-03-dark.png",
+      "compositionReview": "separately authored dark counterpart; same scene, framing and object relationships",
+      "outerBackground": "transparent",
+      "prompt": "Create a separately authored dark-screen counterpart of the supplied engraved technical still life. Preserve exact object count, arrangement, camera angle, silhouette, scale and optical framing. Redraw natural lighting and materials for a charcoal page: pale lit surfaces and fine pale engraving/stippling, deep opaque recesses, accurate internal shadows. Genuine transparent outer background and transparent spaces between separate objects, keeping dark material within objects opaque. No inversion, glowing outlines, paper rectangle, white fringe, lettering, logos, new objects or cropping. Keep it quietly readable at 100mm print width. Supplied image is the composition reference and edit target.",
+      "generator": "built-in image_gen; model identifier not exposed",
+      "styleReferenceSha256": "39e4c7cb78df9e2bec149b6f75f34f54e849dae3c32be3dae1bd623388910eef",
+      "reviewStatus": "accepted",
+      "reviewBasis": "Unchanged artwork from the visually reviewed first-edition candidate; SHA-256 preserved."
+    }
+  ]
+}

@@ -1,3 +1,65 @@
 .chapter{margin-block:4rem}figure{margin-inline:0}.chapter-art{max-width:100%}.chapter-art img{max-height:360px;object-fit:contain}figure img{width:100%;height:auto}table table{margin:0;min-width:0}table td{vertical-align:top}td p{margin:.3rem 0}.table-scroll{overflow-x:auto}h2,h3,h4{scroll-margin-top:5rem}.contents-page a{display:block}.sidebar-nav ol{padding-left:1rem}.sidebar-nav a{display:block}button{cursor:pointer}.sidebar-meta{padding-top:1rem}
 .reader-screenshot{margin-block:2rem;break-inside:auto}.reader-screenshot-panels{display:grid;gap:1.25rem}.reader-screenshot-panel{min-width:0;break-inside:avoid}.reader-screenshot-label{font-family:var(--font-sans,Arial,sans-serif);font-size:.85rem;font-weight:600;margin:0 0 .5rem}.reader-screenshot-image{display:block;width:100%;margin-inline:auto}.reader-screenshot img{display:block;width:100%;height:auto;object-fit:contain;filter:none;background:#fff}.reader-screenshot-larger{display:inline-block;font-size:.8rem;margin-top:.35rem}.reader-screenshot figcaption{margin-top:.8rem;font-size:.9rem;line-height:1.5}.reader-screenshot-image:focus-visible,.reader-screenshot-larger:focus-visible{outline:2px solid currentColor;outline-offset:4px}@media print{.reader-screenshot-larger{display:none}.reader-screenshot img{max-height:240pt;width:auto;max-width:100%;margin-inline:auto}}
 .reader-screenshot-crop{display:block;position:relative;overflow:hidden;width:100%}.reader-screenshot-crop img{position:absolute;max-width:none!important;max-height:none!important;object-fit:fill;margin:0!important;height:auto}
+
+/* Short two-column prose comparisons fit the reading width at every viewport. */
+.reader-compact-table > table{width:100%;min-width:0;table-layout:fixed}
+.reader-compact-table > table th,.reader-compact-table > table td{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:600px){.reader-compact-table > table th,.reader-compact-table > table td{padding:.7rem .5rem}}
+/* Book-owned concepts, rendered as branches or an ownership loop. */
+.reader-concept-diagram{margin:2rem 0;color:var(--ink);font-family:var(--sans)}
+.reader-concept-diagram figcaption{font-size:1.125rem;font-weight:650;line-height:1.35;text-align:center;margin:0 0 1.5rem}
+.reader-concept-diagram ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;list-style:none;padding:0;margin:0;position:relative}
+.reader-concept-diagram li{position:relative;text-align:center;padding:0;margin:0;line-height:1.4}
+.reader-concept-diagram strong{display:block;font-size:1rem;font-weight:650;line-height:1.4}
+.reader-concept-diagram span{display:block;font-size:1rem;line-height:1.4}
+.reader-concept-diagram small{display:block;color:var(--muted);font-size:.75rem;line-height:1.4;text-transform:uppercase;margin-bottom:.5rem;letter-spacing:.03em}
+.reader-concept-diagram .concept-description{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.branch-actions figcaption{position:relative;padding-bottom:1rem;margin-bottom:0}
+.branch-actions figcaption:after{content:"";position:absolute;left:50%;bottom:0;height:1rem;border-left:1px solid currentColor}
+.branch-actions ol:before{content:"";position:absolute;left:calc(16.666% - .6667rem);right:calc(16.666% - .6667rem);top:0;border-top:1px solid currentColor}
+.branch-actions li{padding-top:1.8rem}
+.branch-actions li:before{content:"";position:absolute;left:50%;top:0;height:1.1rem;border-left:1px solid currentColor}
+.branch-actions li:after{content:"";position:absolute;left:calc(50% - 3px);top:1rem;border:3px solid transparent;border-top:5px solid currentColor}
+.branch-actions strong{min-height:4.2em}
+.branch-actions span{position:relative;margin-top:1.8rem}
+.branch-actions span:before{content:"↓";position:absolute;left:calc(50% - .4em);top:-1.5rem;font-size:1.25rem;line-height:1}
+.ownership-loop figcaption{border-bottom:1px solid currentColor;padding-bottom:1rem}
+.ownership-loop li:not(:last-child):after{content:"→";position:absolute;right:-1.6rem;top:2.2rem;font-size:1.4rem}
+.ownership-loop strong{min-height:2.8em}
+.reader-concept-diagram .concept-feedback{position:relative;margin:1.25rem 0 0;padding:.5rem 1.5rem 1rem;border:1px solid currentColor;border-top:0;font-size:.875rem;line-height:1.4;text-align:center}
+.ownership-loop .concept-feedback:before{content:"↑";position:absolute;left:-.42rem;top:-.75rem;font-size:1.2rem}
+@media(max-width:600px){
+ .reader-concept-diagram ol{grid-template-columns:1fr;gap:2rem;margin-left:.5rem;padding-left:1.75rem}
+ .reader-concept-diagram li{text-align:left}
+ .reader-concept-diagram strong{font-size:1rem;min-height:0}
+ .reader-concept-diagram span{font-size:1rem}
+ .branch-actions ol{border-left:1px solid currentColor}
+ .branch-actions ol:before,.branch-actions figcaption:after{display:none}
+ .branch-actions figcaption{margin-bottom:1.2rem}
+ .branch-actions li{padding-top:0}
+ .branch-actions li:before{left:-1.75rem;top:.7rem;width:1.1rem;height:0;border-left:0;border-top:1px solid currentColor}
+ .branch-actions li:after{left:-.7rem;top:calc(.7rem - 3px);border:3px solid transparent;border-left:5px solid currentColor}
+ .branch-actions span{margin-top:1.8rem}
+ .branch-actions span:before{left:0}
+ .ownership-loop ol{border-left:1px solid currentColor;padding-bottom:.5rem}
+ .ownership-loop li:not(:last-child):after{content:"↓";left:0;right:auto;top:auto;bottom:-1.75rem}
+ .ownership-loop .concept-feedback{border-left:0;border-right:0;margin-left:.5rem;padding-left:1.75rem;text-align:left}
+ .ownership-loop .concept-feedback:before{left:-.4rem;top:-1rem}
+}
+.chapter-header .chapter-marker {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ordered-sequence ol{display:block;counter-reset:sequence;list-style:none}
+.ordered-sequence li{text-align:left;padding:0 0 1.5rem 2.5rem;counter-increment:sequence}
+.ordered-sequence li:before{content:counter(sequence);position:absolute;left:0;top:0;font-weight:700}
+.ordered-sequence li:not(:last-child):after{content:"↓";position:absolute;left:0;bottom:.2rem;font-size:1.2rem}
+.ordered-sequence strong{min-height:0;margin-bottom:.25rem}
+.ordered-sequence li:last-child{padding-bottom:0}

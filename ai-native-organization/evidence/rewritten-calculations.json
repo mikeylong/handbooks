@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "method": "independent recomputation from the final synthetic inputs; no empirical results",
+  "results": {
+    "successDependentBudget": 71800,
+    "noBenefitBudget": 77800,
+    "deliveryComparison": 61800,
+    "contingency": 8200,
+    "pilotUnit": 900.0,
+    "comparisonUnit": 1300.0,
+    "ratio": 0.6923076923076923,
+    "lowerPercent": 30.76923076923077,
+    "total": 66600,
+    "headroom": 19400,
+    "releasedHours": 80.0,
+    "pilotNonlabor": 1950,
+    "comparisonNonlabor": 1150,
+    "benefitFullReuse": 400.0,
+    "benefitPartialReuse": 291.30434782608694,
+    "capacityPerWeek": 3.8333333333333335,
+    "fullReuseRecoveryWeeks": 10.43478260869565,
+    "partialReuseRecoveryWeeks": 14.328358208955223,
+    "costFailureUnit": 1100.0,
+    "costFailureRatio": 0.8461538461538461,
+    "costFailureRecoveryWeeks": 20.8695652173913,
+    "planningRecoveryWeeks": 17.77777777777778,
+    "omissionRatios": [
+      0.6923076923076923,
+      0.6923076923076923,
+      0.6923076923076923,
+      0.6923076923076923,
+      0.6923076923076923,
+      0.6923076923076923
+    ]
+  },
+  "zeroDenominator": "N/A; never pass",
+  "missingEvidence": "Pending or final inconclusive",
+  "sourceText": "qa/manuscript.txt"
+}

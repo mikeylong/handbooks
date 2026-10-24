@@ -8,7 +8,7 @@ import {addSiteTheme, validateSiteTheme, finalizeSiteThemes, hostedHtmlPages} fr
 
 const source = await readFile(new URL('../assets/reader/theme.js', import.meta.url), 'utf8');
 function page({saved = null, dark = false, blocked = false} = {}) {
-  const root = {dataset:{}}, color = {}, events = {}, documentEvents = {}, systemEvents = {};
+  const root = {dataset:{}}, color = {}, events = {}, documentEvents = {}, systemEvents = {}, printEvents = {};
   const darkSources = [{media:'screen and (prefers-color-scheme: dark)'}];
   const triggers = [0,1].map(() => ({setAttribute:(key,value) => {}, focus:() => {}}));
   const labels = [0,1].map(() => ({textContent:''}));
@@ -16,13 +16,14 @@ function page({saved = null, dark = false, blocked = false} = {}) {
   const controls = triggers.map(trigger => ({querySelector:selector => selector === '.theme-menu' ? {hidden:true} : trigger}));
   const storage = new Map(saved === null ? [] : [['handbook-theme', saved]]);
   const system = {matches:dark, addEventListener:(name, fn) => systemEvents[name] = fn};
+  const print = {matches:false, addEventListener:(name, fn) => printEvents[name] = fn};
   runInNewContext(source, {
-    matchMedia:() => system,
+    matchMedia:query => query === 'print' ? print : system,
     localStorage:{getItem:key => {if(blocked) throw Error(); return storage.get(key) ?? null;}, setItem:(key, value) => {if(blocked) throw Error(); storage.set(key, value);}},
     document:{documentElement:root, querySelectorAll:selector => ({'[data-theme-trigger]':triggers,'[data-theme-label]':labels,'[data-theme-choice]':choices,'.theme-control':controls,'[data-dark-artwork]':darkSources}[selector]), querySelector:() => color, addEventListener:(name, fn) => documentEvents[name] = fn},
     window:{addEventListener:(name, fn) => events[name] = fn},
   });
-  return {root, color, darkSources, events, documentEvents, systemEvents, system, labels, choices, storage,
+  return {root, color, darkSources, events, documentEvents, systemEvents, system, print, printEvents, labels, choices, storage,
     choose:value => {const choice=choices.find(button=>button.dataset.themeChoice===value); documentEvents.click({target:{closest:selector=>selector==='.theme-control'?controls[0]:selector==='[data-theme-choice]'?choice:null}});}};
 }
 for (const dark of [false,true]) {
@@ -43,6 +44,14 @@ const manual = page();
 manual.choose('dark');
 assert.equal(manual.root.dataset.theme, 'dark');
 assert.equal(manual.darkSources[0].media, 'screen', 'Authored dark source follows explicit Dark and excludes print');
+manual.print.matches = true;manual.printEvents.change();
+assert.equal(manual.darkSources[0].media, 'not all', 'Print media actively restores the light original');
+manual.print.matches = false;manual.printEvents.change();
+assert.equal(manual.darkSources[0].media, 'screen', 'Returning to screen restores the authored dark artwork');
+manual.events.beforeprint();
+assert.equal(manual.darkSources[0].media, 'not all', 'Native print preview selects the light original');
+manual.events.afterprint();
+assert.equal(manual.darkSources[0].media, 'screen', 'Closing native print preview restores Dark');
 manual.choose('light');
 assert.equal(manual.darkSources[0].media, 'not all', 'Explicit Light restores original artwork');
 manual.choose('dark');

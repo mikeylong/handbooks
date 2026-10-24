@@ -2,6 +2,8 @@
   const key = 'handbook-theme';
   const root = document.documentElement;
   const system = matchMedia('(prefers-color-scheme: dark)');
+  const print = matchMedia('print');
+  let preparingPrint = false;
   const valid = value => ['light', 'dark', 'system'].includes(value) ? value : 'system';
   let preference = 'system';
   const read = () => {
@@ -13,7 +15,7 @@
     // A screen-only source respects explicit appearance and falls back to the
     // original bitmap for browser print. Without JS its media follows System.
     document.querySelectorAll('[data-dark-artwork]').forEach(source => {
-      source.media = theme === 'dark' ? 'screen' : 'not all';
+      source.media = theme === 'dark' && !print.matches && !preparingPrint ? 'screen' : 'not all';
     });
     const label = preference[0].toUpperCase() + preference.slice(1);
     document.querySelectorAll('[data-theme-trigger]').forEach(button => button.setAttribute('aria-label', `Appearance: ${label}`));
@@ -82,6 +84,11 @@
   window.addEventListener('resize', closeAll);
   document.addEventListener('DOMContentLoaded', apply);
   system.addEventListener('change', () => { if (preference === 'system') apply(); });
+  // WebKit may retain a picture's selected source across a print-media switch.
+  // Mutating the source selection also covers a native print preview lifecycle.
+  print.addEventListener('change', apply);
+  window.addEventListener('beforeprint', () => { preparingPrint = true; apply(); });
+  window.addEventListener('afterprint', () => { preparingPrint = false; apply(); });
   window.addEventListener('storage', event => { if (event.key === key || event.key === null) { read(); apply(); } });
   window.addEventListener('pageshow', () => { read(); apply(); closeAll(); });
 })();

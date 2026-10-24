@@ -53,6 +53,13 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: pip install -r publish-evidence-backed-handbook/requirements.txt
       - run: pip install pdfplumber==0.11.9
+      - name: Test shared first-edition rendering rules
+        run: |
+          python publish-evidence-backed-handbook/scripts/test-heading-wrap.py
+          python publish-evidence-backed-handbook/scripts/test-eyebrow-roles.py
+          python publish-evidence-backed-handbook/scripts/test-concept-diagrams.py
+          python publish-evidence-backed-handbook/scripts/test-measured-page-map.py
+          node publish-evidence-backed-handbook/scripts/test-first-edition-reader.mjs
       - run: python production-ai-engineering/scripts/test-weekly-toolkit.py
       - run: python production-ai-engineering/scripts/test-pdf-structure.py
       - run: npm install --prefix "$RUNNER_TEMP/pdf-browser" playwright@1.62.1

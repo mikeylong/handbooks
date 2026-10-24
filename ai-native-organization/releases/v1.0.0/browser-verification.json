@@ -1,0 +1,28 @@
+{
+  "job_id": "fab9b44e",
+  "state": "complete",
+  "test_result": {
+    "passed": true,
+    "started_at": 1792804516.8794851,
+    "engine": "chromium",
+    "sandbox_enabled": true,
+    "expected_tests": 2,
+    "discovered_tests": 2,
+    "test_exit_code": 0,
+    "stats": {
+      "startTime": "2026-10-24T01:15:42.136Z",
+      "duration": 2482.746,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "source_tests_unchanged": true,
+    "finished_at": 1792804544.6792526
+  },
+  "evidence_path": "/Users/mike/Codex/local-vm-manager/evidence/fab9b44e",
+  "vm_deleted": true,
+  "runtime_deleted": true,
+  "evidence_complete": true,
+  "evidence_verified": true
+}

@@ -419,8 +419,17 @@ class TwoColumnTOC(TableOfContents):
         return self.width, self.height
 
 
-def P(text: str, style: ParagraphStyle = BODY) -> Paragraph:
-    return Paragraph(clean(text), style)
+INDEX_REFERENCE = ParagraphStyle('IndexReference', parent=BODY)
+
+
+def P(text: str, style: ParagraphStyle = BODY, *, role=None) -> Flowable:
+    from eyebrow_roles import suppress_eyebrow, OmittedEyebrow
+    if suppress_eyebrow(style, role):
+        return OmittedEyebrow()
+    from heading_wrap import paragraph_class
+    paragraph = paragraph_class(style)(clean(text), style)
+    paragraph._handbook_role = role
+    return paragraph
 
 
 def heading(text: str, level: int = 2) -> Paragraph:
@@ -960,6 +969,11 @@ class SetNextRunningHead(Flowable):
 
 
 class GuideDocTemplate(BaseDocTemplate):
+    def multiBuild(self, story, *args, **kwargs):
+        from heading_wrap import prepare_pdf_story
+        prepare_pdf_story(story)
+        return super().multiBuild(story, *args, **kwargs)
+
     def __init__(self, filename: str):
         super().__init__(
             filename,
@@ -1099,7 +1113,7 @@ def module_start(number: str, title: str, deck: str) -> list[Flowable]:
         NextPageTemplate("Chapter"),
         PageBreak(),
         Spacer(1, 5 * mm),
-        P(f"CHAPTER {int(number):02d}", CHAPTER_KICKER),
+        P(f"CHAPTER {int(number):02d}", CHAPTER_KICKER, role='chapter-marker'),
         chapter_title,
         P(deck, CHAPTER_DECK),
         Spacer(1, 3 * mm),

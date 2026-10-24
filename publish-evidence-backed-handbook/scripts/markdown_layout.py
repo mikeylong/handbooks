@@ -229,7 +229,13 @@ def _tokenized_inline(text: str) -> str:
     return escaped
 
 
-def P(text: str, style: ParagraphStyle = BODY) -> Paragraph:
+INDEX_REFERENCE = ParagraphStyle('IndexReference', parent=BODY)
+
+
+def P(text: str, style: ParagraphStyle = BODY, *, role=None) -> Flowable:
+    from eyebrow_roles import suppress_eyebrow, OmittedEyebrow
+    if suppress_eyebrow(style, role):
+        return OmittedEyebrow()
     markup = _tokenized_inline(text)
     # The bundled serif is a Latin subset. Preserve source spelling by using
     # the bundled sans glyph when the serif cannot paint that character.
@@ -244,7 +250,10 @@ def P(text: str, style: ParagraphStyle = BODY) -> Paragraph:
                 else character for character in runs[index]
             )
         markup = ''.join(runs)
-    return Paragraph(markup, style)
+    from heading_wrap import paragraph_class
+    paragraph = paragraph_class(style)(markup, style)
+    paragraph._handbook_role = role
+    return paragraph
 
 
 def heading(text: str, level: int) -> Paragraph:
@@ -844,6 +853,11 @@ class SetNextRunningHead(Flowable):
 
 
 class GuideDocTemplate(BaseDocTemplate):
+    def multiBuild(self, story, *args, **kwargs):
+        from heading_wrap import prepare_pdf_story
+        prepare_pdf_story(story)
+        return super().multiBuild(story, *args, **kwargs)
+
     def __init__(self, filename: str):
         super().__init__(
             filename,
@@ -979,7 +993,7 @@ def chapter_start(number: str, title: str, deck: str) -> list[Flowable]:
         NextPageTemplate("Chapter"),
         PageBreak(),
         Spacer(1, 5 * mm),
-        P(f"CHAPTER {int(number):02d}", CHAPTER_KICKER),
+        P(f"CHAPTER {int(number):02d}", CHAPTER_KICKER, role='chapter-marker'),
         title_para,
         P(deck, CHAPTER_DECK),
         Spacer(1, 3 * mm),

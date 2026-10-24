@@ -128,7 +128,6 @@ strong {
   border-top: 0.8pt solid var(--ink);
 }
 
-.cover-label,
 .section-label,
 .chapter-kicker,
 .eyebrow {
@@ -140,6 +139,12 @@ strong {
   letter-spacing: 0.12em;
   line-height: 1.3;
   text-transform: uppercase;
+}
+
+/* An eyebrow is a chapter marker, never a cover or front/back-matter label. */
+.cover-label,
+.eyebrow:not([data-role="chapter-marker"]) {
+  display: none;
 }
 
 .cover h1 {
