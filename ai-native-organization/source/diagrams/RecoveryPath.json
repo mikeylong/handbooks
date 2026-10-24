@@ -1,0 +1,42 @@
+{
+  "id": "recoverypath",
+  "layout": "ordered-sequence",
+  "title": "Recover before restarting",
+  "nodes": [
+    {
+      "id": "n0",
+      "label": "Suspend and revoke",
+      "detail": "Stop affected execution and remove access."
+    },
+    {
+      "id": "n1",
+      "label": "Preserve evidence",
+      "detail": "Save action traces, versions and changed state."
+    },
+    {
+      "id": "n2",
+      "label": "Restore and verify",
+      "detail": "Recover the product and verify the correction."
+    },
+    {
+      "id": "n3",
+      "label": "Authorize restart",
+      "detail": "The responsible owner decides when the workflow may resume."
+    }
+  ],
+  "edges": [
+    {
+      "from": "n0",
+      "to": "n1"
+    },
+    {
+      "from": "n1",
+      "to": "n2"
+    },
+    {
+      "from": "n2",
+      "to": "n3"
+    }
+  ],
+  "textEquivalent": "Suspend the affected workflow and revoke access. Preserve action traces, versions and changed state. Restore the product and verify the correction. The responsible owner authorizes a restart only after both checks."
+}

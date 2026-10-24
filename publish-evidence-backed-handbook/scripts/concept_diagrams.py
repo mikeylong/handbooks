@@ -8,6 +8,9 @@ from reportlab.lib.enums import TA_CENTER, TA_LEFT
 
 
 def validate_definition(d):
+    if d.get('layout') == 'quantitative':
+        from quantitative_charts import validate
+        return validate(d)
     if d.get('layout') == 'grouped-map':
         from grouped_diagrams import validate
         return validate(d)
@@ -32,6 +35,9 @@ def validate_definition(d):
 
 def render_concept_html(d):
     validate_definition(d)
+    if d['layout']=='quantitative':
+        from quantitative_charts import html
+        return html(d)
     if d['layout']=='grouped-map':
         from grouped_diagrams import html
         return html(d)
@@ -62,6 +68,8 @@ class ConceptDiagram(Flowable):
                 lh=label.wrap(self.width-30,1000)[1];dh=detail.wrap(self.width-30,1000)[1]
                 self.sequence_rows.append((label,detail,lh,dh))
             self.height=26+sum(lh+dh+13 for _,_,lh,dh in self.sequence_rows)
+        if self.semantic_definition['layout']=='quantitative':
+            self.height=self.semantic_definition['height']*self.width/360
         if self.semantic_definition['layout']=='grouped-map':
             self.height=self.semantic_definition['height']*self.width/self.semantic_definition['width']
         self.spaceBefore = 10
@@ -70,6 +78,9 @@ class ConceptDiagram(Flowable):
     def draw(self):
         from reportlab_layout import SANS, SANS_BOLD, INK, MID_GRAY, WHITE
         c=self.canv; d=self.semantic_definition; w=self.width; c.saveState()
+        if d['layout']=='quantitative':
+            from quantitative_charts import render
+            c.scale(w/360,w/360);render(d,c);c.restoreState();return
         if d['layout']=='grouped-map':
             from grouped_diagrams import render
             c.scale(w/d['width'],w/d['width']);render(d,c);c.restoreState();return

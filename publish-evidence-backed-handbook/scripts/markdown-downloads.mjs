@@ -57,6 +57,21 @@ export function readerMarkdown(html,edition){
   if(n.tag==='#text')return esc(n.text.replace(/\s+/g,' '));
   if(n.attrs?.['aria-hidden']==='true'||['script','style','nav','source','button','input','defs'].includes(n.tag)||has(n,'diagram-print'))return '';
   const inner=()=>n.children.map(render).join('');
+  if('data-term-index' in n.attrs){
+   const groups=descendants(n,'section').filter(x=>has(x,'index-group'));
+   if(!groups.length)throw Error('Term index lacks alphabetical groups');
+   return '\n\n'+groups.map(group=>{
+    const heading=descendants(group,'h3')[0];if(!heading)throw Error('Term index group lacks a letter');
+    const rows=descendants(group,'li');if(!rows.length)throw Error('Empty term index group');
+    return render(heading)+rows.map(row=>{
+     const term=descendants(row,'span').find(x=>has(x,'index-term'));
+     const pages=descendants(row,'span').find(x=>has(x,'index-pages'));
+     const links=pages?descendants(pages,'a'):[];
+     if(!term||!links.length||links.some(x=>!/^([0-9]+|[ivxlcdm]+)$/.test(plain(x).trim())))throw Error('Term index needs a term and compact page links');
+     return '- **'+esc(plain(term).trim())+':** '+links.map(render).join(', ');
+    }).join('\n');
+   }).join('\n\n')+'\n\n';
+  }
   if(has(n,'reader-concept-diagram')){
    if(!n.attrs['data-diagram-title']||!n.attrs['data-text-equivalent'])throw Error('Concept diagram lacks text equivalent');
    return '\n\n**'+esc(n.attrs['data-diagram-title'])+'**\n\n'+esc(n.attrs['data-text-equivalent'])+'\n\n';

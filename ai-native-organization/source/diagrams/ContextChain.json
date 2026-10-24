@@ -1,0 +1,33 @@
+{
+  "id": "contextchain",
+  "layout": "ordered-sequence",
+  "title": "Keep the source owner visible",
+  "nodes": [
+    {
+      "id": "n0",
+      "label": "Domain and policy owners",
+      "detail": "Maintain authoritative rules, interfaces and acceptance conditions."
+    },
+    {
+      "id": "n1",
+      "label": "Workflow maintainer",
+      "detail": "Assemble the task packet with source versions or retrieval times."
+    },
+    {
+      "id": "n2",
+      "label": "Product team and reviewer",
+      "detail": "Use the packet to perform and judge the work; return conflicts to the source owner."
+    }
+  ],
+  "edges": [
+    {
+      "from": "n0",
+      "to": "n1"
+    },
+    {
+      "from": "n1",
+      "to": "n2"
+    }
+  ],
+  "textEquivalent": "Domain and policy owners maintain authoritative rules, interfaces and acceptance conditions. The workflow maintainer assembles a task packet with source versions or retrieval times. The product team and reviewer use that packet, and unresolved conflicts go back to the responsible source owner."
+}

@@ -105,3 +105,9 @@ Use exactly one Markdown-first download group in each of three locations: the to
 Grouped organization diagrams use the shared `grouped_diagrams.py` renderer through `ConceptDiagram`. Books own node bounds, labels, parent groups, work/support edges and text equivalents in `source/diagrams`. The shared renderer rejects out-of-bounds nodes, unknown edge endpoints and undersized or overflowing labels, and emits theme-aware vector SVG and PDF geometry. Preserve a text equivalent; company-scale examples are not staffing rules. `pdf-config.json.readerInputs` may name additional safe, book-relative files needed by the reader build, such as a source ledger.
 
 A book may set `subsectionLabels: "titles"` in its reader configuration. The shared renderer then removes visible decimal subsection prefixes and converts section/index references to linked titles, preserving existing `section-N` anchors and adding source-ID aliases. Chapter markers, ordered steps, numeric data, versions and citation labels remain intact. This setting is opt-in so other books retain their established presentation.
+
+Quantitative figures use book-owned `layout: "quantitative"` definitions and the shared `quantitative_charts.py` renderer. Native PDF vectors and hosted SVG use the same values and geometry; title, units, denominator, synthetic/model status and text equivalents are required. Charts use a keyboard-focusable horizontal viewport on narrow screens rather than shrinking labels below legible size. Bars begin at zero; forecasts must be labelled as models and retain their assumptions.
+
+## Term indexes
+
+Use the shared semantic [term index](term-index.md) implementation. It renders the existing collection index classes, measures printed page labels from the exact PDF and keeps each term and its destinations in a separate entry. Final generated and downloaded HTML/PDF checks must reject dense paragraph indexes and stale or missing destinations.

@@ -1,0 +1,40 @@
+{
+  "summary": "Version 1.1.0 adds organization and operating visuals and uses the canonical alphabetical term index.",
+  "previousVersion": "1.0.0",
+  "items": [
+    {
+      "classification": "Addition",
+      "section": "Organization and trial decisions",
+      "title": "Organization and trial decisions",
+      "whatChanged": "Added four illustrative organization arrangements and eight visuals covering context ownership, evaluation results, recovery, the trial schedule, complete cost, unit cost, productive reuse and the final decision.",
+      "why": "The visuals help leaders compare coordination choices and the existing synthetic examples. Company sizes are illustrative total-company headcounts, not reorganization thresholds.",
+      "sources": [
+        {
+          "url": "https://teamtopologies.com/key-concepts",
+          "title": "https://teamtopologies.com/key-concepts"
+        },
+        {
+          "url": "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
+          "title": "https://tag-app-delivery.cncf.io/whitepapers/platforms/"
+        },
+        {
+          "url": "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology",
+          "title": "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology"
+        }
+      ]
+    },
+    {
+      "classification": "Correction or clarification",
+      "section": "Headings and term index",
+      "title": "Headings and term index",
+      "whatChanged": "Subsection titles omit decimal prefixes. The term index now uses alphabetical groups, one term per entry and linked printed-page references, matching the collection format.",
+      "why": "Replaced dense paragraphs of quoted section titles with a scannable index. Page references are measured from the final PDF pagination; existing section links remain available.",
+      "sources": [
+        {
+          "url": "https://handbooks.surfaces.systems/production-ai-engineering/#term-index",
+          "title": "https://handbooks.surfaces.systems/production-ai-engineering/#term-index"
+        }
+      ]
+    }
+  ]
+}

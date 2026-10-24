@@ -970,6 +970,8 @@ class SetNextRunningHead(Flowable):
 
 class GuideDocTemplate(BaseDocTemplate):
     def multiBuild(self, story, *args, **kwargs):
+        from term_index import bind_index_targets
+        bind_index_targets(story)
         from heading_wrap import prepare_pdf_story
         prepare_pdf_story(story)
         return super().multiBuild(story, *args, **kwargs)
@@ -1092,6 +1094,10 @@ class GuideDocTemplate(BaseDocTemplate):
 
     def afterFlowable(self, flowable) -> None:
         if isinstance(flowable, Paragraph):
+            if getattr(flowable, '_index_section_key', None):
+                anchor = flowable._index_section_anchor
+                self.canv.bookmarkPage(anchor)
+                self.notify('TermIndexSection', (flowable._index_section_key, flowable._index_section_title, self._display_page(self.page), anchor))
             text = getattr(flowable, "_toc_title", flowable.getPlainText())
             if flowable.style.name == "H1":
                 self.current_chapter = text

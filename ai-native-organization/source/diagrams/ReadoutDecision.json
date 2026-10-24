@@ -1,0 +1,37 @@
+{
+  "id": "readout-decision",
+  "layout": "branch-actions",
+  "title": "Choose the next step from the evidence",
+  "nodes": [
+    {
+      "id": "complete-pass",
+      "label": "Complete, all requirements pass",
+      "detail": "Consider one separately funded trial with a second team."
+    },
+    {
+      "id": "missing",
+      "label": "Evidence missing; no requirement failed",
+      "detail": "One bounded extension, only if the eligibility conditions hold."
+    },
+    {
+      "id": "complete-fail",
+      "label": "A completed requirement fails",
+      "detail": "Stop expansion. A revised workflow needs a new proposal."
+    }
+  ],
+  "edges": [
+    {
+      "from": "wait",
+      "to": "complete-pass"
+    },
+    {
+      "from": "wait",
+      "to": "missing"
+    },
+    {
+      "from": "wait",
+      "to": "complete-fail"
+    }
+  ],
+  "textEquivalent": "Complete evidence passing every requirement can support one separately funded second-team trial. Missing evidence may qualify for the single bounded extension only under the stated conditions. A completed failed requirement stops expansion. Any prohibited action, data exposure or High/Medium incident requires immediate suspension, independently of this final readout."
+}
