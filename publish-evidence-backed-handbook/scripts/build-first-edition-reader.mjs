@@ -39,6 +39,10 @@ export function validateFirstEditionEvidence({baseline,decision,measurements,val
  }
  if(parity.status!=='passed'||parity.failures?.length||parity.retainedSha256!==measurements.light.sha256||parity.candidateSha256!==measurements.dark.sha256)throw Error('Pair proof does not bind both exact PDFs');
 }
+export async function validateSourceLedger(root, manifest, expectedSha256) {
+ if(manifest.sourceLedger?.path!=='evidence/sources.json'||manifest.sourceLedger.sha256!==expectedSha256)throw Error('Source ledger manifest binding mismatch');
+ if(digest(await readFile(safePath(root,manifest.sourceLedger.path)))!==expectedSha256)throw Error('Staged source ledger differs from verified ledger');
+}
 export async function validateFirstEditionPackage(output) {
  const receipt=await json(resolve(output,'first-edition-package.json'));
  if(receipt.approvalStatus!=='candidate'||receipt.publicationApproved!==false||receipt.baseline!==null)throw Error('First-edition package contains approval or a baseline');
@@ -51,6 +55,7 @@ export async function validateFirstEditionPackage(output) {
   if(digest(await readFile(safePath(root,file)))!==hash)throw Error('Stale public file: '+file);
  }
  if(pkg.files[pkg.html]!==pkg.readerSha256||pkg.files[release.pdf]!==release.sha256)throw Error('Public reader/PDF binding mismatch');
+ await validateSourceLedger(root,release,receipt.sourceLedgerSha256);
  const edition={...receipt.edition,markdown:receipt.markdown};
  const variants=await resolvePdfVariants(root,edition,receipt.variantPin,{candidate:true,collectionRoot:resolve(output,'collection')});
  const html=await readFile(resolve(output,'site',edition.id,'index.html'),'utf8');
@@ -73,11 +78,13 @@ export async function buildFirstEditionReader(o) {
  const measured=measurements.light,id=config.id;
  if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id??''))throw Error('Invalid book id');
  for(const key of ['title','version','date'])if(measured[key]!==config[key])throw Error('Source/PDF identity mismatch: '+key);
- if(digest(await readFile(sourceLedger))!==sourceLedgerSha256)throw Error('Frozen source ledger changed');
+ const ledgerBytes=await readFile(sourceLedger);
+ if(digest(ledgerBytes)!==sourceLedgerSha256)throw Error('Frozen source ledger changed');
  await mkdir(output); // Existing attempts are never replaced.
  const collection=resolve(output,'collection'),staged=resolve(collection,id),site=resolve(output,'site');
  await mkdir(staged,{recursive:true});
  for(const name of ['source','assets','evidence','artwork-pairs.json','pdf-config.json'])await cp(resolve(bookRoot,name),resolve(staged,name),{recursive:true,filter:p=>!p.includes('__pycache__')&&!p.endsWith('.pyc')});
+ await writeFile(resolve(staged,'evidence/sources.json'),ledgerBytes);
  const route=`/${id}/editions/v${measured.version}/`,pdf=`output/pdf/${id}-v${measured.version}-${measured.date}-daytime-r1.pdf`;
  const edition={id,title:measured.title,version:measured.version,date:measured.date,pages:measured.pages,pdf,sha256:measured.sha256,approvalStatus:'candidate',publicationApproved:false,publicationStatus:'candidate',author:o.author??'Michael Long',authorSite:o.authorSite??'https://surfaces.systems',canonicalUrl:`https://handbooks.surfaces.systems/${id}/`,editionUrl:route,pdfUrl:route+basename(pdf)};
  const manifest={...edition,baseline:null,comparison_basis:'first edition; no approved predecessor',sourceLedger:{path:'evidence/sources.json',sha256:sourceLedgerSha256}};
