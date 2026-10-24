@@ -5,8 +5,8 @@
   "version": "1.1.0",
   "date": "2026-10-23",
   "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-  "sha256": "1ae0def352235eed03d05514edfcbda2cfae5fe5e5869064f28bd70ee5b3483c",
-  "pages": 49,
+  "sha256": "34d7a343d50d3d10f77ac88f7ef1f3cd09cda4fbb7683e02dd3084b23079f7e7",
+  "pages": 51,
   "variants": [
     {
       "theme": "light",
@@ -16,12 +16,12 @@
       "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
       "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
       "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-      "sha256": "1ae0def352235eed03d05514edfcbda2cfae5fe5e5869064f28bd70ee5b3483c",
-      "bytes": 8271932,
-      "pages": 49,
+      "sha256": "34d7a343d50d3d10f77ac88f7ef1f3cd09cda4fbb7683e02dd3084b23079f7e7",
+      "bytes": 8298972,
+      "pages": 51,
       "pageMap": {
-        "path": "ai-native-organization/qa/v1.1.0/heading-correction/page-map-light.json",
-        "sha256": "3eba27e88faf59c67fb7e0929b54900af93cc3fa03673516ed0f39b00fcc39c3"
+        "path": "ai-native-organization/qa/v1.1.0/visual-index-correction/page-map-light.json",
+        "sha256": "48025e9c36301cf4a131002353b2e069e601e6ab8059dbd5c30986b229a4a4cd"
       },
       "appearanceDate": "2026-10-23"
     },
@@ -33,35 +33,34 @@
       "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
       "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
       "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
-      "sha256": "cdccc5ff9a45a6d353e422bac063cc429ce56fd5a5cc50f5c77a2efc964503ea",
-      "bytes": 6723157,
-      "pages": 49,
+      "sha256": "3db4c908e599843afaa39a76e786c9f823d68663a51410f0a849ab82e91aa11c",
+      "bytes": 6758225,
+      "pages": 51,
       "pageMap": {
-        "path": "ai-native-organization/qa/v1.1.0/heading-correction/page-map-dark.json",
-        "sha256": "5316b42ab9c0e039ec175a35f779c0119490485868a4e754f85887e07e2a0e22"
+        "path": "ai-native-organization/qa/v1.1.0/visual-index-correction/page-map-dark.json",
+        "sha256": "40ae980ed6162ff236893424af029bcc017c4b181d62be6228eb3bc21b7e1801"
       },
       "proof": {
         "parity": {
-          "path": "ai-native-organization/qa/v1.1.0/heading-correction/parity/parity.json",
-          "sha256": "da1df653efd250fbea5a1fa8f2b0c4880b6af42ba777364246b8bb9ccfeddd53"
+          "path": "ai-native-organization/qa/v1.1.0/visual-index-correction/parity.json",
+          "sha256": "62815f3d040df1261e19fbfc0409106fb00524e53a1cc16d0fbfd54b87f088da"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "cdccc5ff9a45a6d353e422bac063cc429ce56fd5a5cc50f5c77a2efc964503ea",
-          "date": "2026-10-23",
-          "authority": "Mike explicitly authorized correcting version 1.1.0 itself, its website and both PDF download URLs, and rereleasing after validation.",
+          "sha256": "3db4c908e599843afaa39a76e786c9f823d68663a51410f0a849ab82e91aa11c",
+          "date": "2026-10-24",
           "version": "1.1.0",
-          "baseline": "1.0.0",
-          "review": "ai-native-organization/releases/v1.1.0/heading-correction-review.json"
+          "authority": "Mike directly requested the canonical index format, baking it into the skill, and fixing and updating the release, including the visual revision under review.",
+          "review": "ai-native-organization/releases/v1.1.0/visual-index-review.json"
         }
       },
       "appearanceDate": "2026-10-23"
     }
   ],
   "releaseCorrection": {
-    "revision": 1,
-    "reason": "Remove visible decimal subsection prefixes consistently; preserve anchors and link references to visible titles.",
-    "priorArtifacts": "releases/v1.1.0/pre-heading-correction/preservation.json",
-    "authority": "Mike explicitly authorized correcting version 1.1.0 itself, its website and both PDF download URLs, and rereleasing after validation."
+    "revision": 2,
+    "reason": "Eight operating visuals and canonical alphabetical term index with measured printed-page links.",
+    "priorArtifacts": "releases/v1.1.0/pre-index-visual-correction/preservation.json",
+    "authority": "Mike directly requested the canonical index format, baking it into the skill, and fixing and updating the release, including the visual revision under review."
   }
 }

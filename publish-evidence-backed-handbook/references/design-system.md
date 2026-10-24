@@ -45,7 +45,7 @@ Multiline headings must not strand one trailing word or a tiny final fragment. K
 
 PDF subsection headings display the title without decimal prefixes such as `2.1`. Preserve that source identifier for navigation and tracking. The PDF preparation hook gives each subsection a stable `section-2-1` anchor and changes matching in-text/index section references to linked titles. Chapter markers, procedural steps, diagram order, numerical data and source citation labels retain their numbering. Source headings retain their IDs and numbers. Readers may explicitly select `subsectionLabels: "titles"` to use the same title-only presentation and linked references; existing numbered readers remain unchanged. Audit references whenever prefixes are removed so readers are not sent to invisible labels.
 
-Use `INDEX_REFERENCE` for index-entry paragraphs containing section IDs. In narrative prose, references introduced by `section`, `in` or `see` are resolved against known subsection IDs. Unmarked decimal values and versions are preserved. Links and code are excluded from rewriting.
+Use the semantic `TermIndex` renderer for new and revised term indexes; `INDEX_REFERENCE` remains only for legacy compatibility. In narrative prose, references introduced by `section`, `in` or `see` are resolved against known subsection IDs. Unmarked decimal values and versions are preserved. Links and code are excluded from rewriting.
 
 The serif voice should carry narrative and synthesis. The sans voice should carry labels, metadata, table structures, citations, and compact operational information.
 
@@ -123,3 +123,7 @@ During review:
 1. Render every candidate page and inspect a contact sheet.
 2. Compare cover, contents, one opener, one narrative page, one dense table/example page, and back matter with the corresponding specimen roles.
 3. Treat unplanned changes in hierarchy, density, whitespace, illustration treatment, or running furniture as design-system drift.
+
+### Term index
+
+Follow [term-index.md](term-index.md). Use alphabetical letter groups, one entry per term and compact linked printed-page references. Two columns in PDF/wide readers collapse to one on narrow screens. Use shared `TermIndex` and book-owned semantic entries; `INDEX_REFERENCE` paragraphs are a legacy compatibility format, not the authoring pattern for new or revised indexes. Reject paragraphs of concatenated terms and quoted full-section links.

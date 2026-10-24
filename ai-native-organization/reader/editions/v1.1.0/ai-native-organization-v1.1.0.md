@@ -5,8 +5,8 @@ date: "2026-10-23"
 format: "machine-readable-markdown-v1"
 publication_status: "published"
 canonical_url: "https://handbooks.surfaces.systems/ai-native-organization/"
-source_reader_sha256: "add8380f483e429343a72ae6be3c22fd878abaa4b9a3dbceb737ea405d47c153"
-approved_reader_sha256: "2289761f99eada19d8707607b9b1c3d645fce84e60cb655ce763474e145098a0"
+source_reader_sha256: "c93f1f8c2c827c8c560e4e47833e5416cb075377990d3843ca5644874a726a66"
+approved_reader_sha256: "9c38a2beebe67923a0195b1d064aeebbc7fbdca58ffc963d81cdfe83b79022af"
 ---
 
 # AI-Native Organization Handbook
@@ -155,6 +155,10 @@ Context engineering is the work of managing the information available to a model
 
 For each task, bring together the customer goal, acceptance conditions, relevant domain rules, current interfaces, known constraints and reasons to escalate. Keep this packet small enough to use. Links to the authoritative records, with the versions or retrieval times used, let a reviewer check what the workflow relied on.
 
+**Keep the source owner visible**
+
+Domain and policy owners maintain authoritative rules, interfaces and acceptance conditions. The workflow maintainer assembles a task packet with source versions or retrieval times. The product team and reviewer use that packet, and unresolved conflicts go back to the responsible source owner.
+
 How often information needs checking depends on how quickly it changes and the consequences of using an old version. An access policy may need verification for every task; a stable interface example may need review when the interface changes. The workflow maintainer assembles the information, while the domain owner remains responsible for its correctness.
 
 Decide who resolves conflicting information before work starts. If an old example permits an export that current policy forbids, stop the export and ask the responsible owner. Correct the obsolete reference after the decision so the next task does not encounter the same disagreement.
@@ -200,6 +204,10 @@ The test set should include routine tasks, awkward but valid inputs, stale or co
 
 Repeat cases when variable behavior matters, and retain the result of every case. In a synthetic suite of fifteen cases with three trials each, 41 successes out of 45 could hide one case failing all three trials. A high aggregate can coexist with a repeatable failure.
 
+**An aggregate pass count can hide a failed case**
+
+One possible synthetic 41-of-45 result: case 1 fails all three trials; case 2 passes two of three; cases 3 through 15 pass all three. The aggregate is 41 of 45, but case 1 fails the per-case requirement.
+
 Before the trial, decide which cases are critical and what passing each one means. Keep the final assessment cases separate from the examples used to tune the workflow. If an assessment case leaks into tuning, use a replacement assessment that was defined in advance and has not been exposed, or call the final result inconclusive. Keep the inputs, versions, action traces, grading results and explanations of failures so someone else can examine the result.
 
 For each product change, test the behavior customers need and unintended effects the task could introduce. Saved searches need persistence and privacy checks, followed by observation of whether customers can find and reuse the saved query. The product lead defines representative use before delivery.
@@ -226,6 +234,10 @@ Run a stale-context conflict, an incorrect output, a tool timeout, a prohibited 
 
 People should know who can suspend the workflow and who will restore each affected product. Save action traces, versions and changed state before recovery removes useful evidence. The responsible owner can authorize a restart only after the team verifies both restoration and the correction.
 
+**Recover before restarting**
+
+Suspend the affected workflow and revoke access. Preserve action traces, versions and changed state. Restore the product and verify the correction. The responsible owner authorizes a restart only after both checks.
+
 Feedback needs to reach someone who can act on it. Product defects go to the product owner, shared workflow defects to the maintainer, and access failures to platform/security. When a failure crosses those responsibilities, the owners need to coordinate the response.
 
 Budget recurring time for context corrections, evaluation updates, provider changes and support, and include it in operating cost. Even a useful workflow may cost too much to maintain if the work it serves rarely occurs.
@@ -248,7 +260,11 @@ The trial covers forty-eight preference, notification and administration changes
 
 The sponsor wants recurring cost per confirmed outcome at least 15% below the current workflow, within an absolute cost ceiling, with acceptable completion and quality. The detailed requirements in ["Agree on the investment requirements"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-5) are example investment choices. Set locally justified requirements before enrollment.
 
-The schedule allows weeks 1-2 to prepare and agree the trial plan, weeks 3-6 to enroll tasks, weeks 7-8 to finish delivery, and weeks 9-10 to observe use and make the decision. Each release needs at least fourteen calendar days of follow-up and representative customer use. Check the actual deadlines against the business calendar before committing to this schedule.
+Allow time to observe customer use after delivery. The illustrative schedule below includes at least fourteen calendar days of follow-up for each release. Check the actual deadlines against the business calendar before committing to the plan.
+
+**A ten-week trial needs time after delivery**
+
+Illustrative schedule: weeks 1–2 prepare and agree the plan; weeks 3–6 enroll tasks; weeks 7–8 finish delivery; weeks 9–10 observe use and decide. Each release still requires at least fourteen calendar days of follow-up and representative customer use.
 
 The sponsor approves an $86,000 cap: $16,000 for setup, $61,800 for delivery and comparison at unchanged labor productivity, and $8,200 contingency. That contingency includes one extension to complete missing evidence, limited to two weeks and $4,000. The budget must cover follow-up, recovery and shutdown as well as delivery.
 
@@ -290,9 +306,13 @@ Charge support used by only one group to that group. Divide common measurement c
 
 To see whether the trial can finish within budget, add incurred cost, unspent commitments and work still needed but not yet committed. Include setup, both groups, follow-up and shutdown, and reconcile estimated usage charges with invoices. Count a commitment only once, even if it already appears in a group's cost record.
 
-Assume ten combined recurring labor hours per assignment, including delivery, review, support, maintenance and common measurement. At $125/hour, a comparison task costs 10 × $125 + $25 in tools = $1,275. The pilot costs 10 × $125 + $50 = $1,300. The forty-eight assignments cost 24 × ($1,275 + $1,300) = $61,800. Setup brings the no-benefit plan to $77,800.
+Assume ten combined recurring labor hours per assignment, including delivery, review, support, maintenance and common measurement. At $125/hour, a comparison task costs $1,275 including tools, and a pilot task costs $1,300. The chart includes all forty-eight assignments and keeps setup separate.
 
-Funding the hoped-for result would budget only $16,000 + 24 × $1,275 + 24 × $1,050 = $71,800. A $72,000 cap leaves $200 and depends on already achieving the target. The $86,000 cap instead leaves $8,200 over the no-benefit plan.
+**Fund the trial before assuming savings**
+
+The synthetic no-benefit plan includes $16,000 setup, $30,600 comparison work and $31,200 pilot work: $77,800 total. A $72,000 cap falls $5,800 short. The $86,000 cap leaves $8,200 for remaining uncertainty.
+
+Funding the hoped-for result would budget only $71,800, assuming $1,050 for each pilot assignment. A $72,000 cap leaves $200 and depends on already achieving the target. The $86,000 cap covers the no-benefit plan and leaves room for uncertainty.
 
 Review the expected cost to finish every week, including what happens if work goes badly. Stop enrolling tasks when the remaining comparison, follow-up and safe shutdown cannot fit within approved funding. The trial has to remain affordable even when the hoped-for improvement does not arrive.
 
@@ -331,9 +351,12 @@ Review the scorecard in this order. 1. Controls / incidents: Action and recovery
 
 The cost and completion requirements below pass, along with quality, evaluations and integrity. The sponsor still needs the engineer-sensitivity and investment-recovery calculations in ["Check dependence on one engineer"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-8) and ["Value capacity that was actually reused"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-9) before deciding whether to fund another team.
 
+**Equal confirmed outcomes, different cost**
+
+Synthetic week-ten result: both groups have 23 confirmed timely outcomes from 24 assignments. Comparison recurring cost is $29,900, or $1,300 per confirmed outcome. Pilot recurring cost is $20,700, or $900 per confirmed outcome, 30.8% lower. Both totals include unsuccessful work.
+
 | MEASURE | SYNTHETIC RESULT |
 | --- | --- |
-| Recurring unit cost | Pilot $20,700 / 23 = $900. Comparison $29,900 / 23 = $1,300. Ratio 0.692; pilot cost is 30.8% lower. |
 | Completion | 23/24 in both groups, with required customer observations and follow-up complete. |
 | Quality | Zero High/Medium incidents. One Low pilot issue and zero comparison Low issues; no accepted outcome invalidated. |
 | Evaluations | Routine 44/45; every case at least 2/3, critical cases 3/3. Controls 45/45 across all 15 cases. |
@@ -368,11 +391,19 @@ B = ($10,000 - $800) / 23 = $400. Demand is six per week, but demonstrated pilot
 
 This forecast begins after adoption and counts no benefit from the pilot period. It estimates payback; the team has not observed it yet. If only sixty of eighty hours have demonstrated reuse, q = 0.75: B = ($7,500 - $800)/23 = $291.30 and recovery takes 14.3 weeks. If B or V is nonpositive, no finite recovery exists.
 
+**Payback depends on productive reuse**
+
+Derived synthetic forecast, holding all other assumptions fixed: 50% productive reuse gives 22.9 weeks to recover setup; 75% gives 14.3 weeks; 100% gives 10.4 weeks. The 12-week requirement is reached at 88% reuse. This is a model, not an observed payback period.
+
 ### Distinguish missing evidence from failure
 
 At the planned week-ten review, a complete result that passes every requirement can support one separately funded trial with a second team. A complete result that fails a requirement stops expansion. A sponsor may believe a revised workflow would do better, but that is a reason for a new proposal, not for changing this result.
 
 If a customer observation is missing, mark the affected outcome and calculations Pending. The single extension to complete evidence is available only if no completed requirement has failed, every requirement unaffected by that observation passes, the observation is scheduled and finishing fits within the cap. Calculations that depend on the observation remain Pending. Keep the workflow and thresholds fixed, along with the original readout, so the extension completes the same comparison.
+
+**Choose the next step from the evidence**
+
+Complete evidence passing every requirement can support one separately funded second-team trial. Missing evidence may qualify for the single bounded extension only under the stated conditions. A completed failed requirement stops expansion. Any prohibited action, data exposure or High/Medium incident requires immediate suspension, independently of this final readout.
 
 A completed cost failure needs a different decision. Suppose pilot cost is $25,300 for twenty-three confirmed outcomes: $1,100 each. Relative cost is $1,100/$1,300 = 0.846, which passes the relative threshold but fails the $1,050 ceiling. Even with full reuse, $200 benefit per outcome gives recovery of 20.9 weeks. Stop expansion.
 
@@ -552,21 +583,87 @@ A cloud-specific foundation, business-unit infrastructure and application exampl
 
 ## Index of terms
 
-Use the contents or PDF outlines to find the sections listed below.
+Page numbers link to the first page of the relevant section in either PDF appearance.
 
-Acceptance: ["Test the workflow and the outcome"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-4) and ["Make the task record reviewable"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-5), ["Count confirmed customer outcomes"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-3). Agent evaluation: ["Test the workflow and the outcome"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-4), ["Agree on the investment requirements"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-5). Authority: ["Enforce authority through the system"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-3), ["Expand one commitment at a time"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-11). Budget: ["Fund a trial that can disappoint you"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-1), ["Charge the complete delivery cost"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-4).
+### A
 
-Capacity value: ["Protect judgment and attention"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-6), ["Value capacity that was actually reused"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-9). Comparison: ["Keep the comparison interpretable"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-2). Confirmed outcomes: ["Count confirmed customer outcomes"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-3). Context: ["Maintain the context work depends on"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-1). Cost allocation: ["Charge the complete delivery cost"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-4). Customer observation: ["Test the workflow and the outcome"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-4) and ["Make the task record reviewable"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-5), ["Count confirmed customer outcomes"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-3).
+- **Acceptance:** [17](#test-the-workflow-and-the-outcome), [19](#make-the-task-record-reviewable), [26](#count-confirmed-customer-outcomes)
+- **Agent evaluation:** [17](#test-the-workflow-and-the-outcome), [29](#agree-on-the-investment-requirements)
+- **Authority:** [16](#enforce-authority-through-the-system), [37](#expand-one-commitment-at-a-time)
 
-Engineer sensitivity: ["Check dependence on one engineer"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-8). Evidence extension: ["Distinguish missing evidence from failure"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-10). Follow-up: ["Fund a trial that can disappoint you"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-1), ["Count confirmed customer outcomes"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-3). Human attention: ["Protect judgment and attention"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-6). Incomplete work: ["Keep the comparison interpretable"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-2) and ["Count confirmed customer outcomes"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-3).
+### B
 
-Launch record: tool A. Maintenance: ["Make shared expertise usable"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-4), ["Define a repeatable capability"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-2), ["Rehearse failure before live work"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-6). Outcome ownership: ["Give one team the whole outcome"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-2) and ["Assign the decisions people retain"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-3). Permissions: ["Enforce authority through the system"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-3). Productive reuse: ["Value capacity that was actually reused"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-9).
+- **Budget:** [23](#fund-a-trial-that-can-disappoint-you), [27](#charge-the-complete-delivery-cost)
 
-Organization structure: ["Match the structure to your coordination needs"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-5). Recovery from failure: ["Rehearse failure before live work"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-6). Replication: ["Expand one commitment at a time"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-11). Revocation: ["Enforce authority through the system"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-3), ["Rehearse failure before live work"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-6). Setup recovery: ["Value capacity that was actually reused"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-9) and ["Distinguish missing evidence from failure"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-10). Shared expertise: ["Make shared expertise usable"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-4).
+### C
 
-Specialist judgment: ["Give one team the whole outcome"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-2), ["Protect judgment and attention"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-6). Staffing: ["Give one team the whole outcome"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-2), ["Expand one commitment at a time"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-11). Stop and suspend: ["Read the weekly scorecard in order"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-6), ["Distinguish missing evidence from failure"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-10). Task record: ["Make the task record reviewable"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-5). Version changes: ["Define a repeatable capability"](https://handbooks.surfaces.systems/ai-native-organization/#section-2-2). Weekly scorecard: ["Read the weekly scorecard in order"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-6), tool B.
+- **Capacity value:** [11](#protect-judgment-and-attention), [34](#value-capacity-that-was-actually-reused)
+- **Comparison:** [25](#keep-the-comparison-interpretable)
+- **Confirmed outcomes:** [26](#count-confirmed-customer-outcomes)
+- **Context:** [14](#maintain-the-context-work-depends-on)
+- **Cost allocation:** [27](#charge-the-complete-delivery-cost)
+- **Customer observation:** [17](#test-the-workflow-and-the-outcome), [19](#make-the-task-record-reviewable), [26](#count-confirmed-customer-outcomes)
 
-Version 1.1.0 · October 23, 2026.
+### E
+
+- **Engineer sensitivity:** [33](#check-dependence-on-one-engineer)
+- **Evidence extension:** [35](#distinguish-missing-evidence-from-failure)
+
+### F
+
+- **Follow-up:** [23](#fund-a-trial-that-can-disappoint-you), [26](#count-confirmed-customer-outcomes)
+
+### H
+
+- **Human attention:** [11](#protect-judgment-and-attention)
+
+### I
+
+- **Incomplete work:** [25](#keep-the-comparison-interpretable), [26](#count-confirmed-customer-outcomes)
+
+### L
+
+- **Launch record:** [39](#a-write-the-launch-record)
+
+### M
+
+- **Maintenance:** [5](#make-shared-expertise-usable), [15](#define-a-repeatable-capability), [20](#rehearse-failure-before-live-work)
+
+### O
+
+- **Organization structure:** [7](#match-the-structure-to-your-coordination-needs)
+- **Outcome ownership:** [3](#give-one-team-the-whole-outcome), [4](#assign-the-decisions-people-retain)
+
+### P
+
+- **Permissions:** [16](#enforce-authority-through-the-system)
+- **Productive reuse:** [34](#value-capacity-that-was-actually-reused)
+
+### R
+
+- **Recovery from failure:** [20](#rehearse-failure-before-live-work)
+- **Replication:** [37](#expand-one-commitment-at-a-time)
+- **Revocation:** [16](#enforce-authority-through-the-system), [20](#rehearse-failure-before-live-work)
+
+### S
+
+- **Setup recovery:** [34](#value-capacity-that-was-actually-reused), [35](#distinguish-missing-evidence-from-failure)
+- **Shared expertise:** [5](#make-shared-expertise-usable)
+- **Specialist judgment:** [3](#give-one-team-the-whole-outcome), [11](#protect-judgment-and-attention)
+- **Staffing:** [3](#give-one-team-the-whole-outcome), [37](#expand-one-commitment-at-a-time)
+- **Stop and suspend:** [30](#read-the-weekly-scorecard-in-order), [35](#distinguish-missing-evidence-from-failure)
+
+### T
+
+- **Task record:** [19](#make-the-task-record-reviewable)
+
+### V
+
+- **Version changes:** [15](#define-a-repeatable-capability)
+
+### W
+
+- **Weekly scorecard:** [30](#read-the-weekly-scorecard-in-order), [39](#b-record-the-weekly-decision)
 
 ## Changelog
 
@@ -574,11 +671,15 @@ Compared with version 1.0.0, published October 23, 2026.
 
 **Addition**
 
-Added four illustrative organization arrangements, from one team to federated business units, after the discussion of shared expertise.
+Added four illustrative organization arrangements and eight visuals covering context ownership, evaluation results, recovery, the trial schedule, complete cost, unit cost, productive reuse and the final decision.
 
-Helps leaders choose coordination and support arrangements while preserving team ownership. Company sizes are examples, not prescribed transition points.
+The visuals help leaders compare coordination choices and the existing synthetic examples. Company sizes are illustrative total-company headcounts, not reorganization thresholds.
 
-Sources: [\[S10\]](#s10-key-concepts), [\[S11\]](#s11-cncf-platforms-white-paper), [\[S12\]](#s12-enterprise-foundations-deployment-methodology).
+**Correction or clarification**
+
+Subsection titles omit decimal prefixes. The term index now uses alphabetical groups, one term per entry and linked printed-page references, matching the collection format.
+
+Replaced dense paragraphs of quoted section titles with a scannable index. Page references are measured from the final PDF pagination; existing section links remain available.
 
 [Team Topologies: Key Concepts](https://teamtopologies.com/key-concepts)
 
@@ -586,10 +687,6 @@ Sources: [\[S10\]](#s10-key-concepts), [\[S11\]](#s11-cncf-platforms-white-paper
 
 [Google Cloud: Deployment methodology](https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology)
 
-**Correction or clarification**
-
-Removed decimal prefixes from website and Markdown subsection headings. Section references now link to the visible titles, matching the PDFs. Both PDF appearances were reissued with this correction recorded.
-
-[Corrected online edition](https://handbooks.surfaces.systems/ai-native-organization/)
+[Index format: Production AI Engineering](https://handbooks.surfaces.systems/production-ai-engineering/#term-index)
 
 Previous Daytime PDF SHA-256: ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf

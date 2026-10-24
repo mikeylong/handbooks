@@ -1,0 +1,45 @@
+{
+  "id": "ai-native-organization",
+  "title": "AI-Native Organization Handbook",
+  "version": "1.1.0",
+  "date": "2026-10-23",
+  "pages": 49,
+  "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+  "sha256": "1ae0def352235eed03d05514edfcbda2cfae5fe5e5869064f28bd70ee5b3483c",
+  "approvalStatus": "approved",
+  "publicationApproved": true,
+  "publicationStatus": "published",
+  "author": "Michael Long",
+  "authorSite": "https://surfaces.systems",
+  "canonicalUrl": "https://handbooks.surfaces.systems/ai-native-organization/",
+  "editionUrl": "https://handbooks.surfaces.systems/ai-native-organization/editions/v1.1.0/",
+  "pdfUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+  "baseline": {
+    "version": "1.0.0",
+    "date": "2026-10-23",
+    "pdf": "output/pdf/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf",
+    "sha256": "ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf",
+    "pages": 41
+  },
+  "comparison_basis": "approved edition 1.0.0",
+  "sourceLedger": {
+    "path": "evidence/sources.json",
+    "sha256": "8b6b1790b0dc4ed18a87398c1fc651e98f5e9a9c5aaf5ba33e758a475401e7d4"
+  },
+  "publicationApproval": {
+    "date": "2026-10-23",
+    "authority": "Mike explicitly authorized correcting version 1.1.0 itself, its website and both PDF download URLs, and rereleasing after validation.",
+    "version": "1.1.0",
+    "baseline": "1.0.0"
+  },
+  "changelog": {
+    "decision": "qa/v1.1.0/heading-correction/changelog-decision.json",
+    "comparison": "qa/v1.1.0/heading-correction/edition-comparison/edition-diff.json"
+  },
+  "releaseCorrection": {
+    "revision": 1,
+    "reason": "Remove visible decimal subsection prefixes consistently; preserve anchors and link references to visible titles.",
+    "priorArtifacts": "releases/v1.1.0/pre-heading-correction/preservation.json",
+    "authority": "Mike explicitly authorized correcting version 1.1.0 itself, its website and both PDF download URLs, and rereleasing after validation."
+  }
+}

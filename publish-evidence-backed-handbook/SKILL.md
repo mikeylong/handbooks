@@ -9,6 +9,8 @@ Produce a candidate handbook whose claims, editorial decisions, visual system, e
 
 ## Non-negotiable contract
 
+- Term indexes use the collection format: alphabetical groups, one term per entry and compact linked printed-page references. Use the shared semantic index renderer and validate final HTML/PDF destinations. Never concatenate terms or expand an index into paragraphs of quoted section titles. Follow [references/term-index.md](references/term-index.md).
+
 - Work from an editable canonical source. Never hand-edit a generated PDF.
 - Every hosted handbook must offer a machine-readable Markdown edition beside its PDF links. Use the shared Markdown/download runtime for current and future editions, preserving exact content-edition identity and released PDF bytes. Use exactly three reader locations: desktop sidebar, top cover, and mobile Contents menu. Omit bottom-of-main download controls; retain edition-page controls. Validate content coverage, code/prompt preservation, links, and responsive placement.
 - Keep reusable reader rendering, appearance assets, artwork and diagram processing, and validation in this skill. Books own content, assets, and semantic definitions and use thin adapters. Do not maintain copied runtime implementations in individual handbooks.

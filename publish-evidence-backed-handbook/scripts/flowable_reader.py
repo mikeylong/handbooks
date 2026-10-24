@@ -52,6 +52,7 @@ def build_reader(book_root, config, output, chrome=None):
   if key and key not in rendered_references:
    rendered_references.add(key);attrs=f' class="reference-entry" id="ref-{key.lower()}" tabindex="-1"'
   return '<p'+attrs+'>'+txt(p.text,not key and p.style.name not in ['PromptHead','PromptBody'])+'</p>'
+ index_targets={}
  headings=[];blocks=[];section_open=False;subsection_open=False;index=0;chapter_marker=None
 
  def prose_list_kind(table):
@@ -84,6 +85,7 @@ def build_reader(book_root, config, output, chrome=None):
    if s=='CoverTitle' or pdf_contents or any(x.style is getattr(m,name,None) for name in config['skipStyles']):return
    if s in ['H1','H2','H3']:
     index+=1;key='section-'+str(index)
+    if getattr(x,'_index_section_key',None):index_targets[x._index_section_key]={'title':x._index_section_title,'anchor':key}
     if s=='H1':
      if subsection_open:blocks.append('</section>');subsection_open=False
      if section_open:blocks.append('</section>')
@@ -150,6 +152,8 @@ def build_reader(book_root, config, output, chrome=None):
    blocks.append('<div class="'+css+'" tabindex="0"><table>'+''.join(rows)+'</table></div>')
   elif isinstance(x,KeepTogether):
    for c in x._content:item(c)
+  elif getattr(x, '_canonical_term_index', False):
+   blocks.append(x.html(r,index_targets))
   elif hasattr(x, 'semantic_definition'):
    from concept_diagrams import render_concept_html
    blocks.append(render_concept_html(x.semantic_definition))
@@ -180,6 +184,8 @@ def build_reader(book_root, config, output, chrome=None):
  # The web cover is rendered from the publication manifest below. Convert only
  # the PDF body, starting at its first chapter, so cover metadata cannot leak.
  story=getattr(m,config['storyFunction'])()
+ from term_index import bind_index_targets
+ bind_index_targets(story)
  if config.get('subsectionLabels') == 'titles':
   from heading_wrap import prepare_title_story
   prepare_title_story(story)

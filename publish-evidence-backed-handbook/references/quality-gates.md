@@ -22,6 +22,8 @@ A candidate is ready only when every required hard gate passes and the perceptua
 
 ## Editorial gates
 
+- A term index has alphabetical groups and one distinct entry per term. Compact page labels link to actual final section destinations. Reject concatenated paragraph indexes, quoted title dumps and stale page references; run the shared term-index tests and artifact validator.
+
 - The intended audience and reader job remain clear.
 - Headings, section order, terminology, and numbering are coherent.
 - Examples are internally consistent and operationally safe enough to teach from.

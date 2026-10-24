@@ -1,0 +1,26 @@
+{
+  "id": "completecost",
+  "layout": "quantitative",
+  "kind": "budget",
+  "title": "Fund the trial before assuming savings",
+  "width": 360,
+  "height": 220,
+  "textEquivalent": "The synthetic no-benefit plan includes $16,000 setup, $30,600 comparison work and $31,200 pilot work: $77,800 total. A $72,000 cap falls $5,800 short. The $86,000 cap leaves $8,200 for remaining uncertainty.",
+  "sourceNote": "Synthetic handbook example; not measured adoption results.",
+  "segments": [
+    {
+      "label": "Setup",
+      "value": 16000
+    },
+    {
+      "label": "Comparison",
+      "value": 30600
+    },
+    {
+      "label": "Pilot",
+      "value": 31200
+    }
+  ],
+  "max": 86000,
+  "lowerCap": 72000
+}

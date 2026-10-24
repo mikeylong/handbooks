@@ -3,9 +3,9 @@
   "title": "AI-Native Organization Handbook",
   "version": "1.1.0",
   "date": "2026-10-23",
-  "pages": 49,
+  "pages": 51,
   "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-  "sha256": "1ae0def352235eed03d05514edfcbda2cfae5fe5e5869064f28bd70ee5b3483c",
+  "sha256": "34d7a343d50d3d10f77ac88f7ef1f3cd09cda4fbb7683e02dd3084b23079f7e7",
   "approvalStatus": "approved",
   "publicationApproved": true,
   "publicationStatus": "published",
@@ -16,16 +16,15 @@
   "pdfUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
   "releaseUrl": "https://handbooks.surfaces.systems/ai-native-organization/editions/v1.1.0/",
   "publicationApproval": {
-    "date": "2026-10-23",
-    "authority": "Mike explicitly authorized correcting version 1.1.0 itself, its website and both PDF download URLs, and rereleasing after validation.",
+    "date": "2026-10-24",
     "version": "1.1.0",
-    "baseline": "1.0.0"
+    "authority": "Mike directly requested the canonical index format, baking it into the skill, and fixing and updating the release, including the visual revision under review."
   },
   "sourceRepository": "https://github.com/mikeylong/handbooks",
   "releaseCorrection": {
-    "revision": 1,
-    "reason": "Remove visible decimal subsection prefixes consistently; preserve anchors and link references to visible titles.",
-    "priorArtifacts": "releases/v1.1.0/pre-heading-correction/preservation.json",
-    "authority": "Mike explicitly authorized correcting version 1.1.0 itself, its website and both PDF download URLs, and rereleasing after validation."
+    "revision": 2,
+    "reason": "Eight operating visuals and canonical alphabetical term index with measured printed-page links.",
+    "priorArtifacts": "releases/v1.1.0/pre-index-visual-correction/preservation.json",
+    "authority": "Mike directly requested the canonical index format, baking it into the skill, and fixing and updating the release, including the visual revision under review."
   }
 }
