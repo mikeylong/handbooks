@@ -13,6 +13,7 @@ import {installArtworkPairs} from './artwork-pairs.mjs';
 
 const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads,editionPdfUrl,validatePrintGuidanceAbsent}=await toolkitModule('pdf-downloads.mjs');
 const {writeMarkdownEdition}=await toolkitModule('markdown-downloads.mjs');
+const {installSharingAssets,readerSharingIdentity}=await toolkitModule('sharing-metadata.mjs');
 const {exerciseDownloadLinks}=await toolkitModule('exercise-downloads.mjs');
 const {installRetainedReleases}=await toolkitModule('retained-releases.mjs');
 const {installDiagrams} = await toolkitModule('diagrams.mjs');
@@ -38,6 +39,8 @@ let gallery=await readFile(resolve(root,'site/index.html'),'utf8');
 const retained=JSON.parse(await readFile(resolve(root,'retained-releases.json'),'utf8'));
 const changelogs=JSON.parse(await readFile(resolve(root,'changelogs.json'),'utf8'));
 const editions=[];
+const sharingBrand=JSON.parse(await readFile(resolve(root,'sharing-brand.json'),'utf8'));
+const sharingPages=[];
 for(const pin of books){
   const source=await sourceFor(root,pin);
   const approvedPackage=await validatePackage(source,pin);
@@ -111,6 +114,9 @@ for(const pin of books){
   await writeFile(resolve(output,'../publications',pin.id+'.json'),JSON.stringify(edition,null,2)+'\n');
   gallery=gallery.replace(pin.coverPlaceholder,renderGalleryCover(html));
   editions.push({pin,html,edition});
+  const identity=readerSharingIdentity(html);
+  sharingPages.push({id:pin.id,path:pin.id+'/index.html',url:sharingBrand.origin+'/'+pin.id+'/',title:identity.title,coverTitle:identity.title,description:identity.description});
+  sharingPages.push({id:pin.id,path:pin.id+'/editions/v'+manifest.version+'/index.html',url:pin.editionUrl,title:identity.title+' · Version '+manifest.version,coverTitle:identity.title,description:identity.description});
 }
 gallery=sortGalleryCards(gallery,editions.map(({edition})=>edition));
 for(const {pin,html} of editions)validateGalleryCover(gallery,'/'+pin.id+'/',html);
@@ -118,6 +124,8 @@ validateGalleryPublications(gallery,books.map(book=>'/'+book.id+'/'));
 await writeFile(resolve(output,'index.html'),gallery);
 await writeFile(resolve(output,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://handbooks.surfaces.systems/sitemap.xml\n');
 await writeFile(resolve(output,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+['/',...books.flatMap(book=>['/'+book.id+'/',new URL(book.editionUrl).pathname])].map(path=>`<url><loc>https://handbooks.surfaces.systems${path}</loc></url>`).join('')+'</urlset>\n');
+sharingPages.unshift({id:'collection',path:'index.html',url:sharingBrand.origin+'/',title:sharingBrand.collectionTitle+' · '+sharingBrand.author,coverTitle:sharingBrand.collectionTitle,description:sharingBrand.collectionDescription});
+await installSharingAssets({output,assetRoot:resolve(root,'site/assets/sharing'),brand:sharingBrand,pages:sharingPages});
 for(const path of await finalizeSiteThemes(output))validatePrintGuidanceAbsent(await readFile(path,'utf8'));
 // Frozen historical HTML must remain byte-identical after current-reader transforms.
 await installRetainedReleases(resolve(root,'..'),output,retained);

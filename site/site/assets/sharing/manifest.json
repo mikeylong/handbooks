@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "brand": {
+    "schemaVersion": 1,
+    "origin": "https://handbooks.surfaces.systems",
+    "siteName": "Handbooks",
+    "author": "Michael Long",
+    "collectionTitle": "Handbooks",
+    "collectionDescription": "Practical guides to engineering, evaluation, consulting, design, and AI-native organizations.",
+    "collectionArtworkBook": "production-ai-engineering"
+  },
+  "generator": "build-sharing-assets.py",
+  "markSha256": "df6fd578a2e34595900ede96f4d972ff106307187827ac131390ecb319849398",
+  "fonts": {
+    "SourceSerif4-Bold.ttf": "faf5ef02799bec5752da30cd51c936708cd464b257e2770219dbfab170085a9c",
+    "NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5"
+  },
+  "icons": {
+    "favicon-16.png": {
+      "sha256": "716e96dcd7fe1a10edd259fadb86f32080e232483a06336d6c47e78ef42560b6",
+      "bytes": 504
+    },
+    "favicon-180.png": {
+      "sha256": "40291e8b029a5e5fdd8007e999a4bee0e6cd7b122605bcacc356ba859f967884",
+      "bytes": 3797
+    },
+    "favicon-192.png": {
+      "sha256": "e944b93cbe6b3d4004ddbd85bb58f1f313575d0a53403bbfd0472d92650cff97",
+      "bytes": 3935
+    },
+    "favicon-24.png": {
+      "sha256": "6d0e232601ea895cb6df51e0d6dcae69e15fdf8f26b7d0aa52ba7a96b8a54124",
+      "bytes": 770
+    },
+    "favicon-32.png": {
+      "sha256": "8564d9e14f77ec337b22250690a50b0ad42a8714297025ccaf4c30cddd2e7239",
+      "bytes": 913
+    },
+    "favicon-48.png": {
+      "sha256": "fe73235308310307b15513afacba6963bc8e6d610a0d082cb3099770055d0af6",
+      "bytes": 1332
+    },
+    "favicon-96.png": {
+      "sha256": "8a7a45518ff322f6e6bc05fe073508bf7bcbf6190aa9e535d5546a728881f732",
+      "bytes": 2237
+    },
+    "favicon.ico": {
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe",
+      "bytes": 2838
+    },
+    "favicon.svg": {
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb",
+      "bytes": 245
+    }
+  },
+  "cards": {
+    "collection": {
+      "title": "Handbooks",
+      "description": "Practical guides to engineering, evaluation, consulting, design, and AI-native organizations.",
+      "file": "collection.png",
+      "sha256": "e96a6d33289cede2eaac9df9215c237b95a9aed97a76408264d7145c5fe01508",
+      "width": 1200,
+      "height": 630,
+      "bytes": 171551,
+      "artwork": {
+        "path": "production-ai-engineering/assets/chapters/chapter-01.webp",
+        "sha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082"
+      },
+      "alt": "Handbooks \u2014 Practical guides to engineering, evaluation, consulting, design, and AI-native organizations."
+    },
+    "ai-native-organization": {
+      "title": "AI-Native Organization Handbook",
+      "description": "Choose useful work, give people clear ownership, and test whether agent workflows improve delivery.",
+      "file": "ai-native-organization.png",
+      "sha256": "407e4dd66cc1043da2ded313c208a7137e833966b87799ee4426f68b27e8fa92",
+      "width": 1200,
+      "height": 630,
+      "bytes": 190691,
+      "artwork": {
+        "path": "ai-native-organization/assets/chapter-01.png",
+        "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+      },
+      "alt": "AI-Native Organization Handbook \u2014 Choose useful work, give people clear ownership, and test whether agent workflows improve delivery."
+    },
+    "production-ai-engineering": {
+      "title": "Production AI Engineering",
+      "description": "A Handbook for Building Reliable LLM Systems",
+      "file": "production-ai-engineering.png",
+      "sha256": "4f6690286d76f6478cce16d90a5ff3c74a58e386b5b0fd7170962d33e3046367",
+      "width": 1200,
+      "height": 630,
+      "bytes": 173031,
+      "artwork": {
+        "path": "production-ai-engineering/assets/chapters/chapter-01.webp",
+        "sha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082"
+      },
+      "alt": "Production AI Engineering \u2014 A Handbook for Building Reliable LLM Systems"
+    },
+    "claude-design": {
+      "title": "Claude Design Field Guide",
+      "description": "Explore, refine, and hand off an interactive product design",
+      "file": "claude-design.png",
+      "sha256": "519117941e0d92a3430a71dd7b879d978ba6a7648cc2bab0d3227a24e6812cde",
+      "width": 1200,
+      "height": 630,
+      "bytes": 92547,
+      "artwork": {
+        "path": "claude-design/assets/chapter-01.png",
+        "sha256": "45a4950a0ea2f97e2db2b656a374b127d359b59575677d276e982f9cc3f28268"
+      },
+      "alt": "Claude Design Field Guide \u2014 Explore, refine, and hand off an interactive product design"
+    },
+    "ai-evaluation": {
+      "title": "AI Evaluation Field Guide",
+      "description": "From a first test case to a defensible launch decision",
+      "file": "ai-evaluation.png",
+      "sha256": "64eb5aa14670b60d9d22c87e255540bc9b46bd5466fb8098492ce4beb2b19ea8",
+      "width": 1200,
+      "height": 630,
+      "bytes": 89046,
+      "artwork": {
+        "path": "ai-evaluation/assets/chapter-01.png",
+        "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+      },
+      "alt": "AI Evaluation Field Guide \u2014 From a first test case to a defensible launch decision"
+    },
+    "ai-consulting": {
+      "title": "AI Consulting Playbook",
+      "description": "From an AI opportunity to a governed decision and clean handoff",
+      "file": "ai-consulting.png",
+      "sha256": "83f9fa21588d00b3e7d69f0846ab7354ed245bc0162b0520510a360f6e4c89e7",
+      "width": 1200,
+      "height": 630,
+      "bytes": 183254,
+      "artwork": {
+        "path": "ai-consulting/assets/chapter-01.png",
+        "sha256": "4ea6828ca89ec32902811ad7375db43a21e9642143cd20c7b5ebcc4dbc178a3c"
+      },
+      "alt": "AI Consulting Playbook \u2014 From an AI opportunity to a governed decision and clean handoff"
+    }
+  }
+}
