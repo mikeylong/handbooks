@@ -1,0 +1,80 @@
+--- previous/previous-source.py
++++ candidate/build_handbook.py
+@@ -135,7 +135,7 @@
+     story += page('2.4 Test the workflow and the outcome',
+         'Keep two questions separate. Can this workflow version handle representative work? Does this delivered change solve the customer problem? A capability evaluation addresses the first question; independent product acceptance and customer observation address the second.',
+         'The test set should include routine tasks, awkward but valid inputs, stale or conflicting information, tool failures and prohibited requests. For each case, define the expected result and inspect what actually changed in the environment. Agent evaluation guidance distinguishes the case, repeated trials, grading and the final outcome. [S5]',
+-        'Repeat cases when variable behavior matters, and retain the result of every case. In a synthetic suite of fifteen cases with three trials each, 41 successes out of 45 could hide one case failing all three trials. A high aggregate can coexist with a repeatable failure.',
++        'Repeat cases when variable behavior matters, and retain the result of every case. In a suite of fifteen cases with three trials each, 41 successes out of 45 could hide one case failing all three trials. A high aggregate can coexist with a repeatable failure.',
+         'Before the trial, decide which cases are critical and what passing each one means. Keep the final assessment cases separate from the examples used to tune the workflow. If an assessment case leaks into tuning, use a replacement assessment that was defined in advance and has not been exposed, or call the final result inconclusive. Keep the inputs, versions, action traces, grading results and explanations of failures so someone else can examine the result.',
+         'For each product change, test the behavior customers need and unintended effects the task could introduce. Saved searches need persistence and privacy checks, followed by observation of whether customers can find and reuse the saved query. The product lead defines representative use before delivery.',
+         'Repeating a control test tells you more about the selected scenario, not about every situation the workflow might face. Fifteen cases run three times still cover fifteen distinct challenges. A passing suite therefore leaves a continuing job for production monitoring, incident response and customer feedback.', figures={3: 'EvaluationMatrix'})
+@@ -156,7 +156,7 @@
+     story += chapter(story, '3', 'Fund a comparison and decide what to expand',
+         'Pay for the trial to finish, count unsuccessful work, and connect the investment decision to confirmed customer outcomes.')
+     story += page('3.1 Fund a trial that can disappoint you',
+-        '<b>All numbers and results in this chapter are synthetic.</b> The example follows six engineers who already use AI assistants, CI and production controls. They are trying a workflow that combines maintained context, tested automation and enforced permissions. The comparison tests the combination; it cannot tell them how much benefit came from each part.',
++        '<b>All numbers and results in this chapter are illustrative.</b> The example follows six engineers who already use AI assistants, CI and production controls. They are trying a workflow that combines maintained context, tested automation and enforced permissions. The comparison tests the combination; it cannot tell them how much benefit came from each part.',
+         'The trial covers forty-eight preference, notification and administration changes requested to meet customer needs. It excludes authorization, billing, destructive migrations and sensitive exports. Staffing, product ownership and release rules stay the same. Before funding it, the sponsor needs to know that there is enough eligible work and enough reviewer time to finish the comparison.',
+         'The sponsor wants recurring cost per confirmed outcome at least 15% below the current workflow, within an absolute cost ceiling, with acceptable completion and quality. The detailed requirements in 3.5 are example investment choices. Set locally justified requirements before enrollment.',
+         'Allow time to observe customer use after delivery. The illustrative schedule below includes at least fourteen calendar days of follow-up for each release. Check the actual deadlines against the business calendar before committing to the plan.',
+@@ -201,9 +201,9 @@
+         'Start the review with controls and incidents, then ask whether the trial can still afford to finish. Next review missing evidence, completion and customer outcomes, quality and evaluations, and finally cost and recovery. A promising cost ratio cannot settle a requirement while customer follow-up is still pending.')
+     story += [ConceptDiagram(BOOK, 'ScorecardSequence')]
+     story += page('3.7 Calculate a complete example readout',
+-        '<b>Synthetic week-ten result:</b> all forty-eight assignments, follow-up records and costs are resolved. Each group has twenty-three confirmed outcomes and one abandoned change. The abandoned work remains in cost. No outstanding commitments or further work estimates remain.',
++        '<b>Week-ten result:</b> all forty-eight assignments, follow-up records and costs are resolved. Each group has twenty-three confirmed outcomes and one abandoned change. The abandoned work remains in cost. No outstanding commitments or further work estimates remain.',
+         'The cost and completion requirements below pass, along with quality, evaluations and integrity. The sponsor still needs the engineer-sensitivity and investment-recovery calculations in 3.8–3.9 before deciding whether to fund another team.',
+-        rows=[['MEASURE', 'SYNTHETIC RESULT'],
++        rows=[['MEASURE', 'RESULT'],
+         ['Completion', '23/24 in both groups, with required customer observations and follow-up complete.'],
+         ['Quality', 'Zero High/Medium incidents. One Low pilot issue and zero comparison Low issues; no accepted outcome invalidated.'],
+         ['Evaluations', 'Routine 44/45; every case at least 2/3, critical cases 3/3. Controls 45/45 across all 15 cases.'],
+@@ -211,7 +211,7 @@
+         ['Integrity', 'No prohibited execution, preferential review, unlogged crossover or unapproved material workflow change.']], figures={2: 'UnitCost'})
+     story += page('3.8 Check dependence on one engineer',
+         'An aggregate improvement may depend heavily on one person’s work. Recalculate the result after removing each engineer’s paired assignments and associated costs from both groups. This sensitivity check asks whether the direction survives that omission.',
+-        'In the synthetic readout, the six engineers contribute [4, 4, 4, 4, 4, 3] confirmed outcomes in each group. Pilot costs are [$3,600, $3,600, $3,600, $3,600, $3,600, $2,700]. Comparison costs are [$5,200, $5,200, $5,200, $5,200, $5,200, $3,900]. All include unsuccessful work and allocated support.',
++        'In the readout, the six engineers contribute [4, 4, 4, 4, 4, 3] confirmed outcomes in each group. Pilot costs are [$3,600, $3,600, $3,600, $3,600, $3,600, $2,700]. Comparison costs are [$5,200, $5,200, $5,200, $5,200, $5,200, $3,900]. All include unsuccessful work and allocated support.',
+         'Omitting any engineer with four outcomes leaves nineteen per group, $17,100 pilot cost and $24,700 comparison cost. Unit costs remain $900 and $1,300. Omitting the engineer with three outcomes leaves twenty per group, $18,000 and $26,000. The same unit costs remain.',
+         'All six omission ratios are 0.692, below the example requirement of 1. The cost advantage remains when any one engineer’s work is left out. Keep the task and cost records linked to each engineer so another reviewer can reproduce the calculation.',
+         'The check does not produce a confidence interval, isolate the workflow’s components or remove shared learning between engineers. Similar tasks, common review and within-team assistance still constrain interpretation. A second team is a new test of operation, support and economics.',
+@@ -220,7 +220,7 @@
+         'In this example, saved time counts toward paying back setup only when the team uses it for other planned work. That value and any nonlabor savings must cover setup to meet the investment rule. Let L be comparison minus pilot labor cost per confirmed outcome, and N the corresponding nonlabor difference. When L is positive, q is the share of that saving backed by completed work, capped between zero and one.',
+         'Count priority work that was named in advance and completed without extra staffing or overtime, supported by effort records for the people involved. Check those records against the main cost records to avoid counting the same work twice. This estimates the value of capacity used; it does not show that cash spending fell.',
+         'The conservative net benefit is B = min(L, 0) + q × max(L, 0) + N. Any increase in labor cost counts in full; a labor saving counts only in proportion to demonstrated reuse. Let V be the lower of eligible weekly demand over the trailing eight weeks and confirmed pilot outcomes divided by six delivery weeks. Modeled recovery time is S / (B × V).',
+-        'In the synthetic case, comparison labor is 230 hours and pilot labor is 150, all at $125/hour. Estimated released time is 23 × (230/23) − 150 = 80 hours. All eighty have demonstrated productive reuse, so q = 1. Labor costs are $28,750 and $18,750; nonlabor costs are $1,150 and $1,950.',
++        'In this example, comparison labor is 230 hours and pilot labor is 150, all at $125/hour. Estimated released time is 23 × (230/23) − 150 = 80 hours. All eighty have demonstrated productive reuse, so q = 1. Labor costs are $28,750 and $18,750; nonlabor costs are $1,150 and $1,950.',
+         'B = ($10,000 − $800) / 23 = $400. Demand is six per week, but demonstrated pilot capacity is 23/6 = 3.83. Recovery is $16,000 / ($400 × 23/6) = 10.4 weeks, within the twelve-week rule. Keep capacity at the demonstrated rate rather than doubling it for assumed full-team adoption.',
+         'This forecast begins after adoption and counts no benefit from the pilot period. It estimates payback; the team has not observed it yet. If only sixty of eighty hours have demonstrated reuse, q = 0.75: B = ($7,500 − $800)/23 = $291.30 and recovery takes 14.3 weeks. If B or V is nonpositive, no finite recovery exists.', figures={6: 'PaybackSensitivity'})
+     story += page('3.10 Distinguish missing evidence from failure',
+@@ -231,7 +231,7 @@
+         'A prohibited action, data exposure or High/Medium incident requires immediate suspension of the affected capability. Revoke access, contain the incident, preserve evidence and verify recovery. An uncorrectable control failure or unaffordable completion ends the pilot.',
+         'Calibrate economics before launch. At the planning ceiling of $1,050 against $1,275, the difference is $225. Even with full reuse and four outcomes weekly, $16,000 setup takes 17.8 weeks to recover. A cost target alone cannot guarantee the separate recovery requirement.', figures={2: 'ReadoutDecision'})
+     story += page('3.11 Expand one commitment at a time',
+-        'In the synthetic example, every requirement passed. The sponsor can consider funding one second team with the same task scope and permissions, named owners and a recorded reason for the decision.',
++        'In this example, every requirement passed. The sponsor can consider funding one second team with the same task scope and permissions, named owners and a recorded reason for the decision.',
+         'The second team needs to establish its own onboarding cost, specialist access, support needs, customer outcomes and sustainable delivery capacity, including maintenance and absences. It may not be able to get the champions’ help at the original team’s cost.',
+         'Consider four expansion decisions separately: more work for the same team, another team, broader permissions and changed staffing. More volume tests review and support capacity; another team tests whether the workflow travels well; broader access changes the consequences of failure; and staffing changes affect expertise and recovery.',
+         'Say what is changing and what evidence would justify it before committing. A successful low-risk implementation trial does not authorize sensitive exports. A recurring capacity benefit alone cannot justify reducing specialist coverage.',
+@@ -265,7 +265,7 @@
+         'Provider guidance informs the discussion of execution context [S4], evaluation structure [S5] and containment [S6]. The arrangements for source ownership, service agreements and numerical requirements are recommendations made here. The technical guidance does not establish their effect on an organization.',
+         'METR’s methods update explains problems with task selection and concurrent AI measurement [S7]. NIST distinguishes the limit of an observation from an observed event time in reliability data [S8]; section 3.2 borrows that distinction to explain unfinished work. DORA supports small batches and short feedback cycles [S9]. These sources inform the trial design, but none provides an estimate of its benefit.',
+         'The four company-scale arrangements in section 1.5 are also proposals. Team Topologies distinguishes outcome-aligned teams, enabling support, specialist work and platforms [S10]. CNCF describes platforms shaped around internal users [S11]. Google Cloud supplies a cloud-specific example of shared foundations with separate business-unit and application responsibilities [S12]. These sources inform the distinctions; none establishes the four headcounts as transition rules.',
+-        'Every Chapter 3 plan and result is synthetic. Research cutoff: October 23, 2026. The bibliography records direct sources and their limits.')
++        'Research cutoff: October 23, 2026. The bibliography records direct sources and their limits.')
+     source_rows = json.loads((BOOK/'evidence/sources.json').read_text())['sources']
+     for subset, title in [(source_rows[:3], 'Organizational foundations'), (source_rows[3:6], 'Context, evaluation and containment'), (source_rows[6:9], 'Comparison and measurement'), ([s for s in source_rows if s['id'] in ('S10','S11','S12')], 'Structures and shared capabilities')]:
+         story += [heading(title)]
+@@ -283,9 +283,9 @@
+         P('Compared with version 1.0.0, published October 23, 2026.'),
+         P('<b>Addition</b>'),
+         P('Added four illustrative organization arrangements and eight visuals covering context ownership, evaluation results, recovery, the trial schedule, complete cost, unit cost, productive reuse and the final decision.'),
+-        P('The visuals help leaders compare coordination choices and the existing synthetic examples. Company sizes are illustrative total-company headcounts, not reorganization thresholds.'),
++        P('The visuals help leaders compare coordination choices and the worked examples. Company sizes are illustrative total-company headcounts, not reorganization thresholds.'),
+         P('<b>Correction or clarification</b>'),
+-        P('Subsection titles omit decimal prefixes. The term index now uses alphabetical groups, one term per entry and linked printed-page references, matching the collection format.'),
++        P('Subsection titles omit decimal prefixes. The term index now uses alphabetical groups, one term per entry and linked printed-page references, matching the collection format. Repeated example labels and chart footnotes have been removed.'),
+         P('Replaced dense paragraphs of quoted section titles with a scannable index. Page references are measured from the final PDF pagination; existing section links remain available.'),
+         P('<link href="https://teamtopologies.com/key-concepts">Team Topologies: Key Concepts</link>', SMALL),
+         P('<link href="https://tag-app-delivery.cncf.io/whitepapers/platforms/">CNCF Platforms White Paper</link>', SMALL),

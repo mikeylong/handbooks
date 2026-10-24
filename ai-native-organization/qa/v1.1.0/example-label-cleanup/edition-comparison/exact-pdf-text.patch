@@ -1,0 +1,1115 @@
+--- previous/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf
++++ candidate/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf
+@@ -5,8 +5,8 @@
+ Choose useful work, give people clear ownership, and test
+ whether agent workflows improve delivery.
+ Michael Long
+-October 23, 2026 · Version 1.0.0
+-First edition
++October 23, 2026 · Version 1.1.0
++Expanded edition
+ --- PDF page 2 ---
+ ii
+ Make a better
+@@ -36,19 +36,21 @@
+ Make a better delivery decision
+  ii
+ Working tools
+- 31
++ 39
+ 1. Choose useful work and clear owners
+  1
+ Notes and sources
+- 33
++ 41
+ 2. Build a workflow the team can
+ operate
+- 8
++ 13
+ Index of terms
+- 37
++ 47
+ 3. Fund a comparison and decide what
+ to expand
+- 16
++ 22
++Changelog
++ 48
+ --- PDF page 4 ---
+ 1
+ CHAPTER 01
+@@ -214,6 +216,122 @@
+ Fund broader reuse after teams can operate the capability and its
+ support burden is understood. A workflow that succeeds only when its
+ author sits beside the user is still being developed.
++--- PDF page 10 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++1. CHOOSE USEFUL WORK AND CLEAR OWNERS
++7
++Match the structure to your
++coordination needs
++Start with the dependencies between customer outcomes, the specialists
++people need, and the decisions each team can make alone. Add shared
++coordination where it helps teams finish work.
++These four arrangements are proposals. The sizes are illustrative
++total-company headcounts, including non-engineering roles. They are
++not engineering headcounts, staffing ratios or thresholds for
++reorganizing.
++People retain responsibility for outcomes and release; this does not
++require manual approval of every routine deployment.
++Boxes group work, not reporting lines. Solid arrows show work, priorities or evidence; dashed arrows
++show support or controls.
++A small company may coordinate one multidisciplinary team through
++direct conversation and one backlog. The same people can maintain its
++tools and workflows.
++Around 10 people: one team
++FOUNDERS + CORE TEAM
++Define
++Human owner
++Execute
++Agents
++Accept / release
++Human owner
++Tools + context
++Evidence
++--- PDF page 11 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++1. CHOOSE USEFUL WORK AND CLEAR OWNERS
++8
++When several product teams need the same help, give them shared
++workflow support and access to specialists. Keep those services usable
++without making every delivery wait in one central queue.
++Around 100 people: product teams
++Product leadership
++PRODUCT TEAM A
++Human owner / release
++Agents
++PRODUCT TEAM B
++Human owner / release
++Agents
++Platform / workflow owner
++Specialists
++Priorities
++--- PDF page 12 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++1. CHOOSE USEFUL WORK AND CLEAR OWNERS
++9
++When dependencies cluster around a product domain, a domain lead can
++coordinate priorities and interfaces across teams. Each team still owns
++its customer outcome and release; the platform and specialist
++communities support that work.
++Around 1,000 people: product domains
++Portfolio priorities
++DOMAIN A
++Domain lead
++TEAM 1
++Owner /
++release
++Agents
++TEAM 2
++Owner /
++release
++Agents
++DOMAIN B
++Domain lead
++TEAM 1
++Owner /
++release
++Agents
++TEAM 2
++Owner /
++release
++Agents
++Platform + workflows
++Internal product
++Specialist communities
++Domain judgment
++Contracts
++--- PDF page 13 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++1. CHOOSE USEFUL WORK AND CLEAR OWNERS
++10
++Business units with different markets or operating needs may need more
++local authority. Local capability hubs maintain context, evaluations and
++domain tools, while an enterprise foundation supplies common controls.
++Name the cross-unit agreements and escalation routes. Domain
++coordination within each unit is omitted here for clarity.
++Around 10,000 people: federated units
++Enterprise foundation
++Identity / security / audit / standards
++BUSINESS UNIT A
++PRODUCT TEAMS
++Owner /
++release
++Agents
++Local capability hub
++BUSINESS UNIT B
++PRODUCT TEAMS
++Owner /
++release
++Agents
++Local capability hub
++Contracts / escalation
++Before changing reporting lines, trace a few delayed changes across
++team boundaries. Decide whether the problem needs a clearer interface,
++more available specialist time, a shared service or a different decision
++owner. Test that change before applying a larger reorganization.
++--- PDF page 14 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++1. CHOOSE USEFUL WORK AND CLEAR OWNERS
++11
+ Protect judgment and attention
+ A team needs enough expertise to challenge the work it accepts. Before
+ delegating a task, name who can explain the affected architecture,
+@@ -234,10 +352,10 @@
+ and help others develop judgment, while remaining available for
+ difficult cases. Measure useful independent delivery and support quality
+ together.
+---- PDF page 10 ---
++--- PDF page 15 ---
+ AI-NATIVE ORGANIZATION HANDBOOK
+ 1. CHOOSE USEFUL WORK AND CLEAR OWNERS
+-7
++12
+ Decide what the team would do with time saved. Completing more
+ priority work, reducing overtime and leaving room for unexpected work
+ each have value, but they are different benefits. Faster execution does
+@@ -248,17 +366,17 @@
+ reduce, the accountable team and the people responsible for shared
+ capabilities and exceptions. Those choices give the work a purpose and
+ make clear who can act when it fails.
+---- PDF page 11 ---
+-8
++--- PDF page 16 ---
++13
+ CHAPTER 02
+ Build a workflow the
+ team can operate
+ Give agents current context, enforce the actions they may take, and
+ verify the result independently.
+---- PDF page 12 ---
++--- PDF page 17 ---
+ AI-NATIVE ORGANIZATION HANDBOOK
+ 2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-9
++14
+ Maintain the context work depends on
+ An agent working on saved searches needs the current interface, privacy
+ rules, relevant product decisions and acceptance criteria. A large
+@@ -274,6 +392,21 @@
+ reasons to escalate. Keep this packet small enough to use. Links to the
+ authoritative records, with the versions or retrieval times used, let a
+ reviewer check what the workflow relied on.
++ Keep the source owner visible
++1
++Domain and policy owners
++Maintain authoritative rules, interfaces and acceptance conditions.
++2
++Workflow maintainer
++Assemble the task packet with source versions or retrieval times.
++3
++Product team and reviewer
++Use the packet to perform and judge the work; return conflicts to the source
++owner.
++--- PDF page 18 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++15
+ How often information needs checking depends on how quickly it
+ changes and the consequences of using an old version. An access policy
+ may need verification for every task; a stable interface example may
+@@ -284,10 +417,6 @@
+ example permits an export that current policy forbids, stop the export
+ and ask the responsible owner. Correct the obsolete reference after the
+ decision so the next task does not encounter the same disagreement.
+---- PDF page 13 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-10
+ A failure should point to a specific correction. A missing interface
+ agreement needs an authoritative source; an unsupported assumption
+ needs clarification or a new test case. Adding every available document
+@@ -302,6 +431,10 @@
+ contract and a customer task description, propose coordinated changes
+ across clients and backend, and return test evidence. It should identify
+ unsupported work, such as a new authorization model, before execution.
++--- PDF page 19 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++16
+ A short service agreement should answer the questions a product team
+ will have: who maintains the workflow, who can use it, what support to
+ expect, how to report a defect and how to continue if it is unavailable.
+@@ -312,10 +445,6 @@
+ investigation and a human decision before implementation. Use broader
+ agent discretion only when the surrounding controls and verification
+ can support the additional choices.
+---- PDF page 14 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-11
+ Fixing a product defect and changing the workflow are different
+ changes. The product fix belongs in the product's release record. A new
+ model, different tool access or a change in how agents coordinate
+@@ -332,6 +461,10 @@
+ identity, tools and execution environment. Retrieved text can describe
+ permission, but it cannot grant access. A task asking for a production
+ export does not authorize one.
++--- PDF page 20 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++17
+ Containment limits what an agent can do through controls such as
+ sandboxes, virtual machines and network restrictions. [S6] Choose those
+ controls according to the consequences of the task, then check from
+@@ -346,12 +479,6 @@
+ Read
+ Approved repositories, documents and test data under a task
+ identity with limited resources and expiry.
+---- PDF page 15 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-12
+-ACTION
+-PERMITTED SCOPE IN THE EXAMPLE
+ Edit and test
+ An isolated branch or workspace, without production credentials.
+ Record changed state and test results.
+@@ -373,19 +500,43 @@
+ problem? A capability evaluation addresses the first question;
+ independent product acceptance and customer observation address the
+ second.
++--- PDF page 21 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++18
+ The test set should include routine tasks, awkward but valid inputs, stale
+ or conflicting information, tool failures and prohibited requests. For
+ each case, define the expected result and inspect what actually changed
+ in the environment. Agent evaluation guidance distinguishes the case,
+ repeated trials, grading and the final outcome. [S5]
+ Repeat cases when variable behavior matters, and retain the result of
+-every case. In a synthetic suite of fifteen cases with three trials each, 41
+-successes out of 45 could hide one case failing all three trials. A high
+-aggregate can coexist with a repeatable failure.
+---- PDF page 16 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++every case. In a suite of fifteen cases with three trials each, 41 successes
++out of 45 could hide one case failing all three trials. A high aggregate can
++coexist with a repeatable failure.
++An aggregate pass count can hide a failed case
++Case
++1
++2
++3
++4
++5
++6
++7
++8
++9
++10
++11
++12
+ 13
++14
++15
++Trial 1
++Trial 2
++Trial 3
++41/45 trials pass. Case 1 fails all three.
++One possible result; case-level checks expose the failure.
++Pass
++Fail
+ Before the trial, decide which cases are critical and what passing each
+ one means. Keep the final assessment cases separate from the examples
+ used to tune the workflow. If an assessment case leaks into tuning, use a
+@@ -393,6 +544,10 @@
+ exposed, or call the final result inconclusive. Keep the inputs, versions,
+ action traces, grading results and explanations of failures so someone
+ else can examine the result.
++--- PDF page 22 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++19
+ For each product change, test the behavior customers need and
+ unintended effects the task could introduce. Saved searches need
+ persistence and privacy checks, followed by observation of whether
+@@ -412,15 +567,15 @@
+ reopen it in a later session and see a usable failure state. Saved queries
+ remain private to their owner." Add the test environment and
+ representative customer tasks that will establish those conditions.
+---- PDF page 17 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-14
+ The record needs a task ID, responsible product team, source versions,
+ workflow/model version, permitted resources and actions, budget,
+ expiry and escalation owner. Link to protected configuration rather than
+ copying secrets into the record. The platform owner checks that the
+ actual permissions match this scope.
++--- PDF page 23 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++20
+ If a backend contract contradicts a mobile example, pause the affected
+ work and ask the contract owner to resolve the conflict. Keep the
+ decision and update both references. Otherwise the team may end up
+@@ -442,15 +597,28 @@
+ actually stopped, which credentials expired and what state remains. An
+ agent saying it stopped leaves an unanswered question if a background
+ job continues.
+---- PDF page 18 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-15
+ People should know who can suspend the workflow and who will restore
+ each affected product. Save action traces, versions and changed state
+ before recovery removes useful evidence. The responsible owner can
+ authorize a restart only after the team verifies both restoration and the
+ correction.
++--- PDF page 24 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++21
++ Recover before restarting
++1
++Suspend and revoke
++Stop affected execution and remove access.
++2
++Preserve evidence
++Save action traces, versions and changed state.
++3
++Restore and verify
++Recover the product and verify the correction.
++4
++Authorize restart
++The responsible owner decides when the workflow may resume.
+ Feedback needs to reach someone who can act on it. Product defects go
+ to the product owner, shared workflow defects to the maintainer, and
+ access failures to platform/security. When a failure crosses those
+@@ -465,19 +633,19 @@
+ Unresolved gaps need owners. This preparation makes the trial possible
+ within its approved scope; the trial still has to show whether delivery
+ improves.
+---- PDF page 19 ---
+-16
++--- PDF page 25 ---
++22
+ CHAPTER 03
+ Fund a comparison and
+ decide what to expand
+ Pay for the trial to finish, count unsuccessful work, and connect the
+ investment decision to confirmed customer outcomes.
+---- PDF page 20 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-17
++--- PDF page 26 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++23
+ Fund a trial that can disappoint you
+-All numbers and results in this chapter are synthetic. The example
++All numbers and results in this chapter are illustrative. The example
+ follows six engineers who already use AI assistants, CI and production
+ controls. They are trying a workflow that combines maintained context,
+ tested automation and enforced permissions. The comparison tests the
+@@ -493,27 +661,51 @@
+ acceptable completion and quality. The detailed requirements in "Agree
+ on the investment requirements" are example investment choices. Set
+ locally justified requirements before enrollment.
+-The schedule allows weeks 1-2 to prepare and agree the trial plan, weeks
+-3-6 to enroll tasks, weeks 7-8 to finish delivery, and weeks 9-10 to observe
+-use and make the decision. Each release needs at least fourteen calendar
+-days of follow-up and representative customer use. Check the actual
+-deadlines against the business calendar before committing to this
+-schedule.
++Allow time to observe customer use after delivery. The illustrative
++schedule below includes at least fourteen calendar days of follow-up for
++each release. Check the actual deadlines against the business calendar
++before committing to the plan.
++--- PDF page 27 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++24
++A ten-week trial needs time after delivery
++1
++2
++3
++4
++5
++6
++7
++8
++9
++10
++Week
++Prepare and agree
++1–2
++Enroll tasks
++3–6
++Finish delivery
++7–8
++Follow up and decide
++9–10
++Each release still needs at least 14 calendar days of follow-up.
++Illustrative schedule; confirm actual dates before enrollment.
+ The sponsor approves an $86,000 cap: $16,000 for setup, $61,800 for
+ delivery and comparison at unchanged labor productivity, and $8,200
+ contingency. That contingency includes one extension to complete
+ missing evidence, limited to two weeks and $4,000. The budget must
+ cover follow-up, recovery and shutdown as well as delivery.
+---- PDF page 21 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-18
+ Before enrollment, the measurement owner needs statistical help to
+ assess how much tasks vary, the minimum gain worth pursuing and how
+ precisely the trial could estimate it. Document the recommended sample
+ size and what the trial can distinguish. Forty-eight tasks are a planning
+ assumption. That assessment, the funding and the recovery requirement
+ all need to be resolved before work enters the trial.
++--- PDF page 28 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++25
+ Keep the comparison interpretable
+ Compare the pilot with the team's actual current workflow, including the
+ AI assistants it already uses. Match twenty-four pairs of tasks by
+@@ -533,16 +725,16 @@
+ selection and concurrent AI work also complicate measurement in
+ developer research. [S7] Keep deviations visible so the readout can
+ explain what was tested.
+---- PDF page 22 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-19
+ Each change has ten business days from the time it is ready and
+ assigned. Waiting, blockers and rescue work all count toward that
+ deadline. Use the agreed business calendar and record actual
+ completion times, the age of unresolved tasks and late completions. Late
+ work still belongs in the results, even though it no longer qualifies as
+ timely.
++--- PDF page 29 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++26
+ An unfinished task at the deadline has no observed completion time yet.
+ Reporting it as completed at day ten would hide delay. Keep unfinished,
+ late and abandoned outcomes separate. The statistical distinction
+@@ -564,15 +756,15 @@
+ still be useful, but it never enters this timely-outcome count. Remove an
+ accepted outcome if a predefined invalidation condition occurs, such as
+ a defect or customer failure making the accepted behavior unusable.
+---- PDF page 23 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-20
+ Every release needs observation, including late work. Before the final
+ decision, confirm the result for every timely acceptance and complete
+ quality and safety follow-up for late releases. Fourteen days without a
+ reported problem do not show that the change is useful; someone must
+ also observe the specified customer task.
++--- PDF page 30 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++27
+ One assignment register should connect each task to its original group,
+ pair, engineer, assignment time, deadline, production acceptance,
+ follow-up, customer evidence, invalidation and costs. At the end, each
+@@ -593,15 +785,15 @@
+ measurement and outstanding recovery commitments. Keep one-time
+ setup S separate. Unit cost U_a = C_a / A_a; the relative cost ratio is U_P /
+ U_C, where P is pilot and C is comparison.
+---- PDF page 24 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-21
+ Charge support used by only one group to that group. Divide common
+ measurement costs across all assigned tasks, including unsuccessful
+ work. With twenty-four assignments in each group, each receives half.
+ Keep this allocation fixed so a lower success count cannot make
+ measurement costs disappear.
++--- PDF page 31 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++28
+ To see whether the trial can finish within budget, add incurred cost,
+ unspent commitments and work still needed but not yet committed.
+ Include setup, both groups, follow-up and shutdown, and reconcile
+@@ -609,22 +801,40 @@
+ even if it already appears in a group's cost record.
+ Assume ten combined recurring labor hours per assignment, including
+ delivery, review, support, maintenance and common measurement. At
+-$125/hour, a comparison task costs 10 × $125 + $25 in tools = $1,275. The
+-pilot costs 10 × $125 + $50 = $1,300. The forty-eight assignments cost 24 ×
+-($1,275 + $1,300) = $61,800. Setup brings the no-benefit plan to $77,800.
+-Funding the hoped-for result would budget only $16,000 + 24 × $1,275 + 24
+-× $1,050 = $71,800. A $72,000 cap leaves $200 and depends on already
+-achieving the target. The $86,000 cap instead leaves $8,200 over the
+-no-benefit plan.
++$125/hour, a comparison task costs $1,275 including tools, and a pilot
++task costs $1,300. The chart includes all forty-eight assignments and
++keeps setup separate.
++Fund the trial before assuming savings
++Setup
++$16,000
++Comparison
++$30,600
++Pilot
++$31,200
++Reserve
++$8,200
++$0
++$20k
++$40k
++$60k
++$80k
++Cost before reserve: $77,800
++$72,000 cap: $5,800 short (dashed mark).
++$86,000 cap: $8,200 available after full cost.
++No-benefit plan; all 48 assignments remain in cost.
++Funding the hoped-for result would budget only $71,800, assuming
++$1,050 for each pilot assignment. A $72,000 cap leaves $200 and depends
++on already achieving the target. The $86,000 cap covers the no-benefit
++plan and leaves room for uncertainty.
++--- PDF page 32 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++29
+ Review the expected cost to finish every week, including what happens
+ if work goes badly. Stop enrolling tasks when the remaining comparison,
+ follow-up and safe shutdown cannot fit within approved funding. The
+ trial has to remain affordable even when the hoped-for improvement
+ does not arrive.
+---- PDF page 25 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-22
+ Agree on the investment requirements
+ The sponsor approves the requirements and their rationale before
+ enrollment. The thresholds below are investment choices for this
+@@ -656,16 +866,18 @@
+ Enforced controls
+ 15 failure/control cases pass all 3 trials, including actual denial and
+ mid-run revocation.
++--- PDF page 33 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++30
++REQUIREMENT
++EXAMPLE FINAL RULE
+ Investment recovery
+ Complete costs, demonstrated productive reuse, modeled setup
+ recovery at most 12 weeks.
+ Comparison integrity
+ Every assignment retained; no preferential queue treatment,
+ unlogged crossover or unapproved material workflow change.
+---- PDF page 26 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-23
+ Read the weekly scorecard in order
+ The sponsor needs one consistent picture of progress. The measurement
+ owner prepares a cumulative snapshot at an agreed cutoff and timezone,
+@@ -682,10 +894,10 @@
+ customer outcomes, quality and evaluations, and finally cost and
+ recovery. A promising cost ratio cannot settle a requirement while
+ customer follow-up is still pending.
+---- PDF page 27 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-24
++--- PDF page 34 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++31
+  Review the scorecard in this order
+ 1
+ Controls / incidents
+@@ -708,25 +920,34 @@
+ Recovery / integrity
+ Setup, conservative net benefit, eligible demand, demonstrated capacity and
+ reuse; protocol deviations and version history.
+---- PDF page 28 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-25
+ Calculate a complete example readout
+-Synthetic week-ten result: all forty-eight assignments, follow-up records
+-and costs are resolved. Each group has twenty-three confirmed
+-outcomes and one abandoned change. The abandoned work remains in
+-cost. No outstanding commitments or further work estimates remain.
++Week-ten result: all forty-eight assignments, follow-up records and costs
++are resolved. Each group has twenty-three confirmed outcomes and one
++abandoned change. The abandoned work remains in cost. No
++outstanding commitments or further work estimates remain.
+ The cost and completion requirements below pass, along with quality,
+ evaluations and integrity. The sponsor still needs the
+ engineer-sensitivity and investment-recovery calculations in "Check
+ dependence on one engineer" and "Value capacity that was actually
+ reused" before deciding whether to fund another team.
++--- PDF page 35 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++32
++Equal confirmed outcomes, different cost
++Comparison
++$1,300
++Pilot
++$900
++$0
++$500
++$1,000
++$1,500
++Recurring cost per confirmed timely outcome
++23 confirmed / 24 assigned in each group. Unsuccessful work included.
++Cost ratio 0.692; pilot unit cost 30.8% lower.
+ MEASURE
+-SYNTHETIC RESULT
+-Recurring unit cost
+-Pilot $20,700 / 23 = $900. Comparison $29,900 / 23 = $1,300. Ratio
+-0.692; pilot cost is 30.8% lower.
++RESULT
+ Completion
+ 23/24 in both groups, with required customer observations and
+ follow-up complete.
+@@ -742,20 +963,19 @@
+ Integrity
+ No prohibited execution, preferential review, unlogged crossover or
+ unapproved material workflow change.
++--- PDF page 36 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++33
+ Check dependence on one engineer
+ An aggregate improvement may depend heavily on one person's work.
+ Recalculate the result after removing each engineer's paired
+ assignments and associated costs from both groups. This sensitivity
+ check asks whether the direction survives that omission.
+---- PDF page 29 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-26
+-In the synthetic readout, the six engineers contribute [4, 4, 4, 4, 4, 3]
+-confirmed outcomes in each group. Pilot costs are [$3,600, $3,600, $3,600,
+-$3,600, $3,600, $2,700]. Comparison costs are [$5,200, $5,200, $5,200,
+-$5,200, $5,200, $3,900]. All include unsuccessful work and allocated
+-support.
++In the readout, the six engineers contribute [4, 4, 4, 4, 4, 3] confirmed
++outcomes in each group. Pilot costs are [$3,600, $3,600, $3,600, $3,600,
++$3,600, $2,700]. Comparison costs are [$5,200, $5,200, $5,200, $5,200,
++$5,200, $3,900]. All include unsuccessful work and allocated support.
+ Omitting any engineer with four outcomes leaves nineteen per group,
+ $17,100 pilot cost and $24,700 comparison cost. Unit costs remain $900
+ and $1,300. Omitting the engineer with three outcomes leaves twenty per
+@@ -773,10 +993,10 @@
+ before expansion. The result may point to expertise the workflow has
+ not yet made reusable. Treat that explanation as a hypothesis for the
+ next design, while retaining the original failed requirement.
+---- PDF page 30 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-27
++--- PDF page 37 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++34
+ Value capacity that was actually reused
+ In this example, saved time counts toward paying back setup only when
+ the team uses it for other planned work. That value and any nonlabor
+@@ -794,23 +1014,39 @@
+ proportion to demonstrated reuse. Let V be the lower of eligible weekly
+ demand over the trailing eight weeks and confirmed pilot outcomes
+ divided by six delivery weeks. Modeled recovery time is S / (B × V).
+-In the synthetic case, comparison labor is 230 hours and pilot labor is
+-150, all at $125/hour. Estimated released time is 23 × (230/23) - 150 = 80
+-hours. All eighty have demonstrated productive reuse, so q = 1. Labor
+-costs are $28,750 and $18,750; nonlabor costs are $1,150 and $1,950.
++In this example, comparison labor is 230 hours and pilot labor is 150, all
++at $125/hour. Estimated released time is 23 × (230/23) - 150 = 80 hours. All
++eighty have demonstrated productive reuse, so q = 1. Labor costs are
++$28,750 and $18,750; nonlabor costs are $1,150 and $1,950.
+ B = ($10,000 - $800) / 23 = $400. Demand is six per week, but demonstrated
+ pilot capacity is 23/6 = 3.83. Recovery is $16,000 / ($400 × 23/6) = 10.4
+ weeks, within the twelve-week rule. Keep capacity at the demonstrated
+ rate rather than doubling it for assumed full-team adoption.
+---- PDF page 31 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-28
++--- PDF page 38 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++35
+ This forecast begins after adoption and counts no benefit from the pilot
+ period. It estimates payback; the team has not observed it yet. If only
+ sixty of eighty hours have demonstrated reuse, q = 0.75: B = ($7,500 -
+ $800)/23 = $291.30 and recovery takes 14.3 weeks. If B or V is nonpositive,
+ no finite recovery exists.
++Payback depends on productive reuse
++0
++6
++12
++18
++24
++Weeks
++50%
++75%
++88%
++100%
++12-week requirement
++75%: 14.3 weeks
++100%: 10.4 weeks
++Share of saved time used for completed priority work
++Forecast: demand, rates and delivery capacity held fixed.
+ Distinguish missing evidence
+ from failure
+ At the planned week-ten review, a complete result that passes every
+@@ -818,6 +1054,10 @@
+ A complete result that fails a requirement stops expansion. A sponsor
+ may believe a revised workflow would do better, but that is a reason for
+ a new proposal, not for changing this result.
++--- PDF page 39 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++36
+ If a customer observation is missing, mark the affected outcome and
+ calculations Pending. The single extension to complete evidence is
+ available only if no completed requirement has failed, every
+@@ -826,20 +1066,36 @@
+ the observation remain Pending. Keep the workflow and thresholds
+ fixed, along with the original readout, so the extension completes the
+ same comparison.
++ Choose the next step from the evidence
++ Complete, all
++requirements pass
++Consider one separately
++ funded trial with a
++ second team.
++ Evidence missing; no
++ requirement failed
++One bounded extension,
++ only if the eligibility
++ conditions hold.
++ A completed
++requirement fails
++ Stop expansion. A
++revised workflow needs
++ a new proposal.
+ A completed cost failure needs a different decision. Suppose pilot cost is
+ $25,300 for twenty-three confirmed outcomes: $1,100 each. Relative cost
+ is $1,100/$1,300 = 0.846, which passes the relative threshold but fails the
+ $1,050 ceiling. Even with full reuse, $200 benefit per outcome gives
+ recovery of 20.9 weeks. Stop expansion.
+---- PDF page 32 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-29
+ If required evidence is still missing at week twelve, close the trial as
+ inconclusive. Explain what could not be observed and keep its costs in
+ the result. A fresh intervention needs a new charter. Extending the same
+ trial repeatedly until a favorable result appears would undermine the
+ decision the sponsor agreed to make.
++--- PDF page 40 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++37
+ A prohibited action, data exposure or High/Medium incident requires
+ immediate suspension of the affected capability. Revoke access, contain
+ the incident, preserve evidence and verify recovery. An uncorrectable
+@@ -849,9 +1105,9 @@
+ outcomes weekly, $16,000 setup takes 17.8 weeks to recover. A cost target
+ alone cannot guarantee the separate recovery requirement.
+ Expand one commitment at a time
+-In the synthetic example, every requirement passed. The sponsor can
+-consider funding one second team with the same task scope and
+-permissions, named owners and a recorded reason for the decision.
++In this example, every requirement passed. The sponsor can consider
++funding one second team with the same task scope and permissions,
++named owners and a recorded reason for the decision.
+ The second team needs to establish its own onboarding cost, specialist
+ access, support needs, customer outcomes and sustainable delivery
+ capacity, including maintenance and absences. It may not be able to get
+@@ -861,14 +1117,14 @@
+ volume tests review and support capacity; another team tests whether
+ the workflow travels well; broader access changes the consequences of
+ failure; and staffing changes affect expertise and recovery.
+---- PDF page 33 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-30
+ Say what is changing and what evidence would justify it before
+ committing. A successful low-risk implementation trial does not
+ authorize sensitive exports. A recurring capacity benefit alone cannot
+ justify reducing specialist coverage.
++--- PDF page 41 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++38
+ Keep the prior workflow and a recovery route while learning. Stop or
+ narrow the investment if cost, customer outcomes or support burden no
+ longer meet the approved criteria. Disappointing findings belong in the
+@@ -878,10 +1134,10 @@
+ The purpose is to make a better investment decision. Expand when the
+ evidence supports the next commitment and the customer outcome
+ remains worth pursuing.
+---- PDF page 34 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+-31
++--- PDF page 42 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
++39
+ Working tools
+ A. Write the launch record
+ Complete this record in the team's source of truth before enrollment. Use
+@@ -916,10 +1172,10 @@
+ 1. Freeze the cutoff, timezone, workflow version and assignment
+ register. Keep earlier snapshots and link corrections to the record they
+ change.
+---- PDF page 35 ---
++--- PDF page 43 ---
+ AI-NATIVE ORGANIZATION HANDBOOK
+ WORKING TOOLS
+-32
++40
+ 2. Reconcile incidents, action traces and control tests first. Record
+ suspension and recovery decisions with their owners. Check that access
+ and execution actually stopped when required.
+@@ -941,10 +1197,10 @@
+ inventory of work, costs, observations, failures and decisions. State the
+ conclusions the comparison can support and the new evidence required
+ for expansion.
+---- PDF page 36 ---
++--- PDF page 44 ---
+ AI-NATIVE ORGANIZATION HANDBOOK
+ WORKING TOOLS
+-33
++41
+ Notes and sources
+ Evidence behind the recommendations
+ The recommendations in this handbook bring together ideas about team
+@@ -967,10 +1223,10 @@
+ source ownership, service agreements and numerical requirements are
+ recommendations made here. The technical guidance does not establish
+ their effect on an organization.
+---- PDF page 37 ---
++--- PDF page 45 ---
+ AI-NATIVE ORGANIZATION HANDBOOK
+ NOTES AND SOURCES
+-34
++42
+ METR's methods update explains problems with task selection and
+ concurrent AI measurement [S7]. NIST distinguishes the limit of an
+ observation from an observed event time in reliability data [S8]; "Keep
+@@ -978,8 +1234,16 @@
+ unfinished work. DORA supports small batches and short feedback
+ cycles [S9]. These sources inform the trial design, but none provides an
+ estimate of its benefit.
+-Every Chapter 3 plan and result is synthetic. Research cutoff: October 23,
+-2026. The bibliography records direct sources and their limits.
++The four company-scale arrangements in "Match the structure to your
++coordination needs" are also proposals. Team Topologies distinguishes
++outcome-aligned teams, enabling support, specialist work and platforms
++[S10]. CNCF describes platforms shaped around internal users [S11].
++Google Cloud supplies a cloud-specific example of shared foundations
++with separate business-unit and application responsibilities [S12]. These
++sources inform the distinctions; none establishes the four headcounts as
++transition rules.
++Research cutoff: October 23, 2026. The bibliography records direct
++sources and their limits.
+ Organizational foundations
+ [S1] Scaling Agile @ Spotify
+ Henrik Kniberg and Anders Ivarsson. 2012.
+@@ -990,15 +1254,19 @@
+ https://www.f5.com/content/dam/f5/corp/global/pdf/ebooks/Migrating_to_Cloud-Native_Application
+ _Architecutres_NGINX.pdf
+ Historical architectural argument; does not establish an AI productivity effect.
++--- PDF page 46 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++NOTES AND SOURCES
++43
+ [S3] Designing AI-Native Engineering Organizations: Beyond Team
+ Topologies
+ Dilip Saha. 2026-10.
+ https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations
+ An organizational hypothesis; the article does not report validated outcomes.
+---- PDF page 38 ---
++--- PDF page 47 ---
+ AI-NATIVE ORGANIZATION HANDBOOK
+ NOTES AND SOURCES
+-35
++44
+ Context, evaluation and containment
+ [S4] Effective context engineering for AI agents
+ Anthropic. 2025-09-29.
+@@ -1012,10 +1280,10 @@
+ Anthropic. 2026-05-25.
+ https://www.anthropic.com/research/how-we-contain-claude
+ Provider-specific experience. No control or sandbox is claimed infallible.
+---- PDF page 39 ---
++--- PDF page 48 ---
+ AI-NATIVE ORGANIZATION HANDBOOK
+ NOTES AND SOURCES
+-36
++45
+ Comparison and measurement
+ [S7] We are Changing our Developer Productivity Experiment Design
+ Joel Becker, Nate Rush, Tom Cunningham, David Rein and Khalid Mahamud. 2026-02-24.
+@@ -1032,51 +1300,107 @@
+ https://dora.dev/capabilities/working-in-small-batches/
+ Supports short feedback cycles; does not establish the example's task count, deadlines or success
+ hurdles.
+---- PDF page 40 ---
++--- PDF page 49 ---
+ AI-NATIVE ORGANIZATION HANDBOOK
+ NOTES AND SOURCES
+-37
++46
++Structures and shared capabilities
++[S10] Key Concepts
++Team Topologies. Undated living page.
++https://teamtopologies.com/key-concepts
++Defines team types and interaction modes. It does not prescribe these company headcounts or
++establish the effectiveness of this AI-native synthesis.
++[S11] CNCF Platforms White Paper
++CNCF TAG App Delivery. Undated living page.
++https://tag-app-delivery.cncf.io/whitepapers/platforms/
++Supports platforms designed for internal users and a thin shared layer. It does not prescribe the four
++headcount scenarios or validate their results.
++[S12] Enterprise foundations: deployment methodology
++Google Cloud. 2025-05-15.
++https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodolo
++gy
++A cloud-specific foundation, business-unit infrastructure and application example. It is not evidence
++that a particular company size needs a federated organization.
++--- PDF page 50 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++INDEX OF TERMS
++47
+ Index of terms
+-Use the contents or PDF outlines to find the sections listed below.
+-Acceptance: "Test the workflow and the outcome" and "Make the task
+-record reviewable", "Count confirmed customer outcomes". Agent
+-evaluation: "Test the workflow and the outcome", "Agree on the
+-investment requirements". Authority: "Enforce authority through the
+-system", "Expand one commitment at a time". Budget: "Fund a trial that
+-can disappoint you", "Charge the complete delivery cost".
+-Capacity value: "Protect judgment and attention", "Value capacity that
+-was actually reused". Comparison: "Keep the comparison interpretable".
+-Confirmed outcomes: "Count confirmed customer outcomes". Context:
+-"Maintain the context work depends on". Cost allocation: "Charge the
+-complete delivery cost". Customer observation: "Test the workflow and
+-the outcome" and "Make the task record reviewable", "Count confirmed
+-customer outcomes".
+-Engineer sensitivity: "Check dependence on one engineer". Evidence
+-extension: "Distinguish missing evidence from failure". Follow-up:
+-"Fund a trial that can disappoint you", "Count confirmed customer
+-outcomes". Human attention: "Protect judgment and attention".
+-Incomplete work: "Keep the comparison interpretable" and "Count
+-confirmed customer outcomes".
+-Launch record: tool A. Maintenance: "Make shared expertise usable",
+-"Define a repeatable capability", "Rehearse failure before live work".
+-Outcome ownership: "Give one team the whole outcome" and "Assign the
+-decisions people retain". Permissions: "Enforce authority through the
+-system". Productive reuse: "Value capacity that was actually reused".
+---- PDF page 41 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-INDEX OF TERMS
+-38
+-Recovery from failure: "Rehearse failure before live work". Replication:
+-"Expand one commitment at a time". Revocation: "Enforce authority
+-through the system", "Rehearse failure before live work". Setup
+-recovery: "Value capacity that was actually reused" and "Distinguish
+-missing evidence from failure". Shared expertise: "Make shared
+-expertise usable".
+-Specialist judgment: "Give one team the whole outcome", "Protect
+-judgment and attention". Staffing: "Give one team the whole outcome",
+-"Expand one commitment at a time". Stop and suspend: "Read the weekly
+-scorecard in order", "Distinguish missing evidence from failure". Task
+-record: "Make the task record reviewable". Version changes: "Define a
+-repeatable capability". Weekly scorecard: "Read the weekly scorecard in
+-order", tool B.
+-First edition · October 23, 2026.
++Page numbers link to the first page of the relevant section in either PDF
++appearance.
++A
++Acceptance · 17, 19, 26
++Agent evaluation · 17, 29
++Authority · 16, 37
++B
++Budget · 23, 27
++C
++Capacity value · 11, 34
++Comparison · 25
++Confirmed outcomes · 26
++Context · 14
++Cost allocation · 27
++Customer observation · 17, 19, 26
++E
++Engineer sensitivity · 33
++Evidence extension · 35
++F
++Follow-up · 23, 26
++H
++Human attention · 11
++I
++Incomplete work · 25, 26
++L
++Launch record · 39
++M
++Maintenance · 5, 15, 20
++O
++Organization structure · 7
++Outcome ownership · 3, 4
++P
++Permissions · 16
++Productive reuse · 34
++R
++Recovery from failure · 20
++Replication · 37
++Revocation · 16, 20
++S
++Setup recovery · 34, 35
++Shared expertise · 5
++Specialist judgment · 3, 11
++Staffing · 3, 37
++Stop and suspend · 30, 35
++T
++Task record · 19
++V
++Version changes · 15
++W
++Weekly scorecard · 30, 39
++--- PDF page 51 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++CHANGELOG
++48
++Changelog
++Compared with version 1.0.0, published October 23, 2026.
++Addition
++Added four illustrative organization arrangements and eight visuals
++covering context ownership, evaluation results, recovery, the trial
++schedule, complete cost, unit cost, productive reuse and the final
++decision.
++The visuals help leaders compare coordination choices and the worked
++examples. Company sizes are illustrative total-company headcounts, not
++reorganization thresholds.
++Correction or clarification
++Subsection titles omit decimal prefixes. The term index now uses
++alphabetical groups, one term per entry and linked printed-page
++references, matching the collection format. Repeated example labels and
++chart footnotes have been removed.
++Replaced dense paragraphs of quoted section titles with a scannable
++index. Page references are measured from the final PDF pagination;
++existing section links remain available.
++Team Topologies: Key Concepts
++CNCF Platforms White Paper
++Google Cloud: Deployment methodology
++Index format: Production AI Engineering
++Previous Daytime PDF SHA-256:
++ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf

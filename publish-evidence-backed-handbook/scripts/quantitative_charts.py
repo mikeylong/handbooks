@@ -5,8 +5,8 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 
 KINDS={'timeline','trial-matrix','budget','bars','line'}
 def validate(d):
-    if d.get('kind') not in KINDS or not all(d.get(k) for k in ['id','title','textEquivalent','sourceNote']):
-        raise ValueError('Chart needs a supported kind, identity, title, source note and text equivalent')
+    if d.get('kind') not in KINDS or not all(d.get(k) for k in ['id','title','textEquivalent']):
+        raise ValueError('Chart needs a supported kind, identity, title and text equivalent')
     if d.get('width',360)!=360 or not 150<=d.get('height',220)<=320:raise ValueError('Invalid chart dimensions')
     if d['kind']=='timeline' and any(not 1<=r['start']<=r['end']<=10 for r in d['rows']):raise ValueError('Invalid timeline range')
     if d['kind']=='trial-matrix':
@@ -58,7 +58,7 @@ def scene(d):
                 x=left+col*step;s.rect(x-5,y-6,10,12,'ink' if value else 'paper')
                 if not value:s.line(x-3,y-4,x+3,y+4,'ink');s.line(x+3,y-4,x-3,y+4,'ink')
         s.text('41/45 trials pass. Case 1 fails all three.',10,149,10,bold=True)
-        s.text('One possible synthetic result; case-level checks expose the failure.',10,167,8.4)
+        s.text('One possible result; case-level checks expose the failure.',10,167,8.4)
         s.rect(12,185,8,8,'ink');s.text('Pass',27,192,8.5);s.rect(80,185,8,8);s.line(81,186,87,192,'ink');s.line(87,186,81,192,'ink');s.text('Fail',95,192,8.5)
     elif d['kind']=='budget':
         left,pw,top=12,336,62;total=sum(r['value'] for r in d['segments']);maximum=d['max'];scale=pw/maximum
@@ -71,7 +71,7 @@ def scene(d):
         s.text(f'Cost before reserve: ${total:,}',12,140,10,bold=True)
         s.text(f"${d['lowerCap']:,} cap: ${total-d['lowerCap']:,} short (dashed mark).",12,160,9)
         s.text(f"${maximum:,} cap: ${maximum-total:,} available after full cost.",12,178,9)
-        s.text('Synthetic no-benefit plan; all 48 assignments remain in cost.',12,202,8.5)
+        s.text('No-benefit plan; all 48 assignments remain in cost.',12,202,8.5)
     elif d['kind']=='bars':
         left,pw=96,225
         for i,r in enumerate(d['rows']):
@@ -80,7 +80,7 @@ def scene(d):
         for n in [0,500,1000,1500]:s.text('$0' if n==0 else f'${n:,}',left+n/d['max']*pw,166,8,'middle')
         s.text('Recurring cost per confirmed timely outcome',180,187,8.5,'middle')
         s.text('23 confirmed / 24 assigned in each group. Unsuccessful work included.',9,208,8.2)
-        s.text('Synthetic readout: ratio 0.692; pilot unit cost 30.8% lower.',9,226,9,bold=True)
+        s.text('Cost ratio 0.692; pilot unit cost 30.8% lower.',9,226,9,bold=True)
     elif d['kind']=='line':
         left,right,top,bottom=38,340,37,168
         xd,yd=d['xDomain'],d['yDomain'];x=lambda v:left+(v-xd[0])/(xd[1]-xd[0])*(right-left);y=lambda v:bottom-(v-yd[0])/(yd[1]-yd[0])*(bottom-top)
@@ -94,7 +94,7 @@ def scene(d):
         s.text('75%: 14.3 weeks',x(75)+8,y(d['markers'][0][1])-14,8.5,'start')
         s.text('100%: 10.4 weeks',right,y(d['markers'][-1][1])+15,8.5,'end')
         s.text('Share of saved time used for completed priority work',180,208,8.4,'middle')
-        s.text('Synthetic forecast; demand, rates and delivery capacity held fixed.',10,229,8.2)
+        s.text('Forecast: demand, rates and delivery capacity held fixed.',10,229,8.2)
     return s
 
 def render(d,canvas=None):
@@ -125,5 +125,5 @@ def render(d,canvas=None):
     return ''.join(out)
 
 def html(d):
-    content=render(d);key=escape(d['id']);title=escape(d['title']);desc=escape(d['textEquivalent']);source=escape(d['sourceNote'])
-    return f'<figure class="reader-concept-diagram reader-quant-chart" data-diagram-title="{title}" data-text-equivalent="{desc}" role="img" aria-labelledby="{key}-title" aria-describedby="{key}-description" data-chart-kind="{d["kind"]}"><figcaption id="{key}-title">{title}</figcaption><div class="chart-viewport" tabindex="0" role="region" aria-label="{title}; scroll horizontally on a narrow screen" style="overflow-x:auto"><svg viewBox="0 0 360 {d["height"]}" style="display:block;width:100%;min-width:540px;height:auto" aria-hidden="true">{content}</svg></div><p class="concept-description" id="{key}-description">{desc}</p><p class="chart-source"><small>{source}</small></p></figure>'
+    content=render(d);key=escape(d['id']);title=escape(d['title']);desc=escape(d['textEquivalent']);source=escape(d.get('sourceNote',''));note=f'<p class="chart-source"><small>{source}</small></p>' if source else ''
+    return f'<figure class="reader-concept-diagram reader-quant-chart" data-diagram-title="{title}" data-text-equivalent="{desc}" role="img" aria-labelledby="{key}-title" aria-describedby="{key}-description" data-chart-kind="{d["kind"]}"><figcaption id="{key}-title">{title}</figcaption><div class="chart-viewport" tabindex="0" role="region" aria-label="{title}; scroll horizontally on a narrow screen" style="overflow-x:auto"><svg viewBox="0 0 360 {d["height"]}" style="display:block;width:100%;min-width:540px;height:auto" aria-hidden="true">{content}</svg></div><p class="concept-description" id="{key}-description">{desc}</p>{note}</figure>'

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-native-organization",
+  "title": "AI-Native Organization Handbook",
+  "version": "1.1.0",
+  "date": "2026-10-23",
+  "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+  "sha256": "34d7a343d50d3d10f77ac88f7ef1f3cd09cda4fbb7683e02dd3084b23079f7e7",
+  "pages": 51,
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "sha256": "34d7a343d50d3d10f77ac88f7ef1f3cd09cda4fbb7683e02dd3084b23079f7e7",
+      "bytes": 8298972,
+      "pages": 51,
+      "pageMap": {
+        "path": "ai-native-organization/qa/v1.1.0/visual-index-correction/page-map-light.json",
+        "sha256": "48025e9c36301cf4a131002353b2e069e601e6ab8059dbd5c30986b229a4a4cd"
+      },
+      "appearanceDate": "2026-10-23"
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "sha256": "3db4c908e599843afaa39a76e786c9f823d68663a51410f0a849ab82e91aa11c",
+      "bytes": 6758225,
+      "pages": 51,
+      "pageMap": {
+        "path": "ai-native-organization/qa/v1.1.0/visual-index-correction/page-map-dark.json",
+        "sha256": "40ae980ed6162ff236893424af029bcc017c4b181d62be6228eb3bc21b7e1801"
+      },
+      "proof": {
+        "parity": {
+          "path": "ai-native-organization/qa/v1.1.0/visual-index-correction/parity.json",
+          "sha256": "62815f3d040df1261e19fbfc0409106fb00524e53a1cc16d0fbfd54b87f088da"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "3db4c908e599843afaa39a76e786c9f823d68663a51410f0a849ab82e91aa11c",
+          "date": "2026-10-24",
+          "version": "1.1.0",
+          "authority": "Mike directly requested the canonical index format, baking it into the skill, and fixing and updating the release, including the visual revision under review.",
+          "review": "ai-native-organization/releases/v1.1.0/visual-index-review.json"
+        }
+      },
+      "appearanceDate": "2026-10-23"
+    }
+  ],
+  "releaseCorrection": {
+    "revision": 2,
+    "reason": "Eight operating visuals and canonical alphabetical term index with measured printed-page links.",
+    "priorArtifacts": "releases/v1.1.0/pre-index-visual-correction/preservation.json",
+    "authority": "Mike directly requested the canonical index format, baking it into the skill, and fixing and updating the release, including the visual revision under review."
+  }
+}

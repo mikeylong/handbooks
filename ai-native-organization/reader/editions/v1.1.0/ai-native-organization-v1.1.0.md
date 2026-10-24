@@ -5,8 +5,8 @@ date: "2026-10-23"
 format: "machine-readable-markdown-v1"
 publication_status: "published"
 canonical_url: "https://handbooks.surfaces.systems/ai-native-organization/"
-source_reader_sha256: "c93f1f8c2c827c8c560e4e47833e5416cb075377990d3843ca5644874a726a66"
-approved_reader_sha256: "9c38a2beebe67923a0195b1d064aeebbc7fbdca58ffc963d81cdfe83b79022af"
+source_reader_sha256: "eeb864029143a149b7420fa8aabcf01cc485ae04417f614bf163fe97cf70c6d3"
+approved_reader_sha256: "9d4e7d1e05c9c7a459cbc50f6b6df09c3ca0acc5349998e3996819849ea2d5f6"
 ---
 
 # AI-Native Organization Handbook
@@ -202,11 +202,11 @@ Keep two questions separate. Can this workflow version handle representative wor
 
 The test set should include routine tasks, awkward but valid inputs, stale or conflicting information, tool failures and prohibited requests. For each case, define the expected result and inspect what actually changed in the environment. Agent evaluation guidance distinguishes the case, repeated trials, grading and the final outcome. [\[S5\]](#s5-demystifying-evals-for-ai-agents)
 
-Repeat cases when variable behavior matters, and retain the result of every case. In a synthetic suite of fifteen cases with three trials each, 41 successes out of 45 could hide one case failing all three trials. A high aggregate can coexist with a repeatable failure.
+Repeat cases when variable behavior matters, and retain the result of every case. In a suite of fifteen cases with three trials each, 41 successes out of 45 could hide one case failing all three trials. A high aggregate can coexist with a repeatable failure.
 
 **An aggregate pass count can hide a failed case**
 
-One possible synthetic 41-of-45 result: case 1 fails all three trials; case 2 passes two of three; cases 3 through 15 pass all three. The aggregate is 41 of 45, but case 1 fails the per-case requirement.
+One possible 41-of-45 result: case 1 fails all three trials; case 2 passes two of three; cases 3 through 15 pass all three. The aggregate is 41 of 45, but case 1 fails the per-case requirement.
 
 Before the trial, decide which cases are critical and what passing each one means. Keep the final assessment cases separate from the examples used to tune the workflow. If an assessment case leaks into tuning, use a replacement assessment that was defined in advance and has not been exposed, or call the final result inconclusive. Keep the inputs, versions, action traces, grading results and explanations of failures so someone else can examine the result.
 
@@ -254,7 +254,7 @@ Image description: Technical engraving for Chapter 3; conceptual illustration, n
 
 ### Fund a trial that can disappoint you
 
-**All numbers and results in this chapter are synthetic.** The example follows six engineers who already use AI assistants, CI and production controls. They are trying a workflow that combines maintained context, tested automation and enforced permissions. The comparison tests the combination; it cannot tell them how much benefit came from each part.
+**All numbers and results in this chapter are illustrative.** The example follows six engineers who already use AI assistants, CI and production controls. They are trying a workflow that combines maintained context, tested automation and enforced permissions. The comparison tests the combination; it cannot tell them how much benefit came from each part.
 
 The trial covers forty-eight preference, notification and administration changes requested to meet customer needs. It excludes authorization, billing, destructive migrations and sensitive exports. Staffing, product ownership and release rules stay the same. Before funding it, the sponsor needs to know that there is enough eligible work and enough reviewer time to finish the comparison.
 
@@ -310,7 +310,7 @@ Assume ten combined recurring labor hours per assignment, including delivery, re
 
 **Fund the trial before assuming savings**
 
-The synthetic no-benefit plan includes $16,000 setup, $30,600 comparison work and $31,200 pilot work: $77,800 total. A $72,000 cap falls $5,800 short. The $86,000 cap leaves $8,200 for remaining uncertainty.
+The no-benefit plan includes $16,000 setup, $30,600 comparison work and $31,200 pilot work: $77,800 total. A $72,000 cap falls $5,800 short. The $86,000 cap leaves $8,200 for remaining uncertainty.
 
 Funding the hoped-for result would budget only $71,800, assuming $1,050 for each pilot assignment. A $72,000 cap leaves $200 and depends on already achieving the target. The $86,000 cap covers the no-benefit plan and leaves room for uncertainty.
 
@@ -347,15 +347,15 @@ Review the scorecard in this order. 1. Controls / incidents: Action and recovery
 
 ### Calculate a complete example readout
 
-**Synthetic week-ten result:** all forty-eight assignments, follow-up records and costs are resolved. Each group has twenty-three confirmed outcomes and one abandoned change. The abandoned work remains in cost. No outstanding commitments or further work estimates remain.
+**Week-ten result:** all forty-eight assignments, follow-up records and costs are resolved. Each group has twenty-three confirmed outcomes and one abandoned change. The abandoned work remains in cost. No outstanding commitments or further work estimates remain.
 
 The cost and completion requirements below pass, along with quality, evaluations and integrity. The sponsor still needs the engineer-sensitivity and investment-recovery calculations in ["Check dependence on one engineer"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-8) and ["Value capacity that was actually reused"](https://handbooks.surfaces.systems/ai-native-organization/#section-3-9) before deciding whether to fund another team.
 
 **Equal confirmed outcomes, different cost**
 
-Synthetic week-ten result: both groups have 23 confirmed timely outcomes from 24 assignments. Comparison recurring cost is $29,900, or $1,300 per confirmed outcome. Pilot recurring cost is $20,700, or $900 per confirmed outcome, 30.8% lower. Both totals include unsuccessful work.
+Week-ten result: both groups have 23 confirmed timely outcomes from 24 assignments. Comparison recurring cost is $29,900, or $1,300 per confirmed outcome. Pilot recurring cost is $20,700, or $900 per confirmed outcome, 30.8% lower. Both totals include unsuccessful work.
 
-| MEASURE | SYNTHETIC RESULT |
+| MEASURE | RESULT |
 | --- | --- |
 | Completion | 23/24 in both groups, with required customer observations and follow-up complete. |
 | Quality | Zero High/Medium incidents. One Low pilot issue and zero comparison Low issues; no accepted outcome invalidated. |
@@ -367,7 +367,7 @@ Synthetic week-ten result: both groups have 23 confirmed timely outcomes from 24
 
 An aggregate improvement may depend heavily on one person's work. Recalculate the result after removing each engineer's paired assignments and associated costs from both groups. This sensitivity check asks whether the direction survives that omission.
 
-In the synthetic readout, the six engineers contribute \[4, 4, 4, 4, 4, 3\] confirmed outcomes in each group. Pilot costs are \[$3,600, $3,600, $3,600, $3,600, $3,600, $2,700\]. Comparison costs are \[$5,200, $5,200, $5,200, $5,200, $5,200, $3,900\]. All include unsuccessful work and allocated support.
+In the readout, the six engineers contribute \[4, 4, 4, 4, 4, 3\] confirmed outcomes in each group. Pilot costs are \[$3,600, $3,600, $3,600, $3,600, $3,600, $2,700\]. Comparison costs are \[$5,200, $5,200, $5,200, $5,200, $5,200, $3,900\]. All include unsuccessful work and allocated support.
 
 Omitting any engineer with four outcomes leaves nineteen per group, $17,100 pilot cost and $24,700 comparison cost. Unit costs remain $900 and $1,300. Omitting the engineer with three outcomes leaves twenty per group, $18,000 and $26,000. The same unit costs remain.
 
@@ -385,7 +385,7 @@ Count priority work that was named in advance and completed without extra staffi
 
 The conservative net benefit is B = min(L, 0) + q × max(L, 0) + N. Any increase in labor cost counts in full; a labor saving counts only in proportion to demonstrated reuse. Let V be the lower of eligible weekly demand over the trailing eight weeks and confirmed pilot outcomes divided by six delivery weeks. Modeled recovery time is S / (B × V).
 
-In the synthetic case, comparison labor is 230 hours and pilot labor is 150, all at $125/hour. Estimated released time is 23 × (230/23) - 150 = 80 hours. All eighty have demonstrated productive reuse, so q = 1. Labor costs are $28,750 and $18,750; nonlabor costs are $1,150 and $1,950.
+In this example, comparison labor is 230 hours and pilot labor is 150, all at $125/hour. Estimated released time is 23 × (230/23) - 150 = 80 hours. All eighty have demonstrated productive reuse, so q = 1. Labor costs are $28,750 and $18,750; nonlabor costs are $1,150 and $1,950.
 
 B = ($10,000 - $800) / 23 = $400. Demand is six per week, but demonstrated pilot capacity is 23/6 = 3.83. Recovery is $16,000 / ($400 × 23/6) = 10.4 weeks, within the twelve-week rule. Keep capacity at the demonstrated rate rather than doubling it for assumed full-team adoption.
 
@@ -393,7 +393,7 @@ This forecast begins after adoption and counts no benefit from the pilot period.
 
 **Payback depends on productive reuse**
 
-Derived synthetic forecast, holding all other assumptions fixed: 50% productive reuse gives 22.9 weeks to recover setup; 75% gives 14.3 weeks; 100% gives 10.4 weeks. The 12-week requirement is reached at 88% reuse. This is a model, not an observed payback period.
+Derived forecast, holding all other assumptions fixed: 50% productive reuse gives 22.9 weeks to recover setup; 75% gives 14.3 weeks; 100% gives 10.4 weeks. The 12-week requirement is reached at 88% reuse. This is a model, not an observed payback period.
 
 ### Distinguish missing evidence from failure
 
@@ -415,7 +415,7 @@ Calibrate economics before launch. At the planning ceiling of $1,050 against $1,
 
 ### Expand one commitment at a time
 
-In the synthetic example, every requirement passed. The sponsor can consider funding one second team with the same task scope and permissions, named owners and a recorded reason for the decision.
+In this example, every requirement passed. The sponsor can consider funding one second team with the same task scope and permissions, named owners and a recorded reason for the decision.
 
 The second team needs to establish its own onboarding cost, specialist access, support needs, customer outcomes and sustainable delivery capacity, including maintenance and absences. It may not be able to get the champions' help at the original team's cost.
 
@@ -475,7 +475,7 @@ METR's methods update explains problems with task selection and concurrent AI me
 
 The four company-scale arrangements in ["Match the structure to your coordination needs"](https://handbooks.surfaces.systems/ai-native-organization/#section-1-5) are also proposals. Team Topologies distinguishes outcome-aligned teams, enabling support, specialist work and platforms [\[S10\]](#s10-key-concepts). CNCF describes platforms shaped around internal users [\[S11\]](#s11-cncf-platforms-white-paper). Google Cloud supplies a cloud-specific example of shared foundations with separate business-unit and application responsibilities [\[S12\]](#s12-enterprise-foundations-deployment-methodology). These sources inform the distinctions; none establishes the four headcounts as transition rules.
 
-Every Chapter 3 plan and result is synthetic. Research cutoff: October 23, 2026. The bibliography records direct sources and their limits.
+Research cutoff: October 23, 2026. The bibliography records direct sources and their limits.
 
 ### Organizational foundations
 
@@ -673,11 +673,11 @@ Compared with version 1.0.0, published October 23, 2026.
 
 Added four illustrative organization arrangements and eight visuals covering context ownership, evaluation results, recovery, the trial schedule, complete cost, unit cost, productive reuse and the final decision.
 
-The visuals help leaders compare coordination choices and the existing synthetic examples. Company sizes are illustrative total-company headcounts, not reorganization thresholds.
+The visuals help leaders compare coordination choices and the worked examples. Company sizes are illustrative total-company headcounts, not reorganization thresholds.
 
 **Correction or clarification**
 
-Subsection titles omit decimal prefixes. The term index now uses alphabetical groups, one term per entry and linked printed-page references, matching the collection format.
+Subsection titles omit decimal prefixes. The term index now uses alphabetical groups, one term per entry and linked printed-page references, matching the collection format. Repeated example labels and chart footnotes have been removed.
 
 Replaced dense paragraphs of quoted section titles with a scannable index. Page references are measured from the final PDF pagination; existing section links remain available.
 

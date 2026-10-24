@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "Added organization and operating visuals and corrected the term index to the canonical collection format.",
+  "entryCount": 2,
+  "failures": [],
+  "placement": "final-page",
+  "requiredPdfState": {
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
+  },
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "id": "visuals",
+      "category": "Addition",
+      "section": "Organization and trial decisions",
+      "text": "Added four illustrative organization arrangements and eight visuals covering context ownership, evaluation results, recovery, the trial schedule, complete cost, unit cost, productive reuse and the final decision.",
+      "rationale": "The visuals help leaders compare coordination choices and the worked examples. Company sizes are illustrative total-company headcounts, not reorganization thresholds.",
+      "sources": [
+        "https://teamtopologies.com/key-concepts",
+        "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
+        "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology"
+      ]
+    },
+    {
+      "id": "index",
+      "category": "Correction or clarification",
+      "section": "Headings and term index",
+      "text": "Subsection titles omit decimal prefixes. The term index now uses alphabetical groups, one term per entry and linked printed-page references, matching the collection format. Repeated example labels and chart footnotes have been removed.",
+      "rationale": "Replaced dense paragraphs of quoted section titles with a scannable index. Page references are measured from the final PDF pagination; existing section links remain available.",
+      "sources": [
+        "https://handbooks.surfaces.systems/production-ai-engineering/#term-index"
+      ]
+    }
+  ]
+}

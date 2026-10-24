@@ -1,0 +1,133 @@
+--- previous/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf
++++ candidate/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf
+@@ -489,9 +489,9 @@
+ in the environment. Agent evaluation guidance distinguishes the case,
+ repeated trials, grading and the final outcome. [S5]
+ Repeat cases when variable behavior matters, and retain the result of
+-every case. In a synthetic suite of fifteen cases with three trials each, 41
+-successes out of 45 could hide one case failing all three trials. A high
+-aggregate can coexist with a repeatable failure.
++every case. In a suite of fifteen cases with three trials each, 41 successes
++out of 45 could hide one case failing all three trials. A high aggregate can
++coexist with a repeatable failure.
+ An aggregate pass count can hide a failed case
+ Case
+ 1
+@@ -513,7 +513,7 @@
+ Trial 2
+ Trial 3
+ 41/45 trials pass. Case 1 fails all three.
+-One possible synthetic result; case-level checks expose the failure.
++One possible result; case-level checks expose the failure.
+ Pass
+ Fail
+ Before the trial, decide which cases are critical and what passing each
+@@ -624,7 +624,7 @@
+ 3. FUND A COMPARISON AND DECIDE WHAT TO EXPAND
+ 23
+ Fund a trial that can disappoint you
+-All numbers and results in this chapter are synthetic. The example
++All numbers and results in this chapter are illustrative. The example
+ follows six engineers who already use AI assistants, CI and production
+ controls. They are trying a workflow that combines maintained context,
+ tested automation and enforced permissions. The comparison tests the
+@@ -800,7 +800,7 @@
+ Cost before reserve: $77,800
+ $72,000 cap: $5,800 short (dashed mark).
+ $86,000 cap: $8,200 available after full cost.
+-Synthetic no-benefit plan; all 48 assignments remain in cost.
++No-benefit plan; all 48 assignments remain in cost.
+ Funding the hoped-for result would budget only $71,800, assuming
+ $1,050 for each pilot assignment. A $72,000 cap leaves $200 and depends
+ on already achieving the target. The $86,000 cap covers the no-benefit
+@@ -900,10 +900,10 @@
+ Setup, conservative net benefit, eligible demand, demonstrated capacity and
+ reuse; protocol deviations and version history.
+ Calculate a complete example readout
+-Synthetic week-ten result: all forty-eight assignments, follow-up records
+-and costs are resolved. Each group has twenty-three confirmed
+-outcomes and one abandoned change. The abandoned work remains in
+-cost. No outstanding commitments or further work estimates remain.
++Week-ten result: all forty-eight assignments, follow-up records and costs
++are resolved. Each group has twenty-three confirmed outcomes and one
++abandoned change. The abandoned work remains in cost. No
++outstanding commitments or further work estimates remain.
+ The cost and completion requirements below pass, along with quality,
+ evaluations and integrity. The sponsor still needs the
+ engineer-sensitivity and investment-recovery calculations in "Check
+@@ -924,9 +924,9 @@
+ $1,500
+ Recurring cost per confirmed timely outcome
+ 23 confirmed / 24 assigned in each group. Unsuccessful work included.
+-Synthetic readout: ratio 0.692; pilot unit cost 30.8% lower.
++Cost ratio 0.692; pilot unit cost 30.8% lower.
+ MEASURE
+-SYNTHETIC RESULT
++RESULT
+ Completion
+ 23/24 in both groups, with required customer observations and
+ follow-up complete.
+@@ -951,11 +951,10 @@
+ Recalculate the result after removing each engineer's paired
+ assignments and associated costs from both groups. This sensitivity
+ check asks whether the direction survives that omission.
+-In the synthetic readout, the six engineers contribute [4, 4, 4, 4, 4, 3]
+-confirmed outcomes in each group. Pilot costs are [$3,600, $3,600, $3,600,
+-$3,600, $3,600, $2,700]. Comparison costs are [$5,200, $5,200, $5,200,
+-$5,200, $5,200, $3,900]. All include unsuccessful work and allocated
+-support.
++In the readout, the six engineers contribute [4, 4, 4, 4, 4, 3] confirmed
++outcomes in each group. Pilot costs are [$3,600, $3,600, $3,600, $3,600,
++$3,600, $2,700]. Comparison costs are [$5,200, $5,200, $5,200, $5,200,
++$5,200, $3,900]. All include unsuccessful work and allocated support.
+ Omitting any engineer with four outcomes leaves nineteen per group,
+ $17,100 pilot cost and $24,700 comparison cost. Unit costs remain $900
+ and $1,300. Omitting the engineer with three outcomes leaves twenty per
+@@ -994,10 +993,10 @@
+ proportion to demonstrated reuse. Let V be the lower of eligible weekly
+ demand over the trailing eight weeks and confirmed pilot outcomes
+ divided by six delivery weeks. Modeled recovery time is S / (B × V).
+-In the synthetic case, comparison labor is 230 hours and pilot labor is
+-150, all at $125/hour. Estimated released time is 23 × (230/23) - 150 = 80
+-hours. All eighty have demonstrated productive reuse, so q = 1. Labor
+-costs are $28,750 and $18,750; nonlabor costs are $1,150 and $1,950.
++In this example, comparison labor is 230 hours and pilot labor is 150, all
++at $125/hour. Estimated released time is 23 × (230/23) - 150 = 80 hours. All
++eighty have demonstrated productive reuse, so q = 1. Labor costs are
++$28,750 and $18,750; nonlabor costs are $1,150 and $1,950.
+ B = ($10,000 - $800) / 23 = $400. Demand is six per week, but demonstrated
+ pilot capacity is 23/6 = 3.83. Recovery is $16,000 / ($400 × 23/6) = 10.4
+ weeks, within the twelve-week rule. Keep capacity at the demonstrated
+@@ -1026,7 +1025,7 @@
+ 75%: 14.3 weeks
+ 100%: 10.4 weeks
+ Share of saved time used for completed priority work
+-Synthetic forecast; demand, rates and delivery capacity held fixed.
++Forecast: demand, rates and delivery capacity held fixed.
+ Distinguish missing evidence
+ from failure
+ At the planned week-ten review, a complete result that passes every
+@@ -1085,9 +1084,9 @@
+ outcomes weekly, $16,000 setup takes 17.8 weeks to recover. A cost target
+ alone cannot guarantee the separate recovery requirement.
+ Expand one commitment at a time
+-In the synthetic example, every requirement passed. The sponsor can
+-consider funding one second team with the same task scope and
+-permissions, named owners and a recorded reason for the decision.
++In this example, every requirement passed. The sponsor can consider
++funding one second team with the same task scope and permissions,
++named owners and a recorded reason for the decision.
+ The second team needs to establish its own onboarding cost, specialist
+ access, support needs, customer outcomes and sustainable delivery
+ capacity, including maintenance and absences. It may not be able to get
+@@ -1222,8 +1221,8 @@
+ with separate business-unit and application responsibilities [S12]. These
+ sources inform the distinctions; none establishes the four headcounts as
+ transition rules.
+-Every Chapter 3 plan and result is synthetic. Research cutoff: October 23,
+-2026. The bibliography records direct sources and their limits.
++Research cutoff: October 23, 2026. The bibliography records direct
++sources and their limits.
+ Organizational foundations
+ [S1] Scaling Agile @ Spotify
+ Henrik Kniberg and Anders Ivarsson. 2012.
