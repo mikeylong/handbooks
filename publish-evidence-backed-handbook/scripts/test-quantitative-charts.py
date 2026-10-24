@@ -9,6 +9,8 @@ for d in fixtures:
  markup=html(d);assert 'data-text-equivalent="Complete accessible values."' in markup
  assert 'min-width:540px' in markup and 'var(--ink)' in markup and '#fff' not in markup
  assert markup.count('<svg')==1 and '<text' in markup
+without_note=deepcopy(fixtures[0]);without_note.pop('sourceNote');assert 'chart-source' not in html(without_note)
+assert 'Synthetic test.' in html(fixtures[0])
 bad=deepcopy(fixtures[0]);bad['rows'][0]['value']=-1
 try:validate(bad);raise AssertionError('Negative bar accepted')
 except ValueError:pass
