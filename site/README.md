@@ -15,3 +15,7 @@ The gallery orders handbooks by their approved content-edition date, newest firs
 Reusable reader rendering, browser assets, light/dark artwork processing, responsive diagrams, and validation live in `../publish-evidence-backed-handbook/`. Book and site adapters invoke that runtime; do not copy its scripts or styles into a new handbook. Follow the toolkit's [shared reader workflow](../publish-evidence-backed-handbook/references/shared-reader-workflow.md) for new editions and titles. Publication approval remains explicit.
 
 Run `npm run validate` from the collection root to validate the released books and site, or `npm run validate:front-pages` from this directory for hosted checks. To preview, run `npm run preview` and open http://127.0.0.1:4181/. Reuse the existing preview when the port is already serving this collection.
+
+## Favicon and sharing images
+
+The shared build installs the collection book-mark favicon and a 1200 × 630 sharing card for each current title, its edition page, and the gallery. Current cover titles/subtitles and chapter art are bound to `site/assets/sharing/manifest.json`; changed copy, artwork or missing cards fail the build. Follow [the shared asset workflow](../publish-evidence-backed-handbook/references/social-sharing.md) to regenerate and review the package. Frozen historical readers and existing asset URLs retain their bytes.
