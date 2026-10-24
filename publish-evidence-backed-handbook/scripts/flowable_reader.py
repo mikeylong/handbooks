@@ -44,6 +44,7 @@ def build_reader(book_root, config, output, chrome=None):
    self.parts.append(data if self.protected else marker_pattern.sub(citation,data))
  def txt(s,link_sources=True):
   s=re.sub(r"<link href=['\"]([^'\"]+)['\"]>",r'<a href="\1">',s).replace('</link>','</a>').replace('<br/>','<br>')
+  s=re.sub(r'<a name="([^"]+)"\s*/>',r'<span id="\1"></span>',s)
   if not link_sources:return s
   parser=CitationText();parser.feed(s);parser.close();return ''.join(parser.parts)
  def paragraph_html(p):
@@ -179,6 +180,9 @@ def build_reader(book_root, config, output, chrome=None):
  # The web cover is rendered from the publication manifest below. Convert only
  # the PDF body, starting at its first chapter, so cover metadata cannot leak.
  story=getattr(m,config['storyFunction'])()
+ if config.get('subsectionLabels') == 'titles':
+  from heading_wrap import prepare_title_story
+  prepare_title_story(story)
  def find_references(x):
   if isinstance(x,Paragraph):
    key=reference_key(x)

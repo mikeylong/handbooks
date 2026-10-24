@@ -1,0 +1,83 @@
+--- previous/baseline-source.py
++++ candidate/build_handbook.py
+@@ -14,7 +14,7 @@
+     body = [P(text) for text in paragraphs]
+     result = [KeepTogether([heading(title), body[0]])] if body else [heading(title)]
+     remaining = body[1:]
+-    if title.startswith('1.5 ') and len(remaining) >= 2:
++    if title.startswith('1.6 ') and len(remaining) >= 2:
+         result += [KeepTogether([item]) for item in remaining[:-2]]
+         result.append(KeepTogether(remaining[-2:]))
+     else:
+@@ -37,8 +37,8 @@
+         P('AI-Native<br/>Organization<br/>Handbook', COVER_TITLE),
+         P('Choose useful work, give people clear ownership, and test whether agent workflows improve delivery.', COVER_DECK),
+         Spacer(1, 35*mm), P('Michael Long', COVER_CREDIT),
+-        P('October 23, 2026 · Version 1.0.0', COVER_CREDIT),
+-        P('First edition', COVER_CREDIT), PageBreak(),
++        P('October 23, 2026 · Version 1.1.0', COVER_CREDIT),
++        P('Expanded edition', COVER_CREDIT), PageBreak(),
+         P('READ THIS FIRST', CHAPTER_KICKER), P('Make a better delivery decision', H1),
+         P('Your team can generate a change quickly and still struggle to deliver it. Someone has to decide whether the change matters, resolve conflicting requirements, review the result, release it and support the customer afterward. Giving agents more execution work leaves those responsibilities with people.'),
+         P('This handbook helps engineering and product leaders decide where agent workflows can improve delivery. Here, AI-native describes an organization that keeps the information, tools and safeguards people and agents need in working order. The test is whether customers receive better outcomes at an acceptable total cost.'),
+@@ -81,7 +81,18 @@
+         'If routine changes still wait for the enabling team, inspect the reason. A missing test needs a test; an obsolete rule needs a context correction; a mandatory specialist decision needs capacity or a narrower scope. Each correction is more concrete than adding another review agent.',
+         'When many teams depend on one workflow, one defect can affect them all. Keep its version fixed during a comparison. Test a replacement with a limited group of users, identify the work it affects and keep a rollback available. Teams should know how to continue delivery if the shared workflow is unavailable.',
+         'Fund broader reuse after teams can operate the capability and its support burden is understood. A workflow that succeeds only when its author sits beside the user is still being developed.')
+-    story += page('1.5 Protect judgment and attention',
++    story += [PageBreak()]
++    story += page('1.5 Match the structure to your coordination needs',
++        'Start with the dependencies between customer outcomes, the specialists people need, and the decisions each team can make alone. Add shared coordination where it helps teams finish work.',
++        'These four arrangements are proposals. The sizes are illustrative total-company headcounts, including non-engineering roles. They are not engineering headcounts, staffing ratios or thresholds for reorganizing.',
++        'People retain responsibility for outcomes and release; this does not require manual approval of every routine deployment.')
++    story += [P('Boxes group work, not reporting lines. Solid arrows show work, priorities or evidence; dashed arrows show support or controls.', SMALL)]
++    story += [KeepTogether([P('A small company may coordinate one multidisciplinary team through direct conversation and one backlog. The same people can maintain its tools and workflows.'), ConceptDiagram(BOOK, 'OrganizationTen')])]
++    story += [KeepTogether([P('When several product teams need the same help, give them shared workflow support and access to specialists. Keep those services usable without making every delivery wait in one central queue.'), ConceptDiagram(BOOK, 'OrganizationHundred')])]
++    story += [KeepTogether([P('When dependencies cluster around a product domain, a domain lead can coordinate priorities and interfaces across teams. Each team still owns its customer outcome and release; the platform and specialist communities support that work.'), ConceptDiagram(BOOK, 'OrganizationThousand')])]
++    story += [KeepTogether([P('Business units with different markets or operating needs may need more local authority. Local capability hubs maintain context, evaluations and domain tools, while an enterprise foundation supplies common controls. Name the cross-unit agreements and escalation routes. Domain coordination within each unit is omitted here for clarity.'), ConceptDiagram(BOOK, 'OrganizationTenThousand')])]
++    story += [P('Before changing reporting lines, trace a few delayed changes across team boundaries. Decide whether the problem needs a clearer interface, more available specialist time, a shared service or a different decision owner. Test that change before applying a larger reorganization.')]
++    story += page('1.6 Protect judgment and attention',
+         'A team needs enough expertise to challenge the work it accepts. Before delegating a task, name who can explain the affected architecture, recognize a consequential error and restore service. Availability on an organization chart is insufficient if the specialist has no capacity during review or an incident.',
+         'Reserve human time for product decisions, review, exceptions and learning. More parallel agent runs create more proposed work to inspect. Limit work in progress when the review queue grows, and measure the waiting time and rework that follow each additional run.',
+         'Use review to expose assumptions. For saved searches, a reviewer should be able to explain why one customer cannot read another’s saved query, how a failed save appears and what happens after an interface version changes. Agreement between agents cannot supply that explanation by itself.',
+@@ -249,9 +260,10 @@
+         'Saha proposes product builders supported by reusable specialist agent capabilities and a shared platform [S3], and explicitly calls for experimentation. His proposal informs the ownership and operating decisions in Chapters 1–2. It is a starting point to test, rather than evidence that this way of organizing has succeeded.',
+         'Provider guidance informs the discussion of execution context [S4], evaluation structure [S5] and containment [S6]. The arrangements for source ownership, service agreements and numerical requirements are recommendations made here. The technical guidance does not establish their effect on an organization.',
+         'METR’s methods update explains problems with task selection and concurrent AI measurement [S7]. NIST distinguishes the limit of an observation from an observed event time in reliability data [S8]; section 3.2 borrows that distinction to explain unfinished work. DORA supports small batches and short feedback cycles [S9]. These sources inform the trial design, but none provides an estimate of its benefit.',
++        'The four company-scale arrangements in section 1.5 are also proposals. Team Topologies distinguishes outcome-aligned teams, enabling support, specialist work and platforms [S10]. CNCF describes platforms shaped around internal users [S11]. Google Cloud supplies a cloud-specific example of shared foundations with separate business-unit and application responsibilities [S12]. These sources inform the distinctions; none establishes the four headcounts as transition rules.',
+         'Every Chapter 3 plan and result is synthetic. Research cutoff: October 23, 2026. The bibliography records direct sources and their limits.')
+     source_rows = json.loads((BOOK/'evidence/sources.json').read_text())['sources']
+-    for subset, title in [(source_rows[:3], 'Organizational foundations'), (source_rows[3:6], 'Context, evaluation and containment'), (source_rows[6:9], 'Comparison and measurement')]:
++    for subset, title in [(source_rows[:3], 'Organizational foundations'), (source_rows[3:6], 'Context, evaluation and containment'), (source_rows[6:9], 'Comparison and measurement'), ([s for s in source_rows if s['id'] in ('S10','S11','S12')], 'Structures and shared capabilities')]:
+         story += [heading(title)]
+         for s in subset:
+             # Use year precision for S1: the PDF title page says October 2012.
+@@ -261,10 +273,23 @@
+         story += [PageBreak()]
+     story += [P('Index of terms', H1), P('Use the contents or PDF outlines to find the sections listed below.'),
+         P('Acceptance: 2.4–2.5, 3.3. Agent evaluation: 2.4, 3.5. Authority: 2.3, 3.11. Budget: 3.1, 3.4.', INDEX_REFERENCE),
+-        P('Capacity value: 1.5, 3.9. Comparison: 3.2. Confirmed outcomes: 3.3. Context: 2.1. Cost allocation: 3.4. Customer observation: 2.4–2.5, 3.3.', INDEX_REFERENCE),
+-        P('Engineer sensitivity: 3.8. Evidence extension: 3.10. Follow-up: 3.1, 3.3. Human attention: 1.5. Incomplete work: 3.2–3.3.', INDEX_REFERENCE),
++        P('Capacity value: 1.6, 3.9. Comparison: 3.2. Confirmed outcomes: 3.3. Context: 2.1. Cost allocation: 3.4. Customer observation: 2.4–2.5, 3.3.', INDEX_REFERENCE),
++        P('Engineer sensitivity: 3.8. Evidence extension: 3.10. Follow-up: 3.1, 3.3. Human attention: 1.6. Incomplete work: 3.2–3.3.', INDEX_REFERENCE),
+         P('Launch record: tool A. Maintenance: 1.4, 2.2, 2.6. Outcome ownership: 1.2–1.3. Permissions: 2.3. Productive reuse: 3.9.', INDEX_REFERENCE),
+-        P('Recovery from failure: 2.6. Replication: 3.11. Revocation: 2.3, 2.6. Setup recovery: 3.9–3.10. Shared expertise: 1.4.', INDEX_REFERENCE),
+-        P('Specialist judgment: 1.2, 1.5. Staffing: 1.2, 3.11. Stop and suspend: 3.6, 3.10. Task record: 2.5. Version changes: 2.2. Weekly scorecard: 3.6, tool B.', INDEX_REFERENCE),
+-        Spacer(1,6*mm), P('First edition · October 23, 2026.', SMALL)]
++        P('Organization structure: 1.5. Recovery from failure: 2.6. Replication: 3.11. Revocation: 2.3, 2.6. Setup recovery: 3.9–3.10. Shared expertise: 1.4.', INDEX_REFERENCE),
++        P('Specialist judgment: 1.2, 1.6. Staffing: 1.2, 3.11. Stop and suspend: 3.6, 3.10. Task record: 2.5. Version changes: 2.2. Weekly scorecard: 3.6, tool B.', INDEX_REFERENCE),
++        Spacer(1,6*mm), P('Version 1.1.0 · October 23, 2026.', SMALL)]
++    story += [PageBreak(), P('Changelog', H1),
++        P('Compared with version 1.0.0, published October 23, 2026.'),
++        P('<b>Addition</b>'),
++        P('Added four illustrative organization arrangements, from one team to federated business units, after the discussion of shared expertise.'),
++        P('Helps leaders choose coordination and support arrangements while preserving team ownership. Company sizes are examples, not prescribed transition points.'),
++        P('Sources: [S10], [S11], [S12].'),
++        P('<link href="https://teamtopologies.com/key-concepts">Team Topologies: Key Concepts</link>', SMALL),
++        P('<link href="https://tag-app-delivery.cncf.io/whitepapers/platforms/">CNCF Platforms White Paper</link>', SMALL),
++        P('<link href="https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology">Google Cloud: Deployment methodology</link>', SMALL),
++        P('<b>Correction or clarification</b>'),
++        P('Removed decimal prefixes from website and Markdown subsection headings. Section references now link to the visible titles, matching the PDFs. Both PDF appearances were reissued with this correction recorded.'),
++        P('<link href="https://handbooks.surfaces.systems/ai-native-organization/">Corrected online edition</link>', SMALL),
++        P('Previous Daytime PDF SHA-256: ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf', SMALL)]
+     return story

@@ -22,7 +22,7 @@ Produce a candidate handbook whose claims, editorial decisions, visual system, e
 - Include a final-page changelog only when reader-facing content changed. If the result is exactly `The handbook's reader-facing content is unchanged.`, omit the changelog page and its navigation entries.
 - Validate the actual PDF, not only its source or build exit code. Require visual review and structural checks, including opaque illustration objects without masks or soft masks.
 - Inspect heading wraps in both PDF appearances. Avoid a single trailing word or tiny final fragment using the shared measured heading wrapper; preserve wording and type size, and do not scatter manual breaks through individual books.
-- PDF subsection titles omit visible decimal prefixes. Preserve source IDs and resolve PDF cross-references and index entries to linked titles; keep chapter markers, procedural steps, data and other meaningful numbering.
+- PDF subsection titles and readers with `subsectionLabels: "titles"` omit visible decimal prefixes. Preserve source IDs and resolve PDF cross-references and index entries to linked titles; keep chapter markers, procedural steps, data and other meaningful numbering.
 - Treat selected illustration files as frozen build inputs. Record acquisition mode and mode-specific provenance: prompt, references, and generation path for generated art; item page, creator, source, license, credit, and modifications for open-web art. Always record normalization and hashes before claiming the PDF build is reproducible.
 - If any required phase fails, name the failed phase and evidence path. Do not claim the candidate or release is ready.
 
