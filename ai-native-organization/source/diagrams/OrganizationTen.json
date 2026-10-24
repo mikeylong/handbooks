@@ -1,0 +1,146 @@
+{
+  "id": "OrganizationTen",
+  "layout": "grouped-map",
+  "title": "Around 10 people: one team",
+  "width": 346,
+  "height": 200,
+  "textEquivalent": "In this illustrative company of about ten people, founders and a core team share product, design, engineering and operations. A human defines the work, agents execute it, and a human accepts and releases it. Evidence returns to the owner. The same team maintains tools and context.",
+  "nodes": [
+    {
+      "id": "core",
+      "x": 0,
+      "y": 28,
+      "width": 346,
+      "height": 170,
+      "label": "FOUNDERS + CORE TEAM",
+      "kind": "group",
+      "fontSize": 8
+    },
+    {
+      "id": "define",
+      "x": 12,
+      "y": 72,
+      "width": 94,
+      "height": 45,
+      "label": "Define\nHuman owner",
+      "kind": "node",
+      "parent": "core",
+      "fontSize": 8
+    },
+    {
+      "id": "execute",
+      "x": 126,
+      "y": 72,
+      "width": 94,
+      "height": 45,
+      "label": "Execute\nAgents",
+      "kind": "agent",
+      "parent": "core",
+      "fontSize": 8
+    },
+    {
+      "id": "accept",
+      "x": 240,
+      "y": 72,
+      "width": 94,
+      "height": 45,
+      "label": "Accept / release\nHuman owner",
+      "kind": "node",
+      "parent": "core",
+      "fontSize": 8
+    },
+    {
+      "id": "tools",
+      "x": 95,
+      "y": 160,
+      "width": 156,
+      "height": 27,
+      "label": "Tools + context",
+      "kind": "node",
+      "parent": "core",
+      "fontSize": 8
+    }
+  ],
+  "edges": [
+    {
+      "from": "define",
+      "to": "execute",
+      "points": [
+        [
+          106,
+          94
+        ],
+        [
+          124,
+          94
+        ]
+      ],
+      "dashed": false,
+      "both": false
+    },
+    {
+      "from": "execute",
+      "to": "accept",
+      "points": [
+        [
+          220,
+          94
+        ],
+        [
+          238,
+          94
+        ]
+      ],
+      "dashed": false,
+      "both": false
+    },
+    {
+      "from": "accept",
+      "to": "define",
+      "points": [
+        [
+          287,
+          119
+        ],
+        [
+          287,
+          139
+        ],
+        [
+          59,
+          139
+        ],
+        [
+          59,
+          119
+        ]
+      ],
+      "dashed": false,
+      "both": false
+    },
+    {
+      "from": "tools",
+      "to": "execute",
+      "points": [
+        [
+          173,
+          158
+        ],
+        [
+          173,
+          119
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    }
+  ],
+  "labels": [
+    {
+      "x": 132,
+      "y": 132,
+      "width": 82,
+      "text": "Evidence"
+    }
+  ]
+}

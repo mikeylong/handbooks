@@ -1,0 +1,535 @@
+{
+  "manager_id": "c89becbbb0554e459d629bf3d82b3704",
+  "job_id": "a95579eb",
+  "label": "organization-scale-final",
+  "profile": "linux-playwright",
+  "created_at": 1792821078.105289,
+  "deadline": 1792821258.486101,
+  "hard_deadline": 1792824678.105053,
+  "owner_pid": 18547,
+  "owner_start": "Fri Oct 23 22:51:16 2026",
+  "state": "complete",
+  "allocation_pending": false,
+  "captures": [],
+  "exports": {
+    "source-manifest.json": {
+      "bytes": 7105,
+      "sha256": "c1e305fc17d6a7d9a65fd3dea7ff9726ff3c9b8d0522bbb839a390666f7780cb"
+    },
+    "playwright/discovery.json": {
+      "bytes": 5799,
+      "sha256": "743c8dde1392f0e76d07a47583a571e38710be414cbf207c48db8a74c033e077"
+    },
+    "playwright/environment.json": {
+      "bytes": 544,
+      "sha256": "d16e38b3931dad4faa84c5135d4bb00e93d43e64529aa605f05b2632f84da5a8"
+    },
+    "playwright/progress.jsonl": {
+      "bytes": 2524,
+      "sha256": "8656b20907de58689d38a45c091b0825c4f79608f951ea7c2ab7ebe062cb13b4"
+    },
+    "playwright/report/data/0f4c866bd2ffa1d87dca6f99c0434c095eff8a20.zip": {
+      "bytes": 6859282,
+      "sha256": "d15abaabee24a4d78d1b141eb356538c735f014d90e204ad1f3d67634240c2fe"
+    },
+    "playwright/report/data/2340466d9052ecbc9bd78121840b150ec67c658d.zip": {
+      "bytes": 3524120,
+      "sha256": "6eed061871125e4233482f6b4a2f8dbf7bdbc472f58990e07f7cbdc54966ffb4"
+    },
+    "playwright/report/data/41b52595ed03272012d9eee13d9bbf00d0119885.zip": {
+      "bytes": 2178577,
+      "sha256": "e46b40d37b12933f9b35476b042113fb60d652913bb176f9f8c2a043605716d2"
+    },
+    "playwright/report/data/d2557f88121e61d1d92cb2b406372fb85081a4a0.zip": {
+      "bytes": 2211499,
+      "sha256": "b1dcf22c2ea5d2aba4c93b47aab64b06562bee026ad21226ce684d44b82e88a6"
+    },
+    "playwright/report/data/e066173abc3f179757c5b167f9a02ada9b186896.zip": {
+      "bytes": 2357773,
+      "sha256": "80568a8a86e63d9b9b2c2a25c73cfd395b3142ebe737d9c25721c6558d624fe9"
+    },
+    "playwright/report/data/e6cfd02904ec3e8047fa83fabc525e356157fba4.zip": {
+      "bytes": 4901880,
+      "sha256": "38effbfb60dbba039be84fb9addebd7cc5c934f5ec749acd19c6a5cd24e6e988"
+    },
+    "playwright/report/data/f6c6aa7c66c89132f8a85ad938ca1ea183715e38.zip": {
+      "bytes": 3517799,
+      "sha256": "6b61dfca4b697339d94c75412584b13afbbf3a698d84c8905fd879d02a7c4c4a"
+    },
+    "playwright/report/index.html": {
+      "bytes": 536227,
+      "sha256": "1f126dcc03213ae8e81388bfc1d006ca7e24780df29915630baff22edd1255c8"
+    },
+    "playwright/report/trace/assets/codeMirrorModule-rXmQmLUY.js": {
+      "bytes": 307393,
+      "sha256": "bb0f7c41f9889e4195c2504878e38061288881f426498434c9955479828f7e66"
+    },
+    "playwright/report/trace/assets/defaultSettingsView-B-dXF5JN.js": {
+      "bytes": 643184,
+      "sha256": "2ce8be133fe21a4abd7d8330d9b443092dc2ce28826f191442c14989f9d55b15"
+    },
+    "playwright/report/trace/assets/urlMatch-L3liM589.js": {
+      "bytes": 2510,
+      "sha256": "1bc6321e32d11c31a452bc75896f0b344e6153321854d9f1658818be7f845c16"
+    },
+    "playwright/report/trace/codeMirrorModule.-QdMvsKi.css": {
+      "bytes": 6251,
+      "sha256": "20be824a82832b62cc04642d31da3c609fd280b23f1cdcb1e622c4f40aac5ab8"
+    },
+    "playwright/report/trace/codicon.DCmgc-ay.ttf": {
+      "bytes": 80340,
+      "sha256": "0f1d5219934e96e83b8db162d60b4d8c09b5de1e7d38031cbafe4a3c0f2889c9"
+    },
+    "playwright/report/trace/defaultSettingsView.BLFoOugd.css": {
+      "bytes": 105310,
+      "sha256": "72241b3112ab609ca0e06195e85e02cb373799217cd5f24a07d61d9273c4ad3e"
+    },
+    "playwright/report/trace/index.B_TqY17P.css": {
+      "bytes": 2055,
+      "sha256": "08a212fcacae1866f44f065654afcc4c7d03409c68c74b3315c5bda17a0ca003"
+    },
+    "playwright/report/trace/index.KZ4wOW1K.js": {
+      "bytes": 6566,
+      "sha256": "53e2227532161670bc601e241a7a9af00ac54826a9dd2ef9c15b8c1f77e92e63"
+    },
+    "playwright/report/trace/index.html": {
+      "bytes": 2363,
+      "sha256": "e2218af9284b6e1c2ec3b547320857778a323fd1473d90620153e967223c5721"
+    },
+    "playwright/report/trace/manifest.webmanifest": {
+      "bytes": 429,
+      "sha256": "d8540500603a32a39fe7e5a0375dc0f9ebafd11118e06a846db7efc608223ab9"
+    },
+    "playwright/report/trace/playwright-logo.svg": {
+      "bytes": 5033,
+      "sha256": "6b0a4367bdeab10995bc239278f04c68c10e48adbec15e799e01909a0d66dcb9"
+    },
+    "playwright/report/trace/snapshot.B_Jk1wbt.js": {
+      "bytes": 650,
+      "sha256": "d4d09e05451d107d8e1a6bbd041405fe518b9fd2833890e4ebaaad83b7f554f5"
+    },
+    "playwright/report/trace/snapshot.html": {
+      "bytes": 389,
+      "sha256": "c608c8899c95c5a74d3f556e20146c3d852b9df85ae2854c659a7cc773c9b727"
+    },
+    "playwright/report/trace/sw.bundle.js": {
+      "bytes": 93459,
+      "sha256": "cfd6662a71914516efe90a5a6f3da2bbe5db6e442939b868ca465f765d33723f"
+    },
+    "playwright/report/trace/uiMode.C7UW1sC9.css": {
+      "bytes": 54341,
+      "sha256": "c194e703ad4697e31c5e9b8d1e4f75f201a1fbe9940620fa6319dfa5543707b4"
+    },
+    "playwright/report/trace/uiMode.Dzuouizj.js": {
+      "bytes": 37932,
+      "sha256": "a584f96f0797144552430d7a04f7e3b84b1baaa0b781a664b1512339ec1c760b"
+    },
+    "playwright/report/trace/uiMode.html": {
+      "bytes": 727,
+      "sha256": "32b260f173708fe088834efe8eff0f9d92af0c7e2e6c987cd8e197f0a066742f"
+    },
+    "playwright/report/trace/xtermModule.kHJ-D0s7.css": {
+      "bytes": 2853,
+      "sha256": "0dd60056134e6a2994a86b59a1e9789b9f04e92924da109aef8c923acaf08ce5"
+    },
+    "playwright/result.json": {
+      "bytes": 412,
+      "sha256": "9443d0a5813aad88f925058a3289884033be3bfab9944c157aafe1a4b9b30b3b"
+    },
+    "playwright/results/.last-run.json": {
+      "bytes": 45,
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-dark/scale-1.png": {
+      "bytes": 19335,
+      "sha256": "a35074e55f250b1a2e1c6033b1ecd7f883c4f692034598e85f6fe3047f934ee7"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-dark/scale-2.png": {
+      "bytes": 27003,
+      "sha256": "626b209d22211b9f71e24be73e7b92840e3158f26ef144fed31bee8814af463f"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-dark/scale-3.png": {
+      "bytes": 38023,
+      "sha256": "199b099101425914d24658c71dced5bda3ce515134bc8d0614cb85f0e4a271a7"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-dark/scale-4.png": {
+      "bytes": 34303,
+      "sha256": "5beecee1286e55db0221c2eb06eda08fbd3b69147b050c52630a07b20721a6ad"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-dark/trace.zip": {
+      "bytes": 3524120,
+      "sha256": "6eed061871125e4233482f6b4a2f8dbf7bdbc472f58990e07f7cbdc54966ffb4"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-light/scale-1.png": {
+      "bytes": 18430,
+      "sha256": "384bbb6f997dbe73eaf2e117dec301b2497ac01356f263035a34837d080edd84"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-light/scale-2.png": {
+      "bytes": 25478,
+      "sha256": "505181b5660054e382bab965acc8f1f6d5888b4cf181c458aa4bf0cf8d719b35"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-light/scale-3.png": {
+      "bytes": 36089,
+      "sha256": "5683a5de415cf0c36630f0db677cc1099465c9364738e0b92141dd54c6f6c672"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-light/scale-4.png": {
+      "bytes": 32305,
+      "sha256": "0a81d1acdd83f8b2bbf5f1f40cb48d8a829b0f85d72c8654788c51603c10c7b2"
+    },
+    "playwright/results/scale-Four-scale-diagrams-1440-light/trace.zip": {
+      "bytes": 3517799,
+      "sha256": "6b61dfca4b697339d94c75412584b13afbbf3a698d84c8905fd879d02a7c4c4a"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-dark/scale-1.png": {
+      "bytes": 8994,
+      "sha256": "a4a70e4f2c0fb8e4f670f0c7c0fba9fdc0e8bec97937d6c2ebf1b2b5561a3cde"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-dark/scale-2.png": {
+      "bytes": 12561,
+      "sha256": "bda8d0c58f16806fc5a7fc1743a4a24061984f8a81d200a38b83bd95ccf63974"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-dark/scale-3.png": {
+      "bytes": 18442,
+      "sha256": "96d23523614ae85d45b579e6d65dc16163c327f3a951e9d320e4ead8d21461bd"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-dark/scale-4.png": {
+      "bytes": 15190,
+      "sha256": "ab04c3dbf78ec0b4b3c22dd399efb684ce1e5c3aa3c86e5beeeea7df9a507d7e"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-dark/trace.zip": {
+      "bytes": 6859282,
+      "sha256": "d15abaabee24a4d78d1b141eb356538c735f014d90e204ad1f3d67634240c2fe"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-light/scale-1.png": {
+      "bytes": 8527,
+      "sha256": "0286c36e4deb10bc131258856467a003a23a680cde3d2440bdfa15d0923ef5ed"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-light/scale-2.png": {
+      "bytes": 11706,
+      "sha256": "bf48dbc2118c5054906c7f3a1f240a53bdeb7bd1518a822fba73158da68d049c"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-light/scale-3.png": {
+      "bytes": 17503,
+      "sha256": "db8eaf8dcefcb09ebf7928c835f49ed3a63cf209dc44ead5d15b68e93287a7c8"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-light/scale-4.png": {
+      "bytes": 14499,
+      "sha256": "bd971891bd5c503c3cb44cf18fb27733ce2a18a2fb54b421f183b450581efd53"
+    },
+    "playwright/results/scale-Four-scale-diagrams-390-light/trace.zip": {
+      "bytes": 4901880,
+      "sha256": "38effbfb60dbba039be84fb9addebd7cc5c934f5ec749acd19c6a5cd24e6e988"
+    },
+    "playwright/results/scale-New-edition-real-downloads-and-source-links/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf": {
+      "bytes": 8270857,
+      "sha256": "c964422f0135854b2e19aaa6101ff046ecde9ee6b38ef0c3318c90fe82b23736"
+    },
+    "playwright/results/scale-New-edition-real-downloads-and-source-links/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf": {
+      "bytes": 6722023,
+      "sha256": "79748c57c4b224ba40e98beac6b9cd50d2f3395e9ab635caaf84e6425effb25b"
+    },
+    "playwright/results/scale-New-edition-real-downloads-and-source-links/ai-native-organization-v1.1.0.md": {
+      "bytes": 57735,
+      "sha256": "775ac740220bbd4ee335744471c676425e6de96c4960b6cdf759f77f7bea9daa"
+    },
+    "playwright/results/scale-New-edition-real-downloads-and-source-links/trace.zip": {
+      "bytes": 2357773,
+      "sha256": "80568a8a86e63d9b9b2c2a25c73cfd395b3142ebe737d9c25721c6558d624fe9"
+    },
+    "playwright/results/scale-System-follows-dark/trace.zip": {
+      "bytes": 2211499,
+      "sha256": "b1dcf22c2ea5d2aba4c93b47aab64b06562bee026ad21226ce684d44b82e88a6"
+    },
+    "playwright/results/scale-System-follows-light/trace.zip": {
+      "bytes": 2178577,
+      "sha256": "e46b40d37b12933f9b35476b042113fb60d652913bb176f9f8c2a043605716d2"
+    },
+    "playwright/run.log": {
+      "bytes": 54998,
+      "sha256": "d1a7a8789ff20598f3e4106a41987c2c5dda52012c985c3991c48c43227e9ca5"
+    },
+    "playwright/source-manifest.json": {
+      "bytes": 7105,
+      "sha256": "c1e305fc17d6a7d9a65fd3dea7ff9726ff3c9b8d0522bbb839a390666f7780cb"
+    },
+    "playwright/test-results.json": {
+      "bytes": 13928,
+      "sha256": "7697c50d79fbe765d40915c7669e87269833ce875d4156984f8a23fb85e7ab72"
+    },
+    "playwright/manifest.json": {
+      "bytes": 10082,
+      "sha256": "f2badbe70d615ca389f81e25d8cab2f0d1526c4e43eed766cc812544dab7b83c"
+    }
+  },
+  "peak_allocated_bytes": 10289561600,
+  "runtime_path": "/Users/mike/Codex/local-vm-manager/runtime/a95579eb",
+  "evidence_path": "/Users/mike/Codex/local-vm-manager/evidence/a95579eb",
+  "schema_version": 2,
+  "reservation": {
+    "version": 2,
+    "profile": "linux-browser",
+    "guests": 1,
+    "vcpus": 2,
+    "memory_bytes": 2147483648,
+    "runtime_bytes": 17179869184,
+    "evidence_bytes": 3238002688,
+    "external_evidence_bytes": 0,
+    "external_runtime_paths": [],
+    "exclusive_paths": [],
+    "guest_disk_gib": 12,
+    "guest_memory_gib": 2
+  },
+  "admission": {
+    "held_jobs_before": 1,
+    "committed_storage_before": 27606032384,
+    "host": {
+      "logical_cpus": 16,
+      "memory_bytes": 137438953472,
+      "available_memory_bytes": 69975851008,
+      "disk_free_bytes": 149818359808
+    }
+  },
+  "workload": {
+    "schema_version": 1,
+    "source_dir": "/Users/mike/handbooks/candidates/ai-native-organization/2026-10-23-organization-scale-v1.1.0/browser-final",
+    "tests": [
+      "tests/browser/scale.spec.ts"
+    ],
+    "expected_tests": 7,
+    "playwright_version": "1.62.1",
+    "node": {
+      "version": "v22.16.0",
+      "filename": "node-v22.16.0-linux-arm64.tar.xz",
+      "url": "https://nodejs.org/dist/v22.16.0/node-v22.16.0-linux-arm64.tar.xz",
+      "sha256": "eab80cb88f8fda1e65f5e8d0420c9809bdb320b03fd34976ab7161b6e703b910"
+    },
+    "source_files": {
+      "package-lock.json": {
+        "bytes": 2210,
+        "sha256": "7010d43544ec9e2fdf71fba5dd14a35d99a7a3e610524e495d1c30bce066f99c"
+      },
+      "package.json": {
+        "bytes": 192,
+        "sha256": "53eb1dd316625021fa447d7adbc73d29c7b4e7bfbf1261e8b7ca7036566f4ec4"
+      },
+      "playwright.config.ts": {
+        "bytes": 310,
+        "sha256": "f87ff3dd50245a0e07df5570fcab94918d308cab9d2af31c5ba9006fbeecb1c7"
+      },
+      "public/gallery-focus.js": {
+        "bytes": 2796,
+        "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+      },
+      "public/gallery.css": {
+        "bytes": 4062,
+        "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+      },
+      "public/index.html": {
+        "bytes": 273,
+        "sha256": "fb57e2978e31b976414df55321444b063ccb642ca8a2c560ae1719b2226a3dcb"
+      },
+      "public/pdf-downloads.css": {
+        "bytes": 2429,
+        "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+      },
+      "public/reader.css": {
+        "bytes": 60129,
+        "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+      },
+      "public/reader.js": {
+        "bytes": 9958,
+        "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+      },
+      "public/theme.css": {
+        "bytes": 7919,
+        "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+      },
+      "public/theme.js": {
+        "bytes": 5235,
+        "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+      },
+      "public/ai-native-organization/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf": {
+        "bytes": 8229973,
+        "sha256": "ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf"
+      },
+      "public/ai-native-organization/ai-native-organization-v1.0.0-2026-10-23-late-night-r1.pdf": {
+        "bytes": 6674934,
+        "sha256": "1f40e388c9465cfedc8d36e5bc507bc0c11061407c84efca5b35403431c2ba12"
+      },
+      "public/ai-native-organization/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf": {
+        "bytes": 8270857,
+        "sha256": "c964422f0135854b2e19aaa6101ff046ecde9ee6b38ef0c3318c90fe82b23736"
+      },
+      "public/ai-native-organization/index.html": {
+        "bytes": 109258,
+        "sha256": "5ab3014e3cd0f2a6277dc75eca2d59ffcc1eb1bf25f72501c35233f49e2a4d0c"
+      },
+      "public/ai-native-organization/reader.css": {
+        "bytes": 6328,
+        "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+      },
+      "public/ai-native-organization/editions/v1.0.0/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf": {
+        "bytes": 8229973,
+        "sha256": "ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf"
+      },
+      "public/ai-native-organization/editions/v1.0.0/ai-native-organization-v1.0.0-2026-10-23-late-night-r1.pdf": {
+        "bytes": 6674934,
+        "sha256": "1f40e388c9465cfedc8d36e5bc507bc0c11061407c84efca5b35403431c2ba12"
+      },
+      "public/ai-native-organization/editions/v1.0.0/ai-native-organization-v1.0.0.index.json": {
+        "bytes": 6493,
+        "sha256": "752278d6f36c1cb13f19c1cc7911227ca2e8fcc6389524a93d5582ba66d185b9"
+      },
+      "public/ai-native-organization/editions/v1.0.0/ai-native-organization-v1.0.0.md": {
+        "bytes": 51501,
+        "sha256": "6675c0c4a8c17f0ee1fadf160ce1b5dfb24ad544538f8539cfee47d4157608a3"
+      },
+      "public/ai-native-organization/editions/v1.0.0/index.html": {
+        "bytes": 6106,
+        "sha256": "a709518d6e89e07545bb71d43aa0c9301814c40dc3b989446b1b38337e2c4ba7"
+      },
+      "public/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf": {
+        "bytes": 8270857,
+        "sha256": "c964422f0135854b2e19aaa6101ff046ecde9ee6b38ef0c3318c90fe82b23736"
+      },
+      "public/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf": {
+        "bytes": 6722023,
+        "sha256": "79748c57c4b224ba40e98beac6b9cd50d2f3395e9ab635caaf84e6425effb25b"
+      },
+      "public/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0.index.json": {
+        "bytes": 7289,
+        "sha256": "41fa7a23fc7655e712d805257c369a2b7bea11594276858e9b38ef4a153d9915"
+      },
+      "public/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0.md": {
+        "bytes": 57735,
+        "sha256": "775ac740220bbd4ee335744471c676425e6de96c4960b6cdf759f77f7bea9daa"
+      },
+      "public/ai-native-organization/editions/v1.1.0/index.html": {
+        "bytes": 7219,
+        "sha256": "71abd165c84853bb86467ebc7b3646f02fad474dff931edc695ee470e4d1623f"
+      },
+      "public/ai-native-organization/assets/chapter-01.png": {
+        "bytes": 1833489,
+        "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+      },
+      "public/ai-native-organization/assets/chapter-02.png": {
+        "bytes": 2394022,
+        "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+      },
+      "public/ai-native-organization/assets/chapter-03.png": {
+        "bytes": 1673086,
+        "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+      },
+      "public/ai-native-organization/assets/dark/chapter-01.png": {
+        "bytes": 1898687,
+        "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+      },
+      "public/ai-native-organization/assets/dark/chapter-02.png": {
+        "bytes": 2549409,
+        "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+      },
+      "public/ai-native-organization/assets/dark/chapter-03.png": {
+        "bytes": 1740594,
+        "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+      },
+      "public/assets/favicon.png": {
+        "bytes": 8962,
+        "sha256": "0de74c43a4470366df85cacbaa5ac659d0f387e595664c9d472bbf6ef3dd5e01"
+      },
+      "public/assets/fonts/LICENSE.txt": {
+        "bytes": 4314,
+        "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+      },
+      "public/assets/fonts/source-serif-4-latin-variable-italic.woff2": {
+        "bytes": 51516,
+        "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+      },
+      "public/assets/fonts/source-serif-4-latin-variable.woff2": {
+        "bytes": 50824,
+        "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+      },
+      "scripts/hashes.json": {
+        "bytes": 478,
+        "sha256": "4f7519341d1e1b510b18feb6228cbe6c7e417c33e631e3e4bc7c171d1f300b9b"
+      },
+      "tests/browser/scale.spec.ts": {
+        "bytes": 3324,
+        "sha256": "152c5843376f35f686a2f060a36a0b629bf30ff9bf4d3d03a1abd523ec7e3a76"
+      }
+    }
+  },
+  "runtime_identity": {
+    "device": 16777231,
+    "inode": 400537105
+  },
+  "device": 16777231,
+  "inode": 400537107,
+  "payload_sha256": "761083bb4033a6b422a1aec2754f42f5fdf3653bf2500d0c290310d2c0fede35",
+  "recovery_attempts": 0,
+  "supervisor_pid": 18871,
+  "supervisor_start": "Fri Oct 23 22:51:18 2026",
+  "guest_helper_sha256": "ae663dbba0b6b3112a525091d59fd424640856550cb52992a696e62813e5df3d",
+  "peak_runtime_allocated_bytes": 3377479680,
+  "ready_at": 1792821119.6350248,
+  "workload_started": true,
+  "finish_reason": "normal",
+  "approved_export_limit_bytes": 1073741824,
+  "bundle_sha256": "55915619340e17a827e2ebca7fdece3af5b0ca748676e5be686a709ccd4033a6",
+  "test_result": {
+    "passed": true,
+    "started_at": 1792821120.2459638,
+    "engine": "chromium",
+    "sandbox_enabled": true,
+    "expected_tests": 7,
+    "discovered_tests": 7,
+    "test_exit_code": 0,
+    "stats": {
+      "startTime": "2026-10-24T05:52:25.051Z",
+      "duration": 6887.003,
+      "expected": 7,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "source_tests_unchanged": true,
+    "finished_at": 1792821152.0279353
+  },
+  "evidence_complete": true,
+  "evidence_verified": true,
+  "holders_before_stop": [
+    "p18891",
+    "climactl",
+    "f1",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/ha.stdout.log",
+    "f2",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/ha.stderr.log",
+    "f6",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/ha.sock",
+    "f9",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/default_ep.sock",
+    "f10",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/default_fd.sock",
+    "f11",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/serialv.log",
+    "p18903",
+    "ccom.apple.Virtualization.Virtua",
+    "ftxt",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/vz-efi",
+    "f3",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/vz-efi",
+    "f4",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/serialv.log",
+    "f5",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/disk",
+    "f6",
+    "n/Users/mike/Codex/local-vm-manager/runtime/a95579eb/l/guest/cidata.iso"
+  ],
+  "holders_after_stop": [],
+  "deletion_intent": true,
+  "vm_deleted": true,
+  "runtime_deleted": true,
+  "remaining_runtime_bytes": 0,
+  "finished_at": 1792821159.126817,
+  "retained_evidence_bytes": 68481417,
+  "reservation_released_at": 1792821159.126886
+}

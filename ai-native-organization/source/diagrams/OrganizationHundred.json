@@ -1,0 +1,266 @@
+{
+  "id": "OrganizationHundred",
+  "layout": "grouped-map",
+  "title": "Around 100 people: product teams",
+  "width": 346,
+  "height": 280,
+  "textEquivalent": "In this illustrative company of about one hundred people, product leadership aligns priorities across product teams. Each team retains its human outcome and release owner and uses agents for bounded execution. A shared platform/workflow owner and available specialists support both teams; specialist judgment remains distinct from maintaining reusable tools.",
+  "nodes": [
+    {
+      "id": "lead",
+      "x": 83,
+      "y": 28,
+      "width": 180,
+      "height": 27,
+      "label": "Product leadership",
+      "kind": "node",
+      "fontSize": 8
+    },
+    {
+      "id": "a",
+      "x": 0,
+      "y": 88,
+      "width": 164,
+      "height": 112,
+      "label": "PRODUCT TEAM A",
+      "kind": "group",
+      "fontSize": 8
+    },
+    {
+      "id": "aowner",
+      "x": 12,
+      "y": 118,
+      "width": 140,
+      "height": 29,
+      "label": "Human owner / release",
+      "kind": "node",
+      "parent": "a",
+      "fontSize": 8
+    },
+    {
+      "id": "aagent",
+      "x": 27,
+      "y": 168,
+      "width": 110,
+      "height": 23,
+      "label": "Agents",
+      "kind": "agent",
+      "parent": "a",
+      "fontSize": 8
+    },
+    {
+      "id": "b",
+      "x": 182,
+      "y": 88,
+      "width": 164,
+      "height": 112,
+      "label": "PRODUCT TEAM B",
+      "kind": "group",
+      "fontSize": 8
+    },
+    {
+      "id": "bowner",
+      "x": 194,
+      "y": 118,
+      "width": 140,
+      "height": 29,
+      "label": "Human owner / release",
+      "kind": "node",
+      "parent": "b",
+      "fontSize": 8
+    },
+    {
+      "id": "bagent",
+      "x": 209,
+      "y": 168,
+      "width": 110,
+      "height": 23,
+      "label": "Agents",
+      "kind": "agent",
+      "parent": "b",
+      "fontSize": 8
+    },
+    {
+      "id": "platform",
+      "x": 0,
+      "y": 243,
+      "width": 164,
+      "height": 29,
+      "label": "Platform / workflow owner",
+      "kind": "node",
+      "fontSize": 8
+    },
+    {
+      "id": "specialists",
+      "x": 182,
+      "y": 243,
+      "width": 164,
+      "height": 29,
+      "label": "Specialists",
+      "kind": "node",
+      "fontSize": 8
+    }
+  ],
+  "edges": [
+    {
+      "from": "aowner",
+      "to": "aagent",
+      "points": [
+        [
+          82,
+          149
+        ],
+        [
+          82,
+          166
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "lead",
+      "to": "a",
+      "points": [
+        [
+          173,
+          57
+        ],
+        [
+          173,
+          73
+        ],
+        [
+          82,
+          73
+        ],
+        [
+          82,
+          86
+        ]
+      ],
+      "dashed": false,
+      "both": false
+    },
+    {
+      "from": "bowner",
+      "to": "bagent",
+      "points": [
+        [
+          264,
+          149
+        ],
+        [
+          264,
+          166
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "lead",
+      "to": "b",
+      "points": [
+        [
+          173,
+          57
+        ],
+        [
+          173,
+          73
+        ],
+        [
+          264,
+          73
+        ],
+        [
+          264,
+          86
+        ]
+      ],
+      "dashed": false,
+      "both": false
+    },
+    {
+      "from": "platform",
+      "to": "a",
+      "points": [
+        [
+          82,
+          241
+        ],
+        [
+          82,
+          202
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "specialists",
+      "to": "b",
+      "points": [
+        [
+          264,
+          241
+        ],
+        [
+          264,
+          202
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "platform",
+      "to": "b",
+      "points": [
+        [
+          82,
+          221
+        ],
+        [
+          264,
+          221
+        ],
+        [
+          264,
+          202
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "specialists",
+      "to": "a",
+      "points": [
+        [
+          264,
+          221
+        ],
+        [
+          82,
+          221
+        ],
+        [
+          82,
+          202
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    }
+  ],
+  "labels": [
+    {
+      "x": 142,
+      "y": 61,
+      "width": 63,
+      "text": "Priorities"
+    }
+  ]
+}

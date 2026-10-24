@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "baseCommit": "662430324a7c9136ba2ecc26afa16a2917c3103a",
+  "scope": [
+    "new organization-scale prose and four semantic diagrams",
+    "shared grouped-map renderer and candidate input staging",
+    "1.1.0 edition packaging and 1.0.0 retained routes"
+  ],
+  "findings": [],
+  "validation": [
+    "npm run validate",
+    "test-grouped-diagrams.py",
+    "git diff --check",
+    "browser final output identity",
+    "both final PDF hashes"
+  ],
+  "latestProseFeedbackPreserved": true
+}

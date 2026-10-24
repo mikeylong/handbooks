@@ -1,0 +1,402 @@
+{
+  "id": "OrganizationThousand",
+  "layout": "grouped-map",
+  "title": "Around 1,000 people: product domains",
+  "width": 346,
+  "height": 352,
+  "textEquivalent": "In this illustrative company of about one thousand people, domain leads coordinate product teams under portfolio priorities. Each product team, not the domain alone, retains its outcome and release owner and agent execution. Domains agree on interfaces. An internal platform and maintained workflows support the domains; specialist communities supply separate domain judgment.",
+  "nodes": [
+    {
+      "id": "portfolio",
+      "x": 83,
+      "y": 28,
+      "width": 180,
+      "height": 27,
+      "label": "Portfolio priorities",
+      "kind": "node",
+      "fontSize": 8
+    },
+    {
+      "id": "a",
+      "x": 0,
+      "y": 82,
+      "width": 156,
+      "height": 181,
+      "label": "DOMAIN A\nDomain lead",
+      "kind": "group",
+      "fontSize": 8
+    },
+    {
+      "id": "a1",
+      "x": 8,
+      "y": 127,
+      "width": 66,
+      "height": 123,
+      "label": "TEAM 1",
+      "kind": "group",
+      "parent": "a",
+      "fontSize": 8
+    },
+    {
+      "id": "a1owner",
+      "x": 12,
+      "y": 153,
+      "width": 58,
+      "height": 43,
+      "label": "Owner /\nrelease",
+      "kind": "node",
+      "parent": "a1",
+      "fontSize": 7.6
+    },
+    {
+      "id": "a1agent",
+      "x": 12,
+      "y": 219,
+      "width": 58,
+      "height": 23,
+      "label": "Agents",
+      "kind": "agent",
+      "parent": "a1",
+      "fontSize": 7.6
+    },
+    {
+      "id": "a2",
+      "x": 82,
+      "y": 127,
+      "width": 66,
+      "height": 123,
+      "label": "TEAM 2",
+      "kind": "group",
+      "parent": "a",
+      "fontSize": 8
+    },
+    {
+      "id": "a2owner",
+      "x": 86,
+      "y": 153,
+      "width": 58,
+      "height": 43,
+      "label": "Owner /\nrelease",
+      "kind": "node",
+      "parent": "a2",
+      "fontSize": 7.6
+    },
+    {
+      "id": "a2agent",
+      "x": 86,
+      "y": 219,
+      "width": 58,
+      "height": 23,
+      "label": "Agents",
+      "kind": "agent",
+      "parent": "a2",
+      "fontSize": 7.6
+    },
+    {
+      "id": "b",
+      "x": 190,
+      "y": 82,
+      "width": 156,
+      "height": 181,
+      "label": "DOMAIN B\nDomain lead",
+      "kind": "group",
+      "fontSize": 8
+    },
+    {
+      "id": "b1",
+      "x": 198,
+      "y": 127,
+      "width": 66,
+      "height": 123,
+      "label": "TEAM 1",
+      "kind": "group",
+      "parent": "b",
+      "fontSize": 8
+    },
+    {
+      "id": "b1owner",
+      "x": 202,
+      "y": 153,
+      "width": 58,
+      "height": 43,
+      "label": "Owner /\nrelease",
+      "kind": "node",
+      "parent": "b1",
+      "fontSize": 7.6
+    },
+    {
+      "id": "b1agent",
+      "x": 202,
+      "y": 219,
+      "width": 58,
+      "height": 23,
+      "label": "Agents",
+      "kind": "agent",
+      "parent": "b1",
+      "fontSize": 7.6
+    },
+    {
+      "id": "b2",
+      "x": 272,
+      "y": 127,
+      "width": 66,
+      "height": 123,
+      "label": "TEAM 2",
+      "kind": "group",
+      "parent": "b",
+      "fontSize": 8
+    },
+    {
+      "id": "b2owner",
+      "x": 276,
+      "y": 153,
+      "width": 58,
+      "height": 43,
+      "label": "Owner /\nrelease",
+      "kind": "node",
+      "parent": "b2",
+      "fontSize": 7.6
+    },
+    {
+      "id": "b2agent",
+      "x": 276,
+      "y": 219,
+      "width": 58,
+      "height": 23,
+      "label": "Agents",
+      "kind": "agent",
+      "parent": "b2",
+      "fontSize": 7.6
+    },
+    {
+      "id": "platform",
+      "x": 0,
+      "y": 310,
+      "width": 156,
+      "height": 35,
+      "label": "Platform + workflows\nInternal product",
+      "kind": "node",
+      "fontSize": 8
+    },
+    {
+      "id": "specialists",
+      "x": 190,
+      "y": 310,
+      "width": 156,
+      "height": 35,
+      "label": "Specialist communities\nDomain judgment",
+      "kind": "node",
+      "fontSize": 8
+    }
+  ],
+  "edges": [
+    {
+      "from": "portfolio",
+      "to": "a",
+      "points": [
+        [
+          173,
+          57
+        ],
+        [
+          173,
+          67
+        ],
+        [
+          78,
+          67
+        ],
+        [
+          78,
+          80
+        ]
+      ],
+      "dashed": false,
+      "both": false
+    },
+    {
+      "from": "a1owner",
+      "to": "a1agent",
+      "points": [
+        [
+          41,
+          198
+        ],
+        [
+          41,
+          217
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "a2owner",
+      "to": "a2agent",
+      "points": [
+        [
+          115,
+          198
+        ],
+        [
+          115,
+          217
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "portfolio",
+      "to": "b",
+      "points": [
+        [
+          173,
+          57
+        ],
+        [
+          173,
+          67
+        ],
+        [
+          268,
+          67
+        ],
+        [
+          268,
+          80
+        ]
+      ],
+      "dashed": false,
+      "both": false
+    },
+    {
+      "from": "b1owner",
+      "to": "b1agent",
+      "points": [
+        [
+          231,
+          198
+        ],
+        [
+          231,
+          217
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "b2owner",
+      "to": "b2agent",
+      "points": [
+        [
+          305,
+          198
+        ],
+        [
+          305,
+          217
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "a",
+      "to": "b",
+      "points": [
+        [
+          158,
+          97
+        ],
+        [
+          188,
+          97
+        ]
+      ],
+      "dashed": false,
+      "both": true
+    },
+    {
+      "from": "platform",
+      "to": "a",
+      "points": [
+        [
+          78,
+          308
+        ],
+        [
+          78,
+          265
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "specialists",
+      "to": "b",
+      "points": [
+        [
+          268,
+          308
+        ],
+        [
+          268,
+          265
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "platform",
+      "to": "b",
+      "points": [
+        [
+          78,
+          286
+        ],
+        [
+          268,
+          286
+        ],
+        [
+          268,
+          265
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    },
+    {
+      "from": "specialists",
+      "to": "a",
+      "points": [
+        [
+          268,
+          286
+        ],
+        [
+          78,
+          286
+        ],
+        [
+          78,
+          265
+        ]
+      ],
+      "dashed": true,
+      "both": false
+    }
+  ],
+  "labels": [
+    {
+      "x": 148,
+      "y": 103,
+      "width": 50,
+      "text": "Contracts"
+    }
+  ]
+}
