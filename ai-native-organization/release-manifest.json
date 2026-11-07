@@ -1,44 +1,144 @@
 {
   "id": "ai-native-organization",
   "title": "AI-Native Organization Handbook",
-  "version": "1.1.0",
-  "date": "2026-10-23",
-  "pages": 51,
-  "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-  "sha256": "c56f413a7be84533886f61199be33d2f8e8c421cf7c002a17f04f275dfe4af7d",
+  "version": "1.1.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/ai-native-organization-v1.1.1-2026-11-07-daytime-r1.pdf",
+  "sha256": "cbd94ce6fb9b692f4426bf5095f13c469daa650920db5431112d166ddb0fee37",
+  "pages": 52,
   "approvalStatus": "approved",
   "publicationApproved": true,
-  "publicationStatus": "published",
-  "author": "Michael Long",
-  "authorSite": "https://surfaces.systems",
-  "canonicalUrl": "https://handbooks.surfaces.systems/ai-native-organization/",
-  "editionUrl": "https://handbooks.surfaces.systems/ai-native-organization/editions/v1.1.0/",
-  "pdfUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+  "previous_public_edition": "1.1.0",
+  "comparison_basis": "approved public edition",
   "baseline": {
-    "version": "1.0.0",
-    "date": "2026-10-23",
-    "pdf": "output/pdf/ai-native-organization-v1.0.0-2026-10-23-daytime-r1.pdf",
-    "sha256": "ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf",
-    "pages": 41
-  },
-  "comparison_basis": "approved edition 1.0.0",
-  "sourceLedger": {
-    "path": "evidence/sources.json",
-    "sha256": "8b6b1790b0dc4ed18a87398c1fc651e98f5e9a9c5aaf5ba33e758a475401e7d4"
-  },
-  "publicationApproval": {
-    "date": "2026-10-24",
+    "title": "AI-Native Organization Handbook",
     "version": "1.1.0",
-    "authority": "Mike requested removing the repeated synthetic-example labels and footnotes while continuing the handbook release review."
+    "date": "2026-10-23",
+    "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+    "sha256": "c56f413a7be84533886f61199be33d2f8e8c421cf7c002a17f04f275dfe4af7d",
+    "pages": 51,
+    "manifest": {
+      "path": "baselines/v1.1.0/pre-weekly-release/release-manifest.json",
+      "sha256": "f307b703653cc2042a9f68f6da0988f7d20650676c5c5ad3ad3fb47c774142c0"
+    },
+    "originalPdfPath": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf"
   },
+  "candidate_validation": "qa/v1.1.1/weekly/lightValidation.json",
+  "candidateEvidence": {
+    "lightValidation": {
+      "path": "qa/v1.1.1/weekly/lightValidation.json",
+      "sha256": "10b105a9929e4dfbddadafb0b9bd047f7d98eb8d16abd48832ebd89794534206",
+      "bytes": 3144
+    },
+    "darkValidation": {
+      "path": "qa/v1.1.1/weekly/darkValidation.json",
+      "sha256": "a51900c66f67788029709cbdfd202a4ab3a58ef3570b4589201ebe235882dc16",
+      "bytes": 3147
+    },
+    "changelogDecision": {
+      "path": "qa/v1.1.1/weekly/changelogDecision.json",
+      "sha256": "f3491d046bba4ca73b78f1f66762951a9dae0c16f437bf0a1e83c33faad16698",
+      "bytes": 1443
+    },
+    "editionDiff": {
+      "path": "qa/v1.1.1/weekly/editionDiff.json",
+      "sha256": "bbd3daa34d5945d786052cd215daf5721cf74bb3a295ad7ff3889d64ac50791e",
+      "bytes": 2488
+    },
+    "changes": {
+      "path": "qa/v1.1.1/weekly/changes.json",
+      "sha256": "fa1b68a8a344c5153fedada71fc0082aaa6c81543140fc916eb423ddc7226c6e",
+      "bytes": 1120
+    },
+    "editionDiffPdfTextPatch": {
+      "path": "qa/v1.1.1/weekly/exact-pdf-text.patch",
+      "sha256": "8801baf6b1da1dd2c799dcd14e02a80174b5993437d24ba397c54e68548a65c2",
+      "bytes": 28330
+    },
+    "editionDiffReaderFacingContentPatch": {
+      "path": "qa/v1.1.1/weekly/reader-facing-content.patch",
+      "sha256": "60854e4fe5ded277c4a83cd8043d1c51b9b39fb72855af2d5842b9be96498b42",
+      "bytes": 24430
+    },
+    "editionDiffSourcePatch": {
+      "path": "qa/v1.1.1/weekly/exact-source.patch",
+      "sha256": "9edfc38b1296b331544085a3e517373e8e6e955e701355fa9654806193cb0a2c",
+      "bytes": 10451
+    },
+    "parity": {
+      "path": "qa/v1.1.1/weekly/parity.json",
+      "sha256": "aaf0326403599c1d7e49f635075fa8739c77f61d5d80d35ff8a6330dd798edfa"
+    },
+    "appearanceAudit": {
+      "path": "qa/v1.1.1/appearance.json",
+      "sha256": "77c8b04a5769be92f6dffce3ebe7d9b5219c83c81813f95206b9e9470ac0f5fb"
+    }
+  },
+  "evidenceMode": "standard",
+  "pageMaps": {
+    "light": {
+      "path": "qa/v1.1.1/weekly/light-page-map.json",
+      "sha256": "3ef6c5016d4f47742de3c2e4dcb0b8d12d7ebc52c13ecb916da62f704b3d2c95"
+    },
+    "dark": {
+      "path": "qa/v1.1.1/weekly/dark-page-map.json",
+      "sha256": "84db77faae0109828190f197955509ab815a9e072cce02edb4f94634b87187e6"
+    }
+  },
+  "classifiedChangeIds": [
+    "candidate-change-001",
+    "candidate-change-002"
+  ],
+  "readerFacingContentChanged": true,
   "changelog": {
-    "decision": "qa/v1.1.0/example-label-cleanup/changelog-decision.json",
-    "comparison": "qa/v1.1.0/example-label-cleanup/edition-comparison/edition-diff.json"
+    "weeklyDecision": {
+      "path": "qa/v1.1.1/weekly/changelogDecision.json",
+      "sha256": "f3491d046bba4ca73b78f1f66762951a9dae0c16f437bf0a1e83c33faad16698",
+      "bytes": 1443
+    },
+    "pdfDecision": {
+      "path": "qa/v1.1.1/weekly/changelogDecision.json",
+      "sha256": "f3491d046bba4ca73b78f1f66762951a9dae0c16f437bf0a1e83c33faad16698",
+      "bytes": 1443
+    },
+    "retainedHistoricalChangelog": false
   },
-  "releaseCorrection": {
-    "revision": 3,
-    "reason": "Removed redundant example labels and repeated chart footnotes; retained the chapter introduction and meaningful forecast assumptions.",
-    "priorArtifacts": "releases/v1.1.0/pre-example-label-cleanup/preservation.json",
-    "authority": "Mike requested removing the repeated synthetic-example labels and footnotes while continuing the handbook release review."
+  "appearances": {
+    "light": {
+      "pdf": "output/pdf/ai-native-organization-v1.1.1-2026-11-07-daytime-r1.pdf",
+      "sha256": "cbd94ce6fb9b692f4426bf5095f13c469daa650920db5431112d166ddb0fee37",
+      "pages": 52
+    },
+    "dark": {
+      "pdf": "output/pdf/ai-native-organization-v1.1.1-2026-11-07-late-night-r1.pdf",
+      "sha256": "7faa0bac61e9ba00a7803a06eb4e72f0bb7b85778166b3016c1404f1c1f990f2",
+      "pages": 52
+    }
+  },
+  "retainedProvenance": {
+    "status": "historical_only_not_reverified",
+    "sourceEdition": "1.1.0",
+    "sourceManifestSha256": "f307b703653cc2042a9f68f6da0988f7d20650676c5c5ad3ad3fb47c774142c0",
+    "inputMetadata": "baselines/v1.1.0/pre-weekly-release",
+    "readerSnapshot": {
+      "collectionPath": "site/retained/ai-native-organization/v1.1.0/reader-snapshot.html",
+      "sha256": "3c343a62f9666d1d3257565e2d19641f43f1fb68ebdb1f99258d6c943dc869ff"
+    },
+    "historicalCommit": "3968c25d30257f3696a8712365298d0bad6c196e"
+  },
+  "publicationStatus": "published",
+  "publicationApproval": {
+    "date": "2026-11-07",
+    "command": "Publish them and update releases",
+    "clarification": "I asked you to publish updated releases of every handbook.",
+    "kind": "explicit-user-release",
+    "version": "1.1.1",
+    "daytimeSha256": "cbd94ce6fb9b692f4426bf5095f13c469daa650920db5431112d166ddb0fee37"
+  },
+  "releaseValidationKind": "weekly-exact-artifact",
+  "generationToolkitArchive": {
+    "collectionPath": "releases/2026-11-07/generation-toolkit.zip",
+    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
+    "purpose": "Frozen runtime used for these PDF builds; artifact promotion copied exact validated bytes."
   }
 }

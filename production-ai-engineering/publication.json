@@ -1,15 +1,25 @@
 {
   "author": "Michael Long",
   "authorSite": "https://surfaces.systems",
-  "releaseUrl": "https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.0/",
-  "review": {
-    "at": "2026-10-05T16:00:00.000Z",
-    "timeZone": "America/Los_Angeles",
-    "rrule": "FREQ=WEEKLY;BYDAY=MO;BYHOUR=9;BYMINUTE=0",
-    "label": "Monday, October 5, 2026 at 9:00 AM Pacific time"
-  },
-  "historicalRepository": "https://github.com/mikeylong/production-ai-engineering-book",
-  "historicalReleaseUrl": "https://github.com/mikeylong/production-ai-engineering-book/releases",
   "sourceRepository": "https://github.com/mikeylong/handbooks",
-  "editionUrl": "https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.0/"
+  "id": "production-ai-engineering",
+  "title": "Production AI Engineering",
+  "version": "1.4.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+  "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+  "pages": 99,
+  "approvalStatus": "approved",
+  "publicationStatus": "published",
+  "publicationApproved": true,
+  "editionUrl": "https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.1/",
+  "releaseUrl": "https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.1/",
+  "publicationApproval": {
+    "date": "2026-11-07",
+    "command": "Publish them and update releases",
+    "clarification": "I asked you to publish updated releases of every handbook.",
+    "kind": "explicit-user-release",
+    "version": "1.4.1",
+    "daytimeSha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299"
+  }
 }

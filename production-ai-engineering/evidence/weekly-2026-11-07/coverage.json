@@ -1,0 +1,90 @@
+[
+  {
+    "area_id": "model_api_lifecycle",
+    "status": "checked",
+    "source_ids": [
+      "MOD-04",
+      "REV-03",
+      "MOD-02",
+      "REV-08",
+      "MOD-01",
+      "MOD-07"
+    ],
+    "conclusion": "change_warranted",
+    "notes": "Fresh primary-source checks in this prepared run; dated deltas use the shared November 2 cutoff. Living and partial sources retain their limitations."
+  },
+  {
+    "area_id": "serving_inference_runtime",
+    "status": "checked",
+    "source_ids": [
+      "REV-11",
+      "REV-12",
+      "REV-52"
+    ],
+    "conclusion": "change_warranted",
+    "notes": "Fresh primary-source checks in this prepared run; dated deltas use the shared November 2 cutoff. Living and partial sources retain their limitations."
+  },
+  {
+    "area_id": "context_caching_retrieval",
+    "status": "checked",
+    "source_ids": [
+      "CACHE-01",
+      "PRIV-01",
+      "REV-40"
+    ],
+    "conclusion": "change_warranted",
+    "notes": "Fresh primary-source checks in this prepared run; dated deltas use the shared November 2 cutoff. Living and partial sources retain their limitations."
+  },
+  {
+    "area_id": "structured_output_tools_agents",
+    "status": "checked",
+    "source_ids": [
+      "OUT-01",
+      "MCP-02",
+      "REV-21"
+    ],
+    "conclusion": "no_change_warranted",
+    "notes": "Fresh primary-source checks in this prepared run; dated deltas use the shared November 2 cutoff. Living and partial sources retain their limitations."
+  },
+  {
+    "area_id": "evaluation_observability_cost_reliability",
+    "status": "checked",
+    "source_ids": [
+      "MOD-04",
+      "OBS-01",
+      "EVAL-90",
+      "REV-21"
+    ],
+    "conclusion": "change_warranted",
+    "notes": "Fresh primary-source checks in this prepared run; dated deltas use the shared November 2 cutoff. Living and partial sources retain their limitations."
+  },
+  {
+    "area_id": "safety_security_privacy",
+    "status": "checked",
+    "source_ids": [
+      "PRIV-01",
+      "MOD-01",
+      "REV-12",
+      "REV-41",
+      "REV-48",
+      "REV-49",
+      "REV-50",
+      "REV-53",
+      "REV-59"
+    ],
+    "conclusion": "change_warranted",
+    "notes": "Fresh primary-source checks in this prepared run; dated deltas use the shared November 2 cutoff. Living and partial sources retain their limitations."
+  },
+  {
+    "area_id": "original_research",
+    "status": "checked",
+    "source_ids": [
+      "EVAL-90",
+      "REV-16",
+      "REV-17",
+      "REV-54"
+    ],
+    "conclusion": "change_warranted",
+    "notes": "Fresh primary-source checks in this prepared run; dated deltas use the shared November 2 cutoff. Living and partial sources retain their limitations."
+  }
+]

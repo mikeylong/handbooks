@@ -29,7 +29,9 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     shutil.copyfile(BOOK/'AI_ENGINEERING_FIELD_GUIDE.md', build/'AI_ENGINEERING_FIELD_GUIDE.md')
     shutil.copyfile(BOOK/'publication.json', build/'publication.json')
     (build/'output/pdf').mkdir(parents=True)
-    shutil.copyfile(BOOK/'output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf', build/'output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf')
+    publication = json.loads((BOOK/'publication.json').read_text())
+    linked_pdf = publication['pdf']
+    shutil.copyfile(BOOK/linked_pdf, build/linked_pdf)
     env = {**os.environ, 'HANDBOOK_PUBLISHING_TOOLKIT': str(TOOLKIT),
            'HANDBOOK_AUTOMATION_PATH': str(BOOK/'automation/automation.toml'),
            'HANDBOOK_RELEASE_POLICY_PATH': str(BOOK/'automation/release-policy.json')}

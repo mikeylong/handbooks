@@ -42,7 +42,7 @@ def build_story():
         P('AI-Native<br/>Organization<br/>Handbook', COVER_TITLE),
         P('Choose useful work, give people clear ownership, and test whether agent workflows improve delivery.', COVER_DECK),
         Spacer(1, 35*mm), P('Michael Long', COVER_CREDIT),
-        P('October 23, 2026 · Version 1.1.0', COVER_CREDIT),
+        P('November 7, 2026 · Version 1.1.1', COVER_CREDIT),
         P('Expanded edition', COVER_CREDIT), PageBreak(),
         P('READ THIS FIRST', CHAPTER_KICKER), P('Make a better delivery decision', H1),
         P('Your team can generate a change quickly and still struggle to deliver it. Someone has to decide whether the change matters, resolve conflicting requirements, review the result, release it and support the customer afterward. Giving agents more execution work leaves those responsibilities with people.'),
@@ -90,6 +90,7 @@ def build_story():
     story += page('1.5 Match the structure to your coordination needs',
         'Start with the dependencies between customer outcomes, the specialists people need, and the decisions each team can make alone. Add shared coordination where it helps teams finish work.',
         'These four arrangements are proposals. The sizes are illustrative total-company headcounts, including non-engineering roles. They are not engineering headcounts, staffing ratios or thresholds for reorganizing.',
+        'Block’s March 2026 proposal treats shared company and customer context as a way to reduce coordination delays. Use it to define a trial question about one handoff. The proposal supplies an operating hypothesis. Use local delivery and workload evidence to make staffing decisions. [S13]',
         'People retain responsibility for outcomes and release; this does not require manual approval of every routine deployment.')
     story += [P('Boxes group work, not reporting lines. Solid arrows show work, priorities or evidence; dashed arrows show support or controls.', SMALL)]
     story += [KeepTogether([P('A small company may coordinate one multidisciplinary team through direct conversation and one backlog. The same people can maintain its tools and workflows.'), ConceptDiagram(BOOK, 'OrganizationTen')])]
@@ -113,7 +114,8 @@ def build_story():
         'For each task, bring together the customer goal, acceptance conditions, relevant domain rules, current interfaces, known constraints and reasons to escalate. Keep this packet small enough to use. Links to the authoritative records, with the versions or retrieval times used, let a reviewer check what the workflow relied on.',
         'How often information needs checking depends on how quickly it changes and the consequences of using an old version. An access policy may need verification for every task; a stable interface example may need review when the interface changes. The workflow maintainer assembles the information, while the domain owner remains responsible for its correctness.',
         'Decide who resolves conflicting information before work starts. If an old example permits an export that current policy forbids, stop the export and ask the responsible owner. Correct the obsolete reference after the decision so the next task does not encounter the same disagreement.',
-        'A failure should point to a specific correction. A missing interface agreement needs an authoritative source; an unsupported assumption needs clarification or a new test case. Adding every available document can increase the amount of information the workflow has to handle without resolving either problem.', figures={3: 'ContextChain'})
+        'A failure should point to a specific correction. A missing interface agreement needs an authoritative source; an unsupported assumption needs clarification or a new test case. Adding every available document can increase the amount of information the workflow has to handle without resolving either problem.',
+        'For the trial, give each dependency or decision an owner, a due date, a source record and a route for escalation. Compare time waiting for decisions, repeat handoffs, work reopened and review effort against the previous workflow. Check which roles absorbed new work before interpreting faster handoffs as a net improvement.', figures={3: 'ContextChain'})
     story += page('2.2 Define a repeatable capability',
         'To rely on a workflow, a team needs to know which tasks it can handle, what inputs and tools it needs, how its work is checked and how to recover from a failure. Give the complete workflow a version so reviewers can tell what ran and reproduce the relevant conditions.',
         'For saved searches, the capability could accept one approved interface contract and a customer task description, propose coordinated changes across clients and backend, and return test evidence. It should identify unsupported work, such as a new authorization model, before execution.',
@@ -265,9 +267,9 @@ def build_story():
         'Provider guidance informs the discussion of execution context [S4], evaluation structure [S5] and containment [S6]. The arrangements for source ownership, service agreements and numerical requirements are recommendations made here. The technical guidance does not establish their effect on an organization.',
         'METR’s methods update explains problems with task selection and concurrent AI measurement [S7]. NIST distinguishes the limit of an observation from an observed event time in reliability data [S8]; section 3.2 borrows that distinction to explain unfinished work. DORA supports small batches and short feedback cycles [S9]. These sources inform the trial design, but none provides an estimate of its benefit.',
         'The four company-scale arrangements in section 1.5 are also proposals. Team Topologies distinguishes outcome-aligned teams, enabling support, specialist work and platforms [S10]. CNCF describes platforms shaped around internal users [S11]. Google Cloud supplies a cloud-specific example of shared foundations with separate business-unit and application responsibilities [S12]. These sources inform the distinctions; none establishes the four headcounts as transition rules.',
-        'Research cutoff: October 23, 2026. The bibliography records direct sources and their limits.')
+        'Research cutoff: November 2, 2026. The bibliography records direct sources and their limits.')
     source_rows = json.loads((BOOK/'evidence/sources.json').read_text())['sources']
-    for subset, title in [(source_rows[:3], 'Organizational foundations'), (source_rows[3:6], 'Context, evaluation and containment'), (source_rows[6:9], 'Comparison and measurement'), ([s for s in source_rows if s['id'] in ('S10','S11','S12')], 'Structures and shared capabilities')]:
+    for subset, title in [(source_rows[:3], 'Organizational foundations'), (source_rows[3:6], 'Context, evaluation and containment'), (source_rows[6:9], 'Comparison and measurement'), ([s for s in source_rows if s['id'] in ('S10','S11','S12','S13')], 'Structures and shared capabilities')]:
         story += [heading(title)]
         for s in subset:
             # Use year precision for S1: the PDF title page says October 2012.
@@ -279,17 +281,15 @@ def build_story():
     story += [SetNextRunningHead('Index of terms'), PageBreak(), P('Index of terms', H1),
         P('Page numbers link to the first page of the relevant section in either PDF appearance.'),
         TermIndex(BOOK)]
-    story += [SetNextRunningHead('Changelog'), PageBreak(), P('Changelog', H1),
-        P('Compared with version 1.0.0, published October 23, 2026.'),
-        P('<b>Addition</b>'),
-        P('Added four illustrative organization arrangements and eight visuals covering context ownership, evaluation results, recovery, the trial schedule, complete cost, unit cost, productive reuse and the final decision.'),
-        P('The visuals help leaders compare coordination choices and the worked examples. Company sizes are illustrative total-company headcounts, not reorganization thresholds.'),
-        P('<b>Correction or clarification</b>'),
-        P('Subsection titles omit decimal prefixes. The term index now uses alphabetical groups, one term per entry and linked printed-page references, matching the collection format. Repeated example labels and chart footnotes have been removed.'),
-        P('Replaced dense paragraphs of quoted section titles with a scannable index. Page references are measured from the final PDF pagination; existing section links remain available.'),
-        P('<link href="https://teamtopologies.com/key-concepts">Team Topologies: Key Concepts</link>', SMALL),
-        P('<link href="https://tag-app-delivery.cncf.io/whitepapers/platforms/">CNCF Platforms White Paper</link>', SMALL),
-        P('<link href="https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology">Google Cloud: Deployment methodology</link>', SMALL),
-        P('<link href="https://handbooks.surfaces.systems/production-ai-engineering/#term-index">Index format: Production AI Engineering</link>', SMALL),
-        P('Previous Daytime PDF SHA-256: ce517e5a92c4bdb2f2fdabda6143aa7dff91caeab226b6e7fb4a2319144202cf', SMALL)]
+    story.extend([SetNextRunningHead('Changelog'),
+        PageBreak(),
+        heading('Changelog',1),
+        P("Compared with version 1.1.0, published 2026-10-23."),
+        P("<b>Addition.</b> Added a bounded case on Block's proposal for shared company and customer context."),
+        P("The case gives teams a hypothesis they can test against delivery and workload evidence."),
+        P("<link href=\"https://block.xyz/inside/from-hierarchy-to-intelligence\">Primary source</link>",SMALL),
+        P("<b>Correction or clarification.</b> Added owners and escalation routes for dependencies and decisions in a coordination trial."),
+        P("Record waiting time and review effort to see where work moves when a handoff gets faster."),
+        P("<link href=\"https://block.xyz/inside/from-hierarchy-to-intelligence\">Primary source</link> · <link href=\"https://www.anthropic.com/research/demystifying-evals-for-ai-agents\">Primary source</link> · <link href=\"https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations\">Primary source</link>",SMALL),
+        P("Previous Daytime PDF SHA-256: c56f413a7be84533886f61199be33d2f8e8c421cf7c002a17f04f275dfe4af7d",SMALL)])
     return story

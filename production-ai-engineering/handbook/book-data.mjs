@@ -6,7 +6,7 @@ export const CITATION_GROUPS = [
         "label": "CTX-01",
         "citation": "Anthropic. \"Effective context engineering for AI agents.\" 29 September 2025.",
         "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "CTX-02",
@@ -17,13 +17,13 @@ export const CITATION_GROUPS = [
         "label": "AGT-01",
         "citation": "Anthropic. \"Building effective agents.\" 19 December 2024.",
         "url": "https://www.anthropic.com/engineering/building-effective-agents",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "TOOL-01",
         "citation": "Anthropic. \"Writing effective tools for AI agents: using AI agents.\"",
         "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "CACHE-01",
@@ -35,7 +35,7 @@ export const CITATION_GROUPS = [
         "label": "CACHE-02",
         "citation": "Microsoft. \"Get cached responses of large language model API requests.\" Azure API Management documentation. Updated 24 February 2026.",
         "url": "https://learn.microsoft.com/en-us/azure/api-management/llm-semantic-cache-lookup-policy",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "OUT-01",
@@ -47,13 +47,13 @@ export const CITATION_GROUPS = [
         "label": "OUT-02",
         "citation": "JSON Schema. \"Creating your first schema.\"",
         "url": "https://json-schema.org/learn/getting-started-step-by-step",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "TOOL-02",
         "citation": "OpenAI. \"Function calling.\" OpenAI API documentation.",
         "url": "https://developers.openai.com/api/docs/guides/function-calling",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "TOOL-03",
@@ -69,7 +69,7 @@ export const CITATION_GROUPS = [
         "label": "MCP-01",
         "citation": "Model Context Protocol. \"Key Changes in the 2026-07-28 Specification.\" 28 July 2026.",
         "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MCP-02",
@@ -81,25 +81,25 @@ export const CITATION_GROUPS = [
         "label": "MCP-03",
         "citation": "Model Context Protocol. \"Base Protocol: Overview.\" Protocol specification, 28 July 2026.",
         "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "AUTH-01",
         "citation": "Model Context Protocol. \"Authorization.\" Protocol specification, 28 July 2026.",
         "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "AUTH-02",
         "citation": "Model Context Protocol. \"Security Best Practices.\" Protocol specification, 28 July 2026.",
         "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "AUTH-03",
         "citation": "Fisher, Bill, and Ryan Galluzzo. \"Back to the Future: Why Agentic AI Needs a Strong Identity Foundation.\" NIST Cybersecurity Insights, 27 August 2026.",
         "url": "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MOD-01",
@@ -117,7 +117,7 @@ export const CITATION_GROUPS = [
         "label": "MOD-03",
         "citation": "Amazon Web Services. \"Amazon Bedrock model lifecycle.\" AWS documentation.",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MOD-04",
@@ -129,37 +129,37 @@ export const CITATION_GROUPS = [
         "label": "TOOL-05",
         "citation": "OpenAI. \"Asynchronous tool calling.\"",
         "url": "https://developers.openai.com/api/docs/guides/async-tool-calling",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MOD-05",
         "citation": "OpenAI. \"Model guidance: GPT-6 Astra.\"",
         "url": "https://developers.openai.com/api/docs/guides/latest-model",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MOD-06",
         "citation": "AWS. \"Document history for Amazon Bedrock.\"",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "CTX-03",
         "citation": "Anthropic. \"Compaction on demand.\" Claude API documentation, September 2026.",
         "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "TOOL-06",
         "citation": "Anthropic. \"Mid-conversation system messages.\" Claude API documentation, September 2026.",
         "url": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "TOOL-07",
         "citation": "OpenAI. \"Computer use.\" OpenAI Agents API documentation, 29 September 2026.",
         "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MOD-07",
@@ -171,7 +171,7 @@ export const CITATION_GROUPS = [
         "label": "MOD-08",
         "citation": "Anthropic. \"Migrating to Claude Sonnet 5.5.\" Claude API documentation, 28 September 2026.",
         "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide",
-        "accessed": true
+        "accessed": false
       }
     ]
   },
@@ -197,13 +197,13 @@ export const CITATION_GROUPS = [
         "label": "SERV-04",
         "citation": "vLLM Project. \"vLLM documentation.\"",
         "url": "https://docs.vllm.ai/en/latest/",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SERV-05",
         "citation": "OpenAI. \"Latency optimization.\" OpenAI API documentation.",
         "url": "https://developers.openai.com/api/docs/guides/latency-optimization",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SERV-06",
@@ -219,7 +219,7 @@ export const CITATION_GROUPS = [
         "label": "SERV-08",
         "citation": "vLLM Project. \"v0.28.0.\" Release notes, 26 August 2026.",
         "url": "https://github.com/vllm-project/vllm/releases/tag/v0.28.0",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SPEC-01",
@@ -255,7 +255,7 @@ export const CITATION_GROUPS = [
         "label": "SERV-11",
         "citation": "Xie, Renjie, et al. \"HeadWiseKV: Budgeted Per-Head Cache Residency for Hybrid Long-Context Language Models.\" arXiv:2609.02029v1, 2 September 2026.",
         "url": "https://arxiv.org/html/2609.02029v1",
-        "accessed": true
+        "accessed": false
       }
     ]
   },
@@ -271,13 +271,13 @@ export const CITATION_GROUPS = [
         "label": "RAG-02",
         "citation": "Elastic. \"Hybrid search.\" Elastic documentation.",
         "url": "https://www.elastic.co/docs/solutions/search/hybrid-search",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "RAG-03",
         "citation": "Microsoft. \"Grounding Data Design for AI Workloads on Azure.\" Azure Well-Architected Framework.",
         "url": "https://learn.microsoft.com/en-us/azure/well-architected/ai/grounding-data-design",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "RETR-06",
@@ -328,66 +328,78 @@ export const CITATION_GROUPS = [
         "label": "EVAL-02",
         "citation": "Anthropic. \"Demystifying evals for AI agents.\" 9 January 2026.",
         "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "EVAL-03",
         "citation": "OpenAI. \"Working with evals.\" OpenAI API documentation.",
         "url": "https://developers.openai.com/api/docs/guides/evals",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "EVAL-05",
         "citation": "OpenAI. \"The Hugging Face incident and the road ahead.\" 26 August 2026.",
         "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "EVAL-06",
         "citation": "OpenAI. OpenAI - Hugging Face Incident Technical Report. 26 August 2026.",
         "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "ORIG-05",
         "citation": "Greenblatt, Ryan, Ajeya Cotra, and Hjalmar Wijk. \"Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident.\" METR and Redwood Research, 26 August 2026.",
         "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "EVAL-09",
         "citation": "Chen, Yueh-Han, Jiaxin Wen, and Jan Hendrik Kirchner. \"Automated Researchers Can Reliably Mitigate Alignment Failures.\" 28 August 2026.",
         "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "EVAL-10",
         "citation": "OpenAI. \"GPT-6 Astra system card.\" 2026-09-03.",
         "url": "https://deploymentsafety.openai.com/gpt-6-astra/vision",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "ORIG-12",
         "citation": "\"A Stability Audit of Shared Black-Box LLM Judge Endpoints.\" arXiv:2609.04198, September 2026.",
         "url": "https://arxiv.org/abs/2609.04198",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "ORIG-13",
         "citation": "\"Agents' Overreliance on Unreliable Tools.\" arXiv:2609.05587v2, 26 September 2026.",
         "url": "https://arxiv.org/abs/2609.05587",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "ORIG-14",
         "citation": "\"SkillShift: Supply-Chain Risks in Agent Skills.\" arXiv:2609.02564, September 2026.",
         "url": "https://arxiv.org/abs/2609.02564",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "ORIG-15",
         "citation": "\"MMPIBench: Multimodal Prompt Injection Benchmark.\" arXiv:2609.09404, September 2026.",
         "url": "https://arxiv.org/abs/2609.09404",
+        "accessed": false
+      },
+      {
+        "label": "EVAL-90",
+        "citation": "arxiv.org. \"Judging LLM-as-a-Judge: Concerning Rubric Artifacts.\" 2026-08-31.",
+        "url": "https://arxiv.org/html/2609.02942v1",
+        "accessed": true
+      },
+      {
+        "label": "REV-54",
+        "citation": "arxiv.org. \"LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents.\" 2026-10-19T09:50:57Z.",
+        "url": "https://arxiv.org/html/2610.26088v1",
         "accessed": true
       }
     ]
@@ -405,7 +417,7 @@ export const CITATION_GROUPS = [
         "label": "OBS-03",
         "citation": "OpenTelemetry. \"Remove cache token usage attributes from internal agent spans.\" Commit 5f5ae69, 27 August 2026.",
         "url": "https://github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e52464c56eea4389fb793c2690caaea78",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "COST-03",
@@ -416,25 +428,25 @@ export const CITATION_GROUPS = [
         "label": "OBS-02",
         "citation": "National Institute of Standards and Technology. \"Measure.\" AI Risk Management Framework Playbook.",
         "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "COST-01",
         "citation": "OpenAI. \"Costs.\" Organization Usage and Costs API reference.",
         "url": "https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/usage/methods/costs",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "COST-02",
         "citation": "FinOps Foundation. \"Capability: Unit Economics.\"",
         "url": "https://www.finops.org/framework/capabilities/unit-economics/",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "REL-05",
         "citation": "OpenAI. \"API error codes.\"",
         "url": "https://developers.openai.com/api/docs/guides/error-codes",
-        "accessed": true
+        "accessed": false
       }
     ]
   },
@@ -445,13 +457,13 @@ export const CITATION_GROUPS = [
         "label": "SAFE-01",
         "citation": "OWASP GenAI Security Project. \"LLM01:2025 Prompt Injection.\"",
         "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-02",
         "citation": "Microsoft. \"Defend against indirect prompt injection attacks.\" Microsoft Learn.",
         "url": "https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-03",
@@ -462,90 +474,120 @@ export const CITATION_GROUPS = [
         "label": "SAFE-04",
         "citation": "vLLM Project. \"Integer overflow can lead to cross-user inference response leakage.\" GHSA-7m6h-x95x-82q5, 11 August 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-7m6h-x95x-82q5",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-05",
         "citation": "vLLM Project. \"LlavaOnevision2 processor loader executes attacker model code with trust_remote_code=False.\" GHSA-3c86-2m5g-59q7, 28 August 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-3c86-2m5g-59q7",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-06",
         "citation": "vLLM Project. \"Denial of Service NanoNemoTronVL Video Audio Extraction Bomb.\" GHSA-936p-m5pv-vvjf, 28 August 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-936p-m5pv-vvjf",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-07",
         "citation": "vLLM Project. \"Speech-to-text audio decode duration limit bypass via forged header sample rate.\" GHSA-99f2-hwrc-gvq8, 28 August 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-99f2-hwrc-gvq8",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-08",
         "citation": "vLLM Project. \"Request-selected PyNvVideoCodec GPU decode bypasses static VRAM reservation.\" GHSA-8pw2-6jv3-mj5j, 28 August 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-8pw2-6jv3-mj5j",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-09",
         "citation": "NVIDIA. \"Security Bulletin: NVIDIA NemoClaw and OpenShell - August 2026.\" Updated 28 August 2026.",
         "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5872",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "TEN-01",
         "citation": "Google Cloud. \"Multi-tenant agentic AI system.\" Cloud Architecture Center.",
         "url": "https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-11",
         "citation": "vLLM Project. \"Negative token IDs can poison the vLLM engine.\" 2026-09-03.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-12",
         "citation": "vLLM Project. \"Unbounded cache_salt can stall the scheduler.\" GHSA-wpww-v874-ph2p, September 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-13",
         "citation": "vLLM Project. \"Audio compressed-size path can bypass resource limits.\" GHSA-jcq2-4gch-5qhf, September 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-14",
         "citation": "vLLM Project. \"Remote media can be fully materialized before limits apply.\" GHSA-p6g9-7v3x-m8mv, September 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-p6g9-7v3x-m8mv",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-15",
         "citation": "vLLM Project. \"Sampler subclasses can bypass output limits.\" GHSA-j682-9xp5-rrf3, September 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-j682-9xp5-rrf3",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-16",
         "citation": "vLLM Project. \"Qwen video inputs can bypass frame limits.\" GHSA-x6mc-67gf-chw4, September 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-17",
         "citation": "vLLM Project. \"Structured-output request errors can terminate a shared EngineCore.\" GHSA-85xf-c7hm-whqw, September 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "SAFE-18",
         "citation": "vLLM Project. \"Unbounded Prometheus label cardinality.\" GHSA-5fj9-pfhr-6j48, September 2026.",
         "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48",
+        "accessed": false
+      },
+      {
+        "label": "PRIV-01",
+        "citation": "developers.openai.com. \"OpenAI data controls.\" not stated.",
+        "url": "https://developers.openai.com/api/docs/guides/your-data",
+        "accessed": true
+      },
+      {
+        "label": "REV-52",
+        "citation": "github.com/vllm-project/vllm. \"vLLM v0.33.0 release.\" 2026-11-02T10:10:05Z.",
+        "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+        "accessed": true
+      },
+      {
+        "label": "REV-53",
+        "citation": "alignment.openai.com. \"How we detect frontier model misalignment.\" 2026-10-29.",
+        "url": "https://alignment.openai.com/how-we-detect-frontier-model-misalignment",
+        "accessed": true
+      },
+      {
+        "label": "REV-50",
+        "citation": "openai.com. \"OpenAI frontier training containment.\" 2026-10-23.",
+        "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+        "accessed": true
+      },
+      {
+        "label": "REV-59",
+        "citation": "ai.google.dev. \"Gemini API logs and datasets.\" 2026-10-26.",
+        "url": "https://ai.google.dev/gemini-api/docs/logs-datasets",
         "accessed": true
       }
     ]
@@ -557,7 +599,7 @@ export const CITATION_GROUPS = [
         "label": "OPT-01",
         "citation": "OpenAI. \"Model optimization.\" OpenAI API documentation.",
         "url": "https://developers.openai.com/api/docs/guides/model-optimization",
-        "accessed": true
+        "accessed": false
       }
     ]
   }
@@ -623,7 +665,8 @@ export const SECTION_SOURCES = {
     "labels": [
       "SPEC-01",
       "QUANT-02",
-      "DIST-01"
+      "DIST-01",
+      "REV-52"
     ],
     "note": "Author synthesis: the comparison maps each technique to the bottleneck it changes."
   },
@@ -723,7 +766,9 @@ export const SECTION_SOURCES = {
       "ORIG-05",
       "EVAL-09",
       "ORIG-12",
-      "ORIG-15"
+      "ORIG-15",
+      "EVAL-90",
+      "REV-54"
     ]
   },
   "17": {
@@ -733,7 +778,9 @@ export const SECTION_SOURCES = {
       "OBS-02",
       "EVAL-06",
       "ORIG-05",
-      "EVAL-10"
+      "EVAL-10",
+      "REV-53",
+      "REV-50"
     ]
   },
   "18": {
@@ -742,7 +789,10 @@ export const SECTION_SOURCES = {
       "COST-02",
       "OBS-01",
       "OBS-03",
-      "COST-03"
+      "COST-03",
+      "MOD-04",
+      "CACHE-01",
+      "PRIV-01"
     ],
     "note": "Author synthesis: the journey-cost formula ties spend to a completed user outcome."
   },
@@ -784,7 +834,9 @@ export const SECTION_SOURCES = {
       "SAFE-15",
       "SAFE-16",
       "SAFE-17",
-      "SAFE-18"
+      "SAFE-18",
+      "MOD-01",
+      "REV-59"
     ],
     "note": "Author synthesis: the isolation checklist spans the cited permission and tenancy boundaries."
   },

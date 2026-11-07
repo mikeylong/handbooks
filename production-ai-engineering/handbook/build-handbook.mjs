@@ -51,7 +51,7 @@ const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems
 const publication = JSON.parse(await readFile(resolve(HERE, "../publication.json"), "utf8"));
 const REPOSITORY_HREF = publication.editionUrl;
 const RELEASES_HREF = publication.releaseUrl;
-const PUBLICATION_DATE = "September 30, 2026";
+const PUBLICATION_DATE = "November 7, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -75,9 +75,9 @@ const formatBibliographyDate = (displayDate) => {
   if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
   return `${match[2]} ${match[1]} ${match[3]}`;
 };
-const PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf";
+const PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf";
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
-  ?? `Version 1.4.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+  ?? `Version 1.4.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 
 const HANDBOOK_CHAPTERS = [

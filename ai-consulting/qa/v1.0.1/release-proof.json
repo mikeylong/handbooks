@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "visualReview": "passed",
+  "browser": {
+    "status": "passed",
+    "version": "1.0.1",
+    "daytimeSha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
+    "lateNightSha256": "a96f8905d44c7f8f01d2aff149f389712f7b3fa8009c40f28a8bdaa3d77a646e",
+    "jobId": "271ddd72",
+    "report": {
+      "path": "qa/v1.0.1/browser-result.json",
+      "sha256": "5c9d1d2f3081743cd93602f04bc1183386413a0ee2c758c66de7ee8a1a1ab1ba"
+    },
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    }
+  },
+  "contentReview": "unchanged",
+  "retainedApproval": "Existing exact Daytime and Late night approvals remain authoritative; no artifact was replaced."
+}

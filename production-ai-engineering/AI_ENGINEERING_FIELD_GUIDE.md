@@ -1,6 +1,6 @@
 # Production AI Engineering Field Guide
 
-Last evidence review: **2026-09-30**
+Last evidence review: **2026-11-07**
 
 Production AI engineering is a systems discipline. This handbook lays out an operating model that connects the techniques instead of treating each one as an isolated fix. The operating premise is simple:
 
@@ -241,7 +241,9 @@ Speculative decoding, quantization, and distillation change different parts of t
 | Quantization | Represents weights and sometimes activations/KV with fewer bits | Memory/bandwidth-constrained inference with supported kernels | Calibration and numerical error can cause task-specific tail regressions |
 | Distillation | Trains a smaller student to imitate a larger teacher | Stable, narrow, high-volume tasks with governed training data and clear evals | Up-front teacher-data/training cost; broad and long-tail capabilities or teacher biases can transfer or regress |
 
-When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use it to reduce latency, not to approximate an answer. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. [Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html) describe the method.
+When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use a verified lossless policy when preserving the target distribution is part of the contract. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. [Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html) describe the method.
+
+Check the verification policy before treating speculative decoding as lossless. The vLLM v0.33.0 release notes at tag v0.33.0rc3 describe an opt-in lossy verifier and remove CUDA 12.9 release artifacts. Pin the serving image or wheel and verify its CUDA and framework requirements. Evaluate output quality separately before enabling any approximate verifier.
 
 Distillation changes the deployed model and usually changes its behavior. Distillation can greatly lower steady-state cost, but the target workflow first needs to be stable enough for teacher data and evals to represent production. [Hinton, Vinyals, and Dean](https://arxiv.org/abs/1503.02531) describe the foundational method.
 
@@ -428,6 +430,8 @@ Route against measured task requirements, not provider reputation or prompt leng
 
 Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. Google's [Gemini deprecation schedule](https://ai.google.dev/gemini-api/docs/deprecations) demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.
 
+Treat provider service-tier policy as a route constraint. OpenAI documents organization-wide and project-specific tier controls. Test the effective settings using the intended project and confirm the behavior of an explicitly disallowed request. Do not fail over to a different organization or project to get around the denial.
+
 The resolved model settings and preserved model-generated state belong in the migration record. Test omitted parameters separately from explicit values, record supported reasoning levels and their output-token budget, and verify tool/API support and cache controls on the exact route. Parse responses by block type. Bind signed thinking, reasoning, or summary blocks to the exact provider, model, account, conversation history, and API contract. Return them unchanged when required, and keep the history append-only. If a route drops or rejects that state, fail or restart from an explicitly compatible checkpoint instead of silently continuing with different semantics. Migration tests must cover default reasoning behavior, forced-tool restrictions, structured-output parameters, refusal categories, and a fresh effort sweep because the same effort label can change across model generations. [OpenAI's migration guidance](https://developers.openai.com/api/docs/guides/latest-model) documents changes to these contracts, while [AWS's adaptive-thinking correction](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html) shows how omission can enable billable reasoning. Anthropic's [Sonnet 5.5 migration guide](https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide) documents the signed-state and request-contract changes. Reject unsupported settings rather than silently dropping them. Compare the resolved behavior, latency, and cost before rollout.
 
 Treat provider SDK upgrades as production migrations. Diff request headers and response types, exercise every mutating method against disposable state, and canary the pinned upgrade before rollout.
@@ -531,6 +535,8 @@ For iterative search agents, evaluate retrieval in trajectory context. Condition
 
 Build the evals before you optimize. Without them, every caching, routing, quantization, prompt, retrieval, or model change can quietly exchange quality for speed or cost.
 
+In predictive workflows, require every input feature to be available at the actual decision point. Use a paired test with a known leaking input and a valid control. Verify lineage and timestamps with a deterministic check. The clinical LeakBench preprint shows why an improved offline score can coexist with fatal prediction-time leakage.
+
 Use these layers together:
 
 1. **Deterministic unit tests:** parsers, schemas, invariants, ACL filters, idempotency, budgets, termination, and cost math.
@@ -558,6 +564,8 @@ LLM-as-judge is useful when:
 An LLM judge is not an independent source of truth. Judges exhibit position, verbosity, self-preference, and reasoning biases; see the [MT-Bench judge study](https://papers.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html).
 
 Calibrate a black-box judge on the exact endpoint, model version, rubric, language, and time window used for the release. Repeat representative judgments, record disagreement and rank stability, and require a human or deterministic fallback when the judge drifts. Do not transfer a calibration result across endpoints or silently updated aliases. A 52,988-attempt [study](https://arxiv.org/abs/2609.04198) of shared judge endpoints found substantially lower repeat and next-day rank stability than a controlled endpoint. This makes local calibration an operating requirement rather than a one-time benchmark.
+
+Probe an automated judge with controlled reversals. Hold the rubric fixed and change only the answer evidence that should affect the grade. Then hold the answer fixed and reverse a criterion whose judgment should change. A rubric-only baseline can reveal how much of the outcome is predictable without seeing the answer. Investigate that signal before trusting a high aggregate agreement score.
 
 ### Release gates
 
@@ -625,6 +633,8 @@ Agent-, runtime-, and tool-authored transcripts are evidence, not the source of 
 
 Monitor recalibration belongs in every model or reasoning-configuration migration. Compare action-only, reasoning-only, and combined monitoring where those signals are available and permitted. Measure detection, false alarms, and evasion on the same task slices. [OpenAI's GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/vision) reports monitorability changes and adversarial evasion in its evaluation setting. Treat those results as a reason to revalidate local monitoring, not as a production detection rate. Keep external receipts and enforceable policy checks independent of the monitor.
 
+Inventory the surfaces the monitor can see, including evaluation harnesses and every enabled tool path. Exercise a known failure end to end and verify that independent evidence reaches the right responder and that containment actually occurs. Sample unflagged traffic and record gaps in surface coverage, threat-specific recall and responder availability.
+
 ## 18. Attribute cost to the whole workflow
 
 Use the same reliability trace to attribute cost:
@@ -637,6 +647,8 @@ External execution | tool/API calls + network/egress
 Reliability and review | retries/repairs + moderation + allocated human review
 Note | Record cached-input, cache-write, reasoning, and output usage separately, but do not add a subtype again when the provider includes it in a parent total.
 ```
+
+OpenAI added a selectable 12-hour minimum cache lifetime on eligible Responses API routes. Its October 20 changelog lists the write rate as 2.5 times the ordinary input rate. Check the exact model, breakpoint, project data controls and observed reuse interval before pricing the route. Compare the full cost of writes, reads and uncached input over the same traffic window.
 
 The dimensions you usually need are feature, workflow, tenant, user journey, route, model, environment, and terminal outcome. Use pseudonymous identifiers where possible.
 
@@ -703,7 +715,8 @@ Use this checklist:
 - do not let request fields select a decoder, kernel, plugin, adapter, or other privileged backend unless an operator allowlisted it and included it in startup resource reservation and isolation policy;
 - treat agent runtimes, sandbox provisioners, gateways and proxies, bridges, installers, updaters, and inference services as privileged policy-enforcement code; pin and patch them, verify certificates and artifact integrity, normalize paths before layer-7 policy, avoid building shell commands from untrusted data, and test escape, injection, traversal, and authorization-bypass paths;
 - treat the serving engine, custom kernels, and batching scheduler as tenant-isolation code; pin and inventory the runtime, monitor its security advisories, patch within the risk window, and test response ownership under concurrent tenants; a model-server flaw can cross-contaminate responses even when cache namespaces are correct;
-- record the requested processing geography and the provider-resolved organization, project, workspace, and region when the API exposes them; reject unexpected resolution before sensitive data crosses the boundary;
+- record the requested processing geography and the provider-resolved organization, project, workspace, and region when the API exposes them; reject unexpected provider resolution or unapproved request storage before sensitive data crosses the boundary;
+- Before routing sensitive data, check the provider project and request-level storage setting with disposable inputs. Google turned on Generate Content request storage by default for new paid projects from October 26, 2026. Existing projects keep their settings. Verify the effective project default and the request override separately.
 - exclude sensitive content and identifiers from shared scheduler metadata, and address timing or resource side channels with quotas, traffic shaping, or physical silos where the threat model requires;
 - bind every request, tool call, callback, queue item, and result to immutable tenant, principal, conversation, run, and call IDs; reject mismatched or late results and clear or zero pooled worker, sandbox, and request-local state before reuse;
 - isolate background jobs, queues, temporary files, sandboxes, logs, traces, and eval environments;

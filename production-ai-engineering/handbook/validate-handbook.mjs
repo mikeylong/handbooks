@@ -30,12 +30,12 @@ const expectedReleaseSchedule = buildReleaseSchedule(
   new Date(releaseSchedule.generatedAt),
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
-  ?? `Version 1.4.0${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+  ?? `Version 1.4.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const publication = JSON.parse(await readFile(resolve(here, "../publication.json"), "utf8"));
 const REPOSITORY_HREF = publication.editionUrl;
 const RELEASES_HREF = publication.releaseUrl;
-const PUBLICATION_DATE = "September 30, 2026";
-const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf";
+const PUBLICATION_DATE = "November 7, 2026";
+const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf";
 const expectedPdfPageCount = pdfDownloadPageCount(here, CURRENT_PDF_HREF);
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {

@@ -7,8 +7,9 @@
     "directory": "ai-evaluation"
   },
   "scripts": {
-    "build": "node scripts/build-reader.mjs",
-    "validate:release": "node scripts/validate-release.mjs",
-    "validate": "npm run validate:release && npm run build"
-  }
+    "build": "node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-weekly-release.mjs ai-evaluation",
+    "validate:release": "node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-weekly-release.mjs ai-evaluation",
+    "validate": "node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-weekly-release.mjs ai-evaluation"
+  },
+  "version": "1.0.1"
 }

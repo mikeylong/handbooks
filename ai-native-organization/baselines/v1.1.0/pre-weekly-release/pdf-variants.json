@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-native-organization",
+  "title": "AI-Native Organization Handbook",
+  "version": "1.1.0",
+  "date": "2026-10-23",
+  "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+  "sha256": "c56f413a7be84533886f61199be33d2f8e8c421cf7c002a17f04f275dfe4af7d",
+  "pages": 51,
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
+      "sha256": "c56f413a7be84533886f61199be33d2f8e8c421cf7c002a17f04f275dfe4af7d",
+      "bytes": 8298782,
+      "pages": 51,
+      "pageMap": {
+        "path": "ai-native-organization/qa/v1.1.0/example-label-cleanup/page-map-light.json",
+        "sha256": "08c2704b883fad763867c4f3f8803aef4bb50046d157f95c0dafc3045546ab9a"
+      },
+      "appearanceDate": "2026-10-23"
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf",
+      "sha256": "6d6f6a8b07210272e6a64392a271651a3cfb6782cd974861ebc379a6b14e124a",
+      "bytes": 6758037,
+      "pages": 51,
+      "pageMap": {
+        "path": "ai-native-organization/qa/v1.1.0/example-label-cleanup/page-map-dark.json",
+        "sha256": "61e7f53c992a379c14ea0a13969661ba20e2ed03422957cbc913d66de3b442ff"
+      },
+      "proof": {
+        "parity": {
+          "path": "ai-native-organization/qa/v1.1.0/example-label-cleanup/parity.json",
+          "sha256": "d90eac23cc022ffac4c660d7352b03291c4ab700b6715d6627dcd147f7e7d04e"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "6d6f6a8b07210272e6a64392a271651a3cfb6782cd974861ebc379a6b14e124a",
+          "date": "2026-10-24",
+          "version": "1.1.0",
+          "authority": "Mike requested removing the repeated synthetic-example labels and footnotes while continuing the handbook release review.",
+          "review": "ai-native-organization/releases/v1.1.0/example-label-review.json"
+        }
+      },
+      "appearanceDate": "2026-10-23"
+    }
+  ],
+  "releaseCorrection": {
+    "revision": 3,
+    "reason": "Removed redundant example labels and repeated chart footnotes; retained the chapter introduction and meaningful forecast assumptions.",
+    "priorArtifacts": "releases/v1.1.0/pre-example-label-cleanup/preservation.json",
+    "authority": "Mike requested removing the repeated synthetic-example labels and footnotes while continuing the handbook release review."
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "artifacts": {
+    "pdfTextPatch": "exact-pdf-text.patch",
+    "readerFacingContentPatch": "reader-facing-content.patch",
+    "sourcePatch": "exact-source.patch"
+  },
+  "candidate": {
+    "ignoredChangelogPages": [
+      96,
+      97,
+      98,
+      99
+    ],
+    "ignoredNavigationPages": [
+      3,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "A Handbook for Building Reliable LLM Systems",
+      "title": "Production AI Engineering \u00b7 Daytime version"
+    },
+    "pages": 99,
+    "pdf": "candidate/daytime.pdf",
+    "pdfSha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299"
+  },
+  "comparisons": {
+    "contentMetadataChanged": false,
+    "metadataChanged": true,
+    "navigationTextChanged": true,
+    "normalizedSubstantiveTextChanged": true,
+    "outlineIncludingChangelogChanged": true,
+    "rawPdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": true,
+    "substantiveOutlineChanged": true
+  },
+  "decisionProjection": {
+    "excludedSurfaces": [
+      "changelog pages",
+      "contents and index pages",
+      "changelog outline entries",
+      "exact PDF appearance title suffixes"
+    ],
+    "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed."
+  },
+  "limitations": [
+    "Rendering-only differences require visual comparison.",
+    "Semantic change categories and rationales must be authored from accepted exact diffs.",
+    "Pass page maps to avoid relying on heading heuristics for surface roles."
+  ],
+  "previous": {
+    "ignoredChangelogPages": [
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "ignoredNavigationPages": [
+      3,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "A Handbook for Building Reliable LLM Systems",
+      "title": "Production AI Engineering"
+    },
+    "pages": 105,
+    "pdf": "previous/production-ai-engineering-v1.4.0-2026-09-30.pdf",
+    "pdfSha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0"
+  },
+  "readerFacingContentChanged": true,
+  "schemaVersion": 2,
+  "sourceSha256": {
+    "candidate": "b907ee408a1cf31e2e6546d776a1f4bbce7273621fb2081e2957ec568ad1895e",
+    "previous": "89585b5adaf129adca345f514e94f331b905ef62ca778ef872150418dba01bae"
+  },
+  "summary": "The candidate contains reader-facing changes that require semantic classification."
+}

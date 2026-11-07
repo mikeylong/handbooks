@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "visualReview": "passed",
+  "browser": {
+    "status": "passed",
+    "version": "1.0.1",
+    "daytimeSha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+    "lateNightSha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
+    "jobId": "271ddd72",
+    "report": {
+      "path": "qa/v1.0.1/browser-result.json",
+      "sha256": "5f20d3d9409aa55844ae0ee15e819154a756ab2bfa19c596c673c8c23302a200"
+    },
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    }
+  },
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+      "pages": 103,
+      "status": "passed",
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ]
+    },
+    {
+      "theme": "dark",
+      "sha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
+      "pages": 103,
+      "status": "passed",
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ]
+    }
+  ]
+}

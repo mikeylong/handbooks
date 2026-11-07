@@ -1,9 +1,17 @@
 {
-  "schemaVersion": 1,
   "id": "production-ai-engineering",
-  "version": "1.4.0",
+  "title": "Production AI Engineering",
+  "version": "1.4.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+  "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+  "pages": 99,
+  "schemaVersion": 1,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
   "readerDirectory": "handbook",
   "html": "handbook/index.html",
+  "readerSha256": "3d733e0f6ea4ec1a326266469a98c8da4e8eae42946f9ef2ae61e5e627549c7e",
   "files": {
     "handbook/app.js": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa",
     "handbook/assets/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
@@ -36,10 +44,16 @@
     "handbook/assets/fonts/source-serif-4-latin-variable-italic.woff2": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5",
     "handbook/assets/fonts/source-serif-4-latin-variable.woff2": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb",
     "handbook/assets/pointillist-atlas.png": "c435cfb7cb92a1be05babc2fa538b61d594ecc3368ca7f3965416a25fed135d4",
-    "handbook/index.html": "3d507d080bafda7ea1a422e789c5042f9582080b1a78b002461bfbb367e3d1e5",
+    "handbook/index.html": "3d733e0f6ea4ec1a326266469a98c8da4e8eae42946f9ef2ae61e5e627549c7e",
     "handbook/styles.css": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57",
-    "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0"
+    "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299"
   },
-  "approvalBasis": "Existing published edition at pre-consolidation commit; reader and PDF bytes retained",
-  "historicalCommit": "1ac55ab66a10ba9a446bface1824cb292c52cee6"
+  "publicationApproval": {
+    "date": "2026-11-07",
+    "command": "Publish them and update releases",
+    "clarification": "I asked you to publish updated releases of every handbook.",
+    "kind": "explicit-user-release",
+    "version": "1.4.1",
+    "daytimeSha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299"
+  }
 }

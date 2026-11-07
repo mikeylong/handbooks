@@ -1,8 +1,170 @@
 {
+  "id": "production-ai-engineering",
   "title": "Production AI Engineering",
-  "version": "1.4.0",
-  "date": "2026-09-30",
-  "pdf": "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf",
-  "sha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0",
-  "pages": 105
+  "version": "1.4.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+  "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+  "pages": 99,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
+  "previous_public_edition": "1.4.0",
+  "comparison_basis": "approved public edition",
+  "baseline": {
+    "title": "Production AI Engineering",
+    "version": "1.4.0",
+    "date": "2026-09-30",
+    "pdf": "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf",
+    "sha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0",
+    "pages": 105,
+    "manifest": {
+      "path": "baselines/v1.4.0/pre-weekly-release/release-manifest.json",
+      "sha256": "6860a21aaea1c16cfe8a796722fa4187c611020af5908cb4172143a25fbc5fd8"
+    },
+    "originalPdfPath": "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf"
+  },
+  "candidate_validation": "qa/v1.4.1/weekly/lightValidation.json",
+  "candidateEvidence": {
+    "lightValidation": {
+      "path": "qa/v1.4.1/weekly/lightValidation.json",
+      "sha256": "c186ac630c757878bb57dd024cb1c4c7c23e1869545d33d38915f575215a991f",
+      "bytes": 870
+    },
+    "darkValidation": {
+      "path": "qa/v1.4.1/weekly/darkValidation.json",
+      "sha256": "a6748aeec3f3bf9570b5563ceb9dade4df380e4187bfe3a88d1aed6381f953f3",
+      "bytes": 868
+    },
+    "changelogDecision": {
+      "path": "qa/v1.4.1/weekly/changelogDecision.json",
+      "sha256": "08d4985e83e84daffe8168aab70cc31346eb7f53a4959d530e4e477466aaf668",
+      "bytes": 671
+    },
+    "editionDiff": {
+      "path": "qa/v1.4.1/weekly/editionDiff.json",
+      "sha256": "e59116eaf0cf286b463debcca01fd8342f6437c935478854aed47d747fec0fd8",
+      "bytes": 2605
+    },
+    "productionChangelog": {
+      "path": "qa/v1.4.1/weekly/productionChangelog.json",
+      "sha256": "59dc3173b44ab7e3abfd6e559bfdf420cadb67cc444e998cdc909659068a34a3",
+      "bytes": 8349
+    },
+    "lightValidationValidator": {
+      "path": "qa/v1.4.1/weekly/lightValidationValidator.py",
+      "sha256": "01e6d4a2b1c3c76b67982191a36b33a00924559c22bdbe6356773a9d4f4d1ffe",
+      "bytes": 36311
+    },
+    "lightValidationLog": {
+      "path": "qa/v1.4.1/weekly/lightValidationLog.log",
+      "sha256": "9efc4e885698db132d96df66f34fdbbcbe14471b208b1f047c46c5cbc40a9741",
+      "bytes": 214
+    },
+    "darkValidationValidator": {
+      "path": "qa/v1.4.1/weekly/darkValidationValidator.py",
+      "sha256": "01e6d4a2b1c3c76b67982191a36b33a00924559c22bdbe6356773a9d4f4d1ffe",
+      "bytes": 36311
+    },
+    "darkValidationLog": {
+      "path": "qa/v1.4.1/weekly/darkValidationLog.log",
+      "sha256": "9efc4e885698db132d96df66f34fdbbcbe14471b208b1f047c46c5cbc40a9741",
+      "bytes": 214
+    },
+    "editionDiffPdfTextPatch": {
+      "path": "qa/v1.4.1/weekly/exact-pdf-text.patch",
+      "sha256": "dc1b82c6f4adff0a2ba4f28068100d172f3018096880dd4d50d51c7f6e06ddf9",
+      "bytes": 115882
+    },
+    "editionDiffReaderFacingContentPatch": {
+      "path": "qa/v1.4.1/weekly/reader-facing-content.patch",
+      "sha256": "220192bfe7403c69f0951133302c8cd2d2d0f4e446a07e64a41f67f1294fdbb7",
+      "bytes": 94334
+    },
+    "editionDiffSourcePatch": {
+      "path": "qa/v1.4.1/weekly/exact-source.patch",
+      "sha256": "4b818b2c9c9fd3001a07c1cc543b81792ce471856d1b11d02ef5f7871cfc185f",
+      "bytes": 12137
+    },
+    "parity": {
+      "path": "qa/v1.4.1/weekly/parity.json",
+      "sha256": "71bc4125cec2bbea23735daf404fe2b8938d3c5b73bad9023fd9ed012df92a07"
+    },
+    "appearanceAudit": {
+      "path": "qa/v1.4.1/appearance.json",
+      "sha256": "61285aea9434a71b1cb432b6842e5a1c82e08bb39dc05c19fd6e26c6bcc2f469"
+    }
+  },
+  "evidenceMode": "production",
+  "pageMaps": {
+    "light": {
+      "path": "qa/v1.4.1/weekly/light-page-map.json",
+      "sha256": "6fdeb4503470b532c0777c42641ccab32d8280bff7bcd7edeeaeba3b1720adcd"
+    },
+    "dark": {
+      "path": "qa/v1.4.1/weekly/dark-page-map.json",
+      "sha256": "51d1dc3d4fffbdec63a0b127412e5b53a045fd60d9c2c0dbb516cfb7362307a8"
+    }
+  },
+  "classifiedChangeIds": [
+    "CHG-002",
+    "CHG-003",
+    "CHG-004",
+    "CHG-005",
+    "CHG-006",
+    "CHG-007",
+    "CHG-008",
+    "CHG-001"
+  ],
+  "readerFacingContentChanged": true,
+  "changelog": {
+    "weeklyDecision": {
+      "path": "qa/v1.4.1/weekly/changelogDecision.json",
+      "sha256": "08d4985e83e84daffe8168aab70cc31346eb7f53a4959d530e4e477466aaf668",
+      "bytes": 671
+    },
+    "pdfDecision": {
+      "path": "qa/v1.4.1/weekly/productionChangelog.json",
+      "sha256": "59dc3173b44ab7e3abfd6e559bfdf420cadb67cc444e998cdc909659068a34a3",
+      "bytes": 8349
+    },
+    "retainedHistoricalChangelog": false
+  },
+  "appearances": {
+    "light": {
+      "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+      "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+      "pages": 99
+    },
+    "dark": {
+      "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07-late-night-r1.pdf",
+      "sha256": "76978a3123ece09cb71abe2e9553764a3b56cc24535203b746f1eba436236e8b",
+      "pages": 99
+    }
+  },
+  "retainedProvenance": {
+    "status": "historical_only_not_reverified",
+    "sourceEdition": "1.4.0",
+    "sourceManifestSha256": "6860a21aaea1c16cfe8a796722fa4187c611020af5908cb4172143a25fbc5fd8",
+    "inputMetadata": "baselines/v1.4.0/pre-weekly-release",
+    "readerSnapshot": {
+      "collectionPath": "site/retained/production-ai-engineering/v1.4.0/reader-snapshot.html",
+      "sha256": "3f9752bde1b388d8eb9af40996f4fa2bf12d4ee1fce26223d531e0272f1f8495"
+    },
+    "historicalCommit": "3968c25d30257f3696a8712365298d0bad6c196e"
+  },
+  "publicationStatus": "published",
+  "publicationApproval": {
+    "date": "2026-11-07",
+    "command": "Publish them and update releases",
+    "clarification": "I asked you to publish updated releases of every handbook.",
+    "kind": "explicit-user-release",
+    "version": "1.4.1",
+    "daytimeSha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299"
+  },
+  "releaseValidationKind": "weekly-exact-artifact",
+  "generationToolkitArchive": {
+    "collectionPath": "releases/2026-11-07/generation-toolkit.zip",
+    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
+    "purpose": "Frozen runtime used for these PDF builds; artifact promotion copied exact validated bytes."
+  }
 }

@@ -1,0 +1,76 @@
+--- previous/build_handbook.py
++++ candidate/build_handbook.py
+@@ -41,6 +41,7 @@
+                 "Contamination can be indirect",
+                 "Leakage includes final-test examples copied into prompts, retrieved documents that contain expected answers, judge prompts tuned on the same cases later reported as validation, and team decisions repeatedly adjusted after viewing final results.",
+             ),
++            P('For predictive tasks, check that each feature exists at the moment the decision is made. Pair a known leakage case with a valid control and verify input provenance and timestamps independently. LeakBench illustrates this in clinical modeling. Its findings support a test design and leave model rankings and transfer to other domains open. [S31]'),
+             heading("Version the evidence packet", 2),
+             data_table(
+                 [
+@@ -341,6 +342,7 @@
+             P(
+                 "A useful judge prompt states the evaluation context, one named dimension, observable rubric anchors, allowed labels, evidence to cite, and a structured output format. Examples can help. But a polished prompt does not establish validity. Test it on cases not used to build the prompt and compare with an independent human reference process.",
+             ),
++            P('Run two counterfactual checks. Keep the rubric fixed and change the answer evidence that should affect the grade. Then keep the answer fixed and reverse the relevant criterion. Compare against a rubric-only baseline to see how much of the grade can be predicted without the answer. Inspect the cases before interpreting the baseline as evidence of a shortcut. [S27]'),
+             heading("Read the confusion matrix", 2),
+             data_table(
+                 [
+@@ -532,6 +534,7 @@
+                 ],
+                 [1.05 * inch, 2.5 * inch, CONTENT_W - 3.55 * inch],
+             ),
++            P('Pair each credential attack with a legitimate request that uses the same workflow. Score unsafe disclosure and completion of legitimate work separately. For agents with persistent memory, report stale or conflicting facts, cross-user leakage, revoked-memory reuse and constraint decay as separate slices. A high overall pass rate can hide a rare failure with serious consequences. [S28, S29]'),
+             heading("Define the starting state and required result", 2),
+             data_table(
+                 [
+@@ -794,6 +797,7 @@
+                 "What this evidence permits you to claim",
+                 "A monitoring plan supports detection and response for named signals and thresholds. It does not guarantee that all failures will be observed. NIST's production-monitoring work describes persistent measurement challenges; it should not be read as a universal prescriptive standard.",
+             ),
++            P('List the live surfaces and tool paths that each monitor can observe. Sample unflagged traffic and report recall by threat and surface where labels permit. Replay a known failure through the alert, independent evidence, responder and containment path. Record whether the alert arrived, whether anyone was available to act and what actually stopped. [S30]'),
+             source_note("S10, S11, S17"),
+         ]
+     )
+@@ -1193,7 +1197,7 @@
+     return story
+ 
+ 
+-SOURCES = [('S19', 'Liang et al. Holistic Evaluation of Language Models. TMLR, 2023; CRFM methodology overview, 2022.', 'https://arxiv.org/abs/2211.09110'), ('S20', 'Ribeiro et al. Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. ACL, 2020.', 'https://aclanthology.org/2020.acl-main.442/'), ('S21', 'Gebru et al. Datasheets for Datasets. 2018 preprint, version 3; later published in CACM, 2021.', 'https://www.microsoft.com/en-us/research/uploads/prod/2019/01/1803.09010.pdf'), ('S22', 'Yao et al. tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. 2024 research preprint.', 'https://arxiv.org/html/2406.12045v1'), ('S23', 'Debenedetti et al. AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents. 2024 research preprint, version 3.', 'https://arxiv.org/html/2406.13352v3'), ('S24', 'Featonby. Making retries safe with idempotent APIs. Amazon Builders Library, accessed October 1, 2026.', 'https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/'), ('S25', 'NIST/SEMATECH e-Handbook. Confidence intervals for a proportion, accessed October 1, 2026.', 'https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm'), ('S26', 'US Census Bureau. Instructions for Applying Statistical Testing to ACS Data. 2014.', 'https://www2.census.gov/programs-surveys/acs/tech_docs/statistical_testing/2014StatisticalTesting5.pdf')] + [
++SOURCES = [('S27', 'Judging LLM-as-a-Judge: Concerning Rubric Artifacts. 2026-08-31. Preprint and domain-bounded experiments; not proof that every judge or every rubric fails.', 'https://arxiv.org/html/2609.02942v1'), ('S28', 'CredLeakBench. 2026-10-06. Sandboxed simulation using synthetic secrets. No production compromise or portable failure rate inferred.', 'https://arxiv.org/html/2610.08871v1'), ('S29', 'MemRiskBench. 2026-09-14. Scripted episodes and selected quantized models constrain transfer. Summary contamination is documented and excluded from scoring.', 'https://arxiv.org/html/2609.14976v1'), ('S30', 'How we detect frontier model misalignment. 2026-10-29. Vendor internal system and incident replay; not a portable detection rate or proof of local controls.', 'https://alignment.openai.com/how-we-detect-frontier-model-misalignment'), ('S31', 'LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents. 2026-10-19T09:50:57Z. The verifier trusts declared lineage unless independently verified. Study results are clinical and task-specific. No portable mitigation rate or ranking inferred.', 'https://arxiv.org/html/2610.26088v1')] + [('S19', 'Liang et al. Holistic Evaluation of Language Models. TMLR, 2023; CRFM methodology overview, 2022.', 'https://arxiv.org/abs/2211.09110'), ('S20', 'Ribeiro et al. Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. ACL, 2020.', 'https://aclanthology.org/2020.acl-main.442/'), ('S21', 'Gebru et al. Datasheets for Datasets. 2018 preprint, version 3; later published in CACM, 2021.', 'https://www.microsoft.com/en-us/research/uploads/prod/2019/01/1803.09010.pdf'), ('S22', 'Yao et al. tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. 2024 research preprint.', 'https://arxiv.org/html/2406.12045v1'), ('S23', 'Debenedetti et al. AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents. 2024 research preprint, version 3.', 'https://arxiv.org/html/2406.13352v3'), ('S24', 'Featonby. Making retries safe with idempotent APIs. Amazon Builders Library, accessed October 1, 2026.', 'https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/'), ('S25', 'NIST/SEMATECH e-Handbook. Confidence intervals for a proportion, accessed October 1, 2026.', 'https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm'), ('S26', 'US Census Bureau. Instructions for Applying Statistical Testing to ACS Data. 2014.', 'https://www2.census.gov/programs-surveys/acs/tech_docs/statistical_testing/2014StatisticalTesting5.pdf')] + [
+     (
+         "S2",
+         "OpenAI. Evaluation best practices. Living documentation, accessed October 1, 2026.",
+@@ -1316,7 +1320,7 @@
+             P("From a first test case to a defensible launch decision", COVER_DECK),
+             Spacer(1, 22 * mm),
+             Spacer(1, 8 * mm),
+-            P("October 2026 | Version 1.0.0", SMALL),
++            P("November 7, 2026 | Version 1.0.1", SMALL),
+             PageBreak(),
+         ]
+     )
+@@ -1820,6 +1824,23 @@
+     for title,count in [('How to obtain a Wilson interval',4),('Plan precision before collecting cases',3)]:
+         pos=next(i for i,x in enumerate(story) if isinstance(x,Paragraph) and x.getPlainText()==title)
+         story[pos:pos+count]=[KeepTogether(story[pos:pos+count])]
++    story.extend([SetNextRunningHead('Changelog'),
++        PageBreak(),
++        heading('Changelog',1),
++        P("Compared with version 1.0.0, published 2026-10-01."),
++        P("<b>Addition.</b> Add controlled criterion/answer probes and rubric-only baselines."),
++        P("Add two observable probes to Module 8: criterion-only baseline and answer/criterion reversals, alongside existing order and style probes."),
++        P("<link href=\"https://arxiv.org/html/2609.02942v1\">Primary source</link>",SMALL),
++        P("<b>Addition.</b> Pair credential attacks with legitimate controls and test persistent-memory risk slices."),
++        P("Add paired legitimate/phishing cases and stale/conflicting/cross-user/revoked-memory slices to the threat-driven agent checklist; grade submissions and task completion separately."),
++        P("<link href=\"https://arxiv.org/html/2610.08871v1\">Primary source</link> · <link href=\"https://arxiv.org/html/2609.14976v1\">Primary source</link>",SMALL),
++        P("<b>Addition.</b> Measure surface coverage, unflagged-traffic audits and alert-to-response performance."),
++        P("Add coverage accounting, negative-traffic audits and alert-to-response tests; report threat-specific recall and responder availability rather than one aggregate monitor score."),
++        P("<link href=\"https://alignment.openai.com/how-we-detect-frontier-model-misalignment\">Primary source</link>",SMALL),
++        P("<b>Addition.</b> Add prediction-time availability, paired known-failure controls and a provenance verifier."),
++        P("Extend leakage guidance beyond final-test reuse to prediction-time feature validity, paired known-failure controls and a deterministic provenance verifier, with the clinical preprint's limits explicit."),
++        P("<link href=\"https://arxiv.org/html/2610.26088v1\">Primary source</link>",SMALL),
++        P("Previous Daytime PDF SHA-256: 91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",SMALL)])
+     return story
+ 
+ if __name__ == "__main__":

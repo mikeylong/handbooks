@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "artifactSha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+  "pages": 99,
+  "validator": {
+    "path": "/tmp/lvm-playwright/source/automation/validation/editorial-output/production-ai-engineering/staged/book/handbook/validate-pdf.py",
+    "sha256": "01e6d4a2b1c3c76b67982191a36b33a00924559c22bdbe6356773a9d4f4d1ffe"
+  },
+  "log": {
+    "path": "/tmp/lvm-playwright/source/automation/validation/editorial-output/production-ai-engineering/logs/production-validate-light.log",
+    "sha256": "9efc4e885698db132d96df66f34fdbbcbe14471b208b1f047c46c5cbc40a9741"
+  },
+  "workerReceipt": "/tmp/lvm-playwright/source/automation/validation/editorial-output/production-ai-engineering/logs/production-validate-light.json",
+  "workerAttempts": 1,
+  "validatorContract": "unchanged-production-book-specific"
+}

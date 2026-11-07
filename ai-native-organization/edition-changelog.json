@@ -1,0 +1,49 @@
+{
+  "version": "1.1.1",
+  "previousVersion": "1.1.0",
+  "summary": "This edition includes 2 evidence-backed updates.",
+  "items": [
+    {
+      "id": "weekly-001",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "Coordination model",
+      "title": "Added a bounded case on Block's proposal for shared company and customer context.",
+      "whatChanged": "Added a bounded case on Block's proposal for shared company and customer context.",
+      "why": "The case gives teams a hypothesis they can test against delivery and workload evidence.",
+      "sources": [
+        {
+          "url": "https://block.xyz/inside/from-hierarchy-to-intelligence",
+          "authority": "block.xyz",
+          "title": "From Hierarchy to Intelligence"
+        }
+      ]
+    },
+    {
+      "id": "weekly-002",
+      "classification": "correction",
+      "classificationLabel": "Correction or clarification",
+      "section": "Shared context",
+      "title": "Added owners and escalation routes for dependencies and decisions in a coordination trial.",
+      "whatChanged": "Added owners and escalation routes for dependencies and decisions in a coordination trial.",
+      "why": "Record waiting time and review effort to see where work moves when a handoff gets faster.",
+      "sources": [
+        {
+          "url": "https://block.xyz/inside/from-hierarchy-to-intelligence",
+          "authority": "block.xyz",
+          "title": "From Hierarchy to Intelligence"
+        },
+        {
+          "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+          "authority": "www.anthropic.com",
+          "title": "Demystifying evals for AI agents"
+        },
+        {
+          "url": "https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations",
+          "authority": "www.sahadilip.com",
+          "title": "Designing AI-Native Engineering Organizations"
+        }
+      ]
+    }
+  ]
+}

@@ -7,6 +7,29 @@ import {installCandidateBookRoot,installReviewSelfLinks} from './build-review-pr
 import {digest} from '../../publish-evidence-backed-handbook/scripts/reader-paths.mjs';
 const catalog=JSON.parse(await readFile(new URL('../../catalog.json',import.meta.url),'utf8'));
 const books=validateLibrary(catalog);
+// Check the assembled current reader, including edition-local screenshot routes.
+// A package can have correct PDFs while omitting an image required by its HTML.
+const publicOutput=process.env.HANDBOOK_SITE_OUTPUT||new URL('../output/site/',import.meta.url).pathname;
+async function validateRuntimeAssets(html,id){
+ const refs=new Set();
+ for(const [tag] of html.matchAll(/<(?:img|source|script|link)\b[^>]*>/gi)){
+  if(/^<link\b/i.test(tag)&&!(/rel="(?:stylesheet|icon)"/.test(tag)))continue;
+  const direct=tag.match(/\b(?:src|href)="([^"]+)"/)?.[1];if(direct)refs.add(direct);
+  for(const source of (tag.match(/\bsrcset="([^"]+)"/)?.[1]??'').split(',')){const ref=source.trim().split(/\s+/)[0];if(ref)refs.add(ref);}
+ }
+ for(const ref of refs){
+  if(ref.startsWith('data:'))continue;
+  const url=new URL(ref,'https://handbooks.surfaces.systems/'+id+'/');
+  assert.equal(url.origin,'https://handbooks.surfaces.systems','Reader runtime assets must remain local');
+  const file=safePath(publicOutput,decodeURIComponent(url.pathname.slice(1)));
+  await assert.doesNotReject(()=>readFile(file),'Missing assembled runtime asset: '+url.pathname);
+ }
+ return refs.size;
+}
+let runtimeReferences=0;
+for(const book of books)runtimeReferences+=await validateRuntimeAssets(await readFile(resolve(publicOutput,book.id,'index.html'),'utf8'),book.id);
+await assert.rejects(()=>validateRuntimeAssets('<img src="/missing-edition/screenshots/required.png">','future-book'),/Missing assembled runtime asset/);
+console.log('Verified '+runtimeReferences+' current reader runtime references; omitted edition screenshots are rejected.');
 const fixture=books.find(b=>b.id==='ai-evaluation');
 const reviewEdition={id:'claude-design',version:'1.3.0'};
 const currentBook='https://handbooks.surfaces.systems/claude-design/';

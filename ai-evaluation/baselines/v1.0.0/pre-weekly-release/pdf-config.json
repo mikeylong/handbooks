@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "ai-evaluation",
+  "title": "AI Evaluation Field Guide",
+  "version": "1.0.0",
+  "date": "2026-10-01",
+  "renderer": "reportlab",
+  "releasedPdf": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
+  "releasedSha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+  "pages": 100,
+  "story": "build_release_story",
+  "source": "source/build_handbook.py",
+  "fonts": "source/fonts",
+  "pageSizePoints": [
+    419.52755905511816,
+    595.2755905511812
+  ],
+  "runningDeck": "FROM FIRST TEST CASE TO DEFENSIBLE LAUNCH"
+}
