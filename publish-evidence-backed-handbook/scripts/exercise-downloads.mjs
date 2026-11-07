@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile,lstat,realpath} from 'node:fs/promises';
 import {safePath,digest} from './reader-paths.mjs';
+import {downloadRow,downloadSize} from './download-row.mjs';
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 export async function exerciseDownloadLinks(source,edition,pkg) {
  const definitionPath='exercise-downloads.json',file=safePath(source,definitionPath);
@@ -55,4 +56,29 @@ export async function exerciseDownloadLinks(source,edition,pkg) {
   links.push('<p><a href="'+escape(row.url)+'" download="'+escape(row.filename)+'">'+escape(row.label)+'</a></p>');
  }
  return '<section class="exercise-materials" aria-label="Exercise materials"><h2>Exercise materials</h2>'+links.join('')+'</section>';
+}
+
+/** Book-owned presentation selects existing approved materials for reader downloads. */
+export async function readerCompanionLinks(source,edition,pkg) {
+ const file=safePath(source,'reader-downloads.json');
+ let stat;
+ try {stat=await lstat(file);}catch(error){if(error.code==='ENOENT')return '';throw error;}
+ assert.ok(stat.isFile()&&await realpath(file)===file,'Reader download configuration must be a regular local file');
+ const config=JSON.parse(await readFile(file,'utf8'));
+ assert.equal(config.schemaVersion,1);
+ assert.equal(config.book,edition.id,'Reader companion book mismatch');
+ assert.equal(config.version,edition.version,'Reader companion edition mismatch');
+ assert.ok(Array.isArray(config.companions)&&config.companions.length>0,'Reader companions required');
+ // Reuse the complete approval, path, byte-size and hash gates before selection.
+ assert.ok(await exerciseDownloadLinks(source,edition,pkg),'Approved exercise downloads required');
+ const definition=JSON.parse(await readFile(safePath(source,'exercise-downloads.json'),'utf8'));
+ const selected=new Set();
+ return config.companions.map(choice=>{
+  const row=definition.downloads.find(row=>row.filename===choice.filename);
+  assert.ok(row,'Reader companion must select an approved exercise download');
+  assert.ok(!selected.has(row.filename),'Duplicate reader companion');selected.add(row.filename);
+  for(const field of ['label','purpose'])assert.ok(typeof choice[field]==='string'&&choice[field].trim(),'Reader companion '+field+' required');
+  const format=row.filename.split('.').pop().toUpperCase(),size=downloadSize(row.bytes);
+  return `<a class="pdf-download-link companion-download-link" href="${escape(row.url)}" download="${escape(row.filename)}" data-companion-download aria-label="Download ${escape(edition.title)}, ${escape(choice.label)}, ${escape(format)}, ${size}">${downloadRow(choice.label,format,choice.purpose,size)}</a>`;
+ }).join('');
 }

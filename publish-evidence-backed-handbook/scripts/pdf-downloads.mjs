@@ -49,9 +49,9 @@ export async function resolvePdfVariants(source,edition,manifestPin,{candidate=f
  }
  return variants.map(v=>({...v,publicUrl:editionPdfUrl(edition,v.publicUrl)}));
 }
-export function downloadLinks(edition,variants,{compact=false}={}) {
+export function downloadLinks(edition,variants,{compact=false,companionLinks=''}={}) {
  const ordered=variants.map(v=>({...v,publicUrl:editionPdfUrl(edition,v.publicUrl)})).sort((a,b)=>['light','dark'].indexOf(a.theme)-['light','dark'].indexOf(b.theme));
- return `<span class="pdf-downloads${compact?' downloads-compact':''}" data-pdf-downloads role="group" aria-label="Download ${escape(edition.title)}"><span class="pdf-download-title">Download</span>${markdownLink(edition)}${ordered.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages, ${downloadSize(v.bytes)}">${downloadRow(v.displayName,'PDF',v.theme==='light'?'For printing':'For dark reading',`${v.pages} pages, ${downloadSize(v.bytes)}`)}</a>`).join('')}</span>`;
+ return `<span class="pdf-downloads${compact?' downloads-compact':''}" data-pdf-downloads role="group" aria-label="Download ${escape(edition.title)}"><span class="pdf-download-title">Download</span>${markdownLink(edition)}${ordered.map(v=>`<a class="pdf-download-link" href="${escape(v.publicUrl)}" download="${escape(v.downloadFilename)}" data-pdf-theme="${v.theme}" aria-label="Download ${escape(edition.title)}, ${escape(v.displayName)}, content edition ${escape(edition.version)}, ${v.pages} pages, ${downloadSize(v.bytes)}">${downloadRow(v.displayName,'PDF',v.theme==='light'?'For printing':'For dark reading',`${v.pages} pages, ${downloadSize(v.bytes)}`)}</a>`).join('')}${companionLinks}</span>`;
 }
 const printGuidanceText = 'Use the Daytime version for printing.';
 export function removePrintGuidance(html) {
@@ -90,12 +90,17 @@ export function validateReaderDownloadPlacements(html) {
  const controls=node=>{
   const found=[];function visit(n){if(n.tag==='a'&&n.attrs?.download!==undefined)found.push(n);for(const c of n.children??[])visit(c);}visit(node);return found;
  };
- const signatures=groups.map(({node})=>controls(node).map(n=>[n.attrs.href,n.attrs.download,n.attrs['data-markdown-download']!==undefined?'markdown':n.attrs['data-pdf-theme']]));
+ const signatures=groups.map(({node})=>controls(node).map(n=>[n.attrs.href,n.attrs.download,n.attrs['data-markdown-download']!==undefined?'markdown':n.attrs['data-companion-download']!==undefined?'companion':n.attrs['data-pdf-theme']]));
  if(signatures.some(s=>s.length<2||s[0][2]!=='markdown'||JSON.stringify(s)!==JSON.stringify(signatures[0])))throw Error('Reader locations must offer the same Markdown-first downloads');
- for(const node of nodes.filter(n=>n.attrs?.['data-markdown-download']!==undefined||n.attrs?.['data-pdf-theme']!==undefined||(n.tag==='a'&&n.attrs?.download!==undefined&&/\.(?:pdf|md)(?:[?#]|$)/i.test(n.attrs.href??''))))if(!groups.some(g=>controls(g.node).includes(node)))throw Error('Download control outside approved reader group');
+ for(const signature of signatures){
+  const at=signature.findIndex(row=>row[2]==='companion');
+  if(at!==-1&&(at<3||signature.slice(at).some(row=>row[2]!=='companion')))throw Error('Companion materials must follow the handbook formats');
+  if(new Set(signature.map(row=>row[0])).size!==signature.length)throw Error('Duplicate reader download');
+ }
+ for(const node of nodes.filter(n=>n.attrs?.['data-markdown-download']!==undefined||n.attrs?.['data-pdf-theme']!==undefined||n.attrs?.['data-companion-download']!==undefined||(n.tag==='a'&&n.attrs?.download!==undefined&&/\.(?:pdf|md)(?:[?#]|$)/i.test(n.attrs.href??''))))if(!groups.some(g=>controls(g.node).includes(node)))throw Error('Download control outside approved reader group');
  return {status:'passed',locations:Object.keys(slots),groups:3};
 }
-export function installReaderDownloads(html,edition,variants) {
+export function installReaderDownloads(html,edition,variants,{companionLinks=''}={}) {
  html=removePrintGuidance(html);
  html=html.replace(/<section\b([^>]*)>[\s\S]*?<\/section>/gi,(section,attributes)=>{
   const classes=attributes.match(/\bclass\s*=\s*(["'])(.*?)\1/i)?.[2].split(/\s+/)??[];
@@ -107,7 +112,7 @@ export function installReaderDownloads(html,edition,variants) {
  });
  let count=0;html=html.replace(/<a\b[^>]*\bdownload(?:="[^"]*")?[^>]*>[\s\S]*?<\/a>/g,a=>{
   if(!/\.pdf(?:["?])/.test(a))return a;
-  count++;return downloadLinks(edition,variants,{compact:!a.includes('action-link')});
+  count++;return downloadLinks(edition,variants,{compact:!a.includes('action-link'),companionLinks});
  });
  if(count<2)throw Error('Missing cover/sidebar PDF downloads');
  validateReaderDownloadPlacements(html);

@@ -10,6 +10,13 @@ for(const [change,error] of [[x=>x.variants.push(x.variants[0]),/Duplicate/],[x=
 // Future handbook chrome must derive the title from metadata, without per-book patches.
 const reader='<header class="mobile-bar"><a href="/">Back</a><div class="mobile-actions"></div></header><aside class="sidebar"><a href="book.pdf" download>PDF</a></aside><main id="main-content"><section class="cover"><a href="book.pdf" download>PDF</a></section></main><dialog id="toc-dialog"><div class="dialog-footer"><a href="book.pdf" download>PDF</a></div></dialog>';
 const rendered=installReaderDownloads(reader,{...edition,title:'Future & handbook'},m.variants);
+const companion='<a class="pdf-download-link" href="/future-title/editions/v1.0.0/materials.zip" download="materials.zip" data-companion-download>Companion materials</a>';
+const withCompanion=installReaderDownloads(reader,edition,m.variants,{companionLinks:companion});
+assert.equal((withCompanion.match(/data-companion-download/g)||[]).length,3);
+assert.equal(validateReaderDownloadPlacements(withCompanion).groups,3);
+assert.throws(()=>validateReaderDownloadPlacements(withCompanion.replace('</main>',companion+'</main>')),/outside approved reader group/);
+assert.throws(()=>installReaderDownloads(reader,edition,m.variants,{companionLinks:companion+companion}),/Duplicate reader download/);
+assert.throws(()=>validateReaderDownloadPlacements(withCompanion.replace(companion,'')),/same Markdown-first/);
 assert.match(rendered,/<a class="mobile-title" href="#book-top">Future &amp; handbook<\/a>/);
 const existing=installReaderDownloads(reader.replace('<div class="mobile-actions">','<a class="mobile-title" href="#book-top">Existing title</a><div class="mobile-actions">'),edition,m.variants);
 assert.equal((existing.match(/class="mobile-title"/g)||[]).length,1);
