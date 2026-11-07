@@ -7,14 +7,14 @@
       "title": "AI-Native Organization Handbook",
       "directory": "ai-native-organization",
       "status": "published",
-      "pages": 51,
+      "pages": 52,
       "source": "source/build_handbook.py",
-      "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-      "pdfSha256": "c56f413a7be84533886f61199be33d2f8e8c421cf7c002a17f04f275dfe4af7d",
-      "version": "1.1.0",
+      "pdf": "output/pdf/ai-native-organization-v1.1.1-2026-11-07-daytime-r1.pdf",
+      "pdfSha256": "cbd94ce6fb9b692f4426bf5095f13c469daa650920db5431112d166ddb0fee37",
+      "version": "1.1.1",
       "repository": "https://github.com/mikeylong/handbooks",
       "publicUrl": "https://handbooks.surfaces.systems/ai-native-organization/",
-      "editionUrl": "https://handbooks.surfaces.systems/ai-native-organization/editions/v1.1.0/",
+      "editionUrl": "https://handbooks.surfaces.systems/ai-native-organization/editions/v1.1.1/",
       "coverPlaceholder": "{{AI_NATIVE_ORGANIZATION_COVER}}",
       "build": [
         "npm",
@@ -34,9 +34,9 @@
       "title": "Production AI Engineering",
       "directory": "production-ai-engineering",
       "status": "published",
-      "pages": 105,
+      "pages": 99,
       "source": "AI_ENGINEERING_FIELD_GUIDE.md",
-      "pdf": "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf",
+      "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
       "build": [
         "npm",
         "run",
@@ -55,11 +55,11 @@
         ]
       ],
       "publicUrl": "https://handbooks.surfaces.systems/production-ai-engineering/",
-      "pdfSha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0",
+      "pdfSha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
       "historicalRepository": "https://github.com/mikeylong/production-ai-engineering-book",
       "repository": "https://github.com/mikeylong/handbooks",
-      "version": "1.4.0",
-      "editionUrl": "https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.0/",
+      "version": "1.4.1",
+      "editionUrl": "https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.1/",
       "coverPlaceholder": "{{PRODUCTION_COVER}}"
     },
     {
@@ -69,7 +69,7 @@
       "status": "published",
       "pages": 54,
       "source": "Claude_Design_Field_Guide_Source.md",
-      "pdf": "output/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf",
+      "pdf": "output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
       "build": [
         "npm",
         "run",
@@ -82,12 +82,12 @@
           "validate"
         ]
       ],
-      "pdfSha256": "ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7",
+      "pdfSha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
       "historicalRepository": "https://github.com/mikeylong/claude-design-field-guide",
       "repository": "https://github.com/mikeylong/handbooks",
-      "version": "2.1.3",
+      "version": "2.1.4",
       "publicUrl": "https://handbooks.surfaces.systems/claude-design/",
-      "editionUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.3/",
+      "editionUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.4/",
       "coverPlaceholder": "{{CLAUDE_DESIGN_COVER}}"
     },
     {
@@ -95,9 +95,9 @@
       "title": "AI Evaluation Field Guide",
       "directory": "ai-evaluation",
       "status": "published",
-      "pages": 100,
+      "pages": 103,
       "source": "source/build_handbook.py",
-      "pdf": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
+      "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
       "build": [
         "{python}",
         "source/build_handbook.py"
@@ -109,7 +109,7 @@
           "validate"
         ]
       ],
-      "pdfSha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+      "pdfSha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
       "historicalDraft": {
         "directory": "ai-evaluation",
         "source": "work/build_ai_eval_field_guide.py",
@@ -117,12 +117,12 @@
         "pages": 94,
         "pdfSha256": "2a96ca9dc852daa922c88a29abba634005004f8da811b24dabf8288248d42f84"
       },
-      "version": "1.0.0",
+      "version": "1.0.1",
       "publicUrl": "https://handbooks.surfaces.systems/ai-evaluation/",
       "dependencies": [],
       "historicalRepository": "https://github.com/mikeylong/ai-evaluation-field-guide",
       "repository": "https://github.com/mikeylong/handbooks",
-      "editionUrl": "https://handbooks.surfaces.systems/ai-evaluation/editions/v1.0.0/",
+      "editionUrl": "https://handbooks.surfaces.systems/ai-evaluation/editions/v1.0.1/",
       "coverPlaceholder": "{{EVALUATION_COVER}}"
     },
     {
@@ -220,10 +220,10 @@
   "repository": "https://github.com/mikeylong/handbooks",
   "publicHost": "https://handbooks.surfaces.systems",
   "approvedPublicEditions": {
-    "production-ai-engineering": "1.4.0",
-    "ai-evaluation": "1.0.0",
+    "production-ai-engineering": "1.4.1",
+    "ai-evaluation": "1.0.1",
     "ai-consulting": "1.0.1",
-    "claude-design": "2.1.3",
-    "ai-native-organization": "1.1.0"
+    "claude-design": "2.1.4",
+    "ai-native-organization": "1.1.1"
   }
 }

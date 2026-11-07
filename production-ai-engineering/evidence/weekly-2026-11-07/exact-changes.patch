@@ -1,0 +1,622 @@
+--- /Users/mike/handbooks/production-ai-engineering/output/candidates/2026-11-07T13-49-50.0AH33F/pristine-source/AI_ENGINEERING_FIELD_GUIDE.md	2026-11-07 22:02:57.606523473 +0000
++++ /Users/mike/handbooks/production-ai-engineering/output/candidates/2026-11-07T13-49-50.0AH33F/candidate-edits/AI_ENGINEERING_FIELD_GUIDE.md	2026-11-07 22:02:57.606523473 +0000
+@@ -1,6 +1,6 @@
+ # Production AI Engineering Field Guide
+ 
+-Last evidence review: **2026-09-30**
++Last evidence review: **2026-11-07**
+ 
+ Production AI engineering is a systems discipline. This handbook lays out an operating model that connects the techniques instead of treating each one as an isolated fix. The operating premise is simple:
+ 
+@@ -241,7 +241,9 @@
+ | Quantization | Represents weights and sometimes activations/KV with fewer bits | Memory/bandwidth-constrained inference with supported kernels | Calibration and numerical error can cause task-specific tail regressions |
+ | Distillation | Trains a smaller student to imitate a larger teacher | Stable, narrow, high-volume tasks with governed training data and clear evals | Up-front teacher-data/training cost; broad and long-tail capabilities or teacher biases can transfer or regress |
+ 
+-When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use it to reduce latency, not to approximate an answer. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. [Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html) describe the method.
++When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use a verified lossless policy when preserving the target distribution is part of the contract. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. [Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html) describe the method.
++
++Check the verification policy before treating speculative decoding as lossless. The vLLM v0.33.0 release notes at tag v0.33.0rc3 describe an opt-in lossy verifier and remove CUDA 12.9 release artifacts. Pin the serving image or wheel and verify its CUDA and framework requirements. Evaluate output quality separately before enabling any approximate verifier.
+ 
+ Distillation changes the deployed model and usually changes its behavior. Distillation can greatly lower steady-state cost, but the target workflow first needs to be stable enough for teacher data and evals to represent production. [Hinton, Vinyals, and Dean](https://arxiv.org/abs/1503.02531) describe the foundational method.
+ 
+@@ -428,6 +430,8 @@
+ 
+ Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. Google's [Gemini deprecation schedule](https://ai.google.dev/gemini-api/docs/deprecations) demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.
+ 
++Treat provider service-tier policy as a route constraint. OpenAI documents organization-wide and project-specific tier controls. Test the effective settings using the intended project and confirm the behavior of an explicitly disallowed request. Do not fail over to a different organization or project to get around the denial.
++
+ The resolved model settings and preserved model-generated state belong in the migration record. Test omitted parameters separately from explicit values, record supported reasoning levels and their output-token budget, and verify tool/API support and cache controls on the exact route. Parse responses by block type. Bind signed thinking, reasoning, or summary blocks to the exact provider, model, account, conversation history, and API contract. Return them unchanged when required, and keep the history append-only. If a route drops or rejects that state, fail or restart from an explicitly compatible checkpoint instead of silently continuing with different semantics. Migration tests must cover default reasoning behavior, forced-tool restrictions, structured-output parameters, refusal categories, and a fresh effort sweep because the same effort label can change across model generations. [OpenAI's migration guidance](https://developers.openai.com/api/docs/guides/latest-model) documents changes to these contracts, while [AWS's adaptive-thinking correction](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html) shows how omission can enable billable reasoning. Anthropic's [Sonnet 5.5 migration guide](https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide) documents the signed-state and request-contract changes. Reject unsupported settings rather than silently dropping them. Compare the resolved behavior, latency, and cost before rollout.
+ 
+ Treat provider SDK upgrades as production migrations. Diff request headers and response types, exercise every mutating method against disposable state, and canary the pinned upgrade before rollout.
+@@ -531,6 +535,8 @@
+ 
+ Build the evals before you optimize. Without them, every caching, routing, quantization, prompt, retrieval, or model change can quietly exchange quality for speed or cost.
+ 
++In predictive workflows, require every input feature to be available at the actual decision point. Use a paired test with a known leaking input and a valid control. Verify lineage and timestamps with a deterministic check. The clinical LeakBench preprint shows why an improved offline score can coexist with fatal prediction-time leakage.
++
+ Use these layers together:
+ 
+ 1. **Deterministic unit tests:** parsers, schemas, invariants, ACL filters, idempotency, budgets, termination, and cost math.
+@@ -559,6 +565,8 @@
+ 
+ Calibrate a black-box judge on the exact endpoint, model version, rubric, language, and time window used for the release. Repeat representative judgments, record disagreement and rank stability, and require a human or deterministic fallback when the judge drifts. Do not transfer a calibration result across endpoints or silently updated aliases. A 52,988-attempt [study](https://arxiv.org/abs/2609.04198) of shared judge endpoints found substantially lower repeat and next-day rank stability than a controlled endpoint. This makes local calibration an operating requirement rather than a one-time benchmark.
+ 
++Probe an automated judge with controlled reversals. Hold the rubric fixed and change only the answer evidence that should affect the grade. Then hold the answer fixed and reverse a criterion whose judgment should change. A rubric-only baseline can reveal how much of the outcome is predictable without seeing the answer. Investigate that signal before trusting a high aggregate agreement score.
++
+ ### Release gates
+ 
+ Make release gates slice-aware. A one-point global gain cannot offset a large regression in safety, structured outputs, a language, a tenant type, or a critical workflow. Treat any High-severity safety, authorization, or side-effect failure as its own stop condition instead of averaging it into a global score.
+@@ -625,6 +633,8 @@
+ 
+ Monitor recalibration belongs in every model or reasoning-configuration migration. Compare action-only, reasoning-only, and combined monitoring where those signals are available and permitted. Measure detection, false alarms, and evasion on the same task slices. [OpenAI's GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/vision) reports monitorability changes and adversarial evasion in its evaluation setting. Treat those results as a reason to revalidate local monitoring, not as a production detection rate. Keep external receipts and enforceable policy checks independent of the monitor.
+ 
++Inventory the surfaces the monitor can see, including evaluation harnesses and every enabled tool path. Exercise a known failure end to end and verify that independent evidence reaches the right responder and that containment actually occurs. Sample unflagged traffic and record gaps in surface coverage, threat-specific recall and responder availability.
++
+ ## 18. Attribute cost to the whole workflow
+ 
+ Use the same reliability trace to attribute cost:
+@@ -638,6 +648,8 @@
+ Note | Record cached-input, cache-write, reasoning, and output usage separately, but do not add a subtype again when the provider includes it in a parent total.
+ ```
+ 
++OpenAI added a selectable 12-hour minimum cache lifetime on eligible Responses API routes. Its October 20 changelog lists the write rate as 2.5 times the ordinary input rate. Check the exact model, breakpoint, project data controls and observed reuse interval before pricing the route. Compare the full cost of writes, reads and uncached input over the same traffic window.
++
+ The dimensions you usually need are feature, workflow, tenant, user journey, route, model, environment, and terminal outcome. Use pseudonymous identifiers where possible.
+ 
+ Track:
+@@ -703,7 +715,8 @@
+ - do not let request fields select a decoder, kernel, plugin, adapter, or other privileged backend unless an operator allowlisted it and included it in startup resource reservation and isolation policy;
+ - treat agent runtimes, sandbox provisioners, gateways and proxies, bridges, installers, updaters, and inference services as privileged policy-enforcement code; pin and patch them, verify certificates and artifact integrity, normalize paths before layer-7 policy, avoid building shell commands from untrusted data, and test escape, injection, traversal, and authorization-bypass paths;
+ - treat the serving engine, custom kernels, and batching scheduler as tenant-isolation code; pin and inventory the runtime, monitor its security advisories, patch within the risk window, and test response ownership under concurrent tenants; a model-server flaw can cross-contaminate responses even when cache namespaces are correct;
+-- record the requested processing geography and the provider-resolved organization, project, workspace, and region when the API exposes them; reject unexpected resolution before sensitive data crosses the boundary;
++- record the requested processing geography and the provider-resolved organization, project, workspace, and region when the API exposes them; reject unexpected provider resolution or unapproved request storage before sensitive data crosses the boundary;
++- Before routing sensitive data, check the provider project and request-level storage setting with disposable inputs. Google turned on Generate Content request storage by default for new paid projects from October 26, 2026. Existing projects keep their settings. Verify the effective project default and the request override separately.
+ - exclude sensitive content and identifiers from shared scheduler metadata, and address timing or resource side channels with quotas, traffic shaping, or physical silos where the threat model requires;
+ - bind every request, tool call, callback, queue item, and result to immutable tenant, principal, conversation, run, and call IDs; reject mismatched or late results and clear or zero pooled worker, sandbox, and request-local state before reuse;
+ - isolate background jobs, queues, temporary files, sandboxes, logs, traces, and eval environments;
+--- /Users/mike/handbooks/production-ai-engineering/output/candidates/2026-11-07T13-49-50.0AH33F/pristine-source/handbook-data/book-data.json	2026-11-07 22:02:57.606523473 +0000
++++ /Users/mike/handbooks/production-ai-engineering/output/candidates/2026-11-07T13-49-50.0AH33F/candidate-edits/handbook-data/book-data.json	2026-11-07 22:02:57.606523473 +0000
+@@ -8,7 +8,7 @@
+           "label": "CTX-01",
+           "citation": "Anthropic. \"Effective context engineering for AI agents.\" 29 September 2025.",
+           "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "CTX-02",
+@@ -19,13 +19,13 @@
+           "label": "AGT-01",
+           "citation": "Anthropic. \"Building effective agents.\" 19 December 2024.",
+           "url": "https://www.anthropic.com/engineering/building-effective-agents",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "TOOL-01",
+           "citation": "Anthropic. \"Writing effective tools for AI agents: using AI agents.\"",
+           "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "CACHE-01",
+@@ -37,7 +37,7 @@
+           "label": "CACHE-02",
+           "citation": "Microsoft. \"Get cached responses of large language model API requests.\" Azure API Management documentation. Updated 24 February 2026.",
+           "url": "https://learn.microsoft.com/en-us/azure/api-management/llm-semantic-cache-lookup-policy",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "OUT-01",
+@@ -49,13 +49,13 @@
+           "label": "OUT-02",
+           "citation": "JSON Schema. \"Creating your first schema.\"",
+           "url": "https://json-schema.org/learn/getting-started-step-by-step",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "TOOL-02",
+           "citation": "OpenAI. \"Function calling.\" OpenAI API documentation.",
+           "url": "https://developers.openai.com/api/docs/guides/function-calling",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "TOOL-03",
+@@ -71,7 +71,7 @@
+           "label": "MCP-01",
+           "citation": "Model Context Protocol. \"Key Changes in the 2026-07-28 Specification.\" 28 July 2026.",
+           "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "MCP-02",
+@@ -83,25 +83,25 @@
+           "label": "MCP-03",
+           "citation": "Model Context Protocol. \"Base Protocol: Overview.\" Protocol specification, 28 July 2026.",
+           "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "AUTH-01",
+           "citation": "Model Context Protocol. \"Authorization.\" Protocol specification, 28 July 2026.",
+           "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "AUTH-02",
+           "citation": "Model Context Protocol. \"Security Best Practices.\" Protocol specification, 28 July 2026.",
+           "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "AUTH-03",
+           "citation": "Fisher, Bill, and Ryan Galluzzo. \"Back to the Future: Why Agentic AI Needs a Strong Identity Foundation.\" NIST Cybersecurity Insights, 27 August 2026.",
+           "url": "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "MOD-01",
+@@ -119,7 +119,7 @@
+           "label": "MOD-03",
+           "citation": "Amazon Web Services. \"Amazon Bedrock model lifecycle.\" AWS documentation.",
+           "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "MOD-04",
+@@ -131,37 +131,37 @@
+           "label": "TOOL-05",
+           "citation": "OpenAI. \"Asynchronous tool calling.\"",
+           "url": "https://developers.openai.com/api/docs/guides/async-tool-calling",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "MOD-05",
+           "citation": "OpenAI. \"Model guidance: GPT-6 Astra.\"",
+           "url": "https://developers.openai.com/api/docs/guides/latest-model",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "MOD-06",
+           "citation": "AWS. \"Document history for Amazon Bedrock.\"",
+           "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "CTX-03",
+           "citation": "Anthropic. \"Compaction on demand.\" Claude API documentation, September 2026.",
+           "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "TOOL-06",
+           "citation": "Anthropic. \"Mid-conversation system messages.\" Claude API documentation, September 2026.",
+           "url": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "TOOL-07",
+           "citation": "OpenAI. \"Computer use.\" OpenAI Agents API documentation, 29 September 2026.",
+           "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "MOD-07",
+@@ -173,7 +173,7 @@
+           "label": "MOD-08",
+           "citation": "Anthropic. \"Migrating to Claude Sonnet 5.5.\" Claude API documentation, 28 September 2026.",
+           "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide",
+-          "accessed": true
++          "accessed": false
+         }
+       ]
+     },
+@@ -199,13 +199,13 @@
+           "label": "SERV-04",
+           "citation": "vLLM Project. \"vLLM documentation.\"",
+           "url": "https://docs.vllm.ai/en/latest/",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SERV-05",
+           "citation": "OpenAI. \"Latency optimization.\" OpenAI API documentation.",
+           "url": "https://developers.openai.com/api/docs/guides/latency-optimization",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SERV-06",
+@@ -221,7 +221,7 @@
+           "label": "SERV-08",
+           "citation": "vLLM Project. \"v0.28.0.\" Release notes, 26 August 2026.",
+           "url": "https://github.com/vllm-project/vllm/releases/tag/v0.28.0",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SPEC-01",
+@@ -257,7 +257,7 @@
+           "label": "SERV-11",
+           "citation": "Xie, Renjie, et al. \"HeadWiseKV: Budgeted Per-Head Cache Residency for Hybrid Long-Context Language Models.\" arXiv:2609.02029v1, 2 September 2026.",
+           "url": "https://arxiv.org/html/2609.02029v1",
+-          "accessed": true
++          "accessed": false
+         }
+       ]
+     },
+@@ -273,13 +273,13 @@
+           "label": "RAG-02",
+           "citation": "Elastic. \"Hybrid search.\" Elastic documentation.",
+           "url": "https://www.elastic.co/docs/solutions/search/hybrid-search",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "RAG-03",
+           "citation": "Microsoft. \"Grounding Data Design for AI Workloads on Azure.\" Azure Well-Architected Framework.",
+           "url": "https://learn.microsoft.com/en-us/azure/well-architected/ai/grounding-data-design",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "RETR-06",
+@@ -330,66 +330,78 @@
+           "label": "EVAL-02",
+           "citation": "Anthropic. \"Demystifying evals for AI agents.\" 9 January 2026.",
+           "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "EVAL-03",
+           "citation": "OpenAI. \"Working with evals.\" OpenAI API documentation.",
+           "url": "https://developers.openai.com/api/docs/guides/evals",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "EVAL-05",
+           "citation": "OpenAI. \"The Hugging Face incident and the road ahead.\" 26 August 2026.",
+           "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "EVAL-06",
+           "citation": "OpenAI. OpenAI - Hugging Face Incident Technical Report. 26 August 2026.",
+           "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "ORIG-05",
+           "citation": "Greenblatt, Ryan, Ajeya Cotra, and Hjalmar Wijk. \"Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident.\" METR and Redwood Research, 26 August 2026.",
+           "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "EVAL-09",
+           "citation": "Chen, Yueh-Han, Jiaxin Wen, and Jan Hendrik Kirchner. \"Automated Researchers Can Reliably Mitigate Alignment Failures.\" 28 August 2026.",
+           "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "EVAL-10",
+           "citation": "OpenAI. \"GPT-6 Astra system card.\" 2026-09-03.",
+           "url": "https://deploymentsafety.openai.com/gpt-6-astra/vision",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "ORIG-12",
+           "citation": "\"A Stability Audit of Shared Black-Box LLM Judge Endpoints.\" arXiv:2609.04198, September 2026.",
+           "url": "https://arxiv.org/abs/2609.04198",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "ORIG-13",
+           "citation": "\"Agents' Overreliance on Unreliable Tools.\" arXiv:2609.05587v2, 26 September 2026.",
+           "url": "https://arxiv.org/abs/2609.05587",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "ORIG-14",
+           "citation": "\"SkillShift: Supply-Chain Risks in Agent Skills.\" arXiv:2609.02564, September 2026.",
+           "url": "https://arxiv.org/abs/2609.02564",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "ORIG-15",
+           "citation": "\"MMPIBench: Multimodal Prompt Injection Benchmark.\" arXiv:2609.09404, September 2026.",
+           "url": "https://arxiv.org/abs/2609.09404",
++          "accessed": false
++        },
++        {
++          "label": "EVAL-90",
++          "citation": "arxiv.org. \"Judging LLM-as-a-Judge: Concerning Rubric Artifacts.\" 2026-08-31.",
++          "url": "https://arxiv.org/html/2609.02942v1",
++          "accessed": true
++        },
++        {
++          "label": "REV-54",
++          "citation": "arxiv.org. \"LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents.\" 2026-10-19T09:50:57Z.",
++          "url": "https://arxiv.org/html/2610.26088v1",
+           "accessed": true
+         }
+       ]
+@@ -407,7 +419,7 @@
+           "label": "OBS-03",
+           "citation": "OpenTelemetry. \"Remove cache token usage attributes from internal agent spans.\" Commit 5f5ae69, 27 August 2026.",
+           "url": "https://github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e52464c56eea4389fb793c2690caaea78",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "COST-03",
+@@ -418,25 +430,25 @@
+           "label": "OBS-02",
+           "citation": "National Institute of Standards and Technology. \"Measure.\" AI Risk Management Framework Playbook.",
+           "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "COST-01",
+           "citation": "OpenAI. \"Costs.\" Organization Usage and Costs API reference.",
+           "url": "https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/usage/methods/costs",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "COST-02",
+           "citation": "FinOps Foundation. \"Capability: Unit Economics.\"",
+           "url": "https://www.finops.org/framework/capabilities/unit-economics/",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "REL-05",
+           "citation": "OpenAI. \"API error codes.\"",
+           "url": "https://developers.openai.com/api/docs/guides/error-codes",
+-          "accessed": true
++          "accessed": false
+         }
+       ]
+     },
+@@ -447,13 +459,13 @@
+           "label": "SAFE-01",
+           "citation": "OWASP GenAI Security Project. \"LLM01:2025 Prompt Injection.\"",
+           "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-02",
+           "citation": "Microsoft. \"Defend against indirect prompt injection attacks.\" Microsoft Learn.",
+           "url": "https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-03",
+@@ -464,90 +476,120 @@
+           "label": "SAFE-04",
+           "citation": "vLLM Project. \"Integer overflow can lead to cross-user inference response leakage.\" GHSA-7m6h-x95x-82q5, 11 August 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-7m6h-x95x-82q5",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-05",
+           "citation": "vLLM Project. \"LlavaOnevision2 processor loader executes attacker model code with trust_remote_code=False.\" GHSA-3c86-2m5g-59q7, 28 August 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-3c86-2m5g-59q7",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-06",
+           "citation": "vLLM Project. \"Denial of Service NanoNemoTronVL Video Audio Extraction Bomb.\" GHSA-936p-m5pv-vvjf, 28 August 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-936p-m5pv-vvjf",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-07",
+           "citation": "vLLM Project. \"Speech-to-text audio decode duration limit bypass via forged header sample rate.\" GHSA-99f2-hwrc-gvq8, 28 August 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-99f2-hwrc-gvq8",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-08",
+           "citation": "vLLM Project. \"Request-selected PyNvVideoCodec GPU decode bypasses static VRAM reservation.\" GHSA-8pw2-6jv3-mj5j, 28 August 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-8pw2-6jv3-mj5j",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-09",
+           "citation": "NVIDIA. \"Security Bulletin: NVIDIA NemoClaw and OpenShell - August 2026.\" Updated 28 August 2026.",
+           "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5872",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "TEN-01",
+           "citation": "Google Cloud. \"Multi-tenant agentic AI system.\" Cloud Architecture Center.",
+           "url": "https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-11",
+           "citation": "vLLM Project. \"Negative token IDs can poison the vLLM engine.\" 2026-09-03.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-12",
+           "citation": "vLLM Project. \"Unbounded cache_salt can stall the scheduler.\" GHSA-wpww-v874-ph2p, September 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-13",
+           "citation": "vLLM Project. \"Audio compressed-size path can bypass resource limits.\" GHSA-jcq2-4gch-5qhf, September 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-14",
+           "citation": "vLLM Project. \"Remote media can be fully materialized before limits apply.\" GHSA-p6g9-7v3x-m8mv, September 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-p6g9-7v3x-m8mv",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-15",
+           "citation": "vLLM Project. \"Sampler subclasses can bypass output limits.\" GHSA-j682-9xp5-rrf3, September 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-j682-9xp5-rrf3",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-16",
+           "citation": "vLLM Project. \"Qwen video inputs can bypass frame limits.\" GHSA-x6mc-67gf-chw4, September 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-17",
+           "citation": "vLLM Project. \"Structured-output request errors can terminate a shared EngineCore.\" GHSA-85xf-c7hm-whqw, September 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw",
+-          "accessed": true
++          "accessed": false
+         },
+         {
+           "label": "SAFE-18",
+           "citation": "vLLM Project. \"Unbounded Prometheus label cardinality.\" GHSA-5fj9-pfhr-6j48, September 2026.",
+           "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48",
++          "accessed": false
++        },
++        {
++          "label": "PRIV-01",
++          "citation": "developers.openai.com. \"OpenAI data controls.\" not stated.",
++          "url": "https://developers.openai.com/api/docs/guides/your-data",
++          "accessed": true
++        },
++        {
++          "label": "REV-52",
++          "citation": "github.com/vllm-project/vllm. \"vLLM v0.33.0 release.\" 2026-11-02T10:10:05Z.",
++          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
++          "accessed": true
++        },
++        {
++          "label": "REV-53",
++          "citation": "alignment.openai.com. \"How we detect frontier model misalignment.\" 2026-10-29.",
++          "url": "https://alignment.openai.com/how-we-detect-frontier-model-misalignment",
++          "accessed": true
++        },
++        {
++          "label": "REV-50",
++          "citation": "openai.com. \"OpenAI frontier training containment.\" 2026-10-23.",
++          "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
++          "accessed": true
++        },
++        {
++          "label": "REV-59",
++          "citation": "ai.google.dev. \"Gemini API logs and datasets.\" 2026-10-26.",
++          "url": "https://ai.google.dev/gemini-api/docs/logs-datasets",
+           "accessed": true
+         }
+       ]
+@@ -559,7 +601,7 @@
+           "label": "OPT-01",
+           "citation": "OpenAI. \"Model optimization.\" OpenAI API documentation.",
+           "url": "https://developers.openai.com/api/docs/guides/model-optimization",
+-          "accessed": true
++          "accessed": false
+         }
+       ]
+     }
+@@ -624,7 +666,8 @@
+       "labels": [
+         "SPEC-01",
+         "QUANT-02",
+-        "DIST-01"
++        "DIST-01",
++        "REV-52"
+       ],
+       "note": "Author synthesis: the comparison maps each technique to the bottleneck it changes."
+     },
+@@ -724,7 +767,9 @@
+         "ORIG-05",
+         "EVAL-09",
+         "ORIG-12",
+-        "ORIG-15"
++        "ORIG-15",
++        "EVAL-90",
++        "REV-54"
+       ]
+     },
+     "17": {
+@@ -734,7 +779,9 @@
+         "OBS-02",
+         "EVAL-06",
+         "ORIG-05",
+-        "EVAL-10"
++        "EVAL-10",
++        "REV-53",
++        "REV-50"
+       ]
+     },
+     "18": {
+@@ -743,7 +790,10 @@
+         "COST-02",
+         "OBS-01",
+         "OBS-03",
+-        "COST-03"
++        "COST-03",
++        "MOD-04",
++        "CACHE-01",
++        "PRIV-01"
+       ],
+       "note": "Author synthesis: the journey-cost formula ties spend to a completed user outcome."
+     },
+@@ -785,7 +835,9 @@
+         "SAFE-15",
+         "SAFE-16",
+         "SAFE-17",
+-        "SAFE-18"
++        "SAFE-18",
++        "MOD-01",
++        "REV-59"
+       ],
+       "note": "Author synthesis: the isolation checklist spans the cited permission and tenancy boundaries."
+     },

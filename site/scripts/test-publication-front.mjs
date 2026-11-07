@@ -43,12 +43,12 @@ for (const hook of ['data-release-window', 'data-countdown-seconds', 'data-revie
 const regressions = [
  ['standalone printing note', html.replace('</main>','<p class="pdf-print-guidance">Use the Daytime version for printing.</p></main>'), /Standalone PDF printing guidance/],
  ['missing author', html.replace('class="cover-credit"', 'class="removed-credit"'), /authorCredit/],
- ['stale edition', html.replaceAll('Version 1.0.0', 'Version 1.4.0'), /edition/],
- ['wrong PDF page count', html.replaceAll('100 pages', '105 pages'), /pdfAction/],
+ ['stale edition', html.replaceAll('Version '+edition.version, 'Version 999.0.0'), /edition/],
+ ['wrong PDF page count', html.replaceAll(edition.pages+' pages', (edition.pages+1)+' pages'), /pdfAction/],
  ['broken Explore action', html.replace('href="#contents">Explore the handbook', 'href="#missing">Explore the handbook'), /exploreAction/],
  ['wrong release link', html.replaceAll(publication.releaseUrl, 'https://example.invalid/other-release'), /coverEditionLink/],
  ['wrong cover title', html.replace('<h1 id="cover-title">AI Evaluation Field Guide</h1>', '<h1 id="cover-title">Other handbook</h1>'), /title/],
- ['wrong visible page count', html.replace(/(<span(?: class="download-metadata")?>)100 pages/g, (_,open)=>open+'105 pages'), /pdfAction/],
+ ['wrong visible page count', html.replaceAll('>'+edition.pages+' pages', '>'+(edition.pages+1)+' pages'), /pdfAction/],
 ];
 for (const [name, broken, expected] of regressions) {
  assert.notEqual(broken, html, `Regression fixture did not change: ${name}`);

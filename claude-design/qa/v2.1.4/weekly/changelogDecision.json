@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "Evidence-backed updates for Claude Design Field Guide.",
+  "entryCount": 2,
+  "failures": [],
+  "placement": "final-page",
+  "requiredPdfState": {
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
+  },
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "category": "Correction or clarification",
+      "section": "Read this first and surface selection",
+      "text": "Move the primary walkthrough off the closing standalone surface, preserve exports and state the migration boundary.",
+      "rationale": "A retained October 29 access predates this cycle cutoff and establishes the December 14 standalone closure, multi-surface migration and preservation limits. The approved edition still directs its main walkthrough to the standalone beta.",
+      "sources": [
+        "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+        "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design"
+      ]
+    },
+    {
+      "category": "Addition",
+      "section": "Code Connect handoff",
+      "text": "Confirm the active library/framework and verify returned implementation context.",
+      "rationale": "The retained October 29 official documentation establishes plan- and framework-specific Code Connect context. Add an account/framework precheck rather than implying any successful MCP call returns the intended implementation mapping.",
+      "sources": [
+        "https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect",
+        "https://help.figma.com/hc/en-us/articles/42495296821911-Code-Connect-and-MCP"
+      ]
+    }
+  ]
+}

@@ -1,11 +1,20 @@
 {
-  "schemaVersion": 1,
   "id": "ai-evaluation",
-  "version": "1.0.0",
+  "title": "AI Evaluation Field Guide",
+  "version": "1.0.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+  "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+  "pages": 103,
+  "schemaVersion": 1,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
   "readerDirectory": "reader",
   "html": "reader/index.html",
+  "readerSha256": "ce5c374624e087a870f8fb9de7921fc7ac8b3624597e49223355cbdf09e09618",
   "files": {
     "reader/ai-evaluation-v1.0.0-2026-10-01.pdf": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+    "reader/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
     "reader/assets/DataSplitDiagram.png": "04518eaa449d45cadb9db3f072021f84a66b9704aad45b1501d15216f18669aa",
     "reader/assets/EvidenceLoop.png": "b7b0678cb51961e557af55e81eda9d043fec12d35e2104f469bcbc0f06606e28",
     "reader/assets/chapter-01.png": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3",
@@ -20,10 +29,16 @@
     "reader/assets/chapter-10.png": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52",
     "reader/assets/chapter-11.png": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec",
     "reader/assets/chapter-12.png": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78",
-    "reader/index.html": "9e02cd7a88530d3bc33f4f8baaa09ca2ef354beecef01f2ee9d572fad0235b84",
-    "reader/reader.css": "f47e68ebf11402fdeebdb3b194534cdeda729e7fdee841f88afaeea891959c10",
-    "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad"
+    "reader/index.html": "ce5c374624e087a870f8fb9de7921fc7ac8b3624597e49223355cbdf09e09618",
+    "reader/reader.css": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea",
+    "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990"
   },
-  "approvalBasis": "Existing published edition at pre-consolidation commit; reader and PDF bytes retained",
-  "historicalCommit": "50e6b1e0279b3db0f0b9d41dec8e4fd1a96ba14a"
+  "publicationApproval": {
+    "date": "2026-11-07",
+    "command": "Publish them and update releases",
+    "clarification": "I asked you to publish updated releases of every handbook.",
+    "kind": "explicit-user-release",
+    "version": "1.0.1",
+    "daytimeSha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990"
+  }
 }

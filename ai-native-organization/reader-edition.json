@@ -1,28 +1,14 @@
 {
+  "schemaVersion": 1,
   "id": "ai-native-organization",
   "title": "AI-Native Organization Handbook",
-  "version": "1.1.0",
-  "date": "2026-10-23",
-  "pages": 51,
-  "pdf": "output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-  "sha256": "c56f413a7be84533886f61199be33d2f8e8c421cf7c002a17f04f275dfe4af7d",
+  "version": "1.1.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/ai-native-organization-v1.1.1-2026-11-07-daytime-r1.pdf",
+  "sha256": "cbd94ce6fb9b692f4426bf5095f13c469daa650920db5431112d166ddb0fee37",
+  "pages": 52,
   "approvalStatus": "approved",
   "publicationApproved": true,
-  "publicationStatus": "published",
-  "author": "Michael Long",
-  "authorSite": "https://surfaces.systems",
-  "canonicalUrl": "https://handbooks.surfaces.systems/ai-native-organization/",
-  "editionUrl": "https://handbooks.surfaces.systems/ai-native-organization/editions/v1.1.0/",
-  "pdfUrl": "/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf",
-  "publicationApproval": {
-    "date": "2026-10-24",
-    "version": "1.1.0",
-    "authority": "Mike requested removing the repeated synthetic-example labels and footnotes while continuing the handbook release review."
-  },
-  "releaseCorrection": {
-    "revision": 3,
-    "reason": "Removed redundant example labels and repeated chart footnotes; retained the chapter introduction and meaningful forecast assumptions.",
-    "priorArtifacts": "releases/v1.1.0/pre-example-label-cleanup/preservation.json",
-    "authority": "Mike requested removing the repeated synthetic-example labels and footnotes while continuing the handbook release review."
-  }
+  "html": "reader/index.html",
+  "readerSha256": "381d83371796e37b36ec5fa7ed864c7cab5a4116ce1894871277872875cebf0a"
 }

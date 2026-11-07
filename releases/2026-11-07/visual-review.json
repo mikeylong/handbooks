@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "date": "2026-11-07",
+  "scope": "Exact stable PDFs, both appearances, full Poppler and native Apple PDFKit overview plus representative full-size changed pages and final changelogs.",
+  "artifacts": [
+    {
+      "book": "ai-evaluation",
+      "theme": "daytime",
+      "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+      "pages": 103,
+      "status": "passed"
+    },
+    {
+      "book": "ai-evaluation",
+      "theme": "lateNight",
+      "sha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
+      "pages": 103,
+      "status": "passed"
+    },
+    {
+      "book": "ai-native-organization",
+      "theme": "daytime",
+      "sha256": "cbd94ce6fb9b692f4426bf5095f13c469daa650920db5431112d166ddb0fee37",
+      "pages": 52,
+      "status": "passed"
+    },
+    {
+      "book": "ai-native-organization",
+      "theme": "lateNight",
+      "sha256": "7faa0bac61e9ba00a7803a06eb4e72f0bb7b85778166b3016c1404f1c1f990f2",
+      "pages": 52,
+      "status": "passed"
+    },
+    {
+      "book": "claude-design",
+      "theme": "daytime",
+      "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
+      "pages": 54,
+      "status": "passed"
+    },
+    {
+      "book": "claude-design",
+      "theme": "lateNight",
+      "sha256": "77e3920da2a7584c3af942ed53e88b05e65dd81a7903531e33dc481562304a00",
+      "pages": 54,
+      "status": "passed"
+    },
+    {
+      "book": "production-ai-engineering",
+      "theme": "daytime",
+      "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+      "pages": 99,
+      "status": "passed"
+    },
+    {
+      "book": "production-ai-engineering",
+      "theme": "lateNight",
+      "sha256": "76978a3123ece09cb71abe2e9553764a3b56cc24535203b746f1eba436236e8b",
+      "pages": 99,
+      "status": "passed"
+    }
+  ],
+  "findings": [
+    {
+      "impact": "Low",
+      "book": "ai-evaluation",
+      "note": "A source entry continues on a sparse final source page, with no clipping."
+    },
+    {
+      "impact": "Low",
+      "book": "ai-native-organization",
+      "note": "The sparse source continuation is inherited from the approved layout."
+    }
+  ],
+  "claudePageBreak": "The Figma chapter checkpoint and source note remain together on physical page 47; chapter 9 starts on 48.",
+  "releaseAuthority": "Mike: I asked you to publish updated releases of every handbook.",
+  "productionReview": "Both 99-page appearances inspected in paired full overviews and full-size changed safety/source/changelog pages. Original book-specific multi-page changelog is retained; no clipping or renderer-specific loss observed."
+}

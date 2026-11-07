@@ -1,8 +1,8 @@
 ---
 title: Claude Design Field Guide
 subtitle: Explore, refine, and hand off an interactive product design
-edition: October 7, 2026 | Version 2.1.3
-status: Review candidate, not approved for publication
+edition: November 7, 2026 | Version 2.1.4
+status: Published edition
 audience: Product designers and product practitioners working with an existing product
 chapter_art: Frozen approved illustration pairs, remapped to the revised chapters
 diagram_system: Shared publishing toolkit with book-owned semantic definitions
@@ -25,7 +25,7 @@ Finish the main exercise with a reviewed interactive prototype, a decision recor
 
 You need access to Claude Design in your intended account and organization. For a Figma route, use a Figma account and a copy you can inspect. For a code-first route, use Claude Code and a local project you can run. Download the [Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip); no author-private organization or Figma file is required. Import the supplied native file into your own Drafts when you need to work in Figma.
 
-The walkthrough targets the standalone Design beta at `claude.ai/design/`. Claude also documents Design in conversations, Artifacts and Claude Code. Controls and system migration differ between those experiences. Follow one surface throughout a run, and record which surface you used. See the [current Design guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
+Start the walkthrough in Claude from a conversation or the Artifacts tab. Claude Code also supports Design. Use one surface throughout the exercise and record which one you used. Anthropic says the standalone site closes on December 14, 2026. If you have work there, keep an export you can open independently, check whether your account offers migration, and inspect the design system and project in the destination before relying on them. See [Design in Claude](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) and [the migration guide](https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude).
 
 <pagebreak>
 
@@ -92,7 +92,7 @@ Choose the setup route that matches your source. [Anthropic’s setup guide](htt
 
 ## Bring in Figma foundations
 
-In the standalone experience, open Design systems, choose Create design system, and select Create here. The setup form accepts a `.fig` file alongside fonts, logos and assets. Supply the company or system name and explain what the product does. Include the starting screen so Claude sees how the system is used.
+In Claude, open Design from the Artifacts tab and create or attach a design system. Use the supported input for your account and surface. Include the selected Figma foundations, the starting screen and any required fonts and assets. Describe the product and inspect the resulting system before generation. The Velori screenshots document the earlier standalone trial.
 
 The Velori trial attached four source pages and extracted 16 component families. The Figma source has 11 text styles, but Design reported none on import. It reconstructed the type scale from the Foundations notes and estimated the Product size. Compare the imported text against Figma before using it as a reference; the source Product style is 27px, while the import estimated 28px. Arimo and Lora load through Google Fonts; their binaries are not inside the native file.
 
@@ -385,7 +385,7 @@ The supplied Figma answer key contains editable Review and Cart frames. The fram
 | Token relationships | Required values use intended styles or variables |
 | Interaction behavior | Prototype connections and state behavior are tested |
 
-Editable layers do not automatically preserve the source component library or prototype wiring. Reconnect the required relationships and document what was rebuilt. [Code Connect](https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/) can supply implementation context when mappings are maintained; it is not a substitute for inspecting the received file.
+Restore component, style, variable and prototype relationships in the received file. If you use Code Connect, verify the mapped component and code against the source library. Professional plans expose the active library and framework. Desktop uses the Dev Mode selection. Remote clients can request the framework label. [Code Connect and MCP](https://help.figma.com/hc/en-us/articles/42495296821911-Code-Connect-and-MCP).
 
 Use Figma plan features only when the chosen deliverable requires them. A variable-driven native prototype may have additional plan requirements. A Design review prototype should not inherit those requirements merely because the team’s foundations were created in Figma.
 
@@ -469,14 +469,18 @@ Keep original and third-party notices with the supplied material. Velori’s aut
 
 # Changelog
 
-**Version 2.1.3 · October 7, 2026.**
+Compared with version 2.1.3, published 2026-10-07.
 
-**Correction or clarification.** Move dated notes about building and revising the examples out of the instructional chapters and captions. Keep that history in the edition and supporting evidence records.
+**Correction or clarification.** Move the primary walkthrough off the closing standalone surface, preserve exports and state the migration boundary.
 
-**Correction or clarification.** Explain the supplied Figma answer key as editable Review and Cart frames whose interactions need wiring. Keep the current material scope and the human-review requirement clear.
+A retained October 29 access predates this cycle cutoff and establishes the December 14 standalone closure, multi-surface migration and preservation limits. The approved edition still directs its main walkthrough to the standalone beta.
 
-**Correction or clarification.** Clarify the Velori exercise starting material and when to compare the completed example. Start with the design system, configurator and product assets, then explore and refine Review and Cart in Claude Design.
+[Primary source](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) · [Primary source](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design)
 
-[Previous handbook](https://handbooks.surfaces.systems/claude-design/editions/v2.1.2/) and [supporting evidence edition](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/) preserve the earlier records.
+**Addition.** Confirm the active library/framework and verify returned implementation context.
 
-Previous edition: **2.1.2 · October 7, 2026**. Daytime PDF SHA-256: `b92fb97bca6e867bcf636d1b75533d11c14cfc41f587426401638b9f2f6e8b03`.
+The retained October 29 official documentation establishes plan- and framework-specific Code Connect context. Add an account/framework precheck rather than implying any successful MCP call returns the intended implementation mapping.
+
+[Primary source](https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect) · [Primary source](https://help.figma.com/hc/en-us/articles/42495296821911-Code-Connect-and-MCP)
+
+Previous Daytime PDF SHA-256: ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7

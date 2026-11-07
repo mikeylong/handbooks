@@ -1,0 +1,142 @@
+[
+  {
+    "change_id": "CHG-001",
+    "classification": "correction",
+    "section": "Evidence-review metadata",
+    "before_text": "Last evidence review: **2026-09-30**",
+    "after_text": "Last evidence review: **2026-11-07**",
+    "reason": "Record the actual research access date. The collection cutoff remains November 2 at 09:00 Pacific; source access is not backdated.\nBibliography access-scope corrections linked to this actual evidence-review date update:\n[CTX-01] https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents: accessed true -> false; citation wording and URL unchanged.\n[AGT-01] https://www.anthropic.com/engineering/building-effective-agents: accessed true -> false; citation wording and URL unchanged.\n[TOOL-01] https://www.anthropic.com/engineering/writing-tools-for-agents: accessed true -> false; citation wording and URL unchanged.\n[CACHE-02] https://learn.microsoft.com/en-us/azure/api-management/llm-semantic-cache-lookup-policy: accessed true -> false; citation wording and URL unchanged.\n[OUT-02] https://json-schema.org/learn/getting-started-step-by-step: accessed true -> false; citation wording and URL unchanged.\n[TOOL-02] https://developers.openai.com/api/docs/guides/function-calling: accessed true -> false; citation wording and URL unchanged.\n[MCP-01] https://blog.modelcontextprotocol.io/posts/2026-07-28/: accessed true -> false; citation wording and URL unchanged.\n[MCP-03] https://modelcontextprotocol.io/specification/2026-07-28/basic/index: accessed true -> false; citation wording and URL unchanged.\n[AUTH-01] https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization: accessed true -> false; citation wording and URL unchanged.\n[AUTH-02] https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices: accessed true -> false; citation wording and URL unchanged.\n[AUTH-03] https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation: accessed true -> false; citation wording and URL unchanged.\n[MOD-03] https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html: accessed true -> false; citation wording and URL unchanged.\n[TOOL-05] https://developers.openai.com/api/docs/guides/async-tool-calling: accessed true -> false; citation wording and URL unchanged.\n[MOD-05] https://developers.openai.com/api/docs/guides/latest-model: accessed true -> false; citation wording and URL unchanged.\n[MOD-06] https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html: accessed true -> false; citation wording and URL unchanged.\n[CTX-03] https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand: accessed true -> false; citation wording and URL unchanged.\n[TOOL-06] https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages: accessed true -> false; citation wording and URL unchanged.\n[TOOL-07] https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use: accessed true -> false; citation wording and URL unchanged.\n[MOD-08] https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide: accessed true -> false; citation wording and URL unchanged.\n[SERV-04] https://docs.vllm.ai/en/latest/: accessed true -> false; citation wording and URL unchanged.\n[SERV-05] https://developers.openai.com/api/docs/guides/latency-optimization: accessed true -> false; citation wording and URL unchanged.\n[SERV-08] https://github.com/vllm-project/vllm/releases/tag/v0.28.0: accessed true -> false; citation wording and URL unchanged.\n[SERV-11] https://arxiv.org/html/2609.02029v1: accessed true -> false; citation wording and URL unchanged.\n[RAG-02] https://www.elastic.co/docs/solutions/search/hybrid-search: accessed true -> false; citation wording and URL unchanged.\n[RAG-03] https://learn.microsoft.com/en-us/azure/well-architected/ai/grounding-data-design: accessed true -> false; citation wording and URL unchanged.\n[EVAL-02] https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents: accessed true -> false; citation wording and URL unchanged.\n[EVAL-03] https://developers.openai.com/api/docs/guides/evals: accessed true -> false; citation wording and URL unchanged.\n[EVAL-05] https://openai.com/index/hugging-face-incident-and-the-road-ahead/: accessed true -> false; citation wording and URL unchanged.\n[EVAL-06] https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf: accessed true -> false; citation wording and URL unchanged.\n[ORIG-05] https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/: accessed true -> false; citation wording and URL unchanged.\n[EVAL-09] https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures: accessed true -> false; citation wording and URL unchanged.\n[EVAL-10] https://deploymentsafety.openai.com/gpt-6-astra/vision: accessed true -> false; citation wording and URL unchanged.\n[ORIG-12] https://arxiv.org/abs/2609.04198: accessed true -> false; citation wording and URL unchanged.\n[ORIG-13] https://arxiv.org/abs/2609.05587: accessed true -> false; citation wording and URL unchanged.\n[ORIG-14] https://arxiv.org/abs/2609.02564: accessed true -> false; citation wording and URL unchanged.\n[ORIG-15] https://arxiv.org/abs/2609.09404: accessed true -> false; citation wording and URL unchanged.\n[OBS-03] https://github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e52464c56eea4389fb793c2690caaea78: accessed true -> false; citation wording and URL unchanged.\n[OBS-02] https://airc.nist.gov/airmf-resources/playbook/measure/: accessed true -> false; citation wording and URL unchanged.\n[COST-01] https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/usage/methods/costs: accessed true -> false; citation wording and URL unchanged.\n[COST-02] https://www.finops.org/framework/capabilities/unit-economics/: accessed true -> false; citation wording and URL unchanged.\n[REL-05] https://developers.openai.com/api/docs/guides/error-codes: accessed true -> false; citation wording and URL unchanged.\n[SAFE-01] https://genai.owasp.org/llmrisk/llm01-prompt-injection/: accessed true -> false; citation wording and URL unchanged.\n[SAFE-02] https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection: accessed true -> false; citation wording and URL unchanged.\n[SAFE-04] https://github.com/vllm-project/vllm/security/advisories/GHSA-7m6h-x95x-82q5: accessed true -> false; citation wording and URL unchanged.\n[SAFE-05] https://github.com/vllm-project/vllm/security/advisories/GHSA-3c86-2m5g-59q7: accessed true -> false; citation wording and URL unchanged.\n[SAFE-06] https://github.com/vllm-project/vllm/security/advisories/GHSA-936p-m5pv-vvjf: accessed true -> false; citation wording and URL unchanged.\n[SAFE-07] https://github.com/vllm-project/vllm/security/advisories/GHSA-99f2-hwrc-gvq8: accessed true -> false; citation wording and URL unchanged.\n[SAFE-08] https://github.com/vllm-project/vllm/security/advisories/GHSA-8pw2-6jv3-mj5j: accessed true -> false; citation wording and URL unchanged.\n[SAFE-09] https://nvidia.custhelp.com/app/answers/detail/a_id/5872: accessed true -> false; citation wording and URL unchanged.\n[TEN-01] https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system: accessed true -> false; citation wording and URL unchanged.\n[SAFE-11] https://github.com/vllm-project/vllm/security/advisories/GHSA-25q3-v2hm-8vpf: accessed true -> false; citation wording and URL unchanged.\n[SAFE-12] https://github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p: accessed true -> false; citation wording and URL unchanged.\n[SAFE-13] https://github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf: accessed true -> false; citation wording and URL unchanged.\n[SAFE-14] https://github.com/vllm-project/vllm/security/advisories/GHSA-p6g9-7v3x-m8mv: accessed true -> false; citation wording and URL unchanged.\n[SAFE-15] https://github.com/vllm-project/vllm/security/advisories/GHSA-j682-9xp5-rrf3: accessed true -> false; citation wording and URL unchanged.\n[SAFE-16] https://github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4: accessed true -> false; citation wording and URL unchanged.\n[SAFE-17] https://github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw: accessed true -> false; citation wording and URL unchanged.\n[SAFE-18] https://github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48: accessed true -> false; citation wording and URL unchanged.\n[OPT-01] https://developers.openai.com/api/docs/guides/model-optimization: accessed true -> false; citation wording and URL unchanged.",
+    "source_ids": [
+      "MOD-04"
+    ],
+    "confidence": "high",
+    "consequence_accept": "Readers can apply this bounded clarification with its primary evidence and limits.",
+    "consequence_reject": "The current edition omits this verified operational clarification.",
+    "reader_title": "Record the current evidence review",
+    "reader_what_changed": "Updated the evidence-review date and limited current-access assertions to sources reopened in this run.",
+    "reader_why": "Readers can distinguish the retrospective cutoff from the dates on which source text was checked."
+  },
+  {
+    "change_id": "CHG-002",
+    "classification": "addition",
+    "section": "Section 18: Cache cost guidance",
+    "before_text": "Note | Record cached-input, cache-write, reasoning, and output usage separately, but do not add a subtype again when the provider includes it in a parent total.\n```",
+    "after_text": "Note | Record cached-input, cache-write, reasoning, and output usage separately, but do not add a subtype again when the provider includes it in a parent total.\n```\n\nOpenAI added a selectable 12-hour minimum cache lifetime on eligible Responses API routes. Its October 20 changelog lists the write rate as 2.5 times the ordinary input rate. Check the exact model, breakpoint, project data controls and observed reuse interval before pricing the route. Compare the full cost of writes, reads and uncached input over the same traffic window.",
+    "reason": "Add the dated 12-hour option and 2.5x write-rate example after the cache-breakpoint guidance. Keep model-specific terms and data controls explicit. Accepted labels: MOD-04, CACHE-01, PRIV-01. Primary URLs: https://developers.openai.com/api/docs/changelog, https://developers.openai.com/api/docs/guides/prompt-caching, https://developers.openai.com/api/docs/guides/your-data.",
+    "source_ids": [
+      "MOD-04",
+      "CACHE-01",
+      "PRIV-01"
+    ],
+    "confidence": "high",
+    "consequence_accept": "Readers can apply this bounded clarification with its primary evidence and limits.",
+    "consequence_reject": "The current edition omits this verified operational clarification.",
+    "reader_title": "Price the selected cache lifetime",
+    "reader_what_changed": "Add selectable 12-hour cache lifetime, 2.5x write pricing and account/data-control checks.",
+    "reader_why": "Add the dated 12-hour option and 2.5x write-rate example after the cache-breakpoint guidance. Keep model-specific terms and data controls explicit."
+  },
+  {
+    "change_id": "CHG-003",
+    "classification": "addition",
+    "section": "Section 13: Routing and degraded mode",
+    "before_text": "Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. Google's [Gemini deprecation schedule](https://ai.google.dev/gemini-api/docs/deprecations) demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.",
+    "after_text": "Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. Google's [Gemini deprecation schedule](https://ai.google.dev/gemini-api/docs/deprecations) demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.\n\nTreat provider service-tier policy as a route constraint. OpenAI documents organization-wide and project-specific tier controls. Test the effective settings using the intended project and confirm the behavior of an explicitly disallowed request. Do not fail over to a different organization or project to get around the denial.",
+    "reason": "Add organization/project tier-policy checks to route compatibility and fallback decisions; a fallback must remain authorized. Accepted labels: MOD-04. Primary URLs: https://developers.openai.com/api/docs/changelog.",
+    "source_ids": [
+      "MOD-04"
+    ],
+    "confidence": "high",
+    "consequence_accept": "Readers can apply this bounded clarification with its primary evidence and limits.",
+    "consequence_reject": "The current edition omits this verified operational clarification.",
+    "reader_title": "Check service-tier policy before routing",
+    "reader_what_changed": "Test organization/project service-tier restrictions and reject unauthorized fallback routes.",
+    "reader_why": "Add organization/project tier-policy checks to route compatibility and fallback decisions; a fallback must remain authorized."
+  },
+  {
+    "change_id": "CHG-004",
+    "classification": "addition",
+    "section": "Section 16: Judge calibration",
+    "before_text": "Calibrate a black-box judge on the exact endpoint, model version, rubric, language, and time window used for the release. Repeat representative judgments, record disagreement and rank stability, and require a human or deterministic fallback when the judge drifts. Do not transfer a calibration result across endpoints or silently updated aliases. A 52,988-attempt [study](https://arxiv.org/abs/2609.04198) of shared judge endpoints found substantially lower repeat and next-day rank stability than a controlled endpoint. This makes local calibration an operating requirement rather than a one-time benchmark.",
+    "after_text": "Calibrate a black-box judge on the exact endpoint, model version, rubric, language, and time window used for the release. Repeat representative judgments, record disagreement and rank stability, and require a human or deterministic fallback when the judge drifts. Do not transfer a calibration result across endpoints or silently updated aliases. A 52,988-attempt [study](https://arxiv.org/abs/2609.04198) of shared judge endpoints found substantially lower repeat and next-day rank stability than a controlled endpoint. This makes local calibration an operating requirement rather than a one-time benchmark.\n\nProbe an automated judge with controlled reversals. Hold the rubric fixed and change only the answer evidence that should affect the grade. Then hold the answer fixed and reverse a criterion whose judgment should change. A rubric-only baseline can reveal how much of the outcome is predictable without seeing the answer. Investigate that signal before trusting a high aggregate agreement score.",
+    "reason": "Extend judge calibration with controlled semantic reversals and a rubric-only baseline where appropriate; keep claims bounded to the study. Accepted labels: EVAL-90. Primary URLs: https://arxiv.org/html/2609.02942v1.",
+    "source_ids": [
+      "EVAL-90"
+    ],
+    "confidence": "high",
+    "consequence_accept": "Readers can apply this bounded clarification with its primary evidence and limits.",
+    "consequence_reject": "The current edition omits this verified operational clarification.",
+    "reader_title": "Probe rubric artifacts in model judges",
+    "reader_what_changed": "Add controlled answer/criterion counterfactuals and a rubric-only baseline.",
+    "reader_why": "Extend judge calibration with controlled semantic reversals and a rubric-only baseline where appropriate; keep claims bounded to the study."
+  },
+  {
+    "change_id": "CHG-005",
+    "classification": "correction",
+    "section": "Section 8: Speculative decoding and runtime migration",
+    "before_text": "When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use it to reduce latency, not to approximate an answer. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. [Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html) describe the method.",
+    "after_text": "When the rejection sampler and target-model sampling semantics are implemented correctly, speculative decoding preserves the target distribution. Use a verified lossless policy when preserving the target distribution is part of the contract. Floating-point or batching nondeterminism still prevents any guarantee of byte-identical runs. Benchmark acceptance, draft and verification cost, TPOT, and SLO goodput at production concurrency. Low acceptance or saturated compute can make the system slower. [Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html) describe the method.\n\nCheck the verification policy before treating speculative decoding as lossless. The vLLM v0.33.0 release notes at tag v0.33.0rc3 describe an opt-in lossy verifier and remove CUDA 12.9 release artifacts. Pin the serving image or wheel and verify its CUDA and framework requirements. Evaluate output quality separately before enabling any approximate verifier.",
+    "reason": "Clarify that lossless speculative-decoding guidance does not cover an opt-in lossy verifier, and that serving-runtime upgrades require pinned CUDA/framework/artifact compatibility plus quality regression evidence. Accepted labels: REV-52. Primary URLs: https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3.",
+    "source_ids": [
+      "REV-52"
+    ],
+    "confidence": "high",
+    "consequence_accept": "Readers can apply this bounded clarification with its primary evidence and limits.",
+    "consequence_reject": "The current edition omits this verified operational clarification.",
+    "reader_title": "Verify speculative decoding policy",
+    "reader_what_changed": "Separate lossless verification from opt-in lossy approximation and pin CUDA/framework/artifact compatibility.",
+    "reader_why": "Clarify that lossless speculative-decoding guidance does not cover an opt-in lossy verifier, and that serving-runtime upgrades require pinned CUDA/framework/artifact compatibility plus quality regression evidence."
+  },
+  {
+    "change_id": "CHG-006",
+    "classification": "addition",
+    "section": "Section 17: Monitoring",
+    "before_text": "Monitor recalibration belongs in every model or reasoning-configuration migration. Compare action-only, reasoning-only, and combined monitoring where those signals are available and permitted. Measure detection, false alarms, and evasion on the same task slices. [OpenAI's GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/vision) reports monitorability changes and adversarial evasion in its evaluation setting. Treat those results as a reason to revalidate local monitoring, not as a production detection rate. Keep external receipts and enforceable policy checks independent of the monitor.",
+    "after_text": "Monitor recalibration belongs in every model or reasoning-configuration migration. Compare action-only, reasoning-only, and combined monitoring where those signals are available and permitted. Measure detection, false alarms, and evasion on the same task slices. [OpenAI's GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/vision) reports monitorability changes and adversarial evasion in its evaluation setting. Treat those results as a reason to revalidate local monitoring, not as a production detection rate. Keep external receipts and enforceable policy checks independent of the monitor.\n\nInventory the surfaces the monitor can see, including evaluation harnesses and every enabled tool path. Exercise a known failure end to end and verify that independent evidence reaches the right responder and that containment actually occurs. Sample unflagged traffic and record gaps in surface coverage, threat-specific recall and responder availability.",
+    "reason": "Add an explicit monitor-coverage inventory and test the complete alert, external-evidence, responder and containment path; monitor calibration alone does not prove a surface is covered or a response occurs. Accepted labels: REV-53, REV-50. Primary URLs: https://alignment.openai.com/how-we-detect-frontier-model-misalignment, https://openai.com/index/securing-our-frontier-model-training-environment/.",
+    "source_ids": [
+      "REV-53",
+      "REV-50"
+    ],
+    "confidence": "high",
+    "consequence_accept": "Readers can apply this bounded clarification with its primary evidence and limits.",
+    "consequence_reject": "The current edition omits this verified operational clarification.",
+    "reader_title": "Test monitor coverage and incident response",
+    "reader_what_changed": "Inventory every agent/tool surface and test alert, external evidence, responder and containment behavior.",
+    "reader_why": "Add an explicit monitor-coverage inventory and test the complete alert, external-evidence, responder and containment path; monitor calibration alone does not prove a surface is covered or a response occurs."
+  },
+  {
+    "change_id": "CHG-007",
+    "classification": "addition",
+    "section": "Section 16: Evaluation contract",
+    "before_text": "Build the evals before you optimize. Without them, every caching, routing, quantization, prompt, retrieval, or model change can quietly exchange quality for speed or cost.",
+    "after_text": "Build the evals before you optimize. Without them, every caching, routing, quantization, prompt, retrieval, or model change can quietly exchange quality for speed or cost.\n\nIn predictive workflows, require every input feature to be available at the actual decision point. Use a paired test with a known leaking input and a valid control. Verify lineage and timestamps with a deterministic check. The clinical LeakBench preprint shows why an improved offline score can coexist with fatal prediction-time leakage.",
+    "reason": "Add decision-time feature availability and provenance as evaluation invariants; a high offline score must not conceal a feature that cannot exist at the real decision point. Accepted labels: REV-54. Primary URLs: https://arxiv.org/html/2610.26088v1.",
+    "source_ids": [
+      "REV-54"
+    ],
+    "confidence": "high",
+    "consequence_accept": "Readers can apply this bounded clarification with its primary evidence and limits.",
+    "consequence_reject": "The current edition omits this verified operational clarification.",
+    "reader_title": "Verify input availability at decision time",
+    "reader_what_changed": "Require decision-time feature availability and deterministic provenance verification.",
+    "reader_why": "Add decision-time feature availability and provenance as evaluation invariants; a high offline score must not conceal a feature that cannot exist at the real decision point."
+  },
+  {
+    "change_id": "CHG-008",
+    "classification": "correction",
+    "section": "Section 20: Tenant isolation and provider data policy",
+    "before_text": "- record the requested processing geography and the provider-resolved organization, project, workspace, and region when the API exposes them; reject unexpected resolution before sensitive data crosses the boundary;",
+    "after_text": "- record the requested processing geography and the provider-resolved organization, project, workspace, and region when the API exposes them; reject unexpected provider resolution or unapproved request storage before sensitive data crosses the boundary;\n- Before routing sensitive data, check the provider project and request-level storage setting with disposable inputs. Google turned on Generate Content request storage by default for new paid projects from October 26, 2026. Existing projects keep their settings. Verify the effective project default and the request override separately.",
+    "reason": "Test resolved provider project and request-level logging policy with synthetic data before adding sensitive inputs. A newly created replacement project can have a different default. Accepted labels: MOD-01, REV-59. Primary URLs: https://ai.google.dev/gemini-api/docs/changelog, https://ai.google.dev/gemini-api/docs/logs-datasets.",
+    "source_ids": [
+      "MOD-01",
+      "REV-59"
+    ],
+    "confidence": "high",
+    "consequence_accept": "Readers can apply this bounded clarification with its primary evidence and limits.",
+    "consequence_reject": "The current edition omits this verified operational clarification.",
+    "reader_title": "Check resolved request storage defaults",
+    "reader_what_changed": "Verify the effective provider-side logging policy before routing sensitive requests. Google defaults storage on for new paid Generate Content projects from October 26. Existing projects keep their setting. Check the project control and request override using disposable inputs.",
+    "reader_why": "Test resolved provider project and request-level logging policy with synthetic data before adding sensitive inputs. A newly created replacement project can have a different default."
+  }
+]

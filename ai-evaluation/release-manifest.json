@@ -1,13 +1,143 @@
 {
+  "id": "ai-evaluation",
   "title": "AI Evaluation Field Guide",
-  "version": "1.0.0",
-  "date": "2026-10-01",
-  "pdf": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
-  "sha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
-  "pages": 100,
-  "previous_public_edition": null,
-  "comparison_basis": "unpublished draft",
-  "candidate_validation": "qa/validation.json",
+  "version": "1.0.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+  "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+  "pages": 103,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
+  "previous_public_edition": "1.0.0",
+  "comparison_basis": "approved public edition",
+  "baseline": {
+    "title": "AI Evaluation Field Guide",
+    "version": "1.0.0",
+    "date": "2026-10-01",
+    "pdf": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
+    "sha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+    "pages": 100,
+    "manifest": {
+      "path": "baselines/v1.0.0/pre-weekly-release/release-manifest.json",
+      "sha256": "c508f6a97eed629821275f82e54fb80b925eb9bda84215e9ddf013e064dd248f"
+    },
+    "originalPdfPath": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf"
+  },
+  "candidate_validation": "qa/v1.0.1/weekly/lightValidation.json",
+  "candidateEvidence": {
+    "lightValidation": {
+      "path": "qa/v1.0.1/weekly/lightValidation.json",
+      "sha256": "7608d257cb9b4513c9a3619666020b3d4d302e525a2b13bdf95595ef2c42b5b3",
+      "bytes": 8173
+    },
+    "darkValidation": {
+      "path": "qa/v1.0.1/weekly/darkValidation.json",
+      "sha256": "85ba4c1ba68ba0b13e16d1f1fc1fee07349577f62a6099a0262a6760524eeeb5",
+      "bytes": 8188
+    },
+    "changelogDecision": {
+      "path": "qa/v1.0.1/weekly/changelogDecision.json",
+      "sha256": "19a25f6fdcb81a7b05189c3bc267b4d81e03f38b06ef51143df272854c02b867",
+      "bytes": 2376
+    },
+    "editionDiff": {
+      "path": "qa/v1.0.1/weekly/editionDiff.json",
+      "sha256": "43ffb57cedba98ef981afd32abbc5a8704a9f6fd992419d6b7a0c0ab9063dfd0",
+      "bytes": 2375
+    },
+    "changes": {
+      "path": "qa/v1.0.1/weekly/changes.json",
+      "sha256": "82615dbec38fde882b2b5392d79fa2b9e111f6f10cbf51168bb346979f7fedf4",
+      "bytes": 2053
+    },
+    "editionDiffPdfTextPatch": {
+      "path": "qa/v1.0.1/weekly/exact-pdf-text.patch",
+      "sha256": "692d71159bb8a4aef0115ba968a52e940cce92b2ac3c0e4f3fa833d772f9a4cd",
+      "bytes": 38342
+    },
+    "editionDiffReaderFacingContentPatch": {
+      "path": "qa/v1.0.1/weekly/reader-facing-content.patch",
+      "sha256": "530b8c8af33c268fbc8cf227e2f669484ad89dddf06dfb3753ca43efbfa065ca",
+      "bytes": 35292
+    },
+    "editionDiffSourcePatch": {
+      "path": "qa/v1.0.1/weekly/exact-source.patch",
+      "sha256": "fa163cfe3d580c6118cafd282fdf768e602766a08e1e51ee07c233e73591f7c0",
+      "bytes": 10150
+    },
+    "parity": {
+      "path": "qa/v1.0.1/weekly/parity.json",
+      "sha256": "82c22b89f1ade99c06e88a93f91f739256b07a4f65a02128591b544a6791fe76"
+    },
+    "appearanceAudit": {
+      "path": "qa/v1.0.1/appearance.json",
+      "sha256": "ff3b75bfff6cbeaeaee727d6f26b498dec9496109b71a98a95d7068578462a2e"
+    }
+  },
+  "evidenceMode": "standard",
+  "pageMaps": {
+    "light": {
+      "path": "qa/v1.0.1/weekly/light-page-map.json",
+      "sha256": "01386eb50d53a1d14ca11aa465c8c93d39d2b965843a06f20de7789d666432f4"
+    },
+    "dark": {
+      "path": "qa/v1.0.1/weekly/dark-page-map.json",
+      "sha256": "571e3b06e2a655a9de788d48b0680377757d4068949193e54564349eb8807048"
+    }
+  },
+  "classifiedChangeIds": [
+    "candidate-change-001",
+    "candidate-change-002",
+    "candidate-change-003",
+    "candidate-change-004"
+  ],
+  "readerFacingContentChanged": true,
+  "changelog": {
+    "weeklyDecision": {
+      "path": "qa/v1.0.1/weekly/changelogDecision.json",
+      "sha256": "19a25f6fdcb81a7b05189c3bc267b4d81e03f38b06ef51143df272854c02b867",
+      "bytes": 2376
+    },
+    "pdfDecision": {
+      "path": "qa/v1.0.1/weekly/changelogDecision.json",
+      "sha256": "19a25f6fdcb81a7b05189c3bc267b4d81e03f38b06ef51143df272854c02b867",
+      "bytes": 2376
+    },
+    "retainedHistoricalChangelog": false
+  },
+  "appearances": {
+    "light": {
+      "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+      "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+      "pages": 103
+    },
+    "dark": {
+      "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-late-night-r1.pdf",
+      "sha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
+      "pages": 103
+    }
+  },
+  "retainedProvenance": {
+    "status": "historical_only_not_reverified",
+    "sourceEdition": "1.0.0",
+    "sourceManifestSha256": "c508f6a97eed629821275f82e54fb80b925eb9bda84215e9ddf013e064dd248f",
+    "inputMetadata": "baselines/v1.0.0/pre-weekly-release",
+    "readerSnapshot": {
+      "collectionPath": "site/retained/ai-evaluation/v1.0.0/reader-snapshot.html",
+      "sha256": "2e7cf85f554c11cda179b5fe2b6a7aadc3509bd610505fc8664a9a4e2441123c"
+    },
+    "historicalCommit": "3968c25d30257f3696a8712365298d0bad6c196e"
+  },
+  "publicationStatus": "published",
+  "publicationApproval": {
+    "date": "2026-11-07",
+    "command": "Publish them and update releases",
+    "clarification": "I asked you to publish updated releases of every handbook.",
+    "kind": "explicit-user-release",
+    "version": "1.0.1",
+    "daytimeSha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990"
+  },
+  "releaseValidationKind": "weekly-exact-artifact",
   "art": [
     {
       "path": "assets/chapter-art/chapter-09.png",
@@ -105,5 +235,10 @@
       "path": "assets/chapter-art/pdf/chapter-10.png",
       "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
     }
-  ]
+  ],
+  "generationToolkitArchive": {
+    "collectionPath": "releases/2026-11-07/generation-toolkit.zip",
+    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
+    "purpose": "Frozen runtime used for these PDF builds; artifact promotion copied exact validated bytes."
+  }
 }

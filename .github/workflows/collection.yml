@@ -21,10 +21,8 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: pip install pypdf==6.10.0
       - run: npm run validate
-      - name: Verify final term index
-        run: python3 publish-evidence-backed-handbook/scripts/validate-term-index.py --book ai-native-organization --html site/output/site/ai-native-organization/index.html --pdf ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf --pdf ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf
-      - name: Verify AI-Native published heading labels
-        run: python3 publish-evidence-backed-handbook/scripts/validate-heading-labels.py --book ai-native-organization --html site/output/site/ai-native-organization/index.html --markdown site/output/site/ai-native-organization/editions/v1.1.0/ai-native-organization-v1.1.0.md --pdf ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-daytime-r1.pdf --pdf ai-native-organization/output/pdf/ai-native-organization-v1.1.0-2026-10-23-late-night-r1.pdf
+      - name: Verify current AI-Native term index and heading labels
+        run: node scripts/validate-book-structure.mjs ai-native-organization
 
   validate-velori:
     runs-on: ubuntu-latest

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "readerFacingContentChanged": true,
+  "summary": "Evidence-backed updates for AI-Native Organization Handbook.",
+  "changes": [
+    {
+      "category": "Addition",
+      "section": "Coordination model",
+      "text": "Added a bounded case on Block's proposal for shared company and customer context.",
+      "rationale": "The case gives teams a hypothesis they can test against delivery and workload evidence.",
+      "sources": [
+        "https://block.xyz/inside/from-hierarchy-to-intelligence"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Shared context",
+      "text": "Added owners and escalation routes for dependencies and decisions in a coordination trial.",
+      "rationale": "Record waiting time and review effort to see where work moves when a handoff gets faster.",
+      "sources": [
+        "https://block.xyz/inside/from-hierarchy-to-intelligence",
+        "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+        "https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations"
+      ]
+    }
+  ]
+}

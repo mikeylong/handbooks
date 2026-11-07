@@ -7,8 +7,8 @@
     "directory": "claude-design"
   },
   "scripts": {
-    "build": "npm run validate",
-    "validate": "node source/test-release-ledger.mjs && node source/test-design-exploration.mjs && node source/test-retained-exercise.mjs && node source/test-prompt-tools.mjs && node source/validate-release.mjs"
+    "build": "node ../scripts/validate-book-release.mjs claude-design && node ../scripts/validate-weekly-release.mjs claude-design",
+    "validate": "node ../scripts/validate-book-release.mjs claude-design && node ../scripts/validate-weekly-release.mjs claude-design"
   },
-  "version": "2.1.3"
+  "version": "2.1.4"
 }

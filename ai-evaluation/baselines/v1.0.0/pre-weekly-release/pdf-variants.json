@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-evaluation",
+  "title": "AI Evaluation Field Guide",
+  "version": "1.0.0",
+  "date": "2026-10-01",
+  "pdf": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
+  "sha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+  "pages": 100,
+  "contentComparison": {
+    "decision": "unchanged",
+    "baselineSha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+    "changelog": "Preserve the released edition changelog; add no appearance changelog."
+  },
+  "sourceRevision": "394442daf2529d8008abc20db67b130d37f1f120",
+  "sourceInputs": {
+    "REVIEW_PLAN.md": "9e64724ac00cfd48d508ac97fc3fff8c47153cb95f652ca3a10954176bd2db7a",
+    "REPOSITORY_MIGRATION.md": "fd7e528af76a96269457c81e66bb46b0de591c0db7799531e4411887ebeff2f8",
+    "README.md": "9bede171c8f95c33b76fe8afceebf41e906873d19a9dee226061f23a8c254b69",
+    "source/build_reader.py": "215f65240d116a724a8f8f8519dc75815207c5fde187cddd2a52dd0aaafcb74f",
+    "source/build_handbook.py": "3e024112d77e40b09c053143e8d4e5e84ff9f1734b1cdd1a3c33d88325b401e2",
+    "source/reader-config.json": "ebfff4a0ad10ea7652b048956c53cddb59ab7543316b1e4d6fea4b27ad9a3882",
+    "source/diagrams/EvidenceLoop.json": "419d2f024403043c7bfd0bf75ee26d6fb166676c050147d8226bca67fcca159a",
+    "source/diagrams/DataSplitDiagram.json": "6cc3210cf80074fcf052708549e9bd954fb08ecb0976703dd853a278cda53151",
+    "source/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
+    "source/fonts/SourceSerif4-Bold.ttf": "faf5ef02799bec5752da30cd51c936708cd464b257e2770219dbfab170085a9c",
+    "source/fonts/SourceCodePro-Semibold.ttf": "1b61c980d75de8216228a2603bcabe51394013452df26a04c99326bbc035c5a5",
+    "source/fonts/SourceSerif4-MediumItalic.ttf": "020e5e32d990bb12c9c4f10c8cfd8c1e359979c35fb6bca8147d2bfd1bfd1236",
+    "source/fonts/SourceSerif4-Medium.ttf": "0ef212ab36b5f3f2fb810c1a896f9f86f07d4fdb38cae0c7b62a25a55a2b2bf6",
+    "source/fonts/SourceSerif4-BoldItalic.ttf": "8a153c27b5a15c0ba5f6588416d207ea5e119f3b4fb028348f50e3c4de0a1289",
+    "source/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
+    "source/fonts/SourceSerif4-RegularItalic.ttf": "53c465029115d3811c828425890b38cbe4b874af67d15ba5ac795e14dc5baee9",
+    "source/fonts/SourceCodePro-Regular.ttf": "f144137f557805c7327fc4b14d1d730f6e1822e0124170251ff1bcd723a693f1",
+    "source/fonts/manifest.json": "3cf9ba5d64581e74ee36f8b6b71ff1b82ab27bcfd66247abf3c3b7b31696f74e",
+    "source/fonts/SourceSerif4-Regular.ttf": "903db2772e75699975ed8483ec98128f054815c43d1fdc7a8506410c11c25866"
+  },
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "appearanceDate": null,
+      "candidateDate": "2026-10-02",
+      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
+      "publicUrl": "/ai-evaluation/ai-evaluation-v1.0.0-2026-10-01.pdf",
+      "downloadFilename": "ai-evaluation-v1.0.0-2026-10-01-daytime-r1.pdf",
+      "sha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
+      "bytes": 5103884,
+      "pages": 100,
+      "pageMap": {
+        "path": "releases/pdf-appearances/2026-10-02/ai-evaluation/retained-page-map.json",
+        "sha256": "f27c253e9bf6fe213f6a3027aa9b3d0d8d2df03e15da1eff714e3fbe13f2b145"
+      },
+      "approvalStatus": "approved"
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "appearanceDate": "2026-10-02",
+      "candidateDate": "2026-10-02",
+      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "publicUrl": "/ai-evaluation/editions/v1.0.0/ai-evaluation-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "downloadFilename": "ai-evaluation-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "sha256": "bc9bbaaace135a3b0f5a4a711d4f72a30888bdd9749c680153834271f44d0ce2",
+      "bytes": 55713187,
+      "pages": 100,
+      "pageMap": {
+        "path": "releases/pdf-appearances/2026-10-02/ai-evaluation/candidate-page-map.json",
+        "sha256": "e60d3bb0e308862d8f0c78cefd1762456e9e4123a241bc3f9397e36e5a8f39ce"
+      },
+      "approvalStatus": "approved",
+      "proof": {
+        "parity": {
+          "path": "releases/pdf-appearances/2026-10-02/ai-evaluation/parity.json",
+          "sha256": "974980e82f17f4e6bd630aab59ce6b6a5bdb0d61c722f338b2c21c29e5296c3d"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "bc9bbaaace135a3b0f5a4a711d4f72a30888bdd9749c680153834271f44d0ce2",
+          "date": "2026-10-02",
+          "authority": "Mike: direct Land this authorization in the active task, following exact-artifact review and the sidebar correction.",
+          "agentReview": "releases/pdf-appearances/2026-10-02/visual-review.json"
+        },
+        "accessibilityLimitations": [
+          "Untagged baseline; PDF/UA compliance is not claimed. Accessible HTML remains available."
+        ],
+        "appearanceAudit": {
+          "path": "releases/pdf-appearances/2026-10-02/ai-evaluation/appearance-audit.json",
+          "sha256": "8f52a24e386d1b2f283bf404c588131312f89c2767ed80651d9ed504209f7989"
+        },
+        "renderInventory": {
+          "path": "releases/pdf-appearances/2026-10-02/ai-evaluation/render-proof-inventory.json",
+          "sha256": "69aefd39b97c0dc88c23583e6689604843c45e199c8693f2763933ba8c7e1012"
+        },
+        "localPageProofs": {
+          "poppler": "deployments/light-dark-pdfs/proof/ai-evaluation/late-night-v2/poppler",
+          "pdfkit": "deployments/light-dark-pdfs/proof/ai-evaluation/late-night-v2/pdfkit"
+        }
+      }
+    }
+  ],
+  "build": {
+    "configPath": "ai-evaluation/pdf-config.json",
+    "configSha256": "edae9be925d2835cecea5aec91fca7f5f357be491e50b38b976481826f60cad7",
+    "tokenPath": "publish-evidence-backed-handbook/assets/design-system/pdf-appearance.json",
+    "tokenSha256": "bffef43a064c4fc6544f118bdf7bd53725f7537bdb50f5e556ace6a95e59eec3",
+    "renderer": "reportlab",
+    "toolchainReport": "releases/pdf-appearances/2026-10-02/preflight.json",
+    "toolkitRevision": "uncommitted implementation based on 394442daf2529d8008abc20db67b130d37f1f120",
+    "finalizerVersion": 1,
+    "artworkDerivatives": "releases/pdf-appearances/2026-10-02/ai-evaluation/artwork-derivatives.json",
+    "toolkitInputs": {
+      "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs": "85cb4af6951eb69829aacb4ad158a70ad81f580b84b783dcbd959945c81045fa",
+      "publish-evidence-backed-handbook/scripts/finalize_chromium_pdf.py": "0a3d1f751e4494872650585934d7485027acfe93d8feaf21ee3061f9bc4425b3",
+      "publish-evidence-backed-handbook/scripts/pdf_artwork.py": "5e0e8ecc39a12ee3f33efd14e684089416ededdd7ec0da067f9c93f4f0898200",
+      "publish-evidence-backed-handbook/scripts/build_reportlab_pdf.py": "ba8494b7a741a31bcc0282f31d6aa31b953e43ef87b1df14a47d34a3ec7666b0",
+      "publish-evidence-backed-handbook/scripts/diagram_data.py": "91b6294d248115e191d04c46f26102fdd506841689e32db9d16bfce57f83088e",
+      "publish-evidence-backed-handbook/scripts/reportlab_layout.py": "301b4096b12de130268bf0be108f1a9e10697e75e11db25875a636088a71d2a3",
+      "publish-evidence-backed-handbook/scripts/pdf_theme.py": "46f37c800f07f51209810c837c69cc7ec5b3d280a3a06bb513a987df5107ce78",
+      "publish-evidence-backed-handbook/scripts/fixed-flow-diagrams.mjs": "0675d9f9c935490faaf27b6ec6bf7a9f9b0841cf012481753c2271138ac24fa4",
+      "publish-evidence-backed-handbook/scripts/render-chromium-pdf.mjs": "61352cbea1d1cc9736a5128e3001fd299995f81b2c58c6d93b53e601500a6628",
+      "publish-evidence-backed-handbook/scripts/pdf-css.mjs": "0ff51de388f807322e1ed63b68adca47d27c350bd7e4b0593abc93c8e4465961"
+    },
+    "fontHashes": {
+      "publish-evidence-backed-handbook/assets/design-system/fonts/source-serif-4-latin-variable-italic.woff2": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/NotoSans-Regular.ttf": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-Bold.ttf": "faf5ef02799bec5752da30cd51c936708cd464b257e2770219dbfab170085a9c",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceCodePro-Semibold.ttf": "1b61c980d75de8216228a2603bcabe51394013452df26a04c99326bbc035c5a5",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-MediumItalic.ttf": "020e5e32d990bb12c9c4f10c8cfd8c1e359979c35fb6bca8147d2bfd1bfd1236",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-Medium.ttf": "0ef212ab36b5f3f2fb810c1a896f9f86f07d4fdb38cae0c7b62a25a55a2b2bf6",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-BoldItalic.ttf": "8a153c27b5a15c0ba5f6588416d207ea5e119f3b4fb028348f50e3c4de0a1289",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/NotoSans-Bold.ttf": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-RegularItalic.ttf": "53c465029115d3811c828425890b38cbe4b874af67d15ba5ac795e14dc5baee9",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceCodePro-Regular.ttf": "f144137f557805c7327fc4b14d1d730f6e1822e0124170251ff1bcd723a693f1",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/source-serif-4-latin-variable.woff2": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb",
+      "publish-evidence-backed-handbook/assets/design-system/fonts/SourceSerif4-Regular.ttf": "903db2772e75699975ed8483ec98128f054815c43d1fdc7a8506410c11c25866"
+    },
+    "artworkManifestSha256": "16f706ec9853062521329867784fc23c3a3f25d2994aafe0d8cbd6589d1e9084",
+    "command": [
+      "node",
+      "publish-evidence-backed-handbook/scripts/build-pdf-variants.mjs",
+      "--book",
+      "ai-evaluation",
+      "--config",
+      "ai-evaluation/pdf-config.json",
+      "--theme",
+      "dark",
+      "--output",
+      "candidates/light-dark-pdfs/ai-evaluation/v2/ai-evaluation-v1.0.0-2026-10-01-late-night-r1.pdf",
+      "--python",
+      "<pinned Python from toolchain report>"
+    ],
+    "toolchainReportSha256": "1f53aeaf3a5875b297584af7369219648d80a2280cf894598041d549a3b6f1a0",
+    "generationToolkitArchive": {
+      "path": "releases/pdf-appearances/2026-10-02/generation-toolkit.zip",
+      "sha256": "ea5082082437c7738b4e013879eff066450ac134bcae6f0d2958b47e867b47fb",
+      "purpose": "Frozen distribution whose generation scripts exactly match the recorded toolkit input hashes."
+    }
+  },
+  "releaseAuthorization": {
+    "date": "2026-10-02",
+    "instruction": "Land this",
+    "scope": "All three reviewed PDF pairs, shared runtime and download controls."
+  }
+}

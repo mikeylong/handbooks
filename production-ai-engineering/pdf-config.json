@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "id": "production-ai-engineering",
   "title": "Production AI Engineering",
-  "version": "1.4.0",
-  "date": "2026-09-30",
+  "version": "1.4.1",
+  "date": "2026-11-07",
   "renderer": "chromium",
-  "releasedPdf": "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf",
-  "releasedSha256": "dbed169d2eb2fe6f14d43c9f72fac59113fc6de0f2a42d63de36cd75602128c0",
-  "pages": 105,
+  "releasedPdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+  "releasedSha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
   "story": null,
   "source": "handbook/index.html",
   "fonts": "handbook/assets/fonts",
@@ -34,6 +33,10 @@
   ],
   "runningFont": "/System/Library/Fonts/Supplemental/Arial.ttf",
   "chapterCount": 12,
+  "baselineMode": "content-edition",
+  "pages": 99,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
   "authoring": {
     "command": [
       "node",
@@ -47,10 +50,10 @@
       "release-manifest.json",
       "automation/automation.toml",
       "automation/release-policy.json",
-      "output/pdf/production-ai-engineering-v1.4.0-2026-09-30.pdf"
+      "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf"
     ],
-    "frozenChangelog": "handbook/releases/version-1.4.0.json",
+    "frozenChangelog": "handbook/releases/version-1.4.1.json",
     "targetChangelog": "handbook/changelog.json",
-    "date": "2026-09-30"
+    "date": "2026-11-07"
   }
 }

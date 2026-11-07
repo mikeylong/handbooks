@@ -1,0 +1,571 @@
+[
+  {
+    "source_id": "MOD-04",
+    "source_status": "existing",
+    "title": "OpenAI API changelog",
+    "authority": "developers.openai.com",
+    "source_type": "official_release_notes",
+    "url": "https://developers.openai.com/api/docs/changelog",
+    "evidence_locator": "Oct 20, 21, 22, 26, 28 and 30 entries",
+    "publication_date": "2026-10-20/22",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.350+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "18"
+    ],
+    "claim_evaluated": "12-hour cache writes cost 2.5x ordinary input; organization/project tier controls were added; Decisions became GA.",
+    "conclusion": "supports_change",
+    "notes": "The 2.5× rate is the published 12-hour write rate on eligible routes. Verify actual model, account and data controls. Do not infer workload economics or broadly available Rosalind access. Collection source R01. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "CACHE-01",
+    "source_status": "existing",
+    "title": "OpenAI prompt caching",
+    "authority": "developers.openai.com",
+    "source_type": "other_primary",
+    "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+    "evidence_locator": "What is the prompt cache; pricing; lifetime; breakpoints",
+    "publication_date": "not stated",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.330+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "18"
+    ],
+    "claim_evaluated": "Cache-write pricing is an alternative input rate, not an additive fee; supported cache lifetimes and breakpoints have model-specific terms.",
+    "conclusion": "supports_change",
+    "notes": "Living page read October 28; only the October 20 dated feature/rate is accepted for the retrospective cutoff. Newer model-specific rates remain next-cycle context. Collection source R02. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-03",
+    "source_status": "new",
+    "title": "OpenAI deprecations",
+    "authority": "developers.openai.com",
+    "source_type": "other_primary",
+    "url": "https://developers.openai.com/api/docs/deprecations",
+    "evidence_locator": "Dated deprecation and shutdown tables",
+    "publication_date": "not stated",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.339+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Inventory service-specific retirement dates and test replacement routes before shutdown.",
+    "conclusion": "supports_no_change",
+    "notes": "Current tables can evolve; preserve event dates and do not assume model-family continuity means endpoint continuity. Collection source R03. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "PRIV-01",
+    "source_status": "new",
+    "title": "OpenAI data controls",
+    "authority": "developers.openai.com",
+    "source_type": "other_primary",
+    "url": "https://developers.openai.com/api/docs/guides/your-data",
+    "evidence_locator": "Data retention controls and endpoint table",
+    "publication_date": "not stated",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.356+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "18"
+    ],
+    "claim_evaluated": "Retention controls have endpoint/feature exceptions and account prerequisites.",
+    "conclusion": "supports_change",
+    "notes": "Current documentation recheck; not proof of any particular account configuration or blanket legal compliance. Collection source R04. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "OUT-01",
+    "source_status": "existing",
+    "title": "Structured model outputs",
+    "authority": "developers.openai.com",
+    "source_type": "other_primary",
+    "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "evidence_locator": "Refusals with Structured Outputs; incomplete-response examples",
+    "publication_date": "not stated",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.395+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "A schema contract needs explicit refusal and incomplete-response handling.",
+    "conclusion": "supports_no_change",
+    "notes": "Output shape does not prove business meaning; current docs are baseline context, not a dated weekly launch. Collection source R05. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "MOD-02",
+    "source_status": "existing",
+    "title": "Claude Platform release notes",
+    "authority": "platform.claude.com",
+    "source_type": "other_primary",
+    "url": "https://platform.claude.com/docs/en/release-notes/overview",
+    "evidence_locator": "Oct 21 and Oct 28–30 entries, and Nov 2–3 date headings",
+    "publication_date": "2026-10-21",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.620+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "New SDK major versions default to the 2026-10-21 API version; compatibility and error handling need route-level ownership.",
+    "conclusion": "supports_no_change",
+    "notes": "The November 2 beta thread entry is date-only. Hold it for the next cutoff. Keep beta analytics distinct from the supported legacy usage/cost endpoints. Collection source R07. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-08",
+    "source_status": "new",
+    "title": "Claude API versions",
+    "authority": "platform.claude.com",
+    "source_type": "other_primary",
+    "url": "https://platform.claude.com/docs/en/api/versioning",
+    "evidence_locator": "Version header and compatibility promises",
+    "publication_date": "2026-10-21",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.596+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "The anthropic-version header fixes an API version, with documented additive compatibility allowances.",
+    "conclusion": "supports_no_change",
+    "notes": "Do not equate API-version compatibility with unchanged model behavior. Collection source R08. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "MOD-01",
+    "source_status": "existing",
+    "title": "Gemini API release notes",
+    "authority": "ai.google.dev",
+    "source_type": "other_primary",
+    "url": "https://ai.google.dev/gemini-api/docs/changelog",
+    "evidence_locator": "Oct 8, 26, 27 and 30 entries and Nov 2–4 date headings",
+    "publication_date": "2026-10-08",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.789+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "20"
+    ],
+    "claim_evaluated": "The older Deep Research agent was scheduled to shut down October 23; replacement agent IDs are service-specific.",
+    "conclusion": "supports_change",
+    "notes": "Existing project settings are retained. Date-only Nov 2 remapping notices and Nov 4 voice remixing are separated. No account-level configuration was tested. Collection source R09. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "MOD-07",
+    "source_status": "existing",
+    "title": "Gemini deprecations",
+    "authority": "ai.google.dev",
+    "source_type": "other_primary",
+    "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+    "evidence_locator": "Gemini model and managed-agent retirement tables",
+    "publication_date": "not stated",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.989+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Retirement dates may be earliest possible dates; managed surfaces and aliases have distinct lifecycle behavior.",
+    "conclusion": "supports_no_change",
+    "notes": "Current recheck; do not invent an exact retirement time or assume all platform surfaces share dates. Collection source R10. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-11",
+    "source_status": "new",
+    "title": "vLLM v0.32.0 release",
+    "authority": "github.com",
+    "source_type": "other_primary",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+    "evidence_locator": "v0.32.0 Highlights; model/serving changes",
+    "publication_date": "not stated",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.531+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Serving features and performance improvements are runtime/model-specific and require representative workload tests.",
+    "conclusion": "supports_no_change",
+    "notes": "No release date exposed in retained excerpt; this is contextual recheck, not a cutoff-eligible new version recommendation. Collection source R11. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-12",
+    "source_status": "new",
+    "title": "vLLM security",
+    "authority": "docs.vllm.ai",
+    "source_type": "other_primary",
+    "url": "https://docs.vllm.ai/en/latest/usage/security/",
+    "evidence_locator": "API Key Authentication Limitations; request resource limits",
+    "publication_date": "not stated",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.533+00:00",
+    "access_status": "blocked",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Built-in API-key authentication does not cover every exposed endpoint; ingress, resource and route limits remain necessary.",
+    "conclusion": "insufficient",
+    "notes": "Current undated documentation; no deployment audit or exploit reproduction was performed. Fresh direct HTTP returned 429. Treat the primary page as limited in this helper's access window. Collection source R12. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "MCP-02",
+    "source_status": "existing",
+    "title": "MCP 2026-07-28 changes",
+    "authority": "modelcontextprotocol.io",
+    "source_type": "other_primary",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+    "evidence_locator": "Major changes and deprecations",
+    "publication_date": "2026-07-28",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.526+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "MCP revision changes negotiation/state/subscriptions and deprecates older protocol features; migration needs an explicit version contract.",
+    "conclusion": "supports_no_change",
+    "notes": "Protocol text is primary evidence; it does not prove a client implements the revision. Collection source R13. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "OBS-01",
+    "source_status": "existing",
+    "title": "OpenTelemetry GenAI semantic conventions",
+    "authority": "github.com",
+    "source_type": "other_primary",
+    "url": "https://github.com/open-telemetry/semantic-conventions-genai",
+    "evidence_locator": "Repository README and specification location",
+    "publication_date": "not stated",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.523+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "GenAI semantic conventions have moved to their own maintained repository.",
+    "conclusion": "supports_no_change",
+    "notes": "Only location/status is established here; no new attribute schema is accepted without a pinned revision. Collection source R14. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "EVAL-90",
+    "source_status": "new",
+    "title": "Judging LLM-as-a-Judge: Concerning Rubric Artifacts",
+    "authority": "arxiv.org",
+    "source_type": "original_research_paper",
+    "url": "https://arxiv.org/html/2609.02942v1",
+    "evidence_locator": "Abstract; sections 4.3 and 5; limitations",
+    "publication_date": "2026-08-31",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.681+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "16"
+    ],
+    "claim_evaluated": "Rubric-only prediction and controlled answer/rubric reversal probes reveal evaluator artifacts in the studied setting.",
+    "conclusion": "supports_change",
+    "notes": "Preprint and domain-bounded experiments; not proof that every judge or every rubric fails. Collection source R15. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-16",
+    "source_status": "new",
+    "title": "CredLeakBench",
+    "authority": "arxiv.org",
+    "source_type": "other_primary",
+    "url": "https://arxiv.org/html/2610.08871v1",
+    "evidence_locator": "Methods and evaluation sections on synthetic submissions and paired genuine and phishing scenarios.",
+    "publication_date": "2026-10-06",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.685+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Leakage and legitimate-task utility need separate measurement from actual information submissions.",
+    "conclusion": "supports_no_change",
+    "notes": "Sandboxed simulation using synthetic secrets. No production compromise or portable failure rate inferred. Collection source R16. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-17",
+    "source_status": "new",
+    "title": "MemRiskBench",
+    "authority": "arxiv.org",
+    "source_type": "other_primary",
+    "url": "https://arxiv.org/html/2609.14976v1",
+    "evidence_locator": "Sections 3, 4 and 8 on the risk taxonomy, deterministic checks and limitations.",
+    "publication_date": "2026-09-14",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.674+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Long-horizon memory tests need stale/conflicting/cross-user/revoked-memory and constraint-decay slices.",
+    "conclusion": "supports_no_change",
+    "notes": "Scripted episodes and selected quantized models constrain transfer. Summary contamination is documented and excluded from scoring. Collection source R17. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-21",
+    "source_status": "new",
+    "title": "Demystifying evals for AI agents",
+    "authority": "www.anthropic.com",
+    "source_type": "other_primary",
+    "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+    "evidence_locator": "Task/trial/grader definitions; full outcome and transcript; pass metrics",
+    "publication_date": "2026-01-09",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.762+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Agent evaluations need repeated trials, multiple graders and verified resulting environment state.",
+    "conclusion": "supports_no_change",
+    "notes": "Vendor engineering guidance; does not replace independent acceptance or customer outcome evidence. Collection source R21. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-40",
+    "source_status": "new",
+    "title": "Effective context engineering for AI agents",
+    "authority": "www.anthropic.com",
+    "source_type": "other_primary",
+    "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+    "evidence_locator": "Context retrieval and agentic search",
+    "publication_date": "2025-09-29",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.810+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Curate relevant context and retrieve references progressively rather than loading everything into a prompt.",
+    "conclusion": "supports_no_change",
+    "notes": "Vendor engineering synthesis; no causal productivity effect is established. Collection source R40. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-41",
+    "source_status": "new",
+    "title": "How we contain Claude across products",
+    "authority": "www.anthropic.com",
+    "source_type": "other_primary",
+    "url": "https://www.anthropic.com/research/how-we-contain-claude",
+    "evidence_locator": "Containment and blast-radius discussion",
+    "publication_date": "2026-05-25",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.818+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Bound permissions and environments as capability and access grow.",
+    "conclusion": "supports_no_change",
+    "notes": "Vendor account, not proof that the local control plane enforces the desired policy. Collection source R41. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-48",
+    "source_status": "new",
+    "title": "METR control assessment proposal",
+    "authority": "metr.org",
+    "source_type": "other_primary",
+    "url": "https://metr.org/blog/2026-10-14-control-assessment-proposal/",
+    "evidence_locator": "Five control-assessment subquestions",
+    "publication_date": "2026-10-14",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.863+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Monitor coverage, infrastructure tampering, evasion, human response and impact need separate assessment.",
+    "conclusion": "supports_no_change",
+    "notes": "Proposal for internal agents, not a completed certification or proof of local controls. Collection source R48. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-49",
+    "source_status": "new",
+    "title": "NIST incident readiness and response",
+    "authority": "www.nist.gov",
+    "source_type": "other_primary",
+    "url": "https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training",
+    "evidence_locator": "Announcement and five incident lifecycle stages",
+    "publication_date": "2026-10-16",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.824+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Voluntary frontier-training/evaluation incident practices cover preparation through reporting.",
+    "conclusion": "supports_no_change",
+    "notes": "Narrow frontier context; do not silently recast as binding requirements for every product team. Collection source R49. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-50",
+    "source_status": "new",
+    "title": "OpenAI frontier training containment",
+    "authority": "openai.com",
+    "source_type": "other_primary",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+    "evidence_locator": "Research/customer distinction; containment and adversarial findings",
+    "publication_date": "2026-10-23",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:58.988Z",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "17"
+    ],
+    "claim_evaluated": "Training/evaluation environments need tested isolation, egress and cross-task boundaries.",
+    "conclusion": "supports_change",
+    "notes": "Official OpenAI article via native web. Its research/customer distinction and the VM escape, network access and cross-task findings are explicit. Direct HTTP returned 403; the official public article was re-opened via native web after the handoff. Access time records the reading in this handoff. Collection source R50. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-52",
+    "source_status": "new",
+    "title": "vLLM v0.33.0 release",
+    "authority": "github.com/vllm-project/vllm",
+    "source_type": "other_primary",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+    "evidence_locator": "v0.33.0rc3 release highlights and R60 published_at",
+    "publication_date": "2026-11-02T10:10:05Z",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.906+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "8"
+    ],
+    "claim_evaluated": "v0.33.0 drops CUDA 12.9 wheels/images, upgrades PyTorch/Triton, and offers an opt-in lossy speculative verification policy.",
+    "conclusion": "supports_change",
+    "notes": "Retain the exact tag and timestamp. No runtime migration, throughput replication or quality equivalence was tested. Collection source R52. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-53",
+    "source_status": "new",
+    "title": "How we detect frontier model misalignment",
+    "authority": "alignment.openai.com",
+    "source_type": "other_primary",
+    "url": "https://alignment.openai.com/how-we-detect-frontier-model-misalignment",
+    "evidence_locator": "Coverage gap, every tool-use harness, layered review, external telemetry, human response, recall tables and limitations",
+    "publication_date": "2026-10-29",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.938+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "17"
+    ],
+    "claim_evaluated": "Monitoring coverage, negative-traffic audits and responder behavior are distinct controls; a strong aggregate monitor still has threat-specific misses.",
+    "conclusion": "supports_change",
+    "notes": "Vendor internal system and incident replay; not a portable detection rate or proof of local controls. Collection source R53. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-54",
+    "source_status": "new",
+    "title": "LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents",
+    "authority": "arxiv.org",
+    "source_type": "original_research_paper",
+    "url": "https://arxiv.org/html/2610.26088v1",
+    "evidence_locator": "Sections 3–5, section 7 and Appendix N on decision-time validity, provenance and known leakage controls.",
+    "publication_date": "2026-10-19T09:50:57Z",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.966+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "16"
+    ],
+    "claim_evaluated": "A high score can coexist with fatal feature-availability leakage; paired controls and deterministic provenance checks reveal the failure.",
+    "conclusion": "supports_change",
+    "notes": "The verifier trusts declared lineage unless independently verified. Study results are clinical and task-specific. No portable mitigation rate or ranking inferred. Collection source R54. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-55",
+    "source_status": "new",
+    "title": "An updated Model Spec for more capable and beneficial AI",
+    "authority": "openai.com",
+    "source_type": "other_primary",
+    "url": "https://openai.com/index/updated-model-spec/",
+    "evidence_locator": "Intent, human agency, oversight and side-effect guidance",
+    "publication_date": "2026-10-29",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:58.988Z",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "Provider behavior policy changed, but application controls still require explicit local authority and deterministic enforcement.",
+    "conclusion": "supports_no_change",
+    "notes": "Official OpenAI article via native web. The October 29 behavior-policy revision leaves application-level enforcement as a separate job. Fresh direct HTTP returned 403. Treat the primary page as limited in this helper's access window. Collection source R55. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-59",
+    "source_status": "new",
+    "title": "Gemini API logs and datasets",
+    "authority": "ai.google.dev",
+    "source_type": "other_primary",
+    "url": "https://ai.google.dev/gemini-api/docs/logs-datasets",
+    "evidence_locator": "Configure project logging and Request-level logging",
+    "publication_date": "2026-10-26",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:28.448+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "20"
+    ],
+    "claim_evaluated": "New paid projects default to Generate Content request storage. A request-level setting takes precedence over the project default.",
+    "conclusion": "supports_change",
+    "notes": "The dated R09 announcement establishes the cutoff change. The living reference confirms scope and precedence. Collection source R59. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  },
+  {
+    "source_id": "REV-60",
+    "source_status": "new",
+    "title": "vLLM release API metadata",
+    "authority": "api.github.com",
+    "source_type": "other_primary",
+    "url": "https://api.github.com/repos/vllm-project/vllm/releases/tags/v0.33.0rc3",
+    "evidence_locator": "published_at, tag_name, name and release body",
+    "publication_date": "2026-11-02T10:10:05Z",
+    "last_updated": "not stated",
+    "accessed_at": "2026-11-07T21:51:27.935+00:00",
+    "access_status": "accessible",
+    "handbook_sections": [
+      "13",
+      "16",
+      "19"
+    ],
+    "claim_evaluated": "The v0.33.0rc3 release was published before the 17:00 UTC cutoff.",
+    "conclusion": "supports_no_change",
+    "notes": "Use the exact release tag. The display name is v0.33.0. Collection source R60. Original provider/maintainer documentation, policy, repository or original research; no third-party claim is used."
+  }
+]
