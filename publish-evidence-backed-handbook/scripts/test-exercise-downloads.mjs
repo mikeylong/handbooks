@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {copyFile, mkdir, mkdtemp, readFile, realpath, rename, rm, symlink, writeFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {dirname, join} from 'node:path';
-import {exerciseDownloadLinks} from './exercise-downloads.mjs';
+import {exerciseDownloadLinks,readerCompanionLinks} from './exercise-downloads.mjs';
 import {digest} from './reader-paths.mjs';
 
 const root = await realpath(await mkdtemp(join(tmpdir(), 'handbook-exercise-downloads-')));
@@ -248,6 +248,36 @@ try {
     await assert.rejects(() => exerciseDownloadLinks(f.source, f.edition, f.pkg), expected, name);
     results.push(name);
   }
+
+  const companion=await fixture({exerciseEdition:'2.3.9'});
+  companion.edition.title='Future handbook';
+  const config={schemaVersion:1,book:companion.edition.id,version:companion.edition.version,companions:[{filename:companion.row.filename,label:'Companion materials',purpose:'Exercise & <starter>'}]};
+  const configPath=join(companion.source,'reader-downloads.json');
+  const saveConfig=record=>writeFile(configPath,JSON.stringify(record));
+  assert.equal(await readerCompanionLinks(companion.source,companion.edition,companion.pkg),'');
+  await saveConfig(config);
+  const control=await readerCompanionLinks(companion.source,companion.edition,companion.pkg);
+  assert.match(control,/data-companion-download/);
+  assert.match(control,/Exercise &amp; &lt;starter>/);
+  assert.match(control,/class="download-format">FIG/);
+  assert.match(control,/class="download-metadata">8 bytes/);
+  assert.ok(control.includes('href="'+companion.row.url+'"'));
+  assert.deepEqual(await readFile(companion.file),companion.bytes);
+  results.push('optional reader row uses retained approved artifact bytes, size, route, format and escaped book copy');
+  for(const [change,error] of [
+    [c=>c.companions[0].filename='unapproved.zip',/select an approved/],
+    [c=>c.version='9.0.0',/edition mismatch/],
+    [c=>c.book='another-book',/book mismatch/],
+    [c=>c.companions.push(c.companions[0]),/Duplicate reader companion/],
+    [c=>c.companions[0].purpose='',/purpose required/],
+  ]){
+    const broken=structuredClone(config);change(broken);await saveConfig(broken);
+    await assert.rejects(()=>readerCompanionLinks(companion.source,companion.edition,companion.pkg),error);
+  }
+  await saveConfig(config);
+  await writeFile(companion.file,'altered bytes');
+  await assert.rejects(()=>readerCompanionLinks(companion.source,companion.edition,companion.pkg),/Stale exercise/);
+  results.push('reader discovery rejects unapproved selection, stale edition, duplicate row, missing purpose and changed material bytes');
 
   console.log(JSON.stringify({status: 'passed',cases: results.length,checks: results}, null, 2));
 } finally {

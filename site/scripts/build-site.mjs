@@ -14,7 +14,7 @@ import {installArtworkPairs} from './artwork-pairs.mjs';
 const {resolvePdfVariants,installReaderDownloads,downloadLinks,validateDownloads,editionPdfUrl,validatePrintGuidanceAbsent}=await toolkitModule('pdf-downloads.mjs');
 const {writeMarkdownEdition}=await toolkitModule('markdown-downloads.mjs');
 const {installSharingAssets,readerSharingIdentity}=await toolkitModule('sharing-metadata.mjs');
-const {exerciseDownloadLinks}=await toolkitModule('exercise-downloads.mjs');
+const {exerciseDownloadLinks,readerCompanionLinks}=await toolkitModule('exercise-downloads.mjs');
 const {installRetainedReleases}=await toolkitModule('retained-releases.mjs');
 const {installDiagrams} = await toolkitModule('diagrams.mjs');
 const {installPromptBlocks} = await toolkitModule('prompt-blocks.mjs');
@@ -93,7 +93,8 @@ for(const pin of books){
   const variants=await resolvePdfVariants(source,edition,registryBook.variantManifest,{candidate:!!reviewRegistryPath,collectionRoot:resolve(root,'..'),measurePdfPages:false});
   edition.markdown=await writeMarkdownEdition(output,edition,html);
   html=removeSidebarPublication(editionLinks(html,publication,{linkCoverDate:true}));
-  html=installReaderDownloads(html,edition,variants);
+  const companionLinks=await readerCompanionLinks(source,edition,approvedPackage);
+  html=installReaderDownloads(html,edition,variants,{companionLinks});
   html=html.replace('</head>','<link rel="stylesheet" href="/pdf-downloads.css"></head>');
   validateDownloads(html,edition,variants);edition.pdfVariants=variants;
   for(const v of variants){
