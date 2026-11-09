@@ -1,0 +1,14 @@
+{
+  "name": "claude-design-field-guide",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/handbooks",
+    "directory": "claude-design"
+  },
+  "scripts": {
+    "build": "node ../scripts/validate-book-release.mjs claude-design && node ../scripts/validate-weekly-release.mjs claude-design",
+    "validate": "node ../scripts/validate-book-release.mjs claude-design && node ../scripts/validate-weekly-release.mjs claude-design"
+  },
+  "version": "2.1.4"
+}

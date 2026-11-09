@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "ai-native-organization",
+  "title": "AI-Native Organization Handbook",
+  "version": "1.1.2",
+  "date": "2026-11-08",
+  "renderer": "reportlab",
+  "source": "source/build_handbook.py",
+  "story": "build_story",
+  "docClass": "GuideDocTemplate",
+  "fonts": "toolkit",
+  "pageSizePoints": [
+    420,
+    594.96
+  ],
+  "chapterCount": 3,
+  "runningDeck": "Teams, controls and evidence",
+  "pageLabelStyle": "frontmatter-roman",
+  "releasedPdf": "output/pdf/ai-native-organization-v1.1.1-2026-11-07-daytime-r1.pdf",
+  "releasedSha256": "cbd94ce6fb9b692f4426bf5095f13c469daa650920db5431112d166ddb0fee37",
+  "baselineMode": "content-edition",
+  "readerInputs": [
+    "evidence/sources.json"
+  ],
+  "approvalStatus": "approved",
+  "publicationApproved": true
+}

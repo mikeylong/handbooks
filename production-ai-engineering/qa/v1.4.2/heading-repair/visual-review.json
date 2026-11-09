@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "review": "Complete page overviews for both appearances inspected, including independent Poppler and Apple PDFKit output. All chapter openers and representative title, diagram, table, screenshot, reference and index pages inspected at full size. No new blocking layout finding.",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
+      "pages": 97,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/production-ai-engineering/attempt-1/proof/light"
+    },
+    {
+      "theme": "dark",
+      "sha256": "28c67aa1799cb2f8f9bf0694adcdbc7f177a17324256af267a1f82bfb24b2132",
+      "pages": 97,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/production-ai-engineering/attempt-1/proof/dark"
+    }
+  ],
+  "policy": "Title-only subsection headings; preserve chapter markers, procedural steps, figures and numeric data.",
+  "historicalFormatting": "Existing short reference continuation pages remain unchanged in content."
+}

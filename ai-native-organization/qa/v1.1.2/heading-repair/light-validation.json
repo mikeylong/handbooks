@@ -1,0 +1,107 @@
+{
+  "artifactSha256": "903730f4a7c797e2e2706c68404428dc87f79d10ac84a9536793037c8be9f5e0",
+  "changelogDecision": {
+    "changelogPages": [],
+    "decisionStatus": "passed",
+    "directSourceLinks": [],
+    "expectedEntryCount": 0,
+    "firstEdition": false,
+    "includeChangelog": false,
+    "navigationEntries": [],
+    "outlineEntries": []
+  },
+  "failures": [],
+  "limitations": [
+    "This structural validator does not establish visual quality.",
+    "Apple PDFKit compatibility remains unverified unless an Apple-native render was inspected."
+  ],
+  "pdf": "daytime.pdf",
+  "profile": "candidate",
+  "requiredRasterIllustrations": [
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 4,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.2da7e707a565a551102149f5ae6c4296",
+          "object": "51 0",
+          "opaque": true,
+          "page": 4,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 17,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.1a6293dff66342c06677061c8482e6fb",
+          "object": "60 0",
+          "opaque": true,
+          "page": 17,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 26,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.d10442de4d1180c836999fb6313e1f07",
+          "object": "165 0",
+          "opaque": true,
+          "page": 26,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    }
+  ],
+  "schemaVersion": 1,
+  "stats": {
+    "blankPages": [],
+    "externalLinks": 15,
+    "fonts": 6,
+    "imageMasks": 0,
+    "internalLinks": 77,
+    "outlineEntries": 37,
+    "pageMapEntries": 51,
+    "pages": 51,
+    "pdfVersion": "1.4",
+    "rasterImagePaints": 3,
+    "rasterImages": 3,
+    "requiredRasterIllustrationPages": 3
+  },
+  "status": "passed"
+}

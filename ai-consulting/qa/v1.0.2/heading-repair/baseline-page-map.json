@@ -1,0 +1,4100 @@
+{
+  "schemaVersion": 1,
+  "artifactProfile": "candidate",
+  "book": "ai-consulting",
+  "edition": {
+    "id": "ai-consulting",
+    "title": "AI Consulting Playbook",
+    "version": "1.0.1",
+    "date": "2026-10-09"
+  },
+  "sha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
+  "pdfSha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
+  "bytes": 24104614,
+  "pageNumbering": "pdfPage and page are one-based; folio is the measured PDF page label",
+  "measurement": {
+    "runtime": "pypdf; shared validate-pdf.py raster_image_paints and required_raster_illustration_report",
+    "identity": {
+      "title": "AI Consulting Playbook \u00b7 Daytime version",
+      "coverVersion": "1.0.1",
+      "coverDatePrecision": "day",
+      "subject": "Content edition 1.0.1 \u00b7 2026-10-09 \u00b7 PDF appearance revision 1"
+    },
+    "chapterCount": 12,
+    "requiredRasterIllustrationPages": 12,
+    "rasterImagePaints": 12,
+    "limitations": "Measured structural/edition/illustration evidence only; not candidate validation or visual approval."
+  },
+  "pages": [
+    {
+      "pdfPage": 1,
+      "page": 1,
+      "folio": "1",
+      "role": "cover",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 150,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 2,
+      "page": 2,
+      "folio": "2",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1233,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "How to use this playbook",
+          "pdfPage": 2,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 3,
+      "page": 3,
+      "folio": "3",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 869,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Choose a path",
+          "pdfPage": 3,
+          "depth": 0
+        },
+        {
+          "title": "The repeated learning loop",
+          "pdfPage": 3,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 4,
+      "page": 4,
+      "folio": "4",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1294,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "What you need",
+          "pdfPage": 4,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 5,
+      "page": 5,
+      "folio": "5",
+      "role": "contents",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1250,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Contents",
+          "pdfPage": 5,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 6,
+      "page": 6,
+      "folio": "6",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1088,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "The consulting loop at a glance",
+          "pdfPage": 6,
+          "depth": 0
+        },
+        {
+          "title": "The recurring case: Harborline",
+          "pdfPage": 6,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 7,
+      "page": 7,
+      "folio": "7",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1310,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worked example: a bounded support pilot",
+          "pdfPage": 7,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 8,
+      "page": 8,
+      "folio": "8",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 754,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 9,
+      "page": 9,
+      "folio": "9",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1456,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Build your decision summary",
+          "pdfPage": 9,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 10,
+      "page": 10,
+      "folio": "10",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 603,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 11,
+      "page": 11,
+      "folio": "11",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1154,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "The consulting packet you will build",
+          "pdfPage": 11,
+          "depth": 0
+        },
+        {
+          "title": "Five rules for the full guide",
+          "pdfPage": 11,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 12,
+      "page": 12,
+      "folio": "12",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 153,
+      "rasterImagePaints": [
+        {
+          "page": 12,
+          "name": "/FormXob.90d70f507e2cd88e6d65294a1bae8c96",
+          "object": "118 0",
+          "width": 1262,
+          "height": 1163,
+          "xPpi": 290.75,
+          "yPpi": 290.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "1. Frame the engagement around a decision",
+          "pdfPage": 12,
+          "depth": 0
+        }
+      ],
+      "chapter": 1,
+      "section": "1. Frame the engagement around a decision",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 13,
+      "page": 13,
+      "folio": "13",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1387,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "The request is usually not the decision",
+          "pdfPage": 13,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 14,
+      "page": 14,
+      "folio": "14",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 995,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Write the decision before the workplan",
+          "pdfPage": 14,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 15,
+      "page": 15,
+      "folio": "15",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1474,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "A decision brief has six parts",
+          "pdfPage": 15,
+          "depth": 1
+        },
+        {
+          "title": "Protect engagement integrity",
+          "pdfPage": 15,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 16,
+      "page": 16,
+      "folio": "16",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 763,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Exercise: rewrite the Harborline request",
+          "pdfPage": 16,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 17,
+      "page": 17,
+      "folio": "17",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 378,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 1: engagement decision brief",
+          "pdfPage": 17,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 18,
+      "page": 18,
+      "folio": "18",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 599,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 19,
+      "page": 19,
+      "folio": "19",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 149,
+      "rasterImagePaints": [
+        {
+          "page": 19,
+          "name": "/FormXob.c142c264a8948ba5572954b6907c4641",
+          "object": "128 0",
+          "width": 1193,
+          "height": 1170,
+          "xPpi": 292.5,
+          "yPpi": 292.5,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "2. See the work as it actually happens",
+          "pdfPage": 19,
+          "depth": 0
+        }
+      ],
+      "chapter": 2,
+      "section": "2. See the work as it actually happens",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 20,
+      "page": 20,
+      "folio": "20",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1747,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "The documented process is one source",
+          "pdfPage": 20,
+          "depth": 1
+        },
+        {
+          "title": "Map the unit of work",
+          "pdfPage": 20,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 21,
+      "page": 21,
+      "folio": "21",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1525,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Build a baseline that matches the decision",
+          "pdfPage": 21,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 22,
+      "page": 22,
+      "folio": "22",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1235,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Keep facts, interpretations, and proposals separate",
+          "pdfPage": 22,
+          "depth": 1
+        },
+        {
+          "title": "Exercise: find the hidden work",
+          "pdfPage": 22,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 23,
+      "page": 23,
+      "folio": "23",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 344,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 2: current-state evidence",
+          "pdfPage": 23,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 24,
+      "page": 24,
+      "folio": "24",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 638,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 25,
+      "page": 25,
+      "folio": "25",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 148,
+      "rasterImagePaints": [
+        {
+          "page": 25,
+          "name": "/FormXob.e64b229d7b2f5e8e01750a7a83a0d2c2",
+          "object": "138 0",
+          "width": 904,
+          "height": 1208,
+          "xPpi": 302.0,
+          "yPpi": 302.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "3. Choose one opportunity worth testing",
+          "pdfPage": 25,
+          "depth": 0
+        }
+      ],
+      "chapter": 3,
+      "section": "3. Choose one opportunity worth testing",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 26,
+      "page": 26,
+      "folio": "26",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1586,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Start with alternatives, not use cases",
+          "pdfPage": 26,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 27,
+      "page": 27,
+      "folio": "27",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 961,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Classify the role before scoring the idea",
+          "pdfPage": 27,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 28,
+      "page": 28,
+      "folio": "28",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1491,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Screen each option against evidence",
+          "pdfPage": 28,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 29,
+      "page": 29,
+      "folio": "29",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1325,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Show the reasoning behind one rating",
+          "pdfPage": 29,
+          "depth": 1
+        },
+        {
+          "title": "Rank Harborline's first opportunities",
+          "pdfPage": 29,
+          "depth": 1
+        },
+        {
+          "title": "Exercise: challenge the workshop winner",
+          "pdfPage": 29,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 30,
+      "page": 30,
+      "folio": "30",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 414,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 31,
+      "page": 31,
+      "folio": "31",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 349,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 3: opportunity recommendation",
+          "pdfPage": 31,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 32,
+      "page": 32,
+      "folio": "32",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 683,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 33,
+      "page": 33,
+      "folio": "33",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 165,
+      "rasterImagePaints": [
+        {
+          "page": 33,
+          "name": "/FormXob.dc6beed4b4973c78e41e2f0355b9b1a3",
+          "object": "148 0",
+          "width": 1184,
+          "height": 1078,
+          "xPpi": 269.5,
+          "yPpi": 269.5,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "4. Define the future workflow and AI boundary",
+          "pdfPage": 33,
+          "depth": 0
+        }
+      ],
+      "chapter": 4,
+      "section": "4. Define the future workflow and AI boundary",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 34,
+      "page": 34,
+      "folio": "34",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1598,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Design the service, not the model call",
+          "pdfPage": 34,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 35,
+      "page": 35,
+      "folio": "35",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1720,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Write a behavior and outcome contract",
+          "pdfPage": 35,
+          "depth": 1
+        },
+        {
+          "title": "Make the boundary explicit",
+          "pdfPage": 35,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 36,
+      "page": 36,
+      "folio": "36",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 763,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Define meaningful human control",
+          "pdfPage": 36,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 37,
+      "page": 37,
+      "folio": "37",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1483,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Connect behavior to value",
+          "pdfPage": 37,
+          "depth": 1
+        },
+        {
+          "title": "Exercise: draw the hard line",
+          "pdfPage": 37,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 38,
+      "page": 38,
+      "folio": "38",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 370,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 4: target workflow and boundary",
+          "pdfPage": 38,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 39,
+      "page": 39,
+      "folio": "39",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 712,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 40,
+      "page": 40,
+      "folio": "40",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 168,
+      "rasterImagePaints": [
+        {
+          "page": 40,
+          "name": "/FormXob.42a5da2cb7d740e209044d178a469363",
+          "object": "159 0",
+          "width": 1183,
+          "height": 1136,
+          "xPpi": 284.0,
+          "yPpi": 284.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "5. Make ownership, risk, and permissions explicit",
+          "pdfPage": 40,
+          "depth": 0
+        }
+      ],
+      "chapter": 5,
+      "section": "5. Make ownership, risk, and permissions explicit",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 41,
+      "page": 41,
+      "folio": "41",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1703,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Governance is part of delivery",
+          "pdfPage": 41,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 42,
+      "page": 42,
+      "folio": "42",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1267,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Write risk as a testable chain",
+          "pdfPage": 42,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 43,
+      "page": 43,
+      "folio": "43",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1805,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Map permissions from source to effect",
+          "pdfPage": 43,
+          "depth": 1
+        },
+        {
+          "title": "Use law as a jurisdictional overlay",
+          "pdfPage": 43,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 44,
+      "page": 44,
+      "folio": "44",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1745,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Ask vendors for evidence, not assurance",
+          "pdfPage": 44,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 45,
+      "page": 45,
+      "folio": "45",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1062,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Exercise: assign the decision rights",
+          "pdfPage": 45,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 46,
+      "page": 46,
+      "folio": "46",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 366,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 5: risk, permissions, and governance",
+          "pdfPage": 46,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 47,
+      "page": 47,
+      "folio": "47",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 373,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 48,
+      "page": 48,
+      "folio": "48",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 599,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 49,
+      "page": 49,
+      "folio": "49",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 162,
+      "rasterImagePaints": [
+        {
+          "page": 49,
+          "name": "/FormXob.78ad023879aa1b736ca243c8b4f7cc9a",
+          "object": "170 0",
+          "width": 1192,
+          "height": 1141,
+          "xPpi": 285.25,
+          "yPpi": 285.25,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "6. Design a pilot that can answer a decision",
+          "pdfPage": 49,
+          "depth": 0
+        }
+      ],
+      "chapter": 6,
+      "section": "6. Design a pilot that can answer a decision",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 50,
+      "page": 50,
+      "folio": "50",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1485,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "A pilot exists to reduce named uncertainty",
+          "pdfPage": 50,
+          "depth": 1
+        },
+        {
+          "title": "Write a hypothesis with an exposure boundary",
+          "pdfPage": 50,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 51,
+      "page": 51,
+      "folio": "51",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1248,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Keep four evidence tracks separate",
+          "pdfPage": 51,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 52,
+      "page": 52,
+      "folio": "52",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1537,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Choose a comparison that fits the claim",
+          "pdfPage": 52,
+          "depth": 1
+        },
+        {
+          "title": "Predeclare the decision rules",
+          "pdfPage": 52,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 53,
+      "page": 53,
+      "folio": "53",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1176,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Limit exposure deliberately",
+          "pdfPage": 53,
+          "depth": 1
+        },
+        {
+          "title": "Exercise: reject a weak pilot",
+          "pdfPage": 53,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 54,
+      "page": 54,
+      "folio": "54",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 319,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 6: pilot charter",
+          "pdfPage": 54,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 55,
+      "page": 55,
+      "folio": "55",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 310,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 56,
+      "page": 56,
+      "folio": "56",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 557,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 57,
+      "page": 57,
+      "folio": "57",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 167,
+      "rasterImagePaints": [
+        {
+          "page": 57,
+          "name": "/FormXob.06aaef065274e29d41d7d25aa56f670d",
+          "object": "180 0",
+          "width": 1194,
+          "height": 1075,
+          "xPpi": 268.75,
+          "yPpi": 268.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "7. Plan delivery around uncertainty",
+          "pdfPage": 57,
+          "depth": 0
+        }
+      ],
+      "chapter": 7,
+      "section": "7. Plan delivery around uncertainty",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 58,
+      "page": 58,
+      "folio": "58",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1704,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "The plan should expose what is not yet known",
+          "pdfPage": 58,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 59,
+      "page": 59,
+      "folio": "59",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1231,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Choose build, buy, or partner from the constraint",
+          "pdfPage": 59,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 60,
+      "page": 60,
+      "folio": "60",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 2056,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Plan by gates, not phases alone",
+          "pdfPage": 60,
+          "depth": 1
+        },
+        {
+          "title": "Keep evidence and risk records connected",
+          "pdfPage": 60,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 61,
+      "page": 61,
+      "folio": "61",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1212,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Maintain three ledgers",
+          "pdfPage": 61,
+          "depth": 1
+        },
+        {
+          "title": "Define done at the system boundary",
+          "pdfPage": 61,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 62,
+      "page": 62,
+      "folio": "62",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 633,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Exercise: respond to a delivery shortcut",
+          "pdfPage": 62,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 63,
+      "page": 63,
+      "folio": "63",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 276,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 7: integrated delivery plan",
+          "pdfPage": 63,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 64,
+      "page": 64,
+      "folio": "64",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 312,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 65,
+      "page": 65,
+      "folio": "65",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 552,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 66,
+      "page": 66,
+      "folio": "66",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 171,
+      "rasterImagePaints": [
+        {
+          "page": 66,
+          "name": "/FormXob.402654ef0b8dbb8785a4042659907ed6",
+          "object": "189 0",
+          "width": 1176,
+          "height": 1179,
+          "xPpi": 294.75,
+          "yPpi": 294.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "8. Build and verify the whole pilot system",
+          "pdfPage": 66,
+          "depth": 0
+        }
+      ],
+      "chapter": 8,
+      "section": "8. Build and verify the whole pilot system",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 67,
+      "page": 67,
+      "folio": "67",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1377,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "The model is one component",
+          "pdfPage": 67,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 68,
+      "page": 68,
+      "folio": "68",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1706,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Build a verification matrix",
+          "pdfPage": 68,
+          "depth": 1
+        },
+        {
+          "title": "Use different methods for different claims",
+          "pdfPage": 68,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 69,
+      "page": 69,
+      "folio": "69",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 2032,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Rehearse failure before the pilot",
+          "pdfPage": 69,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 70,
+      "page": 70,
+      "folio": "70",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1259,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Run an evidence-based readiness review",
+          "pdfPage": 70,
+          "depth": 1
+        },
+        {
+          "title": "Exercise: hold the right boundary",
+          "pdfPage": 70,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 71,
+      "page": 71,
+      "folio": "71",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 293,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 8: readiness evidence packet",
+          "pdfPage": 71,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 72,
+      "page": 72,
+      "folio": "72",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 377,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 73,
+      "page": 73,
+      "folio": "73",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 581,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 74,
+      "page": 74,
+      "folio": "74",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 158,
+      "rasterImagePaints": [
+        {
+          "page": 74,
+          "name": "/FormXob.49183a66a6ba16afdf292970c14ede4e",
+          "object": "199 0",
+          "width": 1100,
+          "height": 1156,
+          "xPpi": 289.0,
+          "yPpi": 289.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "9. Prepare the people who will use and support it",
+          "pdfPage": 74,
+          "depth": 0
+        }
+      ],
+      "chapter": 9,
+      "section": "9. Prepare the people who will use and support it",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 75,
+      "page": 75,
+      "folio": "75",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1711,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Adoption starts in the target workflow",
+          "pdfPage": 75,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 76,
+      "page": 76,
+      "folio": "76",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1422,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Involve affected people at decision points",
+          "pdfPage": 76,
+          "depth": 1
+        },
+        {
+          "title": "Build role-specific AI literacy",
+          "pdfPage": 76,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 77,
+      "page": 77,
+      "folio": "77",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1235,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Check access to the workflow",
+          "pdfPage": 77,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 78,
+      "page": 78,
+      "folio": "78",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1537,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Design training around work",
+          "pdfPage": 78,
+          "depth": 1
+        },
+        {
+          "title": "Measure adoption without blaming people",
+          "pdfPage": 78,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 79,
+      "page": 79,
+      "folio": "79",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 680,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Exercise: diagnose low use",
+          "pdfPage": 79,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 80,
+      "page": 80,
+      "folio": "80",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 378,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 9: people and adoption plan",
+          "pdfPage": 80,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 81,
+      "page": 81,
+      "folio": "81",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 374,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 82,
+      "page": 82,
+      "folio": "82",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 515,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 83,
+      "page": 83,
+      "folio": "83",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 178,
+      "rasterImagePaints": [
+        {
+          "page": 83,
+          "name": "/FormXob.98365fc05017cf274098478c49d7f697",
+          "object": "74 0",
+          "width": 1084,
+          "height": 1142,
+          "xPpi": 285.5,
+          "yPpi": 285.5,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "10. Run the pilot as a controlled evidence loop",
+          "pdfPage": 83,
+          "depth": 0
+        }
+      ],
+      "chapter": 10,
+      "section": "10. Run the pilot as a controlled evidence loop",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 84,
+      "page": 84,
+      "folio": "84",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1413,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Make the evidence visible while the pilot runs",
+          "pdfPage": 84,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 85,
+      "page": 85,
+      "folio": "85",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1349,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Classify the cause before choosing the fix",
+          "pdfPage": 85,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 86,
+      "page": 86,
+      "folio": "86",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1476,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Control pilot changes",
+          "pdfPage": 86,
+          "depth": 1
+        },
+        {
+          "title": "Respond to an incident in six moves",
+          "pdfPage": 86,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 87,
+      "page": 87,
+      "folio": "87",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1317,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Harborline mid-pilot incident",
+          "pdfPage": 87,
+          "depth": 1
+        },
+        {
+          "title": "Measure the learning system too",
+          "pdfPage": 87,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 88,
+      "page": 88,
+      "folio": "88",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 572,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Exercise: preserve the decision",
+          "pdfPage": 88,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 89,
+      "page": 89,
+      "folio": "89",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 396,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 10: pilot evidence board",
+          "pdfPage": 89,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 90,
+      "page": 90,
+      "folio": "90",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 368,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 91,
+      "page": 91,
+      "folio": "91",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 509,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 92,
+      "page": 92,
+      "folio": "92",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 166,
+      "rasterImagePaints": [
+        {
+          "page": 92,
+          "name": "/FormXob.79f0902e8ad61e6e2aa953c345779d91",
+          "object": "82 0",
+          "width": 1284,
+          "height": 709,
+          "xPpi": 280.75,
+          "yPpi": 280.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "11. Turn the evidence into the next decision",
+          "pdfPage": 92,
+          "depth": 0
+        }
+      ],
+      "chapter": 11,
+      "section": "11. Turn the evidence into the next decision",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 93,
+      "page": 93,
+      "folio": "93",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1204,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Start with the decision, then read every track",
+          "pdfPage": 93,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 94,
+      "page": 94,
+      "folio": "94",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1761,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Use four next-action choices",
+          "pdfPage": 94,
+          "depth": 1
+        },
+        {
+          "title": "Build the economics from observed units",
+          "pdfPage": 94,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 95,
+      "page": 95,
+      "folio": "95",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 2068,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Harborline decision snapshot",
+          "pdfPage": 95,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 96,
+      "page": 96,
+      "folio": "96",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1378,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Write the claim boundary",
+          "pdfPage": 96,
+          "depth": 1
+        },
+        {
+          "title": "Exercise: refuse the rounded-up claim",
+          "pdfPage": 96,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 97,
+      "page": 97,
+      "folio": "97",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 334,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 11: outcome and decision record",
+          "pdfPage": 97,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 98,
+      "page": 98,
+      "folio": "98",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 385,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 99,
+      "page": 99,
+      "folio": "99",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 614,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 100,
+      "page": 100,
+      "folio": "100",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 175,
+      "rasterImagePaints": [
+        {
+          "page": 100,
+          "name": "/FormXob.871f846b8b6dffcabe1af09b14d8c3d5",
+          "object": "90 0",
+          "width": 956,
+          "height": 1181,
+          "xPpi": 295.25,
+          "yPpi": 295.25,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "12. Leave the client able to continue",
+          "pdfPage": 100,
+          "depth": 0
+        }
+      ],
+      "chapter": 12,
+      "section": "12. Leave the client able to continue",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 101,
+      "page": 101,
+      "folio": "101",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1499,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Handoff is an operating change",
+          "pdfPage": 101,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 102,
+      "page": 102,
+      "folio": "102",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1135,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Transfer the complete record",
+          "pdfPage": 102,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 103,
+      "page": 103,
+      "folio": "103",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1479,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Use acceptance demonstrations",
+          "pdfPage": 103,
+          "depth": 1
+        },
+        {
+          "title": "Build the operating cadence",
+          "pdfPage": 103,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 104,
+      "page": 104,
+      "folio": "104",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1427,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Plan the first 90 days",
+          "pdfPage": 104,
+          "depth": 1
+        },
+        {
+          "title": "Retirement is part of ownership",
+          "pdfPage": 104,
+          "depth": 1
+        },
+        {
+          "title": "Exercise: refuse a paper handoff",
+          "pdfPage": 104,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 105,
+      "page": 105,
+      "folio": "105",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 370,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 106,
+      "page": 106,
+      "folio": "106",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 400,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Worksheet 12: handoff and closeout",
+          "pdfPage": 106,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 107,
+      "page": 107,
+      "folio": "107",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 339,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 108,
+      "page": 108,
+      "folio": "108",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 599,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 109,
+      "page": 109,
+      "folio": "109",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1213,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Guided capstone: Harborline decision review",
+          "pdfPage": 109,
+          "depth": 0
+        },
+        {
+          "title": "1. Sponsor memo",
+          "pdfPage": 109,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 110,
+      "page": 110,
+      "folio": "110",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1626,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "2. Current-state evidence",
+          "pdfPage": 110,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 111,
+      "page": 111,
+      "folio": "111",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1292,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "3. Opportunity choices",
+          "pdfPage": 111,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 112,
+      "page": 112,
+      "folio": "112",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1447,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "4. Data, architecture, and vendor packet",
+          "pdfPage": 112,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 113,
+      "page": 113,
+      "folio": "113",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1756,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "5. Proposed six-week pilot",
+          "pdfPage": 113,
+          "depth": 1
+        },
+        {
+          "title": "6. Frozen candidate results",
+          "pdfPage": 113,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 114,
+      "page": 114,
+      "folio": "114",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1434,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 115,
+      "page": 115,
+      "folio": "115",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1190,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Declared gates and missing outcomes",
+          "pdfPage": 115,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 116,
+      "page": 116,
+      "folio": "116",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1275,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "7. Mid-pilot incident and response",
+          "pdfPage": 116,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 117,
+      "page": 117,
+      "folio": "117",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1746,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "8. Ownership and capability",
+          "pdfPage": 117,
+          "depth": 1
+        },
+        {
+          "title": "9. Reproduce the monthly economics",
+          "pdfPage": 117,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 118,
+      "page": 118,
+      "folio": "118",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1485,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Capstone tasks",
+          "pdfPage": 118,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 119,
+      "page": 119,
+      "folio": "119",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 432,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Guided capstone decision worksheet",
+          "pdfPage": 119,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 120,
+      "page": 120,
+      "folio": "120",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 246,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 121,
+      "page": 121,
+      "folio": "121",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 623,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Guided capstone answer key",
+          "pdfPage": 121,
+          "depth": 0
+        },
+        {
+          "title": "1. Reframe the decision",
+          "pdfPage": 121,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 122,
+      "page": 122,
+      "folio": "122",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1916,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "2. Read the evidence by track",
+          "pdfPage": 122,
+          "depth": 1
+        },
+        {
+          "title": "3. Make the bounded recommendation",
+          "pdfPage": 122,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 123,
+      "page": 123,
+      "folio": "123",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1363,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "4. Keep excluded actions blocked",
+          "pdfPage": 123,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 124,
+      "page": 124,
+      "folio": "124",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 829,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "5. Define the next gate",
+          "pdfPage": 124,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 125,
+      "page": 125,
+      "folio": "125",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1331,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Handoff plan for the current boundary",
+          "pdfPage": 125,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 126,
+      "page": 126,
+      "folio": "126",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1069,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "6. State the non-claims",
+          "pdfPage": 126,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 127,
+      "page": 127,
+      "folio": "127",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1753,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Guided capstone self-assessment",
+          "pdfPage": 127,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 128,
+      "page": 128,
+      "folio": "128",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 714,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Automatic non-passing misconceptions",
+          "pdfPage": 128,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 129,
+      "page": 129,
+      "folio": "129",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 2057,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Appendix A: consulting lifecycle",
+          "pdfPage": 129,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 130,
+      "page": 130,
+      "folio": "130",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1125,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Appendix B: discovery interview and observation guide",
+          "pdfPage": 130,
+          "depth": 0
+        },
+        {
+          "title": "Sponsor and decision owner",
+          "pdfPage": 130,
+          "depth": 1
+        },
+        {
+          "title": "People who perform and receive the work",
+          "pdfPage": 130,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 131,
+      "page": 131,
+      "folio": "131",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 640,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Observation prompts",
+          "pdfPage": 131,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 132,
+      "page": 132,
+      "folio": "132",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1466,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Appendix C: assist, recommend, decide, and act",
+          "pdfPage": 132,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 133,
+      "page": 133,
+      "folio": "133",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1798,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Appendix D: measurement and economics cheat sheet",
+          "pdfPage": 133,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 134,
+      "page": 134,
+      "folio": "134",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1491,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Appendix E: governance and vendor question bank",
+          "pdfPage": 134,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 135,
+      "page": 135,
+      "folio": "135",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1995,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Appendix F: plain-language glossary",
+          "pdfPage": 135,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 136,
+      "page": 136,
+      "folio": "136",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1423,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 137,
+      "page": 137,
+      "folio": "137",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1668,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Appendix G: worksheet index",
+          "pdfPage": 137,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 138,
+      "page": 138,
+      "folio": "138",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1765,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Further reading and source notes",
+          "pdfPage": 138,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 139,
+      "page": 139,
+      "folio": "139",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 2226,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 140,
+      "page": 140,
+      "folio": "140",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 2027,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 141,
+      "page": 141,
+      "folio": "141",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1262,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 142,
+      "page": 142,
+      "folio": "142",
+      "role": "changelog",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 551,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Changelog",
+          "pdfPage": 142,
+          "depth": 0
+        }
+      ]
+    }
+  ]
+}

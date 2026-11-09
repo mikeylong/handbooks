@@ -1,0 +1,12 @@
+{
+  "id": "ai-native-organization",
+  "status": "passed",
+  "source": "source/build_handbook.py",
+  "baselineSha256": "1a37a5ced0ddb5309bd5a91b1c6ea2770825a8a807086c5fa4c9a92a122bab88",
+  "candidateSha256": "21fe545d5704e8eff76879c3b6e391ab4390e0cf584d1a3a8346ebe5092eda3e",
+  "allowedChanges": [
+    "edition cover date and version",
+    "omit previous edition changelog from new repair edition"
+  ],
+  "substantiveManuscriptChanged": false
+}

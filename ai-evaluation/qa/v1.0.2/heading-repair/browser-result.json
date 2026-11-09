@@ -1,0 +1,767 @@
+{
+  "id": "ai-evaluation",
+  "status": "passed",
+  "kind": "independent-existing-reader-proof",
+  "collectionComplete": false,
+  "identity": {
+    "id": "ai-evaluation",
+    "title": "AI Evaluation Field Guide",
+    "version": "1.0.2",
+    "date": "2026-11-08",
+    "pages": 102,
+    "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915"
+  },
+  "responsive": [
+    {
+      "url": "http://127.0.0.1:43215/ai-evaluation/",
+      "width": 390,
+      "mode": "light",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [
+        {
+          "color": "rgb(23, 23, 22)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Decision",
+              "size": 16
+            },
+            {
+              "label": "Failure modes",
+              "size": 16
+            },
+            {
+              "label": "Evidence sets",
+              "size": 16
+            },
+            {
+              "label": "Graders",
+              "size": 16
+            },
+            {
+              "label": "Analysis",
+              "size": 16
+            },
+            {
+              "label": "Launch or learn",
+              "size": 16
+            }
+          ]
+        },
+        {
+          "color": "rgb(23, 23, 22)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Candidate cases",
+              "size": 16
+            },
+            {
+              "label": "Calibration",
+              "size": 16
+            },
+            {
+              "label": "Held-out test",
+              "size": 16
+            },
+            {
+              "label": "Challenge",
+              "size": 16
+            },
+            {
+              "label": "Regression",
+              "size": 16
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:43215/ai-evaluation/",
+      "width": 390,
+      "mode": "dark",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [
+        {
+          "color": "rgb(238, 236, 230)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Decision",
+              "size": 16
+            },
+            {
+              "label": "Failure modes",
+              "size": 16
+            },
+            {
+              "label": "Evidence sets",
+              "size": 16
+            },
+            {
+              "label": "Graders",
+              "size": 16
+            },
+            {
+              "label": "Analysis",
+              "size": 16
+            },
+            {
+              "label": "Launch or learn",
+              "size": 16
+            }
+          ]
+        },
+        {
+          "color": "rgb(238, 236, 230)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Candidate cases",
+              "size": 16
+            },
+            {
+              "label": "Calibration",
+              "size": 16
+            },
+            {
+              "label": "Held-out test",
+              "size": 16
+            },
+            {
+              "label": "Challenge",
+              "size": 16
+            },
+            {
+              "label": "Regression",
+              "size": 16
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:43215/ai-evaluation/",
+      "width": 1440,
+      "mode": "light",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [
+        {
+          "color": "rgb(23, 23, 22)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Decision",
+              "size": 16
+            },
+            {
+              "label": "Failure modes",
+              "size": 16
+            },
+            {
+              "label": "Evidence sets",
+              "size": 16
+            },
+            {
+              "label": "Graders",
+              "size": 16
+            },
+            {
+              "label": "Analysis",
+              "size": 16
+            },
+            {
+              "label": "Launch or learn",
+              "size": 16
+            }
+          ]
+        },
+        {
+          "color": "rgb(23, 23, 22)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Candidate cases",
+              "size": 16
+            },
+            {
+              "label": "Calibration",
+              "size": 16
+            },
+            {
+              "label": "Held-out test",
+              "size": 16
+            },
+            {
+              "label": "Challenge",
+              "size": 16
+            },
+            {
+              "label": "Regression",
+              "size": 16
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:43215/ai-evaluation/",
+      "width": 1440,
+      "mode": "dark",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [
+        {
+          "color": "rgb(238, 236, 230)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Decision",
+              "size": 16
+            },
+            {
+              "label": "Failure modes",
+              "size": 16
+            },
+            {
+              "label": "Evidence sets",
+              "size": 16
+            },
+            {
+              "label": "Graders",
+              "size": 16
+            },
+            {
+              "label": "Analysis",
+              "size": 16
+            },
+            {
+              "label": "Launch or learn",
+              "size": 16
+            }
+          ]
+        },
+        {
+          "color": "rgb(238, 236, 230)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Candidate cases",
+              "size": 16
+            },
+            {
+              "label": "Calibration",
+              "size": 16
+            },
+            {
+              "label": "Held-out test",
+              "size": 16
+            },
+            {
+              "label": "Challenge",
+              "size": 16
+            },
+            {
+              "label": "Regression",
+              "size": 16
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        }
+      ]
+    }
+  ],
+  "fallbacks": [
+    {
+      "url": "http://127.0.0.1:43215/ai-evaluation/",
+      "scheme": "light",
+      "overflow": false,
+      "themeScriptAbsent": true,
+      "printFallback": true
+    },
+    {
+      "url": "http://127.0.0.1:43215/ai-evaluation/",
+      "scheme": "dark",
+      "overflow": false,
+      "themeScriptAbsent": true,
+      "printFallback": true
+    },
+    {
+      "url": "http://127.0.0.1:43215/ai-evaluation/",
+      "blockedStorage": true
+    }
+  ],
+  "cover": [
+    {
+      "width": 390,
+      "buttonWidth": 330.5625,
+      "buttonHeight": 44,
+      "downloadWidth": 330.5625,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 640,
+      "buttonWidth": 448,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 641,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 768,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 1024,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    }
+  ],
+  "downloads": [
+    {
+      "href": "/ai-evaluation/editions/v1.0.2/ai-evaluation-v1.0.2.md",
+      "name": "ai-evaluation-v1.0.2.md",
+      "sha256": "cdae5f9ef32da1a6fee08d849925e1f1e88fa8b9aa8cdd10b0af7170875e3aa8",
+      "bytes": 107922,
+      "mime": "text/markdown; charset=utf-8",
+      "wireHttpVerified": true
+    },
+    {
+      "href": "/ai-evaluation/editions/v1.0.2/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+      "name": "ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+      "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+      "bytes": 5515696,
+      "mime": "application/pdf",
+      "wireHttpVerified": true
+    },
+    {
+      "href": "/ai-evaluation/editions/v1.0.2/ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+      "name": "ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+      "sha256": "36ca2580356ea4aac5a7450f25f7e7dce1ad6a592e0c375b9ab0e87ec7bee99f",
+      "bytes": 56174987,
+      "mime": "application/pdf",
+      "wireHttpVerified": true
+    }
+  ],
+  "wireHttpVerified": true,
+  "navigation": "passed",
+  "sourceBytesUnchanged": true
+}

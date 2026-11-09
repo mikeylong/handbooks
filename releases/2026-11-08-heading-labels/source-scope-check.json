@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "books": [
+    {
+      "id": "ai-native-organization",
+      "status": "passed",
+      "source": "source/build_handbook.py",
+      "baselineSha256": "1a37a5ced0ddb5309bd5a91b1c6ea2770825a8a807086c5fa4c9a92a122bab88",
+      "candidateSha256": "21fe545d5704e8eff76879c3b6e391ab4390e0cf584d1a3a8346ebe5092eda3e",
+      "allowedChanges": [
+        "edition cover date and version",
+        "omit previous edition changelog from new repair edition"
+      ],
+      "substantiveManuscriptChanged": false
+    },
+    {
+      "id": "production-ai-engineering",
+      "status": "passed",
+      "source": "AI_ENGINEERING_FIELD_GUIDE.md",
+      "baselineSha256": "b907ee408a1cf31e2e6546d776a1f4bbce7273621fb2081e2957ec568ad1895e",
+      "candidateSha256": "b907ee408a1cf31e2e6546d776a1f4bbce7273621fb2081e2957ec568ad1895e",
+      "allowedChanges": [
+        "edition cover date and version",
+        "omit previous edition changelog from new repair edition"
+      ],
+      "substantiveManuscriptChanged": false
+    },
+    {
+      "id": "claude-design",
+      "status": "passed",
+      "source": "Claude_Design_Field_Guide_Source.md",
+      "baselineSha256": "0dad4734f14ad8a54a721aa8bdae7ec63f80ab126d7ccdb5f4b15b898cd3f3d0",
+      "candidateSha256": "c3674fb9542f25aaaf454341907f7570fa371fa65435e19d23198de9422dfdd8",
+      "allowedChanges": [
+        "edition cover date and version",
+        "omit previous edition changelog from new repair edition"
+      ],
+      "substantiveManuscriptChanged": false
+    },
+    {
+      "id": "ai-evaluation",
+      "status": "passed",
+      "source": "source/build_handbook.py",
+      "baselineSha256": "fae4e8aaa191f1d8c9eab9b69579c29458079a516a9c97931239986ef07544e2",
+      "candidateSha256": "7d155ff1232e86885c026b2eca0ee80dd3b5b5433b62c8c6a23b389a3ea4bb93",
+      "allowedChanges": [
+        "edition cover date and version",
+        "omit previous edition changelog from new repair edition",
+        "explicit existing chapter-marker role"
+      ],
+      "substantiveManuscriptChanged": false
+    },
+    {
+      "id": "ai-consulting",
+      "status": "passed",
+      "source": "source/build_handbook.py",
+      "baselineSha256": "d12f1334168c3596d6241bed3d6ae8d689bfb3de4e79c202d1ef7fff55827dd6",
+      "candidateSha256": "707dc79c0bd65cd9df0ce2c79818a498d0a66c8418941e466b9044c46814f45f",
+      "allowedChanges": [
+        "edition cover date and version",
+        "omit previous edition changelog from new repair edition"
+      ],
+      "substantiveManuscriptChanged": false
+    }
+  ]
+}

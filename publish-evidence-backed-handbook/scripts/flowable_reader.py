@@ -186,9 +186,8 @@ def build_reader(book_root, config, output, chrome=None):
  story=getattr(m,config['storyFunction'])()
  from term_index import bind_index_targets
  bind_index_targets(story)
- if config.get('subsectionLabels') == 'titles':
-  from heading_wrap import prepare_title_story
-  prepare_title_story(story)
+ from heading_wrap import prepare_title_story
+ prepare_title_story(story)
  def find_references(x):
   if isinstance(x,Paragraph):
    key=reference_key(x)

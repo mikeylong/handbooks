@@ -42,7 +42,7 @@ def build_story():
         P('AI-Native<br/>Organization<br/>Handbook', COVER_TITLE),
         P('Choose useful work, give people clear ownership, and test whether agent workflows improve delivery.', COVER_DECK),
         Spacer(1, 35*mm), P('Michael Long', COVER_CREDIT),
-        P('November 7, 2026 · Version 1.1.1', COVER_CREDIT),
+        P('November 8, 2026 · Version 1.1.2', COVER_CREDIT),
         P('Expanded edition', COVER_CREDIT), PageBreak(),
         P('READ THIS FIRST', CHAPTER_KICKER), P('Make a better delivery decision', H1),
         P('Your team can generate a change quickly and still struggle to deliver it. Someone has to decide whether the change matters, resolve conflicting requirements, review the result, release it and support the customer afterward. Giving agents more execution work leaves those responsibilities with people.'),
@@ -281,15 +281,4 @@ def build_story():
     story += [SetNextRunningHead('Index of terms'), PageBreak(), P('Index of terms', H1),
         P('Page numbers link to the first page of the relevant section in either PDF appearance.'),
         TermIndex(BOOK)]
-    story.extend([SetNextRunningHead('Changelog'),
-        PageBreak(),
-        heading('Changelog',1),
-        P("Compared with version 1.1.0, published 2026-10-23."),
-        P("<b>Addition.</b> Added a bounded case on Block's proposal for shared company and customer context."),
-        P("The case gives teams a hypothesis they can test against delivery and workload evidence."),
-        P("<link href=\"https://block.xyz/inside/from-hierarchy-to-intelligence\">Primary source</link>",SMALL),
-        P("<b>Correction or clarification.</b> Added owners and escalation routes for dependencies and decisions in a coordination trial."),
-        P("Record waiting time and review effort to see where work moves when a handoff gets faster."),
-        P("<link href=\"https://block.xyz/inside/from-hierarchy-to-intelligence\">Primary source</link> · <link href=\"https://www.anthropic.com/research/demystifying-evals-for-ai-agents\">Primary source</link> · <link href=\"https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations\">Primary source</link>",SMALL),
-        P("Previous Daytime PDF SHA-256: c56f413a7be84533886f61199be33d2f8e8c421cf7c002a17f04f275dfe4af7d",SMALL)])
     return story

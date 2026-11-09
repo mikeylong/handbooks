@@ -327,7 +327,7 @@ def build_front_matter() -> list[Flowable]:
             COVER_CREDIT,
         ),
         Spacer(1, 6 * mm),
-        P("October 9, 2026 | Version 1.0.1", SMALL),
+        P("November 8, 2026 | Version 1.0.2", SMALL),
         PageBreak(),
         Spacer(1, 5 * mm),
         P("ORIENTATION", CHAPTER_KICKER),
@@ -2585,7 +2585,6 @@ def build_story() -> list[Flowable]:
         + build_modules_5_8()
         + build_modules_9_12()
         + build_capstone_and_appendices()
-        + build_changelog()
     )
 
 

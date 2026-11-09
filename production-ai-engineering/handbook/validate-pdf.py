@@ -210,7 +210,7 @@ def validate_structure(
         assert chapter_starts[chapter_index] <= page_index < chapter_end, (
             f"Section {display_number} destination is outside its chapter"
         )
-        assert canonical(f"{display_number} {title}") in canonical(page_texts[page_index]), (
+        assert canonical(title) in canonical(page_texts[page_index]), (
             f"Section {display_number} heading is missing at its destination"
         )
         section_pages.append(page_index)
@@ -441,9 +441,12 @@ def validate(path: Path, changelog_path: Path | None = None, *, theme: str | Non
     for old_number, (display_number, title) in enumerate(
         zip(SECTION_DISPLAY_NUMBERS, section_titles), start=1
     ):
-        hierarchical_heading = canonical(f"{display_number} {title}")
+        hierarchical_heading = canonical(title)
         assert hierarchical_heading in canonical_text, (
-            f"Missing hierarchical section heading: {display_number} {title}"
+            f"Missing subsection title: {title}"
+        )
+        assert canonical(f"{display_number} {title}") not in canonical_text, (
+            f"Visible decimal subsection prefix: {display_number} {title}"
         )
         legacy_heading = re.compile(
             rf"(?m)^\s*{old_number}\.\s+{re.escape(title)}"
@@ -562,26 +565,13 @@ def validate(path: Path, changelog_path: Path | None = None, *, theme: str | Non
     assert changelog_outline_count == (1 if require_changelog else 0), (
         f"Unexpected changelog bookmark count: {changelog_outline_count}"
     )
-    for display_number, title in zip(SECTION_DISPLAY_NUMBERS, section_titles):
-        section_outline_title = next(
-            (
-                outline_title
-                for outline_title in outline_title_list
-                if canonical(outline_title) == canonical(f"{display_number} {title}")
-            ),
-            None,
+    for title in section_titles:
+        assert any(canonical(value) == canonical(title) for value in outline_title_list), (
+            f"Missing title-only section bookmark: {title}"
         )
-        assert section_outline_title is not None, (
-            f"Missing section bookmark: {display_number} {title}"
-        )
-        separator_index = len(display_number)
-        assert (
-            len(section_outline_title) > separator_index
-            and section_outline_title.startswith(display_number)
-            and section_outline_title[separator_index].isspace()
-        ), (
-            f"Section bookmark lacks a number/title separator: {section_outline_title}"
-        )
+    assert not any(re.match(r"^\s*\d+(?:\.\d+)+\s+", value) for value in outline_title_list), (
+        "Decimal section numbers remain in PDF bookmarks"
+    )
 
     destination_names = set(destination_pages)
     changelog_start: int | None = None

@@ -1,0 +1,13 @@
+{
+  "id": "ai-evaluation",
+  "status": "passed",
+  "source": "source/build_handbook.py",
+  "baselineSha256": "fae4e8aaa191f1d8c9eab9b69579c29458079a516a9c97931239986ef07544e2",
+  "candidateSha256": "7d155ff1232e86885c026b2eca0ee80dd3b5b5433b62c8c6a23b389a3ea4bb93",
+  "allowedChanges": [
+    "edition cover date and version",
+    "omit previous edition changelog from new repair edition",
+    "explicit existing chapter-marker role"
+  ],
+  "substantiveManuscriptChanged": false
+}

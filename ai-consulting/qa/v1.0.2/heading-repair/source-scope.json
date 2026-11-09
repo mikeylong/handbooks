@@ -1,0 +1,12 @@
+{
+  "id": "ai-consulting",
+  "status": "passed",
+  "source": "source/build_handbook.py",
+  "baselineSha256": "d12f1334168c3596d6241bed3d6ae8d689bfb3de4e79c202d1ef7fff55827dd6",
+  "candidateSha256": "707dc79c0bd65cd9df0ce2c79818a498d0a66c8418941e466b9044c46814f45f",
+  "allowedChanges": [
+    "edition cover date and version",
+    "omit previous edition changelog from new repair edition"
+  ],
+  "substantiveManuscriptChanged": false
+}

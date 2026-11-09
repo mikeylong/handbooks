@@ -1,13 +1,106 @@
 {
+  "id": "ai-consulting",
   "title": "AI Consulting Playbook",
-  "version": "1.0.1",
-  "date": "2026-10-09",
-  "pdf": "output/pdf/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf",
-  "sha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
-  "pages": 142,
-  "previous_public_edition": "1.0.0",
-  "comparison_basis": "approved public edition 1.0.0",
-  "candidate_validation": "qa/validation.json",
+  "version": "1.0.2",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf",
+  "sha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
+  "pages": 141,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+    "date": "2026-11-08",
+    "version": "1.0.2",
+    "daytimeSha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4"
+  },
+  "releaseValidationKind": "presentation-exact-artifact",
+  "previous_public_edition": "1.0.1",
+  "comparison_basis": "approved public edition",
+  "baseline": {
+    "version": "1.0.1",
+    "date": "2026-10-09",
+    "pdf": "output/pdf/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf",
+    "sha256": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
+    "manifest": {
+      "path": "baselines/v1.0.1/heading-repair/release-manifest.json",
+      "sha256": "069beedc995d87aaa8d7022de333f88354baad9079a86c6caf6607c2b1ab4748"
+    }
+  },
+  "candidate_validation": "qa/v1.0.2/heading-repair/light-validation.json",
+  "candidateEvidence": {
+    "lightValidation": {
+      "path": "qa/v1.0.2/heading-repair/light-validation.json",
+      "sha256": "6f12ef6c762f1e7716dec69f32543e1c68d93f47410c5e2ad7e6b57c32bd5499"
+    },
+    "darkValidation": {
+      "path": "qa/v1.0.2/heading-repair/dark-validation.json",
+      "sha256": "c445bea494ad6b572f4794a39a115efb1dec1276832c1ef1347324d70a0e16fe"
+    },
+    "editionDiff": {
+      "path": "qa/v1.0.2/heading-repair/comparison/edition-diff.json",
+      "sha256": "15199318112779dcbbe10d7c59a4eb16809b12596f9ee687b08d32e96912830f"
+    },
+    "changelogDecision": {
+      "path": "qa/v1.0.2/heading-repair/changelog-decision.json",
+      "sha256": "af9c429c4e1253f32fafb4a74a52339dca985a9115be9ec7fa8eb0cf046da23a"
+    },
+    "parity": {
+      "path": "qa/v1.0.2/heading-repair/pair/parity.json",
+      "sha256": "b1f4c8aa8bd6f1ebced819262bce6f5a3f9253049bbec5febec3d753134efa59"
+    },
+    "appearanceAudit": {
+      "path": "qa/v1.0.2/heading-repair/appearance.json",
+      "sha256": "eaa620282b02eff5211e28b97be477ebf5904a886da907de33f31e1f8249388e"
+    }
+  },
+  "pageMaps": {
+    "light": {
+      "path": "qa/v1.0.2/heading-repair/light-page-map.json",
+      "sha256": "02f31f9f35e7e523e02ded11bb7f0f5e9455278f936d5139aeef97bf7e2c8293"
+    },
+    "dark": {
+      "path": "qa/v1.0.2/heading-repair/dark-page-map.json",
+      "sha256": "2116276325b0c3473703d4d9732307381922e81f47087243caaf18117b2121f4"
+    }
+  },
+  "appearances": {
+    "light": {
+      "pdf": "output/pdf/ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf",
+      "sha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
+      "pages": 141
+    },
+    "dark": {
+      "pdf": "output/pdf/ai-consulting-v1.0.2-2026-11-08-late-night-r1.pdf",
+      "sha256": "979434dfe883580a78adf2d1eb8f693cff872546e0c1df5f9d99568b913909af",
+      "pages": 141
+    }
+  },
+  "readerFacingContentChanged": false,
+  "presentationRepair": {
+    "policy": "mandatory-title-only-v1",
+    "contentPolicy": "No substantive manuscript changes; preserve chapter markers, data and procedural steps.",
+    "rawDifferences": "candidateEvidence.editionDiff",
+    "historicalChangelog": "Retained in previous edition; no new content changelog.",
+    "sourceProof": {
+      "path": "qa/v1.0.2/heading-repair/source-scope.json",
+      "sha256": "45eb51909cbf958ad40a27931d974cdfe877552e83ea231993e0fec19062857f"
+    },
+    "headingProof": {
+      "path": "qa/v1.0.2/heading-repair/heading-proof.json",
+      "sha256": "4a06bf78d6c1ca16aa9b10d8f5fe725ca3931c4c86c030a788a2c5ebf8d32fbf"
+    },
+    "releaseProof": {
+      "path": "qa/v1.0.2/heading-repair/release-proof.json",
+      "sha256": "7a56a3837fbde2e6dac802d540f22cf8bfddc13ec7f32cbee5f27025b2065ea2"
+    }
+  },
+  "retainedProvenance": {
+    "status": "historical_only_not_reverified",
+    "sourceEdition": "1.0.1",
+    "manifest": "baselines/v1.0.1/heading-repair/release-manifest.json"
+  },
   "art": [
     {
       "path": "assets/chapter-art/original/chapter-01.png",
@@ -158,5 +251,8 @@
       "sha256": "d592067ad27af400909e7396e73dfd4b2e449a7a7fe5c158a4ca97fd14539088"
     }
   ],
-  "state": "candidate; not published"
+  "generationToolkitArchive": {
+    "collectionPath": "releases/2026-11-08-heading-labels/generation-toolkit-v2.zip",
+    "sha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e"
+  }
 }

@@ -78,7 +78,7 @@ SECTION_PREFIX = re.compile(r'^(\d+(?:\.\d+)+)\s+(.+)$', re.S)
 def prepare_title_story(story):
     """Use visible titles and linked references while retaining source section IDs.
 
-    Used by PDF preparation and readers that explicitly opt into title labels.
+    Mandatory for PDF preparation and every hosted reader.
     No author wording, list numbers, chapter markers or numerical data change.
     """
     from reportlab.platypus import Table, KeepTogether

@@ -30,12 +30,12 @@ const expectedReleaseSchedule = buildReleaseSchedule(
   new Date(releaseSchedule.generatedAt),
 );
 const expectedBookVersion = process.env.HANDBOOK_VERSION
-  ?? `Version 1.4.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+  ?? `Version 1.4.2${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const publication = JSON.parse(await readFile(resolve(here, "../publication.json"), "utf8"));
 const REPOSITORY_HREF = publication.editionUrl;
 const RELEASES_HREF = publication.releaseUrl;
-const PUBLICATION_DATE = "November 7, 2026";
-const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf";
+const PUBLICATION_DATE = "November 8, 2026";
+const CURRENT_PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf";
 const expectedPdfPageCount = pdfDownloadPageCount(here, CURRENT_PDF_HREF);
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
@@ -63,7 +63,7 @@ const formatBibliographyDate = (displayDate) => {
 const evidenceReviewDate = source.match(
   /Last evidence review:\s*\*\*([^*]+)\*\*/,
 )?.[1] ?? "Unspecified";
-const bibliographyDate = process.env.HANDBOOK_CANDIDATE_DATE ?? evidenceReviewDate;
+const bibliographyDate = evidenceReviewDate;
 const expectedBibliographyAccessDate = formatBibliographyDate(
   formatCandidateDate(bibliographyDate),
 );
@@ -179,7 +179,7 @@ const expectedSectionDisplayNumbers = [
   "11.1", "11.2", "12.1", "12.2", "12.3",
 ];
 const renderedSectionDisplayNumbers = [
-  ...html.matchAll(/<section class="source-section"[^>]*>[\s\S]*?<h3><span class="section-number">(\d+\.\d+)&nbsp;<\/span>/g),
+  ...html.matchAll(/<h3 data-source-section="(\d+\.\d+)">/g),
 ].map((match) => match[1]);
 
 const chapterImages = Array.from({ length: 12 }, (_, index) =>
@@ -202,17 +202,14 @@ const checks = {
   sourceSections: count(/<section class="source-section"/g, html),
   sectionHierarchyValid:
     JSON.stringify(renderedSectionDisplayNumbers) === JSON.stringify(expectedSectionDisplayNumbers),
-  sectionNumberStylingValid:
-    css.includes(".source-section > h3 .section-number")
-    && /font-size:\s*0\.6em/.test(css)
-    && /font-variant-numeric:\s*tabular-nums/.test(css),
-  sectionNumberSeparatorValid:
-    count(/&nbsp;<\/span><span class="section-title">/g, html) === 25,
+  titleOnlySubsections: !/<h[2-6][^>]*>\s*(?:<[^>]+>)*\s*\d+\.\d+/.test(html)
+    && !/class="section-number"/.test(html)
+    && count(/<h3 data-source-section=/g, html) === 25,
   legacyGlobalSectionHeadingsRemoved:
     !/<section class="source-section"[^>]*>[\s\S]*?<h3>\d+\.\s/.test(html),
   sourceMapHierarchyValid:
-    expectedSectionDisplayNumbers.every((number) => html.includes(`<strong>§${number}</strong>`))
-    && !/<strong>§\d+<\/strong>/.test(html),
+    count(/class="source-map-section"/g, html) === 25
+    && !/class="source-map-section"[^>]*><strong>§/.test(html),
   sourceMapPrintWrapValid:
     /grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(sourceMapItemPrintRule)
     && /white-space:\s*normal/.test(sourceMapReferencesPrintRule),
@@ -617,8 +614,7 @@ const expected = {
   decks: 12,
   sourceSections: 25,
   sectionHierarchyValid: true,
-  sectionNumberStylingValid: true,
-  sectionNumberSeparatorValid: true,
+  titleOnlySubsections: true,
   legacyGlobalSectionHeadingsRemoved: true,
   sourceMapHierarchyValid: true,
   sourceMapPrintWrapValid: true,

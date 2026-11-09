@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-evaluation",
+  "title": "AI Evaluation Field Guide",
+  "version": "1.0.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+  "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+  "pages": 103,
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+      "publicUrl": "/ai-evaluation/editions/v1.0.1/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+      "downloadFilename": "ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+      "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+      "bytes": 5523417,
+      "pages": 103,
+      "pageMap": {
+        "path": "ai-evaluation/qa/v1.0.1/weekly/light-page-map.json",
+        "sha256": "01386eb50d53a1d14ca11aa465c8c93d39d2b965843a06f20de7789d666432f4"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.1-2026-11-07-late-night-r1.pdf",
+      "publicUrl": "/ai-evaluation/editions/v1.0.1/ai-evaluation-v1.0.1-2026-11-07-late-night-r1.pdf",
+      "downloadFilename": "ai-evaluation-v1.0.1-2026-11-07-late-night-r1.pdf",
+      "sha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
+      "bytes": 56183184,
+      "pages": 103,
+      "pageMap": {
+        "path": "ai-evaluation/qa/v1.0.1/weekly/dark-page-map.json",
+        "sha256": "571e3b06e2a655a9de788d48b0680377757d4068949193e54564349eb8807048"
+      },
+      "proof": {
+        "parity": {
+          "path": "ai-evaluation/qa/v1.0.1/weekly/parity.json",
+          "sha256": "82c22b89f1ade99c06e88a93f91f739256b07a4f65a02128591b544a6791fe76"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
+          "date": "2026-11-07",
+          "authority": "Publish them and update releases",
+          "agentReview": "releases/2026-11-07/visual-review.json"
+        },
+        "appearanceAudit": {
+          "path": "ai-evaluation/qa/v1.0.1/appearance.json",
+          "sha256": "ff3b75bfff6cbeaeaee727d6f26b498dec9496109b71a98a95d7068578462a2e"
+        }
+      }
+    }
+  ]
+}

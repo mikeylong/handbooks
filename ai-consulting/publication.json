@@ -1,7 +1,7 @@
 {
   "author": "Michael Long",
   "authorSite": "https://surfaces.systems",
-  "releaseUrl": "https://handbooks.surfaces.systems/ai-consulting/editions/v1.0.1/",
+  "releaseUrl": "https://handbooks.surfaces.systems/ai-consulting/editions/v1.0.2/",
   "review": {
     "at": "2026-10-05T16:00:00.000Z",
     "timeZone": "America/Los_Angeles",
@@ -11,5 +11,21 @@
   "historicalRepository": "https://github.com/mikeylong/ai-consulting-playbook",
   "historicalReleaseUrl": "https://github.com/mikeylong/ai-consulting-playbook/releases/tag/v1.0.0",
   "sourceRepository": "https://github.com/mikeylong/handbooks",
-  "editionUrl": "https://handbooks.surfaces.systems/ai-consulting/editions/v1.0.1/"
+  "editionUrl": "https://handbooks.surfaces.systems/ai-consulting/editions/v1.0.2/",
+  "id": "ai-consulting",
+  "title": "AI Consulting Playbook",
+  "version": "1.0.2",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf",
+  "sha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
+  "pages": 141,
+  "publicationApproved": true,
+  "approvalStatus": "approved",
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+    "date": "2026-11-08",
+    "version": "1.0.2",
+    "daytimeSha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4"
+  }
 }

@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "review": "Complete page overviews for both appearances inspected, including independent Poppler and Apple PDFKit output. All chapter openers and representative title, diagram, table, screenshot, reference and index pages inspected at full size. No new blocking layout finding.",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+      "pages": 53,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/claude-design/attempt-1/proof/light"
+    },
+    {
+      "theme": "dark",
+      "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17",
+      "pages": 53,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/claude-design/attempt-1/proof/dark"
+    }
+  ],
+  "policy": "Title-only subsection headings; preserve chapter markers, procedural steps, figures and numeric data.",
+  "historicalFormatting": "Existing short reference continuation pages remain unchanged in content."
+}

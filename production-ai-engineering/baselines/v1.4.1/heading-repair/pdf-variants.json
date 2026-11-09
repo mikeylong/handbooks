@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "book": "production-ai-engineering",
+  "title": "Production AI Engineering",
+  "version": "1.4.1",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+  "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+  "pages": 99,
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+      "publicUrl": "/production-ai-engineering/editions/v1.4.1/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+      "downloadFilename": "production-ai-engineering-v1.4.1-2026-11-07-daytime-r1.pdf",
+      "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+      "bytes": 24703641,
+      "pages": 99,
+      "pageMap": {
+        "path": "production-ai-engineering/qa/v1.4.1/weekly/light-page-map.json",
+        "sha256": "6fdeb4503470b532c0777c42641ccab32d8280bff7bcd7edeeaeba3b1720adcd"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.1-2026-11-07-late-night-r1.pdf",
+      "publicUrl": "/production-ai-engineering/editions/v1.4.1/production-ai-engineering-v1.4.1-2026-11-07-late-night-r1.pdf",
+      "downloadFilename": "production-ai-engineering-v1.4.1-2026-11-07-late-night-r1.pdf",
+      "sha256": "76978a3123ece09cb71abe2e9553764a3b56cc24535203b746f1eba436236e8b",
+      "bytes": 35300284,
+      "pages": 99,
+      "pageMap": {
+        "path": "production-ai-engineering/qa/v1.4.1/weekly/dark-page-map.json",
+        "sha256": "51d1dc3d4fffbdec63a0b127412e5b53a045fd60d9c2c0dbb516cfb7362307a8"
+      },
+      "proof": {
+        "parity": {
+          "path": "production-ai-engineering/qa/v1.4.1/weekly/parity.json",
+          "sha256": "71bc4125cec2bbea23735daf404fe2b8938d3c5b73bad9023fd9ed012df92a07"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "76978a3123ece09cb71abe2e9553764a3b56cc24535203b746f1eba436236e8b",
+          "date": "2026-11-07",
+          "authority": "Publish them and update releases",
+          "agentReview": "releases/2026-11-07/visual-review.json"
+        },
+        "appearanceAudit": {
+          "path": "production-ai-engineering/qa/v1.4.1/appearance.json",
+          "sha256": "61285aea9434a71b1cb432b6842e5a1c82e08bb39dc05c19fd6e26c6bcc2f469"
+        }
+      }
+    }
+  ]
+}

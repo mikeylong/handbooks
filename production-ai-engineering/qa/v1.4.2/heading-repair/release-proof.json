@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "visualReview": "passed",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
+      "pages": 97,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/production-ai-engineering/attempt-1/proof/light"
+    },
+    {
+      "theme": "dark",
+      "sha256": "28c67aa1799cb2f8f9bf0694adcdbc7f177a17324256af267a1f82bfb24b2132",
+      "pages": 97,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/production-ai-engineering/attempt-1/proof/dark"
+    }
+  ],
+  "browser": {
+    "status": "passed",
+    "jobId": "1f7ba01a",
+    "engine": "Linux Chromium",
+    "version": "1.4.2",
+    "packageSha256": "74f18834221e9171f223873b7c948b46eee95db1cb5ec209e128f48d821036c4",
+    "toolkitArchiveSha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e",
+    "report": {
+      "path": "qa/v1.4.2/heading-repair/browser-result.json",
+      "sha256": "48c99196ca83dfe35ae450a3d74a79672f33de67edc3dc263535a930c1ff8ca5"
+    },
+    "downloads": [
+      {
+        "href": "/production-ai-engineering/editions/v1.4.2/production-ai-engineering-v1.4.2.md",
+        "name": "production-ai-engineering-v1.4.2.md",
+        "sha256": "8b05937c4de8c1bc7ebf6e4b2d88c4acaec62072150e177baccb631cd16d8448",
+        "bytes": 215417,
+        "mime": "text/markdown; charset=utf-8",
+        "wireHttpVerified": true
+      },
+      {
+        "href": "/production-ai-engineering/editions/v1.4.2/production-ai-engineering-v1.4.2-2026-11-08.pdf",
+        "name": "production-ai-engineering-v1.4.2-2026-11-08-daytime-r1.pdf",
+        "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
+        "bytes": 23957312,
+        "mime": "application/pdf",
+        "wireHttpVerified": true
+      },
+      {
+        "href": "/production-ai-engineering/editions/v1.4.2/production-ai-engineering-v1.4.2-2026-11-08-late-night-r1.pdf",
+        "name": "production-ai-engineering-v1.4.2-2026-11-08-late-night-r1.pdf",
+        "sha256": "28c67aa1799cb2f8f9bf0694adcdbc7f177a17324256af267a1f82bfb24b2132",
+        "bytes": 33901687,
+        "mime": "application/pdf",
+        "wireHttpVerified": true
+      }
+    ],
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    },
+    "managedInputSha256": "f80b604cfd2034b3b266f4db07c1359a36f186fcfc3e7953396d530611a8e2f8",
+    "evidencePath": "/Users/mike/Codex/handbook-vm-manager-data/evidence/1f7ba01a"
+  }
+}
