@@ -63,6 +63,8 @@ jobs:
           node publish-evidence-backed-handbook/scripts/test-term-index-markdown.mjs
           python publish-evidence-backed-handbook/scripts/test-quantitative-charts.py
           python publish-evidence-backed-handbook/scripts/test-reader-heading-labels.py
+          python publish-evidence-backed-handbook/scripts/test-heading-policy.py
+          node publish-evidence-backed-handbook/scripts/test-heading-labels.mjs
           python publish-evidence-backed-handbook/scripts/test-eyebrow-roles.py
           python publish-evidence-backed-handbook/scripts/test-concept-diagrams.py
           python publish-evidence-backed-handbook/scripts/test-grouped-diagrams.py

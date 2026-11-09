@@ -1,143 +1,106 @@
 {
   "id": "ai-evaluation",
   "title": "AI Evaluation Field Guide",
-  "version": "1.0.1",
-  "date": "2026-11-07",
-  "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
-  "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
-  "pages": 103,
+  "version": "1.0.2",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+  "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+  "pages": 102,
   "approvalStatus": "approved",
   "publicationApproved": true,
-  "previous_public_edition": "1.0.0",
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+    "date": "2026-11-08",
+    "version": "1.0.2",
+    "daytimeSha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915"
+  },
+  "releaseValidationKind": "presentation-exact-artifact",
+  "previous_public_edition": "1.0.1",
   "comparison_basis": "approved public edition",
   "baseline": {
-    "title": "AI Evaluation Field Guide",
-    "version": "1.0.0",
-    "date": "2026-10-01",
-    "pdf": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf",
-    "sha256": "91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad",
-    "pages": 100,
+    "version": "1.0.1",
+    "date": "2026-11-07",
+    "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+    "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
     "manifest": {
-      "path": "baselines/v1.0.0/pre-weekly-release/release-manifest.json",
-      "sha256": "c508f6a97eed629821275f82e54fb80b925eb9bda84215e9ddf013e064dd248f"
-    },
-    "originalPdfPath": "output/pdf/ai-evaluation-v1.0.0-2026-10-01.pdf"
+      "path": "baselines/v1.0.1/heading-repair/release-manifest.json",
+      "sha256": "6073b14f4f2f3a49f832e714fcf25ee501f975ee559453d7ad24d84896ad8e18"
+    }
   },
-  "candidate_validation": "qa/v1.0.1/weekly/lightValidation.json",
+  "candidate_validation": "qa/v1.0.2/heading-repair/light-validation.json",
   "candidateEvidence": {
     "lightValidation": {
-      "path": "qa/v1.0.1/weekly/lightValidation.json",
-      "sha256": "7608d257cb9b4513c9a3619666020b3d4d302e525a2b13bdf95595ef2c42b5b3",
-      "bytes": 8173
+      "path": "qa/v1.0.2/heading-repair/light-validation.json",
+      "sha256": "800664e95678940d90a398a3b623832ee48252e155851d9765b6585113fbb4a3"
     },
     "darkValidation": {
-      "path": "qa/v1.0.1/weekly/darkValidation.json",
-      "sha256": "85ba4c1ba68ba0b13e16d1f1fc1fee07349577f62a6099a0262a6760524eeeb5",
-      "bytes": 8188
-    },
-    "changelogDecision": {
-      "path": "qa/v1.0.1/weekly/changelogDecision.json",
-      "sha256": "19a25f6fdcb81a7b05189c3bc267b4d81e03f38b06ef51143df272854c02b867",
-      "bytes": 2376
+      "path": "qa/v1.0.2/heading-repair/dark-validation.json",
+      "sha256": "4913625dc904823788cb229b869af905c9271c6c75121b0be51088340f312743"
     },
     "editionDiff": {
-      "path": "qa/v1.0.1/weekly/editionDiff.json",
-      "sha256": "43ffb57cedba98ef981afd32abbc5a8704a9f6fd992419d6b7a0c0ab9063dfd0",
-      "bytes": 2375
+      "path": "qa/v1.0.2/heading-repair/comparison/edition-diff.json",
+      "sha256": "2b1e48181a666240fc07969cafabc2952255e7ea853f11db3f3bbba6c4e24d3a"
     },
-    "changes": {
-      "path": "qa/v1.0.1/weekly/changes.json",
-      "sha256": "82615dbec38fde882b2b5392d79fa2b9e111f6f10cbf51168bb346979f7fedf4",
-      "bytes": 2053
-    },
-    "editionDiffPdfTextPatch": {
-      "path": "qa/v1.0.1/weekly/exact-pdf-text.patch",
-      "sha256": "692d71159bb8a4aef0115ba968a52e940cce92b2ac3c0e4f3fa833d772f9a4cd",
-      "bytes": 38342
-    },
-    "editionDiffReaderFacingContentPatch": {
-      "path": "qa/v1.0.1/weekly/reader-facing-content.patch",
-      "sha256": "530b8c8af33c268fbc8cf227e2f669484ad89dddf06dfb3753ca43efbfa065ca",
-      "bytes": 35292
-    },
-    "editionDiffSourcePatch": {
-      "path": "qa/v1.0.1/weekly/exact-source.patch",
-      "sha256": "fa163cfe3d580c6118cafd282fdf768e602766a08e1e51ee07c233e73591f7c0",
-      "bytes": 10150
+    "changelogDecision": {
+      "path": "qa/v1.0.2/heading-repair/changelog-decision.json",
+      "sha256": "af9c429c4e1253f32fafb4a74a52339dca985a9115be9ec7fa8eb0cf046da23a"
     },
     "parity": {
-      "path": "qa/v1.0.1/weekly/parity.json",
-      "sha256": "82c22b89f1ade99c06e88a93f91f739256b07a4f65a02128591b544a6791fe76"
+      "path": "qa/v1.0.2/heading-repair/pair/parity.json",
+      "sha256": "909c1ee064cddd8d251fb9aeba1a693e944b3c725886198be7ee77964adc343a"
     },
     "appearanceAudit": {
-      "path": "qa/v1.0.1/appearance.json",
-      "sha256": "ff3b75bfff6cbeaeaee727d6f26b498dec9496109b71a98a95d7068578462a2e"
+      "path": "qa/v1.0.2/heading-repair/appearance.json",
+      "sha256": "cb70341d1fd3dd2da0a978b1c20f22c96d8a0d5df88261a14aeca9b1b8de0f10"
     }
   },
-  "evidenceMode": "standard",
   "pageMaps": {
     "light": {
-      "path": "qa/v1.0.1/weekly/light-page-map.json",
-      "sha256": "01386eb50d53a1d14ca11aa465c8c93d39d2b965843a06f20de7789d666432f4"
+      "path": "qa/v1.0.2/heading-repair/light-page-map.json",
+      "sha256": "421dc8dc6acee6ec5183cfe5654bcdb76c6e15505ecc6f9b4d9512cdaddab398"
     },
     "dark": {
-      "path": "qa/v1.0.1/weekly/dark-page-map.json",
-      "sha256": "571e3b06e2a655a9de788d48b0680377757d4068949193e54564349eb8807048"
+      "path": "qa/v1.0.2/heading-repair/dark-page-map.json",
+      "sha256": "eb7effe5b346f3e5ec3e94499f6fca19ae74b4ff3b7f84a00dbad780eaf44956"
     }
-  },
-  "classifiedChangeIds": [
-    "candidate-change-001",
-    "candidate-change-002",
-    "candidate-change-003",
-    "candidate-change-004"
-  ],
-  "readerFacingContentChanged": true,
-  "changelog": {
-    "weeklyDecision": {
-      "path": "qa/v1.0.1/weekly/changelogDecision.json",
-      "sha256": "19a25f6fdcb81a7b05189c3bc267b4d81e03f38b06ef51143df272854c02b867",
-      "bytes": 2376
-    },
-    "pdfDecision": {
-      "path": "qa/v1.0.1/weekly/changelogDecision.json",
-      "sha256": "19a25f6fdcb81a7b05189c3bc267b4d81e03f38b06ef51143df272854c02b867",
-      "bytes": 2376
-    },
-    "retainedHistoricalChangelog": false
   },
   "appearances": {
     "light": {
-      "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
-      "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
-      "pages": 103
+      "pdf": "output/pdf/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+      "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+      "pages": 102
     },
     "dark": {
-      "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-late-night-r1.pdf",
-      "sha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
-      "pages": 103
+      "pdf": "output/pdf/ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+      "sha256": "36ca2580356ea4aac5a7450f25f7e7dce1ad6a592e0c375b9ab0e87ec7bee99f",
+      "pages": 102
+    }
+  },
+  "readerFacingContentChanged": false,
+  "presentationRepair": {
+    "policy": "mandatory-title-only-v1",
+    "contentPolicy": "No substantive manuscript changes; preserve chapter markers, data and procedural steps.",
+    "rawDifferences": "candidateEvidence.editionDiff",
+    "historicalChangelog": "Retained in previous edition; no new content changelog.",
+    "sourceProof": {
+      "path": "qa/v1.0.2/heading-repair/source-scope.json",
+      "sha256": "c8dbb62bb6cbcd57d62352564496b8cac52a685bde5c8786619af723f2851f6d"
+    },
+    "headingProof": {
+      "path": "qa/v1.0.2/heading-repair/heading-proof.json",
+      "sha256": "aba63d05ba298176a9c878debd03e0b7ff32b9a991d93319a9ff44e7a39d68fd"
+    },
+    "releaseProof": {
+      "path": "qa/v1.0.2/heading-repair/release-proof.json",
+      "sha256": "56a3f799fbe1f7186e457a5d97ab6a770575be36af6d7221cc6eef4fa2a66326"
     }
   },
   "retainedProvenance": {
     "status": "historical_only_not_reverified",
-    "sourceEdition": "1.0.0",
-    "sourceManifestSha256": "c508f6a97eed629821275f82e54fb80b925eb9bda84215e9ddf013e064dd248f",
-    "inputMetadata": "baselines/v1.0.0/pre-weekly-release",
-    "readerSnapshot": {
-      "collectionPath": "site/retained/ai-evaluation/v1.0.0/reader-snapshot.html",
-      "sha256": "2e7cf85f554c11cda179b5fe2b6a7aadc3509bd610505fc8664a9a4e2441123c"
-    },
-    "historicalCommit": "3968c25d30257f3696a8712365298d0bad6c196e"
+    "sourceEdition": "1.0.1",
+    "manifest": "baselines/v1.0.1/heading-repair/release-manifest.json"
   },
-  "publicationStatus": "published",
-  "publicationApproval": {
-    "date": "2026-11-07",
-    "command": "Publish them and update releases",
-    "clarification": "I asked you to publish updated releases of every handbook.",
-    "kind": "explicit-user-release",
-    "version": "1.0.1",
-    "daytimeSha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990"
-  },
-  "releaseValidationKind": "weekly-exact-artifact",
   "art": [
     {
       "path": "assets/chapter-art/chapter-09.png",
@@ -237,8 +200,7 @@
     }
   ],
   "generationToolkitArchive": {
-    "collectionPath": "releases/2026-11-07/generation-toolkit.zip",
-    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
-    "purpose": "Frozen runtime used for these PDF builds; artifact promotion copied exact validated bytes."
+    "collectionPath": "releases/2026-11-08-heading-labels/generation-toolkit-v2.zip",
+    "sha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e"
   }
 }

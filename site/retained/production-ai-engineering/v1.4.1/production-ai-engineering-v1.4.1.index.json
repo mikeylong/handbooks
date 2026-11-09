@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "book": "production-ai-engineering",
+  "version": "1.4.1",
+  "sourceReaderSha256": "bc4d41ca1f2ff8b68c8799744aed27e15d8b3700cc7932ba1e3282bbb29a9abd",
+  "sha256": "758e10cc28878819da90de229a81d56f27a9dfe1e6a0737ffc22c034a15b2991",
+  "sections": [
+    {
+      "title": "Engineering the whole system",
+      "anchor": "engineering-the-whole-system",
+      "level": 2
+    },
+    {
+      "title": "Build the System Around the Model",
+      "anchor": "build-the-system-around-the-model",
+      "level": 2
+    },
+    {
+      "title": "1.1 The full system",
+      "anchor": "11-the-full-system",
+      "level": 3
+    },
+    {
+      "title": "1.2 Prompt engineering is one part of the harness",
+      "anchor": "12-prompt-engineering-is-one-part-of-the-harness",
+      "level": 3
+    },
+    {
+      "title": "Treat Context as a Budget",
+      "anchor": "treat-context-as-a-budget",
+      "level": 2
+    },
+    {
+      "title": "2.1 Context engineering, not long prompts",
+      "anchor": "21-context-engineering-not-long-prompts",
+      "level": 3
+    },
+    {
+      "title": "2.2 Four caches that must not be confused",
+      "anchor": "22-four-caches-that-must-not-be-confused",
+      "level": 3
+    },
+    {
+      "title": "Prefill and Decode Are Different Jobs",
+      "anchor": "prefill-and-decode-are-different-jobs",
+      "level": 2
+    },
+    {
+      "title": "3.1 Prefill and decode optimize differently",
+      "anchor": "31-prefill-and-decode-optimize-differently",
+      "level": 3
+    },
+    {
+      "title": "3.2 KV cache management and memory pressure",
+      "anchor": "32-kv-cache-management-and-memory-pressure",
+      "level": 3
+    },
+    {
+      "title": "3.3 Continuous batching, paged attention, and goodput",
+      "anchor": "33-continuous-batching-paged-attention-and-goodput",
+      "level": 3
+    },
+    {
+      "title": "Choose the Optimization That Fits",
+      "anchor": "choose-the-optimization-that-fits",
+      "level": 2
+    },
+    {
+      "title": "4.1 Speculative decoding, quantization, and distillation",
+      "anchor": "41-speculative-decoding-quantization-and-distillation",
+      "level": 3
+    },
+    {
+      "title": "4.2 Quantization: formats, methods, and quality risk",
+      "anchor": "42-quantization-formats-methods-and-quality-risk",
+      "level": 3
+    },
+    {
+      "title": "Turn Model Output into a Contract",
+      "anchor": "turn-model-output-into-a-contract",
+      "level": 2
+    },
+    {
+      "title": "5.1 Structured outputs: syntax is only the first gate",
+      "anchor": "51-structured-outputs-syntax-is-only-the-first-gate",
+      "level": 3
+    },
+    {
+      "title": "5.2 Reliable function and tool calling",
+      "anchor": "52-reliable-function-and-tool-calling",
+      "level": 3
+    },
+    {
+      "title": "Put Clear Limits on Agents",
+      "anchor": "put-clear-limits-on-agents",
+      "level": 2
+    },
+    {
+      "title": "6.1 Agent guardrails, budgets, and termination",
+      "anchor": "61-agent-guardrails-budgets-and-termination",
+      "level": 3
+    },
+    {
+      "title": "6.2 Model routing and degraded mode",
+      "anchor": "62-model-routing-and-degraded-mode",
+      "level": 3
+    },
+    {
+      "title": "Keep Retrieval Grounded",
+      "anchor": "keep-retrieval-grounded",
+      "level": 2
+    },
+    {
+      "title": "7.1 RAG architecture",
+      "anchor": "71-rag-architecture",
+      "level": 3
+    },
+    {
+      "title": "Ingestion and chunking",
+      "anchor": "ingestion-and-chunking",
+      "level": 4
+    },
+    {
+      "title": "Embeddings",
+      "anchor": "embeddings",
+      "level": 4
+    },
+    {
+      "title": "Retrieval",
+      "anchor": "retrieval",
+      "level": 4
+    },
+    {
+      "title": "Freshness",
+      "anchor": "freshness",
+      "level": 4
+    },
+    {
+      "title": "7.2 Retrieval and answer evals",
+      "anchor": "72-retrieval-and-answer-evals",
+      "level": 3
+    },
+    {
+      "title": "Make Evals the Release Gate",
+      "anchor": "make-evals-the-release-gate",
+      "level": 2
+    },
+    {
+      "title": "8.1 Evals as the release contract",
+      "anchor": "81-evals-as-the-release-contract",
+      "level": 3
+    },
+    {
+      "title": "Release gates",
+      "anchor": "release-gates",
+      "level": 4
+    },
+    {
+      "title": "Trace the Whole User Journey",
+      "anchor": "trace-the-whole-user-journey",
+      "level": 2
+    },
+    {
+      "title": "9.1 LLM observability as a first-class discipline",
+      "anchor": "91-llm-observability-as-a-first-class-discipline",
+      "level": 3
+    },
+    {
+      "title": "9.2 Attribute cost to the whole workflow",
+      "anchor": "92-attribute-cost-to-the-whole-workflow",
+      "level": 3
+    },
+    {
+      "title": "Build Safety into the Architecture",
+      "anchor": "build-safety-into-the-architecture",
+      "level": 2
+    },
+    {
+      "title": "10.1 Safety engineering and permission boundaries",
+      "anchor": "101-safety-engineering-and-permission-boundaries",
+      "level": 3
+    },
+    {
+      "title": "10.2 Multi-tenant isolation and cache safety",
+      "anchor": "102-multi-tenant-isolation-and-cache-safety",
+      "level": 3
+    },
+    {
+      "title": "Choose What to Change",
+      "anchor": "choose-what-to-change",
+      "level": 2
+    },
+    {
+      "title": "11.1 In-context learning, RAG, fine-tuning, and distillation",
+      "anchor": "111-in-context-learning-rag-fine-tuning-and-distillation",
+      "level": 3
+    },
+    {
+      "title": "11.2 Diagnosing the four-way tradeoff",
+      "anchor": "112-diagnosing-the-four-way-tradeoff",
+      "level": 3
+    },
+    {
+      "title": "Design for Production Failure",
+      "anchor": "design-for-production-failure",
+      "level": 2
+    },
+    {
+      "title": "12.1 Production failure matrix",
+      "anchor": "121-production-failure-matrix",
+      "level": 3
+    },
+    {
+      "title": "12.2 Production readiness checklist",
+      "anchor": "122-production-readiness-checklist",
+      "level": 3
+    },
+    {
+      "title": "Contract and harness",
+      "anchor": "contract-and-harness",
+      "level": 4
+    },
+    {
+      "title": "Context and retrieval",
+      "anchor": "context-and-retrieval",
+      "level": 4
+    },
+    {
+      "title": "Inference and caching",
+      "anchor": "inference-and-caching",
+      "level": 4
+    },
+    {
+      "title": "Outputs, tools, and agents",
+      "anchor": "outputs-tools-and-agents",
+      "level": 4
+    },
+    {
+      "title": "Evals, operations, and economics",
+      "anchor": "evals-operations-and-economics",
+      "level": 4
+    },
+    {
+      "title": "Security and tenancy",
+      "anchor": "security-and-tenancy",
+      "level": 4
+    },
+    {
+      "title": "12.3 Recommended learning order",
+      "anchor": "123-recommended-learning-order",
+      "level": 3
+    },
+    {
+      "title": "Notes and Sources",
+      "anchor": "notes-and-sources",
+      "level": 2
+    },
+    {
+      "title": "Section source map",
+      "anchor": "section-source-map",
+      "level": 3
+    },
+    {
+      "title": "Harness, context, outputs, and tools",
+      "anchor": "harness-context-outputs-and-tools",
+      "level": 3
+    },
+    {
+      "title": "Serving and compression",
+      "anchor": "serving-and-compression",
+      "level": 3
+    },
+    {
+      "title": "Retrieval and evaluation",
+      "anchor": "retrieval-and-evaluation",
+      "level": 3
+    },
+    {
+      "title": "Observability and economics",
+      "anchor": "observability-and-economics",
+      "level": 3
+    },
+    {
+      "title": "Security and tenancy",
+      "anchor": "security-and-tenancy-1",
+      "level": 3
+    },
+    {
+      "title": "Model adaptation",
+      "anchor": "model-adaptation",
+      "level": 3
+    },
+    {
+      "title": "Index of Terms",
+      "anchor": "index-of-terms",
+      "level": 2
+    },
+    {
+      "title": "A",
+      "anchor": "a",
+      "level": 3
+    },
+    {
+      "title": "B",
+      "anchor": "b",
+      "level": 3
+    },
+    {
+      "title": "C",
+      "anchor": "c",
+      "level": 3
+    },
+    {
+      "title": "D",
+      "anchor": "d",
+      "level": 3
+    },
+    {
+      "title": "E",
+      "anchor": "e",
+      "level": 3
+    },
+    {
+      "title": "F",
+      "anchor": "f",
+      "level": 3
+    },
+    {
+      "title": "G",
+      "anchor": "g",
+      "level": 3
+    },
+    {
+      "title": "H",
+      "anchor": "h",
+      "level": 3
+    },
+    {
+      "title": "I",
+      "anchor": "i",
+      "level": 3
+    },
+    {
+      "title": "K",
+      "anchor": "k",
+      "level": 3
+    },
+    {
+      "title": "L",
+      "anchor": "l",
+      "level": 3
+    },
+    {
+      "title": "M",
+      "anchor": "m",
+      "level": 3
+    },
+    {
+      "title": "N",
+      "anchor": "n",
+      "level": 3
+    },
+    {
+      "title": "O",
+      "anchor": "o",
+      "level": 3
+    },
+    {
+      "title": "P",
+      "anchor": "p",
+      "level": 3
+    },
+    {
+      "title": "Q",
+      "anchor": "q",
+      "level": 3
+    },
+    {
+      "title": "R",
+      "anchor": "r",
+      "level": 3
+    },
+    {
+      "title": "S",
+      "anchor": "s",
+      "level": 3
+    },
+    {
+      "title": "T",
+      "anchor": "t",
+      "level": 3
+    },
+    {
+      "title": "V",
+      "anchor": "v",
+      "level": 3
+    },
+    {
+      "title": "W",
+      "anchor": "w",
+      "level": 3
+    },
+    {
+      "title": "Changelog",
+      "anchor": "changelog",
+      "level": 2
+    },
+    {
+      "title": "Price the selected cache lifetime",
+      "anchor": "price-the-selected-cache-lifetime",
+      "level": 3
+    },
+    {
+      "title": "What changed",
+      "anchor": "what-changed",
+      "level": 4
+    },
+    {
+      "title": "Why",
+      "anchor": "why",
+      "level": 4
+    },
+    {
+      "title": "Check service-tier policy before routing",
+      "anchor": "check-service-tier-policy-before-routing",
+      "level": 3
+    },
+    {
+      "title": "What changed",
+      "anchor": "what-changed-1",
+      "level": 4
+    },
+    {
+      "title": "Why",
+      "anchor": "why-1",
+      "level": 4
+    },
+    {
+      "title": "Probe rubric artifacts in model judges",
+      "anchor": "probe-rubric-artifacts-in-model-judges",
+      "level": 3
+    },
+    {
+      "title": "What changed",
+      "anchor": "what-changed-2",
+      "level": 4
+    },
+    {
+      "title": "Why",
+      "anchor": "why-2",
+      "level": 4
+    },
+    {
+      "title": "Verify speculative decoding policy",
+      "anchor": "verify-speculative-decoding-policy",
+      "level": 3
+    },
+    {
+      "title": "What changed",
+      "anchor": "what-changed-3",
+      "level": 4
+    },
+    {
+      "title": "Why",
+      "anchor": "why-3",
+      "level": 4
+    },
+    {
+      "title": "Test monitor coverage and incident response",
+      "anchor": "test-monitor-coverage-and-incident-response",
+      "level": 3
+    },
+    {
+      "title": "What changed",
+      "anchor": "what-changed-4",
+      "level": 4
+    },
+    {
+      "title": "Why",
+      "anchor": "why-4",
+      "level": 4
+    },
+    {
+      "title": "Verify input availability at decision time",
+      "anchor": "verify-input-availability-at-decision-time",
+      "level": 3
+    },
+    {
+      "title": "What changed",
+      "anchor": "what-changed-5",
+      "level": 4
+    },
+    {
+      "title": "Why",
+      "anchor": "why-5",
+      "level": 4
+    },
+    {
+      "title": "Check resolved request storage defaults",
+      "anchor": "check-resolved-request-storage-defaults",
+      "level": 3
+    },
+    {
+      "title": "What changed",
+      "anchor": "what-changed-6",
+      "level": 4
+    },
+    {
+      "title": "Why",
+      "anchor": "why-6",
+      "level": 4
+    },
+    {
+      "title": "Record the current evidence review",
+      "anchor": "record-the-current-evidence-review",
+      "level": 3
+    },
+    {
+      "title": "What changed",
+      "anchor": "what-changed-7",
+      "level": 4
+    },
+    {
+      "title": "Why",
+      "anchor": "why-7",
+      "level": 4
+    }
+  ],
+  "prompts": 0,
+  "figures": []
+}

@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "review": "Complete page overviews for both appearances inspected, including independent Poppler and Apple PDFKit output. All chapter openers and representative title, diagram, table, screenshot, reference and index pages inspected at full size. No new blocking layout finding.",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "903730f4a7c797e2e2706c68404428dc87f79d10ac84a9536793037c8be9f5e0",
+      "pages": 51,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/ai-native-organization/attempt-1/proof/light"
+    },
+    {
+      "theme": "dark",
+      "sha256": "3ecf9a2b6bc4c498da98dbbe62afcea446917352b3ab883baf881b4ff327424b",
+      "pages": 51,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/ai-native-organization/attempt-1/proof/dark"
+    }
+  ],
+  "policy": "Title-only subsection headings; preserve chapter markers, procedural steps, figures and numeric data.",
+  "historicalFormatting": "Existing short reference continuation pages remain unchanged in content."
+}

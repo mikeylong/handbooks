@@ -51,7 +51,7 @@ const AUTHOR_CREDIT_HTML = `${AUTHOR}, <a href="${AUTHOR_SITE}">surfaces.systems
 const publication = JSON.parse(await readFile(resolve(HERE, "../publication.json"), "utf8"));
 const REPOSITORY_HREF = publication.editionUrl;
 const RELEASES_HREF = publication.releaseUrl;
-const PUBLICATION_DATE = "November 7, 2026";
+const PUBLICATION_DATE = "November 8, 2026";
 const formatCandidateDate = (isoDate) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
     throw new Error("HANDBOOK_CANDIDATE_DATE must use YYYY-MM-DD");
@@ -75,9 +75,9 @@ const formatBibliographyDate = (displayDate) => {
   if (!match) throw new Error(`Invalid bibliography access date: ${displayDate}`);
   return `${match[2]} ${match[1]} ${match[3]}`;
 };
-const PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf";
+const PDF_HREF = "../output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf";
 const BOOK_VERSION = process.env.HANDBOOK_VERSION
-  ?? `Version 1.4.1${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
+  ?? `Version 1.4.2${process.env.HANDBOOK_VERSION_SUFFIX ?? ""}`;
 const UNCHANGED_CHANGELOG_SUMMARY = "The handbook's reader-facing content is unchanged.";
 
 const HANDBOOK_CHAPTERS = [
@@ -694,7 +694,7 @@ const nextReviewAt = new Date(releaseSchedule.nextReviewAt);
 const lines = source.replaceAll("\r\n", "\n").split("\n");
 const sourceTitle = lines.find((line) => /^#\s+/.test(line))?.replace(/^#\s+/, "") ?? "Production AI Engineering Field Guide";
 const evidenceDate = source.match(/Last evidence review:\s*\*\*([^*]+)\*\*/)?.[1] ?? "Unspecified";
-const bibliographyDate = process.env.HANDBOOK_CANDIDATE_DATE ?? evidenceDate;
+const bibliographyDate = evidenceDate;
 const BIBLIOGRAPHY_ACCESS_DATE = formatBibliographyDate(formatCandidateDate(bibliographyDate));
 
 const chapterStarts = lines
@@ -793,7 +793,7 @@ const chapterHtml = chapters.map((chapter, chapterIndex) => {
   const chapterLabel = `Chapter ${String(chapter.number).padStart(2, "0")}`;
   const body = chapter.sections.map((section) => `
       <section class="source-section" id="${section.slug}">
-        <h3><span class="section-number">${escapeHtml(section.displayNumber)}&nbsp;</span><span class="section-title">${escapeHtml(section.title)}</span></h3>
+        <h3 data-source-section="${escapeHtml(section.displayNumber)}"><span class="section-title">${escapeHtml(section.title)}</span></h3>
         ${renderBlocks(section.lines, section.slug, 1, section.title)}
         ${sectionSourcesHtml(section.number)}
       </section>`).join("\n");
@@ -862,7 +862,7 @@ const sourceMapHtml = [...sectionByNumber.values()]
     const note = source.note ? `<span>${escapeHtml(source.note)}</span>` : "";
     return `
       <li>
-        <a class="source-map-section" href="#${section.slug}"><strong>§${escapeHtml(section.displayNumber)}</strong> ${escapeHtml(section.title)}</a>
+        <a class="source-map-section" href="#${section.slug}">${escapeHtml(section.title)}</a>
         <span class="source-map-references">${references}</span>
         ${note}
       </li>`;
@@ -876,7 +876,7 @@ const bibliographyHtml = CITATION_GROUPS.map((group) => `
         const usedIn = sectionsUsingCitation(entry.label)
           .map((sectionNumber) => {
             const section = sectionByNumber.get(sectionNumber);
-            return `<a href="#${section.slug}">§${escapeHtml(section.displayNumber)}</a>`;
+            return `<a href="#${section.slug}">${escapeHtml(section.title)}</a>`;
           })
           .join(", ");
         const accessed = entry.accessed ? ` Accessed ${BIBLIOGRAPHY_ACCESS_DATE}.` : "";
@@ -933,7 +933,7 @@ function indexEntryHtml(entry) {
     const page = String(pageMap[section.slug] ?? "000");
     if (seenPages.has(page) && page !== "000") return "";
     seenPages.add(page);
-    return `<a href="#${section.slug}" aria-label="${escapeHtml(entry.label)}, section ${escapeHtml(section.displayNumber)}, page ${escapeHtml(page)}">${escapeHtml(page)}</a>`;
+    return `<a href="#${section.slug}" aria-label="${escapeHtml(entry.label)}, ${escapeHtml(section.title)}, page ${escapeHtml(page)}">${escapeHtml(page)}</a>`;
   }).filter(Boolean).join(", ");
   const seeAlso = entry.seeAlso?.length
     ? `<span class="index-see">See also ${entry.seeAlso.map((id) => {

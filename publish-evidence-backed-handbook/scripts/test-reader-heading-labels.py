@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exercise opt-in title labels through the complete shared HTML renderer."""
+"""Exercise mandatory title labels through the complete shared HTML renderer."""
 import json
 import os
 from pathlib import Path
@@ -26,11 +26,12 @@ def build_story():
         build_reader(root,{**config,'subsectionLabels':mode},root/mode)
     numbered=(root/'numbers/index.html').read_text()
     titled=(root/'titles/index.html').read_text()
-    assert '<h3>1.1 Make the decision</h3>' in numbered
+    assert '<h3>1.1 Make the decision</h3>' not in numbered
+    assert '<h3><span id="section-1-1"></span>Make the decision</h3>' in numbered
     assert '<h3><span id="section-1-1"></span>Make the decision</h3>' in titled
     assert 'id="section-2"' in titled and 'id="section-2"' in numbered
     assert '<a href="#section-1-1">&quot;Make the decision&quot;</a>' in titled
     assert 'Decision: <a href="#section-1-1">' in titled
     assert 'Version 1.1.0; ratio 1.1; step 2.' in titled
     assert '<link href=' not in titled and '<a name=' not in titled
-print('PASS full reader: opt-in title labels, linked references, stable anchors, numeric data and unchanged legacy mode')
+print('PASS full reader: mandatory title labels, linked references, stable anchors, numeric data and legacy option cannot bypass policy')

@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "visualReview": "passed",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+      "pages": 102,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/ai-evaluation/attempt-2/proof/light"
+    },
+    {
+      "theme": "dark",
+      "sha256": "36ca2580356ea4aac5a7450f25f7e7dce1ad6a592e0c375b9ab0e87ec7bee99f",
+      "pages": 102,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/ai-evaluation/attempt-2/proof/dark"
+    }
+  ],
+  "browser": {
+    "status": "passed",
+    "jobId": "1f7ba01a",
+    "engine": "Linux Chromium",
+    "version": "1.0.2",
+    "packageSha256": "5e00d779078cca3270701b6f009242019fab458cbe40a6a5ea90d631832b7e53",
+    "toolkitArchiveSha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e",
+    "report": {
+      "path": "qa/v1.0.2/heading-repair/browser-result.json",
+      "sha256": "b5c1dd73aa87e75c28103d73fe1c853f512ad1ebb2290b5193a8615c3bebdf52"
+    },
+    "downloads": [
+      {
+        "href": "/ai-evaluation/editions/v1.0.2/ai-evaluation-v1.0.2.md",
+        "name": "ai-evaluation-v1.0.2.md",
+        "sha256": "cdae5f9ef32da1a6fee08d849925e1f1e88fa8b9aa8cdd10b0af7170875e3aa8",
+        "bytes": 107922,
+        "mime": "text/markdown; charset=utf-8",
+        "wireHttpVerified": true
+      },
+      {
+        "href": "/ai-evaluation/editions/v1.0.2/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+        "name": "ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+        "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+        "bytes": 5515696,
+        "mime": "application/pdf",
+        "wireHttpVerified": true
+      },
+      {
+        "href": "/ai-evaluation/editions/v1.0.2/ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+        "name": "ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+        "sha256": "36ca2580356ea4aac5a7450f25f7e7dce1ad6a592e0c375b9ab0e87ec7bee99f",
+        "bytes": 56174987,
+        "mime": "application/pdf",
+        "wireHttpVerified": true
+      }
+    ],
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    },
+    "managedInputSha256": "f80b604cfd2034b3b266f4db07c1359a36f186fcfc3e7953396d530611a8e2f8",
+    "evidencePath": "/Users/mike/Codex/handbook-vm-manager-data/evidence/1f7ba01a"
+  }
+}

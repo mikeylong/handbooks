@@ -8,8 +8,9 @@
   "scripts": {
     "build": "npm --prefix site run build",
     "preview": "npm --prefix site run preview",
-    "validate": "python3 scripts/validate-repositories.py && npm run validate:releases && npm run build && npm --prefix site test",
+    "validate": "python3 scripts/validate-repositories.py && npm run validate:releases && npm run build && npm --prefix site test && npm run validate:headings",
     "validate:releases": "npm --prefix production-ai-engineering run validate:release && npm --prefix production-ai-engineering run validate:handbook && npm --prefix ai-evaluation run validate && npm --prefix ai-consulting run validate && npm --prefix claude-design run validate && npm --prefix ai-native-organization run validate",
-    "validate:migration-2026-10-01": "python3 scripts/validate-collection.py"
+    "validate:migration-2026-10-01": "python3 scripts/validate-collection.py",
+    "validate:headings": "python3 publish-evidence-backed-handbook/scripts/validate-heading-labels.py --collection . --site site/output/site"
   }
 }

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "claude-design",
+  "title": "Claude Design Field Guide",
+  "subtitle": "Explore, refine, and hand off an interactive product design",
+  "version": "2.1.5",
+  "date": "2026-11-08",
+  "renderer": "reportlab",
+  "source": "source/build_handbook.py",
+  "markdown": "Claude_Design_Field_Guide_Source.md",
+  "story": "parse_markdown",
+  "docClass": "GuideDocTemplate",
+  "fonts": "toolkit",
+  "pageSizePoints": [
+    420,
+    594.96
+  ],
+  "chapterCount": 9,
+  "releasedPdf": "output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
+  "releasedSha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
+  "coverKicker": "CLAUDE DESIGN / FIELD PRACTICE",
+  "coverTitleHtml": "Claude Design<br/>Field Guide",
+  "editionLabel": "November 8, 2026 | Version 2.1.5",
+  "contentsDeck": "Begin with your source material, explore and review in Claude Design, then choose the handoff your recipient needs.",
+  "chapterSourceNotes": {
+    "1": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading.",
+    "2": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading.",
+    "3": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading.",
+    "4": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading.",
+    "5": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading.",
+    "6": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading.",
+    "7": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading.",
+    "8": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading.",
+    "9": "Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further reading."
+  },
+  "pageLabelStyle": "frontmatter-roman",
+  "baselineMode": "content-edition",
+  "screenshotManifest": "screenshot-figures.json",
+  "approvalStatus": "approved",
+  "publicationApproved": true
+}

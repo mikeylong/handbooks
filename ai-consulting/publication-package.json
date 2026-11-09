@@ -1,12 +1,21 @@
 {
-  "schemaVersion": 1,
   "id": "ai-consulting",
-  "version": "1.0.1",
+  "title": "AI Consulting Playbook",
+  "version": "1.0.2",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf",
+  "sha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
+  "pages": 141,
+  "schemaVersion": 1,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
   "readerDirectory": "reader",
   "html": "reader/index.html",
+  "readerSha256": "d79878ea19ec1fcb979f5bb59dd3f222dfdeff49301defd699ed8039a5ce0b62",
   "files": {
     "reader/ai-consulting-v1.0.0-2026-10-01.pdf": "4a7055b53ec4e4db7dbafacb6895513b055b4adeb02354c9f38fe53999ed92b2",
     "reader/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812",
+    "reader/ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
     "reader/assets/ConsultingLifecycle.png": "ee42e16282b30e588a93bf6454256b870d041782c95493812f7e3e88f5aadc95",
     "reader/assets/ExposureLadder.png": "95c397b195479aa923f6e1136394ddc7fa48397d57eb6fd10abfd57339dda35d",
     "reader/assets/chapter-01.png": "4ea6828ca89ec32902811ad7375db43a21e9642143cd20c7b5ebcc4dbc178a3c",
@@ -21,9 +30,15 @@
     "reader/assets/chapter-10.png": "806d1b9ecedf792b2a126555bbd18ee8e0d9286df1773745f17f504ad1decf9e",
     "reader/assets/chapter-11.png": "6e52d26bc17116aaff0c2a460723c25b0b0a5cf677edb888750d797efb30072e",
     "reader/assets/chapter-12.png": "777523d4d5e0848256a4eaf94cab29f67cc0e63b0f00e5394c1f6dc21be8fd49",
-    "reader/index.html": "05f9d1e906351bab0e378f15e894c718bb1e115a94dd519429a2a5c5ac55e853",
-    "reader/reader.css": "857276e6516b152a0cbbc5095285d0d65a0620acdc984cf88ea364997eaff344",
-    "output/pdf/ai-consulting-v1.0.1-2026-10-09-daytime-r1.pdf": "5f0d7ef81c670848bd1a78284fea7de55f34a0827a58cd0854938578cc4d9812"
+    "reader/index.html": "d79878ea19ec1fcb979f5bb59dd3f222dfdeff49301defd699ed8039a5ce0b62",
+    "reader/reader.css": "e99a31c03893710b5439484e3087decf563e0a3200a79879daa0dcd8f2352505",
+    "output/pdf/ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4"
   },
-  "approvalBasis": "Mike: direct Land this authorization after reviewing the worked example and twelve-question candidate."
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+    "date": "2026-11-08",
+    "version": "1.0.2",
+    "daytimeSha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4"
+  }
 }

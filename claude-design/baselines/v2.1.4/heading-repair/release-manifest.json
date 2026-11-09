@@ -1,0 +1,220 @@
+{
+  "id": "claude-design",
+  "title": "Claude Design Field Guide",
+  "version": "2.1.4",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
+  "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
+  "pages": 54,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
+  "previous_public_edition": "2.1.3",
+  "comparison_basis": "approved public edition",
+  "baseline": {
+    "title": "Claude Design Field Guide",
+    "version": "2.1.3",
+    "date": "2026-10-07",
+    "pdf": "output/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf",
+    "sha256": "ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7",
+    "pages": 54,
+    "manifest": {
+      "path": "baselines/v2.1.3/pre-weekly-release/release-manifest.json",
+      "sha256": "fc40dd16888fbfc6dc7d8e9ae91edbed179a264e95e45ff29d492e851ccb8078"
+    },
+    "originalPdfPath": "output/pdf/claude-design-v2.1.3-2026-10-07-daytime-r1.pdf"
+  },
+  "candidate_validation": "qa/v2.1.4/weekly/lightValidation.json",
+  "candidateEvidence": {
+    "lightValidation": {
+      "path": "qa/v2.1.4/weekly/lightValidation.json",
+      "sha256": "58f6895e78a98be42755b4a75d7b028170e67b124c2fd8e6dbccbd8923260761",
+      "bytes": 25753
+    },
+    "darkValidation": {
+      "path": "qa/v2.1.4/weekly/darkValidation.json",
+      "sha256": "392763c045bddc7f8ee6e1de33a520ecd320e529fe51424a716b382b7db0179f",
+      "bytes": 25774
+    },
+    "changelogDecision": {
+      "path": "qa/v2.1.4/weekly/changelogDecision.json",
+      "sha256": "40a36bf89629f1c3ebdfcd9020fde391c5bc8fc8803232b5aa442d9976ff85ad",
+      "bytes": 1838
+    },
+    "editionDiff": {
+      "path": "qa/v2.1.4/weekly/editionDiff.json",
+      "sha256": "f2cc5914f479225c825a0805607c45d68995bb3ab117f1a52bda6d123a48d53b",
+      "bytes": 2482
+    },
+    "changes": {
+      "path": "qa/v2.1.4/weekly/changes.json",
+      "sha256": "ff51cda5634bf56be4090ed58f295288baa0ede2a6c0f3750b12142f7a0bc6c0",
+      "bytes": 1515
+    },
+    "editionDiffPdfTextPatch": {
+      "path": "qa/v2.1.4/weekly/exact-pdf-text.patch",
+      "sha256": "f6bc8010f9f8c2e000c418492cdf7273bbde8f6b02e806ab730b93eef8f89a1c",
+      "bytes": 6222
+    },
+    "editionDiffReaderFacingContentPatch": {
+      "path": "qa/v2.1.4/weekly/reader-facing-content.patch",
+      "sha256": "a168027f7fe887a35a8314175c42e112779f96162f8e7e93ac0896fb48e12d46",
+      "bytes": 4055
+    },
+    "editionDiffSourcePatch": {
+      "path": "qa/v2.1.4/weekly/exact-source.patch",
+      "sha256": "7c7c21084bbf195b4805226297d552b7952a008a628e79164870b627d92dddb8",
+      "bytes": 7105
+    },
+    "parity": {
+      "path": "qa/v2.1.4/weekly/parity.json",
+      "sha256": "445e184c82df3ec57411e7c9effb10f6d65b31915f2096f9077ff1a2c460b595"
+    },
+    "appearanceAudit": {
+      "path": "qa/v2.1.4/appearance.json",
+      "sha256": "20a4047b3604db7680fbb924bf369b3e2042af05ae61153a984def96a6b7939c"
+    }
+  },
+  "evidenceMode": "standard",
+  "pageMaps": {
+    "light": {
+      "path": "qa/v2.1.4/weekly/light-page-map.json",
+      "sha256": "d25da7d6f75a4e49fbf7f62cb5f05dbba0ad2126e072db56c139532d3f50e39a"
+    },
+    "dark": {
+      "path": "qa/v2.1.4/weekly/dark-page-map.json",
+      "sha256": "e52606fb6f31a88c1ad980b8972fe0c81ef0b816193f716f744110b0d39511e0"
+    }
+  },
+  "classifiedChangeIds": [
+    "candidate-change-001",
+    "candidate-change-002"
+  ],
+  "readerFacingContentChanged": true,
+  "changelog": {
+    "weeklyDecision": {
+      "path": "qa/v2.1.4/weekly/changelogDecision.json",
+      "sha256": "40a36bf89629f1c3ebdfcd9020fde391c5bc8fc8803232b5aa442d9976ff85ad",
+      "bytes": 1838
+    },
+    "pdfDecision": {
+      "path": "qa/v2.1.4/weekly/changelogDecision.json",
+      "sha256": "40a36bf89629f1c3ebdfcd9020fde391c5bc8fc8803232b5aa442d9976ff85ad",
+      "bytes": 1838
+    },
+    "retainedHistoricalChangelog": false
+  },
+  "appearances": {
+    "light": {
+      "pdf": "output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
+      "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
+      "pages": 54
+    },
+    "dark": {
+      "pdf": "output/pdf/claude-design-v2.1.4-2026-11-07-late-night-r1.pdf",
+      "sha256": "77e3920da2a7584c3af942ed53e88b05e65dd81a7903531e33dc481562304a00",
+      "pages": 54
+    }
+  },
+  "retainedProvenance": {
+    "status": "historical_only_not_reverified",
+    "sourceEdition": "2.1.3",
+    "sourceManifestSha256": "fc40dd16888fbfc6dc7d8e9ae91edbed179a264e95e45ff29d492e851ccb8078",
+    "inputMetadata": "baselines/v2.1.3/pre-weekly-release",
+    "releaseContract": {
+      "kind": "design-exploration",
+      "sample": {
+        "publicUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip",
+        "repositoryPath": "claude-design/reader/editions/v2.1.1/velori-design-exploration-v2.1.1.zip"
+      },
+      "nativeStarter": {
+        "filename": "velori-design-exploration-starter.fig",
+        "sha256": "cac28455bdc7979867cfad5b2002e1a711a177bb12a5cb3db5c4c0c2aef7a4ca"
+      },
+      "chapterCount": 9,
+      "archiveMemberCount": 234,
+      "nativeEvidence": {
+        "edition": "2.0.0",
+        "releaseManifest": {
+          "path": "claude-design/baselines/v2.0.0/release-manifest.json",
+          "sha256": "e5510d84a07c3689386a6a710fa863e5fff801809ec78f3861902e36a38725b7"
+        },
+        "figmaCompanion": {
+          "path": "claude-design/baselines/v2.0.0/figma-companion.json",
+          "sha256": "4883dc903507d11f34533734ec6adf80d2f160097659613849e4ad826824acf3"
+        },
+        "roundtrip": {
+          "path": "claude-design/qa/v2.0.0/figma-roundtrip-validation.json",
+          "sha256": "b749835bb57e33ae444a748143695192545734376c8b3796b827ca2106d171a2"
+        },
+        "publicationApproval": {
+          "path": "claude-design/qa/v2.0.0/publication-approval.json",
+          "sha256": "7a037cbdabf765cd5c07415cabc531943536a9a75efc5d4d388175f61627b5e8"
+        }
+      },
+      "prototypeEvidence": {
+        "path": "claude-design/qa/v2.1.0/prototype-behavior.json",
+        "sha256": "49fce9e32134474185e40ca733b84901434a438403563e2dc184dd143aecfa30",
+        "edition": "2.1.0"
+      },
+      "companionParityEvidence": {
+        "path": "claude-design/qa/v2.1.1/companion-parity.json",
+        "sha256": "5b54798d3c7c68fa70c8d089cd5c4ba56a93953c921e3b46529153c811f25dc6"
+      },
+      "retainedExercise": {
+        "edition": "2.1.1",
+        "releaseManifest": {
+          "path": "claude-design/baselines/v2.1.1/release-manifest.json",
+          "sha256": "b37a0384129b6e15f00b12930c5ffdf216538d74aac97fe06fd5656d16c574dd"
+        },
+        "publicationPackage": {
+          "path": "claude-design/baselines/v2.1.1/publication-package.json",
+          "sha256": "48db0784943a4f33ae6e07ded055b4c28f6e51dcd7dc994b3a883607443490d9"
+        },
+        "publicationApproval": {
+          "path": "claude-design/qa/v2.1.1/publication-approval.json",
+          "sha256": "54f9e7d9683bb4b8ad430cd6efad1a0d5211dd8bb84d1a2b33693d58cd0a797b"
+        },
+        "exerciseDownloads": {
+          "path": "claude-design/baselines/v2.1.1/exercise-downloads.json",
+          "sha256": "6381ec04c0e9a5caf4f854422fe52c7b0137105a674570fdc7b571da7a059082"
+        }
+      }
+    },
+    "readerSnapshot": {
+      "collectionPath": "site/retained/claude-design/v2.1.3/reader-snapshot.html",
+      "sha256": "20dc9a270c6777b7ba3fbb8d4e872cabca7ba459aeb058b6c297de3925912586"
+    },
+    "historicalCommit": "3968c25d30257f3696a8712365298d0bad6c196e"
+  },
+  "releaseContract": {
+    "kind": "design-exploration",
+    "classifiedChangeIds": [
+      "candidate-change-001",
+      "candidate-change-002"
+    ],
+    "retainedProvenance": "baselines/v2.1.3/pre-weekly-release/release-manifest.json",
+    "nativeOrPrototypeEvidenceStatus": "historical_only_not_reverified"
+  },
+  "publicationStatus": "published",
+  "publicationApproval": {
+    "date": "2026-11-07",
+    "command": "Publish them and update releases",
+    "clarification": "I asked you to publish updated releases of every handbook.",
+    "kind": "explicit-user-release",
+    "version": "2.1.4",
+    "daytimeSha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85"
+  },
+  "releaseValidationKind": "weekly-exact-artifact",
+  "sourcePublicationMetadata": {
+    "field": "status",
+    "before": "Review candidate, not approved for publication",
+    "after": "Published edition",
+    "readerFacingContentChanged": false,
+    "prePromotionSource": "qa/v2.1.4/weekly/pre-promotion-manuscript.md"
+  },
+  "generationToolkitArchive": {
+    "collectionPath": "releases/2026-11-07/generation-toolkit.zip",
+    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
+    "purpose": "Frozen runtime used for these PDF builds; artifact promotion copied exact validated bytes."
+  }
+}

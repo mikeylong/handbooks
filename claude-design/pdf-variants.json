@@ -2,26 +2,26 @@
   "schemaVersion": 1,
   "book": "claude-design",
   "title": "Claude Design Field Guide",
-  "version": "2.1.4",
-  "date": "2026-11-07",
-  "pdf": "output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
-  "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
-  "pages": 54,
+  "version": "2.1.5",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
+  "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+  "pages": 53,
   "variants": [
     {
       "theme": "light",
       "displayName": "Daytime version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "claude-design/output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
-      "publicUrl": "/claude-design/editions/v2.1.4/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
-      "downloadFilename": "claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
-      "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
-      "bytes": 7129099,
-      "pages": 54,
+      "path": "claude-design/output/pdf/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.1.5/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
+      "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+      "bytes": 7122827,
+      "pages": 53,
       "pageMap": {
-        "path": "claude-design/qa/v2.1.4/weekly/light-page-map.json",
-        "sha256": "d25da7d6f75a4e49fbf7f62cb5f05dbba0ad2126e072db56c139532d3f50e39a"
+        "path": "claude-design/qa/v2.1.5/heading-repair/light-page-map.json",
+        "sha256": "8fe4e988be25658fd3ed9c0cdf91813afd91f376d7fdaf542c3d5cea4ced8d66"
       }
     },
     {
@@ -29,31 +29,31 @@
       "displayName": "Late night version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "claude-design/output/pdf/claude-design-v2.1.4-2026-11-07-late-night-r1.pdf",
-      "publicUrl": "/claude-design/editions/v2.1.4/claude-design-v2.1.4-2026-11-07-late-night-r1.pdf",
-      "downloadFilename": "claude-design-v2.1.4-2026-11-07-late-night-r1.pdf",
-      "sha256": "77e3920da2a7584c3af942ed53e88b05e65dd81a7903531e33dc481562304a00",
-      "bytes": 46129498,
-      "pages": 54,
+      "path": "claude-design/output/pdf/claude-design-v2.1.5-2026-11-08-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.1.5/claude-design-v2.1.5-2026-11-08-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v2.1.5-2026-11-08-late-night-r1.pdf",
+      "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17",
+      "bytes": 46122759,
+      "pages": 53,
       "pageMap": {
-        "path": "claude-design/qa/v2.1.4/weekly/dark-page-map.json",
-        "sha256": "e52606fb6f31a88c1ad980b8972fe0c81ef0b816193f716f744110b0d39511e0"
+        "path": "claude-design/qa/v2.1.5/heading-repair/dark-page-map.json",
+        "sha256": "ca568f3f3839c0f45f7eb5c3e71cb976127f94bf46da0de4ef8bafa46b8b9362"
       },
       "proof": {
         "parity": {
-          "path": "claude-design/qa/v2.1.4/weekly/parity.json",
-          "sha256": "445e184c82df3ec57411e7c9effb10f6d65b31915f2096f9077ff1a2c460b595"
+          "path": "claude-design/qa/v2.1.5/heading-repair/pair/parity.json",
+          "sha256": "c911d7912c281b95fe38bdccc797b76b714e87886d107ece2f75b155036201f0"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "77e3920da2a7584c3af942ed53e88b05e65dd81a7903531e33dc481562304a00",
-          "date": "2026-11-07",
-          "authority": "Publish them and update releases",
-          "agentReview": "releases/2026-11-07/visual-review.json"
+          "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17",
+          "date": "2026-11-08",
+          "authority": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+          "agentReview": "claude-design/qa/v2.1.5/heading-repair/visual-review.json"
         },
         "appearanceAudit": {
-          "path": "claude-design/qa/v2.1.4/appearance.json",
-          "sha256": "20a4047b3604db7680fbb924bf369b3e2042af05ae61153a984def96a6b7939c"
+          "path": "claude-design/qa/v2.1.5/heading-repair/appearance.json",
+          "sha256": "1c68e3d34b0939fe604b2aab692fda720b96ec6a96ce32af9b3e4fbf48bad713"
         }
       }
     }

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "book": "claude-design",
+  "title": "Claude Design Field Guide",
+  "version": "2.1.4",
+  "date": "2026-11-07",
+  "pdf": "output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
+  "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
+  "pages": 54,
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.1.4/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
+      "downloadFilename": "claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
+      "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
+      "bytes": 7129099,
+      "pages": 54,
+      "pageMap": {
+        "path": "claude-design/qa/v2.1.4/weekly/light-page-map.json",
+        "sha256": "d25da7d6f75a4e49fbf7f62cb5f05dbba0ad2126e072db56c139532d3f50e39a"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "claude-design/output/pdf/claude-design-v2.1.4-2026-11-07-late-night-r1.pdf",
+      "publicUrl": "/claude-design/editions/v2.1.4/claude-design-v2.1.4-2026-11-07-late-night-r1.pdf",
+      "downloadFilename": "claude-design-v2.1.4-2026-11-07-late-night-r1.pdf",
+      "sha256": "77e3920da2a7584c3af942ed53e88b05e65dd81a7903531e33dc481562304a00",
+      "bytes": 46129498,
+      "pages": 54,
+      "pageMap": {
+        "path": "claude-design/qa/v2.1.4/weekly/dark-page-map.json",
+        "sha256": "e52606fb6f31a88c1ad980b8972fe0c81ef0b816193f716f744110b0d39511e0"
+      },
+      "proof": {
+        "parity": {
+          "path": "claude-design/qa/v2.1.4/weekly/parity.json",
+          "sha256": "445e184c82df3ec57411e7c9effb10f6d65b31915f2096f9077ff1a2c460b595"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "77e3920da2a7584c3af942ed53e88b05e65dd81a7903531e33dc481562304a00",
+          "date": "2026-11-07",
+          "authority": "Publish them and update releases",
+          "agentReview": "releases/2026-11-07/visual-review.json"
+        },
+        "appearanceAudit": {
+          "path": "claude-design/qa/v2.1.4/appearance.json",
+          "sha256": "20a4047b3604db7680fbb924bf369b3e2042af05ae61153a984def96a6b7939c"
+        }
+      }
+    }
+  ]
+}

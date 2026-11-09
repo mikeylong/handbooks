@@ -2,26 +2,26 @@
   "schemaVersion": 1,
   "book": "ai-evaluation",
   "title": "AI Evaluation Field Guide",
-  "version": "1.0.1",
-  "date": "2026-11-07",
-  "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
-  "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
-  "pages": 103,
+  "version": "1.0.2",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+  "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+  "pages": 102,
   "variants": [
     {
       "theme": "light",
       "displayName": "Daytime version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
-      "publicUrl": "/ai-evaluation/editions/v1.0.1/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
-      "downloadFilename": "ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
-      "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
-      "bytes": 5523417,
-      "pages": 103,
+      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+      "publicUrl": "/ai-evaluation/editions/v1.0.2/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+      "downloadFilename": "ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+      "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+      "bytes": 5515696,
+      "pages": 102,
       "pageMap": {
-        "path": "ai-evaluation/qa/v1.0.1/weekly/light-page-map.json",
-        "sha256": "01386eb50d53a1d14ca11aa465c8c93d39d2b965843a06f20de7789d666432f4"
+        "path": "ai-evaluation/qa/v1.0.2/heading-repair/light-page-map.json",
+        "sha256": "421dc8dc6acee6ec5183cfe5654bcdb76c6e15505ecc6f9b4d9512cdaddab398"
       }
     },
     {
@@ -29,31 +29,31 @@
       "displayName": "Late night version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.1-2026-11-07-late-night-r1.pdf",
-      "publicUrl": "/ai-evaluation/editions/v1.0.1/ai-evaluation-v1.0.1-2026-11-07-late-night-r1.pdf",
-      "downloadFilename": "ai-evaluation-v1.0.1-2026-11-07-late-night-r1.pdf",
-      "sha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
-      "bytes": 56183184,
-      "pages": 103,
+      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+      "publicUrl": "/ai-evaluation/editions/v1.0.2/ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+      "downloadFilename": "ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+      "sha256": "36ca2580356ea4aac5a7450f25f7e7dce1ad6a592e0c375b9ab0e87ec7bee99f",
+      "bytes": 56174987,
+      "pages": 102,
       "pageMap": {
-        "path": "ai-evaluation/qa/v1.0.1/weekly/dark-page-map.json",
-        "sha256": "571e3b06e2a655a9de788d48b0680377757d4068949193e54564349eb8807048"
+        "path": "ai-evaluation/qa/v1.0.2/heading-repair/dark-page-map.json",
+        "sha256": "eb7effe5b346f3e5ec3e94499f6fca19ae74b4ff3b7f84a00dbad780eaf44956"
       },
       "proof": {
         "parity": {
-          "path": "ai-evaluation/qa/v1.0.1/weekly/parity.json",
-          "sha256": "82c22b89f1ade99c06e88a93f91f739256b07a4f65a02128591b544a6791fe76"
+          "path": "ai-evaluation/qa/v1.0.2/heading-repair/pair/parity.json",
+          "sha256": "909c1ee064cddd8d251fb9aeba1a693e944b3c725886198be7ee77964adc343a"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "473a2439036869b704e5a11756c0d540b5c4c853183aa1f5ab6456624592445a",
-          "date": "2026-11-07",
-          "authority": "Publish them and update releases",
-          "agentReview": "releases/2026-11-07/visual-review.json"
+          "sha256": "36ca2580356ea4aac5a7450f25f7e7dce1ad6a592e0c375b9ab0e87ec7bee99f",
+          "date": "2026-11-08",
+          "authority": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+          "agentReview": "ai-evaluation/qa/v1.0.2/heading-repair/visual-review.json"
         },
         "appearanceAudit": {
-          "path": "ai-evaluation/qa/v1.0.1/appearance.json",
-          "sha256": "ff3b75bfff6cbeaeaee727d6f26b498dec9496109b71a98a95d7068578462a2e"
+          "path": "ai-evaluation/qa/v1.0.2/heading-repair/appearance.json",
+          "sha256": "cb70341d1fd3dd2da0a978b1c20f22c96d8a0d5df88261a14aeca9b1b8de0f10"
         }
       }
     }

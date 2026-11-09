@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-08-mandatory-heading-labels",
+  "mode": "authorized-presentation-repair-and-release",
+  "date": "2026-11-08",
+  "authority": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+  "scope": [
+    {
+      "id": "ai-native-organization",
+      "baseline": "1.1.1",
+      "target": "1.1.2"
+    },
+    {
+      "id": "production-ai-engineering",
+      "baseline": "1.4.1",
+      "target": "1.4.2"
+    },
+    {
+      "id": "claude-design",
+      "baseline": "2.1.4",
+      "target": "2.1.5"
+    },
+    {
+      "id": "ai-evaluation",
+      "baseline": "1.0.1",
+      "target": "1.0.2"
+    },
+    {
+      "id": "ai-consulting",
+      "baseline": "1.0.1",
+      "target": "1.0.2"
+    }
+  ],
+  "research": "No factual changes; current source and released artifacts are the evidence. This repair does not run or advance the weekly editorial research workflow."
+}

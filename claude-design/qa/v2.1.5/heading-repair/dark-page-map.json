@@ -1,0 +1,1870 @@
+{
+  "schemaVersion": 1,
+  "artifactProfile": "candidate",
+  "book": "claude-design",
+  "edition": {
+    "id": "claude-design",
+    "title": "Claude Design Field Guide",
+    "version": "2.1.5",
+    "date": "2026-11-08"
+  },
+  "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17",
+  "pdfSha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17",
+  "bytes": 46122759,
+  "pageNumbering": "pdfPage and page are one-based; folio is the measured PDF page label",
+  "measurement": {
+    "runtime": "pypdf; shared validate-pdf.py raster_image_paints and required_raster_illustration_report",
+    "identity": {
+      "title": "Claude Design Field Guide \u00b7 Late night version",
+      "coverVersion": "2.1.5",
+      "coverDatePrecision": "day",
+      "subject": "Content edition 2.1.5 \u00b7 2026-11-08 \u00b7 PDF appearance revision 1"
+    },
+    "chapterCount": 9,
+    "requiredRasterIllustrationPages": 9,
+    "rasterImagePaints": 27,
+    "limitations": "Measured structural/edition/illustration evidence only; not candidate validation or visual approval."
+  },
+  "pages": [
+    {
+      "pdfPage": 1,
+      "page": 1,
+      "folio": "i",
+      "role": "cover",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 168,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 2,
+      "page": 2,
+      "folio": "ii",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1707,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Orientation",
+          "pdfPage": 2,
+          "depth": 0
+        },
+        {
+          "title": "Choose your starting route",
+          "pdfPage": 2,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 3,
+      "page": 3,
+      "folio": "iii",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 490,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 4,
+      "page": 4,
+      "folio": "iv",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1086,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "The workflow",
+          "pdfPage": 4,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 5,
+      "page": 5,
+      "folio": "v",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 767,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 6,
+      "page": 6,
+      "folio": "vi",
+      "role": "contents",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 559,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 7,
+      "page": 7,
+      "folio": "1",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 122,
+      "rasterImagePaints": [
+        {
+          "page": 7,
+          "name": "/FormXob.ba6ccf0512b14f67e2e9b73c553ac3cf",
+          "object": "68 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "1. Choose the task and starting material",
+          "pdfPage": 7,
+          "depth": 0
+        }
+      ],
+      "chapter": 1,
+      "section": "1. Choose the task and starting material",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 8,
+      "page": 8,
+      "folio": "2",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1749,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Write the brief",
+          "pdfPage": 8,
+          "depth": 1
+        },
+        {
+          "title": "Name what each source owns",
+          "pdfPage": 8,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 9,
+      "page": 9,
+      "folio": "3",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 860,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Start with the Velori configurator",
+          "pdfPage": 9,
+          "depth": 1
+        },
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 9,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 10,
+      "page": 10,
+      "folio": "4",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 118,
+      "rasterImagePaints": [
+        {
+          "page": 10,
+          "name": "/FormXob.687b8da8a45ba26100a60e1d4d8fb45d",
+          "object": "78 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "2. Bring your system into Claude Design",
+          "pdfPage": 10,
+          "depth": 0
+        }
+      ],
+      "chapter": 2,
+      "section": "2. Bring your system into Claude Design",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 11,
+      "page": 11,
+      "folio": "5",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1451,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Bring in Figma foundations",
+          "pdfPage": 11,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 12,
+      "page": 12,
+      "folio": "6",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1032,
+      "rasterImagePaints": [
+        {
+          "page": 12,
+          "name": "/FormXob.e95aaa5f4963660201208e860edbd4c8",
+          "object": "137 0",
+          "width": 768,
+          "height": 517,
+          "xPpi": 169.2,
+          "yPpi": 169.2,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 13,
+      "page": 13,
+      "folio": "7",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1021,
+      "rasterImagePaints": [
+        {
+          "page": 13,
+          "name": "/FormXob.75014478fe1c3c20f11965a612fdcd08",
+          "object": "140 0",
+          "width": 768,
+          "height": 576,
+          "xPpi": 197.49,
+          "yPpi": 197.49,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Bring in implementation context",
+          "pdfPage": 13,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 14,
+      "page": 14,
+      "folio": "8",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1479,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Correct the smallest relevant gap",
+          "pdfPage": 14,
+          "depth": 1
+        },
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 14,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 15,
+      "page": 15,
+      "folio": "9",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 99,
+      "rasterImagePaints": [
+        {
+          "page": 15,
+          "name": "/FormXob.749f2029cf7418b6248bdd4380f695f6",
+          "object": "88 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "3. Explore design directions",
+          "pdfPage": 15,
+          "depth": 0
+        }
+      ],
+      "chapter": 3,
+      "section": "3. Explore design directions",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 16,
+      "page": 16,
+      "folio": "10",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1602,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Generate two or three alternatives",
+          "pdfPage": 16,
+          "depth": 1
+        },
+        {
+          "title": "Compare the actual views",
+          "pdfPage": 16,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 17,
+      "page": 17,
+      "folio": "11",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 294,
+      "rasterImagePaints": [
+        {
+          "page": 17,
+          "name": "/FormXob.68df95618d8f3e37c5a0724dfe58dad5",
+          "object": "149 0",
+          "width": 768,
+          "height": 576,
+          "xPpi": 218.27,
+          "yPpi": 218.27,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 17,
+          "name": "/FormXob.76d9f7017e2fcb95e0f04c577fb6dd02",
+          "object": "150 0",
+          "width": 1024,
+          "height": 830,
+          "xPpi": 314.53,
+          "yPpi": 314.53,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 18,
+      "page": 18,
+      "folio": "12",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 912,
+      "rasterImagePaints": [
+        {
+          "page": 18,
+          "name": "/FormXob.4c978af41a7827df51c77cdecde0748f",
+          "object": "153 0",
+          "width": 1024,
+          "height": 830,
+          "xPpi": 314.53,
+          "yPpi": 314.53,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Select with reasons",
+          "pdfPage": 18,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 19,
+      "page": 19,
+      "folio": "13",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 514,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 19,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 20,
+      "page": 20,
+      "folio": "14",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 109,
+      "rasterImagePaints": [
+        {
+          "page": 20,
+          "name": "/FormXob.5e4b2fafa9e585be662eda9ea817e9dd",
+          "object": "97 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "4. Refine the design",
+          "pdfPage": 20,
+          "depth": 0
+        }
+      ],
+      "chapter": 4,
+      "section": "4. Refine the design",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 21,
+      "page": 21,
+      "folio": "15",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1454,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Use chat for a structural change",
+          "pdfPage": 21,
+          "depth": 1
+        },
+        {
+          "title": "Use a comment for a local correction",
+          "pdfPage": 21,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 22,
+      "page": 22,
+      "folio": "16",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 548,
+      "rasterImagePaints": [
+        {
+          "page": 22,
+          "name": "/FormXob.aef9f211be38df25e4e949152bb0a24c",
+          "object": "160 0",
+          "width": 515,
+          "height": 620,
+          "xPpi": 139.5,
+          "yPpi": 139.5,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 23,
+      "page": 23,
+      "folio": "17",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 700,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Edit directly for a quick visual adjustment",
+          "pdfPage": 23,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 24,
+      "page": 24,
+      "folio": "18",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 793,
+      "rasterImagePaints": [
+        {
+          "page": 24,
+          "name": "/FormXob.1dcd2351b99bbe27037541cc51bfc5fb",
+          "object": "165 0",
+          "width": 310,
+          "height": 455,
+          "xPpi": 136.5,
+          "yPpi": 136.5,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Recheck the chosen direction",
+          "pdfPage": 24,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 25,
+      "page": 25,
+      "folio": "19",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 410,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 25,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 26,
+      "page": 26,
+      "folio": "20",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 102,
+      "rasterImagePaints": [
+        {
+          "page": 26,
+          "name": "/FormXob.4c904ba450cfc4625fbf6cfe74753a9d",
+          "object": "105 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "5. Build the connected experience",
+          "pdfPage": 26,
+          "depth": 0
+        }
+      ],
+      "chapter": 5,
+      "section": "5. Build the connected experience",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 27,
+      "page": 27,
+      "folio": "21",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1431,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Connect the screens",
+          "pdfPage": 27,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 28,
+      "page": 28,
+      "folio": "22",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 100,
+      "rasterImagePaints": [
+        {
+          "page": 28,
+          "name": "/FormXob.a943074573b6ba4ec5630d221d32e18f",
+          "object": "173 0",
+          "width": 944,
+          "height": 440,
+          "xPpi": 196.27,
+          "yPpi": 196.27,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 28,
+          "name": "/FormXob.0ba3b2d67c8467da5e281b87d8de7123",
+          "object": "172 0",
+          "width": 400,
+          "height": 330,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 29,
+      "page": 29,
+      "folio": "23",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 670,
+      "rasterImagePaints": [
+        {
+          "page": 29,
+          "name": "/FormXob.ddab77ca8240a6bccf918203adcb29a2",
+          "object": "176 0",
+          "width": 400,
+          "height": 465,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Finish with Add to cart",
+          "pdfPage": 29,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 30,
+      "page": 30,
+      "folio": "24",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1091,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 31,
+      "page": 31,
+      "folio": "25",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 556,
+      "rasterImagePaints": [
+        {
+          "page": 31,
+          "name": "/FormXob.bb958892b5d54bfbbdeb3b94c982339a",
+          "object": "181 0",
+          "width": 420,
+          "height": 500,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Add a recovery state",
+          "pdfPage": 31,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 32,
+      "page": 32,
+      "folio": "26",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1317,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 33,
+      "page": 33,
+      "folio": "27",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 645,
+      "rasterImagePaints": [
+        {
+          "page": 33,
+          "name": "/FormXob.7ddd2407aec79e58c8c9b95ea4227734",
+          "object": "187 0",
+          "width": 400,
+          "height": 306,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 33,
+          "name": "/FormXob.15123b583fa0b09d9ad9742bcfa908c9",
+          "object": "186 0",
+          "width": 272,
+          "height": 125,
+          "xPpi": 120.0,
+          "yPpi": 120.0,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Protect consistency during generation",
+          "pdfPage": 33,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 34,
+      "page": 34,
+      "folio": "28",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 384,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 34,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 35,
+      "page": 35,
+      "folio": "29",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 106,
+      "rasterImagePaints": [
+        {
+          "page": 35,
+          "name": "/FormXob.b82706ea4deda5488f94afd0a02fdbe6",
+          "object": "124 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "6. Review with people",
+          "pdfPage": 35,
+          "depth": 0
+        }
+      ],
+      "chapter": 6,
+      "section": "6. Review with people",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 36,
+      "page": 36,
+      "folio": "30",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1782,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Prepare a reviewable prototype",
+          "pdfPage": 36,
+          "depth": 1
+        },
+        {
+          "title": "Check response and keyboard behavior",
+          "pdfPage": 36,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 37,
+      "page": 37,
+      "folio": "31",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 231,
+      "rasterImagePaints": [
+        {
+          "page": 37,
+          "name": "/FormXob.7404c5af8d5944a3a69f14b6e1b98e79",
+          "object": "194 0",
+          "width": 390,
+          "height": 844,
+          "xPpi": 155.82,
+          "yPpi": 155.82,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 38,
+      "page": 38,
+      "folio": "32",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 235,
+      "rasterImagePaints": [
+        {
+          "page": 38,
+          "name": "/FormXob.f95a7d616be53b1ca48007527d6f65ff",
+          "object": "197 0",
+          "width": 390,
+          "height": 844,
+          "xPpi": 155.82,
+          "yPpi": 155.82,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 39,
+      "page": 39,
+      "folio": "33",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1227,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Record observations and decide",
+          "pdfPage": 39,
+          "depth": 1
+        },
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 39,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 40,
+      "page": 40,
+      "folio": "34",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 106,
+      "rasterImagePaints": [
+        {
+          "page": 40,
+          "name": "/FormXob.4c312574ce8d12ab9c46385d0541b375",
+          "object": "63 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "7. Hand off to Claude Code",
+          "pdfPage": 40,
+          "depth": 0
+        }
+      ],
+      "chapter": 7,
+      "section": "7. Hand off to Claude Code",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 41,
+      "page": 41,
+      "folio": "35",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1946,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Capture the handoff",
+          "pdfPage": 41,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 42,
+      "page": 42,
+      "folio": "36",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 953,
+      "rasterImagePaints": [
+        {
+          "page": 42,
+          "name": "/FormXob.6694752783ec87d100eabfd3ad977595",
+          "object": "204 0",
+          "width": 580,
+          "height": 325,
+          "xPpi": 120.59,
+          "yPpi": 120.59,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Verify recipient usability",
+          "pdfPage": 42,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 43,
+      "page": 43,
+      "folio": "37",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 629,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 43,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 44,
+      "page": 44,
+      "folio": "38",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 121,
+      "rasterImagePaints": [
+        {
+          "page": 44,
+          "name": "/FormXob.e153dc3f3ca7ac2b90ff430db71c11a5",
+          "object": "73 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "8. Continue in Figma when needed",
+          "pdfPage": 44,
+          "depth": 0
+        }
+      ],
+      "chapter": 8,
+      "section": "8. Continue in Figma when needed",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 45,
+      "page": 45,
+      "folio": "39",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1433,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Choose a supported bridge",
+          "pdfPage": 45,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 46,
+      "page": 46,
+      "folio": "40",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 421,
+      "rasterImagePaints": [
+        {
+          "page": 46,
+          "name": "/FormXob.c9be5eb0b29c7ac46b31e4197a9617b5",
+          "object": "213 0",
+          "width": 1280,
+          "height": 720,
+          "xPpi": 266.13,
+          "yPpi": 266.13,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        },
+        {
+          "page": 46,
+          "name": "/FormXob.bf9b9219c7eb3ab70fa9d6655560d22d",
+          "object": "212 0",
+          "width": 1280,
+          "height": 720,
+          "xPpi": 266.13,
+          "yPpi": 266.13,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 47,
+      "page": 47,
+      "folio": "41",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1389,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Inspect separate kinds of fidelity",
+          "pdfPage": 47,
+          "depth": 1
+        },
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 47,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 48,
+      "page": 48,
+      "folio": "42",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 101,
+      "rasterImagePaints": [
+        {
+          "page": 48,
+          "name": "/FormXob.444b14338581cb66799310696d55246a",
+          "object": "83 0",
+          "width": 2400,
+          "height": 1372,
+          "xPpi": 560.75,
+          "yPpi": 560.75,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "9. Run the guided exercise",
+          "pdfPage": 48,
+          "depth": 0
+        }
+      ],
+      "chapter": 9,
+      "section": "9. Run the guided exercise",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 49,
+      "page": 49,
+      "folio": "43",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1271,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Follow the design loop",
+          "pdfPage": 49,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 50,
+      "page": 50,
+      "folio": "44",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1587,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Keep a useful record",
+          "pdfPage": 50,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 51,
+      "page": 51,
+      "folio": "45",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 231,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Chapter checkpoint",
+          "pdfPage": 51,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 52,
+      "page": 52,
+      "folio": "46",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 1198,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Appendix A: Brief and decision record",
+          "pdfPage": 52,
+          "depth": 0
+        },
+        {
+          "title": "Appendix B: Supporting engineering checks",
+          "pdfPage": 52,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 53,
+      "page": 53,
+      "folio": "47",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.96
+      ],
+      "textCharacters": 628,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Further reading",
+          "pdfPage": 53,
+          "depth": 0
+        }
+      ]
+    }
+  ]
+}

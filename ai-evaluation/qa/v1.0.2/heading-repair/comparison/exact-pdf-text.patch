@@ -1,0 +1,131 @@
+--- previous/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf
++++ candidate/daytime.pdf
+@@ -2,7 +2,7 @@
+ AI Evaluation
+ Field Guide
+ From a first test case to a defensible launch decision
+-November 7, 2026 | Version 1.0.1
++November 8, 2026 | Version 1.0.2
+ --- PDF page 2 ---
+ ii
+ How to use this guide
+@@ -93,60 +93,58 @@
+ Contents
+ How to use this guide
+  ii
++10. Evaluate agents, tools, and side
++effects
++ 56
++The evaluation loop at a glance
++ vi
+ 11. Turn evidence into a launch
+ boundary
+  62
+-The evaluation loop at a glance
+- vi
++1. Know what an evaluation can tell you
++ 1
+ 12. Monitor production and respond to
+ incidents
+  68
+-1. Know what an evaluation can tell you
+- 1
++2. Define behavior, failures, and rubrics
++ 6
+ Guided capstone: Trailwise release
+ review
+  75
+-2. Define behavior, failures, and rubrics
+- 6
++3. Turn risks into an evaluation design
++ 12
+ Guided capstone answer key
+  81
+-3. Turn risks into an evaluation design
+- 12
+-Guided capstone self-assessment
+- 85
+ 4. Build evidence sets that answer
+ different questions
+  18
++Guided capstone self-assessment
++ 85
++5. Protect the final test from
++development
++ 24
+ Appendix A: one-page evaluation
+ checklist
+  87
+-5. Protect the final test from
+-development
+- 24
+-Appendix B: metric cheat sheet
+- 88
+ 6. Measure uncertainty and repeated
+ behavior
+  30
++Appendix B: metric cheat sheet
++ 88
++7. Make human judgment reproducible
++ 38
+ Appendix C: plain-language glossary
+  89
+-7. Make human judgment reproducible
+- 38
+-Appendix D: worksheet index
+- 90
+ 8. Validate a model judge before
+ trusting it
+  44
+-Further reading and source notes
+- 92
++Appendix D: worksheet index
++ 90
+ 9. Test adversarial, security, and
+ privacy failures
+  50
+-Changelog
+- 96
+-10. Evaluate agents, tools, and side
+-effects
+- 56
++Further reading and source notes
++ 92
+ --- PDF page 6 ---
+ vi
+ The evaluation loop at
+@@ -2967,34 +2965,3 @@
+ with a named system, evidence, uncertainty, unresolved risks,
+ accountable action, rollback, and a sentence that says exactly what the
+ evidence cannot prove.
+---- PDF page 103 ---
+-AI EVALUATION FIELD GUIDE
+-CHANGELOG
+-96
+-Changelog
+-Compared with version 1.0.0, published 2026-10-01.
+-Addition. Add controlled criterion/answer probes and rubric-only
+-baselines.
+-Add two observable probes to Module 8: criterion-only baseline and
+-answer/criterion reversals, alongside existing order and style probes.
+-Primary source
+-Addition. Pair credential attacks with legitimate controls and test
+-persistent-memory risk slices.
+-Add paired legitimate/phishing cases and
+-stale/conflicting/cross-user/revoked-memory slices to the threat-driven
+-agent checklist; grade submissions and task completion separately.
+-Primary source · Primary source
+-Addition. Measure surface coverage, unflagged-traffic audits and
+-alert-to-response performance.
+-Add coverage accounting, negative-traffic audits and alert-to-response
+-tests; report threat-specific recall and responder availability rather than
+-one aggregate monitor score.
+-Primary source
+-Addition. Add prediction-time availability, paired known-failure
+-controls and a provenance verifier.
+-Extend leakage guidance beyond final-test reuse to prediction-time
+-feature validity, paired known-failure controls and a deterministic
+-provenance verifier, with the clinical preprint's limits explicit.
+-Primary source
+-Previous Daytime PDF SHA-256:
+-91531220eb1567eb5a51bcd0083c22ccbc77b18f88c275596382b955acf762ad

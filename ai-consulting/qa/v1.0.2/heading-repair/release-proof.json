@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "visualReview": "passed",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
+      "pages": 141,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/ai-consulting/attempt-1/proof/light"
+    },
+    {
+      "theme": "dark",
+      "sha256": "979434dfe883580a78adf2d1eb8f693cff872546e0c1df5f9d99568b913909af",
+      "pages": 141,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/ai-consulting/attempt-1/proof/dark"
+    }
+  ],
+  "browser": {
+    "status": "passed",
+    "jobId": "1f7ba01a",
+    "engine": "Linux Chromium",
+    "version": "1.0.2",
+    "packageSha256": "0ced95d117ea64b4539bba70e71f807e569f93c90a129b2d5536884733a9f328",
+    "toolkitArchiveSha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e",
+    "report": {
+      "path": "qa/v1.0.2/heading-repair/browser-result.json",
+      "sha256": "140cb08d18345e0e4b0ad617abf105e1ae22b847134a05563a69c44ccd91ef5c"
+    },
+    "downloads": [
+      {
+        "href": "/ai-consulting/editions/v1.0.2/ai-consulting-v1.0.2.md",
+        "name": "ai-consulting-v1.0.2.md",
+        "sha256": "17b0512ebb7a05f003b4649dba9e0c8cc1ebb2a105e075134cbff3f327c0d1b5",
+        "bytes": 152901,
+        "mime": "text/markdown; charset=utf-8",
+        "wireHttpVerified": true
+      },
+      {
+        "href": "/ai-consulting/editions/v1.0.2/ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf",
+        "name": "ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf",
+        "sha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
+        "bytes": 24102314,
+        "mime": "application/pdf",
+        "wireHttpVerified": true
+      },
+      {
+        "href": "/ai-consulting/editions/v1.0.2/ai-consulting-v1.0.2-2026-11-08-late-night-r1.pdf",
+        "name": "ai-consulting-v1.0.2-2026-11-08-late-night-r1.pdf",
+        "sha256": "979434dfe883580a78adf2d1eb8f693cff872546e0c1df5f9d99568b913909af",
+        "bytes": 90700664,
+        "mime": "application/pdf",
+        "wireHttpVerified": true
+      }
+    ],
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    },
+    "managedInputSha256": "f80b604cfd2034b3b266f4db07c1359a36f186fcfc3e7953396d530611a8e2f8",
+    "evidencePath": "/Users/mike/Codex/handbook-vm-manager-data/evidence/1f7ba01a"
+  }
+}

@@ -26,6 +26,7 @@ A candidate is ready only when every required hard gate passes and the perceptua
 
 - The intended audience and reader job remain clear.
 - Headings, section order, terminology, and numbering are coherent.
+- Every current reader, Markdown edition and both exact PDF artifacts pass `validate-heading-labels.py`; visible decimal subsection prefixes, missing subsection titles or broken internal reader targets fail release. Run the collection gate for every published catalog entry. Historical immutable editions are outside this current-edition gate.
 - Examples are internally consistent and operationally safe enough to teach from.
 - No placeholders, tool tokens, fabricated citations, or unresolved editorial notes remain.
 - The actual candidate's changelog page, contents or index entry, and bookmark state match the passed changelog decision.

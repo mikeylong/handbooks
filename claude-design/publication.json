@@ -4,22 +4,21 @@
   "sourceRepository": "https://github.com/mikeylong/handbooks",
   "id": "claude-design",
   "title": "Claude Design Field Guide",
-  "version": "2.1.4",
-  "date": "2026-11-07",
-  "pdf": "output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
-  "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
-  "pages": 54,
+  "version": "2.1.5",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
+  "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+  "pages": 53,
   "approvalStatus": "approved",
   "publicationStatus": "published",
   "publicationApproved": true,
-  "editionUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.4/",
-  "releaseUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.4/",
+  "editionUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.5/",
+  "releaseUrl": "https://handbooks.surfaces.systems/claude-design/editions/v2.1.5/",
   "publicationApproval": {
-    "date": "2026-11-07",
-    "command": "Publish them and update releases",
-    "clarification": "I asked you to publish updated releases of every handbook.",
     "kind": "explicit-user-release",
-    "version": "2.1.4",
-    "daytimeSha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85"
+    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+    "date": "2026-11-08",
+    "version": "2.1.5",
+    "daytimeSha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3"
   }
 }

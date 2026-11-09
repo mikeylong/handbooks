@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "visualReview": "passed",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+      "pages": 53,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/claude-design/attempt-1/proof/light"
+    },
+    {
+      "theme": "dark",
+      "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17",
+      "pages": 53,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed",
+      "evidence": "/Users/mike/handbooks/weekly-reviews/2026-11-08-heading-labels/builds/claude-design/attempt-1/proof/dark"
+    }
+  ],
+  "browser": {
+    "status": "passed",
+    "jobId": "1f7ba01a",
+    "engine": "Linux Chromium",
+    "version": "2.1.5",
+    "packageSha256": "e90892d414399cfdea66ecfe2ff5d9168a497b92ec9fb58cca01d8ff2cecd7db",
+    "toolkitArchiveSha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e",
+    "report": {
+      "path": "qa/v2.1.5/heading-repair/browser-result.json",
+      "sha256": "3c13e91aab9359627e10137c7d1a5ff955ec9fcd6ab1b672c0893b6a422e9ece"
+    },
+    "downloads": [
+      {
+        "href": "/claude-design/editions/v2.1.5/claude-design-v2.1.5.md",
+        "name": "claude-design-v2.1.5.md",
+        "sha256": "675ea36b8114ea92f902ce30fb3db0260f9264d3fe445831459074a7298eb537",
+        "bytes": 48890,
+        "mime": "text/markdown; charset=utf-8",
+        "wireHttpVerified": true
+      },
+      {
+        "href": "/claude-design/editions/v2.1.5/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
+        "name": "claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
+        "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+        "bytes": 7122827,
+        "mime": "application/pdf",
+        "wireHttpVerified": true
+      },
+      {
+        "href": "/claude-design/editions/v2.1.5/claude-design-v2.1.5-2026-11-08-late-night-r1.pdf",
+        "name": "claude-design-v2.1.5-2026-11-08-late-night-r1.pdf",
+        "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17",
+        "bytes": 46122759,
+        "mime": "application/pdf",
+        "wireHttpVerified": true
+      }
+    ],
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    },
+    "managedInputSha256": "f80b604cfd2034b3b266f4db07c1359a36f186fcfc3e7953396d530611a8e2f8",
+    "evidencePath": "/Users/mike/Codex/handbook-vm-manager-data/evidence/1f7ba01a"
+  }
+}

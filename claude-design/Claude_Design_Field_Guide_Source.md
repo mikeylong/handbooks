@@ -464,23 +464,3 @@ Keep original and third-party notices with the supplied material. Velori’s aut
 7. [MarsBased: A real client system import trial](https://marsbased.com/blog/2026/09/16/we-imported-a-real-client-design-system-into-claude-design-here-s-what-we-learned).
 8. [GoodCode: Design exploration and multi-screen implementation](https://goodcode.us/blog/nobody-asks-how-you-got-to-disney-world-i-built-a-75-screen-product-with-claude-design-claude-code-in-2-days).
 9. [Jérôme Benoit Reveau: A prototype-to-implementation pilot](https://jeromebenoit.com/case-study-ai-design-system.html).
-
-<pagebreak>
-
-# Changelog
-
-Compared with version 2.1.3, published 2026-10-07.
-
-**Correction or clarification.** Move the primary walkthrough off the closing standalone surface, preserve exports and state the migration boundary.
-
-A retained October 29 access predates this cycle cutoff and establishes the December 14 standalone closure, multi-surface migration and preservation limits. The approved edition still directs its main walkthrough to the standalone beta.
-
-[Primary source](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) · [Primary source](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design)
-
-**Addition.** Confirm the active library/framework and verify returned implementation context.
-
-The retained October 29 official documentation establishes plan- and framework-specific Code Connect context. Add an account/framework precheck rather than implying any successful MCP call returns the intended implementation mapping.
-
-[Primary source](https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect) · [Primary source](https://help.figma.com/hc/en-us/articles/42495296821911-Code-Connect-and-MCP)
-
-Previous Daytime PDF SHA-256: ad7d9400a5a3da38772bfce24a002d73647f3d175db67e93059a7e82d56fd0d7

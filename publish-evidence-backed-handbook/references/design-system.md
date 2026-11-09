@@ -43,7 +43,7 @@ Avoid decorative color, card-heavy interface patterns, glossy gradients, generic
 
 Multiline headings must not strand one trailing word or a tiny final fragment. Keep meaningful phrases together while preserving the heading's wording, font size, type hierarchy and available page width. The shared PDF formatters measure the actual heading and, when needed, choose the widest slightly narrower wrapping width that leaves at least two words and one quarter of the original width on the final line, without increasing the line count. This is a general rule, not a set of book-specific line breaks. Explicit author line breaks remain explicit. If an unbreakable word or other constraint prevents a valid wrap, flag the heading for visual review instead of shrinking the type. Short, single-line headings keep their original geometry.
 
-PDF subsection headings display the title without decimal prefixes such as `2.1`. Preserve that source identifier for navigation and tracking. The PDF preparation hook gives each subsection a stable `section-2-1` anchor and changes matching in-text/index section references to linked titles. Chapter markers, procedural steps, diagram order, numerical data and source citation labels retain their numbering. Source headings retain their IDs and numbers. Readers may explicitly select `subsectionLabels: "titles"` to use the same title-only presentation and linked references; existing numbered readers remain unchanged. Audit references whenever prefixes are removed so readers are not sent to invisible labels.
+Reader, Markdown and PDF subsection headings display the title without decimal prefixes such as `2.1`. Preserve that source identifier for navigation and tracking. The PDF preparation hook gives each subsection a stable `section-2-1` anchor and changes matching in-text/index section references to linked titles. Chapter markers, procedural steps, diagram order, numerical data and source citation labels retain their numbering. Source headings retain their IDs and numbers. All current and future readers use title-only presentation and linked references; a legacy `subsectionLabels` value cannot opt out. Historical released artifacts retain their original bytes. Audit references whenever prefixes are removed so readers are not sent to invisible labels.
 
 Use the semantic `TermIndex` renderer for new and revised term indexes; `INDEX_REFERENCE` remains only for legacy compatibility. In narrative prose, references introduced by `section`, `in` or `see` are resolved against known subsection IDs. Unmarked decimal values and versions are preserved. Links and code are excluded from rewriting.
 
@@ -81,9 +81,11 @@ This chapter-only rule was approved on 2026-10-23 and supersedes the nonchapter 
 
 The shared ReportLab and Markdown formatters require the explicit `chapter-marker` role on an eyebrow paragraph. Chapter-opening helpers set that role. Existing `CoverKicker`, `ChapterKicker`, and `TOCKicker` styles are recognized as eyebrow styles, but a style name alone does not authorize a visible marker. New eyebrow styles declare `handbookEyebrow=True`. Without the chapter-marker role, the formatter omits the label and its spacing. This rule depends on semantic role, never on the label's text. The hosted reader applies the same rule and retains chapter markers inside chapter headers. HTML eyebrows use `data-role="chapter-marker"`.
 
+The mandatory title-only subsection rule supersedes numbered subsection labels visible in the retained historical specimen. Preserve that specimen unchanged.
+
 ### Narrative section
 
-Use numbered headings, short paragraphs, operational lists, and selective bolding. Attach source markers to supported claims and end sourced sections with a compact source line plus an explicit synthesis note when needed.
+Use title-only subsection headings, short paragraphs, operational lists, and selective bolding. Attach source markers to supported claims and end sourced sections with a compact source line plus an explicit synthesis note when needed.
 
 ### Tables and editorial examples
 
