@@ -1,4 +1,7 @@
+import {removeChangelogNavigation} from './publication-front.mjs';
+
 export function editionLinks(html,publication,{linkCoverDate=false}={}) {
+ html=removeChangelogNavigation(html);
  const legacy=publication.historicalRepository;
  if(legacy){
   html=html.replaceAll(publication.historicalReleaseUrl,publication.releaseUrl);

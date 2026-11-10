@@ -3,13 +3,31 @@ import {readFile} from 'node:fs/promises';
 import {resolve,relative} from 'node:path';
 const output=process.env.HANDBOOK_SITE_OUTPUT || new URL('../output/site/',import.meta.url).pathname;
 const publications=resolve(output,'../publications');
-import {removeSidebarPublication, removePublicationReview, validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
+import {removeChangelogNavigation, removeSidebarPublication, removePublicationReview, validatePublicationFront, validateGalleryPublications, validateReaderNavigation, validateReaderBodyStart} from './publication-front.mjs';
 import {renderGalleryCover, validateGalleryCover, sortGalleryCards} from './gallery-covers.mjs';
 const manifest=JSON.parse(await readFile(resolve(publications,'ai-evaluation.json'),'utf8'));
 const publication=manifest;
 const edition=manifest;
 const html = await readFile(resolve(output,'ai-evaluation/index.html'), 'utf8');
 assert.equal(validatePublicationFront(html, edition).status, 'passed');
+// All reading menus omit edition history; body content and edition links survive.
+for (const label of ['Changelog', ' Version\n history ', '<span>CHANGELOG</span>']) {
+ const item = `<li><a href="#history">${label}</a></li>`;
+ const kept = '<li><a href="#chapter">Changelog design patterns</a></li><li><a href="https://example.com/changelog">Changelog</a></li>';
+ const body = '<section class="chapter" id="history"><h2>Changelog</h2><p>Accepted changes</p></section><p class="cover-date"><a href="/book/editions/v2.0.0/">Version 2.0.0</a></p>';
+ const menus = [
+  '<nav class="sidebar-nav" aria-label="Table of contents"><ol>MENU</ol></nav>',
+  '<section class="contents-page" id="contents"><h2>Contents</h2><ol>MENU</ol></section>',
+  '<dialog id="toc-dialog"><nav aria-label="Mobile table of contents"><ol>MENU</ol></nav></dialog>',
+ ];
+ for (const menu of menus) {
+  const dirty = menu.replace('MENU', kept + item) + body;
+  const clean = menu.replace('MENU', kept) + body;
+  assert.equal(removeChangelogNavigation(dirty), clean);
+  assert.equal(removeChangelogNavigation(clean), clean);
+  assert.throws(()=>validateReaderNavigation(dirty, 'Future handbook'), /changelogInReadingMenu/);
+ }
+}
 // Scheduled and unscheduled legacy covers lose only the review section.
 const legacyPanels = [
  '<section class="release-window site-only" data-release-window data-release-at="2026-10-12T16:00:00.000Z"><div><p>Next version review</p></div><section><span data-countdown-days>07</span></section><p>Site and PDF updates publish together after manual review.</p></section>',
