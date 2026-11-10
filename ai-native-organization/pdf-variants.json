@@ -2,26 +2,26 @@
   "schemaVersion": 1,
   "book": "ai-native-organization",
   "title": "AI-Native Organization Handbook",
-  "version": "1.1.2",
-  "date": "2026-11-08",
-  "pdf": "output/pdf/ai-native-organization-v1.1.2-2026-11-08-daytime-r1.pdf",
-  "sha256": "903730f4a7c797e2e2706c68404428dc87f79d10ac84a9536793037c8be9f5e0",
-  "pages": 51,
+  "version": "1.1.3",
+  "date": "2026-11-09",
+  "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+  "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+  "pages": 54,
   "variants": [
     {
       "theme": "light",
       "displayName": "Daytime version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.2-2026-11-08-daytime-r1.pdf",
-      "publicUrl": "/ai-native-organization/editions/v1.1.2/ai-native-organization-v1.1.2-2026-11-08-daytime-r1.pdf",
-      "downloadFilename": "ai-native-organization-v1.1.2-2026-11-08-daytime-r1.pdf",
-      "sha256": "903730f4a7c797e2e2706c68404428dc87f79d10ac84a9536793037c8be9f5e0",
-      "bytes": 8295697,
-      "pages": 51,
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+      "bytes": 8304950,
+      "pages": 54,
       "pageMap": {
-        "path": "ai-native-organization/qa/v1.1.2/heading-repair/light-page-map.json",
-        "sha256": "ed0d9679bea7298e5f133f3cd002eca55bc8577f18051089041ea6e20315a381"
+        "path": "ai-native-organization/qa/v1.1.3/weekly-review/light-page-map.json",
+        "sha256": "b02a71aac046adb01ca6048c7b987a3ab945b94a2b5eb55ca69c7388ec461fd5"
       }
     },
     {
@@ -29,31 +29,31 @@
       "displayName": "Late night version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.2-2026-11-08-late-night-r1.pdf",
-      "publicUrl": "/ai-native-organization/editions/v1.1.2/ai-native-organization-v1.1.2-2026-11-08-late-night-r1.pdf",
-      "downloadFilename": "ai-native-organization-v1.1.2-2026-11-08-late-night-r1.pdf",
-      "sha256": "3ecf9a2b6bc4c498da98dbbe62afcea446917352b3ab883baf881b4ff327424b",
-      "bytes": 6754766,
-      "pages": 51,
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f",
+      "bytes": 6764736,
+      "pages": 54,
       "pageMap": {
-        "path": "ai-native-organization/qa/v1.1.2/heading-repair/dark-page-map.json",
-        "sha256": "9fdef8104a4284ba62e24460f93003b319cc4b4cfcf9a2440ba7d975eee43ee7"
+        "path": "ai-native-organization/qa/v1.1.3/weekly-review/dark-page-map.json",
+        "sha256": "1acbe7a96efd5cf35878a732f82e0171cb84bec78613293b01de41ac85382829"
       },
       "proof": {
         "parity": {
-          "path": "ai-native-organization/qa/v1.1.2/heading-repair/pair/parity.json",
-          "sha256": "5cd9e548497af861a1416592a553758dafa50b4943b4424abb99f0054eacd015"
+          "path": "ai-native-organization/qa/v1.1.3/weekly-review/parity.json",
+          "sha256": "021a12c3c3ee446d7c471dab452747364e79f60130a14a238d71aea923c33d50"
+        },
+        "appearanceAudit": {
+          "path": "ai-native-organization/qa/v1.1.3/weekly-review/appearance.json",
+          "sha256": "f5dedda74992612196bc82e3f7250304ec866ce6561528747ddbfa8bac17d4fc"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "3ecf9a2b6bc4c498da98dbbe62afcea446917352b3ab883baf881b4ff327424b",
-          "date": "2026-11-08",
-          "authority": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
-          "agentReview": "ai-native-organization/qa/v1.1.2/heading-repair/visual-review.json"
-        },
-        "appearanceAudit": {
-          "path": "ai-native-organization/qa/v1.1.2/heading-repair/appearance.json",
-          "sha256": "3ff7211fffe3c085e9c81072637fc43aab8ff8de3b044d0d778ea605a28ec792"
+          "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f",
+          "date": "2026-11-09",
+          "authority": "Explicit user release after completed candidate validation",
+          "agentReview": "ai-native-organization/qa/v1.1.3/release-proof.json"
         }
       }
     }

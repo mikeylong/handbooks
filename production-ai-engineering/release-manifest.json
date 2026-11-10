@@ -1,108 +1,157 @@
 {
   "id": "production-ai-engineering",
   "title": "Production AI Engineering",
-  "version": "1.4.2",
-  "date": "2026-11-08",
-  "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf",
-  "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
-  "pages": 97,
+  "version": "1.4.3",
+  "date": "2026-11-09",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+  "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+  "pages": 100,
   "approvalStatus": "approved",
   "publicationApproved": true,
-  "publicationApproval": {
-    "kind": "explicit-user-release",
-    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
-    "date": "2026-11-08",
-    "version": "1.4.2",
-    "daytimeSha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487"
-  },
-  "releaseValidationKind": "presentation-exact-artifact",
-  "previous_public_edition": "1.4.1",
+  "previous_public_edition": "1.4.2",
   "comparison_basis": "approved public edition",
   "baseline": {
-    "version": "1.4.1",
-    "date": "2026-11-07",
-    "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
-    "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+    "title": "Production AI Engineering",
+    "version": "1.4.2",
+    "date": "2026-11-08",
+    "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf",
+    "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
+    "pages": 97,
     "manifest": {
-      "path": "baselines/v1.4.1/heading-repair/release-manifest.json",
-      "sha256": "2f23a1f0c38596e55bdc72fa7d821b21431aa04a984397669f05f25b074a2937"
-    }
+      "path": "baselines/v1.4.2/weekly-review/release-manifest.json",
+      "sha256": "4b894ebff0b77202c31357d63c69e2ffe9c38ae1056bd7d164a5d13ede803670"
+    },
+    "originalPdfPath": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf"
   },
-  "candidate_validation": "qa/v1.4.2/heading-repair/light-validation.json",
+  "candidate_validation": "qa/v1.4.3/weekly-review/lightValidation.json",
   "candidateEvidence": {
     "lightValidation": {
-      "path": "qa/v1.4.2/heading-repair/light-validation.json",
-      "sha256": "9de5a326d626933d8de575faf64bad213d96680e87289b94adc7bcf45ad8acc5"
+      "path": "qa/v1.4.3/weekly-review/lightValidation.json",
+      "sha256": "ae5e9c32febfafed3f99605449b536f6b6cab3262e773b6a8c4c56ddb68d2f87",
+      "bytes": 640
     },
     "darkValidation": {
-      "path": "qa/v1.4.2/heading-repair/dark-validation.json",
-      "sha256": "c789e8570a8d53847a01fbd9aa71926f72210137087b79a106ebabcca2eb0e00"
-    },
-    "editionDiff": {
-      "path": "qa/v1.4.2/heading-repair/comparison/edition-diff.json",
-      "sha256": "31c2cf1b0efcd5764b2ab2bc762e78605341c54a2a1238f4120fe13bf1fc4a42"
+      "path": "qa/v1.4.3/weekly-review/darkValidation.json",
+      "sha256": "e592876a1359d47c64168dae6f20b010b0e0eb112e8ff04a0e544f2e958db8c2",
+      "bytes": 639
     },
     "changelogDecision": {
-      "path": "qa/v1.4.2/heading-repair/changelog-decision.json",
-      "sha256": "af9c429c4e1253f32fafb4a74a52339dca985a9115be9ec7fa8eb0cf046da23a"
+      "path": "qa/v1.4.3/weekly-review/changelogDecision.json",
+      "sha256": "ec56f7275abb46f77b8ead2ad584ef45ae90527933455550fe6aaa4ae30b7b72",
+      "bytes": 712
+    },
+    "editionDiff": {
+      "path": "qa/v1.4.3/weekly-review/editionDiff.json",
+      "sha256": "09064d974be164739835abef983b9bccf9a8596aff335d530e5480a92aa4721a",
+      "bytes": 2486
+    },
+    "productionChangelog": {
+      "path": "qa/v1.4.3/weekly-review/productionChangelog.json",
+      "sha256": "48de3b63b90858e2d5fdd2a4ce35dc0b8511cbeace35516a76352e98c47c7efe",
+      "bytes": 3535
+    },
+    "lightValidationValidator": {
+      "path": "qa/v1.4.3/weekly-review/lightValidationValidator.py",
+      "sha256": "0029aeacef44216d6340cc582e320ce4a80c9dc2b71d34ebe50a6136fd9d654a",
+      "bytes": 35922
+    },
+    "lightValidationLog": {
+      "path": "qa/v1.4.3/weekly-review/lightValidationLog.log",
+      "sha256": "a39dabd13a429273feff6a41d097366b384cd08c70c0e87f18f5c968a835c26b",
+      "bytes": 214
+    },
+    "darkValidationValidator": {
+      "path": "qa/v1.4.3/weekly-review/darkValidationValidator.py",
+      "sha256": "0029aeacef44216d6340cc582e320ce4a80c9dc2b71d34ebe50a6136fd9d654a",
+      "bytes": 35922
+    },
+    "darkValidationLog": {
+      "path": "qa/v1.4.3/weekly-review/darkValidationLog.log",
+      "sha256": "a39dabd13a429273feff6a41d097366b384cd08c70c0e87f18f5c968a835c26b",
+      "bytes": 214
+    },
+    "editionDiffPdfTextPatch": {
+      "path": "qa/v1.4.3/weekly-review/exact-pdf-text.patch",
+      "sha256": "7ce9c814f9750179b39374e04f2b31526242dfe4780eebf4dc7bddfb76d592d2",
+      "bytes": 78460
+    },
+    "editionDiffReaderFacingContentPatch": {
+      "path": "qa/v1.4.3/weekly-review/reader-facing-content.patch",
+      "sha256": "bad41fa9dc0678c629d2d49167e105ab0b68ca0ff2c174aa0b66986533cec30c",
+      "bytes": 64180
+    },
+    "editionDiffSourcePatch": {
+      "path": "qa/v1.4.3/weekly-review/exact-source.patch",
+      "sha256": "cd144e3fafde23ece59de0e44ff9e3b627957ec2397565cd10206f32270c1a8e",
+      "bytes": 3160
     },
     "parity": {
-      "path": "qa/v1.4.2/heading-repair/pair/parity.json",
-      "sha256": "96562f024cb1d1e5332c519d04523d736f3593d3c9cb025e36873c55be6c4c98"
+      "path": "qa/v1.4.3/weekly-review/parity.json",
+      "sha256": "7d2fa8deb57865552d2370419a7680fa437ecb6a04812d6e105340bd6d2ba7f1"
     },
     "appearanceAudit": {
-      "path": "qa/v1.4.2/heading-repair/appearance.json",
-      "sha256": "c3694f905f8b9acd40b95a89945241cd136e2a0a9b0836e68c663af799b0eb16"
+      "path": "qa/v1.4.3/weekly-review/appearance.json",
+      "sha256": "5b87f5934141b97396af1bd21ee3a5b5c40e0cafcc2a2810c764b3a48482c080"
     }
   },
+  "evidenceMode": "production",
   "pageMaps": {
     "light": {
-      "path": "qa/v1.4.2/heading-repair/light-page-map.json",
-      "sha256": "ba8274e1c674701d543ac643d25b87dcd487adf29b359cbca8fea7b3efac99ff"
+      "path": "qa/v1.4.3/weekly-review/light-page-map.json",
+      "sha256": "7a6e481281717262c85951a962c9adbc290fa1377a5e19abe89304055b11df40"
     },
     "dark": {
-      "path": "qa/v1.4.2/heading-repair/dark-page-map.json",
-      "sha256": "fa2352c66f04eeef98f2220ef77d85da9bdd4115b90f6a9dd0bc784c1d21c747"
+      "path": "qa/v1.4.3/weekly-review/dark-page-map.json",
+      "sha256": "ff6c0802edef70d9b601e034a150aac88380f38e0826b8010f49b0afce18454e"
     }
+  },
+  "classifiedChangeIds": [
+    "CHG-002",
+    "CHG-003",
+    "CHG-001"
+  ],
+  "readerFacingContentChanged": true,
+  "changelog": {
+    "weeklyDecision": {
+      "path": "qa/v1.4.3/weekly-review/changelogDecision.json",
+      "sha256": "ec56f7275abb46f77b8ead2ad584ef45ae90527933455550fe6aaa4ae30b7b72",
+      "bytes": 712
+    },
+    "pdfDecision": {
+      "path": "qa/v1.4.3/weekly-review/productionChangelog.json",
+      "sha256": "48de3b63b90858e2d5fdd2a4ce35dc0b8511cbeace35516a76352e98c47c7efe",
+      "bytes": 3535
+    },
+    "retainedHistoricalChangelog": false
   },
   "appearances": {
     "light": {
-      "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf",
-      "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
-      "pages": 97
+      "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+      "pages": 100
     },
     "dark": {
-      "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08-late-night-r1.pdf",
-      "sha256": "28c67aa1799cb2f8f9bf0694adcdbc7f177a17324256af267a1f82bfb24b2132",
-      "pages": 97
-    }
-  },
-  "readerFacingContentChanged": false,
-  "presentationRepair": {
-    "policy": "mandatory-title-only-v1",
-    "contentPolicy": "No substantive manuscript changes; preserve chapter markers, data and procedural steps.",
-    "rawDifferences": "candidateEvidence.editionDiff",
-    "historicalChangelog": "Retained in previous edition; no new content changelog.",
-    "sourceProof": {
-      "path": "qa/v1.4.2/heading-repair/source-scope.json",
-      "sha256": "e99d3e13009292551959619685b1e428f16ed996c90cc99399299b1565763dd6"
-    },
-    "headingProof": {
-      "path": "qa/v1.4.2/heading-repair/heading-proof.json",
-      "sha256": "c7957d26804e819910457fa600083f686cacf156ccc398603d00bd309d216456"
-    },
-    "releaseProof": {
-      "path": "qa/v1.4.2/heading-repair/release-proof.json",
-      "sha256": "b6d3641e1b6097a1e768d5dcfe06bd53fbfd0f18507b1ff28a9617a3c08ab16a"
+      "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
+      "pages": 100
     }
   },
   "retainedProvenance": {
     "status": "historical_only_not_reverified",
-    "sourceEdition": "1.4.1",
-    "manifest": "baselines/v1.4.1/heading-repair/release-manifest.json"
+    "sourceEdition": "1.4.2",
+    "manifest": "baselines/v1.4.2/weekly-review/release-manifest.json"
   },
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Fix the Production changelog provenance, revalidate the corrected candidate, then publish the three patch editions. Keep the 80 GiB budget and preserve all release and failed-run evidence.",
+    "date": "2026-11-09",
+    "version": "1.4.3",
+    "daytimeSha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92"
+  },
+  "releaseValidationKind": "weekly-exact-artifact",
   "generationToolkitArchive": {
-    "collectionPath": "releases/2026-11-08-heading-labels/generation-toolkit-v2.zip",
-    "sha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e"
+    "collectionPath": "releases/2026-11-09/generation-toolkit.zip",
+    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
+    "purpose": "Frozen shared runtime used for these validated candidate artifacts."
   }
 }

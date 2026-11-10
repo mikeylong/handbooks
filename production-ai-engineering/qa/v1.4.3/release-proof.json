@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "version": "1.4.3",
+  "cycleId": "265b873e-44bb-4dc1-8d77-7a2c8b3f5f8a",
+  "cutoff": "2026-11-09T17:00:00Z",
+  "ledgerSha256": "73e0c7505a73dcdb64360e8e490e3167e7e7b44017afc03ee3429cca706de110",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+      "pages": 100,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed"
+    },
+    {
+      "theme": "dark",
+      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
+      "pages": 100,
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ],
+      "status": "passed"
+    }
+  ],
+  "crossRendererSource": {
+    "path": "qa/v1.4.3/cross-renderer-source.json",
+    "sha256": "4c3a5c6e4cc828b55e48eae6313af3745d4e49350489a620c0305652224eac37"
+  },
+  "visualReview": "passed",
+  "browser": {
+    "status": "passed",
+    "jobId": "0ddec271",
+    "version": "1.4.3",
+    "daytimeSha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+    "lateNightSha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
+    "report": {
+      "path": "qa/v1.4.3/browser-result.json",
+      "sha256": "aa5e8c93efbd8866de0cd5d37a8affdc3bfbae48f2734c517a245e15439b240a"
+    },
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    }
+  },
+  "readerAssemblyRuntime": {
+    "sourceCommit": "e097c102145a5edab3f34a6acd46059e6ecd6a5f",
+    "policy": "Existing approved shared title-only reader formatter; generation runtime separately frozen in release manifest"
+  },
+  "checkedAt": "2026-11-10T04:48:37.319806+00:00"
+}

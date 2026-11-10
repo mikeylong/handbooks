@@ -1,0 +1,18 @@
+{
+  "name": "production-ai-engineering-book",
+  "private": true,
+  "scripts": {
+    "build": "node ../scripts/validate-book-release.mjs production-ai-engineering && node ../scripts/validate-presentation-release.mjs production-ai-engineering",
+    "dev": "node scripts/dev-server.mjs",
+    "validate:handbook": "node scripts/validate-handbook-build.mjs",
+    "validate:release": "node scripts/validate-production-release.mjs && node ../scripts/validate-book-release.mjs production-ai-engineering && node ../scripts/validate-presentation-release.mjs production-ai-engineering",
+    "validate:front-pages": "npm run build",
+    "validate": "node ../scripts/validate-book-release.mjs production-ai-engineering && node ../scripts/validate-presentation-release.mjs production-ai-engineering"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/handbooks",
+    "directory": "production-ai-engineering"
+  },
+  "version": "1.4.2"
+}

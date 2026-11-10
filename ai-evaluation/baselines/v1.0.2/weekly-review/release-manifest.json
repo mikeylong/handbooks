@@ -1,0 +1,206 @@
+{
+  "id": "ai-evaluation",
+  "title": "AI Evaluation Field Guide",
+  "version": "1.0.2",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+  "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+  "pages": 102,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+    "date": "2026-11-08",
+    "version": "1.0.2",
+    "daytimeSha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915"
+  },
+  "releaseValidationKind": "presentation-exact-artifact",
+  "previous_public_edition": "1.0.1",
+  "comparison_basis": "approved public edition",
+  "baseline": {
+    "version": "1.0.1",
+    "date": "2026-11-07",
+    "pdf": "output/pdf/ai-evaluation-v1.0.1-2026-11-07-daytime-r1.pdf",
+    "sha256": "a61393cf430c0e48fb1e467406d5774a67a9f1c1f04ec8285db6e3f960d32990",
+    "manifest": {
+      "path": "baselines/v1.0.1/heading-repair/release-manifest.json",
+      "sha256": "6073b14f4f2f3a49f832e714fcf25ee501f975ee559453d7ad24d84896ad8e18"
+    }
+  },
+  "candidate_validation": "qa/v1.0.2/heading-repair/light-validation.json",
+  "candidateEvidence": {
+    "lightValidation": {
+      "path": "qa/v1.0.2/heading-repair/light-validation.json",
+      "sha256": "800664e95678940d90a398a3b623832ee48252e155851d9765b6585113fbb4a3"
+    },
+    "darkValidation": {
+      "path": "qa/v1.0.2/heading-repair/dark-validation.json",
+      "sha256": "4913625dc904823788cb229b869af905c9271c6c75121b0be51088340f312743"
+    },
+    "editionDiff": {
+      "path": "qa/v1.0.2/heading-repair/comparison/edition-diff.json",
+      "sha256": "2b1e48181a666240fc07969cafabc2952255e7ea853f11db3f3bbba6c4e24d3a"
+    },
+    "changelogDecision": {
+      "path": "qa/v1.0.2/heading-repair/changelog-decision.json",
+      "sha256": "af9c429c4e1253f32fafb4a74a52339dca985a9115be9ec7fa8eb0cf046da23a"
+    },
+    "parity": {
+      "path": "qa/v1.0.2/heading-repair/pair/parity.json",
+      "sha256": "909c1ee064cddd8d251fb9aeba1a693e944b3c725886198be7ee77964adc343a"
+    },
+    "appearanceAudit": {
+      "path": "qa/v1.0.2/heading-repair/appearance.json",
+      "sha256": "cb70341d1fd3dd2da0a978b1c20f22c96d8a0d5df88261a14aeca9b1b8de0f10"
+    }
+  },
+  "pageMaps": {
+    "light": {
+      "path": "qa/v1.0.2/heading-repair/light-page-map.json",
+      "sha256": "421dc8dc6acee6ec5183cfe5654bcdb76c6e15505ecc6f9b4d9512cdaddab398"
+    },
+    "dark": {
+      "path": "qa/v1.0.2/heading-repair/dark-page-map.json",
+      "sha256": "eb7effe5b346f3e5ec3e94499f6fca19ae74b4ff3b7f84a00dbad780eaf44956"
+    }
+  },
+  "appearances": {
+    "light": {
+      "pdf": "output/pdf/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+      "sha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+      "pages": 102
+    },
+    "dark": {
+      "pdf": "output/pdf/ai-evaluation-v1.0.2-2026-11-08-late-night-r1.pdf",
+      "sha256": "36ca2580356ea4aac5a7450f25f7e7dce1ad6a592e0c375b9ab0e87ec7bee99f",
+      "pages": 102
+    }
+  },
+  "readerFacingContentChanged": false,
+  "presentationRepair": {
+    "policy": "mandatory-title-only-v1",
+    "contentPolicy": "No substantive manuscript changes; preserve chapter markers, data and procedural steps.",
+    "rawDifferences": "candidateEvidence.editionDiff",
+    "historicalChangelog": "Retained in previous edition; no new content changelog.",
+    "sourceProof": {
+      "path": "qa/v1.0.2/heading-repair/source-scope.json",
+      "sha256": "c8dbb62bb6cbcd57d62352564496b8cac52a685bde5c8786619af723f2851f6d"
+    },
+    "headingProof": {
+      "path": "qa/v1.0.2/heading-repair/heading-proof.json",
+      "sha256": "aba63d05ba298176a9c878debd03e0b7ff32b9a991d93319a9ff44e7a39d68fd"
+    },
+    "releaseProof": {
+      "path": "qa/v1.0.2/heading-repair/release-proof.json",
+      "sha256": "56a3f799fbe1f7186e457a5d97ab6a770575be36af6d7221cc6eef4fa2a66326"
+    }
+  },
+  "retainedProvenance": {
+    "status": "historical_only_not_reverified",
+    "sourceEdition": "1.0.1",
+    "manifest": "baselines/v1.0.1/heading-repair/release-manifest.json"
+  },
+  "art": [
+    {
+      "path": "assets/chapter-art/chapter-09.png",
+      "sha256": "f1ecb87bf75509b4597cec541f25b1f91756368694993e716752251fed892883"
+    },
+    {
+      "path": "assets/chapter-art/chapter-08.png",
+      "sha256": "c915963f3421a6cc728aa1fa63ee8c7d407b4ee9dd48511732e7f1813aa04098"
+    },
+    {
+      "path": "assets/chapter-art/chapter-01.png",
+      "sha256": "213e9aa155ccd59d65d3b9ce93a0742fa7864fe5bee9264336509dbaa72abb22"
+    },
+    {
+      "path": "assets/chapter-art/chapter-03.png",
+      "sha256": "21a904083e6f61bb75423c4181ca251f9fa3687f2526544e1a48a6f828ee714b"
+    },
+    {
+      "path": "assets/chapter-art/chapter-02.png",
+      "sha256": "daf64c3fee869fbb9d289ad8f29e643f197a230fc53a328412ebfcc3c0891987"
+    },
+    {
+      "path": "assets/chapter-art/chapter-06.png",
+      "sha256": "d1bdc40fa2130da590e48b4721a5a3e5984290657c6b92f7e6f80480adb08dd7"
+    },
+    {
+      "path": "assets/chapter-art/chapter-12.png",
+      "sha256": "606689b6f81b22c36d4ee364e0044e8f2e1ea680b2723a7bb610039caca32c39"
+    },
+    {
+      "path": "assets/chapter-art/chapter-07.png",
+      "sha256": "ed3826bdb3cb773b35dbbe37cf34aac3e2e14c2463fd508fe13acd4643d5c3ce"
+    },
+    {
+      "path": "assets/chapter-art/chapter-11.png",
+      "sha256": "cc5aae9fd43fa52e9e274f57caae658407c1fc9fc1034e27f6d9bc236c56c799"
+    },
+    {
+      "path": "assets/chapter-art/chapter-05.png",
+      "sha256": "fc71360e6d5c87e08fdc71bb930ed04ab7f51addf0f060135d7269d615559a66"
+    },
+    {
+      "path": "assets/chapter-art/chapter-04.png",
+      "sha256": "e07909d10de2b0ad37fc0895a856cc034fd5292069c4e104625f3ae220cb44f5"
+    },
+    {
+      "path": "assets/chapter-art/chapter-10.png",
+      "sha256": "db6108ded3f3be3f4f32d457c07703b9ce314d11835edfae736b81757be546ab"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "assets/chapter-art/pdf/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    }
+  ],
+  "generationToolkitArchive": {
+    "collectionPath": "releases/2026-11-08-heading-labels/generation-toolkit-v2.zip",
+    "sha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e"
+  }
+}

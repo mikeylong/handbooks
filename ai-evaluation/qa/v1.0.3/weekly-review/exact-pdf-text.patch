@@ -1,0 +1,1371 @@
+--- previous/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf
++++ candidate/daytime.pdf
+@@ -2,7 +2,7 @@
+ AI Evaluation
+ Field Guide
+ From a first test case to a defensible launch decision
+-November 8, 2026 | Version 1.0.2
++November 9, 2026 | Version 1.0.3
+ --- PDF page 2 ---
+ ii
+ How to use this guide
+@@ -93,58 +93,60 @@
+ Contents
+ How to use this guide
+  ii
++11. Turn evidence into a launch
++boundary
++ 64
++The evaluation loop at a glance
++ vi
++12. Monitor production and respond to
++incidents
++ 70
++1. Know what an evaluation can tell you
++ 1
++Guided capstone: Trailwise release
++review
++ 77
++2. Define behavior, failures, and rubrics
++ 7
++Guided capstone answer key
++ 83
++3. Turn risks into an evaluation design
++ 13
++Guided capstone self-assessment
++ 87
++4. Build evidence sets that answer
++different questions
++ 19
++Appendix A: one-page evaluation
++checklist
++ 89
++5. Protect the final test from
++development
++ 25
++Appendix B: metric cheat sheet
++ 90
++6. Measure uncertainty and repeated
++behavior
++ 31
++Appendix C: plain-language glossary
++ 91
++7. Make human judgment reproducible
++ 39
++Appendix D: worksheet index
++ 92
++8. Validate a model judge before
++trusting it
++ 45
++Further reading and source notes
++ 94
++9. Test adversarial, security, and
++privacy failures
++ 51
++Changelog
++ 98
+ 10. Evaluate agents, tools, and side
+ effects
+- 56
+-The evaluation loop at a glance
+- vi
+-11. Turn evidence into a launch
+-boundary
+- 62
+-1. Know what an evaluation can tell you
+- 1
+-12. Monitor production and respond to
+-incidents
+- 68
+-2. Define behavior, failures, and rubrics
+- 6
+-Guided capstone: Trailwise release
+-review
+- 75
+-3. Turn risks into an evaluation design
+- 12
+-Guided capstone answer key
+- 81
+-4. Build evidence sets that answer
+-different questions
+- 18
+-Guided capstone self-assessment
+- 85
+-5. Protect the final test from
+-development
+- 24
+-Appendix A: one-page evaluation
+-checklist
+- 87
+-6. Measure uncertainty and repeated
+-behavior
+- 30
+-Appendix B: metric cheat sheet
+- 88
+-7. Make human judgment reproducible
+- 38
+-Appendix C: plain-language glossary
+- 89
+-8. Validate a model judge before
+-trusting it
+- 44
+-Appendix D: worksheet index
+- 90
+-9. Test adversarial, security, and
+-privacy failures
+- 50
+-Further reading and source notes
+- 92
++ 57
+ --- PDF page 6 ---
+ vi
+ The evaluation loop at
+@@ -296,6 +298,12 @@
+ incidents, drift.
+ Biased feedback and
+ silent failures.
++Compare an offline safety result with production cases that present the
++same decision, using consistent grading rules. Select cases from the
++information available before the action, rather than choosing only
++successes or failures. Test whether stating an evaluation objective
++changes behavior. Report imperfect matching and avoid assuming that
++evaluation scores always overstate production safety. [S34]
+ Exact checks and judgment checks
+ AI output is not always open-ended. Use exact checks whenever the
+ requirement is exact: valid JSON, correct order ID, permitted tool,
+@@ -306,6 +314,10 @@
+ For each requirement, choose exact check, human rubric, or model judge:
+ (a) refund amount is $42.50; (b) explanation is clear; (c) no customer secret
+ appears; (d) response accurately applies a nuanced policy exception.
++--- PDF page 11 ---
++AI EVALUATION FIELD GUIDE
++1. KNOW WHAT AN EVALUATION CAN TELL YOU
++4
+ ANSWER: A sensible first pass
+ Use an exact arithmetic or state check for (a). For (c), combine
+ deterministic access-log and state checks, known synthetic-secret or
+@@ -314,10 +326,10 @@
+ Begin with trained human review for (b) and (d). A model judge may later
+ help with those subjective dimensions, but only after validation against
+ independent human labels for its intended use.
+---- PDF page 11 ---
++--- PDF page 12 ---
+ AI EVALUATION FIELD GUIDE
+ 1. KNOW WHAT AN EVALUATION CAN TELL YOU
+-4
++5
+ Worksheet 1: evaluation brief
+ EVALUATION BRIEF
+ Decision this evaluation will inform
+@@ -326,10 +338,10 @@
+ Evidence to collect and who will grade it
+ Decision owner and date
+ What this evaluation will not establish
+---- PDF page 12 ---
++--- PDF page 13 ---
+ AI EVALUATION FIELD GUIDE
+ 1. KNOW WHAT AN EVALUATION CAN TELL YOU
+-5
++6
+ ANSWER: Trailwise brief
+ Decision: whether version 0.7 may enter employee-only shadow mode -
+ running invisibly for observation without changing a user's experience or
+@@ -344,17 +356,17 @@
+ and decision boundary. It does not prove the cases, graders, or thresholds
+ are good yet.
+ Source notes: S2, S3, S9. Full citations and links appear in Further reading and source notes.
+---- PDF page 13 ---
+-6
++--- PDF page 14 ---
++7
+ CHAPTER 02
+ Define behavior, failures,
+ and rubrics
+ Turn a product promise into observable behavior and risk-based
+ grading.
+---- PDF page 14 ---
++--- PDF page 15 ---
+ AI EVALUATION FIELD GUIDE
+ 2. DEFINE BEHAVIOR, FAILURES, AND RUBRICS
+-7
++8
+ Learning objectives. You will write a behavior contract, rank failure
+ modes as High, Medium, or Low, identify non-compensable failures, and
+ create behaviorally anchored rubric items.
+@@ -385,10 +397,10 @@
+ undone?
+ A draft can be edited; a wrong refund or
+ disclosure may not be reversible.
+---- PDF page 15 ---
++--- PDF page 16 ---
+ AI EVALUATION FIELD GUIDE
+ 2. DEFINE BEHAVIOR, FAILURES, AND RUBRICS
+-8
++9
+ Trailwise failure inventory
+ SEVERITY
+ OBSERVABLE FAILURE
+@@ -441,10 +453,10 @@
+ Fail
+ States the wrong rule, invents a rule, omits a condition that changes the
+ outcome, or gives advice without enough information.
+---- PDF page 16 ---
++--- PDF page 17 ---
+ AI EVALUATION FIELD GUIDE
+ 2. DEFINE BEHAVIOR, FAILURES, AND RUBRICS
+-9
++10
+ Exercise: repair a vague rubric
+ Rewrite this criterion so another rater could apply it: 'The response should
+ be helpful and safe.'
+@@ -456,10 +468,10 @@
+ infer another person's private information. Escalation safety: it hands off
+ when policy evidence or authorization is insufficient. Grade each item
+ separately as Pass or Fail with examples.
+---- PDF page 17 ---
++--- PDF page 18 ---
+ AI EVALUATION FIELD GUIDE
+ 2. DEFINE BEHAVIOR, FAILURES, AND RUBRICS
+-10
++11
+ Worksheet 2: behavior and risk register
+ BEHAVIOR CONTRACT AND RISK REGISTER
+ Given: allowed information and starting state
+@@ -468,10 +480,10 @@
+ When uncertain or out of scope: safe fallback
+ High-severity failures: severity, exposure, detectability, reversibility
+ Owner and observable test for every High-severity failure
+---- PDF page 18 ---
++--- PDF page 19 ---
+ AI EVALUATION FIELD GUIDE
+ 2. DEFINE BEHAVIOR, FAILURES, AND RUBRICS
+-11
++12
+ [ ]
+ Each failure can be recognized from output, trace, or environment state.
+ [ ]
+@@ -487,16 +499,16 @@
+ protect. They do not show that your case set covers those conditions or
+ that the system passes.
+ Source notes: S2, S3, S9. Full citations and links appear in Further reading and source notes.
+---- PDF page 19 ---
+-12
++--- PDF page 20 ---
++13
+ CHAPTER 03
+ Turn risks into an
+ evaluation design
+ Build a deliberate suite instead of a bag of convenient examples.
+---- PDF page 20 ---
++--- PDF page 21 ---
+ AI EVALUATION FIELD GUIDE
+ 3. TURN RISKS INTO AN EVALUATION DESIGN
+-13
++14
+ Learning objectives. You will convert tasks and risks into evaluation
+ questions, choose graders that fit the evidence, and keep quality, safety,
+ security, reliability, latency, and cost visible.
+@@ -557,10 +569,10 @@
+ Validated judge
+ plus audit
+ Slice floor
+---- PDF page 21 ---
++--- PDF page 22 ---
+ AI EVALUATION FIELD GUIDE
+ 3. TURN RISKS INTO AN EVALUATION DESIGN
+-14
++15
+ Choose the least ambiguous grader
+ that works
+ GRADER
+@@ -599,10 +611,10 @@
+ critical slices, uncertainty, grader quality, and operational measures
+ separate. A dashboard may summarize them, but the decision record
+ should preserve the underlying evidence.
+---- PDF page 22 ---
++--- PDF page 23 ---
+ AI EVALUATION FIELD GUIDE
+ 3. TURN RISKS INTO AN EVALUATION DESIGN
+-15
++16
+ Exercise: design the grader stack
+ Choose a grader for each: correct order selected; safe authorization;
+ policy-grounded explanation; friendly tone; final refund state; user
+@@ -613,10 +625,10 @@
+ Validate a model judge before using it for routine grounding or tone. Use
+ post-task user feedback for perceived usefulness, but never treat
+ satisfaction as proof of correctness or safe side effects.
+---- PDF page 23 ---
++--- PDF page 24 ---
+ AI EVALUATION FIELD GUIDE
+ 3. TURN RISKS INTO AN EVALUATION DESIGN
+-16
++17
+ Worksheet 3: coverage matrix
+ EVALUATION COVERAGE MATRIX
+ Task or failure mode
+@@ -625,10 +637,10 @@
+ Evidence set and case count
+ Grader and validation requirement
+ Metric, uncertainty report, and proposed gate
+---- PDF page 24 ---
++--- PDF page 25 ---
+ AI EVALUATION FIELD GUIDE
+ 3. TURN RISKS INTO AN EVALUATION DESIGN
+-17
++18
+ Module checkpoint
+ [ ]
+ Every supported task and High-severity failure maps to at least one
+@@ -646,18 +658,18 @@
+ that any grader is reliable.
+ Source notes: S2, S3, S11, S19, S20. Full citations and links appear in Further reading and source
+ notes.
+---- PDF page 25 ---
+-18
++--- PDF page 26 ---
++19
+ CHAPTER 04
+ Build evidence sets
+ that answer
+ different questions
+ Sample expected use without losing rare, boundary, or adversarial
+ failures.
+---- PDF page 26 ---
++--- PDF page 27 ---
+ AI EVALUATION FIELD GUIDE
+ 4. BUILD EVIDENCE SETS THAT ANSWER DIFFERENT QUESTIONS
+-19
++20
+ Learning objectives. You will define a deployment population, build
+ representative slices, separate population-weighted and challenge
+ results, and document provenance, privacy, and blind spots.
+@@ -716,10 +728,10 @@
+ Stress rare and severe hazards
+ Regression
+ Prevent known failures returning
+---- PDF page 27 ---
++--- PDF page 28 ---
+ AI EVALUATION FIELD GUIDE
+ 4. BUILD EVIDENCE SETS THAT ANSWER DIFFERENT QUESTIONS
+-20
++21
+ Name the population before counting
+ 'Customers' is not a sampling frame - the concrete list or selection
+ process from which cases are drawn. Trailwise version 0.7 might target
+@@ -750,10 +762,10 @@
+ updates, and which languages or customer situations are missing. A
+ completed card makes those limits visible; it does not repair an
+ unsuitable sample.
+---- PDF page 28 ---
++--- PDF page 29 ---
+ AI EVALUATION FIELD GUIDE
+ 4. BUILD EVIDENCE SETS THAT ANSWER DIFFERENT QUESTIONS
+-21
++22
+ Method sources: S21.
+ Real cases can reflect actual language and base rates, but they require
+ consent, privacy controls, and careful sampling. Expert-authored cases
+@@ -775,10 +787,10 @@
+ the named population and untouched during development. A single case
+ can inform a new set, but do not count duplicated evidence as
+ independent proof.
+---- PDF page 29 ---
++--- PDF page 30 ---
+ AI EVALUATION FIELD GUIDE
+ 4. BUILD EVIDENCE SETS THAT ANSWER DIFFERENT QUESTIONS
+-22
++23
+ Worksheet 4: dataset card
+ DATASET CARD
+ Purpose and evidence-set type
+@@ -787,10 +799,10 @@
+ Slice names and case counts
+ Real, expert-authored, and synthetic proportions
+ Consent, privacy, sensitive-data, and retention controls
+---- PDF page 30 ---
++--- PDF page 31 ---
+ AI EVALUATION FIELD GUIDE
+ 4. BUILD EVIDENCE SETS THAT ANSWER DIFFERENT QUESTIONS
+-23
++24
+ DATASET CARD
+ Known blind spots and claims this set cannot support
+ CLAIM: What this evidence permits you to claim
+@@ -799,17 +811,17 @@
+ support an estimate for a named population; challenge results support
+ hazard findings, not base-rate claims.
+ Source notes: S2, S3, S12, S21. Full citations and links appear in Further reading and source notes.
+---- PDF page 31 ---
+-24
++--- PDF page 32 ---
++25
+ CHAPTER 05
+ Protect the final test
+ from development
+ Separate learning, grader calibration, regression, and decision
+ evidence.
+---- PDF page 32 ---
++--- PDF page 33 ---
+ AI EVALUATION FIELD GUIDE
+ 5. PROTECT THE FINAL TEST FROM DEVELOPMENT
+-25
++26
+ Learning objectives. You will explain the job of each evidence partition,
+ detect direct and indirect contamination, preserve a sequestered final
+ test, and version the complete system and evaluation.
+@@ -853,10 +865,10 @@
+ when general behavior has not. The examples are now development
+ evidence. Freeze a new candidate and use a fresh sequestered test for the
+ release decision.
+---- PDF page 33 ---
++--- PDF page 34 ---
+ AI EVALUATION FIELD GUIDE
+ 5. PROTECT THE FINAL TEST FROM DEVELOPMENT
+-26
++27
+ CAUTION: Contamination can be indirect
+ Leakage includes final-test examples copied into prompts, retrieved
+ documents that contain expected answers, judge prompts tuned on the
+@@ -885,19 +897,19 @@
+ The team evaluates Trailwise on 100 final-test cases. It opens every
+ failure, adds those cases to the system prompt, and reruns the same 100
+ until the score reaches 96%. Can it report 96% held-out performance?
+---- PDF page 34 ---
++--- PDF page 35 ---
+ AI EVALUATION FIELD GUIDE
+ 5. PROTECT THE FINAL TEST FROM DEVELOPMENT
+-27
++28
+ ANSWER: No
+ The set became development data after the first inspection and change.
+ Report the repeated-set result only as regression or development
+ evidence. Freeze the candidate, draw a new final test under the
+ documented sampling plan, and set gates before opening it.
+---- PDF page 35 ---
++--- PDF page 36 ---
+ AI EVALUATION FIELD GUIDE
+ 5. PROTECT THE FINAL TEST FROM DEVELOPMENT
+-28
++29
+ Worksheet 5: split manifest and
+ version ledger
+ SPLIT MANIFEST
+@@ -906,10 +918,10 @@
+ Held-out grader-validation case IDs, custodian, and opening rule
+ Regression case IDs and incident links
+ Sequestered final-test custodian, access rule, and opening condition
+---- PDF page 36 ---
++--- PDF page 37 ---
+ AI EVALUATION FIELD GUIDE
+ 5. PROTECT THE FINAL TEST FROM DEVELOPMENT
+-29
++30
+ SPLIT MANIFEST
+ Production-audit sampling rule
+ VERSION LEDGER
+@@ -922,17 +934,17 @@
+ adaptive overfitting. They do not guarantee representativeness,
+ independence, or an unbiased grader.
+ Source notes: S12, S15. Full citations and links appear in Further reading and source notes.
+---- PDF page 37 ---
+-30
++--- PDF page 38 ---
++31
+ CHAPTER 06
+ Measure uncertainty and
+ repeated behavior
+ Report what you counted, how uncertain the rate is, and what
+ repeated runs add.
+---- PDF page 38 ---
++--- PDF page 39 ---
+ AI EVALUATION FIELD GUIDE
+ 6. MEASURE UNCERTAINTY AND REPEATED BEHAVIOR
+-31
++32
+ Learning objectives. You will report rates with uncertainty, explain why
+ sample size matters, interpret zero observed failures, and distinguish
+ coverage across cases from repeated runs.
+@@ -979,10 +991,10 @@
+ difference. Record whether the same cases
+ were used and obtain a suitable
+ comparison before claiming improvement.
+---- PDF page 39 ---
++--- PDF page 40 ---
+ AI EVALUATION FIELD GUIDE
+ 6. MEASURE UNCERTAINTY AND REPEATED BEHAVIOR
+-32
++33
+ How to obtain a Wilson interval
+ For a simple pass/fail rate, use a one-proportion interval calculator with
+ Wilson, 95%, and two-sided selected. Enter the pass count and total units, then
+@@ -1009,10 +1021,10 @@
+ built intervals this way would contain the underlying rate about 95% of
+ the time. The coverage statement does not assign a 95% probability to this
+ fixed interval containing a fixed rate, or repair a biased sample.
+---- PDF page 40 ---
++--- PDF page 41 ---
+ AI EVALUATION FIELD GUIDE
+ 6. MEASURE UNCERTAINTY AND REPEATED BEHAVIOR
+-33
++34
+ Plan precision before collecting cases
+ Choose sample size from the decision you need to make. Specify
+ acceptable uncertainty, important slices, and rare failures before
+@@ -1044,10 +1056,10 @@
+ Running the same ten cases ten times creates 100 executions, but it does
+ not create coverage of 100 independent real-world situations. Report
+ unique cases and repeated trials separately.
+---- PDF page 41 ---
++--- PDF page 42 ---
+ AI EVALUATION FIELD GUIDE
+ 6. MEASURE UNCERTAINTY AND REPEATED BEHAVIOR
+-34
++35
+ Nondeterminism needs the right
+ repeat measure
+ The tau-bench method distinguishes at-least-one success from success
+@@ -1077,10 +1089,10 @@
+ pass?
+ Consequential actions where any unsafe
+ run matters.
+---- PDF page 42 ---
++--- PDF page 43 ---
+ AI EVALUATION FIELD GUIDE
+ 6. MEASURE UNCERTAINTY AND REPEATED BEHAVIOR
+-35
++36
+ Exercise: interpret before deciding
+  1
+ Compare 9/10 with 90/100. Which result is more precise?
+@@ -1096,10 +1108,10 @@
+ subject to assumptions - never 'risk is zero.' For the repeated set, report
+ 27/30 per-run success and 8/10 all-three reliability. Also report the number
+ of unique scenarios and their coverage.
+---- PDF page 43 ---
++--- PDF page 44 ---
+ AI EVALUATION FIELD GUIDE
+ 6. MEASURE UNCERTAINTY AND REPEATED BEHAVIOR
+-36
++37
+ Worksheet 6: statistical results
+ STATISTICAL RESULTS SHEET
+ Metric, numerator, denominator, and unit of analysis
+@@ -1107,10 +1119,10 @@
+ Point estimate and 95% interval method
+ Important slices with counts and intervals
+ Repeated-run policy and per-case versus per-run results
+---- PDF page 44 ---
++--- PDF page 45 ---
+ AI EVALUATION FIELD GUIDE
+ 6. MEASURE UNCERTAINTY AND REPEATED BEHAVIOR
+-37
++38
+ STATISTICAL RESULTS SHEET
+ Dependence, bias, missingness, and other assumptions
+ Decision implication and what remains uncertain
+@@ -1121,17 +1133,17 @@
+ remains untested.
+ Source notes: S4, S13, S22, S25, S26. Full citations and links appear in Further reading and source
+ notes.
+---- PDF page 45 ---
+-38
++--- PDF page 46 ---
++39
+ CHAPTER 07
+ Make human judgment
+ reproducible
+ Treat rating as a measurement process that needs design, blinding,
+ calibration, and disagreement review.
+---- PDF page 46 ---
++--- PDF page 47 ---
+ AI EVALUATION FIELD GUIDE
+ 7. MAKE HUMAN JUDGMENT REPRODUCIBLE
+-39
++40
+ Learning objectives. You will create a rater guide, conduct independent
+ and blinded rating, calculate percent agreement, interpret Cohen's
+ kappa cautiously, and distinguish agreement from correctness.
+@@ -1170,10 +1182,10 @@
+ 5
+ 2
+ 7
+---- PDF page 47 ---
++--- PDF page 48 ---
+ AI EVALUATION FIELD GUIDE
+ 7. MAKE HUMAN JUDGMENT REPRODUCIBLE
+-40
++41
+ 100 CASES
+ RATER B: PASS
+ RATER B: FAIL
+@@ -1216,20 +1228,20 @@
+ In this separate fictional practice set, raters agree on 95% of routine
+ answers but disagree on 8 of 12 escalation cases. What is the next step?
+ The capstone uses a different routine-rating set.
+---- PDF page 48 ---
++--- PDF page 49 ---
+ AI EVALUATION FIELD GUIDE
+ 7. MAKE HUMAN JUDGMENT REPRODUCIBLE
+-41
++42
+ ANSWER: Inspect the important slice
+ Do not hide escalation disagreement inside the overall rate. Review the
+ eight cases independently, identify which rubric boundary is unclear, add
+ authoritative examples, retrain, and rescore a fresh validation subset. If
+ escalation remains genuinely ambiguous, resolve the product policy
+ before automating the judgment.
+---- PDF page 49 ---
++--- PDF page 50 ---
+ AI EVALUATION FIELD GUIDE
+ 7. MAKE HUMAN JUDGMENT REPRODUCIBLE
+-42
++43
+ Worksheet 7: rater guide and
+ calibration log
+ HUMAN-RATER GUIDE
+@@ -1238,10 +1250,10 @@
+ Boundary examples and counterexamples
+ Abstain, insufficient-information, and escalation rules
+ Blinding, independence, adjudication, and conflict controls
+---- PDF page 50 ---
++--- PDF page 51 ---
+ AI EVALUATION FIELD GUIDE
+ 7. MAKE HUMAN JUDGMENT REPRODUCIBLE
+-43
++44
+ CALIBRATION AND AGREEMENT LOG
+ Case IDs and original labels by rater
+ Percent agreement, confusion table, and chosen reliability statistic
+@@ -1253,17 +1265,17 @@
+ named dimensions and cases. They do not prove the labels are correct,
+ unbiased, or transferable to a different rubric, population, or decision.
+ Source notes: S8, S16. Full citations and links appear in Further reading and source notes.
+---- PDF page 51 ---
+-44
++--- PDF page 52 ---
++45
+ CHAPTER 08
+ Validate a model judge
+ before trusting it
+ Use LLM-based grading as a governed measurement component, not
+ an answer key.
+---- PDF page 52 ---
++--- PDF page 53 ---
+ AI EVALUATION FIELD GUIDE
+ 8. VALIDATE A MODEL JUDGE BEFORE TRUSTING IT
+-45
++46
+ Learning objectives. You will validate a model judge against
+ independent human labels, calculate precision and recall, probe
+ common biases, restrict its permitted use, and define revalidation
+@@ -1309,10 +1321,10 @@
+ 92% (85%-96%)
+ All matching labels; can hide rare-class
+ misses.
+---- PDF page 53 ---
++--- PDF page 54 ---
+ AI EVALUATION FIELD GUIDE
+ 8. VALIDATE A MODEL JUDGE BEFORE TRUSTING IT
+-46
++47
+ METRIC
+ CALCULATION
+ RESULT
+@@ -1371,10 +1383,10 @@
+ Report language, task, severity, and
+ ambiguity separately.
+ Weak performance hidden by an aggregate.
+---- PDF page 54 ---
++--- PDF page 55 ---
+ AI EVALUATION FIELD GUIDE
+ 8. VALIDATE A MODEL JUDGE BEFORE TRUSTING IT
+-47
++48
+ Set a permitted-use boundary
+ -
+ Autonomous gate only for dimensions and slices with adequate, current
+@@ -1398,10 +1410,10 @@
+ negatives, and uncertainty for each important failure class and slice?
+ Which bias probes passed? Also ask what changed since validation and
+ what decisions the judge is permitted to make.
+---- PDF page 55 ---
++--- PDF page 56 ---
+ AI EVALUATION FIELD GUIDE
+ 8. VALIDATE A MODEL JUDGE BEFORE TRUSTING IT
+-48
++49
+ Worksheet 8: model-judge card
+ MODEL-JUDGE VALIDATION CARD
+ Judge model, snapshot, prompt, rubric, and output schema
+@@ -1409,10 +1421,10 @@
+ Independent human reference process and validation partition
+ Confusion matrix; precision, recall, and false negatives by slice
+ Order, verbosity, identity, paraphrase, and injection probes
+---- PDF page 56 ---
++--- PDF page 57 ---
+ AI EVALUATION FIELD GUIDE
+ 8. VALIDATE A MODEL JUDGE BEFORE TRUSTING IT
+-49
++50
+ MODEL-JUDGE VALIDATION CARD
+ Permitted use, human fallback, and abstention policy
+ Revalidation triggers, cadence, and owner
+@@ -1422,17 +1434,17 @@
+ judge a ground truth, guarantee future behavior, or justify use beyond
+ that boundary.
+ Source notes: S2, S6, S7. Full citations and links appear in Further reading and source notes.
+---- PDF page 57 ---
+-50
++--- PDF page 58 ---
++51
+ CHAPTER 09
+ Test adversarial, security,
+ and privacy failures
+ Use threat-driven evidence so average quality cannot stand in for
+ safety or security.
+---- PDF page 58 ---
++--- PDF page 59 ---
+ AI EVALUATION FIELD GUIDE
+ 9. TEST ADVERSARIAL, SECURITY, AND PRIVACY FAILURES
+-51
++52
+ Learning objectives. You will identify assets and trust boundaries,
+ construct direct and indirect adversarial cases, test safely with mocks or
+ sandboxes, and turn confirmed failures into mitigations and
+@@ -1470,10 +1482,10 @@
+ action that changes data, money, or another
+ outside system - without correct authorization
+ and confirmation.
+---- PDF page 59 ---
++--- PDF page 60 ---
+ AI EVALUATION FIELD GUIDE
+ 9. TEST ADVERSARIAL, SECURITY, AND PRIVACY FAILURES
+-52
++53
+ Threat categories to cover
+ CATEGORY
+ EXAMPLE TEST
+@@ -1533,10 +1545,10 @@
+ read or write? A defense that blocks every useful action needs correction
+ even if no attack succeeds.
+ Method sources: S23.
+---- PDF page 60 ---
++--- PDF page 61 ---
+ AI EVALUATION FIELD GUIDE
+ 9. TEST ADVERSARIAL, SECURITY, AND PRIVACY FAILURES
+-53
++54
+  1
+ Name the protected asset, attacker goal, capability, and trust boundary.
+  2
+@@ -1564,10 +1576,10 @@
+ evidence, and never access a different record. Test with synthetic records
+ and a mock order service that logs every attempted access; pass only if no
+ unauthorized query or disclosure occurs.
+---- PDF page 61 ---
++--- PDF page 62 ---
+ AI EVALUATION FIELD GUIDE
+ 9. TEST ADVERSARIAL, SECURITY, AND PRIVACY FAILURES
+-54
++55
+ Worksheet 9: threat and adversarial test
+ THREAT MODEL AND ADVERSARIAL CASE
+ Asset, actor, attacker goal, and trust boundary
+@@ -1575,10 +1587,10 @@
+ Attack input or condition
+ Expected safe behavior and observable pass condition
+ Sandbox, mocks, scoped credentials, and cleanup
+---- PDF page 62 ---
++--- PDF page 63 ---
+ AI EVALUATION FIELD GUIDE
+ 9. TEST ADVERSARIAL, SECURITY, AND PRIVACY FAILURES
+-55
++56
+ THREAT MODEL AND ADVERSARIAL CASE
+ Result, severity, reproduction evidence, and owner
+ Mitigation, retest variants, and regression case ID
+@@ -1589,17 +1601,17 @@
+ High-severity exploit remains a blocker until the intended deployment
+ boundary removes or mitigates it.
+ Source notes: S9, S14, S23. Full citations and links appear in Further reading and source notes.
+---- PDF page 63 ---
+-56
++--- PDF page 64 ---
++57
+ CHAPTER 10
+ Evaluate agents, tools,
+ and side effects
+ Verify the resulting state, tool history, and permissions before
+ accepting the final message.
+---- PDF page 64 ---
++--- PDF page 65 ---
+ AI EVALUATION FIELD GUIDE
+ 10. EVALUATE AGENTS, TOOLS, AND SIDE EFFECTS
+-57
++58
+ Learning objectives. You will define initial and goal states, inspect tool
+ choice and arguments, verify exact-once side effects, allow alternative
+ valid paths, and test safe recovery.
+@@ -1637,10 +1649,16 @@
+ conflicting facts, cross-user leakage, revoked-memory reuse and
+ constraint decay as separate slices. A high overall pass rate can hide a
+ rare failure with serious consequences. [S28, S29]
+---- PDF page 65 ---
++Test collaboration separately from isolated task success. Include a
++handoff with missing context, a teammate pressing for an unsafe
++shortcut and a takeover containing a plausible but incorrect prior result.
++--- PDF page 66 ---
+ AI EVALUATION FIELD GUIDE
+ 10. EVALUATE AGENTS, TOOLS, AND SIDE EFFECTS
+-58
++59
++Check whether the agent verifies the inherited work, preserves the
++authority boundary and completes the legitimate task. Passing the task
++alone does not establish reliable teamwork. [S32]
+ Define the starting state and
+ required result
+ SCENARIO FIELD
+@@ -1672,15 +1690,15 @@
+ refund service to reject changed intent and expose its deduplication
+ window; if a safe retry cannot be established, reconcile state or hand off.
+ Method sources: S24.
++--- PDF page 67 ---
++AI EVALUATION FIELD GUIDE
++10. EVALUATE AGENTS, TOOLS, AND SIDE EFFECTS
++60
+ Check the final refund record and the tool history. Verify the order,
+ amount, authorization, confirmation, and duplicate prevention directly.
+ A reference tool sequence can help debug a failure; allow other
+ sequences that meet every requirement. Use a rubric for the clarity and
+ caution of the customer explanation.
+---- PDF page 66 ---
+-AI EVALUATION FIELD GUIDE
+-10. EVALUATE AGENTS, TOOLS, AND SIDE EFFECTS
+-59
+ CHECK
+ PASS RULE
+ Identity and scope
+@@ -1705,6 +1723,10 @@
+ when the service suppresses the duplicate and every authorization
+ requirement still holds. Check each requirement even when the final
+ message sounds right.
++--- PDF page 68 ---
++AI EVALUATION FIELD GUIDE
++10. EVALUATE AGENTS, TOOLS, AND SIDE EFFECTS
++61
+ Exercise: uncertain write
+ The refund tool times out after receiving the request. Trailwise
+ immediately retries, receives success, and tells the customer the refund
+@@ -1718,10 +1740,10 @@
+ idempotency key, reuse it for a retry. Proceed only when status confirms a
+ retry is safe or duplicate suppression is guaranteed for that key; otherwise
+ stop, hand off, and explain the uncertainty.
+---- PDF page 67 ---
++--- PDF page 69 ---
+ AI EVALUATION FIELD GUIDE
+ 10. EVALUATE AGENTS, TOOLS, AND SIDE EFFECTS
+-60
++62
+ Worksheet 10: agent scenario
+ and scorecard
+ AGENT AND TOOL SCENARIO
+@@ -1730,10 +1752,10 @@
+ Required prerequisites and safe invariants
+ Prohibited states and High-severity events
+ Faults, attacks, corrections, and alternative valid paths
+---- PDF page 68 ---
++--- PDF page 70 ---
+ AI EVALUATION FIELD GUIDE
+ 10. EVALUATE AGENTS, TOOLS, AND SIDE EFFECTS
+-61
++63
+ AGENT AND TOOL SCENARIO
+ Outcome, trajectory, constraint, recovery, and communication graders
+ Repeat policy and per-run versus all-attempt decision rule
+@@ -1743,17 +1765,17 @@
+ broader permissions, different tool behavior, and longer tasks require
+ their own evidence.
+ Source notes: S5, S22, S23, S24. Full citations and links appear in Further reading and source notes.
+---- PDF page 69 ---
+-62
++--- PDF page 71 ---
++64
+ CHAPTER 11
+ Turn evidence into a
+ launch boundary
+ Predeclare gates, examine uncertainty and slices, and choose launch,
+ limited launch, or no launch.
+---- PDF page 70 ---
++--- PDF page 72 ---
+ AI EVALUATION FIELD GUIDE
+ 11. TURN EVIDENCE INTO A LAUNCH BOUNDARY
+-63
++65
+ Learning objectives. You will define gates before opening the final test,
+ separate hard blockers from quality floors, document residual risk,
+ design a canary and rollback, and make an accountable decision.
+@@ -1791,10 +1813,10 @@
+ switch, and rollback are ready.
+ Quality alone does not make a
+ service operable.
+---- PDF page 71 ---
++--- PDF page 73 ---
+ AI EVALUATION FIELD GUIDE
+ 11. TURN EVIDENCE INTO A LAUNCH BOUNDARY
+-64
++66
+ Trailwise candidate 0.9:
+ release evidence
+ EVIDENCE
+@@ -1845,10 +1867,10 @@
+ review, and explicit stop conditions. Authorization, injection resistance,
+ escalation policy, and judge validation must be repaired and retested
+ before expanding scope.
+---- PDF page 72 ---
++--- PDF page 74 ---
+ AI EVALUATION FIELD GUIDE
+ 11. TURN EVIDENCE INTO A LAUNCH BOUNDARY
+-65
++67
+ Limited launch changes exposure,
+ not evidence
+ A narrower deployment can be a valid mitigation: fewer users, read-only
+@@ -1873,20 +1895,20 @@
+ Rollback
+ Who can execute it, how quickly, to which verified version, and how is state
+ reconciled?
+---- PDF page 73 ---
++--- PDF page 75 ---
+ AI EVALUATION FIELD GUIDE
+ 11. TURN EVIDENCE INTO A LAUNCH BOUNDARY
+-66
++68
+ Worksheet 11: launch decision record
+ LAUNCH DECISION RECORD
+ Candidate system and exact proposed deployment scope
+ Predeclared hard blockers, quality floors, slice floors, and grader gates
+ Evidence results with intervals and validation limitations
+ Residual risks, mitigations, and accountable risk owner
+---- PDF page 74 ---
++--- PDF page 76 ---
+ AI EVALUATION FIELD GUIDE
+ 11. TURN EVIDENCE INTO A LAUNCH BOUNDARY
+-67
++69
+ LAUNCH DECISION RECORD
+ Decision: launch, limited launch, or no launch - with rationale
+ Canary population, signals, duration, stop conditions, and owner
+@@ -1898,16 +1920,16 @@
+ NIST's risk frameworks are voluntary guidance, not a legal determination;
+ applicable obligations still require qualified review.
+ Source notes: S3, S9, S10. Full citations and links appear in Further reading and source notes.
+---- PDF page 75 ---
+-68
++--- PDF page 77 ---
++70
+ CHAPTER 12
+ Monitor production and
+ respond to incidents
+ Treat release as the beginning of a continuous evidence loop.
+---- PDF page 76 ---
++--- PDF page 78 ---
+ AI EVALUATION FIELD GUIDE
+ 12. MONITOR PRODUCTION AND RESPOND TO INCIDENTS
+-69
++71
+ Learning objectives. You will map launch risks to production signals,
+ design privacy-conscious audits, define alerts with actions, detect drift,
+ and conduct a containment-to-regression incident loop.
+@@ -1959,10 +1981,10 @@
+ privacy exposure, or hidden tool actions. Pair incident reports and
+ feedback with periodic sampled human review and targeted challenge
+ testing.
+---- PDF page 77 ---
++--- PDF page 79 ---
+ AI EVALUATION FIELD GUIDE
+ 12. MONITOR PRODUCTION AND RESPOND TO INCIDENTS
+-70
++72
+ Every monitor needs an action
+ SIGNAL
+ SOURCE
+@@ -2041,10 +2063,10 @@
+ needed.
+  8
+ Complete a blameless review with owners and follow-up evidence.
+---- PDF page 78 ---
++--- PDF page 80 ---
+ AI EVALUATION FIELD GUIDE
+ 12. MONITOR PRODUCTION AND RESPOND TO INCIDENTS
+-71
++73
+ Exercise: the judge misses policy drift
+ A return policy changes from 30 to 45 days. Retrieval updates, but the
+ human rubric and judge examples still encode 30 days. Customers
+@@ -2056,10 +2078,10 @@
+ with the authoritative 45-day rule; update and independently validate the
+ rubric and judge; retest retrieval and all policy slices; add regression cases
+ for version mismatch; monitor policy freshness explicitly.
+---- PDF page 79 ---
++--- PDF page 81 ---
+ AI EVALUATION FIELD GUIDE
+ 12. MONITOR PRODUCTION AND RESPOND TO INCIDENTS
+-72
++74
+ Worksheet 12: monitoring and
+ incident plan
+ MONITORING MATRIX
+@@ -2068,10 +2090,10 @@
+ Cadence, window, baseline, and threshold
+ Owner, immediate action, and escalation path
+ Privacy, retention, access, and audit controls
+---- PDF page 80 ---
++--- PDF page 82 ---
+ AI EVALUATION FIELD GUIDE
+ 12. MONITOR PRODUCTION AND RESPOND TO INCIDENTS
+-73
++75
+ MONITORING MATRIX
+ Known detection blind spot and periodic human audit
+ INCIDENT PLAYBOOK
+@@ -2080,10 +2102,10 @@
+ Evidence to preserve
+ Scope, harm, notification, and escalation assessment
+ Corrective action and gates requiring revalidation
+---- PDF page 81 ---
++--- PDF page 83 ---
+ AI EVALUATION FIELD GUIDE
+ 12. MONITOR PRODUCTION AND RESPOND TO INCIDENTS
+-74
++76
+ INCIDENT PLAYBOOK
+ Regression, fresh-test, and monitoring updates
+ CLAIM: What this evidence permits you to claim
+@@ -2097,11 +2119,16 @@
+ evidence, responder and containment path. Record whether the alert
+ arrived, whether anyone was available to act and what actually stopped.
+ [S30]
++Keep three measures separate: the share of eligible actions a monitor
++sees, the delay before automated and human review, and the share
++blocked or escalated. Record actions that remain unreviewed. A low
++escalation rate can reflect missed failures, so compare it with
++independent audits rather than treating it as a safety score. [S33]
+ Source notes: S10, S11, S17. Full citations and links appear in Further reading and source notes.
+---- PDF page 82 ---
++--- PDF page 84 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE: TRAILWISE RELEASE REVIEW
+-75
++77
+ Guided capstone:
+ Trailwise release review
+ Use the fictional evidence packet below to make a defensible launch
+@@ -2122,10 +2149,10 @@
+ decide refund eligibility, and issue refunds without human approval
+ after customer confirmation. The product lead argues that 92% task
+ success, acceptable latency, and low cost justify a canary.
+---- PDF page 83 ---
++--- PDF page 85 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE: TRAILWISE RELEASE REVIEW
+-76
++78
+ Evidence A: behavior and risk draft
+ DRAFT CLAIM
+ EVIDENCE-PACKET NOTE
+@@ -2172,10 +2199,10 @@
+ The 20 inspected final-test cases all passed after the prompt change. The
+ untouched 380 cases produced 348 passes. The team reported 368/400. The
+ 45-case policy-exception slice is entirely untouched and produced 34 passes.
+---- PDF page 84 ---
++--- PDF page 86 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE: TRAILWISE RELEASE REVIEW
+-77
++79
+ Evidence C: human and
+ model measurement
+ MEASUREMENT
+@@ -2234,10 +2261,10 @@
+ sandbox runs.
+ Latency and cost
+ Both meet the team's operational target.
+---- PDF page 85 ---
++--- PDF page 87 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE: TRAILWISE RELEASE REVIEW
+-78
++80
+ Evidence E: five agent traces
+ These illustrative traces show how to grade individual failures. They are not
+ additional runs to add to the 180-run summary. Duplicate attempts describe
+@@ -2268,10 +2295,10 @@
+ Revoked confirmation: customer says 'stop' before the
+ tool call; assistant issues the refund anyway.
+ Authorization fail
+---- PDF page 86 ---
++--- PDF page 88 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE: TRAILWISE RELEASE REVIEW
+-79
++81
+ Your guided capstone tasks
+  1
+ Rewrite the behavior contract and name missing High-severity failures.
+@@ -2296,19 +2323,19 @@
+ Decision and exact permitted deployment boundary
+ Decisive evidence: results, intervals, slices, and hard blockers
+ Measurement limitations: holdout, raters, and judge
+---- PDF page 87 ---
++--- PDF page 89 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE: TRAILWISE RELEASE REVIEW
+-80
++82
+ GUIDED CAPSTONE DECISION RECORD
+ Residual risks and responsible owner
+ Next fixes and fresh evidence required
+ Monitoring, immediate stop conditions, and rollback
+ What this decision does not establish
+---- PDF page 88 ---
++--- PDF page 90 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE ANSWER KEY
+-81
++83
+ Guided capstone
+ answer key
+ 1. Correct the evidence claims
+@@ -2344,10 +2371,10 @@
+ -
+ Preserve human agreement, expert correctness, judge agreement, held-out
+ system performance, and production outcomes as distinct measures.
+---- PDF page 89 ---
++--- PDF page 91 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE ANSWER KEY
+-82
++84
+ 3. Name the blockers
+ -
+ The two privacy-case reads were blocked. The packet does not establish
+@@ -2381,10 +2408,10 @@
+ answer from approved, versioned shipping and returns policies and
+ read only the customer's authorized record. It must ask for needed
+ clarification, treat retrieved and tool content as data, and hand off
+---- PDF page 90 ---
++--- PDF page 92 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE ANSWER KEY
+-83
++85
+ uncertain policy or identity. During shadow evaluation, external writes
+ are disabled and no candidate message is sent directly to customers. Any
+ later refund capability requires current confirmation, enforced
+@@ -2419,19 +2446,19 @@
+  6
+ Only then consider a read-only employee canary, followed by
+ human-approved low-risk actions if every affected gate passes.
+---- PDF page 91 ---
++--- PDF page 93 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE ANSWER KEY
+-84
++86
+ CLAIM: Correct proof boundary
+ The packet supports promising routine task quality and a narrow
+ shadow-learning step. It does not support public autonomy, refund
+ capability, broad safety, reliable escalation judgment, or the absence of
+ rare privacy failures.
+---- PDF page 92 ---
++--- PDF page 94 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE SELF-ASSESSMENT
+-85
++87
+ Guided capstone
+ self-assessment
+ Rate each category. Intermediate competence requires Competent in
+@@ -2480,10 +2507,10 @@
+ incidents
+ Connects signals to actions; covers audits, drift, containment, evidence, and
+ revalidation.
+---- PDF page 93 ---
++--- PDF page 95 ---
+ AI EVALUATION FIELD GUIDE
+ GUIDED CAPSTONE SELF-ASSESSMENT
+-86
++88
+ Automatic non-passing misconceptions
+ [ ]
+ Treating development or calibration examples as held-out evidence.
+@@ -2499,10 +2526,10 @@
+ [ ]
+ Launching without a named rollback mechanism, stop condition, and
+ owner.
+---- PDF page 94 ---
++--- PDF page 96 ---
+ AI EVALUATION FIELD GUIDE
+ APPENDIX A: ONE-PAGE EVALUATION CHECKLIST
+-87
++89
+ Appendix A: one-page
+ evaluation checklist
+ Use this as the front sheet for an evaluation packet.
+@@ -2550,10 +2577,10 @@
+ Recommend the smallest deployment boundary actually supported by the
+ evidence, name what is disabled or human-controlled, and specify what
+ must be learned before expansion.
+---- PDF page 95 ---
++--- PDF page 97 ---
+ AI EVALUATION FIELD GUIDE
+ APPENDIX B: METRIC CHEAT SHEET
+-88
++90
+ Appendix B: metric
+ cheat sheet
+ MEASURE
+@@ -2642,10 +2669,10 @@
+ Always attach the system version, evidence-set purpose, population, case
+ count, unit, grader, uncertainty, slices, repeat policy, and decision
+ boundary.
+---- PDF page 96 ---
++--- PDF page 98 ---
+ AI EVALUATION FIELD GUIDE
+ APPENDIX C: PLAIN-LANGUAGE GLOSSARY
+-89
++91
+ Appendix C:
+ plain-language glossary
+ TERM
+@@ -2696,10 +2723,10 @@
+ sequestered test
+ Decision evidence protected from adaptive product and grader
+ development.
+---- PDF page 97 ---
++--- PDF page 99 ---
+ AI EVALUATION FIELD GUIDE
+ APPENDIX C: PLAIN-LANGUAGE GLOSSARY
+-90
++92
+ TERM
+ MEANING IN THIS GUIDE
+ Contamination
+@@ -2750,10 +2777,10 @@
+ worksheet index
+ The guide's worksheets are designed to be printed or copied into a
+ document or spreadsheet.
+---- PDF page 98 ---
++--- PDF page 100 ---
+ AI EVALUATION FIELD GUIDE
+ APPENDIX D: WORKSHEET INDEX
+-91
++93
+ WORKSHEET
+ MODULE
+ PURPOSE
+@@ -2814,10 +2841,10 @@
+ capstone
+ Synthesize the complete evidence packet into a bounded
+ recommendation.
+---- PDF page 99 ---
++--- PDF page 101 ---
+ AI EVALUATION FIELD GUIDE
+ FURTHER READING AND SOURCE NOTES
+-92
++94
+ Further reading and
+ source notes
+ The guide favors primary standards, official documentation, and
+@@ -2883,10 +2910,20 @@
+ practices.
+ Initial public draft; non-final and subject to
+ revision.
+---- PDF page 100 ---
++--- PDF page 102 ---
+ AI EVALUATION FIELD GUIDE
+ FURTHER READING AND SOURCE NOTES
+-93
++95
++[S32] Measuring AI Agents as Teammates with Collaborative Intelligence.
++2026-11-02T06:59:08Z. Preprint and benchmark proposal; reported model scores
++do not transfer to a local workflow. View source
++[S33] Measurements for understanding the pace of AI development inside
++frontier labs. Publication date not stated. Provider internal platform and
++undated living page; the report itself says monitoring history is measured in
++months and completeness is uncertain. View source
++[S34] Eval-production behavior gaps in agent safety and the role of
++eval-awareness. 2026-11-03. Six studied models and one evaluation family;
++direction and magnitude do not transfer automatically. View source
+ [S27] Judging LLM-as-a-Judge: Concerning Rubric Artifacts. 2026-08-31. Preprint
+ and domain-bounded experiments; not proof that every judge or every rubric
+ fails. View source
+@@ -2911,6 +2948,10 @@
+ published in CACM, 2021. View source
+ [S22] Yao et al. tau-bench: A Benchmark for Tool-Agent-User Interaction in
+ Real-World Domains. 2024 research preprint. View source
++--- PDF page 103 ---
++AI EVALUATION FIELD GUIDE
++FURTHER READING AND SOURCE NOTES
++96
+ [S23] Debenedetti et al. AgentDojo: A Dynamic Environment to Evaluate Prompt
+ Injection Attacks and Defenses for LLM Agents. 2024 research preprint, version
+ 3. View source
+@@ -2920,10 +2961,6 @@
+ accessed October 1, 2026. View source
+ [S26] US Census Bureau. Instructions for Applying Statistical Testing to ACS
+ Data. 2014. View source
+---- PDF page 101 ---
+-AI EVALUATION FIELD GUIDE
+-FURTHER READING AND SOURCE NOTES
+-94
+ [S2] OpenAI. Evaluation best practices. Living documentation, accessed
+ October 1, 2026. View source
+ [S3] NIST. Artificial Intelligence Risk Management Framework (AI RMF 1.0),
+@@ -2947,6 +2984,10 @@
+ overview, accessed October 1, 2026. View source
+ [S13] Hanley and Lippman-Hand. If Nothing Goes Wrong, Is Everything All
+ Right? JAMA, 1983. View source
++--- PDF page 104 ---
++AI EVALUATION FIELD GUIDE
++FURTHER READING AND SOURCE NOTES
++97
+ [S14] OpenAI. Advancing red teaming with people and AI, 2024. View source
+ [S15] Dwork et al. The reusable holdout: Preserving validity in adaptive data
+ analysis. Science, 2015. View source
+@@ -2956,12 +2997,30 @@
+ Center for AI Standards and Innovation, 2026. View source
+ [S18] NIST AI 800-2 initial public draft. Practices for Automated Benchmark
+ Evaluations of Language Models, 2026. View source
+---- PDF page 102 ---
+-AI EVALUATION FIELD GUIDE
+-FURTHER READING AND SOURCE NOTES
+-95
+ DECISION: You are finished when the decision is bounded
+ A strong evaluation packet does not end with 'the score is good.' It ends
+ with a named system, evidence, uncertainty, unresolved risks,
+ accountable action, rollback, and a sentence that says exactly what the
+ evidence cannot prove.
++--- PDF page 105 ---
++AI EVALUATION FIELD GUIDE
++CHANGELOG
++98
++Changelog
++Compared with version 1.0.2, published 2026-11-08.
++Addition. Add teamwork tests for missing context, unsafe pressure and
++inherited mistakes. Assess collaboration separately from isolated task
++success.
++Individual task scores do not establish reliable teamwork.
++Primary source
++Addition. Separate monitoring coverage, review latency and escalation;
++record unreviewed activity and check missed failures independently.
++A low escalation rate does not establish effective detection.
++Primary source
++Addition. Compare safety evaluations with matched production
++decisions using pre-decision sampling and aligned graders; test
++objective framing and report imperfect matching.
++Evaluation scores can differ from production safety in either direction.
++Primary source
++Previous Daytime PDF SHA-256:
++97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915

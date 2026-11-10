@@ -1,0 +1,3474 @@
+{
+  "status": "passed",
+  "identity": {
+    "id": "ai-evaluation",
+    "title": "AI Evaluation Field Guide",
+    "version": "1.0.3",
+    "date": "2026-11-09",
+    "sha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d",
+    "pages": 105
+  },
+  "downloads": [
+    {
+      "href": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3.md",
+      "name": "ai-evaluation-v1.0.3.md",
+      "sha256": "48bb03601ed320b81ead7442f3db18c1d663379a2ac594b67214ea425346f61c",
+      "bytes": 111677,
+      "wireHttpVerified": true
+    },
+    {
+      "href": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf",
+      "name": "ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d",
+      "bytes": 5529845,
+      "wireHttpVerified": true
+    },
+    {
+      "href": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3-2026-11-09-late-night-r1.pdf",
+      "name": "ai-evaluation-v1.0.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "0efc20ea217fb6b46bc6f4d02e2785d12abb8f28bb4de5a44f5ae1da808096a3",
+      "bytes": 56190075,
+      "wireHttpVerified": true
+    }
+  ],
+  "cover": [
+    {
+      "width": 390,
+      "buttonWidth": 330.5625,
+      "buttonHeight": 44,
+      "downloadWidth": 330.5625,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 640,
+      "buttonWidth": 448,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 641,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 768,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 1024,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    }
+  ],
+  "artwork": [
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 1,
+      "name": "390-light-art-1.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 2,
+      "name": "390-light-art-2.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 3,
+      "name": "390-light-art-3.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 4,
+      "name": "390-light-art-4.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 5,
+      "name": "390-light-art-5.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 6,
+      "name": "390-light-art-6.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 7,
+      "name": "390-light-art-7.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 8,
+      "name": "390-light-art-8.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 9,
+      "name": "390-light-art-9.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 10,
+      "name": "390-light-art-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 11,
+      "name": "390-light-art-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 12,
+      "name": "390-light-art-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 1,
+      "name": "390-dark-art-1.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 2,
+      "name": "390-dark-art-2.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 3,
+      "name": "390-dark-art-3.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 4,
+      "name": "390-dark-art-4.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 5,
+      "name": "390-dark-art-5.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 6,
+      "name": "390-dark-art-6.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 7,
+      "name": "390-dark-art-7.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 8,
+      "name": "390-dark-art-8.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 9,
+      "name": "390-dark-art-9.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 10,
+      "name": "390-dark-art-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 11,
+      "name": "390-dark-art-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 12,
+      "name": "390-dark-art-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 1,
+      "name": "1440-light-art-1.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 2,
+      "name": "1440-light-art-2.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 3,
+      "name": "1440-light-art-3.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 4,
+      "name": "1440-light-art-4.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 5,
+      "name": "1440-light-art-5.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 6,
+      "name": "1440-light-art-6.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 7,
+      "name": "1440-light-art-7.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 8,
+      "name": "1440-light-art-8.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 9,
+      "name": "1440-light-art-9.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 10,
+      "name": "1440-light-art-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 11,
+      "name": "1440-light-art-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 12,
+      "name": "1440-light-art-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 1,
+      "name": "1440-dark-art-1.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 2,
+      "name": "1440-dark-art-2.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 3,
+      "name": "1440-dark-art-3.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 4,
+      "name": "1440-dark-art-4.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 5,
+      "name": "1440-dark-art-5.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 6,
+      "name": "1440-dark-art-6.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 7,
+      "name": "1440-dark-art-7.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 8,
+      "name": "1440-dark-art-8.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 9,
+      "name": "1440-dark-art-9.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 10,
+      "name": "1440-dark-art-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 11,
+      "name": "1440-dark-art-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 12,
+      "name": "1440-dark-art-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    }
+  ],
+  "readerSha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4",
+  "responsive": [
+    {
+      "url": "http://127.0.0.1:34503/ai-evaluation/",
+      "width": 390,
+      "mode": "light",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [
+        {
+          "color": "rgb(23, 23, 22)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Decision",
+              "size": 16
+            },
+            {
+              "label": "Failure modes",
+              "size": 16
+            },
+            {
+              "label": "Evidence sets",
+              "size": 16
+            },
+            {
+              "label": "Graders",
+              "size": 16
+            },
+            {
+              "label": "Analysis",
+              "size": 16
+            },
+            {
+              "label": "Launch or learn",
+              "size": 16
+            }
+          ]
+        },
+        {
+          "color": "rgb(23, 23, 22)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Candidate cases",
+              "size": 16
+            },
+            {
+              "label": "Calibration",
+              "size": 16
+            },
+            {
+              "label": "Held-out test",
+              "size": 16
+            },
+            {
+              "label": "Challenge",
+              "size": 16
+            },
+            {
+              "label": "Regression",
+              "size": 16
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.96875,
+          "figure": 330.5625,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:34503/ai-evaluation/",
+      "width": 390,
+      "mode": "dark",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [
+        {
+          "color": "rgb(238, 236, 230)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Decision",
+              "size": 16
+            },
+            {
+              "label": "Failure modes",
+              "size": 16
+            },
+            {
+              "label": "Evidence sets",
+              "size": 16
+            },
+            {
+              "label": "Graders",
+              "size": 16
+            },
+            {
+              "label": "Analysis",
+              "size": 16
+            },
+            {
+              "label": "Launch or learn",
+              "size": 16
+            }
+          ]
+        },
+        {
+          "color": "rgb(238, 236, 230)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Candidate cases",
+              "size": 16
+            },
+            {
+              "label": "Calibration",
+              "size": 16
+            },
+            {
+              "label": "Held-out test",
+              "size": 16
+            },
+            {
+              "label": "Challenge",
+              "size": 16
+            },
+            {
+              "label": "Regression",
+              "size": 16
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 189.203125,
+          "figure": 330.5625,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 188.890625,
+          "figure": 330.5625,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:34503/ai-evaluation/",
+      "width": 1440,
+      "mode": "light",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [
+        {
+          "color": "rgb(23, 23, 22)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Decision",
+              "size": 16
+            },
+            {
+              "label": "Failure modes",
+              "size": 16
+            },
+            {
+              "label": "Evidence sets",
+              "size": 16
+            },
+            {
+              "label": "Graders",
+              "size": 16
+            },
+            {
+              "label": "Analysis",
+              "size": 16
+            },
+            {
+              "label": "Launch or learn",
+              "size": 16
+            }
+          ]
+        },
+        {
+          "color": "rgb(23, 23, 22)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Candidate cases",
+              "size": 16
+            },
+            {
+              "label": "Calibration",
+              "size": 16
+            },
+            {
+              "label": "Held-out test",
+              "size": 16
+            },
+            {
+              "label": "Challenge",
+              "size": 16
+            },
+            {
+              "label": "Regression",
+              "size": 16
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.390625,
+          "figure": 480,
+          "naturalWidth": 1200,
+          "naturalHeight": 686,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:34503/ai-evaluation/",
+      "width": 1440,
+      "mode": "dark",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [
+        {
+          "color": "rgb(238, 236, 230)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Decision",
+              "size": 16
+            },
+            {
+              "label": "Failure modes",
+              "size": 16
+            },
+            {
+              "label": "Evidence sets",
+              "size": 16
+            },
+            {
+              "label": "Graders",
+              "size": 16
+            },
+            {
+              "label": "Analysis",
+              "size": 16
+            },
+            {
+              "label": "Launch or learn",
+              "size": 16
+            }
+          ]
+        },
+        {
+          "color": "rgb(238, 236, 230)",
+          "background": "rgba(0, 0, 0, 0)",
+          "labels": [
+            {
+              "label": "Candidate cases",
+              "size": 16
+            },
+            {
+              "label": "Calibration",
+              "size": 16
+            },
+            {
+              "label": "Held-out test",
+              "size": 16
+            },
+            {
+              "label": "Challenge",
+              "size": 16
+            },
+            {
+              "label": "Regression",
+              "size": 16
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.734375,
+          "figure": 480,
+          "naturalWidth": 1658,
+          "naturalHeight": 949,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 274.28125,
+          "figure": 480,
+          "naturalWidth": 1659,
+          "naturalHeight": 948,
+          "fit": "contain"
+        }
+      ]
+    }
+  ],
+  "fallbacks": [
+    {
+      "url": "http://127.0.0.1:34503/ai-evaluation/",
+      "scheme": "light",
+      "overflow": false,
+      "themeScriptAbsent": true,
+      "printFallback": true
+    },
+    {
+      "url": "http://127.0.0.1:34503/ai-evaluation/",
+      "scheme": "dark",
+      "overflow": false,
+      "themeScriptAbsent": true,
+      "printFallback": true
+    },
+    {
+      "url": "http://127.0.0.1:34503/ai-evaluation/",
+      "blockedStorage": true
+    }
+  ],
+  "navigation": "passed",
+  "wireHttpVerified": true,
+  "sourceBytesUnchanged": true,
+  "requests": [
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/ai-evaluation/assets/EvidenceLoop.png",
+      "sha256": "b7b0678cb51961e557af55e81eda9d043fec12d35e2104f469bcbc0f06606e28"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/DataSplitDiagram.png",
+      "sha256": "04518eaa449d45cadb9db3f072021f84a66b9704aad45b1501d15216f18669aa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/ai-evaluation/assets/EvidenceLoop.png",
+      "sha256": "b7b0678cb51961e557af55e81eda9d043fec12d35e2104f469bcbc0f06606e28"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/DataSplitDiagram.png",
+      "sha256": "04518eaa449d45cadb9db3f072021f84a66b9704aad45b1501d15216f18669aa"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3.md",
+      "sha256": "48bb03601ed320b81ead7442f3db18c1d663379a2ac594b67214ea425346f61c"
+    },
+    {
+      "path": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3.md",
+      "sha256": "48bb03601ed320b81ead7442f3db18c1d663379a2ac594b67214ea425346f61c"
+    },
+    {
+      "path": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d"
+    },
+    {
+      "path": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d"
+    },
+    {
+      "path": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "0efc20ea217fb6b46bc6f4d02e2785d12abb8f28bb4de5a44f5ae1da808096a3"
+    },
+    {
+      "path": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "0efc20ea217fb6b46bc6f4d02e2785d12abb8f28bb4de5a44f5ae1da808096a3"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/EvidenceLoop.png",
+      "sha256": "b7b0678cb51961e557af55e81eda9d043fec12d35e2104f469bcbc0f06606e28"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/DataSplitDiagram.png",
+      "sha256": "04518eaa449d45cadb9db3f072021f84a66b9704aad45b1501d15216f18669aa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/EvidenceLoop.png",
+      "sha256": "b7b0678cb51961e557af55e81eda9d043fec12d35e2104f469bcbc0f06606e28"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/DataSplitDiagram.png",
+      "sha256": "04518eaa449d45cadb9db3f072021f84a66b9704aad45b1501d15216f18669aa"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/EvidenceLoop.png",
+      "sha256": "b7b0678cb51961e557af55e81eda9d043fec12d35e2104f469bcbc0f06606e28"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/assets/DataSplitDiagram.png",
+      "sha256": "04518eaa449d45cadb9db3f072021f84a66b9704aad45b1501d15216f18669aa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/index.html",
+      "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/ai-evaluation/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-evaluation/assets/EvidenceLoop.png",
+      "sha256": "b7b0678cb51961e557af55e81eda9d043fec12d35e2104f469bcbc0f06606e28"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/DataSplitDiagram.png",
+      "sha256": "04518eaa449d45cadb9db3f072021f84a66b9704aad45b1501d15216f18669aa"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-01.png",
+      "sha256": "213537b85d95e0cd550adab3d94361fd54a60b9670684ad8cda3fabf9dc690b3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-02.png",
+      "sha256": "8a44c4184af68807abd70bca8ef0f492900f6ecaed62441118c82a4d66b6f8bc"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-03.png",
+      "sha256": "6ddb5b02d2ecd464433299929cd1e7e402614057147e66d47f43ec68be6bbd7e"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-04.png",
+      "sha256": "33b7a3f63966e07eea0fa441f0a541910fe6766c36dd9f07a43030637710ea9d"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-05.png",
+      "sha256": "fd7e4194d70f0af0863aceb261f2fc04306fe3085aee6ac501f54226502620c3"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-06.png",
+      "sha256": "7e23e1fd8494f689ef1180b45bfb0a78fd343f3a47e201abca17d815cb82fd60"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-07.png",
+      "sha256": "0bfc9d33bef41d20fdbdf8787fc5db47a5dd0696b1ff7fdb0044dbd609c831fa"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-08.png",
+      "sha256": "b55b66df8ca4a8a8f6dde79f0011ee2b0f0c091c2edf67e1470f2179d84d3d18"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-09.png",
+      "sha256": "10085586ac65983f1a4bafcfff630f07cd4c0bc9aab20b5f4a2b9d908b09fe50"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-10.png",
+      "sha256": "877e19c8f0623554fde7df75c558428e57efdcff5b6fa8d7a4c11aa54fbb7f52"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-11.png",
+      "sha256": "f7cd8b923d65c21a327a00eae14f86401a91259f82ed81b4c2c9cf0ed31a23ec"
+    },
+    {
+      "path": "/ai-evaluation/assets/chapter-12.png",
+      "sha256": "1f5f1750cc3552c89382545c6f88da125230a7ddd17909b6ffcf31c916da8c78"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-01.png",
+      "sha256": "4138cf987490c59c4f17561b523d5233bd9f47d4f93d864d7b12ed1c0031841f"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-02.png",
+      "sha256": "4aa2b1061c4e588e7796da3d50e8ec7a25f9664d8a4804c54099f039e896031e"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-03.png",
+      "sha256": "02d073e0babcb7f8ba90133791b88dac804342ec399b833d75feda546537cbac"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-04.png",
+      "sha256": "128265c2047206889a2849da87ce17e459112015c9eac7e8cb31d83da9ecaba5"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-05.png",
+      "sha256": "b0ae31147a0819b8de4199a848b7b6d2b2d0b62d5d6f9aa30c093e11e8113f88"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-06.png",
+      "sha256": "5358489114bfabd0f291cc0ab5320a1c7798453719a5c7f8472f5c1a89d14fdb"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-07.png",
+      "sha256": "70aa031e1c44b84c17363cdb6aeb532d9c482c79f1de7b9c80c35ff8e65501bd"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-09.png",
+      "sha256": "972b78febf91c280a449cdf5e333718cefa9273e242dd5bbf78537c89881724d"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-08.png",
+      "sha256": "073af45938d748fbe0a8f97ebb7695a928639ccd10f2b97bcf8f8ad23ae9ef57"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-10.png",
+      "sha256": "3f5481458e9b10bad65928301f23e4f27fc2a0eac132543892e5a92fed4f3313"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-11.png",
+      "sha256": "5459570e72a2b231ac1b4ebba010efde17410e4be821ee4faa462911d04570b2"
+    },
+    {
+      "path": "/ai-evaluation/assets/dark/chapter-12.png",
+      "sha256": "9b9e10417f2f7700b24f6ba4c13ea5097ace5dc5885e3ac5f123f0995a2b62d9"
+    }
+  ]
+}

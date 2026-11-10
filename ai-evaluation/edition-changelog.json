@@ -1,6 +1,49 @@
 {
-  "version": "1.0.2",
-  "previousVersion": "1.0.1",
-  "summary": "Presentation correction: title-only subsection headings and mandatory checks for the reader, Markdown, and both PDF appearances. Handbook guidance is unchanged.",
-  "items": []
+  "version": "1.0.3",
+  "previousVersion": "1.0.2",
+  "summary": "Evidence-backed clarifications for AI Evaluation Field Guide.",
+  "items": [
+    {
+      "classificationLabel": "Addition",
+      "section": "Agent and tool evaluation",
+      "title": "Agent and tool evaluation",
+      "whatChanged": "Add teamwork tests for missing context, unsafe pressure and inherited mistakes. Assess collaboration separately from isolated task success.",
+      "why": "Individual task scores do not establish reliable teamwork.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.02633",
+          "title": "Measuring AI Agents as Teammates with Collaborative Intelligence",
+          "authority": "arXiv author manuscript"
+        }
+      ]
+    },
+    {
+      "classificationLabel": "Addition",
+      "section": "Monitoring and incidents",
+      "title": "Monitoring and incidents",
+      "whatChanged": "Separate monitoring coverage, review latency and escalation; record unreviewed activity and check missed failures independently.",
+      "why": "A low escalation rate does not establish effective detection.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+          "title": "Measurements for understanding the pace of AI development inside frontier labs",
+          "authority": "Anthropic Institute"
+        }
+      ]
+    },
+    {
+      "classificationLabel": "Addition",
+      "section": "Offline evaluation and production monitoring",
+      "title": "Offline evaluation and production monitoring",
+      "whatChanged": "Compare safety evaluations with matched production decisions using pre-decision sampling and aligned graders; test objective framing and report imperfect matching.",
+      "why": "Evaluation scores can differ from production safety in either direction.",
+      "sources": [
+        {
+          "url": "https://alignment.openai.com/eval-production-behavior-gap",
+          "title": "Eval-production behavior gaps in agent safety and the role of eval-awareness",
+          "authority": "OpenAI Alignment Research"
+        }
+      ]
+    }
+  ]
 }

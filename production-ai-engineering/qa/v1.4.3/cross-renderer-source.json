@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "kind": "fresh-exact-pdf-cross-renderer-proof",
+  "status": "passed",
+  "fixtureOnly": false,
+  "publicationApproved": false,
+  "output": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer",
+  "artifacts": [
+    {
+      "book": "production-ai-engineering",
+      "theme": "daytime",
+      "pdf": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/production/daytime.pdf",
+      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+      "pages": 100,
+      "status": "passed",
+      "identity": {
+        "version": "1.4.3",
+        "date": "2026-11-09",
+        "pages": 100,
+        "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92"
+      },
+      "pageMap": {
+        "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/production/daytime-page-map.json",
+        "sha256": "7a6e481281717262c85951a962c9adbc290fa1377a5e19abe89304055b11df40"
+      },
+      "renderers": [
+        {
+          "renderer": "poppler",
+          "exitCode": 0,
+          "pages": 100,
+          "directory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-daytime/poppler",
+          "log": {
+            "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-daytime/poppler.log.json",
+            "sha256": "7ea645b6a435b6bec1cf3fff91b6f13497de86afe727cddd7445ca961ee7ec9f"
+          }
+        },
+        {
+          "renderer": "pdfkit",
+          "exitCode": 0,
+          "pages": 100,
+          "directory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-daytime/pdfkit",
+          "log": {
+            "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-daytime/pdfkit.log.json",
+            "sha256": "1fdd01c1a479aa0776f16a109c9d6dafd1d647be21c32d1cab70c367a379e668"
+          }
+        }
+      ]
+    },
+    {
+      "book": "production-ai-engineering",
+      "theme": "lateNight",
+      "pdf": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/production/late-night.pdf",
+      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
+      "pages": 100,
+      "status": "passed",
+      "identity": {
+        "version": "1.4.3",
+        "date": "2026-11-09",
+        "pages": 100,
+        "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92"
+      },
+      "pageMap": {
+        "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/production/late-night-page-map.json",
+        "sha256": "ff6c0802edef70d9b601e034a150aac88380f38e0826b8010f49b0afce18454e"
+      },
+      "renderers": [
+        {
+          "renderer": "poppler",
+          "exitCode": 0,
+          "pages": 100,
+          "directory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-lateNight/poppler",
+          "log": {
+            "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-lateNight/poppler.log.json",
+            "sha256": "6b4ea6583f5795104220e4c85abacb1611ce9e1e1fe19241499ff0e36a42f73c"
+          }
+        },
+        {
+          "renderer": "pdfkit",
+          "exitCode": 0,
+          "pages": 100,
+          "directory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-lateNight/pdfkit",
+          "log": {
+            "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-lateNight/pdfkit.log.json",
+            "sha256": "e8c59eba1d7c90ab9d4d4c79dbc9434fedec5c136b0dd6e6aa2e09a4fdc404c7"
+          }
+        }
+      ]
+    }
+  ],
+  "startedAt": "2026-11-10T04:22:51.888313+00:00",
+  "nativeRendererSourceSha256": "77ea29696400735d0a9bd6ef06644274400fe719b10607c07dce8a95d17bbb2e",
+  "nativeRendererBinarySha256": "0e8a43ad62c18a975c8837ebc0d7de2e38229c42e9375c26818bcc8f0fc8ba87",
+  "dpi": 144,
+  "finishedAt": "2026-11-10T04:23:10.562707+00:00",
+  "limitations": [
+    "Exact full-page renderer coverage. Perceptual review remains a separate recorded gate."
+  ]
+}

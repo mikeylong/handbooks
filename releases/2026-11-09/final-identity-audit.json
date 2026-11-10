@@ -1,0 +1,470 @@
+{
+  "status": "passed",
+  "scope": "Independent frozen research, source and exact candidate identity audit; visual acceptance recorded separately",
+  "cycle_id": "265b873e-44bb-4dc1-8d77-7a2c8b3f5f8a",
+  "cutoff": "2026-11-09T09:00:00-08:00",
+  "ledger_sha256": "73e0c7505a73dcdb64360e8e490e3167e7e7b44017afc03ee3429cca706de110",
+  "public_scope_sha256": "3f9a8708d29cd80457f082bc7ac6569cc0f466fe433a0858cb4caaaee60c35c4",
+  "checkedAt": "2026-11-10T01:01:58.517994+00:00",
+  "books": [
+    {
+      "id": "ai-native-organization",
+      "baselineVersion": "1.1.2",
+      "candidateVersion": "1.1.3",
+      "baselinePdfSha256": "903730f4a7c797e2e2706c68404428dc87f79d10ac84a9536793037c8be9f5e0",
+      "candidatePdfSha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+      "readerFacingContentChanged": true,
+      "identityAudit": "passed",
+      "sourcePdfDiff": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/final-comparison/edition-diff.json",
+      "reader": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/reader-build/site/ai-native-organization/index.html",
+      "markdown": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/reader-build/site/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3.md",
+      "pdfs": {
+        "daytime": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/daytime.pdf",
+        "lateNight": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/late-night.pdf"
+      }
+    },
+    {
+      "id": "production-ai-engineering",
+      "baselineVersion": "1.4.2",
+      "candidateVersion": "1.4.3",
+      "baselinePdfSha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
+      "candidatePdfSha256": "254116985edaf5542df72ba076c5e95721da00d365c2d959eab0a4a3036cd3a2",
+      "readerFacingContentChanged": true,
+      "identityAudit": "passed",
+      "sourcePdfDiff": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/final-comparison/edition-diff.json",
+      "reader": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/reader-build/site/production-ai-engineering/index.html",
+      "markdown": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/reader-build/site/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3.md",
+      "pdfs": {
+        "daytime": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/daytime.pdf",
+        "lateNight": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/late-night.pdf"
+      }
+    },
+    {
+      "id": "ai-evaluation",
+      "baselineVersion": "1.0.2",
+      "candidateVersion": "1.0.3",
+      "baselinePdfSha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915",
+      "candidatePdfSha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d",
+      "readerFacingContentChanged": true,
+      "identityAudit": "passed",
+      "sourcePdfDiff": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/final-comparison/edition-diff.json",
+      "reader": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/reader-build/site/ai-evaluation/index.html",
+      "markdown": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/reader-build/site/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3.md",
+      "pdfs": {
+        "daytime": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/daytime.pdf",
+        "lateNight": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/late-night.pdf"
+      }
+    },
+    {
+      "id": "ai-consulting",
+      "baselineVersion": "1.0.2",
+      "candidateVersion": "1.0.2",
+      "baselinePdfSha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
+      "candidatePdfSha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4",
+      "readerFacingContentChanged": false,
+      "identityAudit": "passed",
+      "sourcePdfDiff": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/final-comparison/edition-diff.json",
+      "reader": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/reader-build/site/ai-consulting/index.html",
+      "markdown": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/reader-build/site/ai-consulting/editions/v1.0.2/ai-consulting-v1.0.2.md",
+      "pdfs": {
+        "daytime": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/daytime.pdf",
+        "lateNight": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/late-night.pdf"
+      }
+    },
+    {
+      "id": "claude-design",
+      "baselineVersion": "2.1.5",
+      "candidateVersion": "2.1.5",
+      "baselinePdfSha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+      "candidatePdfSha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+      "readerFacingContentChanged": false,
+      "identityAudit": "passed",
+      "sourcePdfDiff": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/final-comparison/edition-diff.json",
+      "reader": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/reader-build/site/claude-design/index.html",
+      "markdown": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/reader-build/site/claude-design/editions/v2.1.5/claude-design-v2.1.5.md",
+      "pdfs": {
+        "daytime": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/daytime.pdf",
+        "lateNight": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/late-night.pdf"
+      }
+    }
+  ],
+  "materialUpdates": 28,
+  "dispositions": 140,
+  "verifiedApprovedPassages": 56,
+  "acceptedProseChanges": 6,
+  "productionOriginalPatchComplete": true,
+  "artifactHashes": [
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/daytime.pdf",
+      "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/late-night.pdf",
+      "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/daytime-page-map.json",
+      "sha256": "b02a71aac046adb01ca6048c7b987a3ab945b94a2b5eb55ca69c7388ec461fd5"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/late-night-page-map.json",
+      "sha256": "1acbe7a96efd5cf35878a732f82e0171cb84bec78613293b01de41ac85382829"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/reader-build/site/ai-native-organization/index.html",
+      "sha256": "6c600fa900f75f11cd8f4f8fed400bdd533556d04a7979faacc5cc5d2b769bbf"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/reader-build/site/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3.md",
+      "sha256": "71a0888fdaeb1eea364b6808c94491fa4361668f8a87fe6a450fee769001b8bd"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/final-comparison/edition-diff.json",
+      "sha256": "f20204fd38a763dacba4ab87363020d9bcf3bcfeae978767dd4961a17c5ff649"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/pair-parity/parity.json",
+      "sha256": "021a12c3c3ee446d7c471dab452747364e79f60130a14a238d71aea923c33d50"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/appearance.json",
+      "sha256": "f5dedda74992612196bc82e3f7250304ec866ce6561528747ddbfa8bac17d4fc"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/reader-build/reader-status.json",
+      "sha256": "4c5318059e22c86f3b78683a9c6bf98d926ef8c61876e341373987fa1e833eca"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/daytime-validation.json",
+      "sha256": "0e6f2d48c0c624bcc3ecd30ff0c9a74c4115cab39105cb172ba01e1f35db9cc9"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/late-night-validation.json",
+      "sha256": "a2f280340680d581cacd3701aa93fec44050c9ba1262acf23fa0d26a0138bb3a"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/final-comparison/edition-diff.json",
+      "sha256": "f20204fd38a763dacba4ab87363020d9bcf3bcfeae978767dd4961a17c5ff649"
+    },
+    {
+      "book": "ai-native-organization",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-native-organization/changelog-decision.json",
+      "sha256": "b297fa2ba23f3302bd0f50bfd66986121a99d4c12bae51fc9fb03f8a50ad034a"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/daytime.pdf",
+      "sha256": "254116985edaf5542df72ba076c5e95721da00d365c2d959eab0a4a3036cd3a2"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/late-night.pdf",
+      "sha256": "86f6121e7e15c54831592c8f1ec4f0ea67941a6e022f2639c8640b493f3188f2"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/daytime-page-map.json",
+      "sha256": "e0adea854132a83957e85adb84c3a680ade2bc193800e3b79283099be175caab"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/lateNight-page-map.json",
+      "sha256": "1e69e31b272cc1bab51bb8793eaf470cc0856c4715cc61fa611ff62dd3807f3c"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/reader-build/site/production-ai-engineering/index.html",
+      "sha256": "da2f746ad4e1b09893917c9231607145bc09e26d790a67737599ebfa73aa49c3"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/reader-build/site/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3.md",
+      "sha256": "7255431b72d0a060164afcc2b4c2159baca056e7f68a7cd2d30fa09fb542fd30"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/final-comparison/edition-diff.json",
+      "sha256": "1725ef9ea9f371d9b0087d4c8f01298dba6eecda0d9ec2135af9191c0180392f"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/pair-parity/parity.json",
+      "sha256": "8e2837b26ce6f87c7d62656c0b50ed8c9a91d79b1d8aa72902a56fdec44979b7"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/appearance.json",
+      "sha256": "01e9032afad36727e98ad3609c7d7558caef63eff8f80933be5a87e9ea245c9c"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/reader-build/reader-status.json",
+      "sha256": "b29fe5a6181f44f73ab4e9487edd0136b27940db731c342ea952dba14e8c60fa"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/light-book-validation.json",
+      "sha256": "561ebc4bb4c930f5812b93c36ed72e82893d6cdad5412f1e0d34ddc42f1389c1"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/dark-book-validation.json",
+      "sha256": "bd3e81477e302003800c554524a63d85a57213332b64adf7b726974411ef49aa"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/final-comparison/edition-diff.json",
+      "sha256": "1725ef9ea9f371d9b0087d4c8f01298dba6eecda0d9ec2135af9191c0180392f"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/production-changelog-decision.json",
+      "sha256": "0f0df9e6b01793e4413a7e29f69b7ab5eace41f93113da978cd911772d3ca83b"
+    },
+    {
+      "book": "production-ai-engineering",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/production-ai-engineering/staged/book/handbook/changelog.json",
+      "sha256": "785d0b417a317087f5072c359b9a7061a2ff88ae2fead4c9b52e8bc035bf7e2b"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/daytime.pdf",
+      "sha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/late-night.pdf",
+      "sha256": "0efc20ea217fb6b46bc6f4d02e2785d12abb8f28bb4de5a44f5ae1da808096a3"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/daytime-page-map.json",
+      "sha256": "98e705c52b1c43e78d7220153bc8a8375eac256e46dc0e43594d3c67f3a601f4"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/late-night-page-map.json",
+      "sha256": "9b365c813a711968f8e31a027348f6af33775abba8f3d32da78fb98feea78614"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/reader-build/site/ai-evaluation/index.html",
+      "sha256": "b5bae2bea3b6dac56e6d92ce0f24f7de51b5c2072746b889f09e73a2a1ae5f09"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/reader-build/site/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3.md",
+      "sha256": "821bc5d0c210aaf6e3b6b25359cb7f1fd77c40458f81835faf60f1d76da921cc"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/final-comparison/edition-diff.json",
+      "sha256": "fdf2bc9b463a545c7a4976be12b676c596f7e1f64b0476dfe711bbcc0c27407a"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/pair-parity/parity.json",
+      "sha256": "4a073419b55b02917e28c122e20df6275d720ee06fae7f907b4ad70de1df5c02"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/appearance.json",
+      "sha256": "ac7e9b30f5ed7a9b30de8c9a783b02d2fdd161d4f86ab1035b5c074908a37998"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/reader-build/reader-status.json",
+      "sha256": "38cfd1776d369e1a6aaf35ede7fd300f50504cff43a00be9a16e9270dfad5a11"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/daytime-validation.json",
+      "sha256": "034cc94942d94d8e814afc7d178a5c880e7a4289b7f4e384522fb7bde45d6ee4"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/late-night-validation.json",
+      "sha256": "3496598a33769b7d77b77a231ac7c12e47016c68c7cd5c080eae7e76e0b27083"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/final-comparison/edition-diff.json",
+      "sha256": "fdf2bc9b463a545c7a4976be12b676c596f7e1f64b0476dfe711bbcc0c27407a"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-evaluation/changelog-decision.json",
+      "sha256": "abcaf0896f71f099ae28b16cd956a3f9d0874233c18f5d3dde315023c366eb44"
+    },
+    {
+      "book": "ai-evaluation",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/evaluation-changelog-repair/vm-input/review-inputs/changes-ai-evaluation.json",
+      "sha256": "83f212ad3a0c7dfbbd7f7d03732d3efd7571d28e4d7d1b3473dc2fe17eca2576"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/daytime.pdf",
+      "sha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/late-night.pdf",
+      "sha256": "979434dfe883580a78adf2d1eb8f693cff872546e0c1df5f9d99568b913909af"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/daytime-page-map.json",
+      "sha256": "02f31f9f35e7e523e02ded11bb7f0f5e9455278f936d5139aeef97bf7e2c8293"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/late-night-page-map.json",
+      "sha256": "2116276325b0c3473703d4d9732307381922e81f47087243caaf18117b2121f4"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/reader-build/site/ai-consulting/index.html",
+      "sha256": "49db39a44045544cab777b096d32b3f79af812163b30b8324b6e1469f912c161"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/reader-build/site/ai-consulting/editions/v1.0.2/ai-consulting-v1.0.2.md",
+      "sha256": "e245abd658c4d92d888747f1cc9ecc06ba66188460c7c27c0fd1b948dd81f3e1"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/final-comparison/edition-diff.json",
+      "sha256": "d95fedbb13b756013704c640cfa4a20ec276af39308b7f96419e73e783251f7a"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/pair-parity/parity.json",
+      "sha256": "b1f4c8aa8bd6f1ebced819262bce6f5a3f9253049bbec5febec3d753134efa59"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/appearance.json",
+      "sha256": "eaa620282b02eff5211e28b97be477ebf5904a886da907de33f31e1f8249388e"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/reader-build/reader-status.json",
+      "sha256": "23e2b0a2a59ec7e6932f3290beaf2b1214806ea01b273130b26f12e3d850d963"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/daytime-validation.json",
+      "sha256": "354cf34072381eb0929a3b9c61669fed63bf7d8debd70bfc6aa3fd1af5a586d9"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/late-night-validation.json",
+      "sha256": "74400944a1dc77a1a89bc306e55253a567dba859292440374d1a014e19fbd83a"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/final-comparison/edition-diff.json",
+      "sha256": "d95fedbb13b756013704c640cfa4a20ec276af39308b7f96419e73e783251f7a"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/weekly-decision.json",
+      "sha256": "0838f88c7fbb79655485339fe7dfb715eda6c458309d6a9d5927f69342666558"
+    },
+    {
+      "book": "ai-consulting",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/ai-consulting/historical-pdf-decision.json",
+      "sha256": "af9c429c4e1253f32fafb4a74a52339dca985a9115be9ec7fa8eb0cf046da23a"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/daytime.pdf",
+      "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/late-night.pdf",
+      "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/daytime-page-map.json",
+      "sha256": "8fe4e988be25658fd3ed9c0cdf91813afd91f376d7fdaf542c3d5cea4ced8d66"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/late-night-page-map.json",
+      "sha256": "ca568f3f3839c0f45f7eb5c3e71cb976127f94bf46da0de4ef8bafa46b8b9362"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/reader-build/site/claude-design/index.html",
+      "sha256": "7f7fd25964449fe0b580338a0ca1a9915413ed2a0426227b6749763564af5f16"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/reader-build/site/claude-design/editions/v2.1.5/claude-design-v2.1.5.md",
+      "sha256": "79173de367c2842d0c5ba57e0922dcee4404f52f75a5b41d13ed6306f019bb7a"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/final-comparison/edition-diff.json",
+      "sha256": "52f047c1ca8c91abe2f3d11126974e7e7277d91f96422b0af4996b8db27d69c5"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/pair-parity/parity.json",
+      "sha256": "c911d7912c281b95fe38bdccc797b76b714e87886d107ece2f75b155036201f0"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/appearance.json",
+      "sha256": "1c68e3d34b0939fe604b2aab692fda720b96ec6a96ce32af9b3e4fbf48bad713"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/reader-build/reader-status.json",
+      "sha256": "055e75de2f5654025cf14bcb89f830657077388c623dd6ebfcb0d638eeb7d2e9"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/daytime-validation.json",
+      "sha256": "0e613824e959002c0d1401e0b8a1adf8e4c74b9bdcd224f1de2e239c53c89cd2"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/late-night-validation.json",
+      "sha256": "8e829db0538da4c50f788ae5f90019ebb81dc5909c9a84fb25206ef64d5fbb8a"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/final-comparison/edition-diff.json",
+      "sha256": "52f047c1ca8c91abe2f3d11126974e7e7277d91f96422b0af4996b8db27d69c5"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/weekly-decision.json",
+      "sha256": "0838f88c7fbb79655485339fe7dfb715eda6c458309d6a9d5927f69342666558"
+    },
+    {
+      "book": "claude-design",
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/candidate-evidence-a2164a3c-complete/claude-design/historical-pdf-decision.json",
+      "sha256": "af9c429c4e1253f32fafb4a74a52339dca985a9115be9ec7fa8eb0cf046da23a"
+    }
+  ],
+  "checkpointAdvanced": false,
+  "publicationApproved": false
+}

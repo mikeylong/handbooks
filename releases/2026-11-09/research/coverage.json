@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 2,
+  "cycle_id": "265b873e-44bb-4dc1-8d77-7a2c8b3f5f8a",
+  "cutoff": "2026-11-09T09:00:00-08:00",
+  "books": {
+    "production-ai-engineering": {
+      "status": "reviewed_with_documented_limits",
+      "areas": {
+        "model/API lifecycle": [
+          "R01",
+          "R03",
+          "R07",
+          "R08",
+          "R09",
+          "R10"
+        ],
+        "serving/inference": [
+          "R11",
+          "R12",
+          "R52"
+        ],
+        "retrieval/context/cache": [
+          "R02",
+          "R40"
+        ],
+        "structured output/tools/agents/interoperability": [
+          "R05",
+          "R13",
+          "R21"
+        ],
+        "reliability/observability/cost": [
+          "R01",
+          "R02",
+          "R14",
+          "R21"
+        ],
+        "safety/privacy/security/incidents": [
+          "R04",
+          "R12",
+          "R16",
+          "R17",
+          "R41",
+          "R48",
+          "R49",
+          "R50",
+          "R53",
+          "R55",
+          "R57",
+          "R59",
+          "R07"
+        ],
+        "material original research": [
+          "R15",
+          "R16",
+          "R17",
+          "R48",
+          "R53",
+          "R54",
+          "R58",
+          "R59",
+          "R62"
+        ]
+      },
+      "limitations": [
+        "R01: October 20–26 dated entries precede the November 9 cutoff. This review rechecks existing cache and tier guidance; no model ranking or migration is inferred from a launch alone. November 9 announcements with uncertain timing remain excluded.",
+        "R02: The retained October 29 observation precedes this cutoff. Recheck exact route pricing before procurement; no current model-specific rate beyond the accepted October 20 cache-write claim is added.",
+        "R03: Current tables can evolve; preserve event dates and do not assume model-family continuity means endpoint continuity.",
+        "R04: Current documentation recheck; not proof of any particular account configuration or blanket legal compliance.",
+        "R05: Output shape does not prove business meaning; current docs are baseline context, not a dated weekly launch.",
+        "R07: Other October entries are separate; release availability does not prove a workload migration.",
+        "R08: Do not equate API-version compatibility with unchanged model behavior.",
+        "R09: The retained October 29 observation precedes this cutoff, including October 26 entries. The current access attempt failed; retain that access limitation and do not claim a newly retrieved changelog.",
+        "R10: Current recheck; do not invent an exact retirement time or assume all platform surfaces share dates.",
+        "R11: The fresh primary release page dates v0.32.0 October 18, before this cutoff. Version-specific features are contextual rechecks, not an automatic upgrade recommendation.",
+        "R12: Current undated documentation; no deployment audit or exploit reproduction was performed.",
+        "R13: Protocol text is primary evidence; it does not prove a client implements the revision.",
+        "R14: Only location/status is established here; no new attribute schema is accepted without a pinned revision.",
+        "R15: Preprint and domain-bounded experiments; not proof that every judge or every rubric fails.",
+        "R16: Fictional sandbox benchmark, paired controls and submission-based measures; no local replication or universal model ranking.",
+        "R17: 120 scripted episodes and locally quantized models; five scored risk categories plus one documented category. No universal risk rate or ranking claim.",
+        "R21: Vendor engineering guidance; does not replace independent acceptance or customer outcome evidence.",
+        "R40: Vendor engineering synthesis; no causal productivity effect is established.",
+        "R41: Vendor account, not proof that the local control plane enforces the desired policy.",
+        "R48: Proposal for internal agents, not a completed certification or proof of local controls.",
+        "R49: Narrow frontier context; do not silently recast as binding requirements for every product team.",
+        "R50: Internal research-environment report does not establish released customer-model behavior."
+      ],
+      "ledger_reevaluation": "Approved current passages checked; see approved-passage-audit.json and complete disposition matrix."
+    },
+    "ai-evaluation": {
+      "status": "reviewed_with_documented_limits",
+      "areas": {
+        "methodology/benchmark validity": [
+          "R06",
+          "R18",
+          "R19",
+          "R21",
+          "R62"
+        ],
+        "dataset leakage/statistics": [
+          "R18",
+          "R19",
+          "R54"
+        ],
+        "graders/human calibration": [
+          "R06",
+          "R15",
+          "R21"
+        ],
+        "agent/tool evaluation/robustness": [
+          "R16",
+          "R17",
+          "R21",
+          "R48",
+          "R58"
+        ],
+        "safety/deployment monitoring": [
+          "R16",
+          "R17",
+          "R20",
+          "R49",
+          "R53",
+          "R57",
+          "R59"
+        ],
+        "original evaluation research": [
+          "R15",
+          "R16",
+          "R17",
+          "R18",
+          "R53",
+          "R54",
+          "R58",
+          "R62"
+        ],
+        "evaluator qualification/status": [
+          "R30"
+        ]
+      },
+      "limitations": [
+        "R06: Provider guidance is not independent proof that a particular system is valid.",
+        "R15: Preprint and domain-bounded experiments; not proof that every judge or every rubric fails.",
+        "R16: Fictional sandbox benchmark, paired controls and submission-based measures; no local replication or universal model ranking.",
+        "R17: 120 scripted episodes and locally quantized models; five scored risk categories plus one documented category. No universal risk rate or ranking claim.",
+        "R18: Publication abstract reviewed; no local mixed-effects model or statistical calculation was performed.",
+        "R19: Voluntary initial public draft, not a binding or final standard.",
+        "R20: Workshop/literature synthesis, not a guarantee that a monitoring plan catches every failure.",
+        "R21: Vendor engineering guidance; does not replace independent acceptance or customer outcome evidence.",
+        "R30: Non-exhaustive current views subject to change; field and legal scope are narrow. No numerical scoring threshold is public.",
+        "R48: Proposal for internal agents, not a completed certification or proof of local controls.",
+        "R49: Narrow frontier context; do not silently recast as binding requirements for every product team."
+      ],
+      "ledger_reevaluation": "Approved current passages checked; see approved-passage-audit.json and complete disposition matrix."
+    },
+    "ai-consulting": {
+      "status": "reviewed_with_documented_limits",
+      "areas": {
+        "strategy/opportunity/economics/adoption/readiness": [
+          "R22",
+          "R23",
+          "R42",
+          "R64"
+        ],
+        "procurement": [
+          "R24",
+          "R25"
+        ],
+        "workflow/operating change": [
+          "R22",
+          "R23",
+          "R28",
+          "R58",
+          "R59"
+        ],
+        "governance/risk/standards": [
+          "R22",
+          "R26",
+          "R27",
+          "R28",
+          "R49",
+          "R57"
+        ],
+        "regulatory guidance": [
+          "R29",
+          "R30"
+        ]
+      },
+      "limitations": [
+        "R22: Voluntary guidance; neither legal advice nor automatic compliance certification.",
+        "R23: Executive-summary route timed out; official publication overview accessible. Limit conclusions to its adoption context; no full-report recheck or causal estimate.",
+        "R24: ICT supplier quick-start; not a complete AI or legal procurement review.",
+        "R25: Older public-sector guidance; legal references need current jurisdiction-specific review.",
+        "R26: Public overview establishes status, not exhaustive normative requirements.",
+        "R27: Public overview only; paid normative clauses were not accessed or bypassed.",
+        "R28: Current public guidance; organization-specific risk acceptance and legal decisions remain outside this review.",
+        "R29: Living Commission summary read after the cutoff. Only confirmation of dates already present in the approved book is used; no new undated legal change is asserted.",
+        "R30: Non-exhaustive current views subject to change; field and legal scope are narrow. No numerical scoring threshold is public.",
+        "R42: The authors call the later estimate weak evidence; do not turn it into a portable percentage benefit.",
+        "R49: Narrow frontier context; do not silently recast as binding requirements for every product team."
+      ],
+      "ledger_reevaluation": "Approved current passages checked; see approved-passage-audit.json and complete disposition matrix."
+    },
+    "claude-design": {
+      "status": "reviewed_with_documented_limits",
+      "areas": {
+        "Claude Design/Code capabilities": [
+          "R31",
+          "R32",
+          "R36",
+          "R60"
+        ],
+        "design-system authority/component reuse": [
+          "R32",
+          "R33",
+          "R34"
+        ],
+        "Figma/Code Connect/handoff": [
+          "R33",
+          "R34",
+          "R35"
+        ],
+        "product preservation/verified limitations": [
+          "R31",
+          "R32",
+          "R35",
+          "R36"
+        ]
+      },
+      "limitations": [
+        "R31: Updated this week, with no exact update day; newly observed lifecycle/allowance/keyboard wording is queued for a later dated review.",
+        "R32: Current undated beta documentation; no import or native completion was exercised.",
+        "R33: The retained October 29 observation establishes availability before November 9. The page is living and undated; no later unseen revision is assigned to that observation.",
+        "R34: Current public documentation; authenticated mapping changes were not performed.",
+        "R35: No native capture was run; editable layers do not establish library binding or prototype behavior.",
+        "R36: Current docs describe supported behavior; no real policy enforcement trial was conducted."
+      ],
+      "ledger_reevaluation": "Approved current passages checked; see approved-passage-audit.json and complete disposition matrix."
+    },
+    "ai-native-organization": {
+      "status": "reviewed_with_documented_limits",
+      "areas": {
+        "workflow selection/delivery evidence": [
+          "R21",
+          "R40",
+          "R42",
+          "R44"
+        ],
+        "ownership/team interfaces/coordination": [
+          "R37",
+          "R38",
+          "R39",
+          "R45",
+          "R46",
+          "R47",
+          "R51",
+          "R58"
+        ],
+        "permissions/controls": [
+          "R36",
+          "R41",
+          "R48"
+        ],
+        "evaluation/incident response": [
+          "R21",
+          "R48",
+          "R49",
+          "R50",
+          "R57",
+          "R59",
+          "R62"
+        ],
+        "cost/effort/latency/investment assumptions": [
+          "R23",
+          "R42",
+          "R43"
+        ],
+        "adoption/readiness": [
+          "R23",
+          "R40",
+          "R44",
+          "R64"
+        ],
+        "illustrative models vs measured outcomes": [
+          "R37",
+          "R38",
+          "R39",
+          "R42",
+          "R45",
+          "R46",
+          "R47"
+        ]
+      },
+      "limitations": [
+        "R21: Vendor engineering guidance; does not replace independent acceptance or customer outcome evidence.",
+        "R23: Executive-summary route timed out; official publication overview accessible. Limit conclusions to its adoption context; no full-report recheck or causal estimate.",
+        "R36: Current docs describe supported behavior; no real policy enforcement trial was conducted.",
+        "R37: It is not a current Spotify prescription or a controlled causal trial.",
+        "R38: Historical architectural argument, not evidence for present AI productivity or staffing ratios.",
+        "R39: Fresh managed Chromium capture succeeded after native parser access failed. A proposal and personal account do not prove improved delivery or smaller-team economics.",
+        "R40: Vendor engineering synthesis; no causal productivity effect is established.",
+        "R41: Vendor account, not proof that the local control plane enforces the desired policy.",
+        "R42: The authors call the later estimate weak evidence; do not turn it into a portable percentage benefit.",
+        "R43: Reliability analogy only; the handbook labels its borrowing and does not assert a survival-analysis result.",
+        "R44: Observational/synthesis guidance; no fixed local benefit or headcount threshold is inferred.",
+        "R45: Framework guidance does not validate four specific total-company headcounts.",
+        "R46: A platform white paper is not evidence that a particular platform investment will pay off.",
+        "R47: Cloud-specific example; it does not establish universal staffing arrangements.",
+        "R48: Proposal for internal agents, not a completed certification or proof of local controls.",
+        "R49: Narrow frontier context; do not silently recast as binding requirements for every product team.",
+        "R50: Internal research-environment report does not establish released customer-model behavior.",
+        "R51: Eligible before the cutoff, including before this window; explicitly requested catch-up. Company proposal, not independent evidence of improved productivity, an optimal reporting structure, or safe headcount reduction."
+      ],
+      "ledger_reevaluation": "Approved current passages checked; see approved-passage-audit.json and complete disposition matrix."
+    }
+  },
+  "status": "research-reassessment-recorded",
+  "limitations": [
+    "Native Google changelog fetch failed on content type; prior same-day source observation retained.",
+    "Living-source revisions first observed after cutoff are not accepted without pre-cutoff evidence.",
+    "No local source publication, model benchmark replication, legal classification or native Figma completion was performed."
+  ],
+  "cutoff_reassessment": {
+    "at": "2026-11-09T23:06:39.127535+00:00",
+    "sources": [
+      "R01",
+      "R02",
+      "R09",
+      "R11",
+      "R33",
+      "R56"
+    ],
+    "new_update": "U28",
+    "result": "All titles reassessed; six manuscript additions unchanged."
+  }
+}

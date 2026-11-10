@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "readerFacingContentChanged": true,
+  "summary": "Evidence-backed clarifications for AI Evaluation Field Guide.",
+  "changes": [
+    {
+      "category": "Addition",
+      "section": "Agent and tool evaluation",
+      "text": "Add teamwork tests for missing context, unsafe pressure and inherited mistakes. Assess collaboration separately from isolated task success.",
+      "rationale": "Individual task scores do not establish reliable teamwork.",
+      "sources": [
+        "https://arxiv.org/abs/2611.02633"
+      ]
+    },
+    {
+      "category": "Addition",
+      "section": "Monitoring and incidents",
+      "text": "Separate monitoring coverage, review latency and escalation; record unreviewed activity and check missed failures independently.",
+      "rationale": "A low escalation rate does not establish effective detection.",
+      "sources": [
+        "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+      ]
+    },
+    {
+      "category": "Addition",
+      "section": "Offline evaluation and production monitoring",
+      "text": "Compare safety evaluations with matched production decisions using pre-decision sampling and aligned graders; test objective framing and report imperfect matching.",
+      "rationale": "Evaluation scores can differ from production safety in either direction.",
+      "sources": [
+        "https://alignment.openai.com/eval-production-behavior-gap"
+      ]
+    }
+  ]
+}
