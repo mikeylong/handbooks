@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "reproduced absent distinct baseline",
+    "configured baseline copied with exact expected hash",
+    "current linked PDF preserved",
+    "idempotent fixture-local destination remains exact"
+  ],
+  "testFileSha256": "a7d32550a232992a993cd4b7b8c517b23ad0bc72f164715d2b658a125642d747",
+  "fullFailedWorkerRerun": false
+}
