@@ -1,0 +1,2452 @@
+[
+  {
+    "source_id": "R01",
+    "title": "OpenAI API changelog",
+    "url": "https://developers.openai.com/api/docs/changelog",
+    "authority": "developers.openai.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-10-20/22",
+    "accessed_at": "2026-10-29T06:22:31+00:00",
+    "access_started_at": "2026-10-29 06:22:30 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "October 20-22 entries",
+    "claim_evaluated": "12-hour cache writes cost 2.5x ordinary input; organization/project tier controls were added; Decisions became GA.",
+    "conclusion": "12-hour cache writes cost 2.5x ordinary input; organization/project tier controls were added; Decisions became GA.",
+    "limitations": "October 20–26 dated entries precede the November 9 cutoff. This review rechecks existing cache and tier guidance; no model ranking or migration is inferred from a launch alone. November 9 announcements with uncertain timing remain excluded.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch1.json",
+    "cutoff_role": "eligible_prior_to_2026_11_09",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:41+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails1.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:31+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:22:31+00:00",
+    "historical_cutoff_note": {
+      "limitations": "Date-only October 26 model launch cannot be placed before 09:00 Pacific; quarantine it.",
+      "conclusion": "12-hour cache writes cost 2.5x ordinary input; organization/project tier controls were added; Decisions became GA.",
+      "cutoff_role": "dated_eligible_or_baseline_recheck"
+    }
+  },
+  {
+    "source_id": "R02",
+    "title": "OpenAI prompt caching",
+    "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+    "authority": "developers.openai.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:31+00:00",
+    "access_started_at": "2026-10-29 06:22:30 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "What is the prompt cache; pricing; lifetime; breakpoints",
+    "claim_evaluated": "Cache-write pricing is an alternative input rate, not an additive fee; supported cache lifetimes and breakpoints have model-specific terms.",
+    "conclusion": "Cache-write pricing is an alternative input rate, not an additive fee; supported cache lifetimes and breakpoints have model-specific terms.",
+    "limitations": "The retained October 29 observation precedes this cutoff. Recheck exact route pricing before procurement; no current model-specific rate beyond the accepted October 20 cache-write claim is added.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch1.json",
+    "cutoff_role": "eligible_prior_to_2026_11_09",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:41+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails1.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:31+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:22:31+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:22:31+00:00",
+    "historical_cutoff_note": {
+      "limitations": "Living page read October 28; only the October 20 dated feature/rate is accepted for the retrospective cutoff. Newer model-specific rates remain next-cycle context.",
+      "conclusion": "Cache-write pricing is an alternative input rate, not an additive fee; supported cache lifetimes and breakpoints have model-specific terms.",
+      "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta"
+    }
+  },
+  {
+    "source_id": "R03",
+    "title": "OpenAI deprecations",
+    "url": "https://developers.openai.com/api/docs/deprecations",
+    "authority": "developers.openai.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:31+00:00",
+    "access_started_at": "2026-10-29 06:22:30 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Dated deprecation and shutdown tables",
+    "claim_evaluated": "Inventory service-specific retirement dates and test replacement routes before shutdown.",
+    "conclusion": "Inventory service-specific retirement dates and test replacement routes before shutdown.",
+    "limitations": "Current tables can evolve; preserve event dates and do not assume model-family continuity means endpoint continuity.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch1.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:41+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails1.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:31+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:22:31+00:00",
+    "continuation_claim": "November 5 notice: GPT-5.5-Cyber preview shuts down February 1, 2027; current compatibility-matrix guidance already requires a migration owner and tested replacement."
+  },
+  {
+    "source_id": "R04",
+    "title": "OpenAI data controls",
+    "url": "https://developers.openai.com/api/docs/guides/your-data",
+    "authority": "developers.openai.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:31+00:00",
+    "access_started_at": "2026-10-29 06:22:30 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Data retention controls and endpoint table",
+    "claim_evaluated": "Retention controls have endpoint/feature exceptions and account prerequisites.",
+    "conclusion": "Retention controls have endpoint/feature exceptions and account prerequisites.",
+    "limitations": "Current documentation recheck; not proof of any particular account configuration or blanket legal compliance.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch1.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:41+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails1.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:31+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:22:31+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:22:31+00:00"
+  },
+  {
+    "source_id": "R05",
+    "title": "Structured model outputs",
+    "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "authority": "developers.openai.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:31+00:00",
+    "access_started_at": "2026-10-29 06:22:30 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Refusals with Structured Outputs; incomplete-response examples",
+    "claim_evaluated": "A schema contract needs explicit refusal and incomplete-response handling.",
+    "conclusion": "A schema contract needs explicit refusal and incomplete-response handling.",
+    "limitations": "Output shape does not prove business meaning; current docs are baseline context, not a dated weekly launch.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch1.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:41+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails1.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:31+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:22:31+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:22:31+00:00"
+  },
+  {
+    "source_id": "R06",
+    "title": "Evaluation best practices",
+    "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+    "authority": "developers.openai.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:31+00:00",
+    "access_started_at": "2026-10-29 06:22:30 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Evaluation design; continuous evaluation",
+    "claim_evaluated": "Evaluate representative tasks and preserve a repeatable system-level decision process.",
+    "conclusion": "Evaluate representative tasks and preserve a repeatable system-level decision process.",
+    "limitations": "Provider guidance is not independent proof that a particular system is valid.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch1.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:41+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-1.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails1.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:31+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:22:31+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:22:31+00:00"
+  },
+  {
+    "source_id": "R07",
+    "title": "Claude Platform release notes",
+    "url": "https://platform.claude.com/docs/en/release-notes/overview",
+    "authority": "platform.claude.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-10-21",
+    "accessed_at": "2026-10-29T06:22:31+00:00",
+    "access_started_at": "2026-10-29 06:22:30 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "October 21 API and SDK release entries",
+    "claim_evaluated": "New SDK major versions default to the 2026-10-21 API version; compatibility and error handling need route-level ownership.",
+    "conclusion": "New SDK major versions default to the 2026-10-21 API version; compatibility and error handling need route-level ownership.",
+    "limitations": "Other October entries are separate; release availability does not prove a workload migration.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch1.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:42+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails1.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:31+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:22:31+00:00",
+    "continuation_claim": "November 2 message-thread retention and November 5 access controls are eligible. November 9 Fable/Mythos 5.2 entries have no verified pre-09:00 Pacific timestamp and are quarantined."
+  },
+  {
+    "source_id": "R08",
+    "title": "Claude API versions",
+    "url": "https://platform.claude.com/docs/en/api/versioning",
+    "authority": "platform.claude.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-10-21",
+    "accessed_at": "2026-10-29T06:22:51+00:00",
+    "access_started_at": "2026-10-29 06:22:50 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Version header and compatibility promises",
+    "claim_evaluated": "The anthropic-version header fixes an API version, with documented additive compatibility allowances.",
+    "conclusion": "The anthropic-version header fixes an API version, with documented additive compatibility allowances.",
+    "limitations": "Do not equate API-version compatibility with unchanged model behavior.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch2.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:42+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails2.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:51+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:22:51+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:22:51+00:00"
+  },
+  {
+    "source_id": "R09",
+    "title": "Gemini API release notes",
+    "url": "https://ai.google.dev/gemini-api/docs/changelog",
+    "authority": "ai.google.dev",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-10-08",
+    "accessed_at": "2026-10-29T06:22:51+00:00",
+    "access_started_at": "2026-10-29 06:22:50 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "October 8 Deep Research agent retirement entry",
+    "claim_evaluated": "The older Deep Research agent was scheduled to shut down October 23; replacement agent IDs are service-specific.",
+    "conclusion": "The older Deep Research agent was scheduled to shut down October 23; replacement agent IDs are service-specific.",
+    "limitations": "The retained October 29 observation precedes this cutoff, including October 26 entries. The current access attempt failed; retain that access limitation and do not claim a newly retrieved changelog.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch2.json",
+    "cutoff_role": "eligible_prior_to_2026_11_09",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:42+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails2.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:51+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "current_fetch_failed",
+      "at": "2026-10-29T06:22:51+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52",
+      "limit": "Native web fetch returned unsupported text/markdown content type; earlier same-day evidence is retained, with no newly verified Google change asserted."
+    },
+    "first_observed_at": "2026-10-29T06:22:51+00:00",
+    "historical_cutoff_note": {
+      "limitations": "October 26 entry has no time-of-day proof and is quarantined from the Monday 09:00 cutoff.",
+      "conclusion": "The older Deep Research agent was scheduled to shut down October 23; replacement agent IDs are service-specific.",
+      "cutoff_role": "dated_eligible_or_baseline_recheck"
+    }
+  },
+  {
+    "source_id": "R10",
+    "title": "Gemini deprecations",
+    "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+    "authority": "ai.google.dev",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:51+00:00",
+    "access_started_at": "2026-10-29 06:22:50 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Gemini model and managed-agent retirement tables",
+    "claim_evaluated": "Retirement dates may be earliest possible dates; managed surfaces and aliases have distinct lifecycle behavior.",
+    "conclusion": "Retirement dates may be earliest possible dates; managed surfaces and aliases have distinct lifecycle behavior.",
+    "limitations": "Current recheck; do not invent an exact retirement time or assume all platform surfaces share dates.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch2.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:42+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails2.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:51+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:22:51+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:22:51+00:00"
+  },
+  {
+    "source_id": "R11",
+    "title": "vLLM v0.32.0 release",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+    "authority": "github.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:51+00:00",
+    "access_started_at": "2026-10-29 06:22:50 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "v0.32.0 Highlights; model/serving changes",
+    "claim_evaluated": "Serving features and performance improvements are runtime/model-specific and require representative workload tests.",
+    "conclusion": "Serving features and performance improvements are runtime/model-specific and require representative workload tests.",
+    "limitations": "The fresh primary release page dates v0.32.0 October 18, before this cutoff. Version-specific features are contextual rechecks, not an automatic upgrade recommendation.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch2.json",
+    "cutoff_role": "eligible_prior_to_2026_11_09",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:42+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails2.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:51+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:22:51+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:22:51+00:00",
+    "historical_cutoff_note": {
+      "limitations": "No release date exposed in retained excerpt; this is contextual recheck, not a cutoff-eligible new version recommendation.",
+      "conclusion": "Serving features and performance improvements are runtime/model-specific and require representative workload tests.",
+      "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta"
+    }
+  },
+  {
+    "source_id": "R12",
+    "title": "vLLM security",
+    "url": "https://docs.vllm.ai/en/latest/usage/security/",
+    "authority": "docs.vllm.ai",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:51+00:00",
+    "access_started_at": "2026-10-29 06:22:50 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "API Key Authentication Limitations; request resource limits",
+    "claim_evaluated": "Built-in API-key authentication does not cover every exposed endpoint; ingress, resource and route limits remain necessary.",
+    "conclusion": "Built-in API-key authentication does not cover every exposed endpoint; ingress, resource and route limits remain necessary.",
+    "limitations": "Current undated documentation; no deployment audit or exploit reproduction was performed.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch2.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:42+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-2.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails2.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:51+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:22:51+00:00"
+  },
+  {
+    "source_id": "R13",
+    "title": "MCP 2026-07-28 changes",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+    "authority": "modelcontextprotocol.io",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-07-28",
+    "accessed_at": "2026-10-29T06:22:51+00:00",
+    "access_started_at": "2026-10-29 06:22:50 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Major changes and deprecations",
+    "claim_evaluated": "MCP revision changes negotiation/state/subscriptions and deprecates older protocol features; migration needs an explicit version contract.",
+    "conclusion": "MCP revision changes negotiation/state/subscriptions and deprecates older protocol features; migration needs an explicit version contract.",
+    "limitations": "Protocol text is primary evidence; it does not prove a client implements the revision.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch2.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-1.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:43+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails2.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:51+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:22:51+00:00"
+  },
+  {
+    "source_id": "R14",
+    "title": "OpenTelemetry GenAI semantic conventions",
+    "url": "https://github.com/open-telemetry/semantic-conventions-genai",
+    "authority": "github.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:22:51+00:00",
+    "access_started_at": "2026-10-29 06:22:50 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Repository README and specification location",
+    "claim_evaluated": "GenAI semantic conventions have moved to their own maintained repository.",
+    "conclusion": "GenAI semantic conventions have moved to their own maintained repository.",
+    "limitations": "Only location/status is established here; no new attribute schema is accepted without a pinned revision.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch2.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:43+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails2.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:22:51+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:22:51+00:00"
+  },
+  {
+    "source_id": "R15",
+    "title": "Judging LLM-as-a-Judge: Concerning Rubric Artifacts",
+    "url": "https://arxiv.org/html/2609.02942v1",
+    "authority": "arxiv.org",
+    "source_type": "primary_original_research",
+    "publication_or_update_date": "2026-08-31",
+    "accessed_at": "2026-10-29T06:23:13+00:00",
+    "access_started_at": "2026-10-29 06:23:12 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Abstract; sections 4.3 and 5; limitations",
+    "claim_evaluated": "Rubric-only prediction and controlled answer/rubric reversal probes reveal evaluator artifacts in the studied setting.",
+    "conclusion": "Rubric-only prediction and controlled answer/rubric reversal probes reveal evaluator artifacts in the studied setting.",
+    "limitations": "Preprint and domain-bounded experiments; not proof that every judge or every rubric fails.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:43+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails3.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:13+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:13+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:13+00:00"
+  },
+  {
+    "source_id": "R16",
+    "title": "CredLeakBench",
+    "url": "https://arxiv.org/abs/2610.08871",
+    "authority": "arxiv.org",
+    "source_type": "primary_original_research",
+    "publication_or_update_date": "2026-10-06",
+    "accessed_at": "2026-10-29T06:23:13+00:00",
+    "access_started_at": "2026-10-29 06:23:12 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Abstract: paired phishing/legitimate tasks and actual submissions",
+    "claim_evaluated": "Leakage and legitimate-task utility need separate measurement from actual information submissions.",
+    "conclusion": "Leakage and legitimate-task utility need separate measurement from actual information submissions.",
+    "limitations": "Fictional sandbox benchmark, paired controls and submission-based measures; no local replication or universal model ranking.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json",
+    "full_text_url": "https://arxiv.org/html/2610.08871v1",
+    "access_extent": "Full primary HTML; methods and limitations reviewed, no reproduction or universal model ranking.",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T04:30:50+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tfresh-completion/eu-and-evaluation-access.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails3.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:13+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:13+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:13+00:00"
+  },
+  {
+    "source_id": "R17",
+    "title": "MemRiskBench",
+    "url": "https://arxiv.org/abs/2609.14976",
+    "authority": "arxiv.org",
+    "source_type": "primary_original_research",
+    "publication_or_update_date": "2026-09-14",
+    "accessed_at": "2026-10-29T06:23:13+00:00",
+    "access_started_at": "2026-10-29 06:23:12 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Abstract: memory risk taxonomy and trace checks",
+    "claim_evaluated": "Long-horizon memory tests need stale/conflicting/cross-user/revoked-memory and constraint-decay slices.",
+    "conclusion": "Long-horizon memory tests need stale/conflicting/cross-user/revoked-memory and constraint-decay slices.",
+    "limitations": "120 scripted episodes and locally quantized models; five scored risk categories plus one documented category. No universal risk rate or ranking claim.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json",
+    "full_text_url": "https://arxiv.org/html/2609.14976v1",
+    "access_extent": "Full primary HTML; methods and limitations reviewed, no reproduction or universal model ranking.",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T04:30:50+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tfresh-completion/eu-and-evaluation-access.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails3.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:13+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:13+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:13+00:00"
+  },
+  {
+    "source_id": "R18",
+    "title": "Expanding the AI Evaluation Toolbox with Statistical Models",
+    "url": "https://www.nist.gov/publications/expanding-ai-evaluation-toolbox-statistical-models",
+    "authority": "www.nist.gov",
+    "source_type": "primary_original_research",
+    "publication_or_update_date": "2026-02-17",
+    "accessed_at": "2026-10-29T06:23:13+00:00",
+    "access_started_at": "2026-10-29 06:23:12 UTC",
+    "access_status": "partial",
+    "evidence_locator": "Abstract: benchmark vs generalized accuracy",
+    "claim_evaluated": "Statistical assumptions and item populations determine what uncertainty estimates mean.",
+    "conclusion": "Statistical assumptions and item populations determine what uncertainty estimates mean.",
+    "limitations": "Publication abstract reviewed; no local mixed-effects model or statistical calculation was performed.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:43+00:00",
+      "access_status": "partial",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-3.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails3.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:13+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:23:13+00:00"
+  },
+  {
+    "source_id": "R19",
+    "title": "Practices for Automated Benchmark Evaluations of Language Models (Initial Public Draft)",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf",
+    "authority": "nvlpubs.nist.gov",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-01",
+    "accessed_at": "2026-10-29T06:23:13+00:00",
+    "access_started_at": "2026-10-29 06:23:12 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Initial Public Draft; abstract and practices",
+    "claim_evaluated": "Define the measurement target, implement the evaluation and report results with benchmark limitations.",
+    "conclusion": "Define the measurement target, implement the evaluation and report results with benchmark limitations.",
+    "limitations": "Voluntary initial public draft, not a binding or final standard.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:45+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails3.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:13+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:13+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:13+00:00"
+  },
+  {
+    "source_id": "R20",
+    "title": "Challenges to monitoring deployed AI systems",
+    "url": "https://www.nist.gov/publications/challenges-monitoring-deployed-ai-systems-center-ai-standards-and-innovation",
+    "authority": "www.nist.gov",
+    "source_type": "primary_original_research",
+    "publication_or_update_date": "2026-03-06",
+    "accessed_at": "2026-10-29T06:23:13+00:00",
+    "access_started_at": "2026-10-29 06:23:12 UTC",
+    "access_status": "partial",
+    "evidence_locator": "Abstract: categories and unresolved monitoring challenges",
+    "claim_evaluated": "Post-deployment monitoring is necessary and still faces unresolved measurement gaps.",
+    "conclusion": "Post-deployment monitoring is necessary and still faces unresolved measurement gaps.",
+    "limitations": "Workshop/literature synthesis, not a guarantee that a monitoring plan catches every failure.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:45+00:00",
+      "access_status": "partial",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails3.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:13+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:23:13+00:00"
+  },
+  {
+    "source_id": "R21",
+    "title": "Demystifying evals for AI agents",
+    "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+    "authority": "www.anthropic.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-01-09",
+    "accessed_at": "2026-10-29T06:23:13+00:00",
+    "access_started_at": "2026-10-29 06:23:12 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Task/trial/grader definitions; full outcome and transcript; pass metrics",
+    "claim_evaluated": "Agent evaluations need repeated trials, multiple graders and verified resulting environment state.",
+    "conclusion": "Agent evaluations need repeated trials, multiple graders and verified resulting environment state.",
+    "limitations": "Vendor engineering guidance; does not replace independent acceptance or customer outcome evidence.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:45+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails3.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:13+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:13+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:13+00:00"
+  },
+  {
+    "source_id": "R22",
+    "title": "OECD Due Diligence Guidance for Responsible AI",
+    "url": "https://www.oecd.org/en/publications/oecd-due-diligence-guidance-for-responsible-ai_41671712-en.html",
+    "authority": "www.oecd.org",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-02-19",
+    "accessed_at": "2026-10-29T06:11:44+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Executive summary, six due-diligence steps",
+    "claim_evaluated": "Policies, assessment, prevention, tracking, communication and remediation need named action owners.",
+    "conclusion": "Policies, assessment, prevention, tracking, communication and remediation need named action owners.",
+    "limitations": "Voluntary guidance; neither legal advice nor automatic compliance certification.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:11:44+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:11:44+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:11:44+00:00"
+  },
+  {
+    "source_id": "R23",
+    "title": "The Adoption of Artificial Intelligence in Firms",
+    "url": "https://www.oecd.org/en/publications/the-adoption-of-artificial-intelligence-in-firms_f9ef33c3-en/full-report/executive-summary_161ab6ac.html",
+    "authority": "www.oecd.org",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2025-05-02",
+    "accessed_at": "2026-10-29 02:22:23 UTC",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "partial",
+    "evidence_locator": "Executive summary and evidence-base limitations",
+    "claim_evaluated": "Adoption requires organizational capability, information, data and skills; survey evidence needs contextual interpretation.",
+    "conclusion": "Adoption requires organizational capability, information, data and skills; survey evidence needs contextual interpretation.",
+    "limitations": "Executive-summary route timed out; official publication overview accessible. Limit conclusions to its adoption context; no full-report recheck or causal estimate.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "original_access_status": "native web timeout",
+    "alternative_url": "https://www.oecd.org/en/publications/the-adoption-of-artificial-intelligence-in-firms_f9ef33c3-en.html",
+    "alternative_access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/oecd-alternative-access.json",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:11:44+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+      "outcome": "limited",
+      "note": "Current native-web request timed out; previous partial review remains the latest verified content."
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29 02:22:23 UTC",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29 02:22:23 UTC"
+  },
+  {
+    "source_id": "R24",
+    "title": "NIST SP 1326 supplier due diligence",
+    "url": "https://csrc.nist.gov/pubs/sp/1326/final",
+    "authority": "csrc.nist.gov",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-07",
+    "accessed_at": "2026-10-29T06:11:44+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Abstract and five supplier assessment components",
+    "claim_evaluated": "Supplier diligence includes ownership/control, provenance, resilience, cyber practices and supply-chain tiers.",
+    "conclusion": "Supplier diligence includes ownership/control, provenance, resilience, cyber practices and supply-chain tiers.",
+    "limitations": "ICT supplier quick-start; not a complete AI or legal procurement review.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:11:44+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:11:44+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:11:44+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:11:44+00:00"
+  },
+  {
+    "source_id": "R25",
+    "title": "UK Guidelines for AI procurement",
+    "url": "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
+    "authority": "www.gov.uk",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2020-06-08",
+    "accessed_at": "2026-10-29T06:11:44+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Top 10 considerations; preparation through ongoing management",
+    "claim_evaluated": "Procurement must plan evaluation, data, supplier duties and ongoing ownership.",
+    "conclusion": "Procurement must plan evaluation, data, supplier duties and ongoing ownership.",
+    "limitations": "Older public-sector guidance; legal references need current jurisdiction-specific review.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:11:44+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:11:44+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:11:44+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:11:44+00:00"
+  },
+  {
+    "source_id": "R26",
+    "title": "NIST AI Risk Management Framework",
+    "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "authority": "www.nist.gov",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-04-07",
+    "accessed_at": "2026-10-29T06:11:44+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "AI RMF overview and critical-infrastructure concept note",
+    "claim_evaluated": "AI RMF remains voluntary; a concept note and an ongoing revision must not be described as a final new requirement.",
+    "conclusion": "AI RMF remains voluntary; a concept note and an ongoing revision must not be described as a final new requirement.",
+    "limitations": "Public overview establishes status, not exhaustive normative requirements.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:11:44+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-2.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:11:44+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:11:44+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:11:44+00:00"
+  },
+  {
+    "source_id": "R27",
+    "title": "ISO/IEC 42001 overview",
+    "url": "https://www.iso.org/standard/42001",
+    "authority": "www.iso.org",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2023-12",
+    "accessed_at": "2026-10-29T06:11:44+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "partial",
+    "evidence_locator": "Public overview, edition and scope",
+    "claim_evaluated": "ISO/IEC 42001 describes an AI management system standard.",
+    "conclusion": "ISO/IEC 42001 describes an AI management system standard.",
+    "limitations": "Public overview only; paid normative clauses were not accessed or bypassed.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:11:44+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-1.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+      "access_status": "partial"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:11:44+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:11:44+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:11:44+00:00"
+  },
+  {
+    "source_id": "R28",
+    "title": "UK AI Risk Management Toolkit",
+    "url": "https://www.gov.uk/government/publications/ai-risk-management-toolkit/ai-risk-management-toolkit-guidance",
+    "authority": "www.gov.uk",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:12:04+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Toolkit risk lifecycle and accountability guidance",
+    "claim_evaluated": "Risk work needs an ongoing process for identifying, evaluating, treating and monitoring risks.",
+    "conclusion": "Risk work needs an ongoing process for identifying, evaluating, treating and monitoring risks.",
+    "limitations": "Current public guidance; organization-specific risk acceptance and legal decisions remain outside this review.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:04+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:04+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:12:04+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:12:04+00:00"
+  },
+  {
+    "source_id": "R29",
+    "title": "EU AI Act policy page",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+    "authority": "digital-strategy.ec.europa.eu",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:12:04+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Governance and enforcement; Application timeline; AI Omnibus simplification",
+    "claim_evaluated": "Commission timeline attributes high-risk Annex III application to 2 December 2027 and regulated products to 2 August 2028; model obligations and deployment roles remain separate.",
+    "conclusion": "Matches the timeline already attributed in Consulting. No new obligation or broader legal conclusion is imported.",
+    "limitations": "Living Commission summary read after the cutoff. Only confirmation of dates already present in the approved book is used; no new undated legal change is asserted.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "alternative_attempt_receipts": [
+      "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/eu-alternative-search.json",
+      "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/eu-alternative-open.json"
+    ],
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:04+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29T04:30:50+00:00",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tfresh-completion/eu-and-evaluation-access.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:04+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:12:04+00:00"
+  },
+  {
+    "source_id": "R30",
+    "title": "EU qualified independent evaluator workshop output",
+    "url": "https://digital-strategy.ec.europa.eu/en/library/requirements-qualified-independent-external-evaluators-general-purpose-ai-models",
+    "authority": "digital-strategy.ec.europa.eu",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-10-21",
+    "accessed_at": "2026-10-29T04:30:50+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Landing page publication/status statement; linked seven-page workshop report, pages 1–7",
+    "claim_evaluated": "Workshop report expresses non-exhaustive current views on qualifications and independence for external systemic-risk evaluators under the GPAI Code of Practice; distinguishes scientific panel and Commission-appointed experts.",
+    "conclusion": "Scoped workshop proposal/status verified. No general evaluator certification or generic product-evaluation requirement follows.",
+    "limitations": "Non-exhaustive current views subject to change; field and legal scope are narrow. No numerical scoring threshold is public.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tfresh-completion/eu-and-evaluation-access.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "alternative_attempt_receipts": [
+      "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/eu-alternative-search.json",
+      "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/eu-alternative-open.json"
+    ],
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "downloaded_pdf": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tfresh-completion/eu-evaluator-workshop.pdf",
+    "downloaded_pdf_sha256": "c8bac5ff8d9232d586bd4e834c3812be26f945b512bc676b4169cef2b7df9ec8",
+    "full_document_accessed_at": "2026-10-29T04:31:59.224809+00:00",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:04+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+      "outcome": "limited",
+      "note": "Current landing page returned403; the earlier directly retrieved original evaluator report and its access proof remain preserved."
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T04:30:50+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T04:30:50+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T04:30:50+00:00"
+  },
+  {
+    "source_id": "R31",
+    "title": "Get started with Claude Design",
+    "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+    "authority": "support.claude.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:12:04+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Where to use Design; usage and pricing; known limitations",
+    "claim_evaluated": "Design works in multiple surfaces; source quality, saved state and known interaction limitations require checks.",
+    "conclusion": "Design works in multiple surfaces; source quality, saved state and known interaction limitations require checks.",
+    "limitations": "Updated this week, with no exact update day; newly observed lifecycle/allowance/keyboard wording is queued for a later dated review.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "additional_primary_evidence": {
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "locator": "September 16, 2026: Create designs, decks, and docs in any conversation",
+      "published": "2026-09-16",
+      "accessed_at": "2026-10-29T05:01:36+00:00",
+      "conclusion": "Confirms multi-surface availability already stated in approved source line 28; does not date newer lifecycle/keyboard wording.",
+      "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tfresh-completion/claude-eligibility-review.json"
+    },
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:04+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:04+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:12:04+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:12:04+00:00"
+  },
+  {
+    "source_id": "R32",
+    "title": "Set up your design system in Claude Design",
+    "url": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+    "authority": "support.claude.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:12:04+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Before you start; from chat; from Claude Code",
+    "claim_evaluated": "Code-based product design systems use /design-sync; source assets determine the imported system.",
+    "conclusion": "Code-based product design systems use /design-sync; source assets determine the imported system.",
+    "limitations": "Current undated beta documentation; no import or native completion was exercised.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:04+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:04+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:12:04+00:00"
+  },
+  {
+    "source_id": "R33",
+    "title": "Figma Code Connect",
+    "url": "https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect",
+    "authority": "help.figma.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:12:04+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Active library and framework on Professional plans",
+    "claim_evaluated": "Professional plans expose one active library and framework; deactivated connections are retained but omitted from MCP context.",
+    "conclusion": "Professional plans expose one active library and framework; deactivated connections are retained but omitted from MCP context.",
+    "limitations": "The retained October 29 observation establishes availability before November 9. The page is living and undated; no later unseen revision is assigned to that observation.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+    "cutoff_role": "eligible_prior_to_2026_11_09",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:04+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-2.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:04+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:12:04+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:12:04+00:00",
+    "historical_cutoff_note": {
+      "limitations": "Current undated page; cutoff-era applicability needs dated confirmation before the retrospective patch is accepted.",
+      "conclusion": "Professional plans expose one active library and framework; deactivated connections are retained but omitted from MCP context.",
+      "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta"
+    }
+  },
+  {
+    "source_id": "R34",
+    "title": "Figma Code Connect and MCP",
+    "url": "https://help.figma.com/hc/en-us/articles/42495296821911-Code-Connect-and-MCP",
+    "authority": "help.figma.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:12:23+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Choose which framework your agent gets",
+    "claim_evaluated": "Desktop selection and remote clientFrameworks govern connection context, within active plan limits.",
+    "conclusion": "Desktop selection and remote clientFrameworks govern connection context, within active plan limits.",
+    "limitations": "Current public documentation; authenticated mapping changes were not performed.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:23+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:23+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:12:23+00:00"
+  },
+  {
+    "source_id": "R35",
+    "title": "Figma Code to canvas",
+    "url": "https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/",
+    "authority": "developers.figma.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:12:23+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Capture live UI into editable layers; access requirements",
+    "claim_evaluated": "Code-to-canvas is a capture bridge with editable output that must be inspected.",
+    "conclusion": "Code-to-canvas is a capture bridge with editable output that must be inspected.",
+    "limitations": "No native capture was run; editable layers do not establish library binding or prototype behavior.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:23+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:23+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:12:23+00:00"
+  },
+  {
+    "source_id": "R36",
+    "title": "Claude Code permissions",
+    "url": "https://code.claude.com/docs/en/permissions",
+    "authority": "code.claude.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:23:46+00:00",
+    "access_started_at": "2026-10-29 06:23:45 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Permission modes and permissions vs sandboxing",
+    "claim_evaluated": "Agent permission rules and execution isolation are distinct controls.",
+    "conclusion": "Agent permission rules and execution isolation are distinct controls.",
+    "limitations": "Current docs describe supported behavior; no real policy enforcement trial was conducted.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch4.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:45+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails4.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:46+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:23:46+00:00"
+  },
+  {
+    "source_id": "R37",
+    "title": "Scaling Agile at Spotify",
+    "url": "https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf",
+    "authority": "blog.crisp.se",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2012-10",
+    "accessed_at": "2026-10-29 02:22:23 UTC",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Opening disclaimer and squad/coordination sections",
+    "claim_evaluated": "The Spotify account is a historical, evolving organizational snapshot.",
+    "conclusion": "The Spotify account is a historical, evolving organizational snapshot.",
+    "limitations": "It is not a current Spotify prescription or a controlled causal trial.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:23+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+      "outcome": "limited",
+      "note": "Current PDF request timed out; the previously reviewed2012 original remains the historical source."
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29 02:22:23 UTC",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29 02:22:23 UTC"
+  },
+  {
+    "source_id": "R38",
+    "title": "Migrating to Cloud-Native Application Architectures",
+    "url": "https://www.f5.com/content/dam/f5/corp/global/pdf/ebooks/Migrating_to_Cloud-Native_Application_Architecutres_NGINX.pdf",
+    "authority": "www.f5.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2015-02",
+    "accessed_at": "2026-10-29T06:12:23+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Chapter 2 Changes Needed",
+    "claim_evaluated": "Cloud-native adoption involves cultural, organizational and technical changes.",
+    "conclusion": "Cloud-native adoption involves cultural, organizational and technical changes.",
+    "limitations": "Historical architectural argument, not evidence for present AI productivity or staffing ratios.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:23+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-3.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:23+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:12:23+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:12:23+00:00"
+  },
+  {
+    "source_id": "R39",
+    "title": "Designing AI-Native Engineering Organizations",
+    "url": "https://www.sahadilip.com/blog/designing-ai-native-engineering-organizations",
+    "authority": "www.sahadilip.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-10-21",
+    "accessed_at": "2026-10-29T02:23:45.427736+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Proposed operating model; How to Experiment with AI-Native Team Structures",
+    "claim_evaluated": "The author proposes accountable builder teams, specialist enabling capabilities and a shared platform, and calls for bounded experiments.",
+    "conclusion": "The author proposes accountable builder teams, specialist enabling capabilities and a shared platform, and calls for bounded experiments.",
+    "limitations": "Fresh managed Chromium capture succeeded after native parser access failed. A proposal and personal account do not prove improved delivery or smaller-team economics.",
+    "access_receipt": "/Users/mike/Codex/local-vm-manager/evidence/c4e995d0/21cb181f4c8b-result.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "rendered_html": "/Users/mike/Codex/local-vm-manager/evidence/c4e995d0/21cb181f4c8b-page.html",
+    "access_method": "manager-owned sandboxed Linux Chromium; no authentication or access-control bypass",
+    "access_timestamp_basis": "Managed capture result export time; earlier native parser attempt failed.",
+    "prior_cycle_access": "/Users/mike/Codex/local-vm-manager/evidence/c4e995d0/21cb181f4c8b-result.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:23+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+      "outcome": "limited",
+      "note": "Current tool could not open the URL; earlier full first-party article access and explicit proposal limits remain preserved."
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T02:23:45.427736+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T02:23:45.427736+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T02:23:45.427736+00:00"
+  },
+  {
+    "source_id": "R40",
+    "title": "Effective context engineering for AI agents",
+    "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+    "authority": "www.anthropic.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2025-09-29",
+    "accessed_at": "2026-10-29T06:23:46+00:00",
+    "access_started_at": "2026-10-29 06:23:45 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Context retrieval and agentic search",
+    "claim_evaluated": "Curate relevant context and retrieve references progressively rather than loading everything into a prompt.",
+    "conclusion": "Curate relevant context and retrieve references progressively rather than loading everything into a prompt.",
+    "limitations": "Vendor engineering synthesis; no causal productivity effect is established.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch4.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:45+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails4.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:46+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:46+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:46+00:00"
+  },
+  {
+    "source_id": "R41",
+    "title": "How we contain Claude across products",
+    "url": "https://www.anthropic.com/research/how-we-contain-claude",
+    "authority": "www.anthropic.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-05-25",
+    "accessed_at": "2026-10-29T06:23:46+00:00",
+    "access_started_at": "2026-10-29 06:23:45 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Containment and blast-radius discussion",
+    "claim_evaluated": "Bound permissions and environments as capability and access grow.",
+    "conclusion": "Bound permissions and environments as capability and access grow.",
+    "limitations": "Vendor account, not proof that the local control plane enforces the desired policy.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch4.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:45+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-4.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails4.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:46+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:46+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:46+00:00"
+  },
+  {
+    "source_id": "R42",
+    "title": "METR developer productivity experiment design update",
+    "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+    "authority": "metr.org",
+    "source_type": "primary_original_research",
+    "publication_or_update_date": "2026-02-24",
+    "accessed_at": "2026-10-29T06:12:23+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Selection effects and concurrent-agent time measurement",
+    "claim_evaluated": "Developer/task selection and concurrent agents complicate estimates of AI productivity.",
+    "conclusion": "Developer/task selection and concurrent agents complicate estimates of AI productivity.",
+    "limitations": "The authors call the later estimate weak evidence; do not turn it into a portable percentage benefit.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:12:23+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-3.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:12:23+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:12:23+00:00"
+  },
+  {
+    "source_id": "R43",
+    "title": "NIST Censoring",
+    "url": "https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm",
+    "authority": "www.itl.nist.gov",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:13:00+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Type I right censoring example",
+    "claim_evaluated": "An observation limit differs from an observed event time.",
+    "conclusion": "An observation limit differs from an observed event time.",
+    "limitations": "Reliability analogy only; the handbook labels its borrowing and does not assert a survival-analysis result.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:13:00+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:13:00+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:13:00+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:13:00+00:00"
+  },
+  {
+    "source_id": "R44",
+    "title": "DORA Working in small batches",
+    "url": "https://dora.dev/capabilities/working-in-small-batches/",
+    "authority": "dora.dev",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:13:00+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Working in small batches; AI adoption context",
+    "claim_evaluated": "Use independently testable small changes and short feedback cycles.",
+    "conclusion": "Use independently testable small changes and short feedback cycles.",
+    "limitations": "Observational/synthesis guidance; no fixed local benefit or headcount threshold is inferred.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:13:00+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:13:00+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:13:00+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:13:00+00:00"
+  },
+  {
+    "source_id": "R45",
+    "title": "Team Topologies Key Concepts",
+    "url": "https://teamtopologies.com/key-concepts",
+    "authority": "teamtopologies.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:13:00+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Four team types and three interaction modes",
+    "claim_evaluated": "Team responsibilities and interaction modes help discuss flow and cognitive load.",
+    "conclusion": "Team responsibilities and interaction modes help discuss flow and cognitive load.",
+    "limitations": "Framework guidance does not validate four specific total-company headcounts.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:13:00+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:13:00+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:13:00+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:13:00+00:00"
+  },
+  {
+    "source_id": "R46",
+    "title": "CNCF Platforms White Paper",
+    "url": "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
+    "authority": "tag-app-delivery.cncf.io",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:13:00+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Introduction; attributes and success measurement",
+    "claim_evaluated": "Internal platforms should serve internal users and be measured by value in their work.",
+    "conclusion": "Internal platforms should serve internal users and be measured by value in their work.",
+    "limitations": "A platform white paper is not evidence that a particular platform investment will pay off.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:13:00+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:13:00+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:13:00+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:13:00+00:00"
+  },
+  {
+    "source_id": "R47",
+    "title": "Google Cloud enterprise foundations deployment methodology",
+    "url": "https://docs.cloud.google.com/architecture/blueprints/security-foundations/deployment-methodology",
+    "authority": "docs.cloud.google.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-10-29T06:13:00+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Foundation, infrastructure and application pipelines",
+    "claim_evaluated": "Shared foundations and business-unit/workload responsibilities can be separated.",
+    "conclusion": "Shared foundations and business-unit/workload responsibilities can be separated.",
+    "limitations": "Cloud-specific example; it does not establish universal staffing arrangements.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+    "cutoff_role": "current_recheck_not_proof_of_pre_cutoff_delta",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:13:00+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+      "access_status": "accessible"
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:13:00+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:13:00+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:13:00+00:00"
+  },
+  {
+    "source_id": "R48",
+    "title": "METR control assessment proposal",
+    "url": "https://metr.org/blog/2026-10-14-control-assessment-proposal/",
+    "authority": "metr.org",
+    "source_type": "primary_original_research",
+    "publication_or_update_date": "2026-10-14",
+    "accessed_at": "2026-10-29T06:23:46+00:00",
+    "access_started_at": "2026-10-29 06:23:45 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Five control-assessment subquestions",
+    "claim_evaluated": "Monitor coverage, infrastructure tampering, evasion, human response and impact need separate assessment.",
+    "conclusion": "Monitor coverage, infrastructure tampering, evasion, human response and impact need separate assessment.",
+    "limitations": "Proposal for internal agents, not a completed certification or proof of local controls.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch4.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-5.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:46+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-5.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails4.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:46+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:46+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:46+00:00"
+  },
+  {
+    "source_id": "R49",
+    "title": "NIST incident readiness and response",
+    "url": "https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training",
+    "authority": "www.nist.gov",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-10-16",
+    "accessed_at": "2026-10-29T06:23:46+00:00",
+    "access_started_at": "2026-10-29 06:23:45 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Announcement and five incident lifecycle stages",
+    "claim_evaluated": "Voluntary frontier-training/evaluation incident practices cover preparation through reporting.",
+    "conclusion": "Voluntary frontier-training/evaluation incident practices cover preparation through reporting.",
+    "limitations": "Narrow frontier context; do not silently recast as binding requirements for every product team.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch4.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-5.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:46+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-5.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails4.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:46+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:46+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:46+00:00"
+  },
+  {
+    "source_id": "R50",
+    "title": "OpenAI frontier training containment",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+    "authority": "openai.com",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-10-23",
+    "accessed_at": "2026-10-29T06:23:46+00:00",
+    "access_started_at": "2026-10-29 06:23:45 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Research/customer distinction; containment and adversarial findings",
+    "claim_evaluated": "Training/evaluation environments need tested isolation, egress and cross-task boundaries.",
+    "conclusion": "Training/evaluation environments need tested isolation, egress and cross-task boundaries.",
+    "limitations": "Internal research-environment report does not establish released customer-model behavior.",
+    "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshbatch4.json",
+    "cutoff_role": "dated_eligible_or_baseline_recheck",
+    "previous_access": {
+      "accessed_at": "2026-10-29 02:22:23 UTC",
+      "access_started_at": "2026-10-29 02:22:20 UTC",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json"
+    },
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-5.json",
+    "previous_preparation_access": {
+      "accessed_at": "2026-10-29T03:57:46+00:00",
+      "access_status": "accessible",
+      "access_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/production-refresh-5.json"
+    },
+    "detail_receipt": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/freshdetails4.json",
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:23:46+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-10-29T06:23:46+00:00",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-10-29T06:23:46+00:00"
+  },
+  {
+    "source_id": "R51",
+    "title": "From Hierarchy to Intelligence",
+    "url": "https://block.xyz/inside/from-hierarchy-to-intelligence",
+    "authority": "block.xyz",
+    "source_type": "official_documentation_or_original_author",
+    "publication_or_update_date": "2026-03-31",
+    "accessed_at": "2026-10-29T06:13:00+00:00",
+    "access_started_at": "2026-10-29 02:22:20 UTC",
+    "access_status": "accessible",
+    "evidence_locator": "Article full text, especially company and customer world models, DRI/player-coach roles, and early-transition caveat; separate preserved raw metadata verifies publication date.",
+    "claim_evaluated": "Block proposes AI-supported coordination using a shared picture of organizational work and context.",
+    "conclusion": "Block proposes AI-supported coordination using a shared picture of organizational work and context.",
+    "limitations": "Eligible before the cutoff, including before this window; explicitly requested catch-up. Company proposal, not independent evidence of improved productivity, an optimal reporting structure, or safe headcount reduction.",
+    "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+    "cutoff_role": "explicitly_requested_eligible_catchup_before_research_window",
+    "date_verification": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/block-publication-date.json",
+    "raw_html": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/block-article.html",
+    "prior_cycle_access": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanaged-retry/research/access-batch-4.json",
+    "previous_access_provenance": {
+      "accessed_at": "2026-10-29T05:40:24.751068+00:00",
+      "access_receipt": "weekly-reviews/2026-10-26/2026-10-28Tauthorized-retry/block-content-refresh.json",
+      "access_status": "accessible"
+    },
+    "latest_access_attempt": {
+      "at": "2026-10-29T06:13:00+00:00",
+      "receipt": "weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/research/nonproduction-4.json",
+      "outcome": "content_returned",
+      "note": "Official content reopened; prior scope and date limitations retained."
+    },
+    "carried_forward_from": "/Users/mike/handbooks/weekly-reviews/2026-10-26/2026-10-28Tmanifest-verified/sources.json",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-10-29T06:13:00+00:00",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-10-29T06:13:00+00:00"
+  },
+  {
+    "source_id": "R52",
+    "title": "vLLM v0.33.0 release",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+    "authority": "github.com/vllm-project/vllm",
+    "source_type": "maintainer_release",
+    "publication_or_update_date": "2026-11-02T10:10:05Z",
+    "accessed_at": "2026-11-03T18:53:09Z",
+    "access_status": "accessible",
+    "evidence_locator": "GitHub release API published_at and v0.33.0 highlights",
+    "claim_evaluated": "v0.33.0 drops CUDA 12.9 wheels/images, upgrades PyTorch/Triton, and offers an opt-in lossy speculative verification policy.",
+    "conclusion": "Treat runtime upgrades as compatibility migrations and any lossy verifier as a quality-changing approximation.",
+    "limitations": "Release notes and maintainer claims; no local upgrade, workload benchmark or quality replication.",
+    "cutoff_role": "eligible_before_2026-11-02T17:00:00Z",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-11-03T18:53:09Z",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-11-03T18:53:09Z"
+  },
+  {
+    "source_id": "R53",
+    "title": "How we detect frontier model misalignment",
+    "url": "https://alignment.openai.com/how-we-detect-frontier-model-misalignment",
+    "authority": "alignment.openai.com",
+    "source_type": "official_original_research_report",
+    "publication_or_update_date": "2026-10-29",
+    "accessed_at": "2026-11-03T18:53:09Z",
+    "access_status": "accessible",
+    "evidence_locator": "Coverage gap, every tool-use harness, layered review, external telemetry, human response, recall tables and limitations",
+    "claim_evaluated": "Monitoring coverage, negative-traffic audits and responder behavior are distinct controls; a strong aggregate monitor still has threat-specific misses.",
+    "conclusion": "Inventory monitor coverage across agent/tool surfaces and test the complete alert-to-response path with known misses and external state.",
+    "limitations": "Vendor internal system and incident replay; not a portable detection rate or proof of local controls.",
+    "cutoff_role": "eligible",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-11-03T18:53:09Z",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-11-03T18:53:09Z",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-11-03T18:53:09Z"
+  },
+  {
+    "source_id": "R54",
+    "title": "LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents",
+    "url": "https://arxiv.org/abs/2610.26088",
+    "authority": "arxiv.org",
+    "source_type": "original_preprint",
+    "publication_or_update_date": "2026-10-19T09:50:57Z",
+    "accessed_at": "2026-11-03T18:53:09Z",
+    "access_status": "accessible",
+    "evidence_locator": "Abstract and submission history; prediction-time validity, known-failure controls, paired constraints and provenance verifier",
+    "claim_evaluated": "A high score can coexist with fatal feature-availability leakage; paired controls and deterministic provenance checks reveal the failure.",
+    "conclusion": "Add prediction-time availability invariants and deterministic provenance verification to leakage evaluation, while keeping claims bounded to the study.",
+    "limitations": "Preprint and clinical-modeling domain; code absent from this arXiv version, mitigation ablations limited, no universal model ranking.",
+    "cutoff_role": "eligible",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-11-03T18:53:09Z",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-11-03T18:53:09Z",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-11-03T18:53:09Z"
+  },
+  {
+    "source_id": "R55",
+    "title": "An updated Model Spec for more capable and beneficial AI",
+    "url": "https://openai.com/index/updated-model-spec/",
+    "authority": "openai.com",
+    "source_type": "official_policy_documentation",
+    "publication_or_update_date": "2026-10-29",
+    "accessed_at": "2026-11-03T18:53:09Z",
+    "access_status": "accessible",
+    "evidence_locator": "Intent, human agency, oversight and side-effect guidance",
+    "claim_evaluated": "Provider behavior policy changed, but application controls still require explicit local authority and deterministic enforcement.",
+    "conclusion": "No standalone handbook edit: existing production and governance guidance already treats model behavior as non-authoritative and locally bounded.",
+    "limitations": "Provider policy, not an API compatibility guarantee or evidence of local compliance.",
+    "cutoff_role": "eligible_context_no_material_update",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-11-03T18:53:09Z",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "retained_same_scheduled_review",
+      "at": "2026-11-03T18:53:09Z",
+      "retainedLedger": "/Users/mike/handbooks/weekly-reviews/2026-11-09/2026-11-09T09-review.3uzLAZ/sources.json",
+      "retainedLedgerSha256": "f1611e8e3faadc48b8b149a7cdbe2d3ffbb4f4d90950b870c5e9e1b08ee63e52"
+    },
+    "first_observed_at": "2026-11-03T18:53:09Z"
+  },
+  {
+    "source_id": "R56",
+    "title": "Training activation classifiers for safety and alignment",
+    "url": "https://alignment.openai.com/training-activation-classifiers/",
+    "authority": "alignment.openai.com",
+    "source_type": "official_original_research_report",
+    "publication_or_update_date": "2026-11-02",
+    "accessed_at": "2026-11-03T18:53:09Z",
+    "access_status": "accessible",
+    "evidence_locator": "Streaming probes, retraining boundaries, recall/escalation evaluation and fail-closed claims",
+    "claim_evaluated": "Activation probes can add a synchronous monitor layer but require labeled targets and model/checkpoint-specific validation.",
+    "conclusion": "Additional synchronous monitoring layer; operational requirements are covered by approved monitor recalibration, threat-specific recall, escalation and containment guidance. Architecture and vendor rates are outside these application-level handbooks.",
+    "limitations": "November 2 publication and retained November 3 access precede this cutoff. Vendor internal experiments do not establish deployed detection rates; probes require activation access, labeled targets and checkpoint-specific validation.",
+    "cutoff_role": "eligible_prior_to_2026_11_09",
+    "current_cycle_access": {
+      "status": "retained_prior_observation",
+      "accessed_at": "2026-11-03T18:53:09Z",
+      "reason": "Retained prior-cycle observation with its original timestamp; no shared checkpoint advanced. Current continuation retrieval is recorded separately where performed."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T23:06:39.127535+00:00",
+      "method": "native web primary-source retrieval",
+      "receipt": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/research-cutoff-audit/R56-primary-review.json"
+    },
+    "first_observed_at": "2026-11-03T18:53:09Z",
+    "historical_cutoff_note": {
+      "limitations": "Date-only publication; vendor internal results; cutoff eligibility cannot be established without a timestamp.",
+      "conclusion": "Record for the next cycle because the page provides no publication time relative to the 09:00 Pacific cutoff.",
+      "cutoff_role": "later_or_cutoff_time_ambiguous"
+    }
+  },
+  {
+    "source_id": "R57",
+    "title": "NIST Workshop on SI Incident Management (NIST IR 8621)",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8621.pdf",
+    "authority": "NIST",
+    "source_type": "government_primary_report",
+    "publication_or_update_date": "2026-11",
+    "accessed_at": "2026-11-09T17:07:33.663Z",
+    "access_status": "accessible",
+    "evidence_locator": "pp. 17-18 and 30-31: governance records, non-human identities, telemetry, containment decision trees, authority and cross-functional response",
+    "claim_evaluated": "AI incident readiness requires pre-positioned evidence, explicit containment choices and named business-risk authority.",
+    "conclusion": "Treat AI incident response as a cross-functional operating contract, not only a logging checklist.",
+    "limitations": "Workshop synthesis published with month precision; it summarizes participants and does not validate a universal implementation.",
+    "cutoff_role": "eligible_claim_previously_observed_2026-11-09T15:18:00Z_and_rechecked_after_cutoff",
+    "current_cycle_access": {
+      "status": "reopened_after_cutoff",
+      "accessed_at": "2026-11-09T17:07:33.663Z",
+      "reason": "Reopened after the scheduled cutoff."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-11-09T15:18:00Z"
+  },
+  {
+    "source_id": "R58",
+    "title": "Measuring AI Agents as Teammates with Collaborative Intelligence",
+    "url": "https://arxiv.org/abs/2611.02633",
+    "authority": "arXiv author manuscript",
+    "source_type": "original_preprint",
+    "publication_or_update_date": "2026-11-02T06:59:08Z",
+    "accessed_at": "2026-11-09T17:07:33.663Z",
+    "access_status": "accessible",
+    "evidence_locator": "Abstract: 240 tasks across eight teamwork dimensions, capability-conditioned scoring and held-out split",
+    "claim_evaluated": "Individual task capability does not establish teammate performance; handoff, pressure, checking and unsafe-shortcut behavior need separate evaluation.",
+    "conclusion": "Evaluate collaboration and takeover behavior separately from isolated task success.",
+    "limitations": "Preprint and benchmark proposal; reported model scores do not transfer to a local workflow.",
+    "cutoff_role": "eligible_claim_previously_observed_2026-11-09T15:18:00Z_and_rechecked_after_cutoff",
+    "current_cycle_access": {
+      "status": "reopened_after_cutoff",
+      "accessed_at": "2026-11-09T17:07:33.663Z",
+      "reason": "Reopened after the scheduled cutoff."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-11-09T15:18:00Z"
+  },
+  {
+    "source_id": "R59",
+    "title": "Measurements for understanding the pace of AI development inside frontier labs",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "authority": "Anthropic Institute",
+    "source_type": "provider_original_measurement_report",
+    "publication_or_update_date": null,
+    "accessed_at": "2026-11-09T17:07:33.663Z",
+    "access_status": "accessible",
+    "evidence_locator": "Coverage, review latency and escalation-rate measurements; scope and uncertainty limitations",
+    "claim_evaluated": "Agent oversight needs separate coverage, review-latency and escalation-rate measures, with explicit platform boundaries.",
+    "conclusion": "Report monitor reach, response latency and escalation separately; do not generalize one platform measurement to all agent work.",
+    "limitations": "Provider internal platform and undated living page; the report itself says monitoring history is measured in months and completeness is uncertain.",
+    "cutoff_role": "eligible_claim_previously_observed_2026-11-09T15:18:00Z_and_rechecked_after_cutoff",
+    "current_cycle_access": {
+      "status": "reopened_after_cutoff",
+      "accessed_at": "2026-11-09T17:07:33.663Z",
+      "reason": "Reopened after the scheduled cutoff."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-11-09T15:18:00Z"
+  },
+  {
+    "source_id": "R60",
+    "title": "Move from standalone Claude Design to Claude",
+    "url": "https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude",
+    "authority": "Anthropic Support",
+    "source_type": "official_product_documentation",
+    "publication_or_update_date": "updated week of 2026-11-09",
+    "accessed_at": "2026-11-09T17:07:33.663Z",
+    "access_status": "accessible",
+    "evidence_locator": "Closure date, project/design-system movement, ownership, sharing, settings, encryption and non-migrating chats/comments",
+    "claim_evaluated": "The standalone surface closes December 14; moving content has ownership, sharing, state and plan-specific limits.",
+    "conclusion": "A current workflow must start in Claude Artifacts and include a preservation/migration preflight rather than treating standalone behavior as canonical.",
+    "limitations": "Living documentation with week-only revision timing; rollout availability varies by plan and organization.",
+    "cutoff_role": "eligible_claim_previously_observed_2026-11-09T15:18:00Z_and_rechecked_after_cutoff",
+    "current_cycle_access": {
+      "status": "reopened_after_cutoff",
+      "accessed_at": "2026-11-09T17:07:33.663Z",
+      "reason": "Reopened after the scheduled cutoff."
+    },
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-11-09T15:18:00Z"
+  },
+  {
+    "source_id": "R62",
+    "title": "Eval-production behavior gaps in agent safety and the role of eval-awareness",
+    "url": "https://alignment.openai.com/eval-production-behavior-gap",
+    "authority": "OpenAI Alignment Research",
+    "source_type": "provider_original_research",
+    "publication_or_update_date": "2026-11-03",
+    "accessed_at": "2026-11-09T17:07:33.663Z",
+    "access_status": "accessible",
+    "evidence_locator": "TLDR and intervention study",
+    "claim_evaluated": "Safety-evaluation outcomes may differ from comparable production behavior, and objective framing can shift measured performance.",
+    "conclusion": "Treat generalization from eval to deployment as a claim to measure, with production-linked evidence and objective-framing controls.",
+    "limitations": "Six studied models and one evaluation family; direction and magnitude do not transfer automatically.",
+    "cutoff_role": "eligible",
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-11-09T17:07:33.663Z"
+  },
+  {
+    "source_id": "R64",
+    "title": "AI adoption survey report 2026: executive summary",
+    "url": "https://www.gov.uk/government/publications/ai-adoption-survey-2026/ai-adoption-survey-report-2026-executive-summary",
+    "authority": "UK Department for Science, Innovation and Technology",
+    "source_type": "government_survey_report",
+    "publication_or_update_date": "2026-10-29",
+    "accessed_at": "2026-11-09T17:07:33.663Z",
+    "access_status": "accessible",
+    "evidence_locator": "Main findings on strategic importance, skills, ROI, implementation effort, staged adoption and oversight",
+    "claim_evaluated": "Business AI adoption remains uneven and staged, with skills, business-case, implementation effort, accuracy and security constraints.",
+    "conclusion": "Readiness and investment guidance should separate tool price from implementation effort, skills and validated business value.",
+    "limitations": "UK business survey and interviews; findings are descriptive, not causal or universal.",
+    "cutoff_role": "eligible",
+    "continuation_access": {
+      "status": "reopened",
+      "at": "2026-11-09T21:11:01.295Z",
+      "method": "native live-web primary-source retrieval; no account actions or browser claims"
+    },
+    "first_observed_at": "2026-11-09T17:07:33.663Z"
+  }
+]

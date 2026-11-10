@@ -1,6 +1,65 @@
 {
-  "version": "1.4.2",
-  "previousVersion": "1.4.1",
-  "summary": "Presentation correction: title-only subsection headings and mandatory checks for the reader, Markdown, and both PDF appearances. Handbook guidance is unchanged.",
-  "items": []
+  "schemaVersion": 2,
+  "entryDate": "November 9, 2026",
+  "previousVersion": "Version 1.4.2",
+  "previousPublicationDate": "November 8, 2026",
+  "previousPdfSha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
+  "currentSourceSha256": "a88634ad9ae26c58e3f20ac15df10d66e49862deb2e1e08df37633d19ea9db1f",
+  "summary": "This edition makes 3 reader-facing changes: 2 additions, 1 correction. No guidance was removed.",
+  "items": [
+    {
+      "changeId": "CHG-002",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "Section 17. LLM observability as a first-class discipline",
+      "title": "Separate monitor coverage and review delay",
+      "whatChanged": "Report monitor coverage, time to automated review, time to human review and escalation rate separately. An action being logged does not establish timely review, and a low flag rate does not establish good detection. State which platforms and tool paths the denominator includes.",
+      "why": "The existing paragraph inventories surfaces and responder availability but does not separate these operational measures.",
+      "sources": [
+        {
+          "sourceId": "NOV09-59",
+          "title": "Measurements for understanding the pace of AI development inside frontier labs",
+          "authority": "Anthropic Institute",
+          "publicationDate": "not stated",
+          "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-003",
+      "classification": "addition",
+      "classificationLabel": "Addition",
+      "section": "Section 16. Evals as the release contract",
+      "title": "Compare safety evaluations with production decisions",
+      "whatChanged": "Check whether safety-evaluation behavior transfers to comparable production decisions. Match cases on the context before the decision, keep grading definitions aligned and report the remaining case-mixture differences. Where task framing may matter, compare an unchanged task with controlled descriptions of the evaluation objective. Do not assume that evaluation awareness always inflates safety scores.",
+      "why": "The November 3 study supports testing objective framing and the direction of transfer, absent from the current generic production-monitoring layer.",
+      "sources": [
+        {
+          "sourceId": "NOV09-62",
+          "title": "Eval-production behavior gaps in agent safety and the role of eval-awareness",
+          "authority": "OpenAI Alignment Research",
+          "publicationDate": "2026-11-03",
+          "url": "https://alignment.openai.com/eval-production-behavior-gap"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-001",
+      "classification": "correction",
+      "classificationLabel": "Correction",
+      "section": "Evidence-review metadata",
+      "title": "Record the current evidence review",
+      "whatChanged": "Updated the evidence-review date and limited current-access assertions to sources reopened in this prepared run.",
+      "why": "Readers can distinguish the common cutoff from the date on which primary evidence was checked.",
+      "sources": [
+        {
+          "sourceId": "REVIEW-2026-11-09",
+          "title": "Publisher evidence-review record",
+          "authority": "Michael Long, Surfaces",
+          "publicationDate": "2026-11-09",
+          "url": "https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.3/review-record.json"
+        }
+      ]
+    }
+  ]
 }

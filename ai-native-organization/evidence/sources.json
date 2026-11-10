@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "accessDate": "2026-11-04",
-  "researchCutoff": "2026-11-02",
+  "accessDate": "2026-11-09",
+  "researchCutoff": "2026-11-09",
   "sources": [
     {
       "id": "S1",
@@ -197,6 +197,21 @@
       ],
       "limitation": "An organizational proposal. Local delivery, workload and staffing outcomes require separate evidence.",
       "disposition": "accepted"
+    },
+    {
+      "id": "S14",
+      "title": "Measuring AI Agents as Teammates with Collaborative Intelligence",
+      "publisher": "arXiv author manuscript",
+      "published": "2026-11-02T06:59:08Z",
+      "url": "https://arxiv.org/abs/2611.02633",
+      "authority": "original research preprint",
+      "access": "Public research text checked in the shared collection review",
+      "locator": "Abstract: 240 tasks across eight teamwork dimensions, capability-conditioned scoring and held-out split",
+      "supports": [
+        "Separate teamwork evaluation and inherited-error handoff tests"
+      ],
+      "limitation": "Preprint and benchmark proposal; reported model scores do not transfer to a local workflow.",
+      "disposition": "accepted"
     }
   ],
   "claims": [
@@ -298,6 +313,15 @@
         "R1"
       ],
       "kind": "illustrative example; independently recomputed"
+    },
+    {
+      "id": "C14",
+      "section": "2.4",
+      "claim": "Assess coordinated handoffs and inherited errors separately from isolated task success.",
+      "sources": [
+        "S14"
+      ],
+      "kind": "bounded evaluation recommendation; no organizational productivity claim"
     }
   ]
 }

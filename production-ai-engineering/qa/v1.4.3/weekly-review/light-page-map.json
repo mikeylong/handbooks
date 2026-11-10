@@ -1,0 +1,2897 @@
+{
+  "schemaVersion": 1,
+  "artifactProfile": "candidate",
+  "book": "production-ai-engineering",
+  "edition": {
+    "id": "production-ai-engineering",
+    "title": "Production AI Engineering",
+    "version": "1.4.3",
+    "date": "2026-11-09"
+  },
+  "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+  "pdfSha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+  "bytes": 24749030,
+  "pageNumbering": "pdfPage and page are one-based; folio is the measured PDF page label",
+  "measurement": {
+    "runtime": "pypdf; shared validate-pdf.py raster_image_paints and required_raster_illustration_report",
+    "identity": {
+      "title": "Production AI Engineering \u00b7 Daytime version",
+      "coverVersion": "1.4.3",
+      "coverDatePrecision": "day",
+      "subject": "A Handbook for Building Reliable LLM Systems"
+    },
+    "chapterCount": 12,
+    "requiredRasterIllustrationPages": 12,
+    "rasterImagePaints": 12,
+    "limitations": "Measured structural/edition/illustration evidence only; not candidate validation or visual approval."
+  },
+  "pages": [
+    {
+      "pdfPage": 1,
+      "page": 1,
+      "folio": "Cover",
+      "role": "cover",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 132,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "ProductionAIEngineering",
+          "pdfPage": 1,
+          "depth": 0
+        }
+      ]
+    },
+    {
+      "pdfPage": 2,
+      "page": 2,
+      "folio": "ii",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 563,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Engineering the whole system",
+          "pdfPage": 2,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 3,
+      "page": 3,
+      "folio": "iii",
+      "role": "contents",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 513,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Contents",
+          "pdfPage": 3,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "pdfPage": 4,
+      "page": 4,
+      "folio": "1",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 192,
+      "rasterImagePaints": [
+        {
+          "page": 4,
+          "name": "/X31",
+          "object": "263 0",
+          "width": 1536,
+          "height": 1364,
+          "xPpi": 375.22,
+          "yPpi": 375.21,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Build the SystemAround the Model",
+          "pdfPage": 4,
+          "depth": 1
+        }
+      ],
+      "chapter": 1,
+      "section": "Build the SystemAround the Model",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 5,
+      "page": 5,
+      "folio": "2",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1118,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "The full system",
+          "pdfPage": 5,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 6,
+      "page": 6,
+      "folio": "3",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1245,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Prompt engineering is one part of theharness",
+          "pdfPage": 6,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 7,
+      "page": 7,
+      "folio": "4",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 958,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 8,
+      "page": 8,
+      "folio": "5",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 163,
+      "rasterImagePaints": [
+        {
+          "page": 8,
+          "name": "/X56",
+          "object": "340 0",
+          "width": 1536,
+          "height": 1364,
+          "xPpi": 375.22,
+          "yPpi": 375.21,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Treat Contextas a Budget",
+          "pdfPage": 8,
+          "depth": 1
+        }
+      ],
+      "chapter": 2,
+      "section": "Treat Contextas a Budget",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 9,
+      "page": 9,
+      "folio": "6",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1540,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Context engineering, not long prompts",
+          "pdfPage": 9,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 10,
+      "page": 10,
+      "folio": "7",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1624,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 11,
+      "page": 11,
+      "folio": "8",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1449,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Four caches that must not be confused",
+          "pdfPage": 11,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 12,
+      "page": 12,
+      "folio": "9",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2203,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 13,
+      "page": 13,
+      "folio": "10",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 391,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 14,
+      "page": 14,
+      "folio": "11",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 141,
+      "rasterImagePaints": [
+        {
+          "page": 14,
+          "name": "/X88",
+          "object": "406 0",
+          "width": 1536,
+          "height": 1364,
+          "xPpi": 354.47,
+          "yPpi": 354.87,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Prefill andDecode AreDifferent Jobs",
+          "pdfPage": 14,
+          "depth": 1
+        }
+      ],
+      "chapter": 3,
+      "section": "Prefill andDecode AreDifferent Jobs",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 15,
+      "page": 15,
+      "folio": "12",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1259,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Prefill and decode optimize differently",
+          "pdfPage": 15,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 16,
+      "page": 16,
+      "folio": "13",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1179,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "KV cache management and memorypressure",
+          "pdfPage": 16,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 17,
+      "page": 17,
+      "folio": "14",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1495,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 18,
+      "page": 18,
+      "folio": "15",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1727,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Continuous batching, paged attention,and goodput",
+          "pdfPage": 18,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 19,
+      "page": 19,
+      "folio": "16",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1235,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 20,
+      "page": 20,
+      "folio": "17",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 771,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 21,
+      "page": 21,
+      "folio": "18",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 199,
+      "rasterImagePaints": [
+        {
+          "page": 21,
+          "name": "/X131",
+          "object": "477 0",
+          "width": 1536,
+          "height": 1364,
+          "xPpi": 375.22,
+          "yPpi": 375.21,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Choose theOptimizationThat Fits",
+          "pdfPage": 21,
+          "depth": 1
+        }
+      ],
+      "chapter": 4,
+      "section": "Choose theOptimizationThat Fits",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 22,
+      "page": 22,
+      "folio": "19",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1766,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Speculative decoding, quantization, anddistillation",
+          "pdfPage": 22,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 23,
+      "page": 23,
+      "folio": "20",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 635,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 24,
+      "page": 24,
+      "folio": "21",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2065,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Quantization: formats, methods, andquality risk",
+          "pdfPage": 24,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 25,
+      "page": 25,
+      "folio": "22",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1055,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 26,
+      "page": 26,
+      "folio": "23",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 156,
+      "rasterImagePaints": [
+        {
+          "page": 26,
+          "name": "/X164",
+          "object": "518 0",
+          "width": 1536,
+          "height": 1368,
+          "xPpi": 375.22,
+          "yPpi": 375.24,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Turn ModelOutput intoa Contract",
+          "pdfPage": 26,
+          "depth": 1
+        }
+      ],
+      "chapter": 5,
+      "section": "Turn ModelOutput intoa Contract",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 27,
+      "page": 27,
+      "folio": "24",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1299,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Structured outputs: syntax is only the firstgate",
+          "pdfPage": 27,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 28,
+      "page": 28,
+      "folio": "25",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1563,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 29,
+      "page": 29,
+      "folio": "26",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1487,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Reliable function and tool calling",
+          "pdfPage": 29,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 30,
+      "page": 30,
+      "folio": "27",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1244,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 31,
+      "page": 31,
+      "folio": "28",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1682,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 32,
+      "page": 32,
+      "folio": "29",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2036,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 33,
+      "page": 33,
+      "folio": "30",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1947,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 34,
+      "page": 34,
+      "folio": "31",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 154,
+      "rasterImagePaints": [
+        {
+          "page": 34,
+          "name": "/X237",
+          "object": "605 0",
+          "width": 1536,
+          "height": 1368,
+          "xPpi": 375.22,
+          "yPpi": 375.24,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Put Clear Limitson Agents",
+          "pdfPage": 34,
+          "depth": 1
+        }
+      ],
+      "chapter": 6,
+      "section": "Put Clear Limitson Agents",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 35,
+      "page": 35,
+      "folio": "32",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1156,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Agent guardrails, budgets, andtermination",
+          "pdfPage": 35,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 36,
+      "page": 36,
+      "folio": "33",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1182,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 37,
+      "page": 37,
+      "folio": "34",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1511,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Model routing and degraded mode",
+          "pdfPage": 37,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 38,
+      "page": 38,
+      "folio": "35",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2207,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 39,
+      "page": 39,
+      "folio": "36",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1384,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 40,
+      "page": 40,
+      "folio": "37",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1187,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 41,
+      "page": 41,
+      "folio": "38",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 145,
+      "rasterImagePaints": [
+        {
+          "page": 41,
+          "name": "/X284",
+          "object": "658 0",
+          "width": 1536,
+          "height": 1368,
+          "xPpi": 375.22,
+          "yPpi": 375.24,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Keep RetrievalGrounded",
+          "pdfPage": 41,
+          "depth": 1
+        }
+      ],
+      "chapter": 7,
+      "section": "Keep RetrievalGrounded",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 42,
+      "page": 42,
+      "folio": "39",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1217,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "RAG architecture",
+          "pdfPage": 42,
+          "depth": 2
+        },
+        {
+          "title": "Ingestion and chunking",
+          "pdfPage": 42,
+          "depth": 3
+        }
+      ]
+    },
+    {
+      "pdfPage": 43,
+      "page": 43,
+      "folio": "40",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1346,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Embeddings",
+          "pdfPage": 43,
+          "depth": 3
+        },
+        {
+          "title": "Retrieval",
+          "pdfPage": 43,
+          "depth": 3
+        }
+      ]
+    },
+    {
+      "pdfPage": 44,
+      "page": 44,
+      "folio": "41",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1419,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Freshness",
+          "pdfPage": 44,
+          "depth": 3
+        },
+        {
+          "title": "Retrieval and answer evals",
+          "pdfPage": 44,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 45,
+      "page": 45,
+      "folio": "42",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1861,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 46,
+      "page": 46,
+      "folio": "43",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1865,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 47,
+      "page": 47,
+      "folio": "44",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 147,
+      "rasterImagePaints": [
+        {
+          "page": 47,
+          "name": "/X323",
+          "object": "736 0",
+          "width": 1536,
+          "height": 1368,
+          "xPpi": 375.22,
+          "yPpi": 375.24,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Make Evals theRelease Gate",
+          "pdfPage": 47,
+          "depth": 1
+        }
+      ],
+      "chapter": 8,
+      "section": "Make Evals theRelease Gate",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 48,
+      "page": 48,
+      "folio": "45",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1649,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Evals as the release contract",
+          "pdfPage": 48,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 49,
+      "page": 49,
+      "folio": "46",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1704,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 50,
+      "page": 50,
+      "folio": "47",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1035,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 51,
+      "page": 51,
+      "folio": "48",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1800,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Release gates",
+          "pdfPage": 51,
+          "depth": 3
+        }
+      ]
+    },
+    {
+      "pdfPage": 52,
+      "page": 52,
+      "folio": "49",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 917,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 53,
+      "page": 53,
+      "folio": "50",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 171,
+      "rasterImagePaints": [
+        {
+          "page": 53,
+          "name": "/X359",
+          "object": "774 0",
+          "width": 1536,
+          "height": 1364,
+          "xPpi": 336.67,
+          "yPpi": 336.63,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Trace the WholeUser Journey",
+          "pdfPage": 53,
+          "depth": 1
+        }
+      ],
+      "chapter": 9,
+      "section": "Trace the WholeUser Journey",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 54,
+      "page": 54,
+      "folio": "51",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 949,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "LLM observability as a first-classdiscipline",
+          "pdfPage": 54,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 55,
+      "page": 55,
+      "folio": "52",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1624,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 56,
+      "page": 56,
+      "folio": "53",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1740,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 57,
+      "page": 57,
+      "folio": "54",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1385,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Attribute cost to the whole workflow",
+          "pdfPage": 57,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 58,
+      "page": 58,
+      "folio": "55",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1173,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 59,
+      "page": 59,
+      "folio": "56",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 698,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 60,
+      "page": 60,
+      "folio": "57",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 179,
+      "rasterImagePaints": [
+        {
+          "page": 60,
+          "name": "/X396",
+          "object": "822 0",
+          "width": 1536,
+          "height": 1364,
+          "xPpi": 375.22,
+          "yPpi": 375.21,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Build Safety intothe Architecture",
+          "pdfPage": 60,
+          "depth": 1
+        }
+      ],
+      "chapter": 10,
+      "section": "Build Safety intothe Architecture",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 61,
+      "page": 61,
+      "folio": "58",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1515,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Safety engineering and permissionboundaries",
+          "pdfPage": 61,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 62,
+      "page": 62,
+      "folio": "59",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1925,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 63,
+      "page": 63,
+      "folio": "60",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1602,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Multi-tenant isolation and cache safety",
+          "pdfPage": 63,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 64,
+      "page": 64,
+      "folio": "61",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1996,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 65,
+      "page": 65,
+      "folio": "62",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2111,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 66,
+      "page": 66,
+      "folio": "63",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1020,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 67,
+      "page": 67,
+      "folio": "64",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 181,
+      "rasterImagePaints": [
+        {
+          "page": 67,
+          "name": "/X465",
+          "object": "894 0",
+          "width": 1536,
+          "height": 1364,
+          "xPpi": 375.22,
+          "yPpi": 375.21,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Choose Whatto Change",
+          "pdfPage": 67,
+          "depth": 1
+        }
+      ],
+      "chapter": 11,
+      "section": "Choose Whatto Change",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 68,
+      "page": 68,
+      "folio": "65",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1773,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "In-context learning, RAG, fine-tuning, anddistillation",
+          "pdfPage": 68,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 69,
+      "page": 69,
+      "folio": "66",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1954,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Diagnosing the four-way tradeoff",
+          "pdfPage": 69,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 70,
+      "page": 70,
+      "folio": "67",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1293,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 71,
+      "page": 71,
+      "folio": "68",
+      "role": "chapter-opener",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 192,
+      "rasterImagePaints": [
+        {
+          "page": 71,
+          "name": "/X484",
+          "object": "914 0",
+          "width": 1536,
+          "height": 1364,
+          "xPpi": 375.22,
+          "yPpi": 375.21,
+          "hasSMask": false,
+          "hasMask": false,
+          "isImageMask": false,
+          "opaque": true
+        }
+      ],
+      "outlineDestinations": [
+        {
+          "title": "Design forProductionFailure",
+          "pdfPage": 71,
+          "depth": 1
+        }
+      ],
+      "chapter": 12,
+      "section": "Design forProductionFailure",
+      "requiredRasterIllustration": {
+        "paintCount": 1,
+        "minimumEffectivePpi": 240,
+        "requireOpaque": true
+      }
+    },
+    {
+      "pdfPage": 72,
+      "page": 72,
+      "folio": "69",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1876,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Production failure matrix",
+          "pdfPage": 72,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 73,
+      "page": 73,
+      "folio": "70",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1386,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Production readiness checklist",
+          "pdfPage": 73,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 74,
+      "page": 74,
+      "folio": "71",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1176,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Contract and harness",
+          "pdfPage": 74,
+          "depth": 3
+        },
+        {
+          "title": "Context and retrieval",
+          "pdfPage": 74,
+          "depth": 3
+        },
+        {
+          "title": "Inference and caching",
+          "pdfPage": 74,
+          "depth": 3
+        }
+      ]
+    },
+    {
+      "pdfPage": 75,
+      "page": 75,
+      "folio": "72",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1183,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Outputs, tools, and agents",
+          "pdfPage": 75,
+          "depth": 3
+        },
+        {
+          "title": "Evals, operations, and economics",
+          "pdfPage": 75,
+          "depth": 3
+        }
+      ]
+    },
+    {
+      "pdfPage": 76,
+      "page": 76,
+      "folio": "73",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 933,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Security and tenancy",
+          "pdfPage": 76,
+          "depth": 3
+        }
+      ]
+    },
+    {
+      "pdfPage": 77,
+      "page": 77,
+      "folio": "74",
+      "role": "body",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 893,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Recommended learning order",
+          "pdfPage": 77,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 78,
+      "page": 78,
+      "folio": "75",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1230,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Notes and Sources",
+          "pdfPage": 78,
+          "depth": 1
+        },
+        {
+          "title": "Section source map",
+          "pdfPage": 78,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 79,
+      "page": 79,
+      "folio": "76",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1994,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 80,
+      "page": 80,
+      "folio": "77",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1788,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Harness, context, outputs, and tools",
+          "pdfPage": 80,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 81,
+      "page": 81,
+      "folio": "78",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2035,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 82,
+      "page": 82,
+      "folio": "79",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2184,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 83,
+      "page": 83,
+      "folio": "80",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1955,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 84,
+      "page": 84,
+      "folio": "81",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1954,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Serving and compression",
+          "pdfPage": 84,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 85,
+      "page": 85,
+      "folio": "82",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2037,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Retrieval and evaluation",
+          "pdfPage": 85,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 86,
+      "page": 86,
+      "folio": "83",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2008,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 87,
+      "page": 87,
+      "folio": "84",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2384,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 88,
+      "page": 88,
+      "folio": "85",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1810,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Observability and economics",
+          "pdfPage": 88,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 89,
+      "page": 89,
+      "folio": "86",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1798,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Security and tenancy",
+          "pdfPage": 89,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 90,
+      "page": 90,
+      "folio": "87",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2043,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 91,
+      "page": 91,
+      "folio": "88",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2094,
+      "rasterImagePaints": [],
+      "outlineDestinations": []
+    },
+    {
+      "pdfPage": 92,
+      "page": 92,
+      "folio": "89",
+      "role": "references",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1210,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Model adaptation",
+          "pdfPage": 92,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "page": 93,
+      "folio": "90",
+      "role": "index",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1744,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Index of Terms",
+          "pdfPage": 93,
+          "depth": 1
+        },
+        {
+          "title": "A",
+          "pdfPage": 93,
+          "depth": 2
+        },
+        {
+          "title": "B",
+          "pdfPage": 93,
+          "depth": 2
+        },
+        {
+          "title": "C",
+          "pdfPage": 93,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 94,
+      "page": 94,
+      "folio": "91",
+      "role": "index",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2029,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "D",
+          "pdfPage": 94,
+          "depth": 2
+        },
+        {
+          "title": "E",
+          "pdfPage": 94,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 95,
+      "page": 95,
+      "folio": "92",
+      "role": "index",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1854,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "F",
+          "pdfPage": 95,
+          "depth": 2
+        },
+        {
+          "title": "G",
+          "pdfPage": 95,
+          "depth": 2
+        },
+        {
+          "title": "H",
+          "pdfPage": 95,
+          "depth": 2
+        },
+        {
+          "title": "I",
+          "pdfPage": 95,
+          "depth": 2
+        },
+        {
+          "title": "K",
+          "pdfPage": 95,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 96,
+      "page": 96,
+      "folio": "93",
+      "role": "index",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1975,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "L",
+          "pdfPage": 96,
+          "depth": 2
+        },
+        {
+          "title": "M",
+          "pdfPage": 96,
+          "depth": 2
+        },
+        {
+          "title": "N",
+          "pdfPage": 96,
+          "depth": 2
+        },
+        {
+          "title": "O",
+          "pdfPage": 96,
+          "depth": 2
+        },
+        {
+          "title": "P",
+          "pdfPage": 96,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 97,
+      "page": 97,
+      "folio": "94",
+      "role": "index",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 2022,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Q",
+          "pdfPage": 97,
+          "depth": 2
+        },
+        {
+          "title": "R",
+          "pdfPage": 97,
+          "depth": 2
+        },
+        {
+          "title": "S",
+          "pdfPage": 97,
+          "depth": 2
+        },
+        {
+          "title": "T",
+          "pdfPage": 97,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 98,
+      "page": 98,
+      "folio": "95",
+      "role": "index",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1106,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "V",
+          "pdfPage": 98,
+          "depth": 2
+        },
+        {
+          "title": "W",
+          "pdfPage": 98,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "pdfPage": 99,
+      "page": 99,
+      "folio": "96",
+      "role": "changelog",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 892,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Changelog",
+          "pdfPage": 99,
+          "depth": 1
+        },
+        {
+          "title": "Separate monitor coverage and review delay",
+          "pdfPage": 99,
+          "depth": 2
+        },
+        {
+          "title": "WHAT CHANGED",
+          "pdfPage": 99,
+          "depth": 3
+        },
+        {
+          "title": "WHY",
+          "pdfPage": 99,
+          "depth": 3
+        }
+      ]
+    },
+    {
+      "pdfPage": 100,
+      "page": 100,
+      "folio": "97",
+      "role": "changelog",
+      "mediaBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "cropBox": [
+        0.0,
+        0.0,
+        420.0,
+        594.95996
+      ],
+      "textCharacters": 1279,
+      "rasterImagePaints": [],
+      "outlineDestinations": [
+        {
+          "title": "Compare safety evaluations with productiondecisions",
+          "pdfPage": 100,
+          "depth": 2
+        },
+        {
+          "title": "WHAT CHANGED",
+          "pdfPage": 100,
+          "depth": 3
+        },
+        {
+          "title": "WHY",
+          "pdfPage": 100,
+          "depth": 3
+        },
+        {
+          "title": "Record the current evidence review",
+          "pdfPage": 100,
+          "depth": 2
+        },
+        {
+          "title": "WHAT CHANGED",
+          "pdfPage": 100,
+          "depth": 3
+        },
+        {
+          "title": "WHY",
+          "pdfPage": 100,
+          "depth": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "production-ai-engineering",
+  "title": "Production AI Engineering",
+  "version": "1.4.2",
+  "date": "2026-11-08",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf",
+  "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
+  "pages": 97,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
+    "date": "2026-11-08",
+    "version": "1.4.2",
+    "daytimeSha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487"
+  },
+  "releaseValidationKind": "presentation-exact-artifact",
+  "previous_public_edition": "1.4.1",
+  "comparison_basis": "approved public edition",
+  "baseline": {
+    "version": "1.4.1",
+    "date": "2026-11-07",
+    "pdf": "output/pdf/production-ai-engineering-v1.4.1-2026-11-07.pdf",
+    "sha256": "5653ee24bd75a440a8175d4809b5dc4480167771d7fa7c2932edae74e31b3299",
+    "manifest": {
+      "path": "baselines/v1.4.1/heading-repair/release-manifest.json",
+      "sha256": "2f23a1f0c38596e55bdc72fa7d821b21431aa04a984397669f05f25b074a2937"
+    }
+  },
+  "candidate_validation": "qa/v1.4.2/heading-repair/light-validation.json",
+  "candidateEvidence": {
+    "lightValidation": {
+      "path": "qa/v1.4.2/heading-repair/light-validation.json",
+      "sha256": "9de5a326d626933d8de575faf64bad213d96680e87289b94adc7bcf45ad8acc5"
+    },
+    "darkValidation": {
+      "path": "qa/v1.4.2/heading-repair/dark-validation.json",
+      "sha256": "c789e8570a8d53847a01fbd9aa71926f72210137087b79a106ebabcca2eb0e00"
+    },
+    "editionDiff": {
+      "path": "qa/v1.4.2/heading-repair/comparison/edition-diff.json",
+      "sha256": "31c2cf1b0efcd5764b2ab2bc762e78605341c54a2a1238f4120fe13bf1fc4a42"
+    },
+    "changelogDecision": {
+      "path": "qa/v1.4.2/heading-repair/changelog-decision.json",
+      "sha256": "af9c429c4e1253f32fafb4a74a52339dca985a9115be9ec7fa8eb0cf046da23a"
+    },
+    "parity": {
+      "path": "qa/v1.4.2/heading-repair/pair/parity.json",
+      "sha256": "96562f024cb1d1e5332c519d04523d736f3593d3c9cb025e36873c55be6c4c98"
+    },
+    "appearanceAudit": {
+      "path": "qa/v1.4.2/heading-repair/appearance.json",
+      "sha256": "c3694f905f8b9acd40b95a89945241cd136e2a0a9b0836e68c663af799b0eb16"
+    }
+  },
+  "pageMaps": {
+    "light": {
+      "path": "qa/v1.4.2/heading-repair/light-page-map.json",
+      "sha256": "ba8274e1c674701d543ac643d25b87dcd487adf29b359cbca8fea7b3efac99ff"
+    },
+    "dark": {
+      "path": "qa/v1.4.2/heading-repair/dark-page-map.json",
+      "sha256": "fa2352c66f04eeef98f2220ef77d85da9bdd4115b90f6a9dd0bc784c1d21c747"
+    }
+  },
+  "appearances": {
+    "light": {
+      "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf",
+      "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
+      "pages": 97
+    },
+    "dark": {
+      "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08-late-night-r1.pdf",
+      "sha256": "28c67aa1799cb2f8f9bf0694adcdbc7f177a17324256af267a1f82bfb24b2132",
+      "pages": 97
+    }
+  },
+  "readerFacingContentChanged": false,
+  "presentationRepair": {
+    "policy": "mandatory-title-only-v1",
+    "contentPolicy": "No substantive manuscript changes; preserve chapter markers, data and procedural steps.",
+    "rawDifferences": "candidateEvidence.editionDiff",
+    "historicalChangelog": "Retained in previous edition; no new content changelog.",
+    "sourceProof": {
+      "path": "qa/v1.4.2/heading-repair/source-scope.json",
+      "sha256": "e99d3e13009292551959619685b1e428f16ed996c90cc99399299b1565763dd6"
+    },
+    "headingProof": {
+      "path": "qa/v1.4.2/heading-repair/heading-proof.json",
+      "sha256": "c7957d26804e819910457fa600083f686cacf156ccc398603d00bd309d216456"
+    },
+    "releaseProof": {
+      "path": "qa/v1.4.2/heading-repair/release-proof.json",
+      "sha256": "b6d3641e1b6097a1e768d5dcfe06bd53fbfd0f18507b1ff28a9617a3c08ab16a"
+    }
+  },
+  "retainedProvenance": {
+    "status": "historical_only_not_reverified",
+    "sourceEdition": "1.4.1",
+    "manifest": "baselines/v1.4.1/heading-repair/release-manifest.json"
+  },
+  "generationToolkitArchive": {
+    "collectionPath": "releases/2026-11-08-heading-labels/generation-toolkit-v2.zip",
+    "sha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e"
+  }
+}

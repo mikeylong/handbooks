@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-evaluation",
+  "version": "1.0.2",
+  "sourceReaderSha256": "c228885b1ee3e0a6adf4b8ddfa1dab1498494a0dc04a206322d3e136cd0241a7",
+  "sha256": "cdae5f9ef32da1a6fee08d849925e1f1e88fa8b9aa8cdd10b0af7170875e3aa8",
+  "sections": [
+    {
+      "title": "How to use this guide",
+      "anchor": "how-to-use-this-guide",
+      "level": 2
+    },
+    {
+      "title": "Choose a path",
+      "anchor": "choose-a-path",
+      "level": 3
+    },
+    {
+      "title": "The repeated learning loop",
+      "anchor": "the-repeated-learning-loop",
+      "level": 3
+    },
+    {
+      "title": "What you need",
+      "anchor": "what-you-need",
+      "level": 3
+    },
+    {
+      "title": "The evaluation loop at a glance",
+      "anchor": "the-evaluation-loop-at-a-glance",
+      "level": 2
+    },
+    {
+      "title": "The recurring example: Trailwise",
+      "anchor": "the-recurring-example-trailwise",
+      "level": 3
+    },
+    {
+      "title": "The packet you will build",
+      "anchor": "the-packet-you-will-build",
+      "level": 3
+    },
+    {
+      "title": "Know what an evaluation can tell you",
+      "anchor": "know-what-an-evaluation-can-tell-you",
+      "level": 2
+    },
+    {
+      "title": "Start with the whole product system",
+      "anchor": "start-with-the-whole-product-system",
+      "level": 3
+    },
+    {
+      "title": "Three different evidence settings",
+      "anchor": "three-different-evidence-settings",
+      "level": 3
+    },
+    {
+      "title": "Exact checks and judgment checks",
+      "anchor": "exact-checks-and-judgment-checks",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 1: evaluation brief",
+      "anchor": "worksheet-1-evaluation-brief",
+      "level": 3
+    },
+    {
+      "title": "Define behavior, failures, and rubrics",
+      "anchor": "define-behavior-failures-and-rubrics",
+      "level": 2
+    },
+    {
+      "title": "Start with the behavior contract",
+      "anchor": "start-with-the-behavior-contract",
+      "level": 3
+    },
+    {
+      "title": "Risk is more than frequency",
+      "anchor": "risk-is-more-than-frequency",
+      "level": 3
+    },
+    {
+      "title": "Trailwise failure inventory",
+      "anchor": "trailwise-failure-inventory",
+      "level": 3
+    },
+    {
+      "title": "Write observable rubric anchors",
+      "anchor": "write-observable-rubric-anchors",
+      "level": 3
+    },
+    {
+      "title": "Exercise: repair a vague rubric",
+      "anchor": "exercise-repair-a-vague-rubric",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 2: behavior and risk register",
+      "anchor": "worksheet-2-behavior-and-risk-register",
+      "level": 3
+    },
+    {
+      "title": "Turn risks into an evaluation design",
+      "anchor": "turn-risks-into-an-evaluation-design",
+      "level": 2
+    },
+    {
+      "title": "Use a coverage matrix",
+      "anchor": "use-a-coverage-matrix",
+      "level": 3
+    },
+    {
+      "title": "Choose the least ambiguous grader that works",
+      "anchor": "choose-the-least-ambiguous-grader-that-works",
+      "level": 3
+    },
+    {
+      "title": "Avoid the composite-score trap",
+      "anchor": "avoid-the-composite-score-trap",
+      "level": 3
+    },
+    {
+      "title": "Exercise: design the grader stack",
+      "anchor": "exercise-design-the-grader-stack",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 3: coverage matrix",
+      "anchor": "worksheet-3-coverage-matrix",
+      "level": 3
+    },
+    {
+      "title": "Module checkpoint",
+      "anchor": "module-checkpoint",
+      "level": 3
+    },
+    {
+      "title": "Build evidence sets that answer different questions",
+      "anchor": "build-evidence-sets-that-answer-different-questions",
+      "level": 2
+    },
+    {
+      "title": "Representative and challenge evidence are both necessary",
+      "anchor": "representative-and-challenge-evidence-are-both-necessary",
+      "level": 3
+    },
+    {
+      "title": "Name the population before counting",
+      "anchor": "name-the-population-before-counting",
+      "level": 3
+    },
+    {
+      "title": "Use slices that could change the decision",
+      "anchor": "use-slices-that-could-change-the-decision",
+      "level": 3
+    },
+    {
+      "title": "Real, expert-authored, and synthetic cases",
+      "anchor": "real-expert-authored-and-synthetic-cases",
+      "level": 3
+    },
+    {
+      "title": "Exercise: separate the sets",
+      "anchor": "exercise-separate-the-sets",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 4: dataset card",
+      "anchor": "worksheet-4-dataset-card",
+      "level": 3
+    },
+    {
+      "title": "Protect the final test from development",
+      "anchor": "protect-the-final-test-from-development",
+      "level": 2
+    },
+    {
+      "title": "Each partition has one job",
+      "anchor": "each-partition-has-one-job",
+      "level": 3
+    },
+    {
+      "title": "Why a holdout loses meaning",
+      "anchor": "why-a-holdout-loses-meaning",
+      "level": 3
+    },
+    {
+      "title": "Version the evidence packet",
+      "anchor": "version-the-evidence-packet",
+      "level": 3
+    },
+    {
+      "title": "Exercise: find the broken claim",
+      "anchor": "exercise-find-the-broken-claim",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 5: split manifest and version ledger",
+      "anchor": "worksheet-5-split-manifest-and-version-ledger",
+      "level": 3
+    },
+    {
+      "title": "Measure uncertainty and repeated behavior",
+      "anchor": "measure-uncertainty-and-repeated-behavior",
+      "level": 2
+    },
+    {
+      "title": "Report the rate and its uncertainty",
+      "anchor": "report-the-rate-and-its-uncertainty",
+      "level": 3
+    },
+    {
+      "title": "How to obtain a Wilson interval",
+      "anchor": "how-to-obtain-a-wilson-interval",
+      "level": 3
+    },
+    {
+      "title": "Plan precision before collecting cases",
+      "anchor": "plan-precision-before-collecting-cases",
+      "level": 3
+    },
+    {
+      "title": "Zero observed failures is not zero risk",
+      "anchor": "zero-observed-failures-is-not-zero-risk",
+      "level": 3
+    },
+    {
+      "title": "Nondeterminism needs the right repeat measure",
+      "anchor": "nondeterminism-needs-the-right-repeat-measure",
+      "level": 3
+    },
+    {
+      "title": "Exercise: interpret before deciding",
+      "anchor": "exercise-interpret-before-deciding",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 6: statistical results",
+      "anchor": "worksheet-6-statistical-results",
+      "level": 3
+    },
+    {
+      "title": "Make human judgment reproducible",
+      "anchor": "make-human-judgment-reproducible",
+      "level": 2
+    },
+    {
+      "title": "A good human-evaluation process",
+      "anchor": "a-good-human-evaluation-process",
+      "level": 3
+    },
+    {
+      "title": "Percent agreement and kappa answer different questions",
+      "anchor": "percent-agreement-and-kappa-answer-different-questions",
+      "level": 3
+    },
+    {
+      "title": "Choose reliability evidence that fits the labels",
+      "anchor": "choose-reliability-evidence-that-fits-the-labels",
+      "level": 3
+    },
+    {
+      "title": "Exercise: diagnose the disagreement",
+      "anchor": "exercise-diagnose-the-disagreement",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 7: rater guide and calibration log",
+      "anchor": "worksheet-7-rater-guide-and-calibration-log",
+      "level": 3
+    },
+    {
+      "title": "Validate a model judge before trusting it",
+      "anchor": "validate-a-model-judge-before-trusting-it",
+      "level": 2
+    },
+    {
+      "title": "A clear prompt is necessary, not sufficient",
+      "anchor": "a-clear-prompt-is-necessary-not-sufficient",
+      "level": 3
+    },
+    {
+      "title": "Read the confusion matrix",
+      "anchor": "read-the-confusion-matrix",
+      "level": 3
+    },
+    {
+      "title": "Test predictable judge weaknesses",
+      "anchor": "test-predictable-judge-weaknesses",
+      "level": 3
+    },
+    {
+      "title": "Set a permitted-use boundary",
+      "anchor": "set-a-permitted-use-boundary",
+      "level": 3
+    },
+    {
+      "title": "Exercise: reject the easy summary",
+      "anchor": "exercise-reject-the-easy-summary",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 8: model-judge card",
+      "anchor": "worksheet-8-model-judge-card",
+      "level": 3
+    },
+    {
+      "title": "Test adversarial, security, and privacy failures",
+      "anchor": "test-adversarial-security-and-privacy-failures",
+      "level": 2
+    },
+    {
+      "title": "Begin with a small threat model",
+      "anchor": "begin-with-a-small-threat-model",
+      "level": 3
+    },
+    {
+      "title": "Threat categories to cover",
+      "anchor": "threat-categories-to-cover",
+      "level": 3
+    },
+    {
+      "title": "The adversarial loop",
+      "anchor": "the-adversarial-loop",
+      "level": 3
+    },
+    {
+      "title": "Exercise: indirect injection",
+      "anchor": "exercise-indirect-injection",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 9: threat and adversarial test",
+      "anchor": "worksheet-9-threat-and-adversarial-test",
+      "level": 3
+    },
+    {
+      "title": "Evaluate agents, tools, and side effects",
+      "anchor": "evaluate-agents-tools-and-side-effects",
+      "level": 2
+    },
+    {
+      "title": "Check outcome, tool history, and constraints",
+      "anchor": "check-outcome-tool-history-and-constraints",
+      "level": 3
+    },
+    {
+      "title": "Define the starting state and required result",
+      "anchor": "define-the-starting-state-and-required-result",
+      "level": 3
+    },
+    {
+      "title": "Check exact requirements directly",
+      "anchor": "check-exact-requirements-directly",
+      "level": 3
+    },
+    {
+      "title": "Exercise: uncertain write",
+      "anchor": "exercise-uncertain-write",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 10: agent scenario and scorecard",
+      "anchor": "worksheet-10-agent-scenario-and-scorecard",
+      "level": 3
+    },
+    {
+      "title": "Turn evidence into a launch boundary",
+      "anchor": "turn-evidence-into-a-launch-boundary",
+      "level": 2
+    },
+    {
+      "title": "Predeclare the decision rules",
+      "anchor": "predeclare-the-decision-rules",
+      "level": 3
+    },
+    {
+      "title": "Trailwise candidate 0.9: release evidence",
+      "anchor": "trailwise-candidate-09-release-evidence",
+      "level": 3
+    },
+    {
+      "title": "Limited launch changes exposure, not evidence",
+      "anchor": "limited-launch-changes-exposure-not-evidence",
+      "level": 3
+    },
+    {
+      "title": "Design a canary before release",
+      "anchor": "design-a-canary-before-release",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 11: launch decision record",
+      "anchor": "worksheet-11-launch-decision-record",
+      "level": 3
+    },
+    {
+      "title": "Monitor production and respond to incidents",
+      "anchor": "monitor-production-and-respond-to-incidents",
+      "level": 2
+    },
+    {
+      "title": "Monitor the claim boundary",
+      "anchor": "monitor-the-claim-boundary",
+      "level": 3
+    },
+    {
+      "title": "Every monitor needs an action",
+      "anchor": "every-monitor-needs-an-action",
+      "level": 3
+    },
+    {
+      "title": "A practical incident loop",
+      "anchor": "a-practical-incident-loop",
+      "level": 3
+    },
+    {
+      "title": "Exercise: the judge misses policy drift",
+      "anchor": "exercise-the-judge-misses-policy-drift",
+      "level": 3
+    },
+    {
+      "title": "Worksheet 12: monitoring and incident plan",
+      "anchor": "worksheet-12-monitoring-and-incident-plan",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone: Trailwise release review",
+      "anchor": "guided-capstone-trailwise-release-review",
+      "level": 2
+    },
+    {
+      "title": "Proposed release",
+      "anchor": "proposed-release",
+      "level": 3
+    },
+    {
+      "title": "Evidence A: behavior and risk draft",
+      "anchor": "evidence-a-behavior-and-risk-draft",
+      "level": 3
+    },
+    {
+      "title": "Evidence B: cases and partitions",
+      "anchor": "evidence-b-cases-and-partitions",
+      "level": 3
+    },
+    {
+      "title": "Evidence C: human and model measurement",
+      "anchor": "evidence-c-human-and-model-measurement",
+      "level": 3
+    },
+    {
+      "title": "Evidence D: representative, challenge, and agent results",
+      "anchor": "evidence-d-representative-challenge-and-agent-results",
+      "level": 3
+    },
+    {
+      "title": "Evidence E: five agent traces",
+      "anchor": "evidence-e-five-agent-traces",
+      "level": 3
+    },
+    {
+      "title": "Your guided capstone tasks",
+      "anchor": "your-guided-capstone-tasks",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone answer key",
+      "anchor": "guided-capstone-answer-key",
+      "level": 2
+    },
+    {
+      "title": "1. Correct the evidence claims",
+      "anchor": "1-correct-the-evidence-claims",
+      "level": 3
+    },
+    {
+      "title": "2. Restrict the measurement systems",
+      "anchor": "2-restrict-the-measurement-systems",
+      "level": 3
+    },
+    {
+      "title": "3. Name the blockers",
+      "anchor": "3-name-the-blockers",
+      "level": 3
+    },
+    {
+      "title": "Worked contract and launch record",
+      "anchor": "worked-contract-and-launch-record",
+      "level": 3
+    },
+    {
+      "title": "4. Define the next evidence loop",
+      "anchor": "4-define-the-next-evidence-loop",
+      "level": 3
+    },
+    {
+      "title": "Guided capstone self-assessment",
+      "anchor": "guided-capstone-self-assessment",
+      "level": 2
+    },
+    {
+      "title": "Automatic non-passing misconceptions",
+      "anchor": "automatic-non-passing-misconceptions",
+      "level": 3
+    },
+    {
+      "title": "Appendix A: one-page evaluation checklist",
+      "anchor": "appendix-a-one-page-evaluation-checklist",
+      "level": 2
+    },
+    {
+      "title": "Appendix B: metric cheat sheet",
+      "anchor": "appendix-b-metric-cheat-sheet",
+      "level": 2
+    },
+    {
+      "title": "Appendix C: plain-language glossary",
+      "anchor": "appendix-c-plain-language-glossary",
+      "level": 2
+    },
+    {
+      "title": "Appendix D: worksheet index",
+      "anchor": "appendix-d-worksheet-index",
+      "level": 2
+    },
+    {
+      "title": "Further reading and source notes",
+      "anchor": "further-reading-and-source-notes",
+      "level": 2
+    },
+    {
+      "title": "[S27] Judging LLM-as-a-Judge: Concerning Rubric Artifacts. 2026-08-31. Preprint and domain-bounded experiments; not proof that every judge or every rubric fails. View source",
+      "anchor": "s27-judging-llm-as-a-judge-concerning-rubric-artifacts-2026-08-31-preprint-and-domain-bounded-experiments-not-proof-that-every-judge-or-every-rubric-fails-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S28] CredLeakBench. 2026-10-06. Sandboxed simulation using synthetic secrets. No production compromise or portable failure rate inferred. View source",
+      "anchor": "s28-credleakbench-2026-10-06-sandboxed-simulation-using-synthetic-secrets-no-production-compromise-or-portable-failure-rate-inferred-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S29] MemRiskBench. 2026-09-14. Scripted episodes and selected quantized models constrain transfer. Summary contamination is documented and excluded from scoring. View source",
+      "anchor": "s29-memriskbench-2026-09-14-scripted-episodes-and-selected-quantized-models-constrain-transfer-summary-contamination-is-documented-and-excluded-from-scoring-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S30] How we detect frontier model misalignment. 2026-10-29. Vendor internal system and incident replay; not a portable detection rate or proof of local controls. View source",
+      "anchor": "s30-how-we-detect-frontier-model-misalignment-2026-10-29-vendor-internal-system-and-incident-replay-not-a-portable-detection-rate-or-proof-of-local-controls-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S31] LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents. 2026-10-19T09:50:57Z. The verifier trusts declared lineage unless independently verified. Study results are clinical and task-specific. No portable mitigation rate or ranking inferred. View source",
+      "anchor": "s31-leakbench-auditing-reward-hacking-through-prediction-time-leakage-in-clinical-modeling-agents-2026-10-19t095057z-the-verifier-trusts-declared-lineage-unless-independently-verified-study-results-are-clinical-and-task-specific-no-portable-mitigation-rate-or-ranking-inferred-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S19] Liang et al. Holistic Evaluation of Language Models. TMLR, 2023; CRFM methodology overview, 2022. View source",
+      "anchor": "s19-liang-et-al-holistic-evaluation-of-language-models-tmlr-2023-crfm-methodology-overview-2022-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S20] Ribeiro et al. Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. ACL, 2020. View source",
+      "anchor": "s20-ribeiro-et-al-beyond-accuracy-behavioral-testing-of-nlp-models-with-checklist-acl-2020-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S21] Gebru et al. Datasheets for Datasets. 2018 preprint, version 3; later published in CACM, 2021. View source",
+      "anchor": "s21-gebru-et-al-datasheets-for-datasets-2018-preprint-version-3-later-published-in-cacm-2021-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S22] Yao et al. tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. 2024 research preprint. View source",
+      "anchor": "s22-yao-et-al-tau-bench-a-benchmark-for-tool-agent-user-interaction-in-real-world-domains-2024-research-preprint-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S23] Debenedetti et al. AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents. 2024 research preprint, version 3. View source",
+      "anchor": "s23-debenedetti-et-al-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents-2024-research-preprint-version-3-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S24] Featonby. Making retries safe with idempotent APIs. Amazon Builders Library, accessed October 1, 2026. View source",
+      "anchor": "s24-featonby-making-retries-safe-with-idempotent-apis-amazon-builders-library-accessed-october-1-2026-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S25] NIST/SEMATECH e-Handbook. Confidence intervals for a proportion, accessed October 1, 2026. View source",
+      "anchor": "s25-nistsematech-e-handbook-confidence-intervals-for-a-proportion-accessed-october-1-2026-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S26] US Census Bureau. Instructions for Applying Statistical Testing to ACS Data. 2014. View source",
+      "anchor": "s26-us-census-bureau-instructions-for-applying-statistical-testing-to-acs-data-2014-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S2] OpenAI. Evaluation best practices. Living documentation, accessed October 1, 2026. View source",
+      "anchor": "s2-openai-evaluation-best-practices-living-documentation-accessed-october-1-2026-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S3] NIST. Artificial Intelligence Risk Management Framework (AI RMF 1.0), Core, 2023. View source",
+      "anchor": "s3-nist-artificial-intelligence-risk-management-framework-ai-rmf-10-core-2023-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S4] NIST AI 800-3. Expanding the AI Evaluation Toolbox with Statistical Models, 2026. View source",
+      "anchor": "s4-nist-ai-800-3-expanding-the-ai-evaluation-toolbox-with-statistical-models-2026-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S5] Anthropic. Demystifying evals for AI agents, 2026. View source",
+      "anchor": "s5-anthropic-demystifying-evals-for-ai-agents-2026-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S6] Zheng et al. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. NeurIPS, 2023. View source",
+      "anchor": "s6-zheng-et-al-judging-llm-as-a-judge-with-mt-bench-and-chatbot-arena-neurips-2023-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S7] Liu et al. G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment. EMNLP, 2023. View source",
+      "anchor": "s7-liu-et-al-g-eval-nlg-evaluation-using-gpt-4-with-better-human-alignment-emnlp-2023-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S8] Artstein and Poesio. Inter-Coder Agreement for Computational Linguistics. Computational Linguistics, 2008. View source",
+      "anchor": "s8-artstein-and-poesio-inter-coder-agreement-for-computational-linguistics-computational-linguistics-2008-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S9] NIST AI 600-1. Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile, 2024. View source",
+      "anchor": "s9-nist-ai-600-1-artificial-intelligence-risk-management-framework-generative-artificial-intelligence-profile-2024-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S10] Warner et al. Canarying Releases. The Site Reliability Workbook, 2018. View source",
+      "anchor": "s10-warner-et-al-canarying-releases-the-site-reliability-workbook-2018-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S11] Breck et al. What's your ML test score? A rubric for ML production systems, 2016. View source",
+      "anchor": "s11-breck-et-al-whats-your-ml-test-score-a-rubric-for-ml-production-systems-2016-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S12] NIST Artificial Intelligence Technology Evaluation. Sequestered testbed overview, accessed October 1, 2026. View source",
+      "anchor": "s12-nist-artificial-intelligence-technology-evaluation-sequestered-testbed-overview-accessed-october-1-2026-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S13] Hanley and Lippman-Hand. If Nothing Goes Wrong, Is Everything All Right? JAMA, 1983. View source",
+      "anchor": "s13-hanley-and-lippman-hand-if-nothing-goes-wrong-is-everything-all-right-jama-1983-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S14] OpenAI. Advancing red teaming with people and AI, 2024. View source",
+      "anchor": "s14-openai-advancing-red-teaming-with-people-and-ai-2024-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S15] Dwork et al. The reusable holdout: Preserving validity in adaptive data analysis. Science, 2015. View source",
+      "anchor": "s15-dwork-et-al-the-reusable-holdout-preserving-validity-in-adaptive-data-analysis-science-2015-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S16] Cohen. A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 1960. View source",
+      "anchor": "s16-cohen-a-coefficient-of-agreement-for-nominal-scales-educational-and-psychological-measurement-1960-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S17] NIST AI 800-4. Challenges to the Monitoring of Deployed AI Systems: Center for AI Standards and Innovation, 2026. View source",
+      "anchor": "s17-nist-ai-800-4-challenges-to-the-monitoring-of-deployed-ai-systems-center-for-ai-standards-and-innovation-2026-view-source",
+      "level": 4
+    },
+    {
+      "title": "[S18] NIST AI 800-2 initial public draft. Practices for Automated Benchmark Evaluations of Language Models, 2026. View source",
+      "anchor": "s18-nist-ai-800-2-initial-public-draft-practices-for-automated-benchmark-evaluations-of-language-models-2026-view-source",
+      "level": 4
+    }
+  ],
+  "prompts": 0,
+  "figures": []
+}

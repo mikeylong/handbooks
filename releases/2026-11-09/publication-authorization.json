@@ -1,0 +1,14 @@
+{
+  "authorizedAt": "2026-11-10T03:57:31.882274+00:00",
+  "instruction": "Fix the Production changelog provenance, revalidate the corrected candidate, then publish the three patch editions. Keep the 80 GiB budget and preserve all release and failed-run evidence.",
+  "scope": [
+    "production-ai-engineering 1.4.3 provenance correction and revalidation",
+    "ai-native-organization 1.1.3 exact approved candidate",
+    "ai-evaluation 1.0.3 exact approved candidate",
+    "publish those three editions"
+  ],
+  "storageBudgetGiB": 80,
+  "hostFreeFloorGiB": 10,
+  "preserveReleaseAndFailedEvidence": true,
+  "originalProductionHelpersMayRerun": false
+}

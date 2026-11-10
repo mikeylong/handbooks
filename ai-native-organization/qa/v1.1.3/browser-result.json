@@ -1,0 +1,1958 @@
+{
+  "status": "passed",
+  "identity": {
+    "id": "ai-native-organization",
+    "title": "AI-Native Organization Handbook",
+    "version": "1.1.3",
+    "date": "2026-11-09",
+    "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+    "pages": 54
+  },
+  "downloads": [
+    {
+      "href": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3.md",
+      "name": "ai-native-organization-v1.1.3.md",
+      "sha256": "8b825f9541b0a34a1f8195655972bc5f4d783e2b545731ec1801457f8ec7b32a",
+      "bytes": 63896,
+      "wireHttpVerified": true
+    },
+    {
+      "href": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "name": "ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+      "bytes": 8304950,
+      "wireHttpVerified": true
+    },
+    {
+      "href": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "name": "ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f",
+      "bytes": 6764736,
+      "wireHttpVerified": true
+    }
+  ],
+  "cover": [
+    {
+      "width": 390,
+      "buttonWidth": 330.5625,
+      "buttonHeight": 44,
+      "downloadWidth": 330.5625,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 640,
+      "buttonWidth": 448,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 641,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 768,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 1024,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    }
+  ],
+  "artwork": [
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 1,
+      "name": "390-light-art-1.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 2,
+      "name": "390-light-art-2.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 3,
+      "name": "390-light-art-3.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 1,
+      "name": "390-dark-art-1.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 2,
+      "name": "390-dark-art-2.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 3,
+      "name": "390-dark-art-3.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 1,
+      "name": "1440-light-art-1.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 2,
+      "name": "1440-light-art-2.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 3,
+      "name": "1440-light-art-3.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 1,
+      "name": "1440-dark-art-1.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 2,
+      "name": "1440-dark-art-2.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 3,
+      "name": "1440-dark-art-3.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    }
+  ],
+  "readerSha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4",
+  "responsive": [
+    {
+      "url": "http://127.0.0.1:35807/ai-native-organization/",
+      "width": 390,
+      "mode": "light",
+      "overflow": false,
+      "artCount": 3,
+      "diagrams": [],
+      "images": [
+        {
+          "width": 330.5625,
+          "height": 330.5625,
+          "figure": 330.5625,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 330.5625,
+          "figure": 330.5625,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 330.5625,
+          "figure": 330.5625,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:35807/ai-native-organization/",
+      "width": 390,
+      "mode": "dark",
+      "overflow": false,
+      "artCount": 3,
+      "diagrams": [],
+      "images": [
+        {
+          "width": 330.5625,
+          "height": 330.5625,
+          "figure": 330.5625,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 330.5625,
+          "figure": 330.5625,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        },
+        {
+          "width": 330.5625,
+          "height": 330.5625,
+          "figure": 330.5625,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:35807/ai-native-organization/",
+      "width": 1440,
+      "mode": "light",
+      "overflow": false,
+      "artCount": 3,
+      "diagrams": [],
+      "images": [
+        {
+          "width": 480,
+          "height": 360,
+          "figure": 480,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 360,
+          "figure": 480,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 360,
+          "figure": 480,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:35807/ai-native-organization/",
+      "width": 1440,
+      "mode": "dark",
+      "overflow": false,
+      "artCount": 3,
+      "diagrams": [],
+      "images": [
+        {
+          "width": 480,
+          "height": 360,
+          "figure": 480,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 360,
+          "figure": 480,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        },
+        {
+          "width": 480,
+          "height": 360,
+          "figure": 480,
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "fit": "contain"
+        }
+      ]
+    }
+  ],
+  "fallbacks": [
+    {
+      "url": "http://127.0.0.1:35807/ai-native-organization/",
+      "scheme": "light",
+      "overflow": false,
+      "themeScriptAbsent": true,
+      "printFallback": true
+    },
+    {
+      "url": "http://127.0.0.1:35807/ai-native-organization/",
+      "scheme": "dark",
+      "overflow": false,
+      "themeScriptAbsent": true,
+      "printFallback": true
+    },
+    {
+      "url": "http://127.0.0.1:35807/ai-native-organization/",
+      "blockedStorage": true
+    }
+  ],
+  "navigation": "passed",
+  "wireHttpVerified": true,
+  "sourceBytesUnchanged": true,
+  "requests": [
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-03.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-01.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-02.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-01.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-02.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-03.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-01.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-02.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-03.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-01.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-02.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-03.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-03.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-01.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-02.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-03.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3.md",
+      "sha256": "8b825f9541b0a34a1f8195655972bc5f4d783e2b545731ec1801457f8ec7b32a"
+    },
+    {
+      "path": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3.md",
+      "sha256": "8b825f9541b0a34a1f8195655972bc5f4d783e2b545731ec1801457f8ec7b32a"
+    },
+    {
+      "path": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7"
+    },
+    {
+      "path": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7"
+    },
+    {
+      "path": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f"
+    },
+    {
+      "path": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-01.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-02.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-03.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/index.html",
+      "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/reader.css",
+      "sha256": "a0985bfe7c1735c1ac8dda3ca89891bfdfedc3ef8505482fdd9183fca4f64dbb"
+    },
+    {
+      "path": "/ai-native-organization/reader.css",
+      "sha256": "4039db3ded16eb5cf2991404365eb4893231e469b07dbf51d7e11d927fbc6dea"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/reader.js",
+      "sha256": "ff71468907a7475268c06ea87f0f4f6895a16cc41dc24fb447efec262b4df5a1"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-01.png",
+      "sha256": "244603ac550940660759ce952761a8440361f85cbdd9439a000b4da83796473b"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-02.png",
+      "sha256": "c330381eb4109ab84c054ae9bd14250a3ddd47c042ef293c689e103ef10fefa8"
+    },
+    {
+      "path": "/ai-native-organization/assets/dark/chapter-03.png",
+      "sha256": "efd20bd5b57c3eed68d9a84735bfaaf1e91588ce47a7dee893d9424c01aa354a"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-01.png",
+      "sha256": "04633e22e5d803633b89d1e9de0a1b04e80eddd51a59b64b346c6aae3cb91ae7"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-02.png",
+      "sha256": "83feb50b5d6bca5e29cdff9474727864495ebede35d3fc50a964800e20e49632"
+    },
+    {
+      "path": "/ai-native-organization/assets/chapter-03.png",
+      "sha256": "3dbc35980e52d06ad71fae095a3156360347f0c327afa454c1dfe3d12dac3a5e"
+    }
+  ]
+}

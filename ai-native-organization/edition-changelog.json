@@ -1,6 +1,21 @@
 {
-  "version": "1.1.2",
-  "previousVersion": "1.1.1",
-  "summary": "Presentation correction: title-only subsection headings and mandatory checks for the reader, Markdown, and both PDF appearances. Handbook guidance is unchanged.",
-  "items": []
+  "version": "1.1.3",
+  "previousVersion": "1.1.2",
+  "summary": "Evidence-backed clarifications for AI-Native Organization Handbook.",
+  "items": [
+    {
+      "classificationLabel": "Addition",
+      "section": "2.4 Test the workflow and the outcome",
+      "title": "2.4 Test the workflow and the outcome",
+      "whatChanged": "Include a handoff test when people or agents share the work. Give the next participant a plausible mistake or missing fact in the earlier result and check whether they detect it, ask the right owner and preserve the task's authority. Evaluate the coordinated workflow separately from each participant's ability to finish the task alone.",
+      "why": "The handbook depends on coordinated workflow delivery; an explicit inherited-error test improves its existing local test contract without prescribing a team structure.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.02633",
+          "title": "Measuring AI Agents as Teammates with Collaborative Intelligence",
+          "authority": "arXiv author manuscript"
+        }
+      ]
+    }
+  ]
 }

@@ -79,6 +79,12 @@ with tempfile.TemporaryDirectory(prefix='weekly-toolkit-test-') as directory:
     run(['node', str(build/'handbook/build-handbook.mjs')], env)
     run(['node', str(validator)], env)
     config = json.loads((BOOK/'pdf-config.json').read_text())
+    # A content edition can link its new PDF while retaining an older comparison baseline.
+    baseline_source = BOOK/config['releasedPdf']
+    assert hashlib.sha256(baseline_source.read_bytes()).hexdigest() == config['releasedSha256']
+    baseline_destination = build/config['releasedPdf']
+    baseline_destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(baseline_source, baseline_destination)
     config['runningFont'] = str(TOOLKIT/'assets/design-system/fonts/NotoSans-Regular.ttf')
     config['baselineMode'] = 'appearance-companion'
     config_path = root/'explicit-config.json'

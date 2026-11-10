@@ -1,0 +1,65 @@
+{
+  "cycle_id": "265b873e-44bb-4dc1-8d77-7a2c8b3f5f8a",
+  "cutoff": "2026-11-09T09:00:00-08:00",
+  "research_window_start": "2026-08-24T00:00:00-07:00",
+  "ledger_sha256": "73e0c7505a73dcdb64360e8e490e3167e7e7b44017afc03ee3429cca706de110",
+  "public_scope_sha256": "3f9a8708d29cd80457f082bc7ac6569cc0f466fe433a0858cb4caaaee60c35c4",
+  "recordedAt": "2026-11-10T02:06:44.327884+00:00",
+  "publicationApproved": false,
+  "status": "passed",
+  "books": [
+    "ai-native-organization",
+    "production-ai-engineering",
+    "ai-evaluation",
+    "ai-consulting",
+    "claude-design"
+  ],
+  "reviewStatuses": {
+    "ai-native-organization": "ready_for_review",
+    "production-ai-engineering": "ready_for_review",
+    "ai-evaluation": "ready_for_review",
+    "ai-consulting": "unchanged",
+    "claude-design": "unchanged"
+  },
+  "materialUpdates": 28,
+  "dispositions": 140,
+  "sameCycleCutoffLedger": true,
+  "exactDiffsVersionsAndChangelogsAgree": true,
+  "sharedClaimsConsistent": true,
+  "protectedInputsUnchanged": true,
+  "failedEvidencePreserved": true,
+  "originalProductionPreparationCount": 1,
+  "originalProductionFinalizationCount": 1,
+  "components": {
+    "final-identity-audit.json": {
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/final-identity-audit.json",
+      "sha256": "a5f08dd3b2b6a39be86ea170bb4f592760a52a985000839d354d27a1ad894f76",
+      "status": "passed"
+    },
+    "final-pdf-visual-proof.json": {
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/final-pdf-visual-proof.json",
+      "sha256": "c1dd45c0b88b4f3561ce4bb29541a6073ff41e458acd6c990090eb771b6a55a4",
+      "status": "passed"
+    },
+    "protected-final-approved-visual-retry.json": {
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/protected-final-approved-visual-retry.json",
+      "sha256": "730cc842138d9f266344e9e57a1f38772f183e7edc324001e6c84d3facb1408c",
+      "status": "passed"
+    },
+    "failed-evidence-final-audit.json": {
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/failed-evidence-final-audit.json",
+      "sha256": "6f5aaf45477e5f6362ec89e86527b7cba08adf90c85533db2cf0c1b3872920e6",
+      "status": "passed"
+    },
+    "final-candidate-export-audit.json": {
+      "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/final-candidate-export-audit.json",
+      "sha256": "06f74c4f5e678644d7b97ddf2da359fbce306d56a98052b94e0c90f9a7d892e5",
+      "status": "passed"
+    }
+  },
+  "visual": {
+    "path": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/supplemental-appearance-repair/visual-acceptance.json",
+    "sha256": "150cbf59d6eea019ea3cb1ab697bfd59fbe048e3d583ba58323cd445c58415e0",
+    "status": "passed"
+  }
+}

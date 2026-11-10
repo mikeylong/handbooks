@@ -1,0 +1,28 @@
+--- previous/AI_ENGINEERING_FIELD_GUIDE.md
++++ candidate/AI_ENGINEERING_FIELD_GUIDE.md
+@@ -1,6 +1,6 @@
+ # Production AI Engineering Field Guide
+ 
+-Last evidence review: **2026-11-07**
++Last evidence review: **2026-11-09**
+ 
+ Production AI engineering is a systems discipline. This handbook lays out an operating model that connects the techniques instead of treating each one as an isolated fix. The operating premise is simple:
+ 
+@@ -550,6 +550,8 @@
+ Keep capability evals separate from regression tests. Capability sets should stay challenging enough to measure improvement. Regression sets protect behavior already known to work and generally need a much higher pass rate.
+ 
+ Keep the iteration set separate from a blinded release holdout. Deduplicate related prompts, source documents, and generated variants across splits. Prevent fine-tuning data, few-shot examples, and prompt-optimizer inputs from contaminating the holdout.
++
++Check whether safety-evaluation behavior transfers to comparable production decisions. Match cases on the context before the decision, keep grading definitions aligned and report the remaining case-mixture differences. Where task framing may matter, compare an unchanged task with controlled descriptions of the evaluation objective. Do not assume that evaluation awareness always inflates safety scores.
+ 
+ For nondeterministic workflows, report both first-try success and consistency. `pass@k` answers whether at least one of k trials succeeds; `pass^k` asks whether all k trials succeed. Customer-facing reliability often depends much more on the latter than benchmark demos do. Always report pass@1, the exact k, trials per task, estimator, and confidence interval. Do not compare pass@k or pass^k across different k values. Repeated retries do not equal first-attempt product reliability.
+ 
+@@ -634,6 +636,8 @@
+ Monitor recalibration belongs in every model or reasoning-configuration migration. Compare action-only, reasoning-only, and combined monitoring where those signals are available and permitted. Measure detection, false alarms, and evasion on the same task slices. [OpenAI's GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/vision) reports monitorability changes and adversarial evasion in its evaluation setting. Treat those results as a reason to revalidate local monitoring, not as a production detection rate. Keep external receipts and enforceable policy checks independent of the monitor.
+ 
+ Inventory the surfaces the monitor can see, including evaluation harnesses and every enabled tool path. Exercise a known failure end to end and verify that independent evidence reaches the right responder and that containment actually occurs. Sample unflagged traffic and record gaps in surface coverage, threat-specific recall and responder availability.
++
++Report monitor coverage, time to automated review, time to human review and escalation rate separately. An action being logged does not establish timely review, and a low flag rate does not establish good detection. State which platforms and tool paths the denominator includes.
+ 
+ ## 18. Attribute cost to the whole workflow
+ 

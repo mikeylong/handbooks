@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "reviewedAt": "2026-11-10T04:24:28.718326+00:00",
+  "crossRenderer": "Both exact PDFs rendered every page with Poppler and native PDFKit at 144 dpi",
+  "pageCoverage": 400,
+  "unchangedRenderedPages": 396,
+  "unchangedAppearanceBasis": "Each unchanged PNG is SHA-256-identical to the previously visually accepted page in the same renderer. Existing complete-page and representative-role acceptance therefore applies to those exact pixels.",
+  "changedPageReview": "Inspected page 100 full-size in both appearances and both renderers. Publisher provenance citation fits on one line, is legible and unclipped; spacing, footer and remaining changelog text remain correct.",
+  "blockingFindings": [],
+  "comparisons": [
+    {
+      "theme": "daytime",
+      "renderer": "poppler",
+      "unchangedCount": 99,
+      "changedPages": [
+        "page-100.png"
+      ],
+      "oldDirectory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/independent-candidate-cross-renderer/production-ai-engineering-daytime/poppler",
+      "newDirectory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-daytime/poppler"
+    },
+    {
+      "theme": "daytime",
+      "renderer": "pdfkit",
+      "unchangedCount": 99,
+      "changedPages": [
+        "page-100.png"
+      ],
+      "oldDirectory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/independent-candidate-cross-renderer/production-ai-engineering-daytime/pdfkit",
+      "newDirectory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-daytime/pdfkit"
+    },
+    {
+      "theme": "lateNight",
+      "renderer": "poppler",
+      "unchangedCount": 99,
+      "changedPages": [
+        "page-100.png"
+      ],
+      "oldDirectory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/independent-candidate-cross-renderer/production-ai-engineering-lateNight/poppler",
+      "newDirectory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-lateNight/poppler"
+    },
+    {
+      "theme": "lateNight",
+      "renderer": "pdfkit",
+      "unchangedCount": 99,
+      "changedPages": [
+        "page-100.png"
+      ],
+      "oldDirectory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/independent-candidate-cross-renderer/production-ai-engineering-lateNight/pdfkit",
+      "newDirectory": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/cross-renderer/production-ai-engineering-lateNight/pdfkit"
+    }
+  ],
+  "pdfs": {
+    "daytime": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/production/daytime.pdf",
+    "lateNight": "/Users/mike/handbooks/weekly-reviews/2026-11-09/dedup-resume.215537/publication-repair.035731/browser-engine-repair/production/late-night.pdf"
+  }
+}

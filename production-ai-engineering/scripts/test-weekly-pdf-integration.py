@@ -125,6 +125,12 @@ def copied_book(root: Path, changed: bool) -> tuple[Path, dict, dict[str, str]]:
     baseline = build / config["releasedPdf"]
     baseline.parent.mkdir(parents=True)
     shutil.copyfile(BOOK / config["releasedPdf"], baseline)
+    # Current reader downloads and comparison baselines may be distinct editions.
+    publication = json.loads((build / "publication.json").read_text(encoding="utf-8"))
+    linked_pdf = build / publication["pdf"]
+    linked_pdf.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(BOOK / publication["pdf"], linked_pdf)
+    assert sha256(linked_pdf) == publication["sha256"]
     config["runningFont"] = str(TOOLKIT / "assets/design-system/fonts/NotoSans-Regular.ttf")
     config["baselineMode"] = "content-edition"
     (build / "pdf-config.json").write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")

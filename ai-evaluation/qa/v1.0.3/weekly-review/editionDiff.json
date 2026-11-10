@@ -1,0 +1,69 @@
+{
+  "artifacts": {
+    "pdfTextPatch": "exact-pdf-text.patch",
+    "readerFacingContentPatch": "reader-facing-content.patch",
+    "sourcePatch": "exact-source.patch"
+  },
+  "candidate": {
+    "ignoredChangelogPages": [
+      105
+    ],
+    "ignoredNavigationPages": [
+      5
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 1.0.3 \u00b7 2026-11-09 \u00b7 PDF appearance revision 1",
+      "title": "AI Evaluation Field Guide \u00b7 Daytime version"
+    },
+    "pages": 105,
+    "pdf": "candidate/daytime.pdf",
+    "pdfSha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d"
+  },
+  "comparisons": {
+    "contentMetadataChanged": true,
+    "metadataChanged": true,
+    "navigationTextChanged": true,
+    "normalizedSubstantiveTextChanged": true,
+    "outlineIncludingChangelogChanged": true,
+    "rawPdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": true,
+    "substantiveOutlineChanged": false
+  },
+  "decisionProjection": {
+    "excludedSurfaces": [
+      "changelog pages",
+      "contents and index pages",
+      "changelog outline entries",
+      "exact PDF appearance title suffixes"
+    ],
+    "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed."
+  },
+  "limitations": [
+    "Rendering-only differences require visual comparison.",
+    "Semantic change categories and rationales must be authored from accepted exact diffs.",
+    "Pass page maps to avoid relying on heading heuristics for surface roles."
+  ],
+  "previous": {
+    "ignoredChangelogPages": [],
+    "ignoredNavigationPages": [
+      5
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "Content edition 1.0.2 \u00b7 2026-11-08 \u00b7 PDF appearance revision 1",
+      "title": "AI Evaluation Field Guide \u00b7 Daytime version"
+    },
+    "pages": 102,
+    "pdf": "previous/ai-evaluation-v1.0.2-2026-11-08-daytime-r1.pdf",
+    "pdfSha256": "97d99c8c8dd129551051b8eb434dbfd632dda34adeaba3a2b9cc0dc24e744915"
+  },
+  "readerFacingContentChanged": true,
+  "schemaVersion": 2,
+  "sourceSha256": {
+    "candidate": "9fe5086394d879a5330a54496927292f81e81f397f313a73c4b345f99a714330",
+    "previous": "7d155ff1232e86885c026b2eca0ee80dd3b5b5433b62c8c6a23b389a3ea4bb93"
+  },
+  "summary": "The candidate contains reader-facing changes that require semantic classification."
+}

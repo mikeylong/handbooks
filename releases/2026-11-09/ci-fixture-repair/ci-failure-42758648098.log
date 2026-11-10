@@ -1,0 +1,23 @@
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	﻿2026-11-10T04:55:49.7630017Z ##[group]Run python production-ai-engineering/scripts/test-weekly-toolkit.py
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7630668Z ^[[36;1mpython production-ai-engineering/scripts/test-weekly-toolkit.py^[[0m
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7680767Z shell: /usr/bin/bash -e {0}
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7681048Z env:
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7681319Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7681784Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7682240Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7682638Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7683038Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7683437Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:49.7683773Z ##[endgroup]
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9433317Z Traceback (most recent call last):
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9434687Z   File "/home/runner/work/handbooks/handbooks/production-ai-engineering/scripts/test-weekly-toolkit.py", line 99, in <module>
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9436081Z     baseline_sha=hashlib.sha256(baseline.read_bytes()).hexdigest()
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9436808Z                                 ^^^^^^^^^^^^^^^^^^^^^
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9438291Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/pathlib.py", line 1019, in read_bytes
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9439365Z     with self.open(mode='rb') as f:
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9439822Z          ^^^^^^^^^^^^^^^^^^^^
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9440663Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/pathlib.py", line 1013, in open
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9441694Z     return io.open(self, mode, buffering, encoding, errors, newline)
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9442424Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9444117Z FileNotFoundError: [Errno 2] No such file or directory: '/tmp/weekly-toolkit-test-t89vg3cw/build-source/output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf'
+pdf-runtime	Run python production-ai-engineering/scripts/test-weekly-toolkit.py	2026-11-10T04:55:51.9694042Z ##[error]Process completed with exit code 1.

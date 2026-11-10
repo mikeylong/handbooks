@@ -1,0 +1,44 @@
+--- previous/build_handbook.py
++++ candidate/build_handbook.py
+@@ -42,7 +42,7 @@
+         P('AI-Native<br/>Organization<br/>Handbook', COVER_TITLE),
+         P('Choose useful work, give people clear ownership, and test whether agent workflows improve delivery.', COVER_DECK),
+         Spacer(1, 35*mm), P('Michael Long', COVER_CREDIT),
+-        P('November 8, 2026 · Version 1.1.2', COVER_CREDIT),
++        P('November 9, 2026 · Version 1.1.3', COVER_CREDIT),
+         P('Expanded edition', COVER_CREDIT), PageBreak(),
+         P('READ THIS FIRST', CHAPTER_KICKER), P('Make a better delivery decision', H1),
+         P('Your team can generate a change quickly and still struggle to deliver it. Someone has to decide whether the change matters, resolve conflicting requirements, review the result, release it and support the customer afterward. Giving agents more execution work leaves those responsibilities with people.'),
+@@ -136,6 +136,7 @@
+         ['Stop and recover', 'The platform owner can revoke access, stop active execution, find affected state and verify recovery.']])
+     story += page('2.4 Test the workflow and the outcome',
+         'Keep two questions separate. Can this workflow version handle representative work? Does this delivered change solve the customer problem? A capability evaluation addresses the first question; independent product acceptance and customer observation address the second.',
++        'Include a handoff test when people or agents share the work. Give the next participant a plausible mistake or missing fact in the earlier result and check whether they detect it, ask the right owner and preserve the task’s authority. Evaluate the coordinated workflow separately from each participant’s ability to finish the task alone. [S14]',
+         'The test set should include routine tasks, awkward but valid inputs, stale or conflicting information, tool failures and prohibited requests. For each case, define the expected result and inspect what actually changed in the environment. Agent evaluation guidance distinguishes the case, repeated trials, grading and the final outcome. [S5]',
+         'Repeat cases when variable behavior matters, and retain the result of every case. In a suite of fifteen cases with three trials each, 41 successes out of 45 could hide one case failing all three trials. A high aggregate can coexist with a repeatable failure.',
+         'Before the trial, decide which cases are critical and what passing each one means. Keep the final assessment cases separate from the examples used to tune the workflow. If an assessment case leaks into tuning, use a replacement assessment that was defined in advance and has not been exposed, or call the final result inconclusive. Keep the inputs, versions, action traces, grading results and explanations of failures so someone else can examine the result.',
+@@ -267,9 +268,9 @@
+         'Provider guidance informs the discussion of execution context [S4], evaluation structure [S5] and containment [S6]. The arrangements for source ownership, service agreements and numerical requirements are recommendations made here. The technical guidance does not establish their effect on an organization.',
+         'METR’s methods update explains problems with task selection and concurrent AI measurement [S7]. NIST distinguishes the limit of an observation from an observed event time in reliability data [S8]; section 3.2 borrows that distinction to explain unfinished work. DORA supports small batches and short feedback cycles [S9]. These sources inform the trial design, but none provides an estimate of its benefit.',
+         'The four company-scale arrangements in section 1.5 are also proposals. Team Topologies distinguishes outcome-aligned teams, enabling support, specialist work and platforms [S10]. CNCF describes platforms shaped around internal users [S11]. Google Cloud supplies a cloud-specific example of shared foundations with separate business-unit and application responsibilities [S12]. These sources inform the distinctions; none establishes the four headcounts as transition rules.',
+-        'Research cutoff: November 2, 2026. The bibliography records direct sources and their limits.')
++        'Research cutoff: November 9, 2026, at 9:00 AM Pacific. The bibliography records direct sources and their limits.')
+     source_rows = json.loads((BOOK/'evidence/sources.json').read_text())['sources']
+-    for subset, title in [(source_rows[:3], 'Organizational foundations'), (source_rows[3:6], 'Context, evaluation and containment'), (source_rows[6:9], 'Comparison and measurement'), ([s for s in source_rows if s['id'] in ('S10','S11','S12','S13')], 'Structures and shared capabilities')]:
++    for subset, title in [(source_rows[:3], 'Organizational foundations'), (source_rows[3:6], 'Context, evaluation and containment'), (source_rows[6:9], 'Comparison and measurement'), ([s for s in source_rows if s['id'] in ('S10','S11','S12','S13')], 'Structures and shared capabilities'), ([s for s in source_rows if s['id']=='S14'], 'Teamwork and handoff evaluation')]:
+         story += [heading(title)]
+         for s in subset:
+             # Use year precision for S1: the PDF title page says October 2012.
+@@ -281,4 +282,12 @@
+     story += [SetNextRunningHead('Index of terms'), PageBreak(), P('Index of terms', H1),
+         P('Page numbers link to the first page of the relevant section in either PDF appearance.'),
+         TermIndex(BOOK)]
++    story.extend([SetNextRunningHead('Changelog'),
++        PageBreak(),
++        heading('Changelog',1),
++        P("Compared with version 1.1.2, published 2026-11-08."),
++        P("<b>Addition.</b> Include a handoff test when people or agents share the work. Give the next participant a plausible mistake or missing fact in the earlier result and check whether they detect it, ask the right owner and preserve the task's authority. Evaluate the coordinated workflow separately from each participant's ability to finish the task alone."),
++        P("The handbook depends on coordinated workflow delivery; an explicit inherited-error test improves its existing local test contract without prescribing a team structure."),
++        P("<link href=\"https://arxiv.org/abs/2611.02633\">Primary source</link>",SMALL),
++        P("Previous Daytime PDF SHA-256: 903730f4a7c797e2e2706c68404428dc87f79d10ac84a9536793037c8be9f5e0",SMALL)])
+     return story

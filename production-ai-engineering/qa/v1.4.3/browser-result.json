@@ -1,0 +1,3074 @@
+{
+  "status": "passed",
+  "identity": {
+    "id": "production-ai-engineering",
+    "title": "Production AI Engineering",
+    "version": "1.4.3",
+    "date": "2026-11-09",
+    "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+    "pages": 100
+  },
+  "downloads": [
+    {
+      "href": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3.md",
+      "name": "production-ai-engineering-v1.4.3.md",
+      "sha256": "a8878492218d8b4cf1c8dec7f256a164543a6a93c4fd8261bd4c2b55df207be0",
+      "bytes": 219421,
+      "wireHttpVerified": true
+    },
+    {
+      "href": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+      "name": "production-ai-engineering-v1.4.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+      "bytes": 24749030,
+      "wireHttpVerified": true
+    },
+    {
+      "href": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
+      "name": "production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
+      "bytes": 35431257,
+      "wireHttpVerified": true
+    }
+  ],
+  "cover": [
+    {
+      "width": 390,
+      "buttonWidth": 330.5625,
+      "buttonHeight": 44,
+      "downloadWidth": 330.5625,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 640,
+      "buttonWidth": 448,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 641,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 768,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 1024,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "buttonWidth": 190.234375,
+      "buttonHeight": 44,
+      "downloadWidth": 448,
+      "gap": 12,
+      "failures": []
+    }
+  ],
+  "artwork": [
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 1,
+      "name": "390-light-art-1.png",
+      "sha256": "fbdaffdf381b0661575a7ebf8d6c2de3cca0f2bb512d704a90f160b0449871c1"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 2,
+      "name": "390-light-art-2.png",
+      "sha256": "cc5c4c9202fadfdbabc1423633c3431290b48271aa285b76bb346db080d9ba6b"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 3,
+      "name": "390-light-art-3.png",
+      "sha256": "19ed950b384f88658ab0234967e6790458813942e3e1fe280b27c1d3350e6bb2"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 4,
+      "name": "390-light-art-4.png",
+      "sha256": "44f2f2168a6c4bf747f81edd5f773fa2a3a01dc312205719ae41ae9e2f3323f8"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 5,
+      "name": "390-light-art-5.png",
+      "sha256": "5615dce981ee9410f278b94f02e0bcfd7e8d197a21a1930744e795e51940190d"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 6,
+      "name": "390-light-art-6.png",
+      "sha256": "3774fad5e5293483f1e67cfc6b62dca9e626074f6b4feac545c22b67d1ea3629"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 7,
+      "name": "390-light-art-7.png",
+      "sha256": "adf0329a14d0c796cf630403efce202ad39b4402ae7f2bec3399c4627f0761fd"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 8,
+      "name": "390-light-art-8.png",
+      "sha256": "f85ce43c4c28311c42f43e304aea1cf0118e68c01a105cf00cebc858e7c75c13"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 9,
+      "name": "390-light-art-9.png",
+      "sha256": "12c456060fca5404dd3ec90b2bf0ace179ddbbc5b1d8064cd87ff8de4e9262b0"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 10,
+      "name": "390-light-art-10.png",
+      "sha256": "ae1b0e8eef9785d794355b8af5f316f851a02dec1066dfc7bfe27d22f3aa6894"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 11,
+      "name": "390-light-art-11.png",
+      "sha256": "0887ed0f462e9011dc56cd8cf1693c64f9a7f66118e471bb7174a587f38b7676"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "index": 12,
+      "name": "390-light-art-12.png",
+      "sha256": "d51c18e080ba73278249584c752e67745421930d8c08a97f40e97d1a141d821d"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 1,
+      "name": "390-dark-art-1.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 2,
+      "name": "390-dark-art-2.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 3,
+      "name": "390-dark-art-3.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 4,
+      "name": "390-dark-art-4.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 5,
+      "name": "390-dark-art-5.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 6,
+      "name": "390-dark-art-6.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 7,
+      "name": "390-dark-art-7.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 8,
+      "name": "390-dark-art-8.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 9,
+      "name": "390-dark-art-9.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 10,
+      "name": "390-dark-art-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 11,
+      "name": "390-dark-art-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "index": 12,
+      "name": "390-dark-art-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 1,
+      "name": "1440-light-art-1.png",
+      "sha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 2,
+      "name": "1440-light-art-2.png",
+      "sha256": "048323887348b33716a20f39c5ac4a6026e117ef044b9adc259ce881c84d4f87"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 3,
+      "name": "1440-light-art-3.png",
+      "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 4,
+      "name": "1440-light-art-4.png",
+      "sha256": "11e28dff8905d3d490a9da0e23a9539cd77494c250237a8bfe0819a041c61b35"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 5,
+      "name": "1440-light-art-5.png",
+      "sha256": "c4200794335556db916297a8026193bacb2e9c69c18c0e59f71e797705369ed8"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 6,
+      "name": "1440-light-art-6.png",
+      "sha256": "4fbcd259d9418105be0e736b25052aba65f0aeca795f92c32248b0903bf2dcc4"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 7,
+      "name": "1440-light-art-7.png",
+      "sha256": "7449c5a1a8a496d38a93cdd0b4c1b570aeee71c2c831ef0bedd808a0f179b2b7"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 8,
+      "name": "1440-light-art-8.png",
+      "sha256": "fa229d39cf79680aa0a194f67832d01d5f4408165722facd65fdc627cee475c2"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 9,
+      "name": "1440-light-art-9.png",
+      "sha256": "e99b92b1b5b95de2e3f66a07cc58c67b30c2268a3a6066b0352b40a0448f99a1"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 10,
+      "name": "1440-light-art-10.png",
+      "sha256": "0339bda79e48dd049a96ce0517cc699ea804904da32fae5ee03ab51b5bb84533"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 11,
+      "name": "1440-light-art-11.png",
+      "sha256": "a232f00e82d2ebf0761f52581800f4a725454586f71ddd8462dd8e355ecd2114"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "index": 12,
+      "name": "1440-light-art-12.png",
+      "sha256": "4228d7836c7b3f9138ef372489d82e839474eba2c60c1e7609432e919facba70"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 1,
+      "name": "1440-dark-art-1.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 2,
+      "name": "1440-dark-art-2.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 3,
+      "name": "1440-dark-art-3.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 4,
+      "name": "1440-dark-art-4.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 5,
+      "name": "1440-dark-art-5.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 6,
+      "name": "1440-dark-art-6.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 7,
+      "name": "1440-dark-art-7.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 8,
+      "name": "1440-dark-art-8.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 9,
+      "name": "1440-dark-art-9.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 10,
+      "name": "1440-dark-art-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 11,
+      "name": "1440-dark-art-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "index": 12,
+      "name": "1440-dark-art-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    }
+  ],
+  "readerSha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7",
+  "responsive": [
+    {
+      "url": "http://127.0.0.1:39705/production-ai-engineering/",
+      "width": 390,
+      "mode": "light",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [],
+      "images": [
+        {
+          "width": 330.5625,
+          "height": 293.53125,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 314,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.53125,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 314,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.53125,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 314,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.53125,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 314,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 294.40625,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 315,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 294.40625,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 315,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 294.40625,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 315,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 294.40625,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 315,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.53125,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 314,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.53125,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 314,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.53125,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 314,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.53125,
+          "figure": 330.5625,
+          "naturalWidth": 354,
+          "naturalHeight": 314,
+          "fit": "fill"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:39705/production-ai-engineering/",
+      "width": 390,
+      "mode": "dark",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [],
+      "images": [
+        {
+          "width": 330.5625,
+          "height": 293.296875,
+          "figure": 330.5625,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.296875,
+          "figure": 330.5625,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.296875,
+          "figure": 330.5625,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.296875,
+          "figure": 330.5625,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 294.703125,
+          "figure": 330.5625,
+          "naturalWidth": 1328,
+          "naturalHeight": 1184,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 294.703125,
+          "figure": 330.5625,
+          "naturalWidth": 1328,
+          "naturalHeight": 1184,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 294.234375,
+          "figure": 330.5625,
+          "naturalWidth": 1329,
+          "naturalHeight": 1183,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 294.234375,
+          "figure": 330.5625,
+          "naturalWidth": 1329,
+          "naturalHeight": 1183,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.296875,
+          "figure": 330.5625,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.296875,
+          "figure": 330.5625,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.296875,
+          "figure": 330.5625,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 330.5625,
+          "height": 293.296875,
+          "figure": 330.5625,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:39705/production-ai-engineering/",
+      "width": 1440,
+      "mode": "light",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [],
+      "images": [
+        {
+          "width": 480,
+          "height": 426.25,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1364,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 426.25,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1364,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 426.25,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1364,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 426.25,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1364,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 427.5,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1368,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 427.5,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1368,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 427.5,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1368,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 427.5,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1368,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 426.25,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1364,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 426.25,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1364,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 426.25,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1364,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 426.25,
+          "figure": 480,
+          "naturalWidth": 1536,
+          "naturalHeight": 1364,
+          "fit": "fill"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:39705/production-ai-engineering/",
+      "width": 1440,
+      "mode": "dark",
+      "overflow": false,
+      "artCount": 12,
+      "diagrams": [],
+      "images": [
+        {
+          "width": 480,
+          "height": 425.890625,
+          "figure": 480,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 425.890625,
+          "figure": 480,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 425.890625,
+          "figure": 480,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 425.890625,
+          "figure": 480,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 427.9375,
+          "figure": 480,
+          "naturalWidth": 1328,
+          "naturalHeight": 1184,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 427.9375,
+          "figure": 480,
+          "naturalWidth": 1328,
+          "naturalHeight": 1184,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 427.265625,
+          "figure": 480,
+          "naturalWidth": 1329,
+          "naturalHeight": 1183,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 427.265625,
+          "figure": 480,
+          "naturalWidth": 1329,
+          "naturalHeight": 1183,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 425.890625,
+          "figure": 480,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 425.890625,
+          "figure": 480,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 425.890625,
+          "figure": 480,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        },
+        {
+          "width": 480,
+          "height": 425.890625,
+          "figure": 480,
+          "naturalWidth": 1331,
+          "naturalHeight": 1181,
+          "fit": "fill"
+        }
+      ]
+    }
+  ],
+  "fallbacks": [
+    {
+      "url": "http://127.0.0.1:39705/production-ai-engineering/",
+      "scheme": "light",
+      "overflow": false,
+      "themeScriptAbsent": true,
+      "printFallback": true
+    },
+    {
+      "url": "http://127.0.0.1:39705/production-ai-engineering/",
+      "scheme": "dark",
+      "overflow": false,
+      "themeScriptAbsent": true,
+      "printFallback": true
+    },
+    {
+      "url": "http://127.0.0.1:39705/production-ai-engineering/",
+      "blockedStorage": true
+    }
+  ],
+  "navigation": "passed",
+  "wireHttpVerified": true,
+  "sourceBytesUnchanged": true,
+  "requests": [
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01-768.webp",
+      "sha256": "fbdaffdf381b0661575a7ebf8d6c2de3cca0f2bb512d704a90f160b0449871c1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02-768.webp",
+      "sha256": "cc5c4c9202fadfdbabc1423633c3431290b48271aa285b76bb346db080d9ba6b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03-768.webp",
+      "sha256": "19ed950b384f88658ab0234967e6790458813942e3e1fe280b27c1d3350e6bb2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04-768.webp",
+      "sha256": "44f2f2168a6c4bf747f81edd5f773fa2a3a01dc312205719ae41ae9e2f3323f8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05-768.webp",
+      "sha256": "5615dce981ee9410f278b94f02e0bcfd7e8d197a21a1930744e795e51940190d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06-768.webp",
+      "sha256": "3774fad5e5293483f1e67cfc6b62dca9e626074f6b4feac545c22b67d1ea3629"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07-768.webp",
+      "sha256": "adf0329a14d0c796cf630403efce202ad39b4402ae7f2bec3399c4627f0761fd"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08-768.webp",
+      "sha256": "f85ce43c4c28311c42f43e304aea1cf0118e68c01a105cf00cebc858e7c75c13"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09-768.webp",
+      "sha256": "12c456060fca5404dd3ec90b2bf0ace179ddbbc5b1d8064cd87ff8de4e9262b0"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10-768.webp",
+      "sha256": "ae1b0e8eef9785d794355b8af5f316f851a02dec1066dfc7bfe27d22f3aa6894"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11-768.webp",
+      "sha256": "0887ed0f462e9011dc56cd8cf1693c64f9a7f66118e471bb7174a587f38b7676"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12-768.webp",
+      "sha256": "d51c18e080ba73278249584c752e67745421930d8c08a97f40e97d1a141d821d"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-08.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-09.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01-768.webp",
+      "sha256": "fbdaffdf381b0661575a7ebf8d6c2de3cca0f2bb512d704a90f160b0449871c1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02-768.webp",
+      "sha256": "cc5c4c9202fadfdbabc1423633c3431290b48271aa285b76bb346db080d9ba6b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03-768.webp",
+      "sha256": "19ed950b384f88658ab0234967e6790458813942e3e1fe280b27c1d3350e6bb2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04-768.webp",
+      "sha256": "44f2f2168a6c4bf747f81edd5f773fa2a3a01dc312205719ae41ae9e2f3323f8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05-768.webp",
+      "sha256": "5615dce981ee9410f278b94f02e0bcfd7e8d197a21a1930744e795e51940190d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06-768.webp",
+      "sha256": "3774fad5e5293483f1e67cfc6b62dca9e626074f6b4feac545c22b67d1ea3629"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07-768.webp",
+      "sha256": "adf0329a14d0c796cf630403efce202ad39b4402ae7f2bec3399c4627f0761fd"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08-768.webp",
+      "sha256": "f85ce43c4c28311c42f43e304aea1cf0118e68c01a105cf00cebc858e7c75c13"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09-768.webp",
+      "sha256": "12c456060fca5404dd3ec90b2bf0ace179ddbbc5b1d8064cd87ff8de4e9262b0"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10-768.webp",
+      "sha256": "ae1b0e8eef9785d794355b8af5f316f851a02dec1066dfc7bfe27d22f3aa6894"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11-768.webp",
+      "sha256": "0887ed0f462e9011dc56cd8cf1693c64f9a7f66118e471bb7174a587f38b7676"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12-768.webp",
+      "sha256": "d51c18e080ba73278249584c752e67745421930d8c08a97f40e97d1a141d821d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-08.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-09.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12.webp",
+      "sha256": "4228d7836c7b3f9138ef372489d82e839474eba2c60c1e7609432e919facba70"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01.webp",
+      "sha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02.webp",
+      "sha256": "048323887348b33716a20f39c5ac4a6026e117ef044b9adc259ce881c84d4f87"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03.webp",
+      "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04.webp",
+      "sha256": "11e28dff8905d3d490a9da0e23a9539cd77494c250237a8bfe0819a041c61b35"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05.webp",
+      "sha256": "c4200794335556db916297a8026193bacb2e9c69c18c0e59f71e797705369ed8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06.webp",
+      "sha256": "4fbcd259d9418105be0e736b25052aba65f0aeca795f92c32248b0903bf2dcc4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07.webp",
+      "sha256": "7449c5a1a8a496d38a93cdd0b4c1b570aeee71c2c831ef0bedd808a0f179b2b7"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08.webp",
+      "sha256": "fa229d39cf79680aa0a194f67832d01d5f4408165722facd65fdc627cee475c2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09.webp",
+      "sha256": "e99b92b1b5b95de2e3f66a07cc58c67b30c2268a3a6066b0352b40a0448f99a1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10.webp",
+      "sha256": "0339bda79e48dd049a96ce0517cc699ea804904da32fae5ee03ab51b5bb84533"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11.webp",
+      "sha256": "a232f00e82d2ebf0761f52581800f4a725454586f71ddd8462dd8e355ecd2114"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-08.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-09.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01.webp",
+      "sha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02.webp",
+      "sha256": "048323887348b33716a20f39c5ac4a6026e117ef044b9adc259ce881c84d4f87"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03.webp",
+      "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04.webp",
+      "sha256": "11e28dff8905d3d490a9da0e23a9539cd77494c250237a8bfe0819a041c61b35"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05.webp",
+      "sha256": "c4200794335556db916297a8026193bacb2e9c69c18c0e59f71e797705369ed8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07.webp",
+      "sha256": "7449c5a1a8a496d38a93cdd0b4c1b570aeee71c2c831ef0bedd808a0f179b2b7"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08.webp",
+      "sha256": "fa229d39cf79680aa0a194f67832d01d5f4408165722facd65fdc627cee475c2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06.webp",
+      "sha256": "4fbcd259d9418105be0e736b25052aba65f0aeca795f92c32248b0903bf2dcc4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09.webp",
+      "sha256": "e99b92b1b5b95de2e3f66a07cc58c67b30c2268a3a6066b0352b40a0448f99a1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10.webp",
+      "sha256": "0339bda79e48dd049a96ce0517cc699ea804904da32fae5ee03ab51b5bb84533"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11.webp",
+      "sha256": "a232f00e82d2ebf0761f52581800f4a725454586f71ddd8462dd8e355ecd2114"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12.webp",
+      "sha256": "4228d7836c7b3f9138ef372489d82e839474eba2c60c1e7609432e919facba70"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-09.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-08.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01-768.webp",
+      "sha256": "fbdaffdf381b0661575a7ebf8d6c2de3cca0f2bb512d704a90f160b0449871c1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02-768.webp",
+      "sha256": "cc5c4c9202fadfdbabc1423633c3431290b48271aa285b76bb346db080d9ba6b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03-768.webp",
+      "sha256": "19ed950b384f88658ab0234967e6790458813942e3e1fe280b27c1d3350e6bb2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04-768.webp",
+      "sha256": "44f2f2168a6c4bf747f81edd5f773fa2a3a01dc312205719ae41ae9e2f3323f8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05-768.webp",
+      "sha256": "5615dce981ee9410f278b94f02e0bcfd7e8d197a21a1930744e795e51940190d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06-768.webp",
+      "sha256": "3774fad5e5293483f1e67cfc6b62dca9e626074f6b4feac545c22b67d1ea3629"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07-768.webp",
+      "sha256": "adf0329a14d0c796cf630403efce202ad39b4402ae7f2bec3399c4627f0761fd"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08-768.webp",
+      "sha256": "f85ce43c4c28311c42f43e304aea1cf0118e68c01a105cf00cebc858e7c75c13"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09-768.webp",
+      "sha256": "12c456060fca5404dd3ec90b2bf0ace179ddbbc5b1d8064cd87ff8de4e9262b0"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10-768.webp",
+      "sha256": "ae1b0e8eef9785d794355b8af5f316f851a02dec1066dfc7bfe27d22f3aa6894"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11-768.webp",
+      "sha256": "0887ed0f462e9011dc56cd8cf1693c64f9a7f66118e471bb7174a587f38b7676"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12-768.webp",
+      "sha256": "d51c18e080ba73278249584c752e67745421930d8c08a97f40e97d1a141d821d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-08.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-09.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01-768.webp",
+      "sha256": "fbdaffdf381b0661575a7ebf8d6c2de3cca0f2bb512d704a90f160b0449871c1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02-768.webp",
+      "sha256": "cc5c4c9202fadfdbabc1423633c3431290b48271aa285b76bb346db080d9ba6b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03-768.webp",
+      "sha256": "19ed950b384f88658ab0234967e6790458813942e3e1fe280b27c1d3350e6bb2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04-768.webp",
+      "sha256": "44f2f2168a6c4bf747f81edd5f773fa2a3a01dc312205719ae41ae9e2f3323f8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05-768.webp",
+      "sha256": "5615dce981ee9410f278b94f02e0bcfd7e8d197a21a1930744e795e51940190d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06-768.webp",
+      "sha256": "3774fad5e5293483f1e67cfc6b62dca9e626074f6b4feac545c22b67d1ea3629"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07-768.webp",
+      "sha256": "adf0329a14d0c796cf630403efce202ad39b4402ae7f2bec3399c4627f0761fd"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08-768.webp",
+      "sha256": "f85ce43c4c28311c42f43e304aea1cf0118e68c01a105cf00cebc858e7c75c13"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09-768.webp",
+      "sha256": "12c456060fca5404dd3ec90b2bf0ace179ddbbc5b1d8064cd87ff8de4e9262b0"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10-768.webp",
+      "sha256": "ae1b0e8eef9785d794355b8af5f316f851a02dec1066dfc7bfe27d22f3aa6894"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11-768.webp",
+      "sha256": "0887ed0f462e9011dc56cd8cf1693c64f9a7f66118e471bb7174a587f38b7676"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12-768.webp",
+      "sha256": "d51c18e080ba73278249584c752e67745421930d8c08a97f40e97d1a141d821d"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3.md",
+      "sha256": "a8878492218d8b4cf1c8dec7f256a164543a6a93c4fd8261bd4c2b55df207be0"
+    },
+    {
+      "path": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3.md",
+      "sha256": "a8878492218d8b4cf1c8dec7f256a164543a6a93c4fd8261bd4c2b55df207be0"
+    },
+    {
+      "path": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92"
+    },
+    {
+      "path": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92"
+    },
+    {
+      "path": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f"
+    },
+    {
+      "path": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01-768.webp",
+      "sha256": "fbdaffdf381b0661575a7ebf8d6c2de3cca0f2bb512d704a90f160b0449871c1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02-768.webp",
+      "sha256": "cc5c4c9202fadfdbabc1423633c3431290b48271aa285b76bb346db080d9ba6b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03-768.webp",
+      "sha256": "19ed950b384f88658ab0234967e6790458813942e3e1fe280b27c1d3350e6bb2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04-768.webp",
+      "sha256": "44f2f2168a6c4bf747f81edd5f773fa2a3a01dc312205719ae41ae9e2f3323f8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05-768.webp",
+      "sha256": "5615dce981ee9410f278b94f02e0bcfd7e8d197a21a1930744e795e51940190d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06-768.webp",
+      "sha256": "3774fad5e5293483f1e67cfc6b62dca9e626074f6b4feac545c22b67d1ea3629"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07-768.webp",
+      "sha256": "adf0329a14d0c796cf630403efce202ad39b4402ae7f2bec3399c4627f0761fd"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08-768.webp",
+      "sha256": "f85ce43c4c28311c42f43e304aea1cf0118e68c01a105cf00cebc858e7c75c13"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09-768.webp",
+      "sha256": "12c456060fca5404dd3ec90b2bf0ace179ddbbc5b1d8064cd87ff8de4e9262b0"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12-768.webp",
+      "sha256": "d51c18e080ba73278249584c752e67745421930d8c08a97f40e97d1a141d821d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11-768.webp",
+      "sha256": "0887ed0f462e9011dc56cd8cf1693c64f9a7f66118e471bb7174a587f38b7676"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10-768.webp",
+      "sha256": "ae1b0e8eef9785d794355b8af5f316f851a02dec1066dfc7bfe27d22f3aa6894"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-08.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-09.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01-768.webp",
+      "sha256": "fbdaffdf381b0661575a7ebf8d6c2de3cca0f2bb512d704a90f160b0449871c1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02-768.webp",
+      "sha256": "cc5c4c9202fadfdbabc1423633c3431290b48271aa285b76bb346db080d9ba6b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03-768.webp",
+      "sha256": "19ed950b384f88658ab0234967e6790458813942e3e1fe280b27c1d3350e6bb2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04-768.webp",
+      "sha256": "44f2f2168a6c4bf747f81edd5f773fa2a3a01dc312205719ae41ae9e2f3323f8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05-768.webp",
+      "sha256": "5615dce981ee9410f278b94f02e0bcfd7e8d197a21a1930744e795e51940190d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06-768.webp",
+      "sha256": "3774fad5e5293483f1e67cfc6b62dca9e626074f6b4feac545c22b67d1ea3629"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07-768.webp",
+      "sha256": "adf0329a14d0c796cf630403efce202ad39b4402ae7f2bec3399c4627f0761fd"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08-768.webp",
+      "sha256": "f85ce43c4c28311c42f43e304aea1cf0118e68c01a105cf00cebc858e7c75c13"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09-768.webp",
+      "sha256": "12c456060fca5404dd3ec90b2bf0ace179ddbbc5b1d8064cd87ff8de4e9262b0"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10-768.webp",
+      "sha256": "ae1b0e8eef9785d794355b8af5f316f851a02dec1066dfc7bfe27d22f3aa6894"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11-768.webp",
+      "sha256": "0887ed0f462e9011dc56cd8cf1693c64f9a7f66118e471bb7174a587f38b7676"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12-768.webp",
+      "sha256": "d51c18e080ba73278249584c752e67745421930d8c08a97f40e97d1a141d821d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-08.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-09.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01.webp",
+      "sha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02.webp",
+      "sha256": "048323887348b33716a20f39c5ac4a6026e117ef044b9adc259ce881c84d4f87"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03.webp",
+      "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09.webp",
+      "sha256": "e99b92b1b5b95de2e3f66a07cc58c67b30c2268a3a6066b0352b40a0448f99a1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07.webp",
+      "sha256": "7449c5a1a8a496d38a93cdd0b4c1b570aeee71c2c831ef0bedd808a0f179b2b7"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08.webp",
+      "sha256": "fa229d39cf79680aa0a194f67832d01d5f4408165722facd65fdc627cee475c2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04.webp",
+      "sha256": "11e28dff8905d3d490a9da0e23a9539cd77494c250237a8bfe0819a041c61b35"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10.webp",
+      "sha256": "0339bda79e48dd049a96ce0517cc699ea804904da32fae5ee03ab51b5bb84533"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11.webp",
+      "sha256": "a232f00e82d2ebf0761f52581800f4a725454586f71ddd8462dd8e355ecd2114"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12.webp",
+      "sha256": "4228d7836c7b3f9138ef372489d82e839474eba2c60c1e7609432e919facba70"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05.webp",
+      "sha256": "c4200794335556db916297a8026193bacb2e9c69c18c0e59f71e797705369ed8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06.webp",
+      "sha256": "4fbcd259d9418105be0e736b25052aba65f0aeca795f92c32248b0903bf2dcc4"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/index.html",
+      "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"
+    },
+    {
+      "path": "/production-ai-engineering/styles.css",
+      "sha256": "dc201a7e840b7b657fbea492ff12dd51f758547c4864daa7878eb9b5a8d36e57"
+    },
+    {
+      "path": "/theme.js",
+      "sha256": "aa2d5ad2fb442abba898a6669ef0ac0725e227796de7f7829c1d11008a5e1d6c"
+    },
+    {
+      "path": "/gallery.css",
+      "sha256": "98ee9077aa17d5674caf27a1486e473098b02eff8e86a0f16ed2625162252187"
+    },
+    {
+      "path": "/pdf-downloads.css",
+      "sha256": "54285da74a1b5b96c9bbf37a2174e33493e178e838ec8b54fbda94b978f7e190"
+    },
+    {
+      "path": "/theme.css",
+      "sha256": "f52a44d564970176b6f8becf25e6ab7c68d26479e76ddbae0892c7bdc5be5e26"
+    },
+    {
+      "path": "/production-ai-engineering/app.js",
+      "sha256": "06950c21a0c90e2f2193f2e7329352c20b3b52d5e3bacdd71f2af1ec55699aaa"
+    },
+    {
+      "path": "/gallery-focus.js",
+      "sha256": "b011d3bbe34e1a6efd83e39b2ea401c42d06f556537712c19560576a9ec95c37"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "path": "/production-ai-engineering/assets/fonts/source-serif-4-latin-variable-italic.woff2",
+      "sha256": "663e7ef3037a56dce81dfc33f68c1e6445995ffd8887991b3c0b68a7689c9da5"
+    },
+    {
+      "path": "/assets/brand/favicon.svg",
+      "sha256": "2de116e8d1129a2b75f67eac2b4287914e7ad87fb3d791da915c2b0bd0ac9acb"
+    },
+    {
+      "path": "/favicon.ico",
+      "sha256": "11a15cf08ad40c4752a679dd10432d9724c104f2f8a22bb1ba0ffccaf2d178fe"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-08.png",
+      "sha256": "562d0db8803ff17f83750793e1c3ede822b24ec9f1fd5b4113bc43352863829d"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-09.png",
+      "sha256": "261fb6dd8fbd93c0c4e4dbe3a20e5f538aeae3bb79b1fb952d7c81fd1e1dcc04"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-10.png",
+      "sha256": "12c32cb1e115b6be3445aaa5337fd749e35e24326eb8c99f7a4a1cfa21450c28"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-11.png",
+      "sha256": "0fa1bf3295b09e2ef42c9681e24c4d60e77a31b24b33609ef2ab35efc030c91e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-12.png",
+      "sha256": "95de417f25436b1545453e7ae661a7ae45113ad5d6cf341a73c0285d7f944800"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-01.webp",
+      "sha256": "5b186dea8ae680e831ebe4d964b82709b3fa2d9b8ec523f1dc2ebee41ffea082"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-02.webp",
+      "sha256": "048323887348b33716a20f39c5ac4a6026e117ef044b9adc259ce881c84d4f87"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-03.webp",
+      "sha256": "61c1ffdc8a87c3e401953424c3e2803900ec6884a92d5af6a82357e8b00d87b2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-04.webp",
+      "sha256": "11e28dff8905d3d490a9da0e23a9539cd77494c250237a8bfe0819a041c61b35"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-05.webp",
+      "sha256": "c4200794335556db916297a8026193bacb2e9c69c18c0e59f71e797705369ed8"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-06.webp",
+      "sha256": "4fbcd259d9418105be0e736b25052aba65f0aeca795f92c32248b0903bf2dcc4"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-07.webp",
+      "sha256": "7449c5a1a8a496d38a93cdd0b4c1b570aeee71c2c831ef0bedd808a0f179b2b7"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-08.webp",
+      "sha256": "fa229d39cf79680aa0a194f67832d01d5f4408165722facd65fdc627cee475c2"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-09.webp",
+      "sha256": "e99b92b1b5b95de2e3f66a07cc58c67b30c2268a3a6066b0352b40a0448f99a1"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-10.webp",
+      "sha256": "0339bda79e48dd049a96ce0517cc699ea804904da32fae5ee03ab51b5bb84533"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-11.webp",
+      "sha256": "a232f00e82d2ebf0761f52581800f4a725454586f71ddd8462dd8e355ecd2114"
+    },
+    {
+      "path": "/production-ai-engineering/assets/chapters/chapter-12.webp",
+      "sha256": "4228d7836c7b3f9138ef372489d82e839474eba2c60c1e7609432e919facba70"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-01.png",
+      "sha256": "6ee92ced01b765ce6a866a2a81ed116c8c769e1f1b8f931d12853eaf6d07d5aa"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-02.png",
+      "sha256": "25d294685272ee83a81c46ca2f8844d49673022f99b3fa4808dad8b522536487"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-03.png",
+      "sha256": "3ea7f7e2b6e62756926855586c27197c76c72c04d3543584123bee2d6a0e1cca"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-04.png",
+      "sha256": "a33e2fb7351c470c3e25540a9d8dce46f66344a5ec36fc408fa7639644ced08b"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-05.png",
+      "sha256": "3ffa034e10886afa6ec3cecadfc6a0f5ba4008344a86db8523bc29ce7994365e"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-06.png",
+      "sha256": "84c2e6d476b9dfa2aa08d405daf67404df45c959ad901f59783b6ebb0da0d01f"
+    },
+    {
+      "path": "/production-ai-engineering/assets/dark/chapter-07.png",
+      "sha256": "0900d5244143dd7f51e9ec254b40b1f19784a3bbdec6c152658de130a5eef8d4"
+    },
+    {
+      "path": "/production-ai-engineering/editions/v1.4.3/review-record.json",
+      "sha256": "f9da1168c6135524103036fa7e561e15c349815c34e3719beb53875bde314add"
+    }
+  ]
+}

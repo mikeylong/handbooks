@@ -1,0 +1,15 @@
+{
+  "name": "ai-evaluation-field-guide",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeylong/handbooks",
+    "directory": "ai-evaluation"
+  },
+  "scripts": {
+    "build": "node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-presentation-release.mjs ai-evaluation",
+    "validate:release": "node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-presentation-release.mjs ai-evaluation",
+    "validate": "node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-presentation-release.mjs ai-evaluation"
+  },
+  "version": "1.0.2"
+}

@@ -105,13 +105,13 @@ export const CITATION_GROUPS = [
         "label": "MOD-01",
         "citation": "Google. \"Gemini API release notes.\" Google AI for Developers.",
         "url": "https://ai.google.dev/gemini-api/docs/changelog",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MOD-02",
         "citation": "Anthropic. \"Developer platform release notes.\" Claude API documentation.",
         "url": "https://platform.claude.com/docs/en/release-notes/overview",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MOD-03",
@@ -165,7 +165,7 @@ export const CITATION_GROUPS = [
         "label": "MOD-07",
         "citation": "Google. \"Gemini API deprecations.\" Google AI for Developers.",
         "url": "https://ai.google.dev/gemini-api/docs/deprecations",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MOD-08",
@@ -394,13 +394,13 @@ export const CITATION_GROUPS = [
         "label": "EVAL-90",
         "citation": "arxiv.org. \"Judging LLM-as-a-Judge: Concerning Rubric Artifacts.\" 2026-08-31.",
         "url": "https://arxiv.org/html/2609.02942v1",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "REV-54",
         "citation": "arxiv.org. \"LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents.\" 2026-10-19T09:50:57Z.",
         "url": "https://arxiv.org/html/2610.26088v1",
-        "accessed": true
+        "accessed": false
       }
     ]
   },
@@ -411,7 +411,7 @@ export const CITATION_GROUPS = [
         "label": "OBS-01",
         "citation": "OpenTelemetry. \"Semantic conventions for generative AI systems.\"",
         "url": "https://github.com/open-telemetry/semantic-conventions-genai",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "OBS-03",
@@ -570,24 +570,36 @@ export const CITATION_GROUPS = [
         "label": "REV-52",
         "citation": "github.com/vllm-project/vllm. \"vLLM v0.33.0 release.\" 2026-11-02T10:10:05Z.",
         "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "REV-53",
         "citation": "alignment.openai.com. \"How we detect frontier model misalignment.\" 2026-10-29.",
         "url": "https://alignment.openai.com/how-we-detect-frontier-model-misalignment",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "REV-50",
         "citation": "openai.com. \"OpenAI frontier training containment.\" 2026-10-23.",
         "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "REV-59",
         "citation": "ai.google.dev. \"Gemini API logs and datasets.\" 2026-10-26.",
         "url": "https://ai.google.dev/gemini-api/docs/logs-datasets",
+        "accessed": false
+      },
+      {
+        "label": "NOV09-59",
+        "citation": "Anthropic Institute. \"Measurements for understanding the pace of AI development inside frontier labs.\" not stated.",
+        "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+        "accessed": true
+      },
+      {
+        "label": "NOV09-62",
+        "citation": "OpenAI Alignment Research. \"Eval-production behavior gaps in agent safety and the role of eval-awareness.\" 2026-11-03.",
+        "url": "https://alignment.openai.com/eval-production-behavior-gap",
         "accessed": true
       }
     ]
@@ -768,7 +780,8 @@ export const SECTION_SOURCES = {
       "ORIG-12",
       "ORIG-15",
       "EVAL-90",
-      "REV-54"
+      "REV-54",
+      "NOV09-62"
     ]
   },
   "17": {
@@ -780,7 +793,8 @@ export const SECTION_SOURCES = {
       "ORIG-05",
       "EVAL-10",
       "REV-53",
-      "REV-50"
+      "REV-50",
+      "NOV09-59"
     ]
   },
   "18": {

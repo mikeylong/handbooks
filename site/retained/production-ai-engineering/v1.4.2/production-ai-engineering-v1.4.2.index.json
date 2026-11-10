@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "book": "production-ai-engineering",
+  "version": "1.4.2",
+  "sourceReaderSha256": "11fd40d87ae3ba8b75909c60d3cc37117ea50a77939d487887b7cea6e0ebd647",
+  "sha256": "8b05937c4de8c1bc7ebf6e4b2d88c4acaec62072150e177baccb631cd16d8448",
+  "sections": [
+    {
+      "title": "Engineering the whole system",
+      "anchor": "engineering-the-whole-system",
+      "level": 2
+    },
+    {
+      "title": "Build the System Around the Model",
+      "anchor": "build-the-system-around-the-model",
+      "level": 2
+    },
+    {
+      "title": "The full system",
+      "anchor": "the-full-system",
+      "level": 3
+    },
+    {
+      "title": "Prompt engineering is one part of the harness",
+      "anchor": "prompt-engineering-is-one-part-of-the-harness",
+      "level": 3
+    },
+    {
+      "title": "Treat Context as a Budget",
+      "anchor": "treat-context-as-a-budget",
+      "level": 2
+    },
+    {
+      "title": "Context engineering, not long prompts",
+      "anchor": "context-engineering-not-long-prompts",
+      "level": 3
+    },
+    {
+      "title": "Four caches that must not be confused",
+      "anchor": "four-caches-that-must-not-be-confused",
+      "level": 3
+    },
+    {
+      "title": "Prefill and Decode Are Different Jobs",
+      "anchor": "prefill-and-decode-are-different-jobs",
+      "level": 2
+    },
+    {
+      "title": "Prefill and decode optimize differently",
+      "anchor": "prefill-and-decode-optimize-differently",
+      "level": 3
+    },
+    {
+      "title": "KV cache management and memory pressure",
+      "anchor": "kv-cache-management-and-memory-pressure",
+      "level": 3
+    },
+    {
+      "title": "Continuous batching, paged attention, and goodput",
+      "anchor": "continuous-batching-paged-attention-and-goodput",
+      "level": 3
+    },
+    {
+      "title": "Choose the Optimization That Fits",
+      "anchor": "choose-the-optimization-that-fits",
+      "level": 2
+    },
+    {
+      "title": "Speculative decoding, quantization, and distillation",
+      "anchor": "speculative-decoding-quantization-and-distillation",
+      "level": 3
+    },
+    {
+      "title": "Quantization: formats, methods, and quality risk",
+      "anchor": "quantization-formats-methods-and-quality-risk",
+      "level": 3
+    },
+    {
+      "title": "Turn Model Output into a Contract",
+      "anchor": "turn-model-output-into-a-contract",
+      "level": 2
+    },
+    {
+      "title": "Structured outputs: syntax is only the first gate",
+      "anchor": "structured-outputs-syntax-is-only-the-first-gate",
+      "level": 3
+    },
+    {
+      "title": "Reliable function and tool calling",
+      "anchor": "reliable-function-and-tool-calling",
+      "level": 3
+    },
+    {
+      "title": "Put Clear Limits on Agents",
+      "anchor": "put-clear-limits-on-agents",
+      "level": 2
+    },
+    {
+      "title": "Agent guardrails, budgets, and termination",
+      "anchor": "agent-guardrails-budgets-and-termination",
+      "level": 3
+    },
+    {
+      "title": "Model routing and degraded mode",
+      "anchor": "model-routing-and-degraded-mode",
+      "level": 3
+    },
+    {
+      "title": "Keep Retrieval Grounded",
+      "anchor": "keep-retrieval-grounded",
+      "level": 2
+    },
+    {
+      "title": "RAG architecture",
+      "anchor": "rag-architecture",
+      "level": 3
+    },
+    {
+      "title": "Ingestion and chunking",
+      "anchor": "ingestion-and-chunking",
+      "level": 4
+    },
+    {
+      "title": "Embeddings",
+      "anchor": "embeddings",
+      "level": 4
+    },
+    {
+      "title": "Retrieval",
+      "anchor": "retrieval",
+      "level": 4
+    },
+    {
+      "title": "Freshness",
+      "anchor": "freshness",
+      "level": 4
+    },
+    {
+      "title": "Retrieval and answer evals",
+      "anchor": "retrieval-and-answer-evals",
+      "level": 3
+    },
+    {
+      "title": "Make Evals the Release Gate",
+      "anchor": "make-evals-the-release-gate",
+      "level": 2
+    },
+    {
+      "title": "Evals as the release contract",
+      "anchor": "evals-as-the-release-contract",
+      "level": 3
+    },
+    {
+      "title": "Release gates",
+      "anchor": "release-gates",
+      "level": 4
+    },
+    {
+      "title": "Trace the Whole User Journey",
+      "anchor": "trace-the-whole-user-journey",
+      "level": 2
+    },
+    {
+      "title": "LLM observability as a first-class discipline",
+      "anchor": "llm-observability-as-a-first-class-discipline",
+      "level": 3
+    },
+    {
+      "title": "Attribute cost to the whole workflow",
+      "anchor": "attribute-cost-to-the-whole-workflow",
+      "level": 3
+    },
+    {
+      "title": "Build Safety into the Architecture",
+      "anchor": "build-safety-into-the-architecture",
+      "level": 2
+    },
+    {
+      "title": "Safety engineering and permission boundaries",
+      "anchor": "safety-engineering-and-permission-boundaries",
+      "level": 3
+    },
+    {
+      "title": "Multi-tenant isolation and cache safety",
+      "anchor": "multi-tenant-isolation-and-cache-safety",
+      "level": 3
+    },
+    {
+      "title": "Choose What to Change",
+      "anchor": "choose-what-to-change",
+      "level": 2
+    },
+    {
+      "title": "In-context learning, RAG, fine-tuning, and distillation",
+      "anchor": "in-context-learning-rag-fine-tuning-and-distillation",
+      "level": 3
+    },
+    {
+      "title": "Diagnosing the four-way tradeoff",
+      "anchor": "diagnosing-the-four-way-tradeoff",
+      "level": 3
+    },
+    {
+      "title": "Design for Production Failure",
+      "anchor": "design-for-production-failure",
+      "level": 2
+    },
+    {
+      "title": "Production failure matrix",
+      "anchor": "production-failure-matrix",
+      "level": 3
+    },
+    {
+      "title": "Production readiness checklist",
+      "anchor": "production-readiness-checklist",
+      "level": 3
+    },
+    {
+      "title": "Contract and harness",
+      "anchor": "contract-and-harness",
+      "level": 4
+    },
+    {
+      "title": "Context and retrieval",
+      "anchor": "context-and-retrieval",
+      "level": 4
+    },
+    {
+      "title": "Inference and caching",
+      "anchor": "inference-and-caching",
+      "level": 4
+    },
+    {
+      "title": "Outputs, tools, and agents",
+      "anchor": "outputs-tools-and-agents",
+      "level": 4
+    },
+    {
+      "title": "Evals, operations, and economics",
+      "anchor": "evals-operations-and-economics",
+      "level": 4
+    },
+    {
+      "title": "Security and tenancy",
+      "anchor": "security-and-tenancy",
+      "level": 4
+    },
+    {
+      "title": "Recommended learning order",
+      "anchor": "recommended-learning-order",
+      "level": 3
+    },
+    {
+      "title": "Notes and Sources",
+      "anchor": "notes-and-sources",
+      "level": 2
+    },
+    {
+      "title": "Section source map",
+      "anchor": "section-source-map",
+      "level": 3
+    },
+    {
+      "title": "Harness, context, outputs, and tools",
+      "anchor": "harness-context-outputs-and-tools",
+      "level": 3
+    },
+    {
+      "title": "Serving and compression",
+      "anchor": "serving-and-compression",
+      "level": 3
+    },
+    {
+      "title": "Retrieval and evaluation",
+      "anchor": "retrieval-and-evaluation",
+      "level": 3
+    },
+    {
+      "title": "Observability and economics",
+      "anchor": "observability-and-economics",
+      "level": 3
+    },
+    {
+      "title": "Security and tenancy",
+      "anchor": "security-and-tenancy-1",
+      "level": 3
+    },
+    {
+      "title": "Model adaptation",
+      "anchor": "model-adaptation",
+      "level": 3
+    },
+    {
+      "title": "Index of Terms",
+      "anchor": "index-of-terms",
+      "level": 2
+    },
+    {
+      "title": "A",
+      "anchor": "a",
+      "level": 3
+    },
+    {
+      "title": "B",
+      "anchor": "b",
+      "level": 3
+    },
+    {
+      "title": "C",
+      "anchor": "c",
+      "level": 3
+    },
+    {
+      "title": "D",
+      "anchor": "d",
+      "level": 3
+    },
+    {
+      "title": "E",
+      "anchor": "e",
+      "level": 3
+    },
+    {
+      "title": "F",
+      "anchor": "f",
+      "level": 3
+    },
+    {
+      "title": "G",
+      "anchor": "g",
+      "level": 3
+    },
+    {
+      "title": "H",
+      "anchor": "h",
+      "level": 3
+    },
+    {
+      "title": "I",
+      "anchor": "i",
+      "level": 3
+    },
+    {
+      "title": "K",
+      "anchor": "k",
+      "level": 3
+    },
+    {
+      "title": "L",
+      "anchor": "l",
+      "level": 3
+    },
+    {
+      "title": "M",
+      "anchor": "m",
+      "level": 3
+    },
+    {
+      "title": "N",
+      "anchor": "n",
+      "level": 3
+    },
+    {
+      "title": "O",
+      "anchor": "o",
+      "level": 3
+    },
+    {
+      "title": "P",
+      "anchor": "p",
+      "level": 3
+    },
+    {
+      "title": "Q",
+      "anchor": "q",
+      "level": 3
+    },
+    {
+      "title": "R",
+      "anchor": "r",
+      "level": 3
+    },
+    {
+      "title": "S",
+      "anchor": "s",
+      "level": 3
+    },
+    {
+      "title": "T",
+      "anchor": "t",
+      "level": 3
+    },
+    {
+      "title": "V",
+      "anchor": "v",
+      "level": 3
+    },
+    {
+      "title": "W",
+      "anchor": "w",
+      "level": 3
+    }
+  ],
+  "prompts": 0,
+  "figures": []
+}

@@ -1,0 +1,1344 @@
+--- previous/comparison-baseline.pdf
++++ candidate/daytime.pdf
+@@ -1,13 +1,13 @@
+ --- PDF page 1 ---
+-Production AIEngineering
++ProductionAIEngineering
+ A Handbook for Building Reliable LLM Systems
+ Michael Long, surfaces.systems
+-November 8, 2026 · Version 1.4.2
++November 9, 2026 · Version 1.4.3
+ --- PDF page 2 ---
+ Engineering the whole system
+-Production AI engineering is a systems discipline. This handbook lays out
+-an operating model that connects the techniques instead of treating each
+-one as an isolated fix. The operating premise is simple:
++Production AI engineering is a systems discipline. This handbook lays
++out an operating model that connects the techniques instead of treating
++each one as an isolated fix. The operating premise is simple:
+ A model can propose an answer or action. The
+ surrounding system decides whether and how it
+ should proceed, and remains responsible for the
+@@ -161,9 +161,9 @@
+ Retrieve details just in time. Keep durable decisions in explicit state.
+ Label and separate untrusted content from instructions, but do not
+ mistake roles, delimiters, or typed fields for isolation. Enforce a
+-deterministic source-to-sink policy so data derived from an untrusted
+-source cannot authorize actions, expand permissions, or select new
+-egress destinations.
++deterministic source-to-sink policy so data derived from an
++untrusted source cannot authorize actions, expand permissions, or
++select new egress destinations.
+ Keep provenance attached through summarization. A summary
+ without its source and version creates a future stale-fact bug.
+ PRODUCTION AI ENGINEERING
+@@ -195,8 +195,8 @@
+ Remove only the messages the provider says it replaced, and keep
+ system instructions and tool definitions compatible across the handoff.
+ Account for the summarization request separately when usage is
+-reported outside the top-level totals. Compaction can silently omit details
+-and remove earlier images, documents, uploads, or URL content.
++reported outside the top-level totals. Compaction can silently omit
++details and remove earlier images, documents, uploads, or URL content.
+ Preserve durable decisions and required evidence outside the transcript,
+ PRODUCTION AI ENGINEERING
+ TREAT CONTEXT AS A BUDGET
+@@ -282,21 +282,20 @@
+ recomputation for an identical rendered prefix, while still running prefill
+ for the uncached suffix and a full decode. Put stable system instructions,
+ examples, and tool definitions first. Put user-specific material later. Small
+-differences in tokenization, message order, tool serialization, or
+-timestamps can destroy a hit. The cache can reduce TTFT and billed input
+-cost only when provider-specific read/write pricing and reuse frequency
+-make the tradeoff worthwhile.
++differences in tokenization, message order, tool serialization, or timestamps
++can destroy a hit. The cache can reduce TTFT and billed input cost only
++when provider-specific read/write pricing and reuse frequency make the
++tradeoff worthwhile.
+ Semantic caching is approximate and reuses an answer. It decides
+ whether a new request is close enough to an old one to return the old
+ answer. The reuse decision acts as both a quality classifier and a security
+-classifier. The critical metric is false-hit rate by risk slice, not hit rate
+-alone.
+-Use semantic caching only when two paraphrased requests should receive
+-the same answer. Avoid it, or require verification, for personalized,
+-permission-sensitive, rapidly changing, transactional, high-stakes, and
+-multi-turn-dependent answers. Azure's own semantic-cache policy warns
+-that similarity hits can be incorrect, outdated, or unsafe; see the official
+-policy reference[CACHE-02].
++classifier. The critical metric is false-hit rate by risk slice, not hit rate alone.
++Use semantic caching only when two paraphrased requests should receive the
++same answer. Avoid it, or require verification, for personalized, permission-
++sensitive, rapidly changing, transactional, high-stakes, and multi-turn-
++dependent answers. Azure's own semantic-cache policy warns that similarity
++hits can be incorrect, outdated, or unsafe; see the official policy
++reference[CACHE-02].
+ A defensible application cache key or namespace usually needs:
+ REQUEST SCOPE tenant + principal/ACL scope + task type + normalized state
+ RUNTIME CONTRACT model snapshot + prompt version + tool-contract version
+@@ -308,13 +307,13 @@
+ private semantic responses globally based on embedding similarity.
+ Cache breakpoints determine which shared prefix can actually be reused.
+ Where the API exposes them, place and test an eligible boundary after the
+-stable prefix. An implicit boundary after a changing suffix may never reuse
+-that prefix. Verify with requests that keep the prefix fixed while changing the
++stable prefix. An implicit boundary after a changing suffix may never reuse that
++prefix. Verify with requests that keep the prefix fixed while changing the suffix,
+ PRODUCTION AI ENGINEERING
+ TREAT CONTEXT AS A BUDGET
+ 9
+ --- PDF page 13 ---
+-suffix, and inspect cache-read and cache-write usage. OpenAI documents this
++and inspect cache-read and cache-write usage. OpenAI documents this
+ distinction[CACHE-01] for its newer caching contract. Include writes, uncached
+ suffixes, compaction, and retention in the net-cost calculation.
+ SOURCES [CACHE-01] [CACHE-02] [SERV-01]
+@@ -324,9 +323,9 @@
+ 10
+ --- PDF page 14 ---
+ CHAPTER 03
+-Prefill and DecodeAre Different Jobs
+-Prefill and decode use the hardware differently. The serving plan
+-has to account for both.
++Prefill andDecode AreDifferent Jobs
++Prefill and decode use the hardware differently. The serving plan has
++to account for both.
+ 11
+ --- PDF page 15 ---
+ Prefill and decode optimize differently
+@@ -374,10 +373,10 @@
+ Track p50, p95, and p99 for end-to-end latency, queue time, TTFT,
+ TPOT/ITL, and tool latency. A low average can still hide an unusable tail.
+ Chunked prefill can reduce interference with active decodes and
+-improve tail inter-token latency. Chunking can also increase TTFT for the
+-long prompt being split. Use prefill/decode disaggregation only when its
+-SLO benefit outweighs the cost of duplicated model weights, KV transfer,
+-interconnect, routing, and operations.
++improve tail inter-token latency. Chunking can also increase TTFT for
++the long prompt being split. Use prefill/decode disaggregation only when
++its SLO benefit outweighs the cost of duplicated model weights, KV
++transfer, interconnect, routing, and operations.
+ SOURCES [SERV-03] [SERV-04] [SERV-05]
+ KV cache management and memory
+ pressure
+@@ -408,8 +407,8 @@
+ lengths.
+ 2. Reserve memory for active decodes and protect latency-critical
+ traffic classes.
+-3. Use paged/block allocation to reduce fragmentation. Prefix sharing is
+-a separate, explicitly keyed capability layered on top.
++3. Use paged/block allocation to reduce fragmentation. Prefix sharing
++is a separate, explicitly keyed capability layered on top.
+ 4. Use per-tenant concurrency and KV quotas.
+ 5. Where prefix caching is enabled, reuse exact full-prefix blocks with
+ ownership, refcounts, and copy-on-write semantics.
+@@ -422,8 +421,8 @@
+ 8. Shed or degrade load before allowing a node-wide OOM.
+ The PagedAttention paper[SERV-01] applies virtual-memory-like block
+ management to KV state. This reduces allocation waste and enables
+-sharing. Paging manages memory more efficiently, but the underlying KV
+-capacity limit remains.
++sharing. Paging manages memory more efficiently, but the underlying
++KV capacity limit remains.
+ PRODUCTION AI ENGINEERING
+ PREFILL AND DECODE ARE DIFFERENT JOBS
+ 14
+@@ -477,8 +476,8 @@
+ users. Optimize goodput: the maximum arrival rate per provisioned GPU
+ or resource at which the required fraction of requests satisfies both TTFT
+ and TPOT/ITL SLOs plus the application-quality gate. A larger batch can
+-increase throughput while pushing interactive latency past an acceptable
+-limit.
++increase throughput while pushing interactive latency past an
++acceptable limit.
+ PRODUCTION AI ENGINEERING
+ PREFILL AND DECODE ARE DIFFERENT JOBS
+ 16
+@@ -500,9 +499,9 @@
+ --- PDF page 21 ---
+ CHAPTER 04
+ Choose theOptimizationThat Fits
+-Speculative decoding, quantization, and distillation solve
+-different problems. Pick the one that matches the bottleneck and
+-verify the quality tradeoff.
++Speculative decoding, quantization, and distillation solve different
++problems. Pick the one that matches the bottleneck and verify the
++quality tradeoff.
+ 18
+ --- PDF page 22 ---
+ Speculative decoding, quantization, and
+@@ -577,16 +576,18 @@
+ --- PDF page 24 ---
+ Quantization: formats, methods, and
+ quality risk
+-AWQ and GPTQ describe quantization methods. Numeric formats are a
+-separate choice. Always spell out the precision tuple: W8A8, W8A16, W4A16, or
+-KV8, for example. INT8 and INT4 leave too much unspecified on their own.
+-Weight storage is approximately parameters × bits / 8 + scales + zero-
+-points + unquantized modules. W4A16 reduces weight storage, but it does not
+-shrink activations or KV. Calling a model “4-bit” therefore does not imply 4×
+-lower total VRAM. Any latency reduction depends on the actual kernel and
+-hardware.
++AWQ and GPTQ describe quantization methods. Numeric formats are a separate
++choice. Always spell out the precision tuple: W8A8, W8A16, W4A16, or KV8, for
++example. INT8 and INT4 leave too much unspecified on their own.
++Weight storage is approximately parameters × bits / 8 + scales + zero-points
+++ unquantized modules. W4A16 reduces weight storage, but it does not shrink
++activations or KV. Calling a model “4-bit” therefore does not imply 4× lower
++total VRAM. Any latency reduction depends on the actual kernel and hardware.
+ Primary references: FP8 formats[QUANT-01], SmoothQuant for W8A8[QUANT-02],
+ AWQ[QUANT-03], and GPTQ[QUANT-04].
++Quality risk generally rises below 4-bit, in smaller models, on harder reasoning
++slices, with unrepresentative calibration, and when activation or KV outliers
++are aggressively quantized. The risk pattern is empirical, not guaranteed.
+ CHOICE WHAT IT USUALLY
+ MEANS
+ WHEN IT IS
+@@ -645,14 +646,11 @@
+ CHOOSE THE OPTIMIZATION THAT FITS
+ 21
+ --- PDF page 25 ---
+-Quality risk generally rises below 4-bit, in smaller models, on harder
+-reasoning slices, with unrepresentative calibration, and when activation or
+-KV outliers are aggressively quantized. The risk pattern is empirical, not
+-guaranteed. Specific risks include:
+-calibration data does not match production languages, domains, lengths,
+-or modalities;
+-the task depends on small logit margins, exact numbers, code, rare
+-tokens, or precise tool arguments;
++Specific risks include:
++calibration data does not match production languages, domains, lengths, or
++modalities;
++the task depends on small logit margins, exact numbers, code, rare tokens,
++or precise tool arguments;
+ activation or KV outliers are aggressively quantized;
+ long-context, multilingual, rare-token, safety, or tool-use behavior is more
+ sensitive than the aggregate benchmark suggests.
+@@ -660,8 +658,8 @@
+ kernels can erase the performance gain even when quality holds. Benchmark
+ the exact checkpoint, packing, runtime, hardware, batch shape, and
+ parallelism plan.
+-Run every quantized candidate through the same golden and adversarial
+-suite as the baseline. Include exact structured output, function selection and
++Run every quantized candidate through the same golden and adversarial suite
++as the baseline. Include exact structured output, function selection and
+ arguments, safety refusals, multilingual slices, long context, and p95/p99
+ latency. Measure end-to-end performance. Model file size alone proves
+ nothing.
+@@ -676,12 +674,12 @@
+ idempotency, and effect checks make it safe to use.
+ 23
+ --- PDF page 27 ---
+-Structured outputs: syntax is only the
+-first gate
++Structured outputs: syntax is only the first
++gate
+ Constrained decoding and provider structured-output features can
+-greatly improve syntactic conformance. Syntactic conformance does
+-not establish whether the values are true, authorized, internally
+-consistent, current, or safe to execute.
++greatly improve syntactic conformance. Syntactic conformance does not
++establish whether the values are true, authorized, internally consistent,
++current, or safe to execute.
+ Treat every structured-output request as a fault-containment boundary.
+ Cap grammar or schema compilation work, isolate it from the shared
+ inference engine, and reject malformed or unsupported constraints
+@@ -735,9 +733,10 @@
+ Keep repair bounded:
+ 1. Classify transport/status, refusal, incomplete/truncated, parse,
+ schema, semantic, authorization, and policy failures separately.
+-2. Repair only bounded syntax or shape failures when the result is non-
+-consequential or read-only. Never use repair to override a refusal,
+-invent semantically missing values, or make a mutation executable.
++2. Repair only bounded syntax or shape failures when the result is
++non-consequential or read-only. Never use repair to override a
++refusal, invent semantically missing values, or make a mutation
++executable.
+ PRODUCTION AI ENGINEERING
+ TURN MODEL OUTPUT INTO A CONTRACT
+ 25
+@@ -836,11 +835,11 @@
+ distinctions explicit. Apply the same tenant binding, authorization,
+ deadlines, and cancellation rules to callbacks and late results. Preserve
+ completed handle records so a later call cannot reuse their identity.
+-A late tool result is still untrusted input. Reauthorize its tenant, principal,
+-conversation, run, call, resource, and state version at delivery time;
+-discard results for cancelled, expired, superseded, or completed work.
+-Never let a delayed callback revive an old plan, silently spend a new
+-budget, or attach to a reused call identifier.
++A late tool result is still untrusted input. Reauthorize its tenant,
++principal, conversation, run, call, resource, and state version at delivery
++time; discard results for cancelled, expired, superseded, or completed
++work. Never let a delayed callback revive an old plan, silently spend a
++new budget, or attach to a reused call identifier.
+ If tools can be added or removed mid-conversation, treat the available-
+ tool set as versioned runtime state. Build the registry server-side and
+ authorize every change. Persist a canonical schema digest with the turn,
+@@ -956,9 +955,9 @@
+ PUT CLEAR LIMITS ON AGENTS
+ 33
+ --- PDF page 37 ---
+-The model's claim that it finished does not count as the success predicate.
+-Verify the outcome: the record exists, tests pass, the message was sent
+-once, or the cited evidence supports the answer.
++The model's claim that it finished does not count as the success
++predicate. Verify the outcome: the record exists, tests pass, the message
++was sent once, or the cited evidence supports the answer.
+ When the run ends, return a typed state such as succeeded, partial,
+ blocked, refused, cancelled, budget_exhausted, or failed. Include
+ the completed work and a safe next action. A typed result makes
+@@ -979,51 +978,51 @@
+ negotiated protocol version; provider API, client SDK, and serving-
+ runtime versions; lifecycle state and retirement date; supported request
+ parameters and turn rules; tool protocol; JSON Schema support; context
+-and output limits; refusal semantics; modality; processing geography and
+-data policy; and tested quality slices. Managed agent runtimes and built-
++and output limits; refusal semantics; modality; processing geography
++and data policy; and tested quality slices. Managed agent runtimes and
+ PRODUCTION AI ENGINEERING
+ PUT CLEAR LIMITS ON AGENTS
+ 34
+ --- PDF page 38 ---
+-in tools belong in that matrix too. Record the agent runtime, tool
++built-in tools belong in that matrix too. Record the agent runtime, tool
+ versions, approval and sign-in behavior, state-retention rules, and
+ retirement date. Then test the actual replacement before a preview or
+ dated model shuts down. Treat aliases, defaults, and wrappers as
+ mutable. Google, Anthropic, OpenAI, and AWS publish changes on
+ different schedules, and platform-specific retirement dates can differ
+-from a model creator's dates. Google's Gemini deprecation schedule[MOD-07]
+-demonstrates why a product alias or managed surface needs its own
+-migration owner even when the underlying model family remains
+-available. A fallback that cannot honor the same contract puts the
+-product in a different mode.
++from a model creator's dates. Google's Gemini deprecation
++schedule[MOD-07] demonstrates why a product alias or managed surface
++needs its own migration owner even when the underlying model family
++remains available. A fallback that cannot honor the same contract puts
++the product in a different mode.
+ Treat provider service-tier policy as a route constraint. OpenAI
+ documents organization-wide and project-specific tier controls. Test the
+ effective settings using the intended project and confirm the behavior of
+ an explicitly disallowed request. Do not fail over to a different
+ organization or project to get around the denial.
+ The resolved model settings and preserved model-generated state belong
+-in the migration record. Test omitted parameters separately from explicit
+-values, record supported reasoning levels and their output-token budget,
+-and verify tool/API support and cache controls on the exact route. Parse
+-responses by block type. Bind signed thinking, reasoning, or summary
+-blocks to the exact provider, model, account, conversation history, and
+-API contract. Return them unchanged when required, and keep the
+-history append-only. If a route drops or rejects that state, fail or restart
+-from an explicitly compatible checkpoint instead of silently continuing
+-with different semantics. Migration tests must cover default reasoning
+-behavior, forced-tool restrictions, structured-output parameters, refusal
+-categories, and a fresh effort sweep because the same effort label can
+-change across model generations. OpenAI's migration guidance[MOD-05]
+-documents changes to these contracts, while AWS's adaptive-thinking
+-correction[MOD-06] shows how omission can enable billable reasoning.
+-Anthropic's Sonnet 5.5 migration guide[MOD-08] documents the signed-state
++in the migration record. Test omitted parameters separately from
++explicit values, record supported reasoning levels and their output-token
++budget, and verify tool/API support and cache controls on the exact
++route. Parse responses by block type. Bind signed thinking, reasoning, or
++summary blocks to the exact provider, model, account, conversation
++history, and API contract. Return them unchanged when required, and
++keep the history append-only. If a route drops or rejects that state, fail or
++restart from an explicitly compatible checkpoint instead of silently
++continuing with different semantics. Migration tests must cover default
++reasoning behavior, forced-tool restrictions, structured-output
++parameters, refusal categories, and a fresh effort sweep because the
++same effort label can change across model generations. OpenAI's
++migration guidance[MOD-05] documents changes to these contracts, while
++AWS's adaptive-thinking correction[MOD-06] shows how omission can
++enable billable reasoning. Anthropic's Sonnet 5.5 migration guide[MOD-08]
+ PRODUCTION AI ENGINEERING
+ PUT CLEAR LIMITS ON AGENTS
+ 35
+ --- PDF page 39 ---
+-and request-contract changes. Reject unsupported settings rather than
+-silently dropping them. Compare the resolved behavior, latency, and
+-cost before rollout.
++documents the signed-state and request-contract changes. Reject
++unsupported settings rather than silently dropping them. Compare the
++resolved behavior, latency, and cost before rollout.
+ Treat provider SDK upgrades as production migrations. Diff request
+ headers and response types, exercise every mutating method against
+ disposable state, and canary the pinned upgrade before rollout.
+@@ -1122,9 +1121,9 @@
+ dominates every retrieval task.
+ Use a pinned model, version, preprocessing configuration, and
+ distance function for both document and query vectors.
+-Treat an embedding change as an index migration. Build and evaluate
+-a side-by-side index, then switch atomically or through a measured
+-rollout. Do not mix incomparable vector spaces.
++Treat an embedding change as an index migration. Build and
++evaluate a side-by-side index, then switch atomically or through a
++measured rollout. Do not mix incomparable vector spaces.
+ Dimension, precision, and index parameters trade storage and query
+ cost against recall. Measure the full retrieval system rather than
+ ranking embedding models by a generic leaderboard alone.
+@@ -1133,9 +1132,10 @@
+ error codes, and rare terms.
+ Dense embeddings are strong for paraphrase and conceptual
+ similarity.
+-Hybrid retrieval combines complementary candidate sets. Reciprocal
+-rank fusion is a practical starting point when raw scores are not
+-directly comparable; see the Elastic hybrid-search guide[RAG-02].
++Hybrid retrieval combines complementary candidate sets.
++Reciprocal rank fusion is a practical starting point when raw scores
++are not directly comparable; see the Elastic hybrid-search
++guide[RAG-02].
+ Enforce tenant and document ACL constraints inside the source
+ query and before or during vector candidate generation and
+ reranking. Post-filtering a global top-k result is not an isolation
+@@ -1175,7 +1175,7 @@
+ can still produce a bad answer.
+ Define the relevance unit for every metric: document, deduplicated
+ source, chunk, claim, or exact evidence span. Overlapping chunks can
+-inflate item precision and recall, so report deduplicated source recall and
++inflate item precision and recall, so report deduplicated source recall
+ METRIC DEFINITION OR QUESTION DIAGNOSES
+ Recall@k Relevant items retrieved in top k /
+ all known relevant items
+@@ -1228,7 +1228,7 @@
+ KEEP RETRIEVAL GROUNDED
+ 42
+ --- PDF page 46 ---
+-claim coverage as well. When relevance judgments are incomplete,
++and claim coverage as well. When relevance judgments are incomplete,
+ Recall@k and Precision@k are estimates against the judged pool. They do
+ not represent corpus-wide truth.
+ A useful golden record contains:
+@@ -1248,9 +1248,9 @@
+ Validate it against the comparison, training choice, system selection,
+ downstream prediction, or filtering decision it will drive. Test whether
+ evaluator conclusions remain stable across the relevant slices. A metric
+-that ranks retrievers well may still fail to predict answer quality or justify
+-a different generator. Automated metrics surface problems; calibrated
+-human review remains part of the evaluation.
++that ranks retrievers well may still fail to predict answer quality or
++justify a different generator. Automated metrics surface problems;
++calibrated human review remains part of the evaluation.
+ For iterative search agents, evaluate retrieval in trajectory context.
+ Condition the retriever and its evaluation on the original task and prior
+ search interactions, not only the latest sub-query. Measure marginal
+@@ -1264,8 +1264,8 @@
+ --- PDF page 47 ---
+ CHAPTER 08
+ Make Evals theRelease Gate
+-Golden sets, adversarial tests, calibrated judges, and human
+-review determine whether a release can ship.
++Golden sets, adversarial tests, calibrated judges, and human review
++determine whether a release can ship.
+ 44
+ --- PDF page 48 ---
+ Evals as the release contract
+@@ -1305,6 +1305,12 @@
+ Deduplicate related prompts, source documents, and generated variants
+ across splits. Prevent fine-tuning data, few-shot examples, and prompt-
+ optimizer inputs from contaminating the holdout.
++Check whether safety-evaluation behavior transfers to comparable
++production decisions. Match cases on the context before the decision,
++keep grading definitions aligned and report the remaining case-mixture
++differences. Where task framing may matter, compare an unchanged
++task with controlled descriptions of the evaluation objective. Do not
++assume that evaluation awareness always inflates safety scores.
+ For nondeterministic workflows, report both first-try success and
+ consistency. pass@k answers whether at least one of k trials succeeds;
+ pass^k asks whether all k trials succeed. Customer-facing reliability
+@@ -1314,23 +1320,24 @@
+ values. Repeated retries do not equal first-attempt product reliability.
+ LLM-as-judge is useful when:
+ the rubric is explicit and examples are calibrated;
+-candidates are anonymized and pair order is randomized or swapped;
++candidates are anonymized and pair order is randomized or
++swapped;
+ deterministic checks grade everything they can grade;
+ judge agreement is measured against domain experts;
+ disputed, high-risk, and distribution-shifted cases go to humans.
+ An LLM judge is not an independent source of truth. Judges exhibit
+ position, verbosity, self-preference, and reasoning biases; see the MT-
+ Bench judge study[EVAL-01].
++PRODUCTION AI ENGINEERING
++MAKE EVALS THE RELEASE GATE
++46
++--- PDF page 50 ---
+ Calibrate a black-box judge on the exact endpoint, model version, rubric,
+ language, and time window used for the release. Repeat representative
+ judgments, record disagreement and rank stability, and require a human
+ or deterministic fallback when the judge drifts. Do not transfer a
+ calibration result across endpoints or silently updated aliases. A 52,988-
+ attempt study[ORIG-12] of shared judge endpoints found substantially lower
+-PRODUCTION AI ENGINEERING
+-MAKE EVALS THE RELEASE GATE
+-46
+---- PDF page 50 ---
+ repeat and next-day rank stability than a controlled endpoint. This
+ makes local calibration an operating requirement rather than a one-time
+ benchmark.
+@@ -1385,20 +1392,19 @@
+ capability regressions as hard gates, and review sampled trajectories for
+ gaming. Monitoring is detection, not a substitute for isolation or
+ deterministic enforcement.
+-Anthropic's agent-eval guidance[EVAL-02] and OpenAI's eval guide[EVAL-03] both
+-emphasize evaluating the full system or harness instead of stopping at
+-isolated model text.
++Anthropic's agent-eval guidance[EVAL-02] and OpenAI's eval guide[EVAL-03]
++both emphasize evaluating the full system or harness instead of stopping
++at isolated model text.
+ SOURCES [EVAL-01] [EVAL-02] [EVAL-03] [EVAL-05] [EVAL-06] [ORIG-05] [EVAL-09] [ORIG-12]
+-[ORIG-15] [EVAL-90] [REV-54]
++[ORIG-15] [EVAL-90] [REV-54] [NOV09-62]
+ PRODUCTION AI ENGINEERING
+ MAKE EVALS THE RELEASE GATE
+ 49
+ --- PDF page 53 ---
+ CHAPTER 09
+ Trace the WholeUser Journey
+-A complete trace should explain what happened, what it
+-cost, where it slowed down, and whether the user got the
+-intended result.
++A complete trace should explain what happened, what it cost, where
++it slowed down, and whether the user got the intended result.
+ 50
+ --- PDF page 54 ---
+ LLM observability as a first-class
+@@ -1460,17 +1466,17 @@
+ arguments, or model outputs. Use redaction, sampling, encryption,
+ access control, short retention, and content-free hashes or manifests.
+ The observability system cannot become the largest data-leak path.
+-Build drift dashboards from directly observed distributions and sampled,
+-versioned evaluator estimates for retrieval relevance, citation support,
+-grounding, and outcome quality. Show evaluation coverage, grader
+-version, calibration status, and confidence intervals. Put them alongside
++Build drift dashboards from directly observed distributions and
++sampled, versioned evaluator estimates for retrieval relevance, citation
++support, grounding, and outcome quality. Show evaluation coverage,
++grader version, calibration status, and confidence intervals. Put them
+ PRODUCTION AI ENGINEERING
+ TRACE THE WHOLE USER JOURNEY
+ 52
+ --- PDF page 56 ---
+-input length, route mix, cache behavior, tool errors, validation and
+-repair rate, tokens, latency, and cost. Alert on user-impacting SLOs and
+-regression slices instead of every noisy model event.
++alongside input length, route mix, cache behavior, tool errors, validation
++and repair rate, tokens, latency, and cost. Alert on user-impacting SLOs
++and regression slices instead of every noisy model event.
+ OpenTelemetry's GenAI semantic conventions[OBS-01] provide a vendor-
+ neutral starting vocabulary for inference, agents, tools, tokens, and
+ timing. The conventions are evolving, so pin the version your telemetry
+@@ -1482,26 +1488,32 @@
+ traces against authoritative external state. Reasoning traces, when
+ available, may supplement detection, but neither hidden reasoning nor
+ any single transcript can be a required enforcement dependency.
+-Monitor recalibration belongs in every model or reasoning-configuration
+-migration. Compare action-only, reasoning-only, and combined
+-monitoring where those signals are available and permitted. Measure
+-detection, false alarms, and evasion on the same task slices. OpenAI's
+-GPT-6 Astra system card[EVAL-10] reports monitorability changes and
+-adversarial evasion in its evaluation setting. Treat those results as a
++Monitor recalibration belongs in every model or reasoning-
++configuration migration. Compare action-only, reasoning-only, and
++combined monitoring where those signals are available and permitted.
++Measure detection, false alarms, and evasion on the same task slices.
++OpenAI's GPT-6 Astra system card[EVAL-10] reports monitorability changes
++and adversarial evasion in its evaluation setting. Treat those results as a
+ reason to revalidate local monitoring, not as a production detection rate.
+ Keep external receipts and enforceable policy checks independent of the
+ monitor.
+ Inventory the surfaces the monitor can see, including evaluation
+ harnesses and every enabled tool path. Exercise a known failure end to
+ end and verify that independent evidence reaches the right responder
++PRODUCTION AI ENGINEERING
++TRACE THE WHOLE USER JOURNEY
++53
++--- PDF page 57 ---
+ and that containment actually occurs. Sample unflagged traffic and
+ record gaps in surface coverage, threat-specific recall and responder
+ availability.
++Report monitor coverage, time to automated review, time to human
++review and escalation rate separately. An action being logged does not
++establish timely review, and a low flag rate does not establish good
++detection. State which platforms and tool paths the denominator
++includes.
+ SOURCES [OBS-01] [OBS-03] [OBS-02] [EVAL-06] [ORIG-05] [EVAL-10] [REV-53] [REV-50]
+-PRODUCTION AI ENGINEERING
+-TRACE THE WHOLE USER JOURNEY
+-53
+---- PDF page 57 ---
++[NOV09-59]
+ Attribute cost to the whole workflow
+ Use the same reliability trace to attribute cost:
+ Journey cost = SUM OF
+@@ -1519,10 +1531,14 @@
+ when the provider includes it in a parent total.
+ OpenAI added a selectable 12-hour minimum cache lifetime on eligible
+ Responses API routes. Its October 20 changelog lists the write rate as 2.5
+-times the ordinary input rate. Check the exact model, breakpoint,
+-project data controls and observed reuse interval before pricing the
+-route. Compare the full cost of writes, reads and uncached input over the
+-same traffic window.
++times the ordinary input rate. Check the exact model, breakpoint, project
++PRODUCTION AI ENGINEERING
++TRACE THE WHOLE USER JOURNEY
++54
++--- PDF page 58 ---
++data controls and observed reuse interval before pricing the route.
++Compare the full cost of writes, reads and uncached input over the same
++traffic window.
+ The dimensions you usually need are feature, workflow, tenant, user
+ journey, route, model, environment, and terminal outcome. Use
+ pseudonymous identifiers where possible.
+@@ -1531,10 +1547,6 @@
+ cost per grounded/correct answer;
+ retry and repair amplification;
+ semantic and prefix-cache savings net of lookup/storage cost;
+-PRODUCTION AI ENGINEERING
+-TRACE THE WHOLE USER JOURNEY
+-54
+---- PDF page 58 ---
+ cost of fallback and escalation paths;
+ idle and reserved accelerator cost for self-hosting;
+ for self-hosted serving, total inference energy per request and per
+@@ -1545,6 +1557,10 @@
+ Reconcile the trace-derived estimates with provider invoices or Costs
+ APIs. Allocate reserved capacity, idle accelerators, storage, observability,
+ and shared platform cost through documented drivers. Keep an explicit
++PRODUCTION AI ENGINEERING
++TRACE THE WHOLE USER JOURNEY
++55
++--- PDF page 59 ---
+ unallocated or residual bucket instead of inventing false precision.
+ Preserve the price-table version and effective timestamp behind every
+ calculation.
+@@ -1557,22 +1573,22 @@
+ Author synthesis: the journey-cost formula ties spend to a completed user outcome.
+ PRODUCTION AI ENGINEERING
+ TRACE THE WHOLE USER JOURNEY
+-55
+---- PDF page 59 ---
++56
++--- PDF page 60 ---
+ CHAPTER 10
+ Build Safety intothe Architecture
+ Prompt injection and tenant isolation are system problems.
+ Permissions and data boundaries must hold even when the model
+ is wrong.
+-56
+---- PDF page 60 ---
++57
++--- PDF page 61 ---
+ Safety engineering and permission
+ boundaries
+ A stronger system prompt, fine-tuning, or RAG will not solve prompt
+ injection. User text, web pages, documents, emails, images, and tool
+ outputs can all carry adversarial instructions. Assume a probabilistic
+-detector will eventually miss an attack. Deterministic controls must limit
+-the blast radius when that happens.
++detector will eventually miss an attack. Deterministic controls must
++limit the blast radius when that happens.
+ Build the defense in layers:
+ 1. Authenticate the human and workload identity.
+ 2. Authorize every data retrieval and tool action against the exact
+@@ -1582,20 +1598,21 @@
+ deterministic source-to-sink policy.
+ 4. Expose only the tool and data surface the current step needs. Keep
+ credentials and capability tokens inside the trusted executor.
+-5. Use allowlisted tools, egress destinations, and parameter constraints.
++5. Use allowlisted tools, egress destinations, and parameter
++constraints.
+ 6. Never place raw secrets or bearer tokens in model context. Inject
+ scoped, short-lived credentials server-side only after authorization.
+ 7. Sandbox code, files, and network access.
+ 8. Require a single-use approval bound to the exact consequential
+ action and state version; reauthorize immediately before execution.
+ 9. Apply data minimization and DLP at ingestion, context assembly,
+-tool arguments and egress, final output, logs, and traces. Reauthorize
+-sensitive data at every sink.
++tool arguments and egress, final output, logs, and traces.
++Reauthorize sensitive data at every sink.
+ 10. Audit proposals, policy decisions, actions, and resulting state.
+ PRODUCTION AI ENGINEERING
+ BUILD SAFETY INTO THE ARCHITECTURE
+-57
+---- PDF page 61 ---
++58
++--- PDF page 62 ---
+ 11. Red-team direct, indirect, multimodal, encoded, and retrieved
+ injections.
+ 12. Have containment, revocation, incident response, and replay
+@@ -1617,10 +1634,10 @@
+ as executable supply-chain inputs. Pin the exact source and digest.
+ Review transitive files and scripts, minimize installation and runtime
+ privileges, and re-evaluate the package after any update. Test for
+-instruction smuggling, credential access, unexpected egress, and delayed
+-or cross-run behavior. SkillShift[ORIG-14] demonstrates that apparently
+-useful agent skills can carry persistent behaviors that activate outside the
+-installation moment.
++instruction smuggling, credential access, unexpected egress, and
++delayed or cross-run behavior. SkillShift[ORIG-14] demonstrates that
++apparently useful agent skills can carry persistent behaviors that
++activate outside the installation moment.
+ For OAuth or MCP tools, validate the issuer, audience, scopes, actor, and
+ expiry. Prohibit token passthrough. Use separately issued downstream
+ tokens and per-client consent. Treat OAuth metadata, discovery
+@@ -1628,16 +1645,16 @@
+ Allowlist schemes and destinations, block private and link-local ranges
+ PRODUCTION AI ENGINEERING
+ BUILD SAFETY INTO THE ARCHITECTURE
+-58
+---- PDF page 62 ---
++59
++--- PDF page 63 ---
+ after DNS resolution, disable unsafe redirect following, and revalidate
+ every redirect hop. The MCP authorization specification[AUTH-01] and
+ security best practices[AUTH-02] make these boundaries explicit.
+ The OWASP LLM prompt-injection guidance[SAFE-01] notes that RAG and
+ fine-tuning do not fully mitigate injection. Microsoft's defense-in-depth
+-pattern[SAFE-02] recommends content isolation, least privilege,
+-monitoring, and human approval. For the broader governance and risk
+-context, use the NIST Generative AI Profile[SAFE-03].
++pattern[SAFE-02] recommends content isolation, least privilege, monitoring,
++and human approval. For the broader governance and risk context, use
++the NIST Generative AI Profile[SAFE-03].
+ SOURCES [SAFE-01] [SAFE-02] [SAFE-03] [AUTH-01] [AUTH-02] [AUTH-03] [EVAL-06] [ORIG-05]
+ [SAFE-09] [MOD-04] [ORIG-14] [ORIG-15]
+ Multi-tenant isolation and cache safety
+@@ -1658,8 +1675,8 @@
+ entries after ACL, role, user, or document changes;
+ PRODUCTION AI ENGINEERING
+ BUILD SAFETY INTO THE ARCHITECTURE
+-59
+---- PDF page 63 ---
++60
++--- PDF page 64 ---
+ require exact-token matching plus runtime ownership and refcount
+ isolation for prefix/KV reuse; a provider organization or project is not
+ an application tenant boundary;
+@@ -1694,8 +1711,8 @@
+ only the upper bound is insufficient;
+ PRODUCTION AI ENGINEERING
+ BUILD SAFETY INTO THE ARCHITECTURE
+-60
+---- PDF page 64 ---
++61
++--- PDF page 65 ---
+ do not let request fields select a decoder, kernel, plugin, adapter, or
+ other privileged backend unless an operator allowlisted it and
+ included it in startup resource reservation and isolation policy;
+@@ -1710,15 +1727,15 @@
+ security advisories, patch within the risk window, and test response
+ ownership under concurrent tenants; a model-server flaw can cross-
+ contaminate responses even when cache namespaces are correct;
+-record the requested processing geography and the provider-resolved
+-organization, project, workspace, and region when the API exposes
+-them; reject unexpected provider resolution or unapproved request
+-storage before sensitive data crosses the boundary;
++record the requested processing geography and the provider-
++resolved organization, project, workspace, and region when the API
++exposes them; reject unexpected provider resolution or unapproved
++request storage before sensitive data crosses the boundary;
+ Before routing sensitive data, check the provider project and request-
+ level storage setting with disposable inputs. Google turned on
+ Generate Content request storage by default for new paid projects
+-from October 26, 2026. Existing projects keep their settings. Verify the
+-effective project default and the request override separately.
++from October 26, 2026. Existing projects keep their settings. Verify
++the effective project default and the request override separately.
+ exclude sensitive content and identifiers from shared scheduler
+ metadata, and address timing or resource side channels with quotas,
+ traffic shaping, or physical silos where the threat model requires;
+@@ -1730,12 +1747,12 @@
+ traces, and eval environments;
+ PRODUCTION AI ENGINEERING
+ BUILD SAFETY INTO THE ARCHITECTURE
+-61
+---- PDF page 65 ---
++62
++--- PDF page 66 ---
+ enforce tenant quotas for requests, context, KV memory, tools, and
+ cost;
+-test deleted users, changed roles, revoked documents, cache hits after
+-ACL changes, and concurrent tenants;
++test deleted users, changed roles, revoked documents, cache hits
++after ACL changes, and concurrent tenants;
+ seed cross-tenant canaries and alert if they are retrieved, generated,
+ logged, or cached outside their scope.
+ Physical isolation is not always required. The isolation boundary still has
+@@ -1749,17 +1766,17 @@
+ Author synthesis: the isolation checklist spans the cited permission and tenancy boundaries.
+ PRODUCTION AI ENGINEERING
+ BUILD SAFETY INTO THE ARCHITECTURE
+-62
+---- PDF page 66 ---
++63
++--- PDF page 67 ---
+ CHAPTER 11
+ Choose Whatto Change
+ Measure the constraint first. Change the part of the system that
+ causes it, then verify what happened to quality, latency, cost,
+ and reliability.
+-63
+---- PDF page 67 ---
+-In-context learning, RAG, fine-tuning,
+-and distillation
++64
++--- PDF page 68 ---
++In-context learning, RAG, fine-tuning, and
++distillation
+ Choose the method based on what has to change.
+ These methods can work together. A practical sequence is:
+ 1. Define the evals and establish a strong-model baseline.
+@@ -1830,8 +1847,8 @@
+ capability loss
+ PRODUCTION AI ENGINEERING
+ CHOOSE WHAT TO CHANGE
+-64
+---- PDF page 68 ---
++65
++--- PDF page 69 ---
+ 4. Route simpler cases to smaller models only when evals show that it
+ is safe.
+ 5. Fine-tune persistent behavior gaps with clean representative data.
+@@ -1889,8 +1906,8 @@
+ loss
+ PRODUCTION AI ENGINEERING
+ CHOOSE WHAT TO CHANGE
+-65
+---- PDF page 69 ---
++66
++--- PDF page 70 ---
+ Change one major variable at a time when you can. If you combine a
+ model swap with a prompt rewrite, a new retriever, quantization, and a
+ router change, you will have almost no way to attribute a regression.
+@@ -1936,15 +1953,15 @@
+ cost
+ PRODUCTION AI ENGINEERING
+ CHOOSE WHAT TO CHANGE
+-66
+---- PDF page 70 ---
++67
++--- PDF page 71 ---
+ CHAPTER 12
+ Design forProductionFailure
+-Production systems fail in predictable ways. The final chapter
+-turns those patterns into checks, operating decisions, and a
+-practical learning order.
+-67
+---- PDF page 71 ---
++Production systems fail in predictable ways. The final chapter turns
++those patterns into checks, operating decisions, and a practical
++learning order.
++68
++--- PDF page 72 ---
+ Production failure matrix
+ Before launch, define a detection signal, containment path, and
+ regression test for every known failure.
+@@ -2038,8 +2055,8 @@
+ progress evals
+ PRODUCTION AI ENGINEERING
+ DESIGN FOR PRODUCTION FAILURE
+-68
+---- PDF page 72 ---
++69
++--- PDF page 73 ---
+ SOURCES [OUT-01] [TOOL-01] [SERV-01] [EVAL-02] [SAFE-01] [TEN-01]
+ Author synthesis: the failure matrix combines the controls in sections 4–20.
+ Production readiness checklist
+@@ -2098,8 +2115,8 @@
+ release gates
+ PRODUCTION AI ENGINEERING
+ DESIGN FOR PRODUCTION FAILURE
+-69
+---- PDF page 73 ---
++70
++--- PDF page 74 ---
+ Contract and harness
+ Success, partial, refused, blocked, degraded, and failed states are
+ defined.
+@@ -2114,12 +2131,14 @@
+ reproducible.
+ Retrieval recall and generation grounding are measured separately.
+ The retrieval strategy (lexical, dense, or hybrid), plus chunking, k,
+-fusion, and reranking when used, is selected and tuned through evals.
++fusion, and reranking when used, is selected and tuned through
++evals.
+ Updates, deletions, ACL changes, and cache invalidation meet a
+ freshness SLO.
+ Inference and caching
+-Queue, TTFT, mean TPOT, p95/p99 ITL, stall rate, goodput, and p95/p99
+-end-to-end latency are load-tested on real length distributions.
++Queue, TTFT, mean TPOT, p95/p99 ITL, stall rate, goodput, and
++p95/p99 end-to-end latency are load-tested on real length
++distributions.
+ KV capacity, fragmentation, eviction, preemption, quotas, and OOM
+ behavior are known.
+ Prefix and semantic caches have distinct policies and metrics.
+@@ -2127,13 +2146,13 @@
+ regression suite.
+ PRODUCTION AI ENGINEERING
+ DESIGN FOR PRODUCTION FAILURE
+-70
+---- PDF page 74 ---
++71
++--- PDF page 75 ---
+ Outputs, tools, and agents
+-Structured outputs pass syntax, schema, semantic, authorization, and
+-result checks.
+-Tool names, arguments, results, errors, and risk annotations are strict
+-and versioned.
++Structured outputs pass syntax, schema, semantic, authorization,
++and result checks.
++Tool names, arguments, results, errors, and risk annotations are
++strict and versioned.
+ Retryable side effects are idempotent and tested under unknown
+ commit status.
+ Idempotency keys survive retries, resumes, handoffs, and fallbacks
+@@ -2155,11 +2174,11 @@
+ Drift dashboards and rollback procedures are exercised.
+ PRODUCTION AI ENGINEERING
+ DESIGN FOR PRODUCTION FAILURE
+-71
+---- PDF page 75 ---
++72
++--- PDF page 76 ---
+ Security and tenancy
+-Untrusted content is never treated as authority merely because it is in
+-context.
++Untrusted content is never treated as authority merely because it is
++in context.
+ Least privilege, sandboxing, egress controls, DLP, and approvals limit
+ blast radius.
+ Tenant identity scopes retrieval, caches, tools, logs, traces, queues,
+@@ -2177,8 +2196,8 @@
+ Author synthesis: the operating guidance is recast as a production-readiness checklist.
+ PRODUCTION AI ENGINEERING
+ DESIGN FOR PRODUCTION FAILURE
+-72
+---- PDF page 76 ---
++73
++--- PDF page 77 ---
+ Recommended learning order
+ 1. Define success and build a small golden set.
+ 2. Build the deterministic harness: state, schemas, tools, budgets, and
+@@ -2197,8 +2216,8 @@
+ Author synthesis: the learning order follows the sequence I would use to build the system.
+ PRODUCTION AI ENGINEERING
+ DESIGN FOR PRODUCTION FAILURE
+-73
+---- PDF page 77 ---
++74
++--- PDF page 78 ---
+ APPENDIX A
+ Notes and Sources
+ This handbook grew out of my Production AI Engineering Field Guide, which
+@@ -2226,8 +2245,8 @@
+ The KV footprint example follows directly from the model architecture.
+ Continuous batching, paged attention, and goodput
+ [SERV-02] [SERV-03] [SERV-04] [SERV-07]
+-74
+---- PDF page 78 ---
++75
++--- PDF page 79 ---
+ Speculative decoding, quantization, and distillation
+ [SPEC-01] [QUANT-02] [DIST-01] [REV-52]
+ Author synthesis: the comparison maps each technique to the bottleneck it changes.
+@@ -2252,8 +2271,9 @@
+ [RETR-01] [RETR-02] [RETR-03] [RETR-04] [RETR-05] [RETR-07] [RETR-09]
+ Evals as the release contract
+ [EVAL-01] [EVAL-02] [EVAL-03] [EVAL-05] [EVAL-06] [ORIG-05] [EVAL-09] [ORIG-12] [ORIG-15] [EVAL-90] [REV-54]
++[NOV09-62]
+ LLM observability as a first-class discipline
+-[OBS-01] [OBS-03] [OBS-02] [EVAL-06] [ORIG-05] [EVAL-10] [REV-53] [REV-50]
++[OBS-01] [OBS-03] [OBS-02] [EVAL-06] [ORIG-05] [EVAL-10] [REV-53] [REV-50] [NOV09-59]
+ Attribute cost to the whole workflow
+ [COST-01] [COST-02] [OBS-01] [OBS-03] [COST-03] [MOD-04] [CACHE-01] [PRIV-01]
+ Author synthesis: the journey-cost formula ties spend to a completed user outcome.
+@@ -2262,8 +2282,8 @@
+ [ORIG-15]
+ PRODUCTION AI ENGINEERING
+ NOTES AND SOURCES
+-75
+---- PDF page 79 ---
++76
++--- PDF page 80 ---
+ Multi-tenant isolation and cache safety
+ [TEN-01] [AUTH-01] [AUTH-02] [SAFE-03] [SAFE-04] [SAFE-05] [SAFE-06] [SAFE-07] [SAFE-08] [SAFE-09] [SERV-08]
+ [MOD-02] [MOD-04] [SAFE-11] [SAFE-12] [SAFE-13] [SAFE-14] [SAFE-15] [SAFE-16] [SAFE-17] [SAFE-18] [MOD-01] [REV-
+@@ -2296,8 +2316,8 @@
+ aclanthology.org/2024.tacl-1.9 Cited in Context engineering, not long prompts
+ PRODUCTION AI ENGINEERING
+ NOTES AND SOURCES
+-76
+---- PDF page 80 ---
++77
++--- PDF page 81 ---
+ [AGT-01] Anthropic. "Building effective agents." 19 December 2024.
+ anthropic.com/engineering/building-effective-agents
+ Cited in The full system, Prompt engineering is one part of the harness, Agent guardrails, budgets, and
+@@ -2306,7 +2326,7 @@
+ anthropic.com/engineering/writing-tools-for-agents
+ Cited in Prompt engineering is one part of the harness, Reliable function and tool calling, Production
+ failure matrix
+-[CACHE-01] OpenAI. "Prompt caching." OpenAI API documentation. Accessed 7
++[CACHE-01] OpenAI. "Prompt caching." OpenAI API documentation. Accessed 9
+ November 2026.
+ developers.openai.com/api/docs/guides/prompt-caching
+ Cited in Four caches that must not be confused, Attribute cost to the whole workflow
+@@ -2316,7 +2336,7 @@
+ learn.microsoft.com/en-us/azure/api-management/llm-semantic-cache-loo...
+ Cited in Four caches that must not be confused
+ [OUT-01] OpenAI. "Structured model outputs." OpenAI API documentation.
+-Accessed 7 November 2026.
++Accessed 9 November 2026.
+ developers.openai.com/api/docs/guides/structured-outputs
+ Cited in Structured outputs: syntax is only the first gate, Production failure matrix
+ [OUT-02] JSON Schema. "Creating your first schema."
+@@ -2327,19 +2347,19 @@
+ [TOOL-03] Fielding, Roy, Mark Nottingham, and Julian Reschke. "HTTP
+ Semantics." RFC 9110, June 2022, section 9.2.2, "Idempotent Methods."
+ rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods Cited in Reliable function and tool calling
+-[TOOL-04] Kujanpaa, Kalle, et al. "Compiling Agentic Workflows into
+-Deterministic Tools for Production Reliability." arXiv:2607.08010, 2026.
++[TOOL-04] Kujanpaa, Kalle, et al. "Compiling Agentic Workflows into Deterministic
++Tools for Production Reliability." arXiv:2607.08010, 2026.
+ arxiv.org/abs/2607.08010 Cited in Reliable function and tool calling
+ PRODUCTION AI ENGINEERING
+ NOTES AND SOURCES
+-77
+---- PDF page 81 ---
++78
++--- PDF page 82 ---
+ [MCP-01] Model Context Protocol. "Key Changes in the 2026-07-28 Specification."
+ 28 July 2026.
+ blog.modelcontextprotocol.io/posts/2026-07-28
+ Cited in Reliable function and tool calling, Model routing and degraded mode
+ [MCP-02] Model Context Protocol. "Key Changes." Protocol specification, 28 July
+-2026. Accessed 7 November 2026.
++2026. Accessed 9 November 2026.
+ modelcontextprotocol.io/specification/2026-07-28/changelog
+ Cited in Reliable function and tool calling
+ [MCP-03] Model Context Protocol. "Base Protocol: Overview." Protocol
+@@ -2361,24 +2381,23 @@
+ August 2026.
+ nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-need...
+ Cited in Reliable function and tool calling, Safety engineering and permission boundaries
+-[MOD-01] Google. "Gemini API release notes." Google AI for Developers. Accessed
+-7 November 2026.
++[MOD-01] Google. "Gemini API release notes." Google AI for Developers.
+ ai.google.dev/gemini-api/docs/changelog
+ Cited in Reliable function and tool calling, Model routing and degraded mode, Multi-tenant isolation
+ and cache safety
+ [MOD-02] Anthropic. "Developer platform release notes." Claude API
+-documentation. Accessed 7 November 2026.
++documentation.
+ platform.claude.com/docs/en/release-notes/overview
+ Cited in Model routing and degraded mode, Multi-tenant isolation and cache safety
+ PRODUCTION AI ENGINEERING
+ NOTES AND SOURCES
+-78
+---- PDF page 82 ---
++79
++--- PDF page 83 ---
+ [MOD-03] Amazon Web Services. "Amazon Bedrock model lifecycle." AWS
+ documentation.
+ docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html
+ Cited in Model routing and degraded mode
+-[MOD-04] OpenAI. "API changelog." OpenAI API documentation. Accessed 7
++[MOD-04] OpenAI. "API changelog." OpenAI API documentation. Accessed 9
+ November 2026.
+ developers.openai.com/api/docs/changelog
+ Cited in Model routing and degraded mode, Attribute cost to the whole workflow, Safety engineering
+@@ -2402,17 +2421,16 @@
+ September 2026.
+ developers.openai.com/api/docs/guides/agents-api/tools/computer-use
+ Cited in Reliable function and tool calling
+-[MOD-07] Google. "Gemini API deprecations." Google AI for Developers. Accessed
+-7 November 2026.
++[MOD-07] Google. "Gemini API deprecations." Google AI for Developers.
+ ai.google.dev/gemini-api/docs/deprecations Cited in Model routing and degraded mode
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-79
+---- PDF page 83 ---
+ [MOD-08] Anthropic. "Migrating to Claude Sonnet 5.5." Claude API
+ documentation, 28 September 2026.
+ platform.claude.com/docs/en/models/sonnet-5-5/migration-guide
+ Cited in Model routing and degraded mode
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++80
++--- PDF page 84 ---
+ Serving and compression
+ [SERV-01] Kwon, Woosuk, et al. "Efficient Memory Management for Large
+ Language Model Serving with PagedAttention." SOSP 2023.
+@@ -2439,17 +2457,17 @@
+ [SERV-06] Cheng, Ke, et al. "Robust KV-Cache Reservation for LLM Serving Under
+ Workload Distribution Shifts." arXiv:2607.16892, 2026.
+ arxiv.org/abs/2607.16892 Cited in KV cache management and memory pressure
+-[SERV-07] Ni, Hongqiu, et al. "TOPAS: Workflow-Aware Prefix-State Scheduling
+-for Multi-Agent LLM Serving." arXiv:2608.25523, 2026.
++[SERV-07] Ni, Hongqiu, et al. "TOPAS: Workflow-Aware Prefix-State Scheduling for
++Multi-Agent LLM Serving." arXiv:2608.25523, 2026.
+ arxiv.org/abs/2608.25523 Cited in Continuous batching, paged attention, and goodput
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-80
+---- PDF page 84 ---
+ [SERV-08] vLLM Project. "v0.28.0." Release notes, 26 August 2026.
+ github.com/vllm-project/vllm/releases/tag/v0.28.0 Cited in Multi-tenant isolation and cache safety
+-[SPEC-01] Leviathan, Yaniv, Matan Kalman, and Yossi Matias. "Fast Inference
+-from Transformers via Speculative Decoding." ICML 2023.
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++81
++--- PDF page 85 ---
++[SPEC-01] Leviathan, Yaniv, Matan Kalman, and Yossi Matias. "Fast Inference from
++Transformers via Speculative Decoding." ICML 2023.
+ proceedings.mlr.press/v202/leviathan23a.html
+ Cited in Speculative decoding, quantization, and distillation
+ [QUANT-01] Micikevicius, Paulius, et al. "FP8 Formats for Deep Learning."
+@@ -2460,8 +2478,8 @@
+ proceedings.mlr.press/v202/xiao23c.html
+ Cited in Speculative decoding, quantization, and distillation, Quantization: formats, methods, and
+ quality risk
+-[QUANT-03] Lin, Ji, et al. "AWQ: Activation-aware Weight Quantization for On-
+-Device LLM Compression and Acceleration." MLSys 2024.
++[QUANT-03] Lin, Ji, et al. "AWQ: Activation-aware Weight Quantization for On-Device
++LLM Compression and Acceleration." MLSys 2024.
+ proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9b...
+ Cited in Quantization: formats, methods, and quality risk
+ [QUANT-04] Frantar, Elias, et al. "GPTQ: Accurate Post-Training Quantization for
+@@ -2476,22 +2494,22 @@
+ for Hybrid Long-Context Language Models." arXiv:2609.02029v1, 2
+ September 2026.
+ arxiv.org/html/2609.02029v1 Cited in KV cache management and memory pressure
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-81
+---- PDF page 85 ---
+ Retrieval and evaluation
+-[RAG-01] Lewis, Patrick, et al. "Retrieval-Augmented Generation for
+-Knowledge-Intensive NLP Tasks." NeurIPS 2020.
++[RAG-01] Lewis, Patrick, et al. "Retrieval-Augmented Generation for Knowledge-
++Intensive NLP Tasks." NeurIPS 2020.
+ papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Ab...
+ Cited in RAG architecture, In-context learning, RAG, fine-tuning, and distillation
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++82
++--- PDF page 86 ---
+ [RAG-02] Elastic. "Hybrid search." Elastic documentation.
+ elastic.co/docs/solutions/search/hybrid-search Cited in RAG architecture
+ [RAG-03] Microsoft. "Grounding Data Design for AI Workloads on Azure." Azure
+ Well-Architected Framework.
+ learn.microsoft.com/en-us/azure/well-architected/ai/grounding-data-de... Cited in RAG architecture
+-[RETR-06] Hua, Peichun, et al. "Pointing the Way, Hiding the Destination:
+-Practical Private Dense Retrieval at Scale." arXiv:2608.25735, 2026.
++[RETR-06] Hua, Peichun, et al. "Pointing the Way, Hiding the Destination: Practical
++Private Dense Retrieval at Scale." arXiv:2608.25735, 2026.
+ arxiv.org/abs/2608.25735 Cited in RAG architecture
+ [RETR-07] Ghosh, Utshab Kumar, Debayan Mukhopadhyay, and Shubham
+ Chatterjee. "Assessing the Downstream Utility of Evidence-Aware
+@@ -2511,16 +2529,16 @@
+ [RETR-03] Ru, Dongyu, et al. "RAGChecker: A Fine-grained Framework for
+ Diagnosing Retrieval-Augmented Generation." arXiv:2408.08067, 2024.
+ arxiv.org/abs/2408.08067 Cited in Retrieval and answer evals
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-82
+---- PDF page 86 ---
+ [RETR-04] Es, Shahul, et al. "RAGAs: Automated Evaluation of Retrieval
+ Augmented Generation." EACL 2024 System Demonstrations.
+ aclanthology.org/2024.eacl-demo.16 Cited in Retrieval and answer evals
+ [RETR-05] Gao, Tianyu, et al. "Enabling Large Language Models to Generate Text
+ with Citations." EMNLP 2023: 6465-6488.
+ aclanthology.org/2023.emnlp-main.398 Cited in Retrieval and answer evals
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++83
++--- PDF page 87 ---
+ [EVAL-01] Zheng, Lianmin, et al. "Judging LLM-as-a-Judge with MT-Bench and
+ Chatbot Arena." NeurIPS 2023 Datasets and Benchmarks.
+ papers.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef225...
+@@ -2548,13 +2566,8 @@
+ metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation
+ Cited in Agent guardrails, budgets, and termination, Evals as the release contract, LLM observability
+ as a first-class discipline, Safety engineering and permission boundaries
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-83
+---- PDF page 87 ---
+ [EVAL-09] Chen, Yueh-Han, Jiaxin Wen, and Jan Hendrik Kirchner. "Automated
+-Researchers Can Reliably Mitigate Alignment Failures." 28 August
+-2026.
++Researchers Can Reliably Mitigate Alignment Failures." 28 August 2026.
+ anthropic.com/research/automated-researchers-mitigate-alignment-failures
+ Cited in Evals as the release contract
+ [EVAL-10] OpenAI. "GPT-6 Astra system card." 2026-09-03.
+@@ -2562,6 +2575,10 @@
+ [ORIG-12] "A Stability Audit of Shared Black-Box LLM Judge Endpoints."
+ arXiv:2609.04198, September 2026.
+ arxiv.org/abs/2609.04198 Cited in Evals as the release contract
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++84
++--- PDF page 88 ---
+ [ORIG-13] "Agents' Overreliance on Unreliable Tools." arXiv:2609.05587v2, 26
+ September 2026.
+ arxiv.org/abs/2609.05587 Cited in Reliable function and tool calling
+@@ -2572,20 +2589,14 @@
+ arXiv:2609.09404, September 2026.
+ arxiv.org/abs/2609.09404
+ Cited in Evals as the release contract, Safety engineering and permission boundaries
+-[EVAL-90] arxiv.org. "Judging LLM-as-a-Judge: Concerning Rubric Artifacts."
+-2026-08-31. Accessed 7 November 2026.
++[EVAL-90] arxiv.org. "Judging LLM-as-a-Judge: Concerning Rubric Artifacts." 2026-
++08-31.
+ arxiv.org/html/2609.02942v1 Cited in Evals as the release contract
+ [REV-54] arxiv.org. "LeakBench: Auditing Reward Hacking through Prediction-
+ Time Leakage in Clinical Modeling Agents." 2026-10-19T09:50:57Z.
+-Accessed 7 November 2026.
+ arxiv.org/html/2610.26088v1 Cited in Evals as the release contract
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-84
+---- PDF page 88 ---
+ Observability and economics
+ [OBS-01] OpenTelemetry. "Semantic conventions for generative AI systems."
+-Accessed 7 November 2026.
+ github.com/open-telemetry/semantic-conventions-genai
+ Cited in The full system, LLM observability as a first-class discipline, Attribute cost to the whole
+ workflow, Diagnosing the four-way tradeoff
+@@ -2594,9 +2605,13 @@
+ github.com/open-telemetry/semantic-conventions-genai/commit/5f5ae69e5...
+ Cited in LLM observability as a first-class discipline, Attribute cost to the whole workflow
+ [COST-03] Vellaisamy, Prabhu, Vanessa Lam, Shawn Blanton, and John Paul Shen.
+-"Characterization of Request and Token Energy Costs for LLM
+-Inference Workloads on GPU Platforms." arXiv:2608.28044, 2026.
++"Characterization of Request and Token Energy Costs for LLM Inference
++Workloads on GPU Platforms." arXiv:2608.28044, 2026.
+ arxiv.org/abs/2608.28044 Cited in Attribute cost to the whole workflow
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++85
++--- PDF page 89 ---
+ [OBS-02] National Institute of Standards and Technology. "Measure." AI Risk
+ Management Framework Playbook.
+ airc.nist.gov/airmf-resources/playbook/measure
+@@ -2612,12 +2627,8 @@
+ [SAFE-01] OWASP GenAI Security Project. "LLM01:2025 Prompt Injection."
+ genai.owasp.org/llmrisk/llm01-prompt-injection
+ Cited in Safety engineering and permission boundaries, Production failure matrix
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-85
+---- PDF page 89 ---
+-[SAFE-02] Microsoft. "Defend against indirect prompt injection attacks."
+-Microsoft Learn.
++[SAFE-02] Microsoft. "Defend against indirect prompt injection attacks." Microsoft
++Learn.
+ learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-pro...
+ Cited in Safety engineering and permission boundaries
+ [SAFE-03] National Institute of Standards and Technology. Artificial Intelligence
+@@ -2630,6 +2641,10 @@
+ response leakage." GHSA-7m6h-x95x-82q5, 11 August 2026.
+ github.com/vllm-project/vllm/security/advisories/GHSA-7m6h-x95x-82q5
+ Cited in Multi-tenant isolation and cache safety
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++86
++--- PDF page 90 ---
+ [SAFE-05] vLLM Project. "LlavaOnevision2 processor loader executes attacker
+ model code with trust_remote_code=False." GHSA-3c86-2m5g-59q7, 28
+ August 2026.
+@@ -2652,10 +2667,6 @@
+ 2026." Updated 28 August 2026.
+ nvidia.custhelp.com/app/answers/detail/a_id/5872
+ Cited in Safety engineering and permission boundaries, Multi-tenant isolation and cache safety
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-86
+---- PDF page 90 ---
+ [TEN-01] Google Cloud. "Multi-tenant agentic AI system." Cloud Architecture
+ Center.
+ docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system
+@@ -2669,8 +2680,12 @@
+ wpww-v874-ph2p, September 2026.
+ github.com/vllm-project/vllm/security/advisories/GHSA-wpww-v874-ph2p
+ Cited in Multi-tenant isolation and cache safety
+-[SAFE-13] vLLM Project. "Audio compressed-size path can bypass resource
+-limits." GHSA-jcq2-4gch-5qhf, September 2026.
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++87
++--- PDF page 91 ---
++[SAFE-13] vLLM Project. "Audio compressed-size path can bypass resource limits."
++GHSA-jcq2-4gch-5qhf, September 2026.
+ github.com/vllm-project/vllm/security/advisories/GHSA-jcq2-4gch-5qhf
+ Cited in Multi-tenant isolation and cache safety
+ [SAFE-14] vLLM Project. "Remote media can be fully materialized before limits
+@@ -2685,36 +2700,43 @@
+ x6mc-67gf-chw4, September 2026.
+ github.com/vllm-project/vllm/security/advisories/GHSA-x6mc-67gf-chw4
+ Cited in Multi-tenant isolation and cache safety
+-[SAFE-17] vLLM Project. "Structured-output request errors can terminate a
+-shared EngineCore." GHSA-85xf-c7hm-whqw, September 2026.
++[SAFE-17] vLLM Project. "Structured-output request errors can terminate a shared
++EngineCore." GHSA-85xf-c7hm-whqw, September 2026.
+ github.com/vllm-project/vllm/security/advisories/GHSA-85xf-c7hm-whqw
+ Cited in Structured outputs: syntax is only the first gate, Multi-tenant isolation and cache safety
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-87
+---- PDF page 91 ---
+ [SAFE-18] vLLM Project. "Unbounded Prometheus label cardinality." GHSA-5fj9-
+ pfhr-6j48, September 2026.
+ github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48
+ Cited in Multi-tenant isolation and cache safety
+-[PRIV-01] developers.openai.com. "OpenAI data controls." not stated. Accessed 7
++[PRIV-01] developers.openai.com. "OpenAI data controls." not stated. Accessed 9
+ November 2026.
+ developers.openai.com/api/docs/guides/your-data Cited in Attribute cost to the whole workflow
+ [REV-52] github.com/vllm-project/vllm. "vLLM v0.33.0 release." 2026-11-
+-02T10:10:05Z. Accessed 7 November 2026.
++02T10:10:05Z.
+ github.com/vllm-project/vllm/releases/tag/v0.33.0rc3
+ Cited in Speculative decoding, quantization, and distillation
+ [REV-53] alignment.openai.com. "How we detect frontier model misalignment."
+-2026-10-29. Accessed 7 November 2026.
++2026-10-29.
+ alignment.openai.com/how-we-detect-frontier-model-misalignment
+ Cited in LLM observability as a first-class discipline
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++88
++--- PDF page 92 ---
+ [REV-50] openai.com. "OpenAI frontier training containment." 2026-10-23.
+-Accessed 7 November 2026.
+ openai.com/index/securing-our-frontier-model-training-environment
+ Cited in LLM observability as a first-class discipline
+-[REV-59] ai.google.dev. "Gemini API logs and datasets." 2026-10-26. Accessed 7
+-November 2026.
++[REV-59] ai.google.dev. "Gemini API logs and datasets." 2026-10-26.
+ ai.google.dev/gemini-api/docs/logs-datasets Cited in Multi-tenant isolation and cache safety
++[NOV09-59] Anthropic Institute. "Measurements for understanding the pace of AI
++development inside frontier labs." not stated. Accessed 9 November
++2026.
++anthropic.com/institute/measuring-pace-of-ai-development
++Cited in LLM observability as a first-class discipline
++[NOV09-62] OpenAI Alignment Research. "Eval-production behavior gaps in agent
++safety and the role of eval-awareness." 2026-11-03. Accessed 9 November
++2026.
++alignment.openai.com/eval-production-behavior-gap Cited in Evals as the release contract
+ Model adaptation
+ [OPT-01] OpenAI. "Model optimization." OpenAI API documentation.
+ developers.openai.com/api/docs/guides/model-optimization
+@@ -2722,4 +2744,4 @@
+ Diagnosing the four-way tradeoff, Recommended learning order
+ PRODUCTION AI ENGINEERING
+ NOTES AND SOURCES
+-88
++89

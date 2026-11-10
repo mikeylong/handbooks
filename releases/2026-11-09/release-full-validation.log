@@ -1,0 +1,356 @@
+
+> validate
+> python3 scripts/validate-repositories.py && npm run validate:releases && npm run build && npm --prefix site test && npm run validate:headings
+
+{
+  "status": "PASS",
+  "repository": "https://github.com/mikeylong/handbooks",
+  "sourceRoots": [
+    "ai-native-organization",
+    "production-ai-engineering",
+    "claude-design",
+    "ai-evaluation",
+    "ai-consulting",
+    "candidates/poisonous-mushrooms",
+    "drafts/ai-product-design",
+    "site",
+    "publish-evidence-backed-handbook"
+  ],
+  "failures": []
+}
+
+> validate:releases
+> npm --prefix production-ai-engineering run validate:release && npm --prefix production-ai-engineering run validate:handbook && npm --prefix ai-evaluation run validate && npm --prefix ai-consulting run validate && npm --prefix claude-design run validate && npm --prefix ai-native-organization run validate
+
+
+> production-ai-engineering-book@1.4.3 validate:release
+> node scripts/validate-production-release.mjs && node ../scripts/validate-book-release.mjs production-ai-engineering && node ../scripts/validate-weekly-release.mjs production-ai-engineering
+
+{
+  "status": "passed",
+  "releaseChanged": false,
+  "version": "Version 1.4.3",
+  "publicationDate": "November 9, 2026",
+  "productionPdfSha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+  "productionPdfPath": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+  "changedReleasePaths": [
+    "README.md",
+    "handbook/changelog.json"
+  ]
+}
+Validated approved release production-ai-engineering v1.4.3 with both exact PDF hashes and measured page counts.
+Validated weekly release production-ai-engineering 1.4.3: manuscript, baseline, exact PDFs, maps, decisions, paired appearances, both renderers and managed browser proof.
+
+> production-ai-engineering-book@1.4.3 validate:handbook
+> node scripts/validate-handbook-build.mjs
+
+Built /private/var/folders/gt/lzhcg8wj3f19j78b3g444s1c0000gn/T/production-ai-html-validation-L5rynU/handbook/index.html
+Source SHA-256: a88634ad9ae26c58e3f20ac15df10d66e49862deb2e1e08df37633d19ea9db1f
+Chapters: 12
+Verified chapter images: 12
+Changelog: omitted; reader-facing content unchanged
+Next version review: 2026-11-16T17:00:00.000Z
+{
+  "chapters": 12,
+  "decks": 12,
+  "sourceSections": 25,
+  "sectionHierarchyValid": true,
+  "titleOnlySubsections": true,
+  "legacyGlobalSectionHeadingsRemoved": true,
+  "sourceMapHierarchyValid": true,
+  "sourceMapPrintWrapValid": true,
+  "bibliographySectionHierarchyValid": true,
+  "bibliographyAccessDateExact": true,
+  "sectionSourceLines": 25,
+  "citationMarkers": 53,
+  "bibliographyEntries": 102,
+  "indexEntries": 145,
+  "indexAlphabetical": true,
+  "chapterImages": 12,
+  "chapterImageIntrinsicResolutionValid": true,
+  "responsiveChapterImages": 12,
+  "chapterArtPrintScaleValid": true,
+  "chapterArtPrintPdfKitCompatibilityValid": true,
+  "pairedRowVerticalAlignmentValid": true,
+  "systemFlowDiagrams": 1,
+  "systemFlowNodes": 8,
+  "systemFlowTopologyValid": true,
+  "systemFlowNodeLabelsValid": true,
+  "systemFlowAccessibilityValid": true,
+  "systemFlowVectorOnly": true,
+  "systemFlowPanelDecorationRemoved": true,
+  "systemFlowWidthStandardized": true,
+  "validationFlowDiagrams": 1,
+  "validationSteps": 8,
+  "validationLinks": 8,
+  "validationArrowheadsRemoved": true,
+  "validationTopologyValid": true,
+  "validationNodeLabelsValid": true,
+  "validationAccessibilityValid": true,
+  "validationVectorOnly": true,
+  "validationUiChromeRemoved": true,
+  "validationPanelDecorationRemoved": true,
+  "validationVerticalRhythmValid": true,
+  "validationUsabilityGateExplicit": true,
+  "codeFrames": 1,
+  "jsonCodeFrames": 1,
+  "jsonSyntaxHighlighted": true,
+  "jsonSourceFidelity": true,
+  "jsonSyntaxClassificationValid": true,
+  "keyValueExamples": 1,
+  "cacheKeyCompositions": 1,
+  "latencyBudgets": 1,
+  "kvFootprints": 1,
+  "fallbackFlowDiagrams": 1,
+  "fallbackPathNodes": 3,
+  "fallbackTerminalNodes": 3,
+  "fallbackArrows": 5,
+  "fallbackBranchArrows": 3,
+  "fallbackTopologyValid": true,
+  "fallbackNodeLabelsValid": true,
+  "fallbackAccessibilityValid": true,
+  "fallbackVectorOnly": true,
+  "fallbackUiChromeRemoved": true,
+  "fallbackEditorialEdgeNotes": true,
+  "legacyFallbackLadders": 0,
+  "rawFallbackSourceRemoved": true,
+  "fallbackPanelDecorationRemoved": true,
+  "ragFlowDiagrams": 1,
+  "ragIngestionStages": 3,
+  "ragDatastores": 1,
+  "ragQueryStages": 5,
+  "ragOutcomes": 2,
+  "ragArrows": 10,
+  "ragBranches": 1,
+  "ragTopologyValid": true,
+  "ragNodeLabelsValid": true,
+  "ragAccessibilityValid": true,
+  "ragVectorOnly": true,
+  "ragUiChromeRemoved": true,
+  "ragDataflowGrammarValid": true,
+  "ragCollisionClearancesValid": true,
+  "ragPrintScaleValid": true,
+  "ragWidthStandardized": true,
+  "legacyRagFlows": 0,
+  "rawRagSourceRemoved": true,
+  "ragPanelDecorationRemoved": true,
+  "goldenRecords": 1,
+  "traceTrees": 1,
+  "costModels": 1,
+  "ownershipOutlines": 1,
+  "ownershipOutlineHierarchyValid": true,
+  "ownershipOutlineNumberingValid": true,
+  "toolContractListOrdered": true,
+  "textSchematics": 0,
+  "lazyImages": 12,
+  "eagerImages": 0,
+  "pdfDownloadLinks": 3,
+  "pdfDownloadPageCountExact": true,
+  "releaseScheduleValid": true,
+  "publicReviewPanelAbsent": true,
+  "searchCompanionValid": true,
+  "noJavaScriptNavigationFallback": true,
+  "activeNavigationValid": true,
+  "scrollProgressAnnouncementsRemoved": true,
+  "keyboardScrollableDiagrams": true,
+  "tableScrollHintsMatch": true,
+  "tableRegionsUniquelyNamed": true,
+  "checklistsAreStatic": true,
+  "accessibleColorTokens": true,
+  "siteCanvasWhite": true,
+  "sidebarPublicationAbsent": true,
+  "touchTargetsDefined": true,
+  "tocDialogFooterLayoutScoped": true,
+  "companionChromeHiddenInPrint": true,
+  "changelogPage": 0,
+  "changelogContentValid": true,
+  "changelogIsFinalSection": true,
+  "changelogTocLink": true,
+  "changelogPdfOnly": true,
+  "changelogStartsOnNewPrintPage": true,
+  "sourceUrls": 93,
+  "htmlUrls": 103,
+  "allSourceUrlsPreserved": true,
+  "allSourceUrlsCited": true,
+  "uniqueIds": true,
+  "missingInternalTargets": [],
+  "cssBracesBalanced": true,
+  "fullAuthorName": true,
+  "coverCreditExact": true,
+  "authorSiteLinked": true,
+  "coverLabelsRemoved": true,
+  "coverLegacyEditionLineRemoved": true,
+  "coverPublicationMetadataExact": true,
+  "coverDedicationRemoved": true,
+  "forewordPremiseLabelRemoved": true,
+  "forewordSloDefined": true,
+  "handbookSelfReference": true,
+  "centralPremiseApproved": true,
+  "correctBookTitle": true,
+  "stockBookTitleRemoved": true,
+  "inaccurateCoverNoteRemoved": true,
+  "tocMetadataRemoved": true,
+  "plateCaptionsRemoved": true,
+  "plateDecorationsRemoved": true,
+  "rawMermaidRemoved": true,
+  "plainTextCodeExamplesRemoved": true,
+  "codeFrameDecorationRemoved": true
+}
+
+> ai-evaluation-field-guide@1.0.3 validate
+> node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-weekly-release.mjs ai-evaluation
+
+Validated approved release ai-evaluation v1.0.3 with both exact PDF hashes and measured page counts.
+Validated weekly release ai-evaluation 1.0.3: manuscript, baseline, exact PDFs, maps, decisions, paired appearances, both renderers and managed browser proof.
+
+> ai-consulting-playbook@1.0.2 validate
+> node ../scripts/validate-book-release.mjs ai-consulting && node ../scripts/validate-presentation-release.mjs ai-consulting
+
+Validated approved release ai-consulting v1.0.2 with both exact PDF hashes and measured page counts.
+Validated exact presentation release ai-consulting 1.0.2 with preserved baseline, source scope, paired PDFs, visual and browser evidence.
+
+> claude-design-field-guide@2.1.5 validate
+> node ../scripts/validate-book-release.mjs claude-design && node ../scripts/validate-presentation-release.mjs claude-design
+
+Validated approved release claude-design v2.1.5 with both exact PDF hashes and measured page counts.
+Validated exact presentation release claude-design 2.1.5 with preserved baseline, source scope, paired PDFs, visual and browser evidence.
+
+> ai-native-organization-handbook@1.1.3 validate
+> node ../scripts/validate-book-release.mjs ai-native-organization && node ../scripts/validate-weekly-release.mjs ai-native-organization
+
+Validated approved release ai-native-organization v1.1.3 with both exact PDF hashes and measured page counts.
+Validated weekly release ai-native-organization 1.1.3: manuscript, baseline, exact PDFs, maps, decisions, paired appearances, both renderers and managed browser proof.
+
+> build
+> npm --prefix site run build
+
+
+> build
+> node scripts/build-site.mjs
+
+Built gallery from 5 approved local handbook packages
+
+> test
+> node scripts/test-sharing-metadata.mjs && node scripts/test-book-sources.mjs && node scripts/test-artwork-pairs.mjs && node ../publish-evidence-backed-handbook/scripts/test-diagrams.mjs && node scripts/test-publication-front.mjs && node scripts/test-gallery-focus.mjs && node scripts/test-site-theme.mjs && node scripts/test-pdf-headers.mjs && node scripts/test-edition-changelog.mjs && node ../publish-evidence-backed-handbook/scripts/test-prompt-blocks.mjs && node ../publish-evidence-backed-handbook/scripts/test-markdown-downloads.mjs && node ../publish-evidence-backed-handbook/scripts/test-exercise-downloads.mjs && node ../publish-evidence-backed-handbook/scripts/test-terminal-blocks.mjs && python3 ../publish-evidence-backed-handbook/scripts/test-machine-markdown.py && node ../publish-evidence-backed-handbook/scripts/test-retained-releases.mjs && node scripts/test-reader-download-placements.mjs
+
+PASS sharing metadata and favicon coverage for 11 current pages, stale/missing metadata guards, future-title text, and unchanged retained HTML
+Verified 193 current reader runtime references; omitted edition screenshots are rejected.
+Review navigation stays local for the current book and edition; canonical metadata, downloads, earlier editions and source links retain their destinations.
+Draft publication, unsafe paths, changed PDF, unapproved reader and changed artwork are rejected.
+Candidate roots use only pinned files and retained book routes; obsolete CSS, images, downloads and unpinned files are excluded, other books and failed-stage output are preserved.
+Authored dark pairs passed: future-reader coverage, original light preservation, responsive sources, provenance, hashes, and failure cases.
+Diagram semantics, repeated placements, print fallback, stale definitions/assets, screenshot contracts and unmapped diagrams passed.
+Publication front page passed; 8 omissions or stale-copy regressions rejected.
+An unvalidated new gallery title is also rejected.
+Gallery follows published edition dates; future editions reorder and same-day cards stay stable.
+Gallery download controls and standalone printing notes are rejected; reader downloads remain available.
+All hosted readers pass navigation parity; missing styles, local overrides, and broken return links are rejected.
+All hosted readers reject stray cover content between Contents and the first chapter.
+All gallery previews follow reader title, subtitle, credit, and edition; stale raster covers are rejected.
+All canonical HTML links and sitemap entries use Surfaces.
+Gallery return focus passed for all four titles, reordered cards, Back/cache restores, return links, blocked storage, and fresh visits.
+Future reader discovery passed; missing controls, image containers, and local inversion are rejected.
+Shared appearance passed: system/manual choices, navigation, cache return, cross-tab changes, blocked storage, and all published pages.
+Hosted PDF headers match all 54 emitted download routes; missing and stale filenames are rejected.
+Future Markdown routes have UTF-8 content type and attachment headers.
+Future-edition changelogs, first-edition notes, escaping, source links, missing records, version mismatch and stale hashes passed.
+Prompt rendering preserves content and ordinary tables; stale bindings fail closed
+Markdown content, code whitespace, prompts, lists, tables, links, diagrams, edition safety, required placement, and 25-chapter future edition passed.
+Screenshot alt text, captions, image links, immutable edition paths, and chapter-art fallback passed.
+Cropped screenshot descriptions, source bounds, matching larger views, and published-source privacy rejection passed.
+Concept diagrams preserve their accessible text equivalent in Markdown.
+{
+  "status": "passed",
+  "cases": 76,
+  "checks": [
+    "missing definition preserves existing-edition behavior",
+    "exact pinned binary bytes render one escaped edition download",
+    "multiple independently pinned downloads preserve definition order",
+    "explicit current exercise edition preserves legacy output exactly",
+    "approved older exercise routes render without relabeling or changing artifact bytes",
+    "numeric older exercise edition is accepted",
+    "invalid explicit exercise edition false",
+    "invalid explicit exercise edition ",
+    "invalid explicit exercise edition 0",
+    "invalid explicit exercise edition null",
+    "invalid explicit exercise edition 2.3",
+    "invalid explicit exercise edition 02.3.9",
+    "invalid explicit exercise edition 2.3.9-beta",
+    "invalid explicit exercise edition 2.3.9/../private",
+    "future exercise edition 2.4.1",
+    "future exercise edition 2.5.0",
+    "future exercise edition 3.0.0",
+    "future exercise edition 2.10.0",
+    "future exercise edition 9007199254740993.0.0",
+    "explicit exercise edition requires valid current version",
+    "future edition comparison preserves integer precision",
+    "older exercise cannot change current definition identity",
+    "retained routes require explicit exercise edition",
+    "retained route must match selected exercise edition",
+    "retained exercise cannot use current-edition route",
+    "retained route cannot belong to another book",
+    "retained exercise cannot use traversal route",
+    "retained exercise cannot change artifact path",
+    "retained exercise requires approved package pin",
+    "retained exercise cannot change package pin",
+    "retained exercise cannot change measured size",
+    "retained exercise cannot change exact bytes",
+    "exercise edition selection is bound by exact approved definition bytes",
+    "wrong schema",
+    "wrong book identity",
+    "wrong edition version",
+    "missing downloads",
+    "empty downloads",
+    "blank label",
+    "another book route",
+    "another edition route",
+    "nested route",
+    "traversal route",
+    "unsafe filename",
+    "filename-route disagreement",
+    "duplicate download route",
+    "artifact path disagreement",
+    "missing hash",
+    "invalid hash",
+    "zero size",
+    "fractional size",
+    "unsafe integer size",
+    "unlisted artifact pin",
+    "different package pin",
+    "stale measured size",
+    "same-size changed file bytes",
+    "jointly repinned false hash",
+    "unsafe reader directory",
+    "missing artifact",
+    "directory instead of artifact",
+    "file symlink even with exact target bytes",
+    "symlinked parent even with regular artifact bytes",
+    "malformed definition fails instead of silently omitting download",
+    "relabel after approval rejected with unchanged independently pinned artifacts",
+    "reorder after approval rejected with unchanged independently pinned artifacts",
+    "row omission after approval rejected with unchanged independently pinned artifacts",
+    "missing definition pin",
+    "stale definition pin",
+    "definition pin under another path",
+    "deleted pinned definition",
+    "directory instead of definition",
+    "definition file symlink with exact target bytes",
+    "symlinked definition parent with exact bytes",
+    "unapproved malformed bytes rejected before parsing",
+    "optional reader row uses retained approved artifact bytes, size, route, format and escaped book copy",
+    "reader discovery rejects unapproved selection, stale edition, duplicate row, missing purpose and changed material bytes"
+  ]
+}
+PASS frozen terminal overlay, exact commands, ordinary callouts and stale binding rejection
+PASS manuscript callouts, worksheets, prompts, body preservation and invalid directive rejection
+Retained HTML, Markdown, index, PDF, ZIP and native Figma bytes survive new editions; stale hashes, collisions, duplicates and escapes fail.
+PASS three reader download locations: ai-native-organization
+PASS three reader download locations: production-ai-engineering
+PASS three reader download locations: claude-design
+PASS three reader download locations: ai-evaluation
+PASS three reader download locations: ai-consulting
+
+> validate:headings
+> python3 publish-evidence-backed-handbook/scripts/validate-heading-labels.py --collection . --site site/output/site
+
+{"status": "passed", "policy": "mandatory-title-only-v1", "books": [{"status": "passed", "subsections": 31, "pdfs": [{"path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf", "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7", "pages": 54, "outlines": 39}, {"path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf", "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f", "pages": 54, "outlines": 39}], "html": {"path": "site/output/site/ai-native-organization/index.html", "sha256": "df478d20f83ffea69a26ab7aba37517c6282aa133c20699cb80b61b509ca47d4"}, "markdown": {"path": "site/output/site/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3.md", "sha256": "8b825f9541b0a34a1f8195655972bc5f4d783e2b545731ec1801457f8ec7b32a"}, "internalLinks": 104, "policy": "mandatory-title-only-v1", "id": "ai-native-organization", "version": "1.1.3"}, {"status": "passed", "subsections": 47, "pdfs": [{"path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf", "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92", "pages": 100, "outlines": 91}, {"path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf", "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f", "pages": 100, "outlines": 91}], "html": {"path": "site/output/site/production-ai-engineering/index.html", "sha256": "c4d7ef8c7aab1fd854f5febc5e7fea8bb2005421f8c3d18218097d8b88c7f3d7"}, "markdown": {"path": "site/output/site/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3.md", "sha256": "a8878492218d8b4cf1c8dec7f256a164543a6a93c4fd8261bd4c2b55df207be0"}, "internalLinks": 1179, "policy": "mandatory-title-only-v1", "id": "production-ai-engineering", "version": "1.4.3"}, {"status": "passed", "subsections": 29, "pdfs": [{"path": "claude-design/output/pdf/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf", "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3", "pages": 53, "outlines": 50}, {"path": "claude-design/output/pdf/claude-design-v2.1.5-2026-11-08-late-night-r1.pdf", "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17", "pages": 53, "outlines": 50}], "html": {"path": "site/output/site/claude-design/index.html", "sha256": "0887e3a90b50a4a32eb35e8dbd268bc3107b63a20aad65a8dda351c0fc1f37b5"}, "markdown": {"path": "site/output/site/claude-design/editions/v2.1.5/claude-design-v2.1.5.md", "sha256": "675ea36b8114ea92f902ce30fb3db0260f9264d3fe445831459074a7298eb537"}, "internalLinks": 43, "policy": "mandatory-title-only-v1", "id": "claude-design", "version": "2.1.5"}, {"status": "passed", "subsections": 83, "pdfs": [{"path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf", "sha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d", "pages": 105, "outlines": 106}, {"path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.3-2026-11-09-late-night-r1.pdf", "sha256": "0efc20ea217fb6b46bc6f4d02e2785d12abb8f28bb4de5a44f5ae1da808096a3", "pages": 105, "outlines": 106}], "html": {"path": "site/output/site/ai-evaluation/index.html", "sha256": "6ece342fde159149aa686108db6147361728595d6ae96d42c2b99b0fea98a7c4"}, "markdown": {"path": "site/output/site/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3.md", "sha256": "48bb03601ed320b81ead7442f3db18c1d663379a2ac594b67214ea425346f61c"}, "internalLinks": 79, "policy": "mandatory-title-only-v1", "id": "ai-evaluation", "version": "1.0.3"}, {"status": "passed", "subsections": 115, "pdfs": [{"path": "ai-consulting/output/pdf/ai-consulting-v1.0.2-2026-11-08-daytime-r1.pdf", "sha256": "cd1c8e8b7704a4f6497027454f858247fdc98bfc7356ca5833630135048f59d4", "pages": 141, "outlines": 144}, {"path": "ai-consulting/output/pdf/ai-consulting-v1.0.2-2026-11-08-late-night-r1.pdf", "sha256": "979434dfe883580a78adf2d1eb8f693cff872546e0c1df5f9d99568b913909af", "pages": 141, "outlines": 144}], "html": {"path": "site/output/site/ai-consulting/index.html", "sha256": "5878ab32d0da5a6638bb7cf0c9135e133e1929b9a6f26c07653f7521a402c907"}, "markdown": {"path": "site/output/site/ai-consulting/editions/v1.0.2/ai-consulting-v1.0.2.md", "sha256": "17b0512ebb7a05f003b4649dba9e0c8cc1ebb2a105e075134cbff3f327c0d1b5"}, "internalLinks": 91, "policy": "mandatory-title-only-v1", "id": "ai-consulting", "version": "1.0.2"}]}

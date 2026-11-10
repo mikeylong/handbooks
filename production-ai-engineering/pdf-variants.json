@@ -2,26 +2,26 @@
   "schemaVersion": 1,
   "book": "production-ai-engineering",
   "title": "Production AI Engineering",
-  "version": "1.4.2",
-  "date": "2026-11-08",
-  "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf",
-  "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
-  "pages": 97,
+  "version": "1.4.3",
+  "date": "2026-11-09",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+  "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+  "pages": 100,
   "variants": [
     {
       "theme": "light",
       "displayName": "Daytime version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf",
-      "publicUrl": "/production-ai-engineering/editions/v1.4.2/production-ai-engineering-v1.4.2-2026-11-08.pdf",
-      "downloadFilename": "production-ai-engineering-v1.4.2-2026-11-08-daytime-r1.pdf",
-      "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
-      "bytes": 23957312,
-      "pages": 97,
+      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+      "publicUrl": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+      "downloadFilename": "production-ai-engineering-v1.4.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+      "bytes": 24749030,
+      "pages": 100,
       "pageMap": {
-        "path": "production-ai-engineering/qa/v1.4.2/heading-repair/light-page-map.json",
-        "sha256": "ba8274e1c674701d543ac643d25b87dcd487adf29b359cbca8fea7b3efac99ff"
+        "path": "production-ai-engineering/qa/v1.4.3/weekly-review/light-page-map.json",
+        "sha256": "7a6e481281717262c85951a962c9adbc290fa1377a5e19abe89304055b11df40"
       }
     },
     {
@@ -29,31 +29,31 @@
       "displayName": "Late night version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.2-2026-11-08-late-night-r1.pdf",
-      "publicUrl": "/production-ai-engineering/editions/v1.4.2/production-ai-engineering-v1.4.2-2026-11-08-late-night-r1.pdf",
-      "downloadFilename": "production-ai-engineering-v1.4.2-2026-11-08-late-night-r1.pdf",
-      "sha256": "28c67aa1799cb2f8f9bf0694adcdbc7f177a17324256af267a1f82bfb24b2132",
-      "bytes": 33901687,
-      "pages": 97,
+      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
+      "publicUrl": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
+      "downloadFilename": "production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
+      "bytes": 35431257,
+      "pages": 100,
       "pageMap": {
-        "path": "production-ai-engineering/qa/v1.4.2/heading-repair/dark-page-map.json",
-        "sha256": "fa2352c66f04eeef98f2220ef77d85da9bdd4115b90f6a9dd0bc784c1d21c747"
+        "path": "production-ai-engineering/qa/v1.4.3/weekly-review/dark-page-map.json",
+        "sha256": "ff6c0802edef70d9b601e034a150aac88380f38e0826b8010f49b0afce18454e"
       },
       "proof": {
         "parity": {
-          "path": "production-ai-engineering/qa/v1.4.2/heading-repair/pair/parity.json",
-          "sha256": "96562f024cb1d1e5332c519d04523d736f3593d3c9cb025e36873c55be6c4c98"
+          "path": "production-ai-engineering/qa/v1.4.3/weekly-review/parity.json",
+          "sha256": "7d2fa8deb57865552d2370419a7680fa437ecb6a04812d6e105340bd6d2ba7f1"
+        },
+        "appearanceAudit": {
+          "path": "production-ai-engineering/qa/v1.4.3/weekly-review/appearance.json",
+          "sha256": "5b87f5934141b97396af1bd21ee3a5b5c40e0cafcc2a2810c764b3a48482c080"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "28c67aa1799cb2f8f9bf0694adcdbc7f177a17324256af267a1f82bfb24b2132",
-          "date": "2026-11-08",
-          "authority": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
-          "agentReview": "production-ai-engineering/qa/v1.4.2/heading-repair/visual-review.json"
-        },
-        "appearanceAudit": {
-          "path": "production-ai-engineering/qa/v1.4.2/heading-repair/appearance.json",
-          "sha256": "c3694f905f8b9acd40b95a89945241cd136e2a0a9b0836e68c663af799b0eb16"
+          "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
+          "date": "2026-11-09",
+          "authority": "Explicit user release after completed candidate validation",
+          "agentReview": "production-ai-engineering/qa/v1.4.3/release-proof.json"
         }
       }
     }
