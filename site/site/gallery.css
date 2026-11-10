@@ -23,53 +23,55 @@
   padding-bottom: 4rem;
 }
 
-.handbook-card { min-width: 0; }
-.handbook-card-link { display: block; text-decoration: none; scroll-margin-block: 8px; }
+.handbook-card { display: flex; min-width: 0; container-type: inline-size; }
+.handbook-card-link { display: flex; min-width: 0; width: 100%; text-decoration: none; scroll-margin-block: 8px; }
 .handbook-card-link.is-return-focus:focus {
   outline: 2px solid var(--ink);
   outline-offset: 6px;
 }
 .handbook-cover {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   container-type: inline-size;
-  aspect-ratio: 706 / 1000;
+  width: 100%;
+  min-width: 0;
+  /* Keep the 706:1000 cover proportions as a minimum so larger text can grow. */
+  min-height: max(32rem, 141.643cqw);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
   border: 1px solid var(--line);
   background: var(--paper);
+  overflow-wrap: anywhere;
 }
 .gallery-cover-rule,
-.gallery-cover-footer-rule { position: absolute; left: 8.5%; height: 1px; background: var(--line); }
-.gallery-cover-rule { top: 24%; width: 9%; background: var(--ink); }
-.gallery-cover-footer-rule { bottom: 12%; width: 83%; }
-.gallery-cover-copy { position: absolute; top: 34%; left: 8.5%; width: 83%; }
+.gallery-cover-footer-rule { flex: none; height: 1px; background: var(--line); }
+.gallery-cover-rule { margin: clamp(1.5rem, 8cqw, 2.5rem) 0 2rem; width: 2.25rem; background: var(--ink); }
+.gallery-cover-footer-rule { margin-top: 1.25rem; width: 100%; }
+.gallery-cover-copy { min-width: 0; }
 .gallery-cover-copy h2 {
   margin: 0;
-  max-width: 86%;
   font-family: var(--serif);
-  font-size: 9.6cqw;
+  font-size: clamp(2rem, 10cqw, 2.5rem);
   font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  text-wrap: balance;
 }
-.handbook-card-link[href="/production-ai-engineering/"] .gallery-cover-copy h2 { max-width: 72%; }
 .gallery-cover-copy .gallery-cover-subtitle {
-  margin: 3cqw 0 0;
-  font-size: 3.1cqw;
+  margin: 0.875rem 0 0;
+  font-size: clamp(1rem, 4.5cqw, 1.125rem);
   font-style: italic;
-  line-height: 1.3;
+  line-height: 1.45;
 }
 .handbook-cover .gallery-cover-credit,
 .handbook-cover .gallery-cover-date {
-  position: absolute;
-  left: 8.5%;
-  width: 83%;
   margin: 0;
   font-family: var(--sans);
-  font-size: 2.1cqw;
+  font-size: 0.875rem;
   font-variant-numeric: lining-nums;
-  line-height: 1.4;
+  line-height: 1.5;
 }
-.gallery-cover-credit { top: 67%; }
-.gallery-cover-date { top: 81%; }
+.handbook-cover .gallery-cover-credit { margin-top: 1.75rem; }
+.handbook-cover .gallery-cover-date { margin-top: auto; padding-top: 2rem; }
 
 /* Section destinations retain focus for navigation without a content outline. */
 main section[tabindex="-1"]:focus { outline: none; }
