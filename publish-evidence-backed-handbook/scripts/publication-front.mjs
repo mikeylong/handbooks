@@ -12,11 +12,33 @@ function element(html, tag, className) {
   }
   return '';
 }
+
+// Edition history is reached through the cover's date/version, not the reading TOC.
+export function removeChangelogNavigation(html) {
+  const isHistoryLink = anchor => {
+    const href = anchor.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];
+    const label = anchor.replace(/<[^>]*>/g, '').replace(/&nbsp;|&#160;|&#xA0;/gi, ' ').trim().replace(/\s+/g, ' ').toLowerCase();
+    return href?.startsWith('#') && ['changelog', 'version history'].includes(label);
+  };
+  const clean = contents => contents.replace(/<li\b[^>]*>\s*(<a\b[^>]*>[\s\S]*?<\/a>)\s*<\/li>/gi,
+    (item, anchor) => isHistoryLink(anchor) ? '' : item)
+    .replace(/<a\b[^>]*>[\s\S]*?<\/a>/gi, anchor => isHistoryLink(anchor) ? '' : anchor);
+  html = html.replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/gi, nav => {
+    const opening = nav.slice(0, nav.indexOf('>') + 1);
+    const classes = opening.match(/\bclass=(["'])(.*?)\1/i)?.[2].split(/\s+/) ?? [];
+    const label = opening.match(/\baria-label=(["'])(.*?)\1/i)?.[2] ?? '';
+    return classes.includes('sidebar-nav') || /^(?:Mobile )?table of contents$/i.test(label) ? clean(nav) : nav;
+  });
+  const contents = element(html, 'section', 'contents-page');
+  return contents ? html.replace(contents, clean(contents)) : html;
+}
+
 export function validateReaderNavigation(html, title) {
   const sidebar = element(html, 'aside', 'sidebar');
   const returns = [...sidebar.matchAll(/<a\b[^>]*href="\/"[^>]*>[\s\S]*?<\/a>/g)].map(match => match[0]);
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map(match => match[0]);
   const failed = [];
+  if (removeChangelogNavigation(html) !== html) failed.push('changelogInReadingMenu');
   if (returns.length !== 1 || !(returns[0].match(/\bclass="([^"]*)"/)?.[1].split(/\s+/) ?? []).includes('handbooks-return')
     || !/aria-label="All handbooks"/.test(returns[0]) || !returns[0].includes('← All handbooks')) failed.push('sidebarReturn');
   if (returns.some(link => /\bstyle=/.test(link))) failed.push('sidebarReturnInlineStyle');

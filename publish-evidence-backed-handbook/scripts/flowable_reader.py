@@ -92,7 +92,9 @@ def build_reader(book_root, config, output, chrome=None):
      number=re.match(r'(\d+)\. ',getattr(x,'_toc_title','')) if config['chapterNumbers'] else None
      chapter_attr=f' data-chapter="{number[1]}"' if number else ''
      blocks.append(f'<section class="chapter" id="{key}" tabindex="-1"{chapter_attr}>');section_open=True
-     headings.append((key,x.getPlainText()))
+     heading=x.getPlainText()
+     if ' '.join(heading.split()).casefold() not in {'changelog','version history'}:
+      headings.append((key,heading))
     if s=='H2':
      if subsection_open:blocks.append('</section>')
      blocks.append(f'<section class="source-section" id="{key}">');subsection_open=True

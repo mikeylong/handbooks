@@ -5,6 +5,15 @@
   root.classList.remove("no-js");
   root.classList.add("js");
 
+  // Frozen historical readers keep their bytes; apply the current menu policy at runtime.
+  document.querySelectorAll('.sidebar-nav a, .contents-page a, #toc-dialog nav a').forEach((link) => {
+    const label = link.textContent.trim().replace(/\s+/g, ' ').toLowerCase();
+    if (!link.getAttribute('href')?.startsWith('#') || !['changelog', 'version history'].includes(label)) return;
+    const item = link.parentElement;
+    if (item?.tagName === 'LI' && item.children.length === 1 && item.textContent.trim() === link.textContent.trim()) item.remove();
+    else link.remove();
+  });
+
   const contentsDialog = document.querySelector("#toc-dialog");
   const openContentsButton = document.querySelector("[data-open-toc]");
   const closeContentsButton = document.querySelector("[data-close-toc]");
