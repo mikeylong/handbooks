@@ -6,6 +6,7 @@ import {resolve, dirname, isAbsolute} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {buildCandidateReader, measureCandidatePdf, validateCandidatePackage, candidateReaderBookInputNames, selectedCandidateBookInput} from './build-candidate-reader.mjs';
 import {digest} from './reader-paths.mjs';
+import {validateReaderDownloadPlacements} from './pdf-downloads.mjs';
 
 const json=async path=>JSON.parse(await readFile(path,'utf8'));
 const save=async(path,value)=>{await mkdir(dirname(path),{recursive:true});await writeFile(path,JSON.stringify(value,null,2)+'\n');};
@@ -71,6 +72,10 @@ export async function testCandidateReaders({outputParent,books}) {
    assert.ok((reader.match(/data-artwork-paired="true"/g)??[]).length>0,'No paired chapter artwork');
    assert.ok(reader.includes('class="handbooks-return-mobile"'),'Missing mobile candidate return');
    const packageGate=await validateCandidatePackage(output),staged=resolve(output,'work/book');
+   assert.equal(packageGate.downloadPlacements.groups,3);
+   const fourthGroup=reader.replace('</main>','<span data-pdf-downloads></span></main>');
+   assert.notEqual(fourthGroup,reader);
+   assert.throws(()=>validateReaderDownloadPlacements(fourthGroup),/exactly three download groups/);
    const pkg=await json(resolve(staged,'publication-package.json')),manifest=await json(resolve(staged,'release-manifest.json'));
    assert.equal(pkg.version,result.edition.version);assert.equal(pkg.readerSha256,result.readerSha256);
    assert.equal(pkg.approvalStatus,'candidate');assert.equal(pkg.publicationApproved,false);assert.equal(pkg.approvalBasis,undefined);assert.equal(pkg.historicalCommit,undefined);
