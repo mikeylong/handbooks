@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import {digest, safePath} from './reader-paths.mjs';
-import {validateVariantIdentity, resolvePdfVariants, installReaderDownloads, validateDownloads, downloadLinks} from './pdf-downloads.mjs';
+import {validateVariantIdentity, resolvePdfVariants, installReaderDownloads, validateDownloads, validateReaderDownloadPlacements, downloadLinks} from './pdf-downloads.mjs';
 import {installDiagrams} from './diagrams.mjs';
 import {installPromptBlocks} from './prompt-blocks.mjs';
 import {installTerminalBlocks} from './terminal-blocks.mjs';
@@ -119,7 +119,9 @@ export async function validateCandidatePackage(output) {
  const all=await json(resolve(output,'candidate-package-inventory.json'));
  if(JSON.stringify(all.excluded)!==JSON.stringify(assemblyExclusions))throw Error('Candidate assembly inventory has unsafe exclusions');
  if(JSON.stringify(await inventory(output,all.excluded))!==JSON.stringify(all.files))throw Error('Candidate assembly full inventory mismatch');
- return {status:'passed',packageFiles:Object.keys(actual).length,assemblyFiles:Object.keys(all.files).length,publicationApproved:false};
+ if(all.files['site/'+pkg.id+'/index.html']!==pkg.readerSha256)throw Error('Candidate served reader differs from the packaged reader');
+ const downloadPlacements=validateReaderDownloadPlacements(await readFile(safePath(staged,pkg.html),'utf8'));
+ return {status:'passed',packageFiles:Object.keys(actual).length,assemblyFiles:Object.keys(all.files).length,downloadPlacements,publicationApproved:false};
 }
 
 /** Resolve a not-yet-existing destination without following a redirecting parent. */

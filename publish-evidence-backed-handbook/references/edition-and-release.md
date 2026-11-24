@@ -67,6 +67,24 @@ Before release, identify the exact candidate by hash. Publish that exact artifac
 
 The release gate must consume the changelog decision and inspect the actual candidate PDF. A passing ledger decision by itself is not evidence that the candidate obeys it.
 
+## Pre-PR guardrails for the weekly collection
+
+The candidate package must contain the same reader HTML that the assembled site serves. Require three matching download groups in the cover, desktop sidebar, and mobile Contents footer. The edition page keeps its own download controls.
+
+After release authorization, commit the complete set of approved artifacts in an isolated release checkout. Assemble the site from that commit into a fresh absolute output directory. Before pushing or opening the PR, run the gate from the release checkout and keep its JSON receipt.
+
+```sh
+release_commit="$(git rev-parse HEAD)"
+HANDBOOK_SITE_OUTPUT="$release_site" npm run build
+node scripts/verify-release-before-pr.mjs \
+  --checkout "$PWD" --commit "$release_commit" --site "$release_site" \
+  > "$release_receipt"
+```
+
+The gate checks every approved public reader and reads both PDFs from the exact Git commit. Each PDF must be a regular blob with the approved size and SHA-256. If Git ignored a PDF, include that exact artifact in the release commit and check the new commit and its assembled site. Push the SHA named by the passed receipt. Collection CI repeats the same check on its checkout.
+
+Run required Linux browser checks in the foreground through the VM manager CLI so the lease renews during provisioning and testing. Preflight the selected workload and retain its terminal receipt, including the test result, verified evidence, and deletion of the guest and runtime.
+
 ## Release report
 
 Report:

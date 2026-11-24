@@ -21,6 +21,10 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: pip install pypdf==6.10.0
       - run: npm run validate
+      - name: Verify release guardrails
+        run: |
+          node --test scripts/test-release-before-pr.mjs
+          node scripts/verify-release-before-pr.mjs --checkout "$PWD" --commit "$(git rev-parse HEAD)" --site "$PWD/site/output/site"
       - name: Verify current AI-Native term index and heading labels
         run: node scripts/validate-book-structure.mjs ai-native-organization
 
