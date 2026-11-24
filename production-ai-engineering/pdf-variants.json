@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "book": "production-ai-engineering",
   "title": "Production AI Engineering",
-  "version": "1.4.3",
-  "date": "2026-11-09",
-  "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
-  "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+  "version": "1.4.4",
+  "date": "2026-11-23",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.4-2026-11-23.pdf",
+  "sha256": "663e99e0c12130808da297cd28a1d757e3fedbb0b12e58eaa115dd3c1d86d1f4",
   "pages": 100,
   "variants": [
     {
@@ -13,15 +13,15 @@
       "displayName": "Daytime version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
-      "publicUrl": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09.pdf",
-      "downloadFilename": "production-ai-engineering-v1.4.3-2026-11-09-daytime-r1.pdf",
-      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
-      "bytes": 24749030,
+      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.4-2026-11-23.pdf",
+      "publicUrl": "/production-ai-engineering/editions/v1.4.4/production-ai-engineering-v1.4.4-2026-11-23.pdf",
+      "downloadFilename": "production-ai-engineering-v1.4.4-2026-11-23-daytime-r1.pdf",
+      "sha256": "663e99e0c12130808da297cd28a1d757e3fedbb0b12e58eaa115dd3c1d86d1f4",
+      "bytes": 24733794,
       "pages": 100,
       "pageMap": {
-        "path": "production-ai-engineering/qa/v1.4.3/weekly-review/light-page-map.json",
-        "sha256": "7a6e481281717262c85951a962c9adbc290fa1377a5e19abe89304055b11df40"
+        "path": "production-ai-engineering/qa/v1.4.4/weekly-review/light-page-map.json",
+        "sha256": "75e661035f21126a8f87ab27572bb9b47ce8abfef8dfdb7d05153be9dd93ff92"
       }
     },
     {
@@ -29,31 +29,31 @@
       "displayName": "Late night version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
-      "publicUrl": "/production-ai-engineering/editions/v1.4.3/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
-      "downloadFilename": "production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
-      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
-      "bytes": 35431257,
+      "path": "production-ai-engineering/output/pdf/production-ai-engineering-v1.4.4-2026-11-23-late-night-r1.pdf",
+      "publicUrl": "/production-ai-engineering/editions/v1.4.4/production-ai-engineering-v1.4.4-2026-11-23-late-night-r1.pdf",
+      "downloadFilename": "production-ai-engineering-v1.4.4-2026-11-23-late-night-r1.pdf",
+      "sha256": "de9e76e4dc048d54c44ad0a682556c95b3c2c593380ccd3c97f1ff8625d0efdc",
+      "bytes": 35401536,
       "pages": 100,
       "pageMap": {
-        "path": "production-ai-engineering/qa/v1.4.3/weekly-review/dark-page-map.json",
-        "sha256": "ff6c0802edef70d9b601e034a150aac88380f38e0826b8010f49b0afce18454e"
+        "path": "production-ai-engineering/qa/v1.4.4/weekly-review/dark-page-map.json",
+        "sha256": "3d6c1189c94b2393800ca90a53a64dfb3230e47e1941576d5caadfc80fee3a70"
       },
       "proof": {
         "parity": {
-          "path": "production-ai-engineering/qa/v1.4.3/weekly-review/parity.json",
-          "sha256": "7d2fa8deb57865552d2370419a7680fa437ecb6a04812d6e105340bd6d2ba7f1"
+          "path": "production-ai-engineering/qa/v1.4.4/weekly-review/parity.json",
+          "sha256": "2c23099c5bf4ed4748483b16c6e33a53ac7c092a417e289a7ab076154396a390"
         },
         "appearanceAudit": {
-          "path": "production-ai-engineering/qa/v1.4.3/weekly-review/appearance.json",
-          "sha256": "5b87f5934141b97396af1bd21ee3a5b5c40e0cafcc2a2810c764b3a48482c080"
+          "path": "production-ai-engineering/qa/v1.4.4/weekly-review/appearance.json",
+          "sha256": "e712063f468a7d233c49b3c7a054af7fe50d9857b5bc455f619374489a82972e"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
-          "date": "2026-11-09",
-          "authority": "Explicit user release after completed candidate validation",
-          "agentReview": "production-ai-engineering/qa/v1.4.3/release-proof.json"
+          "sha256": "de9e76e4dc048d54c44ad0a682556c95b3c2c593380ccd3c97f1ff8625d0efdc",
+          "date": "2026-11-24",
+          "authority": "Explicit release authorization for reviewed artifacts",
+          "agentReview": "production-ai-engineering/qa/v1.4.4/release-proof.json"
         }
       }
     }

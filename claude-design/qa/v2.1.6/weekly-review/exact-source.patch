@@ -1,0 +1,50 @@
+--- previous/Claude_Design_Field_Guide_Source.md
++++ candidate/Claude_Design_Field_Guide_Source.md
+@@ -25,7 +25,7 @@
+ 
+ You need access to Claude Design in your intended account and organization. For a Figma route, use a Figma account and a copy you can inspect. For a code-first route, use Claude Code and a local project you can run. Download the [Velori exercise materials](https://handbooks.surfaces.systems/claude-design/editions/v2.1.1/velori-design-exploration-v2.1.1.zip); no author-private organization or Figma file is required. Import the supplied native file into your own Drafts when you need to work in Figma.
+ 
+-Start the walkthrough in Claude from a conversation or the Artifacts tab. Claude Code also supports Design. Use one surface throughout the exercise and record which one you used. Anthropic says the standalone site closes on December 14, 2026. If you have work there, keep an export you can open independently, check whether your account offers migration, and inspect the design system and project in the destination before relying on them. See [Design in Claude](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) and [the migration guide](https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude).
++Start the walkthrough in Claude from a conversation or the Artifacts tab. Claude Code also supports Design. Use one surface throughout the exercise and record which one you used. Anthropic says the standalone site closes on December 14, 2026. Download any files you need and confirm you can open them. Save essential chats and comments separately because the move and bulk archive omit them. Check whether your organization can move projects. Already-moved design systems become read-only in standalone when the move reaches your organization. Open the destination copy and check access, files, and behavior before you rely on it. See [Design in Claude](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) and [the migration guide](https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude).
+ 
+ <pagebreak>
+ 
+@@ -387,6 +387,10 @@
+ 
+ Restore component, style, variable and prototype relationships in the received file. If you use Code Connect, verify the mapped component and code against the source library. Professional plans expose the active library and framework. Desktop uses the Dev Mode selection. Remote clients can request the framework label. [Code Connect and MCP](https://help.figma.com/hc/en-us/articles/42495296821911-Code-Connect-and-MCP).
+ 
++On Organization and Enterprise plans, check the administrator’s OAuth app allowlist if your coding client cannot connect to Figma. Ask the organization owner to approve the client through the normal process. Confirm which file and seat permissions are in effect. [Figma OAuth app controls](https://help.figma.com/hc/en-us/articles/44716871463319-Manage-OAuth-apps-and-MCP-clients-for-your-organization).
++
++Use the Dev Mode agent to inspect a design, compare versions, or request code and asset links. If you need editable native content, check whether the remote MCP client has a writing tool, a suitable seat, and permission to edit the destination. Verify the actual layers and relationships in that file. [Dev Mode release notes](https://www.figma.com/release-notes/) and [Figma MCP capabilities](https://developers.figma.com/docs/figma-mcp-server/).
++
+ Use Figma plan features only when the chosen deliverable requires them. A variable-driven native prototype may have additional plan requirements. A Design review prototype should not inherit those requirements merely because the team’s foundations were created in Figma.
+ 
+ ## Chapter checkpoint
+@@ -464,3 +468,27 @@
+ 7. [MarsBased: A real client system import trial](https://marsbased.com/blog/2026/09/16/we-imported-a-real-client-design-system-into-claude-design-here-s-what-we-learned).
+ 8. [GoodCode: Design exploration and multi-screen implementation](https://goodcode.us/blog/nobody-asks-how-you-got-to-disney-world-i-built-a-75-screen-product-with-claude-design-claude-code-in-2-days).
+ 9. [Jérôme Benoit Reveau: A prototype-to-implementation pilot](https://jeromebenoit.com/case-study-ai-design-system.html).
++
++<pagebreak>
++
++# Changelog
++
++Compared with version 2.1.5, published 2026-11-08.
++
++**Correction or clarification.** Preserve project files and discussion before the standalone service closes. The migration and archive cover different parts of a project.
++
++[Primary source](https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude)
++
++**Correction or clarification.** Check administrator approval when an MCP client cannot connect. An organization can restrict the OAuth clients its members use.
++
++[Primary source](https://www.figma.com/release-notes/)
++[Primary source](https://developers.figma.com/docs/figma-mcp-server/)
++[Primary source](https://help.figma.com/hc/en-us/articles/44716871463319-Manage-OAuth-apps-and-MCP-clients-for-your-organization)
++
++**Correction or clarification.** Check native write access before planning an editable handoff. Dev Mode inspection and editor writes have different evidence and access requirements.
++
++[Primary source](https://www.figma.com/release-notes/)
++[Primary source](https://developers.figma.com/docs/figma-mcp-server/)
++[Primary source](https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/)
++
++Previous Daytime PDF SHA-256: eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3

@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "ffe71dab4d047c341b38ed0243e76d53224380f1d89d2ff5373a4a012e0052e5",
+      "pages": 55,
+      "status": "passed",
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ]
+    },
+    {
+      "theme": "dark",
+      "sha256": "8ed4a5000941c6455b44ab80291a2c75e79658868e9f82dcba801b3c23d63e2e",
+      "pages": 55,
+      "status": "passed",
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ]
+    }
+  ],
+  "crossRendererReportSha256": "010d99ce8fd6b0068be4c20b639996dc822e95a14584b0d2b72213887f953c86",
+  "visualReview": "passed",
+  "visualReportSha256": "cbdc997e0394ae368b228aba107d722b6d04098bd41a660c3f41476d5a907838",
+  "visualFindings": [
+    {
+      "severity": "Low",
+      "page": 55,
+      "issue": "Adjacent changelog links share the label “Primary source”. They lead to distinct citations, but the labels offer no hint about where each goes."
+    }
+  ],
+  "browser": {
+    "status": "passed",
+    "version": "2.1.6",
+    "daytimeSha256": "ffe71dab4d047c341b38ed0243e76d53224380f1d89d2ff5373a4a012e0052e5",
+    "lateNightSha256": "8ed4a5000941c6455b44ab80291a2c75e79658868e9f82dcba801b3c23d63e2e",
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    },
+    "report": {
+      "path": "qa/v2.1.6/weekly-review/browser-report.json",
+      "sha256": "b3f556be1006301658d0313bc8e941520eb38f9a719b8bf4289ae020667b4647"
+    }
+  },
+  "publicationBrowser": {
+    "status": "passed",
+    "engine": "chromium",
+    "jobId": "639a5119",
+    "servedReaderSha256": "39031d4baf4a5e0d07727141a8330e4533c01b99a7f52856fb18471fadecd6a4",
+    "markdownSha256": "54d8e65924e29a222f7b6b7ff5ae8c745fe81b8908a34c220caacc3830830495",
+    "pdfSha256": {
+      "light": "ffe71dab4d047c341b38ed0243e76d53224380f1d89d2ff5373a4a012e0052e5",
+      "dark": "8ed4a5000941c6455b44ab80291a2c75e79658868e9f82dcba801b3c23d63e2e"
+    },
+    "verificationSha256": "dcb1a357365aaf9866eee4bf686f10f8e78597cbc484f3d2b25dde0473f19ab5",
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    }
+  }
+}

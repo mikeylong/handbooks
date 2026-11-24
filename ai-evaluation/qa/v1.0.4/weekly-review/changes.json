@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "readerFacingContentChanged": true,
+  "summary": "Evidence-backed clarifications for AI Evaluation Field Guide.",
+  "changes": [
+    {
+      "category": "Correction or clarification",
+      "section": "Module 5, dataset splits",
+      "text": "Evaluate the full data mixture alongside its individual sources.",
+      "rationale": "An interaction can be absent from isolated source checks.",
+      "sources": [
+        "https://alignment.anthropic.com/2026/homeopathic-learning/"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Module 9, the adversarial loop",
+      "text": "Declare adaptive test limits and repeat policy before testing.",
+      "rationale": "Results depend on access, feedback and budget.",
+      "sources": [
+        "https://openai.com/safety-alignment/fuzzy-robustness/"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Module 10, evaluating agent workflows",
+      "text": "Measure team results and individual actions under shared constraints.",
+      "rationale": "A group result can conceal unhealthy behavior by one participant.",
+      "sources": [
+        "https://alignment.anthropic.com/2026/worse-together/"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Module 12, production monitoring",
+      "text": "Revalidate detection when the model or reasoning settings change.",
+      "rationale": "Proxy scores and readable traces alone offer limited evidence about detection.",
+      "sources": [
+        "https://openai.com/safety-alignment/cot-monitorability-model-lifecycle/",
+        "https://openai.com/index/managing-frontier-ai-risk/",
+        "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/model-data-and-training"
+      ]
+    }
+  ]
+}

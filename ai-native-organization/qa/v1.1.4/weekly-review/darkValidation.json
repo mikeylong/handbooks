@@ -1,0 +1,122 @@
+{
+  "artifactSha256": "1f56977a8e4137feafd9ff35e50fbe76293b274b0e0e10366af8b34a179ecd73",
+  "changelogDecision": {
+    "changelogPages": [
+      54
+    ],
+    "decisionStatus": "passed",
+    "directSourceLinks": [
+      "https://alignment.anthropic.com/2026/worse-together/",
+      "https://openai.com/safety-alignment/misalignment-reports/using-peers-work-to-gain-unauthorized-access-to-openai-research-infrastructure/"
+    ],
+    "expectedEntryCount": 2,
+    "firstEdition": false,
+    "includeChangelog": true,
+    "navigationEntries": [
+      {
+        "lines": [
+          "changelog"
+        ],
+        "page": 3,
+        "role": "contents"
+      }
+    ],
+    "outlineEntries": [
+      "Changelog"
+    ]
+  },
+  "failures": [],
+  "limitations": [
+    "This structural validator does not establish visual quality.",
+    "Apple PDFKit compatibility remains unverified unless an Apple-native render was inspected."
+  ],
+  "pdf": "automation/validation/editorial-output/ai-native-organization/late-night.pdf",
+  "profile": "candidate",
+  "requiredRasterIllustrations": [
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 4,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.05548c9adb3b0c5806aab73a9cf19d4b",
+          "object": "52 0",
+          "opaque": true,
+          "page": 4,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 17,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.4ca3d1336fd62fbb82c44a534529af31",
+          "object": "61 0",
+          "opaque": true,
+          "page": 17,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    },
+    {
+      "actualPaintCount": 1,
+      "minimumEffectivePpi": 240,
+      "page": 27,
+      "paints": [
+        {
+          "hasMask": false,
+          "hasSMask": false,
+          "height": 1254,
+          "isImageMask": false,
+          "name": "/FormXob.6c89988215c1189b0d8a155c13e7ac5d",
+          "object": "166 0",
+          "opaque": true,
+          "page": 27,
+          "width": 1254,
+          "xPpi": 361.15,
+          "yPpi": 361.15
+        }
+      ],
+      "requireOpaque": true,
+      "requiredPaintCount": 1,
+      "status": "passed"
+    }
+  ],
+  "schemaVersion": 1,
+  "stats": {
+    "blankPages": [],
+    "externalLinks": 21,
+    "fonts": 6,
+    "imageMasks": 0,
+    "internalLinks": 79,
+    "outlineEntries": 39,
+    "pageMapEntries": 54,
+    "pages": 54,
+    "pdfVersion": "1.4",
+    "rasterImagePaints": 3,
+    "rasterImages": 3,
+    "requiredRasterIllustrationPages": 3
+  },
+  "status": "passed"
+}

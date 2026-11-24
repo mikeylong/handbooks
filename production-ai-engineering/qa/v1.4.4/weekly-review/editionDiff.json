@@ -1,0 +1,85 @@
+{
+  "artifacts": {
+    "pdfTextPatch": "exact-pdf-text.patch",
+    "readerFacingContentPatch": "reader-facing-content.patch",
+    "sourcePatch": "exact-source.patch"
+  },
+  "candidate": {
+    "ignoredChangelogPages": [
+      99,
+      100
+    ],
+    "ignoredNavigationPages": [
+      3,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "A Handbook for Building Reliable LLM Systems",
+      "title": "Production AI Engineering \u00b7 Daytime version"
+    },
+    "pages": 100,
+    "pdf": "candidate/daytime.pdf",
+    "pdfSha256": "663e99e0c12130808da297cd28a1d757e3fedbb0b12e58eaa115dd3c1d86d1f4"
+  },
+  "comparisons": {
+    "contentMetadataChanged": false,
+    "metadataChanged": false,
+    "navigationTextChanged": false,
+    "normalizedSubstantiveTextChanged": true,
+    "outlineIncludingChangelogChanged": true,
+    "rawPdfTextChanged": true,
+    "sourceChanged": true,
+    "substantiveLinksChanged": true,
+    "substantiveOutlineChanged": true
+  },
+  "decisionProjection": {
+    "excludedSurfaces": [
+      "changelog pages",
+      "contents and index pages",
+      "changelog outline entries",
+      "exact PDF appearance title suffixes"
+    ],
+    "reason": "Derivative edition navigation and prior changelog history cannot determine whether substantive reader-facing content changed."
+  },
+  "limitations": [
+    "Rendering-only differences require visual comparison.",
+    "Semantic change categories and rationales must be authored from accepted exact diffs.",
+    "Pass page maps to avoid relying on heading heuristics for surface roles."
+  ],
+  "previous": {
+    "ignoredChangelogPages": [
+      99,
+      100
+    ],
+    "ignoredNavigationPages": [
+      3,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98
+    ],
+    "metadata": {
+      "author": "Michael Long",
+      "subject": "A Handbook for Building Reliable LLM Systems",
+      "title": "Production AI Engineering \u00b7 Daytime version"
+    },
+    "pages": 100,
+    "pdf": "previous/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+    "pdfSha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92"
+  },
+  "readerFacingContentChanged": true,
+  "schemaVersion": 2,
+  "sourceSha256": {
+    "candidate": "48df41ac9d6571f757f5738481c16c95b0d72bb5448f7a3d6f01c220b5fd1a45",
+    "previous": "a88634ad9ae26c58e3f20ac15df10d66e49862deb2e1e08df37633d19ea9db1f"
+  },
+  "summary": "The candidate contains reader-facing changes that require semantic classification."
+}

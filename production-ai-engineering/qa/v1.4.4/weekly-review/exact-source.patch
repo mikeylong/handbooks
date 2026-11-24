@@ -1,0 +1,21 @@
+--- previous/AI_ENGINEERING_FIELD_GUIDE.md
++++ candidate/AI_ENGINEERING_FIELD_GUIDE.md
+@@ -1,6 +1,6 @@
+ # Production AI Engineering Field Guide
+ 
+-Last evidence review: **2026-11-09**
++Last evidence review: **2026-11-23**
+ 
+ Production AI engineering is a systems discipline. This handbook lays out an operating model that connects the techniques instead of treating each one as an isolated fix. The operating premise is simple:
+ 
+@@ -428,7 +428,9 @@
+ - current provider health and rate limits;
+ - router confidence and out-of-distribution detection.
+ 
+-Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. Google's [Gemini deprecation schedule](https://ai.google.dev/gemini-api/docs/deprecations) demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.
++Keep a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator's dates. Google's [Gemini deprecation schedule](https://ai.google.dev/gemini-api/docs/deprecations) demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.
++
++Record where the agent service, its stored state, tool execution, and model inference run. Anthropic’s self-hosted Managed Agents puts the service and stored sessions on infrastructure you operate. The service sends model requests to the selected provider. Trace what each request sends to that provider. Check the provider’s terms for processing, retention, support and limits, and give the operator’s service its own access, recovery, and upgrade owners.
+ 
+ Treat provider service-tier policy as a route constraint. OpenAI documents organization-wide and project-specific tier controls. Test the effective settings using the intended project and confirm the behavior of an explicitly disallowed request. Do not fail over to a different organization or project to get around the denial.
+ 

@@ -29,7 +29,7 @@ export const CITATION_GROUPS = [
         "label": "CACHE-01",
         "citation": "OpenAI. \"Prompt caching.\" OpenAI API documentation.",
         "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "CACHE-02",
@@ -41,7 +41,7 @@ export const CITATION_GROUPS = [
         "label": "OUT-01",
         "citation": "OpenAI. \"Structured model outputs.\" OpenAI API documentation.",
         "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "OUT-02",
@@ -75,7 +75,7 @@ export const CITATION_GROUPS = [
         "label": "MCP-02",
         "citation": "Model Context Protocol. \"Key Changes.\" Protocol specification, 28 July 2026.",
         "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "MCP-03",
@@ -564,7 +564,7 @@ export const CITATION_GROUPS = [
         "label": "PRIV-01",
         "citation": "developers.openai.com. \"OpenAI data controls.\" not stated.",
         "url": "https://developers.openai.com/api/docs/guides/your-data",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "REV-52",
@@ -594,12 +594,18 @@ export const CITATION_GROUPS = [
         "label": "NOV09-59",
         "citation": "Anthropic Institute. \"Measurements for understanding the pace of AI development inside frontier labs.\" not stated.",
         "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
-        "accessed": true
+        "accessed": false
       },
       {
         "label": "NOV09-62",
         "citation": "OpenAI Alignment Research. \"Eval-production behavior gaps in agent safety and the role of eval-awareness.\" 2026-11-03.",
         "url": "https://alignment.openai.com/eval-production-behavior-gap",
+        "accessed": false
+      },
+      {
+        "label": "NOV23-25",
+        "citation": "platform.claude.com. Self-hosted Claude Managed Agents.",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
         "accessed": true
       }
     ]
@@ -744,7 +750,8 @@ export const SECTION_SOURCES = {
       "MOD-06",
       "MOD-07",
       "MOD-08",
-      "REL-05"
+      "REL-05",
+      "NOV23-25"
     ],
     "note": "Author synthesis: routing decisions are tied to the user's degraded-mode experience."
   },

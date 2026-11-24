@@ -1,0 +1,137 @@
+--- previous/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf
++++ candidate/daytime.pdf
+@@ -5,7 +5,7 @@
+ Choose useful work, give people clear ownership, and test
+ whether agent workflows improve delivery.
+ Michael Long
+-November 9, 2026 · Version 1.1.3
++November 23, 2026 · Version 1.1.4
+ Expanded edition
+ --- PDF page 2 ---
+ ii
+@@ -502,11 +502,17 @@
+ and check whether they detect it, ask the right owner and preserve the
+ task's authority. Evaluate the coordinated workflow separately from
+ each participant's ability to finish the task alone. [S14]
+-The test set should include routine tasks, awkward but valid inputs, stale
+-or conflicting information, tool failures and prohibited requests. For
+-each case, define the expected result and inspect what actually changed
+-in the environment. Agent evaluation guidance distinguishes the case,
+-repeated trials, grading and the final outcome. [S5]
++When participants share a queue or a fixed budget, compare the peer
++workflow with a single coordinator under the same workload and
++constraints. Score the shared outcome and each participant's
++out-of-scope actions separately. If two participants can claim the same
++item, test whether the service prevents the second claim and routes the
++exception to the responsible owner. The simulations in [S15] supply a
++comparison to try under your own conditions.
++--- PDF page 23 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++20
+ An aggregate pass count can hide a failed case
+ Case
+ 1
+@@ -531,14 +537,24 @@
+ One possible result; case-level checks expose the failure.
+ Pass
+ Fail
+---- PDF page 23 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-20
++Test the next run with a stale instruction or output left by an earlier
++participant. Check that a current identity and authorization govern
++every action. Have the platform owner preserve the evidence, remove
++the stale material and verify that the next run starts with the intended
++access. A provider incident prompted this check. [S16]
++The test set should include routine tasks, awkward but valid inputs, stale
++or conflicting information, tool failures and prohibited requests. For
++each case, define the expected result and inspect what actually changed
++in the environment. Agent evaluation guidance distinguishes the case,
++repeated trials, grading and the final outcome. [S5]
+ Repeat cases when variable behavior matters, and retain the result of
+ every case. In a suite of fifteen cases with three trials each, 41 successes
+ out of 45 could hide one case failing all three trials. A high aggregate can
+ coexist with a repeatable failure.
++--- PDF page 24 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++21
+ Before the trial, decide which cases are critical and what passing each
+ one means. Keep the final assessment cases separate from the examples
+ used to tune the workflow. If an assessment case leaks into tuning, use a
+@@ -561,14 +577,14 @@
+ long conversation. A useful task record connects the customer goal to
+ the authoritative information, permitted actions and evidence needed to
+ accept the result.
+---- PDF page 24 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-21
+ For the saved-search example, record: "A customer can save a query,
+ reopen it in a later session and see a usable failure state. Saved queries
+ remain private to their owner." Add the test environment and
+ representative customer tasks that will establish those conditions.
++--- PDF page 25 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++22
+ The record needs a task ID, responsible product team, source versions,
+ workflow/model version, permitted resources and actions, budget,
+ expiry and escalation owner. Link to protected configuration rather than
+@@ -589,16 +605,16 @@
+ to customer observation and follow-up. If customers cannot find their
+ saved searches, the product team still has work to do even when the
+ persistence test passes.
+---- PDF page 25 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-22
+ Rehearse failure before live work
+ Run a stale-context conflict, an incorrect output, a tool timeout, a
+ prohibited request and revocation during active execution. Verify what
+ actually stopped, which credentials expired and what state remains. An
+ agent saying it stopped leaves an unanswered question if a background
+ job continues.
++--- PDF page 26 ---
++AI-NATIVE ORGANIZATION HANDBOOK
++2. BUILD A WORKFLOW THE TEAM CAN OPERATE
++23
+ People should know who can suspend the workflow and who will restore
+ each affected product. Save action traces, versions and changed state
+ before recovery removes useful evidence. The responsible owner can
+@@ -621,10 +637,6 @@
+ to the product owner, shared workflow defects to the maintainer, and
+ access failures to platform/security. When a failure crosses those
+ responsibilities, the owners need to coordinate the response.
+---- PDF page 26 ---
+-AI-NATIVE ORGANIZATION HANDBOOK
+-2. BUILD A WORKFLOW THE TEAM CAN OPERATE
+-23
+ Budget recurring time for context corrections, evaluation updates,
+ provider changes and support, and include it in operating cost. Even a
+ useful workflow may cost too much to maintain if the work it serves
+@@ -1244,7 +1256,7 @@
+ with separate business-unit and application responsibilities [S12]. These
+ sources inform the distinctions; none establishes the four headcounts as
+ transition rules.
+-Research cutoff: November 9, 2026, at 9:00 AM Pacific. The bibliography
++Research cutoff: November 23, 2026, at 9:00 AM Pacific. The bibliography
+ records direct sources and their limits.
+ Organizational foundations
+ [S1] Scaling Agile @ Spotify
+@@ -1338,3 +1350,13 @@
+ arXiv author manuscript. 2026-11-02T06:59:08Z.
+ https://arxiv.org/abs/2611.02633
+ Preprint and benchmark proposal; reported model scores do not transfer to a local workflow.
++[S15] Worse Together
++alignment.anthropic.com. 2026-11-11.
++https://alignment.anthropic.com/2026/worse-together/
++Research environments are simulated and mitigations were environment-specific; results do not
++establish a portable production failure rate.
++[S16] Shared-run infrastructure residue incident
++alignment.openai.com. 2026-11-10.
++https://openai.com/safety-alignment/misalignment-reports/using-peers-work-to-gain-unauthorized-
++access-to-openai-research-infrastructure/
++Provider incident report in a research environment; local transfer must be tested.

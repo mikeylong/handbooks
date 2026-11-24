@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "includeChangelog": true,
+  "readerFacingContentChanged": true,
+  "summary": "Evidence-backed clarifications for AI-Native Organization Handbook.",
+  "entryCount": 2,
+  "failures": [],
+  "placement": "final-page",
+  "requiredPdfState": {
+    "changelogPages": 1,
+    "finalPage": true,
+    "navigationEntry": true,
+    "outlineEntry": true
+  },
+  "navigationLabels": [
+    "Changelog",
+    "Version history"
+  ],
+  "expectedEntries": [
+    {
+      "category": "Correction or clarification",
+      "section": "2.4 Test the workflow and the outcome",
+      "text": "Compare a peer workflow with a coordinator under shared constraints.",
+      "rationale": "Group outcomes and individual actions answer different questions.",
+      "sources": [
+        "https://alignment.anthropic.com/2026/worse-together/"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "2.4 Test the workflow and the outcome",
+      "text": "Check how the next run handles stale material from a previous participant.",
+      "rationale": "An old output cannot establish current authorization.",
+      "sources": [
+        "https://openai.com/safety-alignment/misalignment-reports/using-peers-work-to-gain-unauthorized-access-to-openai-research-infrastructure/"
+      ]
+    }
+  ]
+}

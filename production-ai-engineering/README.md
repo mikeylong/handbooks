@@ -6,10 +6,10 @@ Production AI Engineering is for software engineers and technical leaders turnin
 
 The book looks at the decisions that matter between a successful demo and a real product: what to build, what to measure, what can go wrong, and how to know when the system is ready.
 
-**Current release:** Version 1.4.3 · November 9, 2026
-<!-- production-pdf-sha256: 9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92 -->
+**Current release:** Version 1.4.4 · November 23, 2026
+<!-- production-pdf-sha256: 663e99e0c12130808da297cd28a1d757e3fedbb0b12e58eaa115dd3c1d86d1f4 -->
 
-[Read the book (PDF)](./output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf)
+[Read the book (PDF)](./output/pdf/production-ai-engineering-v1.4.4-2026-11-23.pdf)
 
 This repository owns only Production AI Engineering: its manuscript, reader, illustrations, automation and approved PDF editions.
 
