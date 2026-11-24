@@ -11,5 +11,5 @@
     "validate:release": "node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-weekly-release.mjs ai-evaluation",
     "validate": "node ../scripts/validate-book-release.mjs ai-evaluation && node ../scripts/validate-weekly-release.mjs ai-evaluation"
   },
-  "version": "1.0.3"
+  "version": "1.0.4"
 }

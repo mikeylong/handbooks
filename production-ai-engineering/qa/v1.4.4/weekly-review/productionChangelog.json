@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "entryDate": "November 23, 2026",
+  "previousVersion": "Version 1.4.3",
+  "previousPublicationDate": "November 9, 2026",
+  "previousPdfSha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+  "currentSourceSha256": "48df41ac9d6571f757f5738481c16c95b0d72bb5448f7a3d6f01c220b5fd1a45",
+  "summary": "This edition makes 2 reader-facing changes: 2 corrections. No guidance was removed.",
+  "items": [
+    {
+      "changeId": "CHG-002",
+      "classification": "correction",
+      "classificationLabel": "Correction",
+      "section": "13. Model routing and degraded mode",
+      "title": "Check where inference runs in a self-hosted service",
+      "whatChanged": "Record the hosted service, stored state and model provider in the deployment plan.",
+      "why": "Each part has its own access, data handling and recovery obligations.",
+      "sources": [
+        {
+          "sourceId": "MOD-02",
+          "title": "Anthropic platform release notes",
+          "authority": "platform.claude.com",
+          "publicationDate": "2026-11-17",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "sourceId": "NOV23-25",
+          "title": "Self-hosted Claude Managed Agents",
+          "authority": "platform.claude.com",
+          "publicationDate": "November 12 launch",
+          "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted"
+        }
+      ]
+    },
+    {
+      "changeId": "CHG-001",
+      "classification": "correction",
+      "classificationLabel": "Correction",
+      "section": "Evidence-review metadata",
+      "title": "Record the November evidence review",
+      "whatChanged": "Update the evidence-review date and the scope of checked bibliography entries.",
+      "why": "A current access date identifies sources reopened in this run.",
+      "sources": [
+        {
+          "sourceId": "MOD-04",
+          "title": "OpenAI API changelog",
+          "authority": "developers.openai.com",
+          "publicationDate": "2026-11-19",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        }
+      ]
+    }
+  ]
+}

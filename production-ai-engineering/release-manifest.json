@@ -1,157 +1,157 @@
 {
   "id": "production-ai-engineering",
   "title": "Production AI Engineering",
-  "version": "1.4.3",
-  "date": "2026-11-09",
-  "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
-  "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+  "version": "1.4.4",
+  "date": "2026-11-23",
+  "pdf": "output/pdf/production-ai-engineering-v1.4.4-2026-11-23.pdf",
+  "sha256": "663e99e0c12130808da297cd28a1d757e3fedbb0b12e58eaa115dd3c1d86d1f4",
   "pages": 100,
   "approvalStatus": "approved",
   "publicationApproved": true,
-  "previous_public_edition": "1.4.2",
+  "previous_public_edition": "1.4.3",
   "comparison_basis": "approved public edition",
   "baseline": {
     "title": "Production AI Engineering",
-    "version": "1.4.2",
-    "date": "2026-11-08",
-    "pdf": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf",
-    "sha256": "ee5b249c5f37d10f27787a23f7d5ce3f6046af8bfb1e07601d13a18f23c4b487",
-    "pages": 97,
+    "version": "1.4.3",
+    "date": "2026-11-09",
+    "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
+    "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+    "pages": 100,
     "manifest": {
-      "path": "baselines/v1.4.2/weekly-review/release-manifest.json",
-      "sha256": "4b894ebff0b77202c31357d63c69e2ffe9c38ae1056bd7d164a5d13ede803670"
+      "path": "baselines/v1.4.3/weekly-review/release-manifest.json",
+      "sha256": "d37c9f74316c79b5d74cd9f45a9be9995c13c79ad5c8d2402d6af9dd582e18c3"
     },
-    "originalPdfPath": "output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf"
+    "originalPdfPath": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf"
   },
-  "candidate_validation": "qa/v1.4.3/weekly-review/lightValidation.json",
+  "candidate_validation": "qa/v1.4.4/weekly-review/lightValidation.json",
   "candidateEvidence": {
     "lightValidation": {
-      "path": "qa/v1.4.3/weekly-review/lightValidation.json",
-      "sha256": "ae5e9c32febfafed3f99605449b536f6b6cab3262e773b6a8c4c56ddb68d2f87",
-      "bytes": 640
+      "path": "qa/v1.4.4/weekly-review/lightValidation.json",
+      "sha256": "9cb94748317360802ff8ab345131c6488bcc4a76ec60a6857b8b43b430ba719d",
+      "bytes": 754
     },
     "darkValidation": {
-      "path": "qa/v1.4.3/weekly-review/darkValidation.json",
-      "sha256": "e592876a1359d47c64168dae6f20b010b0e0eb112e8ff04a0e544f2e958db8c2",
-      "bytes": 639
+      "path": "qa/v1.4.4/weekly-review/darkValidation.json",
+      "sha256": "8eb56f85cfbe767c0f8f4ad99bb3f29df72eb1e0065f879cb485bb5757a3e105",
+      "bytes": 753
     },
     "changelogDecision": {
-      "path": "qa/v1.4.3/weekly-review/changelogDecision.json",
-      "sha256": "ec56f7275abb46f77b8ead2ad584ef45ae90527933455550fe6aaa4ae30b7b72",
-      "bytes": 712
+      "path": "qa/v1.4.4/weekly-review/changelogDecision.json",
+      "sha256": "3ab4aff03c24d0793fffd57904c4f9e16bf00d0fe8ce587f5b02a1ae5305c7c3",
+      "bytes": 718
     },
     "editionDiff": {
-      "path": "qa/v1.4.3/weekly-review/editionDiff.json",
-      "sha256": "09064d974be164739835abef983b9bccf9a8596aff335d530e5480a92aa4721a",
-      "bytes": 2486
+      "path": "qa/v1.4.4/weekly-review/editionDiff.json",
+      "sha256": "3b78d0504348473e5dd7efa6653f560ae9fd635094a481f71525df76770dfffd",
+      "bytes": 2537
     },
     "productionChangelog": {
-      "path": "qa/v1.4.3/weekly-review/productionChangelog.json",
-      "sha256": "48de3b63b90858e2d5fdd2a4ce35dc0b8511cbeace35516a76352e98c47c7efe",
-      "bytes": 3535
+      "path": "qa/v1.4.4/weekly-review/productionChangelog.json",
+      "sha256": "d09dcb756aa77c6d1961db35bb7c886a81ec495966887356201510d13f61012f",
+      "bytes": 2167
     },
     "lightValidationValidator": {
-      "path": "qa/v1.4.3/weekly-review/lightValidationValidator.py",
+      "path": "qa/v1.4.4/weekly-review/lightValidationValidator.py",
       "sha256": "0029aeacef44216d6340cc582e320ce4a80c9dc2b71d34ebe50a6136fd9d654a",
       "bytes": 35922
     },
     "lightValidationLog": {
-      "path": "qa/v1.4.3/weekly-review/lightValidationLog.log",
-      "sha256": "a39dabd13a429273feff6a41d097366b384cd08c70c0e87f18f5c968a835c26b",
+      "path": "qa/v1.4.4/weekly-review/lightValidationLog.log",
+      "sha256": "b580c77077bdaf0929dbed295d5a03b1ae6dc4e86be046b97cd8038d7600263e",
       "bytes": 214
     },
     "darkValidationValidator": {
-      "path": "qa/v1.4.3/weekly-review/darkValidationValidator.py",
+      "path": "qa/v1.4.4/weekly-review/darkValidationValidator.py",
       "sha256": "0029aeacef44216d6340cc582e320ce4a80c9dc2b71d34ebe50a6136fd9d654a",
       "bytes": 35922
     },
     "darkValidationLog": {
-      "path": "qa/v1.4.3/weekly-review/darkValidationLog.log",
-      "sha256": "a39dabd13a429273feff6a41d097366b384cd08c70c0e87f18f5c968a835c26b",
+      "path": "qa/v1.4.4/weekly-review/darkValidationLog.log",
+      "sha256": "b580c77077bdaf0929dbed295d5a03b1ae6dc4e86be046b97cd8038d7600263e",
       "bytes": 214
     },
     "editionDiffPdfTextPatch": {
-      "path": "qa/v1.4.3/weekly-review/exact-pdf-text.patch",
-      "sha256": "7ce9c814f9750179b39374e04f2b31526242dfe4780eebf4dc7bddfb76d592d2",
-      "bytes": 78460
+      "path": "qa/v1.4.4/weekly-review/exact-pdf-text.patch",
+      "sha256": "ec324d096a95692242b95086971fa996371797d985a7dd337e59e5f94cd48a7c",
+      "bytes": 11257
     },
     "editionDiffReaderFacingContentPatch": {
-      "path": "qa/v1.4.3/weekly-review/reader-facing-content.patch",
-      "sha256": "bad41fa9dc0678c629d2d49167e105ab0b68ca0ff2c174aa0b66986533cec30c",
-      "bytes": 64180
+      "path": "qa/v1.4.4/weekly-review/reader-facing-content.patch",
+      "sha256": "349b2c0e5723ba4871032d94603c77f9845b614a2d9a0dfb415ebf3245a8d1f4",
+      "bytes": 8048
     },
     "editionDiffSourcePatch": {
-      "path": "qa/v1.4.3/weekly-review/exact-source.patch",
-      "sha256": "cd144e3fafde23ece59de0e44ff9e3b627957ec2397565cd10206f32270c1a8e",
-      "bytes": 3160
+      "path": "qa/v1.4.4/weekly-review/exact-source.patch",
+      "sha256": "d3a242ae97417bb7c397d6deeae3e8f49bfe5a2c0d9e1bcf5e22b8536b457418",
+      "bytes": 3708
     },
     "parity": {
-      "path": "qa/v1.4.3/weekly-review/parity.json",
-      "sha256": "7d2fa8deb57865552d2370419a7680fa437ecb6a04812d6e105340bd6d2ba7f1"
+      "path": "qa/v1.4.4/weekly-review/parity.json",
+      "sha256": "2c23099c5bf4ed4748483b16c6e33a53ac7c092a417e289a7ab076154396a390"
     },
     "appearanceAudit": {
-      "path": "qa/v1.4.3/weekly-review/appearance.json",
-      "sha256": "5b87f5934141b97396af1bd21ee3a5b5c40e0cafcc2a2810c764b3a48482c080"
+      "path": "qa/v1.4.4/weekly-review/appearance.json",
+      "sha256": "e712063f468a7d233c49b3c7a054af7fe50d9857b5bc455f619374489a82972e",
+      "bytes": 2300017
     }
   },
   "evidenceMode": "production",
   "pageMaps": {
     "light": {
-      "path": "qa/v1.4.3/weekly-review/light-page-map.json",
-      "sha256": "7a6e481281717262c85951a962c9adbc290fa1377a5e19abe89304055b11df40"
+      "path": "qa/v1.4.4/weekly-review/light-page-map.json",
+      "sha256": "75e661035f21126a8f87ab27572bb9b47ce8abfef8dfdb7d05153be9dd93ff92"
     },
     "dark": {
-      "path": "qa/v1.4.3/weekly-review/dark-page-map.json",
-      "sha256": "ff6c0802edef70d9b601e034a150aac88380f38e0826b8010f49b0afce18454e"
+      "path": "qa/v1.4.4/weekly-review/dark-page-map.json",
+      "sha256": "3d6c1189c94b2393800ca90a53a64dfb3230e47e1941576d5caadfc80fee3a70"
     }
   },
   "classifiedChangeIds": [
     "CHG-002",
-    "CHG-003",
     "CHG-001"
   ],
   "readerFacingContentChanged": true,
   "changelog": {
     "weeklyDecision": {
-      "path": "qa/v1.4.3/weekly-review/changelogDecision.json",
-      "sha256": "ec56f7275abb46f77b8ead2ad584ef45ae90527933455550fe6aaa4ae30b7b72",
-      "bytes": 712
+      "path": "qa/v1.4.4/weekly-review/changelogDecision.json",
+      "sha256": "3ab4aff03c24d0793fffd57904c4f9e16bf00d0fe8ce587f5b02a1ae5305c7c3",
+      "bytes": 718
     },
     "pdfDecision": {
-      "path": "qa/v1.4.3/weekly-review/productionChangelog.json",
-      "sha256": "48de3b63b90858e2d5fdd2a4ce35dc0b8511cbeace35516a76352e98c47c7efe",
-      "bytes": 3535
+      "path": "qa/v1.4.4/weekly-review/productionChangelog.json",
+      "sha256": "d09dcb756aa77c6d1961db35bb7c886a81ec495966887356201510d13f61012f",
+      "bytes": 2167
     },
     "retainedHistoricalChangelog": false
   },
   "appearances": {
     "light": {
-      "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09.pdf",
-      "sha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92",
+      "pdf": "output/pdf/production-ai-engineering-v1.4.4-2026-11-23.pdf",
+      "sha256": "663e99e0c12130808da297cd28a1d757e3fedbb0b12e58eaa115dd3c1d86d1f4",
       "pages": 100
     },
     "dark": {
-      "pdf": "output/pdf/production-ai-engineering-v1.4.3-2026-11-09-late-night-r1.pdf",
-      "sha256": "70d79ec690dcd2f53a907de996fec1853d119b9d160b2a74c798d617f48e607f",
+      "pdf": "output/pdf/production-ai-engineering-v1.4.4-2026-11-23-late-night-r1.pdf",
+      "sha256": "de9e76e4dc048d54c44ad0a682556c95b3c2c593380ccd3c97f1ff8625d0efdc",
       "pages": 100
     }
   },
   "retainedProvenance": {
     "status": "historical_only_not_reverified",
-    "sourceEdition": "1.4.2",
-    "manifest": "baselines/v1.4.2/weekly-review/release-manifest.json"
+    "sourceEdition": "1.4.3",
+    "manifest": "baselines/v1.4.3/weekly-review/release-manifest.json"
   },
   "publicationApproval": {
     "kind": "explicit-user-release",
-    "command": "Fix the Production changelog provenance, revalidate the corrected candidate, then publish the three patch editions. Keep the 80 GiB budget and preserve all release and failed-run evidence.",
-    "date": "2026-11-09",
-    "version": "1.4.3",
-    "daytimeSha256": "9f2801cefd9096c09189445f537678229f96452865c175383dde0c7d6bc9ce92"
+    "command": "Go ahead and publish those four exact editions. Recheck the live baseline first, verify all four on the public site afterward, and keep AI Consulting at 1.0.2.",
+    "date": "2026-11-24",
+    "version": "1.4.4",
+    "daytimeSha256": "663e99e0c12130808da297cd28a1d757e3fedbb0b12e58eaa115dd3c1d86d1f4"
   },
   "releaseValidationKind": "weekly-exact-artifact",
   "generationToolkitArchive": {
-    "collectionPath": "releases/2026-11-09/generation-toolkit.zip",
-    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
-    "purpose": "Frozen shared runtime used for these validated candidate artifacts."
+    "collectionPath": "releases/2026-11-23/production-reader.zip",
+    "sha256": "bb62c744bb26f9333cce68e565dd968b33a681f3f1f1118f0182b097ffa56f53",
+    "purpose": "Frozen generation toolkit used for the exact review artifacts."
   }
 }

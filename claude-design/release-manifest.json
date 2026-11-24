@@ -1,108 +1,138 @@
 {
   "id": "claude-design",
   "title": "Claude Design Field Guide",
-  "version": "2.1.5",
-  "date": "2026-11-08",
-  "pdf": "output/pdf/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
-  "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
-  "pages": 53,
+  "version": "2.1.6",
+  "date": "2026-11-23",
+  "pdf": "output/pdf/claude-design-v2.1.6-2026-11-23-daytime-r1.pdf",
+  "sha256": "ffe71dab4d047c341b38ed0243e76d53224380f1d89d2ff5373a4a012e0052e5",
+  "pages": 55,
   "approvalStatus": "approved",
   "publicationApproved": true,
-  "publicationApproval": {
-    "kind": "explicit-user-release",
-    "command": "Fix it across all five handbooks and make the guardrail mandatory. Validate the reader, Markdown, and both PDFs, then publish corrected releases. Preserve the existing releases and evidence.",
-    "date": "2026-11-08",
-    "version": "2.1.5",
-    "daytimeSha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3"
-  },
-  "releaseValidationKind": "presentation-exact-artifact",
-  "previous_public_edition": "2.1.4",
+  "previous_public_edition": "2.1.5",
   "comparison_basis": "approved public edition",
   "baseline": {
-    "version": "2.1.4",
-    "date": "2026-11-07",
-    "pdf": "output/pdf/claude-design-v2.1.4-2026-11-07-daytime-r1.pdf",
-    "sha256": "e5b3b1ad61f8129d527cc8f99efcceccd0a93bf6ab4cf3db3153696960351a85",
+    "title": "Claude Design Field Guide",
+    "version": "2.1.5",
+    "date": "2026-11-08",
+    "pdf": "output/pdf/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
+    "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
+    "pages": 53,
     "manifest": {
-      "path": "baselines/v2.1.4/heading-repair/release-manifest.json",
-      "sha256": "d2db65bd70645bfc828aacea4da3636a663111f4080a223d4061500e604abd12"
-    }
+      "path": "baselines/v2.1.5/weekly-review/release-manifest.json",
+      "sha256": "7f56795803f3678f28dfc89386b94b94fe22143fb642a3c9505ebfc59f81ec94"
+    },
+    "originalPdfPath": "output/pdf/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf"
   },
-  "candidate_validation": "qa/v2.1.5/heading-repair/light-validation.json",
+  "candidate_validation": "qa/v2.1.6/weekly-review/lightValidation.json",
   "candidateEvidence": {
     "lightValidation": {
-      "path": "qa/v2.1.5/heading-repair/light-validation.json",
-      "sha256": "68b7e128781c3fb72aa843f3395e6f869105655610a9bb82f992fff107da5dc8"
+      "path": "qa/v2.1.6/weekly-review/lightValidation.json",
+      "sha256": "dc5a97f93e69090e4b99421a29d0c7b5549bd3565c682276d27c94e0a2954552",
+      "bytes": 25784
     },
     "darkValidation": {
-      "path": "qa/v2.1.5/heading-repair/dark-validation.json",
-      "sha256": "63800e9c85475513f3f0f25c19a91f2ccc264b87f532e47cc53cd4111e8765bf"
-    },
-    "editionDiff": {
-      "path": "qa/v2.1.5/heading-repair/comparison/edition-diff.json",
-      "sha256": "a1eef50eed9ca826df5c698a28a7513d46df121ddbee5abe7176f8f1cb07cc3c"
+      "path": "qa/v2.1.6/weekly-review/darkValidation.json",
+      "sha256": "7933f0a59b7e77e1b9a2474f2f5a8e375163f44dcdc08b5b71ecd29d466ee4de",
+      "bytes": 25805
     },
     "changelogDecision": {
-      "path": "qa/v2.1.5/heading-repair/changelog-decision.json",
-      "sha256": "af9c429c4e1253f32fafb4a74a52339dca985a9115be9ec7fa8eb0cf046da23a"
+      "path": "qa/v2.1.6/weekly-review/changelogDecision.json",
+      "sha256": "2dfab23197afdf4723c95e1e454b7603cfb2e6d46ada05a8a31bda468d6c4c88",
+      "bytes": 1914
+    },
+    "editionDiff": {
+      "path": "qa/v2.1.6/weekly-review/editionDiff.json",
+      "sha256": "97c94dc5b550d8557a5a99ef4ec410ff84a46ebaabaab324826ea609be8443ae",
+      "bytes": 2432
+    },
+    "changes": {
+      "path": "qa/v2.1.6/weekly-review/changes.json",
+      "sha256": "df273f9eccbf89bd452a35bb0f555c0761e51ce9d7b5d5b6f6f003a651f39d35",
+      "bytes": 1591
+    },
+    "editionDiffPdfTextPatch": {
+      "path": "qa/v2.1.6/weekly-review/exact-pdf-text.patch",
+      "sha256": "7c3737cf6429ffd3f77a161d9cecb27eaa3ab3aaf7f21a0304e85011cf8e55fd",
+      "bytes": 5861
+    },
+    "editionDiffReaderFacingContentPatch": {
+      "path": "qa/v2.1.6/weekly-review/reader-facing-content.patch",
+      "sha256": "535b15ce3084cd49736dac0d72a9a125c2133831365cd0807c2ec87166f74495",
+      "bytes": 4473
+    },
+    "editionDiffSourcePatch": {
+      "path": "qa/v2.1.6/weekly-review/exact-source.patch",
+      "sha256": "1ccd9ad1e2c78832e97de6460b4194b2ce7059ea09e5aeacc06ab77edc378a3d",
+      "bytes": 5592
     },
     "parity": {
-      "path": "qa/v2.1.5/heading-repair/pair/parity.json",
-      "sha256": "c911d7912c281b95fe38bdccc797b76b714e87886d107ece2f75b155036201f0"
+      "path": "qa/v2.1.6/weekly-review/parity.json",
+      "sha256": "99d84e392902001d3be3f025ea763ace4d52274fcbf6b8b77a7bfca149fcd61d"
     },
     "appearanceAudit": {
-      "path": "qa/v2.1.5/heading-repair/appearance.json",
-      "sha256": "1c68e3d34b0939fe604b2aab692fda720b96ec6a96ce32af9b3e4fbf48bad713"
+      "path": "qa/v2.1.6/weekly-review/appearance.json",
+      "sha256": "b5673eefcd521db4be261be38d085fb8d3af5d2519c3c35bd4fa0083faecea57",
+      "bytes": 45987
     }
   },
+  "evidenceMode": "standard",
   "pageMaps": {
     "light": {
-      "path": "qa/v2.1.5/heading-repair/light-page-map.json",
-      "sha256": "8fe4e988be25658fd3ed9c0cdf91813afd91f376d7fdaf542c3d5cea4ced8d66"
+      "path": "qa/v2.1.6/weekly-review/light-page-map.json",
+      "sha256": "f2be0d3ca0d22f40b9b0f2d8a40b0f5f17beb0861b8350b4d1cc4d29a42f58c3"
     },
     "dark": {
-      "path": "qa/v2.1.5/heading-repair/dark-page-map.json",
-      "sha256": "ca568f3f3839c0f45f7eb5c3e71cb976127f94bf46da0de4ef8bafa46b8b9362"
+      "path": "qa/v2.1.6/weekly-review/dark-page-map.json",
+      "sha256": "4ca8d153bf37af8dcdb7eeec2403efe2ba072cc9551df96789f1b0c454af0cf7"
     }
+  },
+  "classifiedChangeIds": [
+    "candidate-change-001",
+    "candidate-change-002",
+    "candidate-change-003"
+  ],
+  "readerFacingContentChanged": true,
+  "changelog": {
+    "weeklyDecision": {
+      "path": "qa/v2.1.6/weekly-review/changelogDecision.json",
+      "sha256": "2dfab23197afdf4723c95e1e454b7603cfb2e6d46ada05a8a31bda468d6c4c88",
+      "bytes": 1914
+    },
+    "pdfDecision": {
+      "path": "qa/v2.1.6/weekly-review/changelogDecision.json",
+      "sha256": "2dfab23197afdf4723c95e1e454b7603cfb2e6d46ada05a8a31bda468d6c4c88",
+      "bytes": 1914
+    },
+    "retainedHistoricalChangelog": false
   },
   "appearances": {
     "light": {
-      "pdf": "output/pdf/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf",
-      "sha256": "eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3",
-      "pages": 53
+      "pdf": "output/pdf/claude-design-v2.1.6-2026-11-23-daytime-r1.pdf",
+      "sha256": "ffe71dab4d047c341b38ed0243e76d53224380f1d89d2ff5373a4a012e0052e5",
+      "pages": 55
     },
     "dark": {
-      "pdf": "output/pdf/claude-design-v2.1.5-2026-11-08-late-night-r1.pdf",
-      "sha256": "4c5feb30eb8d43d2b0f15e6e076e4c9ecafa1aa78343384350fbeda689b89b17",
-      "pages": 53
-    }
-  },
-  "readerFacingContentChanged": false,
-  "presentationRepair": {
-    "policy": "mandatory-title-only-v1",
-    "contentPolicy": "No substantive manuscript changes; preserve chapter markers, data and procedural steps.",
-    "rawDifferences": "candidateEvidence.editionDiff",
-    "historicalChangelog": "Retained in previous edition; no new content changelog.",
-    "sourceProof": {
-      "path": "qa/v2.1.5/heading-repair/source-scope.json",
-      "sha256": "6fef015e379cb9271c8b51f811365229be1bcc3f89299b6cc11d39740d923248"
-    },
-    "headingProof": {
-      "path": "qa/v2.1.5/heading-repair/heading-proof.json",
-      "sha256": "4cafe901d046993f6dd1645fe8a925c175fa37ef18fc7ee1d54038bfc3513e0c"
-    },
-    "releaseProof": {
-      "path": "qa/v2.1.5/heading-repair/release-proof.json",
-      "sha256": "e7b5b1f5eb5d58cf7826c1993b51381dc4881123e221ae8c1ded3efedf5e1346"
+      "pdf": "output/pdf/claude-design-v2.1.6-2026-11-23-late-night-r1.pdf",
+      "sha256": "8ed4a5000941c6455b44ab80291a2c75e79658868e9f82dcba801b3c23d63e2e",
+      "pages": 55
     }
   },
   "retainedProvenance": {
     "status": "historical_only_not_reverified",
-    "sourceEdition": "2.1.4",
-    "manifest": "baselines/v2.1.4/heading-repair/release-manifest.json"
+    "sourceEdition": "2.1.5",
+    "manifest": "baselines/v2.1.5/weekly-review/release-manifest.json"
   },
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Go ahead and publish those four exact editions. Recheck the live baseline first, verify all four on the public site afterward, and keep AI Consulting at 1.0.2.",
+    "date": "2026-11-24",
+    "version": "2.1.6",
+    "daytimeSha256": "ffe71dab4d047c341b38ed0243e76d53224380f1d89d2ff5373a4a012e0052e5"
+  },
+  "releaseValidationKind": "weekly-exact-artifact",
   "generationToolkitArchive": {
-    "collectionPath": "releases/2026-11-08-heading-labels/generation-toolkit-v2.zip",
-    "sha256": "064dae168673690309d4bb1accaa094cc851c86d6b0c3df4525ed63eef82258e"
+    "collectionPath": "releases/2026-11-23/collection-candidate.zip",
+    "sha256": "bb62c744bb26f9333cce68e565dd968b33a681f3f1f1118f0182b097ffa56f53",
+    "purpose": "Frozen generation toolkit used for the exact review artifacts."
   }
 }

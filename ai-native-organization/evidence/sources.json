@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "accessDate": "2026-11-09",
-  "researchCutoff": "2026-11-09",
+  "accessDate": "2026-11-23",
+  "researchCutoff": "2026-11-23",
   "sources": [
     {
       "id": "S1",
@@ -212,6 +212,36 @@
       ],
       "limitation": "Preprint and benchmark proposal; reported model scores do not transfer to a local workflow.",
       "disposition": "accepted"
+    },
+    {
+      "id": "S15",
+      "title": "Worse Together",
+      "publisher": "alignment.anthropic.com",
+      "published": "2026-11-11",
+      "url": "https://alignment.anthropic.com/2026/worse-together/",
+      "authority": "primary publication",
+      "access": "Rechecked for the November 23 collection review",
+      "locator": "Experiment setup, comparison and mitigation results",
+      "supports": [
+        "Compare group outcomes and individual actions under matched constraints."
+      ],
+      "limitation": "Research environments are simulated and mitigations were environment-specific; results do not establish a portable production failure rate.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "S16",
+      "title": "Shared-run infrastructure residue incident",
+      "publisher": "alignment.openai.com",
+      "published": "2026-11-10",
+      "url": "https://openai.com/safety-alignment/misalignment-reports/using-peers-work-to-gain-unauthorized-access-to-openai-research-infrastructure/",
+      "authority": "primary publication",
+      "access": "Rechecked for the November 23 collection review",
+      "locator": "Incident summary and containment changes",
+      "supports": [
+        "Check authorization when previous work is reused."
+      ],
+      "limitation": "Provider incident report in a research environment; local transfer must be tested.",
+      "disposition": "accepted"
     }
   ],
   "claims": [
@@ -322,6 +352,24 @@
         "S14"
       ],
       "kind": "bounded evaluation recommendation; no organizational productivity claim"
+    },
+    {
+      "id": "C15",
+      "section": "2.4",
+      "claim": "Compare group outcomes and individual actions under matched constraints.",
+      "sources": [
+        "S15"
+      ],
+      "kind": "bounded local recommendation"
+    },
+    {
+      "id": "C16",
+      "section": "2.4",
+      "claim": "Check authorization when previous work is reused.",
+      "sources": [
+        "S16"
+      ],
+      "kind": "bounded local recommendation"
     }
   ]
 }

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="styles.css?v=f9f885fefce2">
   <script src="app.js?v=f9f885fefce2" defer></script>
 </head>
-<body id="book-top" data-source-sha256="a88634ad9ae26c58e3f20ac15df10d66e49862deb2e1e08df37633d19ea9db1f">
+<body id="book-top" data-source-sha256="48df41ac9d6571f757f5738481c16c95b0d72bb5448f7a3d6f01c220b5fd1a45">
   <a class="skip-link" href="#main-content">Skip to handbook</a>
   <div class="reading-progress" aria-hidden="true"><span></span></div>
 
@@ -149,7 +149,7 @@
       <div class="sidebar-meta">
         <div class="sidebar-actions">
           <button class="text-button search-trigger js-only" type="button" data-open-search aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="/">Search</button>
-          <a class="text-link" href="../output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf" download aria-label="Download Production AI Engineering as a PDF, 97 pages">PDF</a>
+          <a class="text-link" href="../output/pdf/production-ai-engineering-v1.4.4-2026-11-23.pdf" download aria-label="Download Production AI Engineering as a PDF, 100 pages">PDF</a>
         </div>
       </div>
     </aside>
@@ -160,10 +160,10 @@
         <h1 id="cover-title">Production AI Engineering</h1>
         <p class="cover-subtitle">A Handbook for Building Reliable LLM Systems</p>
         <p class="cover-credit">Michael Long, <a href="https://surfaces.systems">surfaces.systems</a></p>
-        <p class="cover-date">November 9, 2026 · Version 1.4.3</p>
+        <p class="cover-date">November 23, 2026 · Version 1.4.4</p>
         <nav class="cover-actions site-only" aria-label="Handbook actions">
           <a class="action-link action-link-primary" href="#contents">Explore the handbook</a>
-          <a class="action-link" href="../output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf" download aria-label="Download Production AI Engineering as a PDF, 97 pages">Download PDF <span>97 pages</span></a>
+          <a class="action-link" href="../output/pdf/production-ai-engineering-v1.4.4-2026-11-23.pdf" download aria-label="Download Production AI Engineering as a PDF, 100 pages">Download PDF <span>100 pages</span></a>
         </nav>
       </section>
 
@@ -846,7 +846,8 @@
         <h3 data-source-section="6.2"><span class="section-title">Model routing and degraded mode</span></h3>
         <p>Route against measured task requirements, not provider reputation or prompt length alone. Include:</p>
 <ul><li>task class and required capability;</li><li>risk and consequence of error;</li><li>modality, context length, language, and tool requirements;</li><li>latency deadline and cost ceiling;</li><li>tenant policy and data residency;</li><li>current provider health and rate limits;</li><li>router confidence and out-of-distribution detection.</li></ul>
-<p>Maintain a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator&#039;s dates. Google&#039;s <a href="https://ai.google.dev/gemini-api/docs/deprecations">Gemini deprecation schedule</a><sup class="citation-marker"><a href="#ref-mod-07" aria-label="Citation MOD-07">[MOD-07]</a></sup> demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.</p>
+<p>Keep a compatibility matrix for every route: exact model snapshot or negotiated protocol version; provider API, client SDK, and serving-runtime versions; lifecycle state and retirement date; supported request parameters and turn rules; tool protocol; JSON Schema support; context and output limits; refusal semantics; modality; processing geography and data policy; and tested quality slices. Managed agent runtimes and built-in tools belong in that matrix too. Record the agent runtime, tool versions, approval and sign-in behavior, state-retention rules, and retirement date. Then test the actual replacement before a preview or dated model shuts down. Treat aliases, defaults, and wrappers as mutable. Google, Anthropic, OpenAI, and AWS publish changes on different schedules, and platform-specific retirement dates can differ from a model creator&#039;s dates. Google&#039;s <a href="https://ai.google.dev/gemini-api/docs/deprecations">Gemini deprecation schedule</a><sup class="citation-marker"><a href="#ref-mod-07" aria-label="Citation MOD-07">[MOD-07]</a></sup> demonstrates why a product alias or managed surface needs its own migration owner even when the underlying model family remains available. A fallback that cannot honor the same contract puts the product in a different mode.</p>
+<p>Record where the agent service, its stored state, tool execution, and model inference run. Anthropic’s self-hosted Managed Agents puts the service and stored sessions on infrastructure you operate. The service sends model requests to the selected provider. Trace what each request sends to that provider. Check the provider’s terms for processing, retention, support and limits, and give the operator’s service its own access, recovery, and upgrade owners.</p>
 <p>Treat provider service-tier policy as a route constraint. OpenAI documents organization-wide and project-specific tier controls. Test the effective settings using the intended project and confirm the behavior of an explicitly disallowed request. Do not fail over to a different organization or project to get around the denial.</p>
 <p>The resolved model settings and preserved model-generated state belong in the migration record. Test omitted parameters separately from explicit values, record supported reasoning levels and their output-token budget, and verify tool/API support and cache controls on the exact route. Parse responses by block type. Bind signed thinking, reasoning, or summary blocks to the exact provider, model, account, conversation history, and API contract. Return them unchanged when required, and keep the history append-only. If a route drops or rejects that state, fail or restart from an explicitly compatible checkpoint instead of silently continuing with different semantics. Migration tests must cover default reasoning behavior, forced-tool restrictions, structured-output parameters, refusal categories, and a fresh effort sweep because the same effort label can change across model generations. <a href="https://developers.openai.com/api/docs/guides/latest-model">OpenAI&#039;s migration guidance</a><sup class="citation-marker"><a href="#ref-mod-05" aria-label="Citation MOD-05">[MOD-05]</a></sup> documents changes to these contracts, while <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug-doc-history.html">AWS&#039;s adaptive-thinking correction</a><sup class="citation-marker"><a href="#ref-mod-06" aria-label="Citation MOD-06">[MOD-06]</a></sup> shows how omission can enable billable reasoning. Anthropic&#039;s <a href="https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide">Sonnet 5.5 migration guide</a><sup class="citation-marker"><a href="#ref-mod-08" aria-label="Citation MOD-08">[MOD-08]</a></sup> documents the signed-state and request-contract changes. Reject unsupported settings rather than silently dropping them. Compare the resolved behavior, latency, and cost before rollout.</p>
 <p>Treat provider SDK upgrades as production migrations. Diff request headers and response types, exercise every mutating method against disposable state, and canary the pinned upgrade before rollout.</p>
@@ -916,7 +917,7 @@
 </figure>
 <p>In degraded mode, tell the user exactly what changed: unavailable capability, reduced freshness, partial scope, read-only behavior, or delayed completion. Do not silently swap to a materially weaker model and present the output as equivalent.</p>
 <p>Evaluate the router directly: route accuracy, unnecessary escalation, unsafe down-routing, fallback success, quality by route, added latency, and cost per successful task. Shadow new routing policies only on eligible, authorized traffic. Disable all side effects, redact where possible, and never send data to a provider or region outside the request&#039;s approved residency and retention policy.</p>
-        <p class="section-sources"><strong>Sources</strong> <a href="#ref-opt-01">[OPT-01]</a> <a href="#ref-serv-05">[SERV-05]</a> <a href="#ref-mcp-01">[MCP-01]</a> <a href="#ref-mod-01">[MOD-01]</a> <a href="#ref-mod-02">[MOD-02]</a> <a href="#ref-mod-03">[MOD-03]</a> <a href="#ref-mod-04">[MOD-04]</a> <a href="#ref-mod-05">[MOD-05]</a> <a href="#ref-mod-06">[MOD-06]</a> <a href="#ref-mod-07">[MOD-07]</a> <a href="#ref-mod-08">[MOD-08]</a> <a href="#ref-rel-05">[REL-05]</a><span>Author synthesis: routing decisions are tied to the user&#039;s degraded-mode experience.</span></p>
+        <p class="section-sources"><strong>Sources</strong> <a href="#ref-opt-01">[OPT-01]</a> <a href="#ref-serv-05">[SERV-05]</a> <a href="#ref-mcp-01">[MCP-01]</a> <a href="#ref-mod-01">[MOD-01]</a> <a href="#ref-mod-02">[MOD-02]</a> <a href="#ref-mod-03">[MOD-03]</a> <a href="#ref-mod-04">[MOD-04]</a> <a href="#ref-mod-05">[MOD-05]</a> <a href="#ref-mod-06">[MOD-06]</a> <a href="#ref-mod-07">[MOD-07]</a> <a href="#ref-mod-08">[MOD-08]</a> <a href="#ref-rel-05">[REL-05]</a> <a href="#ref-nov23-25">[NOV23-25]</a><span>Author synthesis: routing decisions are tied to the user&#039;s degraded-mode experience.</span></p>
       </section>
     </div>
 
@@ -1454,7 +1455,7 @@
       </li>
       <li>
         <a class="source-map-section" href="#section-13-model-routing-and-degraded-mode">Model routing and degraded mode</a>
-        <span class="source-map-references"><a href="#ref-opt-01">[OPT-01]</a> <a href="#ref-serv-05">[SERV-05]</a> <a href="#ref-mcp-01">[MCP-01]</a> <a href="#ref-mod-01">[MOD-01]</a> <a href="#ref-mod-02">[MOD-02]</a> <a href="#ref-mod-03">[MOD-03]</a> <a href="#ref-mod-04">[MOD-04]</a> <a href="#ref-mod-05">[MOD-05]</a> <a href="#ref-mod-06">[MOD-06]</a> <a href="#ref-mod-07">[MOD-07]</a> <a href="#ref-mod-08">[MOD-08]</a> <a href="#ref-rel-05">[REL-05]</a></span>
+        <span class="source-map-references"><a href="#ref-opt-01">[OPT-01]</a> <a href="#ref-serv-05">[SERV-05]</a> <a href="#ref-mcp-01">[MCP-01]</a> <a href="#ref-mod-01">[MOD-01]</a> <a href="#ref-mod-02">[MOD-02]</a> <a href="#ref-mod-03">[MOD-03]</a> <a href="#ref-mod-04">[MOD-04]</a> <a href="#ref-mod-05">[MOD-05]</a> <a href="#ref-mod-06">[MOD-06]</a> <a href="#ref-mod-07">[MOD-07]</a> <a href="#ref-mod-08">[MOD-08]</a> <a href="#ref-rel-05">[REL-05]</a> <a href="#ref-nov23-25">[NOV23-25]</a></span>
         <span>Author synthesis: routing decisions are tied to the user&#039;s degraded-mode experience.</span>
       </li>
       <li>
@@ -1554,7 +1555,7 @@
         <li id="ref-cache-01">
           <span class="reference-label">[CACHE-01]</span>
           <div>
-            <p>OpenAI. &quot;Prompt caching.&quot; OpenAI API documentation. Accessed 9 November 2026.</p>
+            <p>OpenAI. &quot;Prompt caching.&quot; OpenAI API documentation.</p>
             <p class="reference-meta"><a href="https://developers.openai.com/api/docs/guides/prompt-caching">developers.openai.com/api/docs/guides/prompt-caching</a><span>Cited in <a href="#section-04-four-caches-that-must-not-be-confused">Four caches that must not be confused</a>, <a href="#section-18-attribute-cost-to-the-whole-workflow">Attribute cost to the whole workflow</a></span></p>
           </div>
         </li>
@@ -1568,7 +1569,7 @@
         <li id="ref-out-01">
           <span class="reference-label">[OUT-01]</span>
           <div>
-            <p>OpenAI. &quot;Structured model outputs.&quot; OpenAI API documentation. Accessed 9 November 2026.</p>
+            <p>OpenAI. &quot;Structured model outputs.&quot; OpenAI API documentation.</p>
             <p class="reference-meta"><a href="https://developers.openai.com/api/docs/guides/structured-outputs">developers.openai.com/api/docs/guides/structured-outputs</a><span>Cited in <a href="#section-10-structured-outputs-syntax-is-only-the-first-gate">Structured outputs: syntax is only the first gate</a>, <a href="#section-23-production-failure-matrix">Production failure matrix</a></span></p>
           </div>
         </li>
@@ -1610,7 +1611,7 @@
         <li id="ref-mcp-02">
           <span class="reference-label">[MCP-02]</span>
           <div>
-            <p>Model Context Protocol. &quot;Key Changes.&quot; Protocol specification, 28 July 2026. Accessed 9 November 2026.</p>
+            <p>Model Context Protocol. &quot;Key Changes.&quot; Protocol specification, 28 July 2026.</p>
             <p class="reference-meta"><a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">modelcontextprotocol.io/specification/2026-07-28/changelog</a><span>Cited in <a href="#section-11-reliable-function-and-tool-calling">Reliable function and tool calling</a></span></p>
           </div>
         </li>
@@ -1666,7 +1667,7 @@
         <li id="ref-mod-04">
           <span class="reference-label">[MOD-04]</span>
           <div>
-            <p>OpenAI. &quot;API changelog.&quot; OpenAI API documentation. Accessed 9 November 2026.</p>
+            <p>OpenAI. &quot;API changelog.&quot; OpenAI API documentation. Accessed 23 November 2026.</p>
             <p class="reference-meta"><a href="https://developers.openai.com/api/docs/changelog">developers.openai.com/api/docs/changelog</a><span>Cited in <a href="#section-13-model-routing-and-degraded-mode">Model routing and degraded mode</a>, <a href="#section-18-attribute-cost-to-the-whole-workflow">Attribute cost to the whole workflow</a>, <a href="#section-19-safety-engineering-and-permission-boundaries">Safety engineering and permission boundaries</a>, <a href="#section-20-multi-tenant-isolation-and-cache-safety">Multi-tenant isolation and cache safety</a></span></p>
           </div>
         </li>
@@ -2208,7 +2209,7 @@
         <li id="ref-priv-01">
           <span class="reference-label">[PRIV-01]</span>
           <div>
-            <p>developers.openai.com. &quot;OpenAI data controls.&quot; not stated. Accessed 9 November 2026.</p>
+            <p>developers.openai.com. &quot;OpenAI data controls.&quot; not stated.</p>
             <p class="reference-meta"><a href="https://developers.openai.com/api/docs/guides/your-data">developers.openai.com/api/docs/guides/your-data</a><span>Cited in <a href="#section-18-attribute-cost-to-the-whole-workflow">Attribute cost to the whole workflow</a></span></p>
           </div>
         </li>
@@ -2243,15 +2244,22 @@
         <li id="ref-nov09-59">
           <span class="reference-label">[NOV09-59]</span>
           <div>
-            <p>Anthropic Institute. &quot;Measurements for understanding the pace of AI development inside frontier labs.&quot; not stated. Accessed 9 November 2026.</p>
+            <p>Anthropic Institute. &quot;Measurements for understanding the pace of AI development inside frontier labs.&quot; not stated.</p>
             <p class="reference-meta"><a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development">anthropic.com/institute/measuring-pace-of-ai-development</a><span>Cited in <a href="#section-17-llm-observability-as-a-first-class-discipline">LLM observability as a first-class discipline</a></span></p>
           </div>
         </li>
         <li id="ref-nov09-62">
           <span class="reference-label">[NOV09-62]</span>
           <div>
-            <p>OpenAI Alignment Research. &quot;Eval-production behavior gaps in agent safety and the role of eval-awareness.&quot; 2026-11-03. Accessed 9 November 2026.</p>
+            <p>OpenAI Alignment Research. &quot;Eval-production behavior gaps in agent safety and the role of eval-awareness.&quot; 2026-11-03.</p>
             <p class="reference-meta"><a href="https://alignment.openai.com/eval-production-behavior-gap">alignment.openai.com/eval-production-behavior-gap</a><span>Cited in <a href="#section-16-evals-as-the-release-contract">Evals as the release contract</a></span></p>
+          </div>
+        </li>
+        <li id="ref-nov23-25">
+          <span class="reference-label">[NOV23-25]</span>
+          <div>
+            <p>platform.claude.com. Self-hosted Claude Managed Agents. Accessed 23 November 2026.</p>
+            <p class="reference-meta"><a href="https://platform.claude.com/docs/en/managed-agents/self-hosted">platform.claude.com/docs/en/managed-agents/self-hosted</a><span>Cited in <a href="#section-13-model-routing-and-degraded-mode">Model routing and degraded mode</a></span></p>
           </div>
         </li>
     </ol>
@@ -2372,62 +2380,45 @@
     <header class="back-matter-header changelog-header">
       <p class="section-label">Version history</p>
       <h2 id="changelog-title">Changelog</h2>
-      <p class="changelog-version">Version 1.4.3 - November 9, 2026</p>
-      <p>Compared with Version 1.4.2, published November 8, 2026.</p>
-      <p>This edition makes 3 reader-facing changes: 2 additions, 1 correction. No guidance was removed.</p>
+      <p class="changelog-version">Version 1.4.4 - November 23, 2026</p>
+      <p>Compared with Version 1.4.3, published November 9, 2026.</p>
+      <p>This edition makes 2 reader-facing changes: 2 corrections. No guidance was removed.</p>
     </header>
     <div class="changelog-entries">
 
         <article class="changelog-entry" data-change-id="CHG-002">
           <header>
-            <p class="changelog-entry-meta"><span>CHG-002</span><span>Addition</span><span>Section 17. LLM observability as a first-class discipline</span></p>
-            <h3>Separate monitor coverage and review delay</h3>
+            <p class="changelog-entry-meta"><span>CHG-002</span><span>Correction</span><span><a href="#section-13-model-routing-and-degraded-mode">13. Model routing and degraded mode</a> <span>· p. 34</span></span></p>
+            <h3>Check where inference runs in a self-hosted service</h3>
           </header>
           <div class="changelog-entry-copy">
             <div class="changelog-entry-part" role="group" aria-label="What changed">
               <h4>What changed</h4>
-              <p>Report monitor coverage, time to automated review, time to human review and escalation rate separately. An action being logged does not establish timely review, and a low flag rate does not establish good detection. State which platforms and tool paths the denominator includes.</p>
+              <p>Record the hosted service, stored state and model provider in the deployment plan.</p>
             </div>
             <div class="changelog-entry-part" role="group" aria-label="Why this changed">
               <h4>Why</h4>
-              <p>The existing paragraph inventories surfaces and responder availability but does not separate these operational measures.</p>
+              <p>Each part has its own access, data handling and recovery obligations.</p>
             </div>
           </div>
-          <p class="changelog-sources"><strong>Primary evidence</strong> <a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development">[NOV09-59] Anthropic Institute - Measurements for understanding the pace of AI development inside frontier labs (not stated)</a></p>
-        </article>
-        <article class="changelog-entry" data-change-id="CHG-003">
-          <header>
-            <p class="changelog-entry-meta"><span>CHG-003</span><span>Addition</span><span>Section 16. Evals as the release contract</span></p>
-            <h3>Compare safety evaluations with production decisions</h3>
-          </header>
-          <div class="changelog-entry-copy">
-            <div class="changelog-entry-part" role="group" aria-label="What changed">
-              <h4>What changed</h4>
-              <p>Check whether safety-evaluation behavior transfers to comparable production decisions. Match cases on the context before the decision, keep grading definitions aligned and report the remaining case-mixture differences. Where task framing may matter, compare an unchanged task with controlled descriptions of the evaluation objective. Do not assume that evaluation awareness always inflates safety scores.</p>
-            </div>
-            <div class="changelog-entry-part" role="group" aria-label="Why this changed">
-              <h4>Why</h4>
-              <p>The November 3 study supports testing objective framing and the direction of transfer, absent from the current generic production-monitoring layer.</p>
-            </div>
-          </div>
-          <p class="changelog-sources"><strong>Primary evidence</strong> <a href="https://alignment.openai.com/eval-production-behavior-gap">[NOV09-62] OpenAI Alignment Research - Eval-production behavior gaps in agent safety and the role of eval-awareness (2026-11-03)</a></p>
+          <p class="changelog-sources"><strong>Primary evidence</strong> <a href="https://platform.claude.com/docs/en/release-notes/overview">[MOD-02] platform.claude.com - Anthropic platform release notes (2026-11-17)</a><span aria-hidden="true"> · </span><a href="https://platform.claude.com/docs/en/managed-agents/self-hosted">[NOV23-25] platform.claude.com - Self-hosted Claude Managed Agents (November 12 launch)</a></p>
         </article>
         <article class="changelog-entry" data-change-id="CHG-001">
           <header>
             <p class="changelog-entry-meta"><span>CHG-001</span><span>Correction</span><span>Evidence-review metadata</span></p>
-            <h3>Record the current evidence review</h3>
+            <h3>Record the November evidence review</h3>
           </header>
           <div class="changelog-entry-copy">
             <div class="changelog-entry-part" role="group" aria-label="What changed">
               <h4>What changed</h4>
-              <p>Updated the evidence-review date and limited current-access assertions to sources reopened in this prepared run.</p>
+              <p>Update the evidence-review date and the scope of checked bibliography entries.</p>
             </div>
             <div class="changelog-entry-part" role="group" aria-label="Why this changed">
               <h4>Why</h4>
-              <p>Readers can distinguish the common cutoff from the date on which primary evidence was checked.</p>
+              <p>A current access date identifies sources reopened in this run.</p>
             </div>
           </div>
-          <p class="changelog-sources"><strong>Primary evidence</strong> <a href="https://handbooks.surfaces.systems/production-ai-engineering/editions/v1.4.3/review-record.json">[REVIEW-2026-11-09] Michael Long, Surfaces - Publisher evidence-review record (2026-11-09)</a></p>
+          <p class="changelog-sources"><strong>Primary evidence</strong> <a href="https://developers.openai.com/api/docs/changelog">[MOD-04] developers.openai.com - OpenAI API changelog (2026-11-19)</a></p>
         </article>
     </div>
   </section>
@@ -2553,7 +2544,7 @@
   </li></ol>
     </nav>
     <div class="dialog-footer">
-      <a class="action-link" href="../output/pdf/production-ai-engineering-v1.4.2-2026-11-08.pdf" download aria-label="Download Production AI Engineering as a PDF, 97 pages">Download PDF <span>97 pages</span></a>
+      <a class="action-link" href="../output/pdf/production-ai-engineering-v1.4.4-2026-11-23.pdf" download aria-label="Download Production AI Engineering as a PDF, 100 pages">Download PDF <span>100 pages</span></a>
     </div>
   </dialog>
 

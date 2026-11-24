@@ -1,0 +1,171 @@
+--- previous/claude-design-v2.1.5-2026-11-08-daytime-r1.pdf
++++ candidate/daytime.pdf
+@@ -8,7 +8,7 @@
+ Review
+ Handoff
+ Michael Long
+-November 8, 2026 | Version 2.1.5
++November 23, 2026 | Version 2.1.6
+ --- PDF page 2 ---
+ ii
+ Orientation
+@@ -55,10 +55,14 @@
+ Start the walkthrough in Claude from a conversation or the Artifacts tab.
+ Claude Code also supports Design. Use one surface throughout the
+ exercise and record which one you used. Anthropic says the standalone
+-site closes on December 14, 2026. If you have work there, keep an export
+-you can open independently, check whether your account offers
+-migration, and inspect the design system and project in the destination
+-before relying on them. See Design in Claude and the migration guide.
++site closes on December 14, 2026. Download any files you need and
++confirm you can open them. Save essential chats and comments
++separately because the move and bulk archive omit them. Check
++whether your organization can move projects. Already-moved design
++systems become read-only in standalone when the move reaches your
++organization. Open the destination copy and check access, files, and
++behavior before you rely on it. See Design in Claude and the migration
++guide.
+ --- PDF page 4 ---
+ iv
+ The workflow
+@@ -140,22 +144,24 @@
+ 2. Bring your system into Claude Design
+  4
+ 9. Run the guided exercise
+- 42
++ 43
+ 3. Explore design directions
+  9
+ Appendix A: Brief and decision record
+- 46
++ 47
+ 4. Refine the design
+  14
+ Appendix B: Supporting engineering
+ checks
+- 46
++ 47
+ 5. Build the connected experience
+  20
+ Further reading
+- 47
++ 48
+ 6. Review with people
+  29
++Changelog
++ 49
+ --- PDF page 7 ---
+ 1
+ CHAPTER 01
+@@ -877,11 +883,26 @@
+ and code against the source library. Professional plans expose the active
+ library and framework. Desktop uses the Dev Mode selection. Remote
+ clients can request the framework label. Code Connect and MCP.
++On Organization and Enterprise plans, check the administrator's OAuth
++app allowlist if your coding client cannot connect to Figma. Ask the
++organization owner to approve the client through the normal process.
++Confirm which file and seat permissions are in effect. Figma OAuth app
++controls.
++Use the Dev Mode agent to inspect a design, compare versions, or
++request code and asset links. If you need editable native content, check
++whether the remote MCP client has a writing tool, a suitable seat, and
++permission to edit the destination. Verify the actual layers and
++relationships in that file. Dev Mode release notes and Figma MCP
++capabilities.
+ Use Figma plan features only when the chosen deliverable requires
+ them. A variable-driven native prototype may have additional plan
+ requirements. A Design review prototype should not inherit those
+ requirements merely because the team's foundations were created in
+ Figma.
++CLAUDE DESIGN FIELD GUIDE
++8. CONTINUE IN FIGMA WHEN NEEDED
++--- PDF page 48 ---
++42
+ Chapter checkpoint
+ The Figma recipient can edit the selected design. Required instances,
+ styles, variables and prototype behavior have separate results. Missing
+@@ -890,13 +911,13 @@
+ reading.
+ CLAUDE DESIGN FIELD GUIDE
+ 8. CONTINUE IN FIGMA WHEN NEEDED
+---- PDF page 48 ---
+-42
++--- PDF page 49 ---
++43
+ CHAPTER 09
+ Run the guided exercise
+ Complete the design loop and the handoff your recipient needs.
+---- PDF page 49 ---
+-43
++--- PDF page 50 ---
++44
+ Use the Velori starting materials to explore a review experience. Keep
+ the completed Store example out of initial generation context. Compare
+ the answer only after selecting and refining your own direction.
+@@ -930,8 +951,8 @@
+ the recipient needs that destination. Complete its own checks.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 50 ---
+-44
++--- PDF page 51 ---
++45
+ Keep a useful record
+ Record the chosen route, source files, Design project, selected direction,
+ decision rationale, corrections to hierarchy, content or interaction,
+@@ -971,16 +992,16 @@
+ a flattened screenshot an editable native result.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 51 ---
+-45
++--- PDF page 52 ---
++46
+ Chapter checkpoint
+ You have a reviewed interactive prototype and a recipient-usable
+ handoff. Any chosen implementation or Figma continuation has a
+ separate completion record.
+ CLAUDE DESIGN FIELD GUIDE
+ 9. RUN THE GUIDED EXERCISE
+---- PDF page 52 ---
+-46
++--- PDF page 53 ---
++47
+ Official Design documentation, reported practice and the Velori exercise. Sources are listed in Further
+ reading.
+ Appendix A: Brief and
+@@ -1015,8 +1036,8 @@
+ authored source and imagery use the declared MIT license; referenced
+ CLAUDE DESIGN FIELD GUIDE
+ APPENDIX B: SUPPORTING ENGINEERING CHECKS
+---- PDF page 53 ---
+-47
++--- PDF page 54 ---
++48
+ fonts and icons retain their own notices. Font family names in a Figma
+ file are not bundled font software.
+ Further reading
+@@ -1041,3 +1062,23 @@
+ Jérôme Benoit Reveau: A prototype-to-implementation pilot.
+ CLAUDE DESIGN FIELD GUIDE
+ FURTHER READING
++--- PDF page 55 ---
++49
++Changelog
++Compared with version 2.1.5, published 2026-11-08.
++Correction or clarification. Preserve project files and discussion before
++the standalone service closes. The migration and archive cover different
++parts of a project.
++Primary source
++Correction or clarification. Check administrator approval when an MCP
++client cannot connect. An organization can restrict the OAuth clients its
++members use.
++Primary source Primary source Primary source
++Correction or clarification. Check native write access before planning
++an editable handoff. Dev Mode inspection and editor writes have
++different evidence and access requirements.
++Primary source Primary source Primary source
++Previous Daytime PDF SHA-256:
++eeabd55a0f2ad0ad5f2ebc67f11c4f3596d37d3232ab3f807fa13ace14125cb3
++CLAUDE DESIGN FIELD GUIDE
++CHANGELOG

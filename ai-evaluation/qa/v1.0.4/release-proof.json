@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "crossRenderer": [
+    {
+      "theme": "light",
+      "sha256": "131ea065a740f93a70c3b33b3494c94c50486d8a9a45814c03dc2847198a4e08",
+      "pages": 105,
+      "status": "passed",
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ]
+    },
+    {
+      "theme": "dark",
+      "sha256": "49a020785d6c6382bfa9dc2970f3571880a46e49d6d163ad100f9426fc51c461",
+      "pages": 105,
+      "status": "passed",
+      "renderers": [
+        "poppler",
+        "pdfkit"
+      ]
+    }
+  ],
+  "crossRendererReportSha256": "010d99ce8fd6b0068be4c20b639996dc822e95a14584b0d2b72213887f953c86",
+  "visualReview": "passed",
+  "visualReportSha256": "cbdc997e0394ae368b228aba107d722b6d04098bd41a660c3f41476d5a907838",
+  "visualFindings": [],
+  "browser": {
+    "status": "passed",
+    "version": "1.0.4",
+    "daytimeSha256": "131ea065a740f93a70c3b33b3494c94c50486d8a9a45814c03dc2847198a4e08",
+    "lateNightSha256": "49a020785d6c6382bfa9dc2970f3571880a46e49d6d163ad100f9426fc51c461",
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    },
+    "report": {
+      "path": "qa/v1.0.4/weekly-review/browser-report.json",
+      "sha256": "61520ec06d4626aee13af4c44a81aa335cb9ff2981aa4982262888b51451a7f2"
+    }
+  },
+  "publicationBrowser": {
+    "status": "passed",
+    "engine": "chromium",
+    "jobId": "c4cef61f",
+    "servedReaderSha256": "cd443940647bd0a382df2893d710640f2e78826069bb0469549586a87a47aa33",
+    "markdownSha256": "643c5e1d17e193e5878f2a625dd228b40bfe1a4fe64fc3e68e40e227d206e0fd",
+    "pdfSha256": {
+      "light": "131ea065a740f93a70c3b33b3494c94c50486d8a9a45814c03dc2847198a4e08",
+      "dark": "49a020785d6c6382bfa9dc2970f3571880a46e49d6d163ad100f9426fc51c461"
+    },
+    "verificationSha256": "45836001286683aa04659d191457396e4c1bfbc62735de459d5a1e40f652ed74",
+    "lifecycle": {
+      "vm_deleted": true,
+      "runtime_deleted": true,
+      "evidence_complete": true,
+      "evidence_verified": true
+    }
+  }
+}
