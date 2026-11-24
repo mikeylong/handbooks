@@ -1,135 +1,137 @@
 {
   "id": "ai-native-organization",
   "title": "AI-Native Organization Handbook",
-  "version": "1.1.3",
-  "date": "2026-11-09",
-  "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
-  "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+  "version": "1.1.4",
+  "date": "2026-11-23",
+  "pdf": "output/pdf/ai-native-organization-v1.1.4-2026-11-23-daytime-r1.pdf",
+  "sha256": "8d38a0b394ab2efcae0e091c521cffa93f3e5bebbf4807e8318ebe0cfe37e352",
   "pages": 54,
   "approvalStatus": "approved",
   "publicationApproved": true,
-  "previous_public_edition": "1.1.2",
+  "previous_public_edition": "1.1.3",
   "comparison_basis": "approved public edition",
   "baseline": {
     "title": "AI-Native Organization Handbook",
-    "version": "1.1.2",
-    "date": "2026-11-08",
-    "pdf": "output/pdf/ai-native-organization-v1.1.2-2026-11-08-daytime-r1.pdf",
-    "sha256": "903730f4a7c797e2e2706c68404428dc87f79d10ac84a9536793037c8be9f5e0",
-    "pages": 51,
+    "version": "1.1.3",
+    "date": "2026-11-09",
+    "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+    "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+    "pages": 54,
     "manifest": {
-      "path": "baselines/v1.1.2/weekly-review/release-manifest.json",
-      "sha256": "7b9c7fd748490786926c8a60624b1532b31b87d1f90d264a1928b18b31bd8456"
+      "path": "baselines/v1.1.3/weekly-review/release-manifest.json",
+      "sha256": "55cfa82789a113725de73032111c6570fb7935625838966c4d84f0c2f72e390e"
     },
-    "originalPdfPath": "output/pdf/ai-native-organization-v1.1.2-2026-11-08-daytime-r1.pdf"
+    "originalPdfPath": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf"
   },
-  "candidate_validation": "qa/v1.1.3/weekly-review/lightValidation.json",
+  "candidate_validation": "qa/v1.1.4/weekly-review/lightValidation.json",
   "candidateEvidence": {
     "lightValidation": {
-      "path": "qa/v1.1.3/weekly-review/lightValidation.json",
-      "sha256": "0e6f2d48c0c624bcc3ecd30ff0c9a74c4115cab39105cb172ba01e1f35db9cc9",
-      "bytes": 2932
+      "path": "qa/v1.1.4/weekly-review/lightValidation.json",
+      "sha256": "9449c56dfa54271d47ff1947c0eacac40520141cb3595472a70da70fe2d691d0",
+      "bytes": 3098
     },
     "darkValidation": {
-      "path": "qa/v1.1.3/weekly-review/darkValidation.json",
-      "sha256": "a2f280340680d581cacd3701aa93fec44050c9ba1262acf23fa0d26a0138bb3a",
-      "bytes": 2935
+      "path": "qa/v1.1.4/weekly-review/darkValidation.json",
+      "sha256": "297c43bb34af46b63bd4915ffcfb56d867ac62100812a30ad919d9b0b44ab670",
+      "bytes": 3101
     },
     "changelogDecision": {
-      "path": "qa/v1.1.3/weekly-review/changelogDecision.json",
-      "sha256": "b297fa2ba23f3302bd0f50bfd66986121a99d4c12bae51fc9fb03f8a50ad034a",
-      "bytes": 1204
+      "path": "qa/v1.1.4/weekly-review/changelogDecision.json",
+      "sha256": "fce3ace53f2f8664ef7320d817b8e7dc8d479d675b1c758845eefeee86ddb85f",
+      "bytes": 1335
     },
     "editionDiff": {
-      "path": "qa/v1.1.3/weekly-review/editionDiff.json",
-      "sha256": "f20204fd38a763dacba4ab87363020d9bcf3bcfeae978767dd4961a17c5ff649",
-      "bytes": 2472
+      "path": "qa/v1.1.4/weekly-review/editionDiff.json",
+      "sha256": "2044fa270d1c6a2d135f2ffc31770e54fdfe98f3812b11da7ad08547a7a4575b",
+      "bytes": 2488
     },
     "changes": {
-      "path": "qa/v1.1.3/weekly-review/changes.json",
-      "sha256": "5de3227ab6954cd91bf0488552573b2aa11676dd436599bf20a215a50fa457c8",
-      "bytes": 881
+      "path": "qa/v1.1.4/weekly-review/changes.json",
+      "sha256": "1e0f9e453a1e7b467ea42715b860e30aa2d27812a561b333e166dbf3e698256c",
+      "bytes": 1012
     },
     "editionDiffPdfTextPatch": {
-      "path": "qa/v1.1.3/weekly-review/exact-pdf-text.patch",
-      "sha256": "49ec546b8896459aee2ffc15347c2ec83ba025941eef38e6080acc5fa909beb6",
-      "bytes": 21106
+      "path": "qa/v1.1.4/weekly-review/exact-pdf-text.patch",
+      "sha256": "69303ba7edaf754688fcfb85466358e88f0b491b04bd620237d4440da216996b",
+      "bytes": 8366
     },
     "editionDiffReaderFacingContentPatch": {
-      "path": "qa/v1.1.3/weekly-review/reader-facing-content.patch",
-      "sha256": "c6e8b532b91b8907450045707e405eaca07009d9cff350970577fcf48607748e",
-      "bytes": 18404
+      "path": "qa/v1.1.4/weekly-review/reader-facing-content.patch",
+      "sha256": "cfd10980fa1b84ff1afa637df7a2cf2dcefaa77709ae679c7b4952a8b4113f27",
+      "bytes": 6525
     },
     "editionDiffSourcePatch": {
-      "path": "qa/v1.1.3/weekly-review/exact-source.patch",
-      "sha256": "5a30fb5d456cf9446e0a583cd028a9747b854d2ba9a1b4ae77f6a8db8c645a2c",
-      "bytes": 6434
+      "path": "qa/v1.1.4/weekly-review/exact-source.patch",
+      "sha256": "e4933cdc520a79c59b9652e1d2e6fffdb3359a41ad6b347f61eacd11b2760bd6",
+      "bytes": 7896
     },
     "parity": {
-      "path": "qa/v1.1.3/weekly-review/parity.json",
-      "sha256": "021a12c3c3ee446d7c471dab452747364e79f60130a14a238d71aea923c33d50"
+      "path": "qa/v1.1.4/weekly-review/parity.json",
+      "sha256": "b4b32632b4f05f45e9fb124e0e15a1a38a036452096b562450ae93680e7dc58a"
     },
     "appearanceAudit": {
-      "path": "qa/v1.1.3/weekly-review/appearance.json",
-      "sha256": "f5dedda74992612196bc82e3f7250304ec866ce6561528747ddbfa8bac17d4fc"
+      "path": "qa/v1.1.4/weekly-review/appearance.json",
+      "sha256": "362f932d6786662371e19667169c681bb0e0610d4e205bd2213bda2fbd815636",
+      "bytes": 6275
     }
   },
   "evidenceMode": "standard",
   "pageMaps": {
     "light": {
-      "path": "qa/v1.1.3/weekly-review/light-page-map.json",
-      "sha256": "b02a71aac046adb01ca6048c7b987a3ab945b94a2b5eb55ca69c7388ec461fd5"
+      "path": "qa/v1.1.4/weekly-review/light-page-map.json",
+      "sha256": "fa9d3cc71c29967c3ccb22a2b48d70481d30b244d2c7838a249606f95383d102"
     },
     "dark": {
-      "path": "qa/v1.1.3/weekly-review/dark-page-map.json",
-      "sha256": "1acbe7a96efd5cf35878a732f82e0171cb84bec78613293b01de41ac85382829"
+      "path": "qa/v1.1.4/weekly-review/dark-page-map.json",
+      "sha256": "8b08186f3ec6becacfae6b73393a0e9fdcde2059f8b141947e8bf69909510cbf"
     }
   },
   "classifiedChangeIds": [
-    "candidate-change-001"
+    "candidate-change-001",
+    "candidate-change-002"
   ],
   "readerFacingContentChanged": true,
   "changelog": {
     "weeklyDecision": {
-      "path": "qa/v1.1.3/weekly-review/changelogDecision.json",
-      "sha256": "b297fa2ba23f3302bd0f50bfd66986121a99d4c12bae51fc9fb03f8a50ad034a",
-      "bytes": 1204
+      "path": "qa/v1.1.4/weekly-review/changelogDecision.json",
+      "sha256": "fce3ace53f2f8664ef7320d817b8e7dc8d479d675b1c758845eefeee86ddb85f",
+      "bytes": 1335
     },
     "pdfDecision": {
-      "path": "qa/v1.1.3/weekly-review/changelogDecision.json",
-      "sha256": "b297fa2ba23f3302bd0f50bfd66986121a99d4c12bae51fc9fb03f8a50ad034a",
-      "bytes": 1204
+      "path": "qa/v1.1.4/weekly-review/changelogDecision.json",
+      "sha256": "fce3ace53f2f8664ef7320d817b8e7dc8d479d675b1c758845eefeee86ddb85f",
+      "bytes": 1335
     },
     "retainedHistoricalChangelog": false
   },
   "appearances": {
     "light": {
-      "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
-      "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+      "pdf": "output/pdf/ai-native-organization-v1.1.4-2026-11-23-daytime-r1.pdf",
+      "sha256": "8d38a0b394ab2efcae0e091c521cffa93f3e5bebbf4807e8318ebe0cfe37e352",
       "pages": 54
     },
     "dark": {
-      "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
-      "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f",
+      "pdf": "output/pdf/ai-native-organization-v1.1.4-2026-11-23-late-night-r1.pdf",
+      "sha256": "1f56977a8e4137feafd9ff35e50fbe76293b274b0e0e10366af8b34a179ecd73",
       "pages": 54
     }
   },
   "retainedProvenance": {
     "status": "historical_only_not_reverified",
-    "sourceEdition": "1.1.2",
-    "manifest": "baselines/v1.1.2/weekly-review/release-manifest.json"
+    "sourceEdition": "1.1.3",
+    "manifest": "baselines/v1.1.3/weekly-review/release-manifest.json"
   },
   "publicationApproval": {
     "kind": "explicit-user-release",
-    "command": "Fix the Production changelog provenance, revalidate the corrected candidate, then publish the three patch editions. Keep the 80 GiB budget and preserve all release and failed-run evidence.",
-    "date": "2026-11-09",
-    "version": "1.1.3",
-    "daytimeSha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7"
+    "command": "Go ahead and publish those four exact editions. Recheck the live baseline first, verify all four on the public site afterward, and keep AI Consulting at 1.0.2.",
+    "date": "2026-11-24",
+    "version": "1.1.4",
+    "daytimeSha256": "8d38a0b394ab2efcae0e091c521cffa93f3e5bebbf4807e8318ebe0cfe37e352"
   },
   "releaseValidationKind": "weekly-exact-artifact",
   "generationToolkitArchive": {
-    "collectionPath": "releases/2026-11-09/generation-toolkit.zip",
-    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
-    "purpose": "Frozen shared runtime used for these validated candidate artifacts."
+    "collectionPath": "releases/2026-11-23/collection-candidate.zip",
+    "sha256": "bb62c744bb26f9333cce68e565dd968b33a681f3f1f1118f0182b097ffa56f53",
+    "purpose": "Frozen generation toolkit used for the exact review artifacts."
   }
 }

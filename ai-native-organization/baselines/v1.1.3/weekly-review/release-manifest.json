@@ -1,0 +1,135 @@
+{
+  "id": "ai-native-organization",
+  "title": "AI-Native Organization Handbook",
+  "version": "1.1.3",
+  "date": "2026-11-09",
+  "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+  "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+  "pages": 54,
+  "approvalStatus": "approved",
+  "publicationApproved": true,
+  "previous_public_edition": "1.1.2",
+  "comparison_basis": "approved public edition",
+  "baseline": {
+    "title": "AI-Native Organization Handbook",
+    "version": "1.1.2",
+    "date": "2026-11-08",
+    "pdf": "output/pdf/ai-native-organization-v1.1.2-2026-11-08-daytime-r1.pdf",
+    "sha256": "903730f4a7c797e2e2706c68404428dc87f79d10ac84a9536793037c8be9f5e0",
+    "pages": 51,
+    "manifest": {
+      "path": "baselines/v1.1.2/weekly-review/release-manifest.json",
+      "sha256": "7b9c7fd748490786926c8a60624b1532b31b87d1f90d264a1928b18b31bd8456"
+    },
+    "originalPdfPath": "output/pdf/ai-native-organization-v1.1.2-2026-11-08-daytime-r1.pdf"
+  },
+  "candidate_validation": "qa/v1.1.3/weekly-review/lightValidation.json",
+  "candidateEvidence": {
+    "lightValidation": {
+      "path": "qa/v1.1.3/weekly-review/lightValidation.json",
+      "sha256": "0e6f2d48c0c624bcc3ecd30ff0c9a74c4115cab39105cb172ba01e1f35db9cc9",
+      "bytes": 2932
+    },
+    "darkValidation": {
+      "path": "qa/v1.1.3/weekly-review/darkValidation.json",
+      "sha256": "a2f280340680d581cacd3701aa93fec44050c9ba1262acf23fa0d26a0138bb3a",
+      "bytes": 2935
+    },
+    "changelogDecision": {
+      "path": "qa/v1.1.3/weekly-review/changelogDecision.json",
+      "sha256": "b297fa2ba23f3302bd0f50bfd66986121a99d4c12bae51fc9fb03f8a50ad034a",
+      "bytes": 1204
+    },
+    "editionDiff": {
+      "path": "qa/v1.1.3/weekly-review/editionDiff.json",
+      "sha256": "f20204fd38a763dacba4ab87363020d9bcf3bcfeae978767dd4961a17c5ff649",
+      "bytes": 2472
+    },
+    "changes": {
+      "path": "qa/v1.1.3/weekly-review/changes.json",
+      "sha256": "5de3227ab6954cd91bf0488552573b2aa11676dd436599bf20a215a50fa457c8",
+      "bytes": 881
+    },
+    "editionDiffPdfTextPatch": {
+      "path": "qa/v1.1.3/weekly-review/exact-pdf-text.patch",
+      "sha256": "49ec546b8896459aee2ffc15347c2ec83ba025941eef38e6080acc5fa909beb6",
+      "bytes": 21106
+    },
+    "editionDiffReaderFacingContentPatch": {
+      "path": "qa/v1.1.3/weekly-review/reader-facing-content.patch",
+      "sha256": "c6e8b532b91b8907450045707e405eaca07009d9cff350970577fcf48607748e",
+      "bytes": 18404
+    },
+    "editionDiffSourcePatch": {
+      "path": "qa/v1.1.3/weekly-review/exact-source.patch",
+      "sha256": "5a30fb5d456cf9446e0a583cd028a9747b854d2ba9a1b4ae77f6a8db8c645a2c",
+      "bytes": 6434
+    },
+    "parity": {
+      "path": "qa/v1.1.3/weekly-review/parity.json",
+      "sha256": "021a12c3c3ee446d7c471dab452747364e79f60130a14a238d71aea923c33d50"
+    },
+    "appearanceAudit": {
+      "path": "qa/v1.1.3/weekly-review/appearance.json",
+      "sha256": "f5dedda74992612196bc82e3f7250304ec866ce6561528747ddbfa8bac17d4fc"
+    }
+  },
+  "evidenceMode": "standard",
+  "pageMaps": {
+    "light": {
+      "path": "qa/v1.1.3/weekly-review/light-page-map.json",
+      "sha256": "b02a71aac046adb01ca6048c7b987a3ab945b94a2b5eb55ca69c7388ec461fd5"
+    },
+    "dark": {
+      "path": "qa/v1.1.3/weekly-review/dark-page-map.json",
+      "sha256": "1acbe7a96efd5cf35878a732f82e0171cb84bec78613293b01de41ac85382829"
+    }
+  },
+  "classifiedChangeIds": [
+    "candidate-change-001"
+  ],
+  "readerFacingContentChanged": true,
+  "changelog": {
+    "weeklyDecision": {
+      "path": "qa/v1.1.3/weekly-review/changelogDecision.json",
+      "sha256": "b297fa2ba23f3302bd0f50bfd66986121a99d4c12bae51fc9fb03f8a50ad034a",
+      "bytes": 1204
+    },
+    "pdfDecision": {
+      "path": "qa/v1.1.3/weekly-review/changelogDecision.json",
+      "sha256": "b297fa2ba23f3302bd0f50bfd66986121a99d4c12bae51fc9fb03f8a50ad034a",
+      "bytes": 1204
+    },
+    "retainedHistoricalChangelog": false
+  },
+  "appearances": {
+    "light": {
+      "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+      "pages": 54
+    },
+    "dark": {
+      "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f",
+      "pages": 54
+    }
+  },
+  "retainedProvenance": {
+    "status": "historical_only_not_reverified",
+    "sourceEdition": "1.1.2",
+    "manifest": "baselines/v1.1.2/weekly-review/release-manifest.json"
+  },
+  "publicationApproval": {
+    "kind": "explicit-user-release",
+    "command": "Fix the Production changelog provenance, revalidate the corrected candidate, then publish the three patch editions. Keep the 80 GiB budget and preserve all release and failed-run evidence.",
+    "date": "2026-11-09",
+    "version": "1.1.3",
+    "daytimeSha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7"
+  },
+  "releaseValidationKind": "weekly-exact-artifact",
+  "generationToolkitArchive": {
+    "collectionPath": "releases/2026-11-09/generation-toolkit.zip",
+    "sha256": "29e6c0fedfcb4055aad38a567317347e23116da8fdb5722330e34b6b9e1e8f3a",
+    "purpose": "Frozen shared runtime used for these validated candidate artifacts."
+  }
+}

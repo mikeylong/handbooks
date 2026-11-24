@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "book": "ai-native-organization",
+  "title": "AI-Native Organization Handbook",
+  "version": "1.1.3",
+  "date": "2026-11-09",
+  "pdf": "output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+  "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+  "pages": 54,
+  "variants": [
+    {
+      "theme": "light",
+      "displayName": "Daytime version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.3-2026-11-09-daytime-r1.pdf",
+      "sha256": "a185f527e3e2936b73f6262f0e2ba85c4daf6d25c391961a68cd3f1facc2dac7",
+      "bytes": 8304950,
+      "pages": 54,
+      "pageMap": {
+        "path": "ai-native-organization/qa/v1.1.3/weekly-review/light-page-map.json",
+        "sha256": "b02a71aac046adb01ca6048c7b987a3ab945b94a2b5eb55ca69c7388ec461fd5"
+      }
+    },
+    {
+      "theme": "dark",
+      "displayName": "Late night version",
+      "appearanceRevision": 1,
+      "approvalStatus": "approved",
+      "path": "ai-native-organization/output/pdf/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "publicUrl": "/ai-native-organization/editions/v1.1.3/ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "downloadFilename": "ai-native-organization-v1.1.3-2026-11-09-late-night-r1.pdf",
+      "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f",
+      "bytes": 6764736,
+      "pages": 54,
+      "pageMap": {
+        "path": "ai-native-organization/qa/v1.1.3/weekly-review/dark-page-map.json",
+        "sha256": "1acbe7a96efd5cf35878a732f82e0171cb84bec78613293b01de41ac85382829"
+      },
+      "proof": {
+        "parity": {
+          "path": "ai-native-organization/qa/v1.1.3/weekly-review/parity.json",
+          "sha256": "021a12c3c3ee446d7c471dab452747364e79f60130a14a238d71aea923c33d50"
+        },
+        "appearanceAudit": {
+          "path": "ai-native-organization/qa/v1.1.3/weekly-review/appearance.json",
+          "sha256": "f5dedda74992612196bc82e3f7250304ec866ce6561528747ddbfa8bac17d4fc"
+        },
+        "visualApproval": {
+          "status": "approved",
+          "sha256": "d1e591ebf2a9c661b5327c5d1bf2bcb3dd00cbd71c19d7c295e5db82fff70c9f",
+          "date": "2026-11-09",
+          "authority": "Explicit user release after completed candidate validation",
+          "agentReview": "ai-native-organization/qa/v1.1.3/release-proof.json"
+        }
+      }
+    }
+  ]
+}

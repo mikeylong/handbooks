@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "readerFacingContentChanged": true,
+  "summary": "Evidence-backed clarifications for Claude Design Field Guide.",
+  "changes": [
+    {
+      "category": "Correction or clarification",
+      "section": "Getting started",
+      "text": "Preserve project files and discussion before the standalone service closes.",
+      "rationale": "The migration and archive cover different parts of a project.",
+      "sources": [
+        "https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Figma handoff",
+      "text": "Check administrator approval when an MCP client cannot connect.",
+      "rationale": "An organization can restrict the OAuth clients its members use.",
+      "sources": [
+        "https://www.figma.com/release-notes/",
+        "https://developers.figma.com/docs/figma-mcp-server/",
+        "https://help.figma.com/hc/en-us/articles/44716871463319-Manage-OAuth-apps-and-MCP-clients-for-your-organization"
+      ]
+    },
+    {
+      "category": "Correction or clarification",
+      "section": "Figma handoff",
+      "text": "Check native write access before planning an editable handoff.",
+      "rationale": "Dev Mode inspection and editor writes have different evidence and access requirements.",
+      "sources": [
+        "https://www.figma.com/release-notes/",
+        "https://developers.figma.com/docs/figma-mcp-server/",
+        "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
+      ]
+    }
+  ]
+}

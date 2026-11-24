@@ -1,19 +1,33 @@
 {
-  "version": "1.1.3",
-  "previousVersion": "1.1.2",
+  "version": "1.1.4",
+  "previousVersion": "1.1.3",
   "summary": "Evidence-backed clarifications for AI-Native Organization Handbook.",
   "items": [
     {
-      "classificationLabel": "Addition",
+      "classificationLabel": "Correction or clarification",
       "section": "2.4 Test the workflow and the outcome",
       "title": "2.4 Test the workflow and the outcome",
-      "whatChanged": "Include a handoff test when people or agents share the work. Give the next participant a plausible mistake or missing fact in the earlier result and check whether they detect it, ask the right owner and preserve the task's authority. Evaluate the coordinated workflow separately from each participant's ability to finish the task alone.",
-      "why": "The handbook depends on coordinated workflow delivery; an explicit inherited-error test improves its existing local test contract without prescribing a team structure.",
+      "whatChanged": "Compare a peer workflow with a coordinator under shared constraints.",
+      "why": "Group outcomes and individual actions answer different questions.",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2611.02633",
-          "title": "Measuring AI Agents as Teammates with Collaborative Intelligence",
-          "authority": "arXiv author manuscript"
+          "url": "https://alignment.anthropic.com/2026/worse-together/",
+          "title": "Multi-user multi-agent teams can fail as a group",
+          "authority": "alignment.anthropic.com"
+        }
+      ]
+    },
+    {
+      "classificationLabel": "Correction or clarification",
+      "section": "2.4 Test the workflow and the outcome",
+      "title": "2.4 Test the workflow and the outcome",
+      "whatChanged": "Check how the next run handles stale material from a previous participant.",
+      "why": "An old output cannot establish current authorization.",
+      "sources": [
+        {
+          "url": "https://openai.com/safety-alignment/misalignment-reports/using-peers-work-to-gain-unauthorized-access-to-openai-research-infrastructure/",
+          "title": "Peer residue enabled unauthorized access in a shared run",
+          "authority": "openai.com"
         }
       ]
     }

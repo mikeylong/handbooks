@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "book": "ai-evaluation",
   "title": "AI Evaluation Field Guide",
-  "version": "1.0.3",
-  "date": "2026-11-09",
-  "pdf": "output/pdf/ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf",
-  "sha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d",
+  "version": "1.0.4",
+  "date": "2026-11-23",
+  "pdf": "output/pdf/ai-evaluation-v1.0.4-2026-11-23-daytime-r1.pdf",
+  "sha256": "131ea065a740f93a70c3b33b3494c94c50486d8a9a45814c03dc2847198a4e08",
   "pages": 105,
   "variants": [
     {
@@ -13,15 +13,15 @@
       "displayName": "Daytime version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf",
-      "publicUrl": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf",
-      "downloadFilename": "ai-evaluation-v1.0.3-2026-11-09-daytime-r1.pdf",
-      "sha256": "e2dff35049ceba6503ce1950ec8837b102187bfaa4e85ba251ddd7bfcafcc39d",
-      "bytes": 5529845,
+      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.4-2026-11-23-daytime-r1.pdf",
+      "publicUrl": "/ai-evaluation/editions/v1.0.4/ai-evaluation-v1.0.4-2026-11-23-daytime-r1.pdf",
+      "downloadFilename": "ai-evaluation-v1.0.4-2026-11-23-daytime-r1.pdf",
+      "sha256": "131ea065a740f93a70c3b33b3494c94c50486d8a9a45814c03dc2847198a4e08",
+      "bytes": 5537532,
       "pages": 105,
       "pageMap": {
-        "path": "ai-evaluation/qa/v1.0.3/weekly-review/light-page-map.json",
-        "sha256": "98e705c52b1c43e78d7220153bc8a8375eac256e46dc0e43594d3c67f3a601f4"
+        "path": "ai-evaluation/qa/v1.0.4/weekly-review/light-page-map.json",
+        "sha256": "6894c914ab4bdfe5c4ba940ac4c2344eed38fecb881b7857ad888ce64a997287"
       }
     },
     {
@@ -29,31 +29,31 @@
       "displayName": "Late night version",
       "appearanceRevision": 1,
       "approvalStatus": "approved",
-      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.3-2026-11-09-late-night-r1.pdf",
-      "publicUrl": "/ai-evaluation/editions/v1.0.3/ai-evaluation-v1.0.3-2026-11-09-late-night-r1.pdf",
-      "downloadFilename": "ai-evaluation-v1.0.3-2026-11-09-late-night-r1.pdf",
-      "sha256": "0efc20ea217fb6b46bc6f4d02e2785d12abb8f28bb4de5a44f5ae1da808096a3",
-      "bytes": 56190075,
+      "path": "ai-evaluation/output/pdf/ai-evaluation-v1.0.4-2026-11-23-late-night-r1.pdf",
+      "publicUrl": "/ai-evaluation/editions/v1.0.4/ai-evaluation-v1.0.4-2026-11-23-late-night-r1.pdf",
+      "downloadFilename": "ai-evaluation-v1.0.4-2026-11-23-late-night-r1.pdf",
+      "sha256": "49a020785d6c6382bfa9dc2970f3571880a46e49d6d163ad100f9426fc51c461",
+      "bytes": 56198110,
       "pages": 105,
       "pageMap": {
-        "path": "ai-evaluation/qa/v1.0.3/weekly-review/dark-page-map.json",
-        "sha256": "9b365c813a711968f8e31a027348f6af33775abba8f3d32da78fb98feea78614"
+        "path": "ai-evaluation/qa/v1.0.4/weekly-review/dark-page-map.json",
+        "sha256": "2ba57dc781e77133bc2acc337d039298bc891265613c5cefb26c87b75e036b1f"
       },
       "proof": {
         "parity": {
-          "path": "ai-evaluation/qa/v1.0.3/weekly-review/parity.json",
-          "sha256": "4a073419b55b02917e28c122e20df6275d720ee06fae7f907b4ad70de1df5c02"
+          "path": "ai-evaluation/qa/v1.0.4/weekly-review/parity.json",
+          "sha256": "af726ff1203281875436733a34f5fdc160131f102e4b1bb8e867250f4d4ba33b"
         },
         "appearanceAudit": {
-          "path": "ai-evaluation/qa/v1.0.3/weekly-review/appearance.json",
-          "sha256": "ac7e9b30f5ed7a9b30de8c9a783b02d2fdd161d4f86ab1035b5c074908a37998"
+          "path": "ai-evaluation/qa/v1.0.4/weekly-review/appearance.json",
+          "sha256": "7839da9b70668bc30c8a54ad8da43be6fb08f739cc1d372a4f8632e0584941b8"
         },
         "visualApproval": {
           "status": "approved",
-          "sha256": "0efc20ea217fb6b46bc6f4d02e2785d12abb8f28bb4de5a44f5ae1da808096a3",
-          "date": "2026-11-09",
-          "authority": "Explicit user release after completed candidate validation",
-          "agentReview": "ai-evaluation/qa/v1.0.3/release-proof.json"
+          "sha256": "49a020785d6c6382bfa9dc2970f3571880a46e49d6d163ad100f9426fc51c461",
+          "date": "2026-11-24",
+          "authority": "Explicit release authorization for reviewed artifacts",
+          "agentReview": "ai-evaluation/qa/v1.0.4/release-proof.json"
         }
       }
     }

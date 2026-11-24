@@ -1,0 +1,234 @@
+--- previous/production-ai-engineering-v1.4.3-2026-11-09.pdf
++++ candidate/daytime.pdf
+@@ -2,7 +2,7 @@
+ ProductionAIEngineering
+ A Handbook for Building Reliable LLM Systems
+ Michael Long, surfaces.systems
+-November 9, 2026 · Version 1.4.3
++November 23, 2026 · Version 1.4.4
+ --- PDF page 2 ---
+ Engineering the whole system
+ Production AI engineering is a systems discipline. This handbook lays
+@@ -1002,7 +1002,7 @@
+ tenant policy and data residency;
+ current provider health and rate limits;
+ router confidence and out-of-distribution detection.
+-Maintain a compatibility matrix for every route: exact model snapshot or
++Keep a compatibility matrix for every route: exact model snapshot or
+ negotiated protocol version; provider API, client SDK, and serving-
+ runtime versions; lifecycle state and retirement date; supported request
+ parameters and turn rules; tool protocol; JSON Schema support; context
+@@ -1023,6 +1023,13 @@
+ needs its own migration owner even when the underlying model family
+ remains available. A fallback that cannot honor the same contract puts
+ the product in a different mode.
++Record where the agent service, its stored state, tool execution, and
++model inference run. Anthropicʼs self-hosted Managed Agents puts the
++service and stored sessions on infrastructure you operate. The service
++sends model requests to the selected provider. Trace what each request
++sends to that provider. Check the providerʼs terms for processing,
++retention, support and limits, and give the operatorʼs service its own
++access, recovery, and upgrade owners.
+ Treat provider service-tier policy as a route constraint. OpenAI
+ documents organization-wide and project-specific tier controls. Test the
+ effective settings using the intended project and confirm the behavior of
+@@ -1036,6 +1043,10 @@
+ summary blocks to the exact provider, model, account, conversation
+ history, and API contract. Return them unchanged when required, and
+ keep the history append-only. If a route drops or rejects that state, fail or
++PRODUCTION AI ENGINEERING
++PUT CLEAR LIMITS ON AGENTS
++35
++--- PDF page 39 ---
+ restart from an explicitly compatible checkpoint instead of silently
+ continuing with different semantics. Migration tests must cover default
+ reasoning behavior, forced-tool restrictions, structured-output
+@@ -1044,10 +1055,6 @@
+ migration guidance[MOD-05] documents changes to these contracts, while
+ AWS's adaptive-thinking correction[MOD-06] shows how omission can
+ enable billable reasoning. Anthropic's Sonnet 5.5 migration guide[MOD-08]
+-PRODUCTION AI ENGINEERING
+-PUT CLEAR LIMITS ON AGENTS
+-35
+---- PDF page 39 ---
+ documents the signed-state and request-contract changes. Reject
+ unsupported settings rather than silently dropping them. Compare the
+ resolved behavior, latency, and cost before rollout.
+@@ -1093,7 +1100,7 @@
+ and never send data to a provider or region outside the request's
+ approved residency and retention policy.
+ SOURCES [OPT-01] [SERV-05] [MCP-01] [MOD-01] [MOD-02] [MOD-03] [MOD-04] [MOD-05]
+-[MOD-06] [MOD-07] [MOD-08] [REL-05]
++[MOD-06] [MOD-07] [MOD-08] [REL-05] [NOV23-25]
+ Author synthesis: routing decisions are tied to the user's degraded-mode experience.
+ PRODUCTION AI ENGINEERING
+ PUT CLEAR LIMITS ON AGENTS
+@@ -2292,6 +2299,7 @@
+ Author synthesis: agent limits are organized as budgets and explicit terminal states.
+ Model routing and degraded mode
+ [OPT-01] [SERV-05] [MCP-01] [MOD-01] [MOD-02] [MOD-03] [MOD-04] [MOD-05] [MOD-06] [MOD-07] [MOD-08] [REL-05]
++[NOV23-25]
+ Author synthesis: routing decisions are tied to the user's degraded-mode experience.
+ RAG architecture
+ [RAG-01] [RAG-02] [RAG-03] [RETR-06] [TEN-01]
+@@ -2354,8 +2362,7 @@
+ anthropic.com/engineering/writing-tools-for-agents
+ Cited in Prompt engineering is one part of the harness, Reliable function and tool calling, Production
+ failure matrix
+-[CACHE-01] OpenAI. "Prompt caching." OpenAI API documentation. Accessed 9
+-November 2026.
++[CACHE-01] OpenAI. "Prompt caching." OpenAI API documentation.
+ developers.openai.com/api/docs/guides/prompt-caching
+ Cited in Four caches that must not be confused, Attribute cost to the whole workflow
+ [CACHE-02] Microsoft. "Get cached responses of large language model API
+@@ -2364,7 +2371,6 @@
+ learn.microsoft.com/en-us/azure/api-management/llm-semantic-cache-loo...
+ Cited in Four caches that must not be confused
+ [OUT-01] OpenAI. "Structured model outputs." OpenAI API documentation.
+-Accessed 9 November 2026.
+ developers.openai.com/api/docs/guides/structured-outputs
+ Cited in Structured outputs: syntax is only the first gate, Production failure matrix
+ [OUT-02] JSON Schema. "Creating your first schema."
+@@ -2378,16 +2384,16 @@
+ [TOOL-04] Kujanpaa, Kalle, et al. "Compiling Agentic Workflows into Deterministic
+ Tools for Production Reliability." arXiv:2607.08010, 2026.
+ arxiv.org/abs/2607.08010 Cited in Reliable function and tool calling
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-78
+---- PDF page 82 ---
+ [MCP-01] Model Context Protocol. "Key Changes in the 2026-07-28 Specification."
+ 28 July 2026.
+ blog.modelcontextprotocol.io/posts/2026-07-28
+ Cited in Reliable function and tool calling, Model routing and degraded mode
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++78
++--- PDF page 82 ---
+ [MCP-02] Model Context Protocol. "Key Changes." Protocol specification, 28 July
+-2026. Accessed 9 November 2026.
++2026.
+ modelcontextprotocol.io/specification/2026-07-28/changelog
+ Cited in Reliable function and tool calling
+ [MCP-03] Model Context Protocol. "Base Protocol: Overview." Protocol
+@@ -2417,15 +2423,15 @@
+ documentation.
+ platform.claude.com/docs/en/release-notes/overview
+ Cited in Model routing and degraded mode, Multi-tenant isolation and cache safety
+-PRODUCTION AI ENGINEERING
+-NOTES AND SOURCES
+-79
+---- PDF page 83 ---
+ [MOD-03] Amazon Web Services. "Amazon Bedrock model lifecycle." AWS
+ documentation.
+ docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html
+ Cited in Model routing and degraded mode
+-[MOD-04] OpenAI. "API changelog." OpenAI API documentation. Accessed 9
++PRODUCTION AI ENGINEERING
++NOTES AND SOURCES
++79
++--- PDF page 83 ---
++[MOD-04] OpenAI. "API changelog." OpenAI API documentation. Accessed 23
+ November 2026.
+ developers.openai.com/api/docs/changelog
+ Cited in Model routing and degraded mode, Attribute cost to the whole workflow, Safety engineering
+@@ -2736,8 +2742,7 @@
+ pfhr-6j48, September 2026.
+ github.com/vllm-project/vllm/security/advisories/GHSA-5fj9-pfhr-6j48
+ Cited in Multi-tenant isolation and cache safety
+-[PRIV-01] developers.openai.com. "OpenAI data controls." not stated. Accessed 9
+-November 2026.
++[PRIV-01] developers.openai.com. "OpenAI data controls." not stated.
+ developers.openai.com/api/docs/guides/your-data Cited in Attribute cost to the whole workflow
+ [REV-52] github.com/vllm-project/vllm. "vLLM v0.33.0 release." 2026-11-
+ 02T10:10:05Z.
+@@ -2757,14 +2762,16 @@
+ [REV-59] ai.google.dev. "Gemini API logs and datasets." 2026-10-26.
+ ai.google.dev/gemini-api/docs/logs-datasets Cited in Multi-tenant isolation and cache safety
+ [NOV09-59] Anthropic Institute. "Measurements for understanding the pace of AI
+-development inside frontier labs." not stated. Accessed 9 November
+-2026.
++development inside frontier labs." not stated.
+ anthropic.com/institute/measuring-pace-of-ai-development
+ Cited in LLM observability as a first-class discipline
+ [NOV09-62] OpenAI Alignment Research. "Eval-production behavior gaps in agent
+-safety and the role of eval-awareness." 2026-11-03. Accessed 9 November
+-2026.
++safety and the role of eval-awareness." 2026-11-03.
+ alignment.openai.com/eval-production-behavior-gap Cited in Evals as the release contract
++[NOV23-25] platform.claude.com. Self-hosted Claude Managed Agents. Accessed 23
++November 2026.
++platform.claude.com/docs/en/managed-agents/self-hosted
++Cited in Model routing and degraded mode
+ Model adaptation
+ [OPT-01] OpenAI. "Model optimization." OpenAI API documentation.
+ developers.openai.com/api/docs/guides/model-optimization
+@@ -3218,51 +3225,31 @@
+ --- PDF page 99 ---
+ VERSION HISTORY
+ Changelog
+-Version 1.4.3 - November 9, 2026
+-Compared with Version 1.4.2, published November 8, 2026.
+-This edition makes 3 reader-facing changes: 2 additions, 1 correction. No
+-guidance was removed.
+-CHG-002 ADDITION SECTION 17. LLM OBSERVABILITY AS A FIRST-CLASS DISCIPLINE
+-Separate monitor coverage and review delay
++Version 1.4.4 - November 23, 2026
++Compared with Version 1.4.3, published November 9, 2026.
++This edition makes 2 reader-facing changes: 2 corrections. No guidance was
++removed.
++CHG-002 CORRECTION 13. MODEL ROUTING AND DEGRADED MODE · P. 34
++Check where inference runs in a self-hosted service
+ WHAT CHANGED
+-Report monitor coverage, time to automated review, time to human review
+-and escalation rate separately. An action being logged does not establish
+-timely review, and a low flag rate does not establish good detection. State
+-which platforms and tool paths the denominator includes.
++Record the hosted service, stored state and model provider in the
++deployment plan.
+ WHY
+-The existing paragraph inventories surfaces and responder availability but
+-does not separate these operational measures.
++Each part has its own access, data handling and recovery obligations.
+ PRIMARY EVIDENCE
+-[NOV09-59] Anthropic Institute - Measurements for understanding the pace of AI development inside frontier
+-labs (not stated)
++[MOD-02] platform.claude.com - Anthropic platform release notes (2026-11-17) · [NOV23-25]
++platform.claude.com - Self-hosted Claude Managed Agents (November 12 launch)
+ 96
+ --- PDF page 100 ---
+-CHG-003 ADDITION SECTION 16. EVALS AS THE RELEASE CONTRACT
+-Compare safety evaluations with production
+-decisions
++CHG-001 CORRECTION EVIDENCE-REVIEW METADATA
++Record the November evidence review
+ WHAT CHANGED
+-Check whether safety-evaluation behavior transfers to comparable
+-production decisions. Match cases on the context before the decision, keep
+-grading definitions aligned and report the remaining case-mixture
+-differences. Where task framing may matter, compare an unchanged task
+-with controlled descriptions of the evaluation objective. Do not assume that
+-evaluation awareness always inflates safety scores.
++Update the evidence-review date and the scope of checked bibliography
++entries.
+ WHY
+-The November 3 study supports testing objective framing and the direction
+-of transfer, absent from the current generic production-monitoring layer.
++A current access date identifies sources reopened in this run.
+ PRIMARY EVIDENCE
+-[NOV09-62] OpenAI Alignment Research - Eval-production behavior gaps in agent safety and the role of
+-eval-awareness (2026-11-03)
+-CHG-001 CORRECTION EVIDENCE-REVIEW METADATA
+-Record the current evidence review
+-WHAT CHANGED
+-Updated the evidence-review date and limited current-access assertions to
+-sources reopened in this prepared run.
+-WHY
+-Readers can distinguish the common cutoff from the date on which primary
+-evidence was checked.
+-PRIMARY EVIDENCE
+-[REVIEW-2026-11-09] Michael Long, Surfaces - Publisher evidence-review record (2026-11-09)
++[MOD-04] developers.openai.com - OpenAI API changelog (2026-11-19)
+ PRODUCTION AI ENGINEERING
+ CHANGELOG
+ 97

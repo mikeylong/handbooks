@@ -1,47 +1,71 @@
 {
-  "version": "1.0.3",
-  "previousVersion": "1.0.2",
+  "version": "1.0.4",
+  "previousVersion": "1.0.3",
   "summary": "Evidence-backed clarifications for AI Evaluation Field Guide.",
   "items": [
     {
-      "classificationLabel": "Addition",
-      "section": "Agent and tool evaluation",
-      "title": "Agent and tool evaluation",
-      "whatChanged": "Add teamwork tests for missing context, unsafe pressure and inherited mistakes. Assess collaboration separately from isolated task success.",
-      "why": "Individual task scores do not establish reliable teamwork.",
+      "classificationLabel": "Correction or clarification",
+      "section": "Module 5, dataset splits",
+      "title": "Module 5, dataset splits",
+      "whatChanged": "Evaluate the full data mixture alongside its individual sources.",
+      "why": "An interaction can be absent from isolated source checks.",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2611.02633",
-          "title": "Measuring AI Agents as Teammates with Collaborative Intelligence",
-          "authority": "arXiv author manuscript"
+          "url": "https://alignment.anthropic.com/2026/homeopathic-learning/",
+          "title": "Clean data can strengthen a backdoor in a mixture",
+          "authority": "alignment.anthropic.com"
         }
       ]
     },
     {
-      "classificationLabel": "Addition",
-      "section": "Monitoring and incidents",
-      "title": "Monitoring and incidents",
-      "whatChanged": "Separate monitoring coverage, review latency and escalation; record unreviewed activity and check missed failures independently.",
-      "why": "A low escalation rate does not establish effective detection.",
+      "classificationLabel": "Correction or clarification",
+      "section": "Module 9, the adversarial loop",
+      "title": "Module 9, the adversarial loop",
+      "whatChanged": "Declare adaptive test limits and repeat policy before testing.",
+      "why": "Results depend on access, feedback and budget.",
       "sources": [
         {
-          "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
-          "title": "Measurements for understanding the pace of AI development inside frontier labs",
-          "authority": "Anthropic Institute"
+          "url": "https://openai.com/safety-alignment/fuzzy-robustness/",
+          "title": "Robustness depends on adaptive attacker budget",
+          "authority": "openai.com"
         }
       ]
     },
     {
-      "classificationLabel": "Addition",
-      "section": "Offline evaluation and production monitoring",
-      "title": "Offline evaluation and production monitoring",
-      "whatChanged": "Compare safety evaluations with matched production decisions using pre-decision sampling and aligned graders; test objective framing and report imperfect matching.",
-      "why": "Evaluation scores can differ from production safety in either direction.",
+      "classificationLabel": "Correction or clarification",
+      "section": "Module 10, evaluating agent workflows",
+      "title": "Module 10, evaluating agent workflows",
+      "whatChanged": "Measure team results and individual actions under shared constraints.",
+      "why": "A group result can conceal unhealthy behavior by one participant.",
       "sources": [
         {
-          "url": "https://alignment.openai.com/eval-production-behavior-gap",
-          "title": "Eval-production behavior gaps in agent safety and the role of eval-awareness",
-          "authority": "OpenAI Alignment Research"
+          "url": "https://alignment.anthropic.com/2026/worse-together/",
+          "title": "Multi-user multi-agent teams can fail as a group",
+          "authority": "alignment.anthropic.com"
+        }
+      ]
+    },
+    {
+      "classificationLabel": "Correction or clarification",
+      "section": "Module 12, production monitoring",
+      "title": "Module 12, production monitoring",
+      "whatChanged": "Revalidate detection when the model or reasoning settings change.",
+      "why": "Proxy scores and readable traces alone offer limited evidence about detection.",
+      "sources": [
+        {
+          "url": "https://openai.com/safety-alignment/cot-monitorability-model-lifecycle/",
+          "title": "Chain-of-thought monitorability changes across lifecycle",
+          "authority": "openai.com"
+        },
+        {
+          "url": "https://openai.com/index/managing-frontier-ai-risk/",
+          "title": "Chain-of-thought monitorability changes across lifecycle",
+          "authority": "openai.com"
+        },
+        {
+          "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/model-data-and-training",
+          "title": "Chain-of-thought monitorability changes across lifecycle",
+          "authority": "deploymentsafety.openai.com"
         }
       ]
     }

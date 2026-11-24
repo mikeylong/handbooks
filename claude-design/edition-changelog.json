@@ -1,6 +1,69 @@
 {
-  "version": "2.1.5",
-  "previousVersion": "2.1.4",
-  "summary": "Presentation correction: title-only subsection headings and mandatory checks for the reader, Markdown, and both PDF appearances. Handbook guidance is unchanged.",
-  "items": []
+  "version": "2.1.6",
+  "previousVersion": "2.1.5",
+  "summary": "Evidence-backed clarifications for Claude Design Field Guide.",
+  "items": [
+    {
+      "classificationLabel": "Correction or clarification",
+      "section": "Getting started",
+      "title": "Getting started",
+      "whatChanged": "Preserve project files and discussion before the standalone service closes.",
+      "why": "The migration and archive cover different parts of a project.",
+      "sources": [
+        {
+          "url": "https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude",
+          "title": "Standalone Claude Design closure and preservation boundary",
+          "authority": "support.claude.com"
+        }
+      ]
+    },
+    {
+      "classificationLabel": "Correction or clarification",
+      "section": "Figma handoff",
+      "title": "Figma handoff",
+      "whatChanged": "Check administrator approval when an MCP client cannot connect.",
+      "why": "An organization can restrict the OAuth clients its members use.",
+      "sources": [
+        {
+          "url": "https://www.figma.com/release-notes/",
+          "title": "Figma Dev Mode agent and MCP canvas/Specs surface",
+          "authority": "www.figma.com"
+        },
+        {
+          "url": "https://developers.figma.com/docs/figma-mcp-server/",
+          "title": "Figma Dev Mode agent and MCP canvas/Specs surface",
+          "authority": "developers.figma.com"
+        },
+        {
+          "url": "https://help.figma.com/hc/en-us/articles/44716871463319-Manage-OAuth-apps-and-MCP-clients-for-your-organization",
+          "title": "Figma OAuth app allowlist for MCP clients",
+          "authority": "help.figma.com"
+        }
+      ]
+    },
+    {
+      "classificationLabel": "Correction or clarification",
+      "section": "Figma handoff",
+      "title": "Figma handoff",
+      "whatChanged": "Check native write access before planning an editable handoff.",
+      "why": "Dev Mode inspection and editor writes have different evidence and access requirements.",
+      "sources": [
+        {
+          "url": "https://www.figma.com/release-notes/",
+          "title": "Figma Dev Mode agent and MCP canvas/Specs surface",
+          "authority": "www.figma.com"
+        },
+        {
+          "url": "https://developers.figma.com/docs/figma-mcp-server/",
+          "title": "Figma Dev Mode agent and MCP canvas/Specs surface",
+          "authority": "developers.figma.com"
+        },
+        {
+          "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+          "title": "Figma Dev Mode agent and MCP canvas/Specs surface",
+          "authority": "developers.figma.com"
+        }
+      ]
+    }
+  ]
 }
